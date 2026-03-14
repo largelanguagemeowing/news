@@ -1,12 +1,62 @@
 [
   {
-    "run_id": "b4e0f5ecf94c",
-    "started_at": "2026-03-14T08:04:55+00:00",
+    "run_id": "7f1a4cdd4750",
+    "started_at": "2026-03-14T08:07:27+00:00",
     "ended_at": null,
     "status": "running",
     "error_message": null,
     "github_run_id": null,
     "github_run_url": null,
+    "stage_stats": [
+      {
+        "stage_name": "ingest",
+        "started_at": "2026-03-14T08:07:27+00:00",
+        "ended_at": "2026-03-14T08:07:31+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 1252,
+          "failed_sources": 1,
+          "duration_ms": 3840.8
+        }
+      },
+      {
+        "stage_name": "cluster",
+        "started_at": "2026-03-14T08:07:31+00:00",
+        "ended_at": "2026-03-14T08:07:31+00:00",
+        "status": "success",
+        "metrics": {
+          "events": 43,
+          "articles_clustered": 43,
+          "duration_ms": 40.11
+        }
+      },
+      {
+        "stage_name": "categorize",
+        "started_at": "2026-03-14T08:07:31+00:00",
+        "ended_at": "2026-03-14T08:07:31+00:00",
+        "status": "success",
+        "metrics": {
+          "events_categorized": 43,
+          "duration_ms": 1.16
+        }
+      },
+      {
+        "stage_name": "export",
+        "started_at": "2026-03-14T08:07:31+00:00",
+        "ended_at": null,
+        "status": "running",
+        "metrics": {}
+      }
+    ]
+  },
+  {
+    "run_id": "b4e0f5ecf94c",
+    "started_at": "2026-03-14T08:04:55+00:00",
+    "ended_at": "2026-03-14T08:04:58+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "23083904820",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/23083904820",
     "stage_stats": [
       {
         "stage_name": "ingest",
@@ -43,9 +93,13 @@
       {
         "stage_name": "export",
         "started_at": "2026-03-14T08:04:58+00:00",
-        "ended_at": null,
-        "status": "running",
-        "metrics": {}
+        "ended_at": "2026-03-14T08:04:58+00:00",
+        "status": "success",
+        "metrics": {
+          "exported_files": 6,
+          "open_incidents": 1,
+          "duration_ms": 18.4
+        }
       }
     ]
   },
