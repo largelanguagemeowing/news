@@ -154,6 +154,15 @@ def ingest_stage(
             feed = feedparser.parse(source.feed_url)
             if getattr(feed, "bozo", 0):
                 raise RuntimeError(str(getattr(feed, "bozo_exception", "feed parse failed")))
+            if "youtube.com/feeds/videos.xml" in source.feed_url:
+                feed_title = str(getattr(feed, "feed", {}).get("title", "")).strip()
+                if feed_title and feed_title != source.name:
+                    with transaction(conn):
+                        conn.execute(
+                            "UPDATE sources SET name = ? WHERE source_id = ?",
+                            (feed_title, source.source_id),
+                        )
+                    source.name = feed_title
             source_inserted = 0
             latest_item_at: str | None = None
             with transaction(conn):
