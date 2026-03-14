@@ -73,12 +73,12 @@ function renderSourceLink(source) {
   return `<a class="table-link source-label" href="./index.html?source=${encodeURIComponent(source.source_id)}" title="${source.feed_url || source.name}">${icon}<span>${source.name}</span></a>`;
 }
 
-function renderEventLink(url) {
-  const faviconUrl = sourceFaviconUrl(url);
+function renderEventTitle(event) {
+  const faviconUrl = sourceFaviconUrl(event.representative_url);
   const icon = faviconUrl
-    ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Event source favicon" />`
+    ? `<img class="event-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" />`
     : "";
-  return `<a class="card-link source-label" href="${url}" target="_blank" rel="noreferrer">${icon}<span>Representative link</span></a>`;
+  return `<a class="event-title card-link-inline" href="${event.representative_url}" target="_blank" rel="noreferrer">${icon}<span>${event.canonical_title}</span></a>`;
 }
 
 async function main() {
@@ -182,10 +182,9 @@ async function main() {
       .slice(0, 10)
       .map(
         (ev) => `<li class="card event-card">
-      <strong>${ev.canonical_title}</strong>
+      <strong>${renderEventTitle(ev)}</strong>
       <div class="meta-row">Category: ${ev.category_labels} (${Math.round((ev.confidence || 0) * 100)}%)</div>
       <div class="meta-row">Sources: ${ev.source_count}</div>
-      ${renderEventLink(ev.representative_url)}
     </li>`
       )
       .join("") || `<li class="card">No events yet</li>`;

@@ -96,7 +96,9 @@ body {
 }
 
 .nav-item {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   padding: 9px 14px;
   border-radius: 10px;
   font-size: 0.93rem;
@@ -114,6 +116,20 @@ body {
 .nav-item.active {
   color: #ffffff;
   background: linear-gradient(135deg, var(--accent), #1c5872);
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  opacity: 0.9;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(18%) saturate(738%) hue-rotate(128deg)
+    brightness(92%) contrast(90%);
+}
+
+.nav-item.active .nav-icon {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(100%);
 }
 
 .grid.metrics {
@@ -156,8 +172,20 @@ body {
 
 .panel h2 {
   margin: 4px 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1.08rem;
   letter-spacing: 0.01em;
+}
+
+.section-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  opacity: 0.9;
+  filter: brightness(0) saturate(100%) invert(15%) sepia(17%) saturate(1808%) hue-rotate(161deg)
+    brightness(94%) contrast(90%);
 }
 
 .filters {
@@ -364,6 +392,28 @@ body {
 }
 
 .source-favicon {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid #d4e1ec;
+  background: #ffffff;
+  box-shadow: 0 1px 0 #dbe7f1;
+  flex: 0 0 auto;
+}
+
+.event-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-title:hover {
+  color: var(--accent-2);
+}
+
+.event-favicon {
   width: 18px;
   height: 18px;
   border-radius: 5px;
