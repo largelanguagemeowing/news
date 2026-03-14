@@ -56,6 +56,23 @@ function shortId(value) {
   return String(value).slice(0, 8);
 }
 
+function sourceFaviconUrl(feedUrl) {
+  try {
+    const hostname = new URL(feedUrl).hostname;
+    return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=32`;
+  } catch {
+    return "";
+  }
+}
+
+function renderSourceLink(source) {
+  const faviconUrl = sourceFaviconUrl(source.feed_url);
+  const icon = faviconUrl
+    ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="${source.name} favicon" />`
+    : "";
+  return `<a class="table-link source-label" href="./index.html?source=${encodeURIComponent(source.source_id)}" title="${source.feed_url || source.name}">${icon}<span>${source.name}</span></a>`;
+}
+
 async function main() {
   const [summary, sources, incidents, runs, events] = await Promise.all([
     getJson(["./data/status/summary.json", "../data/status/summary.json"]),
@@ -92,7 +109,7 @@ async function main() {
         ? `<div class="history-inline" title="${s.checks_count_recent || 0} checks · ${s.uptime_pct_recent || 0}% uptime">${historyBars}</div><div class="history-meta">${s.uptime_pct_recent || 0}%</div>`
         : `<span class="history-meta">-</span>`;
       return `<tr>
-      <td><a class="table-link" href="./index.html?source=${encodeURIComponent(s.source_id)}" title="${s.feed_url || s.name}">${s.name}</a></td>
+      <td>${renderSourceLink(s)}</td>
       <td class="${statusClass(s.status)}">${s.status}</td>
       <td title="${formatDateTime(s.last_success_at)}">${formatTimestamp(s.last_success_at)}</td>
       <td>${s.consecutive_failures}</td>
