@@ -36,6 +36,9 @@ STATUS_DIR = Path("data/status")
 SIMILARITY_THRESHOLD = 0.82
 CLUSTER_WINDOW_HOURS = 72
 SOURCE_FAIL_THRESHOLD = 3
+SOURCE_AUTO_DISABLE_FAILURES = 6
+SOURCE_AUTO_DISABLE_MIN_FAILURE_HOURS = 12
+SOURCE_AUTO_DISABLE_COOLDOWN_HOURS = 24
 SOURCE_ID_RENAMES = {
     "deepmind-blog": "google-deepmind-blog",
     "apple-ml-blog": "apple-machine-learning",
@@ -94,6 +97,27 @@ def parse_date(value: Any) -> datetime:
 
 def iso(dt: datetime) -> str:
     return dt.astimezone(timezone.utc).replace(microsecond=0).isoformat()
+
+
+def source_is_in_cooldown(auto_disabled_until: str | None, now: datetime | None = None) -> bool:
+    if not auto_disabled_until:
+        return False
+    current = now or datetime.now(timezone.utc)
+    return parse_date(auto_disabled_until) > current
+
+
+def should_auto_disable_source(
+    failures: int,
+    last_success_at: str | None,
+    now: datetime | None = None,
+) -> bool:
+    if failures < SOURCE_AUTO_DISABLE_FAILURES:
+        return False
+    if not last_success_at:
+        return True
+    current = now or datetime.now(timezone.utc)
+    since_success = current - parse_date(last_success_at)
+    return since_success.total_seconds() >= (SOURCE_AUTO_DISABLE_MIN_FAILURE_HOURS * 3600)
 
 
 def upsert_sources(conn: sqlite3.Connection, sources: list[SourceConfig]) -> None:
@@ -192,7 +216,34 @@ def ingest_stage(
 ) -> StageResult:
     inserted = 0
     failed_sources = 0
+    auto_disabled_sources = 0
+    skipped_sources = 0
     for source in [s for s in sources if s.enabled]:
+        now = datetime.now(timezone.utc)
+        source_health = conn.execute(
+            """
+            SELECT consecutive_failures, last_success_at, auto_disabled_until
+            FROM source_health
+            WHERE source_id = ?
+            """,
+            (source.source_id,),
+        ).fetchone()
+        if source_health and source_is_in_cooldown(source_health["auto_disabled_until"], now):
+            skipped_sources += 1
+            with transaction(conn):
+                conn.execute(
+                    """
+                    INSERT INTO source_checks (source_id, run_id, checked_at, status, latency_ms, error_message)
+                    VALUES (?, ?, ?, 'skipped', NULL, ?)
+                    """,
+                    (
+                        source.source_id,
+                        run_id,
+                        utc_now_iso(),
+                        f"Auto-disabled until {source_health['auto_disabled_until']}",
+                    ),
+                )
+            continue
         start = time.time()
         try:
             feed = feedparser.parse(source.feed_url)
@@ -263,7 +314,8 @@ def ingest_stage(
                     """
                     UPDATE source_health
                     SET last_success_at = ?, last_item_at = ?, consecutive_failures = 0,
-                        avg_latency_ms = ?, last_error = NULL
+                        avg_latency_ms = ?, last_error = NULL,
+                        auto_disabled_until = NULL, auto_disabled_reason = NULL
                     WHERE source_id = ?
                     """,
                     (utc_now_iso(), latest_item_at, new_avg, source.source_id),
@@ -289,18 +341,44 @@ def ingest_stage(
             with transaction(conn):
                 row = conn.execute(
                     """
-                    SELECT consecutive_failures FROM source_health WHERE source_id = ?
+                    SELECT consecutive_failures, last_success_at
+                    FROM source_health
+                    WHERE source_id = ?
                     """,
                     (source.source_id,),
                 ).fetchone()
                 failures = int(row["consecutive_failures"]) + 1 if row else 1
+                should_disable = should_auto_disable_source(
+                    failures=failures,
+                    last_success_at=row["last_success_at"] if row else None,
+                    now=now,
+                )
+                disabled_until = (
+                    iso(now + timedelta(hours=SOURCE_AUTO_DISABLE_COOLDOWN_HOURS))
+                    if should_disable
+                    else None
+                )
+                if should_disable:
+                    auto_disabled_sources += 1
                 conn.execute(
                     """
                     UPDATE source_health
                     SET consecutive_failures = ?, last_error = ?, errors_24h = errors_24h + 1
+                      , auto_disabled_until = COALESCE(?, auto_disabled_until)
+                      , auto_disabled_reason = CASE
+                          WHEN ? IS NULL THEN auto_disabled_reason
+                          ELSE ?
+                        END
                     WHERE source_id = ?
                     """,
-                    (failures, str(exc)[:500], source.source_id),
+                    (
+                        failures,
+                        str(exc)[:500],
+                        disabled_until,
+                        disabled_until,
+                        f"Auto-disabled after {failures} consecutive failures.",
+                        source.source_id,
+                    ),
                 )
                 conn.execute(
                     """
@@ -310,16 +388,26 @@ def ingest_stage(
                     (source.source_id, run_id, utc_now_iso(), str(exc)[:500]),
                 )
                 if failures >= SOURCE_FAIL_THRESHOLD:
+                    disable_note = (
+                        f" Auto-disabled until {disabled_until}."
+                        if disabled_until
+                        else ""
+                    )
                     signal = IncidentSignal(
                         key=f"source:{source.source_id}",
                         kind="source",
                         target_id=source.source_id,
-                        message=f"Source failed {failures} consecutive times. Error: {exc}",
+                        message=f"Source failed {failures} consecutive times. Error: {exc}.{disable_note}",
                     )
                     sync_incident_open_or_update(conn, signal, run_id, issue_client)
     return StageResult(
         status="success",
-        metrics={"inserted_articles": inserted, "failed_sources": failed_sources},
+        metrics={
+            "inserted_articles": inserted,
+            "failed_sources": failed_sources,
+            "skipped_sources": skipped_sources,
+            "auto_disabled_sources": auto_disabled_sources,
+        },
     )
 
 
@@ -588,7 +676,8 @@ def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
         SELECT s.source_id, s.name, s.feed_url, sh.last_success_at, sh.last_item_at,
-               sh.consecutive_failures, sh.avg_latency_ms, sh.items_24h, sh.errors_24h, sh.last_error
+               sh.consecutive_failures, sh.avg_latency_ms, sh.items_24h, sh.errors_24h, sh.last_error,
+               sh.auto_disabled_until
         FROM sources s
         LEFT JOIN source_health sh ON sh.source_id = s.source_id
         WHERE s.enabled = 1
@@ -601,6 +690,8 @@ def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
         if int(row["consecutive_failures"] or 0) > 0:
             status = "degraded"
         if int(row["consecutive_failures"] or 0) >= SOURCE_FAIL_THRESHOLD:
+            status = "down"
+        if source_is_in_cooldown(row["auto_disabled_until"]):
             status = "down"
         checks = conn.execute(
             """
@@ -629,6 +720,7 @@ def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
                 "items_24h": int(row["items_24h"] or 0),
                 "errors_24h": int(row["errors_24h"] or 0),
                 "last_error": row["last_error"],
+                "auto_disabled_until": row["auto_disabled_until"],
                 "recent_statuses": recent_statuses,
                 "uptime_pct_recent": uptime_pct,
                 "checks_count_recent": total_checks,

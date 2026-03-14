@@ -28,7 +28,9 @@ CREATE TABLE IF NOT EXISTS source_health (
   avg_latency_ms REAL NOT NULL DEFAULT 0,
   items_24h INTEGER NOT NULL DEFAULT 0,
   errors_24h INTEGER NOT NULL DEFAULT 0,
-  last_error TEXT
+  last_error TEXT,
+  auto_disabled_until TEXT,
+  auto_disabled_reason TEXT
 );
 
 CREATE TABLE IF NOT EXISTS articles (
@@ -121,7 +123,21 @@ def get_connection() -> sqlite3.Connection:
 
 def init_db(conn: sqlite3.Connection) -> None:
     conn.executescript(SCHEMA)
+    _ensure_columns(conn)
     conn.commit()
+
+
+def _ensure_columns(conn: sqlite3.Connection) -> None:
+    table_columns = {
+        "source_health": {
+            row["name"]
+            for row in conn.execute("PRAGMA table_info(source_health)").fetchall()
+        }
+    }
+    if "auto_disabled_until" not in table_columns["source_health"]:
+        conn.execute("ALTER TABLE source_health ADD COLUMN auto_disabled_until TEXT")
+    if "auto_disabled_reason" not in table_columns["source_health"]:
+        conn.execute("ALTER TABLE source_health ADD COLUMN auto_disabled_reason TEXT")
 
 
 @contextmanager
