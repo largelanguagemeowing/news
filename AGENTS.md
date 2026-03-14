@@ -7,3 +7,6 @@ When dashboard pages or navigation are changed:
 2. Push to `master`.
 3. Trigger the `news-pipeline` GitHub Actions workflow (`workflow_dispatch`) so `data/status/*` and GitHub Pages are refreshed immediately.
 
+## Project Skills
+
+- `frontend-design`: `skills/frontend-design/SKILL.md`
