@@ -1,9 +1,11 @@
-async function getJson(path) {
-  const response = await fetch(path, { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${path}: ${response.status}`);
+async function getJson(paths) {
+  for (const path of paths) {
+    const response = await fetch(path, { cache: "no-store" });
+    if (response.ok) {
+      return response.json();
+    }
   }
-  return response.json();
+  throw new Error(`Failed to fetch ${paths.join(" or ")}`);
 }
 
 function metric(title, value) {
@@ -14,16 +16,59 @@ function statusClass(status) {
   return `status-${String(status || "").toLowerCase()}`;
 }
 
+function formatDateTime(value) {
+  if (!value) return "-";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return value;
+  return dt.toLocaleString(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+}
+
+function formatRelative(value) {
+  if (!value) return "";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return "";
+  const diffMs = dt.getTime() - Date.now();
+  const absMs = Math.abs(diffMs);
+  const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+  const minute = 60 * 1000;
+  const hour = 60 * minute;
+  const day = 24 * hour;
+  if (absMs < hour) {
+    return rtf.format(Math.round(diffMs / minute), "minute");
+  }
+  if (absMs < day) {
+    return rtf.format(Math.round(diffMs / hour), "hour");
+  }
+  return rtf.format(Math.round(diffMs / day), "day");
+}
+
+function formatTimestamp(value) {
+  const absolute = formatDateTime(value);
+  const relative = formatRelative(value);
+  return relative || absolute;
+}
+
+function shortId(value) {
+  if (!value) return "-";
+  return String(value).slice(0, 8);
+}
+
 async function main() {
   const [summary, sources, incidents, runs, events] = await Promise.all([
-    getJson("./data/status/summary.json"),
-    getJson("./data/status/sources.json"),
-    getJson("./data/status/incidents.json"),
-    getJson("./data/status/runs.json"),
-    getJson("./data/status/events.json"),
+    getJson(["./data/status/summary.json", "../data/status/summary.json"]),
+    getJson(["./data/status/sources.json", "../data/status/sources.json"]),
+    getJson(["./data/status/incidents.json", "../data/status/incidents.json"]),
+    getJson(["./data/status/runs.json", "../data/status/runs.json"]),
+    getJson(["./data/status/events.json", "../data/status/events.json"]),
   ]);
 
-  document.getElementById("generatedAt").textContent = `Generated: ${summary.generated_at}`;
+  const generatedLabel = document.getElementById("generatedAt");
+  generatedLabel.textContent = `Updated ${formatTimestamp(summary.generated_at)}`;
+  generatedLabel.title = formatDateTime(summary.generated_at);
+  const repoSlug = summary.github_repository || "";
   document.getElementById("metrics").innerHTML = [
     metric(
       "Pipeline",
@@ -54,11 +99,19 @@ async function main() {
   document.getElementById("incidentsList").innerHTML =
     openIncidents
       .map(
-        (inc) => `<li class="card">
-      <strong>${inc.incident_key}</strong>
-      <div class="${statusClass(inc.status)}">${inc.status}</div>
-      <div>${inc.last_message || ""}</div>
-      <div>${inc.issue_number ? `Issue #${inc.issue_number}` : "No linked issue"}</div>
+        (inc) => `<li class="card incident-card">
+      <div class="card-head">
+        <strong>${inc.incident_key}</strong>
+        <span class="chip ${statusClass(inc.status)}">${inc.status}</span>
+      </div>
+      <div class="meta-row">${inc.last_message || ""}</div>
+      <div class="meta-row">${
+        inc.issue_number && repoSlug
+          ? `<a class="card-link" href="https://github.com/${repoSlug}/issues/${inc.issue_number}" target="_blank" rel="noreferrer">Open issue #${inc.issue_number}</a>`
+          : inc.issue_number
+            ? `Issue #${inc.issue_number}`
+            : "No linked issue"
+      }</div>
     </li>`
       )
       .join("") || `<li class="card">No open incidents</li>`;
@@ -67,11 +120,16 @@ async function main() {
     runs
       .slice(0, 8)
       .map(
-        (run) => `<li class="card">
-      <strong>${run.run_id}</strong>
-      <div class="${statusClass(run.status)}">${run.status}</div>
-      <div>Started: ${run.started_at}</div>
-      <div>Ended: ${run.ended_at || "-"}</div>
+        (run) => `<li class="card run-card">
+      <div class="card-head">
+        <strong>${
+          run.github_run_url
+            ? `<a class="card-link-inline" href="${run.github_run_url}" target="_blank" rel="noreferrer">${shortId(run.run_id)}</a>`
+            : shortId(run.run_id)
+        }</strong>
+        <span class="chip ${statusClass(run.status)}">${run.status}</span>
+      </div>
+      <div class="meta-row" title="${formatDateTime(run.ended_at)}">Ended ${formatTimestamp(run.ended_at)}</div>
     </li>`
       )
       .join("") || `<li class="card">No runs yet</li>`;
@@ -80,11 +138,11 @@ async function main() {
     events
       .slice(0, 10)
       .map(
-        (ev) => `<li class="card">
+        (ev) => `<li class="card event-card">
       <strong>${ev.canonical_title}</strong>
-      <div>Category: ${ev.category_labels} (${Math.round((ev.confidence || 0) * 100)}%)</div>
-      <div>Sources: ${ev.source_count}</div>
-      <a href="${ev.representative_url}" target="_blank" rel="noreferrer">Representative link</a>
+      <div class="meta-row">Category: ${ev.category_labels} (${Math.round((ev.confidence || 0) * 100)}%)</div>
+      <div class="meta-row">Sources: ${ev.source_count}</div>
+      <a class="card-link" href="${ev.representative_url}" target="_blank" rel="noreferrer">Representative link</a>
     </li>`
       )
       .join("") || `<li class="card">No events yet</li>`;
@@ -93,4 +151,3 @@ async function main() {
 main().catch((error) => {
   document.body.innerHTML = `<main class="shell"><h1>Status page failed to load</h1><p>${error.message}</p></main>`;
 });
-

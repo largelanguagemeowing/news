@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 import time
 import traceback
@@ -416,6 +417,18 @@ def build_summary(conn: sqlite3.Connection) -> dict[str, Any]:
         pipeline_status = "degraded"
     if total_sources and healthy == 0:
         pipeline_status = "down"
+    github_repository = os.getenv("GITHUB_REPOSITORY")
+    if not github_repository:
+        latest = conn.execute(
+            "SELECT metrics_json FROM pipeline_runs ORDER BY started_at DESC LIMIT 1"
+        ).fetchone()
+        if latest:
+            latest_metrics = json.loads(latest["metrics_json"] or "{}")
+            github_run_url = latest_metrics.get("github_run_url")
+            if isinstance(github_run_url, str) and "github.com/" in github_run_url:
+                parts = github_run_url.split("github.com/", 1)[1].split("/", 2)
+                if len(parts) >= 2:
+                    github_repository = f"{parts[0]}/{parts[1]}"
     return {
         "generated_at": utc_now_iso(),
         "pipeline_status": pipeline_status,
@@ -425,6 +438,7 @@ def build_summary(conn: sqlite3.Connection) -> dict[str, Any]:
         "total_events_24h": events_24h,
         "dedupe_ratio_24h": dedupe_ratio,
         "open_incidents": open_incidents,
+        "github_repository": github_repository,
     }
 
 
@@ -466,7 +480,7 @@ def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
 def build_runs(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
-        SELECT run_id, started_at, ended_at, status, error_message
+        SELECT run_id, started_at, ended_at, status, error_message, metrics_json
         FROM pipeline_runs
         ORDER BY started_at DESC
         LIMIT 20
@@ -474,6 +488,7 @@ def build_runs(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     ).fetchall()
     out = []
     for row in rows:
+        run_metrics = json.loads(row["metrics_json"] or "{}")
         stage_rows = conn.execute(
             """
             SELECT stage_name, started_at, ended_at, status, metrics_json
@@ -501,6 +516,8 @@ def build_runs(conn: sqlite3.Connection) -> list[dict[str, Any]]:
                 "ended_at": row["ended_at"],
                 "status": row["status"],
                 "error_message": row["error_message"],
+                "github_run_id": run_metrics.get("github_run_id"),
+                "github_run_url": run_metrics.get("github_run_url"),
                 "stage_stats": stages,
             }
         )
@@ -599,6 +616,11 @@ def run_pipeline() -> int:
     conn.commit()
     issue_client = GitHubIssueClient()
     pipeline_metrics: dict[str, Any] = {"run_id": run_id}
+    github_run_id = os.getenv("GITHUB_RUN_ID")
+    github_repo = os.getenv("GITHUB_REPOSITORY")
+    if github_run_id and github_repo:
+        pipeline_metrics["github_run_id"] = github_run_id
+        pipeline_metrics["github_run_url"] = f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
     stages = [
         ("ingest", lambda: ingest_stage(conn, run_id, sources, issue_client)),
         ("cluster", lambda: cluster_stage(conn)),
