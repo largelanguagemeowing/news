@@ -45,6 +45,19 @@ class StageResult:
     error_message: str | None = None
 
 
+TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
+    ("release", ("release", "launched", "launch", "announced", "introduces", "introducing")),
+    ("models", ("model", "llm", "gpt", "gemini", "claude")),
+    ("open-source", ("open source", "open-source", "github", "repo", "weights")),
+    ("api", ("api", "sdk", "endpoint", "developers")),
+    ("agents", ("agent", "agents", "automation", "workflow")),
+    ("safety", ("safety", "alignment", "guardrail", "risk")),
+    ("benchmark", ("benchmark", "eval", "evaluation", "score")),
+    ("research", ("research", "paper", "arxiv", "study")),
+    ("video", ("youtube", "video")),
+]
+
+
 def parse_date(value: Any) -> datetime:
     if value is None:
         return datetime.now(timezone.utc)
@@ -138,6 +151,19 @@ def classify_event(title: str, body: str, default_category: str) -> tuple[str, f
         if any(token in text for token in tokens):
             return label, score
     return default_category, 0.55
+
+
+def extract_tags(title: str, body: str, source_id: str) -> list[str]:
+    text = f"{title} {body}".lower()
+    tags: list[str] = []
+    for label, patterns in TAG_RULES:
+        if any(pattern in text for pattern in patterns):
+            tags.append(label)
+    if source_id.startswith("youtube-") and "video" not in tags:
+        tags.append("video")
+    if not tags:
+        tags.append("general")
+    return tags[:6]
 
 
 def ingest_stage(
@@ -454,7 +480,7 @@ def build_summary(conn: sqlite3.Connection) -> dict[str, Any]:
 def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
-        SELECT s.source_id, s.name, sh.last_success_at, sh.last_item_at,
+        SELECT s.source_id, s.name, s.feed_url, sh.last_success_at, sh.last_item_at,
                sh.consecutive_failures, sh.avg_latency_ms, sh.items_24h, sh.errors_24h, sh.last_error
         FROM sources s
         LEFT JOIN source_health sh ON sh.source_id = s.source_id
@@ -473,6 +499,7 @@ def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
             {
                 "source_id": row["source_id"],
                 "name": row["name"],
+                "feed_url": row["feed_url"],
                 "status": status,
                 "last_success_at": row["last_success_at"],
                 "last_item_at": row["last_item_at"],
@@ -587,25 +614,39 @@ def build_events(conn: sqlite3.Connection) -> list[dict[str, Any]]:
 def build_articles(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
-        SELECT a.article_id, a.title, a.url, a.published_at, a.fetched_at, s.source_id, s.name AS source_name
+        SELECT a.article_id, a.title, a.body, a.url, a.published_at, a.fetched_at,
+               s.source_id, s.name AS source_name, s.default_category,
+               e.category_labels AS event_category
         FROM articles a
         JOIN sources s ON s.source_id = a.source_id
+        LEFT JOIN event_members em ON em.article_id = a.article_id
+        LEFT JOIN events e ON e.event_id = em.event_id
         ORDER BY a.published_at DESC
         LIMIT 500
         """
     ).fetchall()
-    return [
-        {
-            "article_id": row["article_id"],
-            "title": row["title"],
-            "url": row["url"],
-            "published_at": row["published_at"],
-            "fetched_at": row["fetched_at"],
-            "source_id": row["source_id"],
-            "source_name": row["source_name"],
-        }
-        for row in rows
-    ]
+    out: list[dict[str, Any]] = []
+    for row in rows:
+        title = row["title"]
+        body = row["body"] or ""
+        topic = row["event_category"] or classify_event(title, body, row["default_category"])[0]
+        tags = extract_tags(title, body, row["source_id"])
+        if topic not in tags:
+            tags = [topic] + tags
+        out.append(
+            {
+                "article_id": row["article_id"],
+                "title": title,
+                "url": row["url"],
+                "published_at": row["published_at"],
+                "fetched_at": row["fetched_at"],
+                "source_id": row["source_id"],
+                "source_name": row["source_name"],
+                "topic": topic,
+                "tags": tags[:7],
+            }
+        )
+    return out
 
 
 def run_pipeline() -> int:

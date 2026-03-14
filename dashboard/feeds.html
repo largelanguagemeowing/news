@@ -30,12 +30,27 @@
 
       <section class="panel">
         <h2>Latest Feed Stream</h2>
+        <div class="filters" id="filters">
+          <input id="searchInput" type="search" placeholder="Search titles, source, tags..." />
+          <select id="sourceFilter">
+            <option value="">All sources</option>
+          </select>
+          <select id="topicFilter">
+            <option value="">All topics</option>
+          </select>
+          <select id="tagFilter">
+            <option value="">All tags</option>
+          </select>
+          <button id="clearFilters" type="button">Clear</button>
+        </div>
+        <p class="result-meta" id="resultsMeta"></p>
         <div class="table-wrap">
           <table id="feedsTable">
             <thead>
               <tr>
                 <th>Published</th>
                 <th>Source</th>
+                <th>Topic</th>
                 <th>Title</th>
               </tr>
             </thead>

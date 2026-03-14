@@ -84,9 +84,9 @@ async function main() {
   const sourceRows = sources
     .map(
       (s) => `<tr>
-      <td>${s.name}</td>
+      <td><a class="table-link" href="./index.html?source=${encodeURIComponent(s.source_id)}" title="${s.feed_url || s.name}">${s.name}</a></td>
       <td class="${statusClass(s.status)}">${s.status}</td>
-      <td>${s.last_success_at || "-"}</td>
+      <td title="${formatDateTime(s.last_success_at)}">${formatTimestamp(s.last_success_at)}</td>
       <td>${s.consecutive_failures}</td>
       <td>${Math.round(s.avg_latency_ms || 0)} ms</td>
     </tr>`

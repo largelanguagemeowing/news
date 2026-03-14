@@ -156,6 +156,59 @@ body {
   letter-spacing: 0.01em;
 }
 
+.filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 2fr) 1fr 1fr auto;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--ink);
+  font: 500 0.9rem/1 "Space Grotesk", sans-serif;
+  padding: 0 10px;
+}
+
+.filters button {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tags-wrap {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.tag-filter {
+  border: 1px solid var(--line);
+  background: #f4f8fc;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font: 600 0.78rem/1 "IBM Plex Mono", monospace;
+  cursor: pointer;
+  color: #355a69;
+}
+
+.tag-filter.active {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.result-meta {
+  margin: 2px 0 10px;
+  color: var(--ink-soft);
+  font: 500 0.82rem/1.2 "IBM Plex Mono", monospace;
+}
+
 .table-wrap {
   overflow: auto;
   border: 1px solid var(--line);
@@ -167,6 +220,18 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.93rem;
+}
+
+#feedsTable th:nth-child(1),
+#feedsTable td:nth-child(1) {
+  width: 140px;
+  white-space: nowrap;
+}
+
+#feedsTable th:nth-child(3),
+#feedsTable td:nth-child(3) {
+  width: 120px;
+  white-space: nowrap;
 }
 
 thead {
@@ -245,6 +310,34 @@ tbody tr:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
   font-weight: 700;
+}
+
+.topic-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  background: #e7f2f9;
+  color: #235469;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tiny-tags {
+  margin-top: 5px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.tiny-tag {
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 0.67rem;
+  background: #eef3f8;
+  color: #486070;
+  font-weight: 600;
 }
 
 .status-healthy {
@@ -340,6 +433,18 @@ a:hover {
     font-size: 1.05rem;
   }
 
+  .filters {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .filters input,
+  .filters select,
+  .filters button {
+    height: 36px;
+    font-size: 0.84rem;
+  }
+
   .panel {
     margin-top: 10px;
     padding: 10px;
@@ -400,6 +505,10 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--ink-soft);
+  }
+
+  .result-meta {
+    font-size: 0.75rem;
   }
 
   .bg-orb {
