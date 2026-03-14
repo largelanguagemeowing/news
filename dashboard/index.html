@@ -119,7 +119,11 @@
 
     <!-- Main Content -->
     <main class="shell">
-      <div id="feedTimeline" class="timeline-root" aria-live="polite"></div>
+      <div id="feedLoader" class="feed-loader">
+        <div class="loader-spinner"></div>
+        <p>Loading feed items...</p>
+      </div>
+      <div id="feedTimeline" class="timeline-root" aria-live="polite" hidden></div>
       <div class="table-wrap" id="feedTableWrap" hidden>
         <table id="feedsTable">
           <thead>

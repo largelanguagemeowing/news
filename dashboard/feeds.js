@@ -368,6 +368,7 @@ async function main() {
   const filterBadge = document.getElementById("filterBadge");
   const timelineLayoutBtn = document.getElementById("timelineLayout");
   const tableLayoutBtn = document.getElementById("tableLayout");
+  const feedLoader = document.getElementById("feedLoader");
   const feedTimeline = document.getElementById("feedTimeline");
   const feedTableWrap = document.getElementById("feedTableWrap");
   const feedTable = document.getElementById("feedsTable");
@@ -441,8 +442,14 @@ async function main() {
     }
   }
 
+  function hideLoader() {
+    if (feedLoader) feedLoader.hidden = true;
+    if (feedTimeline) feedTimeline.hidden = false;
+  }
+
   function render() {
     const filtered = applyFilters(articles, state);
+    hideLoader();
     renderTimeline(filtered);
     renderRows(filtered);
     setLayout(state, state.layout, {

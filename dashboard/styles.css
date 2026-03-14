@@ -803,6 +803,38 @@ body.no-search .shell {
   color: white;
 }
 
+/* Feed Loader */
+.feed-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+.feed-loader p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .timeline-empty {
   display: none;
 }
@@ -1624,8 +1656,12 @@ a:hover {
     padding: 0;
     border: none;
     border-radius: 0;
-    margin-bottom: 0;
+    margin-bottom: 12px;
     background: transparent;
+  }
+
+  #feedsTable tbody tr:last-child {
+    margin-bottom: 16px;
   }
 
   /* Hide desktop cells on mobile */
@@ -1649,7 +1685,7 @@ a:hover {
     padding: 14px 16px;
     border: 1px solid var(--line);
     border-radius: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     background: var(--panel);
     text-decoration: none;
     color: var(--ink);
@@ -1711,12 +1747,7 @@ a:hover {
   }
 
   #feedsTable tbody {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    scroll-snap-type: y proximity;
-    overflow-y: auto;
-    max-height: calc(100vh - var(--header-height) - var(--search-height) - 100px);
+    display: block;
   }
 
   #feedsTable tbody tr {
