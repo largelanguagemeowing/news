@@ -82,18 +82,27 @@ async function main() {
   ].join("");
 
   const sourceRows = sources
-    .map(
-      (s) => `<tr>
+    .map((s) => {
+      const statuses = Array.isArray(s.recent_statuses) ? s.recent_statuses : [];
+      const showHistory = statuses.length > 1;
+      const historyBars = statuses
+        .map((status) => `<span class="status-dot ${status === "success" ? "ok" : "bad"}"></span>`)
+        .join("");
+      const historyCell = showHistory
+        ? `<div class="history-inline" title="${s.checks_count_recent || 0} checks · ${s.uptime_pct_recent || 0}% uptime">${historyBars}</div><div class="history-meta">${s.uptime_pct_recent || 0}%</div>`
+        : `<span class="history-meta">-</span>`;
+      return `<tr>
       <td><a class="table-link" href="./index.html?source=${encodeURIComponent(s.source_id)}" title="${s.feed_url || s.name}">${s.name}</a></td>
       <td class="${statusClass(s.status)}">${s.status}</td>
       <td title="${formatDateTime(s.last_success_at)}">${formatTimestamp(s.last_success_at)}</td>
       <td>${s.consecutive_failures}</td>
       <td>${Math.round(s.avg_latency_ms || 0)} ms</td>
+      <td>${historyCell}</td>
     </tr>`
-    )
+    })
     .join("");
   document.querySelector("#sourcesTable tbody").innerHTML =
-    sourceRows || `<tr><td colspan="5">No sources configured</td></tr>`;
+    sourceRows || `<tr><td colspan="6">No sources configured</td></tr>`;
 
   const openIncidents = incidents.filter((i) => i.status === "open");
   document.getElementById("incidentsList").innerHTML =
@@ -116,23 +125,32 @@ async function main() {
       )
       .join("") || `<li class="card">No open incidents</li>`;
 
+  const recentRuns = runs.slice(0, 90);
+  const successCount = recentRuns.filter((run) => run.status === "success").length;
+  const successRate = recentRuns.length
+    ? Math.round((successCount / recentRuns.length) * 100)
+    : 0;
+  const orderedRuns = [...recentRuns].reverse();
+  const runBars = orderedRuns
+    .map((run) => {
+      const title = `${shortId(run.run_id)} • ${run.status} • ${formatDateTime(run.ended_at || run.started_at)}`;
+      if (run.github_run_url) {
+        return `<a class="run-dot ${statusClass(run.status)}" href="${run.github_run_url}" target="_blank" rel="noreferrer" title="${title}"></a>`;
+      }
+      return `<span class="run-dot ${statusClass(run.status)}" title="${title}"></span>`;
+    })
+    .join("");
+
   document.getElementById("runsList").innerHTML =
-    runs
-      .slice(0, 8)
-      .map(
-        (run) => `<li class="card run-card">
-      <div class="card-head">
-        <strong>${
-          run.github_run_url
-            ? `<a class="card-link-inline" href="${run.github_run_url}" target="_blank" rel="noreferrer">${shortId(run.run_id)}</a>`
-            : shortId(run.run_id)
-        }</strong>
-        <span class="chip ${statusClass(run.status)}">${run.status}</span>
+    recentRuns.length
+      ? `<li class="run-history-row">
+      <div class="status-history-head">
+        <strong>Run timeline</strong>
+        <span class="status-history-meta">${recentRuns.length} runs · ${successRate}% success</span>
       </div>
-      <div class="meta-row" title="${formatDateTime(run.ended_at)}">Ended ${formatTimestamp(run.ended_at)}</div>
+      <div class="run-bars">${runBars}</div>
     </li>`
-      )
-      .join("") || `<li class="card">No runs yet</li>`;
+      : `<li class="card">No runs yet</li>`;
 
   document.getElementById("eventsList").innerHTML =
     events

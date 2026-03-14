@@ -47,6 +47,27 @@ function normalize(v) {
   return String(v || "").toLowerCase();
 }
 
+function stateFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    search: params.get("q") || "",
+    source: params.get("source") || "",
+    topic: params.get("topic") || "",
+    tag: params.get("tag") || "",
+  };
+}
+
+function syncQueryFromState(state) {
+  const params = new URLSearchParams();
+  if (state.search) params.set("q", state.search);
+  if (state.source) params.set("source", state.source);
+  if (state.topic) params.set("topic", state.topic);
+  if (state.tag) params.set("tag", state.tag);
+  const query = params.toString();
+  const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+  window.history.replaceState(null, "", next);
+}
+
 function enrichArticle(article) {
   const tags = Array.isArray(article.tags) ? article.tags : [];
   return {
@@ -164,14 +185,16 @@ async function main() {
   const resultsMeta = document.getElementById("resultsMeta");
 
   const state = {
-    search: "",
-    source: "",
-    topic: "",
-    tag: "",
+    ...stateFromQuery(),
   };
-  const sourceFromUrl = new URLSearchParams(window.location.search).get("source") || "";
-  if (uniqueSources.some(([sourceId]) => sourceId === sourceFromUrl)) {
-    state.source = sourceFromUrl;
+  if (!uniqueSources.some(([sourceId]) => sourceId === state.source)) {
+    state.source = "";
+  }
+  if (!uniqueTopics.includes(state.topic)) {
+    state.topic = "";
+  }
+  if (!topTags.includes(state.tag)) {
+    state.tag = "";
   }
 
   function refreshFilterOptionCounts() {
@@ -218,6 +241,8 @@ async function main() {
     renderRows(filtered, isMobile);
     resultsMeta.textContent = `${filtered.length} results`;
     refreshFilterOptionCounts();
+    searchInput.value = state.search;
+    syncQueryFromState(state);
   }
 
   searchInput.addEventListener("input", () => {

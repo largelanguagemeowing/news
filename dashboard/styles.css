@@ -147,7 +147,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 14px;
-  box-shadow: 0 4px 0 #dbe5ef;
+  box-shadow: none;
 }
 
 .panel h2 {
@@ -209,6 +209,102 @@ body {
   font: 500 0.82rem/1.2 "IBM Plex Mono", monospace;
 }
 
+.status-history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.status-history-row {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.status-history-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.status-history-meta {
+  color: var(--ink-soft);
+  font: 500 0.8rem/1.2 "IBM Plex Mono", monospace;
+}
+
+.status-bars {
+  display: grid;
+  grid-template-columns: repeat(90, minmax(3px, 1fr));
+  gap: 2px;
+}
+
+.status-dot {
+  height: 12px;
+  border-radius: 2px;
+  background: #dce5ee;
+}
+
+.status-dot.ok {
+  background: #2cbe97;
+}
+
+.status-dot.bad {
+  background: #f06e57;
+}
+
+.history-inline {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(3px, 1fr));
+  gap: 2px;
+  min-width: 120px;
+}
+
+.history-meta {
+  display: inline-block;
+  margin-top: 3px;
+  color: var(--ink-soft);
+  font: 500 0.72rem/1 "IBM Plex Mono", monospace;
+}
+
+.run-history-row {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  padding: 2px 0 0;
+}
+
+.run-bars {
+  display: grid;
+  grid-template-columns: repeat(90, minmax(3px, 1fr));
+  gap: 2px;
+}
+
+.run-dot {
+  height: 12px;
+  border-radius: 2px;
+  background: #dce5ee;
+  display: block;
+}
+
+.run-dot.status-success {
+  background: #2cbe97;
+}
+
+.run-dot.status-running,
+.run-dot.status-degraded {
+  background: #e3b338;
+}
+
+.run-dot.status-failed,
+.run-dot.status-down {
+  background: #f06e57;
+}
+
 .table-wrap {
   overflow: auto;
   border: 1px solid var(--line);
@@ -260,15 +356,25 @@ tbody tr:hover {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 0;
+}
+
+.panel > .cards {
+  margin-top: 8px;
 }
 
 .card {
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 1px 0 #dfe8f1;
+  padding: 10px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cards > .card:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .card-head {
@@ -457,12 +563,12 @@ a:hover {
   }
 
   .cards {
-    gap: 8px;
+    gap: 0;
   }
 
   .card {
-    padding: 10px;
-    border-radius: 10px;
+    padding: 8px 0;
+    border-radius: 0;
   }
 
   .card-head {
@@ -509,6 +615,25 @@ a:hover {
 
   .result-meta {
     font-size: 0.75rem;
+  }
+
+  .status-history-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .status-bars {
+    grid-template-columns: repeat(45, minmax(4px, 1fr));
+  }
+
+  .history-inline {
+    grid-template-columns: repeat(15, minmax(4px, 1fr));
+    min-width: 80px;
+  }
+
+  .run-bars {
+    grid-template-columns: repeat(45, minmax(4px, 1fr));
   }
 
   .bg-orb {

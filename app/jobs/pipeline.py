@@ -36,6 +36,24 @@ STATUS_DIR = Path("data/status")
 SIMILARITY_THRESHOLD = 0.82
 CLUSTER_WINDOW_HOURS = 72
 SOURCE_FAIL_THRESHOLD = 3
+SOURCE_ID_RENAMES = {
+    "deepmind-blog": "google-deepmind-blog",
+    "apple-ml-blog": "apple-machine-learning",
+    "simon-willison-atom": "simon-willison",
+    "anyfeeds-custom-1": "cursor-blog",
+    "anyfeeds-custom-2": "cursor-changelog",
+    "youtube-ai-explained": "matt-wolfe",
+    "youtube-threeblueonebrown": "fireship",
+    "youtube-ai-coding": "ai-explained",
+}
+YOUTUBE_SOURCE_IDS = {
+    "matt-wolfe",
+    "fireship",
+    "ai-explained",
+    "youtube-ai-explained",
+    "youtube-threeblueonebrown",
+    "youtube-ai-coding",
+}
 
 
 @dataclass
@@ -159,7 +177,7 @@ def extract_tags(title: str, body: str, source_id: str) -> list[str]:
     for label, patterns in TAG_RULES:
         if any(pattern in text for pattern in patterns):
             tags.append(label)
-    if source_id.startswith("youtube-") and "video" not in tags:
+    if source_id in YOUTUBE_SOURCE_IDS and "video" not in tags:
         tags.append("video")
     if not tags:
         tags.append("general")
@@ -250,6 +268,13 @@ def ingest_stage(
                     """,
                     (utc_now_iso(), latest_item_at, new_avg, source.source_id),
                 )
+                conn.execute(
+                    """
+                    INSERT INTO source_checks (source_id, run_id, checked_at, status, latency_ms, error_message)
+                    VALUES (?, ?, ?, 'success', ?, NULL)
+                    """,
+                    (source.source_id, run_id, utc_now_iso(), latency_ms),
+                )
             inserted += source_inserted
             sync_incident_resolve(
                 conn,
@@ -277,6 +302,13 @@ def ingest_stage(
                     """,
                     (failures, str(exc)[:500], source.source_id),
                 )
+                conn.execute(
+                    """
+                    INSERT INTO source_checks (source_id, run_id, checked_at, status, latency_ms, error_message)
+                    VALUES (?, ?, ?, 'failed', NULL, ?)
+                    """,
+                    (source.source_id, run_id, utc_now_iso(), str(exc)[:500]),
+                )
                 if failures >= SOURCE_FAIL_THRESHOLD:
                     signal = IncidentSignal(
                         key=f"source:{source.source_id}",
@@ -289,6 +321,81 @@ def ingest_stage(
         status="success",
         metrics={"inserted_articles": inserted, "failed_sources": failed_sources},
     )
+
+
+def migrate_source_ids(conn: sqlite3.Connection) -> None:
+    """Rename historical source ids so feed-source identity stays human-readable."""
+    with transaction(conn):
+        for old_id, new_id in SOURCE_ID_RENAMES.items():
+            old_exists = conn.execute(
+                "SELECT 1 FROM sources WHERE source_id = ?",
+                (old_id,),
+            ).fetchone()
+            if not old_exists:
+                continue
+            conn.execute(
+                """
+                INSERT OR IGNORE INTO sources (source_id, name, feed_url, default_category, enabled)
+                SELECT ?, name, feed_url, default_category, enabled
+                FROM sources
+                WHERE source_id = ?
+                """,
+                (new_id, old_id),
+            )
+            new_health = conn.execute(
+                "SELECT 1 FROM source_health WHERE source_id = ?",
+                (new_id,),
+            ).fetchone()
+            if new_health:
+                conn.execute("DELETE FROM source_health WHERE source_id = ?", (old_id,))
+            else:
+                conn.execute(
+                    "UPDATE source_health SET source_id = ? WHERE source_id = ?",
+                    (new_id, old_id),
+                )
+            conn.execute(
+                """
+                UPDATE articles
+                SET source_id = ?
+                WHERE source_id = ?
+                  AND NOT EXISTS (
+                    SELECT 1
+                    FROM articles a2
+                    WHERE a2.source_id = ?
+                      AND a2.canonical_url = articles.canonical_url
+                      AND a2.published_at = articles.published_at
+                  )
+                """,
+                (new_id, old_id, new_id),
+            )
+            conn.execute(
+                "DELETE FROM articles WHERE source_id = ?",
+                (old_id,),
+            )
+            conn.execute(
+                """
+                UPDATE incidents
+                SET incident_key = CASE
+                      WHEN incident_key = ? THEN ?
+                      ELSE incident_key
+                    END,
+                    target_id = CASE
+                      WHEN kind = 'source' AND target_id = ? THEN ?
+                      ELSE target_id
+                    END
+                WHERE incident_key = ?
+                   OR (kind = 'source' AND target_id = ?)
+                """,
+                (
+                    f"source:{old_id}",
+                    f"source:{new_id}",
+                    old_id,
+                    new_id,
+                    f"source:{old_id}",
+                    old_id,
+                ),
+            )
+            conn.execute("DELETE FROM sources WHERE source_id = ?", (old_id,))
 
 
 def cluster_stage(conn: sqlite3.Connection) -> StageResult:
@@ -495,6 +602,20 @@ def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
             status = "degraded"
         if int(row["consecutive_failures"] or 0) >= SOURCE_FAIL_THRESHOLD:
             status = "down"
+        checks = conn.execute(
+            """
+            SELECT status
+            FROM source_checks
+            WHERE source_id = ?
+            ORDER BY checked_at DESC
+            LIMIT 90
+            """,
+            (row["source_id"],),
+        ).fetchall()
+        recent_statuses = [check["status"] for check in checks][::-1]
+        total_checks = len(recent_statuses)
+        success_checks = sum(1 for status in recent_statuses if status == "success")
+        uptime_pct = round((success_checks / total_checks) * 100, 2) if total_checks else 0.0
         out.append(
             {
                 "source_id": row["source_id"],
@@ -508,6 +629,9 @@ def build_sources(conn: sqlite3.Connection) -> list[dict[str, Any]]:
                 "items_24h": int(row["items_24h"] or 0),
                 "errors_24h": int(row["errors_24h"] or 0),
                 "last_error": row["last_error"],
+                "recent_statuses": recent_statuses,
+                "uptime_pct_recent": uptime_pct,
+                "checks_count_recent": total_checks,
             }
         )
     return out
@@ -652,6 +776,7 @@ def build_articles(conn: sqlite3.Connection) -> list[dict[str, Any]]:
 def run_pipeline() -> int:
     conn = get_connection()
     init_db(conn)
+    migrate_source_ids(conn)
     sources = load_sources()
     upsert_sources(conn, sources)
 

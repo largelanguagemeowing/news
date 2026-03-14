@@ -99,6 +99,16 @@ CREATE TABLE IF NOT EXISTS incidents (
   issue_number INTEGER,
   last_message TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS source_checks (
+  check_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  source_id TEXT NOT NULL REFERENCES sources(source_id),
+  run_id TEXT,
+  checked_at TEXT NOT NULL,
+  status TEXT NOT NULL,
+  latency_ms REAL,
+  error_message TEXT
+);
 """
 
 
