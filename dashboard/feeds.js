@@ -162,7 +162,20 @@ function renderTimeline(articles) {
   const timeline = document.getElementById("feedTimeline");
   if (!timeline) return;
   if (!articles.length) {
-    timeline.innerHTML = `<p class="timeline-empty">No feed items match current filters.</p>`;
+    timeline.innerHTML = `<div class="empty-state">
+      <div class="empty-state-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </div>
+      <h3>No results found</h3>
+      <p>Try adjusting your filters or search terms</p>
+      <button class="empty-state-action" id="clearFiltersEmpty" type="button">Clear all filters</button>
+    </div>`;
+    const clearBtn = document.getElementById("clearFiltersEmpty");
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        if (clearFilters) clearFilters.click();
+      });
+    }
     return;
   }
 
@@ -209,6 +222,10 @@ function renderRows(articles) {
   if (!tbody) return;
   const rows = articles
     .map((item) => {
+      const faviconUrl = sourceFaviconUrl(item);
+      const favicon = faviconUrl
+        ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="" />`
+        : "";
       return `<tr>
         <td data-label="Published" title="${formatDateTime(item.published_at)}">${formatTimestamp(item.published_at)}</td>
         <td data-label="Source">${renderSourceLabel(item)}</td>
@@ -216,10 +233,39 @@ function renderRows(articles) {
         <td data-label="Title">
           <a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>
         </td>
+        <td class="mobile-card-link" colspan="4">
+          <a href="${item.url}" target="_blank" rel="noreferrer" class="mobile-card">
+            <span class="mobile-card-title">${item.title}</span>
+            <span class="mobile-card-meta">
+              ${favicon}<span>${item.source_name}</span>
+              <span class="mobile-card-sep">·</span>
+              <span>${formatTimestamp(item.published_at)}</span>
+              <span class="mobile-card-sep">·</span>
+              <span class="topic-pill">${item.topic}</span>
+            </span>
+          </a>
+        </td>
       </tr>`;
     })
     .join("");
-  tbody.innerHTML = rows || `<tr><td colspan="4">No feed items match current filters</td></tr>`;
+  if (!rows) {
+    tbody.innerHTML = `<tr><td colspan="5" class="empty-state-cell">
+      <div class="empty-state">
+        <div class="empty-state-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <h3>No results found</h3>
+        <p>Try adjusting your filters or search terms</p>
+        <button class="empty-state-action" id="clearFiltersEmptyTable" type="button">Clear all filters</button>
+      </div>
+    </td></tr>`;
+    const clearBtn = document.getElementById("clearFiltersEmptyTable");
+    if (clearBtn && clearFilters) {
+      clearBtn.addEventListener("click", () => clearFilters.click());
+    }
+    return;
+  }
+  tbody.innerHTML = rows;
 }
 
 function setLayout(state, nextLayout, elements) {
@@ -319,7 +365,7 @@ async function main() {
   const tagFilter = document.getElementById("tagFilter");
   const searchInput = document.getElementById("searchInput");
   const clearFilters = document.getElementById("clearFilters");
-  const resultsMeta = document.getElementById("resultsMeta");
+  const filterBadge = document.getElementById("filterBadge");
   const timelineLayoutBtn = document.getElementById("timelineLayout");
   const tableLayoutBtn = document.getElementById("tableLayout");
   const feedTimeline = document.getElementById("feedTimeline");
@@ -384,6 +430,17 @@ async function main() {
     }
   }
 
+  function updateFilterBadge() {
+    if (!filterBadge) return;
+    const activeCount = [state.source, state.topic, state.tag].filter(Boolean).length;
+    if (activeCount > 0) {
+      filterBadge.textContent = activeCount;
+      filterBadge.hidden = false;
+    } else {
+      filterBadge.hidden = true;
+    }
+  }
+
   function render() {
     const filtered = applyFilters(articles, state);
     renderTimeline(filtered);
@@ -395,9 +452,7 @@ async function main() {
       timelineBtn: timelineLayoutBtn,
       tableBtn: tableLayoutBtn,
     });
-    if (resultsMeta) {
-      resultsMeta.textContent = `${filtered.length} results`;
-    }
+    updateFilterBadge();
     refreshFilterOptionCounts();
     if (searchInput) {
       searchInput.value = state.search;
