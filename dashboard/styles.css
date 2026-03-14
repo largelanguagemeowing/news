@@ -1076,7 +1076,8 @@ tbody tr:last-child td {
 .history-inline .status-dot {
   height: 4px;
   border-radius: 1px;
-  min-width: 2px;
+  min-width: 3px;
+  flex-shrink: 0;
 }
 
 .history-meta {
@@ -1093,17 +1094,25 @@ tbody tr:last-child td {
 
 .run-bars {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3px;
+  flex-wrap: nowrap;
+  gap: 2px;
   margin-top: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.run-bars::-webkit-scrollbar {
+  display: none;
 }
 
 .run-dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
   background: var(--line);
+  flex-shrink: 0;
 }
 
 .run-dot.ok,
@@ -1551,8 +1560,19 @@ a:hover {
   }
   
   .history-inline {
-    grid-template-columns: repeat(15, minmax(4px, 1fr));
-    min-width: 80px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 1px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+  }
+  
+  .history-inline::-webkit-scrollbar {
+    display: none;
   }
 
   /* Mobile-friendly table cards - compact layout */

@@ -112,7 +112,9 @@ async function main() {
     .map((s) => {
       const statuses = Array.isArray(s.recent_statuses) ? s.recent_statuses : [];
       const showHistory = statuses.length > 1;
-      const historyBars = statuses
+      // Limit to last 15 statuses on mobile (will be scrolled)
+      const displayStatuses = statuses.slice(-15);
+      const historyBars = displayStatuses
         .map((status) => `<span class="status-dot ${status === "success" ? "ok" : "bad"}"></span>`)
         .join("");
       const historyCell = showHistory
@@ -163,7 +165,7 @@ async function main() {
       )
       .join("") || `<li class="card">No open incidents</li>`;
 
-  const recentRuns = runs.slice(0, 90);
+  const recentRuns = runs.slice(0, 10);
   const successCount = recentRuns.filter((run) => run.status === "success").length;
   const successRate = recentRuns.length
     ? Math.round((successCount / recentRuns.length) * 100)
@@ -181,10 +183,10 @@ async function main() {
 
   document.getElementById("runsList").innerHTML =
     recentRuns.length
-      ? `<li class="run-history-row">
-      <div class="status-history-head">
-        <strong>Run timeline</strong>
-        <span class="status-history-meta">${recentRuns.length} runs · ${successRate}% success</span>
+      ? `<li class="card">
+      <div class="card-head">
+        <strong>Last ${recentRuns.length} runs</strong>
+        <span class="chip">${successRate}% success</span>
       </div>
       <div class="run-bars">${runBars}</div>
     </li>`
