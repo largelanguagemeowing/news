@@ -73,6 +73,14 @@ function renderSourceLink(source) {
   return `<a class="table-link source-label" href="./index.html?source=${encodeURIComponent(source.source_id)}" title="${source.feed_url || source.name}">${icon}<span>${source.name}</span></a>`;
 }
 
+function renderEventLink(url) {
+  const faviconUrl = sourceFaviconUrl(url);
+  const icon = faviconUrl
+    ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Event source favicon" />`
+    : "";
+  return `<a class="card-link source-label" href="${url}" target="_blank" rel="noreferrer">${icon}<span>Representative link</span></a>`;
+}
+
 async function main() {
   const [summary, sources, incidents, runs, events] = await Promise.all([
     getJson(["./data/status/summary.json", "../data/status/summary.json"]),
@@ -177,7 +185,7 @@ async function main() {
       <strong>${ev.canonical_title}</strong>
       <div class="meta-row">Category: ${ev.category_labels} (${Math.round((ev.confidence || 0) * 100)}%)</div>
       <div class="meta-row">Sources: ${ev.source_count}</div>
-      <a class="card-link" href="${ev.representative_url}" target="_blank" rel="noreferrer">Representative link</a>
+      ${renderEventLink(ev.representative_url)}
     </li>`
       )
       .join("") || `<li class="card">No events yet</li>`;
