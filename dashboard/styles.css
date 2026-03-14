@@ -99,6 +99,22 @@ body {
   padding: 14px;
 }
 
+.nav-panel {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .panel h2 {
   margin: 4px 0 10px;
   font-size: 1.1rem;
@@ -153,4 +169,3 @@ td {
 a {
   color: #0b5d69;
 }
-

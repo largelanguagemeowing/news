@@ -367,14 +367,16 @@ def export_status(conn: sqlite3.Connection) -> StageResult:
     runs = build_runs(conn)
     incidents = build_incidents(conn)
     events = build_events(conn)
+    articles = build_articles(conn)
     (STATUS_DIR / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     (STATUS_DIR / "sources.json").write_text(json.dumps(sources, indent=2), encoding="utf-8")
     (STATUS_DIR / "runs.json").write_text(json.dumps(runs, indent=2), encoding="utf-8")
     (STATUS_DIR / "incidents.json").write_text(json.dumps(incidents, indent=2), encoding="utf-8")
     (STATUS_DIR / "events.json").write_text(json.dumps(events, indent=2), encoding="utf-8")
+    (STATUS_DIR / "articles.json").write_text(json.dumps(articles, indent=2), encoding="utf-8")
     return StageResult(
         status="success",
-        metrics={"exported_files": 5, "open_incidents": summary["open_incidents"]},
+        metrics={"exported_files": 6, "open_incidents": summary["open_incidents"]},
     )
 
 
@@ -556,6 +558,30 @@ def build_events(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     ]
 
 
+def build_articles(conn: sqlite3.Connection) -> list[dict[str, Any]]:
+    rows = conn.execute(
+        """
+        SELECT a.article_id, a.title, a.url, a.published_at, a.fetched_at, s.source_id, s.name AS source_name
+        FROM articles a
+        JOIN sources s ON s.source_id = a.source_id
+        ORDER BY a.published_at DESC
+        LIMIT 500
+        """
+    ).fetchall()
+    return [
+        {
+            "article_id": row["article_id"],
+            "title": row["title"],
+            "url": row["url"],
+            "published_at": row["published_at"],
+            "fetched_at": row["fetched_at"],
+            "source_id": row["source_id"],
+            "source_name": row["source_name"],
+        }
+        for row in rows
+    ]
+
+
 def run_pipeline() -> int:
     conn = get_connection()
     init_db(conn)
@@ -638,4 +664,3 @@ def run_pipeline() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(run_pipeline())
-

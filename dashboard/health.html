@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Health and Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="shell">
+      <header class="hero">
+        <h1>Health and Dashboard</h1>
+        <p id="generatedAt">Loading...</p>
+        <p><a href="./index.html">Back to pages</a> | <a href="./feeds.html">Feed Items</a></p>
+      </header>
+
+      <section class="grid metrics" id="metrics"></section>
+
+      <section class="panel">
+        <h2>Source Health</h2>
+        <div class="table-wrap">
+          <table id="sourcesTable">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Status</th>
+                <th>Last Success</th>
+                <th>Failures</th>
+                <th>Latency</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Open Incidents</h2>
+        <ul id="incidentsList" class="cards"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Recent Runs</h2>
+        <ul id="runsList" class="cards"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Recent Events</h2>
+        <ul id="eventsList" class="cards"></ul>
+      </section>
+    </main>
+    <script src="./health.js"></script>
+  </body>
+</html>
+

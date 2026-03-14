@@ -23,10 +23,12 @@ async function main() {
     getJson("./data/status/events.json"),
   ]);
 
-  document.getElementById("generatedAt").textContent =
-    `Generated: ${summary.generated_at}`;
+  document.getElementById("generatedAt").textContent = `Generated: ${summary.generated_at}`;
   document.getElementById("metrics").innerHTML = [
-    metric("Pipeline", `<span class="${statusClass(summary.pipeline_status)}">${summary.pipeline_status}</span>`),
+    metric(
+      "Pipeline",
+      `<span class="${statusClass(summary.pipeline_status)}">${summary.pipeline_status}</span>`
+    ),
     metric("Sources", `${summary.healthy_sources}/${summary.total_sources}`),
     metric("Stale Sources", summary.stale_sources),
     metric("Events 24h", summary.total_events_24h),
