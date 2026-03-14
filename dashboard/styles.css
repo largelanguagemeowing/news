@@ -359,14 +359,17 @@ body {
 .source-label {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   min-width: 0;
 }
 
 .source-favicon {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid #d4e1ec;
+  background: #ffffff;
+  box-shadow: 0 1px 0 #dbe7f1;
   flex: 0 0 auto;
 }
 

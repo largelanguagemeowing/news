@@ -95,7 +95,7 @@ function sourceFaviconUrl(item) {
 function renderSourceLabel(item) {
   const faviconUrl = sourceFaviconUrl(item);
   const icon = faviconUrl
-    ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" alt="" />`
+    ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="${item.source_name} favicon" />`
     : "";
   return `<span class="source-label">${icon}<span>${item.source_name}</span></span>`;
 }
