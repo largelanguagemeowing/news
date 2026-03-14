@@ -83,6 +83,23 @@ function enrichArticle(article) {
   };
 }
 
+function sourceFaviconUrl(item) {
+  try {
+    const hostname = new URL(item.url).hostname;
+    return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=32`;
+  } catch {
+    return "";
+  }
+}
+
+function renderSourceLabel(item) {
+  const faviconUrl = sourceFaviconUrl(item);
+  const icon = faviconUrl
+    ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" alt="" />`
+    : "";
+  return `<span class="source-label">${icon}<span>${item.source_name}</span></span>`;
+}
+
 function toWeekStartKey(value) {
   const dt = new Date(value);
   if (Number.isNaN(dt.getTime())) return null;
@@ -164,7 +181,7 @@ function renderTimeline(articles) {
                   (item) => `<li class="timeline-item">
                     <div class="timeline-item-meta">
                       <span title="${formatDateTime(item.published_at)}">${formatTimestamp(item.published_at)}</span>
-                      <span>${item.source_name}</span>
+                      ${renderSourceLabel(item)}
                     </div>
                     <a class="timeline-item-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>
                   </li>`
@@ -194,7 +211,7 @@ function renderRows(articles) {
     .map((item) => {
       return `<tr>
         <td data-label="Published" title="${formatDateTime(item.published_at)}">${formatTimestamp(item.published_at)}</td>
-        <td data-label="Source">${item.source_name}</td>
+        <td data-label="Source">${renderSourceLabel(item)}</td>
         <td data-label="Topic"><span class="topic-pill">${item.topic}</span></td>
         <td data-label="Title">
           <a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>

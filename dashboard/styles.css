@@ -356,6 +356,20 @@ body {
   font: 500 0.75rem/1.2 "IBM Plex Mono", monospace;
 }
 
+.source-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.source-favicon {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex: 0 0 auto;
+}
+
 .timeline-item-link {
   display: inline-block;
   margin-top: 5px;
