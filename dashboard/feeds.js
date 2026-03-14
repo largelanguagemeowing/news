@@ -80,25 +80,108 @@ function enrichArticle(article) {
   };
 }
 
-function renderRows(articles, isMobile) {
-  const rows = articles
-    .map((item) => {
-      return `<tr>
-        <td data-label="Published" title="${formatDateTime(item.published_at)}">${formatTimestamp(item.published_at)}</td>
-        <td data-label="Source">${item.source_name}</td>
-        <td data-label="Topic"><span class="topic-pill">${item.topic}</span></td>
-        <td data-label="Title">
-          <a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>
-        </td>
-      </tr>`;
+function toWeekStartKey(value) {
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return null;
+  dt.setHours(0, 0, 0, 0);
+  const day = (dt.getDay() + 6) % 7;
+  dt.setDate(dt.getDate() - day);
+  return dt.toISOString().slice(0, 10);
+}
+
+function formatWeekLabel(weekKey) {
+  if (!weekKey) return "Undated";
+  const dt = new Date(`${weekKey}T00:00:00`);
+  if (Number.isNaN(dt.getTime())) return "Undated";
+  return `Week of ${dt.toLocaleDateString(undefined, { dateStyle: "medium" })}`;
+}
+
+function buildTimelineGroups(articles) {
+  const weeks = new Map();
+  for (const item of articles) {
+    const weekKey = toWeekStartKey(item.published_at) || "undated";
+    let week = weeks.get(weekKey);
+    if (!week) {
+      week = {
+        key: weekKey,
+        label: formatWeekLabel(weekKey === "undated" ? null : weekKey),
+        topics: new Map(),
+        count: 0,
+      };
+      weeks.set(weekKey, week);
+    }
+    let topicItems = week.topics.get(item.topic);
+    if (!topicItems) {
+      topicItems = [];
+      week.topics.set(item.topic, topicItems);
+    }
+    topicItems.push(item);
+    week.count += 1;
+  }
+
+  return [...weeks.values()]
+    .sort((a, b) => {
+      if (a.key === "undated") return 1;
+      if (b.key === "undated") return -1;
+      return b.key.localeCompare(a.key);
+    })
+    .map((week) => ({
+      ...week,
+      topics: [...week.topics.entries()]
+        .sort((a, b) => a[0].localeCompare(b[0]))
+        .map(([topic, items]) => ({
+          topic,
+          items: [...items].sort(
+            (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+          ),
+        })),
+    }));
+}
+
+function renderTimeline(articles) {
+  const timeline = document.getElementById("feedTimeline");
+  if (!timeline) return;
+  if (!articles.length) {
+    timeline.innerHTML = `<p class="timeline-empty">No feed items match current filters.</p>`;
+    return;
+  }
+
+  const weekSections = buildTimelineGroups(articles)
+    .map((week) => {
+      const topics = week.topics
+        .map(
+          (topicGroup) => `<section class="timeline-topic">
+            <header class="timeline-topic-head">
+              <span class="topic-pill">${topicGroup.topic}</span>
+              <span class="timeline-subcount">${topicGroup.items.length} item${topicGroup.items.length === 1 ? "" : "s"}</span>
+            </header>
+            <ul class="timeline-items">
+              ${topicGroup.items
+                .map(
+                  (item) => `<li class="timeline-item">
+                    <div class="timeline-item-meta">
+                      <span title="${formatDateTime(item.published_at)}">${formatTimestamp(item.published_at)}</span>
+                      <span>${item.source_name}</span>
+                    </div>
+                    <a class="timeline-item-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>
+                  </li>`
+                )
+                .join("")}
+            </ul>
+          </section>`
+        )
+        .join("");
+      return `<section class="timeline-week">
+        <header class="timeline-week-head">
+          <h3>${week.label}</h3>
+          <span class="timeline-count">${week.count} item${week.count === 1 ? "" : "s"}</span>
+        </header>
+        ${topics}
+      </section>`;
     })
     .join("");
-  const table = document.getElementById("feedsTable");
-  document.querySelector("#feedsTable tbody").innerHTML =
-    rows || `<tr><td colspan="4">No feed items match current filters</td></tr>`;
-  if (isMobile) {
-    table.classList.add("mobile-stack");
-  }
+
+  timeline.innerHTML = weekSections;
 }
 
 function applyFilters(articles, state) {
@@ -156,7 +239,6 @@ async function main() {
     getJson(["./data/status/summary.json", "../data/status/summary.json"]),
   ]);
   const articles = rawArticles.map(enrichArticle);
-  const isMobile = window.matchMedia("(max-width: 760px)").matches;
   const uniqueSources = [...new Map(articles.map((item) => [item.source_id, item.source_name])).entries()];
   const uniqueTopics = [...new Set(articles.map((item) => item.topic))].sort();
   const allTagCounts = countByTag(articles);
@@ -238,7 +320,7 @@ async function main() {
 
   function render() {
     const filtered = applyFilters(articles, state);
-    renderRows(filtered, isMobile);
+    renderTimeline(filtered);
     resultsMeta.textContent = `${filtered.length} results`;
     refreshFilterOptionCounts();
     searchInput.value = state.search;

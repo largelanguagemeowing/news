@@ -68,19 +68,7 @@
           <button id="clearFilters" type="button">Clear</button>
         </div>
         <p class="result-meta" id="resultsMeta"></p>
-        <div class="table-wrap">
-          <table id="feedsTable">
-            <thead>
-              <tr>
-                <th>Published</th>
-                <th>Source</th>
-                <th>Topic</th>
-                <th>Title</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
+        <div id="feedTimeline" class="timeline-root" aria-live="polite"></div>
       </section>
     </main>
     <script src="./feeds.js"></script>

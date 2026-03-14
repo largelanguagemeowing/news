@@ -209,6 +209,94 @@ body {
   font: 500 0.82rem/1.2 "IBM Plex Mono", monospace;
 }
 
+.timeline-root {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-week {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: clip;
+}
+
+.timeline-week-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #f8fbff 0%, #f1f7fd 100%);
+}
+
+.timeline-week-head h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.timeline-count,
+.timeline-subcount {
+  color: var(--ink-soft);
+  font: 600 0.74rem/1 "IBM Plex Mono", monospace;
+}
+
+.timeline-topic {
+  padding: 10px 12px;
+  border-top: 1px solid #e7eef6;
+}
+
+.timeline-topic:first-of-type {
+  border-top: 0;
+}
+
+.timeline-topic-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.timeline-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.timeline-item {
+  border: 1px solid #e8edf4;
+  border-radius: 10px;
+  background: #fcfdff;
+  padding: 8px 10px;
+}
+
+.timeline-item-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--ink-soft);
+  font: 500 0.75rem/1.2 "IBM Plex Mono", monospace;
+}
+
+.timeline-item-link {
+  display: inline-block;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+.timeline-empty {
+  margin: 0;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 14px;
+  color: var(--ink-soft);
+}
+
 .status-history-list {
   list-style: none;
   margin: 0;
@@ -651,6 +739,30 @@ a:hover {
 
   .card-head {
     margin-bottom: 5px;
+  }
+
+  .timeline-root {
+    gap: 10px;
+  }
+
+  .timeline-week-head {
+    padding: 9px 10px;
+  }
+
+  .timeline-week-head h3 {
+    font-size: 0.84rem;
+  }
+
+  .timeline-topic {
+    padding: 8px 10px;
+  }
+
+  .timeline-item {
+    padding: 7px 9px;
+  }
+
+  .timeline-item-link {
+    font-size: 0.86rem;
   }
 
   th,
