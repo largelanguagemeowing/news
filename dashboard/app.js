@@ -9,9 +9,16 @@
 
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
-    const icon = document.querySelector("#themeToggle .theme-icon");
-    if (icon) {
-      icon.textContent = theme === "dark" ? "☀" : "☾";
+    const moonIcon = document.querySelector("#themeToggle .moon-icon");
+    const sunIcon = document.querySelector("#themeToggle .sun-icon");
+    if (moonIcon && sunIcon) {
+      if (theme === "dark") {
+        moonIcon.style.display = "none";
+        sunIcon.style.display = "block";
+      } else {
+        moonIcon.style.display = "block";
+        sunIcon.style.display = "none";
+      }
     }
   }
 
