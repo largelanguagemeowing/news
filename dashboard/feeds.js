@@ -150,11 +150,11 @@ function renderTimeline(articles) {
     .map((week) => {
       const topics = week.topics
         .map(
-          (topicGroup) => `<section class="timeline-topic">
-            <header class="timeline-topic-head">
+          (topicGroup) => `<details class="timeline-topic" open>
+            <summary class="timeline-topic-head">
               <span class="topic-pill">${topicGroup.topic}</span>
               <span class="timeline-subcount">${topicGroup.items.length} item${topicGroup.items.length === 1 ? "" : "s"}</span>
-            </header>
+            </summary>
             <ul class="timeline-items">
               ${topicGroup.items
                 .map(
@@ -168,16 +168,16 @@ function renderTimeline(articles) {
                 )
                 .join("")}
             </ul>
-          </section>`
+          </details>`
         )
         .join("");
-      return `<section class="timeline-week">
-        <header class="timeline-week-head">
+      return `<details class="timeline-week" open>
+        <summary class="timeline-week-head">
           <h3>${week.label}</h3>
           <span class="timeline-count">${week.count} item${week.count === 1 ? "" : "s"}</span>
-        </header>
+        </summary>
         ${topics}
-      </section>`;
+      </details>`;
     })
     .join("");
 

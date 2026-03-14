@@ -222,6 +222,8 @@ body {
 }
 
 .timeline-week-head {
+  list-style: none;
+  cursor: pointer;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -231,9 +233,24 @@ body {
   background: linear-gradient(180deg, #f8fbff 0%, #f1f7fd 100%);
 }
 
+.timeline-week-head::-webkit-details-marker,
+.timeline-topic-head::-webkit-details-marker {
+  display: none;
+}
+
 .timeline-week-head h3 {
   margin: 0;
   font-size: 0.95rem;
+}
+
+.timeline-week-head h3::before {
+  content: "▾";
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+.timeline-week:not([open]) .timeline-week-head h3::before {
+  content: "▸";
 }
 
 .timeline-count,
@@ -252,11 +269,26 @@ body {
 }
 
 .timeline-topic-head {
+  list-style: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+}
+
+.timeline-topic[open] .timeline-topic-head {
   margin-bottom: 8px;
+}
+
+.timeline-topic-head .topic-pill::before {
+  content: "▾";
+  margin-right: 5px;
+  color: #3c6576;
+}
+
+.timeline-topic:not([open]) .timeline-topic-head .topic-pill::before {
+  content: "▸";
 }
 
 .timeline-items {
