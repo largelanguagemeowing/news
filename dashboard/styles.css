@@ -1,0 +1,156 @@
+:root {
+  --bg: #f7f4ec;
+  --ink: #1b2a24;
+  --ink-dim: #4e5a54;
+  --panel: #fffaf0;
+  --line: #d8d3c7;
+  --good: #197a3a;
+  --warn: #b5651d;
+  --bad: #9a1e1e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, #efe8d4 0%, var(--bg) 45%),
+    radial-gradient(circle at 90% 10%, #dfe7d5 0%, transparent 35%);
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.bg-orb {
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.4;
+}
+
+.orb-a {
+  width: 260px;
+  height: 260px;
+  background: #c9d9ad;
+  top: -40px;
+  left: -40px;
+}
+
+.orb-b {
+  width: 220px;
+  height: 220px;
+  background: #e6c9ac;
+  bottom: -30px;
+  right: -30px;
+}
+
+.shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.hero p {
+  margin-top: 8px;
+  color: var(--ink-dim);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.9rem;
+}
+
+.grid.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin: 16px 0 18px;
+}
+
+.metric {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.metric h3 {
+  margin: 0 0 6px;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.metric p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.panel {
+  margin-top: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.panel h2 {
+  margin: 4px 0 10px;
+  font-size: 1.1rem;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.status-healthy {
+  color: var(--good);
+}
+
+.status-degraded {
+  color: var(--warn);
+}
+
+.status-down,
+.status-failed,
+.status-open {
+  color: var(--bad);
+}
+
+a {
+  color: #0b5d69;
+}
+

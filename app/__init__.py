@@ -1,0 +1,2 @@
+"""News aggregator package."""
+
