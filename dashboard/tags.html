@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tag Cloud</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="tags-page">
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="shell">
+      <header class="hero">
+        <p class="kicker">News Curator</p>
+        <h1>Tag Cloud</h1>
+        <p id="tagMeta">Loading...</p>
+        <nav class="top-nav">
+          <a class="nav-item" href="./index.html">Feed Items</a>
+          <a class="nav-item" href="./health.html">Health Dashboard</a>
+          <a class="nav-item active" href="./tags.html">Tag Cloud</a>
+          <a class="nav-item" href="../feed.atom" target="_blank" rel="noreferrer">Atom Feed</a>
+        </nav>
+      </header>
+
+      <section class="grid metrics" id="tagStats"></section>
+
+      <section class="panel">
+        <h2>Tag Landscape</h2>
+        <p class="result-meta">Size reflects frequency. Click any tag to jump into filtered feed items.</p>
+        <div id="tagCloud" class="tag-cloud stage"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Top Tags</h2>
+        <div id="topTagsList" class="tag-rank-list"></div>
+      </section>
+    </main>
+    <script src="./tags.js"></script>
+  </body>
+</html>
