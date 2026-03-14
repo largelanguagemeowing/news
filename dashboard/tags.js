@@ -69,9 +69,10 @@ async function main() {
   const avgMentions = sorted.length ? Math.round(totalTagMentions / sorted.length) : 0;
 
   const tagMeta = document.getElementById("tagMeta");
-  tagMeta.textContent =
-    `${sorted.length} tags from ${articles.length} items. Updated ${formatTimestamp(summary.generated_at)}`;
-  tagMeta.title = formatDateTime(summary.generated_at);
+  if (tagMeta) {
+    tagMeta.textContent = `${sorted.length} tags from ${articles.length} items. Updated ${formatTimestamp(summary.generated_at)}`;
+    tagMeta.title = formatDateTime(summary.generated_at);
+  }
 
   document.getElementById("tagStats").innerHTML = [
     metric("Unique Tags", sorted.length),

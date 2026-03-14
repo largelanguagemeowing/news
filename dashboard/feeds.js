@@ -300,8 +300,10 @@ async function main() {
     .slice(0, 20)
     .map((entry) => entry[0]);
 
-  document.getElementById("feedMeta").textContent =
-    `${articles.length} items loaded. Updated ${formatTimestamp(summary.generated_at)}`;
+  const feedMeta = document.getElementById("feedMeta");
+  if (feedMeta) {
+    feedMeta.textContent = `${articles.length} items loaded. Updated ${formatTimestamp(summary.generated_at)}`;
+  }
   const statsEl = document.getElementById("feedStats");
   if (statsEl) {
     statsEl.innerHTML = [
@@ -345,35 +347,41 @@ async function main() {
     const topicCounts = countByTopic(topicBase);
     const tagCounts = countByTag(tagBase);
 
-    renderOptions(
-      sourceFilter,
-      `All sources (${sourceBase.length})`,
-      uniqueSources.map(([sourceId, sourceName]) => ({
-        value: sourceId,
-        label: `${sourceName} (${sourceCounts.get(sourceId) || 0})`,
-      })),
-      state.source
-    );
+    if (sourceFilter) {
+      renderOptions(
+        sourceFilter,
+        `All sources (${sourceBase.length})`,
+        uniqueSources.map(([sourceId, sourceName]) => ({
+          value: sourceId,
+          label: `${sourceName} (${sourceCounts.get(sourceId) || 0})`,
+        })),
+        state.source
+      );
+    }
 
-    renderOptions(
-      topicFilter,
-      `All topics (${topicBase.length})`,
-      uniqueTopics.map((topic) => ({
-        value: topic,
-        label: `${topic} (${topicCounts.get(topic) || 0})`,
-      })),
-      state.topic
-    );
+    if (topicFilter) {
+      renderOptions(
+        topicFilter,
+        `All topics (${topicBase.length})`,
+        uniqueTopics.map((topic) => ({
+          value: topic,
+          label: `${topic} (${topicCounts.get(topic) || 0})`,
+        })),
+        state.topic
+      );
+    }
 
-    renderOptions(
-      tagFilter,
-      `All tags (${tagBase.length})`,
-      topTags.map((tag) => ({
-        value: tag,
-        label: `${tag} (${tagCounts.get(tag) || 0})`,
-      })),
-      state.tag
-    );
+    if (tagFilter) {
+      renderOptions(
+        tagFilter,
+        `All tags (${tagBase.length})`,
+        topTags.map((tag) => ({
+          value: tag,
+          label: `${tag} (${tagCounts.get(tag) || 0})`,
+        })),
+        state.tag
+      );
+    }
   }
 
   function render() {
@@ -387,39 +395,61 @@ async function main() {
       timelineBtn: timelineLayoutBtn,
       tableBtn: tableLayoutBtn,
     });
-    resultsMeta.textContent = `${filtered.length} results`;
+    if (resultsMeta) {
+      resultsMeta.textContent = `${filtered.length} results`;
+    }
     refreshFilterOptionCounts();
-    searchInput.value = state.search;
+    if (searchInput) {
+      searchInput.value = state.search;
+    }
     syncQueryFromState(state);
   }
 
-  searchInput.addEventListener("input", () => {
-    state.search = searchInput.value.trim();
-    render();
-  });
-  sourceFilter.addEventListener("change", () => {
-    state.source = sourceFilter.value;
-    render();
-  });
-  topicFilter.addEventListener("change", () => {
-    state.topic = topicFilter.value;
-    render();
-  });
-  tagFilter.addEventListener("change", () => {
-    state.tag = tagFilter.value;
-    render();
-  });
-  clearFilters.addEventListener("click", () => {
-    state.search = "";
-    state.source = "";
-    state.topic = "";
-    state.tag = "";
-    searchInput.value = "";
-    sourceFilter.value = "";
-    topicFilter.value = "";
-    tagFilter.value = "";
-    render();
-  });
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      state.search = searchInput.value.trim();
+      render();
+    });
+  }
+  if (sourceFilter) {
+    sourceFilter.addEventListener("change", () => {
+      state.source = sourceFilter.value;
+      render();
+    });
+  }
+  if (topicFilter) {
+    topicFilter.addEventListener("change", () => {
+      state.topic = topicFilter.value;
+      render();
+    });
+  }
+  if (tagFilter) {
+    tagFilter.addEventListener("change", () => {
+      state.tag = tagFilter.value;
+      render();
+    });
+  }
+  if (clearFilters) {
+    clearFilters.addEventListener("click", () => {
+      state.search = "";
+      state.source = "";
+      state.topic = "";
+      state.tag = "";
+      if (searchInput) {
+        searchInput.value = "";
+      }
+      if (sourceFilter) {
+        sourceFilter.value = "";
+      }
+      if (topicFilter) {
+        topicFilter.value = "";
+      }
+      if (tagFilter) {
+        tagFilter.value = "";
+      }
+      render();
+    });
+  }
   if (timelineLayoutBtn) {
     timelineLayoutBtn.addEventListener("click", () => {
       state.layout = "timeline";

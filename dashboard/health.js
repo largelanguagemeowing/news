@@ -91,8 +91,10 @@ async function main() {
   ]);
 
   const generatedLabel = document.getElementById("generatedAt");
-  generatedLabel.textContent = `Updated ${formatTimestamp(summary.generated_at)}`;
-  generatedLabel.title = formatDateTime(summary.generated_at);
+  if (generatedLabel) {
+    generatedLabel.textContent = `Updated ${formatTimestamp(summary.generated_at)}`;
+    generatedLabel.title = formatDateTime(summary.generated_at);
+  }
   const repoSlug = summary.github_repository || "";
   document.getElementById("metrics").innerHTML = [
     metric(
@@ -116,13 +118,24 @@ async function main() {
       const historyCell = showHistory
         ? `<div class="history-inline" title="${s.checks_count_recent || 0} checks · ${s.uptime_pct_recent || 0}% uptime">${historyBars}</div><div class="history-meta">${s.uptime_pct_recent || 0}%</div>`
         : `<span class="history-meta">-</span>`;
+      const lastSuccess = formatTimestamp(s.last_success_at);
+      const failures = s.consecutive_failures || 0;
+      const latency = Math.round(s.avg_latency_ms || 0);
+      const metaItems = [
+        lastSuccess !== "-" ? lastSuccess : null,
+        failures > 0 ? `${failures} fail${failures > 1 ? "s" : ""}` : null,
+        latency > 0 ? `${latency}ms` : null
+      ].filter(Boolean);
+      const metaText = metaItems.length > 0 ? metaItems.join(" · ") : "";
+      const statusDotColor = s.status === "healthy" ? "var(--good)" : s.status === "degraded" ? "var(--warn)" : "var(--bad)";
       return `<tr>
-      <td>${renderSourceLink(s)}</td>
-      <td class="${statusClass(s.status)}">${s.status}</td>
-      <td title="${formatDateTime(s.last_success_at)}">${formatTimestamp(s.last_success_at)}</td>
-      <td>${s.consecutive_failures}</td>
-      <td>${Math.round(s.avg_latency_ms || 0)} ms</td>
-      <td>${historyCell}</td>
+      <td data-label="Source"><span class="source-with-status" style="--status-color: ${statusDotColor}">${renderSourceLink(s)}</span></td>
+      <td data-label="Status" class="${statusClass(s.status)}">${s.status}</td>
+      <td data-label="Last Success" title="${formatDateTime(s.last_success_at)}">${lastSuccess}</td>
+      <td data-label="Failures">${failures}</td>
+      <td data-label="Latency">${latency} ms</td>
+      <td data-label="History">${historyCell}</td>
+      <td class="mobile-meta">${metaText}</td>
     </tr>`
     })
     .join("");
