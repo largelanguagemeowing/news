@@ -49,11 +49,13 @@ function normalize(v) {
 
 function stateFromQuery() {
   const params = new URLSearchParams(window.location.search);
+  const layout = params.get("layout");
   return {
     search: params.get("q") || "",
     source: params.get("source") || "",
     topic: params.get("topic") || "",
     tag: params.get("tag") || "",
+    layout: layout === "timeline" ? "timeline" : "table",
   };
 }
 
@@ -63,6 +65,7 @@ function syncQueryFromState(state) {
   if (state.source) params.set("source", state.source);
   if (state.topic) params.set("topic", state.topic);
   if (state.tag) params.set("tag", state.tag);
+  if (state.layout && state.layout !== "table") params.set("layout", state.layout);
   const query = params.toString();
   const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
   window.history.replaceState(null, "", next);
@@ -184,6 +187,39 @@ function renderTimeline(articles) {
   timeline.innerHTML = weekSections;
 }
 
+function renderRows(articles) {
+  const tbody = document.querySelector("#feedsTable tbody");
+  if (!tbody) return;
+  const rows = articles
+    .map((item) => {
+      return `<tr>
+        <td data-label="Published" title="${formatDateTime(item.published_at)}">${formatTimestamp(item.published_at)}</td>
+        <td data-label="Source">${item.source_name}</td>
+        <td data-label="Topic"><span class="topic-pill">${item.topic}</span></td>
+        <td data-label="Title">
+          <a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>
+        </td>
+      </tr>`;
+    })
+    .join("");
+  tbody.innerHTML = rows || `<tr><td colspan="4">No feed items match current filters</td></tr>`;
+}
+
+function setLayout(state, nextLayout, elements) {
+  state.layout = nextLayout === "table" ? "table" : "timeline";
+  const isTimeline = state.layout === "timeline";
+  if (elements.timeline) elements.timeline.hidden = !isTimeline;
+  if (elements.tableWrap) elements.tableWrap.hidden = isTimeline;
+  if (elements.timelineBtn) elements.timelineBtn.classList.toggle("active", isTimeline);
+  if (elements.tableBtn) elements.tableBtn.classList.toggle("active", !isTimeline);
+  if (!isTimeline && elements.table) {
+    const isMobile = window.matchMedia("(max-width: 760px)").matches;
+    elements.table.classList.toggle("mobile-stack", isMobile);
+  } else if (elements.table) {
+    elements.table.classList.remove("mobile-stack");
+  }
+}
+
 function applyFilters(articles, state) {
   return articles.filter((item) => {
     if (state.source && item.source_id !== state.source) return false;
@@ -265,6 +301,11 @@ async function main() {
   const searchInput = document.getElementById("searchInput");
   const clearFilters = document.getElementById("clearFilters");
   const resultsMeta = document.getElementById("resultsMeta");
+  const timelineLayoutBtn = document.getElementById("timelineLayout");
+  const tableLayoutBtn = document.getElementById("tableLayout");
+  const feedTimeline = document.getElementById("feedTimeline");
+  const feedTableWrap = document.getElementById("feedTableWrap");
+  const feedTable = document.getElementById("feedsTable");
 
   const state = {
     ...stateFromQuery(),
@@ -321,6 +362,14 @@ async function main() {
   function render() {
     const filtered = applyFilters(articles, state);
     renderTimeline(filtered);
+    renderRows(filtered);
+    setLayout(state, state.layout, {
+      timeline: feedTimeline,
+      tableWrap: feedTableWrap,
+      table: feedTable,
+      timelineBtn: timelineLayoutBtn,
+      tableBtn: tableLayoutBtn,
+    });
     resultsMeta.textContent = `${filtered.length} results`;
     refreshFilterOptionCounts();
     searchInput.value = state.search;
@@ -354,6 +403,18 @@ async function main() {
     tagFilter.value = "";
     render();
   });
+  if (timelineLayoutBtn) {
+    timelineLayoutBtn.addEventListener("click", () => {
+      state.layout = "timeline";
+      render();
+    });
+  }
+  if (tableLayoutBtn) {
+    tableLayoutBtn.addEventListener("click", () => {
+      state.layout = "table";
+      render();
+    });
+  }
 
   render();
 }
