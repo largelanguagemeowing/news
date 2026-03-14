@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>News Curator Pages</title>
+    <title>Feed Items</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,13 +17,30 @@
     <div class="bg-orb orb-b"></div>
     <main class="shell">
       <header class="hero">
-        <h1>News Curator Control Plane</h1>
-        <p>Choose a view.</p>
+        <h1>Feed Items</h1>
+        <p id="feedMeta">Loading...</p>
+        <nav class="top-nav">
+          <a class="nav-item active" href="./index.html">Feed Items</a>
+          <a class="nav-item" href="./health.html">Health Dashboard</a>
+        </nav>
       </header>
-      <section class="panel nav-panel">
-        <a class="nav-link" href="./health.html">Health and Dashboard</a>
-        <a class="nav-link" href="./feeds.html">Feed Items</a>
+
+      <section class="panel">
+        <h2>Latest Items</h2>
+        <div class="table-wrap">
+          <table id="feedsTable">
+            <thead>
+              <tr>
+                <th>Published</th>
+                <th>Source</th>
+                <th>Title</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </section>
     </main>
+    <script src="./feeds.js"></script>
   </body>
 </html>

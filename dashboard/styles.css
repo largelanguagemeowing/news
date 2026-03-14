@@ -99,20 +99,32 @@ body {
   padding: 14px;
 }
 
-.nav-panel {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+.top-nav {
+  margin-top: 12px;
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f1ecde;
 }
 
-.nav-link {
+.nav-item {
   display: inline-block;
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #fff;
-  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: 700;
+  color: #31565a;
+}
+
+.nav-item:hover {
+  background: #e3ddcc;
+}
+
+.nav-item.active {
+  color: #ffffff;
+  background: #1f5f56;
 }
 
 .panel h2 {
