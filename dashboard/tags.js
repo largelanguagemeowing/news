@@ -10,6 +10,36 @@ function metric(title, value) {
   return `<article class="metric"><h3>${title}</h3><p>${value}</p></article>`;
 }
 
+function formatDateTime(value) {
+  if (!value) return "-";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return "-";
+  return dt.toLocaleString(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+}
+
+function formatRelative(value) {
+  if (!value) return "";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return "";
+  const diffMs = dt.getTime() - Date.now();
+  const absMs = Math.abs(diffMs);
+  const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+  const minute = 60 * 1000;
+  const hour = 60 * minute;
+  const day = 24 * hour;
+  if (absMs < hour) return rtf.format(Math.round(diffMs / minute), "minute");
+  if (absMs < day) return rtf.format(Math.round(diffMs / hour), "hour");
+  return rtf.format(Math.round(diffMs / day), "day");
+}
+
+function formatTimestamp(value) {
+  const relative = formatRelative(value);
+  return relative || formatDateTime(value);
+}
+
 function scale(value, min, max) {
   if (max <= min) return 1;
   return (value - min) / (max - min);
@@ -38,8 +68,10 @@ async function main() {
   const totalTagMentions = sorted.reduce((sum, [, count]) => sum + count, 0);
   const avgMentions = sorted.length ? Math.round(totalTagMentions / sorted.length) : 0;
 
-  document.getElementById("tagMeta").textContent =
-    `${sorted.length} tags from ${articles.length} items. Updated ${summary.generated_at}`;
+  const tagMeta = document.getElementById("tagMeta");
+  tagMeta.textContent =
+    `${sorted.length} tags from ${articles.length} items. Updated ${formatTimestamp(summary.generated_at)}`;
+  tagMeta.title = formatDateTime(summary.generated_at);
 
   document.getElementById("tagStats").innerHTML = [
     metric("Unique Tags", sorted.length),
@@ -79,4 +111,3 @@ async function main() {
 main().catch((error) => {
   document.body.innerHTML = `<main class="shell"><h1>Tag cloud failed to load</h1><p>${error.message}</p></main>`;
 });
-
