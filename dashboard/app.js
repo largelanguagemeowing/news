@@ -160,6 +160,47 @@
     });
   });
 
+  // Semantic haptics for mobile interactions
+  document.addEventListener("DOMContentLoaded", () => {
+    const canHaptic =
+      "vibrate" in navigator &&
+      window.matchMedia("(pointer: coarse)").matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!canHaptic) return;
+
+    const triggerHaptic = (type) => {
+      if (type === "nav") {
+        navigator.vibrate(14);
+        return;
+      }
+      if (type === "toggle") {
+        navigator.vibrate([10, 18, 10]);
+        return;
+      }
+      navigator.vibrate(10);
+    };
+
+    document.addEventListener("click", (e) => {
+      const mobileNavItem = e.target.closest(".mobile-nav .nav-item");
+      if (mobileNavItem) {
+        triggerHaptic("nav");
+        return;
+      }
+
+      const toggleBtn = e.target.closest("#themeToggle, #filterToggle, .layout-btn");
+      if (toggleBtn) {
+        triggerHaptic("toggle");
+        return;
+      }
+
+      const actionBtn = e.target.closest("button, .filter-btn, .empty-state-action, .copy-btn");
+      if (actionBtn) {
+        triggerHaptic("tap");
+      }
+    });
+  });
+
   // PWA Service Worker Registration
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
