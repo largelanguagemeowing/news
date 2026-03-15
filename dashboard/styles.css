@@ -938,6 +938,73 @@ body.no-search .shell {
   width: 60%;
 }
 
+/* Skeleton responsive styles */
+@media (max-width: 768px) {
+  .skeleton-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skeleton-metric {
+    flex: 1;
+    min-width: calc(50% - 4px);
+    padding: 12px;
+  }
+
+  .skeleton-metric:nth-child(3),
+  .skeleton-metric:nth-child(4) {
+    display: none;
+  }
+
+  .skeleton-metric-value {
+    height: 1.5em;
+    width: 50%;
+    margin-bottom: 6px;
+  }
+
+  .skeleton-metric-label {
+    height: 0.75em;
+    width: 70%;
+  }
+
+  /* Skeleton table becomes cards on mobile */
+  .skeleton-table-row {
+    display: block;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: var(--panel);
+  }
+
+  .skeleton-table-row:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .skeleton-cell {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .skeleton-cell:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Skeleton tag cloud responsive */
+  .skeleton-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  /* Skeleton tag list becomes compact */
+  .skeleton-tag-item {
+    padding: 10px 0;
+  }
+}
+
 .timeline-empty {
   display: none;
 }
