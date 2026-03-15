@@ -38,4 +38,4 @@ DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --dry
 DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --only-missing
 ```
 
-CI note: `news-pipeline` runs this backfill step before ingest on every workflow run.
+CI note: `news-pipeline` keeps backfill disabled by default. On manual `workflow_dispatch`, set `enable_backfill=true` to run this step before ingest.

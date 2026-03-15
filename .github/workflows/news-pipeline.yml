@@ -5,6 +5,12 @@ on:
   schedule:
     - cron: "*/30 * * * *"
   workflow_dispatch:
+    inputs:
+      enable_backfill:
+        description: "Run Defuddle backfill for existing items"
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: news-pipeline-single-writer
@@ -45,6 +51,7 @@ jobs:
         run: uv run pytest -q
 
       - name: Backfill Defuddle content (existing items)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_backfill }}
         env:
           DEFUDDLE_ENABLED: "1"
           DEFUDDLE_TIMEOUT_SECONDS: "20"
