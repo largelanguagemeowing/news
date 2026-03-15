@@ -17,6 +17,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 import feedparser
+import requests
 import trafilatura
 from bs4 import BeautifulSoup
 from dateutil import parser as dtparser
@@ -294,8 +295,6 @@ def normalize_youtube_watch_url(url: str) -> str:
 
 def fetch_text_url(url: str) -> str:
     try:
-        import requests
-
         response = requests.get(
             url,
             timeout=REQUEST_TIMEOUT_SECONDS,
@@ -310,8 +309,6 @@ def fetch_text_url(url: str) -> str:
 
 def fetch_youtube_oembed(url: str) -> dict[str, str] | None:
     try:
-        import requests
-
         endpoint = "https://www.youtube.com/oembed"
         response = requests.get(
             endpoint,
@@ -470,6 +467,42 @@ def parse_with_trafilatura(url: str) -> tuple[str | None, bool]:
     return truncate_for_storage(cleaned), True
 
 
+def parse_with_jina_ai(url: str) -> tuple[str | None, bool]:
+    """Use r.jina.ai as a fallback for blocked sites."""
+    if not url or is_youtube_url(url):
+        return None, False
+    try:
+        jina_url = f"https://r.jina.ai/http://{url.replace('https://', '').replace('http://', '')}"
+        response = requests.get(
+            jina_url,
+            timeout=REQUEST_TIMEOUT_SECONDS,
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        response.raise_for_status()
+        text = response.text.strip()
+        if not text or len(text) < 100:
+            return None, False
+        # Remove the jina.ai headers: Title, URL Source, Markdown Content
+        lines = text.split('\n')
+        cleaned_lines = []
+        in_header = True
+        for line in lines:
+            if in_header:
+                if line.startswith('Title:') or line.startswith('URL Source:') or line.startswith('Markdown Content:'):
+                    continue
+                if line.strip() == '':
+                    continue
+                in_header = False
+            cleaned_lines.append(line)
+        cleaned = '\n'.join(cleaned_lines).strip()
+        if not cleaned or len(cleaned) < 100:
+            return None, False
+        return truncate_for_storage(cleaned), True
+    except Exception as exc:
+        logger.debug("jina.ai extract failed url=%s error=%s", url, exc)
+        return None, False
+
+
 def is_probably_dirty_body(body: str) -> bool:
     text = (body or "").lower()
     if not text:
@@ -499,6 +532,10 @@ def enrich_article_content(url: str, source_id: str, title: str, body: str) -> t
     trafilatura_body, used_trafilatura = parse_with_trafilatura(url)
     if used_trafilatura and trafilatura_body:
         return trafilatura_body, "trafilatura"
+
+    jina_body, used_jina = parse_with_jina_ai(url)
+    if used_jina and jina_body:
+        return jina_body, "jina"
 
     defuddle_body, used_defuddle = parse_with_defuddle(url)
     if used_defuddle and defuddle_body:
