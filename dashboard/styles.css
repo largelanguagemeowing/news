@@ -2182,3 +2182,43 @@ a:hover {
     justify-content: center;
   }
 }
+
+/* Feed end marker — tasteful "end of feed" message */
+.feed-end-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 16px 8px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.feed-end-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.feed-end-text {
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.table-end-row td {
+  border: none;
+  background: transparent;
+}
+
+@media (max-width: 760px) {
+  .feed-end-marker {
+    padding: 24px 12px 4px;
+    font-size: 0.8rem;
+  }
+  .feed-end-line {
+    max-width: 80px;
+  }
+}

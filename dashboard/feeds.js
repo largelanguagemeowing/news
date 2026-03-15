@@ -228,7 +228,13 @@ function renderTimeline(articles) {
     })
     .join("");
 
-  timeline.innerHTML = weekSections;
+  timeline.innerHTML = weekSections + `
+    <div class="feed-end-marker">
+      <span class="feed-end-line"></span>
+      <span class="feed-end-text">That’s all for now</span>
+      <span class="feed-end-line"></span>
+    </div>
+  `;
 }
 
 function renderRows(articles) {
@@ -279,7 +285,17 @@ function renderRows(articles) {
     }
     return;
   }
-  tbody.innerHTML = rows;
+  tbody.innerHTML = rows + `
+    <tr class="table-end-row">
+      <td colspan="5">
+        <div class="feed-end-marker">
+          <span class="feed-end-line"></span>
+          <span class="feed-end-text">That’s all for now</span>
+          <span class="feed-end-line"></span>
+        </div>
+      </td>
+    </tr>
+  `;
 }
 
 function setLayout(state, nextLayout, elements) {
