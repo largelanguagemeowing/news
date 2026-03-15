@@ -1,12 +1,64 @@
 [
   {
-    "run_id": "29a7f97f646d",
-    "started_at": "2026-03-15T10:28:10+00:00",
+    "run_id": "fbf0a2f3a497",
+    "started_at": "2026-03-15T10:58:16+00:00",
     "ended_at": null,
     "status": "running",
     "error_message": null,
     "github_run_id": null,
     "github_run_url": null,
+    "stage_stats": [
+      {
+        "stage_name": "ingest",
+        "started_at": "2026-03-15T10:58:16+00:00",
+        "ended_at": "2026-03-15T10:58:21+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 1267,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "auto_disabled_sources": 0,
+          "duration_ms": 4984.4
+        }
+      },
+      {
+        "stage_name": "cluster",
+        "started_at": "2026-03-15T10:58:21+00:00",
+        "ended_at": "2026-03-15T10:58:21+00:00",
+        "status": "success",
+        "metrics": {
+          "events": 47,
+          "articles_clustered": 47,
+          "duration_ms": 47.23
+        }
+      },
+      {
+        "stage_name": "categorize",
+        "started_at": "2026-03-15T10:58:21+00:00",
+        "ended_at": "2026-03-15T10:58:21+00:00",
+        "status": "success",
+        "metrics": {
+          "events_categorized": 47,
+          "duration_ms": 2.1
+        }
+      },
+      {
+        "stage_name": "export",
+        "started_at": "2026-03-15T10:58:21+00:00",
+        "ended_at": null,
+        "status": "running",
+        "metrics": {}
+      }
+    ]
+  },
+  {
+    "run_id": "29a7f97f646d",
+    "started_at": "2026-03-15T10:28:10+00:00",
+    "ended_at": "2026-03-15T10:28:15+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "23108519849",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/23108519849",
     "stage_stats": [
       {
         "stage_name": "ingest",
@@ -45,9 +97,13 @@
       {
         "stage_name": "export",
         "started_at": "2026-03-15T10:28:15+00:00",
-        "ended_at": null,
-        "status": "running",
-        "metrics": {}
+        "ended_at": "2026-03-15T10:28:15+00:00",
+        "status": "success",
+        "metrics": {
+          "exported_files": 6,
+          "open_incidents": 1,
+          "duration_ms": 19.72
+        }
       }
     ]
   },
@@ -1055,62 +1111,6 @@
           "exported_files": 6,
           "open_incidents": 1,
           "duration_ms": 19.61
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "8daea89f352a",
-    "started_at": "2026-03-14T19:48:14+00:00",
-    "ended_at": "2026-03-14T19:48:18+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "23095081754",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/23095081754",
-    "stage_stats": [
-      {
-        "stage_name": "ingest",
-        "started_at": "2026-03-14T19:48:14+00:00",
-        "ended_at": "2026-03-14T19:48:18+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 1267,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "auto_disabled_sources": 0,
-          "duration_ms": 4282.78
-        }
-      },
-      {
-        "stage_name": "cluster",
-        "started_at": "2026-03-14T19:48:18+00:00",
-        "ended_at": "2026-03-14T19:48:18+00:00",
-        "status": "success",
-        "metrics": {
-          "events": 48,
-          "articles_clustered": 48,
-          "duration_ms": 50.2
-        }
-      },
-      {
-        "stage_name": "categorize",
-        "started_at": "2026-03-14T19:48:18+00:00",
-        "ended_at": "2026-03-14T19:48:18+00:00",
-        "status": "success",
-        "metrics": {
-          "events_categorized": 48,
-          "duration_ms": 1.49
-        }
-      },
-      {
-        "stage_name": "export",
-        "started_at": "2026-03-14T19:48:18+00:00",
-        "ended_at": "2026-03-14T19:48:18+00:00",
-        "status": "success",
-        "metrics": {
-          "exported_files": 6,
-          "open_incidents": 1,
-          "duration_ms": 19.82
         }
       }
     ]
