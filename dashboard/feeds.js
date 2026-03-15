@@ -71,7 +71,10 @@ function syncQueryFromState(state) {
   if (state.sort && state.sort !== "newest") params.set("sort", state.sort);
   const query = params.toString();
   const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
-  window.history.replaceState(null, "", next);
+  const current = `${window.location.pathname}${window.location.search}`;
+  if (next !== current) {
+    window.history.replaceState(null, "", next);
+  }
 }
 
 function enrichArticle(article) {
@@ -86,13 +89,21 @@ function enrichArticle(article) {
   };
 }
 
+const faviconUrlCache = new Map();
+
 function sourceFaviconUrl(item) {
+  const rawUrl = String(item?.url || "");
+  if (!rawUrl) return "";
+  if (faviconUrlCache.has(rawUrl)) return faviconUrlCache.get(rawUrl);
+  let faviconUrl = "";
   try {
-    const hostname = new URL(item.url).hostname;
-    return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=32`;
+    const hostname = new URL(rawUrl).hostname;
+    faviconUrl = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=32`;
   } catch {
-    return "";
+    faviconUrl = "";
   }
+  faviconUrlCache.set(rawUrl, faviconUrl);
+  return faviconUrl;
 }
 
 function renderSourceLabel(item) {
@@ -311,11 +322,6 @@ function sortArticles(articles, sortType) {
   }
 }
 
-function applyFiltersWithExclusion(articles, state, excludeKey) {
-  const shadow = { ...state, [excludeKey]: "" };
-  return applyFilters(articles, shadow);
-}
-
 function countBySource(items) {
   const counts = new Map();
   for (const item of items) {
@@ -348,6 +354,14 @@ function renderOptions(selectEl, defaultLabel, options, selectedValue) {
     .join("");
   selectEl.innerHTML = `<option value="">${defaultLabel}</option>${optionHtml}`;
   selectEl.value = selectedValue;
+}
+
+function debounce(fn, delayMs = 150) {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn(...args), delayMs);
+  };
 }
 
 async function main() {
@@ -408,10 +422,57 @@ async function main() {
     state.sort = "newest";
   }
 
+  const MAX_CACHE_ENTRIES = 100;
+  const filteredSortedCache = new Map();
+  const filterBaseCache = new Map();
+
+  function memoSet(cache, key, value) {
+    if (cache.has(key)) {
+      cache.delete(key);
+    }
+    cache.set(key, value);
+    if (cache.size > MAX_CACHE_ENTRIES) {
+      const oldestKey = cache.keys().next().value;
+      cache.delete(oldestKey);
+    }
+    return value;
+  }
+
+  function filterKey(stateObj) {
+    return [
+      normalize(stateObj.search),
+      stateObj.source || "",
+      stateObj.topic || "",
+      stateObj.tag || "",
+    ].join("|");
+  }
+
+  function filteredSortedKey(stateObj) {
+    return `${filterKey(stateObj)}|${stateObj.sort || "newest"}`;
+  }
+
+  function getFilteredSortedArticles() {
+    const key = filteredSortedKey(state);
+    if (filteredSortedCache.has(key)) {
+      return filteredSortedCache.get(key);
+    }
+    const result = sortArticles(applyFilters(articles, state), state.sort);
+    return memoSet(filteredSortedCache, key, result);
+  }
+
+  function getFilterBaseWithExclusion(excludeKey) {
+    const shadow = { ...state, [excludeKey]: "" };
+    const key = `exclude:${excludeKey}|${filterKey(shadow)}`;
+    if (filterBaseCache.has(key)) {
+      return filterBaseCache.get(key);
+    }
+    return memoSet(filterBaseCache, key, applyFilters(articles, shadow));
+  }
+
   function refreshFilterOptionCounts() {
-    const sourceBase = applyFiltersWithExclusion(articles, state, "source");
-    const topicBase = applyFiltersWithExclusion(articles, state, "topic");
-    const tagBase = applyFiltersWithExclusion(articles, state, "tag");
+    const sourceBase = getFilterBaseWithExclusion("source");
+    const topicBase = getFilterBaseWithExclusion("topic");
+    const tagBase = getFilterBaseWithExclusion("tag");
     const sourceCounts = countBySource(sourceBase);
     const topicCounts = countByTopic(topicBase);
     const tagCounts = countByTag(tagBase);
@@ -470,10 +531,15 @@ async function main() {
   }
 
   function render() {
-    const filtered = sortArticles(applyFilters(articles, state), state.sort);
+    const filtered = getFilteredSortedArticles();
     hideLoader();
-    renderTimeline(filtered);
-    renderRows(filtered);
+
+    if (state.layout === "timeline") {
+      renderTimeline(filtered);
+    } else {
+      renderRows(filtered);
+    }
+
     setLayout(state, state.layout, {
       timeline: feedTimeline,
       tableWrap: feedTableWrap,
@@ -497,10 +563,12 @@ async function main() {
   }
 
   if (searchInput) {
-    searchInput.addEventListener("input", () => {
+    const debouncedSearchRender = debounce(() => {
       state.search = searchInput.value.trim();
       render();
-    });
+    }, 160);
+
+    searchInput.addEventListener("input", debouncedSearchRender);
   }
   if (sourceFilter) {
     sourceFilter.addEventListener("change", () => {
