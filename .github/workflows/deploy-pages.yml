@@ -1,0 +1,59 @@
+name: deploy-pages
+run-name: "deploy-pages @ ${{ github.ref_name }}"
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["news-pipeline"]
+    types:
+      - completed
+
+concurrency:
+  group: deploy-pages-single-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Build site artifact
+        run: |
+          rm -rf site
+          mkdir -p site/data/status
+          cp -R dashboard/* site/
+          cp -R data/status/* site/data/status/
+          uv run python -m app.jobs.atom_feed \
+            --summary data/status/summary.json \
+            --articles data/status/articles.json \
+            --output site/feed.atom \
+            --site-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

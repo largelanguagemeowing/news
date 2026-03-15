@@ -1802,3 +1802,191 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* RSS Page Styles */
+.rss-panel {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.rss-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rss-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff8c42, #ff6b35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.rss-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.rss-title-wrap h1 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.rss-subtitle {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.rss-section {
+  margin-bottom: 28px;
+}
+
+.rss-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.rss-section h2 {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.feed-url-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.feed-url {
+  flex: 1;
+  padding: 10px 12px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  font: 600 0.85rem/1 "Inter", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  border-color: var(--accent);
+  background: rgba(15, 107, 138, 0.08);
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.setup-steps,
+.reader-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ink);
+}
+
+.setup-steps li,
+.reader-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.setup-steps li:last-child,
+.reader-list li:last-child {
+  margin-bottom: 0;
+}
+
+.reader-list a {
+  font-weight: 600;
+}
+
+.rss-meta {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.rss-meta p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .rss-panel {
+    padding: 24px;
+  }
+  
+  .rss-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .rss-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .rss-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .rss-title-wrap h1 {
+    font-size: 1.3rem;
+  }
+  
+  .feed-url-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .feed-url {
+    font-size: 0.8rem;
+  }
+  
+  .copy-btn {
+    justify-content: center;
+  }
+}
