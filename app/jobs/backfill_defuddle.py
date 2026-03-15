@@ -12,22 +12,23 @@ def backfill_articles(
     limit: int,
     only_missing: bool = False,
     dry_run: bool = False,
+    all_items: bool = False,
 ) -> dict[str, int | bool]:
     conn = get_connection()
     init_db(conn)
 
     where_missing = "AND (a.body IS NULL OR TRIM(a.body) = '' OR LENGTH(a.body) < 120)" if only_missing else ""
-    rows = conn.execute(
-        f"""
+    limit_clause = "" if all_items else "LIMIT ?"
+    query = f"""
         SELECT a.article_id, a.url, a.title, a.body
         FROM articles a
         WHERE TRIM(a.url) != ''
         {where_missing}
         ORDER BY a.published_at DESC
-        LIMIT ?
-        """,
-        (max(1, limit),),
-    ).fetchall()
+        {limit_clause}
+    """
+    params: tuple[int, ...] = () if all_items else (max(1, limit),)
+    rows = conn.execute(query, params).fetchall()
 
     attempted = 0
     enriched = 0
@@ -71,6 +72,7 @@ def backfill_articles(
         "defuddle_enabled": pipeline.DEFUDDLE_ENABLED,
         "dry_run": dry_run,
         "only_missing": only_missing,
+        "all_items": all_items,
         "attempted": attempted,
         "enriched": enriched,
         "updated": updated,
@@ -82,6 +84,11 @@ def backfill_articles(
 def main() -> int:
     parser = argparse.ArgumentParser(description="Backfill existing articles with Defuddle-extracted content")
     parser.add_argument("--limit", type=int, default=300, help="Maximum number of articles to process")
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Process all matching articles (ignores --limit)",
+    )
     parser.add_argument(
         "--only-missing",
         action="store_true",
@@ -113,6 +120,7 @@ def main() -> int:
         limit=args.limit,
         only_missing=args.only_missing,
         dry_run=args.dry_run,
+        all_items=args.all,
     )
     print(json.dumps(metrics))
     return 0

@@ -36,6 +36,9 @@ DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --dry
 
 # Write updates for short/missing bodies
 DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --only-missing
+
+# Process all items (ignores --limit)
+DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --all
 ```
 
-CI note: `news-pipeline` keeps backfill disabled by default. On manual `workflow_dispatch`, set `enable_backfill=true` to run this step before ingest.
+CI note: `news-pipeline` keeps backfill disabled by default. On manual `workflow_dispatch`, set `enable_backfill=true` to run backfill. Optionally set `backfill_all=true` to process all items; otherwise it runs a bounded pass (`--limit 300 --only-missing`).

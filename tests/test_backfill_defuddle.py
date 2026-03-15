@@ -87,3 +87,18 @@ def test_backfill_dry_run_does_not_write(monkeypatch) -> None:
     conn.close()
     assert row is not None
     assert row["body"] == "short"
+
+
+def test_backfill_all_items_ignores_limit(monkeypatch) -> None:
+    _seed_article()
+    _seed_article()
+    monkeypatch.setattr(pipeline, "DEFUDDLE_ENABLED", True)
+    monkeypatch.setattr(
+        pipeline,
+        "parse_with_defuddle",
+        lambda _url: ("Bulk backfill content.", True),
+    )
+
+    metrics = backfill_articles(limit=1, all_items=True, only_missing=False, dry_run=True)
+    assert metrics["all_items"] is True
+    assert metrics["attempted"] >= 2
