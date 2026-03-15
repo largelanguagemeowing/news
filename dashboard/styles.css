@@ -43,6 +43,12 @@ html {
   overscroll-behavior-y: none;
 }
 
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+}
+
 body {
   margin: 0;
   color: var(--ink);

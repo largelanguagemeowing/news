@@ -7,29 +7,47 @@
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
 
-  function applyTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
+  function syncThemeToggleIcon(theme) {
     const moonIcon = document.querySelector("#themeToggle .moon-icon");
     const sunIcon = document.querySelector("#themeToggle .sun-icon");
-    if (moonIcon && sunIcon) {
-      if (theme === "dark") {
-        moonIcon.style.display = "none";
-        sunIcon.style.display = "block";
-      } else {
-        moonIcon.style.display = "block";
-        sunIcon.style.display = "none";
-      }
+    if (!moonIcon || !sunIcon) return;
+    if (theme === "dark") {
+      moonIcon.style.display = "none";
+      sunIcon.style.display = "block";
+    } else {
+      moonIcon.style.display = "block";
+      sunIcon.style.display = "none";
+    }
+  }
+
+  function applyTheme(theme, options = {}) {
+    const { suppressTransitions = false } = options;
+    const root = document.documentElement;
+
+    if (suppressTransitions) {
+      root.classList.add("theme-switching");
+    }
+
+    root.setAttribute("data-theme", theme);
+    syncThemeToggleIcon(theme);
+
+    if (suppressTransitions) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          root.classList.remove("theme-switching");
+        });
+      });
     }
   }
 
   // Initialize theme
   const savedTheme = localStorage.getItem(THEME_KEY);
-  applyTheme(savedTheme || getSystemTheme());
+  applyTheme(savedTheme || getSystemTheme(), { suppressTransitions: true });
 
   // Listen for system theme changes
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
     if (!localStorage.getItem(THEME_KEY)) {
-      applyTheme(e.matches ? "dark" : "light");
+      applyTheme(e.matches ? "dark" : "light", { suppressTransitions: true });
     }
   });
 
@@ -40,7 +58,7 @@
     const current = document.documentElement.getAttribute("data-theme") || getSystemTheme();
     const next = current === "dark" ? "light" : "dark";
     localStorage.setItem(THEME_KEY, next);
-    applyTheme(next);
+    applyTheme(next, { suppressTransitions: true });
   });
 
   // Back-to-top functionality
