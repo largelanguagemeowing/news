@@ -12,7 +12,7 @@ on:
         default: false
         type: boolean
       backfill_all:
-        description: "When backfill is enabled, process all items (ignore limit)"
+        description: "When backfill is enabled, process all missing/short items (ignore limit)"
         required: false
         default: false
         type: boolean
@@ -63,7 +63,7 @@ jobs:
           DEFUDDLE_MAX_CHARS: "12000"
         run: |
           if [ "${{ inputs.backfill_all }}" = "true" ]; then
-            uv run python -m app.jobs.backfill_defuddle --all
+            uv run python -m app.jobs.backfill_defuddle --all --only-missing
           else
             uv run python -m app.jobs.backfill_defuddle --limit 300 --only-missing
           fi

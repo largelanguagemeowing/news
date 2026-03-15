@@ -2,10 +2,19 @@ from __future__ import annotations
 
 from uuid import uuid4
 
+import pytest
+
+import app.db as db_module
 from app.db import get_connection, init_db, transaction
 from app.jobs.backfill_defuddle import backfill_articles
 from app.jobs import pipeline
 from app.utils import normalize_text, sha1_hexdigest, simhash64
+
+
+@pytest.fixture(autouse=True)
+def isolate_db() -> None:
+    if db_module.DB_PATH.exists():
+        db_module.DB_PATH.unlink()
 
 
 def _seed_article() -> int:
