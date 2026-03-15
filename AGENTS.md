@@ -16,12 +16,11 @@ Then open http://localhost:8080/ in your browser.
 
 **Note:** The app uses relative paths like `../data/status/` which require an HTTP server (won't work with direct file:// URLs).
 
-## Post-UI update step
+## Post-update workflow guidance
 
-When dashboard pages or navigation are changed:
-1. Commit all related changes.
-2. Push to `master`.
-3. Trigger the `news-pipeline` GitHub Actions workflow (`workflow_dispatch`) so `data/status/*` and GitHub Pages are refreshed immediately.
+After pushing to `master`, trigger `news-pipeline` **only when fresh generated data is needed** (for example: source config changes, pipeline/backend changes, or when you want to refresh `data/status/*` immediately).
+
+For **dashboard-only UI/JS/CSS changes** that do not affect data generation, **do not trigger** `news-pipeline`.
 
 ```bash
 gh workflow run news-pipeline --repo largelanguagemeowing/news --ref master
