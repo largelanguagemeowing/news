@@ -381,8 +381,7 @@ async function main() {
   const sourceFilter = document.getElementById("sourceFilter");
   const topicFilter = document.getElementById("topicFilter");
   const tagFilter = document.getElementById("tagFilter");
-  const sortToggle = document.getElementById("sortToggle");
-  const sortPanel = document.getElementById("sortPanel");
+  const sortFilter = document.getElementById("sortFilter");
   const searchInput = document.getElementById("searchInput");
   const clearFilters = document.getElementById("clearFilters");
   const filterBadge = document.getElementById("filterBadge");
@@ -492,11 +491,9 @@ async function main() {
   }
 
   function updateSortUI() {
-    if (!sortPanel) return;
-    const options = sortPanel.querySelectorAll('.sort-option');
-    options.forEach(opt => {
-      opt.classList.toggle('active', opt.dataset.sort === state.sort);
-    });
+    if (sortFilter) {
+      sortFilter.value = state.sort;
+    }
   }
 
   if (searchInput) {
@@ -524,29 +521,10 @@ async function main() {
     });
   }
 
-  // Sort toggle and panel
-  if (sortToggle && sortPanel) {
-    sortToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      sortPanel.classList.toggle("open");
-      sortToggle.classList.toggle("active");
-    });
-
-    sortPanel.querySelectorAll('.sort-option').forEach(option => {
-      option.addEventListener("click", () => {
-        state.sort = option.dataset.sort;
-        render();
-        sortPanel.classList.remove("open");
-        sortToggle.classList.remove("active");
-      });
-    });
-
-    // Close sort panel when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!sortPanel.contains(e.target) && !sortToggle.contains(e.target)) {
-        sortPanel.classList.remove("open");
-        sortToggle.classList.remove("active");
-      }
+  if (sortFilter) {
+    sortFilter.addEventListener("change", () => {
+      state.sort = sortFilter.value;
+      render();
     });
   }
   if (clearFilters) {
