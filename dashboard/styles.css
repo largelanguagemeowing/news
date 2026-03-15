@@ -40,6 +40,7 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -1890,7 +1891,7 @@ a:hover {
     display: none;
   }
 
-  /* Mobile card link - full width clickable card */
+    /* Mobile card link - full width clickable card */
   #feedsTable tbody td.mobile-card-link {
     display: block !important;
     padding: 0;
@@ -1935,6 +1936,7 @@ a:hover {
     gap: 6px;
     font-size: 0.75rem;
     color: var(--ink-soft);
+    flex-wrap: wrap;
   }
 
   .mobile-card-meta .source-favicon {
@@ -2217,11 +2219,6 @@ a:hover {
 .feed-end-text {
   white-space: nowrap;
   opacity: 0.8;
-}
-
-.table-end-row td {
-  border: none;
-  background: transparent;
 }
 
 @media (max-width: 760px) {

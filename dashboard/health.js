@@ -26,29 +26,46 @@ function formatDateTime(value) {
   });
 }
 
+function formatCompactDate(value) {
+  if (!value) return "-";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return value;
+  const now = new Date();
+  const includeYear = dt.getFullYear() !== now.getFullYear();
+  return dt.toLocaleDateString(undefined, {
+    month: "short",
+    day: "numeric",
+    ...(includeYear ? { year: "numeric" } : {}),
+  });
+}
+
+const RELATIVE_TIMESTAMP_MAX_DAYS = 7;
+
 function formatRelative(value) {
   if (!value) return "";
   const dt = new Date(value);
   if (Number.isNaN(dt.getTime())) return "";
+
   const diffMs = dt.getTime() - Date.now();
   const absMs = Math.abs(diffMs);
-  const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+  const isFuture = diffMs > 0;
   const minute = 60 * 1000;
   const hour = 60 * minute;
   const day = 24 * hour;
-  if (absMs < hour) {
-    return rtf.format(Math.round(diffMs / minute), "minute");
-  }
-  if (absMs < day) {
-    return rtf.format(Math.round(diffMs / hour), "hour");
-  }
-  return rtf.format(Math.round(diffMs / day), "day");
+
+  if (absMs >= RELATIVE_TIMESTAMP_MAX_DAYS * day) return "";
+  if (absMs < minute) return isFuture ? "soon" : "now";
+
+  const formatShort = (amount, unit) => (isFuture ? `in ${amount}${unit}` : `${amount}${unit}`);
+
+  if (absMs < hour) return formatShort(Math.round(absMs / minute), "m");
+  if (absMs < day) return formatShort(Math.round(absMs / hour), "h");
+  return formatShort(Math.round(absMs / day), "d");
 }
 
 function formatTimestamp(value) {
-  const absolute = formatDateTime(value);
   const relative = formatRelative(value);
-  return relative || absolute;
+  return relative || formatCompactDate(value);
 }
 
 function shortId(value) {

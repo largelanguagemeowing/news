@@ -73,24 +73,34 @@
     let lastScrollY = window.scrollY;
     let ticking = false;
     const scrollThreshold = 100; // Min scroll before hiding
+    const minDeltaToReact = 6; // Ignore tiny bounce/jitter deltas (mobile overscroll)
 
     window.addEventListener("scroll", () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
+          const rawScrollY = window.scrollY;
+          const maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+          const currentScrollY = Math.min(Math.max(rawScrollY, 0), maxScrollY);
           const scrollDelta = currentScrollY - lastScrollY;
 
-          // Hide header/search when scrolling down past threshold, show when scrolling up
-          if (currentScrollY > scrollThreshold && scrollDelta > 0) {
-            if (topBar) topBar.classList.add("header-hidden");
-            if (searchBar) searchBar.classList.add("search-hidden");
-            if (mobileNav) mobileNav.classList.add("nav-hidden");
-            document.body.classList.add("header-collapsed");
-          } else if (scrollDelta < 0 || currentScrollY <= scrollThreshold) {
-            if (topBar) topBar.classList.remove("header-hidden");
-            if (searchBar) searchBar.classList.remove("search-hidden");
-            if (mobileNav) mobileNav.classList.remove("nav-hidden");
-            document.body.classList.remove("header-collapsed");
+          const atTop = currentScrollY <= 0;
+          const atBottom = currentScrollY >= maxScrollY - 1;
+          const isBoundaryBounce = (atTop && scrollDelta < 0) || (atBottom && scrollDelta > 0);
+
+          // Ignore bounce jitter and tiny movements that cause nav/header flicker.
+          if (!isBoundaryBounce && Math.abs(scrollDelta) >= minDeltaToReact) {
+            // Hide header/search when scrolling down past threshold, show when scrolling up
+            if (currentScrollY > scrollThreshold && scrollDelta > 0) {
+              if (topBar) topBar.classList.add("header-hidden");
+              if (searchBar) searchBar.classList.add("search-hidden");
+              if (mobileNav) mobileNav.classList.add("nav-hidden");
+              document.body.classList.add("header-collapsed");
+            } else if (scrollDelta < 0 || currentScrollY <= scrollThreshold) {
+              if (topBar) topBar.classList.remove("header-hidden");
+              if (searchBar) searchBar.classList.remove("search-hidden");
+              if (mobileNav) mobileNav.classList.remove("nav-hidden");
+              document.body.classList.remove("header-collapsed");
+            }
           }
 
           lastScrollY = currentScrollY;
