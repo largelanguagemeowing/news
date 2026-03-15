@@ -441,6 +441,10 @@ async function main() {
   const MAX_CACHE_ENTRIES = 100;
   const filteredSortedCache = new Map();
   const filterBaseCache = new Map();
+  const renderedLayoutKey = {
+    timeline: null,
+    table: null,
+  };
 
   function memoSet(cache, key, value) {
     if (cache.has(key)) {
@@ -548,12 +552,17 @@ async function main() {
 
   function render() {
     const filtered = getFilteredSortedArticles();
+    const currentDataKey = filteredSortedKey(state);
     hideLoader();
 
     if (state.layout === "timeline") {
-      renderTimeline(filtered);
-    } else {
+      if (renderedLayoutKey.timeline !== currentDataKey) {
+        renderTimeline(filtered);
+        renderedLayoutKey.timeline = currentDataKey;
+      }
+    } else if (renderedLayoutKey.table !== currentDataKey) {
       renderRows(filtered);
+      renderedLayoutKey.table = currentDataKey;
     }
 
     setLayout(state, state.layout, {
