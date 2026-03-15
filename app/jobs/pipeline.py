@@ -458,7 +458,7 @@ def parse_with_trafilatura(url: str) -> tuple[str | None, bool]:
             output_format="txt",
             include_links=True,
             include_images=False,
-            favor_precision=True,
+            favor_recall=True,
             deduplicate=True,
         )
     except Exception as exc:
