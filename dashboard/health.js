@@ -68,6 +68,22 @@ function formatTimestamp(value) {
   return relative || formatCompactDate(value);
 }
 
+function formatDuration(startDate) {
+  if (!startDate) return "";
+  const start = new Date(startDate);
+  if (Number.isNaN(start.getTime())) return "";
+  
+  const diffMs = Date.now() - start.getTime();
+  const minute = 60 * 1000;
+  const hour = 60 * minute;
+  const day = 24 * hour;
+  
+  if (diffMs < minute) return "<1m";
+  if (diffMs < hour) return `${Math.floor(diffMs / minute)}m`;
+  if (diffMs < day) return `${Math.floor(diffMs / hour)}h`;
+  return `${Math.floor(diffMs / day)}d`;
+}
+
 function shortId(value) {
   if (!value) return "-";
   return String(value).slice(0, 8);
@@ -169,25 +185,38 @@ async function main() {
     sourceRows || `<tr><td colspan="6">No sources configured</td></tr>`;
 
   const openIncidents = incidents.filter((i) => i.status === "open");
+  
   document.getElementById("incidentsList").innerHTML =
-    openIncidents
-      .map(
-        (inc) => `<li class="card incident-card">
-      <div class="card-head">
-        <strong>${inc.incident_key}</strong>
-        <span class="chip ${statusClass(inc.status)}">${inc.status}</span>
-      </div>
-      <div class="meta-row">${inc.last_message || ""}</div>
-      <div class="meta-row">${
-        inc.issue_number && repoSlug
-          ? `<a class="card-link" href="https://github.com/${repoSlug}/issues/${inc.issue_number}" target="_blank" rel="noreferrer">Open issue #${inc.issue_number}</a>`
-          : inc.issue_number
-            ? `Issue #${inc.issue_number}`
-            : "No linked issue"
-      }</div>
-    </li>`
-      )
-      .join("") || `<li class="card">No open incidents</li>`;
+    openIncidents.length > 0
+      ? openIncidents
+          .map(
+            (inc) => {
+              const issueUrl = inc.issue_number && repoSlug
+                ? `https://github.com/${repoSlug}/issues/${inc.issue_number}`
+                : null;
+              
+              const title = issueUrl 
+                ? `<a href="${issueUrl}" target="_blank" rel="noreferrer" class="incident-title">${inc.incident_key}</a>`
+                : `<span class="incident-title" style="color: var(--ink);">${inc.incident_key}</span>`;
+              
+              const metaParts = [];
+              if (inc.last_message) metaParts.push(inc.last_message);
+              if (inc.issue_number) metaParts.push(`#${inc.issue_number}`);
+              
+              return `<li class="card incident-card">
+                <div class="card-head">
+                  ${title}
+                  <span class="chip ${statusClass(inc.status)}">${inc.status}</span>
+                </div>
+                ${metaParts.length > 0 ? `<div class="meta-row">${metaParts.join(" · ")}</div>` : ""}
+              </li>`;
+            }
+          )
+          .join("")
+      : `<li class="incident-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>All systems operational — no open incidents</span>
+        </li>`;
 
   const recentRuns = runs.slice(0, 10);
   const successCount = recentRuns.filter((run) => run.status === "success").length;
@@ -209,7 +238,10 @@ async function main() {
     recentRuns.length
       ? `<li class="card">
       <div class="card-head">
-        <strong>Last ${recentRuns.length} runs</strong>
+        <strong>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Last ${recentRuns.length} runs
+        </strong>
         <span class="chip">${successRate}% success</span>
       </div>
       <div class="run-bars">${runBars}</div>
