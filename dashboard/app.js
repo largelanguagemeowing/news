@@ -64,11 +64,12 @@
     });
   });
 
-  // Mobile bottom nav hide-on-scroll
+  // Header and search bar hide-on-scroll (like Twitter)
   document.addEventListener("DOMContentLoaded", () => {
+    const topBar = document.querySelector(".top-bar");
+    const searchBar = document.querySelector(".search-bar");
     const mobileNav = document.querySelector(".mobile-nav");
-    if (!mobileNav) return;
-
+    
     let lastScrollY = window.scrollY;
     let ticking = false;
     const scrollThreshold = 100; // Min scroll before hiding
@@ -79,11 +80,17 @@
           const currentScrollY = window.scrollY;
           const scrollDelta = currentScrollY - lastScrollY;
 
-          // Hide when scrolling down past threshold, show when scrolling up
+          // Hide header/search when scrolling down past threshold, show when scrolling up
           if (currentScrollY > scrollThreshold && scrollDelta > 0) {
-            mobileNav.classList.add("nav-hidden");
+            if (topBar) topBar.classList.add("header-hidden");
+            if (searchBar) searchBar.classList.add("search-hidden");
+            if (mobileNav) mobileNav.classList.add("nav-hidden");
+            document.body.classList.add("header-collapsed");
           } else if (scrollDelta < 0 || currentScrollY <= scrollThreshold) {
-            mobileNav.classList.remove("nav-hidden");
+            if (topBar) topBar.classList.remove("header-hidden");
+            if (searchBar) searchBar.classList.remove("search-hidden");
+            if (mobileNav) mobileNav.classList.remove("nav-hidden");
+            document.body.classList.remove("header-collapsed");
           }
 
           lastScrollY = currentScrollY;
@@ -93,12 +100,17 @@
       }
     }, { passive: true });
 
-    // Show nav when user touches near bottom of screen
+    // Show header when user touches near top of screen
     document.addEventListener("touchstart", (e) => {
       const touchY = e.touches[0].clientY;
+      if (touchY < 100) {
+        if (topBar) topBar.classList.remove("header-hidden");
+        if (searchBar) searchBar.classList.remove("search-hidden");
+        document.body.classList.remove("header-collapsed");
+      }
       const windowHeight = window.innerHeight;
       if (touchY > windowHeight - 100) {
-        mobileNav.classList.remove("nav-hidden");
+        if (mobileNav) mobileNav.classList.remove("nav-hidden");
       }
     }, { passive: true });
   });
