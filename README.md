@@ -37,3 +37,5 @@ DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --dry
 # Write updates for short/missing bodies
 DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --only-missing
 ```
+
+CI note: `news-pipeline` runs this backfill step before ingest on every workflow run.

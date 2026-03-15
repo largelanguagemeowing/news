@@ -44,6 +44,13 @@ jobs:
       - name: Run tests
         run: uv run pytest -q
 
+      - name: Backfill Defuddle content (existing items)
+        env:
+          DEFUDDLE_ENABLED: "1"
+          DEFUDDLE_TIMEOUT_SECONDS: "20"
+          DEFUDDLE_MAX_CHARS: "12000"
+        run: uv run python -m app.jobs.backfill_defuddle --limit 300 --only-missing
+
       - name: Run pipeline
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
