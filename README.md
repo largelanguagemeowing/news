@@ -20,6 +20,7 @@ The ingest stage can enrich article body text using the Defuddle CLI (`defuddle 
 - Optional tuning:
   - `DEFUDDLE_TIMEOUT_SECONDS` (default `20`)
   - `DEFUDDLE_MAX_CHARS` (default `12000`)
+  - `LOG_LEVEL` (default `INFO`, use `DEBUG` for verbose Defuddle diagnostics)
 
 Example local usage:
 

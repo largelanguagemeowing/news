@@ -61,6 +61,7 @@ jobs:
           DEFUDDLE_ENABLED: "1"
           DEFUDDLE_TIMEOUT_SECONDS: "20"
           DEFUDDLE_MAX_CHARS: "12000"
+          LOG_LEVEL: "INFO"
         run: |
           if [ "${{ inputs.backfill_all }}" = "true" ]; then
             uv run python -m app.jobs.backfill_defuddle --all --only-missing
@@ -75,6 +76,7 @@ jobs:
           DEFUDDLE_ENABLED: "1"
           DEFUDDLE_TIMEOUT_SECONDS: "20"
           DEFUDDLE_MAX_CHARS: "12000"
+          LOG_LEVEL: "INFO"
         run: uv run python -m app.jobs.pipeline
 
       - name: Commit data changes

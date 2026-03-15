@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import shutil
 import sqlite3
@@ -79,6 +80,13 @@ TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
     ("research", ("research", "paper", "arxiv", "study")),
     ("video", ("youtube", "video")),
 ]
+
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+logging.basicConfig(
+    level=getattr(logging, LOG_LEVEL, logging.INFO),
+    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+)
+logger = logging.getLogger("news.pipeline")
 
 DEFUDDLE_ENABLED = os.getenv("DEFUDDLE_ENABLED", "0").lower() in {"1", "true", "yes", "on"}
 DEFUDDLE_TIMEOUT_SECONDS = int(os.getenv("DEFUDDLE_TIMEOUT_SECONDS", "20"))
@@ -227,6 +235,7 @@ def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
     if not DEFUDDLE_ENABLED:
         return None, False
     if not shutil.which("defuddle"):
+        logger.warning("defuddle not found on PATH; continuing without enrichment")
         return None, False
     try:
         result = subprocess.run(
@@ -236,15 +245,21 @@ def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
             timeout=DEFUDDLE_TIMEOUT_SECONDS,
             check=False,
         )
-    except (subprocess.TimeoutExpired, OSError):
+    except subprocess.TimeoutExpired:
+        logger.debug("defuddle timeout for url=%s", url)
+        return None, False
+    except OSError as exc:
+        logger.debug("defuddle invocation error for url=%s: %s", url, exc)
         return None, False
 
     if result.returncode != 0 or not result.stdout.strip():
+        logger.debug("defuddle returned non-success for url=%s code=%s", url, result.returncode)
         return None, False
 
     try:
         payload = json.loads(result.stdout)
     except json.JSONDecodeError:
+        logger.debug("defuddle returned invalid json for url=%s", url)
         return None, False
 
     content = str(payload.get("content") or "").strip()
@@ -252,6 +267,7 @@ def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
     description = str(payload.get("description") or "").strip()
     extracted = content or markdown or description
     if not extracted:
+        logger.debug("defuddle produced empty content for url=%s", url)
         return None, False
     return truncate_for_storage(extracted), True
 
@@ -267,8 +283,15 @@ def ingest_stage(
     auto_disabled_sources = 0
     skipped_sources = 0
     defuddle_enriched = 0
-    for source in [s for s in sources if s.enabled]:
+    enabled_sources = [s for s in sources if s.enabled]
+    logger.info(
+        "Ingest stage started: sources=%d defuddle_enabled=%s",
+        len(enabled_sources),
+        DEFUDDLE_ENABLED,
+    )
+    for source in enabled_sources:
         now = datetime.now(timezone.utc)
+        logger.info("Ingesting source=%s url=%s", source.source_id, source.feed_url)
         source_health = conn.execute(
             """
             SELECT consecutive_failures, last_success_at, auto_disabled_until
@@ -279,6 +302,11 @@ def ingest_stage(
         ).fetchone()
         if source_health and source_is_in_cooldown(source_health["auto_disabled_until"], now):
             skipped_sources += 1
+            logger.info(
+                "Skipping source=%s reason=cooldown until=%s",
+                source.source_id,
+                source_health["auto_disabled_until"],
+            )
             with transaction(conn):
                 conn.execute(
                     """
@@ -381,6 +409,13 @@ def ingest_stage(
                     (source.source_id, run_id, utc_now_iso(), latency_ms),
                 )
             inserted += source_inserted
+            logger.info(
+                "Source complete source=%s inserted=%d latency_ms=%.2f latest_item_at=%s",
+                source.source_id,
+                source_inserted,
+                latency_ms,
+                latest_item_at,
+            )
             sync_incident_resolve(
                 conn,
                 incident_key=f"source:{source.source_id}",
@@ -391,6 +426,7 @@ def ingest_stage(
             conn.commit()
         except Exception as exc:
             failed_sources += 1
+            logger.exception("Source ingest failed source=%s error=%s", source.source_id, exc)
             with transaction(conn):
                 row = conn.execute(
                     """
@@ -453,6 +489,14 @@ def ingest_stage(
                         message=f"Source failed {failures} consecutive times. Error: {exc}.{disable_note}",
                     )
                     sync_incident_open_or_update(conn, signal, run_id, issue_client)
+    logger.info(
+        "Ingest stage finished inserted_articles=%d failed_sources=%d skipped_sources=%d auto_disabled_sources=%d defuddle_enriched_articles=%d",
+        inserted,
+        failed_sources,
+        skipped_sources,
+        auto_disabled_sources,
+        defuddle_enriched,
+    )
     return StageResult(
         status="success",
         metrics={
@@ -950,13 +994,27 @@ def run_pipeline() -> int:
         ("export", lambda: export_status(conn)),
     ]
 
+    logger.info(
+        "Pipeline run started run_id=%s sources=%d defuddle_enabled=%s",
+        run_id,
+        len([s for s in sources if s.enabled]),
+        DEFUDDLE_ENABLED,
+    )
     try:
         for stage_name, stage_fn in stages:
+            logger.info("Stage started stage=%s run_id=%s", stage_name, run_id)
             stage_run_id = stage_start(conn, run_id, stage_name)
             started = time.time()
             result = stage_fn()
             result.metrics["duration_ms"] = round((time.time() - started) * 1000, 2)
             stage_end(conn, stage_run_id, result)
+            logger.info(
+                "Stage finished stage=%s status=%s duration_ms=%.2f metrics=%s",
+                stage_name,
+                result.status,
+                result.metrics.get("duration_ms", 0.0),
+                json.dumps(result.metrics, sort_keys=True),
+            )
             if result.status != "success":
                 raise RuntimeError(result.error_message or f"{stage_name} failed")
             pipeline_metrics[stage_name] = result.metrics
@@ -969,6 +1027,7 @@ def run_pipeline() -> int:
             (utc_now_iso(), json.dumps(pipeline_metrics), run_id),
         )
         conn.commit()
+        logger.info("Pipeline run succeeded run_id=%s", run_id)
         sync_incident_resolve(
             conn,
             incident_key="pipeline:orchestrator",
@@ -979,6 +1038,7 @@ def run_pipeline() -> int:
         conn.commit()
         return 0
     except Exception as exc:
+        logger.exception("Pipeline run failed run_id=%s error=%s", run_id, exc)
         traceback_text = traceback.format_exc(limit=5)
         conn.execute(
             """
