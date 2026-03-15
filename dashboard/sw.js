@@ -1,7 +1,6 @@
 const CACHE_NAME = 'news-aggregator-v1';
 const STATIC_ASSETS = [
   '/news/',
-  '/news/feed/',
   '/news/health/',
   '/news/tags/',
   '/news/rss/',

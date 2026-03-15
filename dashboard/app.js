@@ -148,17 +148,27 @@
     });
   });
 
-  // PWA Service Worker Registration
+  // PWA Service Worker Registration (disabled for development)
+  // if ('serviceWorker' in navigator) {
+  //   window.addEventListener('load', () => {
+  //     navigator.serviceWorker
+  //       .register('/news/sw.js')
+  //       .then((registration) => {
+  //         console.log('SW registered:', registration.scope);
+  //       })
+  //       .catch((error) => {
+  //         console.log('SW registration failed:', error);
+  //       });
+  //   });
+  // }
+  
+  // Unregister existing service workers to clear cache
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('/news/sw.js')
-        .then((registration) => {
-          console.log('SW registered:', registration.scope);
-        })
-        .catch((error) => {
-          console.log('SW registration failed:', error);
-        });
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      registrations.forEach((registration) => {
+        registration.unregister();
+        console.log('SW unregistered:', registration.scope);
+      });
     });
   }
 

@@ -50,12 +50,14 @@ function normalize(v) {
 function stateFromQuery() {
   const params = new URLSearchParams(window.location.search);
   const layout = params.get("layout");
+  const sort = params.get("sort");
   return {
     search: params.get("q") || "",
     source: params.get("source") || "",
     topic: params.get("topic") || "",
     tag: params.get("tag") || "",
     layout: layout === "timeline" ? "timeline" : "table",
+    sort: sort || "newest",
   };
 }
 
@@ -66,6 +68,7 @@ function syncQueryFromState(state) {
   if (state.topic) params.set("topic", state.topic);
   if (state.tag) params.set("tag", state.tag);
   if (state.layout && state.layout !== "table") params.set("layout", state.layout);
+  if (state.sort && state.sort !== "newest") params.set("sort", state.sort);
   const query = params.toString();
   const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
   window.history.replaceState(null, "", next);
@@ -293,6 +296,21 @@ function applyFilters(articles, state) {
   });
 }
 
+function sortArticles(articles, sortType) {
+  const sorted = [...articles];
+  switch (sortType) {
+    case "oldest":
+      return sorted.sort((a, b) => new Date(a.published_at).getTime() - new Date(b.published_at).getTime());
+    case "source":
+      return sorted.sort((a, b) => a.source_name.localeCompare(b.source_name));
+    case "title":
+      return sorted.sort((a, b) => a.title.localeCompare(b.title));
+    case "newest":
+    default:
+      return sorted.sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
+  }
+}
+
 function applyFiltersWithExclusion(articles, state, excludeKey) {
   const shadow = { ...state, [excludeKey]: "" };
   return applyFilters(articles, shadow);
@@ -334,8 +352,8 @@ function renderOptions(selectEl, defaultLabel, options, selectedValue) {
 
 async function main() {
   const [rawArticles, summary] = await Promise.all([
-    getJson(["./data/status/articles.json", "../data/status/articles.json"]),
-    getJson(["./data/status/summary.json", "../data/status/summary.json"]),
+    getJson(["../../data/status/articles.json", "../data/status/articles.json", "./data/status/articles.json"]),
+    getJson(["../../data/status/summary.json", "../data/status/summary.json", "./data/status/summary.json"]),
   ]);
   const articles = rawArticles.map(enrichArticle);
   const uniqueSources = [...new Map(articles.map((item) => [item.source_id, item.source_name])).entries()];
@@ -363,6 +381,8 @@ async function main() {
   const sourceFilter = document.getElementById("sourceFilter");
   const topicFilter = document.getElementById("topicFilter");
   const tagFilter = document.getElementById("tagFilter");
+  const sortToggle = document.getElementById("sortToggle");
+  const sortPanel = document.getElementById("sortPanel");
   const searchInput = document.getElementById("searchInput");
   const clearFilters = document.getElementById("clearFilters");
   const filterBadge = document.getElementById("filterBadge");
@@ -384,6 +404,9 @@ async function main() {
   }
   if (!topTags.includes(state.tag)) {
     state.tag = "";
+  }
+  if (!["newest", "oldest", "source", "title"].includes(state.sort)) {
+    state.sort = "newest";
   }
 
   function refreshFilterOptionCounts() {
@@ -448,7 +471,7 @@ async function main() {
   }
 
   function render() {
-    const filtered = applyFilters(articles, state);
+    const filtered = sortArticles(applyFilters(articles, state), state.sort);
     hideLoader();
     renderTimeline(filtered);
     renderRows(filtered);
@@ -464,7 +487,16 @@ async function main() {
     if (searchInput) {
       searchInput.value = state.search;
     }
+    updateSortUI();
     syncQueryFromState(state);
+  }
+
+  function updateSortUI() {
+    if (!sortPanel) return;
+    const options = sortPanel.querySelectorAll('.sort-option');
+    options.forEach(opt => {
+      opt.classList.toggle('active', opt.dataset.sort === state.sort);
+    });
   }
 
   if (searchInput) {
@@ -491,12 +523,39 @@ async function main() {
       render();
     });
   }
+
+  // Sort toggle and panel
+  if (sortToggle && sortPanel) {
+    sortToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      sortPanel.classList.toggle("open");
+      sortToggle.classList.toggle("active");
+    });
+
+    sortPanel.querySelectorAll('.sort-option').forEach(option => {
+      option.addEventListener("click", () => {
+        state.sort = option.dataset.sort;
+        render();
+        sortPanel.classList.remove("open");
+        sortToggle.classList.remove("active");
+      });
+    });
+
+    // Close sort panel when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!sortPanel.contains(e.target) && !sortToggle.contains(e.target)) {
+        sortPanel.classList.remove("open");
+        sortToggle.classList.remove("active");
+      }
+    });
+  }
   if (clearFilters) {
     clearFilters.addEventListener("click", () => {
       state.search = "";
       state.source = "";
       state.topic = "";
       state.tag = "";
+      state.sort = "newest";
       if (searchInput) {
         searchInput.value = "";
       }
