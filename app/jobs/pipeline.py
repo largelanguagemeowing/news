@@ -503,6 +503,35 @@ def parse_with_jina_ai(url: str) -> tuple[str | None, bool]:
         return None, False
 
 
+def parse_with_markdown_new(url: str) -> tuple[str | None, bool]:
+    """Use markdown.new as a fallback for blocked sites."""
+    if not url or is_youtube_url(url):
+        return None, False
+    try:
+        response = requests.post(
+            "https://markdown.new/",
+            json={"url": url, "method": "auto"},
+            timeout=REQUEST_TIMEOUT_SECONDS,
+            headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
+        )
+        response.raise_for_status()
+        payload = response.json()
+        if not payload.get("success"):
+            return None, False
+        content = payload.get("content", "").strip()
+        if not content or len(content) < 100:
+            return None, False
+        # Remove frontmatter if present
+        if content.startswith("---"):
+            parts = content.split("---", 2)
+            if len(parts) >= 3:
+                content = parts[2].strip()
+        return truncate_for_storage(content), True
+    except Exception as exc:
+        logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
+        return None, False
+
+
 def is_probably_dirty_body(body: str) -> bool:
     text = (body or "").lower()
     if not text:
@@ -532,6 +561,10 @@ def enrich_article_content(url: str, source_id: str, title: str, body: str) -> t
     trafilatura_body, used_trafilatura = parse_with_trafilatura(url)
     if used_trafilatura and trafilatura_body:
         return trafilatura_body, "trafilatura"
+
+    markdown_new_body, used_markdown_new = parse_with_markdown_new(url)
+    if used_markdown_new and markdown_new_body:
+        return markdown_new_body, "markdown_new"
 
     jina_body, used_jina = parse_with_jina_ai(url)
     if used_jina and jina_body:
