@@ -835,6 +835,94 @@ body.no-search .shell {
   }
 }
 
+/* Skeleton Loading Animation */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--line) 25%,
+    var(--panel) 50%,
+    var(--line) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-text {
+  height: 1em;
+  margin-bottom: 0.5em;
+}
+
+.skeleton-text:last-child {
+  width: 80%;
+}
+
+.skeleton-title {
+  height: 1.25em;
+  width: 60%;
+  margin-bottom: 0.75em;
+}
+
+.skeleton-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.skeleton-table-row {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.skeleton-table-row:last-child {
+  border-bottom: none;
+}
+
+.skeleton-cell {
+  height: 1em;
+  flex: 1;
+}
+
+.skeleton-cell:first-child {
+  flex: 2;
+}
+
+.skeleton-badge {
+  width: 60px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.skeleton-metric {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.skeleton-metric-value {
+  height: 2em;
+  width: 40%;
+  margin-bottom: 8px;
+}
+
+.skeleton-metric-label {
+  height: 0.875em;
+  width: 60%;
+}
+
 .timeline-empty {
   display: none;
 }

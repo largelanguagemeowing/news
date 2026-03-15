@@ -23,6 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="manifest" href="../manifest.json" />
     <script src="../app.js"></script>
   </head>
   <body class="no-search">
@@ -66,18 +67,92 @@
 
     <!-- Main Content -->
     <main class="shell">
-      <section class="grid metrics" id="tagStats"></section>
+      <!-- Skeleton Loading State -->
+      <div id="tagsLoader" class="tags-loader">
+        <!-- Metrics Skeleton -->
+        <div class="grid metrics skeleton-metrics">
+          <div class="skeleton-metric">
+            <div class="skeleton skeleton-metric-value"></div>
+            <div class="skeleton skeleton-metric-label"></div>
+          </div>
+          <div class="skeleton-metric">
+            <div class="skeleton skeleton-metric-value"></div>
+            <div class="skeleton skeleton-metric-label"></div>
+          </div>
+          <div class="skeleton-metric">
+            <div class="skeleton skeleton-metric-value"></div>
+            <div class="skeleton skeleton-metric-label"></div>
+          </div>
+        </div>
 
-      <section class="panel">
-        <h2>Tag Landscape</h2>
-        <p class="result-meta">Size reflects frequency. Click any tag to jump into filtered feed items.</p>
-        <div id="tagCloud" class="tag-cloud stage"></div>
-      </section>
+        <!-- Tag Cloud Skeleton -->
+        <div class="panel skeleton-panel">
+          <div class="skeleton skeleton-title" style="width: 120px; height: 24px; margin-bottom: 8px;"></div>
+          <div class="skeleton skeleton-text" style="width: 60%; height: 14px; margin-bottom: 20px;"></div>
+          <div class="skeleton-tag-cloud">
+            <div class="skeleton" style="width: 80px; height: 32px; border-radius: 16px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 60px; height: 28px; border-radius: 14px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 100px; height: 36px; border-radius: 18px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 70px; height: 30px; border-radius: 15px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 90px; height: 34px; border-radius: 17px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 50px; height: 26px; border-radius: 13px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 110px; height: 38px; border-radius: 19px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 75px; height: 32px; border-radius: 16px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 85px; height: 30px; border-radius: 15px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 65px; height: 28px; border-radius: 14px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 95px; height: 34px; border-radius: 17px; display: inline-block; margin: 4px;"></div>
+            <div class="skeleton" style="width: 55px; height: 26px; border-radius: 13px; display: inline-block; margin: 4px;"></div>
+          </div>
+        </div>
 
-      <section class="panel">
-        <h2>Top Tags</h2>
-        <div id="topTagsList" class="tag-rank-list"></div>
-      </section>
+        <!-- Top Tags Skeleton -->
+        <div class="panel skeleton-panel">
+          <div class="skeleton skeleton-title" style="width: 80px; height: 24px; margin-bottom: 16px;"></div>
+          <div class="skeleton-tag-list">
+            <div class="skeleton-tag-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line);">
+              <div class="skeleton" style="width: 32px; height: 32px; border-radius: 50%;"></div>
+              <div class="skeleton" style="flex: 1; height: 18px;"></div>
+              <div class="skeleton" style="width: 60px; height: 24px; border-radius: 12px;"></div>
+            </div>
+            <div class="skeleton-tag-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line);">
+              <div class="skeleton" style="width: 32px; height: 32px; border-radius: 50%;"></div>
+              <div class="skeleton" style="flex: 1; height: 18px;"></div>
+              <div class="skeleton" style="width: 50px; height: 24px; border-radius: 12px;"></div>
+            </div>
+            <div class="skeleton-tag-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line);">
+              <div class="skeleton" style="width: 32px; height: 32px; border-radius: 50%;"></div>
+              <div class="skeleton" style="flex: 1; height: 18px;"></div>
+              <div class="skeleton" style="width: 70px; height: 24px; border-radius: 12px;"></div>
+            </div>
+            <div class="skeleton-tag-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line);">
+              <div class="skeleton" style="width: 32px; height: 32px; border-radius: 50%;"></div>
+              <div class="skeleton" style="flex: 1; height: 18px;"></div>
+              <div class="skeleton" style="width: 55px; height: 24px; border-radius: 12px;"></div>
+            </div>
+            <div class="skeleton-tag-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0;">
+              <div class="skeleton" style="width: 32px; height: 32px; border-radius: 50%;"></div>
+              <div class="skeleton" style="flex: 1; height: 18px;"></div>
+              <div class="skeleton" style="width: 65px; height: 24px; border-radius: 12px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actual Content (hidden initially) -->
+      <div id="tagsContent" hidden>
+        <section class="grid metrics" id="tagStats"></section>
+
+        <section class="panel">
+          <h2>Tag Landscape</h2>
+          <p class="result-meta">Size reflects frequency. Click any tag to jump into filtered feed items.</p>
+          <div id="tagCloud" class="tag-cloud stage"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Top Tags</h2>
+          <div id="topTagsList" class="tag-rank-list"></div>
+        </section>
+      </div>
     </main>
     
     <!-- Mobile Bottom Navigation -->

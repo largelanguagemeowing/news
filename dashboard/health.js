@@ -81,13 +81,20 @@ function renderEventTitle(event) {
   return `<a class="event-title card-link-inline" href="${event.representative_url}" target="_blank" rel="noreferrer">${icon}<span>${event.canonical_title}</span></a>`;
 }
 
+function hideLoader() {
+  const loader = document.getElementById('healthLoader');
+  const content = document.getElementById('healthContent');
+  if (loader) loader.hidden = true;
+  if (content) content.hidden = false;
+}
+
 async function main() {
   const [summary, sources, incidents, runs, events] = await Promise.all([
-    getJson(["./data/status/summary.json", "../data/status/summary.json"]),
-    getJson(["./data/status/sources.json", "../data/status/sources.json"]),
-    getJson(["./data/status/incidents.json", "../data/status/incidents.json"]),
-    getJson(["./data/status/runs.json", "../data/status/runs.json"]),
-    getJson(["./data/status/events.json", "../data/status/events.json"]),
+    getJson(["../../data/status/summary.json", "../data/status/summary.json", "./data/status/summary.json"]),
+    getJson(["../../data/status/sources.json", "../data/status/sources.json", "./data/status/sources.json"]),
+    getJson(["../../data/status/incidents.json", "../data/status/incidents.json", "./data/status/incidents.json"]),
+    getJson(["../../data/status/runs.json", "../data/status/runs.json", "./data/status/runs.json"]),
+    getJson(["../../data/status/events.json", "../data/status/events.json", "./data/status/events.json"]),
   ]);
 
   const generatedLabel = document.getElementById("generatedAt");
@@ -203,8 +210,30 @@ async function main() {
     </li>`
       )
       .join("") || `<li class="card">No events yet</li>`;
+
+  // Hide skeleton loader and show content
+  hideLoader();
 }
 
 main().catch((error) => {
-  document.body.innerHTML = `<main class="shell"><h1>Status page failed to load</h1><p>${error.message}</p></main>`;
+  console.error('Health page error:', error);
+  hideLoader();
+  const content = document.getElementById('healthContent');
+  if (content) {
+    content.innerHTML = `
+      <div class="panel" style="text-align: center; padding: 48px 24px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--bad); margin-bottom: 16px;">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <h2 style="margin-bottom: 8px;">Failed to load health data</h2>
+        <p style="color: var(--ink-soft);">${error.message}</p>
+        <button onclick="location.reload()" class="filter-btn filter-btn-primary" style="margin-top: 16px;">
+          Retry
+        </button>
+      </div>
+    `;
+    content.hidden = false;
+  }
 });

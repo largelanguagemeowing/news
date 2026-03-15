@@ -23,6 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="manifest" href="../manifest.json" />
     <script src="../app.js"></script>
   </head>
   <body class="no-search">
@@ -86,53 +87,155 @@
 
     <!-- Main Content -->
     <main class="shell">
-      <section class="grid metrics" id="metrics"></section>
-
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          <span>Source Health</span>
-        </h2>
-        <div class="table-wrap">
-          <table id="sourcesTable">
-            <thead>
-              <tr>
-                <th>Source</th>
-                <th>Status</th>
-                <th>Last Success</th>
-                <th>Failures</th>
-                <th>Latency</th>
-                <th>History</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+      <!-- Skeleton Loading State -->
+      <div id="healthLoader" class="health-loader">
+        <!-- Metrics Skeleton -->
+        <div class="grid metrics skeleton-metrics">
+          <div class="skeleton-metric">
+            <div class="skeleton skeleton-metric-value"></div>
+            <div class="skeleton skeleton-metric-label"></div>
+          </div>
+          <div class="skeleton-metric">
+            <div class="skeleton skeleton-metric-value"></div>
+            <div class="skeleton skeleton-metric-label"></div>
+          </div>
+          <div class="skeleton-metric">
+            <div class="skeleton skeleton-metric-value"></div>
+            <div class="skeleton skeleton-metric-label"></div>
+          </div>
+          <div class="skeleton-metric">
+            <div class="skeleton skeleton-metric-value"></div>
+            <div class="skeleton skeleton-metric-label"></div>
+          </div>
         </div>
-      </section>
 
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-          <span>Open Incidents</span>
-        </h2>
-        <ul id="incidentsList" class="cards"></ul>
-      </section>
+        <!-- Source Health Table Skeleton -->
+        <div class="panel skeleton-panel">
+          <div class="skeleton skeleton-title" style="width: 140px; height: 24px; margin-bottom: 16px;"></div>
+          <div class="skeleton-table">
+            <div class="skeleton-table-row">
+              <div class="skeleton skeleton-cell" style="flex: 2;"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+            </div>
+            <div class="skeleton-table-row">
+              <div class="skeleton skeleton-cell" style="flex: 2;"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+            </div>
+            <div class="skeleton-table-row">
+              <div class="skeleton skeleton-cell" style="flex: 2;"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+              <div class="skeleton skeleton-cell"></div>
+            </div>
+          </div>
+        </div>
 
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Recent Runs</span>
-        </h2>
-        <ul id="runsList" class="cards"></ul>
-      </section>
+        <!-- Incidents Skeleton -->
+        <div class="panel skeleton-panel">
+          <div class="skeleton skeleton-title" style="width: 120px; height: 24px; margin-bottom: 16px;"></div>
+          <div class="skeleton-cards">
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-text" style="width: 80%;"></div>
+              <div class="skeleton skeleton-text" style="width: 60%;"></div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-text" style="width: 70%;"></div>
+              <div class="skeleton skeleton-text" style="width: 50%;"></div>
+            </div>
+          </div>
+        </div>
 
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span>Recent Events</span>
-        </h2>
-        <ul id="eventsList" class="cards"></ul>
-      </section>
+        <!-- Recent Runs Skeleton -->
+        <div class="panel skeleton-panel">
+          <div class="skeleton skeleton-title" style="width: 110px; height: 24px; margin-bottom: 16px;"></div>
+          <div class="skeleton-cards">
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-text" style="width: 90%;"></div>
+              <div class="skeleton skeleton-text" style="width: 40%;"></div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-text" style="width: 85%;"></div>
+              <div class="skeleton skeleton-text" style="width: 45%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Events Skeleton -->
+        <div class="panel skeleton-panel">
+          <div class="skeleton skeleton-title" style="width: 130px; height: 24px; margin-bottom: 16px;"></div>
+          <div class="skeleton-cards">
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-text" style="width: 75%;"></div>
+              <div class="skeleton skeleton-text" style="width: 55%;"></div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton skeleton-text" style="width: 80%;"></div>
+              <div class="skeleton skeleton-text" style="width: 60%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actual Content (hidden initially) -->
+      <div id="healthContent" hidden>
+        <section class="grid metrics" id="metrics"></section>
+
+        <section class="panel">
+          <h2>
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span>Source Health</span>
+          </h2>
+          <div class="table-wrap">
+            <table id="sourcesTable">
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Status</th>
+                  <th>Last Success</th>
+                  <th>Failures</th>
+                  <th>Latency</th>
+                  <th>History</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <span>Open Incidents</span>
+          </h2>
+          <ul id="incidentsList" class="cards"></ul>
+        </section>
+
+        <section class="panel">
+          <h2>
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Recent Runs</span>
+          </h2>
+          <ul id="runsList" class="cards"></ul>
+        </section>
+
+        <section class="panel">
+          <h2>
+            <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Recent Events</span>
+          </h2>
+          <ul id="eventsList" class="cards"></ul>
+        </section>
+      </div>
     </main>
     
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>

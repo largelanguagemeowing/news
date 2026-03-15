@@ -49,10 +49,17 @@ function slugLink(tag) {
   return `./index.html?tag=${encodeURIComponent(tag)}`;
 }
 
+function hideLoader() {
+  const loader = document.getElementById('tagsLoader');
+  const content = document.getElementById('tagsContent');
+  if (loader) loader.hidden = true;
+  if (content) content.hidden = false;
+}
+
 async function main() {
   const [articles, summary] = await Promise.all([
-    getJson(["./data/status/articles.json", "../data/status/articles.json"]),
-    getJson(["./data/status/summary.json", "../data/status/summary.json"]),
+    getJson(["../../data/status/articles.json", "../data/status/articles.json", "./data/status/articles.json"]),
+    getJson(["../../data/status/summary.json", "../data/status/summary.json", "./data/status/summary.json"]),
   ]);
 
   const tagCounts = new Map();
@@ -107,8 +114,30 @@ async function main() {
     </a>`
       )
       .join("") || `<p class="result-meta">No top tags yet.</p>`;
+
+  // Hide skeleton loader and show content
+  hideLoader();
 }
 
 main().catch((error) => {
-  document.body.innerHTML = `<main class="shell"><h1>Tag cloud failed to load</h1><p>${error.message}</p></main>`;
+  console.error('Tags page error:', error);
+  hideLoader();
+  const content = document.getElementById('tagsContent');
+  if (content) {
+    content.innerHTML = `
+      <div class="panel" style="text-align: center; padding: 48px 24px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--bad); margin-bottom: 16px;">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <h2 style="margin-bottom: 8px;">Failed to load tags data</h2>
+        <p style="color: var(--ink-soft);">${error.message}</p>
+        <button onclick="location.reload()" class="filter-btn filter-btn-primary" style="margin-top: 16px;">
+          Retry
+        </button>
+      </div>
+    `;
+    content.hidden = false;
+  }
 });
