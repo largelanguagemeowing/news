@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import sqlite3
+import subprocess
 import time
 import traceback
 import uuid
@@ -77,6 +79,10 @@ TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
     ("research", ("research", "paper", "arxiv", "study")),
     ("video", ("youtube", "video")),
 ]
+
+DEFUDDLE_ENABLED = os.getenv("DEFUDDLE_ENABLED", "0").lower() in {"1", "true", "yes", "on"}
+DEFUDDLE_TIMEOUT_SECONDS = int(os.getenv("DEFUDDLE_TIMEOUT_SECONDS", "20"))
+DEFUDDLE_MAX_CHARS = int(os.getenv("DEFUDDLE_MAX_CHARS", "12000"))
 
 
 def parse_date(value: Any) -> datetime:
@@ -208,6 +214,48 @@ def extract_tags(title: str, body: str, source_id: str) -> list[str]:
     return tags[:6]
 
 
+def truncate_for_storage(text: str, max_chars: int = DEFUDDLE_MAX_CHARS) -> str:
+    if len(text) <= max_chars:
+        return text
+    return text[:max_chars]
+
+
+def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
+    """Return extracted content and whether defuddle was used successfully."""
+    if not url:
+        return None, False
+    if not DEFUDDLE_ENABLED:
+        return None, False
+    if not shutil.which("defuddle"):
+        return None, False
+    try:
+        result = subprocess.run(
+            ["defuddle", "parse", url, "--json"],
+            capture_output=True,
+            text=True,
+            timeout=DEFUDDLE_TIMEOUT_SECONDS,
+            check=False,
+        )
+    except (subprocess.TimeoutExpired, OSError):
+        return None, False
+
+    if result.returncode != 0 or not result.stdout.strip():
+        return None, False
+
+    try:
+        payload = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return None, False
+
+    content = str(payload.get("content") or "").strip()
+    markdown = str(payload.get("contentMarkdown") or "").strip()
+    description = str(payload.get("description") or "").strip()
+    extracted = content or markdown or description
+    if not extracted:
+        return None, False
+    return truncate_for_storage(extracted), True
+
+
 def ingest_stage(
     conn: sqlite3.Connection,
     run_id: str,
@@ -218,6 +266,7 @@ def ingest_stage(
     failed_sources = 0
     auto_disabled_sources = 0
     skipped_sources = 0
+    defuddle_enriched = 0
     for source in [s for s in sources if s.enabled]:
         now = datetime.now(timezone.utc)
         source_health = conn.execute(
@@ -265,6 +314,10 @@ def ingest_stage(
                     link = str(entry.get("link", "")).strip()
                     title = str(entry.get("title", "")).strip() or "(untitled)"
                     body = str(entry.get("summary", "")).strip()
+                    defuddle_body, used_defuddle = parse_with_defuddle(link)
+                    if used_defuddle and defuddle_body:
+                        body = defuddle_body
+                        defuddle_enriched += 1
                     published = parse_date(
                         entry.get("published")
                         or entry.get("updated")
@@ -407,6 +460,8 @@ def ingest_stage(
             "failed_sources": failed_sources,
             "skipped_sources": skipped_sources,
             "auto_disabled_sources": auto_disabled_sources,
+            "defuddle_enriched_articles": defuddle_enriched,
+            "defuddle_enabled": DEFUDDLE_ENABLED,
         },
     )
 
