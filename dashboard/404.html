@@ -11,130 +11,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css?v=4" />
+    <script src="./app.js?v=2"></script>
     <style>
-      .error-container {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        text-align: center;
-      }
-
-      .error-code {
-        font-size: clamp(6rem, 15vw, 12rem);
-        font-weight: 700;
-        line-height: 1;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin: 0;
-        letter-spacing: -0.05em;
-      }
-
-      .error-title {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        font-weight: 600;
-        margin: 16px 0 8px;
-        color: var(--ink);
-      }
-
-      .error-message {
-        font-size: 1rem;
-        color: var(--ink-soft);
-        max-width: 400px;
-        margin: 0 0 32px;
-        line-height: 1.5;
-      }
-
-      .error-actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .error-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 24px;
-        border-radius: 12px;
-        font: 600 0.95rem/1 "Inter", sans-serif;
-        text-decoration: none;
-        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .error-btn-primary {
-        background: var(--accent);
-        color: white;
-        border: none;
-      }
-
-      .error-btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px var(--glow-color);
-      }
-
-      .error-btn-secondary {
-        background: transparent;
-        color: var(--ink-soft);
-        border: 1px solid var(--line);
-      }
-
-      .error-btn-secondary:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-
-      .error-illustration {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 24px;
-        opacity: 0.8;
-      }
-
-      .error-illustration svg {
-        width: 100%;
-        height: 100%;
-        stroke: var(--accent);
-      }
+      .error-page { min-height: 100vh; display: flex; flex-direction: column; }
+      .error-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--panel); border-bottom: 1px solid var(--line); backdrop-filter: blur(20px); }
+      .error-header-inner { max-width: 1400px; margin: 0 auto; padding: 0 16px; height: var(--header-height); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+      .error-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; justify-self: start; }
+      .error-brand-icon { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 2px 8px var(--glow-color); }
+      .error-brand-text { font: 700 1.1rem/1 "Inter", sans-serif; color: var(--ink); letter-spacing: -0.02em; }
+      .error-nav { display: flex; align-items: center; gap: 4px; justify-self: center; }
+      .error-nav-item { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--ink-soft); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); height: 36px; }
+      .error-nav-item:hover { color: var(--ink); background: rgba(15, 107, 138, 0.08); }
+      .error-nav-icon { width: 18px; height: 18px; flex-shrink: 0; opacity: 0.8; }
+      .error-header-actions { display: flex; align-items: center; gap: 8px; justify-self: end; }
+      .error-theme-toggle { border: 1px solid var(--line); background: var(--bg); color: var(--ink-soft); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+      .error-theme-toggle:hover { background: rgba(15, 107, 138, 0.1); border-color: var(--accent); }
+      .error-container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: calc(var(--header-height) + 24px) 24px 24px; text-align: center; }
+      .error-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(15, 107, 138, 0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+      .error-icon svg { width: 28px; height: 28px; color: var(--accent); }
+      .error-title { font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 0 0 8px; }
+      .error-message { font-size: 0.95rem; color: var(--ink-soft); max-width: 280px; margin: 0 0 20px; line-height: 1.5; }
+      .error-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 10px; font: 600 0.85rem/1 "Inter", sans-serif; text-decoration: none; transition: all 0.2s ease; border: 1px solid var(--line); background: var(--panel); color: var(--accent); cursor: pointer; }
+      .error-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+      @media (max-width: 768px) { .error-header-inner { grid-template-columns: 1fr auto; } .error-nav { display: none; } }
     </style>
   </head>
-  <body class="no-search">
-    <div class="error-container">
-      <div class="error-illustration">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M8 15h8"/>
-          <path d="M9 9h.01"/>
-          <path d="M15 9h.01"/>
-        </svg>
-      </div>
-      <h1 class="error-code">404</h1>
-      <h2 class="error-title">Page not found</h2>
-      <p class="error-message">
-        The page you're looking for doesn't exist or has been moved. 
-        Check the URL or head back to the feed.
-      </p>
-      <div class="error-actions">
-        <a href="./" class="error-btn error-btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M15 18h-5"/>
-            <path d="M18 14h-8"/>
-            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/>
-            <rect width="8" height="4" x="10" y="6" rx="1"/>
-          </svg>
-          Go to Feed
-        </a>
-        <a href="javascript:history.back()" class="error-btn error-btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m9 18 6-6-6-6"/>
-          </svg>
-          Go Back
-        </a>
+  <body>
+    <div class="error-page">
+      <header class="error-header">
+        <div class="error-header-inner">
+          <a href="./" class="error-brand">
+            <div class="error-brand-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M18 18h-8"/><path d="M18 10h-8"/></svg>
+            </div>
+            <span class="error-brand-text">News Aggregator</span>
+          </a>
+          <nav class="error-nav">
+            <a class="error-nav-item" href="./"><svg class="error-nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg><span>Feed</span></a>
+            <a class="error-nav-item" href="./health/"><svg class="error-nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg><span>Health</span></a>
+            <a class="error-nav-item" href="./tags/"><svg class="error-nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>Tags</span></a>
+            <a class="error-nav-item" href="./rss/"><svg class="error-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg><span>RSS</span></a>
+          </nav>
+          <div class="error-header-actions">
+            <button class="error-theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+              <svg class="theme-icon-svg moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+              <svg class="theme-icon-svg sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="error-container">
+        <div class="error-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <h3 class="error-title">Page not found</h3>
+        <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+        <a href="./" class="error-btn">Go to Feed</a>
       </div>
     </div>
   </body>
