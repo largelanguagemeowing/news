@@ -24,48 +24,59 @@
     <div class="relative h-full w-full">
       <!-- Soft radial gradients like the site -->
       <div class="absolute inset-0">
-        <div class="absolute right-[15%] top-[10%] h-[400px] w-[400px] rounded-full bg-[#dce3f7] opacity-60 blur-3xl"></div>
-        <div class="absolute left-[10%] top-[25%] h-[350px] w-[350px] rounded-full bg-[#d5e6ef] opacity-50 blur-3xl"></div>
-        <div class="absolute bottom-[5%] left-[20%] h-[300px] w-[300px] rounded-full bg-[#e8f0f8] opacity-40 blur-3xl"></div>
+        <div class="absolute left-[10%] top-[20%] h-[400px] w-[400px] rounded-full bg-[#d5e6ef] opacity-60 blur-3xl"></div>
+        <div class="absolute right-[12%] top-[10%] h-[350px] w-[350px] rounded-full bg-[#e8f0f8] opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-[10%] left-[20%] h-[300px] w-[300px] rounded-full bg-[#dce3f7] opacity-40 blur-3xl"></div>
       </div>
 
       <!-- Main content card -->
       <div class="relative flex h-full items-center justify-center p-16">
         <div class="relative w-full max-w-[1000px] overflow-hidden rounded-3xl border border-[#cfd9e3] bg-[#f9fcff]/90 p-14 shadow-[0_8px_40px_rgba(18,32,43,0.08)] backdrop-blur-sm">
-          <!-- Accent top border -->
-          <div class="absolute left-0 right-0 top-0 h-1.5 bg-gradient-to-r from-[#7c3aed] via-[#5b21b6] to-[#7c3aed]"></div>
+          <!-- Accent top border - orange for RSS -->
+          <div class="absolute left-0 right-0 top-0 h-1.5 bg-gradient-to-r from-[#ff8c42] via-[#ff6b35] to-[#ff8c42]"></div>
 
           <!-- Top label -->
-          <div class="mono mb-8 inline-flex items-center gap-2 rounded-full bg-[#7c3aed]/10 px-4 py-2 text-sm font-semibold tracking-wider text-[#7c3aed] uppercase">
+          <div class="mono mb-8 inline-flex items-center gap-2 rounded-full bg-[#ff8c42]/10 px-4 py-2 text-sm font-semibold tracking-wider text-[#ff6b35] uppercase">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/>
-              <circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>
+              <path d="M4 11a9 9 0 0 1 9 9"/>
+              <path d="M4 4a16 16 0 0 1 16 16"/>
+              <circle cx="5" cy="19" r="1"/>
             </svg>
-            Discovery
+            Subscribe
           </div>
 
           <!-- Main heading -->
           <h1 class="mb-6 text-7xl font-extrabold tracking-tight text-[#12202b]">
-            Tag Cloud
+            RSS Feed
           </h1>
 
           <!-- Description -->
           <p class="max-w-2xl text-2xl font-medium leading-relaxed text-[#4f5f6f]">
-            Explore trending topics and jump into filtered news streams by category.
+            Get the latest AI news and updates delivered to your feed reader.
           </p>
 
-          <!-- Sample tag pills -->
-          <div class="mt-8 flex flex-wrap gap-3">
-            <span class="mono rounded-full bg-[#0f6b8a]/10 px-4 py-2 text-sm font-semibold text-[#0f6b8a]">#AI</span>
-            <span class="mono rounded-full bg-[#0f6b8a]/10 px-4 py-2 text-sm font-semibold text-[#0f6b8a]">#LLM</span>
-            <span class="mono rounded-full bg-[#0f6b8a]/10 px-4 py-2 text-sm font-semibold text-[#0f6b8a]">#OpenAI</span>
-            <span class="mono rounded-full bg-[#0f6b8a]/10 px-4 py-2 text-sm font-semibold text-[#0f6b8a]">#Research</span>
-            <span class="mono rounded-full bg-[#0f6b8a]/10 px-4 py-2 text-sm font-semibold text-[#0f6b8a]">#Tools</span>
+          <!-- Feed format badges -->
+          <div class="mt-8 flex gap-3">
+            <div class="flex items-center gap-2 rounded-full bg-[#ff8c42]/10 px-4 py-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#ff6b35]">
+                <path d="M4 11a9 9 0 0 1 9 9"/>
+                <path d="M4 4a16 16 0 0 1 16 16"/>
+                <circle cx="5" cy="19" r="1"/>
+              </svg>
+              <span class="mono text-sm font-semibold text-[#ff6b35]">Atom 1.0</span>
+            </div>
+            <div class="flex items-center gap-2 rounded-full bg-[#0f6b8a]/10 px-4 py-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0f6b8a]">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span class="mono text-sm font-semibold text-[#0f6b8a]">Real-time</span>
+            </div>
           </div>
 
           <!-- Bottom URL bar -->
           <div class="mt-10 flex items-center gap-3 border-t border-[#cfd9e3] pt-8">
-            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#7c3aed] to-[#5b21b6] text-white">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#ff8c42] to-[#ff6b35] text-white">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M2 12h20"/>
