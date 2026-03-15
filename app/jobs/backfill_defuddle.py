@@ -22,6 +22,7 @@ logger = logging.getLogger("news.backfill")
 def backfill_articles(
     limit: int,
     only_missing: bool = False,
+    only_dirty: bool = False,
     dry_run: bool = False,
     all_items: bool = False,
 ) -> dict[str, int | bool]:
@@ -32,7 +33,7 @@ def backfill_articles(
     where_missing = "AND (a.body IS NULL OR TRIM(a.body) = '' OR LENGTH(a.body) < 120)" if only_missing else ""
     limit_clause = "" if all_items else "LIMIT ?"
     query = f"""
-        SELECT a.article_id, a.url, a.title, a.body
+        SELECT a.article_id, a.url, a.title, a.body, a.source_id
         FROM articles a
         WHERE TRIM(a.url) != ''
         {where_missing}
@@ -41,11 +42,16 @@ def backfill_articles(
     """
     params: tuple[int, ...] = () if all_items else (max(1, limit),)
     rows = conn.execute(query, params).fetchall()
+
+    if only_dirty:
+        rows = [r for r in rows if pipeline.is_probably_dirty_body(str(r["body"] or ""))]
+
     total_rows = len(rows)
     logger.info(
-        "Backfill started candidates=%d only_missing=%s all_items=%s dry_run=%s",
+        "Backfill started candidates=%d only_missing=%s only_dirty=%s all_items=%s dry_run=%s",
         total_rows,
         only_missing,
+        only_dirty,
         all_items,
         dry_run,
     )
@@ -55,26 +61,32 @@ def backfill_articles(
     updated = 0
     unchanged = 0
     misses = 0
-    updates: list[tuple[str, str, str, str, int]] = []
+    updates: list[tuple[str, str, str, str, str, int]] = []
 
     progress_interval = max(1, total_rows // 10) if total_rows else 1
     for row in rows:
         attempted += 1
-        extracted, used = pipeline.parse_with_defuddle(str(row["url"] or ""))
-        if not used or not extracted:
-            misses += 1
-        else:
+        new_body, method = pipeline.enrich_article_content(
+            str(row["url"] or ""),
+            str(row["source_id"] or ""),
+            str(row["title"] or ""),
+            str(row["body"] or ""),
+        )
+        if method != "rss" and new_body:
             enriched += 1
-            new_body = pipeline.truncate_for_storage(extracted)
-            old_body = str(row["body"] or "").strip()
-            if new_body.strip() == old_body:
-                unchanged += 1
-            else:
-                body_norm = normalize_text(new_body)
-                body_hash = sha1_hexdigest(body_norm)
-                title_norm = normalize_text(str(row["title"] or ""))
-                sh = str(simhash64(body_norm or title_norm))
-                updates.append((new_body, body_norm, body_hash, sh, int(row["article_id"])))
+        elif not new_body:
+            misses += 1
+
+        new_body = pipeline.truncate_for_storage(str(new_body or "").strip())
+        old_body = str(row["body"] or "").strip()
+        if not new_body or new_body == old_body:
+            unchanged += 1
+        else:
+            body_norm = normalize_text(new_body)
+            body_hash = sha1_hexdigest(body_norm)
+            title_norm = normalize_text(str(row["title"] or ""))
+            sh = str(simhash64(body_norm or title_norm))
+            updates.append((new_body, body_norm, body_hash, sh, method, int(row["article_id"])))
 
         if attempted % progress_interval == 0 or attempted == total_rows:
             logger.info(
@@ -92,7 +104,7 @@ def backfill_articles(
             conn.executemany(
                 """
                 UPDATE articles
-                SET body = ?, body_norm = ?, body_hash = ?, simhash = ?
+                SET body = ?, body_norm = ?, body_hash = ?, simhash = ?, extraction_method = ?
                 WHERE article_id = ?
                 """,
                 updates,
@@ -115,6 +127,7 @@ def backfill_articles(
         "defuddle_enabled": pipeline.DEFUDDLE_ENABLED,
         "dry_run": dry_run,
         "only_missing": only_missing,
+        "only_dirty": only_dirty,
         "all_items": all_items,
         "attempted": attempted,
         "enriched": enriched,
@@ -126,7 +139,7 @@ def backfill_articles(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Backfill existing articles with Defuddle-extracted content")
+    parser = argparse.ArgumentParser(description="Backfill existing articles with enriched extraction")
     parser.add_argument("--limit", type=int, default=300, help="Maximum number of articles to process")
     parser.add_argument(
         "--all",
@@ -137,6 +150,11 @@ def main() -> int:
         "--only-missing",
         action="store_true",
         help="Only process articles with empty/very short bodies",
+    )
+    parser.add_argument(
+        "--only-dirty",
+        action="store_true",
+        help="Only process articles with likely polluted/HTML-heavy bodies",
     )
     parser.add_argument("--dry-run", action="store_true", help="Compute metrics without writing updates")
     parser.add_argument(
@@ -149,29 +167,19 @@ def main() -> int:
     if args.enable_defuddle:
         pipeline.DEFUDDLE_ENABLED = True
 
-    if not pipeline.DEFUDDLE_ENABLED:
-        logger.error("Backfill aborted because defuddle is disabled")
-        print(
-            json.dumps(
-                {
-                    "error": "Defuddle is disabled. Set DEFUDDLE_ENABLED=1 or pass --enable-defuddle.",
-                    "defuddle_enabled": False,
-                }
-            )
-        )
-        return 2
-
     logger.info(
-        "Backfill CLI invoked limit=%d all=%s only_missing=%s dry_run=%s defuddle_enabled=%s",
+        "Backfill CLI invoked limit=%d all=%s only_missing=%s only_dirty=%s dry_run=%s defuddle_enabled=%s",
         args.limit,
         args.all,
         args.only_missing,
+        args.only_dirty,
         args.dry_run,
         pipeline.DEFUDDLE_ENABLED,
     )
     metrics = backfill_articles(
         limit=args.limit,
         only_missing=args.only_missing,
+        only_dirty=args.only_dirty,
         dry_run=args.dry_run,
         all_items=args.all,
     )

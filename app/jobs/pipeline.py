@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import shutil
 import sqlite3
 import subprocess
@@ -13,8 +14,11 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import feedparser
+import trafilatura
+from bs4 import BeautifulSoup
 from dateutil import parser as dtparser
 
 from app.config import SourceConfig, load_sources
@@ -91,6 +95,7 @@ logger = logging.getLogger("news.pipeline")
 DEFUDDLE_ENABLED = os.getenv("DEFUDDLE_ENABLED", "0").lower() in {"1", "true", "yes", "on"}
 DEFUDDLE_TIMEOUT_SECONDS = int(os.getenv("DEFUDDLE_TIMEOUT_SECONDS", "20"))
 DEFUDDLE_MAX_CHARS = int(os.getenv("DEFUDDLE_MAX_CHARS", "12000"))
+REQUEST_TIMEOUT_SECONDS = 20
 
 
 def parse_date(value: Any) -> datetime:
@@ -228,6 +233,175 @@ def truncate_for_storage(text: str, max_chars: int = DEFUDDLE_MAX_CHARS) -> str:
     return text[:max_chars]
 
 
+def replace_iframes_with_markdown_links(html: str) -> str:
+    if "<iframe" not in html.lower():
+        return html
+    soup = BeautifulSoup(html, "html.parser")
+    for iframe in soup.find_all("iframe"):
+        src = (iframe.get("src") or "").strip()
+        title = (iframe.get("title") or "Embedded content").strip()
+        replacement = f"[iframe: {title}]({src})" if src else f"iframe: {title}"
+        iframe.replace_with(replacement)
+    return str(soup)
+
+
+def get_hostname(url: str) -> str:
+    try:
+        return urlparse(url).hostname.lower() if urlparse(url).hostname else ""
+    except Exception:
+        return ""
+
+
+def is_youtube_url(url: str) -> bool:
+    hostname = get_hostname(url)
+    return (
+        hostname == "youtu.be"
+        or hostname == "youtube.com"
+        or hostname == "www.youtube.com"
+        or hostname.endswith(".youtube.com")
+    )
+
+
+def get_youtube_video_id(url: str) -> str:
+    try:
+        parsed = urlparse(url)
+        hostname = (parsed.hostname or "").lower()
+        if hostname == "youtu.be":
+            return parsed.path.lstrip("/").split("/")[0]
+        if hostname in {"youtube.com", "www.youtube.com"} or hostname.endswith(".youtube.com"):
+            if parsed.path == "/watch":
+                for part in (parsed.query or "").split("&"):
+                    if part.startswith("v="):
+                        return part.split("=", 1)[1]
+            if parsed.path.startswith("/shorts/"):
+                return parsed.path.replace("/shorts/", "", 1).split("/")[0]
+            if parsed.path.startswith("/embed/"):
+                return parsed.path.replace("/embed/", "", 1).split("/")[0]
+    except Exception:
+        return ""
+    return ""
+
+
+def get_youtube_embed_url(url: str) -> str:
+    video_id = get_youtube_video_id(url)
+    return f"https://www.youtube.com/embed/{video_id}" if video_id else ""
+
+
+def normalize_youtube_watch_url(url: str) -> str:
+    video_id = get_youtube_video_id(url)
+    return f"https://www.youtube.com/watch?v={video_id}" if video_id else url
+
+
+def fetch_text_url(url: str) -> str:
+    try:
+        import requests
+
+        response = requests.get(
+            url,
+            timeout=REQUEST_TIMEOUT_SECONDS,
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        response.raise_for_status()
+        return response.text
+    except Exception as exc:
+        logger.debug("fetch_text_url failed url=%s error=%s", url, exc)
+        return ""
+
+
+def fetch_youtube_oembed(url: str) -> dict[str, str] | None:
+    try:
+        import requests
+
+        endpoint = "https://www.youtube.com/oembed"
+        response = requests.get(
+            endpoint,
+            params={"url": normalize_youtube_watch_url(url), "format": "json"},
+            timeout=REQUEST_TIMEOUT_SECONDS,
+            headers={"accept": "application/json", "User-Agent": "Mozilla/5.0"},
+        )
+        response.raise_for_status()
+        payload = response.json()
+        if not isinstance(payload, dict):
+            return None
+        return {
+            "title": str(payload.get("title") or "").strip(),
+            "author": str(payload.get("author_name") or "").strip(),
+            "thumbnail_url": str(payload.get("thumbnail_url") or "").strip(),
+        }
+    except Exception as exc:
+        logger.debug("fetch_youtube_oembed failed url=%s error=%s", url, exc)
+        return None
+
+
+def extract_youtube_schema_description(html: str) -> str:
+    if not html:
+        return ""
+    soup = BeautifulSoup(html, "html.parser")
+    for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
+        content = (script.string or script.get_text() or "").strip()
+        if not content:
+            continue
+        try:
+            payload = json.loads(content)
+        except json.JSONDecodeError:
+            continue
+
+        def walk(node: Any) -> str:
+            if isinstance(node, list):
+                for item in node:
+                    found = walk(item)
+                    if found:
+                        return found
+                return ""
+            if not isinstance(node, dict):
+                return ""
+            type_value = node.get("@type")
+            is_video = type_value == "VideoObject" or (
+                isinstance(type_value, list) and "VideoObject" in type_value
+            )
+            if is_video and isinstance(node.get("description"), str) and node["description"].strip():
+                return node["description"].strip()
+            for value in node.values():
+                found = walk(value)
+                if found:
+                    return found
+            return ""
+
+        found = walk(payload)
+        if found:
+            return found
+    return ""
+
+
+def extract_youtube_metadata(url: str, rss_title: str, rss_summary: str) -> dict[str, str]:
+    oembed = fetch_youtube_oembed(url) or {}
+    page_html = fetch_text_url(url)
+    schema_description = extract_youtube_schema_description(page_html)
+    description = schema_description or rss_summary.strip()
+    return {
+        "title": rss_title.strip() or oembed.get("title", ""),
+        "author": oembed.get("author", ""),
+        "description": description,
+        "thumbnail_url": oembed.get("thumbnail_url", ""),
+        "embed_url": get_youtube_embed_url(url),
+        "video_id": get_youtube_video_id(url),
+    }
+
+
+def build_youtube_body(metadata: dict[str, str], rss_summary: str) -> str:
+    parts = []
+    description = (metadata.get("description") or rss_summary or "").strip()
+    if description:
+        parts.append(description)
+    author = (metadata.get("author") or "").strip()
+    if author:
+        parts.append(f"author: {author}")
+    embed_url = (metadata.get("embed_url") or "").strip()
+    if embed_url:
+        parts.append(f"video: {embed_url}")
+    return "\n\n".join(parts).strip()
+
+
 def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
     """Return extracted content and whether defuddle was used successfully."""
     if not url:
@@ -262,7 +436,7 @@ def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
         logger.debug("defuddle returned invalid json for url=%s", url)
         return None, False
 
-    content = str(payload.get("content") or "").strip()
+    content = replace_iframes_with_markdown_links(str(payload.get("content") or "").strip())
     markdown = str(payload.get("contentMarkdown") or "").strip()
     description = str(payload.get("description") or "").strip()
     extracted = content or markdown or description
@@ -270,6 +444,67 @@ def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
         logger.debug("defuddle produced empty content for url=%s", url)
         return None, False
     return truncate_for_storage(extracted), True
+
+
+def parse_with_trafilatura(url: str) -> tuple[str | None, bool]:
+    if not url or is_youtube_url(url):
+        return None, False
+    html = fetch_text_url(url)
+    if not html:
+        return None, False
+    try:
+        extracted = trafilatura.extract(
+            html,
+            output_format="txt",
+            include_links=True,
+            include_images=False,
+            favor_precision=True,
+            deduplicate=True,
+        )
+    except Exception as exc:
+        logger.debug("trafilatura extract failed url=%s error=%s", url, exc)
+        return None, False
+    cleaned = str(extracted or "").strip()
+    if not cleaned:
+        return None, False
+    return truncate_for_storage(cleaned), True
+
+
+def is_probably_dirty_body(body: str) -> bool:
+    text = (body or "").lower()
+    if not text:
+        return True
+    dirty_markers = (
+        "<iframe",
+        "<script",
+        "referrerpolicy",
+        "allowfullscreen",
+        "youtube.com/embed",
+        "window.__next",
+        "googletagmanager",
+    )
+    if any(marker in text for marker in dirty_markers):
+        return True
+    if "<" in text and ">" in text:
+        return True
+    return False
+
+
+def enrich_article_content(url: str, source_id: str, title: str, body: str) -> tuple[str, str]:
+    current_body = str(body or "").strip()
+    if is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS:
+        youtube_meta = extract_youtube_metadata(url, title, current_body)
+        return build_youtube_body(youtube_meta, current_body), "youtube"
+
+    trafilatura_body, used_trafilatura = parse_with_trafilatura(url)
+    if used_trafilatura and trafilatura_body:
+        return trafilatura_body, "trafilatura"
+
+    defuddle_body, used_defuddle = parse_with_defuddle(url)
+    if used_defuddle and defuddle_body:
+        return defuddle_body, "defuddle"
+
+    return current_body, "rss"
 
 
 def ingest_stage(
@@ -342,9 +577,8 @@ def ingest_stage(
                     link = str(entry.get("link", "")).strip()
                     title = str(entry.get("title", "")).strip() or "(untitled)"
                     body = str(entry.get("summary", "")).strip()
-                    defuddle_body, used_defuddle = parse_with_defuddle(link)
-                    if used_defuddle and defuddle_body:
-                        body = defuddle_body
+                    body, method = enrich_article_content(link, source.source_id, title, body)
+                    if method == "defuddle":
                         defuddle_enriched += 1
                     published = parse_date(
                         entry.get("published")
@@ -362,8 +596,8 @@ def ingest_stage(
                         """
                         INSERT OR IGNORE INTO articles (
                           source_id, url, canonical_url, title, title_norm, body, body_norm,
-                          published_at, fetched_at, title_hash, body_hash, simhash
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                          published_at, fetched_at, title_hash, body_hash, simhash, extraction_method
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                         """,
                         (
                             source.source_id,
@@ -378,6 +612,7 @@ def ingest_stage(
                             title_hash,
                             body_hash,
                             sh,
+                            method,
                         ),
                     )
                     if conn.total_changes > 0:

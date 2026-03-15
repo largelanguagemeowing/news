@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS articles (
   title_hash TEXT NOT NULL,
   body_hash TEXT NOT NULL,
   simhash TEXT NOT NULL,
+  extraction_method TEXT NOT NULL DEFAULT 'rss',
   UNIQUE(source_id, canonical_url, published_at)
 );
 
@@ -132,12 +133,18 @@ def _ensure_columns(conn: sqlite3.Connection) -> None:
         "source_health": {
             row["name"]
             for row in conn.execute("PRAGMA table_info(source_health)").fetchall()
+        },
+        "articles": {
+            row["name"]
+            for row in conn.execute("PRAGMA table_info(articles)").fetchall()
         }
     }
     if "auto_disabled_until" not in table_columns["source_health"]:
         conn.execute("ALTER TABLE source_health ADD COLUMN auto_disabled_until TEXT")
     if "auto_disabled_reason" not in table_columns["source_health"]:
         conn.execute("ALTER TABLE source_health ADD COLUMN auto_disabled_reason TEXT")
+    if "extraction_method" not in table_columns["articles"]:
+        conn.execute("ALTER TABLE articles ADD COLUMN extraction_method TEXT NOT NULL DEFAULT 'rss'")
 
 
 @contextmanager

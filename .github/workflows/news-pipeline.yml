@@ -7,12 +7,12 @@ on:
   workflow_dispatch:
     inputs:
       enable_backfill:
-        description: "Run Defuddle backfill for existing items"
+        description: "Run enriched backfill for existing items"
         required: false
         default: false
         type: boolean
       backfill_all:
-        description: "When backfill is enabled, process all missing/short items (ignore limit)"
+        description: "When backfill is enabled, process all items (ignore limit)"
         required: false
         default: false
         type: boolean
@@ -54,7 +54,7 @@ jobs:
       - name: Run tests
         run: uv run pytest -q
 
-      - name: Backfill Defuddle content (existing items)
+      - name: Backfill enriched content (existing items)
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_backfill }}
         env:
           DEFUDDLE_ENABLED: "1"
@@ -63,9 +63,9 @@ jobs:
           LOG_LEVEL: "INFO"
         run: |
           if [ "${{ inputs.backfill_all }}" = "true" ]; then
-            uv run python -m app.jobs.backfill_defuddle --all --only-missing
+            uv run python -m app.jobs.backfill_defuddle --all
           else
-            uv run python -m app.jobs.backfill_defuddle --limit 300 --only-missing
+            uv run python -m app.jobs.backfill_defuddle --limit 300 --only-dirty
           fi
 
       - name: Run pipeline
