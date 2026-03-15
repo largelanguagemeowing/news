@@ -1,5 +1,21 @@
 # Agent Notes
 
+## Local Development
+
+Run a local HTTP server to test the dashboard with proper path resolution:
+
+```bash
+# From the project root, serve the dashboard directory
+python3 -m http.server 8080 --directory dashboard
+
+# Or with Python 2
+python -m SimpleHTTPServer 8080
+```
+
+Then open http://localhost:8080/ in your browser.
+
+**Note:** The app uses relative paths like `../data/status/` which require an HTTP server (won't work with direct file:// URLs).
+
 ## Post-UI update step
 
 When dashboard pages or navigation are changed:
