@@ -1894,6 +1894,11 @@ a:hover {
   #feedsTable tbody td.mobile-card-link {
     display: block !important;
     padding: 0;
+    border-bottom: none;
+  }
+
+  #feedsTable tbody tr:hover {
+    background: transparent;
   }
 
   .mobile-card {
