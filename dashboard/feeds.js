@@ -547,15 +547,13 @@ async function main() {
 
   function hideLoader() {
     if (feedLoader) feedLoader.hidden = true;
-    if (feedTimeline) feedTimeline.hidden = false;
   }
 
-  function render() {
+  function ensureLayoutRenderedForCurrentState(layout) {
     const filtered = getFilteredSortedArticles();
     const currentDataKey = filteredSortedKey(state);
-    hideLoader();
 
-    if (state.layout === "timeline") {
+    if (layout === "timeline") {
       if (renderedLayoutKey.timeline !== currentDataKey) {
         renderTimeline(filtered);
         renderedLayoutKey.timeline = currentDataKey;
@@ -564,6 +562,11 @@ async function main() {
       renderRows(filtered);
       renderedLayoutKey.table = currentDataKey;
     }
+  }
+
+  function render() {
+    hideLoader();
+    ensureLayoutRenderedForCurrentState(state.layout);
 
     setLayout(state, state.layout, {
       timeline: feedTimeline,
@@ -579,6 +582,26 @@ async function main() {
     }
     updateSortUI();
     syncQueryFromState(state);
+  }
+
+  function switchLayout(nextLayout) {
+    const normalized = nextLayout === "timeline" ? "timeline" : "table";
+    if (state.layout === normalized) return;
+
+    state.layout = normalized;
+    setLayout(state, state.layout, {
+      timeline: feedTimeline,
+      tableWrap: feedTableWrap,
+      table: feedTable,
+      timelineBtn: timelineLayoutBtn,
+      tableBtn: tableLayoutBtn,
+    });
+    syncQueryFromState(state);
+
+    window.requestAnimationFrame(() => {
+      hideLoader();
+      ensureLayoutRenderedForCurrentState(state.layout);
+    });
   }
 
   function updateSortUI() {
@@ -644,14 +667,12 @@ async function main() {
   }
   if (timelineLayoutBtn) {
     timelineLayoutBtn.addEventListener("click", () => {
-      state.layout = "timeline";
-      render();
+      switchLayout("timeline");
     });
   }
   if (tableLayoutBtn) {
     tableLayoutBtn.addEventListener("click", () => {
-      state.layout = "table";
-      render();
+      switchLayout("table");
     });
   }
 

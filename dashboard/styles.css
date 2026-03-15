@@ -195,19 +195,23 @@ body.no-search {
 /* Layout switch in header */
 .header-layout-switch {
   padding: 2px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--bg);
   border: 1px solid var(--line);
-  height: 36px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
 }
 
 .header-layout-switch .layout-btn {
-  padding: 4px;
-  height: 30px;
-  width: 30px;
-  border-radius: 6px;
+  padding: 6px;
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 8px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .header-layout-switch .layout-btn svg {
@@ -1595,14 +1599,16 @@ a:hover {
   }
   
   .header-layout-switch {
-    height: 36px;
+    height: 44px;
     padding: 2px;
   }
   
   .header-layout-switch .layout-btn {
-    height: 30px;
-    width: 30px;
-    padding: 2px;
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    padding: 4px;
   }
   
   .header-layout-switch .layout-btn svg {
