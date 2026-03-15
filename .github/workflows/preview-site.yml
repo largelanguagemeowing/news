@@ -1,0 +1,52 @@
+name: preview-site
+run-name: "preview-site @ ${{ github.ref_name }}"
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [master]
+    paths:
+      - "dashboard/**"
+      - "data/status/**"
+      - "app/jobs/atom_feed.py"
+      - ".github/workflows/preview-site.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Build preview artifact
+        run: |
+          rm -rf site
+          mkdir -p site/data/status
+          cp -R dashboard/* site/
+          cp -R data/status/* site/data/status/
+          uv run python -m app.jobs.atom_feed \
+            --summary data/status/summary.json \
+            --articles data/status/articles.json \
+            --output site/feed.atom \
+            --site-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview-${{ github.event.pull_request.number || github.ref_name }}
+          path: site
+          if-no-files-found: error
