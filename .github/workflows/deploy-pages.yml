@@ -3,6 +3,11 @@ run-name: "deploy-pages @ ${{ github.ref_name }}"
 
 on:
   workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - "dashboard/**"
+      - ".github/workflows/deploy-pages.yml"
   workflow_run:
     workflows: ["news-pipeline"]
     types:
