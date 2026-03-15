@@ -3,54 +3,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Health Dashboard | News Aggregator</title>
-    <meta name="description" content="Monitor source health, incident state, run timelines, and event quality in one dashboard." />
+    <title>RSS Feed | News Aggregator</title>
+    <meta name="description" content="Subscribe to the News Aggregator RSS feed." />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0f6b8a" />
-    <link rel="canonical" href="https://largelanguagemeowing.github.io/news/health.html" />
+    <link rel="canonical" href="https://largelanguagemeowing.github.io/news/rss/" />
     <link rel="alternate" type="application/atom+xml" title="News Aggregator Atom Feed" href="https://largelanguagemeowing.github.io/news/feed.atom" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="News Aggregator" />
-    <meta property="og:title" content="News Aggregator | Health Dashboard" />
-    <meta property="og:description" content="Track feed uptime, incidents, and processing run reliability." />
-    <meta property="og:url" content="https://largelanguagemeowing.github.io/news/health.html" />
-    <meta property="og:image" content="https://largelanguagemeowing.github.io/news/meta/og-health.png" />
+    <meta property="og:title" content="News Aggregator | RSS Feed" />
+    <meta property="og:description" content="Subscribe to the News Aggregator RSS feed." />
+    <meta property="og:url" content="https://largelanguagemeowing.github.io/news/rss/" />
+    <meta property="og:image" content="https://largelanguagemeowing.github.io/news/meta/og-rss.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="News Aggregator | Health Dashboard" />
-    <meta name="twitter:description" content="Track feed uptime, incidents, and processing run reliability." />
-    <meta name="twitter:image" content="https://largelanguagemeowing.github.io/news/meta/og-health.png" />
+    <meta name="twitter:title" content="News Aggregator | RSS Feed" />
+    <meta name="twitter:description" content="Subscribe to the News Aggregator RSS feed." />
+    <meta name="twitter:image" content="https://largelanguagemeowing.github.io/news/meta/og-rss.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./app.js"></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../app.js"></script>
   </head>
   <body class="no-search">
     <!-- Fixed Header Bar -->
     <header class="top-bar">
       <div class="top-bar-inner">
-        <a href="./index.html" class="brand">
+        <a href="../feed/" class="brand">
           <div class="brand-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M18 18h-8"/><path d="M18 10h-8"/></svg>
           </div>
-          <span class="brand-text">Health Dashboard</span>
+          <span class="brand-text">RSS Feed</span>
         </a>
 
         <nav class="main-nav desktop-nav" aria-label="Main navigation">
-          <a class="nav-item" href="./index.html">
+          <a class="nav-item" href="../feed/">
             <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>
             <span>Feed</span>
           </a>
-          <a class="nav-item active" href="./health.html">
+          <a class="nav-item" href="../health/">
             <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
             <span>Health</span>
           </a>
-          <a class="nav-item" href="./tags.html">
+          <a class="nav-item" href="../tags/">
             <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
             <span>Tags</span>
           </a>
-          <a class="nav-item" href="./rss.html">
-            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          <a class="nav-item active" href="./">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
             <span>RSS</span>
           </a>
         </nav>
@@ -64,78 +64,101 @@
       </div>
     </header>
 
+    <!-- Main Content -->
+    <main class="shell">
+      <div class="panel rss-panel">
+        <div class="rss-header">
+          <div class="rss-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          </div>
+          <div class="rss-title-wrap">
+            <h1>Subscribe to the Feed</h1>
+            <p class="rss-subtitle">Get the latest articles delivered to your feed reader.</p>
+          </div>
+        </div>
+
+        <div class="rss-section">
+          <h2>Feed URL</h2>
+          <div class="feed-url-wrap">
+            <code class="feed-url" id="feedUrl">https://largelanguagemeowing.github.io/news/feed.atom</code>
+            <button class="copy-btn" id="copyBtn" type="button">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <span class="copy-text">Copy</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="rss-section">
+          <h2>Setup Instructions</h2>
+          <ol class="setup-steps">
+            <li>Copy the feed URL above.</li>
+            <li>Open your feed reader (e.g., Feedly, Inoreader, NetNewsWire).</li>
+            <li>Add a new subscription and paste the URL.</li>
+          </ol>
+        </div>
+
+        <div class="rss-section">
+          <h2>Recommended Readers</h2>
+          <ul class="reader-list">
+            <li><a href="https://feedly.com" target="_blank" rel="noreferrer">Feedly</a> — Web, iOS, Android</li>
+            <li><a href="https://www.inoreader.com" target="_blank" rel="noreferrer">Inoreader</a> — Web, iOS, Android</li>
+            <li><a href="https://netnewswire.com" target="_blank" rel="noreferrer">NetNewsWire</a> — macOS, iOS</li>
+            <li><a href="https://www.mozilla.org/firefox/" target="_blank" rel="noreferrer">Firefox Live Bookmarks</a> — Built into Firefox</li>
+          </ul>
+        </div>
+
+        <div class="rss-meta">
+          <p>Format: Atom 1.0</p>
+        </div>
+      </div>
+    </main>
+    
     <!-- Mobile Bottom Navigation -->
     <nav class="main-nav mobile-nav" aria-label="Mobile navigation">
-      <a class="nav-item" href="./index.html">
+      <a class="nav-item" href="../feed/">
         <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>
         <span>Feed</span>
       </a>
-      <a class="nav-item active" href="./health.html">
+      <a class="nav-item" href="../health/">
         <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
         <span>Health</span>
       </a>
-      <a class="nav-item" href="./tags.html">
+      <a class="nav-item" href="../tags/">
         <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
         <span>Tags</span>
       </a>
-      <a class="nav-item" href="./rss.html">
-        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+      <a class="nav-item active" href="./">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
         <span>RSS</span>
       </a>
     </nav>
-
-    <!-- Main Content -->
-    <main class="shell">
-      <section class="grid metrics" id="metrics"></section>
-
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          <span>Source Health</span>
-        </h2>
-        <div class="table-wrap">
-          <table id="sourcesTable">
-            <thead>
-              <tr>
-                <th>Source</th>
-                <th>Status</th>
-                <th>Last Success</th>
-                <th>Failures</th>
-                <th>Latency</th>
-                <th>History</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-          <span>Open Incidents</span>
-        </h2>
-        <ul id="incidentsList" class="cards"></ul>
-      </section>
-
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Recent Runs</span>
-        </h2>
-        <ul id="runsList" class="cards"></ul>
-      </section>
-
-      <section class="panel">
-        <h2>
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span>Recent Events</span>
-        </h2>
-        <ul id="eventsList" class="cards"></ul>
-      </section>
-    </main>
     
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-    <script src="./health.js?v=2"></script>
+    <script>
+      // Copy to clipboard functionality
+      document.getElementById('copyBtn').addEventListener('click', async function() {
+        const feedUrl = document.getElementById('feedUrl').textContent;
+        const copyText = this.querySelector('.copy-text');
+        const copyIcon = this.querySelector('.copy-icon');
+        
+        try {
+          await navigator.clipboard.writeText(feedUrl);
+          copyText.textContent = 'Copied!';
+          copyIcon.innerHTML = '<polyline points="20 6 9 17 4 12"/>';
+          copyIcon.setAttribute('viewBox', '0 0 24 24');
+          copyIcon.innerHTML = '<polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          
+          setTimeout(() => {
+            copyText.textContent = 'Copy';
+            copyIcon.innerHTML = '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>';
+          }, 2000);
+        } catch (err) {
+          copyText.textContent = 'Failed';
+          setTimeout(() => {
+            copyText.textContent = 'Copy';
+          }, 2000);
+        }
+      });
+    </script>
   </body>
 </html>
