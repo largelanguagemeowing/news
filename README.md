@@ -27,3 +27,13 @@ Example local usage:
 npm install -g defuddle@0.13.0
 DEFUDDLE_ENABLED=1 uv run python -m app.jobs.pipeline
 ```
+
+Backfill already-fetched articles:
+
+```bash
+# Preview impact only
+DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --dry-run
+
+# Write updates for short/missing bodies
+DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --only-missing
+```
