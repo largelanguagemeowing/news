@@ -16,6 +16,16 @@ on:
         required: false
         default: false
         type: boolean
+      backfill_source:
+        description: "Filter backfill to specific source (e.g., openai-blog, cursor-blog)"
+        required: false
+        default: ""
+        type: string
+      backfill_method:
+        description: "Force specific extraction method (youtube, trafilatura, markdown_new, jina, defuddle)"
+        required: false
+        default: ""
+        type: string
 
 concurrency:
   group: news-pipeline-single-writer
@@ -28,7 +38,6 @@ permissions:
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,10 +71,36 @@ jobs:
           DEFUDDLE_MAX_CHARS: "12000"
           LOG_LEVEL: "INFO"
         run: |
+          CMD="uv run python -m app.jobs.backfill_defuddle"
+          
           if [ "${{ inputs.backfill_all }}" = "true" ]; then
-            uv run python -m app.jobs.backfill_defuddle --all
+            CMD="$CMD --all"
           else
-            uv run python -m app.jobs.backfill_defuddle --limit 300 --only-dirty
+            CMD="$CMD --limit 300 --only-dirty"
+          fi
+          
+          if [ -n "${{ inputs.backfill_source }}" ]; then
+            CMD="$CMD --source-id ${{ inputs.backfill_source }}"
+          fi
+          
+          if [ -n "${{ inputs.backfill_method }}" ]; then
+            CMD="$CMD --only-method ${{ inputs.backfill_method }}"
+          fi
+          
+          echo "Running: $CMD"
+          $CMD
+
+      - name: Commit backfill data changes
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.enable_backfill }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.db data/status
+          if git diff --cached --quiet; then
+            echo "No backfill data changes to commit."
+          else
+            git commit -m "chore(data): save backfill progress"
+            git push
           fi
 
       - name: Run pipeline
@@ -78,13 +113,14 @@ jobs:
           LOG_LEVEL: "INFO"
         run: uv run python -m app.jobs.pipeline
 
-      - name: Commit data changes
+      - name: Commit pipeline data changes
+        if: ${{ always() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news.db data/status
           if git diff --cached --quiet; then
-            echo "No data changes to commit."
+            echo "No pipeline data changes to commit."
           else
             git commit -m "chore(data): update pipeline artifacts"
             git push

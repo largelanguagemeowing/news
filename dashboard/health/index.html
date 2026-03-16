@@ -55,6 +55,10 @@
             <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
             <span>RSS</span>
           </a>
+          <a class="nav-item" href="../db/">
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+            <span>DB</span>
+          </a>
         </nav>
         
         <div class="header-actions">
@@ -83,6 +87,10 @@
       <a class="nav-item" href="../rss/">
         <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
         <span>RSS</span>
+      </a>
+      <a class="nav-item" href="../db/">
+        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+        <span>DB</span>
       </a>
     </nav>
 
@@ -190,6 +198,25 @@
       <!-- Actual Content (hidden initially) -->
       <div id="healthContent" hidden>
         <section class="grid metrics" id="metrics"></section>
+
+        <!-- DB Explorer Link -->
+        <section class="panel" style="background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <h2 style="margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                <span>Database Explorer</span>
+              </h2>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 14px;">
+                Browse and search all database tables with WASM SQLite. View articles, sources, events, and more with filtering and export capabilities.
+              </p>
+            </div>
+            <a href="../db/" class="btn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--accent); color: white; border-radius: 8px; text-decoration: none; font-weight: 500; white-space: nowrap;">
+              <span>Open DB Explorer</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </section>
 
         <section class="panel">
           <h2>

@@ -19,28 +19,114 @@ logging.basicConfig(
 logger = logging.getLogger("news.backfill")
 
 
+def _enrich_with_rate_limit(
+    url: str,
+    source_id: str,
+    title: str,
+    body: str,
+    max_markdown_new: int,
+    markdown_new_used: int,
+    only_method: str | None = None,
+) -> tuple[str, str, int]:
+    """Enrich article with rate limit awareness for markdown.new.
+    
+    Args:
+        only_method: If set, only try this method. If it fails/rate-limited, return RSS without fallback.
+    
+    Returns: (body, method, rate_limit_remaining)
+    """
+    current_body = str(body or "").strip()
+    rate_limit_remaining = -1
+    
+    # YouTube path (always check first unless only_method is set)
+    if only_method is None or only_method == "youtube":
+        if pipeline.is_youtube_url(url) or source_id in pipeline.YOUTUBE_SOURCE_IDS:
+            youtube_meta = pipeline.extract_youtube_metadata(url, title, current_body)
+            return pipeline.build_youtube_body(youtube_meta, current_body), "youtube", -1
+        if only_method == "youtube":
+            return current_body, "rss", -1
+    
+    # Try Trafilatura
+    if only_method is None or only_method == "trafilatura":
+        trafilatura_body, used = pipeline.parse_with_trafilatura(url)
+        if used and trafilatura_body:
+            return trafilatura_body, "trafilatura", -1
+        if only_method == "trafilatura":
+            return current_body, "rss", -1
+    
+    # Try markdown.new
+    if only_method is None or only_method == "markdown_new":
+        if markdown_new_used < max_markdown_new:
+            markdown_body, used, rate_limit_remaining = pipeline.parse_with_markdown_new(url)
+            if used and markdown_body:
+                return markdown_body, "markdown_new", rate_limit_remaining
+            # If rate limited (429), stop processing markdown.new entirely
+            if rate_limit_remaining == 0:
+                logger.warning("markdown.new rate limit hit (429), stopping markdown.new processing")
+                return current_body, "rss", 0
+            if only_method == "markdown_new":
+                logger.debug("markdown.new failed for url=%s, skipping (no fallback)", url)
+                return current_body, "rss", rate_limit_remaining
+        else:
+            logger.debug("markdown.new rate limit reached, skipping for url=%s", url)
+            if only_method == "markdown_new":
+                return current_body, "rss", 0
+    
+    # Try jina.ai
+    if only_method is None or only_method == "jina":
+        jina_body, used = pipeline.parse_with_jina_ai(url)
+        if used and jina_body:
+            return jina_body, "jina", -1
+        if only_method == "jina":
+            return current_body, "rss", -1
+    
+    # Try Defuddle
+    if only_method is None or only_method == "defuddle":
+        defuddle_body, used = pipeline.parse_with_defuddle(url)
+        if used and defuddle_body:
+            return defuddle_body, "defuddle", -1
+        if only_method == "defuddle":
+            return current_body, "rss", -1
+    
+    # Fall back to current body
+    return current_body, "rss", rate_limit_remaining
+
+
 def backfill_articles(
     limit: int,
     only_missing: bool = False,
     only_dirty: bool = False,
     dry_run: bool = False,
     all_items: bool = False,
+    skip_enriched: bool = False,
+    max_markdown_new: int = 400,  # Stay under 500/day limit
+    only_method: str | None = None,  # Force specific method only
+    source_id: str | None = None,  # Filter to specific source
 ) -> dict[str, int | bool]:
     started_at = time.time()
     conn = get_connection()
     init_db(conn)
 
     where_missing = "AND (a.body IS NULL OR TRIM(a.body) = '' OR LENGTH(a.body) < 120)" if only_missing else ""
+    where_skip_enriched = "AND (a.extraction_method IS NULL OR a.extraction_method = 'rss')" if skip_enriched else ""
+    where_source = "AND a.source_id = ?" if source_id else ""
     limit_clause = "" if all_items else "LIMIT ?"
     query = f"""
-        SELECT a.article_id, a.url, a.title, a.body, a.source_id
+        SELECT a.article_id, a.url, a.title, a.body, a.source_id, a.extraction_method
         FROM articles a
         WHERE TRIM(a.url) != ''
         {where_missing}
+        {where_skip_enriched}
+        {where_source}
         ORDER BY a.published_at DESC
         {limit_clause}
     """
-    params: tuple[int, ...] = () if all_items else (max(1, limit),)
+    params_list: list[str | int] = []
+    if source_id:
+        params_list.append(source_id)
+    if not all_items:
+        params_list.append(max(1, limit))
+    params = tuple(params_list) if params_list else ()
     rows = conn.execute(query, params).fetchall()
 
     if only_dirty:
@@ -48,12 +134,16 @@ def backfill_articles(
 
     total_rows = len(rows)
     logger.info(
-        "Backfill started candidates=%d only_missing=%s only_dirty=%s all_items=%s dry_run=%s",
+        "Backfill started candidates=%d only_missing=%s only_dirty=%s all_items=%s dry_run=%s skip_enriched=%s max_markdown_new=%d only_method=%s source_id=%s",
         total_rows,
         only_missing,
         only_dirty,
         all_items,
         dry_run,
+        skip_enriched,
+        max_markdown_new,
+        only_method,
+        source_id,
     )
 
     attempted = 0
@@ -61,17 +151,47 @@ def backfill_articles(
     updated = 0
     unchanged = 0
     misses = 0
+    markdown_new_used = 0
+    markdown_new_rate_limited = False  # Set to True when 429 received
+    method_counts: dict[str, int] = {}
     updates: list[tuple[str, str, str, str, str, int]] = []
 
     progress_interval = max(1, total_rows // 10) if total_rows else 1
     for row in rows:
         attempted += 1
-        new_body, method = pipeline.enrich_article_content(
-            str(row["url"] or ""),
-            str(row["source_id"] or ""),
-            str(row["title"] or ""),
-            str(row["body"] or ""),
+        url = str(row["url"] or "")
+        source_id = str(row["source_id"] or "")
+        title = str(row["title"] or "")
+        body = str(row["body"] or "")
+        
+        # Check if already enriched and skip_enriched is enabled
+        current_method = str(row["extraction_method"] or "rss")
+        if skip_enriched and current_method != "rss":
+            logger.debug("Skipping already enriched article_id=%s method=%s", row["article_id"], current_method)
+            unchanged += 1
+            continue
+        
+        # Skip if markdown.new rate limited and only_method is markdown_new
+        if markdown_new_rate_limited and only_method == "markdown_new":
+            logger.debug("Skipping article_id=%s due to markdown.new rate limit", row["article_id"])
+            unchanged += 1
+            continue
+        
+        # Try enrichment with rate limit awareness
+        new_body, method, rate_limit_remaining = _enrich_with_rate_limit(
+            url, source_id, title, body, max_markdown_new, markdown_new_used, only_method
         )
+        
+        # Check if rate limited
+        if rate_limit_remaining == 0:
+            markdown_new_rate_limited = True
+            logger.warning("markdown.new rate limit hit, stopping further markdown.new attempts")
+        
+        if method == "markdown_new":
+            markdown_new_used += 1
+        
+        method_counts[method] = method_counts.get(method, 0) + 1
+        
         if method != "rss" and new_body:
             enriched += 1
         elif not new_body:
@@ -89,14 +209,18 @@ def backfill_articles(
             updates.append((new_body, body_norm, body_hash, sh, method, int(row["article_id"])))
 
         if attempted % progress_interval == 0 or attempted == total_rows:
+            method_summary = ", ".join(f"{k}={v}" for k, v in sorted(method_counts.items()))
+            rate_limit_status = "RATE_LIMITED" if markdown_new_rate_limited else f"{markdown_new_used}/{max_markdown_new}"
             logger.info(
-                "Backfill progress attempted=%d/%d enriched=%d queued_updates=%d unchanged=%d misses=%d",
+                "Backfill progress attempted=%d/%d enriched=%d queued_updates=%d unchanged=%d misses=%d markdown_new=%s methods=%s",
                 attempted,
                 total_rows,
                 enriched,
                 len(updates),
                 unchanged,
                 misses,
+                rate_limit_status,
+                method_summary,
             )
 
     if not dry_run and updates:
@@ -112,14 +236,18 @@ def backfill_articles(
         updated = len(updates)
 
     duration_ms = round((time.time() - started_at) * 1000, 2)
+    method_summary = ", ".join(f"{k}={v}" for k, v in sorted(method_counts.items()))
+    rate_limit_status = "RATE_LIMITED" if markdown_new_rate_limited else f"{markdown_new_used}/{max_markdown_new}"
     logger.info(
-        "Backfill finished attempted=%d enriched=%d updated=%d unchanged=%d misses=%d duration_ms=%.2f",
+        "Backfill finished attempted=%d enriched=%d updated=%d unchanged=%d misses=%d markdown_new=%s duration_ms=%.2f methods=%s",
         attempted,
         enriched,
         updated,
         unchanged,
         misses,
+        rate_limit_status,
         duration_ms,
+        method_summary,
     )
 
     conn.close()
@@ -129,11 +257,18 @@ def backfill_articles(
         "only_missing": only_missing,
         "only_dirty": only_dirty,
         "all_items": all_items,
+        "skip_enriched": skip_enriched,
+        "only_method": only_method,
+        "source_id": source_id,
         "attempted": attempted,
         "enriched": enriched,
         "updated": updated,
         "unchanged": unchanged,
         "misses": misses,
+        "markdown_new_used": markdown_new_used,
+        "markdown_new_limit": max_markdown_new,
+        "markdown_new_rate_limited": markdown_new_rate_limited,
+        "method_counts": method_counts,
         "duration_ms": duration_ms,
     }
 
@@ -162,19 +297,47 @@ def main() -> int:
         action="store_true",
         help="Enable defuddle without setting DEFUDDLE_ENABLED env var",
     )
+    parser.add_argument(
+        "--skip-enriched",
+        action="store_true",
+        help="Skip articles already enriched (extraction_method != rss)",
+    )
+    parser.add_argument(
+        "--max-markdown-new",
+        type=int,
+        default=400,
+        help="Maximum markdown.new requests (default 400, stay under 500/day limit)",
+    )
+    parser.add_argument(
+        "--only-method",
+        type=str,
+        choices=["youtube", "trafilatura", "markdown_new", "jina", "defuddle"],
+        default=None,
+        help="Only use specified extraction method, skip if it fails (no fallback)",
+    )
+    parser.add_argument(
+        "--source-id",
+        type=str,
+        default=None,
+        help="Filter to specific source (e.g., openai-blog, cursor-blog)",
+    )
     args = parser.parse_args()
 
     if args.enable_defuddle:
         pipeline.DEFUDDLE_ENABLED = True
 
     logger.info(
-        "Backfill CLI invoked limit=%d all=%s only_missing=%s only_dirty=%s dry_run=%s defuddle_enabled=%s",
+        "Backfill CLI invoked limit=%d all=%s only_missing=%s only_dirty=%s dry_run=%s defuddle_enabled=%s skip_enriched=%s max_markdown_new=%d only_method=%s source_id=%s",
         args.limit,
         args.all,
         args.only_missing,
         args.only_dirty,
         args.dry_run,
         pipeline.DEFUDDLE_ENABLED,
+        args.skip_enriched,
+        args.max_markdown_new,
+        args.only_method,
+        args.source_id,
     )
     metrics = backfill_articles(
         limit=args.limit,
@@ -182,6 +345,10 @@ def main() -> int:
         only_dirty=args.only_dirty,
         dry_run=args.dry_run,
         all_items=args.all,
+        skip_enriched=args.skip_enriched,
+        max_markdown_new=args.max_markdown_new,
+        only_method=args.only_method,
+        source_id=args.source_id,
     )
     print(json.dumps(metrics))
     return 0

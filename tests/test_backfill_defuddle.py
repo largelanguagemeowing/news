@@ -69,7 +69,7 @@ def test_backfill_updates_existing_article(monkeypatch) -> None:
     monkeypatch.setattr(
         pipeline,
         "parse_with_markdown_new",
-        lambda _url: (None, False),
+        lambda _url: (None, False, -1),
     )
     monkeypatch.setattr(
         pipeline,
@@ -104,7 +104,7 @@ def test_backfill_dry_run_does_not_write(monkeypatch) -> None:
     monkeypatch.setattr(
         pipeline,
         "parse_with_markdown_new",
-        lambda _url: (None, False),
+        lambda _url: (None, False, -1),
     )
     monkeypatch.setattr(
         pipeline,
@@ -140,7 +140,7 @@ def test_backfill_all_items_ignores_limit(monkeypatch) -> None:
     monkeypatch.setattr(
         pipeline,
         "parse_with_markdown_new",
-        lambda _url: (None, False),
+        lambda _url: (None, False, -1),
     )
     monkeypatch.setattr(
         pipeline,

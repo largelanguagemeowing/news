@@ -503,10 +503,14 @@ def parse_with_jina_ai(url: str) -> tuple[str | None, bool]:
         return None, False
 
 
-def parse_with_markdown_new(url: str) -> tuple[str | None, bool]:
-    """Use markdown.new as a fallback for blocked sites."""
+def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int]:
+    """Use markdown.new as a fallback for blocked sites.
+    
+    Returns: (content, success, rate_limit_remaining)
+    rate_limit_remaining: -1 if unknown, 0 if rate limited (429), otherwise the count from header
+    """
     if not url or is_youtube_url(url):
-        return None, False
+        return None, False, -1
     try:
         response = requests.post(
             "https://markdown.new/",
@@ -514,22 +518,36 @@ def parse_with_markdown_new(url: str) -> tuple[str | None, bool]:
             timeout=REQUEST_TIMEOUT_SECONDS,
             headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
         )
+        
+        # Check rate limit header
+        rate_limit_remaining = -1
+        if "x-rate-limit-remaining" in response.headers:
+            try:
+                rate_limit_remaining = int(response.headers["x-rate-limit-remaining"])
+            except (ValueError, TypeError):
+                pass
+        
+        # Handle rate limit (429)
+        if response.status_code == 429:
+            logger.warning("markdown.new rate limit exceeded (429) for url=%s", url)
+            return None, False, 0
+        
         response.raise_for_status()
         payload = response.json()
         if not payload.get("success"):
-            return None, False
+            return None, False, rate_limit_remaining
         content = payload.get("content", "").strip()
         if not content or len(content) < 100:
-            return None, False
+            return None, False, rate_limit_remaining
         # Remove frontmatter if present
         if content.startswith("---"):
             parts = content.split("---", 2)
             if len(parts) >= 3:
                 content = parts[2].strip()
-        return truncate_for_storage(content), True
+        return truncate_for_storage(content), True, rate_limit_remaining
     except Exception as exc:
         logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
-        return None, False
+        return None, False, -1
 
 
 def is_probably_dirty_body(body: str) -> bool:
@@ -641,6 +659,7 @@ def ingest_stage(
                         )
                     source.name = feed_title
             source_inserted = 0
+            source_extraction_methods: dict[str, int] = {}
             latest_item_at: str | None = None
             with transaction(conn):
                 for entry in feed.entries:
@@ -648,6 +667,7 @@ def ingest_stage(
                     title = str(entry.get("title", "")).strip() or "(untitled)"
                     body = str(entry.get("summary", "")).strip()
                     body, method = enrich_article_content(link, source.source_id, title, body)
+                    source_extraction_methods[method] = source_extraction_methods.get(method, 0) + 1
                     if method == "defuddle":
                         defuddle_enriched += 1
                     published = parse_date(
@@ -714,12 +734,24 @@ def ingest_stage(
                     (source.source_id, run_id, utc_now_iso(), latency_ms),
                 )
             inserted += source_inserted
+            extraction_summary = ", ".join(f"{k}={v}" for k, v in sorted(source_extraction_methods.items()))
+            # Log slow sources (>60s) for performance monitoring
+            if latency_ms > 60000:
+                logger.warning(
+                    "SLOW SOURCE source=%s latency_ms=%.2f entries=%d methods=%s",
+                    source.source_id,
+                    latency_ms,
+                    len(feed.entries),
+                    extraction_summary,
+                )
             logger.info(
-                "Source complete source=%s inserted=%d latency_ms=%.2f latest_item_at=%s",
+                "Source complete source=%s inserted=%d entries=%d latency_ms=%.2f latest_item_at=%s methods=%s",
                 source.source_id,
                 source_inserted,
+                len(feed.entries),
                 latency_ms,
                 latest_item_at,
+                extraction_summary,
             )
             sync_incident_resolve(
                 conn,
