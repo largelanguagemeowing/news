@@ -1,8 +1,17 @@
-// DB Explorer - WASM SQLite interface
-const DB_URL = '../data/news.db';
+// DB Explorer - JSON-backed interface for all exported DB tables
 const PAGE_SIZE = 50;
 
-let db = null;
+const TABLE_TO_STATUS_FILE = {
+  articles: '../data/status/articles.json',
+  sources: '../data/status/sources.json',
+  source_health: '../data/status/source_health.json',
+  events: '../data/status/events.json',
+  event_members: '../data/status/event_members.json',
+  pipeline_runs: '../data/status/runs.json',
+  source_checks: '../data/status/source_checks.json',
+  incidents: '../data/status/incidents.json',
+};
+
 let currentTable = 'articles';
 let currentPage = 1;
 let totalRows = 0;
@@ -31,245 +40,247 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
   loadBtn.addEventListener('click', loadDatabase);
   exportBtn.addEventListener('click', exportCSV);
-  tableSelect.addEventListener('change', (e) => {
+
+  tableSelect.addEventListener('change', async (e) => {
     currentTable = e.target.value;
     currentPage = 1;
-    if (allData.length) loadTable();
+    await loadCurrentTableData();
   });
+
   searchInput.addEventListener('input', debounce(() => {
     currentPage = 1;
-    if (allData.length) loadTable();
+    applyFiltersAndRender();
   }, 300));
+
   sourceFilter.addEventListener('change', () => {
     currentPage = 1;
-    if (allData.length) loadTable();
+    applyFiltersAndRender();
   });
+
   methodFilter.addEventListener('change', () => {
     currentPage = 1;
-    if (allData.length) loadTable();
+    applyFiltersAndRender();
   });
 }
 
-// Load database
 async function loadDatabase() {
   showLoading(true);
   hideError();
   loadBtn.disabled = true;
-  
+
   try {
-    // Try loading JSON data first (fallback approach)
-    await loadJSONData();
+    await loadCurrentTableData();
+    exportBtn.disabled = false;
   } catch (err) {
     console.error('Data load error:', err);
     showError(`Error loading data: ${err.message}`);
     showEmpty();
   }
-  
+
   showLoading(false);
   loadBtn.disabled = false;
 }
 
-// Load JSON data from status endpoint
-async function loadJSONData() {
-  const response = await fetch('../data/status/articles.json');
-  if (!response.ok) {
-    throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+async function loadCurrentTableData() {
+  const file = TABLE_TO_STATUS_FILE[currentTable];
+  if (!file) {
+    throw new Error(`Unknown table: ${currentTable}`);
   }
-  
-  allData = await response.json();
+
+  showLoading(true);
+  hideError();
+
+  const response = await fetch(file);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${file}: ${response.status} ${response.statusText}`);
+  }
+
+  const payload = await response.json();
+  allData = Array.isArray(payload) ? payload : [];
   currentData = [...allData];
   totalRows = allData.length;
-  
+
   populateSourceFilter(allData);
-  loadTable();
-  exportBtn.disabled = false;
-  
-  showSuccess(`Loaded ${allData.length} articles`);
+  updateFilterVisibility();
+  applyFiltersAndRender();
+  showLoading(false);
 }
 
-// Load and filter table data
-function loadTable() {
+function updateFilterVisibility() {
+  const hasSource = allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'source_id'));
+  const hasMethod = allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'extraction_method'));
+
+  sourceFilter.disabled = !hasSource;
+  methodFilter.disabled = !hasMethod;
+
+  if (!hasSource) sourceFilter.value = '';
+  if (!hasMethod) methodFilter.value = '';
+}
+
+function applyFiltersAndRender() {
   const search = searchInput.value.trim().toLowerCase();
   const source = sourceFilter.value;
   const method = methodFilter.value;
-  
-  // Filter data
+
   let filtered = allData;
-  
+
   if (search) {
-    filtered = filtered.filter(row => {
-      return Object.values(row).some(val => 
-        String(val).toLowerCase().includes(search)
-      );
-    });
+    filtered = filtered.filter((row) =>
+      Object.values(row).some((val) => String(val ?? '').toLowerCase().includes(search))
+    );
   }
-  
+
   if (source) {
-    filtered = filtered.filter(row => row.source_id === source);
+    filtered = filtered.filter((row) => row.source_id === source);
   }
-  
+
   if (method) {
-    filtered = filtered.filter(row => (row.extraction_method || 'rss') === method);
+    filtered = filtered.filter((row) => (row.extraction_method || 'rss') === method);
   }
-  
+
   currentData = filtered;
   totalRows = filtered.length;
-  
-  // Paginate
+
   const start = (currentPage - 1) * PAGE_SIZE;
   const paginated = filtered.slice(start, start + PAGE_SIZE);
-  
+
   renderData(paginated);
   renderPagination();
   updateStats();
 }
 
-// Render data table
 function renderData(data) {
   if (!data.length) {
     tableContainer.style.display = 'none';
     emptyState.style.display = 'block';
     return;
   }
-  
+
   tableContainer.style.display = 'block';
   emptyState.style.display = 'none';
-  
-  // Get columns
-  const columns = Object.keys(data[0]).filter(col => !col.startsWith('_'));
-  
-  // Render header
+
+  const columns = Object.keys(data[0]).filter((col) => !col.startsWith('_'));
+
   tableHead.innerHTML = `
     <tr>
-      ${columns.map(col => `<th>${escapeHtml(col)}</th>`).join('')}
+      ${columns.map((col) => `<th>${escapeHtml(col)}</th>`).join('')}
     </tr>
   `;
-  
-  // Render body
-  tableBody.innerHTML = data.map(row => {
-    return `
+
+  tableBody.innerHTML = data
+    .map((row) => {
+      return `
       <tr>
-        ${columns.map(col => {
-          let val = row[col];
-          let cellContent = '';
-          
-          // Special formatting for certain columns
-          if (col === 'extraction_method') {
-            const method = val || 'rss';
-            const methodClass = `method-${method}`;
-            cellContent = `<span class="method-badge ${methodClass}">${escapeHtml(method)}</span>`;
-          } else if (col === 'body') {
-            const text = String(val || '').substring(0, 150);
-            cellContent = `<span class="truncate-text" title="${escapeHtml(String(val || '').substring(0, 500))}">${escapeHtml(text)}${val && val.length > 150 ? '...' : ''}</span>`;
-          } else if (col === 'title') {
-            const text = String(val || '').substring(0, 100);
-            cellContent = `<span title="${escapeHtml(String(val || ''))}">${escapeHtml(text)}${val && val.length > 100 ? '...' : ''}</span>`;
-          } else if (col === 'url') {
-            const display = String(val || '').substring(0, 40);
-            cellContent = `<a href="${escapeHtml(String(val))}" target="_blank" rel="noopener" title="${escapeHtml(String(val))}">${escapeHtml(display)}...</a>`;
-          } else if (col === 'published_at' || col === 'fetched_at') {
-            cellContent = escapeHtml(formatDate(val));
-          } else {
-            const text = String(val || '').substring(0, 100);
-            cellContent = escapeHtml(text);
-          }
-          
-          return `<td>${cellContent}</td>`;
-        }).join('')}
+        ${columns
+          .map((col) => {
+            const val = row[col];
+            let cellContent = '';
+
+            if (col === 'extraction_method') {
+              const m = val || 'rss';
+              cellContent = `<span class="method-badge method-${escapeHtml(m)}">${escapeHtml(m)}</span>`;
+            } else if (typeof val === 'object' && val !== null) {
+              const text = JSON.stringify(val);
+              const short = text.length > 120 ? `${text.slice(0, 120)}...` : text;
+              cellContent = `<span title="${escapeHtml(text)}">${escapeHtml(short)}</span>`;
+            } else if (col.includes('_at') || col.endsWith('date') || col.endsWith('time')) {
+              cellContent = escapeHtml(formatDate(val));
+            } else if (col === 'url' && val) {
+              const href = String(val);
+              const display = href.length > 60 ? `${href.slice(0, 60)}...` : href;
+              cellContent = `<a href="${escapeHtml(href)}" target="_blank" rel="noopener" title="${escapeHtml(href)}">${escapeHtml(display)}</a>`;
+            } else {
+              const text = String(val ?? '');
+              const short = text.length > 150 ? `${text.slice(0, 150)}...` : text;
+              cellContent = `<span title="${escapeHtml(text)}">${escapeHtml(short)}</span>`;
+            }
+
+            return `<td>${cellContent}</td>`;
+          })
+          .join('')}
       </tr>
     `;
-  }).join('');
+    })
+    .join('');
 }
 
-// Render pagination
 function renderPagination() {
   const totalPages = Math.ceil(totalRows / PAGE_SIZE);
-  
+
   if (totalPages <= 1) {
     pagination.innerHTML = `<span class="page-info">Showing ${totalRows} rows</span>`;
     return;
   }
-  
-  let html = '';
-  
-  // Previous button
-  html += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">← Prev</button>`;
-  
-  // Page info
+
   const startRow = (currentPage - 1) * PAGE_SIZE + 1;
   const endRow = Math.min(currentPage * PAGE_SIZE, totalRows);
-  html += `<span class="page-info">${startRow}-${endRow} of ${totalRows} rows (Page ${currentPage}/${totalPages})</span>`;
-  
-  // Next button
-  html += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Next →</button>`;
-  
-  pagination.innerHTML = html;
-}
 
-// Change page
-window.changePage = function(page) {
-  currentPage = page;
-  loadTable();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-// Update stats display
-function updateStats() {
-  const methodCounts = {};
-  allData.forEach(row => {
-    const method = row.extraction_method || 'rss';
-    methodCounts[method] = (methodCounts[method] || 0) + 1;
-  });
-  
-  const methodSummary = Object.entries(methodCounts)
-    .sort((a, b) => b[1] - a[1])
-    .map(([method, count]) => `${method}: ${count}`)
-    .join(' | ');
-  
-  const sourceCounts = {};
-  allData.forEach(row => {
-    const source = row.source_id || 'unknown';
-    sourceCounts[source] = (sourceCounts[source] || 0) + 1;
-  });
-  
-  dbStats.innerHTML = `
-    <span>Total: ${allData.length} articles</span>
-    <span>Showing: ${currentData.length} filtered</span>
-    <span>Sources: ${Object.keys(sourceCounts).length}</span>
-    <span style="margin-left: auto;">${methodSummary}</span>
+  pagination.innerHTML = `
+    <button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">← Prev</button>
+    <span class="page-info">${startRow}-${endRow} of ${totalRows} rows (Page ${currentPage}/${totalPages})</span>
+    <button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Next →</button>
   `;
 }
 
-// Populate source filter dropdown
-function populateSourceFilter(data) {
-  const sources = [...new Set(data.map(row => row.source_id))].sort();
-  sourceFilter.innerHTML = '<option value="">All Sources</option>' +
-    sources.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+window.changePage = function changePage(page) {
+  currentPage = page;
+  applyFiltersAndRender();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+function updateStats() {
+  const columns = allData.length ? Object.keys(allData[0]).length : 0;
+
+  let methodSummary = '';
+  if (allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'extraction_method'))) {
+    const methodCounts = {};
+    allData.forEach((row) => {
+      const m = row.extraction_method || 'rss';
+      methodCounts[m] = (methodCounts[m] || 0) + 1;
+    });
+    methodSummary = Object.entries(methodCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([m, c]) => `${m}: ${c}`)
+      .join(' | ');
+  }
+
+  dbStats.innerHTML = `
+    <span>Table: ${escapeHtml(currentTable)}</span>
+    <span>Total rows: ${allData.length}</span>
+    <span>Filtered: ${currentData.length}</span>
+    <span>Columns: ${columns}</span>
+    <span style="margin-left: auto;">${escapeHtml(methodSummary)}</span>
+  `;
 }
 
-// Export to CSV
+function populateSourceFilter(data) {
+  const sources = [...new Set(data.map((row) => row.source_id).filter(Boolean))].sort();
+  sourceFilter.innerHTML =
+    '<option value="">All Sources</option>' +
+    sources.map((s) => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+}
+
 function exportCSV() {
   if (!currentData.length) return;
-  
-  const columns = Object.keys(currentData[0]).filter(col => !col.startsWith('_'));
-  
-  // Header
-  let csv = columns.join(',') + '\n';
-  
-  // Rows
-  currentData.forEach(row => {
-    const values = columns.map(col => {
-      let val = row[col] || '';
+
+  const columns = Object.keys(currentData[0]).filter((col) => !col.startsWith('_'));
+  let csv = `${columns.join(',')}\n`;
+
+  currentData.forEach((row) => {
+    const values = columns.map((col) => {
+      let val = row[col] ?? '';
+      if (typeof val === 'object' && val !== null) {
+        val = JSON.stringify(val);
+      }
       val = String(val).replace(/"/g, '""');
       if (val.includes(',') || val.includes('"') || val.includes('\n')) {
         val = `"${val}"`;
       }
       return val;
     });
-    csv += values.join(',') + '\n';
+    csv += `${values.join(',')}\n`;
   });
-  
-  // Download
+
   const blob = new Blob([csv], { type: 'text/csv' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -281,7 +292,6 @@ function exportCSV() {
   URL.revokeObjectURL(url);
 }
 
-// Utility functions
 function escapeHtml(text) {
   if (text == null) return '';
   const div = document.createElement('div');
@@ -293,9 +303,10 @@ function formatDate(dateStr) {
   if (!dateStr) return '';
   try {
     const date = new Date(dateStr);
-    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    if (Number.isNaN(date.getTime())) return String(dateStr);
+    return `${date.toLocaleDateString()} ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
   } catch {
-    return dateStr;
+    return String(dateStr);
   }
 }
 
@@ -319,11 +330,6 @@ function showError(msg) {
   errorState.textContent = msg;
   errorState.style.display = 'block';
   tableContainer.style.display = 'none';
-}
-
-function showSuccess(msg) {
-  // Could add a toast notification here
-  console.log(msg);
 }
 
 function showEmpty() {
