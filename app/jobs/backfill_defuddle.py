@@ -3,20 +3,22 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import os
 import time
 
 from app.db import get_connection, init_db, transaction
 from app.jobs import pipeline
+from app.models import ExtractionMethod
+from app.settings import get_settings
 from app.utils import normalize_text, sha1_hexdigest, simhash64
 
 
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+LOG_LEVEL = get_settings().log_level
 logging.basicConfig(
     level=getattr(logging, LOG_LEVEL, logging.INFO),
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
 )
 logger = logging.getLogger("news.backfill")
+SETTINGS = get_settings()
 
 
 def _enrich_with_rate_limit(
@@ -28,68 +30,18 @@ def _enrich_with_rate_limit(
     markdown_new_used: int,
     only_method: str | None = None,
 ) -> tuple[str, str, int]:
-    """Enrich article with rate limit awareness for markdown.new.
-    
-    Args:
-        only_method: If set, only try this method. If it fails/rate-limited, return RSS without fallback.
-    
-    Returns: (body, method, rate_limit_remaining)
-    """
-    current_body = str(body or "").strip()
-    rate_limit_remaining = -1
-    
-    # YouTube path (always check first unless only_method is set)
-    if only_method is None or only_method == "youtube":
-        if pipeline.is_youtube_url(url) or source_id in pipeline.YOUTUBE_SOURCE_IDS:
-            youtube_meta = pipeline.extract_youtube_metadata(url, title, current_body)
-            return pipeline.build_youtube_body(youtube_meta, current_body), "youtube", -1
-        if only_method == "youtube":
-            return current_body, "rss", -1
-    
-    # Try Trafilatura
-    if only_method is None or only_method == "trafilatura":
-        trafilatura_body, used = pipeline.parse_with_trafilatura(url)
-        if used and trafilatura_body:
-            return trafilatura_body, "trafilatura", -1
-        if only_method == "trafilatura":
-            return current_body, "rss", -1
-    
-    # Try markdown.new
-    if only_method is None or only_method == "markdown_new":
-        if markdown_new_used < max_markdown_new:
-            markdown_body, used, rate_limit_remaining = pipeline.parse_with_markdown_new(url)
-            if used and markdown_body:
-                return markdown_body, "markdown_new", rate_limit_remaining
-            # If rate limited (429), stop processing markdown.new entirely
-            if rate_limit_remaining == 0:
-                logger.warning("markdown.new rate limit hit (429), stopping markdown.new processing")
-                return current_body, "rss", 0
-            if only_method == "markdown_new":
-                logger.debug("markdown.new failed for url=%s, skipping (no fallback)", url)
-                return current_body, "rss", rate_limit_remaining
-        else:
-            logger.debug("markdown.new rate limit reached, skipping for url=%s", url)
-            if only_method == "markdown_new":
-                return current_body, "rss", 0
-    
-    # Try jina.ai
-    if only_method is None or only_method == "jina":
-        jina_body, used = pipeline.parse_with_jina_ai(url)
-        if used and jina_body:
-            return jina_body, "jina", -1
-        if only_method == "jina":
-            return current_body, "rss", -1
-    
-    # Try Defuddle
-    if only_method is None or only_method == "defuddle":
-        defuddle_body, used = pipeline.parse_with_defuddle(url)
-        if used and defuddle_body:
-            return defuddle_body, "defuddle", -1
-        if only_method == "defuddle":
-            return current_body, "rss", -1
-    
-    # Fall back to current body
-    return current_body, "rss", rate_limit_remaining
+    """Enrich article using shared pipeline enrichment policy."""
+    budget_remaining = max_markdown_new - markdown_new_used
+    enriched_body, method, rate_limit_remaining, _rate_limited = pipeline.enrich_with_policy(
+        url,
+        source_id,
+        title,
+        body,
+        only_method=only_method,
+        markdown_new_budget_remaining=budget_remaining,
+        stop_on_markdown_rate_limit=True,
+    )
+    return enriched_body, method, rate_limit_remaining
 
 
 def backfill_articles(
@@ -99,7 +51,7 @@ def backfill_articles(
     dry_run: bool = False,
     all_items: bool = False,
     skip_enriched: bool = False,
-    max_markdown_new: int = 400,  # Stay under 500/day limit
+    max_markdown_new: int = SETTINGS.backfill_default_markdown_new_limit,
     only_method: str | None = None,  # Force specific method only
     source_id: str | None = None,  # Filter to specific source
 ) -> dict[str, int | bool]:
@@ -166,7 +118,7 @@ def backfill_articles(
         
         # Check if already enriched and skip_enriched is enabled
         current_method = str(row["extraction_method"] or "rss")
-        if skip_enriched and current_method != "rss":
+        if skip_enriched and current_method != ExtractionMethod.RSS.value:
             logger.debug("Skipping already enriched article_id=%s method=%s", row["article_id"], current_method)
             unchanged += 1
             continue
@@ -187,12 +139,12 @@ def backfill_articles(
             markdown_new_rate_limited = True
             logger.warning("markdown.new rate limit hit, stopping further markdown.new attempts")
         
-        if method == "markdown_new":
+        if method == ExtractionMethod.MARKDOWN_NEW.value:
             markdown_new_used += 1
         
         method_counts[method] = method_counts.get(method, 0) + 1
         
-        if method != "rss" and new_body:
+        if method != ExtractionMethod.RSS.value and new_body:
             enriched += 1
         elif not new_body:
             misses += 1
@@ -275,7 +227,12 @@ def backfill_articles(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Backfill existing articles with enriched extraction")
-    parser.add_argument("--limit", type=int, default=300, help="Maximum number of articles to process")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=SETTINGS.backfill_default_limit,
+        help="Maximum number of articles to process",
+    )
     parser.add_argument(
         "--all",
         action="store_true",
@@ -305,8 +262,8 @@ def main() -> int:
     parser.add_argument(
         "--max-markdown-new",
         type=int,
-        default=400,
-        help="Maximum markdown.new requests (default 400, stay under 500/day limit)",
+        default=SETTINGS.backfill_default_markdown_new_limit,
+        help="Maximum markdown.new requests (default from BACKFILL_DEFAULT_MARKDOWN_NEW_LIMIT)",
     )
     parser.add_argument(
         "--only-method",
