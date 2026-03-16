@@ -78,11 +78,14 @@
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 12px;
-        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
       }
       
       .db-table {
-        width: 100%;
+        width: max-content;
+        min-width: 100%;
         border-collapse: collapse;
         font-size: 13px;
       }
