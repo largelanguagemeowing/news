@@ -17,15 +17,36 @@ on:
         default: false
         type: boolean
       backfill_source:
-        description: "Filter backfill to specific source (e.g., openai-blog, cursor-blog)"
+        description: "Filter backfill to specific source"
         required: false
-        default: ""
-        type: string
+        type: choice
+        default: "all"
+        options:
+          - all
+          - microsoft-ai-blog
+          - google-ai-blog
+          - google-deepmind-blog
+          - openai-blog
+          - apple-machine-learning
+          - simon-willison
+          - cursor-blog
+          - cursor-changelog
+          - matt-wolfe
+          - fireship
+          - ai-explained
+          - hugging-face
       backfill_method:
-        description: "Force specific extraction method (youtube, trafilatura, markdown_new, jina, defuddle)"
+        description: "Force specific extraction method"
         required: false
-        default: ""
-        type: string
+        type: choice
+        default: "default"
+        options:
+          - default
+          - youtube
+          - trafilatura
+          - markdown_new
+          - jina
+          - defuddle
 
 concurrency:
   group: news-pipeline-single-writer
@@ -65,6 +86,7 @@ jobs:
         run: uv run pytest -q
 
       - name: Backfill enriched content (existing items)
+        id: backfill
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_backfill }}
         env:
           DEFUDDLE_ENABLED: "1"
@@ -80,31 +102,19 @@ jobs:
             CMD="$CMD --limit 300 --only-dirty"
           fi
           
-          if [ -n "${{ inputs.backfill_source }}" ]; then
+          if [ "${{ inputs.backfill_source }}" != "all" ]; then
             CMD="$CMD --source-id ${{ inputs.backfill_source }}"
           fi
           
-          if [ -n "${{ inputs.backfill_method }}" ]; then
+          if [ "${{ inputs.backfill_method }}" != "default" ]; then
             CMD="$CMD --only-method ${{ inputs.backfill_method }}"
           fi
           
           echo "Running: $CMD"
           $CMD
 
-      - name: Commit backfill data changes
-        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.enable_backfill }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.db data/status
-          if git diff --cached --quiet; then
-            echo "No backfill data changes to commit."
-          else
-            git commit -m "chore(data): save backfill progress"
-            git push
-          fi
-
       - name: Run pipeline
+        id: pipeline
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
@@ -114,15 +124,25 @@ jobs:
           LOG_LEVEL: "INFO"
         run: uv run python -m app.jobs.pipeline
 
-      - name: Commit pipeline data changes
-        if: ${{ always() }}
+      - name: Commit and push data changes
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news.db data/status
+          
           if git diff --cached --quiet; then
-            echo "No pipeline data changes to commit."
+            echo "No data changes to commit."
           else
-            git commit -m "chore(data): update pipeline artifacts"
+            # Pull latest changes to avoid conflicts
+            git pull --rebase || echo "Rebase had conflicts, attempting to continue"
+            
+            # Commit changes
+            if [ "${{ steps.backfill.outcome }}" = "success" ] && [ "${{ inputs.enable_backfill }}" = "true" ]; then
+              COMMIT_MSG="chore(data): save backfill and pipeline progress"
+            else
+              COMMIT_MSG="chore(data): update pipeline artifacts"
+            fi
+            git commit -m "$COMMIT_MSG"
             git push
           fi

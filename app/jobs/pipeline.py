@@ -18,6 +18,7 @@ from urllib.parse import urlparse
 
 import feedparser
 import requests
+import tenacity
 import trafilatura
 from bs4 import BeautifulSoup
 from dateutil import parser as dtparser
@@ -294,37 +295,70 @@ def normalize_youtube_watch_url(url: str) -> str:
 
 
 def fetch_text_url(url: str) -> str:
+    """Fetch page text with retry logic for transient failures."""
     try:
-        response = requests.get(
-            url,
-            timeout=REQUEST_TIMEOUT_SECONDS,
-            headers={"User-Agent": "Mozilla/5.0"},
+        @tenacity.retry(
+            stop=tenacity.stop_after_attempt(2),
+            wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
+            retry=tenacity.retry_if_exception_type((requests.RequestException, requests.HTTPError)),
+            retry_error_callback=lambda retry_state: "",
+            before_sleep=lambda retry_state: logger.debug(
+                "Page fetch failed, retrying (attempt %d/2) for url=%s",
+                retry_state.attempt_number,
+                url,
+            ),
         )
-        response.raise_for_status()
-        return response.text
+        def _fetch(u: str) -> str:
+            response = requests.get(
+                u,
+                timeout=REQUEST_TIMEOUT_SECONDS,
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            response.raise_for_status()
+            return response.text
+        
+        return _fetch(url)
     except Exception as exc:
         logger.debug("fetch_text_url failed url=%s error=%s", url, exc)
         return ""
 
 
 def fetch_youtube_oembed(url: str) -> dict[str, str] | None:
+    """Fetch YouTube oembed data with retry logic for transient failures."""
     try:
-        endpoint = "https://www.youtube.com/oembed"
-        response = requests.get(
-            endpoint,
-            params={"url": normalize_youtube_watch_url(url), "format": "json"},
-            timeout=REQUEST_TIMEOUT_SECONDS,
-            headers={"accept": "application/json", "User-Agent": "Mozilla/5.0"},
+        @tenacity.retry(
+            stop=tenacity.stop_after_attempt(2),
+            wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
+            retry=tenacity.retry_if_exception_type((requests.RequestException, requests.HTTPError)),
+            retry_error_callback=lambda retry_state: None,
+            before_sleep=lambda retry_state: logger.debug(
+                "YouTube oembed fetch failed, retrying (attempt %d/2) for url=%s",
+                retry_state.attempt_number,
+                url,
+            ),
         )
-        response.raise_for_status()
-        payload = response.json()
-        if not isinstance(payload, dict):
+        def _fetch_oembed(u: str) -> dict[str, str]:
+            endpoint = "https://www.youtube.com/oembed"
+            response = requests.get(
+                endpoint,
+                params={"url": normalize_youtube_watch_url(u), "format": "json"},
+                timeout=REQUEST_TIMEOUT_SECONDS,
+                headers={"accept": "application/json", "User-Agent": "Mozilla/5.0"},
+            )
+            response.raise_for_status()
+            payload = response.json()
+            if not isinstance(payload, dict):
+                return {}
+            return {
+                "title": str(payload.get("title") or "").strip(),
+                "author": str(payload.get("author_name") or "").strip(),
+                "thumbnail_url": str(payload.get("thumbnail_url") or "").strip(),
+            }
+        
+        result = _fetch_oembed(url)
+        if not result:
             return None
-        return {
-            "title": str(payload.get("title") or "").strip(),
-            "author": str(payload.get("author_name") or "").strip(),
-            "thumbnail_url": str(payload.get("thumbnail_url") or "").strip(),
-        }
+        return result
     except Exception as exc:
         logger.debug("fetch_youtube_oembed failed url=%s error=%s", url, exc)
         return None
@@ -468,18 +502,36 @@ def parse_with_trafilatura(url: str) -> tuple[str | None, bool]:
 
 
 def parse_with_jina_ai(url: str) -> tuple[str | None, bool]:
-    """Use r.jina.ai as a fallback for blocked sites."""
+    """Use r.jina.ai as a fallback for blocked sites.
+    
+    Uses tenacity to retry on transient failures with exponential backoff.
+    """
     if not url or is_youtube_url(url):
         return None, False
-    try:
-        jina_url = f"https://r.jina.ai/http://{url.replace('https://', '').replace('http://', '')}"
+    
+    @tenacity.retry(
+        stop=tenacity.stop_after_attempt(2),
+        wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
+        retry=tenacity.retry_if_exception_type((requests.RequestException, requests.HTTPError)),
+        retry_error_callback=lambda retry_state: None,
+        before_sleep=lambda retry_state: logger.debug(
+            "jina.ai fetch failed, retrying (attempt %d/2) for url=%s",
+            retry_state.attempt_number,
+            url,
+        ),
+    )
+    def _fetch_jina(u: str) -> str:
+        jina_url = f"https://r.jina.ai/http://{u.replace('https://', '').replace('http://', '')}"
         response = requests.get(
             jina_url,
             timeout=REQUEST_TIMEOUT_SECONDS,
             headers={"User-Agent": "Mozilla/5.0"},
         )
         response.raise_for_status()
-        text = response.text.strip()
+        return response.text
+    
+    try:
+        text = _fetch_jina(url)
         if not text or len(text) < 100:
             return None, False
         # Remove the jina.ai headers: Title, URL Source, Markdown Content
@@ -508,13 +560,28 @@ def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int]:
     
     Returns: (content, success, rate_limit_remaining)
     rate_limit_remaining: -1 if unknown, 0 if rate limited (429), otherwise the count from header
+    
+    Uses tenacity to retry on rate limit errors (429) with exponential backoff.
     """
     if not url or is_youtube_url(url):
         return None, False, -1
-    try:
+    
+    @tenacity.retry(
+        stop=tenacity.stop_after_attempt(3),
+        wait=tenacity.wait_exponential(multiplier=2, min=4, max=30),
+        retry=tenacity.retry_if_exception_type(requests.HTTPError),
+        retry_error_callback=lambda retry_state: None,
+        before_sleep=lambda retry_state: logger.warning(
+            "markdown.new rate limited, retrying (attempt %d/%d) for url=%s",
+            retry_state.attempt_number,
+            3,
+            url,
+        ),
+    )
+    def _fetch_markdown_new(u: str) -> tuple[str, int]:
         response = requests.post(
             "https://markdown.new/",
-            json={"url": url, "method": "auto"},
+            json={"url": u, "method": "auto"},
             timeout=REQUEST_TIMEOUT_SECONDS,
             headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
         )
@@ -527,24 +594,30 @@ def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int]:
             except (ValueError, TypeError):
                 pass
         
-        # Handle rate limit (429)
+        # Handle rate limit (429) - raise to trigger tenacity retry
         if response.status_code == 429:
-            logger.warning("markdown.new rate limit exceeded (429) for url=%s", url)
-            return None, False, 0
+            logger.warning("markdown.new rate limit exceeded (429) for url=%s", u)
+            raise requests.HTTPError(f"Rate limited (429) for {u}", response=response)
         
         response.raise_for_status()
         payload = response.json()
         if not payload.get("success"):
-            return None, False, rate_limit_remaining
+            return "", rate_limit_remaining
         content = payload.get("content", "").strip()
         if not content or len(content) < 100:
-            return None, False, rate_limit_remaining
+            return "", rate_limit_remaining
         # Remove frontmatter if present
         if content.startswith("---"):
             parts = content.split("---", 2)
             if len(parts) >= 3:
                 content = parts[2].strip()
-        return truncate_for_storage(content), True, rate_limit_remaining
+        return truncate_for_storage(content), rate_limit_remaining
+    
+    try:
+        content, rate_limit_remaining = _fetch_markdown_new(url)
+        if content:
+            return content, True, rate_limit_remaining
+        return None, False, rate_limit_remaining
     except Exception as exc:
         logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
         return None, False, -1
@@ -580,7 +653,7 @@ def enrich_article_content(url: str, source_id: str, title: str, body: str) -> t
     if used_trafilatura and trafilatura_body:
         return trafilatura_body, "trafilatura"
 
-    markdown_new_body, used_markdown_new = parse_with_markdown_new(url)
+    markdown_new_body, used_markdown_new, _ = parse_with_markdown_new(url)
     if used_markdown_new and markdown_new_body:
         return markdown_new_body, "markdown_new"
 
@@ -646,9 +719,30 @@ def ingest_stage(
             continue
         start = time.time()
         try:
-            feed = feedparser.parse(source.feed_url)
-            if getattr(feed, "bozo", 0):
-                raise RuntimeError(str(getattr(feed, "bozo_exception", "feed parse failed")))
+            @tenacity.retry(
+                stop=tenacity.stop_after_attempt(2),
+                wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
+                retry=tenacity.retry_if_exception_type((requests.RequestException, RuntimeError)),
+                retry_error_callback=lambda retry_state: None,
+                before_sleep=lambda retry_state: logger.warning(
+                    "Feed fetch failed, retrying (attempt %d/2) for source=%s",
+                    retry_state.attempt_number,
+                    source.source_id,
+                ),
+            )
+            def _fetch_feed(feed_url: str) -> tuple[bytes, str]:
+                response = requests.get(feed_url, timeout=30)
+                response.raise_for_status()
+                return response.content, response.encoding or "utf-8"
+            
+            feed_content, feed_encoding = _fetch_feed(source.feed_url)
+            if not feed_content:
+                raise RuntimeError("Failed to fetch feed content after retries")
+            
+            feed = feedparser.parse(feed_content)
+            bozo_exception = getattr(feed, "bozo_exception", None)
+            if getattr(feed, "bozo", 0) or bozo_exception:
+                raise RuntimeError(str(bozo_exception or "feed parse failed"))
             if "youtube.com/feeds/videos.xml" in source.feed_url:
                 feed_title = str(getattr(feed, "feed", {}).get("title", "")).strip()
                 if feed_title and feed_title != source.name:
