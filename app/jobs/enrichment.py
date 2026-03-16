@@ -5,6 +5,8 @@ import logging
 import shutil
 import subprocess
 from dataclasses import dataclass
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from typing import Any, Literal
 from urllib.parse import urlparse
 
@@ -44,6 +46,8 @@ class EnrichResult:
     method: MethodName
     rate_limit_remaining: int = -1
     markdown_new_rate_limited: bool = False
+    retry_after_seconds: int = 0
+    stop_processing: bool = False
 
 
 def truncate_for_storage(text: str, max_chars: int) -> str:
@@ -380,7 +384,11 @@ def parse_with_markdown_new(url: str, settings: EnrichmentSettings) -> tuple[str
     """Use markdown.new as a fallback for blocked sites.
 
     Returns: (content, success, rate_limit_remaining)
-    rate_limit_remaining: -1 if unknown, 0 if rate limited (429), otherwise count from header.
+    rate_limit_remaining values:
+      -1: unknown / not rate-limited
+       0: rate-limited (429)
+      -2: rate-limited with retry-after > 24h (stop processing early)
+      >0: remaining quota from header
     """
     if not url or is_youtube_url(url):
         return None, False, -1
@@ -413,6 +421,14 @@ def parse_with_markdown_new(url: str, settings: EnrichmentSettings) -> tuple[str
                 pass
 
         if response.status_code == 429:
+            retry_after_seconds = get_retry_after_seconds(response)
+            if retry_after_seconds > 24 * 3600:
+                logger.warning(
+                    "markdown.new rate limit exceeded and retry-after is too long (%ss) for url=%s",
+                    retry_after_seconds,
+                    u,
+                )
+                return "", -2
             logger.warning("markdown.new rate limit exceeded (429) for url=%s", u)
             raise requests.HTTPError(f"Rate limited (429) for {u}", response=response)
 
@@ -468,6 +484,31 @@ def parse_with_compress_new(url: str, settings: EnrichmentSettings) -> tuple[str
     except Exception as exc:
         logger.debug("compress.new extract failed url=%s error=%s", url, exc)
         return None, False
+
+
+def supports_markdown_family(source_id: str) -> bool:
+    normalized = (source_id or "").strip().lower()
+    return normalized == "openai-blog" or normalized.startswith("openai")
+
+
+def get_retry_after_seconds(response: requests.Response | None) -> int:
+    if response is None:
+        return 0
+    value = (response.headers.get("retry-after") or "").strip()
+    if not value:
+        return 0
+    try:
+        return max(0, int(value))
+    except ValueError:
+        pass
+    try:
+        dt = parsedate_to_datetime(value)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        now = datetime.now(timezone.utc)
+        return max(0, int((dt - now).total_seconds()))
+    except Exception:
+        return 0
 
 
 def is_probably_dirty_body(body: str) -> bool:
@@ -533,6 +574,8 @@ def enrich_with_policy(
             continue
 
         if method == ExtractionMethod.MARKDOWN_NEW.value:
+            if not supports_markdown_family(source_id):
+                continue
             if opts.markdown_new_budget_remaining is not None and opts.markdown_new_budget_remaining <= 0:
                 continue
             markdown_new_body, used, rate_limit_remaining = parse_with_markdown_new(url, settings)
@@ -541,6 +584,15 @@ def enrich_with_policy(
                     body=markdown_new_body,
                     method=ExtractionMethod.MARKDOWN_NEW.value,
                     rate_limit_remaining=rate_limit_remaining,
+                )
+
+            if rate_limit_remaining == -2:
+                return EnrichResult(
+                    body=current_body,
+                    method=ExtractionMethod.RSS.value,
+                    rate_limit_remaining=-2,
+                    markdown_new_rate_limited=True,
+                    stop_processing=True,
                 )
 
             if rate_limit_remaining == 0:
@@ -559,6 +611,14 @@ def enrich_with_policy(
                         rate_limit_remaining=0,
                         markdown_new_rate_limited=True,
                     )
+            continue
+
+        if method == ExtractionMethod.COMPRESS_NEW.value:
+            if not supports_markdown_family(source_id):
+                continue
+            compress_body, used = parse_with_compress_new(url, settings)
+            if used and compress_body:
+                return EnrichResult(body=compress_body, method=ExtractionMethod.COMPRESS_NEW.value)
             continue
 
         if method == ExtractionMethod.JINA.value:

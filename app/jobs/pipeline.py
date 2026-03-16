@@ -414,6 +414,8 @@ def enrich_with_policy(
             continue
 
         if method == ExtractionMethod.MARKDOWN_NEW.value:
+            if not enrichment.supports_markdown_family(source_id):
+                continue
             if markdown_new_budget_remaining is not None and markdown_new_budget_remaining <= 0:
                 continue
             markdown_body, used, rate_limit_remaining = parse_with_markdown_new(url)
@@ -428,6 +430,8 @@ def enrich_with_policy(
             continue
 
         if method == ExtractionMethod.COMPRESS_NEW.value:
+            if not enrichment.supports_markdown_family(source_id):
+                continue
             compress_body, used = parse_with_compress_new(url)
             if used and compress_body:
                 return compress_body, ExtractionMethod.COMPRESS_NEW.value, -1, False
