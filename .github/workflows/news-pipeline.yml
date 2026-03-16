@@ -121,6 +121,7 @@ jobs:
           DEFUDDLE_TIMEOUT_SECONDS: "20"
           DEFUDDLE_MAX_CHARS: "12000"
           LOG_LEVEL: "INFO"
+          PIPELINE_SOURCE_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill_source || '' }}
         run: uv run python -m app.jobs.pipeline
 
       - name: Commit and push data changes

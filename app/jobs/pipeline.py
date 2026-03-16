@@ -644,6 +644,13 @@ def run_pipeline() -> int:
     init_db(conn)
     migrate_source_ids(conn)
     sources = load_sources()
+
+    requested_source = (os.getenv("PIPELINE_SOURCE_ID") or "").strip()
+    if requested_source and requested_source.lower() != "all":
+        sources = [s for s in sources if s.source_id == requested_source]
+        if not sources:
+            logger.warning("PIPELINE_SOURCE_ID=%s did not match any configured source", requested_source)
+
     upsert_sources(conn, sources)
 
     run_id = uuid.uuid4().hex[:12]
