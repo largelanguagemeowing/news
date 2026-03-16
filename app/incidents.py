@@ -3,11 +3,16 @@ from __future__ import annotations
 import os
 import sqlite3
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from typing import Optional
 
 import requests
 
+from app.settings import get_settings
 from app.utils import utc_now_iso
+
+SETTINGS = get_settings()
+MIN_HOURS_BETWEEN_SAME_INCIDENT = SETTINGS.min_hours_between_same_incident
 
 
 @dataclass
@@ -17,6 +22,21 @@ class IncidentSignal:
     target_id: str
     message: str
     severity: str = "sev3"
+
+
+def _is_throttled(updated_at: str | None, now_iso: str) -> bool:
+    if not updated_at:
+        return False
+    try:
+        last = datetime.fromisoformat(updated_at)
+        now = datetime.fromisoformat(now_iso)
+        if last.tzinfo is None:
+            last = last.replace(tzinfo=timezone.utc)
+        if now.tzinfo is None:
+            now = now.replace(tzinfo=timezone.utc)
+        return (now - last).total_seconds() < (MIN_HOURS_BETWEEN_SAME_INCIDENT * 3600)
+    except Exception:
+        return False
 
 
 class GitHubIssueClient:
@@ -73,7 +93,7 @@ def sync_incident_open_or_update(
 ) -> None:
     now = utc_now_iso()
     row = conn.execute(
-        "SELECT incident_id, status, issue_number FROM incidents WHERE incident_key = ?",
+        "SELECT incident_id, status, issue_number, updated_at FROM incidents WHERE incident_key = ?",
         (signal.key,),
     ).fetchone()
     if row is None:
@@ -98,6 +118,13 @@ def sync_incident_open_or_update(
         return
 
     issue_number = row["issue_number"]
+    if row["status"] == "open" and _is_throttled(row["updated_at"], now):
+        conn.execute(
+            "UPDATE incidents SET last_message = ? WHERE incident_key = ?",
+            (signal.message, signal.key),
+        )
+        return
+
     conn.execute(
         """
         UPDATE incidents
