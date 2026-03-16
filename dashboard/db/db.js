@@ -30,6 +30,7 @@ const errorState = document.getElementById('errorState');
 const tableContainer = document.getElementById('tableContainer');
 const emptyState = document.getElementById('emptyState');
 const dbStats = document.getElementById('dbStats');
+const scrollHint = document.getElementById('scrollHint');
 const tableHead = document.getElementById('tableHead');
 const tableBody = document.getElementById('tableBody');
 const pagination = document.getElementById('pagination');
@@ -152,6 +153,7 @@ function applyFiltersAndRender() {
 function renderData(data) {
   if (!data.length) {
     tableContainer.style.display = 'none';
+    if (scrollHint) scrollHint.style.display = 'none';
     emptyState.style.display = 'block';
     return;
   }
@@ -202,6 +204,12 @@ function renderData(data) {
     `;
     })
     .join('');
+
+  requestAnimationFrame(() => {
+    if (!scrollHint) return;
+    const needsHorizontalScroll = tableContainer.scrollWidth > tableContainer.clientWidth + 2;
+    scrollHint.style.display = needsHorizontalScroll ? 'block' : 'none';
+  });
 }
 
 function renderPagination() {
@@ -334,5 +342,6 @@ function showError(msg) {
 
 function showEmpty() {
   tableContainer.style.display = 'none';
+  if (scrollHint) scrollHint.style.display = 'none';
   emptyState.style.display = 'block';
 }
