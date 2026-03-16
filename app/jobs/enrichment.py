@@ -434,9 +434,40 @@ def parse_with_markdown_new(url: str, settings: EnrichmentSettings) -> tuple[str
         if content:
             return content, True, rate_limit_remaining
         return None, False, rate_limit_remaining
+    except requests.HTTPError as exc:
+        if getattr(exc, "response", None) is not None and exc.response.status_code == 429:
+            return None, False, 0
+        logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
+        return None, False, -1
     except Exception as exc:
         logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
         return None, False, -1
+
+
+def parse_with_compress_new(url: str, settings: EnrichmentSettings) -> tuple[str | None, bool]:
+    """Fallback extractor using compress.new when markdown.new is rate-limited."""
+    if not url or is_youtube_url(url):
+        return None, False
+    try:
+        response = requests.post(
+            "https://compress.new/",
+            json={"url": url, "method": "auto"},
+            timeout=settings.request_timeout_seconds,
+            headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
+        )
+        response.raise_for_status()
+        payload = response.json()
+        content = str(payload.get("content") or "").strip()
+        if not content or len(content) < 100:
+            return None, False
+        if content.startswith("---"):
+            parts = content.split("---", 2)
+            if len(parts) >= 3:
+                content = parts[2].strip()
+        return truncate_for_storage(content, settings.max_chars), True
+    except Exception as exc:
+        logger.debug("compress.new extract failed url=%s error=%s", url, exc)
+        return None, False
 
 
 def is_probably_dirty_body(body: str) -> bool:
@@ -511,13 +542,23 @@ def enrich_with_policy(
                     method=ExtractionMethod.MARKDOWN_NEW.value,
                     rate_limit_remaining=rate_limit_remaining,
                 )
-            if rate_limit_remaining == 0 and opts.stop_on_markdown_rate_limit:
-                return EnrichResult(
-                    body=current_body,
-                    method=ExtractionMethod.RSS.value,
-                    rate_limit_remaining=0,
-                    markdown_new_rate_limited=True,
-                )
+
+            if rate_limit_remaining == 0:
+                compress_body, compress_used = parse_with_compress_new(url, settings)
+                if compress_used and compress_body:
+                    return EnrichResult(
+                        body=compress_body,
+                        method=ExtractionMethod.COMPRESS_NEW.value,
+                        rate_limit_remaining=0,
+                        markdown_new_rate_limited=True,
+                    )
+                if opts.stop_on_markdown_rate_limit:
+                    return EnrichResult(
+                        body=current_body,
+                        method=ExtractionMethod.RSS.value,
+                        rate_limit_remaining=0,
+                        markdown_new_rate_limited=True,
+                    )
             continue
 
         if method == ExtractionMethod.JINA.value:

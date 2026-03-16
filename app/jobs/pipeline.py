@@ -370,6 +370,10 @@ def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int]:
     return enrichment.parse_with_markdown_new(url, _enrichment_settings())
 
 
+def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
+    return enrichment.parse_with_compress_new(url, _enrichment_settings())
+
+
 def is_probably_dirty_body(body: str) -> bool:
     return enrichment.is_probably_dirty_body(body)
 
@@ -415,8 +419,18 @@ def enrich_with_policy(
             markdown_body, used, rate_limit_remaining = parse_with_markdown_new(url)
             if used and markdown_body:
                 return markdown_body, ExtractionMethod.MARKDOWN_NEW.value, rate_limit_remaining, False
-            if rate_limit_remaining == 0 and stop_on_markdown_rate_limit:
-                return current_body, ExtractionMethod.RSS.value, 0, True
+            if rate_limit_remaining == 0:
+                compress_body, compress_used = parse_with_compress_new(url)
+                if compress_used and compress_body:
+                    return compress_body, ExtractionMethod.COMPRESS_NEW.value, 0, True
+                if stop_on_markdown_rate_limit:
+                    return current_body, ExtractionMethod.RSS.value, 0, True
+            continue
+
+        if method == ExtractionMethod.COMPRESS_NEW.value:
+            compress_body, used = parse_with_compress_new(url)
+            if used and compress_body:
+                return compress_body, ExtractionMethod.COMPRESS_NEW.value, -1, False
             continue
 
         if method == ExtractionMethod.JINA.value:

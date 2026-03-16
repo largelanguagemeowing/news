@@ -268,7 +268,7 @@ def main() -> int:
     parser.add_argument(
         "--only-method",
         type=str,
-        choices=["youtube", "trafilatura", "markdown_new", "jina", "defuddle"],
+        choices=["youtube", "trafilatura", "markdown_new", "compress_new", "jina", "defuddle"],
         default=None,
         help="Only use specified extraction method, skip if it fails (no fallback)",
     )
