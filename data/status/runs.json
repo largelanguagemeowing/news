@@ -1,7 +1,7 @@
 [
   {
-    "run_id": "b599486a1477",
-    "started_at": "2026-03-16T14:44:15+00:00",
+    "run_id": "59972239fedc",
+    "started_at": "2026-03-17T00:05:13+00:00",
     "ended_at": null,
     "status": "running",
     "error_message": null,
@@ -10,43 +10,43 @@
     "stage_stats": [
       {
         "stage_name": "ingest",
-        "started_at": "2026-03-16T14:44:15+00:00",
-        "ended_at": "2026-03-16T14:46:46+00:00",
+        "started_at": "2026-03-17T00:05:13+00:00",
+        "ended_at": "2026-03-17T03:24:52+00:00",
         "status": "success",
         "metrics": {
-          "inserted_articles": 272,
-          "failed_sources": 4,
+          "inserted_articles": 1268,
+          "failed_sources": 1,
           "skipped_sources": 0,
           "auto_disabled_sources": 0,
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": true,
-          "duration_ms": 150884.17
+          "duration_ms": 11978479.82
         }
       },
       {
         "stage_name": "cluster",
-        "started_at": "2026-03-16T14:46:46+00:00",
-        "ended_at": "2026-03-16T14:46:46+00:00",
+        "started_at": "2026-03-17T03:24:52+00:00",
+        "ended_at": "2026-03-17T03:24:52+00:00",
         "status": "success",
         "metrics": {
-          "events": 32,
-          "articles_clustered": 34,
-          "duration_ms": 24.32
+          "events": 45,
+          "articles_clustered": 47,
+          "duration_ms": 45.18
         }
       },
       {
         "stage_name": "categorize",
-        "started_at": "2026-03-16T14:46:46+00:00",
-        "ended_at": "2026-03-16T14:46:46+00:00",
+        "started_at": "2026-03-17T03:24:52+00:00",
+        "ended_at": "2026-03-17T03:24:52+00:00",
         "status": "success",
         "metrics": {
-          "events_categorized": 32,
-          "duration_ms": 1.74
+          "events_categorized": 45,
+          "duration_ms": 1.96
         }
       },
       {
         "stage_name": "export",
-        "started_at": "2026-03-16T14:46:46+00:00",
+        "started_at": "2026-03-17T03:24:52+00:00",
         "ended_at": null,
         "status": "running",
         "metrics": {}
