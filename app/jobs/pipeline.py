@@ -433,13 +433,26 @@ def enrich_with_policy(
     current_body = str(body or "").strip()
     rate_limit_remaining = -1
 
-    methods_order = [
-        ExtractionMethod.YOUTUBE.value,
-        ExtractionMethod.TRAFILATURA.value,
-        ExtractionMethod.MARKDOWN_NEW.value,
-        ExtractionMethod.JINA.value,
-        ExtractionMethod.DEFUDDLE.value,
-    ]
+    # Source-aware extraction priority:
+    # - OpenAI sources: markdown.new -> compress.new -> jina -> defuddle -> trafilatura
+    # - Other sources: trafilatura -> jina -> defuddle
+    # YouTube handling remains first where applicable.
+    if enrichment.supports_markdown_family(source_id):
+        methods_order = [
+            ExtractionMethod.YOUTUBE.value,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            ExtractionMethod.COMPRESS_NEW.value,
+            ExtractionMethod.JINA.value,
+            ExtractionMethod.DEFUDDLE.value,
+            ExtractionMethod.TRAFILATURA.value,
+        ]
+    else:
+        methods_order = [
+            ExtractionMethod.YOUTUBE.value,
+            ExtractionMethod.TRAFILATURA.value,
+            ExtractionMethod.JINA.value,
+            ExtractionMethod.DEFUDDLE.value,
+        ]
     methods_to_try = [only_method] if only_method else methods_order
 
     for method in methods_to_try:
