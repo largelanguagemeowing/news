@@ -59,6 +59,7 @@ def backfill_articles(
     exclude_source: str | None = None,  # Exclude source(s), comma-separated
 ) -> dict[str, int | bool]:
     started_at = time.time()
+    pipeline.reset_markdown_new_circuit_breaker()
     conn = get_connection()
     init_db(conn)
 

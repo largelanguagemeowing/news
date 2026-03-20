@@ -109,7 +109,20 @@ def ingest_stage(
                 ),
             )
             def _fetch_feed(feed_url: str) -> tuple[bytes | None, str | None, str | None, int]:
+                logger.info(
+                    "Feed fetch start source=%s url=%s timeout=%ss",
+                    source.source_id,
+                    feed_url,
+                    source_timeout_seconds,
+                )
                 response = requests.get(feed_url, timeout=source_timeout_seconds, headers=request_headers)
+                logger.info(
+                    "Feed fetch response source=%s url=%s status=%d bytes=%d",
+                    source.source_id,
+                    feed_url,
+                    response.status_code,
+                    len(response.content or b""),
+                )
                 if response.status_code == 304:
                     return None, response.headers.get("ETag"), response.headers.get("Last-Modified"), 304
                 response.raise_for_status()
