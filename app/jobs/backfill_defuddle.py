@@ -120,6 +120,7 @@ def backfill_articles(
     misses = 0
     markdown_new_used = 0
     markdown_new_rate_limited = False  # Set to True when 429 received
+    stopped_early_due_to_rate_limit = False
     method_counts: dict[str, int] = {}
     updates: list[tuple[str, str, str, str, str, int]] = []
 
@@ -138,11 +139,15 @@ def backfill_articles(
             unchanged += 1
             continue
         
-        # Skip if markdown.new rate limited and only_method is markdown_new
+        # Hard-stop when markdown.new-only mode is rate-limited.
         if markdown_new_rate_limited and only_method == "markdown_new":
-            logger.debug("Skipping article_id=%s due to markdown.new rate limit", row["article_id"])
-            unchanged += 1
-            continue
+            stopped_early_due_to_rate_limit = True
+            logger.warning(
+                "Stopping early due to markdown.new rate limit in markdown_new-only mode attempted=%d total_candidates=%d",
+                attempted - 1,
+                total_rows,
+            )
+            break
         
         # Try enrichment with rate limit awareness
         new_body, method, rate_limit_remaining = _enrich_with_rate_limit(
@@ -235,6 +240,7 @@ def backfill_articles(
         "markdown_new_used": markdown_new_used,
         "markdown_new_limit": max_markdown_new,
         "markdown_new_rate_limited": markdown_new_rate_limited,
+        "stopped_early_due_to_rate_limit": stopped_early_due_to_rate_limit,
         "method_counts": method_counts,
         "duration_ms": duration_ms,
         "run_id": run_id,
@@ -339,6 +345,12 @@ def main() -> int:
         exclude_source=args.exclude_source,
     )
     print(json.dumps(metrics))
+    if args.only_method == "markdown_new" and bool(metrics.get("markdown_new_rate_limited")):
+        logger.error(
+            "Exiting non-zero because markdown.new is rate-limited in markdown_new-only mode. "
+            "Retry this run after the provider cooldown."
+        )
+        return 75
     return 0
 
 
