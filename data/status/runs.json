@@ -1,7 +1,7 @@
 [
   {
-    "run_id": "062735023d7d",
-    "started_at": "2026-03-19T23:35:43+00:00",
+    "run_id": "f4e1d4f59bdd",
+    "started_at": "2026-03-20T05:07:16+00:00",
     "ended_at": null,
     "status": "running",
     "error_message": null,
@@ -10,8 +10,8 @@
     "stage_stats": [
       {
         "stage_name": "ingest",
-        "started_at": "2026-03-19T23:35:43+00:00",
-        "ended_at": "2026-03-20T02:16:28+00:00",
+        "started_at": "2026-03-20T05:07:16+00:00",
+        "ended_at": "2026-03-20T07:53:46+00:00",
         "status": "success",
         "metrics": {
           "inserted_articles": 1276,
@@ -20,33 +20,33 @@
           "auto_disabled_sources": 0,
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": true,
-          "duration_ms": 9644289.92
+          "duration_ms": 9990029.22
         }
       },
       {
         "stage_name": "cluster",
-        "started_at": "2026-03-20T02:16:28+00:00",
-        "ended_at": "2026-03-20T02:16:28+00:00",
+        "started_at": "2026-03-20T07:53:46+00:00",
+        "ended_at": "2026-03-20T07:53:47+00:00",
         "status": "success",
         "metrics": {
-          "events": 46,
-          "articles_clustered": 48,
-          "duration_ms": 50.64
+          "events": 45,
+          "articles_clustered": 47,
+          "duration_ms": 52.1
         }
       },
       {
         "stage_name": "categorize",
-        "started_at": "2026-03-20T02:16:28+00:00",
-        "ended_at": "2026-03-20T02:16:28+00:00",
+        "started_at": "2026-03-20T07:53:47+00:00",
+        "ended_at": "2026-03-20T07:53:47+00:00",
         "status": "success",
         "metrics": {
-          "events_categorized": 46,
-          "duration_ms": 1.92
+          "events_categorized": 45,
+          "duration_ms": 2.06
         }
       },
       {
         "stage_name": "export",
-        "started_at": "2026-03-20T02:16:28+00:00",
+        "started_at": "2026-03-20T07:53:47+00:00",
         "ended_at": null,
         "status": "running",
         "metrics": {}
