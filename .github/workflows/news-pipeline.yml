@@ -37,26 +37,6 @@ on:
         required: false
         default: false
         type: boolean
-      backfill_source:
-        description: "Backfill: which sources to process"
-        required: false
-        type: choice
-        default: "all"
-        options:
-          - all
-          - non-openai
-          - microsoft-ai-blog
-          - google-ai-blog
-          - google-deepmind-blog
-          - openai-blog
-          - apple-machine-learning
-          - simon-willison
-          - cursor-blog
-          - cursor-changelog
-          - matt-wolfe
-          - fireship
-          - ai-explained
-          - hugging-face
       backfill_method:
         description: "Force specific extraction method"
         required: false
@@ -93,7 +73,7 @@ jobs:
             echo "pipeline_source:  ${{ inputs.pipeline_source }}"
             echo "enable_backfill:  ${{ inputs.enable_backfill }}"
             echo "backfill_all:     ${{ inputs.backfill_all }}"
-            echo "backfill_source:  ${{ inputs.backfill_source }}"
+            echo "backfill_source:  follows pipeline_source"
             echo "backfill_method:  ${{ inputs.backfill_method }}"
           fi
           echo "ref:              ${{ github.ref_name }}"
@@ -140,9 +120,11 @@ jobs:
             CMD="$CMD --limit 300 --only-dirty"
           fi
           
-          BACKFILL_SOURCE="${{ inputs.backfill_source }}"
+          BACKFILL_SOURCE="${{ inputs.pipeline_source }}"
           if [ "$BACKFILL_SOURCE" = "non-openai" ]; then
             CMD="$CMD --exclude-source openai-blog"
+          elif [ "$BACKFILL_SOURCE" = "openai-only" ]; then
+            CMD="$CMD --source-id openai-blog"
           elif [ "$BACKFILL_SOURCE" != "all" ]; then
             CMD="$CMD --source-id $BACKFILL_SOURCE"
           fi
