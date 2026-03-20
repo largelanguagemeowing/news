@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import logging
 import sqlite3
 import time
@@ -35,18 +36,22 @@ def ingest_stage(
     utc_now_iso: Callable[[], str],
     iso: Callable[[datetime], str],
     parse_date: Callable[[Any], datetime],
+    parse_date_inferred: Callable[[Any], tuple[datetime, bool]],
     canonicalize_url: Callable[[str], str],
     normalize_text: Callable[[str], str],
     sha1_hexdigest: Callable[[str], str],
     simhash64: Callable[[str], int],
-    enrich_article_content: Callable[[str, str, str, str], tuple[str, str]],
+    enrich_article_content: Callable[[str, str, str, str], tuple[str, str, list[dict]]],
     get_source_timeout_seconds: Callable[[str], int],
     slow_source_latency_ms: int,
 ) -> dict[str, Any]:
     inserted = 0
+    duplicates = 0
+    dead_letter_count = 0
     failed_sources = 0
     auto_disabled_sources = 0
     skipped_sources = 0
+    not_modified_sources = 0
     defuddle_enriched = 0
 
     enabled_sources = [s for s in sources if s.enabled]
@@ -84,6 +89,13 @@ def ingest_stage(
         try:
             source_timeout_seconds = get_source_timeout_seconds(source.source_id)
 
+            request_headers: dict[str, str] = {}
+            if source_health:
+                if source_health["last_etag"]:
+                    request_headers["If-None-Match"] = source_health["last_etag"]
+                if source_health["last_modified"]:
+                    request_headers["If-Modified-Since"] = source_health["last_modified"]
+
             @tenacity.retry(
                 stop=tenacity.stop_after_attempt(2),
                 wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
@@ -96,12 +108,36 @@ def ingest_stage(
                     source_timeout_seconds,
                 ),
             )
-            def _fetch_feed(feed_url: str) -> bytes:
-                response = requests.get(feed_url, timeout=source_timeout_seconds)
+            def _fetch_feed(feed_url: str) -> tuple[bytes | None, str | None, str | None, int]:
+                response = requests.get(feed_url, timeout=source_timeout_seconds, headers=request_headers)
+                if response.status_code == 304:
+                    return None, response.headers.get("ETag"), response.headers.get("Last-Modified"), 304
                 response.raise_for_status()
-                return response.content
+                return (
+                    response.content,
+                    response.headers.get("ETag"),
+                    response.headers.get("Last-Modified"),
+                    response.status_code,
+                )
 
-            feed_content = _fetch_feed(source.feed_url)
+            result = _fetch_feed(source.feed_url)
+            if result is None:
+                raise RuntimeError("Failed to fetch feed content after retries")
+
+            feed_content, resp_etag, resp_last_modified, resp_status = result
+
+            if resp_status == 304:
+                not_modified_sources += 1
+                logger.info("Feed not modified source=%s (304)", source.source_id)
+                latency_ms = round((time.time() - start) * 1000, 2)
+                old_avg = source_repo.get_latency_avg(conn, source.source_id)
+                new_avg = round((old_avg * 0.8) + (latency_ms * 0.2), 2)
+                with transaction(conn):
+                    source_repo.update_http_cursors(conn, source.source_id, resp_etag, resp_last_modified, resp_status)
+                    source_repo.update_source_success(conn, source.source_id, utc_now_iso(), None, new_avg)
+                    source_repo.insert_source_check(conn, source.source_id, run_id, utc_now_iso(), CheckStatus.SUCCESS.value, latency_ms, None)
+                continue
+
             if not feed_content:
                 raise RuntimeError("Failed to fetch feed content after retries")
 
@@ -123,52 +159,95 @@ def ingest_stage(
 
             with transaction(conn):
                 for entry in feed.entries:
-                    link = str(entry.get("link", "")).strip()
-                    title = str(entry.get("title", "")).strip() or "(untitled)"
-                    body = str(entry.get("summary", "")).strip()
+                    try:
+                        link = str(entry.get("link", "")).strip()
+                        title = str(entry.get("title", "")).strip() or "(untitled)"
+                        body = str(entry.get("summary", "")).strip()
 
-                    body, method = enrich_article_content(link, source.source_id, title, body)
-                    source_extraction_methods[method] = source_extraction_methods.get(method, 0) + 1
-                    if method == ExtractionMethod.DEFUDDLE.value:
-                        defuddle_enriched += 1
+                        body, method, enrichment_attempts = enrich_article_content(link, source.source_id, title, body)
+                        source_extraction_methods[method] = source_extraction_methods.get(method, 0) + 1
+                        if method == ExtractionMethod.DEFUDDLE.value:
+                            defuddle_enriched += 1
 
-                    published = parse_date(
-                        entry.get("published")
-                        or entry.get("updated")
-                        or datetime.now(timezone.utc)
-                    )
-                    fetched_at = utc_now_iso()
-                    canonical_url = canonicalize_url(link)
-                    title_norm = normalize_text(title)
-                    body_norm = normalize_text(body)
-                    title_hash = sha1_hexdigest(title_norm)
-                    body_hash = sha1_hexdigest(body_norm)
-                    sh = str(simhash64(body_norm or title_norm))
+                        attempt_ts = utc_now_iso()
+                        for attempt in enrichment_attempts:
+                            article_repo.record_enrichment_attempt(
+                                conn,
+                                article_url=link,
+                                source_id=source.source_id,
+                                method=attempt["method"],
+                                status=attempt["status"],
+                                duration_ms=attempt.get("duration_ms"),
+                                error_message=attempt.get("error_message"),
+                                output_chars=attempt.get("output_chars"),
+                                created_at=attempt_ts,
+                            )
 
-                    was_inserted = article_repo.insert_article_if_new(
-                        conn,
-                        source.source_id,
-                        link,
-                        canonical_url,
-                        title,
-                        title_norm,
-                        body,
-                        body_norm,
-                        iso(published),
-                        fetched_at,
-                        title_hash,
-                        body_hash,
-                        sh,
-                        method,
-                    )
-                    if was_inserted:
-                        source_inserted += 1
-                    latest_item_at = iso(published) if latest_item_at is None else max(latest_item_at, iso(published))
+                        fetched_at = utc_now_iso()
+                        raw_published = entry.get("published") or entry.get("updated")
+                        published, published_inferred = parse_date_inferred(raw_published)
+                        if published_inferred:
+                            published = parse_date(fetched_at)
+                        canonical_url = canonicalize_url(link)
+                        title_norm = normalize_text(title)
+                        body_norm = normalize_text(body)
+                        title_hash = sha1_hexdigest(title_norm)
+                        body_hash = sha1_hexdigest(body_norm)
+                        sh = str(simhash64(body_norm or title_norm))
+
+                        was_inserted = article_repo.insert_article_if_new(
+                            conn,
+                            source.source_id,
+                            link,
+                            canonical_url,
+                            title,
+                            title_norm,
+                            body,
+                            body_norm,
+                            iso(published),
+                            fetched_at,
+                            title_hash,
+                            body_hash,
+                            sh,
+                            method,
+                            published_inferred,
+                        )
+                        if was_inserted:
+                            source_inserted += 1
+                            article_repo.record_ingest_attempt(conn, run_id, source.source_id, link, "inserted", None, fetched_at)
+                        else:
+                            duplicates += 1
+                            article_repo.record_ingest_attempt(conn, run_id, source.source_id, link, "duplicate", None, fetched_at)
+                        latest_item_at = iso(published) if latest_item_at is None else max(latest_item_at, iso(published))
+                    except Exception as entry_exc:
+                        dead_letter_count += 1
+                        entry_url = str(entry.get("link", "")).strip() or None
+                        raw_json = None
+                        try:
+                            raw_json = json.dumps(dict(entry), default=str)[:2000]
+                        except Exception:
+                            pass
+                        article_repo.record_dead_letter(
+                            conn,
+                            run_id,
+                            source.source_id,
+                            entry_url,
+                            str(entry_exc)[:500],
+                            raw_json,
+                            utc_now_iso(),
+                        )
+                        logger.warning(
+                            "Dead letter recorded source=%s url=%s error=%s",
+                            source.source_id,
+                            entry_url,
+                            entry_exc,
+                        )
 
                 latency_ms = round((time.time() - start) * 1000, 2)
                 old_avg = source_repo.get_latency_avg(conn, source.source_id)
                 new_avg = round((old_avg * 0.8) + (latency_ms * 0.2), 2)
 
+                source_repo.update_http_cursors(conn, source.source_id, resp_etag, resp_last_modified, resp_status)
                 source_repo.update_source_success(
                     conn,
                     source.source_id,
@@ -268,18 +347,23 @@ def ingest_stage(
                     sync_incident_open_or_update(conn, signal, run_id, issue_client)
 
     logger.info(
-        "Ingest stage finished inserted_articles=%d failed_sources=%d skipped_sources=%d auto_disabled_sources=%d defuddle_enriched_articles=%d",
+        "Ingest stage finished inserted_articles=%d failed_sources=%d skipped_sources=%d not_modified_sources=%d auto_disabled_sources=%d defuddle_enriched_articles=%d dead_letters=%d",
         inserted,
         failed_sources,
         skipped_sources,
+        not_modified_sources,
         auto_disabled_sources,
         defuddle_enriched,
+        dead_letter_count,
     )
 
     return {
         "inserted_articles": inserted,
+        "duplicate_articles": duplicates,
+        "dead_letters": dead_letter_count,
         "failed_sources": failed_sources,
         "skipped_sources": skipped_sources,
+        "not_modified_sources": not_modified_sources,
         "auto_disabled_sources": auto_disabled_sources,
         "defuddle_enriched_articles": defuddle_enriched,
         "defuddle_enabled": defuddle_enabled,

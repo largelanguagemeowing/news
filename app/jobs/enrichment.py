@@ -4,6 +4,7 @@ import json
 import logging
 import shutil
 import subprocess
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -48,6 +49,7 @@ class EnrichResult:
     markdown_new_rate_limited: bool = False
     retry_after_seconds: int = 0
     stop_processing: bool = False
+    attempts: tuple[dict, ...] = ()
 
 
 def truncate_for_storage(text: str, max_chars: int) -> str:
@@ -542,6 +544,7 @@ def enrich_with_policy(
     current_body = str(body or "").strip()
     opts = options or EnrichOptions()
     rate_limit_remaining = -1
+    attempts: list[dict] = []
 
     methods_order: list[MethodName] = [
         ExtractionMethod.YOUTUBE.value,
@@ -555,36 +558,55 @@ def enrich_with_policy(
     for method in methods_to_try:
         if method == ExtractionMethod.YOUTUBE.value:
             if is_youtube_url(url) or source_id in settings.youtube_source_ids:
+                t0 = time.monotonic()
                 youtube_meta = extract_youtube_metadata(
                     url,
                     title,
                     current_body,
                     settings.request_timeout_seconds,
                 )
+                yt_body = build_youtube_body(youtube_meta, current_body)
+                dur = round((time.monotonic() - t0) * 1000, 2)
+                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(yt_body)})
                 return EnrichResult(
-                    body=build_youtube_body(youtube_meta, current_body),
+                    body=yt_body,
                     method=ExtractionMethod.YOUTUBE.value,
+                    attempts=tuple(attempts),
                 )
+            else:
+                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": None, "output_chars": None})
             continue
 
         if method == ExtractionMethod.TRAFILATURA.value:
+            t0 = time.monotonic()
             trafilatura_body, used = parse_with_trafilatura(url, settings)
+            dur = round((time.monotonic() - t0) * 1000, 2)
             if used and trafilatura_body:
-                return EnrichResult(body=trafilatura_body, method=ExtractionMethod.TRAFILATURA.value)
+                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(trafilatura_body)})
+                return EnrichResult(body=trafilatura_body, method=ExtractionMethod.TRAFILATURA.value, attempts=tuple(attempts))
+            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
             continue
 
         if method == ExtractionMethod.MARKDOWN_NEW.value:
             if not supports_markdown_family(source_id):
+                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": None, "output_chars": None})
                 continue
             if opts.markdown_new_budget_remaining is not None and opts.markdown_new_budget_remaining <= 0:
+                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": "budget exhausted", "output_chars": None})
                 continue
+            t0 = time.monotonic()
             markdown_new_body, used, rate_limit_remaining = parse_with_markdown_new(url, settings)
+            dur = round((time.monotonic() - t0) * 1000, 2)
             if used and markdown_new_body:
+                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(markdown_new_body)})
                 return EnrichResult(
                     body=markdown_new_body,
                     method=ExtractionMethod.MARKDOWN_NEW.value,
                     rate_limit_remaining=rate_limit_remaining,
+                    attempts=tuple(attempts),
                 )
+
+            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
 
             if rate_limit_remaining == -2:
                 return EnrichResult(
@@ -593,47 +615,67 @@ def enrich_with_policy(
                     rate_limit_remaining=-2,
                     markdown_new_rate_limited=True,
                     stop_processing=True,
+                    attempts=tuple(attempts),
                 )
 
             if rate_limit_remaining == 0:
+                t0c = time.monotonic()
                 compress_body, compress_used = parse_with_compress_new(url, settings)
+                durc = round((time.monotonic() - t0c) * 1000, 2)
                 if compress_used and compress_body:
+                    attempts.append({"method": ExtractionMethod.COMPRESS_NEW.value, "status": "success", "duration_ms": durc, "error_message": None, "output_chars": len(compress_body)})
                     return EnrichResult(
                         body=compress_body,
                         method=ExtractionMethod.COMPRESS_NEW.value,
                         rate_limit_remaining=0,
                         markdown_new_rate_limited=True,
+                        attempts=tuple(attempts),
                     )
+                attempts.append({"method": ExtractionMethod.COMPRESS_NEW.value, "status": "failed", "duration_ms": durc, "error_message": None, "output_chars": None})
                 if opts.stop_on_markdown_rate_limit:
                     return EnrichResult(
                         body=current_body,
                         method=ExtractionMethod.RSS.value,
                         rate_limit_remaining=0,
                         markdown_new_rate_limited=True,
+                        attempts=tuple(attempts),
                     )
             continue
 
         if method == ExtractionMethod.COMPRESS_NEW.value:
             if not supports_markdown_family(source_id):
+                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": None, "output_chars": None})
                 continue
+            t0 = time.monotonic()
             compress_body, used = parse_with_compress_new(url, settings)
+            dur = round((time.monotonic() - t0) * 1000, 2)
             if used and compress_body:
-                return EnrichResult(body=compress_body, method=ExtractionMethod.COMPRESS_NEW.value)
+                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(compress_body)})
+                return EnrichResult(body=compress_body, method=ExtractionMethod.COMPRESS_NEW.value, attempts=tuple(attempts))
+            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
             continue
 
         if method == ExtractionMethod.JINA.value:
+            t0 = time.monotonic()
             jina_body, used = parse_with_jina_ai(url, settings)
+            dur = round((time.monotonic() - t0) * 1000, 2)
             if used and jina_body:
-                return EnrichResult(body=jina_body, method=ExtractionMethod.JINA.value)
+                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(jina_body)})
+                return EnrichResult(body=jina_body, method=ExtractionMethod.JINA.value, attempts=tuple(attempts))
+            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
             continue
 
         if method == ExtractionMethod.DEFUDDLE.value:
+            t0 = time.monotonic()
             defuddle_body, used = parse_with_defuddle(url, settings)
+            dur = round((time.monotonic() - t0) * 1000, 2)
             if used and defuddle_body:
-                return EnrichResult(body=defuddle_body, method=ExtractionMethod.DEFUDDLE.value)
+                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(defuddle_body)})
+                return EnrichResult(body=defuddle_body, method=ExtractionMethod.DEFUDDLE.value, attempts=tuple(attempts))
+            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
             continue
 
-    return EnrichResult(body=current_body, method=ExtractionMethod.RSS.value, rate_limit_remaining=rate_limit_remaining)
+    return EnrichResult(body=current_body, method=ExtractionMethod.RSS.value, rate_limit_remaining=rate_limit_remaining, attempts=tuple(attempts))
 
 
 def enrich_article_content(
@@ -642,6 +684,6 @@ def enrich_article_content(
     title: str,
     body: str,
     settings: EnrichmentSettings,
-) -> tuple[str, str]:
+) -> tuple[str, str, list[dict]]:
     result = enrich_with_policy(url, source_id, title, body, settings)
-    return result.body, result.method
+    return result.body, result.method, list(result.attempts)

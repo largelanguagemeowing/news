@@ -32,6 +32,9 @@ def export_status(
     source_health = build_source_health(conn)
     source_checks = build_source_checks(conn)
     event_members = build_event_members(conn)
+    ingest_attempts = build_ingest_attempts(conn)
+    enrichment_attempts = build_enrichment_attempts(conn)
+    dead_letters = build_dead_letters(conn)
 
     files = {
         "summary.json": summary,
@@ -43,6 +46,9 @@ def export_status(
         "source_health.json": source_health,
         "source_checks.json": source_checks,
         "event_members.json": event_members,
+        "ingest_attempts.json": ingest_attempts,
+        "enrichment_attempts.json": enrichment_attempts,
+        "dead_letters.json": dead_letters,
     }
     for filename, payload in files.items():
         (status_dir / filename).write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -126,8 +132,19 @@ def build_sources(
     rows = conn.execute(
         """
         SELECT s.source_id, s.name, s.feed_url, sh.last_success_at, sh.last_item_at,
-               sh.consecutive_failures, sh.avg_latency_ms, sh.items_24h, sh.errors_24h, sh.last_error,
-               sh.auto_disabled_until
+               sh.consecutive_failures, sh.avg_latency_ms, sh.last_error,
+               sh.auto_disabled_until,
+               COALESCE((
+                 SELECT COUNT(*) FROM articles a
+                 WHERE a.source_id = s.source_id
+                   AND a.fetched_at >= datetime('now', '-24 hours')
+               ), 0) AS items_24h,
+               COALESCE((
+                 SELECT COUNT(*) FROM source_checks sc
+                 WHERE sc.source_id = s.source_id
+                   AND sc.status = 'failed'
+                   AND sc.checked_at >= datetime('now', '-24 hours')
+               ), 0) AS errors_24h
         FROM sources s
         LEFT JOIN source_health sh ON sh.source_id = s.source_id
         WHERE s.enabled = 1
@@ -304,11 +321,22 @@ def build_articles(
 def build_source_health(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
-        SELECT source_id, last_success_at, last_item_at, consecutive_failures,
-               avg_latency_ms, items_24h, errors_24h, last_error,
-               auto_disabled_until, auto_disabled_reason
-        FROM source_health
-        ORDER BY source_id
+        SELECT sh.source_id, sh.last_success_at, sh.last_item_at, sh.consecutive_failures,
+               sh.avg_latency_ms, sh.last_error,
+               sh.auto_disabled_until, sh.auto_disabled_reason,
+               COALESCE((
+                 SELECT COUNT(*) FROM articles a
+                 WHERE a.source_id = sh.source_id
+                   AND a.fetched_at >= datetime('now', '-24 hours')
+               ), 0) AS items_24h,
+               COALESCE((
+                 SELECT COUNT(*) FROM source_checks sc
+                 WHERE sc.source_id = sh.source_id
+                   AND sc.status = 'failed'
+                   AND sc.checked_at >= datetime('now', '-24 hours')
+               ), 0) AS errors_24h
+        FROM source_health sh
+        ORDER BY sh.source_id
         """
     ).fetchall()
     return [dict(row) for row in rows]
@@ -333,6 +361,47 @@ def build_event_members(conn: sqlite3.Connection, limit: int = 2000) -> list[dic
         SELECT event_id, article_id, similarity, reason
         FROM event_members
         ORDER BY event_id DESC, article_id DESC
+        LIMIT ?
+        """,
+        (limit,),
+    ).fetchall()
+    return [dict(row) for row in rows]
+
+
+def build_ingest_attempts(conn: sqlite3.Connection, limit: int = 2000) -> list[dict[str, Any]]:
+    rows = conn.execute(
+        """
+        SELECT attempt_id, run_id, source_id, url, status, reason, created_at
+        FROM article_ingest_attempts
+        ORDER BY created_at DESC
+        LIMIT ?
+        """,
+        (limit,),
+    ).fetchall()
+    return [dict(row) for row in rows]
+
+
+def build_enrichment_attempts(conn: sqlite3.Connection, limit: int = 2000) -> list[dict[str, Any]]:
+    rows = conn.execute(
+        """
+        SELECT attempt_id, article_url, source_id, method, status,
+               duration_ms, error_message, output_chars, created_at
+        FROM article_enrichment_attempts
+        ORDER BY created_at DESC
+        LIMIT ?
+        """,
+        (limit,),
+    ).fetchall()
+    return [dict(row) for row in rows]
+
+
+def build_dead_letters(conn: sqlite3.Connection, limit: int = 1000) -> list[dict[str, Any]]:
+    rows = conn.execute(
+        """
+        SELECT dead_letter_id, run_id, source_id, url, error_message,
+               raw_entry_json, created_at
+        FROM dead_letters
+        ORDER BY created_at DESC
         LIMIT ?
         """,
         (limit,),

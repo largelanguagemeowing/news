@@ -6,7 +6,8 @@ import sqlite3
 def get_health(conn: sqlite3.Connection, source_id: str):
     return conn.execute(
         """
-        SELECT consecutive_failures, last_success_at, auto_disabled_until
+        SELECT consecutive_failures, last_success_at, auto_disabled_until,
+               last_etag, last_modified, last_http_status
         FROM source_health
         WHERE source_id = ?
         """,
@@ -81,7 +82,7 @@ def update_source_failure(
     conn.execute(
         """
         UPDATE source_health
-        SET consecutive_failures = ?, last_error = ?, errors_24h = errors_24h + 1
+        SET consecutive_failures = ?, last_error = ?
           , auto_disabled_until = COALESCE(?, auto_disabled_until)
           , auto_disabled_reason = CASE
               WHEN ? IS NULL THEN auto_disabled_reason
@@ -97,6 +98,23 @@ def update_source_failure(
             auto_disable_reason,
             source_id,
         ),
+    )
+
+
+def update_http_cursors(
+    conn: sqlite3.Connection,
+    source_id: str,
+    etag: str | None,
+    last_modified: str | None,
+    http_status: int,
+) -> None:
+    conn.execute(
+        """
+        UPDATE source_health
+        SET last_etag = ?, last_modified = ?, last_http_status = ?
+        WHERE source_id = ?
+        """,
+        (etag, last_modified, http_status, source_id),
     )
 
 

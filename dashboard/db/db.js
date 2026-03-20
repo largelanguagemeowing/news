@@ -10,6 +10,9 @@ const TABLE_TO_STATUS_FILE = {
   pipeline_runs: '../data/status/runs.json',
   source_checks: '../data/status/source_checks.json',
   incidents: '../data/status/incidents.json',
+  ingest_attempts: '../data/status/ingest_attempts.json',
+  enrichment_attempts: '../data/status/enrichment_attempts.json',
+  dead_letters: '../data/status/dead_letters.json',
 };
 
 let currentTable = 'articles';
@@ -109,7 +112,7 @@ async function loadCurrentTableData() {
 
 function updateFilterVisibility() {
   const hasSource = allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'source_id'));
-  const hasMethod = allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'extraction_method'));
+  const hasMethod = allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'extraction_method') || Object.prototype.hasOwnProperty.call(row, 'method'));
 
   sourceFilter.disabled = !hasSource;
   methodFilter.disabled = !hasMethod;
@@ -136,7 +139,7 @@ function applyFiltersAndRender() {
   }
 
   if (method) {
-    filtered = filtered.filter((row) => (row.extraction_method || 'rss') === method);
+    filtered = filtered.filter((row) => (row.extraction_method || row.method || 'rss') === method);
   }
 
   currentData = filtered;
@@ -178,7 +181,7 @@ function renderData(data) {
             const val = row[col];
             let cellContent = '';
 
-            if (col === 'extraction_method') {
+            if (col === 'extraction_method' || col === 'method') {
               const m = val || 'rss';
               cellContent = `<span class="method-badge method-${escapeHtml(m)}">${escapeHtml(m)}</span>`;
             } else if (typeof val === 'object' && val !== null) {
@@ -187,7 +190,7 @@ function renderData(data) {
               cellContent = `<span title="${escapeHtml(text)}">${escapeHtml(short)}</span>`;
             } else if (col.includes('_at') || col.endsWith('date') || col.endsWith('time')) {
               cellContent = escapeHtml(formatDate(val));
-            } else if (col === 'url' && val) {
+            } else if ((col === 'url' || col === 'article_url') && val) {
               const href = String(val);
               const display = href.length > 60 ? `${href.slice(0, 60)}...` : href;
               cellContent = `<a href="${escapeHtml(href)}" target="_blank" rel="noopener" title="${escapeHtml(href)}">${escapeHtml(display)}</a>`;
@@ -240,10 +243,10 @@ function updateStats() {
   const columns = allData.length ? Object.keys(allData[0]).length : 0;
 
   let methodSummary = '';
-  if (allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'extraction_method'))) {
+  if (allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'extraction_method') || Object.prototype.hasOwnProperty.call(row, 'method'))) {
     const methodCounts = {};
     allData.forEach((row) => {
-      const m = row.extraction_method || 'rss';
+      const m = row.extraction_method || row.method || 'rss';
       methodCounts[m] = (methodCounts[m] || 0) + 1;
     });
     methodSummary = Object.entries(methodCounts)

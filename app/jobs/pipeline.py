@@ -115,7 +115,7 @@ def get_source_timeout_seconds(source_id: str) -> int:
 
 def parse_date(value: Any) -> datetime:
     if value is None:
-        return datetime.now(timezone.utc)
+        return datetime.min.replace(tzinfo=timezone.utc)
     if isinstance(value, datetime):
         if value.tzinfo is None:
             return value.replace(tzinfo=timezone.utc)
@@ -126,7 +126,23 @@ def parse_date(value: Any) -> datetime:
             dt = dt.replace(tzinfo=timezone.utc)
         return dt.astimezone(timezone.utc)
     except Exception:
-        return datetime.now(timezone.utc)
+        return datetime.min.replace(tzinfo=timezone.utc)
+
+
+def parse_date_inferred(value: Any) -> tuple[datetime, bool]:
+    if value is None:
+        return datetime.min.replace(tzinfo=timezone.utc), True
+    if isinstance(value, datetime):
+        if value.tzinfo is None:
+            return value.replace(tzinfo=timezone.utc), False
+        return value.astimezone(timezone.utc), False
+    try:
+        dt = dtparser.parse(str(value))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc), False
+    except Exception:
+        return datetime.min.replace(tzinfo=timezone.utc), True
 
 
 def iso(dt: datetime) -> str:
@@ -452,11 +468,11 @@ def enrich_with_policy(
     return current_body, ExtractionMethod.RSS.value, rate_limit_remaining, False
 
 
-def enrich_article_content(url: str, source_id: str, title: str, body: str) -> tuple[str, str]:
+def enrich_article_content(url: str, source_id: str, title: str, body: str) -> tuple[str, str, list[dict]]:
     enriched_body, method, _rate_limit_remaining, _rate_limited = enrich_with_policy(
         url, source_id, title, body
     )
-    return enriched_body, method
+    return enriched_body, method, []
 
 
 def ingest_stage(
@@ -480,6 +496,7 @@ def ingest_stage(
         utc_now_iso=utc_now_iso,
         iso=iso,
         parse_date=parse_date,
+        parse_date_inferred=parse_date_inferred,
         canonicalize_url=canonicalize_url,
         normalize_text=normalize_text,
         sha1_hexdigest=sha1_hexdigest,
@@ -669,6 +686,13 @@ def run_pipeline() -> int:
         if not sources:
             logger.warning("PIPELINE_SOURCE_ID=%s did not match any configured source", requested_source)
 
+    exclude_source = (os.getenv("PIPELINE_EXCLUDE_SOURCE") or "").strip()
+    if exclude_source:
+        exclude_ids = {s.strip() for s in exclude_source.split(",") if s.strip()}
+        before = len(sources)
+        sources = [s for s in sources if s.source_id not in exclude_ids]
+        logger.info("PIPELINE_EXCLUDE_SOURCE=%s excluded %d sources", exclude_source, before - len(sources))
+
     upsert_sources(conn, sources)
 
     run_id = uuid.uuid4().hex[:12]
@@ -731,6 +755,7 @@ def run_pipeline() -> int:
         return 0
     except Exception as exc:
         logger.exception("Pipeline run failed run_id=%s error=%s", run_id, exc)
+        conn.rollback()
         traceback_text = traceback.format_exc(limit=5)
         run_repo.fail_pipeline_run(
             conn,

@@ -5,13 +5,13 @@ import sqlite3
 from typing import Any
 
 
-def create_pipeline_run(conn: sqlite3.Connection, run_id: str, started_at: str) -> None:
+def create_pipeline_run(conn: sqlite3.Connection, run_id: str, started_at: str, run_type: str = "pipeline") -> None:
     conn.execute(
         """
-        INSERT INTO pipeline_runs (run_id, started_at, status, metrics_json)
-        VALUES (?, ?, 'running', '{}')
+        INSERT INTO pipeline_runs (run_id, started_at, status, metrics_json, run_type)
+        VALUES (?, ?, 'running', '{}', ?)
         """,
-        (run_id, started_at),
+        (run_id, started_at, run_type),
     )
 
 

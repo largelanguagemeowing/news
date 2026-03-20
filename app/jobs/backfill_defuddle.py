@@ -4,12 +4,14 @@ import argparse
 import json
 import logging
 import time
+import uuid
 
 from app.db import get_connection, init_db, transaction
 from app.jobs import pipeline
 from app.models import ExtractionMethod
+from app.repos import run_repo
 from app.settings import get_settings
-from app.utils import normalize_text, sha1_hexdigest, simhash64
+from app.utils import normalize_text, sha1_hexdigest, simhash64, utc_now_iso
 
 
 LOG_LEVEL = get_settings().log_level
@@ -54,14 +56,24 @@ def backfill_articles(
     max_markdown_new: int = SETTINGS.backfill_default_markdown_new_limit,
     only_method: str | None = None,  # Force specific method only
     source_id: str | None = None,  # Filter to specific source
+    exclude_source: str | None = None,  # Exclude source(s), comma-separated
 ) -> dict[str, int | bool]:
     started_at = time.time()
     conn = get_connection()
     init_db(conn)
 
+    run_id = uuid.uuid4().hex[:12]
+    run_repo.create_pipeline_run(conn, run_id, utc_now_iso(), run_type="backfill")
+    conn.commit()
+
     where_missing = "AND (a.body IS NULL OR TRIM(a.body) = '' OR LENGTH(a.body) < 120)" if only_missing else ""
     where_skip_enriched = "AND (a.extraction_method IS NULL OR a.extraction_method = 'rss')" if skip_enriched else ""
     where_source = "AND a.source_id = ?" if source_id else ""
+    exclude_ids = [s.strip() for s in (exclude_source or "").split(",") if s.strip()]
+    where_exclude = ""
+    if exclude_ids:
+        placeholders = ",".join("?" for _ in exclude_ids)
+        where_exclude = f"AND a.source_id NOT IN ({placeholders})"
     limit_clause = "" if all_items else "LIMIT ?"
     query = f"""
         SELECT a.article_id, a.url, a.title, a.body, a.source_id, a.extraction_method
@@ -70,12 +82,14 @@ def backfill_articles(
         {where_missing}
         {where_skip_enriched}
         {where_source}
+        {where_exclude}
         ORDER BY a.published_at DESC
         {limit_clause}
     """
     params_list: list[str | int] = []
     if source_id:
         params_list.append(source_id)
+    params_list.extend(exclude_ids)
     if not all_items:
         params_list.append(max(1, limit))
     params = tuple(params_list) if params_list else ()
@@ -86,7 +100,7 @@ def backfill_articles(
 
     total_rows = len(rows)
     logger.info(
-        "Backfill started candidates=%d only_missing=%s only_dirty=%s all_items=%s dry_run=%s skip_enriched=%s max_markdown_new=%d only_method=%s source_id=%s",
+        "Backfill started candidates=%d only_missing=%s only_dirty=%s all_items=%s dry_run=%s skip_enriched=%s max_markdown_new=%d only_method=%s source_id=%s exclude_source=%s",
         total_rows,
         only_missing,
         only_dirty,
@@ -96,6 +110,7 @@ def backfill_articles(
         max_markdown_new,
         only_method,
         source_id,
+        exclude_source,
     )
 
     attempted = 0
@@ -202,8 +217,7 @@ def backfill_articles(
         method_summary,
     )
 
-    conn.close()
-    return {
+    metrics = {
         "defuddle_enabled": pipeline.DEFUDDLE_ENABLED,
         "dry_run": dry_run,
         "only_missing": only_missing,
@@ -212,6 +226,7 @@ def backfill_articles(
         "skip_enriched": skip_enriched,
         "only_method": only_method,
         "source_id": source_id,
+        "exclude_source": exclude_source,
         "attempted": attempted,
         "enriched": enriched,
         "updated": updated,
@@ -222,7 +237,15 @@ def backfill_articles(
         "markdown_new_rate_limited": markdown_new_rate_limited,
         "method_counts": method_counts,
         "duration_ms": duration_ms,
+        "run_id": run_id,
     }
+
+    metrics_to_record = {"run_id": run_id, "backfill": metrics}
+    run_repo.complete_pipeline_run(conn, run_id, utc_now_iso(), metrics_to_record)
+    conn.commit()
+
+    conn.close()
+    return metrics
 
 
 def main() -> int:
@@ -278,13 +301,19 @@ def main() -> int:
         default=None,
         help="Filter to specific source (e.g., openai-blog, cursor-blog)",
     )
+    parser.add_argument(
+        "--exclude-source",
+        type=str,
+        default=None,
+        help="Exclude source(s), comma-separated (e.g., openai-blog or openai-blog,cursor-blog)",
+    )
     args = parser.parse_args()
 
     if args.enable_defuddle:
         pipeline.DEFUDDLE_ENABLED = True
 
     logger.info(
-        "Backfill CLI invoked limit=%d all=%s only_missing=%s only_dirty=%s dry_run=%s defuddle_enabled=%s skip_enriched=%s max_markdown_new=%d only_method=%s source_id=%s",
+        "Backfill CLI invoked limit=%d all=%s only_missing=%s only_dirty=%s dry_run=%s defuddle_enabled=%s skip_enriched=%s max_markdown_new=%d only_method=%s source_id=%s exclude_source=%s",
         args.limit,
         args.all,
         args.only_missing,
@@ -295,6 +324,7 @@ def main() -> int:
         args.max_markdown_new,
         args.only_method,
         args.source_id,
+        args.exclude_source,
     )
     metrics = backfill_articles(
         limit=args.limit,
@@ -306,6 +336,7 @@ def main() -> int:
         max_markdown_new=args.max_markdown_new,
         only_method=args.only_method,
         source_id=args.source_id,
+        exclude_source=args.exclude_source,
     )
     print(json.dumps(metrics))
     return 0

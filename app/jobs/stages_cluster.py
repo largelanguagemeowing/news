@@ -85,7 +85,6 @@ def cluster_stage(
                 """,
                 (event_id, item["article_id"], float(item.get("score", 1.0)), "title+simhash"),
             )
-    conn.commit()
 
     return {"events": len(groups), "articles_clustered": len(articles)}
 
@@ -117,5 +116,4 @@ def categorize_stage(
             (label, confidence, row["event_id"]),
         )
         updated += 1
-    conn.commit()
     return {"events_categorized": updated}
