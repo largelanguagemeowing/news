@@ -436,10 +436,10 @@ def enrich_with_policy(
     # Source-aware extraction priority:
     # - OpenAI sources: markdown.new -> compress.new -> jina -> defuddle -> trafilatura
     # - Other sources: trafilatura -> jina -> defuddle
-    # YouTube handling remains first where applicable.
+    # - YouTube is only included for YouTube URLs/sources.
+    is_youtube_candidate = is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS
     if enrichment.supports_markdown_family(source_id):
         methods_order = [
-            ExtractionMethod.YOUTUBE.value,
             ExtractionMethod.MARKDOWN_NEW.value,
             ExtractionMethod.COMPRESS_NEW.value,
             ExtractionMethod.JINA.value,
@@ -448,11 +448,12 @@ def enrich_with_policy(
         ]
     else:
         methods_order = [
-            ExtractionMethod.YOUTUBE.value,
             ExtractionMethod.TRAFILATURA.value,
             ExtractionMethod.JINA.value,
             ExtractionMethod.DEFUDDLE.value,
         ]
+    if is_youtube_candidate:
+        methods_order = [ExtractionMethod.YOUTUBE.value, *methods_order]
     methods_to_try = [only_method] if only_method else methods_order
 
     for method in methods_to_try:
