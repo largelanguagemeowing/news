@@ -1,12 +1,69 @@
 [
   {
-    "run_id": "82dda7be918c",
-    "started_at": "2026-03-21T12:57:46+00:00",
+    "run_id": "ac42f94f4876",
+    "started_at": "2026-03-21T17:33:26+00:00",
     "ended_at": null,
     "status": "running",
     "error_message": null,
     "github_run_id": null,
     "github_run_url": null,
+    "stage_stats": [
+      {
+        "stage_name": "ingest",
+        "started_at": "2026-03-21T17:33:26+00:00",
+        "ended_at": "2026-03-21T19:53:26+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 0,
+          "duplicate_articles": 1236,
+          "dead_letters": 0,
+          "failed_sources": 1,
+          "skipped_sources": 0,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": true,
+          "duration_ms": 8399748.29
+        }
+      },
+      {
+        "stage_name": "cluster",
+        "started_at": "2026-03-21T19:53:26+00:00",
+        "ended_at": "2026-03-21T19:53:26+00:00",
+        "status": "success",
+        "metrics": {
+          "events": 43,
+          "articles_clustered": 46,
+          "duration_ms": 48.13
+        }
+      },
+      {
+        "stage_name": "categorize",
+        "started_at": "2026-03-21T19:53:26+00:00",
+        "ended_at": "2026-03-21T19:53:26+00:00",
+        "status": "success",
+        "metrics": {
+          "events_categorized": 43,
+          "duration_ms": 1.41
+        }
+      },
+      {
+        "stage_name": "export",
+        "started_at": "2026-03-21T19:53:26+00:00",
+        "ended_at": null,
+        "status": "running",
+        "metrics": {}
+      }
+    ]
+  },
+  {
+    "run_id": "82dda7be918c",
+    "started_at": "2026-03-21T12:57:46+00:00",
+    "ended_at": "2026-03-21T15:14:23+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "23379943516",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/23379943516",
     "stage_stats": [
       {
         "stage_name": "ingest",
@@ -50,9 +107,13 @@
       {
         "stage_name": "export",
         "started_at": "2026-03-21T15:14:23+00:00",
-        "ended_at": null,
-        "status": "running",
-        "metrics": {}
+        "ended_at": "2026-03-21T15:14:23+00:00",
+        "status": "success",
+        "metrics": {
+          "exported_files": 12,
+          "open_incidents": 1,
+          "duration_ms": 117.68
+        }
       }
     ]
   },
