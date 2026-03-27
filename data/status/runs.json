@@ -1,12 +1,69 @@
 [
   {
-    "run_id": "a77acd1939f7",
-    "started_at": "2026-03-26T19:10:30+00:00",
+    "run_id": "b482e1a9d6a2",
+    "started_at": "2026-03-27T00:02:33+00:00",
     "ended_at": null,
     "status": "running",
     "error_message": null,
     "github_run_id": null,
     "github_run_url": null,
+    "stage_stats": [
+      {
+        "stage_name": "ingest",
+        "started_at": "2026-03-27T00:02:33+00:00",
+        "ended_at": "2026-03-27T02:23:29+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 4,
+          "duplicate_articles": 1274,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": true,
+          "duration_ms": 8455809.74
+        }
+      },
+      {
+        "stage_name": "cluster",
+        "started_at": "2026-03-27T02:23:29+00:00",
+        "ended_at": "2026-03-27T02:23:29+00:00",
+        "status": "success",
+        "metrics": {
+          "events": 57,
+          "articles_clustered": 60,
+          "duration_ms": 75.85
+        }
+      },
+      {
+        "stage_name": "categorize",
+        "started_at": "2026-03-27T02:23:29+00:00",
+        "ended_at": "2026-03-27T02:23:29+00:00",
+        "status": "success",
+        "metrics": {
+          "events_categorized": 57,
+          "duration_ms": 2.0
+        }
+      },
+      {
+        "stage_name": "export",
+        "started_at": "2026-03-27T02:23:29+00:00",
+        "ended_at": null,
+        "status": "running",
+        "metrics": {}
+      }
+    ]
+  },
+  {
+    "run_id": "a77acd1939f7",
+    "started_at": "2026-03-26T19:10:30+00:00",
+    "ended_at": "2026-03-26T21:41:38+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "23610319742",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/23610319742",
     "stage_stats": [
       {
         "stage_name": "ingest",
@@ -50,9 +107,13 @@
       {
         "stage_name": "export",
         "started_at": "2026-03-26T21:41:38+00:00",
-        "ended_at": null,
-        "status": "running",
-        "metrics": {}
+        "ended_at": "2026-03-26T21:41:38+00:00",
+        "status": "success",
+        "metrics": {
+          "exported_files": 12,
+          "open_incidents": 1,
+          "duration_ms": 170.73
+        }
       }
     ]
   },
@@ -1150,67 +1211,6 @@
           "exported_files": 12,
           "open_incidents": 1,
           "duration_ms": 135.18
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "e68e974baad2",
-    "started_at": "2026-03-23T00:50:37+00:00",
-    "ended_at": "2026-03-23T03:11:08+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "23415529915",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/23415529915",
-    "stage_stats": [
-      {
-        "stage_name": "ingest",
-        "started_at": "2026-03-23T00:50:37+00:00",
-        "ended_at": "2026-03-23T03:11:08+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 10,
-          "duplicate_articles": 1241,
-          "dead_letters": 0,
-          "failed_sources": 2,
-          "skipped_sources": 0,
-          "not_modified_sources": 1,
-          "auto_disabled_sources": 1,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": true,
-          "duration_ms": 8430742.2
-        }
-      },
-      {
-        "stage_name": "cluster",
-        "started_at": "2026-03-23T03:11:08+00:00",
-        "ended_at": "2026-03-23T03:11:08+00:00",
-        "status": "success",
-        "metrics": {
-          "events": 50,
-          "articles_clustered": 52,
-          "duration_ms": 60.68
-        }
-      },
-      {
-        "stage_name": "categorize",
-        "started_at": "2026-03-23T03:11:08+00:00",
-        "ended_at": "2026-03-23T03:11:08+00:00",
-        "status": "success",
-        "metrics": {
-          "events_categorized": 50,
-          "duration_ms": 1.5
-        }
-      },
-      {
-        "stage_name": "export",
-        "started_at": "2026-03-23T03:11:08+00:00",
-        "ended_at": "2026-03-23T03:11:08+00:00",
-        "status": "success",
-        "metrics": {
-          "exported_files": 12,
-          "open_incidents": 1,
-          "duration_ms": 133.98
         }
       }
     ]
