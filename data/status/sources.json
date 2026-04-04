@@ -3,14 +3,14 @@
     "source_id": "ai-explained",
     "name": "AI Explained",
     "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCNJ1Ymd5yFuUPtn21xtRbbw",
-    "status": "healthy",
+    "status": "degraded",
     "last_success_at": "2026-04-04T04:21:58+00:00",
     "last_item_at": "2026-03-26T20:15:12+00:00",
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "avg_latency_ms": 17441.64,
     "items_24h": 0,
-    "errors_24h": 1,
-    "last_error": null,
+    "errors_24h": 2,
+    "last_error": "Failed to fetch feed content after retries",
     "auto_disabled_until": null,
     "recent_statuses": [
       "success",
@@ -87,20 +87,21 @@
       "success",
       "success",
       "success",
-      "success"
+      "success",
+      "failed"
     ],
-    "uptime_pct_recent": 94.67,
-    "checks_count_recent": 75
+    "uptime_pct_recent": 93.42,
+    "checks_count_recent": 76
   },
   {
     "source_id": "apple-machine-learning",
     "name": "Apple ML Research",
     "feed_url": "https://machinelearning.apple.com/rss.xml",
     "status": "healthy",
-    "last_success_at": "2026-04-04T04:20:40+00:00",
+    "last_success_at": "2026-04-04T06:43:29+00:00",
     "last_item_at": null,
     "consecutive_failures": 0,
-    "avg_latency_ms": 236.81,
+    "avg_latency_ms": 214.04,
     "items_24h": 0,
     "errors_24h": 0,
     "last_error": null,
@@ -180,20 +181,21 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
     "uptime_pct_recent": 100.0,
-    "checks_count_recent": 75
+    "checks_count_recent": 76
   },
   {
     "source_id": "cursor-blog",
     "name": "Cursor Blog",
     "feed_url": "https://www.any-feeds.com/api/feeds/custom/cmkoaiogm0000lf04qmtirq2g/rss.xml",
     "status": "healthy",
-    "last_success_at": "2026-04-04T04:20:52+00:00",
+    "last_success_at": "2026-04-04T06:43:39+00:00",
     "last_item_at": "2026-03-26T00:00:00+00:00",
     "consecutive_failures": 0,
-    "avg_latency_ms": 11932.24,
+    "avg_latency_ms": 11502.28,
     "items_24h": 0,
     "errors_24h": 0,
     "last_error": null,
@@ -273,20 +275,21 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
     "uptime_pct_recent": 100.0,
-    "checks_count_recent": 75
+    "checks_count_recent": 76
   },
   {
     "source_id": "cursor-changelog",
     "name": "Cursor Changelog",
     "feed_url": "https://any-feeds.com/api/feeds/custom/cml03n27k0000ih04sx4hqg1e/rss.xml",
     "status": "healthy",
-    "last_success_at": "2026-04-04T04:21:22+00:00",
+    "last_success_at": "2026-04-04T06:43:53+00:00",
     "last_item_at": "2026-03-25T00:00:00+00:00",
     "consecutive_failures": 0,
-    "avg_latency_ms": 21810.42,
+    "avg_latency_ms": 20314.07,
     "items_24h": 0,
     "errors_24h": 0,
     "last_error": null,
@@ -366,10 +369,11 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
     "uptime_pct_recent": 100.0,
-    "checks_count_recent": 75
+    "checks_count_recent": 76
   },
   {
     "source_id": "fireship",
@@ -378,10 +382,10 @@
     "status": "degraded",
     "last_success_at": "2026-04-03T23:56:41+00:00",
     "last_item_at": "2026-04-02T19:18:38+00:00",
-    "consecutive_failures": 1,
+    "consecutive_failures": 2,
     "avg_latency_ms": 18257.11,
     "items_24h": 0,
-    "errors_24h": 2,
+    "errors_24h": 3,
     "last_error": "Failed to fetch feed content after retries",
     "auto_disabled_until": null,
     "recent_statuses": [
@@ -459,20 +463,21 @@
       "success",
       "success",
       "success",
+      "failed",
       "failed"
     ],
-    "uptime_pct_recent": 90.67,
-    "checks_count_recent": 75
+    "uptime_pct_recent": 89.47,
+    "checks_count_recent": 76
   },
   {
     "source_id": "google-ai-blog",
     "name": "Google AI Blog",
     "feed_url": "https://blog.google/technology/ai/rss/",
     "status": "healthy",
-    "last_success_at": "2026-04-04T02:02:47+00:00",
+    "last_success_at": "2026-04-04T04:29:21+00:00",
     "last_item_at": "2026-04-02T16:00:00+00:00",
     "consecutive_failures": 0,
-    "avg_latency_ms": 9907.93,
+    "avg_latency_ms": 9506.05,
     "items_24h": 0,
     "errors_24h": 0,
     "last_error": null,
@@ -552,20 +557,21 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
     "uptime_pct_recent": 100.0,
-    "checks_count_recent": 75
+    "checks_count_recent": 76
   },
   {
     "source_id": "google-deepmind-blog",
     "name": "Google DeepMind Blog",
     "feed_url": "https://deepmind.google/blog/rss.xml",
     "status": "healthy",
-    "last_success_at": "2026-04-04T02:03:36+00:00",
+    "last_success_at": "2026-04-04T04:30:05+00:00",
     "last_item_at": "2026-04-02T16:00:49+00:00",
     "consecutive_failures": 0,
-    "avg_latency_ms": 51488.95,
+    "avg_latency_ms": 49936.79,
     "items_24h": 0,
     "errors_24h": 0,
     "last_error": null,
@@ -645,23 +651,24 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
     "uptime_pct_recent": 100.0,
-    "checks_count_recent": 75
+    "checks_count_recent": 76
   },
   {
     "source_id": "hugging-face",
     "name": "Hugging Face",
     "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w",
-    "status": "healthy",
+    "status": "degraded",
     "last_success_at": "2026-04-04T04:22:12+00:00",
     "last_item_at": "2026-04-03T06:43:00+00:00",
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "avg_latency_ms": 17298.83,
     "items_24h": 1,
-    "errors_24h": 0,
-    "last_error": null,
+    "errors_24h": 1,
+    "last_error": "Failed to fetch feed content after retries",
     "auto_disabled_until": null,
     "recent_statuses": [
       "success",
@@ -738,20 +745,21 @@
       "success",
       "success",
       "success",
-      "success"
+      "success",
+      "failed"
     ],
-    "uptime_pct_recent": 90.67,
-    "checks_count_recent": 75
+    "uptime_pct_recent": 89.47,
+    "checks_count_recent": 76
   },
   {
     "source_id": "matt-wolfe",
     "name": "Matt Wolfe",
     "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UChpleBmo18P08aKCIgti38g",
     "status": "healthy",
-    "last_success_at": "2026-04-04T04:21:40+00:00",
+    "last_success_at": "2026-04-04T06:44:08+00:00",
     "last_item_at": "2026-04-03T15:00:00+00:00",
     "consecutive_failures": 0,
-    "avg_latency_ms": 19601.41,
+    "avg_latency_ms": 18694.57,
     "items_24h": 1,
     "errors_24h": 1,
     "last_error": null,
@@ -831,10 +839,11 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
-    "uptime_pct_recent": 94.67,
-    "checks_count_recent": 75
+    "uptime_pct_recent": 94.74,
+    "checks_count_recent": 76
   },
   {
     "source_id": "microsoft-ai-blog",
@@ -924,20 +933,21 @@
       "skipped",
       "skipped",
       "skipped",
+      "skipped",
       "skipped"
     ],
     "uptime_pct_recent": 0.0,
-    "checks_count_recent": 75
+    "checks_count_recent": 76
   },
   {
     "source_id": "openai-blog",
     "name": "OpenAI Blog",
     "feed_url": "https://openai.com/blog/rss.xml",
     "status": "healthy",
-    "last_success_at": "2026-04-04T04:20:40+00:00",
+    "last_success_at": "2026-04-04T06:43:29+00:00",
     "last_item_at": "2026-04-02T10:30:00+00:00",
     "consecutive_failures": 0,
-    "avg_latency_ms": 8292092.7,
+    "avg_latency_ms": 8234462.79,
     "items_24h": 0,
     "errors_24h": 0,
     "last_error": null,
@@ -1016,20 +1026,21 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
     "uptime_pct_recent": 100.0,
-    "checks_count_recent": 74
+    "checks_count_recent": 75
   },
   {
     "source_id": "simon-willison",
     "name": "Simon Willison",
     "feed_url": "https://simonwillison.net/atom/everything/",
     "status": "healthy",
-    "last_success_at": "2026-04-04T04:20:43+00:00",
-    "last_item_at": "2026-04-04T02:20:17+00:00",
+    "last_success_at": "2026-04-04T06:43:29+00:00",
+    "last_item_at": null,
     "consecutive_failures": 0,
-    "avg_latency_ms": 2396.64,
+    "avg_latency_ms": 1931.66,
     "items_24h": 8,
     "errors_24h": 0,
     "last_error": null,
@@ -1109,10 +1120,11 @@
       "success",
       "success",
       "success",
+      "success",
       "success"
     ],
     "uptime_pct_recent": 100.0,
-    "checks_count_recent": 75
+    "checks_count_recent": 76
   },
   {
     "source_id": "test-source",
