@@ -1,5 +1,113 @@
 [
   {
+    "check_id": 1655,
+    "source_id": "hugging-face",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:59+00:00",
+    "status": "failed",
+    "latency_ms": null,
+    "error_message": "Failed to fetch feed content after retries"
+  },
+  {
+    "check_id": 1654,
+    "source_id": "ai-explained",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:57+00:00",
+    "status": "failed",
+    "latency_ms": null,
+    "error_message": "Failed to fetch feed content after retries"
+  },
+  {
+    "check_id": 1653,
+    "source_id": "fireship",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:55+00:00",
+    "status": "success",
+    "latency_ms": 10020.16,
+    "error_message": null
+  },
+  {
+    "check_id": 1652,
+    "source_id": "matt-wolfe",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:45+00:00",
+    "status": "failed",
+    "latency_ms": null,
+    "error_message": "Failed to fetch feed content after retries"
+  },
+  {
+    "check_id": 1651,
+    "source_id": "cursor-changelog",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:43+00:00",
+    "status": "success",
+    "latency_ms": 11323.29,
+    "error_message": null
+  },
+  {
+    "check_id": 1650,
+    "source_id": "cursor-blog",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:32+00:00",
+    "status": "success",
+    "latency_ms": 7952.11,
+    "error_message": null
+  },
+  {
+    "check_id": 1649,
+    "source_id": "simon-willison",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:24+00:00",
+    "status": "success",
+    "latency_ms": 116.3,
+    "error_message": null
+  },
+  {
+    "check_id": 1647,
+    "source_id": "openai-blog",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:23+00:00",
+    "status": "success",
+    "latency_ms": 9215618.64,
+    "error_message": null
+  },
+  {
+    "check_id": 1648,
+    "source_id": "apple-machine-learning",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-17T02:02:23+00:00",
+    "status": "success",
+    "latency_ms": 69.19,
+    "error_message": null
+  },
+  {
+    "check_id": 1646,
+    "source_id": "google-deepmind-blog",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-16T23:28:48+00:00",
+    "status": "success",
+    "latency_ms": 34160.15,
+    "error_message": null
+  },
+  {
+    "check_id": 1645,
+    "source_id": "google-ai-blog",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-16T23:28:14+00:00",
+    "status": "success",
+    "latency_ms": 11566.65,
+    "error_message": null
+  },
+  {
+    "check_id": 1644,
+    "source_id": "microsoft-ai-blog",
+    "run_id": "982b98332c28",
+    "checked_at": "2026-04-16T23:28:02+00:00",
+    "status": "skipped",
+    "latency_ms": null,
+    "error_message": "Auto-disabled until 2026-04-17T01:58:23+00:00"
+  },
+  {
     "check_id": 1643,
     "source_id": "hugging-face",
     "run_id": "db71ed70839b",
@@ -8889,114 +8997,6 @@
     "checked_at": "2026-03-31T07:27:21+00:00",
     "status": "success",
     "latency_ms": 16603.91,
-    "error_message": null
-  },
-  {
-    "check_id": 655,
-    "source_id": "cursor-changelog",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T07:27:04+00:00",
-    "status": "success",
-    "latency_ms": 22571.39,
-    "error_message": null
-  },
-  {
-    "check_id": 654,
-    "source_id": "cursor-blog",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T07:26:42+00:00",
-    "status": "success",
-    "latency_ms": 10068.14,
-    "error_message": null
-  },
-  {
-    "check_id": 652,
-    "source_id": "apple-machine-learning",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T07:26:32+00:00",
-    "status": "success",
-    "latency_ms": 117.81,
-    "error_message": null
-  },
-  {
-    "check_id": 653,
-    "source_id": "simon-willison",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T07:26:32+00:00",
-    "status": "success",
-    "latency_ms": 108.59,
-    "error_message": null
-  },
-  {
-    "check_id": 651,
-    "source_id": "openai-blog",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T07:26:31+00:00",
-    "status": "success",
-    "latency_ms": 8649275.47,
-    "error_message": null
-  },
-  {
-    "check_id": 650,
-    "source_id": "google-deepmind-blog",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T05:02:22+00:00",
-    "status": "success",
-    "latency_ms": 48936.61,
-    "error_message": null
-  },
-  {
-    "check_id": 649,
-    "source_id": "google-ai-blog",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T05:01:33+00:00",
-    "status": "success",
-    "latency_ms": 8966.79,
-    "error_message": null
-  },
-  {
-    "check_id": 648,
-    "source_id": "microsoft-ai-blog",
-    "run_id": "f471ed55d7fd",
-    "checked_at": "2026-03-31T05:01:24+00:00",
-    "status": "skipped",
-    "latency_ms": null,
-    "error_message": "Auto-disabled until 2026-04-01T00:02:52+00:00"
-  },
-  {
-    "check_id": 647,
-    "source_id": "hugging-face",
-    "run_id": "af92e8b37a89",
-    "checked_at": "2026-03-31T02:35:10+00:00",
-    "status": "success",
-    "latency_ms": 13246.61,
-    "error_message": null
-  },
-  {
-    "check_id": 646,
-    "source_id": "ai-explained",
-    "run_id": "af92e8b37a89",
-    "checked_at": "2026-03-31T02:34:57+00:00",
-    "status": "success",
-    "latency_ms": 12058.05,
-    "error_message": null
-  },
-  {
-    "check_id": 645,
-    "source_id": "fireship",
-    "run_id": "af92e8b37a89",
-    "checked_at": "2026-03-31T02:34:45+00:00",
-    "status": "success",
-    "latency_ms": 12632.13,
-    "error_message": null
-  },
-  {
-    "check_id": 644,
-    "source_id": "matt-wolfe",
-    "run_id": "af92e8b37a89",
-    "checked_at": "2026-03-31T02:34:33+00:00",
-    "status": "success",
-    "latency_ms": 14584.87,
     "error_message": null
   }
 ]
