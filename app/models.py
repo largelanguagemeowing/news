@@ -6,6 +6,7 @@ from enum import Enum
 class ExtractionMethod(str, Enum):
     RSS = "rss"
     YOUTUBE = "youtube"
+    YOUTUBE_TRANSCRIPT = "youtube_transcript"
     TRAFILATURA = "trafilatura"
     MARKDOWN_NEW = "markdown_new"
     COMPRESS_NEW = "compress_new"

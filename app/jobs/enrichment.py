@@ -15,6 +15,7 @@ import requests
 import tenacity
 import trafilatura
 from bs4 import BeautifulSoup
+from youtube_transcript_api import YouTubeTranscriptApi
 
 from app.models import ExtractionMethod
 
@@ -22,7 +23,7 @@ from app.models import ExtractionMethod
 logger = logging.getLogger("news.pipeline")
 
 
-MethodName = Literal["youtube", "trafilatura", "markdown_new", "jina", "defuddle", "rss"]
+MethodName = Literal["youtube", "youtube_transcript", "trafilatura", "markdown_new", "jina", "defuddle", "rss"]
 
 
 @dataclass(frozen=True)
@@ -252,6 +253,34 @@ def build_youtube_body(metadata: dict[str, str], rss_summary: str) -> str:
     description = (metadata.get("description") or rss_summary or "").strip()
     if description:
         parts.append(description)
+    author = (metadata.get("author") or "").strip()
+    if author:
+        parts.append(f"author: {author}")
+    embed_url = (metadata.get("embed_url") or "").strip()
+    if embed_url:
+        parts.append(f"video: {embed_url}")
+    return "\n\n".join(parts).strip()
+
+
+def fetch_youtube_transcript(video_id: str) -> str | None:
+    if not video_id:
+        return None
+    try:
+        fetched = YouTubeTranscriptApi().fetch(video_id, languages=["en"])
+        text = " ".join(snippet.text for snippet in fetched if snippet.text).strip()
+    except Exception as exc:
+        logger.debug("youtube transcript fetch failed video_id=%s error=%s", video_id, exc)
+        return None
+    if len(text) < 300:
+        return None
+    return text
+
+
+def build_youtube_transcript_body(metadata: dict[str, str], transcript: str) -> str:
+    parts = [transcript.strip()]
+    title = (metadata.get("title") or "").strip()
+    if title:
+        parts.append(f"title: {title}")
     author = (metadata.get("author") or "").strip()
     if author:
         parts.append(f"author: {author}")
@@ -565,6 +594,25 @@ def enrich_with_policy(
                     current_body,
                     settings.request_timeout_seconds,
                 )
+                transcript = fetch_youtube_transcript(youtube_meta.get("video_id", ""))
+                if transcript:
+                    transcript_body = truncate_for_storage(
+                        build_youtube_transcript_body(youtube_meta, transcript),
+                        settings.max_chars,
+                    )
+                    dur = round((time.monotonic() - t0) * 1000, 2)
+                    attempts.append({
+                        "method": ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
+                        "status": "success",
+                        "duration_ms": dur,
+                        "error_message": None,
+                        "output_chars": len(transcript_body),
+                    })
+                    return EnrichResult(
+                        body=transcript_body,
+                        method=ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
+                        attempts=tuple(attempts),
+                    )
                 yt_body = build_youtube_body(youtube_meta, current_body)
                 dur = round((time.monotonic() - t0) * 1000, 2)
                 attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(yt_body)})

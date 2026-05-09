@@ -335,6 +335,14 @@ def build_youtube_body(metadata: dict[str, str], rss_summary: str) -> str:
     return enrichment.build_youtube_body(metadata, rss_summary)
 
 
+def fetch_youtube_transcript(video_id: str) -> str | None:
+    return enrichment.fetch_youtube_transcript(video_id)
+
+
+def build_youtube_transcript_body(metadata: dict[str, str], transcript: str) -> str:
+    return enrichment.build_youtube_transcript_body(metadata, transcript)
+
+
 def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
     """Compatibility wrapper kept for tests and monkeypatching."""
     if not url:
@@ -466,6 +474,16 @@ def enrich_with_policy(
         if method == ExtractionMethod.YOUTUBE.value:
             if is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS:
                 youtube_meta = extract_youtube_metadata(url, title, current_body)
+                transcript = fetch_youtube_transcript(youtube_meta.get("video_id", ""))
+                if transcript:
+                    transcript_body = truncate_for_storage(build_youtube_transcript_body(youtube_meta, transcript))
+                    logger.info(
+                        "Enrichment success source=%s method=%s url=%s",
+                        source_id,
+                        ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
+                        url,
+                    )
+                    return transcript_body, ExtractionMethod.YOUTUBE_TRANSCRIPT.value, -1, False
                 logger.info(
                     "Enrichment success source=%s method=%s url=%s",
                     source_id,
