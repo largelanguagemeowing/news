@@ -283,6 +283,7 @@ def build_articles(
     rows = conn.execute(
         """
         SELECT a.article_id, a.title, a.body, a.url, a.published_at, a.fetched_at,
+               a.extraction_method,
                s.source_id, s.name AS source_name, s.default_category,
                e.category_labels AS event_category
         FROM articles a
@@ -311,6 +312,8 @@ def build_articles(
                 "fetched_at": row["fetched_at"],
                 "source_id": row["source_id"],
                 "source_name": row["source_name"],
+                "extraction_method": row["extraction_method"] or "rss",
+                "body": body,
                 "topic": topic,
                 "tags": tags[:7],
             }

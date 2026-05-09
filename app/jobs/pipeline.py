@@ -633,10 +633,22 @@ def enrich_with_policy(
 
 
 def enrich_article_content(url: str, source_id: str, title: str, body: str) -> tuple[str, str, list[dict]]:
+    started = time.monotonic()
     enriched_body, method, _rate_limit_remaining, _rate_limited = enrich_with_policy(
         url, source_id, title, body
     )
-    return enriched_body, method, []
+    duration_ms = round((time.monotonic() - started) * 1000, 2)
+    output_chars = len(enriched_body or "")
+    status = "success" if method != ExtractionMethod.RSS.value and output_chars > 0 else "failed"
+    return enriched_body, method, [
+        {
+            "method": method,
+            "status": status,
+            "duration_ms": duration_ms,
+            "error_message": None,
+            "output_chars": output_chars if output_chars else None,
+        }
+    ]
 
 
 def ingest_stage(
