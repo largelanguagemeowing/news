@@ -2,11 +2,11 @@
   {
     "run_id": "31d7165aebf2",
     "started_at": "2026-05-09T13:11:15+00:00",
-    "ended_at": null,
-    "status": "running",
+    "ended_at": "2026-05-09T15:45:04+00:00",
+    "status": "success",
     "error_message": null,
-    "github_run_id": null,
-    "github_run_url": null,
+    "github_run_id": "25600757214",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25600757214",
     "stage_stats": [
       {
         "stage_name": "ingest",
@@ -50,9 +50,13 @@
       {
         "stage_name": "export",
         "started_at": "2026-05-09T15:45:03+00:00",
-        "ended_at": null,
-        "status": "running",
-        "metrics": {}
+        "ended_at": "2026-05-09T15:45:04+00:00",
+        "status": "success",
+        "metrics": {
+          "exported_files": 12,
+          "open_incidents": 2,
+          "duration_ms": 539.54
+        }
       }
     ]
   },
