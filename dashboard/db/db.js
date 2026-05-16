@@ -201,7 +201,7 @@ function renderData(data) {
   pagination.style.display = '';
   emptyState.style.display = 'none';
 
-  const columns = Object.keys(data[0]).filter((col) => !col.startsWith('_'));
+  const columns = orderColumns(Object.keys(data[0]).filter((col) => !col.startsWith('_')));
 
   tableHead.innerHTML = `
     <tr>
@@ -385,7 +385,7 @@ function populateSourceFilter(data) {
 function exportCSV() {
   if (!currentData.length) return;
 
-  const columns = Object.keys(currentData[0]).filter((col) => !col.startsWith('_'));
+  const columns = orderColumns(Object.keys(currentData[0]).filter((col) => !col.startsWith('_')));
   let csv = `${columns.join(',')}\n`;
 
   currentData.forEach((row) => {
@@ -421,12 +421,29 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+function orderColumns(cols) {
+  const late = new Set(['published_at', 'fetched_at']);
+  const front = [];
+  const middle = [];
+  const back = [];
+  for (const col of cols) {
+    if (col === 'body') back.push(col);
+    else if (late.has(col)) middle.push(col);
+    else front.push(col);
+  }
+  return [...front, ...middle, ...back];
+}
+
 function formatDate(dateStr) {
   if (!dateStr) return '';
   try {
     const date = new Date(dateStr);
     if (Number.isNaN(date.getTime())) return String(dateStr);
-    return `${date.toLocaleDateString()} ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    const d = String(date.getDate()).padStart(2, '0');
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const y = date.getFullYear();
+    const time = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return `${d}/${m}/${y} ${time}`;
   } catch {
     return String(dateStr);
   }
