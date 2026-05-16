@@ -1023,6 +1023,104 @@ def build_articles(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     )
 
 
+def fetch_stage(
+    conn: sqlite3.Connection,
+    run_id: str,
+    sources: list[SourceConfig],
+    issue_client: GitHubIssueClient,
+) -> StageResult:
+    from app.jobs import stages_ingest
+
+    def _noop_enrich(url, source_id, title, body):
+        return body, ExtractionMethod.RSS.value, []
+
+    metrics = stages_ingest.ingest_stage(
+        conn,
+        run_id,
+        sources,
+        issue_client,
+        defuddle_enabled=DEFUDDLE_ENABLED,
+        source_fail_threshold=SOURCE_FAIL_THRESHOLD,
+        source_auto_disable_cooldown_hours=SOURCE_AUTO_DISABLE_COOLDOWN_HOURS,
+        source_is_in_cooldown=source_is_in_cooldown,
+        should_auto_disable_source=should_auto_disable_source,
+        utc_now_iso=utc_now_iso,
+        iso=iso,
+        parse_date=parse_date,
+        parse_date_inferred=parse_date_inferred,
+        canonicalize_url=canonicalize_url,
+        normalize_text=normalize_text,
+        sha1_hexdigest=sha1_hexdigest,
+        simhash64=simhash64,
+        enrich_article_content=_noop_enrich,
+        get_source_timeout_seconds=get_source_timeout_seconds,
+        slow_source_latency_ms=SLOW_SOURCE_LATENCY_MS,
+    )
+    return StageResult(status="success", metrics=metrics)
+
+
+def enrich_stage(conn: sqlite3.Connection, run_id: str) -> StageResult:
+    from app.jobs import enrich_pipeline as enrich_mod
+
+    limit = os.getenv("ENRICH_LIMIT")
+    only_method = os.getenv("ENRICH_ONLY_METHOD") or None
+
+    try:
+        result = enrich_mod._enrich_articles(
+            conn,
+            run_id,
+            limit=int(limit) if limit else 500,
+            only_missing=True,
+            only_dirty=False,
+            skip_enriched=True,
+            max_markdown_new=100,
+            only_method=only_method,
+            source_id=None,
+            exclude_source=None,
+        )
+        return StageResult(status="success", metrics=result)
+    except Exception as e:
+        return StageResult(status="failed", metrics={}, error_message=str(e))
+
+
+def classify_stage(conn: sqlite3.Connection, run_id: str) -> StageResult:
+    from app.jobs import stages_cluster, stages_export
+
+    cluster_metrics = stages_cluster.cluster_stage(
+        conn,
+        parse_date=parse_date,
+        iso=iso,
+        pair_similarity=pair_similarity,
+        sha1_hexdigest=sha1_hexdigest,
+        similarity_threshold=SIMILARITY_THRESHOLD,
+        cluster_window_hours=CLUSTER_WINDOW_HOURS,
+        cluster_lookback_days=CLUSTER_LOOKBACK_DAYS,
+    )
+
+    categorize_metrics = stages_cluster.categorize_stage(
+        conn,
+        classify_event=classify_event,
+    )
+
+    export_metrics = stages_export.export_status(
+        conn,
+        status_dir=STATUS_DIR,
+        build_summary_fn=build_summary,
+        build_sources_fn=build_sources,
+        build_runs_fn=build_runs,
+        build_incidents_fn=build_incidents,
+        build_events_fn=build_events,
+        build_articles_fn=build_articles,
+    )
+
+    combined_metrics = {
+        "cluster": cluster_metrics,
+        "categorize": categorize_metrics,
+        "export": export_metrics,
+    }
+    return StageResult(status="success", metrics=combined_metrics)
+
+
 def run_pipeline() -> int:
     reset_markdown_new_circuit_breaker()
     conn = get_connection()
@@ -1064,11 +1162,11 @@ def run_pipeline() -> int:
         pipeline_metrics["github_run_url"] = (
             f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
         )
+
     stages = [
-        ("ingest", lambda: ingest_stage(conn, run_id, sources, issue_client)),
-        ("cluster", lambda: cluster_stage(conn)),
-        ("categorize", lambda: categorize_stage(conn)),
-        ("export", lambda: export_status(conn)),
+        ("fetch", lambda: fetch_stage(conn, run_id, sources, issue_client)),
+        ("enrich", lambda: enrich_stage(conn, run_id)),
+        ("classify", lambda: classify_stage(conn, run_id)),
     ]
 
     logger.info(

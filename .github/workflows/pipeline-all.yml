@@ -1,0 +1,220 @@
+name: pipeline-all
+run-name: "pipeline-all @ ${{ github.ref_name }}"
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      pipeline_source:
+        description: "Which sources to ingest"
+        required: false
+        type: choice
+        default: "all"
+        options:
+          - all
+          - openai-only
+          - non-openai
+          - microsoft-ai-blog
+          - google-ai-blog
+          - google-deepmind-blog
+          - openai-blog
+          - apple-machine-learning
+          - simon-willison
+          - cursor-blog
+          - cursor-changelog
+          - matt-wolfe
+          - fireship
+          - ai-explained
+          - hugging-face
+      enable_backfill:
+        description: "Run enriched backfill for existing items"
+        required: false
+        default: false
+        type: boolean
+      backfill_all:
+        description: "When backfill is enabled, process all items"
+        required: false
+        default: false
+        type: boolean
+      backfill_method:
+        description: "Force specific extraction method"
+        required: false
+        type: choice
+        default: "default"
+        options:
+          - default
+          - youtube
+          - trafilatura
+          - markdown_new
+          - jina
+          - defuddle
+      skip_fetch:
+        description: "Skip fetch stage"
+        required: false
+        type: boolean
+        default: false
+      skip_enrich:
+        description: "Skip enrich stage"
+        required: false
+        type: boolean
+        default: false
+      skip_classify:
+        description: "Skip classify stage"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: news-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  fetch:
+    if: ${{ !inputs.skip_fetch }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Run fetch pipeline
+        id: fetch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          LOG_LEVEL: "INFO"
+          PIPELINE_SOURCE_ID: >-
+            ${{
+              inputs.pipeline_source != 'all'
+              && inputs.pipeline_source != 'openai-only'
+              && inputs.pipeline_source != 'non-openai'
+              && inputs.pipeline_source
+              || ''
+            }}
+          PIPELINE_EXCLUDE_SOURCE: >-
+            ${{
+              inputs.pipeline_source == 'non-openai'
+              && 'openai-blog'
+              || ''
+            }}
+        run: |
+          if [ "${{ inputs.pipeline_source }}" = "openai-only" ]; then
+            export PIPELINE_SOURCE_ID="openai-blog"
+          fi
+          uv run python -m app.jobs.fetch_pipeline
+
+      - name: Commit fetch data
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.db data/status
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git pull --rebase || echo "Rebase had conflicts"
+            git commit -m "chore(data): save fetch stage"
+            git push
+          fi
+
+  enrich:
+    needs: fetch
+    if: ${{ !inputs.skip_enrich && (inputs.pipeline_source != '' || github.event_name != 'workflow_dispatch') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Install defuddle CLI
+        run: npm install -g defuddle@0.13.0
+        env:
+          DEFUDDLE_ENABLED: "1"
+
+      - name: Run enrich pipeline
+        id: enrich
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DEFUDDLE_ENABLED: "1"
+          DEFUDDLE_TIMEOUT_SECONDS: "20"
+          DEFUDDLE_MAX_CHARS: "12000"
+          LOG_LEVEL: "INFO"
+        run: uv run python -m app.jobs.enrich_pipeline
+
+      - name: Commit enrich data
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.db data/status
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git pull --rebase || echo "Rebase had conflicts"
+            git commit -m "chore(data): save enrich stage"
+            git push
+          fi
+
+  classify:
+    needs: enrich
+    if: ${{ !inputs.skip_classify }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Run classify pipeline
+        id: classify
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          LOG_LEVEL: "INFO"
+        run: uv run python -m app.jobs.classify_pipeline
+
+      - name: Commit classify data
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.db data/status
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git pull --rebase || echo "Rebase had conflicts"
+            git commit -m "chore(data): save classify stage"
+            git push
+          fi

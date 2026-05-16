@@ -1,0 +1,125 @@
+name: pipeline-enrich
+run-name: "enrich @ ${{ github.ref_name }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_id:
+        description: "Filter to specific source"
+        required: false
+        type: string
+      exclude_source:
+        description: "Exclude source(s), comma-separated"
+        required: false
+        type: string
+      limit:
+        description: "Max articles to process"
+        required: false
+        type: number
+        default: 500
+      all:
+        description: "Process all matching articles (ignore limit)"
+        required: false
+        type: boolean
+        default: false
+      only_dirty:
+        description: "Only process likely dirty bodies"
+        required: false
+        type: boolean
+        default: false
+      method:
+        description: "Force specific extraction method"
+        required: false
+        type: choice
+        default: "default"
+        options:
+          - default
+          - youtube
+          - trafilatura
+          - markdown_new
+          - jina
+          - defuddle
+
+concurrency:
+  group: news-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Install defuddle CLI
+        run: npm install -g defuddle@0.13.0
+        env:
+          DEFUDDLE_ENABLED: "1"
+          DEFUDDLE_TIMEOUT_SECONDS: "20"
+          DEFUDDLE_MAX_CHARS: "12000"
+
+      - name: Run enrich pipeline
+        id: enrich
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DEFUDDLE_ENABLED: "1"
+          DEFUDDLE_TIMEOUT_SECONDS: "20"
+          DEFUDDLE_MAX_CHARS: "12000"
+          LOG_LEVEL: "INFO"
+        run: |
+          CMD="uv run python -m app.jobs.enrich_pipeline"
+          
+          if [ -n "${{ inputs.source_id }}" ]; then
+            CMD="$CMD --source-id ${{ inputs.source_id }}"
+          fi
+          
+          if [ -n "${{ inputs.exclude_source }}" ]; then
+            CMD="$CMD --exclude-source ${{ inputs.exclude_source }}"
+          fi
+          
+          if [ "${{ inputs.all }}" = "true" ]; then
+            CMD="$CMD --all"
+          else
+            CMD="$CMD --limit ${{ inputs.limit }}"
+          fi
+          
+          if [ "${{ inputs.only_dirty }}" = "true" ]; then
+            CMD="$CMD --only-dirty"
+          fi
+          
+          if [ "${{ inputs.method }}" != "default" ]; then
+            CMD="$CMD --only-method ${{ inputs.method }}"
+          fi
+          
+          echo "Running: $CMD"
+          $CMD
+
+      - name: Commit and push data changes
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.db data/status
+          
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git pull --rebase || echo "Rebase had conflicts"
+            git commit -m "chore(data): save enrich pipeline progress"
+            git push
+          fi
