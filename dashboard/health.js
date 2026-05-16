@@ -16,6 +16,23 @@ function statusClass(status) {
   return `status-${String(status || "").toLowerCase()}`;
 }
 
+function formatLatency(ms) {
+  if (!ms || ms <= 0) return null;
+  const units = [
+    { label: 'd', divisor: 86400000 },
+    { label: 'h', divisor: 3600000 },
+    { label: 'm', divisor: 60000 },
+    { label: 's', divisor: 1000 },
+  ];
+  for (const u of units) {
+    if (ms >= u.divisor) {
+      const val = ms / u.divisor;
+      return `${val < 10 ? val.toFixed(1) : Math.round(val)}${u.label}`;
+    }
+  }
+  return `${Math.round(ms)}ms`;
+}
+
 function formatDateTime(value) {
   if (!value) return "-";
   const dt = new Date(value);
@@ -162,11 +179,12 @@ async function main() {
         : `<span class="history-meta">-</span>`;
       const lastSuccess = formatTimestamp(s.last_success_at);
       const failures = s.consecutive_failures || 0;
-      const latency = Math.round(s.avg_latency_ms || 0);
+      const latency = s.avg_latency_ms || 0;
+      const latencyLabel = formatLatency(latency);
       const metaItems = [
         lastSuccess !== "-" ? lastSuccess : null,
         failures > 0 ? `${failures} fail${failures > 1 ? "s" : ""}` : null,
-        latency > 0 ? `${latency}ms` : null
+        latency > 0 ? latencyLabel : null
       ].filter(Boolean);
       const metaText = metaItems.length > 0 ? metaItems.join(" · ") : "";
       const statusDotColor = s.status === "healthy" ? "var(--good)" : s.status === "degraded" ? "var(--warn)" : "var(--bad)";
@@ -175,7 +193,7 @@ async function main() {
       <td data-label="Status" class="${statusClass(s.status)}">${s.status}</td>
       <td data-label="Last Success" title="${formatDateTime(s.last_success_at)}">${lastSuccess}</td>
       <td data-label="Failures">${failures}</td>
-      <td data-label="Latency">${latency} ms</td>
+      <td data-label="Latency">${latencyLabel}</td>
       <td data-label="History">${historyCell}</td>
       <td class="mobile-meta">${metaText}</td>
     </tr>`
