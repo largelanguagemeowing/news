@@ -112,10 +112,11 @@ function renderCard(v) {
     ? `https://img.youtube.com/vi/${id}/mqdefault.jpg`
     : '';
   const channelLink = `../?source=${encodeURIComponent(v.source_id)}`;
+  const detailLink = id ? `./detail/?v=${id}` : escapeHtml(v.url);
 
   return `
     <div class="video-card">
-      <a class="video-thumb" href="${escapeHtml(v.url)}" target="_blank" rel="noreferrer">
+      <a class="video-thumb" href="${detailLink}">
         ${thumb ? `<img src="${thumb}" alt="" loading="lazy">` : '<div class="video-thumb-fallback">No thumbnail</div>'}
         <span class="video-duration">${v.topic ? escapeHtml(v.topic) : ''}</span>
       </a>
@@ -124,7 +125,7 @@ function renderCard(v) {
           <a class="video-channel" href="${channelLink}">${escapeHtml(v.source_name)}</a>
           <span class="video-meta-date">${formatDate(v.published_at)}</span>
         </div>
-        <h3 class="video-title"><a href="${escapeHtml(v.url)}" target="_blank" rel="noreferrer">${escapeHtml(v.title)}</a></h3>
+        <h3 class="video-title"><a href="${detailLink}">${escapeHtml(v.title)}</a></h3>
       </div>
     </div>
   `;
@@ -138,11 +139,18 @@ function escapeHtml(text) {
 }
 
 function populateChannels() {
-  const channels = [...new Set(allVideos.map((v) => v.source_id))].sort();
-  channels.forEach((id) => {
+  const channelMap = {};
+  allVideos.forEach((v) => {
+    if (!channelMap[v.source_id]) {
+      channelMap[v.source_id] = { name: v.source_name, count: 0 };
+    }
+    channelMap[v.source_id].count++;
+  });
+  const channels = Object.entries(channelMap).sort((a, b) => a[1].name.localeCompare(b[1].name));
+  channels.forEach(([id, info]) => {
     const opt = document.createElement('option');
     opt.value = id;
-    opt.textContent = id;
+    opt.textContent = `${info.name} (${info.count})`;
     channelEl.appendChild(opt);
   });
 }

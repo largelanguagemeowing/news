@@ -14,7 +14,9 @@ const STATIC_ASSETS = [
   '/news/article/',
   '/news/article/article.js',
   '/news/videos/',
-  '/news/videos/videos.js'
+  '/news/videos/videos.js',
+  '/news/videos/detail/',
+  '/news/videos/detail/detail.js'
 ];
 
 // Install event - cache static assets
