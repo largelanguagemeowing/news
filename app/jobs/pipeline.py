@@ -57,6 +57,8 @@ MARKDOWN_NEW_QUOTA_PATH = STATUS_DIR / "markdown_new_quota.json"
 MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
 COMPRESS_NEW_QUOTA_PATH = STATUS_DIR / "compress_new_quota.json"
 COMPRESS_NEW_DAILY_LIMIT = int(os.getenv("COMPRESS_NEW_DAILY_LIMIT", "500"))
+COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD = int(os.getenv("COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD", "5"))
+COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS = int(os.getenv("COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS", "300"))
 SOURCE_ID_RENAMES = {
     "deepmind-blog": "google-deepmind-blog",
     "apple-ml-blog": "apple-machine-learning",
@@ -235,9 +237,9 @@ def _compress_new_block_seconds_remaining() -> int:
     return max(0, int(COMPRESS_NEW_BLOCKED_UNTIL_TS - time.time()))
 
 
-def _block_compress_new(seconds: int, reason: str) -> None:
+def _block_compress_new(reason: str) -> None:
     global COMPRESS_NEW_BLOCKED_UNTIL_TS
-    seconds = max(1, seconds)
+    seconds = max(1, COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS)
     COMPRESS_NEW_BLOCKED_UNTIL_TS = max(
         COMPRESS_NEW_BLOCKED_UNTIL_TS, time.time() + seconds
     )
@@ -570,8 +572,8 @@ def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
         _record_compress_new_response(False, str(exc))
         state = _load_compress_new_quota_state()
         consecutive_failures = state.get("consecutive_failures", 0)
-        if consecutive_failures >= 5:
-            _block_compress_new(300, f"consecutive_failures={consecutive_failures}")
+        if consecutive_failures >= COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD:
+            _block_compress_new(f"consecutive_failures={consecutive_failures}")
         return None, False
 
 
