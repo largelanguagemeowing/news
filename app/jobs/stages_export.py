@@ -51,7 +51,9 @@ def export_status(
         "dead_letters.json": dead_letters,
     }
     for filename, payload in files.items():
-        (status_dir / filename).write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        (status_dir / filename).write_text(
+            json.dumps(payload, indent=2), encoding="utf-8"
+        )
 
     return {"exported_files": len(files), "open_incidents": summary["open_incidents"]}
 
@@ -64,7 +66,9 @@ def build_summary(
     stale_source_hours: int,
     events_window_hours: int,
 ) -> dict[str, Any]:
-    total_sources = conn.execute("SELECT COUNT(*) c FROM sources WHERE enabled = 1").fetchone()["c"]
+    total_sources = conn.execute(
+        "SELECT COUNT(*) c FROM sources WHERE enabled = 1"
+    ).fetchone()["c"]
     sources_health = conn.execute(
         """
         SELECT sh.source_id, sh.last_success_at, sh.consecutive_failures
@@ -82,11 +86,17 @@ def build_summary(
         if not row["last_success_at"]:
             stale += 1
             continue
-        if (now - parse_date(row["last_success_at"])).total_seconds() > stale_source_hours * 3600:
+        if (
+            now - parse_date(row["last_success_at"])
+        ).total_seconds() > stale_source_hours * 3600:
             stale += 1
     events_24h = conn.execute(
         "SELECT COUNT(*) c FROM events WHERE last_seen >= ?",
-        ((now - timedelta(hours=events_window_hours)).replace(microsecond=0).isoformat(),),
+        (
+            (now - timedelta(hours=events_window_hours))
+            .replace(microsecond=0)
+            .isoformat(),
+        ),
     ).fetchone()["c"]
     open_incidents = incident_repo.count_open_incidents(conn)
     article_count = conn.execute("SELECT COUNT(*) c FROM articles").fetchone()["c"]
@@ -172,8 +182,12 @@ def build_sources(
         ).fetchall()
         recent_statuses = [check["status"] for check in checks][::-1]
         total_checks = len(recent_statuses)
-        success_checks = sum(1 for status in recent_statuses if status == CheckStatus.SUCCESS.value)
-        uptime_pct = round((success_checks / total_checks) * 100, 2) if total_checks else 0.0
+        success_checks = sum(
+            1 for status in recent_statuses if status == CheckStatus.SUCCESS.value
+        )
+        uptime_pct = (
+            round((success_checks / total_checks) * 100, 2) if total_checks else 0.0
+        )
         out.append(
             {
                 "source_id": row["source_id"],
@@ -246,7 +260,9 @@ def build_incidents(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     ]
 
 
-def build_events(conn: sqlite3.Connection, *, events_export_limit: int) -> list[dict[str, Any]]:
+def build_events(
+    conn: sqlite3.Connection, *, events_export_limit: int
+) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
         SELECT e.event_id, e.canonical_title, e.category_labels, e.confidence,
@@ -280,6 +296,16 @@ def build_articles(
     extract_tags: Callable[[str, str, str], list[str]],
     articles_export_limit: int,
 ) -> list[dict[str, Any]]:
+    dearrow_map: dict[str, str] = {}
+    dearrow_path = Path("data/status/dearrow_thumbnails.json")
+    if dearrow_path.exists():
+        try:
+            dearrow_map = json.loads(dearrow_path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+
+    from app.jobs.enrichment import get_youtube_video_id
+
     rows = conn.execute(
         """
         SELECT a.article_id, a.title, a.body, a.url, a.published_at, a.fetched_at,
@@ -299,10 +325,15 @@ def build_articles(
     for row in rows:
         title = row["title"]
         body = row["body"] or ""
-        topic = row["event_category"] or classify_event(title, body, row["default_category"])[0]
+        topic = (
+            row["event_category"]
+            or classify_event(title, body, row["default_category"])[0]
+        )
         tags = extract_tags(title, body, row["source_id"])
         if topic not in tags:
             tags = [topic] + tags
+        video_id = get_youtube_video_id(row["url"])
+        dearrow_url = dearrow_map.get(video_id, "")
         out.append(
             {
                 "article_id": row["article_id"],
@@ -316,6 +347,7 @@ def build_articles(
                 "body": body,
                 "topic": topic,
                 "tags": tags[:7],
+                "dearrow_thumbnail_url": dearrow_url,
             }
         )
     return out
@@ -345,7 +377,9 @@ def build_source_health(conn: sqlite3.Connection) -> list[dict[str, Any]]:
     return [dict(row) for row in rows]
 
 
-def build_source_checks(conn: sqlite3.Connection, limit: int = 1000) -> list[dict[str, Any]]:
+def build_source_checks(
+    conn: sqlite3.Connection, limit: int = 1000
+) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
         SELECT check_id, source_id, run_id, checked_at, status, latency_ms, error_message
@@ -358,7 +392,9 @@ def build_source_checks(conn: sqlite3.Connection, limit: int = 1000) -> list[dic
     return [dict(row) for row in rows]
 
 
-def build_event_members(conn: sqlite3.Connection, limit: int = 2000) -> list[dict[str, Any]]:
+def build_event_members(
+    conn: sqlite3.Connection, limit: int = 2000
+) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
         SELECT event_id, article_id, similarity, reason
@@ -371,7 +407,9 @@ def build_event_members(conn: sqlite3.Connection, limit: int = 2000) -> list[dic
     return [dict(row) for row in rows]
 
 
-def build_ingest_attempts(conn: sqlite3.Connection, limit: int = 2000) -> list[dict[str, Any]]:
+def build_ingest_attempts(
+    conn: sqlite3.Connection, limit: int = 2000
+) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
         SELECT attempt_id, run_id, source_id, url, status, reason, created_at
@@ -384,7 +422,9 @@ def build_ingest_attempts(conn: sqlite3.Connection, limit: int = 2000) -> list[d
     return [dict(row) for row in rows]
 
 
-def build_enrichment_attempts(conn: sqlite3.Connection, limit: int = 2000) -> list[dict[str, Any]]:
+def build_enrichment_attempts(
+    conn: sqlite3.Connection, limit: int = 2000
+) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
         SELECT attempt_id, article_url, source_id, method, status,
@@ -398,7 +438,9 @@ def build_enrichment_attempts(conn: sqlite3.Connection, limit: int = 2000) -> li
     return [dict(row) for row in rows]
 
 
-def build_dead_letters(conn: sqlite3.Connection, limit: int = 1000) -> list[dict[str, Any]]:
+def build_dead_letters(
+    conn: sqlite3.Connection, limit: int = 1000
+) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
         SELECT dead_letter_id, run_id, source_id, url, error_message,

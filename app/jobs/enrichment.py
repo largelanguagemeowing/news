@@ -23,7 +23,15 @@ from app.models import ExtractionMethod
 logger = logging.getLogger("news.pipeline")
 
 
-MethodName = Literal["youtube", "youtube_transcript", "trafilatura", "markdown_new", "jina", "defuddle", "rss"]
+MethodName = Literal[
+    "youtube",
+    "youtube_transcript",
+    "trafilatura",
+    "markdown_new",
+    "jina",
+    "defuddle",
+    "rss",
+]
 
 
 @dataclass(frozen=True)
@@ -51,6 +59,7 @@ class EnrichResult:
     retry_after_seconds: int = 0
     stop_processing: bool = False
     attempts: tuple[dict, ...] = ()
+    dearrow_thumbnail_url: str = ""
 
 
 def truncate_for_storage(text: str, max_chars: int) -> str:
@@ -94,7 +103,9 @@ def get_youtube_video_id(url: str) -> str:
         hostname = (parsed.hostname or "").lower()
         if hostname == "youtu.be":
             return parsed.path.lstrip("/").split("/")[0]
-        if hostname in {"youtube.com", "www.youtube.com"} or hostname.endswith(".youtube.com"):
+        if hostname in {"youtube.com", "www.youtube.com"} or hostname.endswith(
+            ".youtube.com"
+        ):
             if parsed.path == "/watch":
                 for part in (parsed.query or "").split("&"):
                     if part.startswith("v="):
@@ -121,10 +132,13 @@ def normalize_youtube_watch_url(url: str) -> str:
 def fetch_text_url(url: str, request_timeout_seconds: int) -> str:
     """Fetch page text with retry logic for transient failures."""
     try:
+
         @tenacity.retry(
             stop=tenacity.stop_after_attempt(2),
             wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-            retry=tenacity.retry_if_exception_type((requests.RequestException, requests.HTTPError)),
+            retry=tenacity.retry_if_exception_type(
+                (requests.RequestException, requests.HTTPError)
+            ),
             retry_error_callback=lambda retry_state: "",
             before_sleep=lambda retry_state: logger.debug(
                 "Page fetch failed, retrying (attempt %d/2) for url=%s",
@@ -147,13 +161,18 @@ def fetch_text_url(url: str, request_timeout_seconds: int) -> str:
         return ""
 
 
-def fetch_youtube_oembed(url: str, request_timeout_seconds: int) -> dict[str, str] | None:
+def fetch_youtube_oembed(
+    url: str, request_timeout_seconds: int
+) -> dict[str, str] | None:
     """Fetch YouTube oembed data with retry logic for transient failures."""
     try:
+
         @tenacity.retry(
             stop=tenacity.stop_after_attempt(2),
             wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-            retry=tenacity.retry_if_exception_type((requests.RequestException, requests.HTTPError)),
+            retry=tenacity.retry_if_exception_type(
+                (requests.RequestException, requests.HTTPError)
+            ),
             retry_error_callback=lambda retry_state: None,
             before_sleep=lambda retry_state: logger.debug(
                 "YouTube oembed fetch failed, retrying (attempt %d/2) for url=%s",
@@ -214,7 +233,11 @@ def extract_youtube_schema_description(html: str) -> str:
             is_video = type_value == "VideoObject" or (
                 isinstance(type_value, list) and "VideoObject" in type_value
             )
-            if is_video and isinstance(node.get("description"), str) and node["description"].strip():
+            if (
+                is_video
+                and isinstance(node.get("description"), str)
+                and node["description"].strip()
+            ):
                 return node["description"].strip()
             for value in node.values():
                 found = walk(value)
@@ -228,6 +251,57 @@ def extract_youtube_schema_description(html: str) -> str:
     return ""
 
 
+def fetch_dearrow_thumbnail(video_id: str, request_timeout_seconds: int) -> str | None:
+    """Fetch DeArrow community thumbnail URL for a YouTube video."""
+    try:
+        resp = requests.get(
+            "https://sponsor.ajay.app/api/branding",
+            params={"videoID": video_id},
+            timeout=request_timeout_seconds,
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        if resp.status_code != 200:
+            return None
+        data = resp.json()
+        thumb = next(
+            (
+                t
+                for t in data.get("thumbnails", [])
+                if t.get("locked") or t.get("votes", 0) >= 0
+            ),
+            None,
+        )
+        if thumb and not thumb.get("original") and thumb.get("timestamp") is not None:
+            return f"https://dearrow-thumb.ajay.app/api/v1/getThumbnail?videoID={video_id}&time={thumb['timestamp']}"
+    except Exception as exc:
+        logger.debug(
+            "dearrow thumbnail fetch failed video_id=%s error=%s", video_id, exc
+        )
+    return None
+
+
+def _save_dearrow_thumbnail(video_id: str, thumbnail_url: str) -> None:
+    """Persist a DeArrow thumbnail URL to the shared JSON cache."""
+    if not video_id or not thumbnail_url:
+        return
+    try:
+        cache_path = Path("data/status/dearrow_thumbnails.json")
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        data: dict[str, str] = {}
+        if cache_path.exists():
+            try:
+                data = json.loads(cache_path.read_text(encoding="utf-8"))
+            except Exception:
+                pass
+        if video_id not in data:
+            data[video_id] = thumbnail_url
+            cache_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    except Exception as exc:
+        logger.debug(
+            "failed to persist dearrow thumbnail video_id=%s error=%s", video_id, exc
+        )
+
+
 def extract_youtube_metadata(
     url: str,
     rss_title: str,
@@ -238,13 +312,20 @@ def extract_youtube_metadata(
     page_html = fetch_text_url(url, request_timeout_seconds)
     schema_description = extract_youtube_schema_description(page_html)
     description = schema_description or rss_summary.strip()
+    video_id = get_youtube_video_id(url)
+    dearrow_thumb = (
+        fetch_dearrow_thumbnail(video_id, request_timeout_seconds) if video_id else None
+    )
+    if dearrow_thumb:
+        _save_dearrow_thumbnail(video_id, dearrow_thumb)
     return {
         "title": rss_title.strip() or oembed.get("title", ""),
         "author": oembed.get("author", ""),
         "description": description,
         "thumbnail_url": oembed.get("thumbnail_url", ""),
         "embed_url": get_youtube_embed_url(url),
-        "video_id": get_youtube_video_id(url),
+        "video_id": video_id,
+        "dearrow_thumbnail_url": dearrow_thumb or "",
     }
 
 
@@ -269,7 +350,9 @@ def fetch_youtube_transcript(video_id: str) -> str | None:
         fetched = YouTubeTranscriptApi().fetch(video_id, languages=["en"])
         text = " ".join(snippet.text for snippet in fetched if snippet.text).strip()
     except Exception as exc:
-        logger.debug("youtube transcript fetch failed video_id=%s error=%s", video_id, exc)
+        logger.debug(
+            "youtube transcript fetch failed video_id=%s error=%s", video_id, exc
+        )
         return None
     if len(text) < 300:
         return None
@@ -290,7 +373,9 @@ def build_youtube_transcript_body(metadata: dict[str, str], transcript: str) -> 
     return "\n\n".join(parts).strip()
 
 
-def parse_with_defuddle(url: str, settings: EnrichmentSettings) -> tuple[str | None, bool]:
+def parse_with_defuddle(
+    url: str, settings: EnrichmentSettings
+) -> tuple[str | None, bool]:
     """Return extracted content and whether defuddle was used successfully."""
     if not url:
         return None, False
@@ -315,7 +400,9 @@ def parse_with_defuddle(url: str, settings: EnrichmentSettings) -> tuple[str | N
         return None, False
 
     if result.returncode != 0 or not result.stdout.strip():
-        logger.debug("defuddle returned non-success for url=%s code=%s", url, result.returncode)
+        logger.debug(
+            "defuddle returned non-success for url=%s code=%s", url, result.returncode
+        )
         return None, False
 
     try:
@@ -324,7 +411,9 @@ def parse_with_defuddle(url: str, settings: EnrichmentSettings) -> tuple[str | N
         logger.debug("defuddle returned invalid json for url=%s", url)
         return None, False
 
-    content = replace_iframes_with_markdown_links(str(payload.get("content") or "").strip())
+    content = replace_iframes_with_markdown_links(
+        str(payload.get("content") or "").strip()
+    )
     markdown = str(payload.get("contentMarkdown") or "").strip()
     description = str(payload.get("description") or "").strip()
     extracted = content or markdown or description
@@ -334,7 +423,9 @@ def parse_with_defuddle(url: str, settings: EnrichmentSettings) -> tuple[str | N
     return truncate_for_storage(extracted, settings.max_chars), True
 
 
-def parse_with_trafilatura(url: str, settings: EnrichmentSettings) -> tuple[str | None, bool]:
+def parse_with_trafilatura(
+    url: str, settings: EnrichmentSettings
+) -> tuple[str | None, bool]:
     if not url or is_youtube_url(url):
         return None, False
     html = fetch_text_url(url, settings.request_timeout_seconds)
@@ -358,7 +449,9 @@ def parse_with_trafilatura(url: str, settings: EnrichmentSettings) -> tuple[str 
     return truncate_for_storage(cleaned, settings.max_chars), True
 
 
-def parse_with_jina_ai(url: str, settings: EnrichmentSettings) -> tuple[str | None, bool]:
+def parse_with_jina_ai(
+    url: str, settings: EnrichmentSettings
+) -> tuple[str | None, bool]:
     """Use r.jina.ai as a fallback for blocked sites.
 
     Uses tenacity to retry on transient failures with exponential backoff.
@@ -369,7 +462,9 @@ def parse_with_jina_ai(url: str, settings: EnrichmentSettings) -> tuple[str | No
     @tenacity.retry(
         stop=tenacity.stop_after_attempt(2),
         wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-        retry=tenacity.retry_if_exception_type((requests.RequestException, requests.HTTPError)),
+        retry=tenacity.retry_if_exception_type(
+            (requests.RequestException, requests.HTTPError)
+        ),
         retry_error_callback=lambda retry_state: None,
         before_sleep=lambda retry_state: logger.debug(
             "jina.ai fetch failed, retrying (attempt %d/2) for url=%s",
@@ -396,7 +491,11 @@ def parse_with_jina_ai(url: str, settings: EnrichmentSettings) -> tuple[str | No
         in_header = True
         for line in lines:
             if in_header:
-                if line.startswith("Title:") or line.startswith("URL Source:") or line.startswith("Markdown Content:"):
+                if (
+                    line.startswith("Title:")
+                    or line.startswith("URL Source:")
+                    or line.startswith("Markdown Content:")
+                ):
                     continue
                 if line.strip() == "":
                     continue
@@ -411,7 +510,9 @@ def parse_with_jina_ai(url: str, settings: EnrichmentSettings) -> tuple[str | No
         return None, False
 
 
-def parse_with_markdown_new(url: str, settings: EnrichmentSettings) -> tuple[str | None, bool, int]:
+def parse_with_markdown_new(
+    url: str, settings: EnrichmentSettings
+) -> tuple[str | None, bool, int]:
     """Use markdown.new as a fallback for blocked sites.
 
     Returns: (content, success, rate_limit_remaining)
@@ -482,7 +583,10 @@ def parse_with_markdown_new(url: str, settings: EnrichmentSettings) -> tuple[str
             return content, True, rate_limit_remaining
         return None, False, rate_limit_remaining
     except requests.HTTPError as exc:
-        if getattr(exc, "response", None) is not None and exc.response.status_code == 429:
+        if (
+            getattr(exc, "response", None) is not None
+            and exc.response.status_code == 429
+        ):
             return None, False, 0
         logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
         return None, False, -1
@@ -491,7 +595,9 @@ def parse_with_markdown_new(url: str, settings: EnrichmentSettings) -> tuple[str
         return None, False, -1
 
 
-def parse_with_compress_new(url: str, settings: EnrichmentSettings) -> tuple[str | None, bool]:
+def parse_with_compress_new(
+    url: str, settings: EnrichmentSettings
+) -> tuple[str | None, bool]:
     """Fallback extractor using compress.new when markdown.new is rate-limited."""
     if not url or is_youtube_url(url):
         return None, False
@@ -601,13 +707,15 @@ def enrich_with_policy(
                         settings.max_chars,
                     )
                     dur = round((time.monotonic() - t0) * 1000, 2)
-                    attempts.append({
-                        "method": ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
-                        "status": "success",
-                        "duration_ms": dur,
-                        "error_message": None,
-                        "output_chars": len(transcript_body),
-                    })
+                    attempts.append(
+                        {
+                            "method": ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
+                            "status": "success",
+                            "duration_ms": dur,
+                            "error_message": None,
+                            "output_chars": len(transcript_body),
+                        }
+                    )
                     return EnrichResult(
                         body=transcript_body,
                         method=ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
@@ -615,14 +723,30 @@ def enrich_with_policy(
                     )
                 yt_body = build_youtube_body(youtube_meta, current_body)
                 dur = round((time.monotonic() - t0) * 1000, 2)
-                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(yt_body)})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "success",
+                        "duration_ms": dur,
+                        "error_message": None,
+                        "output_chars": len(yt_body),
+                    }
+                )
                 return EnrichResult(
                     body=yt_body,
                     method=ExtractionMethod.YOUTUBE.value,
                     attempts=tuple(attempts),
                 )
             else:
-                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "skipped",
+                        "duration_ms": 0,
+                        "error_message": None,
+                        "output_chars": None,
+                    }
+                )
             continue
 
         if method == ExtractionMethod.TRAFILATURA.value:
@@ -630,23 +754,72 @@ def enrich_with_policy(
             trafilatura_body, used = parse_with_trafilatura(url, settings)
             dur = round((time.monotonic() - t0) * 1000, 2)
             if used and trafilatura_body:
-                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(trafilatura_body)})
-                return EnrichResult(body=trafilatura_body, method=ExtractionMethod.TRAFILATURA.value, attempts=tuple(attempts))
-            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "success",
+                        "duration_ms": dur,
+                        "error_message": None,
+                        "output_chars": len(trafilatura_body),
+                    }
+                )
+                return EnrichResult(
+                    body=trafilatura_body,
+                    method=ExtractionMethod.TRAFILATURA.value,
+                    attempts=tuple(attempts),
+                )
+            attempts.append(
+                {
+                    "method": method,
+                    "status": "failed",
+                    "duration_ms": dur,
+                    "error_message": None,
+                    "output_chars": None,
+                }
+            )
             continue
 
         if method == ExtractionMethod.MARKDOWN_NEW.value:
             if not supports_markdown_family(source_id):
-                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "skipped",
+                        "duration_ms": 0,
+                        "error_message": None,
+                        "output_chars": None,
+                    }
+                )
                 continue
-            if opts.markdown_new_budget_remaining is not None and opts.markdown_new_budget_remaining <= 0:
-                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": "budget exhausted", "output_chars": None})
+            if (
+                opts.markdown_new_budget_remaining is not None
+                and opts.markdown_new_budget_remaining <= 0
+            ):
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "skipped",
+                        "duration_ms": 0,
+                        "error_message": "budget exhausted",
+                        "output_chars": None,
+                    }
+                )
                 continue
             t0 = time.monotonic()
-            markdown_new_body, used, rate_limit_remaining = parse_with_markdown_new(url, settings)
+            markdown_new_body, used, rate_limit_remaining = parse_with_markdown_new(
+                url, settings
+            )
             dur = round((time.monotonic() - t0) * 1000, 2)
             if used and markdown_new_body:
-                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(markdown_new_body)})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "success",
+                        "duration_ms": dur,
+                        "error_message": None,
+                        "output_chars": len(markdown_new_body),
+                    }
+                )
                 return EnrichResult(
                     body=markdown_new_body,
                     method=ExtractionMethod.MARKDOWN_NEW.value,
@@ -654,7 +827,15 @@ def enrich_with_policy(
                     attempts=tuple(attempts),
                 )
 
-            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
+            attempts.append(
+                {
+                    "method": method,
+                    "status": "failed",
+                    "duration_ms": dur,
+                    "error_message": None,
+                    "output_chars": None,
+                }
+            )
 
             if rate_limit_remaining == -2:
                 return EnrichResult(
@@ -671,7 +852,15 @@ def enrich_with_policy(
                 compress_body, compress_used = parse_with_compress_new(url, settings)
                 durc = round((time.monotonic() - t0c) * 1000, 2)
                 if compress_used and compress_body:
-                    attempts.append({"method": ExtractionMethod.COMPRESS_NEW.value, "status": "success", "duration_ms": durc, "error_message": None, "output_chars": len(compress_body)})
+                    attempts.append(
+                        {
+                            "method": ExtractionMethod.COMPRESS_NEW.value,
+                            "status": "success",
+                            "duration_ms": durc,
+                            "error_message": None,
+                            "output_chars": len(compress_body),
+                        }
+                    )
                     return EnrichResult(
                         body=compress_body,
                         method=ExtractionMethod.COMPRESS_NEW.value,
@@ -679,7 +868,15 @@ def enrich_with_policy(
                         markdown_new_rate_limited=True,
                         attempts=tuple(attempts),
                     )
-                attempts.append({"method": ExtractionMethod.COMPRESS_NEW.value, "status": "failed", "duration_ms": durc, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": ExtractionMethod.COMPRESS_NEW.value,
+                        "status": "failed",
+                        "duration_ms": durc,
+                        "error_message": None,
+                        "output_chars": None,
+                    }
+                )
                 if opts.stop_on_markdown_rate_limit:
                     return EnrichResult(
                         body=current_body,
@@ -692,15 +889,43 @@ def enrich_with_policy(
 
         if method == ExtractionMethod.COMPRESS_NEW.value:
             if not supports_markdown_family(source_id):
-                attempts.append({"method": method, "status": "skipped", "duration_ms": 0, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "skipped",
+                        "duration_ms": 0,
+                        "error_message": None,
+                        "output_chars": None,
+                    }
+                )
                 continue
             t0 = time.monotonic()
             compress_body, used = parse_with_compress_new(url, settings)
             dur = round((time.monotonic() - t0) * 1000, 2)
             if used and compress_body:
-                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(compress_body)})
-                return EnrichResult(body=compress_body, method=ExtractionMethod.COMPRESS_NEW.value, attempts=tuple(attempts))
-            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "success",
+                        "duration_ms": dur,
+                        "error_message": None,
+                        "output_chars": len(compress_body),
+                    }
+                )
+                return EnrichResult(
+                    body=compress_body,
+                    method=ExtractionMethod.COMPRESS_NEW.value,
+                    attempts=tuple(attempts),
+                )
+            attempts.append(
+                {
+                    "method": method,
+                    "status": "failed",
+                    "duration_ms": dur,
+                    "error_message": None,
+                    "output_chars": None,
+                }
+            )
             continue
 
         if method == ExtractionMethod.JINA.value:
@@ -708,9 +933,29 @@ def enrich_with_policy(
             jina_body, used = parse_with_jina_ai(url, settings)
             dur = round((time.monotonic() - t0) * 1000, 2)
             if used and jina_body:
-                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(jina_body)})
-                return EnrichResult(body=jina_body, method=ExtractionMethod.JINA.value, attempts=tuple(attempts))
-            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "success",
+                        "duration_ms": dur,
+                        "error_message": None,
+                        "output_chars": len(jina_body),
+                    }
+                )
+                return EnrichResult(
+                    body=jina_body,
+                    method=ExtractionMethod.JINA.value,
+                    attempts=tuple(attempts),
+                )
+            attempts.append(
+                {
+                    "method": method,
+                    "status": "failed",
+                    "duration_ms": dur,
+                    "error_message": None,
+                    "output_chars": None,
+                }
+            )
             continue
 
         if method == ExtractionMethod.DEFUDDLE.value:
@@ -718,12 +963,37 @@ def enrich_with_policy(
             defuddle_body, used = parse_with_defuddle(url, settings)
             dur = round((time.monotonic() - t0) * 1000, 2)
             if used and defuddle_body:
-                attempts.append({"method": method, "status": "success", "duration_ms": dur, "error_message": None, "output_chars": len(defuddle_body)})
-                return EnrichResult(body=defuddle_body, method=ExtractionMethod.DEFUDDLE.value, attempts=tuple(attempts))
-            attempts.append({"method": method, "status": "failed", "duration_ms": dur, "error_message": None, "output_chars": None})
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "success",
+                        "duration_ms": dur,
+                        "error_message": None,
+                        "output_chars": len(defuddle_body),
+                    }
+                )
+                return EnrichResult(
+                    body=defuddle_body,
+                    method=ExtractionMethod.DEFUDDLE.value,
+                    attempts=tuple(attempts),
+                )
+            attempts.append(
+                {
+                    "method": method,
+                    "status": "failed",
+                    "duration_ms": dur,
+                    "error_message": None,
+                    "output_chars": None,
+                }
+            )
             continue
 
-    return EnrichResult(body=current_body, method=ExtractionMethod.RSS.value, rate_limit_remaining=rate_limit_remaining, attempts=tuple(attempts))
+    return EnrichResult(
+        body=current_body,
+        method=ExtractionMethod.RSS.value,
+        rate_limit_remaining=rate_limit_remaining,
+        attempts=tuple(attempts),
+    )
 
 
 def enrich_article_content(
