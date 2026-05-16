@@ -233,6 +233,8 @@ function renderData(data) {
               cellContent = `<a href="${escapeHtml(href)}" target="_blank" rel="noopener" title="${escapeHtml(href)}">${escapeHtml(display)}</a>`;
             } else if (col === 'issue_number' && val) {
               cellContent = `<a href="https://github.com/largelanguagemeowing/news/issues/${encodeURIComponent(val)}" target="_blank" rel="noopener">#${escapeHtml(String(val))}</a>`;
+            } else if (col === 'title' && row.url) {
+              cellContent = `<a href="${escapeHtml(String(row.url))}" target="_blank" rel="noopener">${escapeHtml(String(val ?? ''))}</a>`;
             } else if (col === 'article_id') {
               cellContent = `<a href="../article/?id=${encodeURIComponent(val)}">${escapeHtml(String(val))}</a>`;
             } else if (col === 'source_id' && val) {
@@ -422,7 +424,7 @@ function escapeHtml(text) {
 }
 
 function orderColumns(cols) {
-  const late = new Set(['published_at', 'fetched_at']);
+  const late = new Set(['url', 'article_url', 'published_at', 'fetched_at']);
   const front = [];
   const middle = [];
   const back = [];
