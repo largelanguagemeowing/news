@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import logging
+import os
+from pathlib import Path
 import shutil
 import subprocess
 import time
@@ -21,6 +23,8 @@ from app.models import ExtractionMethod
 
 
 logger = logging.getLogger("news.pipeline")
+MARKDOWN_NEW_QUOTA_PATH = Path("data/status/markdown_new_quota.json")
+MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
 
 
 MethodName = Literal[
@@ -60,6 +64,110 @@ class EnrichResult:
     stop_processing: bool = False
     attempts: tuple[dict, ...] = ()
     dearrow_thumbnail_url: str = ""
+
+
+def _markdown_new_quota_date() -> str:
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def _new_markdown_quota_state(today: str | None = None) -> dict[str, Any]:
+    date = today or _markdown_new_quota_date()
+    return {
+        "date": date,
+        "header_observations": [],
+        "limit": MARKDOWN_NEW_DAILY_LIMIT,
+        "last_response": None,
+        "requests_made": 0,
+        "remaining": MARKDOWN_NEW_DAILY_LIMIT,
+        "exhausted": False,
+        "updated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+    }
+
+
+def load_markdown_new_quota_state() -> dict[str, Any]:
+    today = _markdown_new_quota_date()
+    if not MARKDOWN_NEW_QUOTA_PATH.exists():
+        return _new_markdown_quota_state(today)
+    try:
+        state = json.loads(MARKDOWN_NEW_QUOTA_PATH.read_text(encoding="utf-8"))
+        if not isinstance(state, dict) or state.get("date") != today:
+            return _new_markdown_quota_state(today)
+        state["limit"] = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
+        state["requests_made"] = int(state.get("requests_made") or 0)
+        state["remaining"] = int(state.get("remaining") or 0)
+        state["exhausted"] = bool(state.get("exhausted")) or state["remaining"] <= 0
+        return state
+    except Exception as exc:
+        logger.warning("Failed to read markdown.new quota state error=%s", exc)
+        return _new_markdown_quota_state(today)
+
+
+def save_markdown_new_quota_state(state: dict[str, Any]) -> None:
+    state["updated_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    MARKDOWN_NEW_QUOTA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    MARKDOWN_NEW_QUOTA_PATH.write_text(
+        json.dumps(state, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def markdown_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
+    state = load_markdown_new_quota_state()
+    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
+    exhausted = (
+        bool(state.get("exhausted"))
+        or int(state.get("remaining") or 0) <= 0
+        or int(state.get("requests_made") or 0) >= limit
+    )
+    return exhausted, state
+
+
+def reserve_markdown_new_request() -> bool:
+    exhausted, state = markdown_new_quota_exhausted()
+    if exhausted:
+        return False
+    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
+    requests_made = int(state.get("requests_made") or 0) + 1
+    state["requests_made"] = requests_made
+    state["remaining"] = max(0, min(int(state.get("remaining") or limit), limit - requests_made))
+    state["exhausted"] = state["remaining"] <= 0
+    save_markdown_new_quota_state(state)
+    return True
+
+
+def record_markdown_new_response(
+    rate_limit_remaining: int,
+    *,
+    status_code: int | None = None,
+    raw_remaining_header: str | None = None,
+    url: str | None = None,
+) -> None:
+    state = load_markdown_new_quota_state()
+    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
+    observed_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    response_meta = {
+        "observed_at": observed_at,
+        "status_code": status_code,
+        "x_rate_limit_remaining": raw_remaining_header,
+        "parsed_remaining": rate_limit_remaining,
+        "url": url,
+    }
+    observations = state.get("header_observations")
+    if not isinstance(observations, list):
+        observations = []
+    observations.append(response_meta)
+    state["header_observations"] = observations[-20:]
+    state["last_response"] = response_meta
+    if rate_limit_remaining >= 0:
+        state["remaining"] = min(rate_limit_remaining, limit)
+        state["requests_made"] = max(
+            int(state.get("requests_made") or 0),
+            max(0, limit - state["remaining"]),
+        )
+    if rate_limit_remaining in {0, -2}:
+        state["remaining"] = 0
+        state["exhausted"] = True
+    save_markdown_new_quota_state(state)
 
 
 def truncate_for_storage(text: str, max_chars: int) -> str:
@@ -512,10 +620,10 @@ def parse_with_jina_ai(
 
 def parse_with_markdown_new(
     url: str, settings: EnrichmentSettings
-) -> tuple[str | None, bool, int]:
+) -> tuple[str | None, bool, int, dict[str, Any]]:
     """Use markdown.new as a fallback for blocked sites.
 
-    Returns: (content, success, rate_limit_remaining)
+    Returns: (content, success, rate_limit_remaining, response_metadata)
     rate_limit_remaining values:
       -1: unknown / not rate-limited
        0: rate-limited (429)
@@ -523,21 +631,9 @@ def parse_with_markdown_new(
       >0: remaining quota from header
     """
     if not url or is_youtube_url(url):
-        return None, False, -1
+        return None, False, -1, {}
 
-    @tenacity.retry(
-        stop=tenacity.stop_after_attempt(3),
-        wait=tenacity.wait_exponential(multiplier=2, min=4, max=30),
-        retry=tenacity.retry_if_exception_type(requests.HTTPError),
-        retry_error_callback=lambda retry_state: None,
-        before_sleep=lambda retry_state: logger.warning(
-            "markdown.new rate limited, retrying (attempt %d/%d) for url=%s",
-            retry_state.attempt_number,
-            3,
-            url,
-        ),
-    )
-    def _fetch_markdown_new(u: str) -> tuple[str, int]:
+    def _fetch_markdown_new(u: str) -> tuple[str, int, dict[str, Any]]:
         response = requests.post(
             "https://markdown.new/",
             json={"url": u, "method": "auto"},
@@ -546,11 +642,17 @@ def parse_with_markdown_new(
         )
 
         rate_limit_remaining = -1
+        raw_remaining_header = response.headers.get("x-rate-limit-remaining")
         if "x-rate-limit-remaining" in response.headers:
             try:
-                rate_limit_remaining = int(response.headers["x-rate-limit-remaining"])
+                rate_limit_remaining = int(raw_remaining_header or "")
             except (ValueError, TypeError):
                 pass
+        response_meta = {
+            "status_code": response.status_code,
+            "x_rate_limit_remaining": raw_remaining_header,
+            "url": u,
+        }
 
         if response.status_code == 429:
             retry_after_seconds = get_retry_after_seconds(response)
@@ -560,39 +662,55 @@ def parse_with_markdown_new(
                     retry_after_seconds,
                     u,
                 )
-                return "", -2
+                return "", -2, response_meta
             logger.warning("markdown.new rate limit exceeded (429) for url=%s", u)
             raise requests.HTTPError(f"Rate limited (429) for {u}", response=response)
 
         response.raise_for_status()
         payload = response.json()
         if not payload.get("success"):
-            return "", rate_limit_remaining
+            return "", rate_limit_remaining, response_meta
         content = payload.get("content", "").strip()
         if not content or len(content) < 100:
-            return "", rate_limit_remaining
+            return "", rate_limit_remaining, response_meta
         if content.startswith("---"):
             parts = content.split("---", 2)
             if len(parts) >= 3:
                 content = parts[2].strip()
-        return truncate_for_storage(content, settings.max_chars), rate_limit_remaining
+        return (
+            truncate_for_storage(content, settings.max_chars),
+            rate_limit_remaining,
+            response_meta,
+        )
 
     try:
-        content, rate_limit_remaining = _fetch_markdown_new(url)
+        content, rate_limit_remaining, response_meta = _fetch_markdown_new(url)
         if content:
-            return content, True, rate_limit_remaining
-        return None, False, rate_limit_remaining
+            return content, True, rate_limit_remaining, response_meta
+        return None, False, rate_limit_remaining, response_meta
     except requests.HTTPError as exc:
         if (
             getattr(exc, "response", None) is not None
             and exc.response.status_code == 429
         ):
-            return None, False, 0
+            response = exc.response
+            return (
+                None,
+                False,
+                0,
+                {
+                    "status_code": response.status_code,
+                    "x_rate_limit_remaining": response.headers.get(
+                        "x-rate-limit-remaining"
+                    ),
+                    "url": url,
+                },
+            )
         logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
-        return None, False, -1
+        return None, False, -1, {"url": url}
     except Exception as exc:
         logger.debug("markdown.new extract failed url=%s error=%s", url, exc)
-        return None, False, -1
+        return None, False, -1, {"url": url}
 
 
 def parse_with_compress_new(
@@ -791,6 +909,22 @@ def enrich_with_policy(
                     }
                 )
                 continue
+            quota_exhausted, quota_state = markdown_new_quota_exhausted()
+            if quota_exhausted:
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "skipped",
+                        "duration_ms": 0,
+                        "error_message": (
+                            f"daily quota exhausted date={quota_state.get('date')} "
+                            f"requests_made={quota_state.get('requests_made')} "
+                            f"limit={quota_state.get('limit')}"
+                        ),
+                        "output_chars": None,
+                    }
+                )
+                continue
             if (
                 opts.markdown_new_budget_remaining is not None
                 and opts.markdown_new_budget_remaining <= 0
@@ -805,9 +939,29 @@ def enrich_with_policy(
                     }
                 )
                 continue
+            if not reserve_markdown_new_request():
+                attempts.append(
+                    {
+                        "method": method,
+                        "status": "skipped",
+                        "duration_ms": 0,
+                        "error_message": "daily quota reserve failed",
+                        "output_chars": None,
+                    }
+                )
+                continue
             t0 = time.monotonic()
-            markdown_new_body, used, rate_limit_remaining = parse_with_markdown_new(
-                url, settings
+            (
+                markdown_new_body,
+                used,
+                rate_limit_remaining,
+                response_meta,
+            ) = parse_with_markdown_new(url, settings)
+            record_markdown_new_response(
+                rate_limit_remaining,
+                status_code=response_meta.get("status_code"),
+                raw_remaining_header=response_meta.get("x_rate_limit_remaining"),
+                url=response_meta.get("url") or url,
             )
             dur = round((time.monotonic() - t0) * 1000, 2)
             if used and markdown_new_body:

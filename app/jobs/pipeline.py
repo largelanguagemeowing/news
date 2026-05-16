@@ -53,6 +53,8 @@ except ModuleNotFoundError:
 
 
 STATUS_DIR = Path("data/status")
+MARKDOWN_NEW_QUOTA_PATH = STATUS_DIR / "markdown_new_quota.json"
+MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
 SOURCE_ID_RENAMES = {
     "deepmind-blog": "google-deepmind-blog",
     "apple-ml-blog": "apple-machine-learning",
@@ -120,6 +122,45 @@ ARTICLES_EXPORT_LIMIT = SETTINGS.articles_export_limit
 SLOW_SOURCE_LATENCY_MS = SETTINGS.slow_source_latency_ms
 MARKDOWN_NEW_BLOCK_SECONDS_ON_429 = 600
 MARKDOWN_NEW_BLOCKED_UNTIL_TS = 0.0
+
+
+def _markdown_new_quota_date() -> str:
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def _new_markdown_quota_state(today: str | None = None) -> dict[str, Any]:
+    return enrichment._new_markdown_quota_state(today)
+
+
+def _load_markdown_new_quota_state() -> dict[str, Any]:
+    return enrichment.load_markdown_new_quota_state()
+
+
+def _save_markdown_new_quota_state(state: dict[str, Any]) -> None:
+    enrichment.save_markdown_new_quota_state(state)
+
+
+def _markdown_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
+    return enrichment.markdown_new_quota_exhausted()
+
+
+def _reserve_markdown_new_request() -> bool:
+    return enrichment.reserve_markdown_new_request()
+
+
+def _record_markdown_new_response(
+    rate_limit_remaining: int,
+    *,
+    status_code: int | None = None,
+    raw_remaining_header: str | None = None,
+    url: str | None = None,
+) -> None:
+    enrichment.record_markdown_new_response(
+        rate_limit_remaining,
+        status_code=status_code,
+        raw_remaining_header=raw_remaining_header,
+        url=url,
+    )
 
 
 def get_source_timeout_seconds(source_id: str) -> int:
@@ -450,7 +491,7 @@ def parse_with_jina_ai(url: str) -> tuple[str | None, bool]:
     return enrichment.parse_with_jina_ai(url, _enrichment_settings())
 
 
-def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int]:
+def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int, dict[str, Any]]:
     return enrichment.parse_with_markdown_new(url, _enrichment_settings())
 
 
@@ -590,6 +631,18 @@ def enrich_with_policy(
                     url,
                 )
                 continue
+            quota_exhausted, quota_state = _markdown_new_quota_exhausted()
+            if quota_exhausted:
+                logger.warning(
+                    "Enrichment skip source=%s method=%s url=%s reason=daily_quota_exhausted date=%s requests_made=%s limit=%s",
+                    source_id,
+                    method,
+                    url,
+                    quota_state.get("date"),
+                    quota_state.get("requests_made"),
+                    quota_state.get("limit"),
+                )
+                continue
             if (
                 markdown_new_budget_remaining is not None
                 and markdown_new_budget_remaining <= 0
@@ -601,7 +654,26 @@ def enrich_with_policy(
                     url,
                 )
                 continue
-            markdown_body, used, rate_limit_remaining = parse_with_markdown_new(url)
+            if not _reserve_markdown_new_request():
+                logger.warning(
+                    "Enrichment skip source=%s method=%s url=%s reason=daily_quota_reserve_failed",
+                    source_id,
+                    method,
+                    url,
+                )
+                continue
+            markdown_result = parse_with_markdown_new(url)
+            if len(markdown_result) == 3:
+                markdown_body, used, rate_limit_remaining = markdown_result
+                response_meta = {}
+            else:
+                markdown_body, used, rate_limit_remaining, response_meta = markdown_result
+            _record_markdown_new_response(
+                rate_limit_remaining,
+                status_code=response_meta.get("status_code"),
+                raw_remaining_header=response_meta.get("x_rate_limit_remaining"),
+                url=response_meta.get("url") or url,
+            )
             if used and markdown_body:
                 logger.info(
                     "Enrichment success source=%s method=%s url=%s rate_limit_remaining=%d",
