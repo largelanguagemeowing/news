@@ -19,8 +19,6 @@ import trafilatura
 from dateutil import parser as dtparser
 
 from app.config import SourceConfig, load_sources
-from app.jobs.classifier import classify_article, extract_article_tags
-from app.jobs.ml_classifier import classify_with_model
 from app.jobs import enrichment
 from app.db import get_connection, init_db, transaction
 from app.logging_helpers import log_stage_summary
@@ -41,6 +39,17 @@ from app.utils import (
     simhash64,
     utc_now_iso,
 )
+
+try:
+    from app.jobs.classifier import classify_article, extract_article_tags
+except ModuleNotFoundError:
+    classify_article = None
+    extract_article_tags = None
+
+try:
+    from app.jobs.ml_classifier import classify_with_model
+except ModuleNotFoundError:
+    classify_with_model = None
 
 
 STATUS_DIR = Path("data/status")
@@ -63,6 +72,17 @@ YOUTUBE_SOURCE_IDS = {
     "youtube-ai-coding",
     "ai-engineer",
 }
+TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
+    ("release", ("release", "launched", "launch", "announced", "introduces", "introducing")),
+    ("models", ("model", "llm", "gpt", "gemini", "claude")),
+    ("open-source", ("open source", "open-source", "github", "repo", "weights")),
+    ("api", ("api", "sdk", "endpoint", "developers")),
+    ("agents", ("agent", "agents", "automation", "workflow")),
+    ("safety", ("safety", "alignment", "guardrail", "risk")),
+    ("benchmark", ("benchmark", "eval", "evaluation", "score")),
+    ("research", ("research", "paper", "arxiv", "study")),
+    ("video", ("youtube", "video")),
+]
 
 
 @dataclass
@@ -247,15 +267,40 @@ def stage_end(
 
 
 def classify_event(title: str, body: str, default_category: str) -> tuple[str, float]:
-    ml_result = classify_with_model(title, body, default_category=default_category)
-    if ml_result:
-        return ml_result
-    result = classify_article(title, body, default_category)
-    return result.label, result.confidence
+    if classify_with_model is not None:
+        ml_result = classify_with_model(title, body, default_category=default_category)
+        if ml_result:
+            return ml_result
+    if classify_article is not None:
+        result = classify_article(title, body, default_category)
+        return result.label, result.confidence
+    text = f"{title} {body}".lower()
+    rules: list[tuple[str, tuple[str, ...], float]] = [
+        ("ai-models", ("model release", "llm", "gpt", "openai", "anthropic", "gemini"), 0.85),
+        ("security", ("vulnerability", "cve", "exploit", "breach"), 0.84),
+        ("policy", ("regulation", "policy", "law", "compliance"), 0.8),
+        ("funding", ("funding", "series a", "series b", "valuation"), 0.8),
+        ("product", ("launch", "released", "announced", "introduces"), 0.74),
+    ]
+    for label, tokens, score in rules:
+        if any(token in text for token in tokens):
+            return label, score
+    return default_category, 0.55
 
 
 def extract_tags(title: str, body: str, source_id: str) -> list[str]:
-    return extract_article_tags(title, body, source_id, YOUTUBE_SOURCE_IDS)
+    if extract_article_tags is not None:
+        return extract_article_tags(title, body, source_id, YOUTUBE_SOURCE_IDS)
+    text = f"{title} {body}".lower()
+    tags: list[str] = []
+    for label, patterns in TAG_RULES:
+        if any(pattern in text for pattern in patterns):
+            tags.append(label)
+    if source_id in YOUTUBE_SOURCE_IDS and "video" not in tags:
+        tags.append("video")
+    if not tags:
+        tags.append("general")
+    return tags[:6]
 
 
 def _enrichment_settings() -> enrichment.EnrichmentSettings:
