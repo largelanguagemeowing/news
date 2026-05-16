@@ -70,20 +70,12 @@ function render() {
   gridEl.innerHTML = filtered.map(renderCard).join('');
 }
 
-function avatarColor(name) {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  const hue = Math.abs(hash) % 360;
-  return `hsl(${hue}, 55%, 50%)`;
-}
-
 function renderCard(v) {
   const id = getYouTubeId(v.url);
   const thumb = id
-    ? `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+    ? `https://img.youtube.com/vi/${id}/mqdefault.jpg`
     : '';
   const channelLink = `../?source=${encodeURIComponent(v.source_id)}`;
-  const initial = v.source_name ? v.source_name.charAt(0).toUpperCase() : '?';
 
   return `
     <div class="video-card">
@@ -92,14 +84,11 @@ function renderCard(v) {
         <span class="video-duration">${v.topic ? escapeHtml(v.topic) : ''}</span>
       </a>
       <div class="video-body">
-        <div class="video-avatar" style="background:${avatarColor(v.source_name)}">${initial}</div>
-        <div class="video-info">
-          <h3 class="video-title"><a href="${escapeHtml(v.url)}" target="_blank" rel="noreferrer">${escapeHtml(v.title)}</a></h3>
+        <div class="video-meta-row">
           <a class="video-channel" href="${channelLink}">${escapeHtml(v.source_name)}</a>
-          <div class="video-meta">
-            <span>${formatDate(v.published_at)}</span>
-          </div>
+          <span class="video-meta-date">${formatDate(v.published_at)}</span>
         </div>
+        <h3 class="video-title"><a href="${escapeHtml(v.url)}" target="_blank" rel="noreferrer">${escapeHtml(v.title)}</a></h3>
       </div>
     </div>
   `;

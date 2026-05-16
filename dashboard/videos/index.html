@@ -93,35 +93,28 @@
       }
 
       .video-body {
-        display: flex; gap: 10px; padding: 10px 12px 12px;
+        padding: 10px 12px 14px;
       }
-      .video-avatar {
-        width: 34px; height: 34px; border-radius: 50%;
-        flex-shrink: 0;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 14px; font-weight: 600; color: #fff;
+      .video-meta-row {
+        display: flex; align-items: center; gap: 8px;
+        margin-bottom: 4px;
       }
-      .video-info { flex: 1; min-width: 0; }
-
+      .video-channel {
+        font-size: 12px; color: var(--ink-soft); text-decoration: none;
+      }
+      .video-channel:hover { color: var(--ink); }
+      .video-meta-date {
+        font-size: 12px; color: var(--ink-soft);
+      }
       .video-title {
         font-size: 14px; font-weight: 600; line-height: 1.35;
         display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-        overflow: hidden; margin: 0 0 3px;
+        overflow: hidden; margin: 0;
       }
       .video-title a {
         color: var(--ink); text-decoration: none;
       }
       .video-title a:hover { color: var(--accent); }
-
-      .video-channel {
-        font-size: 12px; color: var(--ink-soft); text-decoration: none;
-        display: inline-block; margin-bottom: 1px;
-      }
-      .video-channel:hover { color: var(--ink); }
-
-      .video-meta {
-        font-size: 12px; color: var(--ink-soft);
-      }
 
       .videos-loader {
         display: grid;
@@ -137,13 +130,20 @@
         aspect-ratio: 16 / 9;
       }
       .video-card-skeleton .skeleton-body {
-        display: flex; gap: 10px; padding: 10px 12px 12px;
+        padding: 10px 12px 14px;
       }
-      .video-card-skeleton .skeleton-avatar {
-        width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+      .video-card-skeleton .skeleton-meta-row {
+        display: flex; gap: 8px; margin-bottom: 6px;
       }
-      .video-card-skeleton .skeleton-lines { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+      .video-card-skeleton .skeleton-meta-row .skeleton {
+        height: 12px; border-radius: 4px;
+      }
+      .video-card-skeleton .skeleton-meta-row .skeleton:first-child { width: 80px; }
+      .video-card-skeleton .skeleton-meta-row .skeleton:last-child { width: 60px; }
+      .video-card-skeleton .skeleton-lines { display: flex; flex-direction: column; gap: 6px; }
       .video-card-skeleton .skeleton-lines .skeleton { height: 14px; }
+      .video-card-skeleton .skeleton-lines .skeleton:first-child { width: 90%; }
+      .video-card-skeleton .skeleton-lines .skeleton:last-child { width: 70%; }
 
       .videos-empty {
         text-align: center; padding: 80px 24px; color: var(--ink-soft);
@@ -221,12 +221,12 @@
       <div class="videos-count" id="videosCount"></div>
 
       <div id="videosLoader" class="videos-loader">
-        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton skeleton-avatar"></div><div class="skeleton-lines"><div class="skeleton w-80"></div><div class="skeleton w-50"></div></div></div></div>
-        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton skeleton-avatar"></div><div class="skeleton-lines"><div class="skeleton w-80"></div><div class="skeleton w-50"></div></div></div></div>
-        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton skeleton-avatar"></div><div class="skeleton-lines"><div class="skeleton w-80"></div><div class="skeleton w-50"></div></div></div></div>
-        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton skeleton-avatar"></div><div class="skeleton-lines"><div class="skeleton w-80"></div><div class="skeleton w-50"></div></div></div></div>
-        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton skeleton-avatar"></div><div class="skeleton-lines"><div class="skeleton w-80"></div><div class="skeleton w-50"></div></div></div></div>
-        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton skeleton-avatar"></div><div class="skeleton-lines"><div class="skeleton w-80"></div><div class="skeleton w-50"></div></div></div></div>
+        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-meta-row"><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div></div></div></div>
+        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-meta-row"><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div></div></div></div>
+        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-meta-row"><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div></div></div></div>
+        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-meta-row"><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div></div></div></div>
+        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-meta-row"><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div></div></div></div>
+        <div class="video-card-skeleton"><div class="skeleton skeleton-thumb"></div><div class="skeleton-body"><div class="skeleton-meta-row"><div class="skeleton"></div><div class="skeleton"></div></div><div class="skeleton-lines"><div class="skeleton"></div><div class="skeleton"></div></div></div></div>
       </div>
 
       <div id="videosContent" hidden>
