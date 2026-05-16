@@ -797,7 +797,7 @@ def parse_with_compress_new(
         return None, False
     try:
         response = requests.post(
-            "https://compress.new/",
+            "https://compress.new/?main_only=true",
             json={"url": url, "method": "auto"},
             timeout=settings.request_timeout_seconds,
             headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
