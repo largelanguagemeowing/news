@@ -237,9 +237,9 @@ function renderData(data) {
               cellContent = `<a href="${escapeHtml(String(row.url))}" target="_blank" rel="noopener">${escapeHtml(String(val ?? ''))}</a>`;
             } else if (col === 'article_id') {
               cellContent = `<a href="../article/?id=${encodeURIComponent(val)}">${escapeHtml(String(val))}</a>`;
-            } else if (col === 'source_id' && val) {
-              const text = String(val);
-              cellContent = `<a href="#" class="source-link" data-source="${escapeHtml(text)}" onclick="filterBySource('${escapeHtml(text)}'); return false;">${escapeHtml(text)}</a>`;
+            } else if ((col === 'source_id' || col === 'source_name') && row.source_id) {
+              const sid = String(row.source_id);
+              cellContent = `<a href="#" class="source-link" data-source="${escapeHtml(sid)}" onclick="filterBySource('${escapeHtml(sid)}'); return false;">${escapeHtml(String(val ?? ''))}</a>`;
             } else {
               const text = String(val ?? '');
               const short = text.length > 150 ? `${text.slice(0, 150)}...` : text;
