@@ -1,4 +1,4 @@
-const CACHE_NAME = 'news-aggregator-v2';
+const CACHE_NAME = 'news-aggregator-v3';
 const STATIC_ASSETS = [
   '/news/',
   '/news/health/',
@@ -12,7 +12,9 @@ const STATIC_ASSETS = [
   '/news/db/',
   '/news/db/db.js',
   '/news/article/',
-  '/news/article/article.js'
+  '/news/article/article.js',
+  '/news/videos/',
+  '/news/videos/videos.js'
 ];
 
 // Install event - cache static assets
