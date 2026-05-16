@@ -125,12 +125,43 @@
       }
       .article-not-found h2 { font-size: 20px; margin: 0 0 8px 0; }
 
+      .article-loader {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+      .article-loader-sidebar { display: flex; flex-direction: column; gap: 8px; }
+      .article-loader-section {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 14px 16px;
+      }
+      .article-loader-body {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 28px;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .article-loader-body .skeleton-line { height: 16px; border-radius: 6px; }
+      .skeleton-label { height: 12px; width: 50%; margin-bottom: 8px; border-radius: 4px; }
+      .skeleton-value { height: 16px; width: 80%; border-radius: 4px; }
+      .w-80 { width: 80%; } .w-60 { width: 60%; } .w-90 { width: 90%; }
+      .w-70 { width: 70%; } .w-50 { width: 50%; } .w-85 { width: 85%; }
+      .w-40 { width: 40%; } .w-75 { width: 75%; } .w-65 { width: 65%; }
+
       @media (max-width: 760px) {
         .article-layout {
           grid-template-columns: 1fr;
         }
         .article-page { padding: 16px; }
         .article-title { font-size: 22px; }
+        .article-loader { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -207,7 +238,28 @@
         <div class="article-back">
           <a href="javascript:history.back()" onclick="if (document.referrer) return true; this.href='../db/';">← Back</a>
         </div>
-        <div id="articleContent"></div>
+        <div id="articleContent">
+          <div id="articleLoader" class="article-loader">
+            <div class="article-loader-sidebar">
+              <div class="article-loader-section"><div class="skeleton skeleton-label"></div><div class="skeleton skeleton-value"></div></div>
+              <div class="article-loader-section"><div class="skeleton skeleton-label"></div><div class="skeleton skeleton-value"></div></div>
+              <div class="article-loader-section"><div class="skeleton skeleton-label"></div><div class="skeleton skeleton-value"></div></div>
+              <div class="article-loader-section"><div class="skeleton skeleton-label"></div><div class="skeleton skeleton-value"></div></div>
+              <div class="article-loader-section"><div class="skeleton skeleton-label"></div><div class="skeleton skeleton-value"></div></div>
+            </div>
+            <div class="article-loader-body">
+              <div class="skeleton skeleton-line w-80"></div>
+              <div class="skeleton skeleton-line w-60"></div>
+              <div class="skeleton skeleton-line w-90"></div>
+              <div class="skeleton skeleton-line w-70"></div>
+              <div class="skeleton skeleton-line w-50"></div>
+              <div class="skeleton skeleton-line w-85"></div>
+              <div class="skeleton skeleton-line w-40"></div>
+              <div class="skeleton skeleton-line w-75"></div>
+              <div class="skeleton skeleton-line w-65"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
