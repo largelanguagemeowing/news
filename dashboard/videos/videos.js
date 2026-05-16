@@ -182,7 +182,7 @@ async function main() {
     allVideos = articles.filter((a) => (a.extraction_method === 'youtube' || a.extraction_method === 'youtube_transcript') && getYouTubeId(a.url));
     populateChannels();
 
-    availableVideos = await filterAvailableVideos(allVideos);
+    availableVideos = allVideos;
     availabilityChecked = true;
     render();
 

@@ -306,6 +306,22 @@ def build_articles(
 
     from app.jobs.enrichment import get_youtube_video_id
 
+
+def check_youtube_available(video_id: str) -> bool:
+    """Check if YouTube video is still available."""
+    import requests
+    try:
+        resp = requests.get(
+            f"https://noembed.com/embed?url=https://www.youtube.com/watch?v={video_id}",
+            timeout=10,
+        )
+        if resp.ok:
+            data = resp.json()
+            return "error" not in data
+    except Exception:
+        pass
+    return True
+
     rows = conn.execute(
         """
         SELECT a.article_id, a.title, a.body, a.url, a.published_at, a.fetched_at,
@@ -333,6 +349,9 @@ def build_articles(
         if topic not in tags:
             tags = [topic] + tags
         video_id = get_youtube_video_id(row["url"])
+        if row["extraction_method"] in ("youtube", "youtube_transcript") and video_id:
+            if not check_youtube_available(video_id):
+                continue
         dearrow_url = dearrow_map.get(video_id, "")
         out.append(
             {
