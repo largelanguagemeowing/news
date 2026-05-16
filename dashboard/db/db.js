@@ -2,17 +2,17 @@
 const PAGE_SIZE = 50;
 
 const TABLE_TO_STATUS_FILE = {
-  articles: '../data/status/articles.json',
-  sources: '../data/status/sources.json',
-  source_health: '../data/status/source_health.json',
-  events: '../data/status/events.json',
-  event_members: '../data/status/event_members.json',
-  pipeline_runs: '../data/status/runs.json',
-  source_checks: '../data/status/source_checks.json',
-  incidents: '../data/status/incidents.json',
-  ingest_attempts: '../data/status/ingest_attempts.json',
-  enrichment_attempts: '../data/status/enrichment_attempts.json',
-  dead_letters: '../data/status/dead_letters.json',
+  articles: '../../data/status/articles.json',
+  sources: '../../data/status/sources.json',
+  source_health: '../../data/status/source_health.json',
+  events: '../../data/status/events.json',
+  event_members: '../../data/status/event_members.json',
+  pipeline_runs: '../../data/status/runs.json',
+  source_checks: '../../data/status/source_checks.json',
+  incidents: '../../data/status/incidents.json',
+  ingest_attempts: '../../data/status/ingest_attempts.json',
+  enrichment_attempts: '../../data/status/enrichment_attempts.json',
+  dead_letters: '../../data/status/dead_letters.json',
 };
 
 let currentTable = 'articles';
@@ -26,7 +26,6 @@ const tableSelect = document.getElementById('tableSelect');
 const searchInput = document.getElementById('searchInput');
 const sourceFilter = document.getElementById('sourceFilter');
 const methodFilter = document.getElementById('methodFilter');
-const loadBtn = document.getElementById('loadBtn');
 const exportBtn = document.getElementById('exportBtn');
 const loadingState = document.getElementById('loadingState');
 const errorState = document.getElementById('errorState');
@@ -37,13 +36,16 @@ const scrollHint = document.getElementById('scrollHint');
 const tableHead = document.getElementById('tableHead');
 const tableBody = document.getElementById('tableBody');
 const pagination = document.getElementById('pagination');
+const filterBadges = document.getElementById('filterBadges');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', init);
 
-function init() {
-  loadBtn.addEventListener('click', loadDatabase);
+async function init() {
+  readParams();
+
   exportBtn.addEventListener('click', exportCSV);
+  await loadDatabase();
 
   tableSelect.addEventListener('change', async (e) => {
     currentTable = e.target.value;
@@ -67,10 +69,39 @@ function init() {
   });
 }
 
+function readParams() {
+  const params = new URLSearchParams(location.search);
+  const t = params.get('table');
+  if (t && [...tableSelect.options].some((o) => o.value === t)) {
+    tableSelect.value = t;
+    currentTable = t;
+  }
+  const q = params.get('q');
+  if (q) searchInput.value = q;
+  const s = params.get('source');
+  if (s) sourceFilter.value = s;
+  const m = params.get('method');
+  if (m) methodFilter.value = m;
+  const p = parseInt(params.get('page'), 10);
+  if (p > 1) currentPage = p;
+}
+
+function syncUrl() {
+  const params = new URLSearchParams();
+  if (tableSelect.value !== 'articles') params.set('table', tableSelect.value);
+  if (searchInput.value.trim()) params.set('q', searchInput.value.trim());
+  if (sourceFilter.value) params.set('source', sourceFilter.value);
+  if (methodFilter.value) params.set('method', methodFilter.value);
+  if (currentPage > 1) params.set('page', String(currentPage));
+
+  const qs = params.toString();
+  const url = qs ? `${location.pathname}?${qs}` : location.pathname;
+  history.replaceState(null, '', url);
+}
+
 async function loadDatabase() {
   showLoading(true);
   hideError();
-  loadBtn.disabled = true;
 
   try {
     await loadCurrentTableData();
@@ -82,7 +113,6 @@ async function loadDatabase() {
   }
 
   showLoading(false);
-  loadBtn.disabled = false;
 }
 
 async function loadCurrentTableData() {
@@ -150,18 +180,22 @@ function applyFiltersAndRender() {
 
   renderData(paginated);
   renderPagination();
+  renderFilterBadges();
+  syncUrl();
   updateStats();
 }
 
 function renderData(data) {
   if (!data.length) {
     tableContainer.style.display = 'none';
+    pagination.style.display = 'none';
     if (scrollHint) scrollHint.style.display = 'none';
     emptyState.style.display = 'block';
     return;
   }
 
   tableContainer.style.display = 'block';
+  pagination.style.display = '';
   emptyState.style.display = 'none';
 
   const columns = Object.keys(data[0]).filter((col) => !col.startsWith('_'));
@@ -183,17 +217,24 @@ function renderData(data) {
 
             if (col === 'extraction_method' || col === 'method') {
               const m = val || 'rss';
-              cellContent = `<span class="method-badge method-${escapeHtml(m)}">${escapeHtml(m)}</span>`;
+              cellContent = `<a href="#" class="method-link" onclick="filterByMethod('${escapeHtml(m)}'); return false;"><span class="method-badge method-${escapeHtml(m)}">${escapeHtml(m)}</span></a>`;
             } else if (typeof val === 'object' && val !== null) {
               const text = JSON.stringify(val);
               const short = text.length > 120 ? `${text.slice(0, 120)}...` : text;
               cellContent = `<span title="${escapeHtml(text)}">${escapeHtml(short)}</span>`;
             } else if (col.includes('_at') || col.endsWith('date') || col.endsWith('time')) {
               cellContent = escapeHtml(formatDate(val));
-            } else if ((col === 'url' || col === 'article_url') && val) {
+            } else if ((col === 'url' || col === 'article_url' || col === 'github_run_url') && val) {
               const href = String(val);
               const display = href.length > 60 ? `${href.slice(0, 60)}...` : href;
               cellContent = `<a href="${escapeHtml(href)}" target="_blank" rel="noopener" title="${escapeHtml(href)}">${escapeHtml(display)}</a>`;
+            } else if (col === 'issue_number' && val) {
+              cellContent = `<a href="https://github.com/largelanguagemeowing/news/issues/${encodeURIComponent(val)}" target="_blank" rel="noopener">#${escapeHtml(String(val))}</a>`;
+            } else if (col === 'article_id') {
+              cellContent = `<a href="../article/?id=${encodeURIComponent(val)}">${escapeHtml(String(val))}</a>`;
+            } else if (col === 'source_id' && val) {
+              const text = String(val);
+              cellContent = `<a href="#" class="source-link" data-source="${escapeHtml(text)}" onclick="filterBySource('${escapeHtml(text)}'); return false;">${escapeHtml(text)}</a>`;
             } else {
               const text = String(val ?? '');
               const short = text.length > 150 ? `${text.slice(0, 150)}...` : text;
@@ -216,19 +257,27 @@ function renderData(data) {
 }
 
 function renderPagination() {
+  const totalUnfiltered = allData.length;
   const totalPages = Math.ceil(totalRows / PAGE_SIZE);
 
   if (totalPages <= 1) {
-    pagination.innerHTML = `<span class="page-info">Showing ${totalRows} rows</span>`;
+    const info = totalRows < totalUnfiltered
+      ? `Showing ${totalRows} of ${totalUnfiltered} rows`
+      : `Showing ${totalRows} rows`;
+    pagination.innerHTML = `<span class="page-info">${info}</span>`;
     return;
   }
 
   const startRow = (currentPage - 1) * PAGE_SIZE + 1;
   const endRow = Math.min(currentPage * PAGE_SIZE, totalRows);
 
+  const info = totalRows < totalUnfiltered
+    ? `${startRow}-${endRow} of ${totalRows} rows (filtered from ${totalUnfiltered})`
+    : `${startRow}-${endRow} of ${totalRows} rows (Page ${currentPage}/${totalPages})`;
+
   pagination.innerHTML = `
     <button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">← Prev</button>
-    <span class="page-info">${startRow}-${endRow} of ${totalRows} rows (Page ${currentPage}/${totalPages})</span>
+    <span class="page-info">${info}</span>
     <button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Next →</button>
   `;
 }
@@ -239,30 +288,89 @@ window.changePage = function changePage(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-function updateStats() {
-  const columns = allData.length ? Object.keys(allData[0]).length : 0;
+function renderFilterBadges() {
+  const badges = [];
 
-  let methodSummary = '';
-  if (allData.some((row) => Object.prototype.hasOwnProperty.call(row, 'extraction_method') || Object.prototype.hasOwnProperty.call(row, 'method'))) {
+  if (sourceFilter.value) {
+    badges.push({ type: 'source', label: `Source: ${sourceFilter.value}`, clear: 'clearSourceFilter' });
+  }
+  if (methodFilter.value) {
+    badges.push({ type: 'method', label: `Method: ${methodFilter.value}`, clear: 'clearMethodFilter' });
+  }
+
+  if (!badges.length) {
+    filterBadges.style.display = 'none';
+    return;
+  }
+
+  filterBadges.style.display = 'flex';
+  filterBadges.innerHTML = badges
+    .map(
+      (b) =>
+        `<span class="filter-badge">
+          <span class="badge-label">${escapeHtml(b.label)}</span>
+          <button class="badge-remove" onclick="${b.clear}(); return false;">✕</button>
+        </span>`
+    )
+    .join('');
+}
+
+window.clearSourceFilter = function () {
+  sourceFilter.value = '';
+  currentPage = 1;
+  applyFiltersAndRender();
+};
+
+window.clearMethodFilter = function () {
+  methodFilter.value = '';
+  currentPage = 1;
+  applyFiltersAndRender();
+};
+
+function updateStats() {
+  dbStats.innerHTML = '';
+
+  const methodsEl = document.getElementById('dbMethods') || (() => {
+    const el = document.createElement('div');
+    el.id = 'dbMethods';
+    el.className = 'db-methods';
+    dbStats.parentNode.insertBefore(el, dbStats.nextSibling);
+    return el;
+  })();
+
+  const hasMethod = allData.some((row) =>
+    Object.prototype.hasOwnProperty.call(row, 'extraction_method') ||
+    Object.prototype.hasOwnProperty.call(row, 'method')
+  );
+
+  if (hasMethod) {
     const methodCounts = {};
     allData.forEach((row) => {
       const m = row.extraction_method || row.method || 'rss';
       methodCounts[m] = (methodCounts[m] || 0) + 1;
     });
-    methodSummary = Object.entries(methodCounts)
-      .sort((a, b) => b[1] - a[1])
-      .map(([m, c]) => `${m}: ${c}`)
-      .join(' | ');
+    methodsEl.innerHTML = '<span class="db-methods-label">Methods</span>' +
+      Object.entries(methodCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([m, c]) => `<a href="#" class="db-method-pill" onclick="filterByMethod('${escapeHtml(m)}'); return false;"><span class="count">${c}</span> ${escapeHtml(m)}</a>`)
+        .join('');
+    methodsEl.style.display = '';
+  } else {
+    methodsEl.style.display = 'none';
   }
-
-  dbStats.innerHTML = `
-    <span>Table: ${escapeHtml(currentTable)}</span>
-    <span>Total rows: ${allData.length}</span>
-    <span>Filtered: ${currentData.length}</span>
-    <span>Columns: ${columns}</span>
-    <span style="margin-left: auto;">${escapeHtml(methodSummary)}</span>
-  `;
 }
+
+window.filterBySource = function filterBySource(source) {
+  sourceFilter.value = source;
+  currentPage = 1;
+  applyFiltersAndRender();
+};
+
+window.filterByMethod = function filterByMethod(method) {
+  methodFilter.value = method;
+  currentPage = 1;
+  applyFiltersAndRender();
+};
 
 function populateSourceFilter(data) {
   const sources = [...new Set(data.map((row) => row.source_id).filter(Boolean))].sort();
@@ -341,10 +449,12 @@ function showError(msg) {
   errorState.textContent = msg;
   errorState.style.display = 'block';
   tableContainer.style.display = 'none';
+  pagination.style.display = 'none';
 }
 
 function showEmpty() {
   tableContainer.style.display = 'none';
+  pagination.style.display = 'none';
   if (scrollHint) scrollHint.style.display = 'none';
   emptyState.style.display = 'block';
 }

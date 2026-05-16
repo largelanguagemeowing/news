@@ -28,10 +28,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@sqlite.org/sqlite-wasm@3.45.1/sqlite-wasm.min.js"></script>
     <style>
       .db-explorer { padding: 24px; max-width: 1400px; margin: 0 auto; }
-      .db-header { margin-bottom: 24px; }
-      .db-header h1 { font-size: 24px; font-weight: 600; margin: 0 0 8px 0; }
-      .db-header p { color: var(--text-secondary); margin: 0; }
-      
       .db-toolbar {
         display: flex;
         gap: 12px;
@@ -42,10 +38,10 @@
       
       .db-toolbar select, .db-toolbar input {
         padding: 8px 12px;
-        border: 1px solid var(--border);
+        border: 1px solid var(--line);
         border-radius: 8px;
-        background: var(--surface);
-        color: var(--text-primary);
+        background: var(--panel);
+        color: var(--ink);
         font-size: 14px;
       }
       
@@ -68,21 +64,47 @@
       
       .db-stats {
         display: flex;
-        gap: 16px;
-        margin-bottom: 8px;
-        font-size: 13px;
-        color: var(--text-secondary);
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .db-methods {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding: 6px 0;
+      }
+      .db-methods-label {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--ink-soft);
+      }
+      .db-method-pill {
+        font-size: 12px;
+        color: var(--ink-soft);
+        padding: 2px 8px;
+        background: color-mix(in srgb, var(--ink) 5%, transparent);
+        border-radius: 4px;
+      }
+      .db-method-pill .count {
+        font-weight: 600;
+        color: var(--ink);
       }
 
       .db-scroll-hint {
         font-size: 12px;
-        color: var(--text-secondary);
+        color: var(--ink-soft);
         margin-bottom: 10px;
       }
       
       .db-table-container {
-        background: var(--surface);
-        border: 1px solid var(--border);
+        background: var(--panel);
+        border: 1px solid var(--line);
         border-radius: 12px;
         overflow-x: auto;
         overflow-y: hidden;
@@ -97,11 +119,11 @@
       }
       
       .db-table th {
-        background: var(--surface-2);
+        background: color-mix(in srgb, var(--ink) 5%, var(--panel));
         padding: 12px;
         text-align: left;
         font-weight: 600;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--line);
         white-space: nowrap;
         position: sticky;
         top: 0;
@@ -110,14 +132,14 @@
       
       .db-table td {
         padding: 10px 12px;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--line);
         max-width: 300px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
       
-      .db-table tr:hover td { background: var(--surface-2); }
+      .db-table tr:hover td { background: color-mix(in srgb, var(--ink) 5%, var(--panel)); }
       .db-table tr:last-child td { border-bottom: none; }
       
       .db-table .col-id { width: 60px; }
@@ -128,22 +150,40 @@
       .db-loading {
         padding: 40px;
         text-align: center;
-        color: var(--text-secondary);
+        color: var(--ink-soft);
       }
       
       .db-error {
         padding: 20px;
-        background: #fef2f2;
-        border: 1px solid #fecaca;
+        background: color-mix(in srgb, var(--bad) 10%, var(--panel));
+        border: 1px solid color-mix(in srgb, var(--bad) 40%, var(--line));
         border-radius: 8px;
-        color: #dc2626;
+        color: var(--bad);
         margin: 20px 0;
       }
       
       .db-empty {
-        padding: 40px;
+        padding: 60px 20px;
         text-align: center;
-        color: var(--text-secondary);
+        color: var(--ink-soft);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+      .db-empty-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        opacity: 0.3;
+      }
+      .db-empty-text {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+      .db-empty-hint {
+        font-size: 13px;
+        opacity: 0.7;
       }
       
       .pagination {
@@ -151,21 +191,22 @@
         gap: 8px;
         justify-content: center;
         padding: 16px;
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--line);
       }
       
       .pagination button {
         padding: 6px 12px;
-        border: 1px solid var(--border);
-        background: var(--surface);
+        border: 1px solid var(--line);
+        background: var(--panel);
+        color: var(--ink);
         border-radius: 6px;
         cursor: pointer;
         font-size: 13px;
       }
       
-      .pagination button:hover { background: var(--surface-2); }
+      .pagination button:hover { background: color-mix(in srgb, var(--ink) 5%, var(--panel)); }
       .pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
-      .pagination .page-info { padding: 6px 12px; color: var(--text-secondary); }
+      .pagination .page-info { padding: 6px 12px; color: var(--ink-soft); }
       
       .method-badge {
         display: inline-block;
@@ -183,6 +224,42 @@
       .method-defuddle { background: #f3e8ff; color: #6b21a8; }
       .method-rss { background: #f3f4f6; color: #4b5563; }
       
+      .filter-badges {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+      }
+      .filter-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        background: color-mix(in srgb, var(--accent) 15%, var(--panel));
+        border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+        color: var(--accent);
+      }
+      .filter-badge .badge-remove {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        color: var(--accent);
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1;
+        padding: 0;
+        opacity: 0.6;
+      }
+      .filter-badge .badge-remove:hover { opacity: 1; background: color-mix(in srgb, var(--accent) 20%, transparent); }
+      .filter-badge .badge-label { opacity: 0.7; }
       .truncate-text { max-width: 400px; }
       .truncate-text:hover { white-space: normal; word-break: break-word; }
     </style>
@@ -257,11 +334,6 @@
     <!-- Main Content -->
     <main class="shell">
       <div class="db-explorer">
-        <div class="db-header">
-          <h1>Database Explorer</h1>
-          <p>Browse and search all database tables using WASM SQLite</p>
-        </div>
-
         <div class="db-toolbar">
           <select id="tableSelect">
             <option value="articles">Articles</option>
@@ -290,11 +362,11 @@
             <option value="defuddle">Defuddle</option>
             <option value="rss">RSS</option>
           </select>
-          <button id="loadBtn">Load Database</button>
-          <button id="exportBtn" disabled>Export CSV</button>
+          <button id="exportBtn">Export CSV</button>
         </div>
 
         <div class="db-stats" id="dbStats"></div>
+        <div class="filter-badges" id="filterBadges"></div>
         <div class="db-scroll-hint" id="scrollHint" style="display: none;">↔ This table is wide — scroll horizontally to see all columns.</div>
 
         <div id="loadingState" class="db-loading" style="display: none;">
@@ -309,11 +381,13 @@
             <thead id="tableHead"></thead>
             <tbody id="tableBody"></tbody>
           </table>
-          <div class="pagination" id="pagination"></div>
         </div>
+        <div class="pagination" id="pagination" style="display: none;"></div>
 
         <div id="emptyState" class="db-empty" style="display: none;">
-          No data found. Click "Load Database" to fetch the data.
+          <svg class="db-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/><path d="M9 14h6"/><path d="M9 18h4"/></svg>
+          <div class="db-empty-text">No data found</div>
+          <div class="db-empty-hint">Try adjusting filters or selecting a different table</div>
         </div>
       </div>
     </main>
