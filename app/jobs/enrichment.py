@@ -25,6 +25,8 @@ from app.models import ExtractionMethod
 logger = logging.getLogger("news.pipeline")
 MARKDOWN_NEW_QUOTA_PATH = Path("data/status/markdown_new_quota.json")
 MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
+COMPRESS_NEW_QUOTA_PATH = Path("data/status/compress_new_quota.json")
+COMPRESS_NEW_DAILY_LIMIT = int(os.getenv("COMPRESS_NEW_DAILY_LIMIT", "500"))
 
 
 MethodName = Literal[
@@ -168,6 +170,80 @@ def record_markdown_new_response(
         state["remaining"] = 0
         state["exhausted"] = True
     save_markdown_new_quota_state(state)
+
+
+def _compress_new_quota_date() -> str:
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def _new_compress_quota_state(today: str | None = None) -> dict[str, Any]:
+    date = today or _compress_new_quota_date()
+    return {
+        "date": date,
+        "requests_made": 0,
+        "limit": COMPRESS_NEW_DAILY_LIMIT,
+        "remaining": COMPRESS_NEW_DAILY_LIMIT,
+        "exhausted": False,
+        "updated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+    }
+
+
+def load_compress_new_quota_state() -> dict[str, Any]:
+    today = _compress_new_quota_date()
+    if not COMPRESS_NEW_QUOTA_PATH.exists():
+        return _new_compress_quota_state(today)
+    try:
+        state = json.loads(COMPRESS_NEW_QUOTA_PATH.read_text(encoding="utf-8"))
+        if not isinstance(state, dict) or state.get("date") != today:
+            return _new_compress_quota_state(today)
+        state["limit"] = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
+        state["requests_made"] = int(state.get("requests_made") or 0)
+        state["remaining"] = int(state.get("remaining") or 0)
+        state["exhausted"] = bool(state.get("exhausted")) or state["remaining"] <= 0
+        return state
+    except Exception as exc:
+        logger.warning("Failed to read compress.new quota state error=%s", exc)
+        return _new_compress_quota_state(today)
+
+
+def save_compress_new_quota_state(state: dict[str, Any]) -> None:
+    state["updated_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    COMPRESS_NEW_QUOTA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    COMPRESS_NEW_QUOTA_PATH.write_text(
+        json.dumps(state, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def compress_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
+    state = load_compress_new_quota_state()
+    limit = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
+    exhausted = (
+        bool(state.get("exhausted"))
+        or int(state.get("remaining") or 0) <= 0
+        or int(state.get("requests_made") or 0) >= limit
+    )
+    return exhausted, state
+
+
+def reserve_compress_new_request() -> bool:
+    exhausted, state = compress_new_quota_exhausted()
+    if exhausted:
+        return False
+    limit = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
+    requests_made = int(state.get("requests_made") or 0) + 1
+    state["requests_made"] = requests_made
+    state["remaining"] = max(0, min(int(state.get("remaining") or limit), limit - requests_made))
+    state["exhausted"] = state["remaining"] <= 0
+    save_compress_new_quota_state(state)
+    return True
+
+
+def record_compress_new_response(success: bool) -> None:
+    state = load_compress_new_quota_state()
+    if success:
+        state["last_success"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    save_compress_new_quota_state(state)
 
 
 def truncate_for_storage(text: str, max_chars: int) -> str:

@@ -55,6 +55,8 @@ except ModuleNotFoundError:
 STATUS_DIR = Path("data/status")
 MARKDOWN_NEW_QUOTA_PATH = STATUS_DIR / "markdown_new_quota.json"
 MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
+COMPRESS_NEW_QUOTA_PATH = STATUS_DIR / "compress_new_quota.json"
+COMPRESS_NEW_DAILY_LIMIT = int(os.getenv("COMPRESS_NEW_DAILY_LIMIT", "500"))
 SOURCE_ID_RENAMES = {
     "deepmind-blog": "google-deepmind-blog",
     "apple-ml-blog": "apple-machine-learning",
@@ -161,6 +163,30 @@ def _record_markdown_new_response(
         raw_remaining_header=raw_remaining_header,
         url=url,
     )
+
+
+def _compress_new_quota_date() -> str:
+    return enrichment._compress_new_quota_date()
+
+
+def _load_compress_new_quota_state() -> dict[str, Any]:
+    return enrichment.load_compress_new_quota_state()
+
+
+def _save_compress_new_quota_state(state: dict[str, Any]) -> None:
+    enrichment.save_compress_new_quota_state(state)
+
+
+def _compress_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
+    return enrichment.compress_new_quota_exhausted()
+
+
+def _reserve_compress_new_request() -> bool:
+    return enrichment.reserve_compress_new_request()
+
+
+def _record_compress_new_response(success: bool) -> None:
+    enrichment.record_compress_new_response(success)
 
 
 def get_source_timeout_seconds(source_id: str) -> int:
@@ -496,7 +522,17 @@ def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int, dict[str, 
 
 
 def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
-    return enrichment.parse_with_compress_new(url, _enrichment_settings())
+    exhausted, state = _compress_new_quota_exhausted()
+    if exhausted:
+        logger.info("compress.new quota exhausted date=%s requests=%d limit=%d",
+                    state.get("date"), state.get("requests_made"), state.get("limit"))
+        return None, False
+    if not _reserve_compress_new_request():
+        return None, False
+    result = enrichment.parse_with_compress_new(url, _enrichment_settings())
+    body, used = result
+    _record_compress_new_response(bool(used and body))
+    return result
 
 
 def is_probably_dirty_body(body: str) -> bool:
