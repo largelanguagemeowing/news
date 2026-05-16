@@ -48,6 +48,12 @@
         font-size: 13px; font-family: inherit; cursor: pointer;
         outline: none;
       }
+      .videos-filter {
+        padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line);
+        background: var(--panel); color: var(--ink);
+        font-size: 13px; font-family: inherit; cursor: pointer;
+        outline: none;
+      }
 
       .videos-count {
         font-size: 13px; color: var(--ink-soft); padding: 0 24px; margin: 8px 0 0;
@@ -207,6 +213,9 @@
       <div class="videos-header">
         <div class="videos-header-left">
           <input class="videos-search" id="videosSearch" type="search" placeholder="Search videos..." autocomplete="off">
+          <select class="videos-filter" id="videosChannel" title="Filter by channel">
+            <option value="">All channels</option>
+          </select>
           <select class="videos-sort" id="videosSort">
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>

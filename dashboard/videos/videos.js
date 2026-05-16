@@ -12,9 +12,12 @@ const gridEl = document.getElementById('videosGrid');
 const emptyEl = document.getElementById('videosEmpty');
 const countEl = document.getElementById('videosCount');
 const searchEl = document.getElementById('videosSearch');
+const channelEl = document.getElementById('videosChannel');
 const sortEl = document.getElementById('videosSort');
 
 let allVideos = [];
+let availableVideos = [];
+let availabilityChecked = false;
 
 function getYouTubeId(url) {
   try {
@@ -24,6 +27,38 @@ function getYouTubeId(url) {
   } catch {
     return null;
   }
+}
+
+async function checkVideoAvailability(video) {
+  const id = getYouTubeId(video.url);
+  if (!id) return false;
+  try {
+    const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`);
+    if (!resp.ok) return false;
+    const data = await resp.json();
+    return !data.error;
+  } catch {
+    return false;
+  }
+}
+
+async function filterAvailableVideos(videos, concurrency = 5) {
+  const results = [];
+  let index = 0;
+
+  async function worker() {
+    while (index < videos.length) {
+      const i = index++;
+      const video = videos[i];
+      const isAvailable = await checkVideoAvailability(video);
+      results[i] = { video, isAvailable };
+    }
+  }
+
+  const workers = Array.from({ length: Math.min(concurrency, videos.length) }, () => worker());
+  await Promise.all(workers);
+
+  return results.filter((r) => r && r.isAvailable).map((r) => r.video);
 }
 
 function formatDate(value) {
@@ -37,7 +72,8 @@ function render() {
   const q = searchEl.value.trim().toLowerCase();
   const sort = sortEl.value;
 
-  let filtered = allVideos.filter((v) => {
+  let filtered = availableVideos.filter((v) => {
+    if (channelEl.value && v.source_id !== channelEl.value) return false;
     if (!q) return true;
     return v.title.toLowerCase().includes(q)
         || v.source_name.toLowerCase().includes(q)
@@ -101,6 +137,16 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
+function populateChannels() {
+  const channels = [...new Set(allVideos.map((v) => v.source_id))].sort();
+  channels.forEach((id) => {
+    const opt = document.createElement('option');
+    opt.value = id;
+    opt.textContent = id;
+    channelEl.appendChild(opt);
+  });
+}
+
 function debounce(fn, ms) {
   let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
@@ -110,6 +156,10 @@ async function main() {
   try {
     const articles = await getJson(['../../data/status/articles.json', '../data/status/articles.json', './data/status/articles.json']);
     allVideos = articles.filter((a) => a.extraction_method === 'youtube' && getYouTubeId(a.url));
+    populateChannels();
+
+    availableVideos = await filterAvailableVideos(allVideos);
+    availabilityChecked = true;
     render();
 
     loaderEl.hidden = true;
@@ -120,6 +170,7 @@ async function main() {
 }
 
 searchEl.addEventListener('input', debounce(render, 200));
+channelEl.addEventListener('change', render);
 sortEl.addEventListener('change', render);
 
 main();
