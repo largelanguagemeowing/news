@@ -184,6 +184,11 @@ def _new_compress_quota_state(today: str | None = None) -> dict[str, Any]:
         "limit": COMPRESS_NEW_DAILY_LIMIT,
         "remaining": COMPRESS_NEW_DAILY_LIMIT,
         "exhausted": False,
+        "consecutive_failures": 0,
+        "total_successes": 0,
+        "total_failures": 0,
+        "last_success": None,
+        "last_failure": None,
         "updated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
     }
 
@@ -200,6 +205,9 @@ def load_compress_new_quota_state() -> dict[str, Any]:
         state["requests_made"] = int(state.get("requests_made") or 0)
         state["remaining"] = int(state.get("remaining") or 0)
         state["exhausted"] = bool(state.get("exhausted")) or state["remaining"] <= 0
+        state["consecutive_failures"] = int(state.get("consecutive_failures") or 0)
+        state["total_successes"] = int(state.get("total_successes") or 0)
+        state["total_failures"] = int(state.get("total_failures") or 0)
         return state
     except Exception as exc:
         logger.warning("Failed to read compress.new quota state error=%s", exc)
@@ -239,10 +247,17 @@ def reserve_compress_new_request() -> bool:
     return True
 
 
-def record_compress_new_response(success: bool) -> None:
+def record_compress_new_response(success: bool, error: str | None = None) -> None:
     state = load_compress_new_quota_state()
+    now = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     if success:
-        state["last_success"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+        state["consecutive_failures"] = 0
+        state["total_successes"] = int(state.get("total_successes", 0)) + 1
+        state["last_success"] = now
+    else:
+        state["consecutive_failures"] = int(state.get("consecutive_failures", 0)) + 1
+        state["total_failures"] = int(state.get("total_failures", 0)) + 1
+        state["last_failure"] = now
     save_compress_new_quota_state(state)
 
 

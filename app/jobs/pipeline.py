@@ -219,6 +219,35 @@ def _block_markdown_new(seconds: int, reason: str) -> None:
     )
 
 
+COMPRESS_NEW_BLOCKED_UNTIL_TS = 0.0
+
+
+def reset_compress_new_circuit_breaker() -> None:
+    global COMPRESS_NEW_BLOCKED_UNTIL_TS
+    COMPRESS_NEW_BLOCKED_UNTIL_TS = 0.0
+
+
+def _is_compress_new_blocked() -> bool:
+    return COMPRESS_NEW_BLOCKED_UNTIL_TS > time.time()
+
+
+def _compress_new_block_seconds_remaining() -> int:
+    return max(0, int(COMPRESS_NEW_BLOCKED_UNTIL_TS - time.time()))
+
+
+def _block_compress_new(seconds: int, reason: str) -> None:
+    global COMPRESS_NEW_BLOCKED_UNTIL_TS
+    seconds = max(1, seconds)
+    COMPRESS_NEW_BLOCKED_UNTIL_TS = max(
+        COMPRESS_NEW_BLOCKED_UNTIL_TS, time.time() + seconds
+    )
+    logger.warning(
+        "compress.new circuit breaker open seconds=%d reason=%s",
+        _compress_new_block_seconds_remaining(),
+        reason,
+    )
+
+
 def parse_date(value: Any) -> datetime:
     if value is None:
         return datetime.min.replace(tzinfo=timezone.utc)
@@ -522,6 +551,9 @@ def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int, dict[str, 
 
 
 def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
+    if _is_compress_new_blocked():
+        logger.warning("compress.new circuit breaker open, skipping")
+        return None, False
     exhausted, state = _compress_new_quota_exhausted()
     if exhausted:
         logger.info("compress.new quota exhausted date=%s requests=%d limit=%d",
@@ -529,10 +561,18 @@ def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
         return None, False
     if not _reserve_compress_new_request():
         return None, False
-    result = enrichment.parse_with_compress_new(url, _enrichment_settings())
-    body, used = result
-    _record_compress_new_response(bool(used and body))
-    return result
+    try:
+        result = enrichment.parse_with_compress_new(url, _enrichment_settings())
+        body, used = result
+        _record_compress_new_response(bool(used and body))
+        return result
+    except Exception as exc:
+        _record_compress_new_response(False, str(exc))
+        state = _load_compress_new_quota_state()
+        consecutive_failures = state.get("consecutive_failures", 0)
+        if consecutive_failures >= 5:
+            _block_compress_new(300, f"consecutive_failures={consecutive_failures}")
+        return None, False
 
 
 def is_probably_dirty_body(body: str) -> bool:
@@ -1159,6 +1199,7 @@ def classify_stage(conn: sqlite3.Connection, run_id: str) -> StageResult:
 
 def run_pipeline() -> int:
     reset_markdown_new_circuit_breaker()
+    reset_compress_new_circuit_breaker()
     conn = get_connection()
     init_db(conn)
     migrate_source_ids(conn)
