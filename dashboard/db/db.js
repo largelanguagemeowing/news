@@ -426,14 +426,14 @@ function escapeHtml(text) {
 function orderColumns(cols) {
   const late = new Set(['url', 'article_url', 'published_at', 'fetched_at']);
   const front = [];
-  const middle = [];
+  const bodyCol = [];
   const back = [];
   for (const col of cols) {
-    if (col === 'body') back.push(col);
-    else if (late.has(col)) middle.push(col);
+    if (col === 'body') bodyCol.push(col);
+    else if (late.has(col)) back.push(col);
     else front.push(col);
   }
-  return [...front, ...middle, ...back];
+  return [...front, ...bodyCol, ...back];
 }
 
 function formatDate(dateStr) {
