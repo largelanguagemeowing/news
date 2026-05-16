@@ -17,7 +17,7 @@ function statusClass(status) {
 }
 
 function formatLatency(ms) {
-  if (!ms || ms <= 0) return null;
+  if (!ms || ms <= 0) return '-';
   const units = [
     { label: 'd', divisor: 86400000 },
     { label: 'h', divisor: 3600000 },
