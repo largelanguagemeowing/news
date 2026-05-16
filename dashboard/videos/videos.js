@@ -11,9 +11,11 @@ const contentEl = document.getElementById('videosContent');
 const gridEl = document.getElementById('videosGrid');
 const emptyEl = document.getElementById('videosEmpty');
 const countEl = document.getElementById('videosCount');
-const searchEl = document.getElementById('videosSearch');
+const searchEl = document.getElementById('searchInput');
 const channelEl = document.getElementById('videosChannel');
 const sortEl = document.getElementById('videosSort');
+const clearFiltersEl = document.getElementById('clearFilters');
+const filterBadgeEl = document.getElementById('filterBadge');
 
 let allVideos = [];
 let availableVideos = [];
@@ -95,6 +97,7 @@ function render() {
   }
 
   countEl.textContent = `${filtered.length} video${filtered.length !== 1 ? 's' : ''}`;
+  updateFilterBadge();
 
   if (!filtered.length) {
     gridEl.innerHTML = '';
@@ -104,6 +107,17 @@ function render() {
   emptyEl.hidden = true;
 
   gridEl.innerHTML = filtered.map(renderCard).join('');
+}
+
+function updateFilterBadge() {
+  if (!filterBadgeEl) return;
+  const activeCount = channelEl.value ? 1 : 0;
+  if (activeCount > 0) {
+    filterBadgeEl.textContent = activeCount;
+    filterBadgeEl.hidden = false;
+  } else {
+    filterBadgeEl.hidden = true;
+  }
 }
 
 function renderCard(v) {
@@ -182,5 +196,11 @@ async function main() {
 searchEl.addEventListener('input', debounce(render, 200));
 channelEl.addEventListener('change', render);
 sortEl.addEventListener('change', render);
+clearFiltersEl.addEventListener('click', () => {
+  searchEl.value = '';
+  channelEl.value = '';
+  sortEl.value = 'newest';
+  render();
+});
 
 main();

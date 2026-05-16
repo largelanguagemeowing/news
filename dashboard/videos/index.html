@@ -27,36 +27,8 @@
     <link rel="manifest" href="../manifest.json" />
     <script src="../app.js"></script>
     <style>
-      .videos-header {
-        display: flex; align-items: center; justify-content: space-between; gap: 12px;
-        padding: 20px 24px 0; flex-wrap: wrap;
-      }
-      .videos-header-left { display: flex; align-items: center; gap: 12px; flex: 1; }
-      .videos-search {
-        flex: 1; max-width: 360px;
-        padding: 9px 14px; border-radius: 8px; border: 1px solid var(--line);
-        background: var(--panel); color: var(--ink);
-        font-size: 14px; font-family: inherit;
-        outline: none; transition: border-color 0.2s;
-      }
-      .videos-search:focus { border-color: var(--accent); }
-      .videos-search::placeholder { color: var(--ink-soft); }
-
-      .videos-sort {
-        padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line);
-        background: var(--panel); color: var(--ink);
-        font-size: 13px; font-family: inherit; cursor: pointer;
-        outline: none;
-      }
-      .videos-filter {
-        padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line);
-        background: var(--panel); color: var(--ink);
-        font-size: 13px; font-family: inherit; cursor: pointer;
-        outline: none;
-      }
-
       .videos-count {
-        font-size: 13px; color: var(--ink-soft); padding: 0 24px; margin: 8px 0 0;
+        font-size: 13px; color: var(--ink-soft); padding: 0 24px; margin: 0 0 8px;
       }
 
       .videos-grid {
@@ -154,16 +126,13 @@
       .videos-empty h2 { font-size: 20px; margin: 0 0 8px; }
 
       @media (max-width: 760px) {
-        .videos-header { padding: 16px 16px 0; flex-direction: column; align-items: stretch; }
-        .videos-header-left { flex-direction: column; align-items: stretch; }
-        .videos-search { max-width: none; }
         .videos-grid { padding: 12px 16px; grid-template-columns: 1fr; }
         .videos-loader { padding: 12px 16px; grid-template-columns: 1fr; }
         .videos-count { padding: 0 16px; }
       }
     </style>
   </head>
-  <body class="no-search">
+  <body>
     <header class="top-bar">
       <div class="top-bar-inner">
         <a href="../" class="brand">
@@ -209,21 +178,46 @@
       </div>
     </header>
 
-    <main class="shell">
-      <div class="videos-header">
-        <div class="videos-header-left">
-          <input class="videos-search" id="videosSearch" type="search" placeholder="Search videos..." autocomplete="off">
-          <select class="videos-filter" id="videosChannel" title="Filter by channel">
+    <div class="search-bar">
+      <div class="search-bar-inner">
+        <div class="search-input-wrap">
+          <input id="searchInput" type="search" placeholder="Search videos..." autocomplete="off" />
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <button class="filter-toggle" id="filterToggle" type="button" aria-label="Toggle filters">
+          <svg class="filter-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          <span>Filters</span>
+          <span class="filter-badge" id="filterBadge" hidden></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-panel" id="filterPanel">
+      <div class="filter-panel-inner">
+        <div class="filters-grid">
+          <div class="filter-group">
+            <label for="videosChannel">Channel</label>
+            <select id="videosChannel">
             <option value="">All channels</option>
           </select>
-          <select class="videos-sort" id="videosSort">
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-            <option value="channel">Channel</option>
-            <option value="title">Title</option>
-          </select>
+          </div>
+          <div class="filter-group">
+            <label for="videosSort">Sort by</label>
+            <select id="videosSort">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="channel">Channel (A-Z)</option>
+              <option value="title">Title (A-Z)</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-actions">
+          <button class="filter-btn filter-btn-secondary" id="clearFilters" type="button">Clear All</button>
         </div>
       </div>
+    </div>
+
+    <main class="shell">
       <div class="videos-count" id="videosCount"></div>
 
       <div id="videosLoader" class="videos-loader">
