@@ -25,6 +25,11 @@ on:
           - fireship
           - ai-explained
           - hugging-face
+      export:
+        description: "Export status files after fetch (enables feed dashboard)"
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: news-pipeline
@@ -75,7 +80,11 @@ jobs:
           if [ "${{ inputs.pipeline_source }}" = "openai-only" ]; then
             export PIPELINE_SOURCE_ID="openai-blog"
           fi
-          uv run python -m app.jobs.fetch_pipeline
+          if [ "${{ inputs.export }}" = "true" ]; then
+            uv run python -m app.jobs.fetch_pipeline --export
+          else
+            uv run python -m app.jobs.fetch_pipeline
+          fi
 
       - name: Commit and push data changes
         if: always()

@@ -23,10 +23,17 @@ from typing import Any
 
 from app.db import get_connection, init_db
 from app.incidents import GitHubIssueClient, IncidentSignal, sync_incident_open_or_update
-from app.jobs import pipeline
+from app.jobs import pipeline, stages_export
 from app.jobs.pipeline import (
     DEFUDDLE_ENABLED,
     SETTINGS,
+    STATUS_DIR,
+    build_articles,
+    build_events,
+    build_incidents,
+    build_runs,
+    build_sources,
+    build_summary,
     log_stage_summary,
     reset_markdown_new_circuit_breaker,
     utc_now_iso,
@@ -70,6 +77,7 @@ def run_enrich_pipeline(
     only_method: str | None = None,
     source_id: str | None = None,
     exclude_source: str | None = None,
+    export: bool = False,
 ) -> int:
     reset_markdown_new_circuit_breaker()
     conn = get_connection()
@@ -112,6 +120,24 @@ def run_enrich_pipeline(
 
         log_stage_summary(logger, stage_name="enrich", status="success", metrics=metrics, run_id=run_id)
         logger.info("Enrich pipeline succeeded run_id=%s enriched=%d", run_id, metrics.get("updated", 0))
+
+        if export:
+            logger.info("Running lightweight export for feed dashboard")
+            export_metrics = stages_export.export_status(
+                conn,
+                status_dir=STATUS_DIR,
+                build_summary_fn=lambda c: build_summary(c),
+                build_sources_fn=lambda c: build_sources(c),
+                build_runs_fn=lambda c: build_runs(c),
+                build_incidents_fn=lambda c: build_incidents(c),
+                build_events_fn=lambda c: build_events(c),
+                build_articles_fn=lambda c: build_articles(c),
+            )
+            logger.info("Export completed: %s", export_metrics)
+            pipeline_metrics["export"] = export_metrics
+            run_repo.complete_pipeline_run(conn, run_id, utc_now_iso(), pipeline_metrics)
+            conn.commit()
+
         return 0
 
     except Exception as exc:
@@ -313,6 +339,12 @@ def main() -> int:
     parser.add_argument("--only-method", type=str, choices=["youtube", "trafilatura", "markdown_new", "compress_new", "jina", "defuddle"], default=None, help="Force specific extraction method only")
     parser.add_argument("--source-id", type=str, default=None, help="Filter to a specific source")
     parser.add_argument("--exclude-source", type=str, default=None, help="Exclude source(s), comma-separated")
+    parser.add_argument(
+        "--export",
+        action="store_true",
+        default=False,
+        help="Export status files after enrichment (enables feed dashboard without classify pipeline)",
+    )
     args = parser.parse_args()
 
     return run_enrich_pipeline(
@@ -324,6 +356,7 @@ def main() -> int:
         only_method=args.only_method,
         source_id=args.source_id,
         exclude_source=args.exclude_source,
+        export=args.export,
     )
 
 

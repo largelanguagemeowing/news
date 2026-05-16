@@ -12,17 +12,19 @@ Triggered separately from enrich and classify pipelines so that:
 
 from __future__ import annotations
 
+import argparse
 import logging
 import os
 import time
 import traceback
 import uuid
+from pathlib import Path
 from typing import Any
 
 from app.config import load_sources
 from app.db import get_connection, init_db
 from app.incidents import GitHubIssueClient, sync_incident_open_or_update, sync_incident_resolve
-from app.jobs import stages_ingest
+from app.jobs import stages_ingest, stages_export
 from app.jobs.pipeline import (
     DEFUDDLE_ENABLED,
     REQUEST_TIMEOUT_SECONDS,
@@ -31,7 +33,18 @@ from app.jobs.pipeline import (
     SOURCE_AUTO_DISABLE_COOLDOWN_HOURS,
     SOURCE_FAIL_THRESHOLD,
     SOURCE_TIMEOUTS_SECONDS,
+    STATUS_DIR,
+    ARTICLES_EXPORT_LIMIT,
+    EVENTS_EXPORT_LIMIT,
+    build_articles,
+    build_events,
+    build_incidents,
+    build_runs,
+    build_sources,
+    build_summary,
     canonicalize_url,
+    classify_event,
+    extract_tags,
     get_source_timeout_seconds,
     iso,
     log_stage_summary,
@@ -61,7 +74,23 @@ def _noop_enrich(
     return body, ExtractionMethod.RSS.value, []
 
 
-def run_fetch_pipeline() -> int:
+def run_export(conn) -> dict[str, Any]:
+    logger.info("Running lightweight export for feed dashboard")
+    metrics = stages_export.export_status(
+        conn,
+        status_dir=STATUS_DIR,
+        build_summary_fn=lambda c: build_summary(c),
+        build_sources_fn=lambda c: build_sources(c),
+        build_runs_fn=lambda c: build_runs(c),
+        build_incidents_fn=lambda c: build_incidents(c),
+        build_events_fn=lambda c: build_events(c),
+        build_articles_fn=lambda c: build_articles(c),
+    )
+    logger.info("Export completed: %s", metrics)
+    return metrics
+
+
+def run_fetch_pipeline(export: bool = False) -> int:
     reset_markdown_new_circuit_breaker()
     conn = get_connection()
     init_db(conn)
@@ -140,6 +169,12 @@ def run_fetch_pipeline() -> int:
         log_stage_summary(logger, stage_name="fetch", status="success", metrics=metrics, run_id=run_id)
         logger.info("Fetch pipeline succeeded run_id=%s", run_id)
 
+        if export:
+            export_metrics = run_export(conn)
+            pipeline_metrics["export"] = export_metrics
+            run_repo.complete_pipeline_run(conn, run_id, utc_now_iso(), pipeline_metrics)
+            conn.commit()
+
         sync_incident_resolve(
             conn,
             incident_key="pipeline:fetch",
@@ -185,5 +220,17 @@ def _complete_stage_run(conn, stage_run_id: int, status: str, metrics: dict) -> 
     conn.commit()
 
 
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Fetch-only pipeline: ingest RSS feeds")
+    parser.add_argument(
+        "--export",
+        action="store_true",
+        default=False,
+        help="Export status files after fetch (enables feed dashboard without classify pipeline)",
+    )
+    args = parser.parse_args()
+    return run_fetch_pipeline(export=args.export)
+
+
 if __name__ == "__main__":
-    raise SystemExit(run_fetch_pipeline())
+    raise SystemExit(main())
