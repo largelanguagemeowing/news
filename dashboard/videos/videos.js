@@ -70,31 +70,36 @@ function render() {
   gridEl.innerHTML = filtered.map(renderCard).join('');
 }
 
+function avatarColor(name) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  const hue = Math.abs(hash) % 360;
+  return `hsl(${hue}, 55%, 50%)`;
+}
+
 function renderCard(v) {
   const id = getYouTubeId(v.url);
   const thumb = id
     ? `https://img.youtube.com/vi/${id}/hqdefault.jpg`
     : '';
   const channelLink = `../?source=${encodeURIComponent(v.source_id)}`;
+  const initial = v.source_name ? v.source_name.charAt(0).toUpperCase() : '?';
 
   return `
     <div class="video-card">
       <a class="video-thumb" href="${escapeHtml(v.url)}" target="_blank" rel="noreferrer">
-        ${thumb ? `<img src="${thumb}" alt="" loading="lazy">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--ink-soft);font-size:13px;">No thumbnail</div>'}
-        <div class="play-overlay">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" fill="#fff" stroke="none"/></svg>
-        </div>
+        ${thumb ? `<img src="${thumb}" alt="" loading="lazy">` : '<div class="video-thumb-fallback">No thumbnail</div>'}
+        <span class="video-duration">${v.topic ? escapeHtml(v.topic) : ''}</span>
       </a>
       <div class="video-body">
-        <h3 class="video-title"><a href="${escapeHtml(v.url)}" target="_blank" rel="noreferrer">${escapeHtml(v.title)}</a></h3>
-        <div class="video-meta">
-          <a class="video-channel" href="${channelLink}" style="color:var(--ink-soft);text-decoration:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
-            ${escapeHtml(v.source_name)}
-          </a>
-          <span>${formatDate(v.published_at)}</span>
+        <div class="video-avatar" style="background:${avatarColor(v.source_name)}">${initial}</div>
+        <div class="video-info">
+          <h3 class="video-title"><a href="${escapeHtml(v.url)}" target="_blank" rel="noreferrer">${escapeHtml(v.title)}</a></h3>
+          <a class="video-channel" href="${channelLink}">${escapeHtml(v.source_name)}</a>
+          <div class="video-meta">
+            <span>${formatDate(v.published_at)}</span>
+          </div>
         </div>
-        ${v.topic ? `<div style="margin-top:8px;"><span class="video-topic">${escapeHtml(v.topic)}</span></div>` : ''}
       </div>
     </div>
   `;
