@@ -33,10 +33,22 @@ async function checkVideoAvailability(video) {
   const id = getYouTubeId(video.url);
   if (!id) return false;
   try {
-    const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`);
-    if (!resp.ok) return false;
-    const data = await resp.json();
-    return !data.error;
+    const [embedResp, dearrowResp] = await Promise.all([
+      fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`),
+      fetch(`https://sponsor.ajay.app/api/branding?videoID=${id}`),
+    ]);
+    if (!embedResp.ok) return false;
+    const embedData = await embedResp.json();
+    if (embedData.error) return false;
+
+    if (dearrowResp.ok) {
+      const dearrowData = await dearrowResp.json();
+      const thumb = dearrowData.thumbnails?.find((t) => t.locked || t.votes >= 0);
+      if (thumb && !thumb.original && thumb.timestamp != null) {
+        video.dearrowThumb = `https://dearrow-thumb.ajay.app/api/v1/getThumbnail?videoID=${id}&time=${thumb.timestamp}`;
+      }
+    }
+    return true;
   } catch {
     return false;
   }
@@ -108,9 +120,11 @@ function render() {
 
 function renderCard(v) {
   const id = getYouTubeId(v.url);
-  const thumb = id
-    ? `https://img.youtube.com/vi/${id}/mqdefault.jpg`
-    : '';
+  const thumb = v.dearrowThumb
+    ? v.dearrowThumb
+    : id
+      ? `https://img.youtube.com/vi/${id}/mqdefault.jpg`
+      : '';
   const channelLink = `../?source=${encodeURIComponent(v.source_id)}`;
   const detailLink = id ? `./detail/?v=${id}` : escapeHtml(v.url);
 
