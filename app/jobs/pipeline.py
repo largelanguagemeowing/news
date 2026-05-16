@@ -19,6 +19,8 @@ import trafilatura
 from dateutil import parser as dtparser
 
 from app.config import SourceConfig, load_sources
+from app.jobs.classifier import classify_article, extract_article_tags
+from app.jobs.ml_classifier import classify_with_model
 from app.jobs import enrichment
 from app.db import get_connection, init_db, transaction
 from app.logging_helpers import log_stage_summary
@@ -59,6 +61,7 @@ YOUTUBE_SOURCE_IDS = {
     "youtube-ai-explained",
     "youtube-threeblueonebrown",
     "youtube-ai-coding",
+    "ai-engineer",
 }
 
 
@@ -68,18 +71,6 @@ class StageResult:
     metrics: dict[str, Any]
     error_message: str | None = None
 
-
-TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
-    ("release", ("release", "launched", "launch", "announced", "introduces", "introducing")),
-    ("models", ("model", "llm", "gpt", "gemini", "claude")),
-    ("open-source", ("open source", "open-source", "github", "repo", "weights")),
-    ("api", ("api", "sdk", "endpoint", "developers")),
-    ("agents", ("agent", "agents", "automation", "workflow")),
-    ("safety", ("safety", "alignment", "guardrail", "risk")),
-    ("benchmark", ("benchmark", "eval", "evaluation", "score")),
-    ("research", ("research", "paper", "arxiv", "study")),
-    ("video", ("youtube", "video")),
-]
 
 SETTINGS = get_settings()
 
@@ -131,7 +122,9 @@ def _markdown_new_block_seconds_remaining() -> int:
 def _block_markdown_new(seconds: int, reason: str) -> None:
     global MARKDOWN_NEW_BLOCKED_UNTIL_TS
     seconds = max(1, seconds)
-    MARKDOWN_NEW_BLOCKED_UNTIL_TS = max(MARKDOWN_NEW_BLOCKED_UNTIL_TS, time.time() + seconds)
+    MARKDOWN_NEW_BLOCKED_UNTIL_TS = max(
+        MARKDOWN_NEW_BLOCKED_UNTIL_TS, time.time() + seconds
+    )
     logger.warning(
         "markdown.new circuit breaker open seconds=%d reason=%s",
         _markdown_new_block_seconds_remaining(),
@@ -175,7 +168,9 @@ def iso(dt: datetime) -> str:
     return dt.astimezone(timezone.utc).replace(microsecond=0).isoformat()
 
 
-def source_is_in_cooldown(auto_disabled_until: str | None, now: datetime | None = None) -> bool:
+def source_is_in_cooldown(
+    auto_disabled_until: str | None, now: datetime | None = None
+) -> bool:
     if not auto_disabled_until:
         return False
     current = now or datetime.now(timezone.utc)
@@ -193,7 +188,9 @@ def should_auto_disable_source(
         return True
     current = now or datetime.now(timezone.utc)
     since_success = current - parse_date(last_success_at)
-    return since_success.total_seconds() >= (SOURCE_AUTO_DISABLE_MIN_FAILURE_HOURS * 3600)
+    return since_success.total_seconds() >= (
+        SOURCE_AUTO_DISABLE_MIN_FAILURE_HOURS * 3600
+    )
 
 
 def upsert_sources(conn: sqlite3.Connection, sources: list[SourceConfig]) -> None:
@@ -250,31 +247,15 @@ def stage_end(
 
 
 def classify_event(title: str, body: str, default_category: str) -> tuple[str, float]:
-    text = f"{title} {body}".lower()
-    rules: list[tuple[str, tuple[str, ...], float]] = [
-        ("ai-models", ("model release", "llm", "gpt", "openai", "anthropic", "gemini"), 0.85),
-        ("security", ("vulnerability", "cve", "exploit", "breach"), 0.84),
-        ("policy", ("regulation", "policy", "law", "compliance"), 0.8),
-        ("funding", ("funding", "series a", "series b", "valuation"), 0.8),
-        ("product", ("launch", "released", "announced", "introduces"), 0.74),
-    ]
-    for label, tokens, score in rules:
-        if any(token in text for token in tokens):
-            return label, score
-    return default_category, 0.55
+    ml_result = classify_with_model(title, body, default_category=default_category)
+    if ml_result:
+        return ml_result
+    result = classify_article(title, body, default_category)
+    return result.label, result.confidence
 
 
 def extract_tags(title: str, body: str, source_id: str) -> list[str]:
-    text = f"{title} {body}".lower()
-    tags: list[str] = []
-    for label, patterns in TAG_RULES:
-        if any(pattern in text for pattern in patterns):
-            tags.append(label)
-    if source_id in YOUTUBE_SOURCE_IDS and "video" not in tags:
-        tags.append("video")
-    if not tags:
-        tags.append("general")
-    return tags[:6]
+    return extract_article_tags(title, body, source_id, YOUTUBE_SOURCE_IDS)
 
 
 def _enrichment_settings() -> enrichment.EnrichmentSettings:
@@ -327,8 +308,12 @@ def extract_youtube_schema_description(html: str) -> str:
     return enrichment.extract_youtube_schema_description(html)
 
 
-def extract_youtube_metadata(url: str, rss_title: str, rss_summary: str) -> dict[str, str]:
-    return enrichment.extract_youtube_metadata(url, rss_title, rss_summary, REQUEST_TIMEOUT_SECONDS)
+def extract_youtube_metadata(
+    url: str, rss_title: str, rss_summary: str
+) -> dict[str, str]:
+    return enrichment.extract_youtube_metadata(
+        url, rss_title, rss_summary, REQUEST_TIMEOUT_SECONDS
+    )
 
 
 def build_youtube_body(metadata: dict[str, str], rss_summary: str) -> str:
@@ -368,7 +353,9 @@ def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
         return None, False
 
     if result.returncode != 0 or not result.stdout.strip():
-        logger.debug("defuddle returned non-success for url=%s code=%s", url, result.returncode)
+        logger.debug(
+            "defuddle returned non-success for url=%s code=%s", url, result.returncode
+        )
         return None, False
 
     try:
@@ -377,7 +364,9 @@ def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
         logger.debug("defuddle returned invalid json for url=%s", url)
         return None, False
 
-    content = replace_iframes_with_markdown_links(str(payload.get("content") or "").strip())
+    content = replace_iframes_with_markdown_links(
+        str(payload.get("content") or "").strip()
+    )
     markdown = str(payload.get("contentMarkdown") or "").strip()
     description = str(payload.get("description") or "").strip()
     extracted = content or markdown or description
@@ -476,22 +465,36 @@ def enrich_with_policy(
                 youtube_meta = extract_youtube_metadata(url, title, current_body)
                 transcript = fetch_youtube_transcript(youtube_meta.get("video_id", ""))
                 if transcript:
-                    transcript_body = truncate_for_storage(build_youtube_transcript_body(youtube_meta, transcript))
+                    transcript_body = truncate_for_storage(
+                        build_youtube_transcript_body(youtube_meta, transcript)
+                    )
                     logger.info(
                         "Enrichment success source=%s method=%s url=%s",
                         source_id,
                         ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
                         url,
                     )
-                    return transcript_body, ExtractionMethod.YOUTUBE_TRANSCRIPT.value, -1, False
+                    return (
+                        transcript_body,
+                        ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
+                        -1,
+                        False,
+                    )
                 logger.info(
                     "Enrichment success source=%s method=%s url=%s",
                     source_id,
                     ExtractionMethod.YOUTUBE.value,
                     url,
                 )
-                return build_youtube_body(youtube_meta, current_body), ExtractionMethod.YOUTUBE.value, -1, False
-            logger.info("Enrichment miss source=%s method=%s url=%s", source_id, method, url)
+                return (
+                    build_youtube_body(youtube_meta, current_body),
+                    ExtractionMethod.YOUTUBE.value,
+                    -1,
+                    False,
+                )
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
             continue
 
         if method == ExtractionMethod.TRAFILATURA.value:
@@ -504,7 +507,9 @@ def enrich_with_policy(
                     url,
                 )
                 return trafilatura_body, ExtractionMethod.TRAFILATURA.value, -1, False
-            logger.info("Enrichment miss source=%s method=%s url=%s", source_id, method, url)
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
             continue
 
         if method == ExtractionMethod.MARKDOWN_NEW.value:
@@ -540,7 +545,10 @@ def enrich_with_policy(
                     url,
                 )
                 continue
-            if markdown_new_budget_remaining is not None and markdown_new_budget_remaining <= 0:
+            if (
+                markdown_new_budget_remaining is not None
+                and markdown_new_budget_remaining <= 0
+            ):
                 logger.info(
                     "Enrichment skip source=%s method=%s url=%s reason=budget_exhausted",
                     source_id,
@@ -557,7 +565,12 @@ def enrich_with_policy(
                     url,
                     rate_limit_remaining,
                 )
-                return markdown_body, ExtractionMethod.MARKDOWN_NEW.value, rate_limit_remaining, False
+                return (
+                    markdown_body,
+                    ExtractionMethod.MARKDOWN_NEW.value,
+                    rate_limit_remaining,
+                    False,
+                )
             if rate_limit_remaining == -2:
                 _block_markdown_new(24 * 3600, "retry_after_gt_24h")
                 compress_body, compress_used = parse_with_compress_new(url)
@@ -569,7 +582,9 @@ def enrich_with_policy(
                         url,
                     )
                     return compress_body, ExtractionMethod.COMPRESS_NEW.value, 0, True
-                logger.info("Enrichment miss source=%s method=%s url=%s", source_id, method, url)
+                logger.info(
+                    "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+                )
                 continue
             if rate_limit_remaining == 0:
                 _block_markdown_new(MARKDOWN_NEW_BLOCK_SECONDS_ON_429, "http_429")
@@ -596,7 +611,9 @@ def enrich_with_policy(
                         url,
                     )
                     return current_body, ExtractionMethod.RSS.value, 0, True
-            logger.info("Enrichment miss source=%s method=%s url=%s", source_id, method, url)
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
             continue
 
         if method == ExtractionMethod.COMPRESS_NEW.value:
@@ -617,7 +634,9 @@ def enrich_with_policy(
                     url,
                 )
                 return compress_body, ExtractionMethod.COMPRESS_NEW.value, -1, False
-            logger.info("Enrichment miss source=%s method=%s url=%s", source_id, method, url)
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
             continue
 
         if method == ExtractionMethod.JINA.value:
@@ -630,7 +649,9 @@ def enrich_with_policy(
                     url,
                 )
                 return jina_body, ExtractionMethod.JINA.value, -1, False
-            logger.info("Enrichment miss source=%s method=%s url=%s", source_id, method, url)
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
             continue
 
         if method == ExtractionMethod.DEFUDDLE.value:
@@ -643,30 +664,47 @@ def enrich_with_policy(
                     url,
                 )
                 return defuddle_body, ExtractionMethod.DEFUDDLE.value, -1, False
-            logger.info("Enrichment miss source=%s method=%s url=%s", source_id, method, url)
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
             continue
 
-    logger.info("Enrichment fallback source=%s method=%s url=%s", source_id, ExtractionMethod.RSS.value, url)
+    logger.info(
+        "Enrichment fallback source=%s method=%s url=%s",
+        source_id,
+        ExtractionMethod.RSS.value,
+        url,
+    )
     return current_body, ExtractionMethod.RSS.value, rate_limit_remaining, False
 
 
-def enrich_article_content(url: str, source_id: str, title: str, body: str) -> tuple[str, str, list[dict]]:
+def enrich_article_content(
+    url: str, source_id: str, title: str, body: str
+) -> tuple[str, str, list[dict]]:
     started = time.monotonic()
     enriched_body, method, _rate_limit_remaining, _rate_limited = enrich_with_policy(
         url, source_id, title, body
     )
     duration_ms = round((time.monotonic() - started) * 1000, 2)
     output_chars = len(enriched_body or "")
-    status = "success" if method != ExtractionMethod.RSS.value and output_chars > 0 else "failed"
-    return enriched_body, method, [
-        {
-            "method": method,
-            "status": status,
-            "duration_ms": duration_ms,
-            "error_message": None,
-            "output_chars": output_chars if output_chars else None,
-        }
-    ]
+    status = (
+        "success"
+        if method != ExtractionMethod.RSS.value and output_chars > 0
+        else "failed"
+    )
+    return (
+        enriched_body,
+        method,
+        [
+            {
+                "method": method,
+                "status": status,
+                "duration_ms": duration_ms,
+                "error_message": None,
+                "output_chars": output_chars if output_chars else None,
+            }
+        ],
+    )
 
 
 def ingest_stage(
@@ -879,14 +917,21 @@ def run_pipeline() -> int:
     if requested_source and requested_source.lower() != "all":
         sources = [s for s in sources if s.source_id == requested_source]
         if not sources:
-            logger.warning("PIPELINE_SOURCE_ID=%s did not match any configured source", requested_source)
+            logger.warning(
+                "PIPELINE_SOURCE_ID=%s did not match any configured source",
+                requested_source,
+            )
 
     exclude_source = (os.getenv("PIPELINE_EXCLUDE_SOURCE") or "").strip()
     if exclude_source:
         exclude_ids = {s.strip() for s in exclude_source.split(",") if s.strip()}
         before = len(sources)
         sources = [s for s in sources if s.source_id not in exclude_ids]
-        logger.info("PIPELINE_EXCLUDE_SOURCE=%s excluded %d sources", exclude_source, before - len(sources))
+        logger.info(
+            "PIPELINE_EXCLUDE_SOURCE=%s excluded %d sources",
+            exclude_source,
+            before - len(sources),
+        )
 
     upsert_sources(conn, sources)
 
@@ -899,7 +944,9 @@ def run_pipeline() -> int:
     github_repo = os.getenv("GITHUB_REPOSITORY")
     if github_run_id and github_repo:
         pipeline_metrics["github_run_id"] = github_run_id
-        pipeline_metrics["github_run_url"] = f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
+        pipeline_metrics["github_run_url"] = (
+            f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
+        )
     stages = [
         ("ingest", lambda: ingest_stage(conn, run_id, sources, issue_client)),
         ("cluster", lambda: cluster_stage(conn)),
