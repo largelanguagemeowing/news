@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pipeline-classify
+  group: news-pipeline
   cancel-in-progress: false
 
 permissions:

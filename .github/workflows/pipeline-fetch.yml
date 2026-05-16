@@ -27,7 +27,7 @@ on:
           - hugging-face
 
 concurrency:
-  group: pipeline-fetch
+  group: news-pipeline
   cancel-in-progress: false
 
 permissions:

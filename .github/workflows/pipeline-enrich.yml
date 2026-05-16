@@ -41,7 +41,7 @@ on:
           - defuddle
 
 concurrency:
-  group: pipeline-enrich
+  group: news-pipeline
   cancel-in-progress: false
 
 permissions:
