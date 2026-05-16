@@ -424,7 +424,7 @@ function escapeHtml(text) {
 }
 
 function orderColumns(cols) {
-  const late = new Set(['url', 'article_url', 'published_at', 'fetched_at']);
+  const late = new Set(['url', 'article_url', 'published_at', 'fetched_at', 'source_id']);
   const front = [];
   const bodyCol = [];
   const back = [];
