@@ -89,7 +89,9 @@ def ingest_stage(
         try:
             source_timeout_seconds = get_source_timeout_seconds(source.source_id)
 
-            request_headers: dict[str, str] = {}
+            request_headers: dict[str, str] = {
+                "User-Agent": "News-Aggregator/1.0 (RSS feed reader; +https://github.com/largelanguagemeowing/news)",
+            }
             if source_health:
                 if source_health["last_etag"]:
                     request_headers["If-None-Match"] = source_health["last_etag"]
