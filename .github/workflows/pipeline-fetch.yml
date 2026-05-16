@@ -1,0 +1,93 @@
+name: pipeline-fetch
+run-name: "fetch @ ${{ github.ref_name }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      pipeline_source:
+        description: "Which sources to fetch"
+        required: false
+        type: choice
+        default: "all"
+        options:
+          - all
+          - openai-only
+          - non-openai
+          - microsoft-ai-blog
+          - google-ai-blog
+          - google-deepmind-blog
+          - openai-blog
+          - apple-machine-learning
+          - simon-willison
+          - cursor-blog
+          - cursor-changelog
+          - matt-wolfe
+          - fireship
+          - ai-explained
+          - hugging-face
+
+concurrency:
+  group: pipeline-fetch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Run fetch pipeline
+        id: fetch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          LOG_LEVEL: "INFO"
+          PIPELINE_SOURCE_ID: >-
+            ${{
+              inputs.pipeline_source != 'all'
+              && inputs.pipeline_source != 'openai-only'
+              && inputs.pipeline_source != 'non-openai'
+              && inputs.pipeline_source
+              || ''
+            }}
+          PIPELINE_EXCLUDE_SOURCE: >-
+            ${{
+              inputs.pipeline_source == 'non-openai'
+              && 'openai-blog'
+              || ''
+            }}
+        run: |
+          if [ "${{ inputs.pipeline_source }}" = "openai-only" ]; then
+            export PIPELINE_SOURCE_ID="openai-blog"
+          fi
+          uv run python -m app.jobs.fetch_pipeline
+
+      - name: Commit and push data changes
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.db data/status
+          
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git pull --rebase || echo "Rebase had conflicts"
+            git commit -m "chore(data): save fetch pipeline progress"
+            git push
+          fi
