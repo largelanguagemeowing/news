@@ -179,7 +179,7 @@ function debounce(fn, ms) {
 async function main() {
   try {
     const articles = await getJson(['../../data/status/articles.json', '../data/status/articles.json', './data/status/articles.json']);
-    allVideos = articles.filter((a) => a.extraction_method === 'youtube' && getYouTubeId(a.url));
+    allVideos = articles.filter((a) => (a.extraction_method === 'youtube' || a.extraction_method === 'youtube_transcript') && getYouTubeId(a.url));
     populateChannels();
 
     availableVideos = await filterAvailableVideos(allVideos);
