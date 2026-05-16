@@ -1,8 +1,202 @@
 [
   {
+    "run_id": "43cff8d2b3a9",
+    "started_at": "2026-05-16T23:38:35+00:00",
+    "ended_at": null,
+    "status": "running",
+    "error_message": null,
+    "github_run_id": null,
+    "github_run_url": null,
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-16T23:38:35+00:00",
+        "ended_at": "2026-05-16T23:38:35+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 10,
+          "duplicate_articles": 0,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 0,
+          "not_modified_sources": 0,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 340.02
+        }
+      },
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-05-16T23:38:35+00:00",
+        "ended_at": "2026-05-16T23:38:35+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 0,
+          "enriched": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {},
+          "defuddle_enabled": false,
+          "duration_ms": 139.91
+        }
+      },
+      {
+        "stage_name": "classify",
+        "started_at": "2026-05-16T23:38:35+00:00",
+        "ended_at": null,
+        "status": "running",
+        "metrics": {}
+      }
+    ]
+  },
+  {
+    "run_id": "3019ae6bb030",
+    "started_at": "2026-05-16T23:37:42+00:00",
+    "ended_at": "2026-05-16T23:37:49+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": null,
+    "github_run_url": null,
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-16T23:37:42+00:00",
+        "ended_at": "2026-05-16T23:37:43+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 0,
+          "duplicate_articles": 0,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 0,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 349.97
+        }
+      },
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-05-16T23:37:43+00:00",
+        "ended_at": "2026-05-16T23:37:43+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 0,
+          "enriched": 0,
+          "updated": 0,
+          "unchanged": 0,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {},
+          "defuddle_enabled": false,
+          "duration_ms": 96.11
+        }
+      },
+      {
+        "stage_name": "classify",
+        "started_at": "2026-05-16T23:37:43+00:00",
+        "ended_at": "2026-05-16T23:37:49+00:00",
+        "status": "success",
+        "metrics": {
+          "cluster": {
+            "events": 67,
+            "articles_clustered": 68
+          },
+          "categorize": {
+            "events_categorized": 67
+          },
+          "export": {
+            "exported_files": 12,
+            "open_incidents": 1
+          },
+          "duration_ms": 6193.22
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "06e0b9851859",
+    "started_at": "2026-05-16T23:36:08+00:00",
+    "ended_at": "2026-05-16T23:36:16+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": null,
+    "github_run_url": null,
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-16T23:36:08+00:00",
+        "ended_at": "2026-05-16T23:36:09+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 0,
+          "duplicate_articles": 0,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 0,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 295.02
+        }
+      },
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-05-16T23:36:09+00:00",
+        "ended_at": "2026-05-16T23:36:10+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 2,
+          "enriched": 2,
+          "updated": 2,
+          "unchanged": 0,
+          "misses": 0,
+          "markdown_new_used": 1,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "markdown_new": 1,
+            "trafilatura": 1
+          },
+          "defuddle_enabled": false,
+          "duration_ms": 1369.62
+        }
+      },
+      {
+        "stage_name": "classify",
+        "started_at": "2026-05-16T23:36:10+00:00",
+        "ended_at": "2026-05-16T23:36:16+00:00",
+        "status": "success",
+        "metrics": {
+          "cluster": {
+            "events": 67,
+            "articles_clustered": 68
+          },
+          "categorize": {
+            "events_categorized": 67
+          },
+          "export": {
+            "exported_files": 12,
+            "open_incidents": 1
+          },
+          "duration_ms": 5808.0
+        }
+      }
+    ]
+  },
+  {
     "run_id": "1a516926ea07",
     "started_at": "2026-05-16T23:33:11+00:00",
-    "ended_at": "2026-05-16T23:33:12+00:00",
+    "ended_at": "2026-05-16T23:33:13+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "25975859165",
@@ -968,189 +1162,6 @@
           "exported_files": 12,
           "open_incidents": 1,
           "duration_ms": 556.7
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "0c8025773a9c",
-    "started_at": "2026-05-06T10:33:26+00:00",
-    "ended_at": "2026-05-06T13:03:42+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "25430120590",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25430120590",
-    "stage_stats": [
-      {
-        "stage_name": "ingest",
-        "started_at": "2026-05-06T10:33:26+00:00",
-        "ended_at": "2026-05-06T13:03:42+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 0,
-          "duplicate_articles": 1282,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 2,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": true,
-          "duration_ms": 9015418.67
-        }
-      },
-      {
-        "stage_name": "cluster",
-        "started_at": "2026-05-06T13:03:42+00:00",
-        "ended_at": "2026-05-06T13:03:42+00:00",
-        "status": "success",
-        "metrics": {
-          "events": 48,
-          "articles_clustered": 50,
-          "duration_ms": 56.88
-        }
-      },
-      {
-        "stage_name": "categorize",
-        "started_at": "2026-05-06T13:03:42+00:00",
-        "ended_at": "2026-05-06T13:03:42+00:00",
-        "status": "success",
-        "metrics": {
-          "events_categorized": 48,
-          "duration_ms": 1.44
-        }
-      },
-      {
-        "stage_name": "export",
-        "started_at": "2026-05-06T13:03:42+00:00",
-        "ended_at": "2026-05-06T13:03:42+00:00",
-        "status": "success",
-        "metrics": {
-          "exported_files": 12,
-          "open_incidents": 1,
-          "duration_ms": 555.46
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "01d3286ba491",
-    "started_at": "2026-05-06T05:56:26+00:00",
-    "ended_at": "2026-05-06T08:28:21+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "25418980764",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25418980764",
-    "stage_stats": [
-      {
-        "stage_name": "ingest",
-        "started_at": "2026-05-06T05:56:26+00:00",
-        "ended_at": "2026-05-06T08:28:20+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 0,
-          "duplicate_articles": 1282,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 2,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": true,
-          "duration_ms": 9114191.38
-        }
-      },
-      {
-        "stage_name": "cluster",
-        "started_at": "2026-05-06T08:28:20+00:00",
-        "ended_at": "2026-05-06T08:28:20+00:00",
-        "status": "success",
-        "metrics": {
-          "events": 50,
-          "articles_clustered": 52,
-          "duration_ms": 52.29
-        }
-      },
-      {
-        "stage_name": "categorize",
-        "started_at": "2026-05-06T08:28:20+00:00",
-        "ended_at": "2026-05-06T08:28:20+00:00",
-        "status": "success",
-        "metrics": {
-          "events_categorized": 50,
-          "duration_ms": 1.56
-        }
-      },
-      {
-        "stage_name": "export",
-        "started_at": "2026-05-06T08:28:20+00:00",
-        "ended_at": "2026-05-06T08:28:21+00:00",
-        "status": "success",
-        "metrics": {
-          "exported_files": 12,
-          "open_incidents": 1,
-          "duration_ms": 562.92
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "32d672c8d58f",
-    "started_at": "2026-05-06T02:41:14+00:00",
-    "ended_at": "2026-05-06T05:22:16+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "25413560385",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25413560385",
-    "stage_stats": [
-      {
-        "stage_name": "ingest",
-        "started_at": "2026-05-06T02:41:14+00:00",
-        "ended_at": "2026-05-06T05:22:16+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 0,
-          "duplicate_articles": 1282,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 2,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": true,
-          "duration_ms": 9661245.5
-        }
-      },
-      {
-        "stage_name": "cluster",
-        "started_at": "2026-05-06T05:22:16+00:00",
-        "ended_at": "2026-05-06T05:22:16+00:00",
-        "status": "success",
-        "metrics": {
-          "events": 50,
-          "articles_clustered": 52,
-          "duration_ms": 59.44
-        }
-      },
-      {
-        "stage_name": "categorize",
-        "started_at": "2026-05-06T05:22:16+00:00",
-        "ended_at": "2026-05-06T05:22:16+00:00",
-        "status": "success",
-        "metrics": {
-          "events_categorized": 50,
-          "duration_ms": 1.34
-        }
-      },
-      {
-        "stage_name": "export",
-        "started_at": "2026-05-06T05:22:16+00:00",
-        "ended_at": "2026-05-06T05:22:16+00:00",
-        "status": "success",
-        "metrics": {
-          "exported_files": 12,
-          "open_incidents": 1,
-          "duration_ms": 544.41
         }
       }
     ]
