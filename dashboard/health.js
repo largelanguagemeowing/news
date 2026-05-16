@@ -120,7 +120,9 @@ function renderSourceLink(source) {
   const icon = faviconUrl
     ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="${source.name} favicon" />`
     : "";
-  return `<a class="table-link source-label" href="../?source=${encodeURIComponent(source.source_id)}" title="${source.feed_url || source.name}">${icon}<span>${source.name}</span></a>`;
+  const name = `${icon}<span>${source.name}</span>`;
+  if (!source.last_item_at) return `<span class="source-label">${name}</span>`;
+  return `<a class="table-link source-label" href="../?source=${encodeURIComponent(source.source_id)}" title="${source.feed_url || source.name}">${name}</a>`;
 }
 
 function renderEventTitle(event) {
