@@ -9,9 +9,10 @@ on:
       - feat/defuddle-integration
     paths:
       - "dashboard/**"
+      - "data/status/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_run:
-    workflows: ["news-pipeline"]
+    workflows: ["news-pipeline", "pipeline-all", "pipeline-classify", "pipeline-fetch", "pipeline-enrich"]
     types:
       - completed
 
