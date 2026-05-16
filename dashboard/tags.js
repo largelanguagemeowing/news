@@ -68,7 +68,7 @@ function scale(value, min, max) {
 }
 
 function slugLink(tag) {
-  return `./index.html?tag=${encodeURIComponent(tag)}`;
+  return `../?tag=${encodeURIComponent(tag)}`;
 }
 
 function hideLoader() {
