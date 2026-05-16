@@ -1,18 +1,26 @@
 // DB Explorer - JSON-backed interface for all exported DB tables
 const PAGE_SIZE = 50;
 
+async function getJson(paths) {
+  for (const path of paths) {
+    const response = await fetch(path, { cache: 'no-store' });
+    if (response.ok) return response.json();
+  }
+  throw new Error(`Failed to fetch ${paths.join(' or ')}`);
+}
+
 const TABLE_TO_STATUS_FILE = {
-  articles: '../../data/status/articles.json',
-  sources: '../../data/status/sources.json',
-  source_health: '../../data/status/source_health.json',
-  events: '../../data/status/events.json',
-  event_members: '../../data/status/event_members.json',
-  pipeline_runs: '../../data/status/runs.json',
-  source_checks: '../../data/status/source_checks.json',
-  incidents: '../../data/status/incidents.json',
-  ingest_attempts: '../../data/status/ingest_attempts.json',
-  enrichment_attempts: '../../data/status/enrichment_attempts.json',
-  dead_letters: '../../data/status/dead_letters.json',
+  articles: ['../../data/status/articles.json', '../data/status/articles.json', './data/status/articles.json'],
+  sources: ['../../data/status/sources.json', '../data/status/sources.json', './data/status/sources.json'],
+  source_health: ['../../data/status/source_health.json', '../data/status/source_health.json', './data/status/source_health.json'],
+  events: ['../../data/status/events.json', '../data/status/events.json', './data/status/events.json'],
+  event_members: ['../../data/status/event_members.json', '../data/status/event_members.json', './data/status/event_members.json'],
+  pipeline_runs: ['../../data/status/runs.json', '../data/status/runs.json', './data/status/runs.json'],
+  source_checks: ['../../data/status/source_checks.json', '../data/status/source_checks.json', './data/status/source_checks.json'],
+  incidents: ['../../data/status/incidents.json', '../data/status/incidents.json', './data/status/incidents.json'],
+  ingest_attempts: ['../../data/status/ingest_attempts.json', '../data/status/ingest_attempts.json', './data/status/ingest_attempts.json'],
+  enrichment_attempts: ['../../data/status/enrichment_attempts.json', '../data/status/enrichment_attempts.json', './data/status/enrichment_attempts.json'],
+  dead_letters: ['../../data/status/dead_letters.json', '../data/status/dead_letters.json', './data/status/dead_letters.json'],
 };
 
 let currentTable = 'articles';
@@ -124,12 +132,7 @@ async function loadCurrentTableData() {
   showLoading(true);
   hideError();
 
-  const response = await fetch(file);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch ${file}: ${response.status} ${response.statusText}`);
-  }
-
-  const payload = await response.json();
+  const payload = await getJson(file);
   allData = Array.isArray(payload) ? payload : [];
   currentData = [...allData];
   totalRows = allData.length;

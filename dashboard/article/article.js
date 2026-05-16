@@ -1,3 +1,11 @@
+async function getJson(paths) {
+  for (const path of paths) {
+    const response = await fetch(path, { cache: 'no-store' });
+    if (response.ok) return response.json();
+  }
+  throw new Error(`Failed to fetch ${paths.join(' or ')}`);
+}
+
 async function main() {
   const params = new URLSearchParams(location.search);
   const articleId = params.get('id');
@@ -9,10 +17,7 @@ async function main() {
   }
 
   try {
-    const response = await fetch('../../data/status/articles.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-    const articles = await response.json();
+    const articles = await getJson(['../../data/status/articles.json', '../data/status/articles.json', './data/status/articles.json']);
     const article = articles.find((a) => String(a.article_id) === articleId);
 
     if (!article) {
