@@ -17,6 +17,18 @@ def isolate_db() -> None:
         db_module.DB_PATH.unlink()
 
 
+@pytest.fixture(autouse=True)
+def cleanup_test_source() -> None:
+    yield
+    try:
+        conn = get_connection()
+        conn.execute("DELETE FROM sources WHERE source_id = 'test-source'")
+        conn.execute("DELETE FROM articles WHERE source_id = 'test-source'")
+        conn.close()
+    except Exception:
+        pass
+
+
 def _seed_article() -> int:
     conn = get_connection()
     init_db(conn)
