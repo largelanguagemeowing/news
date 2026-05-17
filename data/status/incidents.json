@@ -1,5 +1,16 @@
 [
   {
+    "incident_key": "pipeline:fetch",
+    "kind": "pipeline-stage",
+    "target_id": "fetch",
+    "status": "open",
+    "opened_at": "2026-05-17T01:09:58+00:00",
+    "updated_at": "2026-05-17T01:09:58+00:00",
+    "resolved_at": null,
+    "issue_number": 11,
+    "last_message": "Fetch pipeline failed in run a61fb6918bbb: No module named 'sklearn'\n\nTraceback (most recent call last):\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 173, in run_fetch_pipeline\n    export_metrics = run_export(conn)\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 79, in run_export\n    metrics = stages_export.export_status(\n        conn,\n    ...<6 lines>...\n        build_articles_fn=lambda c: build_articles(c),\n    )\n  File \"/home/runner/work/news/news/app/jobs/stages_export.py\", line 31, in export_status\n    articles = build_articles_fn(conn)\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 87, in <lambda>\n    build_articles_fn=lambda c: build_articles(c),\n                                ~~~~~~~~~~~~~~^^^\n  File \"/home/runner/work/news/news/app/jobs/pipeline.py\", line 1096, in build_articles\n    return stages_export.build_articles(\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        conn,\n        ^^^^^\n    ...<2 lines>...\n        articles_export_limit=ARTICLES_EXPORT_LIMIT,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\nModuleNotFoundError: No module named 'sklearn'\n"
+  },
+  {
     "incident_key": "source:apple-machine-learning",
     "kind": "source",
     "target_id": "apple-machine-learning",
