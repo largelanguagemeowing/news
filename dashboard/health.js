@@ -292,15 +292,17 @@ main().catch((error) => {
   const content = document.getElementById('healthContent');
   if (content) {
     content.innerHTML = `
-      <div class="panel" style="text-align: center; padding: 48px 24px;">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--bad); margin-bottom: 16px;">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        <h2 style="margin-bottom: 8px;">Failed to load health data</h2>
-        <p style="color: var(--ink-soft);">${error.message}</p>
-        <button onclick="location.reload()" class="filter-btn filter-btn-primary" style="margin-top: 16px;">
+      <div class="empty-state" style="min-height: 300px;">
+        <div class="empty-state-icon" style="background: rgba(220, 53, 69, 0.1);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--bad)" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <h3>Failed to load health data</h3>
+        <p>${escapeHtml(error.message)}</p>
+        <button onclick="location.reload()" class="empty-state-action">
           Retry
         </button>
       </div>
