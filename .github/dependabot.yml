@@ -8,3 +8,10 @@ updates:
     open-pull-requests-limit: 10
     commit-message:
       prefix: "ci"
+    groups:
+      actions:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
