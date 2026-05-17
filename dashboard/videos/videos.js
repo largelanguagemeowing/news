@@ -19,7 +19,6 @@ const filterBadgeEl = document.getElementById('filterBadge');
 
 let allVideos = [];
 let availableVideos = [];
-let availabilityChecked = false;
 
 function getYouTubeId(url) {
   try {
@@ -31,36 +30,8 @@ function getYouTubeId(url) {
   }
 }
 
-async function checkVideoAvailability(video) {
-  const id = getYouTubeId(video.url);
-  if (!id) return false;
-  try {
-    const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${id}`);
-    if (!resp.ok) return false;
-    const data = await resp.json();
-    return !data.error;
-  } catch {
-    return false;
-  }
-}
-
-async function filterAvailableVideos(videos, concurrency = 5) {
-  const results = [];
-  let index = 0;
-
-  async function worker() {
-    while (index < videos.length) {
-      const i = index++;
-      const video = videos[i];
-      const isAvailable = await checkVideoAvailability(video);
-      results[i] = { video, isAvailable };
-    }
-  }
-
-  const workers = Array.from({ length: Math.min(concurrency, videos.length) }, () => worker());
-  await Promise.all(workers);
-
-  return results.filter((r) => r && r.isAvailable).map((r) => r.video);
+function filterAvailableVideos(videos) {
+  return videos.filter((v) => v.available !== false);
 }
 
 function formatDate(value) {
@@ -182,8 +153,7 @@ async function main() {
     allVideos = articles.filter((a) => (a.extraction_method === 'youtube' || a.extraction_method === 'youtube_transcript') && getYouTubeId(a.url));
     populateChannels();
 
-    availableVideos = allVideos;
-    availabilityChecked = true;
+    availableVideos = filterAvailableVideos(allVideos);
     render();
 
     loaderEl.hidden = true;

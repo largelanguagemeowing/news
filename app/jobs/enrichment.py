@@ -501,13 +501,35 @@ def _save_dearrow_thumbnail(video_id: str, thumbnail_url: str) -> None:
         )
 
 
+def _save_video_availability(video_id: str, available: bool) -> None:
+    """Persist video availability to the shared JSON cache."""
+    if not video_id:
+        return
+    try:
+        cache_path = Path("data/status/video_availability.json")
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        data: dict[str, bool] = {}
+        if cache_path.exists():
+            try:
+                data = json.loads(cache_path.read_text(encoding="utf-8"))
+            except Exception:
+                pass
+        data[video_id] = available
+        cache_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    except Exception as exc:
+        logger.debug(
+            "failed to persist video availability video_id=%s error=%s", video_id, exc
+        )
+
+
 def extract_youtube_metadata(
     url: str,
     rss_title: str,
     rss_summary: str,
     request_timeout_seconds: int,
 ) -> dict[str, str]:
-    oembed = fetch_youtube_oembed(url, request_timeout_seconds) or {}
+    oembed_result = fetch_youtube_oembed(url, request_timeout_seconds)
+    oembed = oembed_result or {}
     page_html = fetch_text_url(url, request_timeout_seconds)
     schema_description = extract_youtube_schema_description(page_html)
     description = schema_description or rss_summary.strip()
@@ -517,6 +539,9 @@ def extract_youtube_metadata(
     )
     if dearrow_thumb:
         _save_dearrow_thumbnail(video_id, dearrow_thumb)
+    available = oembed_result is not None
+    if video_id:
+        _save_video_availability(video_id, available)
     return {
         "title": rss_title.strip() or oembed.get("title", ""),
         "author": oembed.get("author", ""),
@@ -525,6 +550,7 @@ def extract_youtube_metadata(
         "embed_url": get_youtube_embed_url(url),
         "video_id": video_id,
         "dearrow_thumbnail_url": dearrow_thumb or "",
+        "available": available,
     }
 
 

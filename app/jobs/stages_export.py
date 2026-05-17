@@ -304,23 +304,15 @@ def build_articles(
         except Exception:
             pass
 
+    availability_map: dict[str, bool] = {}
+    availability_path = Path("data/status/video_availability.json")
+    if availability_path.exists():
+        try:
+            availability_map = json.loads(availability_path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+
     from app.jobs.enrichment import get_youtube_video_id
-
-
-def check_youtube_available(video_id: str) -> bool:
-    """Check if YouTube video is still available."""
-    import requests
-    try:
-        resp = requests.get(
-            f"https://noembed.com/embed?url=https://www.youtube.com/watch?v={video_id}",
-            timeout=10,
-        )
-        if resp.ok:
-            data = resp.json()
-            return "error" not in data
-    except Exception:
-        pass
-    return True
 
     rows = conn.execute(
         """
@@ -349,10 +341,8 @@ def check_youtube_available(video_id: str) -> bool:
         if topic not in tags:
             tags = [topic] + tags
         video_id = get_youtube_video_id(row["url"])
-        if row["extraction_method"] in ("youtube", "youtube_transcript") and video_id:
-            if not check_youtube_available(video_id):
-                continue
         dearrow_url = dearrow_map.get(video_id, "")
+        available = availability_map.get(video_id, True)
         out.append(
             {
                 "article_id": row["article_id"],
@@ -367,6 +357,7 @@ def check_youtube_available(video_id: str) -> bool:
                 "topic": topic,
                 "tags": tags[:7],
                 "dearrow_thumbnail_url": dearrow_url,
+                "available": available,
             }
         )
     return out
