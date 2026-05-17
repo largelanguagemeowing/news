@@ -121,7 +121,8 @@ function renderSourceLink(source) {
     ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="${source.name} favicon" />`
     : "";
   const name = `${icon}<span>${source.name}</span>`;
-  if (!source.last_item_at) return `<span class="source-label">${name}</span>`;
+  const hasItems = source.last_item_at || (source.items_24h && source.items_24h > 0);
+  if (!hasItems) return `<span class="source-label">${name}</span>`;
   return `<a class="table-link source-label" href="../?source=${encodeURIComponent(source.source_id)}" title="${source.feed_url || source.name}">${name}</a>`;
 }
 
