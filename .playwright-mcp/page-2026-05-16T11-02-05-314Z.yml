@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "DB Explorer" [ref=e4] [cursor=pointer]:
+        - /url: ../
+        - img [ref=e6]
+        - generic [ref=e8]: DB Explorer
+      - navigation "Main navigation" [ref=e9]:
+        - link "Feed" [ref=e10] [cursor=pointer]:
+          - /url: ../
+          - img [ref=e11]
+          - generic [ref=e14]: Feed
+        - link "Health" [ref=e15] [cursor=pointer]:
+          - /url: ../health/
+          - img [ref=e16]
+          - generic [ref=e19]: Health
+        - link "Tags" [ref=e20] [cursor=pointer]:
+          - /url: ../tags/
+          - img [ref=e21]
+          - generic [ref=e24]: Tags
+        - link "RSS" [ref=e25] [cursor=pointer]:
+          - /url: ../rss/
+          - img [ref=e26]
+          - generic [ref=e30]: RSS
+        - link "DB" [ref=e31] [cursor=pointer]:
+          - /url: ./
+          - img [ref=e32]
+          - generic [ref=e36]: DB
+      - button "Toggle theme" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - main [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - heading "Database Explorer" [level=1] [ref=e44]
+        - paragraph [ref=e45]: Browse and search all database tables using WASM SQLite
+      - generic [ref=e46]:
+        - combobox [ref=e47]:
+          - option "Articles" [selected]
+          - option "Sources"
+          - option "Source Health"
+          - option "Events"
+          - option "Event Members"
+          - option "Pipeline Runs"
+          - option "Source Checks"
+          - option "Incidents"
+          - option "Ingest Attempts"
+          - option "Enrichment Attempts"
+          - option "Dead Letters"
+        - textbox "Search... (e.g., title, url, source_id)" [ref=e48]
+        - combobox [ref=e49]:
+          - option "All Sources" [selected]
+        - combobox [ref=e50]:
+          - option "All Methods" [selected]
+          - option "YouTube"
+          - option "Trafilatura"
+          - option "Markdown.new"
+          - option "Compress.new"
+          - option "Jina"
+          - option "Defuddle"
+          - option "RSS"
+        - button "Load Database" [ref=e51] [cursor=pointer]
+        - button "Export CSV" [disabled] [ref=e52]

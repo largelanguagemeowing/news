@@ -17,7 +17,7 @@ async function main() {
   }
 
   try {
-    const articles = await getJson(['../../data/status/articles.json', '../data/status/articles.json', './data/status/articles.json']);
+    const articles = await getJson(['./data/status/articles.json', '../data/status/articles.json', '../../data/status/articles.json']);
     const article = articles.find((a) => String(a.article_id) === articleId);
 
     if (!article) {

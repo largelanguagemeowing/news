@@ -413,8 +413,8 @@ function debounce(fn, delayMs = 150) {
 
 async function main() {
   const [rawArticles, summary] = await Promise.all([
-    getJson(["../../data/status/articles.json", "../data/status/articles.json", "./data/status/articles.json"]),
-    getJson(["../../data/status/summary.json", "../data/status/summary.json", "./data/status/summary.json"]),
+    getJson(["./data/status/articles.json", "../data/status/articles.json", "../../data/status/articles.json"]),
+    getJson(["./data/status/summary.json", "../data/status/summary.json", "../../data/status/summary.json"]),
   ]);
   const articles = rawArticles.map(enrichArticle);
   const uniqueSources = [...new Map(articles.map((item) => [item.source_id, item.source_name])).entries()];

@@ -142,11 +142,11 @@ function hideLoader() {
 
 async function main() {
   const [summary, sources, incidents, runs, events] = await Promise.all([
-    getJson(["../../data/status/summary.json", "../data/status/summary.json", "./data/status/summary.json"]),
-    getJson(["../../data/status/sources.json", "../data/status/sources.json", "./data/status/sources.json"]),
-    getJson(["../../data/status/incidents.json", "../data/status/incidents.json", "./data/status/incidents.json"]),
-    getJson(["../../data/status/runs.json", "../data/status/runs.json", "./data/status/runs.json"]),
-    getJson(["../../data/status/events.json", "../data/status/events.json", "./data/status/events.json"]),
+    getJson(["./data/status/summary.json", "../data/status/summary.json", "../../data/status/summary.json"]),
+    getJson(["./data/status/sources.json", "../data/status/sources.json", "../../data/status/sources.json"]),
+    getJson(["./data/status/incidents.json", "../data/status/incidents.json", "../../data/status/incidents.json"]),
+    getJson(["./data/status/runs.json", "../data/status/runs.json", "../../data/status/runs.json"]),
+    getJson(["./data/status/events.json", "../data/status/events.json", "../../data/status/events.json"]),
   ]);
 
   const generatedLabel = document.getElementById("generatedAt");

@@ -10,17 +10,17 @@ async function getJson(paths) {
 }
 
 const TABLE_TO_STATUS_FILE = {
-  articles: ['../../data/status/articles.json', '../data/status/articles.json', './data/status/articles.json'],
-  sources: ['../../data/status/sources.json', '../data/status/sources.json', './data/status/sources.json'],
-  source_health: ['../../data/status/source_health.json', '../data/status/source_health.json', './data/status/source_health.json'],
-  events: ['../../data/status/events.json', '../data/status/events.json', './data/status/events.json'],
-  event_members: ['../../data/status/event_members.json', '../data/status/event_members.json', './data/status/event_members.json'],
-  pipeline_runs: ['../../data/status/runs.json', '../data/status/runs.json', './data/status/runs.json'],
-  source_checks: ['../../data/status/source_checks.json', '../data/status/source_checks.json', './data/status/source_checks.json'],
-  incidents: ['../../data/status/incidents.json', '../data/status/incidents.json', './data/status/incidents.json'],
-  ingest_attempts: ['../../data/status/ingest_attempts.json', '../data/status/ingest_attempts.json', './data/status/ingest_attempts.json'],
-  enrichment_attempts: ['../../data/status/enrichment_attempts.json', '../data/status/enrichment_attempts.json', './data/status/enrichment_attempts.json'],
-  dead_letters: ['../../data/status/dead_letters.json', '../data/status/dead_letters.json', './data/status/dead_letters.json'],
+  articles: ['../data/status/articles.json', './data/status/articles.json', '../../data/status/articles.json'],
+  sources: ['../data/status/sources.json', './data/status/sources.json', '../../data/status/sources.json'],
+  source_health: ['../data/status/source_health.json', './data/status/source_health.json', '../../data/status/source_health.json'],
+  events: ['../data/status/events.json', './data/status/events.json', '../../data/status/events.json'],
+  event_members: ['../data/status/event_members.json', './data/status/event_members.json', '../../data/status/event_members.json'],
+  pipeline_runs: ['../data/status/runs.json', './data/status/runs.json', '../../data/status/runs.json'],
+  source_checks: ['../data/status/source_checks.json', './data/status/source_checks.json', '../../data/status/source_checks.json'],
+  incidents: ['../data/status/incidents.json', './data/status/incidents.json', '../../data/status/incidents.json'],
+  ingest_attempts: ['../data/status/ingest_attempts.json', './data/status/ingest_attempts.json', '../../data/status/ingest_attempts.json'],
+  enrichment_attempts: ['../data/status/enrichment_attempts.json', './data/status/enrichment_attempts.json', '../../data/status/enrichment_attempts.json'],
+  dead_letters: ['../data/status/dead_letters.json', './data/status/dead_letters.json', '../../data/status/dead_letters.json'],
 };
 
 let currentTable = 'articles';

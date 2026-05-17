@@ -80,8 +80,8 @@ function hideLoader() {
 
 async function main() {
   const [articles, summary] = await Promise.all([
-    getJson(["../../data/status/articles.json", "../data/status/articles.json", "./data/status/articles.json"]),
-    getJson(["../../data/status/summary.json", "../data/status/summary.json", "./data/status/summary.json"]),
+    getJson(["./data/status/articles.json", "../data/status/articles.json", "../../data/status/articles.json"]),
+    getJson(["./data/status/summary.json", "../data/status/summary.json", "../../data/status/summary.json"]),
   ]);
 
   const tagCounts = new Map();

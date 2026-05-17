@@ -50,7 +50,7 @@ async function main() {
   }
 
   try {
-    const articles = await getJson(['../../../data/status/articles.json', '../../data/status/articles.json', '../data/status/articles.json']);
+    const articles = await getJson(['../data/status/articles.json', '../../data/status/articles.json', '../../../data/status/articles.json']);
     const video = articles.find((a) => (a.extraction_method === 'youtube' || a.extraction_method === 'youtube_transcript') && getYouTubeId(a.url) === videoId);
 
     if (!video) {
