@@ -3,12 +3,12 @@
     "incident_key": "pipeline:fetch",
     "kind": "pipeline-stage",
     "target_id": "fetch",
-    "status": "open",
+    "status": "resolved",
     "opened_at": "2026-05-17T01:09:58+00:00",
-    "updated_at": "2026-05-17T01:34:31+00:00",
-    "resolved_at": null,
+    "updated_at": "2026-05-17T03:00:38+00:00",
+    "resolved_at": "2026-05-17T03:00:38+00:00",
     "issue_number": 11,
-    "last_message": "Fetch pipeline failed in run 219ae3e80fc8: no such column: s.favicon\n\nTraceback (most recent call last):\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 173, in run_fetch_pipeline\n    export_metrics = run_export(conn)\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 79, in run_export\n    metrics = stages_export.export_status(\n        conn,\n    ...<6 lines>...\n        build_articles_fn=lambda c: build_articles(c),\n    )\n  File \"/home/runner/work/news/news/app/jobs/stages_export.py\", line 27, in export_status\n    sources = build_sources_fn(conn)\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 83, in <lambda>\n    build_sources_fn=lambda c: build_sources(c),\n                               ~~~~~~~~~~~~~^^^\n  File \"/home/runner/work/news/news/app/jobs/pipeline.py\", line 1067, in build_sources\n    return stages_export.build_sources(\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        conn,\n        ^^^^^\n    ...<2 lines>...\n        source_checks_history_limit=SOURCE_CHECKS_HISTORY_LIMIT,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\nsqlite3.OperationalError: no such column: s.favicon\n"
+    "last_message": "Fetch pipeline completed successfully."
   },
   {
     "incident_key": "source:apple-machine-learning",
