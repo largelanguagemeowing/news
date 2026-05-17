@@ -2563,6 +2563,36 @@ a:hover {
   }
 }
 
+/* Method badge (extraction method) */
+.method-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.method-badge.method-rss { background: #e8f5e9; color: #2e7d32; }
+.method-badge.method-youtube { background: #ffebee; color: #c62828; }
+.method-badge.method-youtube_transcript { background: #fff3e0; color: #e65100; }
+.method-badge.method-trafilatura { background: #e3f2fd; color: #1565c0; }
+.method-badge.method-jina { background: #f3e5f5; color: #7b1fa2; }
+.method-badge.method-compress_new { background: #fce4ec; color: #ad1457; }
+.method-badge.method-markdown_new { background: #fff8e1; color: #ff8f00; }
+.method-badge.method-defuddle { background: #e0f7fa; color: #00838f; }
+
+[data-theme="dark"] .method-badge.method-rss { background: rgba(46, 125, 50, 0.2); color: #81c784; }
+[data-theme="dark"] .method-badge.method-youtube { background: rgba(198, 40, 40, 0.2); color: #ef9a9a; }
+[data-theme="dark"] .method-badge.method-youtube_transcript { background: rgba(230, 81, 0, 0.2); color: #ffb74d; }
+[data-theme="dark"] .method-badge.method-trafilatura { background: rgba(21, 101, 192, 0.2); color: #64b5f6; }
+[data-theme="dark"] .method-badge.method-jina { background: rgba(123, 31, 162, 0.2); color: #ba68c8; }
+[data-theme="dark"] .method-badge.method-compress_new { background: rgba(173, 20, 87, 0.2); color: #f06292; }
+[data-theme="dark"] .method-badge.method-markdown_new { background: rgba(255, 143, 0, 0.2); color: #ffb74d; }
+[data-theme="dark"] .method-badge.method-defuddle { background: rgba(0, 131, 143, 0.2); color: #4dd0e1; }
+
 /* View Transitions API support */
 @view-transition {
   navigation: auto;
