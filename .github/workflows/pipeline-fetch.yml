@@ -2,6 +2,8 @@ name: pipeline-fetch
 run-name: "fetch @ ${{ github.ref_name }}"
 
 on:
+  schedule:
+    - cron: "*/30 * * * *"
   workflow_dispatch:
     inputs:
       pipeline_source:
