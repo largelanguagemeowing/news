@@ -8,6 +8,25 @@ async function getJson(paths) {
   throw new Error(`Failed to fetch ${paths.join(" or ")}`);
 }
 
+function getYouTubeId(url) {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    if (u.hostname === "youtu.be") return u.pathname.slice(1);
+    return u.searchParams.get("v");
+  } catch {
+    return null;
+  }
+}
+
+function getArticleLink(item) {
+  const videoId = getYouTubeId(item.url);
+  if (videoId && (item.extraction_method === "youtube" || item.extraction_method === "youtube_transcript")) {
+    return `./videos/detail/?v=${videoId}`;
+  }
+  return item.url;
+}
+
 function formatDateTime(value) {
   if (!value) return "-";
   const dt = new Date(value);
@@ -231,7 +250,7 @@ function renderTimeline(articles) {
                       <span title="${formatDateTime(item.published_at)}">${formatTimestamp(item.published_at)}</span>
                       ${renderSourceLabel(item)}
                     </div>
-                    <a class="timeline-item-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>
+                    <a class="timeline-item-link" href="${getArticleLink(item)}" ${getYouTubeId(item.url) ? "" : 'target="_blank" rel="noreferrer"'}>${item.title}</a>
                   </li>`
                 )
                 .join("")}
@@ -272,10 +291,10 @@ function renderRows(articles) {
         <td data-label="Source">${renderSourceLabel(item)}</td>
         <td data-label="Topic"><span class="topic-pill">${item.topic}</span></td>
         <td data-label="Title">
-          <a href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>
+          <a href="${getArticleLink(item)}" ${getYouTubeId(item.url) ? "" : 'target="_blank" rel="noreferrer"'}>${item.title}</a>
         </td>
         <td class="mobile-card-link" colspan="4">
-          <a href="${item.url}" target="_blank" rel="noreferrer" class="mobile-card">
+          <a href="${getArticleLink(item)}" ${getYouTubeId(item.url) ? "" : 'target="_blank" rel="noreferrer"'} class="mobile-card">
             <span class="mobile-card-title">${item.title}</span>
             <span class="mobile-card-meta">
               ${favicon}<span>${item.source_name}</span>
