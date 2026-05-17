@@ -46,6 +46,12 @@ const tableBody = document.getElementById('tableBody');
 const pagination = document.getElementById('pagination');
 const filterBadges = document.getElementById('filterBadges');
 
+// Filter panel elements
+const filterToggle = document.getElementById('filterToggle');
+const filterPanel = document.getElementById('filterPanel');
+const filterBadge = document.getElementById('filterBadge');
+const clearFilters = document.getElementById('clearFilters');
+
 // Initialize
 document.addEventListener('DOMContentLoaded', init);
 
@@ -75,6 +81,33 @@ async function init() {
     currentPage = 1;
     applyFiltersAndRender();
   });
+
+  // Filter panel toggle
+  filterToggle.addEventListener('click', () => {
+    filterToggle.classList.toggle('active');
+    filterPanel.classList.toggle('open');
+    updateFilterBadge();
+  });
+
+  // Clear filters button
+  clearFilters.addEventListener('click', () => {
+    searchInput.value = '';
+    sourceFilter.value = '';
+    methodFilter.value = '';
+    currentPage = 1;
+    applyFiltersAndRender();
+    updateFilterBadge();
+  });
+
+  // Close filter panel when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!filterPanel.contains(e.target) && !filterToggle.contains(e.target)) {
+      filterToggle.classList.remove('active');
+      filterPanel.classList.remove('open');
+    }
+  });
+
+  updateFilterBadge();
 }
 
 function readParams() {
@@ -92,6 +125,20 @@ function readParams() {
   if (m) methodFilter.value = m;
   const p = parseInt(params.get('page'), 10);
   if (p > 1) currentPage = p;
+}
+
+function updateFilterBadge() {
+  const activeFilters = [];
+  if (searchInput.value.trim()) activeFilters.push('search');
+  if (sourceFilter.value) activeFilters.push('source');
+  if (methodFilter.value) activeFilters.push('method');
+
+  if (activeFilters.length > 0) {
+    filterBadge.textContent = activeFilters.length;
+    filterBadge.removeAttribute('hidden');
+  } else {
+    filterBadge.setAttribute('hidden', '');
+  }
 }
 
 function syncUrl() {
@@ -186,6 +233,7 @@ function applyFiltersAndRender() {
   renderFilterBadges();
   syncUrl();
   updateStats();
+  updateFilterBadge();
 }
 
 function renderData(data) {

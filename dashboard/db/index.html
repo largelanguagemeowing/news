@@ -28,27 +28,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@sqlite.org/sqlite-wasm@3.45.1/sqlite-wasm.min.js"></script>
     <style>
       .db-explorer { padding: 24px; max-width: 1400px; margin: 0 auto; }
-      .db-toolbar {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-        align-items: center;
-      }
       
-      .db-toolbar select, .db-toolbar input {
-        padding: 8px 12px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--panel);
-        color: var(--ink);
-        font-size: 14px;
-      }
-      
-      .db-toolbar select { min-width: 150px; }
-      .db-toolbar input { min-width: 250px; flex: 1; }
-      
-      .db-toolbar button {
+      #exportBtn {
         padding: 8px 16px;
         background: var(--accent);
         color: white;
@@ -57,10 +38,11 @@
         cursor: pointer;
         font-size: 14px;
         font-weight: 500;
+        width: 100%;
       }
       
-      .db-toolbar button:hover { opacity: 0.9; }
-      .db-toolbar button:disabled { opacity: 0.5; cursor: not-allowed; }
+      #exportBtn:hover { opacity: 0.9; }
+      #exportBtn:disabled { opacity: 0.5; cursor: not-allowed; }
       
       .db-stats {
         display: flex;
@@ -265,6 +247,69 @@
     </style>
   </head>
   <body class="no-search">
+    <!-- Fixed Search Bar -->
+    <div class="search-bar">
+      <div class="search-bar-inner">
+        <div class="search-input-wrap">
+          <input id="searchInput" type="search" placeholder="Search database..." />
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <button class="filter-toggle" id="filterToggle" type="button" aria-label="Toggle filters">
+          <svg class="filter-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          <span>Filters</span>
+          <span class="filter-badge" id="filterBadge" hidden></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Collapsible Filter Panel -->
+    <div class="filter-panel" id="filterPanel">
+      <div class="filter-panel-inner">
+        <div class="filters-grid">
+          <div class="filter-group">
+            <label for="tableSelect">Table</label>
+            <select id="tableSelect">
+              <option value="articles">Articles</option>
+              <option value="sources">Sources</option>
+              <option value="source_health">Source Health</option>
+              <option value="events">Events</option>
+              <option value="event_members">Event Members</option>
+              <option value="pipeline_runs">Pipeline Runs</option>
+              <option value="source_checks">Source Checks</option>
+              <option value="incidents">Incidents</option>
+              <option value="ingest_attempts">Ingest Attempts</option>
+              <option value="enrichment_attempts">Enrichment Attempts</option>
+              <option value="dead_letters">Dead Letters</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="sourceFilter">Source</label>
+            <select id="sourceFilter">
+              <option value="">All Sources</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="methodFilter">Method</label>
+            <select id="methodFilter">
+              <option value="">All Methods</option>
+              <option value="youtube">YouTube</option>
+              <option value="trafilatura">Trafilatura</option>
+              <option value="markdown_new">Markdown.new</option>
+              <option value="compress_new">Compress.new</option>
+              <option value="jina">Jina</option>
+              <option value="defuddle">Defuddle</option>
+              <option value="rss">RSS</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <button id="exportBtn">Export CSV</button>
+          </div>
+        </div>
+        <div class="filter-actions">
+          <button class="filter-btn filter-btn-secondary" id="clearFilters" type="button">Clear All</button>
+        </div>
+      </div>
+    </div>
     <!-- Fixed Header Bar -->
     <header class="top-bar">
       <div class="top-bar-inner">
@@ -342,36 +387,6 @@
     <!-- Main Content -->
     <main class="shell">
       <div class="db-explorer">
-        <div class="db-toolbar">
-          <select id="tableSelect">
-            <option value="articles">Articles</option>
-            <option value="sources">Sources</option>
-            <option value="source_health">Source Health</option>
-            <option value="events">Events</option>
-            <option value="event_members">Event Members</option>
-            <option value="pipeline_runs">Pipeline Runs</option>
-            <option value="source_checks">Source Checks</option>
-            <option value="incidents">Incidents</option>
-            <option value="ingest_attempts">Ingest Attempts</option>
-            <option value="enrichment_attempts">Enrichment Attempts</option>
-            <option value="dead_letters">Dead Letters</option>
-          </select>
-          <input type="text" id="searchInput" placeholder="Search... (e.g., title, url, source_id)" />
-          <select id="sourceFilter">
-            <option value="">All Sources</option>
-          </select>
-          <select id="methodFilter">
-            <option value="">All Methods</option>
-            <option value="youtube">YouTube</option>
-            <option value="trafilatura">Trafilatura</option>
-            <option value="markdown_new">Markdown.new</option>
-            <option value="compress_new">Compress.new</option>
-            <option value="jina">Jina</option>
-            <option value="defuddle">Defuddle</option>
-            <option value="rss">RSS</option>
-          </select>
-          <button id="exportBtn">Export CSV</button>
-        </div>
 
         <div class="db-stats" id="dbStats"></div>
         <div class="filter-badges" id="filterBadges"></div>
