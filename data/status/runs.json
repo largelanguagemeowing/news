@@ -1,8 +1,72 @@
 [
   {
+    "run_id": "8c98f2900194",
+    "started_at": "2026-05-17T13:08:40+00:00",
+    "ended_at": "2026-05-17T13:10:39+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "25991739683",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25991739683",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-05-17T13:08:40+00:00",
+        "ended_at": "2026-05-17T13:10:39+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 34,
+          "enriched": 34,
+          "updated": 34,
+          "unchanged": 0,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 34
+          },
+          "defuddle_enabled": true,
+          "duration_ms": 119272.24
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "1b9a46941b37",
+    "started_at": "2026-05-17T11:34:48+00:00",
+    "ended_at": "2026-05-17T11:47:58+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "25989682615",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25989682615",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-05-17T11:34:48+00:00",
+        "ended_at": "2026-05-17T11:47:58+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 209,
+          "enriched": 209,
+          "updated": 209,
+          "unchanged": 0,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 209
+          },
+          "defuddle_enabled": true,
+          "duration_ms": 789494.44
+        }
+      }
+    ]
+  },
+  {
     "run_id": "22d7b548277a",
     "started_at": "2026-05-17T11:18:56+00:00",
-    "ended_at": "2026-05-17T11:18:59+00:00",
+    "ended_at": "2026-05-17T11:19:06+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "25989351671",
@@ -598,69 +662,6 @@
             "open_incidents": 1
           },
           "duration_ms": 6842.82
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "27fc625c0369",
-    "started_at": "2026-05-16T23:50:47+00:00",
-    "ended_at": "2026-05-16T23:51:30+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": null,
-    "github_run_url": null,
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-05-16T23:50:47+00:00",
-        "ended_at": "2026-05-16T23:51:30+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 15,
-          "enriched": 15,
-          "updated": 15,
-          "unchanged": 0,
-          "misses": 0,
-          "markdown_new_used": 0,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "youtube_transcript": 13,
-            "youtube": 2
-          },
-          "defuddle_enabled": false,
-          "duration_ms": 43404.95
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "09630f5e401e",
-    "started_at": "2026-05-16T23:50:36+00:00",
-    "ended_at": "2026-05-16T23:50:37+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": null,
-    "github_run_url": null,
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-05-16T23:50:37+00:00",
-        "ended_at": "2026-05-16T23:50:37+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 0,
-          "enriched": 0,
-          "updated": 0,
-          "unchanged": 0,
-          "misses": 0,
-          "markdown_new_used": 0,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {},
-          "defuddle_enabled": false,
-          "duration_ms": 0.66
         }
       }
     ]
