@@ -84,6 +84,8 @@ jobs:
               || ''
             }}
         run: |
+          echo "Params: pipeline_source=${{ inputs.pipeline_source }}, export=${{ inputs.export }}"
+          
           if [ "${{ inputs.pipeline_source }}" = "openai-only" ]; then
             export PIPELINE_SOURCE_ID="openai-blog"
           fi

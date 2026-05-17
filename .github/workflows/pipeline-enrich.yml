@@ -82,6 +82,8 @@ jobs:
           DEFUDDLE_MAX_CHARS: "12000"
           LOG_LEVEL: "INFO"
         run: |
+          echo "Params: source_id=${{ inputs.source_id }}, exclude_source=${{ inputs.exclude_source }}, limit=${{ inputs.limit }}, all=${{ inputs.all }}, only_dirty=${{ inputs.only_dirty }}, method=${{ inputs.method }}"
+          
           CMD="uv run python -m app.jobs.enrich_pipeline"
           
           if [ -n "${{ inputs.source_id }}" ]; then
