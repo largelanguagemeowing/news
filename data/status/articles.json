@@ -1,5 +1,24 @@
 [
   {
+    "article_id": 319284,
+    "title": "New AI Model Can Do Shocking Things",
+    "url": "https://www.youtube.com/shorts/HdLTWc3KOfk",
+    "published_at": "2026-05-16T23:48:39+00:00",
+    "fetched_at": "2026-05-17T00:11:20+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "This might be the first AI demo in a LONG time that felt like there was actually a big step up in intelligence. \n\nThinking Machines Labs just showed off their new \u201cInteraction Models\u201d and some of these demos genuinely feel like the next evolution of AI.\n\nThey showed off real-time translation while someone is still speaking and a deep understanding of timing, pauses, posture, and context during a conversation.\n\nI was genuinely impressed.\n\nHere's the link if you want to check out all the demos and read more information: thinkingmachines.ai/blog/interaction-models\n\n#ai #ainews #aimodels #thinkingmachineslabs",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 316393,
     "title": "Warelay -> OpenClaw",
     "url": "https://simonwillison.net/2026/May/16/openclaw-names/#atom-everything",
@@ -10211,26 +10230,6 @@
       "api",
       "agents",
       "safety",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 31351,
-    "title": "Exclusive Self Attention",
-    "url": "https://machinelearning.apple.com/research/exclusive-self-attention",
-    "published_at": "2026-03-25T00:00:00+00:00",
-    "fetched_at": "2026-03-25T23:36:18+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "We introduce exclusive self attention (XSA), a simple modification of self attention (SA) that improves Transformer\u00e2s sequence modeling performance. The key idea is to constrain attention to capture only information orthogonal to the token\u00e2s own value vector (thus excluding information of self position), encouraging better context modeling. Evaluated on the standard language modeling task, XSA consistently outperforms SA across model sizes up to 2.7B parameters and shows increasingly larger gains as sequence length grows.\nRelated readings and updates.\nSelf-attention and masked self-attention are at the heart of Transformers\u00e2 outstanding success. Still, our mathematical understanding of attention, in particular of its Lipschitz properties \u00e2 which are key when it comes to analyzing robustness and expressive power \u00e2 is incomplete. We provide a detailed study of the Lipschitz constant of self-attention in several practical scenarios, discussing the impact of the sequence length and layer\u00e2\u00a6\n[Read more](/research/how-smooth-is-attention)\nHybrid Transformer and CTC Networks for Hardware Efficient Voice Triggering\nOctober 6, 2020[research area Speech and Natural Language Processing](/research/?domain=Speech%20and%20Natural%20Language%20Processing)[conference Interspeech](/research/?event=Interspeech)\nWe consider the design of two-pass voice trigger detection systems. We focus on the networks in the second pass that are used to re-score candidate segments obtained from the first-pass. Our baseline is an acoustic model(AM), with BiLSTM layers, trained by minimizing the CTC loss. We replace the BiLSTM layers with self-attention layers. Results on internal evaluation sets show that self-attention networks yield better accuracy while requiring\u00e2\u00a6\n[Read more](/research/hybrid-transformer-and-ctc-networks)",
-    "topic": "funding",
-    "tags": [
-      "funding",
-      "models",
       "benchmark",
       "research"
     ],
