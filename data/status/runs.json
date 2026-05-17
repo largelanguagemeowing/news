@@ -1,8 +1,52 @@
 [
   {
+    "run_id": "9e914e4a257c",
+    "started_at": "2026-05-17T14:40:50+00:00",
+    "ended_at": "2026-05-17T14:41:16+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "25993829785",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25993829785",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-05-17T14:40:50+00:00",
+        "ended_at": "2026-05-17T14:41:16+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 145,
+          "enriched": 145,
+          "updated": 145,
+          "unchanged": 0,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 145
+          },
+          "per_source": {
+            "claude-blog": {
+              "attempted": 142,
+              "enriched": 142,
+              "failed": 0
+            },
+            "anthropic-engineering": {
+              "attempted": 3,
+              "enriched": 3,
+              "failed": 0
+            }
+          },
+          "defuddle_enabled": true,
+          "duration_ms": 25748.27
+        }
+      }
+    ]
+  },
+  {
     "run_id": "fc4a9c051803",
     "started_at": "2026-05-17T14:38:20+00:00",
-    "ended_at": "2026-05-17T14:38:20+00:00",
+    "ended_at": "2026-05-17T14:38:27+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "25993773296",
@@ -558,35 +602,6 @@
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": false,
           "duration_ms": 0.15
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "2e70887fc7ba",
-    "started_at": "2026-05-17T01:06:44+00:00",
-    "ended_at": "2026-05-17T01:06:44+00:00",
-    "status": "failed",
-    "error_message": "No module named 'joblib'",
-    "github_run_id": "25977599112",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/25977599112",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-05-17T01:06:44+00:00",
-        "ended_at": "2026-05-17T01:06:44+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 0,
-          "duplicate_articles": 0,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 0,
-          "not_modified_sources": 0,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "duration_ms": 0.12
         }
       }
     ]
