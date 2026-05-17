@@ -64,3 +64,28 @@ sources:
     feed_url: https://www.youtube.com/feeds/videos.xml?channel_id=UCLKPca3kwwd-B59HNr-_lvA
     default_category: ai-models
     enabled: true
+  - id: anthropic-news
+    name: Anthropic News
+    feed_url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml
+    default_category: ai-models
+    enabled: true
+  - id: anthropic-engineering
+    name: Anthropic Engineering
+    feed_url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml
+    default_category: ai-models
+    enabled: true
+  - id: anthropic-research
+    name: Anthropic Research
+    feed_url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml
+    default_category: ai-models
+    enabled: true
+  - id: claude-blog
+    name: Claude Blog
+    feed_url: https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_claude.xml
+    default_category: ai-models
+    enabled: true
+  - id: thinking-machines
+    name: Thinking Machines
+    feed_url: https://thinkingmachines.ai/blog/index.xml
+    default_category: ai-models
+    enabled: true
