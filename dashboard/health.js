@@ -8,6 +8,23 @@ async function getJson(paths) {
   throw new Error(`Failed to fetch ${paths.join(" or ")}`);
 }
 
+let sourceArticleUrls = {};
+
+async function loadSourceArticleUrls() {
+  try {
+    const articles = await getJson(["./data/status/articles.json", "../data/status/articles.json", "../../data/status/articles.json"]);
+    const urlMap = {};
+    for (const article of articles) {
+      if (article.source_id && article.url && !urlMap[article.source_id]) {
+        urlMap[article.source_id] = article.url;
+      }
+    }
+    sourceArticleUrls = urlMap;
+  } catch (e) {
+    console.warn("Could not load articles for favicons:", e);
+  }
+}
+
 function metric(title, value) {
   return `<article class="metric"><h3>${title}</h3><p>${value}</p></article>`;
 }
@@ -106,18 +123,28 @@ function shortId(value) {
   return String(value).slice(0, 8);
 }
 
-function sourceFaviconUrl(feedUrl, faviconOverride) {
-  if (faviconOverride) return faviconOverride;
-  try {
-    const hostname = new URL(feedUrl).hostname;
-    return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=32`;
-  } catch {
-    return "";
+function sourceFaviconUrl(sourceIdOrUrl) {
+  let hostname;
+  if (sourceIdOrUrl.includes("://") || sourceIdOrUrl.startsWith("http")) {
+    try {
+      hostname = new URL(sourceIdOrUrl).hostname;
+    } catch {
+      return "";
+    }
+  } else {
+    const articleUrl = sourceArticleUrls[sourceIdOrUrl];
+    if (!articleUrl) return "";
+    try {
+      hostname = new URL(articleUrl).hostname;
+    } catch {
+      return "";
+    }
   }
+  return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=32`;
 }
 
 function renderSourceLink(source) {
-  const faviconUrl = sourceFaviconUrl(source.feed_url, source.favicon);
+  const faviconUrl = sourceFaviconUrl(source.source_id);
   const icon = faviconUrl
     ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="${source.name} favicon" />`
     : "";
@@ -143,6 +170,7 @@ function hideLoader() {
 }
 
 async function main() {
+  await loadSourceArticleUrls();
   const [summary, sources, incidents, runs, events] = await Promise.all([
     getJson(["./data/status/summary.json", "../data/status/summary.json", "../../data/status/summary.json"]),
     getJson(["./data/status/sources.json", "../data/status/sources.json", "../../data/status/sources.json"]),
