@@ -1,0 +1,1157 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "DB Explorer" [ref=e4] [cursor=pointer]:
+        - /url: ../
+        - img [ref=e6]
+        - generic [ref=e8]: DB Explorer
+      - navigation "Main navigation" [ref=e9]:
+        - link "Feed" [ref=e10] [cursor=pointer]:
+          - /url: ../
+          - img [ref=e11]
+          - generic [ref=e14]: Feed
+        - link "Health" [ref=e15] [cursor=pointer]:
+          - /url: ../health/
+          - img [ref=e16]
+          - generic [ref=e19]: Health
+        - link "Tags" [ref=e20] [cursor=pointer]:
+          - /url: ../tags/
+          - img [ref=e21]
+          - generic [ref=e24]: Tags
+        - link "RSS" [ref=e25] [cursor=pointer]:
+          - /url: ../rss/
+          - img [ref=e26]
+          - generic [ref=e30]: RSS
+        - link "DB" [ref=e31] [cursor=pointer]:
+          - /url: ./
+          - img [ref=e32]
+          - generic [ref=e36]: DB
+      - button "Toggle theme" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - main [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - combobox [ref=e44]:
+          - option "Articles" [selected]
+          - option "Sources"
+          - option "Source Health"
+          - option "Events"
+          - option "Event Members"
+          - option "Pipeline Runs"
+          - option "Source Checks"
+          - option "Incidents"
+          - option "Ingest Attempts"
+          - option "Enrichment Attempts"
+          - option "Dead Letters"
+        - textbox "Search... (e.g., title, url, source_id)" [ref=e45]
+        - combobox [ref=e46]:
+          - option "All Sources" [selected]
+          - option "ai-explained"
+          - option "apple-machine-learning"
+          - option "cursor-blog"
+          - option "cursor-changelog"
+          - option "fireship"
+          - option "google-ai-blog"
+          - option "google-deepmind-blog"
+          - option "hugging-face"
+          - option "matt-wolfe"
+          - option "openai-blog"
+          - option "simon-willison"
+        - combobox [ref=e47]:
+          - option "All Methods" [selected]
+          - option "YouTube"
+          - option "Trafilatura"
+          - option "Markdown.new"
+          - option "Compress.new"
+          - option "Jina"
+          - option "Defuddle"
+          - option "RSS"
+        - button "Export CSV" [ref=e48] [cursor=pointer]
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: articles
+          - generic [ref=e52]: Table
+        - generic [ref=e53]:
+          - generic [ref=e54]: "500"
+          - generic [ref=e55]: Total rows
+        - generic [ref=e56]:
+          - generic [ref=e57]: "500"
+          - generic [ref=e58]: Filtered
+        - generic [ref=e59]:
+          - generic [ref=e60]: "11"
+          - generic [ref=e61]: Columns
+        - generic [ref=e63]:
+          - generic [ref=e64]: 294 trafilatura
+          - generic [ref=e65]: 105 markdown_new
+          - generic [ref=e66]: 98 youtube
+          - generic [ref=e67]: 3 jina
+      - generic [ref=e68]: ↔ This table is wide — scroll horizontally to see all columns.
+      - table [ref=e70]:
+        - rowgroup [ref=e71]:
+          - row "article_id title url published_at fetched_at source_id source_name extraction_method body topic tags" [ref=e72]:
+            - columnheader "article_id" [ref=e73]
+            - columnheader "title" [ref=e74]
+            - columnheader "url" [ref=e75]
+            - columnheader "published_at" [ref=e76]
+            - columnheader "fetched_at" [ref=e77]
+            - columnheader "source_id" [ref=e78]
+            - columnheader "source_name" [ref=e79]
+            - columnheader "extraction_method" [ref=e80]
+            - columnheader "body" [ref=e81]
+            - columnheader "topic" [ref=e82]
+            - columnheader "tags" [ref=e83]
+        - rowgroup [ref=e84]:
+          - row "312474 Quoting Luke Curley https://simonwillison.net/2026/May/9/luke-curley/#atom-every... 5/9/2026 06:33 AM 5/9/2026 10:42 AM simon-willison Simon Willison trafilatura 9th May 2026 WebRTC is designed to degrade and drop my prompt during poor network conditions. wtf my dude WebRTC aggressively drops audio packets to k... ai-models [\"ai-models\",\"models\",\"api\",\"agents\"]" [ref=e85]:
+            - cell "312474" [ref=e86]:
+              - link "312474" [ref=e87] [cursor=pointer]:
+                - /url: ../article/?id=312474
+            - cell "Quoting Luke Curley" [ref=e88]
+            - cell "https://simonwillison.net/2026/May/9/luke-curley/#atom-every..." [ref=e89]:
+              - link "https://simonwillison.net/2026/May/9/luke-curley/#atom-every..." [ref=e90] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/9/luke-curley/#atom-everything
+            - cell "5/9/2026 06:33 AM" [ref=e91]
+            - cell "5/9/2026 10:42 AM" [ref=e92]
+            - cell "simon-willison" [ref=e93]:
+              - link "simon-willison" [ref=e94] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e95]
+            - cell "trafilatura" [ref=e96]:
+              - link "trafilatura" [ref=e97] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e98]: trafilatura
+            - cell "9th May 2026 WebRTC is designed to degrade and drop my prompt during poor network conditions. wtf my dude WebRTC aggressively drops audio packets to k..." [ref=e99]
+            - cell "ai-models" [ref=e100]
+            - cell "[\"ai-models\",\"models\",\"api\",\"agents\"]" [ref=e101]
+          - 'row "311149 Using Claude Code: The Unreasonable Effectiveness of HTML https://simonwillison.net/2026/May/8/unreasonable-effectiven... 5/9/2026 02:30 AM 5/9/2026 05:30 AM simon-willison Simon Willison trafilatura 8th May 2026 - Link Blog [Using Claude Code: The Unreasonable Effectiveness of HTML](https://twitter.com/trq212/status/2052809885763747935). Thought-p... ai-models [\"ai-models\",\"models\",\"open-source\",\"agents\"]" [ref=e102]':
+            - cell "311149" [ref=e103]:
+              - link "311149" [ref=e104] [cursor=pointer]:
+                - /url: ../article/?id=311149
+            - 'cell "Using Claude Code: The Unreasonable Effectiveness of HTML" [ref=e105]'
+            - cell "https://simonwillison.net/2026/May/8/unreasonable-effectiven..." [ref=e106]:
+              - link "https://simonwillison.net/2026/May/8/unreasonable-effectiven..." [ref=e107] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/#atom-everything
+            - cell "5/9/2026 02:30 AM" [ref=e108]
+            - cell "5/9/2026 05:30 AM" [ref=e109]
+            - cell "simon-willison" [ref=e110]:
+              - link "simon-willison" [ref=e111] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e112]
+            - cell "trafilatura" [ref=e113]:
+              - link "trafilatura" [ref=e114] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e115]: trafilatura
+            - 'cell "8th May 2026 - Link Blog [Using Claude Code: The Unreasonable Effectiveness of HTML](https://twitter.com/trq212/status/2052809885763747935). Thought-p..." [ref=e116]'
+            - cell "ai-models" [ref=e117]
+            - cell "[\"ai-models\",\"models\",\"open-source\",\"agents\"]" [ref=e118]
+          - 'row "310022 AI News: OpenAI Absolutely Cooked This Week! https://www.youtube.com/watch?v=SXneZ3bRKO4 5/8/2026 08:30 PM 5/9/2026 12:20 AM matt-wolfe Matt Wolfe youtube Here''s the AI News you probably missed this week. Try HubSpot AEO on your brand free for 28 days here 👉🏻 https://clickhubspot.com/f1da94 Discover M... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"video\"]" [ref=e119]':
+            - cell "310022" [ref=e120]:
+              - link "310022" [ref=e121] [cursor=pointer]:
+                - /url: ../article/?id=310022
+            - 'cell "AI News: OpenAI Absolutely Cooked This Week!" [ref=e122]'
+            - cell "https://www.youtube.com/watch?v=SXneZ3bRKO4" [ref=e123]:
+              - link "https://www.youtube.com/watch?v=SXneZ3bRKO4" [ref=e124] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=SXneZ3bRKO4
+            - cell "5/8/2026 08:30 PM" [ref=e125]
+            - cell "5/9/2026 12:20 AM" [ref=e126]
+            - cell "matt-wolfe" [ref=e127]:
+              - link "matt-wolfe" [ref=e128] [cursor=pointer]:
+                - /url: "#"
+            - cell "Matt Wolfe" [ref=e129]
+            - cell "youtube" [ref=e130]:
+              - link "youtube" [ref=e131] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e132]: youtube
+            - cell "Here's the AI News you probably missed this week. Try HubSpot AEO on your brand free for 28 days here 👉🏻 https://clickhubspot.com/f1da94 Discover M..." [ref=e133]
+            - cell "ai-models" [ref=e134]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"video\"]" [ref=e135]
+          - row "308790 See what happens when creative legends use AI to make ads for small businesses https://blog.google/company-news/inside-google/company-annou... 5/8/2026 08:30 PM 5/8/2026 09:35 PM google-ai-blog Google AI Blog trafilatura Today we're launching The Small Brief, an initiative bringing together four ad industry icons to champion a local businesses they love. Their mission ... product [\"product\",\"release\",\"agents\"]" [ref=e136]:
+            - cell "308790" [ref=e137]:
+              - link "308790" [ref=e138] [cursor=pointer]:
+                - /url: ../article/?id=308790
+            - cell "See what happens when creative legends use AI to make ads for small businesses" [ref=e139]
+            - cell "https://blog.google/company-news/inside-google/company-annou..." [ref=e140]:
+              - link "https://blog.google/company-news/inside-google/company-annou..." [ref=e141] [cursor=pointer]:
+                - /url: https://blog.google/company-news/inside-google/company-announcements/the-small-brief/
+            - cell "5/8/2026 08:30 PM" [ref=e142]
+            - cell "5/8/2026 09:35 PM" [ref=e143]
+            - cell "google-ai-blog" [ref=e144]:
+              - link "google-ai-blog" [ref=e145] [cursor=pointer]:
+                - /url: "#"
+            - cell "Google AI Blog" [ref=e146]
+            - cell "trafilatura" [ref=e147]:
+              - link "trafilatura" [ref=e148] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e149]: trafilatura
+            - cell "Today we're launching The Small Brief, an initiative bringing together four ad industry icons to champion a local businesses they love. Their mission ..." [ref=e150]
+            - cell "product" [ref=e151]
+            - cell "[\"product\",\"release\",\"agents\"]" [ref=e152]
+          - 'row "310202 Running Codex safely at OpenAI https://openai.com/index/running-codex-safely 5/8/2026 06:00 PM 5/9/2026 03:03 AM openai-blog OpenAI Blog markdown_new OpenAI May 8, 2026 [Security](/news/security/)[Safety](/news/safety-alignment/) # Running Codex safely at OpenAI A look at the controls, boundarie... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"safety\"]" [ref=e153]':
+            - cell "310202" [ref=e154]:
+              - link "310202" [ref=e155] [cursor=pointer]:
+                - /url: ../article/?id=310202
+            - cell "Running Codex safely at OpenAI" [ref=e156]
+            - cell "https://openai.com/index/running-codex-safely" [ref=e157]:
+              - link "https://openai.com/index/running-codex-safely" [ref=e158] [cursor=pointer]:
+                - /url: https://openai.com/index/running-codex-safely
+            - cell "5/8/2026 06:00 PM" [ref=e159]
+            - cell "5/9/2026 03:03 AM" [ref=e160]
+            - cell "openai-blog" [ref=e161]:
+              - link "openai-blog" [ref=e162] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e163]
+            - cell "markdown_new" [ref=e164]:
+              - link "markdown_new" [ref=e165] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e166]: markdown_new
+            - 'cell "OpenAI May 8, 2026 [Security](/news/security/)[Safety](/news/safety-alignment/) # Running Codex safely at OpenAI A look at the controls, boundarie..." [ref=e167]'
+            - cell "ai-models" [ref=e168]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"safety\"]" [ref=e169]
+          - row "304656 llm-gemini 0.31 https://simonwillison.net/2026/May/7/llm-gemini/#atom-everyt... 5/8/2026 01:27 AM 5/8/2026 03:46 AM simon-willison Simon Willison trafilatura 7th May 2026 gemini-3.1-flash-lite is[no longer a preview]. Here's my write-up of the [Gemini 3.1 Flash-Lite Preview model](https://simonwillison.net/... ai-models [\"ai-models\",\"models\",\"agents\"]" [ref=e170]:
+            - cell "304656" [ref=e171]:
+              - link "304656" [ref=e172] [cursor=pointer]:
+                - /url: ../article/?id=304656
+            - cell "llm-gemini 0.31" [ref=e173]
+            - cell "https://simonwillison.net/2026/May/7/llm-gemini/#atom-everyt..." [ref=e174]:
+              - link "https://simonwillison.net/2026/May/7/llm-gemini/#atom-everyt..." [ref=e175] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/7/llm-gemini/#atom-everything
+            - cell "5/8/2026 01:27 AM" [ref=e176]
+            - cell "5/8/2026 03:46 AM" [ref=e177]
+            - cell "simon-willison" [ref=e178]:
+              - link "simon-willison" [ref=e179] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e180]
+            - cell "trafilatura" [ref=e181]:
+              - link "trafilatura" [ref=e182] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e183]: trafilatura
+            - cell "7th May 2026 gemini-3.1-flash-lite is[no longer a preview]. Here's my write-up of the [Gemini 3.1 Flash-Lite Preview model](https://simonwillison.net/..." [ref=e184]
+            - cell "ai-models" [ref=e185]
+            - cell "[\"ai-models\",\"models\",\"agents\"]" [ref=e186]
+          - row "304657 Big Words https://simonwillison.net/2026/May/7/big-words/#atom-everyth... 5/8/2026 12:17 AM 5/8/2026 03:46 AM simon-willison Simon Willison trafilatura 7th May 2026 Tool [Big Words](https://tools.simonwillison.net/big-words)I'm using my [vibe coded macOS presentations tool](https://simonwillison.net/2... ai-models [\"ai-models\",\"models\",\"open-source\",\"agents\"]" [ref=e187]:
+            - cell "304657" [ref=e188]:
+              - link "304657" [ref=e189] [cursor=pointer]:
+                - /url: ../article/?id=304657
+            - cell "Big Words" [ref=e190]
+            - cell "https://simonwillison.net/2026/May/7/big-words/#atom-everyth..." [ref=e191]:
+              - link "https://simonwillison.net/2026/May/7/big-words/#atom-everyth..." [ref=e192] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/7/big-words/#atom-everything
+            - cell "5/8/2026 12:17 AM" [ref=e193]
+            - cell "5/8/2026 03:46 AM" [ref=e194]
+            - cell "simon-willison" [ref=e195]:
+              - link "simon-willison" [ref=e196] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e197]
+            - cell "trafilatura" [ref=e198]:
+              - link "trafilatura" [ref=e199] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e200]: trafilatura
+            - cell "7th May 2026 Tool [Big Words](https://tools.simonwillison.net/big-words)I'm using my [vibe coded macOS presentations tool](https://simonwillison.net/2..." [ref=e201]
+            - cell "ai-models" [ref=e202]
+            - cell "[\"ai-models\",\"models\",\"open-source\",\"agents\"]" [ref=e203]
+          - row "304658 Behind the Scenes Hardening Firefox with Claude Mythos Preview https://simonwillison.net/2026/May/7/firefox-claude-mythos/#... 5/7/2026 11:26 PM 5/8/2026 03:46 AM simon-willison Simon Willison trafilatura 7th May 2026 - Link Blog [Behind the Scenes Hardening Firefox with Claude Mythos Preview](https://hacks.mozilla.org/2026/05/behind-the-scenes-hardenin... ai-models [\"ai-models\",\"models\",\"open-source\",\"agents\"]" [ref=e204]:
+            - cell "304658" [ref=e205]:
+              - link "304658" [ref=e206] [cursor=pointer]:
+                - /url: ../article/?id=304658
+            - cell "Behind the Scenes Hardening Firefox with Claude Mythos Preview" [ref=e207]
+            - cell "https://simonwillison.net/2026/May/7/firefox-claude-mythos/#..." [ref=e208]:
+              - link "https://simonwillison.net/2026/May/7/firefox-claude-mythos/#..." [ref=e209] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/7/firefox-claude-mythos/#atom-everything
+            - cell "5/7/2026 11:26 PM" [ref=e210]
+            - cell "5/8/2026 03:46 AM" [ref=e211]
+            - cell "simon-willison" [ref=e212]:
+              - link "simon-willison" [ref=e213] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e214]
+            - cell "trafilatura" [ref=e215]:
+              - link "trafilatura" [ref=e216] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e217]: trafilatura
+            - cell "7th May 2026 - Link Blog [Behind the Scenes Hardening Firefox with Claude Mythos Preview](https://hacks.mozilla.org/2026/05/behind-the-scenes-hardenin..." [ref=e218]
+            - cell "ai-models" [ref=e219]
+            - cell "[\"ai-models\",\"models\",\"open-source\",\"agents\"]" [ref=e220]
+          - row "304869 Every operating system concept in one video… https://www.youtube.com/watch?v=MtxP2pyCvYA 5/7/2026 11:02 PM 5/8/2026 03:47 AM fireship Fireship youtube Railway is the easiest way to deploy anything. Get $20 in free credits - https://railway.com/?referralCode=fireship Everything that happens inside yo... ai-models [\"ai-models\",\"video\"]" [ref=e221]:
+            - cell "304869" [ref=e222]:
+              - link "304869" [ref=e223] [cursor=pointer]:
+                - /url: ../article/?id=304869
+            - cell "Every operating system concept in one video…" [ref=e224]
+            - cell "https://www.youtube.com/watch?v=MtxP2pyCvYA" [ref=e225]:
+              - link "https://www.youtube.com/watch?v=MtxP2pyCvYA" [ref=e226] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=MtxP2pyCvYA
+            - cell "5/7/2026 11:02 PM" [ref=e227]
+            - cell "5/8/2026 03:47 AM" [ref=e228]
+            - cell "fireship" [ref=e229]:
+              - link "fireship" [ref=e230] [cursor=pointer]:
+                - /url: "#"
+            - cell "Fireship" [ref=e231]
+            - cell "youtube" [ref=e232]:
+              - link "youtube" [ref=e233] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e234]: youtube
+            - cell "Railway is the easiest way to deploy anything. Get $20 in free credits - https://railway.com/?referralCode=fireship Everything that happens inside yo..." [ref=e235]
+            - cell "ai-models" [ref=e236]
+            - cell "[\"ai-models\",\"video\"]" [ref=e237]
+          - row "304659 Notes on the xAI/Anthropic data center deal https://simonwillison.net/2026/May/7/xai-anthropic/#atom-eve... 5/7/2026 10:39 PM 5/8/2026 03:46 AM simon-willison Simon Willison trafilatura Notes on the xAI/Anthropic data center deal 7th May 2026 There weren’t a lot of big new announcements from Anthropic at yesterday’s Code w/ Claude eve... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"agents\",\"safety\"]" [ref=e238]:
+            - cell "304659" [ref=e239]:
+              - link "304659" [ref=e240] [cursor=pointer]:
+                - /url: ../article/?id=304659
+            - cell "Notes on the xAI/Anthropic data center deal" [ref=e241]
+            - cell "https://simonwillison.net/2026/May/7/xai-anthropic/#atom-eve..." [ref=e242]:
+              - link "https://simonwillison.net/2026/May/7/xai-anthropic/#atom-eve..." [ref=e243] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/7/xai-anthropic/#atom-everything
+            - cell "5/7/2026 10:39 PM" [ref=e244]
+            - cell "5/8/2026 03:46 AM" [ref=e245]
+            - cell "simon-willison" [ref=e246]:
+              - link "simon-willison" [ref=e247] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e248]
+            - cell "trafilatura" [ref=e249]:
+              - link "trafilatura" [ref=e250] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e251]: trafilatura
+            - cell "Notes on the xAI/Anthropic data center deal 7th May 2026 There weren’t a lot of big new announcements from Anthropic at yesterday’s Code w/ Claude eve..." [ref=e252]
+            - cell "ai-models" [ref=e253]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"agents\",\"safety\"]" [ref=e254]
+          - 'row "305034 Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber https://openai.com/index/gpt-5-5-with-trusted-access-for-cyb... 5/7/2026 06:30 PM 5/8/2026 06:12 AM openai-blog OpenAI Blog markdown_new OpenAI May 7, 2026 [Security](/news/security/) # Scaling Trusted Access for Cyber with GPT‑5.5 and GPT‑5.5‑Cyber How our latest models help each l... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e255]':
+            - cell "305034" [ref=e256]:
+              - link "305034" [ref=e257] [cursor=pointer]:
+                - /url: ../article/?id=305034
+            - cell "Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber" [ref=e258]
+            - cell "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyb..." [ref=e259]:
+              - link "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyb..." [ref=e260] [cursor=pointer]:
+                - /url: https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber
+            - cell "5/7/2026 06:30 PM" [ref=e261]
+            - cell "5/8/2026 06:12 AM" [ref=e262]
+            - cell "openai-blog" [ref=e263]:
+              - link "openai-blog" [ref=e264] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e265]
+            - cell "markdown_new" [ref=e266]:
+              - link "markdown_new" [ref=e267] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e268]: markdown_new
+            - 'cell "OpenAI May 7, 2026 [Security](/news/security/) # Scaling Trusted Access for Cyber with GPT‑5.5 and GPT‑5.5‑Cyber How our latest models help each l..." [ref=e269]'
+            - cell "ai-models" [ref=e270]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e271]
+          - 'row "302416 Parloa builds service agents customers want to talk to https://openai.com/index/parloa 5/7/2026 04:30 PM 5/7/2026 07:48 PM openai-blog OpenAI Blog markdown_new OpenAI May 7, 2026 Startup # Parloa builds service agents customers want to talk to Parloa uses OpenAI models to simulate, evaluate, and run voice... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\",\"video\"]" [ref=e272]':
+            - cell "302416" [ref=e273]:
+              - link "302416" [ref=e274] [cursor=pointer]:
+                - /url: ../article/?id=302416
+            - cell "Parloa builds service agents customers want to talk to" [ref=e275]
+            - cell "https://openai.com/index/parloa" [ref=e276]:
+              - link "https://openai.com/index/parloa" [ref=e277] [cursor=pointer]:
+                - /url: https://openai.com/index/parloa
+            - cell "5/7/2026 04:30 PM" [ref=e278]
+            - cell "5/7/2026 07:48 PM" [ref=e279]
+            - cell "openai-blog" [ref=e280]:
+              - link "openai-blog" [ref=e281] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e282]
+            - cell "markdown_new" [ref=e283]:
+              - link "markdown_new" [ref=e284] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e285]: markdown_new
+            - 'cell "OpenAI May 7, 2026 Startup # Parloa builds service agents customers want to talk to Parloa uses OpenAI models to simulate, evaluate, and run voice..." [ref=e286]'
+            - cell "ai-models" [ref=e287]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\",\"video\"]" [ref=e288]
+          - 'row "303705 Advancing voice intelligence with new models in the API https://openai.com/index/advancing-voice-intelligence-with-n... 5/7/2026 03:30 PM 5/8/2026 01:15 AM openai-blog OpenAI Blog markdown_new OpenAI May 7, 2026 [Product](/news/product-releases/)[Release](/research/index/release/) # Advancing voice intelligence with new models in the API ... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"safety\"]" [ref=e289]':
+            - cell "303705" [ref=e290]:
+              - link "303705" [ref=e291] [cursor=pointer]:
+                - /url: ../article/?id=303705
+            - cell "Advancing voice intelligence with new models in the API" [ref=e292]
+            - cell "https://openai.com/index/advancing-voice-intelligence-with-n..." [ref=e293]:
+              - link "https://openai.com/index/advancing-voice-intelligence-with-n..." [ref=e294] [cursor=pointer]:
+                - /url: https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api
+            - cell "5/7/2026 03:30 PM" [ref=e295]
+            - cell "5/8/2026 01:15 AM" [ref=e296]
+            - cell "openai-blog" [ref=e297]:
+              - link "openai-blog" [ref=e298] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e299]
+            - cell "markdown_new" [ref=e300]:
+              - link "markdown_new" [ref=e301] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e302]: markdown_new
+            - 'cell "OpenAI May 7, 2026 [Product](/news/product-releases/)[Release](/research/index/release/) # Advancing voice intelligence with new models in the API ..." [ref=e303]'
+            - cell "ai-models" [ref=e304]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"safety\"]" [ref=e305]
+          - row "304660 GitHub Repo Stats https://simonwillison.net/2026/May/7/github-repo-stats/#atom... 5/7/2026 12:55 PM 5/8/2026 03:46 AM simon-willison Simon Willison trafilatura 7th May 2026 Tool [GitHub Repo Stats](https://tools.simonwillison.net/github-repo-stats)— View GitHub repository statistics including commit counts, c... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"benchmark\"]" [ref=e306]:
+            - cell "304660" [ref=e307]:
+              - link "304660" [ref=e308] [cursor=pointer]:
+                - /url: ../article/?id=304660
+            - cell "GitHub Repo Stats" [ref=e309]
+            - cell "https://simonwillison.net/2026/May/7/github-repo-stats/#atom..." [ref=e310]:
+              - link "https://simonwillison.net/2026/May/7/github-repo-stats/#atom..." [ref=e311] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/7/github-repo-stats/#atom-everything
+            - cell "5/7/2026 12:55 PM" [ref=e312]
+            - cell "5/8/2026 03:46 AM" [ref=e313]
+            - cell "simon-willison" [ref=e314]:
+              - link "simon-willison" [ref=e315] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e316]
+            - cell "trafilatura" [ref=e317]:
+              - link "trafilatura" [ref=e318] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e319]: trafilatura
+            - cell "7th May 2026 Tool [GitHub Repo Stats](https://tools.simonwillison.net/github-repo-stats)— View GitHub repository statistics including commit counts, c..." [ref=e320]
+            - cell "ai-models" [ref=e321]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"benchmark\"]" [ref=e322]
+          - row "304646 What Matters in Practical Learned Image Compression https://machinelearning.apple.com/research/compression 5/7/2026 05:30 AM 5/8/2026 03:46 AM apple-machine-learning Apple ML Research trafilatura [content type paper](/research/)published May 2026 What Matters in Practical Learned Image Compression AuthorsKedar Tatwawadi, Parisa Rahimzadeh, Zhan... ai-models [\"ai-models\",\"models\",\"agents\",\"research\",\"video\"]" [ref=e323]:
+            - cell "304646" [ref=e324]:
+              - link "304646" [ref=e325] [cursor=pointer]:
+                - /url: ../article/?id=304646
+            - cell "What Matters in Practical Learned Image Compression" [ref=e326]
+            - cell "https://machinelearning.apple.com/research/compression" [ref=e327]:
+              - link "https://machinelearning.apple.com/research/compression" [ref=e328] [cursor=pointer]:
+                - /url: https://machinelearning.apple.com/research/compression
+            - cell "5/7/2026 05:30 AM" [ref=e329]
+            - cell "5/8/2026 03:46 AM" [ref=e330]
+            - cell "apple-machine-learning" [ref=e331]:
+              - link "apple-machine-learning" [ref=e332] [cursor=pointer]:
+                - /url: "#"
+            - cell "Apple ML Research" [ref=e333]
+            - cell "trafilatura" [ref=e334]:
+              - link "trafilatura" [ref=e335] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e336]: trafilatura
+            - cell "[content type paper](/research/)published May 2026 What Matters in Practical Learned Image Compression AuthorsKedar Tatwawadi, Parisa Rahimzadeh, Zhan..." [ref=e337]
+            - cell "ai-models" [ref=e338]
+            - cell "[\"ai-models\",\"models\",\"agents\",\"research\",\"video\"]" [ref=e339]
+          - row "304647 Text-Conditional JEPA for Learning Semantically Rich Visual Representations https://machinelearning.apple.com/research/text-conditional-... 5/7/2026 05:30 AM 5/8/2026 03:46 AM apple-machine-learning Apple ML Research trafilatura [content type paper](/research/)published May 2026 Text-Conditional JEPA for Learning Semantically Rich Visual Representations AuthorsChen Huang, Xian... ai-models [\"ai-models\",\"models\",\"research\",\"video\"]" [ref=e340]:
+            - cell "304647" [ref=e341]:
+              - link "304647" [ref=e342] [cursor=pointer]:
+                - /url: ../article/?id=304647
+            - cell "Text-Conditional JEPA for Learning Semantically Rich Visual Representations" [ref=e343]
+            - cell "https://machinelearning.apple.com/research/text-conditional-..." [ref=e344]:
+              - link "https://machinelearning.apple.com/research/text-conditional-..." [ref=e345] [cursor=pointer]:
+                - /url: https://machinelearning.apple.com/research/text-conditional-jepa-visual-representations
+            - cell "5/7/2026 05:30 AM" [ref=e346]
+            - cell "5/8/2026 03:46 AM" [ref=e347]
+            - cell "apple-machine-learning" [ref=e348]:
+              - link "apple-machine-learning" [ref=e349] [cursor=pointer]:
+                - /url: "#"
+            - cell "Apple ML Research" [ref=e350]
+            - cell "trafilatura" [ref=e351]:
+              - link "trafilatura" [ref=e352] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e353]: trafilatura
+            - cell "[content type paper](/research/)published May 2026 Text-Conditional JEPA for Learning Semantically Rich Visual Representations AuthorsChen Huang, Xian..." [ref=e354]
+            - cell "ai-models" [ref=e355]
+            - cell "[\"ai-models\",\"models\",\"research\",\"video\"]" [ref=e356]
+          - 'row "303707 Introducing Trusted Contact in ChatGPT https://openai.com/index/introducing-trusted-contact-in-chat... 5/7/2026 05:30 AM 5/8/2026 01:15 AM openai-blog OpenAI Blog markdown_new OpenAI May 7, 2026 [Safety](/news/safety-alignment/) # Introducing Trusted Contact in ChatGPT Connecting you to someone you trust when it matters ... ai-models [\"ai-models\",\"release\",\"models\",\"safety\",\"research\"]" [ref=e357]':
+            - cell "303707" [ref=e358]:
+              - link "303707" [ref=e359] [cursor=pointer]:
+                - /url: ../article/?id=303707
+            - cell "Introducing Trusted Contact in ChatGPT" [ref=e360]
+            - cell "https://openai.com/index/introducing-trusted-contact-in-chat..." [ref=e361]:
+              - link "https://openai.com/index/introducing-trusted-contact-in-chat..." [ref=e362] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-trusted-contact-in-chatgpt
+            - cell "5/7/2026 05:30 AM" [ref=e363]
+            - cell "5/8/2026 01:15 AM" [ref=e364]
+            - cell "openai-blog" [ref=e365]:
+              - link "openai-blog" [ref=e366] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e367]
+            - cell "markdown_new" [ref=e368]:
+              - link "markdown_new" [ref=e369] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e370]: markdown_new
+            - 'cell "OpenAI May 7, 2026 [Safety](/news/safety-alignment/) # Introducing Trusted Contact in ChatGPT Connecting you to someone you trust when it matters ..." [ref=e371]'
+            - cell "ai-models" [ref=e372]
+            - cell "[\"ai-models\",\"release\",\"models\",\"safety\",\"research\"]" [ref=e373]
+          - 'row "305039 Simplex rethinks software development with Codex https://openai.com/index/simplex 5/7/2026 05:30 AM 5/8/2026 06:12 AM openai-blog OpenAI Blog markdown_new OpenAI May 7, 2026 # Simplex rethinks software development with Codex Simplex is using ChatGPT Enterprise and Codex to validate AI-driven developme... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\"]" [ref=e374]':
+            - cell "305039" [ref=e375]:
+              - link "305039" [ref=e376] [cursor=pointer]:
+                - /url: ../article/?id=305039
+            - cell "Simplex rethinks software development with Codex" [ref=e377]
+            - cell "https://openai.com/index/simplex" [ref=e378]:
+              - link "https://openai.com/index/simplex" [ref=e379] [cursor=pointer]:
+                - /url: https://openai.com/index/simplex
+            - cell "5/7/2026 05:30 AM" [ref=e380]
+            - cell "5/8/2026 06:12 AM" [ref=e381]
+            - cell "openai-blog" [ref=e382]:
+              - link "openai-blog" [ref=e383] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e384]
+            - cell "markdown_new" [ref=e385]:
+              - link "markdown_new" [ref=e386] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e387]: markdown_new
+            - 'cell "OpenAI May 7, 2026 # Simplex rethinks software development with Codex Simplex is using ChatGPT Enterprise and Codex to validate AI-driven developme..." [ref=e388]'
+            - cell "ai-models" [ref=e389]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\"]" [ref=e390]
+          - 'row "303706 Testing ads in ChatGPT https://openai.com/index/testing-ads-in-chatgpt 5/7/2026 05:30 AM 5/8/2026 01:15 AM openai-blog OpenAI Blog markdown_new OpenAI May 7, 2026 [Company](/news/company-announcements/)[Product](/news/product-releases/) # Testing ads in ChatGPT Ads that support free access... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"safety\",\"research\"]" [ref=e391]':
+            - cell "303706" [ref=e392]:
+              - link "303706" [ref=e393] [cursor=pointer]:
+                - /url: ../article/?id=303706
+            - cell "Testing ads in ChatGPT" [ref=e394]
+            - cell "https://openai.com/index/testing-ads-in-chatgpt" [ref=e395]:
+              - link "https://openai.com/index/testing-ads-in-chatgpt" [ref=e396] [cursor=pointer]:
+                - /url: https://openai.com/index/testing-ads-in-chatgpt
+            - cell "5/7/2026 05:30 AM" [ref=e397]
+            - cell "5/8/2026 01:15 AM" [ref=e398]
+            - cell "openai-blog" [ref=e399]:
+              - link "openai-blog" [ref=e400] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e401]
+            - cell "markdown_new" [ref=e402]:
+              - link "markdown_new" [ref=e403] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e404]: markdown_new
+            - 'cell "OpenAI May 7, 2026 [Company](/news/company-announcements/)[Product](/news/product-releases/) # Testing ads in ChatGPT Ads that support free access..." [ref=e405]'
+            - cell "ai-models" [ref=e406]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"safety\",\"research\"]" [ref=e407]
+          - row "298465 Your AI Setup Needs This https://www.youtube.com/shorts/z7EE9VWKrCA 5/7/2026 12:30 AM 5/7/2026 05:32 AM matt-wolfe Matt Wolfe youtube If you’re serious about AI, your laptop matters more than you think. Most people are running powerful AI tools on hardware that’s holding them back. ... ai-models [\"ai-models\",\"agents\",\"video\"]" [ref=e408]:
+            - cell "298465" [ref=e409]:
+              - link "298465" [ref=e410] [cursor=pointer]:
+                - /url: ../article/?id=298465
+            - cell "Your AI Setup Needs This" [ref=e411]
+            - cell "https://www.youtube.com/shorts/z7EE9VWKrCA" [ref=e412]:
+              - link "https://www.youtube.com/shorts/z7EE9VWKrCA" [ref=e413] [cursor=pointer]:
+                - /url: https://www.youtube.com/shorts/z7EE9VWKrCA
+            - cell "5/7/2026 12:30 AM" [ref=e414]
+            - cell "5/7/2026 05:32 AM" [ref=e415]
+            - cell "matt-wolfe" [ref=e416]:
+              - link "matt-wolfe" [ref=e417] [cursor=pointer]:
+                - /url: "#"
+            - cell "Matt Wolfe" [ref=e418]
+            - cell "youtube" [ref=e419]:
+              - link "youtube" [ref=e420] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e421]: youtube
+            - cell "If you’re serious about AI, your laptop matters more than you think. Most people are running powerful AI tools on hardware that’s holding them back. ..." [ref=e422]
+            - cell "ai-models" [ref=e423]
+            - cell "[\"ai-models\",\"agents\",\"video\"]" [ref=e424]
+          - 'row "297170 Full Guide: Build An AI Second Brain With Codex https://www.youtube.com/watch?v=yke4fLQUsh4 5/6/2026 11:49 PM 5/7/2026 12:07 AM matt-wolfe Matt Wolfe youtube Here''s how to build an AI second brain. Launch your own AI agents with OpenClaw at http://hostinger.com/mattopenclaw and get 10% off with code MATTWOL... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"agents\",\"video\"]" [ref=e425]':
+            - cell "297170" [ref=e426]:
+              - link "297170" [ref=e427] [cursor=pointer]:
+                - /url: ../article/?id=297170
+            - 'cell "Full Guide: Build An AI Second Brain With Codex" [ref=e428]'
+            - cell "https://www.youtube.com/watch?v=yke4fLQUsh4" [ref=e429]:
+              - link "https://www.youtube.com/watch?v=yke4fLQUsh4" [ref=e430] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=yke4fLQUsh4
+            - cell "5/6/2026 11:49 PM" [ref=e431]
+            - cell "5/7/2026 12:07 AM" [ref=e432]
+            - cell "matt-wolfe" [ref=e433]:
+              - link "matt-wolfe" [ref=e434] [cursor=pointer]:
+                - /url: "#"
+            - cell "Matt Wolfe" [ref=e435]
+            - cell "youtube" [ref=e436]:
+              - link "youtube" [ref=e437] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e438]: youtube
+            - cell "Here's how to build an AI second brain. Launch your own AI agents with OpenClaw at http://hostinger.com/mattopenclaw and get 10% off with code MATTWOL..." [ref=e439]
+            - cell "ai-models" [ref=e440]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"agents\",\"video\"]" [ref=e441]
+          - row "297230 5 gardening tips you can try right in Search https://blog.google/products-and-platforms/products/search/g... 5/6/2026 09:30 PM 5/7/2026 02:56 AM google-ai-blog Google AI Blog trafilatura 5 gardening tips you can try right in Search This year, gardening is taking on new life. Google Trends shows that people in the U.S. are ditching perf... ai-models [\"ai-models\",\"agents\"]" [ref=e442]:
+            - cell "297230" [ref=e443]:
+              - link "297230" [ref=e444] [cursor=pointer]:
+                - /url: ../article/?id=297230
+            - cell "5 gardening tips you can try right in Search" [ref=e445]
+            - cell "https://blog.google/products-and-platforms/products/search/g..." [ref=e446]:
+              - link "https://blog.google/products-and-platforms/products/search/g..." [ref=e447] [cursor=pointer]:
+                - /url: https://blog.google/products-and-platforms/products/search/gardening-tips/
+            - cell "5/6/2026 09:30 PM" [ref=e448]
+            - cell "5/7/2026 02:56 AM" [ref=e449]
+            - cell "google-ai-blog" [ref=e450]:
+              - link "google-ai-blog" [ref=e451] [cursor=pointer]:
+                - /url: "#"
+            - cell "Google AI Blog" [ref=e452]
+            - cell "trafilatura" [ref=e453]:
+              - link "trafilatura" [ref=e454] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e455]: trafilatura
+            - cell "5 gardening tips you can try right in Search This year, gardening is taking on new life. Google Trends shows that people in the U.S. are ditching perf..." [ref=e456]
+            - cell "ai-models" [ref=e457]
+            - cell "[\"ai-models\",\"agents\"]" [ref=e458]
+          - 'row "296972 Live blog: Code w/ Claude 2026 https://simonwillison.net/2026/May/6/code-w-claude-2026/#ato... 5/6/2026 09:28 PM 5/7/2026 12:05 AM simon-willison Simon Willison trafilatura Live blog: Code w/ Claude 2026 6th May 2026 I’m at Anthropic’s Code w/ Claude event in 2026, and I’ll be live blogging the keynote and a few other not... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\",\"research\"]" [ref=e459]':
+            - cell "296972" [ref=e460]:
+              - link "296972" [ref=e461] [cursor=pointer]:
+                - /url: ../article/?id=296972
+            - 'cell "Live blog: Code w/ Claude 2026" [ref=e462]'
+            - cell "https://simonwillison.net/2026/May/6/code-w-claude-2026/#ato..." [ref=e463]:
+              - link "https://simonwillison.net/2026/May/6/code-w-claude-2026/#ato..." [ref=e464] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/6/code-w-claude-2026/#atom-everything
+            - cell "5/6/2026 09:28 PM" [ref=e465]
+            - cell "5/7/2026 12:05 AM" [ref=e466]
+            - cell "simon-willison" [ref=e467]:
+              - link "simon-willison" [ref=e468] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e469]
+            - cell "trafilatura" [ref=e470]:
+              - link "trafilatura" [ref=e471] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e472]: trafilatura
+            - 'cell "Live blog: Code w/ Claude 2026 6th May 2026 I’m at Anthropic’s Code w/ Claude event in 2026, and I’ll be live blogging the keynote and a few other not..." [ref=e473]'
+            - cell "ai-models" [ref=e474]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\",\"research\"]" [ref=e475]
+          - row "296973 Vibe coding and agentic engineering are getting closer than I'd like https://simonwillison.net/2026/May/6/vibe-coding-and-agentic... 5/6/2026 07:54 PM 5/7/2026 12:05 AM simon-willison Simon Willison trafilatura Vibe coding and agentic engineering are getting closer than I’d like 6th May 2026 I recently talked with Joseph Ruscio about AI coding tools for Heavy... ai-models [\"ai-models\",\"models\",\"open-source\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e476]:
+            - cell "296973" [ref=e477]:
+              - link "296973" [ref=e478] [cursor=pointer]:
+                - /url: ../article/?id=296973
+            - cell "Vibe coding and agentic engineering are getting closer than I'd like" [ref=e479]
+            - cell "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic..." [ref=e480]:
+              - link "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic..." [ref=e481] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/#atom-everything
+            - cell "5/6/2026 07:54 PM" [ref=e482]
+            - cell "5/7/2026 12:05 AM" [ref=e483]
+            - cell "simon-willison" [ref=e484]:
+              - link "simon-willison" [ref=e485] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e486]
+            - cell "trafilatura" [ref=e487]:
+              - link "trafilatura" [ref=e488] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e489]: trafilatura
+            - cell "Vibe coding and agentic engineering are getting closer than I’d like 6th May 2026 I recently talked with Joseph Ruscio about AI coding tools for Heavy..." [ref=e490]
+            - cell "ai-models" [ref=e491]
+            - cell "[\"ai-models\",\"models\",\"open-source\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e492]
+          - row "297171 AI Coworkers Are Officially Here https://www.youtube.com/shorts/B3vfCHfK2b4 5/6/2026 06:30 PM 5/7/2026 12:07 AM matt-wolfe Matt Wolfe youtube If your team lives in Slack, this is worth checking out. @getviktor is an AI coworker that works where your team already works. It connects to your t... ai-models [\"ai-models\",\"open-source\",\"agents\",\"video\"]" [ref=e493]:
+            - cell "297171" [ref=e494]:
+              - link "297171" [ref=e495] [cursor=pointer]:
+                - /url: ../article/?id=297171
+            - cell "AI Coworkers Are Officially Here" [ref=e496]
+            - cell "https://www.youtube.com/shorts/B3vfCHfK2b4" [ref=e497]:
+              - link "https://www.youtube.com/shorts/B3vfCHfK2b4" [ref=e498] [cursor=pointer]:
+                - /url: https://www.youtube.com/shorts/B3vfCHfK2b4
+            - cell "5/6/2026 06:30 PM" [ref=e499]
+            - cell "5/7/2026 12:07 AM" [ref=e500]
+            - cell "matt-wolfe" [ref=e501]:
+              - link "matt-wolfe" [ref=e502] [cursor=pointer]:
+                - /url: "#"
+            - cell "Matt Wolfe" [ref=e503]
+            - cell "youtube" [ref=e504]:
+              - link "youtube" [ref=e505] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e506]: youtube
+            - cell "If your team lives in Slack, this is worth checking out. @getviktor is an AI coworker that works where your team already works. It connects to your t..." [ref=e507]
+            - cell "ai-models" [ref=e508]
+            - cell "[\"ai-models\",\"open-source\",\"agents\",\"video\"]" [ref=e509]
+          - 'row "303604 AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields https://deepmind.google/blog/alphaevolve-impact/ 5/6/2026 04:13 PM 5/8/2026 01:14 AM google-deepmind-blog Google DeepMind Blog trafilatura Improving AI infrastructure AlphaEvolve has graduated from pilot testing to becoming a core component of our infrastructure. AlphaEvolve has been used... ai-models [\"ai-models\",\"models\",\"open-source\",\"api\",\"agents\",\"research\"]" [ref=e510]':
+            - cell "303604" [ref=e511]:
+              - link "303604" [ref=e512] [cursor=pointer]:
+                - /url: ../article/?id=303604
+            - 'cell "AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields" [ref=e513]'
+            - cell "https://deepmind.google/blog/alphaevolve-impact/" [ref=e514]:
+              - link "https://deepmind.google/blog/alphaevolve-impact/" [ref=e515] [cursor=pointer]:
+                - /url: https://deepmind.google/blog/alphaevolve-impact/
+            - cell "5/6/2026 04:13 PM" [ref=e516]
+            - cell "5/8/2026 01:14 AM" [ref=e517]
+            - cell "google-deepmind-blog" [ref=e518]:
+              - link "google-deepmind-blog" [ref=e519] [cursor=pointer]:
+                - /url: "#"
+            - cell "Google DeepMind Blog" [ref=e520]
+            - cell "trafilatura" [ref=e521]:
+              - link "trafilatura" [ref=e522] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e523]: trafilatura
+            - cell "Improving AI infrastructure AlphaEvolve has graduated from pilot testing to becoming a core component of our infrastructure. AlphaEvolve has been used..." [ref=e524]
+            - cell "ai-models" [ref=e525]
+            - cell "[\"ai-models\",\"models\",\"open-source\",\"api\",\"agents\",\"research\"]" [ref=e526]
+          - 'row "310209 How ChatGPT learns about the world while protecting privacy https://openai.com/index/how-chatgpt-protects-privacy 5/6/2026 01:30 PM 5/9/2026 03:03 AM openai-blog OpenAI Blog markdown_new OpenAI May 6, 2026 [Global Affairs](/news/global-affairs/) # How ChatGPT learns about the world while protecting privacy A plain-language guide t... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e527]':
+            - cell "310209" [ref=e528]:
+              - link "310209" [ref=e529] [cursor=pointer]:
+                - /url: ../article/?id=310209
+            - cell "How ChatGPT learns about the world while protecting privacy" [ref=e530]
+            - cell "https://openai.com/index/how-chatgpt-protects-privacy" [ref=e531]:
+              - link "https://openai.com/index/how-chatgpt-protects-privacy" [ref=e532] [cursor=pointer]:
+                - /url: https://openai.com/index/how-chatgpt-protects-privacy
+            - cell "5/6/2026 01:30 PM" [ref=e533]
+            - cell "5/9/2026 03:03 AM" [ref=e534]
+            - cell "openai-blog" [ref=e535]:
+              - link "openai-blog" [ref=e536] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e537]
+            - cell "markdown_new" [ref=e538]:
+              - link "markdown_new" [ref=e539] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e540]: markdown_new
+            - 'cell "OpenAI May 6, 2026 [Global Affairs](/news/global-affairs/) # How ChatGPT learns about the world while protecting privacy A plain-language guide t..." [ref=e541]'
+            - cell "ai-models" [ref=e542]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e543]
+          - row "298288 Normalizing Flows with Iterative Denoising https://machinelearning.apple.com/research/normalizing-flows... 5/6/2026 05:30 AM 5/7/2026 05:31 AM apple-machine-learning Apple ML Research trafilatura [content type paper](/research/)published May 2026 Normalizing Flows with Iterative Denoising AuthorsTianrong Chen, Jiatao Gu, David Berthelot, Joshua... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"research\"]" [ref=e544]:
+            - cell "298288" [ref=e545]:
+              - link "298288" [ref=e546] [cursor=pointer]:
+                - /url: ../article/?id=298288
+            - cell "Normalizing Flows with Iterative Denoising" [ref=e547]
+            - cell "https://machinelearning.apple.com/research/normalizing-flows..." [ref=e548]:
+              - link "https://machinelearning.apple.com/research/normalizing-flows..." [ref=e549] [cursor=pointer]:
+                - /url: https://machinelearning.apple.com/research/normalizing-flows-iterative-denoising
+            - cell "5/6/2026 05:30 AM" [ref=e550]
+            - cell "5/7/2026 05:31 AM" [ref=e551]
+            - cell "apple-machine-learning" [ref=e552]:
+              - link "apple-machine-learning" [ref=e553] [cursor=pointer]:
+                - /url: "#"
+            - cell "Apple ML Research" [ref=e554]
+            - cell "trafilatura" [ref=e555]:
+              - link "trafilatura" [ref=e556] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e557]: trafilatura
+            - cell "[content type paper](/research/)published May 2026 Normalizing Flows with Iterative Denoising AuthorsTianrong Chen, Jiatao Gu, David Berthelot, Joshua..." [ref=e558]
+            - cell "ai-models" [ref=e559]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"research\"]" [ref=e560]
+          - 'row "298289 From Where Things Are to What They’re For: Benchmarking Spatial–Functional Intelligence for Multimodal LLMs https://machinelearning.apple.com/research/spatial 5/6/2026 05:30 AM 5/7/2026 05:31 AM apple-machine-learning Apple ML Research trafilatura True spatial intelligence for multimodal agents transcends low-level geometric perception, evolving from knowing where things are to understanding wha... ai-models [\"ai-models\",\"models\",\"agents\",\"benchmark\",\"video\"]" [ref=e561]':
+            - cell "298289" [ref=e562]:
+              - link "298289" [ref=e563] [cursor=pointer]:
+                - /url: ../article/?id=298289
+            - 'cell "From Where Things Are to What They’re For: Benchmarking Spatial–Functional Intelligence for Multimodal LLMs" [ref=e564]'
+            - cell "https://machinelearning.apple.com/research/spatial" [ref=e565]:
+              - link "https://machinelearning.apple.com/research/spatial" [ref=e566] [cursor=pointer]:
+                - /url: https://machinelearning.apple.com/research/spatial
+            - cell "5/6/2026 05:30 AM" [ref=e567]
+            - cell "5/7/2026 05:31 AM" [ref=e568]
+            - cell "apple-machine-learning" [ref=e569]:
+              - link "apple-machine-learning" [ref=e570] [cursor=pointer]:
+                - /url: "#"
+            - cell "Apple ML Research" [ref=e571]
+            - cell "trafilatura" [ref=e572]:
+              - link "trafilatura" [ref=e573] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e574]: trafilatura
+            - cell "True spatial intelligence for multimodal agents transcends low-level geometric perception, evolving from knowing where things are to understanding wha..." [ref=e575]
+            - cell "ai-models" [ref=e576]
+            - cell "[\"ai-models\",\"models\",\"agents\",\"benchmark\",\"video\"]" [ref=e577]
+          - 'row "298287 SpecMD: A Comprehensive Study on Speculative Expert Prefetching https://machinelearning.apple.com/research/specmd-expert-pre... 5/6/2026 05:30 AM 5/7/2026 05:31 AM apple-machine-learning Apple ML Research trafilatura [content type paper](/research/)published May 2026 SpecMD: A Comprehensive Study on Speculative Expert Prefetching AuthorsDuc Hoang, Ajay Jaiswal, Moh... ai-models [\"ai-models\",\"models\",\"benchmark\",\"research\"]" [ref=e578]':
+            - cell "298287" [ref=e579]:
+              - link "298287" [ref=e580] [cursor=pointer]:
+                - /url: ../article/?id=298287
+            - 'cell "SpecMD: A Comprehensive Study on Speculative Expert Prefetching" [ref=e581]'
+            - cell "https://machinelearning.apple.com/research/specmd-expert-pre..." [ref=e582]:
+              - link "https://machinelearning.apple.com/research/specmd-expert-pre..." [ref=e583] [cursor=pointer]:
+                - /url: https://machinelearning.apple.com/research/specmd-expert-prefetching
+            - cell "5/6/2026 05:30 AM" [ref=e584]
+            - cell "5/7/2026 05:31 AM" [ref=e585]
+            - cell "apple-machine-learning" [ref=e586]:
+              - link "apple-machine-learning" [ref=e587] [cursor=pointer]:
+                - /url: "#"
+            - cell "Apple ML Research" [ref=e588]
+            - cell "trafilatura" [ref=e589]:
+              - link "trafilatura" [ref=e590] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e591]: trafilatura
+            - 'cell "[content type paper](/research/)published May 2026 SpecMD: A Comprehensive Study on Speculative Expert Prefetching AuthorsDuc Hoang, Ajay Jaiswal, Moh..." [ref=e592]'
+            - cell "ai-models" [ref=e593]
+            - cell "[\"ai-models\",\"models\",\"benchmark\",\"research\"]" [ref=e594]
+          - 'row "296036 How frontier enterprises are building an AI advantage https://openai.com/index/introducing-b2b-signals 5/6/2026 05:30 AM 5/6/2026 09:21 PM openai-blog OpenAI Blog markdown_new OpenAI May 6, 2026 [Company](/news/company-announcements/)[Global Affairs](/news/global-affairs/) # How frontier enterprises are building an AI adv... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"research\"]" [ref=e595]':
+            - cell "296036" [ref=e596]:
+              - link "296036" [ref=e597] [cursor=pointer]:
+                - /url: ../article/?id=296036
+            - cell "How frontier enterprises are building an AI advantage" [ref=e598]
+            - cell "https://openai.com/index/introducing-b2b-signals" [ref=e599]:
+              - link "https://openai.com/index/introducing-b2b-signals" [ref=e600] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-b2b-signals
+            - cell "5/6/2026 05:30 AM" [ref=e601]
+            - cell "5/6/2026 09:21 PM" [ref=e602]
+            - cell "openai-blog" [ref=e603]:
+              - link "openai-blog" [ref=e604] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e605]
+            - cell "markdown_new" [ref=e606]:
+              - link "markdown_new" [ref=e607] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e608]: markdown_new
+            - 'cell "OpenAI May 6, 2026 [Company](/news/company-announcements/)[Global Affairs](/news/global-affairs/) # How frontier enterprises are building an AI adv..." [ref=e609]'
+            - cell "ai-models" [ref=e610]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"agents\",\"research\"]" [ref=e611]
+          - 'row "297350 Introducing ChatGPT Futures: Class of 2026 https://openai.com/index/introducing-chatgpt-futures-class-o... 5/6/2026 05:30 AM 5/7/2026 02:57 AM openai-blog OpenAI Blog markdown_new OpenAI May 6, 2026 [Company](/news/company-announcements/) # Introducing ChatGPT Futures: Class of 2026 [Meet the class of 2026(opens in a new win... ai-models [\"ai-models\",\"release\",\"models\",\"research\"]" [ref=e612]':
+            - cell "297350" [ref=e613]:
+              - link "297350" [ref=e614] [cursor=pointer]:
+                - /url: ../article/?id=297350
+            - 'cell "Introducing ChatGPT Futures: Class of 2026" [ref=e615]'
+            - cell "https://openai.com/index/introducing-chatgpt-futures-class-o..." [ref=e616]:
+              - link "https://openai.com/index/introducing-chatgpt-futures-class-o..." [ref=e617] [cursor=pointer]:
+                - /url: https://openai.com/index/introducing-chatgpt-futures-class-of-2026
+            - cell "5/6/2026 05:30 AM" [ref=e618]
+            - cell "5/7/2026 02:57 AM" [ref=e619]
+            - cell "openai-blog" [ref=e620]:
+              - link "openai-blog" [ref=e621] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e622]
+            - cell "markdown_new" [ref=e623]:
+              - link "markdown_new" [ref=e624] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e625]: markdown_new
+            - 'cell "OpenAI May 6, 2026 [Company](/news/company-announcements/) # Introducing ChatGPT Futures: Class of 2026 [Meet the class of 2026(opens in a new win..." [ref=e626]'
+            - cell "ai-models" [ref=e627]
+            - cell "[\"ai-models\",\"release\",\"models\",\"research\"]" [ref=e628]
+          - 'row "298616 Singular Bank helps bankers move fast with ChatGPT and Codex https://openai.com/index/singular-bank 5/6/2026 05:30 AM 5/7/2026 08:14 AM openai-blog OpenAI Blog markdown_new OpenAI May 6, 2026 # Singular Bank helps bankers move fast with ChatGPT and Codex Singular Bank built an internal assistant that analyzes portfolio... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"agents\",\"safety\",\"benchmark\"]" [ref=e629]':
+            - cell "298616" [ref=e630]:
+              - link "298616" [ref=e631] [cursor=pointer]:
+                - /url: ../article/?id=298616
+            - cell "Singular Bank helps bankers move fast with ChatGPT and Codex" [ref=e632]
+            - cell "https://openai.com/index/singular-bank" [ref=e633]:
+              - link "https://openai.com/index/singular-bank" [ref=e634] [cursor=pointer]:
+                - /url: https://openai.com/index/singular-bank
+            - cell "5/6/2026 05:30 AM" [ref=e635]
+            - cell "5/7/2026 08:14 AM" [ref=e636]
+            - cell "openai-blog" [ref=e637]:
+              - link "openai-blog" [ref=e638] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e639]
+            - cell "markdown_new" [ref=e640]:
+              - link "markdown_new" [ref=e641] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e642]: markdown_new
+            - 'cell "OpenAI May 6, 2026 # Singular Bank helps bankers move fast with ChatGPT and Codex Singular Bank built an internal assistant that analyzes portfolio..." [ref=e643]'
+            - cell "ai-models" [ref=e644]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"agents\",\"safety\",\"benchmark\"]" [ref=e645]
+          - 'row "298617 Uber uses OpenAI to help people earn smarter and book faster https://openai.com/index/uber 5/6/2026 05:30 AM 5/7/2026 08:14 AM openai-blog OpenAI Blog markdown_new OpenAI May 6, 2026 # Uber uses OpenAI to help people earn smarter and book faster Uber uses OpenAI to power AI assistants and voice features that h... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e646]':
+            - cell "298617" [ref=e647]:
+              - link "298617" [ref=e648] [cursor=pointer]:
+                - /url: ../article/?id=298617
+            - cell "Uber uses OpenAI to help people earn smarter and book faster" [ref=e649]
+            - cell "https://openai.com/index/uber" [ref=e650]:
+              - link "https://openai.com/index/uber" [ref=e651] [cursor=pointer]:
+                - /url: https://openai.com/index/uber
+            - cell "5/6/2026 05:30 AM" [ref=e652]
+            - cell "5/7/2026 08:14 AM" [ref=e653]
+            - cell "openai-blog" [ref=e654]:
+              - link "openai-blog" [ref=e655] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e656]
+            - cell "markdown_new" [ref=e657]:
+              - link "markdown_new" [ref=e658] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e659]: markdown_new
+            - 'cell "OpenAI May 6, 2026 # Uber uses OpenAI to help people earn smarter and book faster Uber uses OpenAI to power AI assistants and voice features that h..." [ref=e660]'
+            - cell "ai-models" [ref=e661]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"safety\",\"benchmark\"]" [ref=e662]
+          - row "291812 datasette-referrer-policy 0.1 https://simonwillison.net/2026/May/5/datasette-referrer-poli... 5/6/2026 05:14 AM 5/6/2026 07:29 AM simon-willison Simon Willison trafilatura 5th May 2026 The OpenStreetMap tiles on the Datasette [global-power-plants demo](https://datasette.io/global-power-plants/global-power-plants) weren't... ai-models [\"ai-models\",\"models\",\"open-source\"]" [ref=e663]:
+            - cell "291812" [ref=e664]:
+              - link "291812" [ref=e665] [cursor=pointer]:
+                - /url: ../article/?id=291812
+            - cell "datasette-referrer-policy 0.1" [ref=e666]
+            - cell "https://simonwillison.net/2026/May/5/datasette-referrer-poli..." [ref=e667]:
+              - link "https://simonwillison.net/2026/May/5/datasette-referrer-poli..." [ref=e668] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/5/datasette-referrer-policy/#atom-everything
+            - cell "5/6/2026 05:14 AM" [ref=e669]
+            - cell "5/6/2026 07:29 AM" [ref=e670]
+            - cell "simon-willison" [ref=e671]:
+              - link "simon-willison" [ref=e672] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e673]
+            - cell "trafilatura" [ref=e674]:
+              - link "trafilatura" [ref=e675] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e676]: trafilatura
+            - cell "5th May 2026 The OpenStreetMap tiles on the Datasette [global-power-plants demo](https://datasette.io/global-power-plants/global-power-plants) weren't..." [ref=e677]
+            - cell "ai-models" [ref=e678]
+            - cell "[\"ai-models\",\"models\",\"open-source\"]" [ref=e679]
+          - row "291813 Our AI started a cafe in Stockholm https://simonwillison.net/2026/May/5/our-ai-started-a-cafe-i... 5/6/2026 03:44 AM 5/6/2026 07:29 AM simon-willison Simon Willison trafilatura 5th May 2026 - Link Blog [Our AI started a cafe in Stockholm](https://andonlabs.com/blog/ai-cafe-stockholm) ([via](https://news.ycombinator.com/item?i... ai-models [\"ai-models\",\"release\",\"models\"]" [ref=e680]:
+            - cell "291813" [ref=e681]:
+              - link "291813" [ref=e682] [cursor=pointer]:
+                - /url: ../article/?id=291813
+            - cell "Our AI started a cafe in Stockholm" [ref=e683]
+            - cell "https://simonwillison.net/2026/May/5/our-ai-started-a-cafe-i..." [ref=e684]:
+              - link "https://simonwillison.net/2026/May/5/our-ai-started-a-cafe-i..." [ref=e685] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/5/our-ai-started-a-cafe-in-stockholm/#atom-everything
+            - cell "5/6/2026 03:44 AM" [ref=e686]
+            - cell "5/6/2026 07:29 AM" [ref=e687]
+            - cell "simon-willison" [ref=e688]:
+              - link "simon-willison" [ref=e689] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e690]
+            - cell "trafilatura" [ref=e691]:
+              - link "trafilatura" [ref=e692] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e693]: trafilatura
+            - cell "5th May 2026 - Link Blog [Our AI started a cafe in Stockholm](https://andonlabs.com/blog/ai-cafe-stockholm) ([via](https://news.ycombinator.com/item?i..." [ref=e694]
+            - cell "ai-models" [ref=e695]
+            - cell "[\"ai-models\",\"release\",\"models\"]" [ref=e696]
+          - row "289436 Google is partnering with XPRIZE and Range Media Partners on the $3.5 million Future Vision film competition. https://blog.google/innovation-and-ai/technology/ai/future-v... 5/5/2026 09:30 PM 5/5/2026 11:49 PM google-ai-blog Google AI Blog trafilatura Google is partnering with XPRIZE and Range Media Partners through our 100 ZEROS initiative to support the Future Vision XPRIZE, a $3.5 million global ... ai-models [\"ai-models\",\"general\"]" [ref=e697]:
+            - cell "289436" [ref=e698]:
+              - link "289436" [ref=e699] [cursor=pointer]:
+                - /url: ../article/?id=289436
+            - cell "Google is partnering with XPRIZE and Range Media Partners on the $3.5 million Future Vision film competition." [ref=e700]
+            - cell "https://blog.google/innovation-and-ai/technology/ai/future-v..." [ref=e701]:
+              - link "https://blog.google/innovation-and-ai/technology/ai/future-v..." [ref=e702] [cursor=pointer]:
+                - /url: https://blog.google/innovation-and-ai/technology/ai/future-vision-film-competition-xprize/
+            - cell "5/5/2026 09:30 PM" [ref=e703]
+            - cell "5/5/2026 11:49 PM" [ref=e704]
+            - cell "google-ai-blog" [ref=e705]:
+              - link "google-ai-blog" [ref=e706] [cursor=pointer]:
+                - /url: "#"
+            - cell "Google AI Blog" [ref=e707]
+            - cell "trafilatura" [ref=e708]:
+              - link "trafilatura" [ref=e709] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e710]: trafilatura
+            - cell "Google is partnering with XPRIZE and Range Media Partners through our 100 ZEROS initiative to support the Future Vision XPRIZE, a $3.5 million global ..." [ref=e711]
+            - cell "ai-models" [ref=e712]
+            - cell "[\"ai-models\",\"general\"]" [ref=e713]
+          - 'row "289421 The Context Course: a FREE course on building agents with agents #learning #ai #agents https://www.youtube.com/shorts/ULiuKvI0qg0 5/5/2026 07:55 PM 5/5/2026 09:11 PM hugging-face Hugging Face youtube Introducing the context course: a free course on doing ML with agent context. Sign up: https://hf-learn.short.gy/join-context-course You will learn ... ai-models [\"ai-models\",\"release\",\"models\",\"agents\",\"video\"]" [ref=e714]':
+            - cell "289421" [ref=e715]:
+              - link "289421" [ref=e716] [cursor=pointer]:
+                - /url: ../article/?id=289421
+            - 'cell "The Context Course: a FREE course on building agents with agents #learning #ai #agents" [ref=e717]'
+            - cell "https://www.youtube.com/shorts/ULiuKvI0qg0" [ref=e718]:
+              - link "https://www.youtube.com/shorts/ULiuKvI0qg0" [ref=e719] [cursor=pointer]:
+                - /url: https://www.youtube.com/shorts/ULiuKvI0qg0
+            - cell "5/5/2026 07:55 PM" [ref=e720]
+            - cell "5/5/2026 09:11 PM" [ref=e721]
+            - cell "hugging-face" [ref=e722]:
+              - link "hugging-face" [ref=e723] [cursor=pointer]:
+                - /url: "#"
+            - cell "Hugging Face" [ref=e724]
+            - cell "youtube" [ref=e725]:
+              - link "youtube" [ref=e726] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e727]: youtube
+            - 'cell "Introducing the context course: a free course on doing ML with agent context. Sign up: https://hf-learn.short.gy/join-context-course You will learn ..." [ref=e728]'
+            - cell "ai-models" [ref=e729]
+            - cell "[\"ai-models\",\"release\",\"models\",\"agents\",\"video\"]" [ref=e730]
+          - 'row "289557 GPT-5.5 Instant: smarter, clearer, and more personalized https://openai.com/index/gpt-5-5-instant 5/5/2026 03:30 PM 5/5/2026 11:51 PM openai-blog OpenAI Blog markdown_new ai-models [\"ai-models\",\"release\",\"models\",\"benchmark\",\"research\"]" [ref=e731]':
+            - cell "289557" [ref=e732]:
+              - link "289557" [ref=e733] [cursor=pointer]:
+                - /url: ../article/?id=289557
+            - 'cell "GPT-5.5 Instant: smarter, clearer, and more personalized" [ref=e734]'
+            - cell "https://openai.com/index/gpt-5-5-instant" [ref=e735]:
+              - link "https://openai.com/index/gpt-5-5-instant" [ref=e736] [cursor=pointer]:
+                - /url: https://openai.com/index/gpt-5-5-instant
+            - cell "5/5/2026 03:30 PM" [ref=e737]
+            - cell "5/5/2026 11:51 PM" [ref=e738]
+            - cell "openai-blog" [ref=e739]:
+              - link "openai-blog" [ref=e740] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e741]
+            - cell "markdown_new" [ref=e742]:
+              - link "markdown_new" [ref=e743] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e744]: markdown_new
+            - cell [ref=e745]
+            - cell "ai-models" [ref=e746]
+            - cell "[\"ai-models\",\"release\",\"models\",\"benchmark\",\"research\"]" [ref=e747]
+          - 'row "289556 GPT-5.5 Instant System Card https://openai.com/index/gpt-5-5-instant-system-card 5/5/2026 03:30 PM 5/5/2026 11:51 PM openai-blog OpenAI Blog markdown_new OpenAI May 5, 2026 [Safety](/news/safety-alignment/)[Publication](/research/index/publication/) # GPT‑5.5 Instant System Card [Read the System Car... ai-models [\"ai-models\",\"models\",\"safety\",\"research\"]" [ref=e748]':
+            - cell "289556" [ref=e749]:
+              - link "289556" [ref=e750] [cursor=pointer]:
+                - /url: ../article/?id=289556
+            - cell "GPT-5.5 Instant System Card" [ref=e751]
+            - cell "https://openai.com/index/gpt-5-5-instant-system-card" [ref=e752]:
+              - link "https://openai.com/index/gpt-5-5-instant-system-card" [ref=e753] [cursor=pointer]:
+                - /url: https://openai.com/index/gpt-5-5-instant-system-card
+            - cell "5/5/2026 03:30 PM" [ref=e754]
+            - cell "5/5/2026 11:51 PM" [ref=e755]
+            - cell "openai-blog" [ref=e756]:
+              - link "openai-blog" [ref=e757] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e758]
+            - cell "markdown_new" [ref=e759]:
+              - link "markdown_new" [ref=e760] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e761]: markdown_new
+            - 'cell "OpenAI May 5, 2026 [Safety](/news/safety-alignment/)[Publication](/research/index/publication/) # GPT‑5.5 Instant System Card [Read the System Car..." [ref=e762]'
+            - cell "ai-models" [ref=e763]
+            - cell "[\"ai-models\",\"models\",\"safety\",\"research\"]" [ref=e764]
+          - 'row "296037 Unlocking large scale AI training networks with MRC (Multipath Reliable Connection) https://openai.com/index/mrc-supercomputer-networking 5/5/2026 03:30 PM 5/6/2026 09:21 PM openai-blog OpenAI Blog markdown_new OpenAI May 5, 2026 [Engineering](/news/engineering/) # Supercomputer networking to accelerate large scale AI training Loading… Share Frontier mo... ai-models [\"ai-models\",\"release\",\"models\",\"research\"]" [ref=e765]':
+            - cell "296037" [ref=e766]:
+              - link "296037" [ref=e767] [cursor=pointer]:
+                - /url: ../article/?id=296037
+            - cell "Unlocking large scale AI training networks with MRC (Multipath Reliable Connection)" [ref=e768]
+            - cell "https://openai.com/index/mrc-supercomputer-networking" [ref=e769]:
+              - link "https://openai.com/index/mrc-supercomputer-networking" [ref=e770] [cursor=pointer]:
+                - /url: https://openai.com/index/mrc-supercomputer-networking
+            - cell "5/5/2026 03:30 PM" [ref=e771]
+            - cell "5/6/2026 09:21 PM" [ref=e772]
+            - cell "openai-blog" [ref=e773]:
+              - link "openai-blog" [ref=e774] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e775]
+            - cell "markdown_new" [ref=e776]:
+              - link "markdown_new" [ref=e777] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e778]: markdown_new
+            - 'cell "OpenAI May 5, 2026 [Engineering](/news/engineering/) # Supercomputer networking to accelerate large scale AI training Loading… Share Frontier mo..." [ref=e779]'
+            - cell "ai-models" [ref=e780]
+            - cell "[\"ai-models\",\"release\",\"models\",\"research\"]" [ref=e781]
+          - row "290500 datasette-llm 0.1a7 https://simonwillison.net/2026/May/5/datasette-llm/#atom-eve... 5/5/2026 07:26 AM 5/6/2026 02:29 AM simon-willison Simon Willison trafilatura 5th May 2026 - Mechanism for [configuring default options]for specific models. Part of Datasette's evolving support mechanism for plugins that use LLM... ai-models [\"ai-models\",\"models\",\"open-source\"]" [ref=e782]:
+            - cell "290500" [ref=e783]:
+              - link "290500" [ref=e784] [cursor=pointer]:
+                - /url: ../article/?id=290500
+            - cell "datasette-llm 0.1a7" [ref=e785]
+            - cell "https://simonwillison.net/2026/May/5/datasette-llm/#atom-eve..." [ref=e786]:
+              - link "https://simonwillison.net/2026/May/5/datasette-llm/#atom-eve..." [ref=e787] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/5/datasette-llm/#atom-everything
+            - cell "5/5/2026 07:26 AM" [ref=e788]
+            - cell "5/6/2026 02:29 AM" [ref=e789]
+            - cell "simon-willison" [ref=e790]:
+              - link "simon-willison" [ref=e791] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e792]
+            - cell "trafilatura" [ref=e793]:
+              - link "trafilatura" [ref=e794] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e795]: trafilatura
+            - cell "5th May 2026 - Mechanism for [configuring default options]for specific models. Part of Datasette's evolving support mechanism for plugins that use LLM..." [ref=e796]
+            - cell "ai-models" [ref=e797]
+            - cell "[\"ai-models\",\"models\",\"open-source\"]" [ref=e798]
+          - row "290501 llm-echo 0.5a0 https://simonwillison.net/2026/May/5/llm-echo/#atom-everythi... 5/5/2026 07:01 AM 5/6/2026 02:29 AM simon-willison Simon Willison trafilatura 5th May 2026 - New -o thinking 1 option to help test against[LLM 0.32a0]and higher. This plugin provides a fake model called \"echo\" for LLM which does... ai-models [\"ai-models\",\"models\"]" [ref=e799]:
+            - cell "290501" [ref=e800]:
+              - link "290501" [ref=e801] [cursor=pointer]:
+                - /url: ../article/?id=290501
+            - cell "llm-echo 0.5a0" [ref=e802]
+            - cell "https://simonwillison.net/2026/May/5/llm-echo/#atom-everythi..." [ref=e803]:
+              - link "https://simonwillison.net/2026/May/5/llm-echo/#atom-everythi..." [ref=e804] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/5/llm-echo/#atom-everything
+            - cell "5/5/2026 07:01 AM" [ref=e805]
+            - cell "5/6/2026 02:29 AM" [ref=e806]
+            - cell "simon-willison" [ref=e807]:
+              - link "simon-willison" [ref=e808] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e809]
+            - cell "trafilatura" [ref=e810]:
+              - link "trafilatura" [ref=e811] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e812]: trafilatura
+            - cell "5th May 2026 - New -o thinking 1 option to help test against[LLM 0.32a0]and higher. This plugin provides a fake model called \"echo\" for LLM which does..." [ref=e813]
+            - cell "ai-models" [ref=e814]
+            - cell "[\"ai-models\",\"models\"]" [ref=e815]
+          - row "286620 Quoting John Gruber https://simonwillison.net/2026/May/5/john-gruber/#atom-every... 5/5/2026 06:16 AM 5/5/2026 10:52 AM simon-willison Simon Willison trafilatura 5th May 2026 So it’s well known that Y Combinator owns some stake in OpenAI. But how big is that stake? This seems like devilishly difficult informati... ai-models [\"ai-models\",\"models\"]" [ref=e816]:
+            - cell "286620" [ref=e817]:
+              - link "286620" [ref=e818] [cursor=pointer]:
+                - /url: ../article/?id=286620
+            - cell "Quoting John Gruber" [ref=e819]
+            - cell "https://simonwillison.net/2026/May/5/john-gruber/#atom-every..." [ref=e820]:
+              - link "https://simonwillison.net/2026/May/5/john-gruber/#atom-every..." [ref=e821] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/5/john-gruber/#atom-everything
+            - cell "5/5/2026 06:16 AM" [ref=e822]
+            - cell "5/5/2026 10:52 AM" [ref=e823]
+            - cell "simon-willison" [ref=e824]:
+              - link "simon-willison" [ref=e825] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e826]
+            - cell "trafilatura" [ref=e827]:
+              - link "trafilatura" [ref=e828] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e829]: trafilatura
+            - cell "5th May 2026 So it’s well known that Y Combinator owns some stake in OpenAI. But how big is that stake? This seems like devilishly difficult informati..." [ref=e830]
+            - cell "ai-models" [ref=e831]
+            - cell "[\"ai-models\",\"models\"]" [ref=e832]
+          - 'row "290490 Stochastic KV Routing: Enabling Adaptive Depth-Wise Cache Sharing https://machinelearning.apple.com/research/stochastic-kv-rou... 5/5/2026 05:30 AM 5/6/2026 02:29 AM apple-machine-learning Apple ML Research trafilatura [content type paper](/research/)published May 2026 Stochastic KV Routing: Enabling Adaptive Depth-Wise Cache Sharing AuthorsAnastasiia Filippova, Davi... ai-models [\"ai-models\",\"models\",\"benchmark\",\"research\"]" [ref=e833]':
+            - cell "290490" [ref=e834]:
+              - link "290490" [ref=e835] [cursor=pointer]:
+                - /url: ../article/?id=290490
+            - 'cell "Stochastic KV Routing: Enabling Adaptive Depth-Wise Cache Sharing" [ref=e836]'
+            - cell "https://machinelearning.apple.com/research/stochastic-kv-rou..." [ref=e837]:
+              - link "https://machinelearning.apple.com/research/stochastic-kv-rou..." [ref=e838] [cursor=pointer]:
+                - /url: https://machinelearning.apple.com/research/stochastic-kv-routing
+            - cell "5/5/2026 05:30 AM" [ref=e839]
+            - cell "5/6/2026 02:29 AM" [ref=e840]
+            - cell "apple-machine-learning" [ref=e841]:
+              - link "apple-machine-learning" [ref=e842] [cursor=pointer]:
+                - /url: "#"
+            - cell "Apple ML Research" [ref=e843]
+            - cell "trafilatura" [ref=e844]:
+              - link "trafilatura" [ref=e845] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e846]: trafilatura
+            - 'cell "[content type paper](/research/)published May 2026 Stochastic KV Routing: Enabling Adaptive Depth-Wise Cache Sharing AuthorsAnastasiia Filippova, Davi..." [ref=e847]'
+            - cell "ai-models" [ref=e848]
+            - cell "[\"ai-models\",\"models\",\"benchmark\",\"research\"]" [ref=e849]
+          - 'row "310217 Advancing youth safety and wellbeing in EMEA https://openai.com/index/advancing-youth-safety-in-emea 5/5/2026 05:30 AM 5/9/2026 03:03 AM openai-blog OpenAI Blog markdown_new OpenAI May 5, 2026 [Safety](/news/safety-alignment/)[Global Affairs](/news/global-affairs/) # Advancing youth safety and wellbeing in EMEA Announc... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"safety\",\"benchmark\"]" [ref=e850]':
+            - cell "310217" [ref=e851]:
+              - link "310217" [ref=e852] [cursor=pointer]:
+                - /url: ../article/?id=310217
+            - cell "Advancing youth safety and wellbeing in EMEA" [ref=e853]
+            - cell "https://openai.com/index/advancing-youth-safety-in-emea" [ref=e854]:
+              - link "https://openai.com/index/advancing-youth-safety-in-emea" [ref=e855] [cursor=pointer]:
+                - /url: https://openai.com/index/advancing-youth-safety-in-emea
+            - cell "5/5/2026 05:30 AM" [ref=e856]
+            - cell "5/9/2026 03:03 AM" [ref=e857]
+            - cell "openai-blog" [ref=e858]:
+              - link "openai-blog" [ref=e859] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e860]
+            - cell "markdown_new" [ref=e861]:
+              - link "markdown_new" [ref=e862] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e863]: markdown_new
+            - 'cell "OpenAI May 5, 2026 [Safety](/news/safety-alignment/)[Global Affairs](/news/global-affairs/) # Advancing youth safety and wellbeing in EMEA Announc..." [ref=e864]'
+            - cell "ai-models" [ref=e865]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"api\",\"safety\",\"benchmark\"]" [ref=e866]
+          - 'row "289558 New ways to buy ChatGPT ads https://openai.com/index/new-ways-to-buy-chatgpt-ads 5/5/2026 05:30 AM 5/5/2026 11:51 PM openai-blog OpenAI Blog markdown_new OpenAI May 5, 2026 [Product](/news/product-releases/)[ChatGPT](/stories/chatgpt/) # New ways to buy ChatGPT ads We’re expanding ChatGPT ads with n... ai-models [\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\"]" [ref=e867]':
+            - cell "289558" [ref=e868]:
+              - link "289558" [ref=e869] [cursor=pointer]:
+                - /url: ../article/?id=289558
+            - cell "New ways to buy ChatGPT ads" [ref=e870]
+            - cell "https://openai.com/index/new-ways-to-buy-chatgpt-ads" [ref=e871]:
+              - link "https://openai.com/index/new-ways-to-buy-chatgpt-ads" [ref=e872] [cursor=pointer]:
+                - /url: https://openai.com/index/new-ways-to-buy-chatgpt-ads
+            - cell "5/5/2026 05:30 AM" [ref=e873]
+            - cell "5/5/2026 11:51 PM" [ref=e874]
+            - cell "openai-blog" [ref=e875]:
+              - link "openai-blog" [ref=e876] [cursor=pointer]:
+                - /url: "#"
+            - cell "OpenAI Blog" [ref=e877]
+            - cell "markdown_new" [ref=e878]:
+              - link "markdown_new" [ref=e879] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e880]: markdown_new
+            - 'cell "OpenAI May 5, 2026 [Product](/news/product-releases/)[ChatGPT](/stories/chatgpt/) # New ways to buy ChatGPT ads We’re expanding ChatGPT ads with n..." [ref=e881]'
+            - cell "ai-models" [ref=e882]
+            - cell "[\"ai-models\",\"release\",\"models\",\"api\",\"agents\",\"benchmark\"]" [ref=e883]
+          - row "285312 Granite 4.1 3B SVG Pelican Gallery https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelic... 5/5/2026 05:19 AM 5/5/2026 05:35 AM simon-willison Simon Willison trafilatura 4th May 2026 - Link Blog [Granite 4.1 3B SVG Pelican Gallery](https://simonw.github.io/granite-4.1-3b-gguf-pelicans/). IBM released their [Granite 4.1... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"research\"]" [ref=e884]:
+            - cell "285312" [ref=e885]:
+              - link "285312" [ref=e886] [cursor=pointer]:
+                - /url: ../article/?id=285312
+            - cell "Granite 4.1 3B SVG Pelican Gallery" [ref=e887]
+            - cell "https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelic..." [ref=e888]:
+              - link "https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelic..." [ref=e889] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/4/granite-41-3b-svg-pelican-gallery/#atom-everything
+            - cell "5/5/2026 05:19 AM" [ref=e890]
+            - cell "5/5/2026 05:35 AM" [ref=e891]
+            - cell "simon-willison" [ref=e892]:
+              - link "simon-willison" [ref=e893] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e894]
+            - cell "trafilatura" [ref=e895]:
+              - link "trafilatura" [ref=e896] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e897]: trafilatura
+            - cell "4th May 2026 - Link Blog [Granite 4.1 3B SVG Pelican Gallery](https://simonw.github.io/granite-4.1-3b-gguf-pelicans/). IBM released their [Granite 4.1..." [ref=e898]
+            - cell "ai-models" [ref=e899]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"research\"]" [ref=e900]
+          - row "285313 Quoting Andy Masley https://simonwillison.net/2026/May/4/andy-masley/#atom-every... 5/5/2026 04:21 AM 5/5/2026 05:35 AM simon-willison Simon Willison trafilatura 4th May 2026 [...] Between 2000 and 2024, farmers sold in total a Colorado-sized chunk of land all on their own, 77 times all land on data center prop... ai-models [\"ai-models\",\"models\"]" [ref=e901]:
+            - cell "285313" [ref=e902]:
+              - link "285313" [ref=e903] [cursor=pointer]:
+                - /url: ../article/?id=285313
+            - cell "Quoting Andy Masley" [ref=e904]
+            - cell "https://simonwillison.net/2026/May/4/andy-masley/#atom-every..." [ref=e905]:
+              - link "https://simonwillison.net/2026/May/4/andy-masley/#atom-every..." [ref=e906] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/4/andy-masley/#atom-everything
+            - cell "5/5/2026 04:21 AM" [ref=e907]
+            - cell "5/5/2026 05:35 AM" [ref=e908]
+            - cell "simon-willison" [ref=e909]:
+              - link "simon-willison" [ref=e910] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e911]
+            - cell "trafilatura" [ref=e912]:
+              - link "trafilatura" [ref=e913] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e914]: trafilatura
+            - cell "4th May 2026 [...] Between 2000 and 2024, farmers sold in total a Colorado-sized chunk of land all on their own, 77 times all land on data center prop..." [ref=e915]
+            - cell "ai-models" [ref=e916]
+            - cell "[\"ai-models\",\"models\"]" [ref=e917]
+          - row "285314 April 2026 newsletter https://simonwillison.net/2026/May/4/april-newsletter/#atom-... 5/5/2026 04:08 AM 5/5/2026 05:35 AM simon-willison Simon Willison trafilatura 4th May 2026 I just sent out the April edition of my [sponsors-only monthly newsletter](https://github.com/sponsors/simonw/). If you are a sponsor (or... ai-models [\"ai-models\",\"release\",\"models\",\"open-source\",\"research\"]" [ref=e918]:
+            - cell "285314" [ref=e919]:
+              - link "285314" [ref=e920] [cursor=pointer]:
+                - /url: ../article/?id=285314
+            - cell "April 2026 newsletter" [ref=e921]
+            - cell "https://simonwillison.net/2026/May/4/april-newsletter/#atom-..." [ref=e922]:
+              - link "https://simonwillison.net/2026/May/4/april-newsletter/#atom-..." [ref=e923] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/4/april-newsletter/#atom-everything
+            - cell "5/5/2026 04:08 AM" [ref=e924]
+            - cell "5/5/2026 05:35 AM" [ref=e925]
+            - cell "simon-willison" [ref=e926]:
+              - link "simon-willison" [ref=e927] [cursor=pointer]:
+                - /url: "#"
+            - cell "Simon Willison" [ref=e928]
+            - cell "trafilatura" [ref=e929]:
+              - link "trafilatura" [ref=e930] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e931]: trafilatura
+            - cell "4th May 2026 I just sent out the April edition of my [sponsors-only monthly newsletter](https://github.com/sponsors/simonw/). If you are a sponsor (or..." [ref=e932]
+            - cell "ai-models" [ref=e933]
+            - cell "[\"ai-models\",\"release\",\"models\",\"open-source\",\"research\"]" [ref=e934]
+      - generic [ref=e935]:
+        - button "← Prev" [disabled] [ref=e936]
+        - generic [ref=e937]: 1-50 of 500 rows (Page 1/10)
+        - button "Next →" [ref=e938] [cursor=pointer]

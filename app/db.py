@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS sources (
   source_id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
   feed_url TEXT NOT NULL,
+  favicon TEXT,
   default_category TEXT NOT NULL,
   enabled INTEGER NOT NULL DEFAULT 1
 );

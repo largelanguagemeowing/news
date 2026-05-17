@@ -141,7 +141,7 @@ def build_sources(
 ) -> list[dict[str, Any]]:
     rows = conn.execute(
         """
-        SELECT s.source_id, s.name, s.feed_url, sh.last_success_at, sh.last_item_at,
+        SELECT s.source_id, s.name, s.feed_url, s.favicon, sh.last_success_at, sh.last_item_at,
                sh.consecutive_failures, sh.avg_latency_ms, sh.last_error,
                sh.auto_disabled_until,
                COALESCE((
@@ -193,6 +193,7 @@ def build_sources(
                 "source_id": row["source_id"],
                 "name": row["name"],
                 "feed_url": row["feed_url"],
+                "favicon": row["favicon"],
                 "status": status,
                 "last_success_at": row["last_success_at"],
                 "last_item_at": row["last_item_at"],

@@ -1,0 +1,75 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Article" [ref=e4] [cursor=pointer]:
+        - /url: ../
+        - img [ref=e6]
+        - generic [ref=e8]: Article
+      - navigation "Main navigation" [ref=e9]:
+        - link "Feed" [ref=e10] [cursor=pointer]:
+          - /url: ../
+          - img [ref=e11]
+          - generic [ref=e14]: Feed
+        - link "Health" [ref=e15] [cursor=pointer]:
+          - /url: ../health/
+          - img [ref=e16]
+          - generic [ref=e19]: Health
+        - link "Tags" [ref=e20] [cursor=pointer]:
+          - /url: ../tags/
+          - img [ref=e21]
+          - generic [ref=e24]: Tags
+        - link "RSS" [ref=e25] [cursor=pointer]:
+          - /url: ../rss/
+          - img [ref=e26]
+          - generic [ref=e30]: RSS
+        - link "DB" [ref=e31] [cursor=pointer]:
+          - /url: ../db/
+          - img [ref=e32]
+          - generic [ref=e36]: DB
+      - button "Toggle theme" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - main [ref=e41]:
+    - generic [ref=e42]:
+      - link "← Back" [ref=e44] [cursor=pointer]:
+        - /url: javascript:history.back()
+      - generic [ref=e45]:
+        - heading "Quoting Luke Curley" [level=1] [ref=e46]
+        - generic [ref=e47]:
+          - complementary [ref=e48]:
+            - generic [ref=e49]:
+              - generic [ref=e50]: Identification
+              - generic [ref=e51]: "#312474"
+            - generic [ref=e52]:
+              - generic [ref=e53]: Source
+              - link "Simon Willison" [ref=e55] [cursor=pointer]:
+                - /url: ../?source=simon-willison
+            - generic [ref=e56]:
+              - generic [ref=e57]: Topic
+              - link "ai-models" [ref=e59] [cursor=pointer]:
+                - /url: ../?topic=ai-models
+            - generic [ref=e60]:
+              - generic [ref=e61]: Extraction
+              - generic [ref=e62]: trafilatura
+            - generic [ref=e63]:
+              - generic [ref=e64]: Published
+              - generic [ref=e65]: May 9, 2026, 6:33 AM
+            - generic [ref=e66]:
+              - generic [ref=e67]: Fetched
+              - generic [ref=e68]: May 9, 2026, 10:42 AM
+            - generic [ref=e69]:
+              - generic [ref=e70]: Original
+              - link "Open article ↗" [ref=e72] [cursor=pointer]:
+                - /url: https://simonwillison.net/2026/May/9/luke-curley/#atom-everything
+            - generic [ref=e73]:
+              - generic [ref=e74]: Tags
+              - generic [ref=e75]:
+                - link "ai-models" [ref=e76] [cursor=pointer]:
+                  - /url: ../?tag=ai-models
+                - link "models" [ref=e77] [cursor=pointer]:
+                  - /url: ../?tag=models
+                - link "api" [ref=e78] [cursor=pointer]:
+                  - /url: ../?tag=api
+                - link "agents" [ref=e79] [cursor=pointer]:
+                  - /url: ../?tag=agents
+          - generic [ref=e81]: "9th May 2026 WebRTC is designed to degrade and drop my prompt during poor network conditions. wtf my dude WebRTC aggressively drops audio packets to keep latency low. If you’ve ever heard distorted audio on a conference call, that’s WebRTC baybee. The idea is that conference calls depend on rapid back-and-forth, so pausing to wait for audio is unacceptable. …but as a user, I would much rather wait an extra 200ms for my slow/expensive prompt to be accurate. After all, I’m paying good money to boil the ocean, and a garbage prompt means a garbage response. It’s not like LLMs are particularly responsive anyway. But I’m not allowed to wait. It’s impossible to even retransmit a WebRTC audio packet within a browser; we tried at Discord. The implementation is hard-coded for real-time latency or else. — [Luke Curley](https://moq.dev/blog/webrtc-is-the-problem/), OpenAI’s WebRTC Problem, in response to [How OpenAI delivers low-latency voice AI at scale](https://openai.com/index/delivering-low-latency-voice-ai-at-scale/) Recent articles [Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026"
+  - button "Back to top": ↑
