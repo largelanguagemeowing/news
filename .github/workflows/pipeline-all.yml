@@ -2,8 +2,6 @@ name: pipeline-all
 run-name: "pipeline-all @ ${{ github.ref_name }}"
 
 on:
-  schedule:
-    - cron: "*/30 * * * *"
   workflow_dispatch:
     inputs:
       pipeline_source:
