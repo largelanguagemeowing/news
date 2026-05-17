@@ -179,7 +179,7 @@ jobs:
             echo "No data changes to commit."
           else
             # Pull latest changes to avoid conflicts
-            git pull --rebase || echo "Rebase had conflicts, attempting to continue"
+            git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
             
             # Commit changes
             if [ "${{ steps.backfill.outcome }}" = "success" ] && [ "${{ inputs.enable_backfill }}" = "true" ]; then
@@ -187,6 +187,6 @@ jobs:
             else
               COMMIT_MSG="chore(data): update pipeline artifacts"
             fi
-            git commit -m "$COMMIT_MSG"
-            git push
+            git commit -m "$COMMIT_MSG" || { echo "ERROR: Commit failed"; exit 1; }
+            git push || { echo "ERROR: Push failed"; exit 1; }
           fi
