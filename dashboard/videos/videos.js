@@ -24,6 +24,8 @@ function getYouTubeId(url) {
   try {
     const u = new URL(url);
     if (u.hostname === 'youtu.be') return u.pathname.slice(1);
+    const shortsMatch = u.pathname.match(/^\/shorts\/([a-zA-Z0-9_-]+)/);
+    if (shortsMatch) return shortsMatch[1];
     return u.searchParams.get('v');
   } catch {
     return null;
