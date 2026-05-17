@@ -95,27 +95,23 @@ jobs:
             uv run python -m app.jobs.fetch_pipeline
           fi
 
-      - name: Debug git state
-        run: |
-          echo "=== Git status ==="
-          git status
-          echo "=== Git diff --stat ==="
-          git diff --stat
-          echo "=== Git diff --stat --cached ==="
-          git diff --stat --cached
-
       - name: Commit and push data changes
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet data/news.db data/status; then
+          # Stage data files and lockfile
+          git add data/news.db data/status uv.lock
+
+          # Check if there are changes to commit (staged changes)
+          if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git stash -k -u || true
+            # Disconnect staged changes from index by storing in temp commit, then rebase
+            git stash push -m "temp-stash" || true
             git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
-            git add data/news.db data/status
+            git stash pop || true
             git commit -m "chore(data): save fetch pipeline progress" || { echo "ERROR: Commit failed"; exit 1; }
             git push || { echo "ERROR: Push failed"; exit 1; }
           fi
