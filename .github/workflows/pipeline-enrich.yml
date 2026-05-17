@@ -118,10 +118,18 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news.db data/status
           
+          # Stage data files and lockfile
+          git add data/news.db data/status uv.lock
+
+          # Check if there are changes to commit (staged changes)
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
+            # Disconnect staged changes from index by storing in temp commit, then rebase
+            git stash push -m "temp-stash" || true
             git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
+            git stash pop || true
+            git add data/news.db data/status
             git commit -m "chore(data): save enrich pipeline progress" || { echo "ERROR: Commit failed"; exit 1; }
             git push || { echo "ERROR: Push failed"; exit 1; }
           fi
