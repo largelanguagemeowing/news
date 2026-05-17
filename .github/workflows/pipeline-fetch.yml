@@ -112,6 +112,7 @@ jobs:
             git stash push -m "temp-stash" || true
             git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
             git stash pop || true
+            git add data/news.db data/status
             git commit -m "chore(data): save fetch pipeline progress" || { echo "ERROR: Commit failed"; exit 1; }
             git push || { echo "ERROR: Push failed"; exit 1; }
           fi
