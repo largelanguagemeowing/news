@@ -95,6 +95,15 @@ jobs:
             uv run python -m app.jobs.fetch_pipeline
           fi
 
+      - name: Debug git state
+        run: |
+          echo "=== Git status ==="
+          git status
+          echo "=== Git diff --stat ==="
+          git diff --stat
+          echo "=== Git diff --stat --cached ==="
+          git diff --stat --cached
+
       - name: Commit and push data changes
         if: always()
         run: |
