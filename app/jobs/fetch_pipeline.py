@@ -23,7 +23,7 @@ from typing import Any
 
 from app.config import load_sources
 from app.db import get_connection, init_db
-from app.incidents import GitHubIssueClient, sync_incident_open_or_update, sync_incident_resolve
+from app.incidents import GitHubIssueClient, IncidentSignal, sync_incident_open_or_update, sync_incident_resolve
 from app.jobs import stages_ingest, stages_export
 from app.jobs.pipeline import (
     DEFUDDLE_ENABLED,
