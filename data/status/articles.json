@@ -68,16 +68,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>In preparation for a lightning talk I'm giving at PyCon US <a href=\"https://us.pycon.org/2026/schedule/presentation/175/\">this afternoon</a> I decided to figure out how many names OpenClaw has <em>actually</em> had since that <a href=\"https://github.com/openclaw/openclaw/commit/f6dd362d39b8e30bd79ef7560aab9575712ccc11\">first commit</a> back in November.</p>\n<p>Thanks to this <a href=\"https://tools.simonwillison.net/python/#first_line_historypy\">first_line_history.py tool</a> (<a href=\"https://github.com/simonw/tools/blob/main/python/first_line_history.py\">code here</a>) the answer, according to the Git history of the OpenClaw README, is:</p>\n<p>Warelay \u2192 CLAWDIS \u2192 CLAWDBOT \u2192 Clawdbot \u2192 Moltbot \u2192\ud83e\udd9e OpenClaw</p>\n<p>Or in detail (the output from the tool):</p>\n<pre>\n2025-11-24T11:23:15+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/16dfc1a&gt;\">16dfc1a</a> # Warelay \u2014 WhatsApp Relay CLI (Twilio)\n2025-11-24T11:41:37+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/d4153da&gt;\">d4153da</a> # \ud83d\udce1 Warelay \u2014 WhatsApp Relay CLI (Twilio)\n2025-11-24T17:47:57+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/343ef9b&gt;\">343ef9b</a> # \ud83d\udce1 warelay \u2014 WhatsApp Relay CLI (Twilio)\n2025-11-25T04:44:10+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/14b3c6f&gt;\">14b3c6f</a> # \ud83d\udce1 warelay \u2014 WhatsApp Relay CLI\n2025-11-25T12:48:40+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/4814021&gt;\">4814021</a> # \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp\u2014Twilio-backed or QR-linked.\n2025-11-25T13:50:18+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/d51a3e9&gt;\">d51a3e9</a> # warelay \ud83d\udce1 - Send, receive, and auto-reply on WhatsApp via Twilio or QR-linked WhatsApp Web; webhook setup in one command\n2025-11-25T13:51:13+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/4d2a8a8&gt;\">4d2a8a8</a> # \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp\u2014Twilio-backed or QR-linked.\n2025-11-25T14:52:43+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/1ef7f4d&gt;\">1ef7f4d</a> # \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp.\n2025-12-03T15:45:32+00:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/a27ee23&gt;\">a27ee23</a> # \ud83e\udd9e CLAWDIS \u2014 WhatsApp Gateway for AI Agents\n2025-12-08T12:43:13+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/17fa2f4&gt;\">17fa2f4</a> # \ud83e\udd9e CLAWDIS \u2014 WhatsApp & Telegram Gateway for AI Agents\n2025-12-19T18:41:17+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/7710439&gt;\">7710439</a> # \ud83e\udd9e CLAWDIS \u2014 Personal AI Assistant\n2026-01-04T14:32:47+00:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/246adaa&gt;\">246adaa</a> # \ud83e\udd9e CLAWDBOT \u2014 Personal AI Assistant\n2026-01-10T05:14:09+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/cdb915d&gt;\">cdb915d</a> # \ud83e\udd9e Clawdbot \u2014 Personal AI Assistant\n2026-01-27T13:37:47-05:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/3fe4b25&gt;\">3fe4b25</a> # \ud83e\udd9e Moltbot \u2014 Personal AI Assistant\n2026-01-30T03:15:10+01:00 <a href=\"&lt;https://github.com/openclaw/openclaw/commit/9a71607&gt;\">9a71607</a> # \ud83e\udd9e OpenClaw \u2014 Personal AI Assistant\n</pre>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/openclaw\">openclaw</a>, <a href=\"https://simonwillison.net/tags/git\">git</a>, <a href=\"https://simonwillison.net/tags/tools\">tools</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "16th May 2026\nIn preparation for a lightning talk I'm giving at PyCon US [this afternoon](https://us.pycon.org/2026/schedule/presentation/175/) I decided to figure out how many names OpenClaw has actually had since that [first commit](https://github.com/openclaw/openclaw/commit/f6dd362d39b8e30bd79ef7560aab9575712ccc11) back in November.\nThanks to this [first_line_history.py tool](https://tools.simonwillison.net/python/#first_line_historypy) ([code here](https://github.com/simonw/tools/blob/main/python/first_line_history.py)) the answer, according to the Git history of the OpenClaw README, is:\nWarelay \u2192 CLAWDIS \u2192 CLAWDBOT \u2192 Clawdbot \u2192 Moltbot \u2192\ud83e\udd9e OpenClaw\nOr in detail (the output from the tool):\n2025-11-24T11:23:15+01:00[16dfc1a]# Warelay \u2014 WhatsApp Relay CLI (Twilio) 2025-11-24T11:41:37+01:00[d4153da]# \ud83d\udce1 Warelay \u2014 WhatsApp Relay CLI (Twilio) 2025-11-24T17:47:57+01:00[343ef9b]# \ud83d\udce1 warelay \u2014 WhatsApp Relay CLI (Twilio) 2025-11-25T04:44:10+01:00[14b3c6f]# \ud83d\udce1 warelay \u2014 WhatsApp Relay CLI 2025-11-25T12:48:40+01:00[4814021]# \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp\u2014Twilio-backed or QR-linked. 2025-11-25T13:50:18+01:00[d51a3e9]# warelay \ud83d\udce1 - Send, receive, and auto-reply on WhatsApp via Twilio or QR-linked WhatsApp Web; webhook setup in one command 2025-11-25T13:51:13+01:00[4d2a8a8]# \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp\u2014Twilio-backed or QR-linked. 2025-11-25T14:52:43+01:00[1ef7f4d]# \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp. 2025-12-03T15:45:32+00:00[a27ee23]# \ud83e\udd9e CLAWDIS \u2014 WhatsApp Gateway for AI Agents 2025-12-08T12:43:13+01:00[17fa2f4]# \ud83e\udd9e CLAWDIS \u2014 WhatsApp & Telegram Gateway for AI Agents 2025-12-19T18:41:17+01:00[7710439]# \ud83e\udd9e CLAWDIS \u2014 Personal AI Assistant 2026-01-04T14:32:47+00:00[246adaa]# \ud83e\udd9e CLAWDBOT \u2014 Personal AI Assistant 2026-01-10T05:14:09+01:00[cdb915d]# \ud83e\udd9e Clawdbot \u2014 Personal AI Assistant 2026-01-27T13:37:47-05:00[3fe4b25]# \ud83e\udd9e Moltbot \u2014 Personal AI Assistant 2026-01-30T03:15:10+01:00[9a71607]# \ud83e\udd9e OpenClaw \u2014 Personal AI Assistant\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
+      "tools",
+      "models",
       "open-source",
       "agents",
       "infrastructure",
       "coding",
-      "policy",
-      "tools"
+      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -112,14 +113,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://jvns.ca/blog/2026/05/15/moving-away-from-tailwind--and-learning-to-structure-my-css-/\"><p>[...] in the last 10 years I\u2019ve learned to really love and respect CSS as a technology.</p>\n<p>So I decided years ago that I wanted to react to \u201cCSS is hard\u201d by getting better at CSS and taking it seriously as a technology, instead of devaluing it. Doing that changed everything for me: I learned that so many of my frustrations (\u201ccentering is impossible\u201d) had been addressed in CSS a long time ago, and that also what \u201ccentering\u201d means is not always straightforward and it makes sense that there are many ways to do it. CSS is hard because it\u2019s solving a hard problem!</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://jvns.ca/blog/2026/05/15/moving-away-from-tailwind--and-learning-to-structure-my-css-/\">Julia Evans</a>, Moving away from Tailwind, and learning to structure my CSS</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/css\">css</a>, <a href=\"https://simonwillison.net/tags/julia-evans\">julia-evans</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "16th May 2026\n[...] in the last 10 years I\u2019ve learned to really love and respect CSS as a technology.\nSo I decided years ago that I wanted to react to \u201cCSS is hard\u201d by getting better at CSS and taking it seriously as a technology, instead of devaluing it. Doing that changed everything for me: I learned that so many of my frustrations (\u201ccentering is impossible\u201d) had been addressed in CSS a long time ago, and that also what \u201ccentering\u201d means is not always straightforward and it makes sense that there are many ways to do it. CSS is hard because it\u2019s solving a hard problem!\n\u2014 [Julia Evans](https://jvns.ca/blog/2026/05/15/moving-away-from-tailwind--and-learning-to-structure-my-css-/), Moving away from Tailwind, and learning to structure my CSS\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
+      "opinion",
+      "models",
+      "agents",
       "benchmark",
+      "infrastructure",
       "coding",
-      "education",
-      "opinion"
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -218,13 +222,15 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/inaturalist-clumper/releases/tag/0.1\">inaturalist-clumper 0.1</a></p>\n        <p>Part of the infrastructure I use for <a href=\"https://simonwillison.net/2026/May/1/inat-sightings/\">publishing my iNaturalist sightings on my blog</a>. I've been running this in production for a few weeks now, inspiring some iterations on how it works, so I decided to ship a 0.1 release.</p>\n<p>You can see an example of the output <a href=\"https://github.com/simonw/inaturalist-clumps/blob/main/clumps.json\">in this JSON file</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/inaturalist\">inaturalist</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "15th May 2026\nPart of the infrastructure I use for [publishing my iNaturalist sightings on my blog](https://simonwillison.net/2026/May/1/inat-sightings/). I've been running this in production for a few weeks now, inspiring some iterations on how it works, so I decided to ship a 0.1 release.\nYou can see an example of the output [in this JSON file](https://github.com/simonw/inaturalist-clumps/blob/main/clumps.json).\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "product",
     "tags": [
       "product",
       "release",
+      "models",
       "open-source",
+      "agents",
       "infrastructure",
       "coding"
     ],
@@ -348,12 +354,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><img alt=\"Western Gull\" src=\"https://static.inaturalist.org/photos/660343826/large.jpg\" /></p><p><img alt=\"Rock Pigeon\" src=\"https://static.inaturalist.org/photos/660344126/large.jpg\" /></p><p>Western Gull, Rock Pigeon, in Los Angeles Area (custom), CA, US</p><p>I went for a bird walk in the morning before PyCon, and we spotted a local seagull enjoying a Starbucks.</p>",
+    "extraction_method": "trafilatura",
+    "body": "15th May 2026\nI went for a bird walk in the morning before PyCon, and we spotted a local seagull enjoying a Starbucks.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "product",
     "tags": [
       "product",
-      "general"
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "development",
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -389,14 +400,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/qr-code-generator\">QR code generator</a></p>\n        <p>Claude helped me build this tool for creating QR codes, for both text/URLs and for connecting to WiFi networks.</p>\n<p><img alt=\"Screenshot of a QR code generator web form. Heading &quot;QR code generator&quot; with subtitle &quot;Create a scannable code for a URL, text, or WiFi network.&quot; A segmented toggle shows &quot;URL / text&quot; and &quot;WiFi&quot; with WiFi selected. Below are fields: &quot;Network name (SSID)&quot; with placeholder &quot;My WiFi&quot;; &quot;Password&quot; with placeholder &quot;Password&quot; and a blue &quot;Show&quot; link; &quot;Security&quot; dropdown set to &quot;WPA / WPA2 / WPA3 (most common)&quot;; an unchecked &quot;Hidden&quot; checkbox; helper text &quot;Not sure? Leave it on WPA / WPA2 / WPA3 \u2014 that covers almost every home WiFi network.&quot; Below that: &quot;Style&quot; dropdown set to &quot;Square&quot;, an unchecked &quot;Border&quot; checkbox, &quot;Size&quot; dropdown set to &quot;Medium&quot;, and a &quot;Color&quot; swatch showing black. At the bottom is a blue &quot;Generate QR code&quot; button.\" src=\"https://static.simonwillison.net/static/2026/qr-code-generate.jpg\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/vibe-coding\">vibe-coding</a>, <a href=\"https://simonwillison.net/tags/tools\">tools</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "15th May 2026\nTool\n[QR code generator](https://tools.simonwillison.net/qr-code-generator)\u2014 Generate QR codes from any URL or text with customizable styling options. This tool supports multiple design styles including square and liquid patterns, adjustable sizes, custom colors, and optional borders. The generated QR codes can be downloaded as PNG files or copied directly to your clipboard for immediate use.Claude helped me build this tool for creating QR codes, for both text/URLs and for connecting to WiFi networks.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
+      "tools",
       "models",
-      "safety",
+      "agents",
+      "infrastructure",
       "coding",
-      "tools"
+      "development",
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -409,15 +423,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-llm-limits/releases/tag/0.1a0\">datasette-llm-limits 0.1a0</a></p>\n        <p>This plugin works in conjunction with <a href=\"https://github.com/datasette/datasette-llm\">datasette-llm</a> and <a href=\"https://github.com/datasette/datasette-llm-accountant\">datasette-llm-accountant</a> to let you configure a per-user (or global) spending limit for LLM usage inside of Datasette. Configuration looks something like this:</p>\n<pre><span class=\"pl-ent\">plugins</span>:\n  <span class=\"pl-ent\">datasette-llm-limits</span>:\n    <span class=\"pl-ent\">limits</span>:\n      <span class=\"pl-ent\">per-user-daily</span>:\n        <span class=\"pl-ent\">scope</span>: <span class=\"pl-s\">actor</span>\n        <span class=\"pl-ent\">window</span>: <span class=\"pl-s\">rolling-24h</span>\n        <span class=\"pl-ent\">amount_usd</span>: <span class=\"pl-c1\">1.00</span>\n</pre>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "15th May 2026\nRelease\n[datasette-llm-limits 0.1a0](https://github.com/datasette/datasette-llm-limits/releases/tag/0.1a0)\u2014 Plugin for configuring periodic limits on LLM usage in DatasetteThis plugin works in conjunction with [datasette-llm](https://github.com/datasette/datasette-llm) and [datasette-llm-accountant](https://github.com/datasette/datasette-llm-accountant) to let you configure a per-user (or global) spending limit for LLM usage inside of Datasette. Configuration looks something like this:\nplugins: datasette-llm-limits: limits: per-user-daily: scope: actor window: rolling-24h amount_usd: 1.00\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
+      "tools",
       "release",
       "models",
       "open-source",
-      "coding",
-      "tools"
+      "agents",
+      "infrastructure",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -547,13 +563,15 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>This <a href=\"https://simonwillison.net/2026/May/14/mitchell-hashimoto/\">Mitchell Hashimoto quote</a> about Bun migrating from Zig to Rust reminded me of a similar conversation I had at a conference last week.</p>\n<p>I was talking to someone who worked for a medium sized technology company with a pair of legacy/<a href=\"https://simonwillison.net/2018/Jul/17/mark-norman-francis/\">legendary</a> iPhone and Android apps.</p>\n<p>They told me they had just completed a coding-agent driven rewrite of both apps to React Native.</p>\n<p>I asked why they chose that, given that coding agents presumably drive down the cost of maintaining separate iPhone and Android apps.</p>\n<p>They said that React Native has improved a lot over the past few years and covered everything their apps needed to do.</p>\n<p>And... if it turned out to be the wrong decision, they could <strong>just port back to native</strong> in the future.</p>\n<p>Like Mitchell said:</p>\n<blockquote>\n<p>Programming languages used to be LOCK IN, and they're increasingly not so.</p>\n</blockquote>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/react\">react</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "14th May 2026\nThis [Mitchell Hashimoto quote](https://simonwillison.net/2026/May/14/mitchell-hashimoto/) about Bun migrating from Zig to Rust reminded me of a similar conversation I had at a conference last week.\nI was talking to someone who worked for a medium sized technology company with a pair of legacy/[legendary](https://simonwillison.net/2018/Jul/17/mark-norman-francis/) iPhone and Android apps.\nThey told me they had just completed a coding-agent driven rewrite of both apps to React Native.\nI asked why they chose that, given that coding agents presumably drive down the cost of maintaining separate iPhone and Android apps.\nThey said that React Native has improved a lot over the past few years and covered everything their apps needed to do.\nAnd... if it turned out to be the wrong decision, they could just port back to native in the future.\nLike Mitchell said:\nProgramming languages used to be LOCK IN, and they're increasingly not so.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "coding",
     "tags": [
       "models",
       "agents",
+      "infrastructure",
       "coding",
+      "development",
       "events"
     ],
     "dearrow_thumbnail_url": "",
@@ -567,14 +585,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://twitter.com/mitchellh/status/2055039647924007222\"><p>[...] On the interesting side is how fungible programming languages are nowadays. Programming languages used to be LOCK IN, and they're increasingly not so. You think the Bun rewrite in Rust is good for Rust? Bun has shown they can be in probably any language they want in roughly a week or two. Rust is expendable. Its useful until its not then it can be thrown out. That's interesting!</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/mitchellh/status/2055039647924007222\">Mitchell Hashimoto</a>, on Bun porting from Zig to Rust</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/zig\">zig</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/mitchell-hashimoto\">mitchell-hashimoto</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/rust\">rust</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/agentic-engineering\">agentic-engineering</a>, <a href=\"https://simonwillison.net/tags/bun\">bun</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "14th May 2026\n[...] On the interesting side is how fungible programming languages are nowadays. Programming languages used to be LOCK IN, and they're increasingly not so. You think the Bun rewrite in Rust is good for Rust? Bun has shown they can be in probably any language they want in roughly a week or two. Rust is expendable. Its useful until its not then it can be thrown out. That's interesting!\n\u2014 [Mitchell Hashimoto](https://twitter.com/mitchellh/status/2055039647924007222), on Bun porting from Zig to Rust\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
+      "opinion",
       "models",
       "agents",
+      "infrastructure",
       "coding",
-      "opinion"
+      "development",
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -753,16 +774,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-ip-rate-limit/releases/tag/0.1a0\">datasette-ip-rate-limit 0.1a0</a></p>\n        <p>The <a href=\"https://datasette.io/\">datasette.io</a> site was being hammered by poorly-behaved crawlers, so I had Codex (GPT-5.5 xhigh) build a configurable rate limiting plugin to block IPs that were hammering specific areas of the site too quickly.</p>\n<p>Here's <a href=\"https://github.com/simonw/datasette.io/blob/b6022bf9987661b94a26d3143028193a6cabfdcf/datasette.yml#L103-L116\">the production configuration</a> I'm using on that site for the new plugin:</p>\n<pre>  <span class=\"pl-ent\">datasette-ip-rate-limit</span>:\n    <span class=\"pl-ent\">header</span>: <span class=\"pl-s\">Fly-Client-IP</span>\n    <span class=\"pl-ent\">max_keys</span>: <span class=\"pl-c1\">10000</span>\n    <span class=\"pl-ent\">exempt_paths</span>:\n    - <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>/static/*<span class=\"pl-pds\">\"</span></span>\n    - <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>/-/turnstile*<span class=\"pl-pds\">\"</span></span>\n    <span class=\"pl-ent\">rules</span>:\n    - <span class=\"pl-ent\">name</span>: <span class=\"pl-s\">demo-databases</span>\n      <span class=\"pl-ent\">paths</span>:\n      - <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>/global-power-plants/*<span class=\"pl-pds\">\"</span></span>\n      - <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>/legislators/*<span class=\"pl-pds\">\"</span></span>\n      <span class=\"pl-ent\">window_seconds</span>: <span class=\"pl-c1\">60</span>\n      <span class=\"pl-ent\">max_requests</span>: <span class=\"pl-c1\">60</span>\n      <span class=\"pl-ent\">block_seconds</span>: <span class=\"pl-c1\">20</span></pre>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/rate-limiting\">rate-limiting</a>, <a href=\"https://simonwillison.net/tags/codex\">codex</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "14th May 2026\nThe [datasette.io](https://datasette.io/) site was being hammered by poorly-behaved crawlers, so I had Codex (GPT-5.5 xhigh) build a configurable rate limiting plugin to block IPs that were hammering specific areas of the site too quickly.\nHere's [the production configuration](https://github.com/simonw/datasette.io/blob/b6022bf9987661b94a26d3143028193a6cabfdcf/datasette.yml#L103-L116) I'm using on that site for the new plugin:\ndatasette-ip-rate-limit: header: Fly-Client-IP max_keys: 10000 exempt_paths: - \"/static/*\" - \"/-/turnstile*\" rules: - name: demo-databases paths: - \"/global-power-plants/*\" - \"/legislators/*\" window_seconds: 60 max_requests: 60 block_seconds: 20\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
-      "release",
+      "tools",
       "models",
       "open-source",
       "agents",
+      "infrastructure",
       "coding",
-      "tools"
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -908,16 +930,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://datasette.io/blog/2026/new-blog/\">Welcome to the Datasette blog</a></strong></p>\nWe have a bunch of neat Datasette announcements in the pipeline so we decided it was time the project grew an official blog.</p>\n<p>I built this using OpenAI Codex desktop, which turns out to have the Markdown session transcript export feature I've always wanted. Here's <a href=\"https://gist.github.com/simonw/885b11eee46822622b8031a1f4e5f3a3\">the session that built the blog</a>. See also <a href=\"https://github.com/simonw/datasette.io/issues/179\">issue 179</a>.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a>, <a href=\"https://simonwillison.net/tags/codex\">codex</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "13th May 2026 - Link Blog\n[Welcome to the Datasette blog](https://datasette.io/blog/2026/new-blog/). We have a bunch of neat Datasette announcements in the pipeline so we decided it was time the project grew an official blog.\nI built this using OpenAI Codex desktop, which turns out to have the Markdown session transcript export feature I've always wanted. Here's [the session that built the blog](https://gist.github.com/simonw/885b11eee46822622b8031a1f4e5f3a3). See also [issue 179](https://github.com/simonw/datasette.io/issues/179).\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
+      "tools",
       "models",
       "open-source",
       "agents",
       "video",
-      "coding",
-      "tools"
+      "infrastructure",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -971,12 +994,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://bsky.app/profile/bmann.ca/post/3mlp2ipupv22z\"><p>\u201c11 AI agents\u201d is meaningless as a phrase. </p>\n<p>If I said \u201cI have 11 spreadsheets\u201d or \u201cI have 11 browser tabs\u201d to do my work, it means about the same thing.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://bsky.app/profile/bmann.ca/post/3mlp2ipupv22z\">Boris Mann</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-agents\">ai-agents</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/agent-definitions\">agent-definitions</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "13th May 2026\n\u201c11 AI agents\u201d is meaningless as a phrase.\nIf I said \u201cI have 11 spreadsheets\u201d or \u201cI have 11 browser tabs\u201d to do my work, it means about the same thing.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
+      "opinion",
+      "models",
       "agents",
-      "opinion"
+      "infrastructure",
+      "coding",
+      "development",
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1096,17 +1124,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/csp-allow\">CSP Allow-list Experiment</a></p>\n        <p>An experiment that shows that you can load an app in a CSP-protected sandboxed iframe (see <a href=\"https://simonwillison.net/2026/Apr/3/test-csp-iframe-escape/\">previous note</a>) and have a custom <code>fetch()</code> that intercepts CSP errors and passes them up to the parent window... which can then prompt the user to add that domain to an allow-list and then refresh the page.</p>\n<p><img alt=\"Screenshot of a web tool titled &quot;CSP Allow-list Experiment&quot; with buttons Reset sample, Clear allow-list, Refresh preview. Left panel shows HTML source code starting with &lt;!doctype html&gt;. Right panel shows Preview with CSP header default-src 'none'; script-src 'unsafe-inline'; style-s... and heading &quot;Sandbox fetch test&quot;. A modal dialog from tools.simonwillison.net is overlaid reading: &quot;The sandbox tried to connect to: https://api.inaturalist.org   Add this origin to the CSP connect-src allow-list and refresh the page?&quot; with an unchecked checkbox &quot;Don't allow tools.simonwillison.net to prompt you again&quot; and Cancel and OK buttons. Below is &quot;Messages from sandbox&quot; showing fetch-catch blocked https://api.inaturalist.org/v1/observations?per... connect-src \u00b7 https://api.inaturalist.org. At the bottom left is &quot;Allowed fetch() origins&quot; with an input field containing https://api.github.com, an Add button, and a tag https://api.github.com x.\" src=\"https://static.simonwillison.net/static/2026/csp-allow.jpg\" /></p>\n<p>I built this one with GPT-5.5 xhigh running in the Codex desktop app.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/content-security-policy\">content-security-policy</a>, <a href=\"https://simonwillison.net/tags/iframes\">iframes</a>, <a href=\"https://simonwillison.net/tags/security\">security</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "13th May 2026\nTool\n[CSP Allow-list Experiment](https://tools.simonwillison.net/csp-allow)\u2014 Experiment with Content Security Policy (CSP) allow-lists by editing HTML code in the left panel and observing how network requests are handled in the sandboxed preview on the right. Add trusted origins to the connect-src allow-list, and the application will prompt you to approve blocked requests from the sandbox, automatically updating your CSP configuration. This tool helps developers understand how CSP policies control resource loading and test dynamic allow-list management in real-time.An experiment that shows that you can load an app in a CSP-protected sandboxed iframe (see [previous note](https://simonwillison.net/2026/Apr/3/test-csp-iframe-escape/)) and have a custom fetch()\nthat intercepts CSP errors and passes them up to the parent window... which can then prompt the user to add that domain to an allow-list and then refresh the page.\nI built this one with GPT-5.5 xhigh running in the Codex desktop app.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "security",
     "tags": [
       "security",
       "models",
-      "open-source",
-      "api",
       "agents",
       "safety",
-      "coding"
+      "infrastructure",
+      "coding",
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1182,16 +1210,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette/releases/tag/1.0a29\">datasette 1.0a29</a></p>\n        <blockquote>\n<ul>\n<li>New <code>TokenRestrictions.abbreviated(datasette)</code> <a href=\"https://docs.datasette.io/en/latest/internals.html#tokenrestrictions\">utility method</a> for creating <code>\"_r\"</code> dictionaries. <a href=\"https://github.com/simonw/datasette/issues/2695\">#2695</a></li>\n<li>Table headers and column options are now visible even if a table contains zero rows. <a href=\"https://github.com/simonw/datasette/issues/2701\">#2701</a></li>\n<li>Fixed bug with display of column actions dialog on Mobile Safari. <a href=\"https://github.com/simonw/datasette/issues/2708\">#2708</a></li>\n<li>Fixed bug where tests could crash with a segfault due to a race condition between <code>Datasette.close()</code> and <code>Database.close()</code>. <a href=\"https://github.com/simonw/datasette/issues/2709\">#2709</a></li>\n</ul>\n</blockquote>\n<p>That segfault bug was <em>gnarly</em>. I added a mechanism to Datasette recently that would automatically close connections at the end of each test, but it turned out that introduced a race condition where an in-flight query could sometimes be executing in a thread against a connection while it was being closed. I ended up solving that by having Codex CLI (with GPT-5.5 xhigh) create <a href=\"https://github.com/simonw/datasette/issues/2709#issuecomment-4435604727\">a minimal Dockerfile</a> that recreated the bug.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "12th May 2026\n- New\nTokenRestrictions.abbreviated(datasette)\n[utility method]for creating\"_r\"\ndictionaries.[#2695]- Table headers and column options are now visible even if a table contains zero rows.\n[#2701]- Fixed bug with display of column actions dialog on Mobile Safari.\n[#2708]- Fixed bug where tests could crash with a segfault due to a race condition between\nDatasette.close()\nandDatabase.close()\n.[#2709]\nThat segfault bug was gnarly. I added a mechanism to Datasette recently that would automatically close connections at the end of each test, but it turned out that introduced a race condition where an in-flight query could sometimes be executing in a thread against a connection while it was being closed. I ended up solving that by having Codex CLI (with GPT-5.5 xhigh) create [a minimal Dockerfile](https://github.com/simonw/datasette/issues/2709#issuecomment-4435604727) that recreated the bug.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
-      "release",
+      "tools",
       "models",
       "open-source",
       "agents",
+      "infrastructure",
       "coding",
-      "tools"
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1204,16 +1233,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://www.tiktok.com/@atmoio/video/7638649825382190350\"><p>Now, if your CEO has never heard the phrase Ralph Loop, oh man, you are less than 30 days away from your next promotion. I'm not even exaggerating. Walk into his office, close the door, and say, hey chief, been experimenting with something. It's called Ralph Loops. And I think it could change literally everything. And he's gonna say, what's a Ralph loop? And you will say, give me $18,000 worth of API credits and I'll show you. Now you won't actually do anything, because you can't do anything. Because nobody can, because nobody knows what they're doing. But by the time he figures that out, you'll have a new title, and equity bump. [...]</p>\n<p>Talk about automation constantly. Nothing arouses the slumbering capitalists than the mention of automation. Drop names too, bro. Like talk about specific team members you can automate out of existence. Be like, yo, I automated Gary, bro. Tag Gary in the message. Tag him in Slack in a very public channel. Be like, yo, I just automated @Gary. His function has been Ralph Looped. And tag your CEO in the same message. You think you're getting laid off after that?</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.tiktok.com/@atmoio/video/7638649825382190350\">Mo Bitar</a>, The Unethical Guide to Surviving AI Layoffs, TikTok</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/tiktok\">tiktok</a>, <a href=\"https://simonwillison.net/tags/careers\">careers</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "12th May 2026\nNow, if your CEO has never heard the phrase Ralph Loop, oh man, you are less than 30 days away from your next promotion. I'm not even exaggerating. Walk into his office, close the door, and say, hey chief, been experimenting with something. It's called Ralph Loops. And I think it could change literally everything. And he's gonna say, what's a Ralph loop? And you will say, give me $18,000 worth of API credits and I'll show you. Now you won't actually do anything, because you can't do anything. Because nobody can, because nobody knows what they're doing. But by the time he figures that out, you'll have a new title, and equity bump. [...]\nTalk about automation constantly. Nothing arouses the slumbering capitalists than the mention of automation. Drop names too, bro. Like talk about specific team members you can automate out of existence. Be like, yo, I automated Gary, bro. Tag Gary in the message. Tag him in Slack in a very public channel. Be like, yo, I just automated @Gary. His function has been Ralph Looped. And tag your CEO in the same message. You think you're getting laid off after that?\n\u2014 [Mo Bitar](https://www.tiktok.com/@atmoio/video/7638649825382190350), The Unethical Guide to Surviving AI Layoffs, TikTok\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
+      "opinion",
+      "models",
       "api",
       "agents",
       "video",
-      "coding",
-      "tutorials",
-      "opinion"
+      "infrastructure",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1226,11 +1256,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://lobste.rs/s/oznirn/redis_cost_ambition#c_dzrja0\"><p>The thing about 90% of TDMs [Technical Decision Makers] is that they're motivated primarily by NOT GETTING FIRED. These aren't people who browser Lobsters or push to GH on the weekend. These are people that work 9 to 5, get paid, go home, and NEVER THINK ABOUT WORK AGAIN. So to achieve all that, they follow secular trends supported by analysts and broad public sentiment. Oh, Gartner said that \"AI strategy\" is most important? McKinsey said \"context\" needs to be managed? Well, \"Context Engine for AI Apps\" is going to be defensible. Buy it.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://lobste.rs/s/oznirn/redis_cost_ambition#c_dzrja0\">Mitchell Hashimoto</a>, in a conversation about the design of the <a href=\"https://redis.io/\">Redis homepage</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/marketing\">marketing</a>, <a href=\"https://simonwillison.net/tags/mitchell-hashimoto\">mitchell-hashimoto</a>, <a href=\"https://simonwillison.net/tags/redis\">redis</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "12th May 2026\nThe thing about 90% of TDMs [Technical Decision Makers] is that they're motivated primarily by NOT GETTING FIRED. These aren't people who browser Lobsters or push to GH on the weekend. These are people that work 9 to 5, get paid, go home, and NEVER THINK ABOUT WORK AGAIN. So to achieve all that, they follow secular trends supported by analysts and broad public sentiment. Oh, Gartner said that \"AI strategy\" is most important? McKinsey said \"context\" needs to be managed? Well, \"Context Engine for AI Apps\" is going to be defensible. Buy it.\n\u2014 [Mitchell Hashimoto](https://lobste.rs/s/oznirn/redis_cost_ambition#c_dzrja0), in a conversation about the design of the [Redis homepage](https://redis.io/)\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
-      "opinion"
+      "opinion",
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "development",
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1266,16 +1302,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.32a2\">llm 0.32a2</a></p>\n        <p>A bunch of useful stuff in this <a href=\"https://llm.datasette.io/\">LLM</a> alpha, but the most important detail is this one:</p>\n<blockquote>\n<p>Most reasoning-capable OpenAI models now use the <a href=\"https://platform.openai.com/docs/api-reference/responses\"><code>/v1/responses</code></a> endpoint instead of <code>/v1/chat/completions</code>. This enables interleaved reasoning across tool calls for GPT-5 class models. <a href=\"https://github.com/simonw/llm/pull/1435\">#1435</a></p>\n</blockquote>\n<p>This means you can now see the summarized reasoning tokens when you run prompts against an OpenAI model, displayed in a different color to standard error. Use the <code>-R</code> or <code>--hide-reasoning</code> flags if you don't want to see that.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/annotated-release-notes\">annotated-release-notes</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "12th May 2026\nA bunch of useful stuff in this [LLM](https://llm.datasette.io/) alpha, but the most important detail is this one:\nMost reasoning-capable OpenAI models now use the\n[endpoint instead of]/v1/responses\n/v1/chat/completions\n. This enables interleaved reasoning across tool calls for GPT-5 class models.[#1435]\nThis means you can now see the summarized reasoning tokens when you run prompts against an OpenAI model, displayed in a different color to standard error. Use the -R\nor --hide-reasoning\nflags if you don't want to see that.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
-      "release",
+      "tools",
       "models",
-      "open-source",
       "api",
+      "agents",
+      "infrastructure",
       "coding",
-      "tools"
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1485,16 +1522,16 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://about.gitlab.com/blog/gitlab-act-2/\">GitLab Act 2</a></strong></p>\nThere's a lot going on in this announcement from GitLab about the \"workforce reduction\" and \"structural and strategic decisions\" they are making with respect to the agentic era.</p>\n<ul>\n<li>They're \"planning to reduce the number of countries by up to 30% where we have small teams\". One of the most interesting things about GitLab is that they have employees spread across a large number of countries - 18 are listed <a href=\"https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/7ce61c4be88b04061f9ad9ab5eb64db91ce89d2a/content/handbook/people-group/employment-solutions.md\">in their public employee handbook</a> but this post says they are \"operating in nearly 60 countries\". That handbook used to document their payroll workflows for those countries too - they stopped publishing that in 2023 but <a href=\"https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/82ad50d380b11751645eedc733f7d663cf908d1f/content/handbook/finance/payroll.md\">the last public version</a> (hooray for version control) remains a fascinating read. Since we don't know which of those 60 countries have small teams, we can't calculate how many countries that 30% applies to.</li>\n<li>\"We're planning to flatten the organization, removing up to three layers of management in some functions so leaders are closer to the work.\" - this isn't the first announcement of this type I've seen that's trimming management. Coinbase <a href=\"https://twitter.com/brian_armstrong/status/2051616759145185723\">recently announced</a> a much more aggressive version of this: they were \"flattening our org structure to 5 layers max below\" and \"No pure managers: Every leader at Coinbase must also be a strong and active individual contributor. Managers should be like player-coaches\".</li>\n<li>In terms of team structure: \"We're re-organizing R&amp;D to create roughly 60 smaller, more empowered teams with end-to-end ownership, nearly doubling the number of independent teams.\" I've always loved the idea of individual teams that can ship features unblocked by other teams, and it makes sense to me that agentic engineering can increase the capability of such teams. The 37signals public employee handbook used to have a section on working <a href=\"https://github.com/basecamp/handbook/blob/9504494a6daa555837ee2cc2d9134ca43ab36301/how-we-work.md#in-self-sufficient-independent-teams\">In self-sufficient, independent teams</a> which perfectly captured this for me, I'm sad to see they <a href=\"https://github.com/basecamp/handbook/commit/1db14f83913163f4e2e72130524269ae6ba3d757\">removed that detail</a> in January 2024!</li>\n<li>Tucked away towards the bottom: \"<em>We will be retiring CREDIT as our values framework</em>\" - that's the values framework <a href=\"https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/7ce61c4be88b04061f9ad9ab5eb64db91ce89d2a/content/handbook/values/_index.md\">described on this page</a>: \"Collaboration, Results for Customers, Efficiency, Diversity, Inclusion &amp; Belonging, Iteration, and Transparency\". The new values are \"Speed with Quality, Ownership Mindset, Customer Outcomes\". The fact that \"Diversity\" is no longer in there is likely to attract a whole lot of attention, so it's worth noting that a sub-bullet under Customer Outcomes reads \"Interpersonal excellence: individuals who are good humans, embrace diversity, inclusion and belonging, assume good intent and treat everyone with respect\".</li>\n</ul>\n<p>Here's the part of their new strategy that most resonated with me:</p>\n<blockquote>\n<p><strong>The agentic era multiplies demand for software</strong>. Software has been the force multiplier behind nearly every business transformation of the last two decades. The constraint was the cost and time of producing and managing it. That constraint is collapsing. As the cost of producing software collapses, demand for it will expand. Last year, the developer platform market used to be measured in tens of dollars per user per month, this year it is hundreds/user/month and headed to thousands. <em>Not only is the value of software for builders increasing, but we believe there will be more software and builders than ever, and we will serve an increasing volume of both</em>.</p>\n</blockquote>\n<p>That very much encapsulates my own optimistic, <a href=\"https://simonwillison.net/tags/jevons-paradox/\">Jevons-paradox</a>-inspired hope for how this will all work out.</p>\n<p>Their opinion on this does need to be taken with a big grain of salt though. GitLab's stock price was ~$52 a year ago and is ~$26 today, and it's plausible that the drop corresponds to uncertainty about GitLab's continued growth as agentic engineering eats its way through their core market.</p>\n<p>If your entire business depends on software engineering growing as a field and producing larger volumes of more lucrative seats, you have a strong incentive to believe that agents will have that effect!\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=48100500\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/37signals\">37signals</a>, <a href=\"https://simonwillison.net/tags/careers\">careers</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/gitlab\">gitlab</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/jevons-paradox\">jevons-paradox</a>, <a href=\"https://simonwillison.net/tags/agentic-engineering\">agentic-engineering</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "11th May 2026 - Link Blog\n[GitLab Act 2](https://about.gitlab.com/blog/gitlab-act-2/) ([via](https://news.ycombinator.com/item?id=48100500)) There's a lot going on in this announcement from GitLab about the \"workforce reduction\" and \"structural and strategic decisions\" they are making with respect to the agentic era.\n- They're \"planning to reduce the number of countries by up to 30% where we have small teams\". One of the most interesting things about GitLab is that they have employees spread across a large number of countries - 18 are listed\n[in their public employee handbook](https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/7ce61c4be88b04061f9ad9ab5eb64db91ce89d2a/content/handbook/people-group/employment-solutions.md)but this post says they are \"operating in nearly 60 countries\". That handbook used to document their payroll workflows for those countries too - they stopped publishing that in 2023 but[the last public version](https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/82ad50d380b11751645eedc733f7d663cf908d1f/content/handbook/finance/payroll.md)(hooray for version control) remains a fascinating read. Since we don't know which of those 60 countries have small teams, we can't calculate how many countries that 30% applies to. - \"We're planning to flatten the organization, removing up to three layers of management in some functions so leaders are closer to the work.\" - this isn't the first announcement of this type I've seen that's trimming management. Coinbase\n[recently announced](https://twitter.com/brian_armstrong/status/2051616759145185723)a much more aggressive version of this: they were \"flattening our org structure to 5 layers max below\" and \"No pure managers: Every leader at Coinbase must also be a strong and active individual contributor. Managers should be like player-coaches\". - In terms of team structure: \"We're re-organizing R&D to create roughly 60 smaller, more empowered teams with end-to-end ownership, nearly doubling the number of independent teams.\" I've always loved the idea of individual teams that can ship features unblocked by other teams, and it makes sense to me that agentic engineering can increase the capability of such teams. The 37signals public employee handbook used to have a section on working\n[In self-sufficient, independent teams](https://github.com/basecamp/handbook/blob/9504494a6daa555837ee2cc2d9134ca43ab36301/how-we-work.md#in-self-sufficient-independent-teams)which perfectly captured this for me, I'm sad to see they[removed that detail](https://github.com/basecamp/handbook/commit/1db14f83913163f4e2e72130524269ae6ba3d757)in January 2024! - Tucked away towards the bottom: \"We will be retiring CREDIT as our values framework\" - that's the values framework\n[described on this page](https://gitlab.com/gitlab-com/content-sites/handbook/-/blob/7ce61c4be88b04061f9ad9ab5eb64db91ce89d2a/content/handbook/values/_index.md): \"Collaboration, Results for Customers, Efficiency, Diversity, Inclusion & Belonging, Iteration, and Transparency\". The new values are \"Speed with Quality, Ownership Mindset, Customer Outcomes\". The fact that \"Diversity\" is no longer in there is likely to attract a whole lot of attention, so it's worth noting that a sub-bullet under Customer Outcomes reads \"Interpersonal excellence: individuals who are good humans, embrace diversity, inclusion and belonging, assume good intent and treat everyone with respect\".\nHere's the part of their new strategy that most resonated with me:\nThe agentic era multiplies demand for software. Software has been the force multiplier behind nearly every business transformation of the last two decades. The constraint was the cost and time of producing and managing it. That constraint is collapsing. As the cost of producing software collapses, demand for it will expand. Last year, the developer platform market used to be measured in tens of dollars per user per month, this year it is hundreds/user/month and headed to thousands. Not only is the value of software for builders increasing, but we believe there will be more software and builders than ever, and we will serve an increasing volume of both.\nThat very much encapsulates my own optimistic, [Jevons-paradox](https://simonwillison.net/tags/jevons-paradox/)-inspired hope for how this will all work out.\nTheir opinion on this does need to be taken with a big grain of salt though. GitLab's stock price was ~$52 a year ago and is ~$26 today, and it's plausible that the drop corresponds to uncertainty about GitLab's continued growth as agentic engineering eats its way through their core market.\nIf your entire business depends on software engineering growing as a field and producing larger volumes of more lucrative seats, you have a strong incentive to believe that agents will have that effect!\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "agents",
     "tags": [
       "release",
+      "models",
       "open-source",
       "agents",
-      "coding",
-      "enterprise",
-      "opinion"
+      "infrastructure",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1507,15 +1544,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://www.jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs\"><p>Your AI coding agent, the one you use to write code, needs to reduce your maintenance costs. Not by a little bit, either. You write code twice as quick now? Better hope you\u2019ve halved your maintenance costs. Three times as productive? One third the maintenance costs. Otherwise, you\u2019re screwed. You\u2019re trading a temporary speed boost for permanent indenture. [...]</p>\n<p>The math only works if the LLM <em>decreases</em> your maintenance costs, and by exactly the inverse of the rate it adds code. If you double your output and your cost of maintaining that output, two times two means you\u2019ve quadrupled your maintenance costs. If you double your output and hold your maintenance costs steady, two times one means you\u2019ve <em>still</em> doubled your maintenance costs.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs\">James Shore</a>, You Need AI That Reduces Maintenance Costs</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/agentic-engineering\">agentic-engineering</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "11th May 2026\nYour AI coding agent, the one you use to write code, needs to reduce your maintenance costs. Not by a little bit, either. You write code twice as quick now? Better hope you\u2019ve halved your maintenance costs. Three times as productive? One third the maintenance costs. Otherwise, you\u2019re screwed. You\u2019re trading a temporary speed boost for permanent indenture. [...]\nThe math only works if the LLM decreases your maintenance costs, and by exactly the inverse of the rate it adds code. If you double your output and your cost of maintaining that output, two times two means you\u2019ve quadrupled your maintenance costs. If you double your output and hold your maintenance costs steady, two times one means you\u2019ve still doubled your maintenance costs.\n\u2014 [James Shore](https://www.jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs), You Need AI That Reduces Maintenance Costs\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
+      "opinion",
       "models",
       "agents",
       "infrastructure",
       "coding",
-      "opinion"
+      "development",
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1528,16 +1567,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://www.404media.co/your-ai-use-is-breaking-my-brain/\">Your AI Use Is Breaking My Brain</a></strong></p>\nExcellent, angry piece by Jason Koebler on how AI writing online is becoming impossible to avoid, filtering it is mentally exhausting and it's even starting to distort regular human writing styles.</p>\n<p>I particularly liked his use of the term \"Zombie Internet\" to define a different, more insidious alternative to the \"Dead Internet\" (which is just bots talking to each other):</p>\n<blockquote>\n<p>I called it the Zombie Internet because the truth is that large parts of the internet are not just bots talking to bots or bots talking to people. It\u2019s people talking to bots, people talking to people, people creating \u201cAI agents\u201d and then instructing them to interact with people. It\u2019s people using AI talking to people who are not using AI, and it\u2019s people using AI talking to other people who are using AI. It\u2019s influencer hustlebros who are teaching each other how to make AI influencers and have spun up automated YouTube channels and blogs and social media accounts that are spamming the internet for the sole purpose of making money. It is whatever the fuck \u201cMoltbook\u201d is and whatever the fuck X and LinkedIn have become. It\u2019s AI summaries of real books being sold as the book itself and inspirational Reddit posts and comment threads in which people give heartfelt advice to some account that\u2019s actually being run by a marketing firm. [...]</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://bsky.app/profile/jasonkoebler.bsky.social/post/3mllgvidacs2n\">@jasonkoebler.bsky.social</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/definitions\">definitions</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/slop\">slop</a>, <a href=\"https://simonwillison.net/tags/jason-koebler\">jason-koebler</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "11th May 2026 - Link Blog\n[Your AI Use Is Breaking My Brain](https://www.404media.co/your-ai-use-is-breaking-my-brain/) ([via](https://bsky.app/profile/jasonkoebler.bsky.social/post/3mllgvidacs2n)) Excellent, angry piece by Jason Koebler on how AI writing online is becoming impossible to avoid, filtering it is mentally exhausting and it's even starting to distort regular human writing styles.\nI particularly liked his use of the term \"Zombie Internet\" to define a different, more insidious alternative to the \"Dead Internet\" (which is just bots talking to each other):\nI called it the Zombie Internet because the truth is that large parts of the internet are not just bots talking to bots or bots talking to people. It\u2019s people talking to bots, people talking to people, people creating \u201cAI agents\u201d and then instructing them to interact with people. It\u2019s people using AI talking to people who are not using AI, and it\u2019s people using AI talking to other people who are using AI. It\u2019s influencer hustlebros who are teaching each other how to make AI influencers and have spun up automated YouTube channels and blogs and social media accounts that are spamming the internet for the sole purpose of making money. It is whatever the fuck \u201cMoltbook\u201d is and whatever the fuck X and LinkedIn have become. It\u2019s AI summaries of real books being sold as the book itself and inspirational Reddit posts and comment threads in which people give heartfelt advice to some account that\u2019s actually being run by a marketing firm. [...]\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "media",
     "tags": [
+      "media",
       "models",
       "agents",
       "video",
-      "tutorials",
-      "education",
-      "media"
+      "infrastructure",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1550,16 +1590,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>TIL:</strong> <a href=\"https://til.simonwillison.net/llms/llm-shebang\">Using LLM in the shebang line of a script</a></p>\n        <p>Kim_Bruning <a href=\"https://news.ycombinator.com/item?id=48073246#48090590\">on Hacker News</a>:</p>\n<blockquote>\n<p>But seriously, you can put a shebang on an english text file now (if you're sufficiently brave) [...]</p>\n</blockquote>\n<p>This inspired me to look at patterns for doing exactly that with <a href=\"https://llm.datasette.io/en/stable/\">LLM</a>. Here's the simplest, which takes advantage of <a href=\"https://llm.datasette.io/en/stable/fragments.html\">LLM fragments</a>:</p>\n<pre><code>#!/usr/bin/env -S llm -f\nGenerate an SVG of a pelican riding a bicycle\n</code></pre>\n<p>But you can also incorporate <a href=\"https://llm.datasette.io/en/stable/tools.html\">tool calls</a> using the <code>-T name_of_tool</code> option:</p>\n<pre><code>#!/usr/bin/env -S llm -T llm_time -f\nWrite a haiku that mentions the exact current time\n</code></pre>\n<p>Or even execute YAML templates directly that define extra tools as Python functions:</p>\n<pre><span class=\"pl-c\"><span class=\"pl-c\">#</span>!/usr/bin/env -S llm -t</span>\n<span class=\"pl-ent\">model</span>: <span class=\"pl-s\">gpt-5.4-mini</span>\n<span class=\"pl-ent\">system</span>: <span class=\"pl-s\">|</span>\n<span class=\"pl-s\">  Use tools to run calculations</span>\n<span class=\"pl-s\"></span><span class=\"pl-ent\">functions</span>: <span class=\"pl-s\">|</span>\n<span class=\"pl-s\">  def add(a: int, b: int) -&gt; int:</span>\n<span class=\"pl-s\">      return a + b</span>\n<span class=\"pl-s\">  def multiply(a: int, b: int) -&gt; int:</span>\n<span class=\"pl-s\">      return a * b</span></pre>\n\n<p>Then:</p>\n<pre><code>./calc.sh 'what is 2344 * 5252 + 134' --td\n</code></pre>\n<p>Which outputs (thanks to that <code>--td</code> tools debug option):</p>\n<pre><code>Tool call: multiply({'a': 2344, 'b': 5252})\n  12310688\n\nTool call: add({'a': 12310688, 'b': 134})\n  12310822\n\n2344 \u00d7 5252 + 134 = **12,310,822**\n</code></pre>\n<p>Read the full TIL for <a href=\"https://til.simonwillison.net/llms/llm-shebang#templates-with-tools\">a more complex example</a> that uses the Datasette SQL API to answer questions about content on my blog.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/llm-tool-use\">llm-tool-use</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "11th May 2026\n[Using LLM in the shebang line of a script](https://til.simonwillison.net/llms/llm-shebang)\u2014 This comment on Hacker News inspired me to investigate patterns for using my LLM CLI tool in a shebang line:\nKim_Bruning [on Hacker News](https://news.ycombinator.com/item?id=48073246#48090590):\nBut seriously, you can put a shebang on an english text file now (if you're sufficiently brave) [...]\nThis inspired me to look at patterns for doing exactly that with [LLM](https://llm.datasette.io/en/stable/). Here's the simplest, which takes advantage of [LLM fragments](https://llm.datasette.io/en/stable/fragments.html):\n#!/usr/bin/env -S llm -f\nGenerate an SVG of a pelican riding a bicycle\nBut you can also incorporate [tool calls](https://llm.datasette.io/en/stable/tools.html) using the -T name_of_tool\noption:\n#!/usr/bin/env -S llm -T llm_time -f\nWrite a haiku that mentions the exact current time\nOr even execute YAML templates directly that define extra tools as Python functions:\n#!/usr/bin/env -S llm -t model: gpt-5.4-mini system: | Use tools to run calculations functions: | def add(a: int, b: int) -> int: return a + b def multiply(a: int, b: int) -> int: return a * b\nThen:\n./calc.sh 'what is 2344 * 5252 + 134' --td\nWhich outputs (thanks to that --td\ntools debug option):\nTool call: multiply({'a': 2344, 'b': 5252})\n12310688\nTool call: add({'a': 12310688, 'b': 134})\n12310822\n2344 \u00d7 5252 + 134 = **12,310,822**\nRead the full TIL for [a more complex example](https://til.simonwillison.net/llms/llm-shebang#templates-with-tools) that uses the Datasette SQL API to answer questions about content on my blog.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "tools",
     "tags": [
+      "tools",
       "models",
       "api",
+      "agents",
       "infrastructure",
       "coding",
-      "enterprise",
-      "tools"
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1572,15 +1613,16 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://twitter.com/tobi/status/2053121182044451016\">Learning on the Shop floor</a></strong></p>\nTobias L\u00fctke describes Shopify's internal coding agent tool, River, which operates entirely in public on their Slack:</p>\n<blockquote>\n<p>River does not respond to direct messages. She politely declines and suggests to create a public channel for you and her to start working in. I myself work with river in <code>#tobi_river</code> channel and many followed this pattern.  Every conversation is therefore searchable.  Anyone at Shopify  can jump in. In my own channel, there are over 100 people who, react to threads, add color and add context, pick up the torch, help with the reviews, remind me how rusty I am, and importantly, learn from watching. [...]</p>\n<p>As so often with German, there is a word for the kind of environment: <em>Lehrwerkstatt</em>. Literally: <strong>A teaching workshop</strong>. The whole shop floor is the classroom. You learn by being near the work. Being a constant learner is one of the core values of the firm.</p>\n<p>Shopify wants to be a Lehrwerkstatt at scale and River has now gotten us closer to this ideal than ever. It\u2019s <em>osmosis learning</em>, because it does not require a curriculum, a training plan, or a manager. It just requires everyone's work to be visible to the maximum extent possible. Everyone learns from each other.</p>\n</blockquote>\n<p>I'm reminded of how Midjourney spent its first few years with the primary interface being public Discord channels, forcing users to share their prompts and learn from each other's experiments. I continue to believe that the early success of Midjourney was tied to this mechanism, helping to compensate for how weird and finicky text-to-image prompting is.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/slack\">slack</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/midjourney\">midjourney</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/tobias-lutke\">tobias-lutke</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "11th May 2026 - Link Blog\n[Learning on the Shop floor](https://twitter.com/tobi/status/2053121182044451016). Tobias L\u00fctke describes Shopify's internal coding agent tool, River, which operates entirely in public on their Slack:\nRiver does not respond to direct messages. She politely declines and suggests to create a public channel for you and her to start working in. I myself work with river in\n#tobi_river\nchannel and many followed this pattern. Every conversation is therefore searchable. Anyone at Shopify can jump in. In my own channel, there are over 100 people who, react to threads, add color and add context, pick up the torch, help with the reviews, remind me how rusty I am, and importantly, learn from watching. [...]As so often with German, there is a word for the kind of environment: Lehrwerkstatt. Literally: A teaching workshop. The whole shop floor is the classroom. You learn by being near the work. Being a constant learner is one of the core values of the firm.\nShopify wants to be a Lehrwerkstatt at scale and River has now gotten us closer to this ideal than ever. It\u2019s osmosis learning, because it does not require a curriculum, a training plan, or a manager. It just requires everyone's work to be visible to the maximum extent possible. Everyone learns from each other.\nI'm reminded of how Midjourney spent its first few years with the primary interface being public Discord channels, forcing users to share their prompts and learn from each other's experiments. I continue to believe that the early success of Midjourney was tied to this mechanism, helping to compensate for how weird and finicky text-to-image prompting is.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "education",
     "tags": [
       "models",
       "agents",
+      "infrastructure",
       "coding",
-      "education",
-      "tools"
+      "development",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1777,15 +1819,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://www.nytimes.com/2026/04/14/world/canada/election-carney-liberal-party.html\"><p><em>This article was updated after The Times learned that a remark attributed to Pierre Poilievre, the Conservative leader, was in fact an A.I.-generated summary of his views about Canadian politics that A.I. rendered as a quotation. The reporter should have checked the accuracy of what the A.I. tool returned.  The article now accurately quotes from a speech delivered by Mr. Poilievre in April. [...] He did not refer to politicians who changed allegiances as turncoats in that speech.</em></p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.nytimes.com/2026/04/14/world/canada/election-carney-liberal-party.html\">New York Times Editors\u2019 Note</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/hallucinations\">hallucinations</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/new-york-times\">new-york-times</a>, <a href=\"https://simonwillison.net/tags/journalism\">journalism</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "10th May 2026\nThis article was updated after The Times learned that a remark attributed to Pierre Poilievre, the Conservative leader, was in fact an A.I.-generated summary of his views about Canadian politics that A.I. rendered as a quotation. The reporter should have checked the accuracy of what the A.I. tool returned. The article now accurately quotes from a speech delivered by Mr. Poilievre in April. [...] He did not refer to politicians who changed allegiances as turncoats in that speech.\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
+      "opinion",
       "models",
       "open-source",
-      "education",
-      "opinion",
-      "tools"
+      "agents",
+      "infrastructure",
+      "coding",
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1798,15 +1842,17 @@
     "fetched_at": "2026-05-16T23:19:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://til.andrew-quinn.me/posts/replacing-a-3-gb-sqlite-database-with-a-7-mb-fst-finite-state-trandsucer-binary/#fn:5\"><p>One could say in the first quarter-century of my life, that while I was always fascinated by programming, I could never overcome the guilt of not really knowing whether the tool I am building right now isn\u2019t already superceded by some much better implementation someone else has already written 30 or 40 years ago; I could write a TSV-aware search and replace, or I could find out about\u00a0<code>awk</code>\u00a0and solve that entire class of problems in one fell swoop, for example. My central conceit is that\u00a0<em>this is a trap</em>. You\u00a0<em>need</em>\u00a0to reinvent a couple of wheels to get to the edge of what we know about wheel-making, not a thousand wheels, and not zero; probably four or five is sufficient in most domains, maybe closer to twenty or thirty in the most epistemically rigorous and developed fields like mathematics or computer science. Each wheel you reinvent, and every directed question you ask along the way, will propel you faster to the true frontier than that same amount of time spend in idle study, or even five times that amount.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://til.andrew-quinn.me/posts/replacing-a-3-gb-sqlite-database-with-a-7-mb-fst-finite-state-trandsucer-binary/#fn:5\">Andrew Quinn</a>, footnote on Replacing a 3 GB SQLite database with a 10 MB FST (finite state transducer) binary</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/careers\">careers</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "10th May 2026\nOne could say in the first quarter-century of my life, that while I was always fascinated by programming, I could never overcome the guilt of not really knowing whether the tool I am building right now isn\u2019t already superceded by some much better implementation someone else has already written 30 or 40 years ago; I could write a TSV-aware search and replace, or I could find out about\nawk\nand solve that entire class of problems in one fell swoop, for example. My central conceit is that this is a trap. You need to reinvent a couple of wheels to get to the edge of what we know about wheel-making, not a thousand wheels, and not zero; probably four or five is sufficient in most domains, maybe closer to twenty or thirty in the most epistemically rigorous and developed fields like mathematics or computer science. Each wheel you reinvent, and every directed question you ask along the way, will propel you faster to the true frontier than that same amount of time spend in idle study, or even five times that amount.\n\u2014 [Andrew Quinn](https://til.andrew-quinn.me/posts/replacing-a-3-gb-sqlite-database-with-a-7-mb-fst-finite-state-trandsucer-binary/#fn:5), footnote on Replacing a 3 GB SQLite database with a 10 MB FST (finite state transducer) binary\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
     "topic": "opinion",
     "tags": [
+      "opinion",
+      "models",
+      "agents",
       "research",
       "infrastructure",
       "coding",
-      "opinion",
-      "tools"
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
