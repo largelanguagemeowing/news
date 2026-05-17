@@ -1,4 +1,4 @@
-const CACHE_NAME = 'news-aggregator-v3';
+const CACHE_NAME = 'news-aggregator-v4';
 const STATIC_ASSETS = [
   '/news/',
   '/news/health/',
@@ -64,29 +64,43 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Data files - network first (always get fresh data)
+  if (url.pathname.includes('/data/')) {
+    event.respondWith(
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Static assets - cache first with background update
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
-      // Return cached version if available
       if (cachedResponse) {
-        // For data files, still fetch in background to update cache
-        if (url.pathname.includes('/data/')) {
-          fetch(request)
-            .then((networkResponse) => {
-              if (networkResponse.ok) {
-                caches.open(CACHE_NAME).then((cache) => {
-                  cache.put(request, networkResponse);
-                });
-              }
-            })
-            .catch(() => {});
-        }
+        // Background update for next visit
+        fetch(request)
+          .then((networkResponse) => {
+            if (networkResponse.ok) {
+              caches.open(CACHE_NAME).then((cache) => {
+                cache.put(request, networkResponse);
+              });
+            }
+          })
+          .catch(() => {});
         return cachedResponse;
       }
 
-      // Otherwise fetch from network
       return fetch(request)
         .then((networkResponse) => {
-          // Cache successful responses
           if (networkResponse.ok) {
             const responseToCache = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
@@ -96,7 +110,6 @@ self.addEventListener('fetch', (event) => {
           return networkResponse;
         })
         .catch(() => {
-          // Return offline fallback for navigation requests
           if (request.mode === 'navigate') {
             return caches.match('/news/');
           }
