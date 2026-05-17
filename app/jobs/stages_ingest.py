@@ -17,6 +17,7 @@ from app.incidents import IncidentSignal, sync_incident_open_or_update, sync_inc
 from app.logging_helpers import log_source_complete
 from app.models import CheckStatus, ExtractionMethod
 from app.repos import article_repo, source_repo
+from app.utils import clean_title
 
 
 logger = logging.getLogger("news.pipeline")
@@ -176,7 +177,7 @@ def ingest_stage(
                 for entry in feed.entries:
                     try:
                         link = str(entry.get("link", "")).strip()
-                        title = str(entry.get("title", "")).strip() or "(untitled)"
+                        title = clean_title(str(entry.get("title", "")).strip() or "(untitled)")
                         body = str(entry.get("summary", "")).strip()
 
                         body, method, enrichment_attempts = enrich_article_content(link, source.source_id, title, body)

@@ -12,6 +12,7 @@ from rapidfuzz import fuzz
 TRACKING_PREFIXES = ("utm_", "fbclid", "gclid", "mc_", "ref")
 WHITESPACE_RE = re.compile(r"\s+")
 NON_WORD_RE = re.compile(r"[^\w\s]")
+DATE_PREFIX_RE = re.compile(r"^(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}\s*")
 
 
 def utc_now_iso() -> str:
@@ -83,4 +84,11 @@ def pair_similarity(
 
 def to_json(value: dict | list) -> str:
     return json.dumps(value, ensure_ascii=True, separators=(",", ":"))
+
+
+def clean_title(title: str) -> str:
+    """Remove date prefix from titles like 'May 14, 2026Policy...'"""
+    if not title:
+        return title
+    return DATE_PREFIX_RE.sub("", title)
 
