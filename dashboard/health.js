@@ -106,7 +106,8 @@ function shortId(value) {
   return String(value).slice(0, 8);
 }
 
-function sourceFaviconUrl(feedUrl) {
+function sourceFaviconUrl(feedUrl, faviconOverride) {
+  if (faviconOverride) return faviconOverride;
   try {
     const hostname = new URL(feedUrl).hostname;
     return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostname)}&sz=32`;
@@ -116,7 +117,7 @@ function sourceFaviconUrl(feedUrl) {
 }
 
 function renderSourceLink(source) {
-  const faviconUrl = sourceFaviconUrl(source.feed_url);
+  const faviconUrl = sourceFaviconUrl(source.feed_url, source.favicon);
   const icon = faviconUrl
     ? `<img class="source-favicon" src="${faviconUrl}" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="${source.name} favicon" />`
     : "";
