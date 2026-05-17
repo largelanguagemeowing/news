@@ -169,16 +169,6 @@ def ingest_stage(
                         source_repo.update_source_name(conn, source.source_id, feed_title)
                     source.name = feed_title
 
-            feed_image = getattr(feed.feed, "image", None)
-            if feed_image:
-                image_url = str(getattr(feed_image, "href", "") or "")
-                if image_url:
-                    with transaction(conn):
-                        conn.execute(
-                            "UPDATE sources SET favicon = ? WHERE source_id = ?",
-                            (image_url, source.source_id),
-                        )
-
             source_inserted = 0
             source_extraction_methods: dict[str, int] = {}
             latest_item_at: str | None = None
