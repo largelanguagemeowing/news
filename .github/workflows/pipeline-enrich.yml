@@ -27,6 +27,11 @@ on:
         required: false
         type: boolean
         default: false
+      only_missing:
+        description: "Only process articles with empty/short bodies"
+        required: false
+        type: boolean
+        default: true
       method:
         description: "Force specific extraction method"
         required: false
@@ -107,6 +112,12 @@ jobs:
             CMD="$CMD --only-dirty"
           fi
           
+          if [ "${{ inputs.only_missing }}" = "true" ]; then
+            CMD="$CMD --only-missing"
+          else
+            CMD="$CMD --no-only-missing"
+          fi
+          
           if [ "${{ inputs.method }}" != "default" ]; then
             CMD="$CMD --only-method ${{ inputs.method }}"
           fi
@@ -130,6 +141,7 @@ jobs:
           echo "| **Limit** | ${{ inputs.all == 'true' && 'unlimited' || inputs.limit }} |" >> $GITHUB_STEP_SUMMARY
           echo "| **Method** | ${{ inputs.method != 'default' && inputs.method || 'default (priority chain)' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| **Only dirty** | ${{ inputs.only_dirty }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Only missing** | ${{ inputs.only_missing }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           LATEST=$(jq 'max_by(.ended_at // .started_at) // empty' data/status/runs.json 2>/dev/null)
