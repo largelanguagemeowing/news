@@ -136,26 +136,28 @@ jobs:
           if [ -n "$LATEST" ] && [ "$LATEST" != "null" ]; then
             METRICS=$(echo "$LATEST" | jq '.stage_stats[] | select(.stage_name=="enrich") | .metrics // empty')
             if [ -n "$METRICS" ] && [ "$METRICS" != "null" ]; then
-              ATTEMPTED=$(echo "$METRICS" | jq -r '.attempted // 0')
-              ENRICHED=$(echo "$METRICS" | jq -r '.enriched // 0')
-              UPDATED=$(echo "$METRICS" | jq -r '.updated // 0')
-              UNCHANGED=$(echo "$METRICS" | jq -r '.unchanged // 0')
-              MISSES=$(echo "$METRICS" | jq -r '.misses // 0')
-              STOPPED=$(echo "$METRICS" | jq -r '.stopped_early // false')
-              METHODS=$(echo "$METRICS" | jq -r '.method_counts | to_entries | map("\(.key): \(.value)") | join(", ")')
               DURATION=$(echo "$METRICS" | jq -r '.duration_ms // 0 | tonumber | . / 1000 | floor')
 
-              echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
-              echo "|---|---|" >> $GITHUB_STEP_SUMMARY
-              echo "| **Attempted** | $ATTEMPTED |" >> $GITHUB_STEP_SUMMARY
-              echo "| **Enriched** | $ENRICHED |" >> $GITHUB_STEP_SUMMARY
-              echo "| **Updated** | $UPDATED |" >> $GITHUB_STEP_SUMMARY
-              echo "| **Unchanged** | $UNCHANGED |" >> $GITHUB_STEP_SUMMARY
-              echo "| **Misses** | $MISSES |" >> $GITHUB_STEP_SUMMARY
-              echo "| **Methods** | $METHODS |" >> $GITHUB_STEP_SUMMARY
-              echo "| **Duration** | ${DURATION}s |" >> $GITHUB_STEP_SUMMARY
+              echo "### Results" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Source | Attempted | Enriched | Failed |" >> $GITHUB_STEP_SUMMARY
+              echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
 
-              if [ "$STOPPED" = "true" ]; then
+              echo "$METRICS" | jq -r '
+                .per_source // {} | to_entries | sort_by(.key)[] |
+                "| \(.key) | \(.value.attempted) | \(.value.enriched) | \(.value.failed) |"
+              ' >> $GITHUB_STEP_SUMMARY
+
+              TOTALS=$(echo "$METRICS" | jq -r '
+                [.per_source // {} | to_entries[] | .value] |
+                {attempted: map(.attempted) | add, enriched: map(.enriched) | add, failed: map(.failed) | add}
+              ')
+              T_ATT=$(echo "$TOTALS" | jq -r '.attempted // 0')
+              T_ENR=$(echo "$TOTALS" | jq -r '.enriched // 0')
+              T_FAIL=$(echo "$TOTALS" | jq -r '.failed // 0')
+              echo "| **Total** | **$T_ATT** | **$T_ENR** | **$T_FAIL** |" >> $GITHUB_STEP_SUMMARY
+
+              if [ "$(echo "$METRICS" | jq -r '.stopped_early // false')" = "true" ]; then
                 echo "" >> $GITHUB_STEP_SUMMARY
                 echo "⚠️ **Stopped early** — markdown.new rate limit hit." >> $GITHUB_STEP_SUMMARY
               fi

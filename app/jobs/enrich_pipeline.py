@@ -17,10 +17,10 @@ import argparse
 import logging
 import os
 import time
-import traceback
 import uuid
 from typing import Any
 
+from app.config import load_sources
 from app.db import get_connection, init_db
 from app.incidents import GitHubIssueClient, IncidentSignal, sync_incident_open_or_update
 from app.jobs import pipeline, stages_export
@@ -68,6 +68,23 @@ def _enrich_with_rate_limit(
     return enriched_body, method, rate_limit_remaining
 
 
+def _write_job_summary(message: str) -> None:
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if path:
+        try:
+            with open(path, "a") as f:
+                f.write("## Enrich Pipeline Failed\n\n")
+                f.write(f"{message}\n\n")
+        except OSError:
+            pass
+
+
+def _fail(message: str) -> int:
+    logger.error("Enrich pipeline aborted: %s", message)
+    _write_job_summary(message)
+    return 1
+
+
 def run_enrich_pipeline(
     limit: int | None = None,
     only_missing: bool = True,
@@ -79,6 +96,16 @@ def run_enrich_pipeline(
     exclude_source: str | None = None,
     export: bool = False,
 ) -> int:
+    if source_id:
+        source_ids = [s.strip() for s in source_id.split(",") if s.strip()]
+        configured_ids = {s.source_id for s in load_sources()}
+        unknown = [s for s in source_ids if s not in configured_ids]
+        if unknown:
+            return _fail(
+                f"Unknown source_id(s): {', '.join(unknown)}. Must be one of: {', '.join(sorted(configured_ids))}"
+            )
+        source_id = source_ids
+
     reset_markdown_new_circuit_breaker()
     conn = get_connection()
     init_db(conn)
@@ -143,9 +170,6 @@ def run_enrich_pipeline(
     except Exception as exc:
         logger.exception("Enrich pipeline failed run_id=%s error=%s", run_id, exc)
         conn.rollback()
-        traceback_text = traceback.format_exc(limit=5)
-        run_repo.fail_pipeline_run(conn, run_id, utc_now_iso(), str(exc), pipeline_metrics)
-        conn.commit()
         return 1
 
 
@@ -163,7 +187,11 @@ def _enrich_articles(
 ) -> dict[str, Any]:
     where_missing = "AND (a.body IS NULL OR TRIM(a.body) = '' OR LENGTH(a.body) < 120)" if only_missing else ""
     where_skip_enriched = "AND (a.extraction_method IS NULL OR a.extraction_method = 'rss')" if skip_enriched else ""
-    where_source = "AND a.source_id = ?" if source_id else ""
+    source_ids = list(source_id) if source_id else []
+    where_source = ""
+    if source_ids:
+        placeholders = ",".join("?" for _ in source_ids)
+        where_source = f"AND a.source_id IN ({placeholders})"
     exclude_ids = [s.strip() for s in (exclude_source or "").split(",") if s.strip()]
     where_exclude = ""
     if exclude_ids:
@@ -182,8 +210,7 @@ def _enrich_articles(
         {limit_clause}
     """
     params_list: list[str | int] = []
-    if source_id:
-        params_list.append(source_id)
+    params_list.extend(source_ids)
     params_list.extend(exclude_ids)
     if limit is not None:
         params_list.append(max(1, limit))
@@ -208,6 +235,7 @@ def _enrich_articles(
     markdown_new_rate_limited = False
     stopped_early = False
     method_counts: dict[str, int] = {}
+    per_source: dict[str, dict[str, int]] = {}
     updates: list[tuple[str, str, str, str, str, int]] = []
 
     progress_interval = max(1, total_rows // 10) if total_rows else 1
@@ -260,6 +288,14 @@ def _enrich_articles(
             sh = str(simhash64(body_norm or title_norm))
             updates.append((new_body, body_norm, body_hash, sh, method, int(row["article_id"])))
 
+        # Per-source tracking
+        ps = per_source.setdefault(sid, {"attempted": 0, "enriched": 0, "failed": 0})
+        ps["attempted"] += 1
+        if method != ExtractionMethod.RSS.value and new_body:
+            ps["enriched"] += 1
+        elif method == ExtractionMethod.RSS.value or not new_body:
+            ps["failed"] += 1
+
         # Record enrichment attempt
         enrichment_status = "success" if method != ExtractionMethod.RSS.value and new_body else "failed"
         attempt_ts = utc_now_iso()
@@ -310,6 +346,7 @@ def _enrich_articles(
         "markdown_new_rate_limited": markdown_new_rate_limited,
         "stopped_early": stopped_early,
         "method_counts": dict(method_counts),
+        "per_source": per_source,
         "defuddle_enabled": DEFUDDLE_ENABLED,
     }
 
@@ -337,7 +374,7 @@ def main() -> int:
     parser.add_argument("--no-skip-enriched", action="store_false", dest="skip_enriched", help="Process articles even if already enriched")
     parser.add_argument("--max-markdown-new", type=int, default=100, help="Max markdown.new requests")
     parser.add_argument("--only-method", type=str, choices=["youtube", "trafilatura", "markdown_new", "compress_new", "jina", "defuddle"], default=None, help="Force specific extraction method only")
-    parser.add_argument("--source-id", type=str, default=None, help="Filter to a specific source")
+    parser.add_argument("--source-id", type=str, default=None, help="Filter to specific source(s), comma-separated")
     parser.add_argument("--exclude-source", type=str, default=None, help="Exclude source(s), comma-separated")
     parser.add_argument(
         "--export",
