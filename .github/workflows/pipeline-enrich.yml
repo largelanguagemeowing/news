@@ -116,6 +116,62 @@ jobs:
           echo "Running: $CMD"
           $CMD
 
+      - name: Generate Workflow Summary
+        run: |
+          echo "## Enrich Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### Workflow Parameters" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Parameter | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| **Source** | ${{ inputs.source_id || 'all' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Exclude** | ${{ inputs.exclude_source || '—' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Limit** | ${{ inputs.all == 'true' && 'unlimited' || inputs.limit }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Method** | ${{ inputs.method != 'default' && inputs.method || 'default (priority chain)' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Only dirty** | ${{ inputs.only_dirty }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          LATEST=$(jq 'max_by(.ended_at // .started_at) // empty' data/status/runs.json 2>/dev/null)
+          if [ -n "$LATEST" ] && [ "$LATEST" != "null" ]; then
+            METRICS=$(echo "$LATEST" | jq '.stage_stats[] | select(.stage_name=="enrich") | .metrics // empty')
+            if [ -n "$METRICS" ] && [ "$METRICS" != "null" ]; then
+              ATTEMPTED=$(echo "$METRICS" | jq -r '.attempted // 0')
+              ENRICHED=$(echo "$METRICS" | jq -r '.enriched // 0')
+              UPDATED=$(echo "$METRICS" | jq -r '.updated // 0')
+              UNCHANGED=$(echo "$METRICS" | jq -r '.unchanged // 0')
+              MISSES=$(echo "$METRICS" | jq -r '.misses // 0')
+              STOPPED=$(echo "$METRICS" | jq -r '.stopped_early // false')
+              METHODS=$(echo "$METRICS" | jq -r '.method_counts | to_entries | map("\(.key): \(.value)") | join(", ")')
+              DURATION=$(echo "$METRICS" | jq -r '.duration_ms // 0 | tonumber | . / 1000 | floor')
+
+              echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+              echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+              echo "| **Attempted** | $ATTEMPTED |" >> $GITHUB_STEP_SUMMARY
+              echo "| **Enriched** | $ENRICHED |" >> $GITHUB_STEP_SUMMARY
+              echo "| **Updated** | $UPDATED |" >> $GITHUB_STEP_SUMMARY
+              echo "| **Unchanged** | $UNCHANGED |" >> $GITHUB_STEP_SUMMARY
+              echo "| **Misses** | $MISSES |" >> $GITHUB_STEP_SUMMARY
+              echo "| **Methods** | $METHODS |" >> $GITHUB_STEP_SUMMARY
+              echo "| **Duration** | ${DURATION}s |" >> $GITHUB_STEP_SUMMARY
+
+              if [ "$STOPPED" = "true" ]; then
+                echo "" >> $GITHUB_STEP_SUMMARY
+                echo "⚠️ **Stopped early** — markdown.new rate limit hit." >> $GITHUB_STEP_SUMMARY
+              fi
+            fi
+
+            echo "" >> $GITHUB_STEP_SUMMARY
+            RUN_ID=$(echo "$LATEST" | jq -r '.run_id // ""')
+            GITHUB_URL=$(echo "$LATEST" | jq -r '.github_run_url // ""')
+            if [ -n "$RUN_ID" ]; then
+              echo "**Run ID:** \`$RUN_ID\`" >> $GITHUB_STEP_SUMMARY
+            fi
+            if [ -n "$GITHUB_URL" ] && [ "$GITHUB_URL" != "null" ]; then
+              echo "[View workflow run]($GITHUB_URL)" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+
       - name: Commit and push data changes
         if: always()
         run: |
