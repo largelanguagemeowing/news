@@ -1,26 +1,20 @@
 // DB Explorer - JSON-backed interface for all exported DB tables
 const PAGE_SIZE = 50;
 
-async function getJson(paths) {
-  for (const path of paths) {
-    const response = await fetch(path, { cache: 'no-store' });
-    if (response.ok) return response.json();
-  }
-  throw new Error(`Failed to fetch ${paths.join(' or ')}`);
-}
+// getJson() provided by ../data-path.js
 
 const TABLE_TO_STATUS_FILE = {
-  articles: ['../data/status/articles.json', './data/status/articles.json', '../../data/status/articles.json'],
-  sources: ['../data/status/sources.json', './data/status/sources.json', '../../data/status/sources.json'],
-  source_health: ['../data/status/source_health.json', './data/status/source_health.json', '../../data/status/source_health.json'],
-  events: ['../data/status/events.json', './data/status/events.json', '../../data/status/events.json'],
-  event_members: ['../data/status/event_members.json', './data/status/event_members.json', '../../data/status/event_members.json'],
-  pipeline_runs: ['../data/status/runs.json', './data/status/runs.json', '../../data/status/runs.json'],
-  source_checks: ['../data/status/source_checks.json', './data/status/source_checks.json', '../../data/status/source_checks.json'],
-  incidents: ['../data/status/incidents.json', './data/status/incidents.json', '../../data/status/incidents.json'],
-  ingest_attempts: ['../data/status/ingest_attempts.json', './data/status/ingest_attempts.json', '../../data/status/ingest_attempts.json'],
-  enrichment_attempts: ['../data/status/enrichment_attempts.json', './data/status/enrichment_attempts.json', '../../data/status/enrichment_attempts.json'],
-  dead_letters: ['../data/status/dead_letters.json', './data/status/dead_letters.json', '../../data/status/dead_letters.json'],
+  articles: '/data/status/articles.json',
+  sources: '/data/status/sources.json',
+  source_health: '/data/status/source_health.json',
+  events: '/data/status/events.json',
+  event_members: '/data/status/event_members.json',
+  pipeline_runs: '/data/status/runs.json',
+  source_checks: '/data/status/source_checks.json',
+  incidents: '/data/status/incidents.json',
+  ingest_attempts: '/data/status/ingest_attempts.json',
+  enrichment_attempts: '/data/status/enrichment_attempts.json',
+  dead_letters: '/data/status/dead_letters.json',
 };
 
 let currentTable = 'articles';
@@ -28,6 +22,9 @@ let currentPage = 1;
 let totalRows = 0;
 let currentData = [];
 let allData = [];
+
+let sortKey = '';
+let sortDir = 'asc'; // 'asc' | 'desc'
 
 // DOM elements
 const tableSelect = document.getElementById('tableSelect');
@@ -82,12 +79,21 @@ async function init() {
     applyFiltersAndRender();
   });
 
-  // Filter panel toggle
-  filterToggle.addEventListener('click', () => {
-    filterToggle.classList.toggle('active');
-    filterPanel.classList.toggle('open');
-    updateFilterBadge();
-  });
+  // Ensure the filter toggle works even if another listener stops propagation.
+  // (We've seen cases where the "click outside" handler effectively cancels the toggle.)
+  filterToggle.addEventListener(
+    'click',
+    (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      filterToggle.classList.toggle('active');
+      filterPanel.classList.toggle('open');
+      updateFilterBadge();
+    },
+    { capture: true }
+  );
+
+  // Filter panel toggle is registered above in capture phase.
 
   // Clear filters button
   clearFilters.addEventListener('click', () => {
@@ -125,6 +131,11 @@ function readParams() {
   if (m) methodFilter.value = m;
   const p = parseInt(params.get('page'), 10);
   if (p > 1) currentPage = p;
+
+  const sk = params.get('sort');
+  if (sk) sortKey = sk;
+  const sd = params.get('dir');
+  if (sd === 'asc' || sd === 'desc') sortDir = sd;
 }
 
 function updateFilterBadge() {
@@ -148,6 +159,8 @@ function syncUrl() {
   if (sourceFilter.value) params.set('source', sourceFilter.value);
   if (methodFilter.value) params.set('method', methodFilter.value);
   if (currentPage > 1) params.set('page', String(currentPage));
+  if (sortKey) params.set('sort', sortKey);
+  if (sortKey && sortDir) params.set('dir', sortDir);
 
   const qs = params.toString();
   const url = qs ? `${location.pathname}?${qs}` : location.pathname;
@@ -184,6 +197,12 @@ async function loadCurrentTableData() {
   currentData = [...allData];
   totalRows = allData.length;
 
+  // If a saved sort key doesn't exist on this table, drop it.
+  if (sortKey && !allData.some((r) => Object.prototype.hasOwnProperty.call(r, sortKey))) {
+    sortKey = '';
+    sortDir = 'asc';
+  }
+
   populateSourceFilter(allData);
   updateFilterVisibility();
   applyFiltersAndRender();
@@ -215,7 +234,8 @@ function applyFiltersAndRender() {
   }
 
   if (source) {
-    filtered = filtered.filter((row) => row.source_id === source);
+    // source_id is sometimes numeric in exported JSON; normalize to string for comparison.
+    filtered = filtered.filter((row) => String(row.source_id ?? '') === String(source));
   }
 
   if (method) {
@@ -224,6 +244,11 @@ function applyFiltersAndRender() {
 
   currentData = filtered;
   totalRows = filtered.length;
+
+  if (sortKey) {
+    filtered = sortRows(filtered, sortKey, sortDir);
+    currentData = filtered;
+  }
 
   const start = (currentPage - 1) * PAGE_SIZE;
   const paginated = filtered.slice(start, start + PAGE_SIZE);
@@ -253,9 +278,24 @@ function renderData(data) {
 
   tableHead.innerHTML = `
     <tr>
-      ${columns.map((col) => `<th>${escapeHtml(col)}</th>`).join('')}
+      ${columns
+        .map((col) => {
+          const isActive = sortKey && sortKey === col;
+          const ariaSort = isActive ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none';
+          const indicator = isActive ? (sortDir === 'asc' ? '▲' : '▼') : '';
+          return `
+            <th class="sortable" data-col="${escapeHtml(col)}" role="columnheader" tabindex="0" aria-sort="${ariaSort}">
+              <span class="sort-label">
+                <span>${escapeHtml(col)}</span>
+                <span class="sort-indicator" aria-hidden="true">${indicator}</span>
+              </span>
+            </th>`;
+        })
+        .join('')}
     </tr>
   `;
+
+  wireHeaderSortHandlers();
 
   tableBody.innerHTML = data
     .map((row) => {
@@ -309,6 +349,90 @@ function renderData(data) {
   });
 }
 
+function wireHeaderSortHandlers() {
+  // Re-render replaces the <thead>, so bind after each render.
+  tableHead.querySelectorAll('th.sortable[data-col]').forEach((th) => {
+    const col = th.getAttribute('data-col') || '';
+    const activate = () => setSort(col);
+    th.addEventListener('click', (e) => {
+      e.preventDefault();
+      activate();
+    });
+    th.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activate();
+      }
+    });
+  });
+}
+
+function setSort(col) {
+  if (!col) return;
+
+  if (sortKey === col) {
+    sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+  } else {
+    sortKey = col;
+    sortDir = 'asc';
+  }
+
+  currentPage = 1;
+  applyFiltersAndRender();
+}
+
+function sortRows(rows, key, dir) {
+  const factor = dir === 'desc' ? -1 : 1;
+  const sorted = [...rows];
+
+  // Detect numeric columns (common for ids, counts, durations).
+  const sample = rows.find((r) => r && r[key] != null);
+  const sampleVal = sample ? sample[key] : null;
+  const treatAsNumber =
+    typeof sampleVal === 'number' ||
+    (typeof sampleVal === 'string' && sampleVal.trim() !== '' && Number.isFinite(Number(sampleVal)));
+
+  sorted.sort((a, b) => {
+    const av = a ? a[key] : undefined;
+    const bv = b ? b[key] : undefined;
+
+    // Push null/undefined to the end in both directions.
+    const aNil = av == null || av === '';
+    const bNil = bv == null || bv === '';
+    if (aNil && bNil) return 0;
+    if (aNil) return 1;
+    if (bNil) return -1;
+
+    // Dates: common *_at fields are ISO strings.
+    const isDateKey = key.includes('_at') || key.endsWith('date') || key.endsWith('time');
+    if (isDateKey) {
+      const at = new Date(av).getTime();
+      const bt = new Date(bv).getTime();
+      const aBad = Number.isNaN(at);
+      const bBad = Number.isNaN(bt);
+      if (!aBad || !bBad) {
+        if (aBad && bBad) return 0;
+        if (aBad) return 1;
+        if (bBad) return -1;
+        return (at - bt) * factor;
+      }
+    }
+
+    if (treatAsNumber) {
+      const an = typeof av === 'number' ? av : Number(av);
+      const bn = typeof bv === 'number' ? bv : Number(bv);
+      if (Number.isFinite(an) && Number.isFinite(bn)) return (an - bn) * factor;
+    }
+
+    // Fallback: string compare.
+    const as = typeof av === 'string' ? av : JSON.stringify(av);
+    const bs = typeof bv === 'string' ? bv : JSON.stringify(bv);
+    return as.localeCompare(bs, undefined, { numeric: true, sensitivity: 'base' }) * factor;
+  });
+
+  return sorted;
+}
+
 function renderPagination() {
   const totalUnfiltered = allData.length;
   const totalPages = Math.ceil(totalRows / PAGE_SIZE);
@@ -352,7 +476,9 @@ function renderFilterBadges() {
   }
 
   if (!badges.length) {
-    filterBadges.style.display = 'none';
+    // Still show sort chip even when no filter badges exist.
+    filterBadges.style.display = sortKey ? 'flex' : 'none';
+    filterBadges.innerHTML = sortKey ? renderSortChipHtml() : '';
     return;
   }
 
@@ -365,8 +491,26 @@ function renderFilterBadges() {
           <button class="badge-remove" onclick="${b.clear}(); return false;">✕</button>
         </span>`
     )
-    .join('');
+    .join('') + (sortKey ? renderSortChipHtml() : '');
 }
+
+function renderSortChipHtml() {
+  const dirLabel = sortDir === 'desc' ? 'desc' : 'asc';
+  const value = `${sortKey} ${dirLabel}`;
+  return `
+    <span class="sort-chip" title="Sorted by ${escapeHtml(value)}">
+      <span class="sort-chip-label">Sort</span>
+      <span class="sort-chip-value">${escapeHtml(value)}</span>
+      <button class="sort-chip-btn" aria-label="Reset sort" title="Reset sort" onclick="resetSort(); return false;">✕</button>
+    </span>`;
+}
+
+window.resetSort = function resetSort() {
+  sortKey = '';
+  sortDir = 'asc';
+  currentPage = 1;
+  applyFiltersAndRender();
+};
 
 window.clearSourceFilter = function () {
   sourceFilter.value = '';
@@ -414,7 +558,7 @@ function updateStats() {
 }
 
 window.filterBySource = function filterBySource(source) {
-  sourceFilter.value = source;
+  sourceFilter.value = String(source);
   currentPage = 1;
   applyFiltersAndRender();
 };

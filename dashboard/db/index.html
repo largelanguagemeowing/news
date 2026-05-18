@@ -27,18 +27,25 @@
     <!-- SQLite WASM -->
     <script src="https://cdn.jsdelivr.net/npm/@sqlite.org/sqlite-wasm@3.45.1/sqlite-wasm.min.js"></script>
     <style>
-      .db-explorer { padding: 24px; max-width: 1400px; margin: 0 auto; }
+      /* DB uses fixed search bar; reserve only search height (header is overlay). */
+      body { padding-top: var(--search-height); }
+      body.header-collapsed { padding-top: 0; }
+
+      /* Match feed: shell is 1400px, but table can span the viewport. */
+      .db-explorer { padding: 24px 4px; max-width: none; margin: 0; }
       
+      /* Match filter <select> sizing so the button aligns in the grid */
       #exportBtn {
-        padding: 8px 16px;
+        height: 40px;
+        padding: 0 12px;
+        width: 100%;
+        margin-top: auto;
+        border: 1px solid var(--line);
+        border-radius: 10px;
         background: var(--accent);
         color: white;
-        border: none;
-        border-radius: 8px;
         cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-        width: 100%;
+        font: 600 0.9rem/1 "Inter", sans-serif;
       }
       
       #exportBtn:hover { opacity: 0.9; }
@@ -111,6 +118,19 @@
         top: 0;
         z-index: 10;
       }
+
+      .db-table th.sortable { cursor: pointer; user-select: none; }
+      .db-table th.sortable:hover { background: color-mix(in srgb, var(--ink) 8%, var(--panel)); }
+      .db-table th .sort-label { display: inline-flex; align-items: center; gap: 8px; }
+      .db-table th .sort-indicator {
+        width: 14px;
+        display: inline-block;
+        text-align: center;
+        opacity: 0.55;
+        font-size: 12px;
+      }
+      .db-table th[aria-sort="ascending"] .sort-indicator,
+      .db-table th[aria-sort="descending"] .sort-indicator { opacity: 1; }
       
       .db-table td {
         padding: 10px 12px;
@@ -212,17 +232,72 @@
         margin-bottom: 8px;
         flex-wrap: wrap;
       }
+
+      /* DB page also uses .filter-badge for pills; styles.css uses it for the tiny count chip. */
+      #filterBadge.filter-badge {
+        min-width: 16px;
+        height: 16px;
+        padding: 0 4px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: white;
+        font: 600 0.65rem/1 "Inter", sans-serif;
+        margin-left: 2px;
+        border: none;
+      }
+      @media (max-width: 768px) {
+        #filterBadge.filter-badge {
+          min-width: 14px;
+          height: 14px;
+          padding: 0 3px;
+          font-size: 0.6rem;
+          border-radius: 7px;
+        }
+      }
+
+      .sort-chip {
+        /* Like filter badge, but neutral (not "active filter" blue) */
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        background: color-mix(in srgb, var(--ink) 6%, var(--panel));
+        border: 1px solid var(--line);
+        color: var(--ink);
+        margin-left: auto;
+      }
+      .sort-chip .sort-chip-label { opacity: 0.7; }
+      .sort-chip .sort-chip-value { font-weight: 600; }
+      .sort-chip .sort-chip-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        color: var(--ink-soft);
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+        opacity: 0.7;
+      }
+      .sort-chip .sort-chip-btn:hover { opacity: 1; background: color-mix(in srgb, currentColor 12%, transparent); }
       .filter-badge {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 4px 10px;
-        border-radius: 6px;
+        padding: 7px 14px;
+        border-radius: 999px;
         font-size: 13px;
         font-weight: 500;
-        background: color-mix(in srgb, var(--accent) 15%, var(--panel));
-        border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
-        color: var(--accent);
+        background: color-mix(in srgb, var(--ink) 6%, var(--panel));
+        border: 1px solid var(--line);
+        color: var(--ink);
       }
       .filter-badge .badge-remove {
         display: inline-flex;
@@ -233,14 +308,14 @@
         border-radius: 50%;
         border: none;
         background: transparent;
-        color: var(--accent);
+        color: var(--ink-soft);
         cursor: pointer;
         font-size: 14px;
         line-height: 1;
         padding: 0;
         opacity: 0.6;
       }
-      .filter-badge .badge-remove:hover { opacity: 1; background: color-mix(in srgb, var(--accent) 20%, transparent); }
+      .filter-badge .badge-remove:hover { opacity: 1; background: color-mix(in srgb, var(--ink) 10%, transparent); }
       .filter-badge .badge-label { opacity: 0.7; }
       .truncate-text { max-width: 400px; }
       .truncate-text:hover { white-space: normal; word-break: break-word; }
@@ -415,6 +490,7 @@
       </div>
     </main>
 
-    <script src="db.js?v=2"></script>
+    <script src="../data-path.js?v=1"></script>
+    <script src="db.js?v=4"></script>
   </body>
 </html>
