@@ -2,7 +2,20 @@
 
 ## Local Development
 
-Run a local HTTP server to test the dashboard with proper path resolution:
+Run a local HTTP server to test the dashboard with proper path resolution.
+
+### Recommended (matches production subpath)
+
+Production is hosted under `/news/` on GitHub Pages. Use `devserver.py` to match
+that locally (and to serve `/news/data/` from the repo `data/` directory):
+
+```bash
+python3 devserver.py --port 8008
+```
+
+Then open http://127.0.0.1:8008/news/
+
+### Legacy (root-served)
 
 ```bash
 # From the project root, serve the dashboard directory
@@ -14,7 +27,7 @@ python -m SimpleHTTPServer 8080
 
 Then open http://localhost:8080/ in your browser.
 
-**Note:** The app uses relative paths like `../data/status/` which require an HTTP server (won't work with direct file:// URLs).
+**Note:** The dashboard expects an HTTP server (won't work with direct `file://` URLs).
 
 ## Post-update workflow guidance
 
