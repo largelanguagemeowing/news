@@ -1,18 +1,10 @@
-async function getJson(paths) {
-  for (const path of paths) {
-    const response = await fetch(path, { cache: "no-store" });
-    if (response.ok) {
-      return response.json();
-    }
-  }
-  throw new Error(`Failed to fetch ${paths.join(" or ")}`);
-}
+// getJson() provided by data-path.js
 
 let sourceArticleUrls = {};
 
 async function loadSourceArticleUrls() {
   try {
-    const articles = await getJson(["./data/status/articles.json", "../data/status/articles.json", "../../data/status/articles.json"]);
+    const articles = await getJson('/data/status/articles.json');
     const urlMap = {};
     for (const article of articles) {
       if (article.source_id && article.url && !urlMap[article.source_id]) {
@@ -172,11 +164,11 @@ function hideLoader() {
 async function main() {
   await loadSourceArticleUrls();
   const [summary, sources, incidents, runs, events] = await Promise.all([
-    getJson(["./data/status/summary.json", "../data/status/summary.json", "../../data/status/summary.json"]),
-    getJson(["./data/status/sources.json", "../data/status/sources.json", "../../data/status/sources.json"]),
-    getJson(["./data/status/incidents.json", "../data/status/incidents.json", "../../data/status/incidents.json"]),
-    getJson(["./data/status/runs.json", "../data/status/runs.json", "../../data/status/runs.json"]),
-    getJson(["./data/status/events.json", "../data/status/events.json", "../../data/status/events.json"]),
+    getJson('/data/status/summary.json'),
+    getJson('/data/status/sources.json'),
+    getJson('/data/status/incidents.json'),
+    getJson('/data/status/runs.json'),
+    getJson('/data/status/events.json'),
   ]);
 
   const generatedLabel = document.getElementById("generatedAt");
