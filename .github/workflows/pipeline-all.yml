@@ -82,6 +82,8 @@ jobs:
           fetch-depth: 0
 
       - name: Download news.db from release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p data
           if gh release view news-db --json assets >/dev/null 2>&1; then
@@ -142,6 +144,8 @@ jobs:
 
       - name: Upload news.db to release
         if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -s data/news.db ]; then
             gh release view news-db >/dev/null 2>&1 || gh release create news-db --title "News Database" --notes "Managed by pipeline workflows"
@@ -163,6 +167,8 @@ jobs:
           fetch-depth: 0
 
       - name: Download news.db from release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p data
           if gh release view news-db --json assets >/dev/null 2>&1; then
@@ -213,6 +219,8 @@ jobs:
 
       - name: Upload news.db to release
         if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -s data/news.db ]; then
             gh release view news-db >/dev/null 2>&1 || gh release create news-db --title "News Database" --notes "Managed by pipeline workflows"
@@ -234,6 +242,8 @@ jobs:
           fetch-depth: 0
 
       - name: Download news.db from release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p data
           if gh release view news-db --json assets >/dev/null 2>&1; then
@@ -276,6 +286,8 @@ jobs:
 
       - name: Upload news.db to release
         if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -s data/news.db ]; then
             gh release view news-db >/dev/null 2>&1 || gh release create news-db --title "News Database" --notes "Managed by pipeline workflows"
