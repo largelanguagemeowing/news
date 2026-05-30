@@ -84,6 +84,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Download news.db from release
+        run: |
+          mkdir -p data
+          if gh release view news-db --json assets >/dev/null 2>&1; then
+            gh release download news-db -p news.db -D data --clobber
+            echo "Downloaded news.db ($(stat -c%s data/news.db) bytes)"
+          else
+            echo "No existing release found; starting with empty database"
+            touch data/news.db
+          fi
+
       - name: Set up uv
         uses: astral-sh/setup-uv@v7
         with:
@@ -173,7 +184,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.db data/status
+          git add data/status
           
           if git diff --cached --quiet; then
             echo "No data changes to commit."
@@ -189,4 +200,16 @@ jobs:
             fi
             git commit -m "$COMMIT_MSG" || { echo "ERROR: Commit failed"; exit 1; }
             git push || { echo "ERROR: Push failed"; exit 1; }
+          fi
+
+      - name: Upload news.db to release
+        if: always()
+        run: |
+          if [ -s data/news.db ]; then
+            gh release view news-db >/dev/null 2>&1 || gh release create news-db --title "News Database" --notes "Managed by pipeline workflows"
+            gh release delete-asset news-db news.db --yes 2>/dev/null || true
+            gh release upload news-db data/news.db --clobber
+            echo "Uploaded news.db to release"
+          else
+            echo "news.db is empty; skipping upload"
           fi
