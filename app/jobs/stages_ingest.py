@@ -11,6 +11,8 @@ import feedparser
 import requests
 import tenacity
 
+import re
+
 from app.config import SourceConfig
 from app.db import transaction
 from app.incidents import IncidentSignal, sync_incident_open_or_update, sync_incident_resolve
@@ -21,6 +23,16 @@ from app.utils import clean_title
 
 
 logger = logging.getLogger("news.pipeline")
+
+
+def _should_skip_entry(entry_title: str, skip_patterns: list[str] | None) -> bool:
+    """Return True if the entry title matches any skip pattern."""
+    if not skip_patterns:
+        return False
+    for pattern in skip_patterns:
+        if re.search(pattern, entry_title):
+            return True
+    return False
 
 
 def ingest_stage(
@@ -54,6 +66,7 @@ def ingest_stage(
     skipped_sources = 0
     not_modified_sources = 0
     defuddle_enriched = 0
+    skipped_entries = 0
 
     enabled_sources = [s for s in sources if s.enabled]
     logger.info(
@@ -172,12 +185,17 @@ def ingest_stage(
             source_inserted = 0
             source_extraction_methods: dict[str, int] = {}
             latest_item_at: str | None = None
+            source_skipped_entries = 0
 
             with transaction(conn):
                 for entry in feed.entries:
                     try:
                         link = str(entry.get("link", "")).strip()
                         title = clean_title(str(entry.get("title", "")).strip() or "(untitled)")
+                        if _should_skip_entry(title, source.skip_patterns):
+                            source_skipped_entries += 1
+                            logger.debug("Skipping entry source=%s title=%s", source.source_id, title[:80])
+                            continue
                         body = str(entry.get("summary", "")).strip()
 
                         body, method, enrichment_attempts = enrich_article_content(link, source.source_id, title, body)
@@ -282,6 +300,7 @@ def ingest_stage(
                 )
 
             inserted += source_inserted
+            skipped_entries += source_skipped_entries
             extraction_summary = ", ".join(f"{k}={v}" for k, v in sorted(source_extraction_methods.items()))
 
             if latency_ms > slow_source_latency_ms:
@@ -300,6 +319,7 @@ def ingest_stage(
                 latency_ms=latency_ms,
                 latest_item_at=latest_item_at,
                 methods=source_extraction_methods,
+                skipped_entries=source_skipped_entries,
             )
 
             sync_incident_resolve(
@@ -363,7 +383,7 @@ def ingest_stage(
                     sync_incident_open_or_update(conn, signal, run_id, issue_client)
 
     logger.info(
-        "Ingest stage finished inserted_articles=%d failed_sources=%d skipped_sources=%d not_modified_sources=%d auto_disabled_sources=%d defuddle_enriched_articles=%d dead_letters=%d",
+        "Ingest stage finished inserted_articles=%d failed_sources=%d skipped_sources=%d not_modified_sources=%d auto_disabled_sources=%d defuddle_enriched_articles=%d dead_letters=%d skipped_entries=%d",
         inserted,
         failed_sources,
         skipped_sources,
@@ -371,6 +391,7 @@ def ingest_stage(
         auto_disabled_sources,
         defuddle_enriched,
         dead_letter_count,
+        skipped_entries,
     )
 
     return {
@@ -383,4 +404,5 @@ def ingest_stage(
         "auto_disabled_sources": auto_disabled_sources,
         "defuddle_enriched_articles": defuddle_enriched,
         "defuddle_enabled": defuddle_enabled,
+        "skipped_entries": skipped_entries,
     }

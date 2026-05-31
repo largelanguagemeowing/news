@@ -19,6 +19,7 @@ def log_source_complete(
     latency_ms: float,
     latest_item_at: str | None,
     methods: dict[str, int],
+    skipped_entries: int = 0,
 ) -> None:
     _log_structured(
         logger,
@@ -29,6 +30,7 @@ def log_source_complete(
         latency_ms=latency_ms,
         latest_item_at=latest_item_at,
         methods=methods,
+        skipped_entries=skipped_entries,
     )
 
 

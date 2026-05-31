@@ -14,6 +14,7 @@ class SourceConfig:
     default_category: str = "general"
     enabled: bool = True
     user_agent: str | None = None
+    skip_patterns: list[str] | None = None
 
 
 def load_sources(path: str = "config/sources.yml") -> list[SourceConfig]:
@@ -32,6 +33,7 @@ def load_sources(path: str = "config/sources.yml") -> list[SourceConfig]:
                 default_category=source.get("default_category", "general"),
                 enabled=bool(source.get("enabled", True)),
                 user_agent=source.get("user_agent"),
+                skip_patterns=source.get("skip_patterns"),
             )
         )
     return out
