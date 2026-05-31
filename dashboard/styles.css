@@ -1209,18 +1209,32 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.93rem;
+  table-layout: fixed;
 }
 
 #feedsTable th:nth-child(1),
 #feedsTable td:nth-child(1) {
-  width: 140px;
+  width: 80px;
+  white-space: nowrap;
+}
+
+#feedsTable th:nth-child(2),
+#feedsTable td:nth-child(2) {
+  width: 220px;
   white-space: nowrap;
 }
 
 #feedsTable th:nth-child(3),
 #feedsTable td:nth-child(3) {
-  width: 120px;
+  width: 180px;
   white-space: nowrap;
+}
+
+#feedsTable th:nth-child(4),
+#feedsTable td:nth-child(4) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 thead {
