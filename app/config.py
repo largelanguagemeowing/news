@@ -13,6 +13,7 @@ class SourceConfig:
     feed_url: str
     default_category: str = "general"
     enabled: bool = True
+    user_agent: str | None = None
 
 
 def load_sources(path: str = "config/sources.yml") -> list[SourceConfig]:
@@ -30,6 +31,7 @@ def load_sources(path: str = "config/sources.yml") -> list[SourceConfig]:
                 feed_url=source["feed_url"],
                 default_category=source.get("default_category", "general"),
                 enabled=bool(source.get("enabled", True)),
+                user_agent=source.get("user_agent"),
             )
         )
     return out
