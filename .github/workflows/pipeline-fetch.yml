@@ -35,7 +35,7 @@ on:
       export:
         description: "Export status files after fetch (enables feed dashboard)"
         required: false
-        default: false
+        default: true
         type: boolean
 
 concurrency:
