@@ -102,7 +102,7 @@ jobs:
           if [ "${{ inputs.pipeline_source }}" = "openai-only" ]; then
             export PIPELINE_SOURCE_ID="openai-blog"
           fi
-          if [ "${{ inputs.export }}" = "true" ]; then
+          if [ "${{ inputs.export }}" != "false" ]; then
             uv run python -m app.jobs.fetch_pipeline --export
           else
             uv run python -m app.jobs.fetch_pipeline
