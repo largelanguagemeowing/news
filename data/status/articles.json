@@ -1,5 +1,69 @@
 [
   {
+    "article_id": 1444840,
+    "title": "WTF Is the Context Layer? The Missing Infrastructure for Production Agents \u2014 Prukalpa Sankar",
+    "url": "https://www.youtube.com/watch?v=8G_1-3IO4ZQ",
+    "published_at": "2026-07-14T22:45:06+00:00",
+    "fetched_at": "2026-07-14T23:25:27+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In the last two years, models have gotten exponentially smarter. Two years ago they couldn't pass the bar. Today, top 1% of test scorers. And yet most agents still can't answer a simple business question correctly. You ship a demo that works. You deploy it. The business abandons it in a month.\n\nThe missing variable is context: the business definitions, procedural knowledge, and operational norms that make a human expert valuable.\n\nDrawing on hundreds of production deployments, Prukalpa Sankar will break down what it actually takes to give agents contextual intelligence \u2014 and get them past the demo stage.\n\nShe'll walk through the architecture of a context layer: how context repos work (versioned, testable, portable), how simulation environments catch failures before deployment, how agent traces compound back into shared context, and why context engineering scales where fine-tuning and prompting don't. She'll also cover why your context needs to be open (MCP, Iceberg, deploy to any framework) \u2014 and what happens when it isn't.\n\n### Prukalpa Sankar\nFounder & Co-CEO \u00b7 Atlan\n[X/Twitter](https://x.com/prukalpa) \u00b7 [LinkedIn](https://www.linkedin.com/in/prukalpa)\n\nPrukalpa Sankar is the Founder & Co-CEO of Atlan, the context layer for AI. She's been early to a defining idea of the AI era: context is king. AI systems are only as good as the business context behind the data they rely on. Under her leadership, Atlan has become a Leader in the Gartner Magic Quadrants for both Data & Analytics and Metadata Management, serves 300+ enterprises including Mastercard, GM, JPMorgan Chase, and Nasdaq, and has raised $200M+ from Sequoia, GIC, and Salesforce Ventures. Before Atlan, Prukalpa co-founded SocialCops, the world's largest government data lake powering the UN's SDG monitoring \u2014 recognized by the New York Times and the World Economic Forum. She's been featured in Forbes 30 Under 30 and Fortune 40 Under 40.",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1444582,
+    "title": "Quoting GitHub Changeling",
+    "url": "https://simonwillison.net/2026/Jul/14/github-changeling/#atom-everything",
+    "published_at": "2026-07-14T22:43:35+00:00",
+    "fetched_at": "2026-07-14T23:25:24+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://github.blog/changelog/2026-07-14-dependabot-version-updates-introduce-default-package-cooldown/\"><p>Dependabot now waits until a new release has been available on its registry for at least three days before opening a version update pull request. This cooldown is now the default and requires no configuration.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://github.blog/changelog/2026-07-14-dependabot-version-updates-introduce-default-package-cooldown/\">GitHub Changeling</a>, embracing <a href=\"https://simonwillison.net/tags/dependency-cooldowns/\">dependency cooldowns</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/dependency-cooldowns\">dependency-cooldowns</a>, <a href=\"https://simonwillison.net/tags/packaging\">packaging</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/github\">github</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "release",
+      "open-source",
+      "safety",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1444583,
+    "title": "simonw/pedalican",
+    "url": "https://simonwillison.net/2026/Jul/14/pedalican/#atom-everything",
+    "published_at": "2026-07-14T22:29:45+00:00",
+    "fetched_at": "2026-07-14T23:25:24+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://github.com/simonw/pedalican\">simonw/pedalican</a></strong></p>\nClearly I wasn't paying attention when these were <a href=\"https://twitter.com/OpenAIDevs/status/2050301642717950166\">first announced</a> back in May, but today I accidentally activated a \"pet\" in Codex Desktop - a little animated robot, reminiscent of <a href=\"https://en.wikipedia.org/wiki/Office_Assistant\">Clippy</a> - and then learned you can create your own.</p>\n<p>So I did, and now I have a cute little pelican on a bicycle bouncing around my desktop giving me updates on my Codex tasks.</p>\n<p><video controls=\"controls\" height=\"834\" poster=\"https://static.simonwillison.net/static/2026/pedalican-first-frame.jpg\" preload=\"none\" style=\"display: block; width: 100%; height: auto;\" width=\"1542\">\n    <source src=\"https://static.simonwillison.net/static/2026/pedalican.mp4\" type=\"video/mp4\" />\n    Your browser does not support HTML5 video.\n  </video>\n</p>\n<p>The most interesting thing about this process was watching how the custom pet was created. I told it I wanted a custom pet that was a pelican riding a bicycle and GPT-5.6 Sol xhigh did the rest of the work, using several rounds with <a href=\"https://developers.openai.com/api/docs/models/gpt-image-2\">gpt-image-2</a> to generate the necessary sprite assets.</p>\n<p>I had it make <a href=\"https://github.com/simonw/pedalican-pet/blob/main/notes-on-creating-a-pet.md\">extensive notes</a> and record all of the <a href=\"https://github.com/simonw/pedalican-pet/tree/main/run\">intermediary steps</a>. My GItHub repo includes every generated image and combined sprite sheet, plus GIFs for each of the animation loops such as this one, called <a href=\"https://github.com/simonw/pedalican-pet/blob/main/run/qa/previews/waving.gif\">waving.gif</a>:</p>\n<p><img alt=\"A cute pelican on a bicycle waving its wing\" src=\"https://static.simonwillison.net/static/2026/waving.gif\" /></p>\n<p>That GIF was compiled from <a href=\"https://github.com/simonw/pedalican-pet/blob/main/run/api-generation/waving.png\">a single image</a> generated by <code>gpt-image-2</code> that looked like this:</p>\n<p><img alt=\"Four frames of the animation presented on a bright magenta background\" src=\"https://static.simonwillison.net/static/2026/waving.webp\" /></p>\n<p>And <em>that</em> image was created by executing <a href=\"https://github.com/simonw/pedalican-pet/blob/main/run/prompts/rows/waving.md\">this prompt</a> against the initial generated <a href=\"https://github.com/simonw/pedalican-pet/blob/main/run/api-generation/base.png\">character reference image</a>, which was created with <a href=\"https://github.com/simonw/pedalican-pet/blob/main/run/prompts/base-pet.md\">this prompt</a>, which has this structure:</p>\n<blockquote>\n<p><code>Create one clean full-body reference sprite for Codex pet Pedalican.</code></p>\n<p><code>Pet identity: A compact adorable baby pelican with a round cream-white body, soft coral-orange bill and feet, riding a tiny sky-blue bicycle [...]</code></p>\n<p><code>Place a single centered pose on a perfectly flat pure magenta #FF00FF chroma-key background. Keep the full pet visible, compact, readable at 192x208, and easy to animate. [...]</code></p>\n</blockquote>\n<p>I've been looking out for example of ways to use image generation to create simple game-ready sprites, so I spent some time digging into this mechanism to see how it works.</p>\n<p>The key implementation details are open source - these two skills in particular, both Apache 2.0 licensed:</p>\n<ul>\n<li><a href=\"https://github.com/openai/skills/tree/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/hatch-pet\">hatch-pet</a> from <code>openai/skills</code></li>\n<li><a href=\"https://github.com/openai/codex/tree/f90e7deea6a715bbd153044af6f475eefa749177/codex-rs/skills/src/assets/samples/imagegen\">imagegen</a> from <code>openai/codex</code></li>\n</ul>\n<p>And yes, GPT-5.6 Sol did come up with the name \"Pedalican\". I like it!\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/prompt-engineering\">prompt-engineering</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/text-to-image\">text-to-image</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/codex\">codex</a></p>",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1442700,
     "title": "Don't Ship Skills Without Evals \u2014 Philipp Schmid, Google DeepMind",
     "url": "https://www.youtube.com/watch?v=0vphxNt4wyk",
@@ -136,6 +200,27 @@
       "coding",
       "events",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1444586,
+    "title": "datasette 1.0a37",
+    "url": "https://simonwillison.net/2026/Jul/14/datasette/#atom-everything",
+    "published_at": "2026-07-14T16:31:41+00:00",
+    "fetched_at": "2026-07-14T23:25:24+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette/releases/tag/1.0a37\">datasette 1.0a37</a></p>\n        <p>A minor release. Performance and <a href=\"https://docs.datasette.io/en/latest/authentication.html#authentication-permissions-explained\">documentation</a> improvements to the permissions system, plus I reverted a cosmetic API change which caused almost every existing plugin test suite to break.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "api",
+      "education",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9936,80 +10021,6 @@
     "tags": [
       "ai-models",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 841023,
-    "title": "Economic ResearchAgentic coding and persistent returns to expertise",
-    "url": "https://www.anthropic.com/research/claude-code-expertise",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-06-16T21:26:41+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jun 17, 2026Economic ResearchAgentic coding and persistent returns to expertise",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 855278,
-    "title": "Claude Design now stays on brand for daily work",
-    "url": "https://claude.com/blog/claude-design-stays-on-brand-for-daily-work",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-06-17T21:07:25+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Claude Design now stays on brand for daily work",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 857306,
-    "title": "Meet the winners of our Claude Opus 4.8 Build Day hackathon",
-    "url": "https://claude.com/blog/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-06-17T22:58:33+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Meet the winners of our Claude Opus 4.8 Build Day hackathon",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 855277,
-    "title": "Secure access to the Claude Platform with Workload Identity Federation",
-    "url": "https://claude.com/blog/workload-identity-federation",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-06-17T21:07:25+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Secure access to the Claude Platform with Workload Identity Federation",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
