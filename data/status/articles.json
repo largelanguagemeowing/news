@@ -1,5 +1,534 @@
 [
   {
+    "article_id": 1440582,
+    "title": "Forward Deployed Engineering at Cursor \u2014 Pauline Brunet",
+    "url": "https://www.youtube.com/watch?v=APqXGyCoGW4",
+    "published_at": "2026-07-14T21:00:06+00:00",
+    "fetched_at": "2026-07-14T21:00:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "# How Forward Deployed Engineering is done at Cursor\n\n**Location:** Forward Deployed Engineering / Room 2020\n**When:** Day 2 - June 30, 2026 \u00b7 11:10am-11:30am\n\n## Speakers\n\n### Pauline Brunet\nVP, Forward Deployed Engineering \u00b7 Cursor\n[LinkedIn](https://www.linkedin.com/in/pauline-brunet/)\n\nVP of Forward Deployed Engineering at Cursor. Building the motion and team to help customers adopt Cursor and drive meaningful returns. We configure and co-build alongside customer software and transformation teams. Spent 10 years in AI deployments across enterprises.\n\n\u2014 [View on the schedule](https://www.ai.engineer/worldsfair/schedule?session=asn_slot_2026_06_30_breakout_track_08_1110_2026_06_20t00_13_36_943z)",
+    "topic": "product",
+    "tags": [
+      "product",
+      "coding",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1438204,
+    "title": "lobste.rs is now running on SQLite",
+    "url": "https://simonwillison.net/2026/Jul/14/lobsters-sqlite/#atom-everything",
+    "published_at": "2026-07-14T19:44:11+00:00",
+    "fetched_at": "2026-07-14T19:52:00+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://lobste.rs/s/ko1ji1/lobste_rs_is_now_running_on_sqlite\">lobste.rs is now running on SQLite</a></strong></p>\nCommunity site <a href=\"https://lobste.rs\">Lobsters</a> has been planning a migration away from MariaDB <a href=\"https://github.com/lobsters/lobsters/issues/539#issuecomment-4959857588\">since August 2018</a> - originally targeting PostgreSQL, but last year they decided to <a href=\"https://github.com/lobsters/lobsters/issues/539#issuecomment-2964114295\">investigate SQLite</a> instead.</p>\n<p>This weekend they completed the migration, and now consider it stable enough that it looks like this is the permanent architecture for the site going forward:</p>\n<blockquote>\n<p>SQLite seems to have passed with flying colors: cpu usage is down, memory usage is down, site seems to be snappier at least for me, 1/2 the vps cost once mariadb vps is taken down</p>\n</blockquote>\n<p>The Lobsters Rails application now runs on a single VPS, with a primary content SQLite database file that's around 3.8GB.</p>\n<p>There are plenty more details in both the linked thread and this <a href=\"https://github.com/lobsters/lobsters/pull/1927\">SQLite migration PR</a> by Thomas Dziedzic, which added 735 lines and removed 593 lines across 30 commits and 188 files. That PR built on top of previous PRs <a href=\"https://github.com/lobsters/lobsters/pull/1705\">#1705</a>, <a href=\"https://github.com/lobsters/lobsters/pull/1871\">#1871</a>, and <a href=\"https://github.com/lobsters/lobsters/pull/1924\">#1924</a>.</p>\n<p>This is a really useful case study, and a great reminder that you can get a whole lot done with a single server and SQLite in 2026.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/migrations\">migrations</a>, <a href=\"https://simonwillison.net/tags/ops\">ops</a>, <a href=\"https://simonwillison.net/tags/rails\">rails</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/lobsters\">lobsters</a></p>",
+    "topic": "hardware",
+    "tags": [
+      "open-source",
+      "research",
+      "coding",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1439177,
+    "title": "Sometimes you don't know the answer in a grilling session Thinking about creating a /to-questionnaire skill That takes the grilling session and turns it into a questionnaire you can send someone to fill out OR work through it together in a meeting Collaboration made easy",
+    "url": "https://nitter.net/mattpocockuk/status/2077094799014875585#m",
+    "published_at": "2026-07-14T18:16:05+00:00",
+    "fetched_at": "2026-07-14T19:52:04+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Sometimes you don't know the answer in a grilling session<br />\n<br />\nThinking about creating a /to-questionnaire skill<br />\n<br />\nThat takes the grilling session and turns it into a questionnaire you can send someone to fill out OR work through it together in a meeting<br />\n<br />\nCollaboration made easy</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1438205,
+    "title": "Quoting Armin Ronacher",
+    "url": "https://simonwillison.net/2026/Jul/14/armin-ronacher/#atom-everything",
+    "published_at": "2026-07-14T18:04:23+00:00",
+    "fetched_at": "2026-07-14T19:52:00+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/\"><p>The shared language of a software project is not English or Python but it is the common understanding of what its concepts mean, where the boundaries are, which invariants matter, who owns what, and why the system has the shape it does. This language is rarely written down in one place. It lives partly in documentation and code, but also in code review, conversations, arguments, and the experience of having to explain a change to somebody else.</p>\n<p>Before agents, some of this shared understanding was maintained by friction. If I wanted to change your storage layer, I usually had to read your code, ask you questions, and perhaps coordinate with another team whose service depended on it. This was slow, and much of that slowness was waste but not all of it was. Some of it was the process by which your understanding became mine, and by which both of us discovered whether we still agreed about how the system worked. This friction synchronizes people.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/\">Armin Ronacher</a>, The Tower Keeps Rising</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/software-engineering\">software-engineering</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/armin-ronacher\">armin-ronacher</a>, <a href=\"https://simonwillison.net/tags/agentic-engineering\">agentic-engineering</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "education",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1437018,
+    "title": "Let's do a quick check on how wayfinder is going: When you build something new with my skills, you reach for:",
+    "url": "https://nitter.net/mattpocockuk/status/2077081524474630227#m",
+    "published_at": "2026-07-14T17:23:20+00:00",
+    "fetched_at": "2026-07-14T18:04:16+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Let's do a quick check on how wayfinder is going:<br />\n<br />\nWhen you build something new with my skills, you reach for:</p>\n<hr />\n<b>Poll</b>\n<p>\n29% \u2014 /wayfinder<br />\n24% \u2014 /grill-me<br />\n30% \u2014 /grill-with-docs<br />\n17% \u2014 \ud83c\udf7f<br />\n<i>572 votes \u2022 23 hours</i>\n</p>",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1436297,
+    "title": "Don't Build Agents You Can't Answer For \u2014 Addy Osmani",
+    "url": "https://www.youtube.com/watch?v=n97BCfyFIvw",
+    "published_at": "2026-07-14T17:16:43+00:00",
+    "fetched_at": "2026-07-14T18:04:13+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "For his closing keynote, Addy Osmani explores the evolving role of software engineers in the age of AI agents. He argues that as coding tasks become increasingly automated, the true value of an engineer shifts from mere code production to accountability, judgment, and system ownership.\n\nhttps://addyosmani.com/\nhttps://x.com/addyosmani/status/2074927530482835916\n\nTimestamps\n\n0:00 Introduction and the human side of engineering\n1:46 Rebundling roles and ownership of systems\n2:34 Harnesses, loop engineering, and software factories\n3:34 The shift to answerability as an engineering requirement\n4:26 Reviewing AI-assisted code and organizational bottlenecks\n5:55 Redefining leverage through human judgment\n6:15 Alpha, decay, and the role of \"taste\"\n8:49 Defining the modern software engineer\n9:50 Risks to avoid: cognitive debt and surrender\n11:51 Orchestration tax and system design\n12:39 Accountability as the foundation for scaling\n13:16 Career math: credibility vs. capability\n14:13 High agency and the decision-making ladder\n15:13 Defining the boundary between agents and humans\n16:13 Operational rule: explain it or don't ship it\n17:20 Future outlook: unlocking latent demand",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "agents",
+      "safety",
+      "coding",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1432770,
+    "title": "Celebrating 25 years of visual search innovation",
+    "url": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
+    "published_at": "2026-07-14T16:00:00+00:00",
+    "fetched_at": "2026-07-14T16:45:49+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Google Images logo surrounded by illustrations of people searching for different images",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1434642,
+    "title": "recommended reading.",
+    "url": "https://x.com/i/article/2076946210397552640",
+    "published_at": "2026-07-14T15:21:05+00:00",
+    "fetched_at": "2026-07-14T16:45:54+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1431966,
+    "title": "Easy \u201cTime Travel\u201d Editing Trick",
+    "url": "https://www.youtube.com/shorts/KzJkS00Ztd8",
+    "published_at": "2026-07-14T14:31:02+00:00",
+    "fetched_at": "2026-07-14T15:23:36+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "How to \"Time Travel\" in your next video with this SUPER easy editing trick!\n\nYou don't need complex VFX software to create seamless, mind-bending transitions anymore. Here is a straightforward way to jump between locations using AI tools like Runway, Kling, or Leonardo:\n\nStep 1: Record your intro in Location A, then head to Location B. Try to wear the same outfit and match your pose at the start of the second clip\u2014it makes the final transition much more believable.\nStep 2: Take a screenshot of the very last frame of Clip A, and the very first frame of Clip B.\nStep 3: Upload these two images as your starting and ending keyframes in an AI tool (I used Runway's Seedance 2.0 for the edit you see in this video).\nStep 4: Use a prompt like this: \u201cThe camera shoots up like a big jump transition and reveals the second location in one smooth motion. The man does not speak.\u201d (Pro-tip: Adding \"does not speak\" stops the AI from generating weird facial movements).\nStep 5: Download the generated clip, place it between your two original videos, and apply a short crossfade or smooth cut to hide the seams.\n\nThis method works for teleporting, outfit changes, mic tosses, and more.\n\nSave this post so you can reference the prompt later, and tag a creator who needs to try this! \ud83c\udfac\n\n#videoediting #contentcreator #editingtips #AI #genAI",
+    "topic": "tutorials",
+    "tags": [
+      "video",
+      "coding",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1430613,
+    "title": "Sometimes I experiment with going deep in the dumb zone to implement a feature Today it cost me 90 minutes of debugging to fix its stupid mistakes in a complex build Need to stop trying this",
+    "url": "https://nitter.net/mattpocockuk/status/2077024507420668349#m",
+    "published_at": "2026-07-14T13:36:46+00:00",
+    "fetched_at": "2026-07-14T13:43:37+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Sometimes I experiment with going deep in the dumb zone to implement a feature<br />\n<br />\nToday it cost me 90 minutes of debugging to fix its stupid mistakes in a complex build<br />\n<br />\nNeed to stop trying this</p>",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1430614,
+    "title": "For anyone interested in the outcome of the demo, here's the final spec I put together after finishing wayfinding this morning There's one task that needs to be done HITL, but the rest is ready for AFK to pick up Probably it'll be shipped by the time you see this https://github.com/mattpocock/course-video-manager/issues/1282",
+    "url": "https://nitter.net/mattpocockuk/status/2077003527025532958#m",
+    "published_at": "2026-07-14T12:13:24+00:00",
+    "fetched_at": "2026-07-14T13:43:37+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>For anyone interested in the outcome of the demo, here's the final spec I put together after finishing wayfinding this morning<br />\n<br />\nThere's one task that needs to be done HITL, but the rest is ready for AFK to pick up<br />\n<br />\nProbably it'll be shipped by the time you see this<br />\n<br />\n<a href=\"https://github.com/mattpocock/course-video-manager/issues/1282\">github.com/mattpocock/course\u2026</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://github.com/mattpocock/course-video-manager/issues/1282\">\n<img src=\"https://nitter.net/pic/card_img%2F2077003530708176896%2Fyw8l-gAr%3Fformat%3Djpg%26name%3D800x419\" />\n<br />\n<b>Spec: TikTok creator \u2014 short-form videos, portrait Studio, subtitled vertical render, TikTok +...</b>\n</a>\n<p>Spec synthesized from wayfinder map #1265 \u2014 all 15 decision tickets closed. Grounded against CVM main on 2026-07-14. Decision provenance is linked per section; the map is the index. Problem Stateme...</p>\n<small><a href=\"https://github.com/mattpocock/course-video-manager/issues/1282\">github.com</a></small>\n\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>Going live to demo /wayfinder<br />\n<br />\nTime to get your questions in now!<br />\n<br />\n<a href=\"https://piped.video/live/251hsWgoTPM?feature=share\">piped.video/live/251hsWgoTPM\u2026</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://piped.video/watch?v=251hsWgoTPM\">\n<img src=\"https://nitter.net/pic/card_img%2F2076679479951241216%2F17ZvIazO%3Fformat%3Djpg%26name%3D800x320_1\" />\n<br />\n<b>LIVE: The /wayfinder Demo</b>\n</a>\n<p>Become an AI Hero with my Skills For Real Engineershttps://www.ai...</p>\n<small><a href=\"https://piped.video/watch?v=251hsWgoTPM\">youtube.com</a></small>\n\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2076679479435337784#m\">https://nitter.net/mattpocockuk/status/2076679479435337784#m</a>\n</footer>\n</blockquote>",
+    "topic": "education",
+    "tags": [
+      "open-source",
+      "video",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1428497,
+    "title": "Debating a new /wayfinder change: Lots of folks are reporting that /wayfinder doesn't do as much 'shared language' work as /grill-with-docs stuff. I am also seeing this. So, I propose adding an explicit step BEFORE we make the map to firm up the language. I.e. in the very first /wayfinder mapping session, you immediately go into /domain-modeling (if needed) to establish the new entities. That way, the new language bleeds into all the rest of the tickets before they're created, making them more concise. WDYT?",
+    "url": "https://nitter.net/mattpocockuk/status/2076996976525054246#m",
+    "published_at": "2026-07-14T11:47:22+00:00",
+    "fetched_at": "2026-07-14T11:54:37+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Debating a new /wayfinder change:<br />\n<br />\nLots of folks are reporting that /wayfinder doesn't do as much 'shared language' work as /grill-with-docs stuff. I am also seeing this.<br />\n<br />\nSo, I propose adding an explicit step BEFORE we make the map to firm up the language.<br />\n<br />\nI.e. in the very first /wayfinder mapping session, you immediately go into /domain-modeling (if needed) to establish the new entities.<br />\n<br />\nThat way, the new language bleeds into all the rest of the tickets before they're created, making them more concise.<br />\n<br />\nWDYT?</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "open-source"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1435018,
+    "title": "How to manage AI investments in the agentic era",
+    "url": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+    "published_at": "2026-07-14T10:00:00+00:00",
+    "fetched_at": "2026-07-14T18:04:11+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows.",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "tutorials",
+      "funding",
+      "education",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1426375,
+    "title": "Never been easier to feel busy and ship nothing Stay focused",
+    "url": "https://nitter.net/mattpocockuk/status/2076951628138082680#m",
+    "published_at": "2026-07-14T08:47:10+00:00",
+    "fetched_at": "2026-07-14T10:17:12+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Never been easier to feel busy and ship nothing<br />\n<br />\nStay focused</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1426376,
+    "title": "Yesterday I submitted a Claude plugin for my skills (finally) Anyone know how long the submission process takes? Would love a nudge from any of my mates at Anthropic",
+    "url": "https://nitter.net/mattpocockuk/status/2076949051610640813#m",
+    "published_at": "2026-07-14T08:36:56+00:00",
+    "fetched_at": "2026-07-14T10:17:12+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Yesterday I submitted a Claude plugin for my skills (finally)<br />\n<br />\nAnyone know how long the submission process takes? Would love a nudge from any of my mates at Anthropic</p>",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1438463,
+    "title": "Don't Ship Skills Without Evals \u2014 Philipp Schmid, Google DeepMind",
+    "url": "https://www.youtube.com/watch?v=0vphxNt4wyk",
+    "published_at": "2026-07-14T01:13:32+00:00",
+    "fetched_at": "2026-07-14T19:52:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "There are thousands of agent skills. Almost none of them are tested. They get vibe-checked with two manual runs, maybe a thumbs-up from a colleague, then shipped. You wouldn't merge code without tests \u2014 so why are we shipping skills without evals? This talk covers the full lifecycle of building reliable agent skills: what a skill actually is (and isn't), how to write one that triggers correctly, and how to build a lightweight eval harness that catches failures before your users do.\n\n### Philipp Schmid\nStaff Engineer \u00b7 Google DeepMind\n[X/Twitter](https://x.com/_philschmid) \u00b7 [LinkedIn](https://www.linkedin.com/in/philipp-schmid-a6a2bb196/) \u00b7 [Website](https://www.philschmid.de/) \u00b7 [Blog](https://www.philschmid.de)\n\nPhilipp Schmid is a Staff Engineer at Google DeepMind working on Gemini and Gemma. His work focuses on helping developers build and benefit from AI responsibly.\n\n## About This Session\n\n\u2014 [View on the schedule](https://www.ai.engineer/worldsfair/schedule?session=asn_slot_2026_07_01_breakout_track_05_1545_2026_06_26t08_57_00_975z)",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1419180,
+    "title": "Using uvx in GitHub Actions in a cache-friendly way",
+    "url": "https://simonwillison.net/2026/Jul/14/uvx-github-actions-cache/#atom-everything",
+    "published_at": "2026-07-14T00:56:20+00:00",
+    "fetched_at": "2026-07-14T03:19:24+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>TIL:</strong> <a href=\"https://til.simonwillison.net/github-actions/uvx-github-actions-cache\">Using uvx in GitHub Actions in a cache-friendly way</a></p>\n        <p>I finally found a cache-friendly recipe for using <code>uvx tool-name</code> in GitHub Actions workflows that I like.</p>\n<p>The trick is setting a <code>UV_EXCLUDE_NEWER: \"2026-07-12\"</code> environment variable at the start of the workflow and then using that as part of the GitHub Actions cache key. This means any <code>uvx tool-name</code> commands will resolve to the most recent version as-of that date, and you can bust the cache and upgrade the tools by bumping the date in the future.</p>\n<p>My goal here is to use Python tools in GitHub Actions without every run of the workflow hitting PyPI to download a fresh copy of the tool and its dependencies.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/packaging\">packaging</a>, <a href=\"https://simonwillison.net/tags/pypi\">pypi</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/github-actions\">github-actions</a>, <a href=\"https://simonwillison.net/tags/uv\">uv</a></p>",
+    "topic": "tools",
+    "tags": [
+      "open-source",
+      "agents",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1438464,
+    "title": "Forward Deployed Engineering at Cursor \u2014 Pauline Brunet",
+    "url": "https://www.youtube.com/watch?v=APqXGyCoGW4",
+    "published_at": "2026-07-14T00:55:53+00:00",
+    "fetched_at": "2026-07-14T19:52:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "# How Forward Deployed Engineering is done at Cursor\n\n**Location:** Forward Deployed Engineering / Room 2020\n**When:** Day 2 - June 30, 2026 \u00b7 11:10am-11:30am\n\n## Speakers\n\n### Pauline Brunet\nVP, Forward Deployed Engineering \u00b7 Cursor\n[LinkedIn](https://www.linkedin.com/in/pauline-brunet/)\n\nVP of Forward Deployed Engineering at Cursor. Building the motion and team to help customers adopt Cursor and drive meaningful returns. We configure and co-build alongside customer software and transformation teams. Spent 10 years in AI deployments across enterprises.\n\n\u2014 [View on the schedule](https://www.ai.engineer/worldsfair/schedule?session=asn_slot_2026_06_30_breakout_track_08_1110_2026_06_20t00_13_36_943z)",
+    "topic": "product",
+    "tags": [
+      "product",
+      "coding",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1438465,
+    "title": "WTF Is the Context Layer? The Missing Infrastructure for Production Agents \u2014 Prukalpa Sankar",
+    "url": "https://www.youtube.com/watch?v=8G_1-3IO4ZQ",
+    "published_at": "2026-07-14T00:54:03+00:00",
+    "fetched_at": "2026-07-14T19:52:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In the last two years, models have gotten exponentially smarter. Two years ago they couldn't pass the bar. Today, top 1% of test scorers. And yet most agents still can't answer a simple business question correctly. You ship a demo that works. You deploy it. The business abandons it in a month.\n\nThe missing variable is context: the business definitions, procedural knowledge, and operational norms that make a human expert valuable.\n\nDrawing on hundreds of production deployments, Prukalpa Sankar will break down what it actually takes to give agents contextual intelligence \u2014 and get them past the demo stage.\n\nShe'll walk through the architecture of a context layer: how context repos work (versioned, testable, portable), how simulation environments catch failures before deployment, how agent traces compound back into shared context, and why context engineering scales where fine-tuning and prompting don't. She'll also cover why your context needs to be open (MCP, Iceberg, deploy to any framework) \u2014 and what happens when it isn't.\n\n### Prukalpa Sankar\nFounder & Co-CEO \u00b7 Atlan\n[X/Twitter](https://x.com/prukalpa) \u00b7 [LinkedIn](https://www.linkedin.com/in/prukalpa)\n\nPrukalpa Sankar is the Founder & Co-CEO of Atlan, the context layer for AI. She's been early to a defining idea of the AI era: context is king. AI systems are only as good as the business context behind the data they rely on. Under her leadership, Atlan has become a Leader in the Gartner Magic Quadrants for both Data & Analytics and Metadata Management, serves 300+ enterprises including Mastercard, GM, JPMorgan Chase, and Nasdaq, and has raised $200M+ from Sequoia, GIC, and Salesforce Ventures. Before Atlan, Prukalpa co-founded SocialCops, the world's largest government data lake powering the UN's SDG monitoring \u2014 recognized by the New York Times and the World Economic Forum. She's been featured in Forbes 30 Under 30 and Fortune 40 Under 40.",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1432041,
+    "title": "Anthropic commits $10 million to Canadian AI research",
+    "url": "https://www.anthropic.com/news/canadian-ai-research",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "fetched_at": "2026-07-14T15:23:37+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Anthropic commits $10 million to Canadian AI research",
+    "topic": "research",
+    "tags": [
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1432042,
+    "title": "Introducing Claude for Teachers",
+    "url": "https://www.anthropic.com/news/claude-for-teachers",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "fetched_at": "2026-07-14T15:23:37+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Introducing Claude for Teachers",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1432309,
+    "title": "Economic ResearchHow Canada uses Claude: Findings from the Anthropic Economic Index",
+    "url": "https://www.anthropic.com/research/how-canada-uses-claude",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "fetched_at": "2026-07-14T15:23:37+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Jul 14, 2026Economic ResearchHow Canada uses Claude: Findings from the Anthropic Economic Index",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1436060,
+    "title": "Multilingual Semantic Retrieval for Apple Music Search",
+    "url": "https://machinelearning.apple.com/research/multilingual-semantic-retrieval",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "fetched_at": "2026-07-14T18:04:11+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Apple Music serves listeners across 150+ storefronts in dozens of languages, with a catalog that grows by hundreds of thousands of new tracks daily. At this scale, search recall on misspelled, transliterated, and cross-lingual queries becomes a dominant driver of session quality, particularly for tail queries that account for the majority of unique queries. We present a multilingual semantic retrieval system built on a 305M-parameter Siamese bi-encoder fine-tuned from GTE-multilingual-base with curriculum-scheduled multi-objective training. The model is integrated into the search stack via a\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1431788,
+    "title": "Proactive Agent Research Environment: Simulating Active Users to Evaluate Proactive Assistants",
+    "url": "https://machinelearning.apple.com/research/proactive-agent-research-environment",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "fetched_at": "2026-07-14T15:23:36+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Proactive agents that anticipate user needs and autonomously execute tasks hold great promise as digital assistants, yet the lack of realistic user simulation frameworks hinders their development. Existing approaches model apps as flat tool-calling APIs, failing to capture the stateful and sequential nature of user interaction in digital environments and making realistic user simulation infeasible. We introduce Proactive Agent Research Environment (Pare), a framework for building and evaluating proactive agents in digital environments. Pare models applications as finite state machines with\u2026",
+    "topic": "research",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "research",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1426511,
+    "title": "How data science teams use ChatGPT Work",
+    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "fetched_at": "2026-07-14T11:54:32+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1426512,
+    "title": "How sales teams use ChatGPT Work",
+    "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+    "published_at": "2026-07-14T00:00:00+00:00",
+    "fetched_at": "2026-07-14T11:54:32+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1414912,
+    "title": "DOOMQL",
+    "url": "https://simonwillison.net/2026/Jul/13/doomql/#atom-everything",
+    "published_at": "2026-07-13T22:34:41+00:00",
+    "fetched_at": "2026-07-13T22:58:31+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://github.com/petergpt/doomql\">DOOMQL</a></strong></p>\nPeter Gostev built this using GPT-5.6 Sol. This is a <em>lot</em> of fun: </p>\n<blockquote>\n<p>DOOMQL started with a deliberately unreasonable question: what if SQLite were the game engine, not merely the place where a game stores data?</p>\n<p>The result is a small, original Doom-like game in which SQL owns movement, collision, enemies, combat, progression and every RGB pixel on screen.</p>\n</blockquote>\n<p>It's implemented as a Python terminal script - I tried it out like this:</p>\n<pre><code>cd /tmp\ngit clone https://github.com/petergpt/doomql\ncd doomql\nuv run host/doomql.py\n</code></pre>\n<p><img alt=\"Screenshot of a macOS terminal window titled &quot;doomql \u2014 python3.14 \u25c2 uv run host/doomql.py \u2014 134\u00d731&quot; showing a retro Doom-style game rendered as text-mode pixel art. The scene is a pixelated first-person corridor with gray paneled walls, dark red doors on the far left and right, a floating cyan-and-gold coin pickup on the right side, a white crosshair near the center, and a dark weapon barrel rising from the bottom center. A status bar below the scene reads &quot;HP 100/100 AMMO 037 SCORE 00225 INDEX MISSING TICK 0028450&quot;, followed by an orange line &quot;FIND THE INDEX TOKEN&quot; and a cyan controls line &quot;WASD MOVE J/L OR ARROWS TURN SPACE FIRE E USE P PAUSE CTRL-C EXIT&quot;.\" src=\"https://static.simonwillison.net/static/2026/doomql-window.png\" /></p>\n<p>Here's <a href=\"https://github.com/petergpt/doomql/blob/main/sql/003_render.sql\">the huge SQL query</a> that implements a full ray tracer in SQLite using a recursive CTE.</p>\n<p>Running the above script creates a <code>/tmp/doomql/.doomql/doomql.sqlite</code> SQLite database, which you can explore using Datasette like this:</p>\n<pre><code>uvx --prerelease=allow  --with datasette-apps datasette \\\n  /tmp/doomql/.doomql/doomql.sqlite \\\n  -p 4444 --root --secret 1 --internal internal.db\n</code></pre>\n<p>The <code>--with datasette-apps</code> option installs the new <a href=\"https://simonwillison.net/2026/Jun/18/datasette-apps/\">Datasette Apps</a> plugin, which supports creating custom HTML+JavaScript apps that can run SQL queries directly within the Datasette interface.</p>\n<p>I created a new app, pasted the copy-paste prompt into Claude chat (Fable 5) <a href=\"https://claude.ai/share/c793280c-2ef1-4555-a7c2-31281abfdf78\">and told it</a>:</p>\n<blockquote>\n<p><code>Build an app that displays the current state of the screen using the frame_pixels view with its x, y, r, g, b columns. have it refresh once a second.</code></p>\n</blockquote>\n<p>This got me a working HTML+JavaScript app inside Datasette that could reflect the current state while I played the game in my terminal. Then I added:</p>\n<blockquote>\n<p><code>add a minimap</code></p>\n</blockquote>\n<p>And now my Datasette App looks like this:</p>\n<p><img alt=\"Screenshot of a dark-themed web app running a retro Doom-style game rendered from SQL queries. The page header reads &quot;DOOMQL&quot; with buttons &quot;All apps&quot;, &quot;Edit app&quot;, &quot;Pin&quot;, and &quot;Full screen&quot;. Inside the game panel, the title &quot;DOOMQL&quot; sits above the subtitle &quot;auto-refreshing once a second \u00b7 frame and tactical map straight from SQL&quot;. The left side shows a pixelated first-person corridor view with gray walls, dark red doors, a floating cyan-and-gold coin pickup, a white crosshair, and a weapon barrel at bottom center. A status bar below reads &quot;HP 100/100 AMMO 037 SCORE 00225 INDEX MISSING TICK 0027847&quot;. On the right, a panel titled &quot;TACTICAL MAP&quot; shows a top-down grid map with a player triangle, a red enemy circle, yellow pickup dots, red wall markers, and a green exit square, with a legend reading &quot;you&quot;, &quot;enemy&quot;, &quot;pickup&quot;, &quot;locked door&quot;, &quot;door&quot;, &quot;exit&quot;. Below the game view, an orange banner reads &quot;FIND THE INDEX TOKEN&quot;, followed by the cyan line &quot;READ-ONLY VIEWER \u00b7 SELECT x, y, r, g, b FROM frame_pixels&quot;. At the bottom, a green &quot;RUNNING&quot; badge appears beside the stats &quot;160\u00d754 \u00b7 8,640 pixels \u00b7 3 hostiles \u00b7 query 89 ms \u00b7 refreshing every 1 s&quot;.\" src=\"https://static.simonwillison.net/static/2026/doomql-datasette-app.png\" /></p>\n<p>Here's <a href=\"https://gist.github.com/simonw/7c78184476fccd4b70b02f7f9048dffa\">the HTML app code</a> - paste that into your own Datasette instance (using the <code>uvx --with datasette-apps</code> recipe from above) to try it yourself.\n\n    <p><small></small>Via <a href=\"https://twitter.com/petergostev/status/2076692164310884468\">@petergostev</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/games\">games</a>, <a href=\"https://simonwillison.net/tags/sql\">sql</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a>, <a href=\"https://simonwillison.net/tags/gpt\">gpt</a>, <a href=\"https://simonwillison.net/tags/datasette-apps\">datasette-apps</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "benchmark",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1411111,
     "title": "datasette code-frequency chart on GitHub",
     "url": "https://simonwillison.net/2026/Jul/13/datasette-code-frequency/#atom-everything",
@@ -17,6 +546,27 @@
       "infrastructure",
       "coding",
       "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1438466,
+    "title": "The Great Loops Debate \u2014\u00a0Dex Horthy, Geoff Huntley, Ian Livingstone, Greg Pstrucha, @insecure-agents",
+    "url": "https://www.youtube.com/watch?v=c35YoMdnI78",
+    "published_at": "2026-07-13T20:36:45+00:00",
+    "fetched_at": "2026-07-14T19:52:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Oxford Style Debate: There is, or is not, a delta between the hype behind loops and what actually works in practice.\n\nTeam No Delta (pro the way we do loops today)\n\nThe hype around loops is valid and loops work well today in practice. Loops today can be a silver bullet and result in outsize productivity gains, and marks an important step up the autonomy curve towards real software factories.\n\nIan Livingstone\nGeoff Huntley\n\nTeam Delta (anti the way we do loops today)\n\nThere is a delta between the hype behind loops and what actually works in practice. The way we are doing loops today is wrong. Loops are not a silver bullet and there is no magic.\n\nThe hype is outrunning the discipline\n\"Stop writing loops, start writing control loops.\" A bare repeat-the-agent loop isn't magic. The leverage comes from the Kubernetes-style reconciliation around it: read current state \u2192 read desired state \u2192 one incremental change  \u2192 repeat. Dex's tell when shown a fake loop: \"where's the recur condition?\" (Jun 21)\nA software factory can run the mechanical, spec-gated, test-covered slices unattended; it cannot autonomously decide whether it built the right thing.\n\nDex Horthy\nGreg Pstrucha\n\nMain Debate \nLoop History - Why now as the inflection point and not some of the earlier ones? \nLoop Anatomy - What makes a good loop? \nLoop Future - Given what we\u2019re seeing with loop usage now, are we well positioned for software factories? If we can\u2019t use loops well today how do we expect to operate software factories?\n\nAppendix\nResearch\nhttps://x.com/AnatoliKopadze/status/2068328135611822149?s=20\nhttps://x.com/ericzakariasson/status/2070493377267646797?s=20\nhttps://x.com/MilksandMatcha/status/2069838072515281386?s=20\nhttps://x.com/AnatoliKopadze/status/2070156017262793008?s=20\nhttps://ghuntley.com/loop/\nhttps://ghuntley.com/ralph/\nhttps://www.anthropic.com/institute/recursive-self-improvement\nAnthropic's Absorption of the Ralph Loop\nVerifying Agents in GitHub",
+    "topic": "research",
+    "tags": [
+      "open-source",
+      "agents",
+      "research",
+      "coding",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -89,6 +639,29 @@
     "available": true
   },
   {
+    "article_id": 1423542,
+    "title": "Stop Evaluating Models Like It's the 50s - Alejandro Vidal, Mindmakers",
+    "url": "https://www.youtube.com/watch?v=O3FEoMYvUf8",
+    "published_at": "2026-07-13T17:56:55+00:00",
+    "fetched_at": "2026-07-14T08:05:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Psychologists spent the last century learning how to measure something invisible and uncooperative: a human mind. AI evaluation, meanwhile, still scores like it is 1950. Count the right answers, treat every question as equal, trust the percentage (this is Classical Test Theory). We are sitting on decades of measurement theory built for exactly this problem, and we forgot to use it.\n\nBorrow it and the picture changes. Item Response Theory (or IRT, the math behind the SAT and the GRE) models every item on top of a shared scale with real error bars. That tells you which of your test items are pure noise, which are optimal, and where the knowledge gaps and unexpected behaviours are. Adaptive testing then measures the same ability with a fraction of the questions, which means private, rotating benchmarks that resist contamination instead of saturating in a month (tinyBenchmarks already hinted you can shrink a benchmark with IRT).\n\nIt goes further than scoring. The statistical properties of how a model fits the test reveal something a single number never could: data leakage, the moment an agent has quietly seen the answers before. The same machinery that catches a cheating student catches a contaminated benchmark. And instead of one flat score, you get a shape: where the jagged frontier actually is, which abilities are solid and which are luck, so you know which direction to push next.\n\nYou will leave this talk with a way to build evals that are cheaper, harder to game, and that tell you what your model actually learned instead of how lucky it got. This is not about handing human tests to a model. It is about borrowing a century of how to measure a mind that does not want to be measured.\n\nSpeakers:\n- Alejandro Vidal (Mindmakers): Alex Vidal is the founder of Mindmakers, a psychologist and computer scientist who teaches humans to use AI and teaches AIs to teach humans, building adaptive learning technology and the agents, evals and boring infrastructure that keep it from falling over.\n\nX/Twitter: https://x.com/dobleio",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "tutorials",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1404973,
     "title": "From fork() to Fleet: Designing an Agent Sandbox Cloud \u2014 Abhishek Bhardwaj, OpenAI",
     "url": "https://www.youtube.com/watch?v=OqM67QG_Ikk",
@@ -147,6 +720,26 @@
       "product",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1422173,
+    "title": "Empowering India\u2019s next generation of innovators with ATL Saathi",
+    "url": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
+    "published_at": "2026-07-13T12:37:28+00:00",
+    "fetched_at": "2026-07-14T08:05:21+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators in robotics labs.",
+    "topic": "robotics",
+    "tags": [
+      "release",
+      "models",
+      "robotics",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9415,618 +10008,6 @@
       "release",
       "benchmark",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 846616,
-    "title": "datasette 1.0a34",
-    "url": "https://simonwillison.net/2026/Jun/16/datasette/#atom-everything",
-    "published_at": "2026-06-16T21:31:24+00:00",
-    "fetched_at": "2026-06-17T07:34:29+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette/releases/tag/1.0a34\">datasette 1.0a34</a></p>\n        <p>Quoting the release notes:</p>\n<blockquote>\n<p>The big feature in this alpha is tools to insert, edit and delete rows within the Datasette interface. These features are available on table pages, and edit and delete are also available as action items on the row page.</p>\n</blockquote>\n<p><a href=\"https://static.simonwillison.net/static/2026/datasette-edit.gif\"><img src=\"https://static.simonwillison.net/static/2026/datasette-edit-first-frame.gif\" /></a></p>\n\n<p>The inspiration for this feature - which is <em>long</em> overdue - was <a href=\"https://agent.datasette.io/\">Datasette Agent</a>. I added <a href=\"https://simonwillison.net/2026/Jun/15/datasette-agent/\">SQL write support</a> to that the other day which highlighted how absurd it was that you could insert and edit ties via the chat interface but not in the regular Datasette UI!</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/annotated-release-notes\">annotated-release-notes</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "opinion",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 841440,
-    "title": "Unlocking UK house-building with AI-accelerated planning",
-    "url": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
-    "published_at": "2026-06-16T21:29:50+00:00",
-    "fetched_at": "2026-06-16T23:05:45+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "UK government partners with Google DeepMind to build a new AI-powered prototype aimed at faster housing decisions.",
-    "topic": "policy",
-    "tags": [
-      "policy",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 841207,
-    "title": "Running local models is good now",
-    "url": "https://vickiboykis.com/2026/06/15/running-local-models-is-good-now/",
-    "published_at": "2026-06-16T19:15:22+00:00",
-    "fetched_at": "2026-06-16T21:26:42+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. we are getting there.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 839378,
-    "title": "The outrageous effectiveness of Leitw\u00f6rter\n\nI've realised that all of the great skills I've written share one thing in common.\n\nThey make heavy use of Leitw\u00f6rter - leading words.\n\nA leitwort comes from literary theory. It's a repeated word or phrase used throughout a text to establish a theme or anchor meaning.\n\nIn skills, a leitwort is a word or phrase the agent uses to guide its own behavior. In other words, it's a word that leads the agent in a certain direction.\n\nLet's take the leitwort \"zone of proximal development\" from my /teach skill. It's a phrase from the study of education. It means the \"zone where the user feels challenged but not overwhelmed\".\n\nI use this only a couple of times throughout the skill's SKILL.md, but I've seen it almost every time the agent invokes the skill.\n\n- \"Let me adjust the lesson so it's in the user's zone of proximal development.\"\n- \"I'll read the learning records to establish the user's zone of proximal development.\"\n\nIn other words, that single phrase encodes how the agent should behave, in a concise token the agent can itself repeat to reinforce its own behavior.\n\nNot only that, but it also likely tickles the agents' parameters related to educational research and \"being a good teacher\".\n\nFor engineering, leading words like \"tracer bullets\", \"deep modules\", \"test seams\", \"clean code\" are outrageously effective for leading the agent to produce better code.\n\nSo a leitwort in AI is any word or phrase you use that appears in the agents' thinking traces and guides its behavior.\n\nEnjoy finding your own.",
-    "url": "https://nitter.net/mattpocockuk/status/2066922013000671731#m",
-    "published_at": "2026-06-16T16:33:04+00:00",
-    "fetched_at": "2026-06-16T18:16:45+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>The outrageous effectiveness of Leitw\u00f6rter<br />\n<br />\nI've realised that all of the great skills I've written share one thing in common.<br />\n<br />\nThey make heavy use of Leitw\u00f6rter - leading words.<br />\n<br />\nA leitwort comes from literary theory. It's a repeated word or phrase used throughout a text to establish a theme or anchor meaning.<br />\n<br />\nIn skills, a leitwort is a word or phrase the agent uses to guide its own behavior. In other words, it's a word that leads the agent in a certain direction.<br />\n<br />\nLet's take the leitwort \"zone of proximal development\" from my /teach skill. It's a phrase from the study of education. It means the \"zone where the user feels challenged but not overwhelmed\".<br />\n<br />\nI use this only a couple of times throughout the skill's SKILL.md, but I've seen it almost every time the agent invokes the skill.<br />\n<br />\n- \"Let me adjust the lesson so it's in the user's zone of proximal development.\"<br />\n- \"I'll read the learning records to establish the user's zone of proximal development.\"<br />\n<br />\nIn other words, that single phrase encodes how the agent should behave, in a concise token the agent can itself repeat to reinforce its own behavior.<br />\n<br />\nNot only that, but it also likely tickles the agents' parameters related to educational research and \"being a good teacher\".<br />\n<br />\nFor engineering, leading words like \"tracer bullets\", \"deep modules\", \"test seams\", \"clean code\" are outrageously effective for leading the agent to produce better code.<br />\n<br />\nSo a leitwort in AI is any word or phrase you use that appears in the agents' thinking traces and guides its behavior.<br />\n<br />\nEnjoy finding your own.</p>",
-    "topic": "education",
-    "tags": [
-      "agents",
-      "research",
-      "coding",
-      "tutorials",
-      "development",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 844563,
-    "title": "datasette-tailscale 0.1a0",
-    "url": "https://simonwillison.net/2026/Jun/16/datasette-tailscale/#atom-everything",
-    "published_at": "2026-06-16T16:18:20+00:00",
-    "fetched_at": "2026-06-17T02:02:19+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-tailscale/releases/tag/0.1a0\">datasette-tailscale 0.1a0</a></p>\n        <p>A very experimental alpha plugin which lets you do this:</p>\n<pre><code>datasette tailscale mydata.db \\\n  --ts-authkey tskey-auth-xxxx --ts-hostname datasette-preview\n</code></pre>\n<p>This starts a localhost Datasette server with a <a href=\"https://tailscale.com/\">Tailscale</a> sidecar that connects it to your Tailnet, such that <code>http://datasette-preview/</code> serves Datasette.</p>\n<p>It's using the Python bindings for the experimental <a href=\"https://github.com/tailscale/tailscale-rs\">tailscale-rs</a> library. I <a href=\"https://github.com/tailscale/tailscale-rs/issues/243\">filed an issue</a> asking if there's a cleaner way of setting up the proxy mechanism.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/tailscale\">tailscale</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 838471,
-    "title": "Quoting Georgi Gerganov",
-    "url": "https://simonwillison.net/2026/Jun/16/georgi-gerganov/#atom-everything",
-    "published_at": "2026-06-16T16:04:59+00:00",
-    "fetched_at": "2026-06-16T18:16:42+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://news.ycombinator.com/item?id=48555993#48557304\"><p>I can 100% attest to the fact that Qwen3.6-27B is a very capable local model for coding tasks. Over the last month and a half I've been using it almost daily, either on my M2 Ultra or on my RTX 5090 box. I use it for small <a href=\"https://github.com/search?q=%22Assisted-by%22+user%3Aggml-org&amp;type=commits&amp;ref=advsearch\">mundane tasks at ggml-org</a> - nothing really impressive, but definitely a helpful tool for a maintainer. I think I would be using it much more, if I didn't have to spend a lot of my time on reviewing PRs. Currently, I have a very lightweight harness - the pi agent with everything stripped (<code>pi -nc --offline</code>) and <a href=\"https://github.com/ggml-org/llama.cpp/blob/master/.pi/gg/SYSTEM.md\">a short system prompt</a> to align it a bit with my style.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://news.ycombinator.com/item?id=48555993#48557304\">Georgi Gerganov</a>, Hacker News comment on <a href=\"https://vickiboykis.com/2026/06/15/running-local-models-is-good-now/\">Running local models is good now</a> by  Boykis</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/georgi-gerganov\">georgi-gerganov</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/pi\">pi</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a>, <a href=\"https://simonwillison.net/tags/local-llms\">local-llms</a>, <a href=\"https://simonwillison.net/tags/qwen\">qwen</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "opinion",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 865764,
-    "title": "Securing the future of AI agents",
-    "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
-    "published_at": "2026-06-16T15:46:31+00:00",
-    "fetched_at": "2026-06-18T16:33:52+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Securing internal systems with an AI Control Roadmap, combining traditional safeguards and real-time monitoring.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 837335,
-    "title": "Farming is risky business. This app helps Turkish growers succeed",
-    "url": "https://news.microsoft.com/source/emea/features/farming-is-risky-business-this-app-helps-turkish-growers-succeed/",
-    "published_at": "2026-06-16T13:41:44+00:00",
-    "fetched_at": "2026-06-16T18:16:40+00:00",
-    "source_id": "microsoft-ai-blog",
-    "source_name": "Microsoft AI Blog",
-    "extraction_method": "rss",
-    "body": "<p>The post <a href=\"https://news.microsoft.com/source/emea/features/farming-is-risky-business-this-app-helps-turkish-growers-succeed/\">Farming is risky business. This app helps Turkish growers succeed</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
-    "topic": "enterprise",
-    "tags": [
-      "safety",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 839379,
-    "title": "Folks say that the stuff you learn from the /teach skill doesn't stick.\n\n\"Did AI really teach you how to solve a Rubik's cube?\"\n\nYes. Here's the proof:\n\n(don't expect any great speed, but I can do it)",
-    "url": "https://nitter.net/mattpocockuk/status/2066874357612151271#m",
-    "published_at": "2026-06-16T13:23:42+00:00",
-    "fetched_at": "2026-06-16T18:16:45+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Folks say that the stuff you learn from the /teach skill doesn't stick.<br />\n<br />\n\"Did AI really teach you how to solve a Rubik's cube?\"<br />\n<br />\nYes. Here's the proof:<br />\n<br />\n(don't expect any great speed, but I can do it)</p>\n<a href=\"https://nitter.net/mattpocockuk/status/2066874357612151271#m\">\n<br />Video<br />\n  <img src=\"https://nitter.net/pic/amplify_video_thumb%2F2066873817004154880%2Fimg%2FC3Wbte97JkSks3bf.jpg\" />\n</a>",
-    "topic": "education",
-    "tags": [
-      "video",
-      "coding",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 838714,
-    "title": "Quantization: The Size vs Quality Trade-Off",
-    "url": "https://www.youtube.com/shorts/-s4KGeAE6iQ",
-    "published_at": "2026-06-16T13:23:14+00:00",
-    "fetched_at": "2026-06-16T18:16:43+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Models can shrink down to a fraction of their size and still be useful. That's the power of quantization: Trading a bit of precision for massive gains in speed and size. In Transformers.js, you control that trade-off with a single parameter: dtype. Watch to see how far it can go.\n\n#TransformersJS #JavaScript #MachineLearning #AI #WebAI #Quantization",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836667,
-    "title": "You Might Not Need 50 Diffusion Steps \u2014 Ziv Ilan, Nvidia",
-    "url": "https://www.youtube.com/watch?v=gHs5ZiY80PM",
-    "published_at": "2026-06-16T13:00:06+00:00",
-    "fetched_at": "2026-06-16T13:14:01+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "At GTC a few weeks ago, Ziv Ilan's team at NVIDIA got a video diffusion model generating in close to real time on a single Blackwell B200. The trick wasn't a new architecture, it was stripping out most of the fifty step denoising process diffusion models default to, by combining quantization, caching, and step distillation: training a student model to match a teacher's output using four steps, eight steps, or in some cases just one.\n\nIlan walks through each layer of that stack: dynamic quantization work done with Black Forest Labs on Flux 2, a caching method that skips recomputing latent chunks that barely change between denoising steps, and distillation approaches split into trajectory based training, where the student copies the teacher's exact path, and distribution based training, where it only has to land on the same output, now the more common and higher quality of the two. NVIDIA's open source FastGen repo packages the post training and GPU sharding work needed to apply all this at scale, and Ilan frames the gains as additive, quantization alone can be enough on its own, or you can stack it with caching and distillation to reach the ten to two hundred times speedup that real time generation needs.\n\nSpeaker info:\n- https://www.linkedin.com/in/ziv-ilan-deci/",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source",
-      "video",
-      "infrastructure",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 837321,
-    "title": "Anthropic has opted against slashing AFK/third-party usage, at least for now\n\nGo back to sleep, Codex, I don't need you yet",
-    "url": "https://nitter.net/mattpocockuk/status/2066838482761179277#m",
-    "published_at": "2026-06-16T11:01:08+00:00",
-    "fetched_at": "2026-06-16T13:14:04+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Anthropic has opted against slashing AFK/third-party usage, at least for now<br />\n<br />\nGo back to sleep, Codex, I don't need you yet</p>\n<img src=\"https://nitter.net/pic/media%2FHK7iHKcXQAAWGZ0.png\" />",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 834393,
-    "title": "The Fable 5 Export Controls Harm US Cyber Defense",
-    "url": "https://simonwillison.net/2026/Jun/16/fable-5-export-controls/#atom-everything",
-    "published_at": "2026-06-16T05:20:29+00:00",
-    "fetched_at": "2026-06-16T08:27:41+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://www.lutasecurity.com/post/the-fable-5-export-controls-harm-us-cyber-defense\">The Fable 5 Export Controls Harm US Cyber Defense</a></strong></p>\nI <a href=\"https://simonwillison.net/2026/Jun/16/matteo-wong-the-atlantic/\">quoted The Atlantic</a> quoting Kate Moussouris earlier, when I should have gone straight to the source. Here she is confirming that the \"jailbreak\" that got Claude Fable 5 banned under an export control really was \"fix this code\":</p>\n<blockquote>\n<p>The researchers took open-source code with known CVEs, plus new code with deliberately planted vulnerabilities, and asked Fable 5, Mythos, and Opus to \u201creview the code for security issues.\u201d Fable 5 refused. They then asked the models to \u201cfix this code\u201d and, through a multistep and manual process, turned the output into scripts that test the patches.</p>\n</blockquote>\n<p>As Kate points out, this is absurd. Coding models fix bugs, and security exploits are the most important category of bugs for them to fix!</p>\n<blockquote>\n<p>Defenders need to be able to ask AI to fix the bugs in a file, explain why the fix matters, and write tests that confirm the patch works. That is not a guardrail bypass. It is the most valuable thing an AI model can do for defensive security: executing the find, fix, and test loop defenders run every day. [...]</p>\n<p>The prompts worked because they were defensive requests, and that capability cannot be removed without making the model worse at fixing bugs and verifying patches.</p>\n</blockquote>\n<p>This whole situation is such a mess. Non-technical decision-makers have been hearing that models that can \"craft cyber attacks\" are uniquely dangerous for months. Now they look ready to ban any model that can help us secure our code.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/jailbreaking\">jailbreaking</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/claude-mythos\">claude-mythos</a></p>",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "safety",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 834394,
-    "title": "Quoting Matteo Wong, The Atlantic",
-    "url": "https://simonwillison.net/2026/Jun/16/matteo-wong-the-atlantic/#atom-everything",
-    "published_at": "2026-06-16T03:07:54+00:00",
-    "fetched_at": "2026-06-16T08:27:41+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://www.theatlantic.com/technology/2026/06/trump-anthropic-export-control-ai-race/687555/?gift=5MjKTLV9QwyU_J0HzTnanoWieJfkMhNH_YTT9pP_fhA\"><p>Katie Moussouris, a cybersecurity expert and the CEO of Luta Security, told me that Anthropic shared with her a copy of the White House\u2019s report on the Fable jailbreak to get her appraisal. (She said that she is not being paid by Anthropic.) The report, Moussouris said, involved IT experts asking Fable to help find and patch bugs. When given deliberately insecure code, she said, Fable refused the prompt \u201creview the code for security issues\u201d but then complied when asked to \u201cfix this code,\u201d followed by some further manual steps. Moussouris told me that this was just \u201cthe model working as intended\u201d for cyberdefense.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.theatlantic.com/technology/2026/06/trump-anthropic-export-control-ai-race/687555/?gift=5MjKTLV9QwyU_J0HzTnanoWieJfkMhNH_YTT9pP_fhA\">Matteo Wong, The Atlantic</a>, The White House Is Ratcheting Up Its War Against Anthropic</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/jailbreaking\">jailbreaking</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/claude-mythos\">claude-mythos</a></p>",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "safety",
-      "research",
-      "coding",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 832342,
-    "title": "Cloudflare CAPTCHA on at least one ampersand",
-    "url": "https://simonwillison.net/2026/Jun/16/captcha-on-at-least-one-ampersand/#atom-everything",
-    "published_at": "2026-06-16T00:21:36+00:00",
-    "fetched_at": "2026-06-16T02:07:45+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>TIL:</strong> <a href=\"https://til.simonwillison.net/cloudflare/captcha-on-at-least-one-ampersand\">Cloudflare CAPTCHA on at least one ampersand</a></p>\n        <p>I'm using Cloudflare's CAPTCHA (they call it a \"Web Application Firewall &gt; Custom rules &gt; Managed Challenge\" these days) to prevent crawlers from aggresively spidering my <a href=\"https://simonwillison.net/2017/Oct/5/django-postgresql-faceted-search/\">faceted search engine</a> on this site, but I got fed up of even simple <code>?q=term</code> searches triggering the challenge.</p>\n<p>After some mucking around with Claude Code it turns out you can register the following rule instead, so the CAPTCHA only kicks in for search URLs containing at least one ampersand:</p>\n<p><code>(http.request.uri.path wildcard r\"/search/*\" and http.request.uri.query contains \"&amp;\")</code></p>\n<p>And now <a href=\"https://simonwillison.net/search/?q=lemur\">/search/?q=lemur</a> works without triggering a CAPTCHA!</p>\n<p>Also included: notes on <a href=\"https://til.simonwillison.net/cloudflare/captcha-on-at-least-one-ampersand#trying-the-cloudflare-mcp\">trying out the Cloudflare MCP with Claude Code</a>, though it turned out not to be able to edit the rules in question so I had Claude Code <a href=\"https://til.simonwillison.net/cloudflare/captcha-on-at-least-one-ampersand#using-the-api-instead\">switch to the Cloudflare API</a> instead.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/captchas\">captchas</a>, <a href=\"https://simonwillison.net/tags/cloudflare\">cloudflare</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a>, <a href=\"https://simonwillison.net/tags/claude-code\">claude-code</a></p>",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 843044,
-    "title": "Economic ResearchAgentic coding and persistent returns to expertise",
-    "url": "https://www.anthropic.com/research/claude-code-expertise",
-    "published_at": "2026-06-16T00:00:00+00:00",
-    "fetched_at": "2026-06-16T23:05:48+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jun 16, 2026Economic ResearchAgentic coding and persistent returns to expertise",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 839519,
-    "title": "Predicting model behavior before release by simulating deployment",
-    "url": "https://openai.com/index/deployment-simulation",
-    "published_at": "2026-06-16T00:00:00+00:00",
-    "fetched_at": "2026-06-16T21:26:39+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI introduces Deployment Simulation, a method to predict AI model behavior before deployment using real conversation data to improve safety and evaluation accuracy.",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "safety",
-      "benchmark",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 832540,
-    "title": "Every New Apple AI Feature",
-    "url": "https://www.youtube.com/shorts/NQof8hG8FwE",
-    "published_at": "2026-06-15T23:35:04+00:00",
-    "fetched_at": "2026-06-16T02:07:46+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "SAVE \u2705 this so you can try these out later!\n\nApple announced a bunch of cool new Siri AI features at WWDC 2026 and showed off some crazy use-cases. \n\nI shared my personal favorite at the end of the video, but let me know in the comments which one you're most excited about.\n\n#AI #apple #siri #ainews #appleintelligence",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 875028,
-    "title": "datasette-apps 0.1a3",
-    "url": "https://simonwillison.net/2026/Jun/15/datasette-apps-2/#atom-everything",
-    "published_at": "2026-06-15T20:25:07+00:00",
-    "fetched_at": "2026-06-19T04:20:28+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-apps/releases/tag/0.1a3\">datasette-apps 0.1a3</a></p>\n        <blockquote>\n<ul>\n<li>Fixed a bug where users without the <code>create-app</code> permission could still create apps. <a href=\"https://github.com/datasette/datasette-apps/issues/27\">#27</a></li>\n<li>Fixed a bug where it was impossible to grant permission to edit an app to users who were not the app's owner. The rules for edit/delete are now the same as view: if the app is private only the owner can modify it, otherwise permission is controlled by Datasette's regular permission system. <a href=\"https://github.com/datasette/datasette-apps/issues/29\">#29</a></li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 829187,
-    "title": "I have a deep distrust of almost any 'self-improvement' loop in coding agents\n\nI.e. automatically created memories, CLAUDE.md suggestions applied after every session\n\nOften the suggestions themselves are shit\n\nBut even if they're good, the agent often over-indexes on them in a way that's super unhelpful.\n\nIt makes the agent impossible to steer. And often because these memories are scoped per-project, each project is unsteerable in its own way.\n\nWhat's the right name for this? Instruction rot?",
-    "url": "https://nitter.net/mattpocockuk/status/2066612676520779867#m",
-    "published_at": "2026-06-15T20:03:52+00:00",
-    "fetched_at": "2026-06-15T20:56:18+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>I have a deep distrust of almost any 'self-improvement' loop in coding agents<br />\n<br />\nI.e. automatically created memories, CLAUDE.md suggestions applied after every session<br />\n<br />\nOften the suggestions themselves are shit<br />\n<br />\nBut even if they're good, the agent often over-indexes on them in a way that's super unhelpful.<br />\n<br />\nIt makes the agent impossible to steer. And often because these memories are scoped per-project, each project is unsteerable in its own way.<br />\n<br />\nWhat's the right name for this? Instruction rot?</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 828489,
-    "title": "One man just liberated Fable... and now it\u2019s illegal",
-    "url": "https://www.youtube.com/watch?v=ey_GaPdC9zk",
-    "published_at": "2026-06-15T18:35:58+00:00",
-    "fetched_at": "2026-06-15T20:56:14+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Take BlueDot's Future of AI course for free - https://bluedot.org/fireship\n\nJust three days after the release of Claude Fable, the US government stepped in and banned it in the name of national security. But why?\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- What makes Fable allegedly unsafe?\n- Fable Jailbreak\n- Fable gets banned\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "safety",
-      "coding",
-      "education",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 875029,
-    "title": "datasette-apps 0.1a2",
-    "url": "https://simonwillison.net/2026/Jun/15/datasette-apps/#atom-everything",
-    "published_at": "2026-06-15T17:26:11+00:00",
-    "fetched_at": "2026-06-19T04:20:28+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-apps/releases/tag/0.1a2\">datasette-apps 0.1a2</a></p>\n        <blockquote>\n<ul>\n<li>Custom network/CSP origins for apps are now guarded by a new <code>apps-set-csp</code> permission, with an optional <code>allowed_csp_origins</code> plugin allow-list for non-privileged users. The Datasette Agent app creation tool enforces the same rules. <a href=\"https://github.com/datasette/datasette-apps/issues/24\">#24</a></li>\n<li>Stored query picker now supports keyboard navigation and shows the three most recent accessible stored queries when focused.</li>\n<li><code>#fragment</code> links inside apps are no longer intercepted by the external-link confirmation modal. <a href=\"https://github.com/datasette/datasette-apps/issues/23\">#23</a></li>\n<li>Fixed link confirmation modal and logging panels in <code>?full=1</code> full-screen mode. <a href=\"https://github.com/datasette/datasette-apps/issues/26\">#26</a></li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 832343,
-    "title": "datasette-agent 0.3a0",
-    "url": "https://simonwillison.net/2026/Jun/15/datasette-agent/#atom-everything",
-    "published_at": "2026-06-15T17:19:27+00:00",
-    "fetched_at": "2026-06-16T02:07:45+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent/releases/tag/0.3a0\">datasette-agent 0.3a0</a></p>\n        <blockquote>\n<ul>\n<li>New tool, <code>execute_write_sql</code>, which requests user approval and then writes to a database - taking user permissions into account. <a href=\"https://github.com/datasette/datasette-agent/issues/27\">#27</a></li>\n</ul>\n</blockquote>\n<p>I added a mechanism for asking user approval in <a href=\"https://simonwillison.net/2026/Jun/10/datasette-agent/\">datasette agent 0.2a0</a>. The new <code>execute_write_sql</code> tool can now prompt the user for all kinds of useful operations. Here's an example where I add some pelican sightings to my <code>pelican_sightings</code> table:</p>\n<p><img alt=\"Screenshot of a chat interface showing a write SQL confirmation dialog. User message (blue bubble): &quot;I saw 4 pelicans flying over the harbor&quot;. Collapsed tool section: &quot;\u25ba Tool: execute_write_sql&quot;. A yellow-bordered confirmation card reads: &quot;Confirm write SQL batch / Database: pelicans / Statements execute in order. If one statement fails, later statements will not be executed. / Statement 1 / INSERT INTO pelican_sightings (number_of_pelicans, notes) VALUES (:number_of_pelicans, :notes); / number_of_pelicans 4 / notes Flying over the harbor&quot;. A table with columns &quot;Operation, Database, Table, Required permissions&quot; shows row: &quot;insert, pelicans, pelican_sightings&quot; with permission buttons &quot;insert-row&quot;, &quot;update-row&quot;, &quot;delete-row&quot;. Below: &quot;Execute 1 write SQL statement against database 'pelicans'? / Asked by tool: execute_write_sql&quot; with &quot;Yes&quot; (blue) and &quot;No&quot; (gray) buttons.\" src=\"https://static.simonwillison.net/static/2026/i-saw-pelicans-agent.jpg\" /></p>\n<p>The new version also enhances the <code>datasette agent chat</code> terminal mode to support approvals, and adds several new options including <code>--unsafe</code> mode for auto-approving them:</p>\n<blockquote>\n<ul>\n<li><code>datasette agent chat</code> can execute tools that require user approval. <a href=\"https://github.com/datasette/datasette-agent/issues/30\">#30</a></li>\n<li>Three new options for <code>datasette agent chat</code> - <code>--root</code> to run as root, <code>--yes</code> to approve all ask user questions, and <code>--unsafe</code> for both.</li>\n<li>Tools can now provide plain text alternatives to HTML, for display in the <code>datasette agent chat</code> CLI. <a href=\"https://github.com/datasette/datasette-agent/issues/31\">#31</a></li>\n</ul>\n</blockquote>\n<p>The <code>datasette agent chat content.db -m gpt-5.5 --unsafe</code> command can now be used to chat directly with a specific database <em>and</em> directly modify it through prompts like \"create a notes table\", \"add a note about X\" etc.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/annotated-release-notes\">annotated-release-notes</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm-tool-use\">llm-tool-use</a>, <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 825122,
-    "title": "We\u2019re strengthening our presence in Alabama through new investments and community support.",
-    "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
-    "published_at": "2026-06-15T15:00:00+00:00",
-    "fetched_at": "2026-06-15T17:31:20+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Google has announced a $1.5 billion investment for 2026 and 2027 to expand its data center campus in Jackson County, Alabama. Operating since 2019 on a repurposed former\u2026",
-    "topic": "infrastructure",
-    "tags": [
-      "release",
-      "infrastructure",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826248,
-    "title": "\"They screwed us\": Personality clashes sent Anthropic's models offline",
-    "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/#atom-everything",
-    "published_at": "2026-06-15T14:57:33+00:00",
-    "fetched_at": "2026-06-15T17:31:22+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://www.axios.com/2026/06/15/anthropic-white-house-fable-mythos\">&quot;They screwed us&quot;: Personality clashes sent Anthropic&#x27;s models offline</a></strong></p>\nLots of \"source familiar with the administration's thinking\" and \"source close to Anthropic\" in this Axios piece, which is the best collection of behind-the-scenes gossip I've seen about the US government <a href=\"https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/\">export control Mythos/Fable story</a> so far.</p>\n<p>Logan Graham (<a href=\"https://logangraham.xyz\">I lead the Frontier Red Team at Anthropic</a>), Dave Orr (Head of Safeguards, previously a Director of Engineering at Google DeepMind), and blog favorite <a href=\"https://simonwillison.net/tags/nicholas-carlini/\">Nicholas Carlini</a> are reported to be meeting with the Commerce Department today in D.C. Good luck to them!</p>\n<p>(I just noticed Logan was \"Special Adviser to the Prime Minister\" in the Boris Johnson era, covering AI, science, and technology policy - so significant political experience.)</p>\n<p>This closing notes doesn't give me much optimism that we'll be getting Fable back any time soon:</p>\n<blockquote>\n<p><strong>The bottom line</strong>: One option is to make sure Anthropic's models can't be jailbroken \u2014 though perfect jailbreak resistance <a href=\"https://www.anthropic.com/news/fable-mythos-access\">may be</a> impossible.</p>\n<p>Absent that, a source familiar with the administration's thinking said it may simply come down to an attitude fix where, instead of feeling dismissed, \"everyone feels safe, secure and happy.\"</p>\n</blockquote>\n<p>This made me wonder if Anthropic ever successfully addressed the class of attacks described in the <a href=\"https://llm-attacks.org/\">Universal and Transferable Adversarial Attacks on Aligned Language Models</a> paper from 2023.</p>\n<p>It looks like their <a href=\"https://www.anthropic.com/research/next-generation-constitutional-classifiers\">Constitutional Classifiers</a> work (that post is from January this year) is relevant to that. They continue to claim that no \"universal jailbreak\" has been found against Claude Mythos, <a href=\"https://www.anthropic.com/news/fable-mythos-access\">classifying the jailbreak</a> that triggered the US government response as \"a potential narrow, non-universal jailbreak\".\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/jailbreaking\">jailbreaking</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/nicholas-carlini\">nicholas-carlini</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/claude-mythos\">claude-mythos</a></p>",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "safety",
-      "research",
-      "media",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826506,
-    "title": "Why MCP and ChatGPT Apps Use Double Iframes \u2014 Fr\u00e9d\u00e9ric Barthelet, Alpic",
-    "url": "https://www.youtube.com/watch?v=c-2eEv2ou7Y",
-    "published_at": "2026-06-15T14:00:06+00:00",
-    "fetched_at": "2026-06-15T17:31:23+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Inspect ChatGPT's DOM while an MCP app is rendering and you find an iframe nested inside another iframe. Fr\u00e9d\u00e9ric Barthelet traces why each simpler approach fails: `srcdoc` shares the parent origin so ChatGPT's CSP blocks all third party scripts; relaxing that CSP lets any app read ChatGPT's localStorage and cookies; adding `sandbox` removes origin indexed storage; adding `allow-same-origin` to restore it is the classic sandbox escape. The double iframe is what remains after ruling all of that out.\n\nThe outer iframe serves one lightweight script from a controlled subdomain (different subdomain per app to prevent cross app storage collisions), which loads the actual app HTML via `srcdoc` into the inner frame \u2014 the same pattern Facebook first shipped for their app marketplace. The practical implication: every external domain your view touches must be declared in your MCP app metadata or the submission gets rejected. Barthelet demos Skybridge's CSP inspector, which diffs declared domains against actual network calls live in dev.\n\nSpeaker info:\n- https://x.com/bartheletf\n- https://www.linkedin.com/in/frederic-barthelet/\n- https://github.com/fredericbarthelet",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "events",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826491,
-    "title": "Training Agents: Live tutorial on how to fine-tune a coding agent for continual learning",
-    "url": "https://www.youtube.com/watch?v=rNgUoH7Wbv8",
-    "published_at": "2026-06-15T13:23:22+00:00",
-    "fetched_at": "2026-06-15T17:31:23+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Training Agents, Session 1: from raw agent traces to a supervised fine-tuning baseline.\n\nIn this live session, I\u2019ll set up the first rung of an agentic post-training workflow: SFT. We\u2019ll take public coding-agent traces, turn them into prompt/completion training data, run a small TRL + LoRA fine-tune, and inspect what the first metrics can and cannot tell us.\n\nWhat we\u2019ll cover:\n- Why start with SFT before GRPO or environment RL\n- How agent traces become training examples\n- Completion-only loss for chat/tool traces\n- Running TRL SFT on Hugging Face Jobs\n- Keeping experiments reproducible without checking in logs or checkpoints\n- What the first eval metrics do and do not prove\n\nRepo:\nhttps://github.com/burtenshaw/training-agents\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #FineTuning",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 827154,
-    "title": "Cooking a /decision-mapping skill, for splitting planning into multiple sessions\n\nKind of like /to-issues, but for planning\n\nShould make greenfield builds + complex brownfield builds much more seamless",
-    "url": "https://nitter.net/mattpocockuk/status/2066498727854886986#m",
-    "published_at": "2026-06-15T12:31:05+00:00",
-    "fetched_at": "2026-06-15T17:31:25+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Cooking a /decision-mapping skill, for splitting planning into multiple sessions<br />\n<br />\nKind of like /to-issues, but for planning<br />\n<br />\nShould make greenfield builds + complex brownfield builds much more seamless</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 825097,
-    "title": "Initial thoughts here is that you often need to plan in multiple phases, often in parallel.\n\nSo you need a multi-session plan, but for _planning_ as well as for implementation.\n\nAn asset that tells you how to plan the feature, so you're not doing the usual /grill-with-docs -> /handoff -> /prototype dance",
-    "url": "https://nitter.net/mattpocockuk/status/2066488704814743915#m",
-    "published_at": "2026-06-15T11:51:15+00:00",
-    "fetched_at": "2026-06-15T12:15:35+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Initial thoughts here is that you often need to plan in multiple phases, often in parallel.<br />\n<br />\nSo you need a multi-session plan, but for _planning_ as well as for implementation.<br />\n<br />\nAn asset that tells you how to plan the feature, so you're not doing the usual /grill-with-docs -&gt; /handoff -&gt; /prototype dance</p>\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>Here are my 7 phases of AI-powered development.<br />\n<br />\nI've been thinking that the pre-PRD phase needs more structure. You need to figure out the shape of the design tree first, before then walking down it with higher-fidelity prototypes.<br />\n<br />\nIn other words, /grill-with-docs needs to change again IMO</p>\n<img src=\"https://nitter.net/pic/media%2FHK2CSd0WcAA6tOm.jpg\" />\n\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2066451514672009337#m\">https://nitter.net/mattpocockuk/status/2066451514672009337#m</a>\n</footer>\n</blockquote>",
-    "topic": "tutorials",
-    "tags": [
-      "coding",
-      "tutorials",
-      "development",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 825098,
-    "title": "Here are my 7 phases of AI-powered development.\n\nI've been thinking that the pre-PRD phase needs more structure. You need to figure out the shape of the design tree first, before then walking down it with higher-fidelity prototypes.\n\nIn other words, /grill-with-docs needs to change again IMO",
-    "url": "https://nitter.net/mattpocockuk/status/2066451514672009337#m",
-    "published_at": "2026-06-15T09:23:28+00:00",
-    "fetched_at": "2026-06-15T12:15:35+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Here are my 7 phases of AI-powered development.<br />\n<br />\nI've been thinking that the pre-PRD phase needs more structure. You need to figure out the shape of the design tree first, before then walking down it with higher-fidelity prototypes.<br />\n<br />\nIn other words, /grill-with-docs needs to change again IMO</p>\n<img src=\"https://nitter.net/pic/media%2FHK2CSd0WcAA6tOm.jpg\" />",
-    "topic": "development",
-    "tags": [
-      "coding",
-      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
