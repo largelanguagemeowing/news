@@ -1,5 +1,50 @@
 [
   {
+    "article_id": 1472058,
+    "title": "Computer-Use 2.0: Agents Just Got Multi-Cursor \u2014 Francesco Bonacci, Cua",
+    "url": "https://www.youtube.com/watch?v=ZSQb5fzRFPw",
+    "published_at": "2026-07-15T22:45:06+00:00",
+    "fetched_at": "2026-07-15T23:28:58+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Three agents click, type, and scroll through three different apps on one desktop at the same time, and the user's own mouse and keyboard never move. That's the live demo behind cua driver, a tool the team built in a single weekend after Codex shipped its own computer use model. Instead of taking over the hardware cursor, it talks straight to the accessibility layer underneath the operating system: UI Automation on Windows, AT SPI on Linux, AX on macOS. Those undocumented APIs let a click land on a background window or a keystroke reach a hidden one, so any number of agents can act without stealing focus from each other or from the human sitting at the machine.\n\nTo know whether any of this can be trusted, the team built CUABench: over 130 verifiable tasks across 42 environments and five platforms, each one attacked by a matrix of agents trying to reward hack it before it's allowed into the dataset. Swapping a standard computer tool for cua driver pushed pass rate on a 4K benchmark from 62% to 80% while using 34% fewer tokens, mostly because it watches one window instead of the whole screen. The newest addition, built with Snorkel AI on real circuit design software, humbled every model tested: the best agent fully passed only 6 of 25 electrical engineering tasks, every one of them an edit to an existing schematic, and starting from a blank schematic dropped every model straight to 0%.\n\nSpeaker info:\n- https://www.linkedin.com/in/francesco-bonacci-70428a121/",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1471998,
+    "title": "Complete Guide to ChatGPT 5.6 + Prompting Guide",
+    "url": "https://www.youtube.com/watch?v=MDy_b9F7oUc",
+    "published_at": "2026-07-15T22:17:52+00:00",
+    "fetched_at": "2026-07-15T23:28:58+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Here's your complete guide to the new ChatGPT app - Download it free here: https://chatgpt.com/download/?utm_source=creator&amp;utm_campaign=youtube&amp;utm_content=partnership-mattwolfe\n\nThe complete guide to ChatGPT 5.6 and the new ChatGPT app, from someone who used 6.8 billion tokens on it in the last two weeks.\n\nOpenAI just combined ChatGPT, Codex, their browser, and ChatGPT Work into one platform. The 5.6 models running underneath are the best I've used. In this video I walk through the full app, the prompts I actually use every day, and some of the wildest things the community has built with it.\n\nI cover the personal assistant setup that reads everything in my business, ChatGPT Work mode, Codex for development, the Sites feature, scheduled tasks, real builds from the community, and the Wolf Control Tower I built just for myself to run Future Tools.\nThis video is sponsored by OpenAI. Everything I say is my honest experience.\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#ChatGPT56 #GPT56 #openai \n\nTIMESTAMPS: \n00:00 Intro\n00:52 New ChatGPT App Tour\n03:14 Scheduled Tasks & Side Chat\n04:26 Connecting Your Apps\n05:54 Prompt Demos Begin\n07:22 Building a Personal Assistant\n09:02 Teaching It Your Voice\n10:15 Book One-Pager\n11:25 AI-Made Slide Deck\n12:25 Researching With Logged-In Browser\n13:59 Panel Prep Doc\n15:40 Weekly Task Rundown\n17:20 Cold Leads & Email Drafts\n18:48 Assistant Prompt\n22:20 Switching to Codex & GPT-5.6\n23:00 Rebuilding Craigslist\n24:48 Building a Game\n27:05 Fully AI-Generated Videos\n28:55 Controlling Blender With AI\n29:55 3D City Builds\n32:00 Future Tools Overhaul\n32:40 BuseyBench\n33:48 The Wolf Control Tower\n36:00 One-Prompt Mini Apps\n37:20 Final Thoughts",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents",
+      "research",
+      "video",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1469942,
     "title": "title of talk \u2014 speakername, companyname",
     "url": "https://www.youtube.com/watch?v=ZSQb5fzRFPw",
@@ -9984,42 +10029,6 @@
     "tags": [
       "agents",
       "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 869431,
-    "title": "Centrally manage authorization for MCP connectors",
-    "url": "https://claude.com/blog/enterprise-managed-auth",
-    "published_at": "2026-06-18T00:00:00+00:00",
-    "fetched_at": "2026-06-18T19:29:19+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Centrally manage authorization for MCP connectors",
-    "topic": "agents",
-    "tags": [
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 869432,
-    "title": "Steering Claude Code: CLAUDE.md files, skills, hooks, rules, subagents and more",
-    "url": "https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more",
-    "published_at": "2026-06-18T00:00:00+00:00",
-    "fetched_at": "2026-06-18T19:29:19+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Steering Claude Code: CLAUDE.md files, skills, hooks, rules, subagents and more",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
       "coding"
     ],
     "dearrow_thumbnail_url": "",
