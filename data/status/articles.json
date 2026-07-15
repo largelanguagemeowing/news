@@ -1,5 +1,44 @@
 [
   {
+    "article_id": 1463500,
+    "title": "The most controversial rewrite in history just shipped...",
+    "url": "https://www.youtube.com/watch?v=CXSvKcLovAk",
+    "published_at": "2026-07-15T17:39:02+00:00",
+    "fetched_at": "2026-07-15T17:47:43+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Try CodeRabbit Review free and turn your next big PR into a guided walkthrough - https://coderabbit.link/fireship\n\nBun just refactored their entire codebase from Zig to Rust in just 11 days. But not everybody is celebrating... \n\n#coding #programming #ai \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "coding",
+      "tutorials",
+      "development",
+      "education",
+      "media",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1464029,
+    "title": "What will be left for us to work on?",
+    "url": "https://www.cs.princeton.edu/~arvindn/talks/icml-2026-annotated-slides/",
+    "published_at": "2026-07-15T16:16:51+00:00",
+    "fetched_at": "2026-07-15T17:47:45+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1461649,
     "title": "Simon Willison in conversation with Cat Wu & Thariq Shihipar, Anthropic",
     "url": "https://www.youtube.com/watch?v=uU5Gv2h8-9g",
@@ -81,6 +120,42 @@
     "available": true
   },
   {
+    "article_id": 1462271,
+    "title": "The US is advancing AI safety through state and federal action",
+    "url": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
+    "published_at": "2026-07-15T12:00:00+00:00",
+    "fetched_at": "2026-07-15T17:47:41+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI outlines a \u201creverse federalism\u201d approach to AI governance, where state laws help build a national framework for safe, democratic AI.",
+    "topic": "safety",
+    "tags": [
+      "safety",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1462272,
+    "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+    "url": "https://openai.com/index/unlocking-self-improvement-gpt-red",
+    "published_at": "2026-07-15T10:00:00+00:00",
+    "fetched_at": "2026-07-15T17:47:41+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Explore GPT-Red, OpenAI\u2019s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness.",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1455983,
     "title": "When they're playing with the effort dial, people seem to start high and go low if they need to IMO this is a crazy way to do things - you should start low and only go higher if you need to Effort is essentially throwing more tokens at the problem. This works great in benchmarks, where spending an extra 20% on tokens to yield a 2% improvement is great for marketing. But in regular tasks, such as exploring a repo or modifying a test, it just means burning pointless tokens. This is especially true in Fable-class models where tokens cost so much more. And the more tokens you burn, the faster attention degradation creeps up, and the worse your tokens become. People are a little too convinced by those graphs that show the quality line going up when you increase the effort. So they think \"I'll try this out on xhigh, but not max, that seems reasonable\" But those graphs hide the cost, the latency, and the unbelievable waste. If you've ever asked the agent to explore your repo and ended up with 200K tokens spent, you know what I mean. So whenever you're trying a new model, try the lowest effort level first. If you see a dip in quality, creep up.",
     "url": "https://nitter.net/mattpocockuk/status/2077329609381581156#m",
@@ -97,6 +172,25 @@
       "agents",
       "benchmark",
       "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1463307,
+    "title": "One Layer Is Enough: Adapting Pretrained Visual Encoders for Image Generation",
+    "url": "https://machinelearning.apple.com/research/adapting-pretrained-visual-encoders",
+    "published_at": "2026-07-15T00:00:00+00:00",
+    "fetched_at": "2026-07-15T17:47:42+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Visual generative models (e.g., diffusion models) typically operate in compressed latent spaces to balance training efficiency and sample quality. In parallel, there has been growing interest in leveraging high-quality pre-trained visual representations\u2014either by aligning them inside VAEs or directly within the generative model. However, adapting such representations remains challenging due to fundamental mismatches between understanding-oriented features and generation-friendly latent spaces. Representation encoders benefit from high-dimensional latents that capture diverse hypotheses for\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
       "coding"
     ],
     "dearrow_thumbnail_url": "",
@@ -9933,101 +10027,6 @@
     "tags": [
       "api",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 851566,
-    "title": "Announcing mattpocock/skills v1\n\n- Achieved a 63% reduction in token cost for skill descriptions\n- Split skills into model-invocable and user-invocable skills, adding /codebase-design, /domain-modeling, and /grilling\n- (UPDATED) /writing-great-skills - rewritten from the ground up, encoding my skill-writing best practices\n- (UPDATED) /diagnose -> /diagnosing-bugs - now model-invocable, awesome for fixing hard bugs\n- (NEW) /ask-matt: a router skill that teaches you how all the engineering skills work together",
-    "url": "https://nitter.net/mattpocockuk/status/2067259590488510471#m",
-    "published_at": "2026-06-17T14:54:28+00:00",
-    "fetched_at": "2026-06-17T16:12:57+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Announcing mattpocock/skills v1<br />\n<br />\n- Achieved a 63% reduction in token cost for skill descriptions<br />\n- Split skills into model-invocable and user-invocable skills, adding /codebase-design, /domain-modeling, and /grilling<br />\n- (UPDATED) /writing-great-skills - rewritten from the ground up, encoding my skill-writing best practices<br />\n- (UPDATED) /diagnose -&gt; /diagnosing-bugs - now model-invocable, awesome for fixing hard bugs<br />\n- (NEW) /ask-matt: a router skill that teaches you how all the engineering skills work together</p>\n<img src=\"https://nitter.net/pic/media%2FHLBhYbMXAAA9NGk.png\" />",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 851567,
-    "title": "About to slam a huge PR to my skills repo\n\nVery excited about this",
-    "url": "https://nitter.net/mattpocockuk/status/2067250621707677708#m",
-    "published_at": "2026-06-17T14:18:50+00:00",
-    "fetched_at": "2026-06-17T16:12:57+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>About to slam a huge PR to my skills repo<br />\n<br />\nVery excited about this</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "open-source"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 850909,
-    "title": "Your Agent's Biggest Lie: \"I Searched the Web\" \u2014 Rafael Levi, Bright Data",
-    "url": "https://www.youtube.com/watch?v=btxGmN8RvNU",
-    "published_at": "2026-06-17T13:00:06+00:00",
-    "fetched_at": "2026-06-17T16:12:54+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Sometimes the agent did not search the web at all. It got blocked, hit a CAPTCHA, saw a fake page, or fell back to stale training data, then answered as if everything worked. This session is a direct look at that failure mode, and what changes when the same agent is given real web access instead of pretending.\n\nUsing Bright Data's Web MCP, the demo compares blocked and unblocked runs across sites like LinkedIn, Instagram, Amazon, and TikTok, and walks through the mechanics behind the difference: anti-bot systems, JS rendering, CAPTCHA handling, and why clean access matters if you want reliable citations, real-time results, and fewer hallucinations. If you're building agents that depend on the open web, this is a practical look at one of their biggest hidden failure modes.\n\nSpeaker info:\n- https://il.linkedin.com/in/rafael-levi\n- https://github.com/ScrapeAlchemist",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 851363,
-    "title": "recommended viewing. the only tech podcast i listen to these days.",
-    "url": "https://video.twimg.com/amplify_video/2065415727574634496/vid/avc1/1920x1080/YCtJrdbhp0hRTbs3.mp4",
-    "published_at": "2026-06-17T12:26:12+00:00",
-    "fetched_at": "2026-06-17T16:12:56+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. the only tech podcast i listen to these days.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 849543,
-    "title": "A frustrating gap I'm hitting in the skills spec.\n\nTL;DR: I want three tiers of 'invocable'. User-invocable, skill-invocable, and model-invocable. Skill-invocable skills are only invocable by the user, or by skills.\n\nSkills can be marked as model-invocable or user-invocable. Model-invocable skills put their description into context. User-invocable skills are hidden from the model, so no tokens are burned on the description.\n\nBut what about skills that you want to BOTH invoke on their own (user-invocable only), but also use as parts of other skills?\n\nAn example would be a /review skill, which:\n\n1. Runs some automated checks on the repo\n2. Checks the code against the original spec\n3. Checks it against some coding standards\n\nWhat if you want to pull out step 1 into its own skill? /run-automated-checks\n\nYou'd create that skill, then reference it in the /review skill: \"1. /run-automated-checks\"\n\nIn order to move that into its own skill, you MUST make it model-invocable - meaning its description goes into context.\n\nThis is pointless token waste. You can't omit the description - that goes against spec. But you'd just write a description saying \"never invoke this except in other skills\".\n\nAnyone working on the skills spec? Has this been considered?",
-    "url": "https://nitter.net/mattpocockuk/status/2067205673792721057#m",
-    "published_at": "2026-06-17T11:20:14+00:00",
-    "fetched_at": "2026-06-17T12:17:32+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>A frustrating gap I'm hitting in the skills spec.<br />\n<br />\nTL;DR: I want three tiers of 'invocable'. User-invocable, skill-invocable, and model-invocable. Skill-invocable skills are only invocable by the user, or by skills.<br />\n<br />\nSkills can be marked as model-invocable or user-invocable. Model-invocable skills put their description into context. User-invocable skills are hidden from the model, so no tokens are burned on the description.<br />\n<br />\nBut what about skills that you want to BOTH invoke on their own (user-invocable only), but also use as parts of other skills?<br />\n<br />\nAn example would be a /review skill, which:<br />\n<br />\n1. Runs some automated checks on the repo<br />\n2. Checks the code against the original spec<br />\n3. Checks it against some coding standards<br />\n<br />\nWhat if you want to pull out step 1 into its own skill? /run-automated-checks<br />\n<br />\nYou'd create that skill, then reference it in the /review skill: \"1. /run-automated-checks\"<br />\n<br />\nIn order to move that into its own skill, you MUST make it model-invocable - meaning its description goes into context.<br />\n<br />\nThis is pointless token waste. You can't omit the description - that goes against spec. But you'd just write a description saying \"never invoke this except in other skills\".<br />\n<br />\nAnyone working on the skills spec? Has this been considered?</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
