@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 1490955,
+    "title": "Quoting Thibault Sottiaux",
+    "url": "https://simonwillison.net/2026/Jul/16/bad-codex-bug/#atom-everything",
+    "published_at": "2026-07-16T17:45:59+00:00",
+    "fetched_at": "2026-07-16T18:07:02+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://twitter.com/thsottiaux/status/2077630111499882637\"><p>On file deletions. We\u2019ve investigated a handful of reports where GPT-5.6 unexpectedly deleted files. </p>\n<p>What we have  found is that this most commonly occurs when:</p>\n<ul>\n<li>Full access mode is enabled and codex is run without sandboxing protections, including without auto review being enabled</li>\n<li>The model attempts  to override the $HOME env var to define a temporary directory.</li>\n<li>The model makes an honest mistake and mistakenly deletes $HOME instead.</li>\n</ul></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/thsottiaux/status/2077630111499882637\">Thibault Sottiaux</a>, describing a pretty gnarly Codex bug</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/codex\">codex</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1489772,
     "title": "My skills vs superpowers: Superpowers gives the agent superpowers My skills give you superpowers",
     "url": "https://nitter.net/mattpocockuk/status/2077789613691699629#m",
@@ -307,6 +328,25 @@
     "topic": "ai-models",
     "tags": [
       "ai-models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1491513,
+    "title": "How Anthropic runs large-scale code migrations with Claude Code",
+    "url": "https://claude.com/blog/ai-code-migration",
+    "published_at": "2026-07-16T00:00:00+00:00",
+    "fetched_at": "2026-07-16T18:07:03+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "How Anthropic runs large-scale code migrations with Claude Code",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
       "coding"
     ],
     "dearrow_thumbnail_url": "",
@@ -9974,44 +10014,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 896331,
-    "title": "Love to see it",
-    "url": "https://nitter.net/mattpocockuk/status/2068226974942662826#m",
-    "published_at": "2026-06-20T06:58:31+00:00",
-    "fetched_at": "2026-06-20T08:22:29+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Love to see it</p>\n<hr />\n<blockquote>\n<b>Reed (@reed_barnes)</b>\n<p>\n<p>kinda thought that the /grill-me and /teach skills that are popular on here sounded like slop;  I regret to inform you they are, in fact, really cool and good<br />\n<br />\nvery weird to live in a world where a 500-word .md file is a valuable piece of distributable software!</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/reed_barnes/status/2067989969512386777#m\">https://nitter.net/reed_barnes/status/2067989969512386777#m</a>\n</footer>\n</blockquote>",
-    "topic": "education",
-    "tags": [
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 889300,
-    "title": "Quoting Sean Lynch",
-    "url": "https://simonwillison.net/2026/Jun/19/sean-lynch/#atom-everything",
-    "published_at": "2026-06-19T22:45:49+00:00",
-    "fetched_at": "2026-06-19T22:58:47+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://news.ycombinator.com/item?id=48592163#48593190\"><p>The real valuable capability MCP offers over skills/CLI is isolating the auth flow outside of the agent\u2019s context window, and potentially out of the harness completely. [...]</p>\n<p>Maybe the idealized form of MCP is just an auth gateway for the API and nothing else. That\u2019d still be a win.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://news.ycombinator.com/item?id=48592163#48593190\">Sean Lynch</a>, comment on Hacker News</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/skills\">skills</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "coding",
-      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
