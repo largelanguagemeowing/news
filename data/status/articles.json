@@ -1,5 +1,103 @@
 [
   {
+    "article_id": 1489772,
+    "title": "My skills vs superpowers: Superpowers gives the agent superpowers My skills give you superpowers",
+    "url": "https://nitter.net/mattpocockuk/status/2077789613691699629#m",
+    "published_at": "2026-07-16T16:17:02+00:00",
+    "fetched_at": "2026-07-16T16:49:36+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>My skills vs superpowers:<br />\n<br />\nSuperpowers gives the agent superpowers<br />\n<br />\nMy skills give you superpowers</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1487631,
+    "title": "Connect more of your apps to Search",
+    "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+    "published_at": "2026-07-16T16:00:00+00:00",
+    "fetched_at": "2026-07-16T16:49:30+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Connected apps rendering",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1487632,
+    "title": "Create, edit and star in videos with two Google Vids updates",
+    "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+    "published_at": "2026-07-16T16:00:00+00:00",
+    "fetched_at": "2026-07-16T16:49:30+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Text \"Gemini Omni and Personal Avatars in Google Vids\" surrounded by various images",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1487751,
+    "title": "Why teens deserve access to safe AI",
+    "url": "https://openai.com/index/why-teens-deserve-access-safe-ai",
+    "published_at": "2026-07-16T16:00:00+00:00",
+    "fetched_at": "2026-07-16T16:49:31+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships.",
+    "topic": "education",
+    "tags": [
+      "models",
+      "education",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1488789,
+    "title": "Inkling: Our open-weights model",
+    "url": "https://simonwillison.net/2026/Jul/16/inkling/#atom-everything",
+    "published_at": "2026-07-16T15:35:25+00:00",
+    "fetched_at": "2026-07-16T16:49:32+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://thinkingmachines.ai/news/introducing-inkling/\">Inkling: Our open-weights model</a></strong></p>\nMira Murati's Thinking Machines Lab just released their first open-weights model. Inkling is \"a Mixture-of-Experts transformer with 975B total parameters, 41B active\" - an Apache-2.0 licensed multimodal model trained on 45 trillion tokens of text, images, audio and video.</p>\n<p>They're also promising Inkling-Small, a 276B (12B active) model, but that's still being tested and the weights will be released \"once that work is complete\".</p>\n<p>The <a href=\"https://thinkingmachines.ai/model-card/inkling/\">model card</a> is much shorter than I've come to expect from US AI labs. It links to even shorter <a href=\"https://thinkingmachines.ai/training-data-documentation/\">Training Data Documentation</a> with almost nothing of interest in it - it's best summarized by these two paragraphs:</p>\n<blockquote>\n<p>The datasets Thinking Machines Lab uses to develop its AI services includes content that is in the public domain as well as content that may be subject to intellectual property protection.</p>\n<p>Thinking Machines Lab\u2019s services were developed using publicly available content obtained from the open internet and publicly accessible data repositories. Certain datasets were also obtained from third parties.</p>\n</blockquote>\n<p>By Thinking Machines' own admission, this is not a frontier model. It's instead intended as a strong base model for fine-tuning using their own <a href=\"https://thinkingmachines.ai/tinker/\">Tinker training platform</a>:</p>\n<blockquote>\n<p>Inkling is not the strongest overall model available today, open or closed. Instead, a combination of qualities makes it a good open-weights base for customization: multimodal capabilities, efficient thinking, and availability on Tinker for fine-tuning.</p>\n</blockquote>\n<p>There's a lot to like about this release. It's Apache-2.0 licensed, and looks competitive with the open weight models coming out of China - it's good to see the US open weights ecosystem gain a new viable contender to join NVIDIA Nemotron and Gemma 4.</p>\n<p>Here's its attempt at an SVG pelican riding a bicycle, which I generated using this <code>curl</code> command against the Thinking Machines API:</p>\n<div class=\"highlight highlight-source-shell\"><pre>curl <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>https://tinker.thinkingmachines.dev/services/tinker-prod/oai/api/v1/chat/completions<span class=\"pl-pds\">\"</span></span> \\\n  -H <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>Authorization: Bearer <span class=\"pl-smi\">$TINKER_API_KEY</span><span class=\"pl-pds\">\"</span></span> \\\n  -H <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>Content-Type: application/json<span class=\"pl-pds\">\"</span></span> \\\n  -d <span class=\"pl-s\"><span class=\"pl-pds\">'</span>{</span>\n<span class=\"pl-s\">    \"model\": \"thinkingmachines/Inkling\",</span>\n<span class=\"pl-s\">    \"messages\": [</span>\n<span class=\"pl-s\">      {\"role\": \"user\", \"content\": \"Generate an SVG of a pelican riding a bicycle\"}</span>\n<span class=\"pl-s\">    ],</span>\n<span class=\"pl-s\">    \"stream\": false</span>\n<span class=\"pl-s\">  }<span class=\"pl-pds\">'</span></span></pre></div>\n\n<p>Full <a href=\"https://gist.github.com/simonw/8117ac4376371dd3fc2b5dbce27e0855\">response here</a>.</p>\n<p><img alt=\"See image description below\" src=\"https://static.simonwillison.net/static/2026/inkling-pelican.jpg\" /></p>\n<p>Since it's a multi-modal model I had it describe its own image (after I rendered it to a JPEG) by sending this JSON:</p>\n<div class=\"highlight highlight-source-json\"><pre>{\n  <span class=\"pl-ent\">\"model\"</span>: <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>thinkingmachines/Inkling<span class=\"pl-pds\">\"</span></span>,\n  <span class=\"pl-ent\">\"messages\"</span>: [{\n    <span class=\"pl-ent\">\"role\"</span>: <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>user<span class=\"pl-pds\">\"</span></span>,\n    <span class=\"pl-ent\">\"content\"</span>: [\n      {<span class=\"pl-ent\">\"type\"</span>: <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>image_url<span class=\"pl-pds\">\"</span></span>, <span class=\"pl-ent\">\"image_url\"</span>: {<span class=\"pl-ent\">\"url\"</span>: <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>data:image/jpeg;base64,$BASE_64_JPEG<span class=\"pl-pds\">\"</span></span>}},\n      {<span class=\"pl-ent\">\"type\"</span>: <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>text<span class=\"pl-pds\">\"</span></span>, <span class=\"pl-ent\">\"text\"</span>: <span class=\"pl-s\"><span class=\"pl-pds\">\"</span>Describe this image in detail<span class=\"pl-pds\">\"</span></span>},\n    ],\n  }],\n  <span class=\"pl-ent\">\"stream\"</span>: <span class=\"pl-c1\">false</span>\n}</pre></div>\n\n<p>Here's <a href=\"https://gist.github.com/simonw/dccebd0581f5c4056c5b0ca5bdc38cd9#reasoning_content\">the full response</a>. It thought it had drawn a \"stork or seagull\":</p>\n<blockquote>\n<p>This is a cheerful, flat-vector cartoon illustration featuring a white bird riding a bicycle across a green landscape.</p>\n<p><strong>The Bird:</strong> The central figure is a stylized white bird\u2014resembling a stork or seagull\u2014with a plump, rounded body. It has a long, prominent orange beak that is slightly open, revealing a black line for the mouth. Its eye is small and black with a tiny white highlight. The bird has black wing and tail feathers with white edges, and thin orange legs ending in black feet that rest on the bicycle's orange pedals.</p>\n<p><strong>The Bicycle:</strong> The bike has a simple black frame with two large wheels featuring black tires, gray inner rims, and black spokes arranged in a cross pattern. The handlebars are black, and there are bright orange pedals attached to a black crank. A white seat is visible behind the bird's body.</p>\n<p><strong>The Setting:</strong> The scene is set against a clear, light blue sky. There are two fluffy white clouds\u2014one on the left side and a smaller one near the bird's head on the right. A bright, solid yellow sun shines in the upper right corner. At the bottom, there are rolling green hills with a smooth, curved top edge where the bicycle rests.</p>\n<p>The overall style is playful, simple, and colorful, with clean lines and a bright, sunny atmosphere.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=48924912\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/training-data\">training-data</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1486836,
     "title": "Testing the 2 BIGGEST AI Website Builders",
     "url": "https://www.youtube.com/shorts/FO5zsDIY6Yc",
@@ -228,6 +326,23 @@
     "tags": [
       "ai-models",
       "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1487752,
+    "title": "How Cars24 scales conversations and builds faster with OpenAI",
+    "url": "https://openai.com/index/cars24",
+    "published_at": "2026-07-16T00:00:00+00:00",
+    "fetched_at": "2026-07-16T16:49:31+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company.",
+    "topic": "agents",
+    "tags": [
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9897,130 +10012,6 @@
       "agents",
       "coding",
       "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 883370,
-    "title": "The most trusted code on Earth is being rewritten in Rust",
-    "url": "https://www.youtube.com/watch?v=Sntj4HmuykI",
-    "published_at": "2026-06-19T17:24:47+00:00",
-    "fetched_at": "2026-06-19T18:16:41+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Junie is the #1 coding agent on SWE-Rebench and it'll save you a bunch of tokens - https://jb.gg/Fireship-Junie-GA\n\nUse code: FIRESHIP20 to to get 20 free AI credits\n\nSQLite, the world's most trusted code, just got rewritten in Rust and it actually works. It's called Turso and it ships some cool features you won't find in SQLite.\n\n#coding #programming #technology \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding",
-      "education",
-      "media",
-      "news",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 884081,
-    "title": "An absolute monster PRD, built out from a /decision-mapping session\n\nLove this new flow\n\nhttps://github.com/mattpocock/course-video-manager/issues/1049",
-    "url": "https://nitter.net/mattpocockuk/status/2068003650849362323#m",
-    "published_at": "2026-06-19T16:11:06+00:00",
-    "fetched_at": "2026-06-19T18:16:44+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>An absolute monster PRD, built out from a /decision-mapping session<br />\n<br />\nLove this new flow<br />\n<br />\n<a href=\"https://github.com/mattpocock/course-video-manager/issues/1049\">github.com/mattpocock/course\u2026</a></p>\n<img src=\"https://nitter.net/pic/card_img%2F2068003527251591168%2Fv0xBTCh-%3Fformat%3Djpg%26name%3D800x419\" />",
-    "topic": "education",
-    "tags": [
-      "open-source",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 881321,
-    "title": "AI News: Fable Banned, New Open-Source Leader, Midjourney Shocker",
-    "url": "https://www.youtube.com/watch?v=Db260rUuKJg",
-    "published_at": "2026-06-19T15:00:23+00:00",
-    "fetched_at": "2026-06-19T16:12:25+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Here's The AI News You Probably Missed This Week. Learn more about how Box AI can unlock key insights for your business here: \nhttps://www.box.com/ai?utm_source=youtube&amp;utm_medium=paidinfluencer&amp;utm_theme=icm&amp;utm_campaign=FY27_Q2_MattWolfe_June19\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nFable/Mythos Suspension: https://www.anthropic.com/news/fable-mythos-access\nAnthropic Export Controls: https://www.politico.com/news/2026/06/13/inside-the-whirlwind-24-hours-that-led-the-white-house-to-slap-export-controls-on-anthropic-00961519\nJassy Security Concerns: https://x.com/steph_palazzolo/status/2065830580135051306\nTransparent AI Letter: https://freefable.org/\nMythos/Fable Access Returning: https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522\nGLM-5.2 Launch: https://z.ai/blog/glm-5.2\nFacebook AI Tools: https://about.fb.com/news/2026/06/new-ai-tools-to-help-you-make-things-happen-on-facebook/\nMidjourney New Era: https://www.midjourney.com/medical/blogpost\nWhole-Body Ultrasounds: https://x.com/hankgreen/status/2067471250159448305\nCodex Record Replay: https://x.com/OpenAIDevs/status/2067681320281723113\nClaude Design Branding: https://claude.com/blog/claude-design-stays-on-brand-for-daily-work\nSelf-Improving Agent Memory: https://www.perplexity.ai/hub/blog/self-improving-memory-for-agents\nPalmier Video Editor: https://x.com/Marcos12345rico/status/2067264877463261400\nAdobe AI Assistant: https://techcrunch.com/2026/06/18/adobe-adds-its-ai-assistant-to-premiere-illustrator-and-indesign/\nAsk Ad Manager: https://blog.google/products/admanager/ask-ad-manager/\nAmericans AI Views: https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/\nSelf-Driving Toilet: https://www.theverge.com/tech/952441/yueban-xiaoban-self-driving-autonomous-toilet\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:09 Fable / Mythos Banned\n6:38 Box AI\n8:19 GLM-5.2\n15:07 Facebook AI\n17:04 Midjourney Scanner\n24:06 OpenAI Record & Replay\n25:16 Claude Design Update\n25:57 Perplexity Brain\n27:19 Palmier\n28:34 Adobe AI Updates\n28:57 Google Ask Ad Manager\n29:38 People use but hate AI\n33:00 Self-Driving Toilet\n34:14 Final Thoughts\n35:29 WTF?",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 882042,
-    "title": "Yesterday, I shipped v1 of mattpocock/skills, including:\n\n- /ask-matt: ask me how best to use the skills, from right in your agent\n- Model-invoked vs User-invoked skills\n- /writing-great-skills, which encodes my skill-writing best practices\n\nEnjoy:",
-    "url": "https://nitter.net/mattpocockuk/status/2067966169860931606#m",
-    "published_at": "2026-06-19T13:42:10+00:00",
-    "fetched_at": "2026-06-19T16:12:27+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Yesterday, I shipped v1 of mattpocock/skills, including:<br />\n<br />\n- /ask-matt: ask me how best to use the skills, from right in your agent<br />\n- Model-invoked vs User-invoked skills<br />\n- /writing-great-skills, which encodes my skill-writing best practices<br />\n<br />\nEnjoy:</p>\n<a href=\"https://nitter.net/mattpocockuk/status/2067966169860931606#m\">\n<br />Video<br />\n  <img src=\"https://nitter.net/pic/amplify_video_thumb%2F2067965842814345216%2Fimg%2FdU-fgk3q_zLbqv5h.jpg\" />\n</a>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 882043,
-    "title": "Two new leading words for planning work with AI:\n\n- Frontier\n- Fog of war\n\n\"Don't plan past the fog of war. Let's resolve just the decisions at the frontier first.\"\n\nGreat for getting aligned during a grilling session.",
-    "url": "https://nitter.net/mattpocockuk/status/2067965196618895564#m",
-    "published_at": "2026-06-19T13:38:18+00:00",
-    "fetched_at": "2026-06-19T16:12:27+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Two new leading words for planning work with AI:<br />\n<br />\n- Frontier<br />\n- Fog of war<br />\n<br />\n\"Don't plan past the fog of war. Let's resolve just the decisions at the frontier first.\"<br />\n<br />\nGreat for getting aligned during a grilling session.</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 880009,
-    "title": "Folks who are running GLM 5.2, how are you doing it?\n\nWhat harness/provider are you using?\n\nGetting FOMO about an open weights model for the first time",
-    "url": "https://nitter.net/mattpocockuk/status/2067899664209187273#m",
-    "published_at": "2026-06-19T09:17:54+00:00",
-    "fetched_at": "2026-06-19T12:59:54+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Folks who are running GLM 5.2, how are you doing it?<br />\n<br />\nWhat harness/provider are you using?<br />\n<br />\nGetting FOMO about an open weights model for the first time</p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
