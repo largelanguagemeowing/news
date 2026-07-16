@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1480459,
+    "title": "New Model: Inkling by Thinking Machine on Hugging Face",
+    "url": "https://www.youtube.com/watch?v=EOK_haQSMIA",
+    "published_at": "2026-07-16T07:07:24+00:00",
+    "fetched_at": "2026-07-16T09:13:48+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Inkling by Thinking Machines is here, a 1 TRILLION parameter open model that natively understands images, text, AND audio, with a 1M token context window. In this video, we break down the architecture, show you how to run it, and share our vibe-eval results.\n\nNow on Hugging Face \ud83e\udd17 https://huggingface.co/thinkingmachines/Inkling\n\n\u26a1 TL;DR\n\u2022 975B total / 41B active params (MoE, 256 experts)\n\u2022 Native image, text & audio input \u2014 one model, no separate encoders\n\u2022 1M context window, trained on 45T tokens\n\u2022 BF16 + calibrated NVFP4 checkpoints, MTP layers for speculative decoding\n\u2022 Day-0 support: transformers, SGLang, vLLM, llama.cpp\n\n\u23f1\ufe0f CHAPTERS\n00:00 Intro \u2014 what is Inkling?\n00:00 Architecture deep dive (relative attention, hybrid attention, SConv)\n00:00 MoE with shared expert sinks\n00:00 Vision & audio towers explained\n00:00 Running it: transformers pipeline\n00:00 Serving with SGLang & vLLM\n00:00 Free inference via Inference Providers\n00:00 1-bit GGUFs with llama.cpp & Unsloth\n00:00 Agentic coding demo with Pi\n00:00 MTP speculative decoding\n00:00 Vision & audio vibe evals\n00:00 Post-training with tinker + OpenEnv\n00:00 Benchmarks & final thoughts\n\n\ud83d\udd27 TRY IT\n\u2022 Model (BF16): https://huggingface.co/thinkingmachines/Inkling\n\u2022 Model (NVFP4): https://huggingface.co/thinkingmachines/Inkling-NVFP4\n\u2022 GGUF quants: https://huggingface.co/unsloth/inkling-GGUF\n\u2022 Inference Providers (free for 2h at launch): https://huggingface.co/thinkingmachines/inkling?inference_api=true\n\u2022 Quick start: pip install -U transformers, then pipeline(\"any-to-any\", model=\"thinkingmachines/Inkling\")\n\n\ud83d\udcda RESOURCES\n\u2022 Full blog post: https://huggingface.co/blog/thinkingmachines-inkling\n\u2022 Vibe eval images & results: https://huggingface.co/buckets/merve/inkling\n\u2022 RL example (tinker + OpenEnv): https://github.com/huggingface/OpenEnv\n\u2022 Distillation with TRL (GOLD): https://github.com/huggingface/trl\n\n\ud83d\udca1 KEY TAKEAWAYS\n\u2022 Needs ~2TB VRAM in BF16 (600GB in NVFP4) \u2014 but 1-bit GGUFs retain ~74% top-1 accuracy at 86% smaller\n\u2022 Reasoning effort is tunable from \"none\" to \"max\"; medium (0.7) is the sweet spot\n\u2022 The model transcribes/OCRs inputs first, then reasons \u2014 prompt accordingly\n\u2022 Great for multimodal reasoning apps, document processing, and fine-tuning\n\n\ud83d\udc65 By burtenshaw, merve, pcuenq & ariG23498 from Hugging Face\n\n#Inkling #ThinkingMachines #HuggingFace #OpenSource #LLM #Multimodal #AI #MachineLearning",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1473952,
     "title": "Mermaid to Unicode box art (grok-mermaid)",
     "url": "https://simonwillison.net/2026/Jul/16/grok-mermaid/#atom-everything",
@@ -10016,27 +10039,6 @@
       "models",
       "research",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 862987,
-    "title": "Midjourney Built What?!?",
-    "url": "https://www.youtube.com/shorts/Qy25rSEXpPQ",
-    "published_at": "2026-06-18T04:32:28+00:00",
-    "fetched_at": "2026-06-18T09:55:01+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Midjourney built a health scanner that uses sound. It's faster, cheaper, and easier than an MRI too. This could be the future of health.\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence",
-    "topic": "media",
-    "tags": [
-      "enterprise",
-      "media",
-      "news",
-      "tools",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
