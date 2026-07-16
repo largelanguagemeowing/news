@@ -1,5 +1,40 @@
 [
   {
+    "article_id": 1483081,
+    "title": "The Human-in-the-Loop is Tired",
+    "url": "https://pydantic.dev/articles/the-human-in-the-loop-is-tired",
+    "published_at": "2026-07-16T09:49:33+00:00",
+    "fetched_at": "2026-07-16T11:17:52+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading by Laura Summers who appears to be not on this hellsite because she's a smart human.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1481232,
+    "title": "Our approach to bioresilience",
+    "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
+    "published_at": "2026-07-16T09:30:42+00:00",
+    "fetched_at": "2026-07-16T11:17:48+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI models.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1480459,
     "title": "New Model: Inkling by Thinking Machine on Hugging Face",
     "url": "https://www.youtube.com/watch?v=EOK_haQSMIA",
@@ -9999,46 +10034,6 @@
       "benchmark",
       "funding",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 863709,
-    "title": "Let me put this more simply:\n\nSkills need to be able to import other skills without imposing a token cost",
-    "url": "https://nitter.net/mattpocockuk/status/2067533513042128977#m",
-    "published_at": "2026-06-18T09:02:57+00:00",
-    "fetched_at": "2026-06-18T09:55:05+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Let me put this more simply:<br />\n<br />\nSkills need to be able to import other skills without imposing a token cost</p>\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>A frustrating gap I'm hitting in the skills spec.<br />\n<br />\nTL;DR: I want three tiers of 'invocable'. User-invocable, skill-invocable, and model-invocable. Skill-invocable skills are only invocable by the user, or by skills.<br />\n<br />\nSkills can be marked as model-invocable or user-invocable. Model-invocable skills put their description into context. User-invocable skills are hidden from the model, so no tokens are burned on the description.<br />\n<br />\nBut what about skills that you want to BOTH invoke on their own (user-invocable only), but also use as parts of other skills?<br />\n<br />\nAn example would be a /review skill, which:<br />\n<br />\n1. Runs some automated checks on the repo<br />\n2. Checks the code against the original spec<br />\n3. Checks it against some coding standards<br />\n<br />\nWhat if you want to pull out step 1 into its own skill? /run-automated-checks<br />\n<br />\nYou'd create that skill, then reference it in the /review skill: \"1. /run-automated-checks\"<br />\n<br />\nIn order to move that into its own skill, you MUST make it model-invocable - meaning its description goes into context.<br />\n<br />\nThis is pointless token waste. You can't omit the description - that goes against spec. But you'd just write a description saying \"never invoke this except in other skills\".<br />\n<br />\nAnyone working on the skills spec? Has this been considered?</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2067205673792721057#m\">https://nitter.net/mattpocockuk/status/2067205673792721057#m</a>\n</footer>\n</blockquote>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 865863,
-    "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
-    "url": "https://openai.com/index/diagnose-rare-childhood-diseases",
-    "published_at": "2026-06-18T08:00:00+00:00",
-    "fetched_at": "2026-06-18T16:33:53+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
