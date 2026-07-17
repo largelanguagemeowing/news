@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 1516860,
+    "title": "Special Topics in Kernels, RL, Reward Hacking in Agents \u2014 Daniel Han, Unsloth",
+    "url": "https://www.youtube.com/watch?v=uIiA6DquRiE",
+    "published_at": "2026-07-17T17:00:06+00:00",
+    "fetched_at": "2026-07-17T17:39:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An advanced seminar (good prerequisites: Daniel's 2024 and 2025 hit AIE workshops, but all are welcome!)\n\nPLS WATCH: https://www.youtube.com/@aiDotEngineer/search?query=daniel%20han",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1516861,
+    "title": "On AI and Knowledge \u2014 Pablo Castro, Distinguished Engineer & CVP for AI Knowledge, Microsoft",
+    "url": "https://www.youtube.com/watch?v=RGSFUqzqErE",
+    "published_at": "2026-07-17T16:30:06+00:00",
+    "fetched_at": "2026-07-17T17:39:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Pablo Castro explores AI and knowledge systems for building better applications and agents.\n\nSpeaker:\nPablo Castro \u2014Distinguished Engineer and CVP, Microsoft, leads the AI Knowledge team in Microsoft's CoreAI division, where he focuses on state-of-the-art information understanding and retrieval systems for AI applications and agents, including Foundry IQ, Azure AI Search, and Azure Content Understanding.\n\nLinkedIn: https://www.linkedin.com/in/pabloc\n\nTimestamps:\n\n0:00 Introduction and speaker background\n1:14 Defining the nature of knowledge: Intrinsic, Extrinsic, and Learned\n1:27 Intrinsic knowledge and the history of AI coding tools\n4:38 Extrinsic knowledge and corporate data grounding\n7:06 Evolution of retrieval systems and Foundry IQ\n9:56 Foundry IQ demo: Building a knowledge base\n13:08 Learned knowledge: The agent learning loop\n14:25 Foundry agent optimization demo\n16:49 Closing remarks and resources\n\n\nKey quotes \n\nIntrinsic Knowledge\nPerspective: This knowledge represents the foundational parametric memory of models.\n\"Intrinsic knowledge is just the knowledge that comes with the models... it's what started many of the scenarios that then grew on all the things we're doing with agents today.\" (1:27 - 1:48)\n\"I would argue that GitHub Copilot and ChatGPT, those sort of experiences, were heavily grounded on this intrinsic memory\u2014what the models already knew.\" (2:59 - 3:04)\nExtrinsic Knowledge\nPerspective: To be truly useful in an organization, agents must access private, ambient data through sophisticated retrieval.\n\"Intrinsic model got us here, but it only gets you so far if you're building a system that or an agent that needs to participate in what's happening in an organization.\" (4:41 - 4:49)\n\"The trick is how do you build a platform that allows you to combine all these building blocks without putting the complexity right in front of you.\" (8:02 - 8:10)\n\"For more sophisticated cases you do want a system that can reflect on what's in the data set and decide whether or not we've satisfied the information need.\" (9:09 - 9:18)\nLearned Knowledge & Future Predictions\nPerspective: Knowledge is compounded by observing processes and enabling agents to self-optimize.\n\"The idea that we can actually observe the processes and get better at them by reflecting and improving every step of it is something that is really changed now.\" (13:20 - 13:29)\n\"Satya wrote about this recently and reflected on the fact that people and agents can really compound in how they do the work and how they can create this learning loop.\" (13:35 - 13:43)\n\"This is a real learning loop materialized in practice... we can enable this learning loops that will capture this differentiated capability that lives in each one of the companies and organizations we work on.\" (16:40 - 17:03)",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1514721,
     "title": "Research to Reality: Benoit Schillings, Google DeepMind, VP Research (Thinking, Reasoning, Coding)",
     "url": "https://www.youtube.com/watch?v=1P1hJ36rxM0",
@@ -175,6 +217,67 @@
       "agents",
       "research",
       "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1516622,
+    "title": "When Unlearning Is Free: Leveraging Low Influence Points to Reduce Computational Costs",
+    "url": "https://machinelearning.apple.com/research/unlearning-free-low-influence",
+    "published_at": "2026-07-17T00:00:00+00:00",
+    "fetched_at": "2026-07-17T17:39:00+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "As concerns around data privacy in machine learning grow, the ability to unlearn\u2014or remove\u2014specific data points from trained models becomes increasingly important. While state-of-the-art unlearning methods have emerged in response, they typically treat all points in the forget set equally. In this work, we challenge this approach by asking: do points that have a negligible impact on the model\u2019s learning need to be removed? Through a comparative analysis of influence functions across language and vision tasks, we identify subsets of training data with negligible impact on model outputs\u2026",
+    "topic": "education",
+    "tags": [
+      "models",
+      "safety",
+      "infrastructure",
+      "coding",
+      "education",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1517159,
+    "title": "Zero risk isn't the job: a CISO's guide to agentic AI",
+    "url": "https://claude.com/blog/ciso-guide-to-agentic-ai",
+    "published_at": "2026-07-17T00:00:00+00:00",
+    "fetched_at": "2026-07-17T17:39:02+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Zero risk isn't the job: a CISO's guide to agentic AI",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "safety",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1517160,
+    "title": "Working at the frontier: How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems",
+    "url": "https://claude.com/blog/working-at-the-frontier-cursor",
+    "published_at": "2026-07-17T00:00:00+00:00",
+    "fetched_at": "2026-07-17T17:39:02+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Working at the frontier: How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
       "coding"
     ],
     "dearrow_thumbnail_url": "",
@@ -9922,105 +10025,6 @@
       "agents",
       "infrastructure",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 981426,
-    "title": "Turn 10,994 Notes Into Memory - Paul Iusztin, Decoding AI & Louis-Fran\u00e7ois Bouchard, Towards AI",
-    "url": "https://www.youtube.com/watch?v=ZRM_TfEZcIo",
-    "published_at": "2026-06-22T22:25:06+00:00",
-    "fetched_at": "2026-06-24T22:48:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Paul Iusztin and Louis-Francois Bouchard show how to turn notes, docs, videos, and repos into memory for AI agents.\n\nSpeakers: Paul Iusztin, Decoding AI; Louis-Francois Bouchard, Towards AI.",
-    "topic": "tutorials",
-    "tags": [
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 943003,
-    "title": "My talk at AIE SF is going to be a banger: Building Great Skills: The Missing Manual A framework for building and improving skills, from the ground up.",
-    "url": "https://nitter.net/mattpocockuk/status/2069170261367128080#m",
-    "published_at": "2026-06-22T21:26:48+00:00",
-    "fetched_at": "2026-06-22T21:39:44+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>My talk at AIE SF is going to be a banger:<br />\n<br />\nBuilding Great Skills: The Missing Manual<br />\n<br />\nA framework for building and improving skills, from the ground up.</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 942797,
-    "title": "recommended viewing. as are all of her videos.",
-    "url": "https://video.twimg.com/amplify_video/2069093096017817603/vid/avc1/3840x2160/0wxXlOGPnBFOP94S.mp4",
-    "published_at": "2026-06-22T20:30:53+00:00",
-    "fetched_at": "2026-06-22T21:39:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. as are all of her videos.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 942798,
-    "title": "Die analysis of the 8087 math coprocessor's fast bit shifter",
-    "url": "https://www.righto.com/2020/05/die-analysis-of-8087-math-coprocessors.html",
-    "published_at": "2026-06-22T19:38:11+00:00",
-    "fetched_at": "2026-06-22T21:39:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i love this type of forensics. an internet friend thought me 8087 fpu programming in the 90ies. first time i had contact with a stack. good times.",
-    "topic": "opinion",
-    "tags": [
-      "coding",
-      "hardware",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 940285,
-    "title": "Training Agents: Live tutorial on how to fine-tune a coding agent for continual learning",
-    "url": "https://www.youtube.com/watch?v=rNgUoH7Wbv8",
-    "published_at": "2026-06-22T19:13:46+00:00",
-    "fetched_at": "2026-06-22T19:28:46+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Training Agents, Session 1: from raw agent traces to a supervised fine-tuning baseline.\n\nIn this live session, I\u2019ll set up the first rung of an agentic post-training workflow: SFT. We\u2019ll take public coding-agent traces, turn them into prompt/completion training data, run a small TRL + LoRA fine-tune, and inspect what the first metrics can and cannot tell us.\n\nWhat we\u2019ll cover:\n- Why start with SFT before GRPO or environment RL\n- How agent traces become training examples\n- Completion-only loss for chat/tool traces\n- Running TRL SFT on Hugging Face Jobs\n- Keeping experiments reproducible without checking in logs or checkpoints\n- What the first eval metrics do and do not prove\n\nRepo:\nhttps://github.com/burtenshaw/training-agents\n\nGuide:\nhttps://x.com/ben_burtenshaw/status/2067615361428545566?s=20\n\nSlides:\nhttps://docs.google.com/presentation/d/1hcGZ4U9TjZZzcGNbH2K6wYD45qwZTyo_gosCQsnHlnc/edit?usp=sharing\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #FineTuning",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "coding",
-      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
