@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1546702,
+    "title": "Agents Need Receipts, Not More Tool Calls - Armanas Povilionis, Alithea Bio",
+    "url": "https://www.youtube.com/watch?v=Fu45geO3zX8",
+    "published_at": "2026-07-18T13:45:07+00:00",
+    "fetched_at": "2026-07-18T14:58:07+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In this talk, I\u2019ll show an agent publish a service, another agent discover and invoke it, and a signed receipt that proves what happened. The point is simple: if agents are going to buy, sell, and compose work across hosts, logs and API dashboards are not enough.\n\nFroglet is an open-source protocol and node for agent-to-agent compute. It reduces named services, data-backed services, and open-ended compute to one signed flow: Descriptor  to  Offer  to  Quote  to  Deal  to  Receipt. The same surface is exposed through MCP and OpenClaw/NemoClaw as one froglet tool, so agents can publish, discover, invoke, and verify work without custom glue for every provider.\n\nThe hot take: agentic commerce should start with verifiable work, not checkout pages. Payment rails can change. Receipts, identities, workload hashes, and deal state need to survive across models, hosts, and marketplaces.\n\nsee froglet.dev\n\nSpeakers:\n- Armanas Povilionis (Alithea Bio): Technologist and systems strategist working at the intersection of AI, infrastructure, biology, governance, and incentive coordination.\n  LinkedIn: https://www.linkedin.com/in/armanas-povilionis/\n  GitHub: https://github.com/armanas",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1536059,
     "title": "Your Agents Need a Save Button - Hamza Tahir, ZenML",
     "url": "https://www.youtube.com/watch?v=bZISsg7H7DA",
@@ -10005,26 +10028,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 950513,
-    "title": "How One API Runs 27 ML Tasks",
-    "url": "https://www.youtube.com/shorts/Xe67WF8Hfu8",
-    "published_at": "2026-06-23T07:50:42+00:00",
-    "fetched_at": "2026-06-23T10:10:44+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "One API. 27 different ML tasks. The secret is a simple input/output contract. The task ID defines what goes in and what comes out. Same pattern, every time.\n\n#TransformersJS #JavaScript #MachineLearning #AI #WebAI #Pipeline",
-    "topic": "product",
-    "tags": [
-      "product",
-      "api",
-      "infrastructure",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
