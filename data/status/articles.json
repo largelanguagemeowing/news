@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1553083,
+    "title": "Stop Renting Your Cognitive Infrastructure - Thiyagarajan Maruthavanan, Kalmantic Labs",
+    "url": "https://www.youtube.com/watch?v=Bck7ABCZRZI",
+    "published_at": "2026-07-18T18:15:06+00:00",
+    "fetched_at": "2026-07-18T18:32:35+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "I pointed my lab at one problem, inference, after 200 users burned $1,000 in credits and the math just wouldn't close. So I built the thing, felt the cost, and went looking for why renting intelligence never pencils out.\nTurns out everyone in this market sells a gospel shaped like their own invoice. Jensen: build a token factory. Nadella: don't even think about the meter. Fireworks: own your model (on our infra). Three smart people, three different layers, three pitches that all end at \"keep paying us.\"\nMy rule: rent to learn, own to run. Rent the model while you're hunting PMF, own the inference for the part you'd have to answer for. I moved my own agents off the Anthropic API onto owned infra, open-sourced the piece that stops the bleed, and got few things badly wrong on the way\n\nSpeakers:\n- Thiyagarajan Maruthavanan (Kalmantic Labs): Thiyagarajan M (Rajan) runs an agentic lab focused on AI inference and agent harness, has built open source tools and other products to shape work on it, and authored a book on peak inference performance.\n  X/Twitter: https://x.com/mtraja\n  LinkedIn: https://linkedin.com/in/thiyagarajan\n  GitHub: https://github.com/mtr7x",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "infrastructure",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1550958,
     "title": "Content Is Code - Matt Palmer, Conductor",
     "url": "https://www.youtube.com/watch?v=yv6xovSsB1U",
@@ -10012,27 +10034,6 @@
     "tags": [
       "product",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 952554,
-    "title": "Welcome to Open Source AI: Run Your Own Models Locally",
-    "url": "https://www.youtube.com/watch?v=wRcByxXkJCQ",
-    "published_at": "2026-06-23T11:11:12+00:00",
-    "fetched_at": "2026-06-23T13:22:08+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "A livestream for everyone starting out with open models. We walk through the most robust stack for running AI on your own laptop or server, and answer your questions live.\n\nWhat we cover:\n\nMerve Noyan on llama.cpp: what it is and how it runs on your hardware, plus the new llama.app and llama barn.\n\nDaniel Han from Unsloth on downloading GGUFs: finding quantized models on the Hub, why quantization matters, and choosing the right size and type for your hardware.\n\nBen Burtenshaw on selecting your harness: closed harnesses like Claude and Codex, open harnesses like Pi, with a demo using llama server.\n\nOnur Solmaz on Pi PR triage: a demo of Pi and Gemma for automated PR triage.\n\nPlus a live AMA throughout the stream.\n\nBring your questions about local models, llama.cpp, open coding agents, and anything open or local AI.",
-    "topic": "hardware",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "hardware"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
