@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1536059,
+    "title": "Your Agents Need a Save Button - Hamza Tahir, ZenML",
+    "url": "https://www.youtube.com/watch?v=bZISsg7H7DA",
+    "published_at": "2026-07-18T07:00:06+00:00",
+    "fetched_at": "2026-07-18T08:20:32+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most of an agent's life is spent waiting - on a tool, a human, the next step - and the whole time you're holding a live process awake and billing for it. Multiply that across every agent your org wants to run overnight and the math stops working.\n\nA save button fixes the obvious stuff: freeze an agent to durable state, drop its compute to zero, bring it back in milliseconds when there's work, and if it crashes, resume from the last save instead of re-burning every token from the top.\n\nThe interesting part is what a save button does after the run is over. Reload an agent to any point in its trajectory, change one thing, a prompt, a model, a tool, and watch whether it does better. A finished run stops being a log you read and becomes something you re-run and improve.\n\nI'll argue that this one primitive, a checkpoint, is the most underrated thing in agent infrastructure, and follow it down to the sandboxes and Kubernetes-shaped infra the industry is quietly racing to build so a million saved agents can sleep for free. You'll leave with a model for running and improving agents at scale without paying to keep them awake.\n\nSpeakers:\n- Hamza Tahir (ZenML): Hamza Tahir is co-founder and CTO of ZenML and co-founder of Kitaru, the durable runtime for AI agents. He's spent a decade building production ML and AI infrastructure used by JetBrains, the German Bundeswehr, and Adeo, and writes and speaks on what actually breaks when agents hit production.\n  X/Twitter: https://x.com/htahir111\n  LinkedIn: https://www.linkedin.com/in/hamzatahirofficial\n  GitHub: http://github.com/htahir1",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1536060,
+    "title": "Agents Need Feature Flags - Sachin Gupta",
+    "url": "https://www.youtube.com/watch?v=zU4EagB311U",
+    "published_at": "2026-07-18T07:00:06+00:00",
+    "fetched_at": "2026-07-18T08:20:32+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most AI teams ship behavior changes to 100% of users on every deploy \u2014 no canary, no segment, no kill switch. Web teams stopped doing this in 2012. AI teams are about to learn why.\nFeature flags are table stakes in software engineering. In agent systems they're almost nonexistent \u2014 prompts, tool access, model selection, memory policy, and autonomy level all change globally the moment you ship. That's why your \"small\" prompt tweak just broke 12% of your users and you found out from a Discord screenshot.\nThis talk walks the feature-flag patterns agents specifically need \u2014 beyond the standard boolean-toggle. We'll cover segment-targeted prompt variants, per-tool access flags, model-routing flags, autonomy-level flags (suggest vs. auto-approve vs. auto-execute), memory-policy flags, and the kill switch every agent system should have on day one but almost none do.\n\nSpeakers:\n- Sachin Gupta: Sachin Gupta is a Staff Software Engineer with 15+ years building backend platforms at internet scale, currently focused on the runtime trust boundaries that LLM coding agents blur and the creator of HeapLens, a Java heap analyzer extension used in 50+ countries.\n  LinkedIn: https://www.linkedin.com/in/guptasachin1/\n  GitHub: https://github.com/sachinkg12",
+    "topic": "education",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1533676,
     "title": "Claude make Fable 5 permanent",
     "url": "https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything",
@@ -9981,49 +10025,6 @@
       "api",
       "infrastructure",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 981420,
-    "title": "A Genius With Amnesia - Victor Savkin, Nx",
-    "url": "https://www.youtube.com/watch?v=jVjt-2g8NMY",
-    "published_at": "2026-06-23T03:05:52+00:00",
-    "fetched_at": "2026-06-24T22:48:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Imagine a genie grants your wish and materializes the best engineer in the world, John Carmack in his prime, to work on your codebase. The catch: he can only see a tiny corner of it, and he forgets everything between interactions. No matter how good he is, the value isn\u2019t there. This is what coding agents are today. We need to fix it.\n\nSpeakers:\n- Victor Savkin (Nx): Victor is the creator of Nx, the agentic monorepo platform, and Polygraph, the meta-harness for maximum agent autonomy, with 20+ years building high-performance frameworks and build tools.\n  X/Twitter: https://x.com/victorsavkin\n  LinkedIn: https://www.linkedin.com/in/victorsavkin/\n  GitHub: https://github.com/vsavkin",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "coding",
-      "tools",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 981421,
-    "title": "Production Evals For Agentic AI Systems - Nishant Gupta, Meta Superintelligence Labs",
-    "url": "https://www.youtube.com/watch?v=vljxQZfJ9wY",
-    "published_at": "2026-06-23T03:05:38+00:00",
-    "fetched_at": "2026-06-24T22:48:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "As AI systems evolve from chat interfaces into autonomous agents capable of reasoning, planning, and tool usage, traditional evaluation approaches are breaking down. Offline benchmarks and static datasets fail to capture the complexity, non-determinism, and operational risks of real-world AI systems operating in production environments.\n\nIn this talk, I\u2019ll share practical lessons and architectural patterns for building evaluation systems for agentic AI workflows at scale. We\u2019ll explore how modern AI platforms are shifting from one-time benchmark testing toward continuous evaluation pipelines integrated directly into production infrastructure.\n\nTopics include:\n- Why offline evals fail for autonomous AI systems\n- Evaluating tool use, planning, reasoning, and multi-step workflows\n- Online vs offline eval architectures\n- Human-in-the-loop evaluation systems\n- Detecting drift, hallucinations, and unsafe behaviors\n- Building feedback loops for continuous improvement\n- Observability and telemetry for agentic workflows\n- Reliability metrics beyond model accuracy\n\nAttendees will leave with practical frameworks for designing scalable evaluation systems capable of measuring real-world AI behavior, reliability, and operational impact.\n\nSpeakers:\n- NISHANT GUPTA (Meta): Nishant Gupta is a Software Engineering Tech Lead at Meta in the SuperIntelligence Lab focused on building the training and inference AI Infrastructure.\n  LinkedIn: https://www.linkedin.com/in/nishantgupta-ai/\n  GitHub: https://github.com/nishantgpt-lab",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark",
-      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
