@@ -1,5 +1,46 @@
 [
   {
+    "article_id": 1533676,
+    "title": "Claude make Fable 5 permanent",
+    "url": "https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything",
+    "published_at": "2026-07-18T06:00:13+00:00",
+    "fetched_at": "2026-07-18T06:05:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://twitter.com/claudeai/status/2078302415804379218\">Claude make Fable 5 permanent</a></strong></p>\nAn update from the <code>@claudeai</code> account on Twitter:</p>\n<blockquote>\n<p>Beginning July 20, Claude Fable 5 will be included in all Max and Team Premium plans, at 50% of limits.</p>\n<p>Pro and Team Standard users will continue to have access to Fable via usage credits, and will receive a one-time $100 credit.</p>\n</blockquote>\n<p>As I was saying <a href=\"https://simonwillison.net/2026/Jul/12/bump/\">last week</a>, the competition from <a href=\"https://simonwillison.net/2026/Jul/9/gpt-5-6/\">GPT-5.6 Sol</a> (and maybe to a lesser extent <a href=\"https://simonwillison.net/2026/Jul/16/kimi-k3/\">Kimi 3</a>) made untenable Anthropic's plan to remove Fable 5 from their subscription accounts and make it available exclusively through API pricing.</p>\n<p>Why pay $100 or $200/month for a subscription plan that <em>doesn't</em> include Anthropic's best model?</p>\n<p>Their original plan was driven by concerns over compute capacity. I wonder if they'll have to dial back their training efforts in order to make more GPUs available to help serve the model.</p>\n<p>A lot of people were losing sleep over trying to make the most of Fable 5 before subscriber access was withdrawn. It's nice not to have to worry about the Fablepocalypse any more.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "api",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1533677,
+    "title": "nascheme/quixote",
+    "url": "https://simonwillison.net/2026/Jul/18/quixote/#atom-everything",
+    "published_at": "2026-07-18T05:27:49+00:00",
+    "fetched_at": "2026-07-18T06:05:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://github.com/nascheme/quixote\">nascheme/quixote</a></strong></p>\nA certain vintage if Python web nerd might be delighted to learn that the most recent commit to the Quixote web framework was <a href=\"(https://github.com/nascheme/quixote/commit/7f775cf9d1e7e80fcbb2706b4a1d971e55ca74a3)\">six hours ago</a>.</p>\n<p>The <a href=\"https://github.com/nascheme/quixote/commit/d6b73c5768c2d041b68b54cc71863604249abc18\">oldest commit</a> in that repo is from 21 years ago, and that was the initial import of Quixote 2.4 from Subversion into Git.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/computer-history\">computer-history</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/web-frameworks\">web-frameworks</a></p>",
+    "topic": "education",
+    "tags": [
+      "open-source",
+      "infrastructure",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1523251,
     "title": "The Great Loops Debate \u2014\u00a0Dex Horthy, Geoff Huntley, Ian Livingstone, Greg Pstrucha, @insecure-agents",
     "url": "https://www.youtube.com/watch?v=c35YoMdnI78",
@@ -182,6 +223,26 @@
       "agents",
       "models",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1533679,
+    "title": "LLM clich\u00e9 highlighter",
+    "url": "https://simonwillison.net/2026/Jul/17/llm-cliche-highlighter/#atom-everything",
+    "published_at": "2026-07-17T12:11:11+00:00",
+    "fetched_at": "2026-07-18T06:05:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/llm-cliche-highlighter\">LLM clich\u00e9 highlighter</a></p>\n        <p>I got frustrated reading <em>yet another</em> article that was crammed with the clich\u00e9s of LLM-generated writing - \"no fluff, no filler, no jargon\" type stuff - so I had Fable 5 vibe code up this app for highlighting ten common patterns that show up in that sort of writing.</p>\n<p><img alt=\"Screenshot of a text-analysis web tool. Top summary row: &quot;2 matches&quot;, &quot;1 flagged sentence&quot;, &quot;0 chain items&quot;. Below, a collapsed &quot;\u25b6 Patterns \u00b7 all 11 on&quot; panel, then a URL input reading &quot;https://example.com/article \u2014 fetched via r.jina.ai&quot; with a &quot;Load URL&quot; button. A text area contains &quot;That loss is real and it's worth naming&quot;. Below are &quot;Load example&quot; and &quot;Clear&quot; buttons and a checked checkbox &quot;Show just the highlights&quot;. A &quot;Highlighted text&quot; section shows &quot;That loss is real and it's worth naming&quot; with &quot;That loss&quot; in pale yellow (flagged sentence) and &quot;is real and&quot; plus &quot;'s worth naming&quot; in darker yellow (pattern match). Legend: &quot;flagged sentence&quot;, &quot;pattern match&quot;, &quot;3 chain item count&quot;. &quot;Matches&quot; section: 1. &quot;is real and&quot; \u2014 &quot;Is real \u2026 and / not&quot;; 2. &quot;'s worth naming&quot; \u2014 &quot;Worth naming&quot;.\" src=\"https://static.simonwillison.net/static/2026/the-loss-is-real.webp\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/tools\">tools</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "coding",
+      "opinion",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9962,72 +10023,6 @@
       "agents",
       "safety",
       "benchmark",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 981422,
-    "title": "The Miranda Hypothesis: How Hamilton Poisoned Persona Evals - Jacob E. Thomas, Results Gen",
-    "url": "https://www.youtube.com/watch?v=IJXjTLPzvAU",
-    "published_at": "2026-06-23T02:18:48+00:00",
-    "fetched_at": "2026-06-24T22:48:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Your persona-eval pipeline rates an Alexander Hamilton simulation at 80% personality fidelity. It is also rating a Hamilton who sounds like he has read his own Broadway musical. The dominant failure mode of every character-based AI system now in production is invisible to LLM-as-judge, personality-scale benchmarks, and behavioral consistency scores because every one of them was built to detect convincingness, and convincingness is exactly what the failure produces.\n\nThe failure has a name: Miranda distortion. When the volume of cultural representation of a figure in your training corpus outnumbers their primary documentary record by orders of magnitude (and it always does for any culturally salient figure) your persona doesn't speak from the record. It speaks from the smoothed cultural composite. The 2015 Broadway musical has exponentially more representational density in your training data than the 175,000 words of the Federalist Papers. Your evals were not designed to notice this. They were designed to score fluency, personality coherence, and stylistic naturalness... the exact features the composite optimizes.\n\nIn this talk:\n\n- The structural argument: why InCharacter-style benchmarks, CoSER, and PsyMem can hit state-of-the-art on personality fidelity while structurally failing to detect anachronistic reasoning.\n- The architectural mechanism: why RLHF amplifies Miranda distortion instead of correcting it (raters are themselves products of the same cultural composite).\n- The framework: a four-stage paradigm shift from cognitive simulation to epistemic simulation (corpus-bounded, temporally-anchored, expert-loop-evaluated).\n- The instrument: the pre-registered Prism Experiment. Lincoln at four documented temporal moments, three seeding conditions, five diagnostic questions written by a domain historian, and a weighted three-axis rubric (Anachronism Detection, Documentary Consistency, Contextual Plausibility) that catches what automated metrics miss.\n- The handoff: what a working eval loop looks like when a historian, classicist, theologian, or clinical psychologist sits in it, and why that's a technical requirement, not a cultural courtesy\n\nPre-registered protocol with University of Toronto historian Rick Halpern, paper forthcoming. Reproducible by any team running a frontier model with a context window.\n\nIf you ship character bots, companion AI, pedagogical agents, historical simulations, or any system where a persona is supposed to reason from a specified record, your evals are measuring the wrong thing. Here is the instrument that catches what they miss.\n\nSpeakers:\n- Jacob E. Thomas (Results Generation): Dr. Thomas is an epidemiologist, data scientist, and AI engineer who studies information as a determinant of health.\n  LinkedIn: https://www.linkedin.com/in/jacob-e-thomas-atx/\n  GitHub: https://github.com/jethomasphd/THE_COMPANION_DOSSIER",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 981423,
-    "title": "Build Systems, Not Code - Angie Jones, Agentic AI Foundation",
-    "url": "https://www.youtube.com/watch?v=ZD9-4fW2HhM",
-    "published_at": "2026-06-23T02:01:15+00:00",
-    "fetched_at": "2026-06-24T22:48:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "AI coding agents are changing what it feels like to be a software engineer. For a lot of us, that's challenging our sense of craftsmanship. If agents are writing the code, do we lose the joy of building?\n\nI don't think so. The building moves up a layer.\n\nIn this talk, I'll share how I found that familiar engineering flow state again. Not by writing every line myself, but by designing agentic systems that still require the engineering principles we value: systems thinking, decomposition, separation of concerns, state management, etc.\n\nThe tools are different now, but the engineering discipline is still there. We'll walk through how to apply the engineering muscles you already have to a new set of building blocks.\n\nIf you've been wondering where your value goes in an AI native world, this talk will help you see that it hasn't disappeared. It's now at the system level.\n\nSpeakers:\n- Angie Jones (Agentic AI Foundation): Angie Jones is the VP of Developer Experience at the Agentic AI Foundation where she guides how agentic systems are designed, implemented, and adopted across the global developer ecosystem.\n  X/Twitter: https://twitter.com/techgirl1908\n  LinkedIn: https://www.linkedin.com/in/angiejones/\n  GitHub: https://github.com/angiejones",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "coding",
-      "tutorials",
-      "tools",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 981424,
-    "title": "The Log Is The Agent - Ishaan Sehgal, Omnara",
-    "url": "https://www.youtube.com/watch?v=UPwGaM2MKHY",
-    "published_at": "2026-06-23T01:07:48+00:00",
-    "fetched_at": "2026-06-24T22:48:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Think about a character you've spent 100 hours playing in a video game like Skyrim or Elden Ring.\n\nWhat exactly is your character?\n- Is it the game engine (the loop)? No.\n- Is it the PlayStation console (the compute)? No.\n- Is it the controller (the tools)? No.\n\nYour character is the save file (the data).\n\nIf your PlayStation bursts into flames, your character isn't dead. You just buy a new PlayStation, download your save file from the cloud, and your character is exactly where they were, mid-swing. The identity, history, and current state of your character live entirely in the data.\n\nToday, most attention goes toward frameworks, orchestration layers, context engineering, specs, and tools. But as models become more capable and generally intelligent, the differentiator shifts away from these abstractions and toward the underlying infrastructure.\n\nThe Engine becomes interchangeable. The Brain (LLM) commoditizes. The Hands (tools) are just APIs.\n\nWhat actually persists across models, runtimes, and machines is the session log.\n\nThat\u2019s where continuity, identity, and state actually live.\n\nA decade ago, Martin Kleppmann argued that databases should be understood as projections over an append-only log. I think the same thing is now happening with agents.\n\nToday, agents are treated like complicated black boxes made of loops, models, and tool calls. But at its core, the agent is the session log (the save file). Everything else is swappable.\n\nOnce the log becomes the primitive, entirely new system properties emerge:\n- durability \u2014 agents survive crashes, disconnects, and machine failure\n- continuity \u2014 sessions can be resumed from anywhere, on any device\n- forkability \u2014 timelines can branch for parallel execution and exploration\n- addressability \u2014 agents become durable entities that can be referenced and revisited\n- observability \u2014 execution can be monitored and steered in real time\n- portability \u2014 models, runtimes, and machines become interchangeable\n\nBut this creates a new infrastructure question:\n\nIf the model provider owns the log, does the model provider own the agent?\n\nThis talk explores why the future of agent infrastructure isn't what we're focused on today, but rather durable, portable logs that make agents persistent across models, runtimes, and machines.\n\nSpeakers:\n- Ishaan Sehgal (Omnara): Ishaan Sehgal is the CEO and cofounder of Omnara (YC S25), where he builds managed infrastructure for AI agents.\n  X/Twitter: https://x.com/ishaansehgal\n  LinkedIn: https://www.linkedin.com/in/ishaan-sehgal/\n  GitHub: https://github.com/ishaansehgal99",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "video",
       "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
