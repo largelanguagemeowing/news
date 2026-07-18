@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1557369,
+    "title": "The UX of AI: Making AI-Powered Apps Your Users Don't Hate - Kathryn Grayson Nanz, Progress Software",
+    "url": "https://www.youtube.com/watch?v=L3RuP_q8Bwc",
+    "published_at": "2026-07-18T20:30:06+00:00",
+    "fetched_at": "2026-07-18T21:23:36+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "As a developer, AI is fun, exciting, and full of potential \u2013 but users don't always feel the same way about it.\n\nFrom a UX perspective, AI comes with a whole new set of considerations around user trust, privacy, and security. From a UI perspective, AI brings new interaction patterns, new icons, new visual cues, and so much more!\n\nIf we want people to get the most from what we build, we have to teach our users how to use AI. Let's look at ways to introduce new capabilities in our apps and guide our users through new patterns and processes \u2013 ideally without making them throw their phone out a window\n\nSpeakers:\n- Kathryn Grayson Nanz (Progress Software): Kathryn Grayson Nanz is the Senior Design and Developer Advocate at Progress Software; her work focuses on React, UI design and design systems, accessibility, and creating software that centers the human experience.\n  X/Twitter: https://bsky.app/profile/kgrayson.com\n  LinkedIn: https://www.linkedin.com/in/kathryngrayson/\n  GitHub: https://github.com/kathryngraysonnanz",
+    "topic": "tutorials",
+    "tags": [
+      "open-source",
+      "safety",
+      "coding",
+      "tutorials",
+      "education",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1557370,
+    "title": "Stop Burning Tokens: Why self-improvement needs domain expertise first - Annabell Sch\u00e4fer, Langfuse",
+    "url": "https://www.youtube.com/watch?v=eAXxdtNlK04",
+    "published_at": "2026-07-18T20:15:06+00:00",
+    "fetched_at": "2026-07-18T21:23:36+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "We ran auto-improvement loops on a paper classification task against a ground-truth dataset. A real problem, narrow enough to measure precisely, and in fact one of the few clear cut target functions out there.\n\nWe\u2019ll share how to properly set up an agent for auto-improvement, what task specificity and target function quality is actually required for it to work, and why the most efficient path to a continuously improving agentic system is one where domain experts and automation know when to hand off to each other.\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\n\nSpeakers:\n- Annabell Sch\u00e4fer (Langfuse): Annabell is a Growth Engineer at Langfuse, the largest Open Source AI observability and evaluation platform. She is passionate about building cutting edge AI systems and has been around in the space since 2022.\n  X/Twitter: https://x.com/annabellschfr\n  LinkedIn: https://linkedin.com/in/annabell-schaefer/\n  GitHub: https://github.com/annabellscha",
+    "topic": "research",
+    "tags": [
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "tutorials",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1553083,
     "title": "Stop Renting Your Cognitive Infrastructure - Thiyagarajan Maruthavanan, Kalmantic Labs",
     "url": "https://www.youtube.com/watch?v=Bck7ABCZRZI",
@@ -17,6 +61,27 @@
       "agents",
       "infrastructure",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1557111,
+    "title": "SQLite Query Explainer",
+    "url": "https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything",
+    "published_at": "2026-07-18T17:19:10+00:00",
+    "fetched_at": "2026-07-18T21:23:35+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/sqlite-query-explainer\">SQLite Query Explainer</a></p>\n        <p>Julia Evan's, in <a href=\"https://jvns.ca/blog/2026/07/17/learning-about-running-sqlite/\">Learning a few things about running SQLite</a>:</p>\n<blockquote>\n<p>Maybe one day I\u2019ll learn to read a query plan.</p>\n</blockquote>\n<p>Big same.... which inspired me to <a href=\"https://github.com/simonw/tools/pull/299#issue-4919268017\">have Fable build</a> this interactive explain tool, which runs SQLite in Python in Pyodide in Web Assembly in the browser and adds a layer of explanation to the results of both EXPLAIN and EXPLAIN QUERY PLAN.</p>\n<p>Approach with caution, since I don't know enough about SQLite query plans to verify the results myself, but it seems cromulent enough to me.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/sql\">sql</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/tools\">tools</a>, <a href=\"https://simonwillison.net/tags/julia-evans\">julia-evans</a>, <a href=\"https://simonwillison.net/tags/pyodide\">pyodide</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "education",
+    "tags": [
+      "models",
+      "open-source",
+      "coding",
+      "education",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9976,64 +10041,6 @@
       "safety",
       "benchmark",
       "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 952509,
-    "title": "Codex Can Now \"Copy\" Your Tasks",
-    "url": "https://www.youtube.com/shorts/qv-KPydJhXs",
-    "published_at": "2026-06-23T12:52:33+00:00",
-    "fetched_at": "2026-06-23T13:22:08+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Codex can now watch your screen, learn what repetitive tasks you need done, and then do them for you.\n\nOpenAI just dropped a new feature called \"Record and Replay\" and it\u2019s the ultimate cheat code for repetitive tasks.\n\nFirst, you record yourself doing a task once and the AI will watch your screen, understand your clicks, and turn that task into a brand-new \"skill\" that it saves. Then, the next time you need to do this task, just drop whatever context you need into the chat box and tell it to use the skill it saved.\n\nWhat is the FIRST repetitive task you would let this AI copy for you? Let me know in the comments\ud83d\udc47\n\n#OpenAI #AI #ProductivityHacks #AInews #chatgpt",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding",
-      "education",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1256721,
-    "title": "Meta-Harness R&D: Enterprise-Grade Self-Improvement for Long-Horizon AI Workflows",
-    "url": "https://openai.com/deployco/news/meta-harness-enterprise-self-improvement-long-horizon-ai-workflows",
-    "published_at": "2026-06-23T12:00:00+00:00",
-    "fetched_at": "2026-07-07T22:37:52+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How autonomous code improvement can be made disciplined enough for enterprise use",
-    "topic": "enterprise",
-    "tags": [
-      "agents",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 953237,
-    "title": "11 months ago, Sean Grove gave a great talk that specs are the new code. I disagreed with it - IMO you need to keep a close watch on the code to avoid slop. I gave a talk and a workshop rebutting it. Both of them are set to get more views than the original. Mission complete.",
-    "url": "https://nitter.net/mattpocockuk/status/2069379106974670888#m",
-    "published_at": "2026-06-23T11:16:40+00:00",
-    "fetched_at": "2026-06-23T13:22:11+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>11 months ago, Sean Grove gave a great talk that specs are the new code.<br />\n<br />\nI disagreed with it - IMO you need to keep a close watch on the code to avoid slop.<br />\n<br />\nI gave a talk and a workshop rebutting it.<br />\n<br />\nBoth of them are set to get more views than the original.<br />\n<br />\nMission complete.</p>\n<img src=\"https://nitter.net/pic/media%2FHLfoiC4XoAAmpBy.jpg\" />",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
