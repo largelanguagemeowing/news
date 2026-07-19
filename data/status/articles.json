@@ -1,5 +1,66 @@
 [
   {
+    "article_id": 1578709,
+    "title": "From Blind Spots to Merged PRs: Continuous Agentic Performance Optimization - May Walter, Hud",
+    "url": "https://www.youtube.com/watch?v=JJGbw4ggaFs",
+    "published_at": "2026-07-19T13:45:06+00:00",
+    "fetched_at": "2026-07-19T14:56:12+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Performance issues silently pile up in mature codebases. Teams know things could be faster, but can never justify pausing feature work to investigate. You have to put engineers on it just to find out if there's something worth fixing, and the effort is completely unpredictable: it could take an hour or three weeks.\n\nIn this talk, we'll walk through a real case study of adding runtime intelligence to coding agents to enable continuous performance optimization in production. We'll cover the pain that led us here, the technical approach (agents analyzing real production context to surface high-ROI fixes scored by complexity and impact), and what we had to improve along the way to get reliable results.\n\nThis approach surfaced and fixed N+1 queries and missing database indexes within the first week, with measurable P90 latency improvements after deployment. Tech leads now receive actionable reports before sprint planning and can make decisions starting from the fix, not the problem.\n\nIf you're looking for a concrete, real-world example of integrating AI agents into the SDLC, this is it: not a demo, not a prototype, but merged PRs and better production performance.\n\nSpeakers:\n- May Walter (Hud): May Walter is Co-Founder and CTO of Hud, where she builds the Runtime Code Sensor that gives coding agents real-time production intelligence, drawing on her background as a serial CTO, runtime internals expert, and adversarial cybersecurity researcher.\n  LinkedIn: https://www.linkedin.com/in/may-walterr/",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1578694,
+    "title": "Local AI 201: Build your local setup and serve the model",
+    "url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
+    "published_at": "2026-07-19T13:35:08+00:00",
+    "fetched_at": "2026-07-19T14:56:12+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "In this livestream series we onboard you to build your local AI setup and get started with local models and going more advanced. Learn from the local AI experts and ask them questions! Watch the 101 if you want to start from scratch: https://www.youtube.com/watch?v=wRcByxXkJCQ\n\n\ud83c\udf99\ufe0f New to streaming or looking to level up? Check out StreamYard and get $10 discount! \ud83d\ude0d https://streamyard.com/pal/d/5371923545718784",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "video",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1579204,
+    "title": "Reliable unreliability | David Gasquez",
+    "url": "https://davidgasquez.com/reliable-unreliability",
+    "published_at": "2026-07-19T13:25:56+00:00",
+    "fetched_at": "2026-07-19T14:56:15+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. in a few systems i built over the past 2 years i ended up with this flow for a given task:\n\n- start with full inference for all steps, observe behaviour, judge correctness\n- find inference steps that can be replaced with deterministic steps\n\neventually, most\n\nas  a programmer, i always tried to automate myself away.\n\nturns out, agents can also (help) automate themselves away.\n\nalso much cheaper.",
+    "topic": "infrastructure",
+    "tags": [
+      "agents",
+      "infrastructure",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1576584,
     "title": "Build Evals That Actually Matter - Nick Ung, Lyft",
     "url": "https://www.youtube.com/watch?v=3z2uT5aDx_Y",
@@ -9992,67 +10053,6 @@
     "tags": [
       "ai-models",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 963323,
-    "title": "recommended reading. deepmind's new AI control roadmap. looks like they've given up on solving the lethal trifecta directly. the new direction seems to be a tower of LLMs. i suppose that's as good as it gets.",
-    "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/securing-the-future-of-ai-agents/gdm-ai-control-roadmap.pdf",
-    "published_at": "2026-06-23T22:24:04+00:00",
-    "fetched_at": "2026-06-23T23:35:53+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. deepmind's new AI control roadmap. looks like they've given up on solving the lethal trifecta directly. the new direction seems to be a tower of LLMs. i suppose that's as good as it gets.\n\nlove it",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 964686,
-    "title": "datasette 1.0a35",
-    "url": "https://simonwillison.net/2026/Jun/23/datasette/#atom-everything",
-    "published_at": "2026-06-23T21:34:37+00:00",
-    "fetched_at": "2026-06-24T03:37:25+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette/releases/tag/1.0a35\">datasette 1.0a35</a></p>\n        <p>I'll write more about this one tomorrow, but it's a big release. Three highlights from the release notes:</p>\n<blockquote>\n<ul>\n<li>New \"Create table\" interface in the database actions menu, backed by the <code>/&lt;database&gt;/-/create</code> <a href=\"https://docs.datasette.io/en/latest/json_api.html#tablecreateview\">JSON API</a>. It can define columns, primary keys, custom column types, <code>NOT NULL</code> constraints, literal defaults, expression defaults and single-column foreign keys. (<a href=\"https://github.com/simonw/datasette/issues/2787\">#2787</a>)</li>\n<li>New \"Alter table\" table action and <code>/&lt;database&gt;/&lt;table&gt;/-/alter</code> <a href=\"https://docs.datasette.io/en/latest/json_api.html#tablealterview\">JSON API</a> for changing existing tables: add, rename, reorder and drop columns; change column types, defaults, <code>NOT NULL</code>constraints, primary keys and foreign keys; and rename the table. The alter table dialog also includes a \"Drop table\" button. (<a href=\"https://github.com/simonw/datasette/issues/2788\">#2788</a>)</li>\n<li>New <a href=\"https://docs.datasette.io/en/latest/template_context.html#template-context\">Template context</a> documentation listing the variables available to custom templates for Datasette's core pages. Variables documented there are treated as a stable API for custom templates until Datasette 2.0. The documentation is generated from dataclass definitions next to the view code, with tests that compare the documented fields against the actual contexts rendered by the database, table, query and row pages. (<a href=\"https://github.com/simonw/datasette/issues/1510\">#1510</a>, <a href=\"https://github.com/simonw/datasette/issues/2127\">#2127</a>, <a href=\"https://github.com/simonw/datasette/issues/1477\">#1477</a>, <a href=\"https://github.com/simonw/datasette/pull/2803\">#2803</a>)</li>\n</ul>\n</blockquote>\n<p>Here's a rough video demo I made of the new create/alter table feature as part of <a href=\"https://github.com/simonw/datasette/pull/2789\">reviewing the PR</a>:</p>\n<p><video controls=\"controls\" height=\"1056\" poster=\"https://static.simonwillison.net/static/2026/create-alter-demo-first-frame.jpg\" preload=\"none\" style=\"height: auto;\" width=\"1280\">\n  <source src=\"https://static.simonwillison.net/static/2026/create-alter-demo.mp4\" type=\"video/mp4\" />\n</video>\n</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "api",
-      "video",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 958506,
-    "title": "OPFS + Pyodide test harness",
-    "url": "https://simonwillison.net/2026/Jun/23/opfs-pyodide/#atom-everything",
-    "published_at": "2026-06-23T18:58:54+00:00",
-    "fetched_at": "2026-06-23T20:33:19+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/opfs-pyodide\">OPFS + Pyodide test harness</a></p>\n        <p>I've been pondering if <a href=\"https://lite.datasette.io/\">Datasette Lite</a> - the Python Datasette application run entirely in the browser using Pyodide and WebAssembly - might be able to edit persistent SQLite files stored on the user's computer.</p>\n<p>That's what <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system\">OFPS</a> (Origin Private File System) is for, so I had Claude Code for web build me this playground UI to try it out in different browsers.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/browsers\">browsers</a>, <a href=\"https://simonwillison.net/tags/pyodide\">pyodide</a>, <a href=\"https://simonwillison.net/tags/datasette-lite\">datasette-lite</a></p>",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "api",
-      "infrastructure",
-      "coding",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
