@@ -409,7 +409,9 @@ async function main() {
     getJson('/data/status/articles.json'),
     getJson('/data/status/summary.json'),
   ]);
-  const articles = rawArticles.map(enrichArticle);
+  const articles = rawArticles
+    .filter((item) => !getYouTubeId(item.url))
+    .map(enrichArticle);
   const uniqueSources = [...new Map(articles.map((item) => [item.source_id, item.source_name])).entries()];
   const uniqueTopics = [...new Set(articles.map((item) => item.topic))].sort();
   const allTagCounts = countByTag(articles);
