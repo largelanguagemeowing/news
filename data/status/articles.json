@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1582967,
+    "title": "You Didn't Ship a Bug. You Just Wrote It for a Human. - Ravi Madabhushi, Scalekit",
+    "url": "https://www.youtube.com/watch?v=lMCxVorb9wM",
+    "published_at": "2026-07-19T16:00:06+00:00",
+    "fetched_at": "2026-07-19T17:07:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "We built a demo agent to show customers how to connect agents to their tools. A simple chat assistant \u2014 Gmail, Calendar, a handful of connectors. It ran on a 15-minute schedule. And every 15 minutes, our production database strained. Latency crept up and alerts fired. Then settled.\n\nThen, it fired again.\n\nIt took us a while to find it. One line - a \"last seen\" timestamp updating on every tool call. Written for a human who logs in once. Our agent was calling it sixty times a second. We had built infrastructure to show customers how to connect agents to their tools. We hadn't noticed we'd built it for humans.\n\nThat line wasn't a bug. It was a design assumption. And it's not just us - 60% of all production LLM errors trace back to rate limits. They are not model failures or bad prompts. Infrastructure that never anticipated this kind of traffic. As one developer put it: \"Rate limits can't tell the difference between agent legitimately needs 100 calls and agent is just looping.\" Because they were never designed to. They were designed for humans.\n\nEvery layer of the stack your agents depend on carries the same assumption \u2014 that the user on the other end is a person, doing one thing at a time, at human speed. Your agent isn't. And until your infrastructure knows that, production will keep finding the places where it doesn't.\n\nThis talk is about what we learned from finding it, what it actually means to treat agents as a first-class principal, not a fast human, and what changes when you design for that from the start.\n\nSpeakers:\n- Ravi Madabhushi (Scalekit): Ravi has been building infra for how software talks to other software for more than a decade. He co-founded Pipemonk \u2014 a SaaS integration platform acq. by Freshworks (NASDAQ listed) then spent years leading product on Freshworks' auth platform as it scaled to 50K+ businesses and 2M DAUs.\n\nAt Scalekit, he's applying that to a harder version of the same problem: not humans logging into software, but agents taking actions inside it. What breaks is different. What it costs when it breaks is worse.\n  X/Twitter: https://x.com/ravibits\n  LinkedIn: https://www.linkedin.com/in/ravibits/\n  GitHub: https://github.com/ravibits",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1578709,
     "title": "From Blind Spots to Merged PRs: Continuous Agentic Performance Optimization - May Walter, Hud",
     "url": "https://www.youtube.com/watch?v=JJGbw4ggaFs",
@@ -3189,7 +3211,7 @@
       "funding"
     ],
     "dearrow_thumbnail_url": "",
-    "available": true
+    "available": false
   },
   {
     "article_id": 1366937,
@@ -5007,7 +5029,7 @@
       "video"
     ],
     "dearrow_thumbnail_url": "",
-    "available": true
+    "available": false
   },
   {
     "article_id": 1268287,
@@ -8968,7 +8990,7 @@
       "coding"
     ],
     "dearrow_thumbnail_url": "",
-    "available": true
+    "available": false
   },
   {
     "article_id": 1064448,
@@ -10035,24 +10057,6 @@
       "models",
       "agents",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 977593,
-    "title": "Building effective human-agent teams",
-    "url": "https://claude.com/blog/building-effective-human-agent-teams",
-    "published_at": "2026-06-24T00:00:00+00:00",
-    "fetched_at": "2026-06-24T19:46:33+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Building effective human-agent teams",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
