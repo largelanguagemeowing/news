@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1576584,
+    "title": "Build Evals That Actually Matter - Nick Ung, Lyft",
+    "url": "https://www.youtube.com/watch?v=3z2uT5aDx_Y",
+    "published_at": "2026-07-19T12:15:06+00:00",
+    "fetched_at": "2026-07-19T13:42:07+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your agent passes offline evals at 90%. You ship. Production immediately finds failure modes your eval never saw. Sound familiar?\n\nThe culprit is almost always the same: the \"customer\" in your offline eval is an off-the-shelf LLM that sounds nothing like your real users, and your synthetic test set doesn't capture how messy, angry, or off-topic real conversations get. Your eval was too easy.\n\nAt Lyft, our customer-care agents resolve roughly a third of all customer issues \u2014 millions of conversations a month. To trust them at that scale, we built an adversarial user simulator: a fine-tuned LLM trained on real Lyft rider and driver transcripts that can role-play frustrated, confused, and adversarial users with the same distribution as production. It found regressions our synthetic dataset missed for months.\n\nThis talk walks through the full eval lifecycle that surrounds it: the harness primitives that let any engineer write a benchmark in 20 lines, how we calibrate LLM-judge rubrics against human labels until they match inter-rater agreement, how we route failed production traces back into the offline test set, and the continual-learning loop that feeds improvements into prompts, harness, and the model.\n\nSpeakers:\n- Nick Ung (Lyft): Nick Ung leads Data Science for Safety & Customer Care at Lyft, where his team built and operates the multi-agent platform that powers AI agents resolving roughly a third of all Lyft customer issues.\n  LinkedIn: https://www.linkedin.com/in/unglikteng",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1567814,
     "title": "AI Mania Is Eviscerating Global Decision-Making",
     "url": "https://simonwillison.net/2026/Jul/19/ai-mania/#atom-everything",
@@ -10030,25 +10053,6 @@
       "infrastructure",
       "coding",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 955435,
-    "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-    "url": "https://openai.com/index/gpt-5-immunology-mystery",
-    "published_at": "2026-06-23T17:00:00+00:00",
-    "fetched_at": "2026-06-23T18:20:46+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
