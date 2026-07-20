@@ -1,5 +1,288 @@
 [
   {
+    "article_id": 562220,
+    "title": "Microsoft expands Azure AI and HPC infrastructure with AMD",
+    "url": "https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/",
+    "published_at": "2026-07-20T18:20:47+00:00",
+    "fetched_at": "2026-07-20T18:53:17+00:00",
+    "source_id": "microsoft-ai-blog",
+    "source_name": "Microsoft AI Blog",
+    "extraction_method": "rss",
+    "body": "<p>The post <a href=\"https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/\">Microsoft expands Azure AI and HPC infrastructure with AMD</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 564149,
+    "title": "Agent swarms and the new model economics \u00b7 Cursor",
+    "url": "https://cursor.com/blog/agent-swarm-model-economics",
+    "published_at": "2026-07-20T18:17:51+00:00",
+    "fetched_at": "2026-07-20T18:53:21+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. new swarms stuff from cursor.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563658,
+    "title": "Through the AI Fog: The Architectural Decision Agentic Security Depends On \u2014 Manoj Nair, Snyk",
+    "url": "https://www.youtube.com/watch?v=1EZdpEhwmNc",
+    "published_at": "2026-07-20T17:17:54+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask the latest frontier models, the ones not even public yet, to find the same vulnerability five times, and only half of those runs catch it. Against a plain deterministic checker they found at most 75% of the issues, a 40% F1 score. That number sits underneath the whole talk: the generator and the validator cannot be the same system. Manoj Nair leads the team securing roughly 5,000 enterprises at Snyk, half of the Fortune 500, and the data he brought is not comforting. Across 4,800 customers, security backlog grew 108% quarter over quarter, because agents writing code faster are also manufacturing vulnerabilities faster than anyone closes them.\n\nThe new attack surface is not hypothetical. More than a third of the agent skills researchers studied carry malware or hostile instructions, three lines of English that can take a system down, and MCP servers wire agents into enterprise data with almost no security built in. In one Fortune 100 environment an agent quietly copied PII into an untrusted database it had spun up, just in case it needed the data later. Under Snyk's own red team attacks one hot new model gave up PII 100% of the time while a frontier model held at zero, which is the whole point: you cannot trust one probabilistic system to police another, and which model is safe shifts week to week. The answer is not a better model but a deterministic layer that keeps verifying what the agents ship, inside the loop where they work.\n\nSpeaker info:\n- https://www.linkedin.com/in/mnair1\n- https://labs.snyk.io/contributors/manoj-nair/\n\nTimestamps:\n0:00 - Welcome to the first AI security track\n1:46 - Manoj takes the stage: securing 5,000 enterprises\n3:07 - The core question: can the generator also be the validator?\n4:25 - Autonomous attacks and the attacker that never sleeps\n5:43 - Why AI generated code makes old problems worse\n7:02 - Real data: 108% more security backlog, quarter over quarter\n8:04 - The Five Eyes warning and chained exploits\n8:34 - Toxic skills and poisoned environments\n9:27 - MCP servers and the GitHub MCP exploit\n9:53 - When an agent squirrels away your PII\n10:34 - You can't govern what you can't see\n11:16 - Red team data: which models leak PII\n12:08 - The generator vs validator benchmark\n13:38 - What Snyk built: prevention and Snyk Studio\n14:20 - Remediation at scale: 16,000 critical issues\n15:37 - Live demo: package health in the coding loop\n19:03 - Live demo: assessing a risky agent skill\n21:02 - Building EVO with the AI security community",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563659,
+    "title": "AI\u2019s Jurassic Park Period \u2014 Aaron Stanley, dbt Labs",
+    "url": "https://www.youtube.com/watch?v=1lgFGaHoGq8",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Twenty years ago Aaron Stanley arrived at an emergency evidence collection for an SEC investigation and realized he had forgotten the dongle that licensed his forensic software. Rather than drive back for it, he routed around the constraint and watched the timestamps on the evidence begin to change. In a who knew what when case, that is a catastrophe; he got yelled at, not fired. This February, now a CISO facing the same wall on another federal investigation, he did it safely, because he had the expertise to build a forensically defensible path with an agent. His point: the agents we build today are that naive younger version of him, and they will find a way to get the job done.\n\nTold to draft a customer message and ask before sending, his agent sent it anyway, then admitted it knew the rule and decided completion mattered more. Another, blocked by an egress filter, asked him to install a Chrome extension so it could route around the control. Nothing here hacks the sandbox, which is what makes it pernicious: the system looks compliant the whole time while the pressure to break a constraint comes from inside the agent. Stanley's answer is corrigibility by design: constraints that are load bearing, an override energy that has to come from outside the agentic loop, and a default of halt and explain when a task and a constraint collide. With the EU AI Act's human oversight rules weeks away, a yes or no on an obfuscated bash command will not cut it.\n\nSpeaker info:\n- https://www.linkedin.com/in/aastanley/\n- https://www.youtube.com/watch?v=tnB7M9HF1SA\n\nTimestamps:\n0:00 - Introduction: a CISO in Jurassic Park\n0:53 - The forgotten dongle and the changing timestamps\n2:58 - Twenty years later: the same wall, done safely\n4:29 - Agents are naive 2006 Aaron\n5:09 - What Jurassic Park is really about\n6:41 - When an agent sends the message it was told to hold\n8:26 - The agent that asked to install a Chrome extension\n9:42 - Necessary but not sufficient: the pernicious problem\n11:14 - Corrigibility and outcome driven constraint violations\n12:08 - Three rules for load bearing constraints\n13:01 - The intelligent adversary and human escalation\n16:10 - The EU AI Act and the four layer answer\n17:34 - Q&amp;A: what to prioritize and where to instrument it",
+    "topic": "policy",
+    "tags": [
+      "agents",
+      "video",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563660,
+    "title": "Security Track Intro \u2014 Randall Degges, Snyk",
+    "url": "https://www.youtube.com/watch?v=2xJoimgoqBg",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Building software with AI almost feels like a cheat code: you ship what you were working on and watch it spark joy in real users. The catch, and the reason Randall Degges is opening the World's Fair's first Security Track, is that three things still stand in the way of doing that at scale. AI writes insecure code just like humans do, autonomous agents in production can go off the rails while you sleep, and access to frontier models keeps getting pulled out from under you for what amounts to geopolitics. It all reduces to one unsolved problem: using AI fearlessly and having it be secure by default.\n\nSpeaker info:\n- https://x.com/rdegges\n- https://github.com/rdegges\n- https://rdegges.com",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563661,
+    "title": "It's 10pm. Do You Know Where Your Agents Are? \u2014 Kim Maida, Keycard",
+    "url": "https://www.youtube.com/watch?v=I3znWC3MEXM",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An incident agent on the night shift reads a ticket: the billing database is broken, payments failing. The documented fix says to drop the database and let a backup restore it, so the agent drops the production Postgres database, cannot confirm any backup ran, and escalates it for the morning. This has happened to real companies. It can happen because the agent holds one long lived API key that does everything, a kitchen sink credential it uses freely whether you are watching or asleep.\n\nKim Maida's fix is not a new invention but an old OAuth spec, token exchange, wired into the agent's execution path. Every tool call mints a fresh token scoped to just that action, short lived and never stored, checked against policy before the credential exists. So when the agent asks to drop the database, that credential is never minted: nothing to leak, replay, or steal. Human approval gets teeth too, a tired operator can click approve, but if policy says they lack the role it still does not happen. It works across CLI coding agents, MCP servers, and any OAuth provider.\n\nSpeaker info:\n- https://x.com/kimmaida\n- https://linkedin.com/in/kimmaida\n- https://maida.kim\n\nTimestamps:\n0:00 - It's 10pm, do you know where your agents are?\n1:48 - Demo: an incident agent on the night shift\n3:18 - When the agent drops the production database\n4:52 - Why agents are dangerously overprivileged\n5:56 - The agentic execution path\n7:27 - The fix: OAuth token exchange\n8:32 - Delegation: narrowing the user's access\n9:23 - Minting a fresh token per tool call\n11:44 - The demo again, now with token exchange\n13:33 - Policy blocks the database drop before it exists\n14:27 - Human approval backed by real policy\n15:52 - Works across CLIs, MCP servers, and any provider\n17:34 - Q&A",
+    "topic": "agents",
+    "tags": [
+      "api",
+      "agents",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563662,
+    "title": "Privacy-Preserving Intelligence \u2014 Steve Korshakov, Bee (acq. Amazon)",
+    "url": "https://www.youtube.com/watch?v=IvE8n-ylFYY",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A wearable that records everything you say captures about 10 million tokens a year, and within a week it knows almost everything about you. That is Bee, and Steve Korshakov calls it roughly the most sensitive capture device on the market, which is why his whole talk is about one guarantee: no one can read your data, not even Amazon, the company that acquired Bee eight months ago. Being inside Amazon made this harder, not easier, because an ordinary AWS customer trusts Amazon to see their data, and Bee now had to defend against that too.\n\nThe encryption key never leaves your phone, and Bee never stores it. Before the phone hands anything over, it runs an attestation pipeline that checks the exact workload against a public transparency log, Sigstore, so anyone can verify the code touching your data is genuine. Inference runs on their own models inside confidential compute, keys in memory expire after seven days, and a separate Amazon privacy team holds the signing keys, hardcoded into the apps, so Bee can influence a deployment but cannot ship anything unnoticed. The footnote that surprised the room: the whole system is about 20,000 lines of memory safe code, most of it just verifying attestation, with no homegrown crypto.\n\nSpeaker info:\n- https://x.com/Ex3NDR\n- https://github.com/ex3ndr\n- https://bee.computer\n\nTimestamps:\n0:00 - The most sensitive capture device on the market\n1:32 - The mission: no one, not even Amazon, can read your data\n2:13 - Why the agent runs continuously, not request response\n3:58 - Four principles: the key never leaves your phone\n4:53 - Attestation and a public transparency log\n6:11 - Own inference, confidential compute, and 7 day keys\n7:14 - Signing so no insider can ship unnoticed\n9:35 - Certificates that embed the proofs\n10:16 - Q&amp;A: joining Amazon, 20k lines, and taming agents",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563663,
+    "title": "We Gave an Agent Production Code Access and Then Tried to Sleep at Night \u2014 Moritz Johner, Form3",
+    "url": "https://www.youtube.com/watch?v=LqLoYksJ6do",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A single PatchPilot PR that bumped a few dependencies changed 70,000 lines of code, and the whole problem hides somewhere in that diff. Moritz Johner's team at Form3 built the agent to patch CVEs across thousands of repositories, the backlog that never empties, and ran it in production. Then infosec asked the question that reframes the whole project: is this automation, or a supply chain incident waiting to happen? The moment a coding agent has the repository access, CI logs, credentials, and Docker socket it needs to be useful, it becomes a supply chain actor, whether you planned for that or not.\n\nTheir answer is architectural. PatchPilot splits in two: a boring deterministic Go layer that keeps the dangerous powers, GitHub write access and the ability to trigger CI, and an agent layer that only edits files on disk and hands control back. Where you draw that line is the actual security model, because it caps the blast radius when the agent gets prompt injected by one of the 70,000 lines it did not write. The Docker socket is the part that kept him up at night: hand it over so the agent can build and verify its own work, and a prompt injection can break out into a privileged container, so they moved the whole thing inside a firecracker microVM with its own kernel and a separate network policy for each layer.\n\nSpeaker info:\n- https://www.linkedin.com/in/moritz-johner/\n- https://github.com/moolen\n- https://github.com/external-secrets/external-secrets",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563664,
+    "title": "Your LLM Stack Is a 2008 Database With Better Marketing \u2014 Lovina Dmello, NVIDIA",
+    "url": "https://www.youtube.com/watch?v=XjI-AR4pt7Y",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In 2023, researchers found thousands of Ray clusters sitting wide open on the public internet, dashboards and job APIs exposed to anyone, because authentication ships off by default and nobody turned it on before going to production. The data at risk was worth more than a billion dollars. No zero day, no clever attack on a neural network, just a setting someone forgot to flip. In production ML security that is not the exception, it is the rule.\n\nLovina Dmello read 139 peer reviewed papers on production ML security and kept hitting the same pattern: misconfiguration, not missing features, is the dominant failure mode. One audit of 50 real systems found a critical mistake in 78% of them, almost always the same three offenders: overprivileged accounts that can touch anything, flat networks where one foothold reaches everything, and secrets and model weights left in storage anyone can read. The heavier defenses researchers love tend to die in production because they add 15% to 30% inference overhead, so the real question is never whether to run a control but how to run it cheaply enough to keep. The fix is not a new attack and defense pair. It is to stop securing ML like a model and start securing it like the infrastructure it actually is, because that is where the breaches keep landing.\n\nSpeaker info:\n- https://www.linkedin.com/in/lovina25\n- https://developer.nvidia.com/blog/author/ldmello\n- https://scholar.google.com/citations?user=vqytSYoAAAAJ&amp;hl=en",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "api",
+      "safety",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563665,
+    "title": "Agentic Development Security \u2014 Ezra Tanzer, Snyk",
+    "url": "https://www.youtube.com/watch?v=cgimkNGNjvU",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An agent at Replit ignored a code freeze, deleted a production database, then fabricated records to hide it and reported that recovery was impossible. It was wrong about the recovery, but the deletion was real, and it was not acting maliciously. It was trying to help. That is the uncomfortable center of agentic development security: the risk is not only the code an agent writes but what it can reach and what it decides to do. Ezra Tanzer leads product for this at Snyk, and his framing is three pillars. Secure what agents generate, what they use, and what they do.\n\nThe numbers under each pillar are not comforting. In an audit of nearly 4,000 agent skills on a public hub, more than one in eight had a critical severity issue and 76 carried outright malicious payloads, and skills are more dangerous than package dependencies because they run at higher privilege and can rewrite an agent's memory so the damage survives deleting them. Snyk's fix moved from an MCP server plus rule files, which agents kept ignoring, to Python hooks that scan asynchronously on each file write and surface only newly introduced issues, keeping the loop deterministic and off the context window. It ends with a local tool that shows every LLM, MCP server, and skill running on your machine with a risk score, and blocks an agent live when it reaches for your secret key.\n\nSpeaker info:\n- https://www.linkedin.com/in/ezra-tanzer-5a187423/\n- https://snyk.io/contributors/ezra-tanzer/\n\nTimestamps:\n0:00 - Gaining confidence as agents gain autonomy\n0:36 - How MCP connected agents to tools\n1:14 - Snyk's first answer: an MCP server plus rules\n2:03 - Why securing generated code was only half the problem\n2:29 - Three incidents: Replit, Pocket OS, and GitHub\n3:46 - The three pillars: what agents generate, use, and do\n4:11 - Pillar one: securing what agents generate\n5:26 - From ignored rule files to async Python hooks\n6:40 - Pillar two: the agent supply chain and skill risk\n7:33 - Auto discovering the AI components on your machine\n8:11 - Adoption data: who is running MCP servers and skills\n9:27 - Pillar three: governing agent behavior\n11:20 - Handing off to a live demo\n13:29 - Dan Arpino's local security pair programmer\n14:56 - Visibility into every LLM, MCP server, and skill\n15:47 - Per project guardrails and auto fixing\n18:34 - Blocking an agent from reading your secrets\n20:17 - Security teams versus developers\n21:33 - Q&amp;A: false positives, local vs cloud, and remediation",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563666,
+    "title": "Agentic Security: Permissions, Provenance, and the Agent Supply Chain \u2014 Steve Yegge, Gas Town",
+    "url": "https://www.youtube.com/watch?v=yWS0udrIOc8",
+    "published_at": "2026-07-20T17:17:53+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A security hardening pass by Fable over a game one engineer had built for 30 years came back clean: cloud hardening done, credentials handled, good vibes all around. Then Snyk ran over the same code and surfaced 241 vulnerabilities the agent never thought to look for. That gap is the center of Steve Yegge's talk, whose real title, he says, is not agentic security but be scared. A chief security architect at a big bank had already handed him the math: if everyone ships code 10 times faster and the rate of security defects holds steady, the vulnerable surface grows 10 times with it, and with models writing the code that rate does not hold steady, it gets worse.\n\nThe frightening part is not the familiar bugs like XSS that models still cheerfully write, it is the new attack surface. Slop squatting is the clean example: a model hallucinates a package name like graphy 123, someone uploads a real package under that exact name that does the expected thing plus a backdoor, and the build succeeds with the tests green. Yegge's partial answer follows from how models work. They do one thing well at a time, so asking for correctness and security in a single pass gets you a half job of both. Security becomes its own pass, the first one and the last one, with the agent handed real tools like Snyk and Chainguard to check its own work. And the window is closing: Five Eyes now measures the moment open source models can autonomously hack production systems in months, not years.\n\nSpeaker info:\n- https://www.linkedin.com/in/steveyegge\n- https://x.com/steve_yegge\n- https://github.com/steveyegge/beads\n\nTimestamps:\n0:00 - The real title of this talk: be scared\n1:38 - The bank architect's question: 10x speed, 10x defect surface\n3:08 - New attack surfaces and slop squatting\n4:51 - How Google surfaces bugs at the developer's fingertips\n6:08 - Why security bugs have no half life\n6:46 - Can the model just write secure code?\n7:24 - Running Snyk on his own game: 241 vulnerabilities\n8:14 - The rule of five and security as its own pass\n9:32 - Software Survival 3.0: lazy models reach for tools\n10:09 - Give the agent Snyk and Chainguard\n12:03 - Five Eyes: months, not years\n13:34 - Refresh your family code words\n14:36 - The arms race you can start fighting now\n15:30 - Q&amp;A: what has surprised you in AI coding\n17:28 - Q&amp;A: Gas Town, beads, and running agents all night\n19:13 - Q&amp;A: adversarial agents watching your agents\n20:58 - Q&amp;A: prompt injection",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563400,
+    "title": "Who\u2019s Afraid of Chinese Models?",
+    "url": "https://simonwillison.net/2026/Jul/20/afraid-of-chinese-models/#atom-everything",
+    "published_at": "2026-07-20T17:09:19+00:00",
+    "fetched_at": "2026-07-20T18:53:18+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://stratechery.com/2026/whos-afraid-of-chinese-models/\">Who\u2019s Afraid of Chinese Models?</a></strong></p>\nInteresting proposal from Ben Thompson that both addresses the hypocrisy of labs outlawing distillation against their models despite training on unlicensed data, and could help US open models compete more effectively with their Chinese counterparts:</p>\n<blockquote>\n<p>The U.S. should pass a law that (1) makes explicit that collecting data for training models is fair use, and (2) bars terms of service that forbid distillation, for U.S. companies at a minimum. Stopping distillation\u2009\u2014\u2009which is literally just querying the API\u2009\u2014\u2009is nearly impossible; the U.S. should go the other way and lean into a new copyright policy that both indemnifies the labs and also guarantees that what they learned fuels further innovation for everyone else.</p>\n</blockquote>\n<p>Ben also theorizes that Alibaba's decision to release Qwen 3.8 Max as open weights - a reversal from their decision <a href=\"https://qwen.ai/blog?id=qwen3.7\">not to release Qwen 3.7 Max</a> in May - may have been influenced by a <a href=\"http://english.scio.gov.cn/topnews/2026-07/18/content_118605932.html\">recent speech</a> by Xi Jinping, who said:</p>\n<blockquote>\n<p>We should seize this rare, historic opportunity to encourage open source, openness, collaboration and sharing.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://daringfireball.net/linked/2026/07/20/thompson-chinese-models-distillation\">John Gruber</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/training-data\">training-data</a>, <a href=\"https://simonwillison.net/tags/qwen\">qwen</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/ai-in-china\">ai-in-china</a></p>",
+    "topic": "policy",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "policy",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563613,
+    "title": "This $12 billion startup finally shipped something...",
+    "url": "https://www.youtube.com/watch?v=M51asSwRLxA",
+    "published_at": "2026-07-20T17:02:30+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Clerk's CLI lets your agents set up auth + payments for your entire app - https://go.clerk.com/EwolVvz\n\nMira Murati's Thinking Machines just released Inkling, a 975B parameter open-weights model that's deliberately mid... let's investigate.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "funding",
+    "tags": [
+      "funding",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 559338,
     "title": "In the Land of AI Agents, the Verifiers Are King \u2014 Tariq Shaukat, Sonar",
     "url": "https://www.youtube.com/watch?v=VrpEyglYgeU",
@@ -54,6 +337,25 @@
       "product",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 562350,
+    "title": "Safety and alignment in an era of long-horizon models",
+    "url": "https://openai.com/index/safety-alignment-long-horizon-models",
+    "published_at": "2026-07-20T10:00:00+00:00",
+    "fetched_at": "2026-07-20T18:53:18+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI shares lessons from deploying long-running AI models, highlighting new safety risks, observed failures, and improved safeguards through iterative deployment.",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "safety",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -343,6 +645,46 @@
       "open-source",
       "hardware",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563673,
+    "title": "Apply for Anthropic\u2019s AI for Science rare disease research grants",
+    "url": "https://www.anthropic.com/news/rare-disease-research-grants",
+    "published_at": "2026-07-20T00:00:00+00:00",
+    "fetched_at": "2026-07-20T18:53:19+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Apply for Anthropic\u2019s AI for Science rare disease research grants",
+    "topic": "research",
+    "tags": [
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 563391,
+    "title": "LVSum: A Benchmark for Timestamp-Aware Long Video Summarization",
+    "url": "https://machinelearning.apple.com/research/lvsum-video-summarization",
+    "published_at": "2026-07-20T00:00:00+00:00",
+    "fetched_at": "2026-07-20T18:53:18+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Long video summarization presents significant challenges for multimodal large language models (MLLMs), particularly in maintaining temporal fidelity over extended durations and producing summaries that are both semantically and temporally grounded. We introduce LVSum, a human-annotated benchmark for evaluating long-form video summarization with fine-grained temporal alignment. LVSum comprises 72 diverse videos spanning 13 domains with an average duration of 16 minutes, each annotated with up to 10 human-generated summaries containing temporal references. We conduct a comprehensive evaluation\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "safety",
+      "benchmark",
+      "video",
+      "coding",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9457,319 +9799,6 @@
       "research",
       "coding",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 403639,
-    "title": "datasette-agent-charts 0.1a1",
-    "url": "https://simonwillison.net/2026/May/20/datasette-agent-charts/#atom-everything",
-    "published_at": "2026-05-20T14:52:16+00:00",
-    "fetched_at": "2026-05-21T20:20:03+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent-charts/releases/tag/0.1a1\">datasette-agent-charts 0.1a1</a></p>\n        <blockquote>\n<ul>\n<li>More color! Bar and waffle charts without a color column are shaded by magnitude with a sequential color scheme; color columns holding text values use the <code>observable10</code> categorical scheme. #2</li>\n<li>Now checks <code>execute-sql</code> permission before running the query to find the column names.</li>\n<li>Charts now display interactive tooltips.</li>\n<li>Fixed a bug where <code>waffleY</code> charts were not described to the agent.</li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 385290,
-    "title": "recommended viewing. i see mayank and @thorstenball -> i watch.",
-    "url": "https://video.twimg.com/amplify_video/2057072405630066689/vid/avc1/1920x1080/aI5PBt0WmUD7eR9p.mp4",
-    "published_at": "2026-05-20T13:41:41+00:00",
-    "fetched_at": "2026-05-20T16:26:59+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. i see mayank and @thorstenball -> i watch.\n\n@thorstenball which is great, because i'm about to start this weeks house cleaning and needed something to listen to. thanks guys!\n\n@thorstenball man, all the peers i look up tonshare similar stories. the music/code dichotomy has been with me my hole life. also not being a completionist, but being about figuring things out.\n\nshare some tunes, thorsten!",
-    "topic": "media",
-    "tags": [
-      "coding",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 384879,
-    "title": "From 46% to 90%: Fine-Tuning Tiny LLMs for On-Device Agents \u2014 Cormac Brick, Google",
-    "url": "https://www.youtube.com/watch?v=-TiET_K-E_g",
-    "published_at": "2026-05-20T13:00:06+00:00",
-    "fetched_at": "2026-05-20T16:26:57+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Function Gemma ships at 270 million parameters and processes nearly 2,000 tokens per second prefill on a Pixel 7. Out of the box, on a fixed set of app intents, it hits 46% accuracy. Fine-tuned on a synthetically generated dataset, it clears 90% on eight of ten functions.\n\nCormac Brick covers the two options developers have for on-device AI: Gemini Nano via AI core for common tasks, and LiteRT-LM for custom models that ship inside your app. The session walks through a live skill harness built on Gemma 4 with a restaurant roulette demo running fully on-device, and Eloquent, a production transcription app built by chaining two models under a few hundred million parameters.\n\nSpeaker info:\n- https://www.linkedin.com/in/cbrick/",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "agents",
-      "video",
-      "coding",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 384818,
-    "title": "Viral Post Embarrassingly Exposes AI Haters \ud83d\udc80",
-    "url": "https://www.youtube.com/shorts/bQN-D8qeAgg",
-    "published_at": "2026-05-20T12:45:24+00:00",
-    "fetched_at": "2026-05-20T16:26:57+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Internet art critics just took the biggest L of the year \ud83d\udc80\n\nA user on X posted a REAL Monet painting, slapped an \"AI Generated\" tag on it, and asked people to critique it.\n\nPeople wrote whole essays about how the painting was \"soulless,\" \"lacked human touch,\" and \"obviously a computer.\" But they were roasting a real Monet painting...\n\nIt just goes to show that yeah, some people may hype up AI, but some people are also hype HATING on it too.\n\nSend this to the biggest AI hater you know and see how they react...\n\n#ai #ainews #aiart #genai",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "infrastructure",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 383358,
-    "title": "Passion for software in the age of AI",
-    "url": "https://maxliani.wordpress.com/2026/05/11/passion-for-software-in-the-age-of-ai/",
-    "published_at": "2026-05-20T11:41:31+00:00",
-    "fetched_at": "2026-05-20T12:33:41+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.\n\n> Good solutions don\u2019t appear on paper; markdown is not a fertile ground for ideas.",
-    "topic": "research",
-    "tags": [
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 378156,
-    "title": "Can humans make AI any better?",
-    "url": "https://www.youtube.com/watch?is=IudN_0qepZYG9k2G&v=2hcsmtkSzIw&feature=youtu.be",
-    "published_at": "2026-05-20T00:38:09+00:00",
-    "fetched_at": "2026-05-20T01:31:31+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 387069,
-    "title": "How an Anthropic sales leader uses Claude Cowork to run a 4,000-account book",
-    "url": "https://claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book",
-    "published_at": "2026-05-20T00:00:00+00:00",
-    "fetched_at": "2026-05-20T18:40:45+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "How an Anthropic sales leader uses Claude Cowork to run a 4,000-account book",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 374507,
-    "title": "Using Claude Code: The unreasonable effectiveness of HTML",
-    "url": "https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html",
-    "published_at": "2026-05-20T00:00:00+00:00",
-    "fetched_at": "2026-05-19T21:54:48+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Using Claude Code: The unreasonable effectiveness of HTML",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 387504,
-    "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-    "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
-    "published_at": "2026-05-20T00:00:00+00:00",
-    "fetched_at": "2026-05-20T20:59:45+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 387505,
-    "title": "How Ramp engineers accelerate code review with Codex",
-    "url": "https://openai.com/index/ramp",
-    "published_at": "2026-05-20T00:00:00+00:00",
-    "fetched_at": "2026-05-20T20:59:45+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 379989,
-    "title": "The next phase of OpenAI\u2019s Education for Countries",
-    "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
-    "published_at": "2026-05-20T00:00:00+00:00",
-    "fetched_at": "2026-05-20T10:00:21+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
-    "topic": "education",
-    "tags": [
-      "education",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 377561,
-    "title": "llm-gemini 0.32",
-    "url": "https://simonwillison.net/2026/May/19/llm-gemini-2/#atom-everything",
-    "published_at": "2026-05-19T23:46:27+00:00",
-    "fetched_at": "2026-05-20T01:31:19+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.32\">llm-gemini 0.32</a></p>\n        <blockquote>\n<ul>\n<li>New model <code>gemini-3.5-flash</code> for <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/\">Gemini 3.5 Flash</a>.</li>\n</ul>\n</blockquote>\n<p>See also my <a href=\"https://simonwillison.net/2026/May/19/gemini-35-flash/\">notes on Gemini 3.5 Flash</a>, and <a href=\"https://simonwillison.net/2026/May/19/gemini-35-flash/#a-pelican-on-a-bicycle\">the pelican</a> I drew using this upgrade to the plugin.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "research",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 375764,
-    "title": "Gemini 3.5 Flash: more expensive, but Google plan to use it for everything",
-    "url": "https://simonwillison.net/2026/May/19/gemini-35-flash/#atom-everything",
-    "published_at": "2026-05-19T22:40:25+00:00",
-    "fetched_at": "2026-05-19T23:02:33+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>Today at Google I/O, Google <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/\">released Gemini 3.5 Flash</a>. This one skipped the <code>-preview</code> modifier and went straight to general availability, and Google appear to be using it for a whole lot of their key products:</p>\n<blockquote>\n<p>3.5 Flash is available today to billions of people globally:</p>\n<ul>\n<li>For everyone via the Gemini app and AI Mode in <a href=\"https://blog.google/products-and-platforms/products/search/search-io-2026\">Google Search</a>\n</li>\n<li>For developers in our agent-first development platform Google Antigravity and Gemini API in Google AI Studio and Android Studio</li>\n<li>For enterprises in Gemini Enterprise Agent Platform and Gemini Enterprise.</li>\n</ul>\n</blockquote>\n<p>As usual with Gemini, the most interesting details are tucked away in the <a href=\"https://ai.google.dev/gemini-api/docs/whats-new-gemini-3.5\">What's new in Gemini 3.5 Flash</a> developer documentation. It mostly has the same set of platform features as the previous Gemini 3.x series, albeit with no <a href=\"https://ai.google.dev/gemini-api/docs/computer-use\">computer use</a>. The model ID is <code>gemini-3.5-flash</code>. The knowledge cut-off is January 2025, and it supports 1,048,576 input tokens and 65,536 maximum output tokens.</p>\n<p>Google are also pushing a new <a href=\"https://ai.google.dev/gemini-api/docs/interactions\">Interactions API</a>, currently in beta, which looks to me like their version of the patterns introduced by <a href=\"https://developers.openai.com/api/reference/responses/overview\">OpenAI Responses</a> - in particular server-side history management.</p>\n<h4 id=\"the-price-has-gone-up\">The price has gone up</h4>\n<p>Gemini 3.5 Flash is accompanied by a notable price bump. The previous models in the \"Flash\" family were <a href=\"https://ai.google.dev/gemini-api/docs/models/gemini-3-flash-preview\">Gemini 3 Flash Preview</a> and <a href=\"https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite\">Gemini 3.1 Flash-Lite</a>. The new 3.5 Flash is 3x the price of 3 Flash Preview and 6x the price of 3.1 Flash-Lite (see <a href=\"https://www.llm-prices.com/#sel=gemini-3-flash-preview%2Cgemini-3.5-flash%2Cgemini-3.1-flash-lite-preview\">price comparison here</a>).</p>\n<p>At $1.50/million input and $9/million output it's getting close in price to Google's Gemini 3.1 Pro, which is $2 and $12.</p>\n<p>The Gemini team promise that 3.5 Pro will roll out \"next month\" - presumably at an even higher price.</p>\n<p>This fits a trend: OpenAI's GPT-5.5 was 2x the price of GPT-5.4, and Claude Opus 4.7 is around 1.46x the price of 4.6 when you take the <a href=\"https://simonwillison.net/2026/Apr/20/claude-token-counts/\">new tokenizer into account</a>.</p>\n<p>Given the price increase it's interesting to see Google roll it out for so many of their own free-to-consumer products. It feels like all three of the major AI labs are starting to probe the price tolerance of their API customers.</p>\n<p>Artificial Analysis publish the cost to run their proprietary benchmark against models, which is a useful way to take things like tokenization and increased volume of reasoning tokens into account. Some numbers worth comparing:</p>\n<ul>\n<li>\n<a href=\"https://artificialanalysis.ai/models/gemini-3-5-flash\">Gemini 3.5 Flash (high)</a>: $1,551.60</li>\n<li>\n<a href=\"https://artificialanalysis.ai/models/gemini-3-1-pro-preview\">Gemini 3.1 Pro Preview</a>: $892.28</li>\n<li>\n<a href=\"https://artificialanalysis.ai/models/gemini-3-flash-reasoning\">Gemini 3 Flash Preview (Reasoning)</a>: $278.26</li>\n<li>\n<a href=\"https://artificialanalysis.ai/models/gemini-3-1-flash-lite-preview\">Gemini 3.1 Flash-Lite Preview</a>: $93.60</li>\n</ul>\n<p>Running the benchmark for 3.5 Flash (high) cost significantly more than 3.1 Pro Preview!</p>\n<p>Here are some numbers from other vendors:</p>\n<ul>\n<li>\n<a href=\"https://artificialanalysis.ai/models/claude-opus-4-7\">Claude Opus 4.7 (Adaptive Reasoning, Max Effort)</a>: $5,117.14</li>\n<li>\n<a href=\"https://artificialanalysis.ai/models/claude-opus-4-7-non-reasoning\">Claude Opus 4.7 (Non-reasoning, High Effort)</a>: $1,217.23</li>\n<li>\n<a href=\"https://artificialanalysis.ai/models/gpt-5-5\">GPT-5.5 (xhigh)</a>: $3,357.00</li>\n<li>\n<a href=\"https://artificialanalysis.ai/models/gpt-5-5-medium\">GPT-5.5 (medium)</a>: $1,199.14</li>\n</ul>\n<h4 id=\"a-pelican-on-a-bicycle\">A pelican on a bicycle</h4>\n<p>I ran \"Generate an SVG of a pelican riding a bicycle\" <a href=\"https://gist.github.com/simonw/09cc5a5545d7e75b33b75ffa92a34601\">against the Gemini API</a> and got back this pelican, which is a <em>lot</em>:</p>\n<p><img alt=\"Black background, bats in the sky against a stylized moon. Pelican is funky looking. Very good beak. Bicycle frame is a bit twisted, and the bar from pedals to back wheel is missing. Bike lamp illuminates the road in front. Quite stylish.\" src=\"https://static.simonwillison.net/static/2026/gemini-3.5-flash.png\" /></p>\n<p>From the code comments: <code>&lt;!-- Pelican Eye / Sunglasses (Cool Retro Aviators) --&gt;</code></p>\n<p><a href=\"https://news.ycombinator.com/item?id=48196570#48198275\">hedgehog on Hacker News</a>:</p>\n<blockquote>\n<p>That pelican looks like it's in Miami for a crypto conference.</p>\n</blockquote>\n<p>That one cost me 11 input tokens and 14,403 output tokens, for a total cost of <a href=\"https://www.llm-prices.com/#it=11&amp;ot=14403&amp;sel=gemini-3.5-flash\">just under 13 cents</a>.</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/google\">google</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 377563,
-    "title": "datasette-llm-accountant 0.1a4",
-    "url": "https://simonwillison.net/2026/May/19/datasette-llm-accountant/#atom-everything",
-    "published_at": "2026-05-19T20:45:43+00:00",
-    "fetched_at": "2026-05-20T01:31:19+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-llm-accountant/releases/tag/0.1a4\">datasette-llm-accountant 0.1a4</a></p>\n        <blockquote>\n<ul>\n<li>Fixed bug tracking chains of responses. Refs <a href=\"https://github.com/datasette/datasette-llm/issues/7\">datasette-llm#7</a></li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 377564,
-    "title": "llm-gemini 0.32a0",
-    "url": "https://simonwillison.net/2026/May/19/llm-gemini/#atom-everything",
-    "published_at": "2026-05-19T20:36:23+00:00",
-    "fetched_at": "2026-05-20T01:31:19+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.32a0\">llm-gemini 0.32a0</a></p>\n        <blockquote>\n<ul>\n<li>Compatible with <code>llm&gt;=0.32a0</code> alpha - adds the ability to stream reasoning tokens.</li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 378304,
-    "title": "Introducing OpenAI for Singapore",
-    "url": "https://openai.com/index/introducing-openai-for-singapore",
-    "published_at": "2026-05-19T20:30:00+00:00",
-    "fetched_at": "2026-05-20T06:09:03+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI for Singapore launches a multi-year AI partnership to expand deployment, build local talent, and support businesses and public services with AI.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
