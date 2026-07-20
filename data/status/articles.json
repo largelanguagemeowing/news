@@ -1,5 +1,45 @@
 [
   {
+    "article_id": 559338,
+    "title": "In the Land of AI Agents, the Verifiers Are King \u2014 Tariq Shaukat, Sonar",
+    "url": "https://www.youtube.com/watch?v=VrpEyglYgeU",
+    "published_at": "2026-07-20T15:00:06+00:00",
+    "fetched_at": "2026-07-20T15:12:09+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "As AI agents take on increasingly complex development tasks, the critical challenge has shifted from generation to verification. Hallucination is not a temporary bug. Evidence suggests that as models grow more capable, failures become more frequent and more convincing, making cognitive surrender among human reviewers an acute risk. This talk introduces a three-stage discipline for responsible agentic development, Guide, Verify, Solve, and argues that rigorous verification infrastructure is both a safety requirement and a competitive advantage. Counterintuitively, code quality matters more in an agentic world: clean, low-complexity codebases make agents faster, cheaper, and more reliable, while technical debt compounds at machine speed.\n\nSpeaker:\nTariq Shaukat \u2014 Chief Executive Officer, Sonar\nChief Executive Officer of Sonar. Previously served as President of Google Cloud and President of Bumble.\nX: https://x.com/tariqshaukat",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "coding",
+      "tutorials",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 560063,
+    "title": "One thing I'm proudest of in my upcoming course is that we use a request logger to read the raw stuff being sent to Anthropic/OpenAI This has a bunch of cool effects: - Makes all the mechanics completely clear: sessions, context window, model/harness boundary - Instills context paranoia - every token you send matters, and it's easy to see waste - Empowers folks to want to build their own harnesses - all the magic disappears",
+    "url": "https://nitter.net/mattpocockuk/status/2079193858190041399#m",
+    "published_at": "2026-07-20T13:17:00+00:00",
+    "fetched_at": "2026-07-20T15:12:12+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>One thing I'm proudest of in my upcoming course is that we use a request logger to read the raw stuff being sent to Anthropic/OpenAI<br />\n<br />\nThis has a bunch of cool effects:<br />\n<br />\n- Makes all the mechanics completely clear: sessions, context window, model/harness boundary<br />\n- Instills context paranoia - every token you send matters, and it's easy to see waste<br />\n- Empowers folks to want to build their own harnesses - all the magic disappears</p>",
+    "topic": "education",
+    "tags": [
+      "models",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 557917,
     "title": "1m context windows are a nice gimmick But you might be better off sticking to only the first 150K tokens:",
     "url": "https://nitter.net/mattpocockuk/status/2079150593524772864#m",
@@ -303,6 +343,25 @@
       "open-source",
       "hardware",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 559100,
+    "title": "RayRoPE: Projective Ray Positional Encoding for Multi-View Attention",
+    "url": "https://machinelearning.apple.com/research/rayrope-projective-ray",
+    "published_at": "2026-07-20T00:00:00+00:00",
+    "fetched_at": "2026-07-20T15:12:06+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "We study positional encodings for multi-view transformers that process tokens from a set of posed input images, and seek a mechanism that encodes patches uniquely, allows SE(3)-invariant attention with multi-frequency similarity, and can be adaptive to the geometry of the underlying scene. We find that prior (absolute or relative) encoding schemes for multi-view attention do not meet the above desiderata, and present RayRoPE to address this gap. RayRoPE represents patch positions based on associated rays but leverages a predicted point along the ray instead of the direction for a\u2026",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "research",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9713,61 +9772,6 @@
       "open-source",
       "coding",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367949,
-    "title": "Gemini 3.5: frontier intelligence with action",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
-    "published_at": "2026-05-19T17:45:00+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Gemini 3.5 text and multi-colored star icon on an abstract blue background.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367948,
-    "title": "I/O 2026: Welcome to the agentic Gemini era",
-    "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
-    "published_at": "2026-05-19T17:45:00+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "a series of colorful icons representing Google I/O against a black background",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367945,
-    "title": "I/O 2026",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
-    "published_at": "2026-05-19T17:45:00+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Collection-Hero.gif\" />At Google I/O 2026, we shared how we\u2019re making AI more helpful for everyone. See everything we announced.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "api"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
