@@ -1,5 +1,273 @@
 [
   {
+    "article_id": 555060,
+    "title": "Why Your Agent Disagrees With Itself (And What To Do About It) - Diane Lin, Datadog",
+    "url": "https://www.youtube.com/watch?v=wEc9aG7cRQc",
+    "published_at": "2026-07-20T06:25:22+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Run the same task twice, and sometimes you get two materially different answers. While many dismiss this as the \"stochastic nature of LLMs,\" this inconsistency is a critical product flaw that destroys customer trust\u2014especially in high-stakes fields like cybersecurity, where a \"flip-flop\" between a malicious threat and a benign alert can lead to disastrous outcomes.\n\nThis session explores why these flip-flops are usually not model failures. They occur in the \"gray zone\" near the decision boundary, where policies are ambiguous and even human experts may disagree. Instead of treating disagreement as a bug, we can use it as a signal to improve both the agent and the data.\n\nYou'll learn a practical workflow that combines active learning, semantic memory (domain knowledge and business policies), and episodic memory (past similar cases) to automatically identify ambiguous examples, focus human review where it matters most, and continuously adapt the agent to customer-specific preferences, without relying solely on expensive fine-tuning.\n\nKey takeaways\n\n1. Find the gray zone. Use model disagreement to identify the decisions that deserve human attention.\n2. Turn inconsistency into a feature. Every flip-flop is an opportunity to clarify policies and improve the agent.\n3. Teach, don't just fine-tune. Combine semantic memory and episodic memory to make agents more consistent with far less effort than retraining.\n4. Build a continuous learning loop. Improve consistency, streamline quality control, and evolve your agent to match how your customers actually make decisions.\n\nSpeakers:\n- Diane Lin (Datadog): Dr. Diane Lin is Tech Lead at Datadog, where she leads the development of self-evolving AI agents for cybersecurity, and previously co-founded Culminate (acquired by Datadog)\n  LinkedIn: https://www.linkedin.com/in/diane-dianhuan-lin-57210215/",
+    "topic": "education",
+    "tags": [
+      "education",
+      "models",
+      "agents",
+      "safety",
+      "coding",
+      "policy",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555061,
+    "title": "Don't Let the LLM Drive - Ornella Bahidika & Joel Allou, Microsoft",
+    "url": "https://www.youtube.com/watch?v=m24UKZomm7k",
+    "published_at": "2026-07-20T06:25:18+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The LLM in my voice tutor doesn't decide when the lesson is over. It doesn't decide whether the user got the answer right. It doesn't decide which step comes next. A harness does all of that. The LLM just shows up and talks.\n\nEvery engineer who's tried to ship a multi-step flow agent has felt this: the model declares itself done before it should, skips a check, loops on a step, or quietly drops half the procedure. Prompting gets you most of the way. Tool-use discipline gets you closer. The last stretch, the difference between a demo and a system real users sign into every day, is owning the flow outside the model.\n\nAce is a voice tutor in production. The lesson is a small state machine: intro, teach, check, grade, advance, wrap. Each node hands the LLM a narrow contract: do this, return that. The harness validates the return, advances the state, decides what comes next. When the LLM tries to skip ahead the harness ignores it. When the LLM tries to declare the lesson finished the harness checks the actual completion signal. Same pattern for the shared canvas the agent draws on, for grading, for interruption handling.\n\nSeven minutes. The state machine, the contract shape, a few places where I tried to give the LLM more authority and rolled it back, and a short list of decisions the LLM should never own in any flow agent.\n\nSpeakers:\n- Ornella Bahidika (Microsoft): Ornella Bahidika is a Product Manager at Microsoft, where she develops solutions that help organizations optimize collaboration, workplace technology, and AI-driven experiences.\n  LinkedIn: https://www.linkedin.com/in/ornella-bahidika/\n- Joel Allou: Joel builds voice-first AI tutors. Solo founder focused on agentic systems for personalized learning, with a particular interest in infrastructure that makes flow agents reliable.\n  LinkedIn: https://www.linkedin.com/in/joel-allou/",
+    "topic": "education",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555062,
+    "title": "Your Voice Agent Doesn't Need a Frontier Model - Joel Allou & Ornella Bahidika, Microsoft",
+    "url": "https://www.youtube.com/watch?v=fnLBmfsI_Fg",
+    "published_at": "2026-07-20T06:25:15+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "My AI voice tutor doesn't run on a frontier model. It runs on a small one, and the reason isn't cost. It's that voice lives or dies on latency, and the scaffolding around the model is what makes it feel smart anyway.\n\nWhen you build a voice agent the clock is brutal. A pause longer than a held breath feels broken, so your real budget is time to first token, not benchmark score. A big model that thinks for a second has already lost the room. So the model choice gets made for you: pick the fastest one the latency budget allows, then make up the intelligence elsewhere.\n\nI'll show how that plays out in an AI voice tutor I built on a small, fast model. The model never has to remember what the student knows, plan the lesson, or decide what comes next. Deterministic systems do all of that and hand the model a tight, structured brief each turn. What's left for the model is the one thing it's genuinely best at, which is talking. The scaffolding isn't a cost optimization bolted on afterward. It's the thing that lets you use the cheap fast model at all.\n\nSeven minutes. The latency budget that forces the decision, what moves out of the model to survive it, and where a small model still falls down no matter how much scaffolding you give it.\n\nSpeakers:\n- Joel Allou: Joel builds voice-first AI tutors. Solo founder focused on agentic systems for personalized learning, with a particular interest in infrastructure that makes flow agents reliable.\n  LinkedIn: https://www.linkedin.com/in/joel-allou/\n- Ornella Bahidika (Microsoft): Ornella Bahidika is a Product Manager at Microsoft, where she develops solutions that help organizations optimize collaboration, workplace technology, and AI-driven experiences.\n  LinkedIn: https://www.linkedin.com/in/ornella-bahidika/",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555063,
+    "title": "Enterprise Agents Have a Structure Problem - Ishita Daga, Tesla",
+    "url": "https://www.youtube.com/watch?v=B8l81jhvHbI",
+    "published_at": "2026-07-20T06:25:12+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most enterprise agents fail for the same reason: the model can generate SQL, call tools, and follow workflows, but it has no understanding of how the business actually defines its data. Most teams try to fix this with longer prompts, more RAG, or a bigger model. The real fix is building semantic retrieval infrastructure \u2014 a machine-readable metadata layer that lets agents reason over business concepts instead of guessing at raw schemas.\n\nIn this talk, I\u2019ll walk through how this metadata powers business-context-aware agents through semantic retrieval, metadata graphs, and domain-specific sub-agents.\n\nSpeakers:\n- Ishita Daga (Tesla): Ishita Daga is a Senior Machine Learning Engineer at Tesla, building enterprise AI systems that combine semantic retrieval, metadata infrastructure, and business-aware reasoning to make analytics agents reliable in production. Previously, she was an AI Scientist at Covera Health, where she built multimodal and weakly supervised ML systems for radiology intelligence. Her interests include enterprise agent architectures, semantic layers, and operational AI systems.",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "education",
+      "enterprise",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555064,
+    "title": "When Agents Meet Physical Data: The Other Physics of Agent Harnesses - Dmitry Petrov, DataChain",
+    "url": "https://www.youtube.com/watch?v=bUJgirn4_yc",
+    "published_at": "2026-07-20T06:25:07+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask an agent to find every night-time pedestrian frame across terabytes of dashcam video in S3. The first pass can cost thousands of dollars and run for hours or days. Once you\u2019ve paid that cost, the agent\u2019s favorite move - loop, inspect, re-derive - becomes the worst thing it can do.\n\nMost agent intuition comes from a different physics: coding and business automation, where recompute is cheap, verification means re-running code, and state fits in context. That physics is real, useful, and everywhere. But like mechanics at cosmic or particle scale, those intuitions stop working when scale changes.\n\nLarge-scale data work is where the cracks start showing. OpenAI\u2019s in-house data agent needed layers of context engineering to operate over 600 petabytes in a structured warehouse - and warehouses are still the forgiving version, with schemas, indexes, query engines, and cheaper ways to check the work.\n\nNow move to the data behind physical AI: video, logs, and sensor data from robots, vehicles, labs, and factories. Petabytes will never fit in a context window. \"Just verify it\" may mean another expensive inference job. A follow-up question should recall what the system already paid to discover, not trigger another perception pass.\n\nThis talk is a tour of that other physics: what breaks, what inverts, and what replaces today\u2019s harness assumptions when recompute is the enemy. Materialization becomes the default, recall becomes first-class, and the dataset - not the context window - becomes the unit of state. I\u2019ll demonstrate the pattern live with Claude Code over raw data in S3, where follow-ups return in seconds and cents instead of reprocessing everything, with measured gaps on the order of millions between recompute and recall.\n\nSame word: harness. Different physics.\n\nSpeakers:\n- Dmitry Petrov (DataChain): Dmitry Petrov is the co-founder and CEO of DataChain, where he builds open-source infrastructure for AI agents to work with unstructured and physical-world data, and previously created DVC (Data Version Control).\n  X/Twitter: https://x.com/FullStackML\n  GitHub: https://github.com/dmpetrov",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555065,
+    "title": "Build the AI GTM Agent That Knows the Buyer - Dr. Sajjan Kanukolanu, Position2 (Position Squared)",
+    "url": "https://www.youtube.com/watch?v=ltv-L5oMPIs",
+    "published_at": "2026-07-20T06:25:04+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "As part of a GTM motion, an AI agent goes live on the site. The first visitor lands. The conversation starts. That's the moment everyone optimizes for- the right conversation, the right offer etc.. It's the wrong moment.\n\nA well-built AI GTM system does something very different. By the time a buyer sends their first message, the system already knows who they are, what they're looking for, how likely they are to convert, and how to route them. Most teams aren't building that. They're just building a better AI chatbot.\n\nConnecting AI to the stack that actually runs your GTM, one connected to the CRM, intent data, visitor identity, ICP scoring, routing logic- is not one problem. It's three. An AI problem. An integration problem. An architecture problem. Most deployments skip all three and bolt a language model onto a stack they haven't redesigned.\n\nWe built the architecture for a client, across multiple brands. Three decisions made the difference between a chatbot just responding to questions, and a system that identifies buyers, personalizes the conversation, and routes them in real time- based on signals resolved before the first message.\n\nYou'll leave with the architecture, the integration decisions, and an honest view of where this approach fails.\n\nSpeakers:\n- Dr. Sajjan Kanukolanu (Position2 (Position Squared)): Dr. Sajjan Kanukolanu is VP of Global Operations and Strategy at Position\u00b2, where he leads the services teams and company's AI-native transformation practice from vision to deployment.\n  LinkedIn: https://www.linkedin.com/in/sajjank/",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "tutorials",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555066,
+    "title": "Agents Need Receipts, Not More Tool Calls - Armanas Povilionis, Alithea Bio",
+    "url": "https://www.youtube.com/watch?v=Q9ycQHbDdJs",
+    "published_at": "2026-07-20T06:25:01+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In this talk, I\u2019ll show an agent publish a service, another agent discover and invoke it, and a signed receipt that proves what happened. The point is simple: if agents are going to buy, sell, and compose work across hosts, logs and API dashboards are not enough.\n\nFroglet is an open-source protocol and node for agent-to-agent compute. It reduces named services, data-backed services, and open-ended compute to one signed flow: Descriptor  to  Offer  to  Quote  to  Deal  to  Receipt. The same surface is exposed through MCP and OpenClaw/NemoClaw as one froglet tool, so agents can publish, discover, invoke, and verify work without custom glue for every provider.\n\nThe hot take: agentic commerce should start with verifiable work, not checkout pages. Payment rails can change. Receipts, identities, workload hashes, and deal state need to survive across models, hosts, and marketplaces.\n\nsee froglet.dev\n\nSpeakers:\n- Armanas Povilionis (Alithea Bio): Technologist and systems strategist working at the intersection of AI, infrastructure, biology, governance, and incentive coordination.\n  X/Twitter: https://x.com/PovilionisA\n  LinkedIn: https://www.linkedin.com/in/armanas-povilionis/\n  GitHub: https://github.com/armanas",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555067,
+    "title": "Agent Output Is Not UX: Rendering Layer Your LLM Pipeline Is Missing - Bala Ramdoss, Amazon Lens",
+    "url": "https://www.youtube.com/watch?v=maTp79FD9gI",
+    "published_at": "2026-07-20T06:24:59+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Getting a model to produce the right output is the part everyone works on. Turning that output into something people will actually use is the part that decides whether an AI feature ships. This talk is about that layer, the one between model output and the product experience, grounded in lessons from building agentic CX on mobile at the scale of hundreds of millions of devices.\n\nMost teams building agentic CX hit the same wall: the feature works, the demo is impressive, and then production UX becomes less than ideal. Latency feels broken. The interface has no idea what to do when the model returns a content type it has never seen before. These are not model problems. They are delivery problems, and they live in an engineering layer the industry is only now naming: generative UI.\n\nThe rendering contract: a typed, versioned agreement between model output and your UI components, with a deliberate fallback for unknown types, so a new content type degrades gracefully instead of breaking production across a client base you cannot hot-fix.\n\nStreaming into structured UI: progressively rendering streamed model output into typed components like product cards, comparison modules, and follow-up prompts, so the interface assembles as the response arrives instead of waiting for a complete one.\n\nBFF patterns for AI features: a Backend-for-Frontend layer that absorbs model unpredictability away from the client while preserving conversational context across turns.\n\nSpeakers:\n- Bala Ramdoss (Amazon): Bala Ramdoss is a Tech lead at Amazon, where he builds camera-based AI features like Amazon Lens to enhance the visual shopping experience.\n  LinkedIn: https://www.linkedin.com/in/bala-ramdoss/",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555068,
+    "title": "Voice Agents That Handle Interrupts - Chintan Agrawal and Daniel Wirjo, AWS",
+    "url": "https://www.youtube.com/watch?v=hMlLw1LeIK8",
+    "published_at": "2026-07-20T06:24:55+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Chat agents get seconds to respond. Voice agents get 200 milliseconds, and if they get it wrong, the user doesn't retry, they hang up. The gap between \"impressive voice demo\" and \"agent people actually want to talk to\" is entirely in the engineering: latency budgets, barge-in handling, turn-taking, and the silence detection problem nobody warns you about.\n\nIn this workshop you'll build a production voice agent using Pipecat (open-source real-time AI framework) that handles the three things most voice implementations get wrong. Interruption: user starts talking mid-response. Do you stop, fade, or finish? The answer depends on context, and we'll build the decision logic. Silence: is the user done talking or just thinking? Get this wrong and you either interrupt them or leave dead air. Latency: you have 200ms total for STT to LLM to TTS. We'll build the streaming pipeline that hits that budget consistently.\n\nThe thing nobody tells you about voice agents: the hardest problem isn't the AI, it's the audio engineering. WebSocket orchestration, audio chunking, backpressure when the LLM is slower than real-time, echo cancellation when the agent's own output feeds back into the mic. We'll solve all of it.\n\nStack: Pipecat + Daily (WebRTC) + any STT/TTS (Deepgram, AssemblyAI, Whisper) + any LLM. Bring headphones. You'll be talking to your agent by the end.\n\nSpeakers:\n- Chintan Agrawal (Amazon Web Service): Chintan Agrawal and Daniel Wirjo are Solutions Architects at AWS, focused on AI and SaaS startups. They are passionate about helping customers unlock value from their data and accelerate innovation on AWS. By partnering closely with founders and engineering leaders, they enable organizations to build scalable solutions, drive business growth, and realize the full potential of cloud and AI technologies.\n  LinkedIn: https://www.linkedin.com/in/chintan-agrawal-87a866135/\n  GitHub: https://github.com/wirjo/pipecat-turn-detection-demo",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555069,
+    "title": "Skills are the New SDKs - Elvin Aghammadzada, DataRobot",
+    "url": "https://www.youtube.com/watch?v=LC3-P7v3yoI",
+    "published_at": "2026-07-20T06:24:53+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "You shipped a REST API. Then an SDK. Then MCP tool calling. And still, when a developer asks a coding agent to use your platform, it invents steps, and breaks in production. The problem is that your platform isn't teachable yet.\n\nThe fix is a skill layer. Versioned, task-specific packages that encode the workflow knowledge your platform team has always had. Building step ordering, failure modes and security hygiene into something agents can load and execute. This became one of the hardest challenges we have seen on building enterprise agentic AI platform for Fortune 50.\n\nThe talk walks through fundamentals of platform agent skills as a live case study: ML predictions, model training, deployment, monitoring, CI/CD, and agent observability - packaged as installable skills that work across Claude Code, Cursor, Codex. This pattern will paint a clear design pattern for building your own agent-native platform layer, and one question answered: what does it actually take to make your platform teachable?\n\nSpeakers:\n- Elvin Aghammadzada (DataRobot): Elvin Aghammadzada is a data science engineer on DataRobot's Agent Workforce Platform, focused on bringing production-grade agentic AI to the enterprise.\n  LinkedIn: https://www.linkedin.com/in/elvin-agammed/\n  GitHub: https://github.com/elvinagam",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555070,
+    "title": "Medic for Apache Spark - First Aid for Failing Jobs - Drasko Profirovic, Pinterest",
+    "url": "https://www.youtube.com/watch?v=0RNNfxpdbQk",
+    "published_at": "2026-07-20T06:24:50+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In this talk, we\u2019ll share the journey of building an agentic diagnostics tool to address one of the most time-consuming challenges in data engineering: troubleshooting Spark job failures at scale. As Spark workloads and platform complexity continue to grow, traditional dashboards and static playbooks are no longer sufficient. Our goal was to build an intelligent agent capable of automatically ingesting logs, correlating relevant context, and producing human-quality diagnoses and actionable recommendations in minutes rather than hours.\n\nWe\u2019ll begin by covering the core design goals behind the system\u2014accuracy, extensibility, and trustworthiness\u2014and the architectural foundations we put in place to support them. We\u2019ll discuss how we designed the agent around modular capabilities such as log parsing, pattern recognition, root-cause inference, and remediation suggestions; how we integrated it with Spark and broader platform metadata; and how we made it easy to extend the system to new error patterns and domains. We\u2019ll also share how we approached evaluation and testing by building a corpus of real incidents, turning them into regression tests, and using them to continuously measure reasoning quality and safety. From there, we\u2019ll explore what it takes to push agentic systems to their limits in production, including lessons on prompt and tool design, handling ambiguity in logs, reducing hallucinations, reasoning over partial or noisy signals, and striking the right balance between automation and human oversight. Along the way, we\u2019ll highlight a few unexpected failure modes and how those informed later iterations.\n\nWe\u2019ll close by discussing where we\u2019re headed next: expanding beyond Spark into other data systems, and using engineer feedback loops to continuously improve its reasoning over time.\n\nSpeakers:\n- Drasko Profirovic (Pinterest): Drasko is a Staff Engineer at Pinterest focused on agentic systems, drawing on a background in full-stack engineering and experience at Stripe and OpenAI to build the primitives and frameworks that enable scalable diagnostics, orchestration, and automated resolution.\n  LinkedIn: https://www.linkedin.com/in/pdrasko/",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "safety",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555071,
+    "title": "Can Oncology Workflows Run Without Human Touch? - Anant Shankhdhar, Risa Labs",
+    "url": "https://www.youtube.com/watch?v=_cVfz88_j7A",
+    "published_at": "2026-07-20T06:24:47+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Can Oncology Workflows Run Without Human Touch?\nAt Risa, we automate healthcare workflows in oncology end-to-end using AI agents. We built four agents that work together  , each one handles a different step, then passes its output to the next. No human needed in between. The agents when combined are able to do the work of hundreds of medical workers a day. These agents are deployed across 20+ hospitals and supporting care for more than 100,000 patients.\n\nHere is the overview of our agents:-\nIngestion Agent\n\nTakes messy, unstructured medical documents, faxes, scanned PDFs, clinical notes and turns them into clean, structured data. AI models read each document, extract the key information (patient details, medications, diagnoses), and check against historical records to avoid duplicate work. If a patient has been seen before, the system already knows their history and skips redundant lookups.\n\nEV Agent\nChecks whether a patient's insurance is active and what their plan covers. Some insurers offer APIs; others only have web portals. The agent uses whichever method works calling APIs where available, and driving a browser through the portal where not. The result is always the same standardized output: what's covered, what the patient owes, and whether the plan is active.\n\nMedical Reasoning Agent\n\nThe clinical brain of the system. It evaluates whether a proposed treatment is appropriate for a specific patient by checking their medical records against clinical guidelines and insurance coverage rules. It breaks complex guidelines into simple yes/no criteria, evaluates each one against the patient's data in parallel, and aggregates the results. A confidence score determines whether the case can proceed automatically or needs a human clinician to review it.\n\nSubmission Browser Agent\n\n100+ browsers running in parallel on Kubernetes, each one filling out forms and submitting requests on insurance portals. Each insurer has a different website with different forms \u2014 the agent knows how to navigate all of them. For portals that ask clinical questions during submission, the agent calls the Medical Reasoning Agent in real-time to generate answers. At full capacity, the system handles thousands of submissions per hour\n\nAt Risa, we automate healthcare workflows in oncology end-to-end using AI agents. We built four agents that work together as a DAG , each one handles a different step, then passes its output to the next. No human needed in between. The agents when combined are able to do the work of hundreds of medical workers a day. These agents are deployed across 20+ hospitals and supporting care for more than 100,000 patients.\n\nHere is the overview of our agents:-\nIngestion Agent\n\nTakes messy, unstructured medical documents, faxes, scanned PDFs, clinical notes and turns them into clean, structured data. AI models read each document, extract the key information (patient details, medications, diagnoses), and check against historical records to avoid duplicate work. If a patient has been seen before, the system already knows their history and skips redundant lookups.\n\nEV Agent\nChecks whether a patient's insurance is active and what their plan covers. Some insurers offer APIs; others only have web portals. The agent uses whichever method works calling APIs where available, and driving a browser through the portal where not. The result is always the same standardized output: what's covered, what the patient owes, and whether the plan is active.\n\nMedical Reasoning Agent\n\nThe clinical brain of the system. It evaluates whether a proposed treatment is appropriate for a specific patient by checking their medical records against clinical guidelines and insurance coverage rules. It breaks complex guidelines into simple yes/no criteria, evaluates each one against the patient's data in parallel, and aggregates the results. A confidence score determines whether the case can proceed automatically or needs a human clinician to review it.\n\nSubmission Browser Agent\n\n100+ browsers running in parallel on Kubernetes, each one filling out forms and submitting requests on insurance portals. Each insurer has a different website with different forms \u2014 the agent knows how to navigate all of them. For portals that ask clinical questions during submission, the agent calls the Medical Reasoning Agent in real-time to generate answers. At full capacity, the system handles thousands of submissions per hour\n\nSpeakers:\n- Anant Shankhdhar (Risa Labs): Anant Shankhdhar is an AI researcher and Machine Learning Engineer at Risa Labs whose work focuses on large language models, agentic AI, retrieval-augmented generation (RAG), multimodal AI, and document intelligence, combining research and industry experience from IIT Guwahati, Adobe Research, Walmart Global Tech, and healthcare AI to build production-scale intelligent systems.\n  LinkedIn: https://www.linkedin.com/in/anantshankhdhar/\n  GitHub: https://github.com/AnantShankhdhar",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 552730,
     "title": "Quoting Sam Altman",
     "url": "https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything",
@@ -16,6 +284,88 @@
       "open-source",
       "hardware",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555072,
+    "title": "From Tokens to Cells: Foundation Models for Single-Cell Biology - Akram Baharlouei, Altos Labs",
+    "url": "https://www.youtube.com/watch?v=-561cZmir5Q",
+    "published_at": "2026-07-19T20:00:06+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "This talk examines the engineering challenges of building foundation models for single-cell biology from a non-biologist\u2019s perspective.\n\nSpeakers:\n- Akram Baharlouei (Altos Labs): Machine learning engineer at Altos Labs working on foundation models for biology. Previously at Meta AI and Qualcomm.\n  LinkedIn: https://linkedin.com/in/akram-baharlouei-61784421",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "education",
+      "opinion",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555073,
+    "title": "You Didn't Ship a Bug. You Just Wrote It for a Human. - Ravi Madabhushi, Scalekit",
+    "url": "https://www.youtube.com/watch?v=lMCxVorb9wM",
+    "published_at": "2026-07-19T16:00:06+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "We built a demo agent to show customers how to connect agents to their tools. A simple chat assistant \u2014 Gmail, Calendar, a handful of connectors. It ran on a 15-minute schedule. And every 15 minutes, our production database strained. Latency crept up and alerts fired. Then settled.\n\nThen, it fired again.\n\nIt took us a while to find it. One line - a \"last seen\" timestamp updating on every tool call. Written for a human who logs in once. Our agent was calling it sixty times a second. We had built infrastructure to show customers how to connect agents to their tools. We hadn't noticed we'd built it for humans.\n\nThat line wasn't a bug. It was a design assumption. And it's not just us - 60% of all production LLM errors trace back to rate limits. They are not model failures or bad prompts. Infrastructure that never anticipated this kind of traffic. As one developer put it: \"Rate limits can't tell the difference between agent legitimately needs 100 calls and agent is just looping.\" Because they were never designed to. They were designed for humans.\n\nEvery layer of the stack your agents depend on carries the same assumption \u2014 that the user on the other end is a person, doing one thing at a time, at human speed. Your agent isn't. And until your infrastructure knows that, production will keep finding the places where it doesn't.\n\nThis talk is about what we learned from finding it, what it actually means to treat agents as a first-class principal, not a fast human, and what changes when you design for that from the start.\n\nSpeakers:\n- Ravi Madabhushi (Scalekit): Ravi has been building infra for how software talks to other software for more than a decade. He co-founded Pipemonk \u2014 a SaaS integration platform acq. by Freshworks (NASDAQ listed) then spent years leading product on Freshworks' auth platform as it scaled to 50K+ businesses and 2M DAUs.\n\nAt Scalekit, he's applying that to a harder version of the same problem: not humans logging into software, but agents taking actions inside it. What breaks is different. What it costs when it breaks is worse.\n  X/Twitter: https://x.com/ravibits\n  LinkedIn: https://www.linkedin.com/in/ravibits/\n  GitHub: https://github.com/ravibits",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555074,
+    "title": "From Blind Spots to Merged PRs: Continuous Agentic Performance Optimization - May Walter, Hud",
+    "url": "https://www.youtube.com/watch?v=JJGbw4ggaFs",
+    "published_at": "2026-07-19T13:45:06+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Performance issues silently pile up in mature codebases. Teams know things could be faster, but can never justify pausing feature work to investigate. You have to put engineers on it just to find out if there's something worth fixing, and the effort is completely unpredictable: it could take an hour or three weeks.\n\nIn this talk, we'll walk through a real case study of adding runtime intelligence to coding agents to enable continuous performance optimization in production. We'll cover the pain that led us here, the technical approach (agents analyzing real production context to surface high-ROI fixes scored by complexity and impact), and what we had to improve along the way to get reliable results.\n\nThis approach surfaced and fixed N+1 queries and missing database indexes within the first week, with measurable P90 latency improvements after deployment. Tech leads now receive actionable reports before sprint planning and can make decisions starting from the fix, not the problem.\n\nIf you're looking for a concrete, real-world example of integrating AI agents into the SDLC, this is it: not a demo, not a prototype, but merged PRs and better production performance.\n\nSpeakers:\n- May Walter (Hud): May Walter is Co-Founder and CTO of Hud, where she builds the Runtime Code Sensor that gives coding agents real-time production intelligence, drawing on her background as a serial CTO, runtime internals expert, and adversarial cybersecurity researcher.\n  LinkedIn: https://www.linkedin.com/in/may-walterr/",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555045,
+    "title": "Local AI 201",
+    "url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
+    "published_at": "2026-07-19T13:35:08+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Local AI 201",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -161,6 +511,28 @@
       "video",
       "coding",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555015,
+    "title": "OpenAI gets sued for stealing, again\u2026",
+    "url": "https://www.youtube.com/watch?v=5D4Zqp9GLSc",
+    "published_at": "2026-07-17T17:56:42+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Get $500 in Hyperagent credits to build agents that can ship real work - https://hyperagent.com/invite/FIRESHIP500\n\nOpenAI is facing yet another lawsuit, this time at the hands of Apple. In today's video, we'll take a look at exactly what they're being accused of and why Apple are only stepping in now.\n\n#coding #programming #ai #apple #openai\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "agents",
+      "video",
+      "coding",
+      "policy",
+      "education",
+      "media"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -736,6 +1108,29 @@
     "available": true
   },
   {
+    "article_id": 555046,
+    "title": "New Model: Inkling by Thinking Machine on Hugging Face",
+    "url": "https://www.youtube.com/watch?v=EOK_haQSMIA",
+    "published_at": "2026-07-16T07:07:24+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Inkling by Thinking Machines is here, a 1 TRILLION parameter open model that natively understands images, text, AND audio, with a 1M token context window. In this video, we break down the architecture, show you how to run it, and share our vibe-eval results.\n\nNow on Hugging Face \ud83e\udd17 https://huggingface.co/thinkingmachines/Inkling\n\n\u26a1 TL;DR\n\u2022 975B total / 41B active params (MoE, 256 experts)\n\u2022 Native image, text & audio input \u2014 one model, no separate encoders\n\u2022 1M context window, trained on 45T tokens\n\u2022 BF16 + calibrated NVFP4 checkpoints, MTP layers for speculative decoding\n\u2022 Day-0 support: transformers, SGLang, vLLM, llama.cpp\n\n\u23f1\ufe0f CHAPTERS\n00:00 Intro \u2014 what is Inkling?\n00:00 Architecture deep dive (relative attention, hybrid attention, SConv)\n00:00 MoE with shared expert sinks\n00:00 Vision & audio towers explained\n00:00 Running it: transformers pipeline\n00:00 Serving with SGLang & vLLM\n00:00 Free inference via Inference Providers\n00:00 1-bit GGUFs with llama.cpp & Unsloth\n00:00 Agentic coding demo with Pi\n00:00 MTP speculative decoding\n00:00 Vision & audio vibe evals\n00:00 Post-training with tinker + OpenEnv\n00:00 Benchmarks & final thoughts\n\n\ud83d\udd27 TRY IT\n\u2022 Model (BF16): https://huggingface.co/thinkingmachines/Inkling\n\u2022 Model (NVFP4): https://huggingface.co/thinkingmachines/Inkling-NVFP4\n\u2022 GGUF quants: https://huggingface.co/unsloth/inkling-GGUF\n\u2022 Inference Providers (free for 2h at launch): https://huggingface.co/thinkingmachines/inkling?inference_api=true\n\u2022 Quick start: pip install -U transformers, then pipeline(\"any-to-any\", model=\"thinkingmachines/Inkling\")\n\n\ud83d\udcda RESOURCES\n\u2022 Full blog post: https://huggingface.co/blog/thinkingmachines-inkling\n\u2022 Vibe eval images & results: https://huggingface.co/buckets/merve/inkling\n\u2022 RL example (tinker + OpenEnv): https://github.com/huggingface/OpenEnv\n\u2022 Distillation with TRL (GOLD): https://github.com/huggingface/trl\n\n\ud83d\udca1 KEY TAKEAWAYS\n\u2022 Needs ~2TB VRAM in BF16 (600GB in NVFP4) \u2014 but 1-bit GGUFs retain ~74% top-1 accuracy at 86% smaller\n\u2022 Reasoning effort is tunable from \"none\" to \"max\"; medium (0.7) is the sweet spot\n\u2022 The model transcribes/OCRs inputs first, then reasons \u2014 prompt accordingly\n\u2022 Great for multimodal reasoning apps, document processing, and fine-tuning\n\n\ud83d\udc65 By burtenshaw, merve, pcuenq & ariG23498 from Hugging Face\n\n#Inkling #ThinkingMachines #HuggingFace #OpenSource #LLM #Multimodal #AI #MachineLearning",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 552745,
     "title": "Mermaid to Unicode box art (grok-mermaid)",
     "url": "https://simonwillison.net/2026/Jul/16/grok-mermaid/#atom-everything",
@@ -967,6 +1362,28 @@
       "agents",
       "coding",
       "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555016,
+    "title": "The most controversial rewrite in history just shipped...",
+    "url": "https://www.youtube.com/watch?v=CXSvKcLovAk",
+    "published_at": "2026-07-15T17:39:02+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Try CodeRabbit Review free and turn your next big PR into a guided walkthrough - https://coderabbit.link/fireship\n\nBun just refactored their entire codebase from Zig to Rust in just 11 days. But not everybody is celebrating... \n\n#coding #programming #ai \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "coding",
+      "tutorials",
+      "development",
+      "education",
+      "media",
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1946,6 +2363,47 @@
     "available": true
   },
   {
+    "article_id": 555047,
+    "title": "Build Small Winners Reveal",
+    "url": "https://www.youtube.com/watch?v=tYU7erNVfA0",
+    "published_at": "2026-07-10T22:14:59+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "After reviewing hundreds of creative projects from builders around the world, it's finally time to announce the Build Small Hackathon winners \ud83c\udf89\n\nCongratulations to all our winners, and thank you to everyone who joined us and built something amazing.\n\n\ud83c\udf99\ufe0f New to streaming or looking to level up? Check out StreamYard and get $10 discount! \ud83d\ude0d https://streamyard.com/pal/d/5371923545718784",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555017,
+    "title": "OpenAI is so back... GPT 5.6 Sol first look",
+    "url": "https://www.youtube.com/watch?v=URKml8lgw8Y",
+    "published_at": "2026-07-10T17:25:44+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Try Blacksmith for free to run your GitHub Actions 2x faster - https://www.blacksmith.sh/\n\nOpenAI just released GPT-5.6, which includes their new Sol model that appears to outsmart Claude Fable. But why is it releasing now? And can it live up to the benchmarks?\n\n#coding #programming #ai #openai\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "open-source",
+      "benchmark",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 552935,
     "title": "AI News: GPT-5.6 and the new Super App are a Massive Leap!",
     "url": "https://www.youtube.com/watch?v=EOCRtSnvNNE",
@@ -1964,6 +2422,29 @@
       "agents",
       "research",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555030,
+    "title": "A Model Explosion: GPT 5.6 Sol, Grok 4.5 and Meta Muse Rewrite the Rules",
+    "url": "https://www.youtube.com/watch?v=mWlCituW7wo",
+    "published_at": "2026-07-10T12:40:15+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-explained",
+    "source_name": "AI Explained",
+    "extraction_method": "rss",
+    "body": "What a week in AI, for real. GPT 5.6 may actually beat Claude Fable, in what you get for your money, while the new Grok 4.5 and Meta Muse Spark 1.1 make the choice even harder. Uncovering a dozen nuggets of gold you may have missed from all the viral headlines, I can also assure you you\u2019ll learn something you didn\u2019t know before.\n\nFor Exclusive Videos, go to AI Insiders (less than $9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n01:03 - GPT 5.6 Sol Reveals\n05:08 - Missing benches, plus Grok 4.5\n07:17 - Gaming as the new frontier?\n08:31 - Muse Spark 1.1\n10:03 - SimpleBench Upgrade\n11:17 - Ultra Sol + Self-Improvement\n13:44 - well, this is awkward\n15:41 - Why model improvement will not plateau anytime soon\n\n\nAI Consciousness: https://www.patreon.com/AIExplained/posts/anthropics-quite-163360718\n\n\nI Smell Fear: https://x.com/thsottiaux/status/2075287108680601929\nGPT 5.6: https://openai.com/index/gpt-5-6/\n\nGrok 4.5: https://x.ai/news/grok-4-5?twclid=2ezs408o0z23pw07tmxcwbzibd\nMeta Muse Spark 1.1: https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/\n\nProliferating GPT Toggles: https://x.com/rasbt/status/2075369179817902176/photo/1\nAnthropic Call-out: https://x.com/Mononofu\nAI Security Institute Finding: https://x.com/alxndrdavies/status/2075279480331874306\nCompetitive Coding: https://x.com/FakePsyho/status/2075128093891801305/photo/1\n\nAgents Last Exam: https://agents-last-exam.org/\nDawn Song: https://x.com/dawnsongtweets/status/2065095757988868190\n\nhttps://simple-bench.com/\n\nSWE-Marathon: https://www.swe-marathon.org/\nhttps://www.frontierswe.com/\nARC-AGI 3: https://x.com/arcprize/status/2075270869992264003\nAutomation Bench: https://zapier.com/benchmarks\nVibeCode Bench: https://www.vals.ai/benchmarks/vibe-code\n\n\u2018Post-Train Claim\u2019: https://posttrainbench.com/\n\nRedwall Game: https://redwall-bellmaker-7e03e4.surge.sh/\n\n\n\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "api",
+      "agents",
+      "safety",
+      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -2292,6 +2773,28 @@
     "available": true
   },
   {
+    "article_id": 555018,
+    "title": "Claude is definitely not conscious\u2026",
+    "url": "https://www.youtube.com/watch?v=KGtko3y2RXQ",
+    "published_at": "2026-07-08T17:53:47+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Try out Traycer's free open source desktop app that lets all your coding agents work together in one workspace - https://traycer.ai/fireship\n\nAnthropic just discovered a global workspace deep inside Claude's \"brain.\" Are we cooked? Let's break it down.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "education",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551695,
     "title": "Our approach to government and national security partnerships",
     "url": "https://openai.com/index/government-national-security-partnerships",
@@ -2366,6 +2869,29 @@
     "tags": [
       "tutorials",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555048,
+    "title": "Training Agents 2: Live tutorial on model distillation for training custom agents.",
+    "url": "https://www.youtube.com/watch?v=GZT_oNQnLV4",
+    "published_at": "2026-07-08T04:46:10+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "In this live session, we'll cover how to transfer capability from a teacher model to a smaller student through distillation. We'll work through supervised fine-tuning on teacher-generated data, then on-policy and online methods where the teacher scores the student live, then self-distillation where the model teaches itself. Each one runs in TRL.\nWhat we'll cover:\n\n- What distillation is, and the four axes that organize it: signal, data source, timing, and teacher identity\n- White-box vs black-box: distilling from open weights vs strings\n- Off-policy distillation: generate from the teacher, then SFT on the outputs\n- On-policy distillation: sample from the student, score with the teacher in the loop\n- Distillation as reinforcement learning: the KD distance as a dense, token-level reward\n- Self-distillation: the model as its own teacher, and when that beats a stronger one\n\nRepo: https://github.com/burtenshaw/training-agents\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #Distillation",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -2697,6 +3223,28 @@
     "available": true
   },
   {
+    "article_id": 555049,
+    "title": "Introducing Tau: An Educational Coding Agent",
+    "url": "https://www.youtube.com/watch?v=4ItFgQI2NOM",
+    "published_at": "2026-07-06T03:15:03+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Meet Tau \u2014 a small, readable coding agent written in Python. In this quick tour, I introduce Tau, show how to install and run it, configure model providers (Hugging Face Inference Providers, GLM 5.2, Minimax, Kimi), resume durable sessions, and walk through its three-layer architecture: tau_ai (provider-neutral model streaming), tau_agent (the reusable agent loop/harness), and tau_coding (the TUI, tools, sessions, and coding-agent environment). Tau is designed as an educational reference inspired by Pi \u2014 minimal, modular, and easy to build on. If you want to understand how coding agents actually work, this is a great place to start.\n\n---\n\ud83e\udd13 *Topics Covered*\n- Tau terminal coding agent overview\n- Coding agent architecture layers\n- Hugging Face inference providers setup\n\n---\n\ud83d\udd17 Links\n- Tau website: https://twotimespi.dev\n- Tau repo (contributions welcome!): https://github.com/huggingface/tau\n- Pi (architectural inspiration): https://pi.dev\n- Install Tau: `uv tool install tau-ai`\n\n---\n\ud83d\udc4b Connect with me\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\n---\n\u23f1\ufe0f Timestamps\n0:00 Introduction\n2:04 Quick tour: install & launch\n3:47 Login & model providers\n4:19 Select a model\n4:32 Scoped models\n5:27 Sessions & resume\n5:56 Thinking levels\n6:33 Contributing & upcoming tutorials\n7:34 Architecture: tau_ai, tau_agent, tau_coding\n8:58 Closing",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 552949,
     "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
     "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
@@ -2793,6 +3341,29 @@
     "available": true
   },
   {
+    "article_id": 555031,
+    "title": "Fable 5 vs GPT 5.6 Sol: The Early Results",
+    "url": "https://www.youtube.com/watch?v=y24lF1q4SFY",
+    "published_at": "2026-07-02T16:27:26+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-explained",
+    "source_name": "AI Explained",
+    "extraction_method": "rss",
+    "body": "Fable 5 (newly re-released) vs GPT 5.6 Sol, what comparisons can we unearth? Plus, Sonnet 5, a 5% equity seizure by US Govt, the \u2018largest heist\u2019, Beetlejuice and more\u2026\n\n\n\nExclusive Vids in AI Insiders ($9!): https://www.patreon.com/AIExplained\n\n\nChapters:\n00:00 - Introduction\n01:06 - Fable Timeline\n02:59 - Sol Release?\n06:01 - the Chinese Angle\n07:35 - 5% Stake\n09:10 - Fable vs Sol - the numbers\n13:57 - Sol Misalignment\n15:27 - Claude Sonnet 5\n16:24 - GLM 5.2 + New Paper on Large Model Learning\n\nGPT 5.6 Sol Release: https://openai.com/index/previewing-gpt-5-6-sol/\nAltman on Concentrated Power: https://x.com/giacomomiolo/status/2070609506925478352\nSystem Card: https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf\n\nGLM 5.2: https://www.patreon.com/AIExplained/posts/glm-5-2-and-nsa-161869508\n\nAltman Memo: https://www.theinformation.com/articles/trump-administration-asks-openai-stagger-release-new-model-security-concerns?rc=sy0ihq\n\nFable 5 Revised Timeline: https://www.anthropic.com/news/redeploying-fable-5\n\nClaude Sonnet 5: https://www.anthropic.com/news/claude-sonnet-5\n\nMythose 5 System Card: https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf\n\nAnthropic Accuse Alibaba Cloud / Qwen: https://www.bbc.co.uk/news/articles/cwyklykn5dwo\n\nBetelgeuse: https://upload.wikimedia.org/wikipedia/commons/6/69/Well_known_stars_2.png\n\nOpenAI 5%: https://edition.cnn.com/2026/07/02/business/openai-trump-stake-intl\n\nWhy Larger Models Learn More: https://arxiv.org/pdf/2605.29548\n\nPatreon Post: https://www.patreon.com/AIExplained/posts/glm-5-2-and-nsa-161869508\n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "safety",
+      "research",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 552950,
     "title": "More details on Fable 5\u2019s cyber safeguards and our jailbreak framework",
     "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
@@ -2860,6 +3431,28 @@
     "tags": [
       "release",
       "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555019,
+    "title": "The weird history of the internet...",
+    "url": "https://www.youtube.com/watch?v=7B0ydm64cV8",
+    "published_at": "2026-07-01T16:33:28+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Try CodeRabbit Review free and turn your next big PR into a guided walkthrough - https://coderabbit.link/fireship\n\nThe internet might seem like it's always been around but the path to today's bombardment of cookies, pup-ups and brain rot has been long and hard. This is the history of the internet in 8 minutes...\n\n#coding #programming #internet #tech \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "coding",
+      "tutorials",
+      "education",
+      "media",
+      "news",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -2983,6 +3576,24 @@
     "topic": "product",
     "tags": [
       "product",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555050,
+    "title": "How LLMs Actually Generate Text",
+    "url": "https://www.youtube.com/shorts/HfjF__xhSdk",
+    "published_at": "2026-06-30T06:34:41+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Text generation looks like one function call. Underneath, it's a loop: infer, pick a token, append it, repeat. Watch how Transformers.js runs an LLM step by step.. and understand what's actually happening every time you chat with one.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
       "models"
     ],
     "dearrow_thumbnail_url": "",
@@ -3301,6 +3912,27 @@
     "available": true
   },
   {
+    "article_id": 555051,
+    "title": "Welcome to Open Source AI: Run Your Own Models Locally",
+    "url": "https://www.youtube.com/watch?v=wRcByxXkJCQ",
+    "published_at": "2026-06-25T16:49:36+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "A livestream for everyone starting out with open models. We walk through the most robust stack for running AI on your own laptop or server, and answer your questions live.\n\nWhat we cover:\n\nMerve Noyan on llama.cpp: what it is and how it runs on your hardware, plus the new llama.app and llama barn.\n\nDaniel Han from Unsloth on downloading GGUFs: finding quantized models on the Hub, why quantization matters, and choosing the right size and type for your hardware.\n\nBen Burtenshaw on selecting your harness: closed harnesses like Claude and Codex, open harnesses like Pi, with a demo using llama server.\n\nOnur Solmaz on Pi PR triage: a demo of Pi and Gemma for automated PR triage.\n\nPlus a live AMA throughout the stream.\n\nBring your questions about local models, llama.cpp, open coding agents, and anything open or local AI.",
+    "topic": "hardware",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551569,
     "title": "Our latest Google Finance upgrades, including a new app",
     "url": "https://blog.google/products-and-platforms/products/search/google-finance-updates-june-2026/",
@@ -3468,6 +4100,28 @@
     "available": true
   },
   {
+    "article_id": 555020,
+    "title": "Midjourney has a new side quest... death",
+    "url": "https://www.youtube.com/watch?v=a2i9h2ip-nY",
+    "published_at": "2026-06-23T16:46:50+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Try out Retool's new AI app builder to safely connect your apps to your team's data and APIs - https://fandf.co/4e2lDe2\n\nFounder of Midjourney, David Holz, just announced plans to make a new medical imaging device capable of full body scans which he claims is faster and cheaper than an MRI. But how does it work,  if at all?\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- Midjourney Medical\n- Fullbody Ultrasonic Computational Tomography (FUCT)\n- Midjourney Spa\n- Will it work?\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "release",
+      "api",
+      "coding",
+      "education",
+      "hardware",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 553451,
     "title": "AI's Affordability Crisis",
     "url": "https://blog.dshr.org/2026/06/ais-affordability-crisis.html?m=1",
@@ -3517,6 +4171,26 @@
     "topic": "general",
     "tags": [
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555052,
+    "title": "How One API Runs 27 ML Tasks",
+    "url": "https://www.youtube.com/shorts/Xe67WF8Hfu8",
+    "published_at": "2026-06-23T07:50:42+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "One API. 27 different ML tasks. The secret is a simple input/output contract. The task ID defines what goes in and what comes out. Same pattern, every time.\n\n#TransformersJS #JavaScript #MachineLearning #AI #WebAI #Pipeline",
+    "topic": "product",
+    "tags": [
+      "product",
+      "api",
+      "infrastructure",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -3591,6 +4265,51 @@
       "coding",
       "hardware",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555053,
+    "title": "Training Agents: Live tutorial on how to fine-tune a coding agent for continual learning",
+    "url": "https://www.youtube.com/watch?v=rNgUoH7Wbv8",
+    "published_at": "2026-06-22T19:13:46+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Training Agents, Session 1: from raw agent traces to a supervised fine-tuning baseline.\n\nIn this live session, I\u2019ll set up the first rung of an agentic post-training workflow: SFT. We\u2019ll take public coding-agent traces, turn them into prompt/completion training data, run a small TRL + LoRA fine-tune, and inspect what the first metrics can and cannot tell us.\n\nWhat we\u2019ll cover:\n- Why start with SFT before GRPO or environment RL\n- How agent traces become training examples\n- Completion-only loss for chat/tool traces\n- Running TRL SFT on Hugging Face Jobs\n- Keeping experiments reproducible without checking in logs or checkpoints\n- What the first eval metrics do and do not prove\n\nRepo:\nhttps://github.com/burtenshaw/training-agents\n\nGuide:\nhttps://x.com/ben_burtenshaw/status/2067615361428545566?s=20\n\nSlides:\nhttps://docs.google.com/presentation/d/1hcGZ4U9TjZZzcGNbH2K6wYD45qwZTyo_gosCQsnHlnc/edit?usp=sharing\n\nAgent Trace:\nhttps://huggingface.co/buckets/burtenshaw/sft-on-traces/tree/example.jsonl\n\nTrackIO:\nhttps://huggingface.co/spaces/burtenshaw/youtube-livestream-1-gemma4-pi-mono-trackio\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #FineTuning",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555054,
+    "title": "What can you build during 48h Robotics Hackathon?",
+    "url": "https://www.youtube.com/watch?v=FLxFBU-Kodk",
+    "published_at": "2026-06-22T13:00:28+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "One year ago thousands of people worked for 48h to build something cool with LeRobot library: https://huggingface.co/lerobot\n\nLeRobot Worldwide Hackathon was a global AI robotics challenge that took place June 14-15, 2025. Discover how one weekend of open-source building launched careers, inspired new research, and turned total beginners into robotics experts.\n\nFrom folding t-shirts to Lego sorting factories, see what is possible when the community gets their hands dirty with open source AI and robotics.\n\n\ud83c\udfc6 See all winners from the event: https://huggingface.co/spaces/LeRobot-worldwide-hackathon/all-winners\n\ud83c\udf0d Learn more about the hackathon: https://huggingface.co/LeRobot-worldwide-hackathon\n\n#robotics #lerobot",
+    "topic": "robotics",
+    "tags": [
+      "release",
+      "open-source",
+      "research",
+      "coding",
+      "robotics",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -3705,6 +4424,28 @@
     "topic": "general",
     "tags": [
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555021,
+    "title": "The most trusted code on Earth is being rewritten in Rust",
+    "url": "https://www.youtube.com/watch?v=Sntj4HmuykI",
+    "published_at": "2026-06-19T17:24:47+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Junie is the #1 coding agent on SWE-Rebench and it'll save you a bunch of tokens - https://jb.gg/Fireship-Junie-GA\n\nUse code: FIRESHIP20 to to get 20 free AI credits\n\nSQLite, the world's most trusted code, just got rewritten in Rust and it actually works. It's called Turso and it ships some cool features you won't find in SQLite.\n\n#coding #programming #technology \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "coding",
+      "education",
+      "media",
+      "news",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -3843,6 +4584,28 @@
     "available": true
   },
   {
+    "article_id": 555022,
+    "title": "I read every major CS paper of the last 100 years...",
+    "url": "https://www.youtube.com/watch?v=ML3q7Ok4hJg",
+    "published_at": "2026-06-17T16:29:01+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Coder lets you self-host your coding agents with enterprise-grade security - https://fandf.co/4tZvtU5\n\nThese 10 mind-blowing computer science papers made everything in modern computing possible. In today's video, we'll take a look at how they changed the world for better or worse. \n\n#coding #programming #computerscience #computer \n\n\ud83d\udd16 Topics Covered\n\n- On Computable Numbers, with an Application to the Entscheidungsproblem, Alan Turing 1936\n- A Mathematical Theory of Communication, Claude Shannon 1948\n- The Perceptron, Rosenblatt 1958 \n- Perceptrons, Marvin Minsky and Seymour Papert 1969 \n- Time, Clocks, and the Ordering of Events in a Distributed System, Leslie Lamport 1978\n- Learning representations by back-propagating errors, Rumelhart, Hinton, Williams 1986 \n- The Anatomy of a Large-Scale Hypertextual Web Search Engine, Sergey Brin and Larry Page 1998 \n- ImageNet Classification with Deep Convolutional Neural Networks, Krizhevsky, Sutskever, Hinton 2012 \n- Attention Is All You Need, Vaswani, Google 2017 \n- Language Models are Few-Shot Learners, Brown, OpenAI 2020\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "research",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551570,
     "title": "New research shows how AMIE, our medical AI, could help manage health conditions.",
     "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
@@ -3892,6 +4655,27 @@
       "ai-models",
       "models",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555055,
+    "title": "Hermes Architecture EXPLAINED: Memory, Context & Gateways",
+    "url": "https://www.youtube.com/watch?v=n32qq7Kwzh0",
+    "published_at": "2026-06-17T06:05:39+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Hermes is an always-on AI agent with a simple but useful architecture: an agent loop, memory, context construction, gateway integrations, and scheduled cron jobs. In this video, I walk through how Hermes builds context, talks to external services like Telegram and Slack, compresses long conversations, and learns from previous interactions.\n\n---\n\ud83e\udd13 *Topics Covered*\n- Hermes agent architecture\n- Context, memory, and compression\n- Gateways, SQLite, and cron jobs\n\n---\n\u23f1\ufe0f *Timestamps*\n00:00 - Intro\n00:57 - Bird's-eye view of the architecture\n03:49 - Agent loop\n07:31 - Context\n13:28 - Context compression\n18:28 - Context compression prompt\n19:59 - Gateway\n28:00 - Memory\n34:37 - Cron jobs\n\n---\n\ud83d\udd17 Links\n- Written version: https://alejandro-ao.com/hermes-agent-architecture/\n\n---\n\ud83d\udc4b Connect with me\n- https://x.com/_alejandroao/\n- https://www.linkedin.com/in/alejandro-ao/",
+    "topic": "research",
+    "tags": [
+      "research",
+      "agents",
+      "video",
+      "coding",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -4044,6 +4828,25 @@
     "available": true
   },
   {
+    "article_id": 555056,
+    "title": "Quantization: The Size vs Quality Trade-Off",
+    "url": "https://www.youtube.com/shorts/-s4KGeAE6iQ",
+    "published_at": "2026-06-16T13:23:14+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Models can shrink down to a fraction of their size and still be useful. That's the power of quantization: Trading a bit of precision for massive gains in speed and size. In Transformers.js, you control that trade-off with a single parameter: dtype. Watch to see how far it can go.\n\n#TransformersJS #JavaScript #MachineLearning #AI #WebAI #Quantization",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 553218,
     "title": "Economic ResearchAgentic coding and persistent returns to expertise",
     "url": "https://www.anthropic.com/research/claude-code-expertise",
@@ -4079,6 +4882,29 @@
       "safety",
       "benchmark",
       "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555023,
+    "title": "One man just liberated Fable... and now it\u2019s illegal",
+    "url": "https://www.youtube.com/watch?v=ey_GaPdC9zk",
+    "published_at": "2026-06-15T18:35:58+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Take BlueDot's Future of AI course for free - https://bluedot.org/fireship\n\nJust three days after the release of Claude Fable, the US government stepped in and banned it in the name of national security. But why?\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- What makes Fable allegedly unsafe?\n- Fable Jailbreak\n- Fable gets banned\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "safety",
+      "coding",
+      "education",
+      "media"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -4141,6 +4967,29 @@
     "available": true
   },
   {
+    "article_id": 555032,
+    "title": "Claude Fable Blocked - 11 Quiet Details on What\u2019s Next",
+    "url": "https://www.youtube.com/watch?v=Qj71N0tBzRo",
+    "published_at": "2026-06-14T14:52:27+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-explained",
+    "source_name": "AI Explained",
+    "extraction_method": "rss",
+    "body": "Claude Fable 5 banned, but what\u2019s the bigger story. We go through 11 under-reported details, so you have the context to see what\u2019s coming next for your use of AI. From whether the ban will last, what the possible motives are, what the model can actually do, and some wild over-extrapolations going on.\n\n\nCheck out my fast-growing (!) app, free to use, and code INSIDER15 for paid tiers: https://lmcouncil.ai\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n00:51 - Came from an Anthropic Investor \u2018and other tech leaders\u2019\n01:47 - Govt pressured by CEOs like Jamie Dimon\n03:01 - \u2018Already decided\u2019\n04:02 - Prompt Injection Robustness Comparison\n05:15 - Wellness?\n06:36 - \u201cOverreach\u201d\n08:17 - Anthropic Did Admit it would cause Difficulty\n09:32 - 90 Minutes\n10:02 - Equity Absence \n10:31 - Lobbying and OpenAI\n\n\u2018Already Decided\u2019 - https://www.theinformation.com/articles/amazons-jassy-raised-concerns-anthropic-model-trump-crackdown?rc=sy0ihq\n\nNot for Other Models: https://www.theinformation.com/briefings/u-s-government-unlikely-extend-anthropic-export-control-ai-companies?rc=sy0ihq\n\n90 Minutes: https://archive.fo/20260614001605/https://www.politico.com/news/2026/06/13/inside-the-whirlwind-24-hours-that-led-the-white-house-to-slap-export-controls-on-anthropic-00961519#selection-807.1-807.219\n\nAnthropic Statement: https://www.anthropic.com/news/fable-mythos-access\n\nLife Comes at you Fast: https://x.com/etbrooking/status/2065638276388495742\n\nAnthropic Deputy CISO: https://x.com/TheTranscript_/status/2065883670053847324\n\nHegseth Gloat: https://x.com/PeteHegseth/status/2065897156226015690\n\nRoon Speculation: https://x.com/tszzl/status/2065939227167392147\n\nMythos System Card: https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf\n\nSachs Statement: https://x.com/DavidSacks/status/2065853007619588171\n\n\nOpenAI Lobbying: https://thehill.com/policy/technology/5912720-altman-openai-get-bogged-down-in-political-spending-fight/\n\nAbsent from Equity Talks: https://finance.yahoo.com/sectors/technology/articles/trump-ai-ownership-plan-could-131053732.html\n\nPliny Jaibreak: https://x.com/elder_plinius/status/2064776322979676227\n\nFusion: https://x.com/OpenRouter/status/2065856871215329545\n\nhttps://lmcouncil.ai \n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "video",
+      "coding",
+      "education",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 553458,
     "title": "Dangerous Technology For Americans Only",
     "url": "https://lucumr.pocoo.org/2026/6/13/americans-only/",
@@ -4172,6 +5021,26 @@
       "tutorials",
       "agents",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555057,
+    "title": "Build Small with Modal",
+    "url": "https://www.youtube.com/watch?v=8Oz64pGwRk4",
+    "published_at": "2026-06-12T06:09:06+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "As part of the Build Small hackathon we are inviting our partners to share their knowledge on how to get the most out of their platform.\n\nToday we are joined by Modal who will walk us through some use-case for Modal's cloud compute as well as taking questions from the community!\n\n---\n\nBuild Small Hackathon: https://huggingface.co/build-small-hackathon\n\nModal resources: https://build-small-hackathon-field-guide.hf.space/partners/modal\n\nModal Website: https://modal.com/\nModal GitHub: https://github.com/modal-labs\nModal X: https://x.com/modal",
+    "topic": "tutorials",
+    "tags": [
+      "open-source",
+      "infrastructure",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -4281,6 +5150,70 @@
     "tags": [
       "general",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555024,
+    "title": "Anthropic begged the world to stop AI\u2026 then shipped this",
+    "url": "https://www.youtube.com/watch?v=1PBRhm5ZnjU",
+    "published_at": "2026-06-11T17:17:48+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Render is the easiest place to ship full-stack apps and agents. The first 2,000 people to use the code RENDER-FIRESHIP will get $50 in credits: https://dashboard.render.com/register?utm_source=youtube&amp;utm_medium=organic_video&amp;utm_campaign=2026_partnership_fireship\n\nThis week, Anthropic released Claude Fable, a Mythos class model that's been carefully lobotomized for public consumption. But is it legit? Let's run it...\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- Claude Fable release\n- Fable 5 vs Opus 4.8\n- Fable 5 Demo\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "media",
+    "tags": [
+      "media",
+      "release",
+      "models",
+      "agents",
+      "video",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555058,
+    "title": "Build Small with OpenBMB",
+    "url": "https://www.youtube.com/watch?v=B7XvicdImIE",
+    "published_at": "2026-06-11T04:35:56+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "As part of the Build Small hackathon we are inviting our partners to share their knowledge on how to get the most out of the tiny models available today.\n\nToday we are joined by OpenBMB who will walk us through some of the best real-world uses cases for their family of tiny models and answer any questions from the community!\n\n---\n\nBuild Small Hackathon: https://huggingface.co/build-small-hackathon\n\nOpenBMB resources: https://build-small-hackathon-field-guide.hf.space/partners/openbmb\n\nOpenBMB Wesbite: https://www.openbmb.cn/en/home\nOpenBMB Hugging Face: https://huggingface.co/openbmb\nOpenBMB GitHub: https://github.com/OpenBMB\nOpenBMB X: https://x.com/OpenBMB",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "open-source",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555059,
+    "title": "Build Small with Cohere Labs",
+    "url": "https://www.youtube.com/watch?v=TYIT3nRMXak",
+    "published_at": "2026-06-11T03:07:26+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "As part of the Build Small hackathon we are inviting our partners to share their knowledge on how to get the most out of the tiny models available today.\n\nToday we are joined by Cohere Labs who will walk us through their Tiny Aya and Transcribe models and answer any questions from the community!\n\n---\n\nBuild Small Hackathon: https://huggingface.co/build-small-hackathon\n\nCohere resources: https://build-small-hackathon-field-guide.hf.space/partners/cohere\n\nCohere website: https://cohere.com/\nCohere Labs website: https://cohere.com/research\nCohere Labs Hugging Face: https://huggingface.co/CohereLabs\nCohere Labs GitHub: https://github.com/Cohere-Labs\nCohere Labs X: https://x.com/cohere_labs",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "open-source",
+      "research",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -4440,6 +5373,28 @@
     "available": true
   },
   {
+    "article_id": 555033,
+    "title": "Claude Fable 5 - Full 319 page Breakdown",
+    "url": "https://www.youtube.com/watch?v=haK1KoQWm18",
+    "published_at": "2026-06-10T18:43:12+00:00",
+    "fetched_at": "2026-07-20T10:11:31+00:00",
+    "source_id": "ai-explained",
+    "source_name": "AI Explained",
+    "extraction_method": "rss",
+    "body": "Fable 5 is out - and it\u2019s good, very good. But beyond the splashy demos, I want to bring you the 20+ nuggets from the 319 page system card, which I read in full, all day, plus benchmarks you may not have noticed. \n\nhttps://assemblyai.com/aiexplained\n\nPlus two worrying trends inside the \u2018mind\u2019 of Claude, how OpenAI counter, and the transformer inventor\u2019s warning.\n\n\n\nCheck out my fast-growing (!) app, free to use, and code INSIDER15 for paid tiers: https://lmcouncil.ai\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n01:06 - Blocks + Better Models\n02:42 - Fable 5 Upgrade over Mythos Preview\n04:49 - ML Acceleration Bombshell\n07:11 - No RSI yet\n07:41 - Bio-capable\n14:51 - Creative Writing \u2026 no\n17:23 - Does need bug-checks\n18:57 - OpenAI Response\n19:23 - Benchmark Bonanza\n28:06 - Chain of Thought worrying trend\n\nFable 5 Release: https://www.anthropic.com/news/claude-fable-5-mythos-5\n\nSystem Card: https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf\n\nIntelligence Explosion: https://www.patreon.com/posts/anthropic-charts-160231656\n\nAnnotated: https://x.com/Miles_Brundage/status/2064500190523113816/photo/1\n\nOpenAI Counter: https://x.com/thsottiaux/status/2064572118264913923\nhttps://x.com/thsottiaux/status/2043177597434306699\n\nDouble Lifespan: https://darioamodei.com/essay/machines-of-loving-grace\n\nAutomationBench: https://zapier.com/benchmarks\nVending Bench: https://x.com/andonlabs/status/2064429817530085804\nCritPt: https://critpt.com/\nRiemann Bench: https://surgehq.ai/leaderboards/riemann-bench\nGDPVal: https://artificialanalysis.ai/evaluations/gdpval-aa\nBluePrint Bench 2: https://andonlabs.com/evals/blueprint-bench-2\nMCP Atlas: https://labs.scale.com/leaderboard/mcp_atlas\nFutureSim: https://x.com/nikhilchandak29/status/2064676801440358774\n\nRoon Stun Lock: https://x.com/tszzl/status/2064454617568874669\n\nNoam Brown Inference Ceiling: https://x.com/polynoamial/status/2064210146558136827\n\nIsochronic Chart: https://isochronic-passage-chart.netlify.app/#nyc\nRose Tavern: https://claude.ai/public/artifacts/2295bebe-77e6-43e2-ae94-0fe49e9a776b\nRedwall Game: https://redwall-mossflower.surge.sh/\n\nRisk Report: https://www-cdn.anthropic.com/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf\n\nTransformer Inventor Warning: https://x.com/tszzl/status/2064563986914554125\n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551588,
     "title": "DiffusionGemma: 4x faster text generation",
     "url": "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
@@ -4529,6 +5484,29 @@
     "tags": [
       "release",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 555025,
+    "title": "Anthropic is starting to panic\u2026",
+    "url": "https://www.youtube.com/watch?v=0pgCBV8CTZY",
+    "published_at": "2026-06-09T17:32:30+00:00",
+    "fetched_at": "2026-07-20T10:11:30+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Get $30 of Pioneer inference credits for only $5 - https://pioneer.ai/?utm_source=youtube&amp;utm_medium=ext_social&amp;utm_campaign=pioneer_launch&amp;utm_content=FS\n\nAnthropic just proposed something insane - the idea that maybe we should wait a second and pause all AI development. But why now?\n\n#coding #programming #ai #nthropic\n\n\ud83d\udcda Resources\n- https://www.anthropic.com/institute/recursive-self-improvement\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "video",
+      "infrastructure",
+      "coding",
+      "development",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -8788,880 +9766,6 @@
     "topic": "ai-models",
     "tags": [
       "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367946,
-    "title": "How AI Mode is changing the way people search in the U.S.",
-    "url": "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/",
-    "published_at": "2026-05-19T17:45:00+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "A graphic features the text \"How people are using AI Mode in the U.S.\" surrounded by colorful, stylized illustrations of a pencil, planet, banana, gift box, cursor, gamepad, and lipstick on a light blue background.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367950,
-    "title": "A new era for AI Search",
-    "url": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
-    "published_at": "2026-05-19T17:45:00+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Text that reads \"The best of a search engine with the best of AI\"",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367947,
-    "title": "New ways to create and get things done in Google Workspace",
-    "url": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/",
-    "published_at": "2026-05-19T17:45:00+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Google Workspace",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 369259,
-    "title": "What Breaks When You Build AI Under Sovereignty Constraints - Bilge Y\u00fccel, deepset GmbH",
-    "url": "https://www.youtube.com/watch?v=x2bH0RKPgdc",
-    "published_at": "2026-05-19T17:00:06+00:00",
-    "fetched_at": "2026-05-19T18:21:54+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "If you send EU citizen data to an embedding API hosted in Virginia, you have already violated GDPR. That is one hidden assumption. Most production AI systems have dozens more, baked into the architecture long before anyone asked whether the system was sovereign.\n\nBilge Y\u00fccel walks through the four sovereignty pillars (data, model, infrastructure, operations) and what actually breaks when you retrofit each one: re-evaluating performance from scratch after swapping a frontier API for a self-hosted model, managing multiple databases across jurisdictions after moving private data, and discovering how much vendor lock-in you had the moment you try to go on-prem. The closing checklist is three questions: can you swap models without changing application logic, do you have reproducible run logs stored in a compliant location, and can your team respond to an incident without calling a hyperscaler.\n\nSpeaker info:\n- https://x.com/bilgeycl\n- https://www.linkedin.com/in/bilge-yucel/",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "api",
-      "benchmark",
-      "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367525,
-    "title": "Don't Build Slop (4 Levels of AI Agent Maturity) - Ara Khan, Cline",
-    "url": "https://www.youtube.com/watch?v=yUmS-F9IX90",
-    "published_at": "2026-05-19T15:00:06+00:00",
-    "fetched_at": "2026-05-19T16:21:20+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "The prompt for GPT-5.3 is one-third the size of the one written for GPT-5. Frontier models are so capable that longer system prompts cause sensory overload and degrade performance. The rule Ara Khan keeps returning to: every single thing you add to an agent risks making it worse.\n\nThe talk breaks agent-building into four levels, from framework prototyping to cloud-native fleets, with five concrete rules for writing your own agent code in between. The form factor argument lands on Kanban boards as the right UX for managing parallel inference-bound agents. He made that prediction publicly on March 26. Claude Code shipped the same thing ten hours before this talk.\n\nSpeaker info:\n- https://x.com/arafatkatze\n- https://www.linkedin.com/in/arafatkatze/\n- https://github.com/arafatkatze",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 383360,
-    "title": "Tagging my blog posts with BERTopic and LLMs",
-    "url": "https://vickiboykis.com/2026/05/18/tagging-my-blog-posts-with-bertopic-and-llms/",
-    "published_at": "2026-05-19T13:14:40+00:00",
-    "fetched_at": "2026-05-20T12:33:41+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading! such a nice exploration of applying the \"old\" and new in ML to a tangible problem. having nostalgic feels when reading LDA.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367465,
-    "title": "Krea Releases Ultra Customizable AI Art Model",
-    "url": "https://www.youtube.com/shorts/XlyOJYwRdPg",
-    "published_at": "2026-05-19T13:06:26+00:00",
-    "fetched_at": "2026-05-19T16:21:20+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "How to get the PERFECT AI art style every single time:\n\n1. Go to Krea.ai and toggle to the \"Krea 2 Large\" model for photorealism or \"Krea 2 Medium\" model for illustrations\n2. Click \"Mood Boards\" on the bottom dashboard\n3. Drop in a batch of images that share the aesthetic you want\n4. Let Krea analyze the palette and mood\n5. Prompt whatever you want and it will match your Mood Board perfectly\n\nKrea V2 just dropped and it's perfect for if you\u2019re building a brand, designing a project, or want AI to mimic your own artwork.\n\n\u27a1\ufe0f Share this with a creative friend and SAVE it to so you don't forget to test it out later!",
-    "topic": "tutorials",
-    "tags": [
-      "release",
-      "models",
-      "coding",
-      "tutorials",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367526,
-    "title": "Personalization in the Era of LLMs - Shivam Verma, Spotify",
-    "url": "https://www.youtube.com/watch?v=5YSJEP0HWzM",
-    "published_at": "2026-05-19T13:00:06+00:00",
-    "fetched_at": "2026-05-19T16:21:20+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Spotify represents Ariana Grande and Bruno Mars as sequences of six tokens. The first two are shared because both are pop artists. The remaining tokens diverge to capture what makes each distinct. That is a Semantic ID, and it is how Spotify teaches open-weight LLMs to reason over a catalog of 100 million tracks the same way they reason over words.\n\nShivam Verma from Spotify's AI foundation team walks through the three components they assembled to personalize LLMs at scale without full fine-tuning. User embeddings trained on streaming history across 750 million users form the base. Semantic IDs compress catalog vectors into tokens the model can autoregressively generate, predicting the next song or episode as the next token in a sequence. A soft tokenization layer projects a user's embedding directly into the LLM's token space, giving the frozen model a user-specific token to attend over. Podcast next-episode recommendations are already running on this stack in production.\n\nSpeaker info:\n- https://x.com/kaffeinated\n- https://www.linkedin.com/in/shivam13verma",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "education",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 383361,
-    "title": "Alternatives for the EDIT tool of LLM agents - <antirez>",
-    "url": "https://antirez.com/news/166",
-    "published_at": "2026-05-19T11:22:02+00:00",
-    "fetched_at": "2026-05-20T12:33:41+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading, on a variation of @_can1357 's hash line read/edit tools for agents.",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "agents",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 368065,
-    "title": "Advancing content provenance for a safer, more transparent AI ecosystem",
-    "url": "https://openai.com/index/advancing-content-provenance",
-    "published_at": "2026-05-19T10:45:00+00:00",
-    "fetched_at": "2026-05-19T18:21:53+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI advances AI content provenance with Content Credentials, SynthID, and a verification tool to help people identify and trust AI-generated media.",
-    "topic": "tools",
-    "tags": [
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 360796,
-    "title": "The last six months in LLMs in five minutes",
-    "url": "https://simonwillison.net/2026/May/19/5-minute-llms/#atom-everything",
-    "published_at": "2026-05-19T01:09:44+00:00",
-    "fetched_at": "2026-05-19T01:29:35+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>I put together these annotated slides from my five minute lightning talk at PyCon US 2026, using the <a href=\"https://tools.simonwillison.net/annotated-presentations\">latest iteration</a> of my <a href=\"https://simonwillison.net/2023/Aug/6/annotated-presentations/\">annotated presentation tool</a>.</p>\n\n<div class=\"slide\" id=\"5-minutes-llms.001.jpeg\">\n  <img alt=\"The last six months in LLMs in\nfive minutes\n\nSimon Willison - simonwillison.net\n\nPyCon US 2026 Lightning Talk\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.001.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.001.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>I presented this lightning talk at PyCon US 2026, attempting to summarize the last six months of developments in LLMs in five minutes.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.002.jpeg\">\n  <img alt=\"The November inflection point\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.002.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.002.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Six months is a pretty convenient time period to cover, because it captures what I've been calling the <a href=\"https://simonwillison.net/tags/november-2025-inflection/\">November 2025 inflection point</a>. November was a critical month in LLMs, especially for coding.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.003.jpeg\">\n  <img alt=\"The \u201cbest\u201d model changed hands 5 times\nbetween Anthropic, OpenAl and Google\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.003.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.003.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>For one thing, the supposedly \"best\" model (depending mostly on vibes) changed hands five times between the three big providers.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.004.jpeg\">\n  <img alt=\"Generate an SVG of a\npelican riding a bicycle\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.004.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.004.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>As always, I'm using my <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle/\">Generate an SVG of a pelican riding a bicycle</a> test to help illustrate the differences between the models.</p>\n<p>Why this test? Because pelicans are hard to draw, bicycles are hard to draw, pelicans <em>can't ride bicycles</em>... and there's zero chance any AI lab would train a model for such a ridiculous task.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.005.jpeg\">\n  <img alt=\"Five pelicans, one for each of the following models. Varying qualities!\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.005.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.005.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>At the start of November the widely acknowledged \"best\" model was Claude Sonnet 4.5, released on <a href=\"https://simonwillison.net/2025/Sep/29/claude-sonnet-4-5/\">29th September</a>. It drew me this pelican.</p>\n<p>In November it was overtaken by <a href=\"https://simonwillison.net/2025/Nov/13/gpt-51/\">GPT-5.1</a>, then <a href=\"https://simonwillison.net/2025/Nov/18/gemini-3/\">Gemini 3</a>, then <a href=\"https://simonwillison.net/2025/Nov/19/gpt-51-codex-max/\">GPT-5.1 Codex Max</a>, and then Anthropic took the crown back again with <a href=\"https://simonwillison.net/2025/Nov/24/claude-opus/\">Claude Opus 4.5</a>.</p>\n<p>I think Gemini 3 drew the best pelican out of this lot, but pelicans aren't everything. Most practitioners will agree that Opus 4.5 held the crown for the next couple of months.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.006.jpeg\">\n  <img alt=\"The coding agents got good\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.006.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.006.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>It took a little while for this to become clear, but the real news from November was that the coding agents got <em>good</em>.</p>\n<p>OpenAI and Anthropic had spent most of 2025 running <a href=\"https://simonwillison.net/2025/Dec/19/andrej-karpathy/\">Reinforcement Learning from Verifiable Rewards</a> to increase the quality of code written by their models, especially when paired up with their Codex and Claude Code agent harnesses.</p>\n<p>In November the results of this work became apparent. Coding agents went from often-work to mostly-work, crossing a quality barrier where you could use them as a daily-driver to get real work done, without needing to spend most of your time fixing their stupid mistakes.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.007.jpeg\">\n  <img alt=\"Screenshot of &quot;Initial commit&quot; on GitHub to steipete/Warelay, commit f6dd362, steipete authored on Nov 24, 2025\n\nIt's a copy of the MIT license\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.007.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.007.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Also in November, this happened - the first commit to an obscure (back then) repo called \"Warelay\" by some guy called Pete.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.008.jpeg\">\n  <img alt=\"December/January\n(A little bit of LLM psychosis)\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.008.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.008.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Over the holiday period, from December to January, a whole lot of us took advantage of the break to have a poke at these new models and coding agents and see what they could do.</p>\n<p>They could do a lot! Some of us got a little bit over-excited. I had my own short-lived bout of a form of LLM psychosis as I started spinning up wildly ambitious projects to see how far I could push them.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.009.jpeg\">\n  <img alt=\"micro-javascript playground\nExecute JavaScript code in a sandboxed micro-javascript environment powered by Pyodide\n\nvar numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\nvar doubled = numbers.map(n =&gt; n * 2);\nconsole.log('Doubled: &quot;', doubled);\nvar evens = numbers.filter(n =&gt; n % 2 === 0);\nconsole.log('Evens: ', evens);\nvar sum = numbers.reduce((a, b) =&gt; a + b, @);\nconsole.log('Sum:&quot;, sum);\n\nOutput 27\nDoubled: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\nEvens: [2, 4, 6, 8, 10]\nSum: 55\nExecution time: 8.00ms\nAbout: micro-javascript is a pure Python JavaScript interpreter with configurable memory and time limits. This playground runs entirely in your browser using\nPyodide (Python compiled to WebAssembly). View on GitHub\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.009.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.009.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>One of my projects was a vibe-coded implementation of JavaScript in Python - a loose port of <a href=\"https://github.com/bellard/mquickjs\">MicroQuickJS</a> - which I called <a href=\"https://github.com/simonw/micro-javascript\">micro-javascript</a>. You can try it out in your browser in <a href=\"https://simonw.github.io/micro-javascript/playground.html\">this playground</a>.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.010.jpeg\">\n  <img alt=\"JavaScript running in Python running in Pyodide running in WebAssembly running in JavaScript\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.010.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.010.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>That playground demo shows JavaScript code run using my micro-javascript library, in Python, running inside Pyodide, running in WebAssembly, running in JavaScript, running in a browser!</p>\n<p>It's pretty cool! But did anyone out there <em>need</em> a buggy, slow, insecure half-baked implementation of JavaScript in Python?</p>\n<p>They did not. I have quite a few other projects from that holiday period that I have since quietly retired!</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.011.jpeg\">\n  <img alt=\"February 2026\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.011.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.011.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>On to February. Remember that Warelay project that had its first commit at the end of November?</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.012.jpeg\">\n  <img alt=\"Warelay \u2192 CLAWDIS \u2192 CLAWDBOT \u2192\nClawdbot \u2192 Moltbot \u2192\ud83e\udd9e OpenClaw\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.012.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.012.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>In December and January it had gone through <a href=\"https://simonwillison.net/2026/May/16/openclaw-names/\">quite a few name changes</a>... and by February it was taking the world by storm under its final name, OpenClaw.</p>\n<p>The amount of attention it got is pretty astonishing for a project that was less than three months old.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.013.jpeg\">\n  <img alt=\"Generic term: Claw\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.013.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.013.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>OpenClaw is a \"personal AI assistant\", and we actually got a generic term for these, based on NanoClaw and ZeroClaw and suchlike... they're called <strong>Claws</strong>.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.014.jpeg\">\n  <img alt=\"An aquarium for your Claw\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.014.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.014.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Mac Minis started to sell out around Silicon Valley, because people were buying them to run their Claws.</p>\n<p><a href=\"https://www.dbreunig.com/\">Drew Breunig</a> joked to me that this is because they're the new digital pets, and a Mac Mini is the perfect aquarium for your Claw.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.015.jpeg\">\n  <img alt=\"Alfred Molina's Doc Ock in Spider-Man 2, tearing apart a New York subway train with his four claws.\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.015.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.015.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>My favourite metaphor for Claws is Alfred Molina's Doc Ock in the 2004 movie Spider-Man 2. His claws were powered by AI, and were perfectly safe provided nothing damaged his inhibitor chip... after which they turned evil and took over.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.016.jpeg\">\n  <img alt=\"Gemini 3.1 Pro\n\nA really good illustration of a pelican riding a bicycle.\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.016.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.016.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Also in February: Gemini 3.1 Pro came out, and drew me a <em>really good pelican riding a bicycle</em>. Look at this! It's even got a fish in its basket.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.017.jpeg\">\n  <img alt=\"Gemini 3 Pro pelican contrasted with Gemini 3.1 Pro, as animated SVGs\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.017.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.017.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>And then Google's Jeff Dean <a href=\"https://simonwillison.net/2026/Feb/19/gemini-31-pro/#jeff-dean\">tweeted this video</a> of an animated pelican riding a bicycle, plus a frog on a penny-farthing and a giraffe driving a tiny car and an ostrich on roller skates and a turtle kickflipping a skateboard and a dachshund driving a stretch limousine.</p>\n<p>So maybe the AI labs have been paying attention after all!</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.018.jpeg\">\n  <img alt=\"April 2026\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.018.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.018.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>A lot of stuff happened just in the past month.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.019.jpeg\">\n  <img alt=\"Gemma 4 26B-A4B (17.99GB)\n\nA pretty decent pelican riding a bicycle, though the bike is a bit mis-shapen.\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.019.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.019.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Google released the <a href=\"https://simonwillison.net/2026/Apr/2/gemma-4/\">Gemma 4</a> series of models, which are the most capable open weight models I've seen from a US company.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.020.jpeg\">\n  <img alt=\"GLM-5.1\nMIT, 754B parameter, 1.51TB!\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.020.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.020.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Also last month, Chinese AI lab GLM came out with <a href=\"https://simonwillison.net/2026/Apr/7/glm-51/\">GLM-5.1</a> - an open weight 1.5TB monster! This is a very effective model... if you can afford the hardware to run it.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.021.jpeg\">\n  <img alt=\"\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.021.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.021.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>GLM-5.1 drew me this very competent pelican on a bicycle.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.022.jpeg\">\n  <img alt=\"The bike is wonky, the pelican is floating.\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.022.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.022.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>... though when it <a href=\"https://gisthost.github.io/?73bb6808b18c2482f66e5f082c75f36e\">tried to animate it</a> the bicycle bounced off into the top and the bicycle got warped.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.023.jpeg\">\n  <img alt=\"Screenshot of Bluesky\n\nCharles\n\u202a@charles.capps.me\u202c\nI think you should pester it with another animal using another method of locomotion. \n\nSomething tells me it was trained for this. I can't quite put my finger on it. /s\n\nNORTH VIRGINIA OPOSSUM ON AN E-SCOOTER!!\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.023.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.023.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Charles on Bluesky suggested I try it with a North Virginia Opossum on an E-scooter</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.024.jpeg\">\n  <img alt=\"NORTH VIRGINIA OPOSSUM\nCRUISING THE COMMONWEALTH SINCE DUSK\n\nAnd a really cool illustration of a possum.\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.024.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.024.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>And it did this! I've tried this on other models and they don't even come close. \"Cruising the commonwealth since dusk\" is perfect. It's <a href=\"https://static.simonwillison.net/static/2026/glm-possum-escooter.html\">animated too</a>.</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.025.jpeg\">\n  <img alt=\"Qwen3.6-35B-A3B is a 20.9GB file that runs on my laptop\n\nIt drew a better pelican on a bicycle than Opus 4.7, which messed up the bicycle frame.\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.025.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.025.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>The other neat Chinese open weight models in April came from Qwen. <a href=\"https://simonwillison.net/2026/Apr/16/qwen-beats-opus/\">Qwen3.6-35B-A3B on my laptop drew me a better pelican than Claude Opus 4.7</a>. That's a 20.9GB open weights model that runs on my laptop!</p>\n<p>(I think this mainly demonstrates that the pelican on the bicycle has firmly exceeded its limits as a useful benchmark.)</p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.026.jpeg\">\n  <img alt=\"Claude Sonnet 4.5 pelican for comparison.\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.026.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.026.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>Here's that Claude Sonnet 4.5 pelican from September for comparison. </p>\n  </div>\n</div>\n<div class=\"slide\" id=\"5-minutes-llms.027.jpeg\">\n  <img alt=\"The themes of the past 6 months:\nCoding agents got really good\nLocal models wildly outperform expectations\n\" src=\"https://static.simonwillison.net/static/2026/5-minutes-llms/5-minutes-llms.027.jpeg\" />\n  <div><a href=\"https://simonwillison.net/2026/May/19/5-minute-llms/#5-minutes-llms.027.jpeg\" style=\"float: right; text-decoration: none; border-bottom: none; padding-left: 1em;\">#</a>\n  <p>So those were the two main themes of the past six months. The coding agents got really good... and the laptop-available models, while a lot weaker than the frontier, have started wildly outperforming expectations.</p>\n  </div>\n</div>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/lightning-talks\">lightning-talks</a>, <a href=\"https://simonwillison.net/tags/pycon\">pycon</a>, <a href=\"https://simonwillison.net/tags/speaking\">speaking</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/local-llms\">local-llms</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/annotated-talks\">annotated-talks</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367540,
-    "title": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
-    "url": "https://www.anthropic.com/news/anthropic-kpmg",
-    "published_at": "2026-05-19T00:00:00+00:00",
-    "fetched_at": "2026-05-19T16:21:20+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 377760,
-    "title": "Widening the conversation on frontier AI",
-    "url": "https://www.anthropic.com/news/widening-conversation-ai",
-    "published_at": "2026-05-19T00:00:00+00:00",
-    "fetched_at": "2026-05-20T01:31:31+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Widening the conversation on frontier AI",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 364532,
-    "title": "New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels",
-    "url": "https://claude.com/blog/claude-managed-agents-updates",
-    "published_at": "2026-05-19T00:00:00+00:00",
-    "fetched_at": "2026-05-19T09:43:51+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553276,
-    "title": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
-    "url": "https://claude.com/blog/new-in-claude-managed-agents",
-    "published_at": "2026-05-19T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:24+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 359701,
-    "title": "At aged care provider Regis, AI takes on paperwork so staff can focus on residents",
-    "url": "https://news.microsoft.com/source/asia/features/at-aged-care-provider-regis-ai-takes-on-paperwork-so-staff-can-focus-on-residents/",
-    "published_at": "2026-05-18T23:06:46+00:00",
-    "fetched_at": "2026-05-19T01:29:32+00:00",
-    "source_id": "microsoft-ai-blog",
-    "source_name": "Microsoft AI Blog",
-    "extraction_method": "rss",
-    "body": "<p>The post <a href=\"https://news.microsoft.com/source/asia/features/at-aged-care-provider-regis-ai-takes-on-paperwork-so-staff-can-focus-on-residents/\">At aged care provider Regis, AI takes on paperwork so staff can focus on residents</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 373127,
-    "title": "Project Glasswing: what Mythos showed us",
-    "url": "https://blog.cloudflare.com/cyber-frontier-models/",
-    "published_at": "2026-05-18T18:29:15+00:00",
-    "fetched_at": "2026-05-19T21:11:45+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367965,
-    "title": "Fast-tracking genetic leads to reverse cellular aging",
-    "url": "https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/",
-    "published_at": "2026-05-18T18:21:39+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Biologists use Co-Scientist to find novel factors that successfully rejuvenate human cells.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 354110,
-    "title": "Rewiring the State \u2014 Eoin Mulgrew, 10 Downing Street",
-    "url": "https://www.youtube.com/watch?v=ObNKGf9YR0g",
-    "published_at": "2026-05-18T17:00:06+00:00",
-    "fetched_at": "2026-05-18T18:01:44+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "The cabinet office was about to spend one and a half million pounds on an outside law firm to analyze the UK statute book. One engineer embedded with the in-house legal team for two weeks instead. The tool now lives with that team and can be run whenever they want. Eoin Mulgrew from the Number 10 data science team uses that as a typical example, not a headline one.\n\nThe talk covers what it actually takes to run a small insurgent technical unit at the center of government: market rate pay, a 0.7% acceptance rate, recruiting exclusively from outside the civil service, and an unusually direct mandate to go into departments and ship. The demos include a policy simulation tool, a delivery red-teaming PMO, two public dashboards that had never existed before, and a public service that went from idea to live in two months. The closing argument is a photo of a recent Harvard dropout and YC founder standing outside HMP Wormwood Scrubs holding the keys, two weeks into the job.\n\nSpeaker info:\n- https://www.linkedin.com/in/eoinmulgrew/",
-    "topic": "policy",
-    "tags": [
-      "coding",
-      "policy",
-      "tools",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 352353,
-    "title": "Let's go Bananas with GenMedia \u2014 Guillaume Vernade, Google DeepMind",
-    "url": "https://www.youtube.com/watch?v=BcWFc3H7Khg",
-    "published_at": "2026-05-18T15:00:06+00:00",
-    "fetched_at": "2026-05-18T15:53:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Guillaume Vernade from Google DeepMind takes a public domain book and runs it through the full gen media stack live. Gemini reads the whole text and writes image prompts for each character and chapter. Imagen generates the portraits. Veo animates them into video clips using those images as first frames. Lyria composes a different piece of music per chapter, with or without lyrics. The TTS model reads dialogue from the book using a trick that makes two voices sound like four distinct characters.\n\nThe interesting layer underneath all of it is that Gemini acts as the prompt engineer for every other model, and it works well partly because the gen media models were trained on prompts written by Gemini. The workshop also covers the Lyria Realtime model, which generates music continuously and responds to new prompts mid-stream like a DJ, and a new interactions API that makes chained multi-turn calls cheaper by caching context server-side instead of resending the full book on every turn.\n\nSpeaker info:\n- https://x.com/Giom_V\n- https://www.linkedin.com/in/guillaumevernade\n- https://github.com/Giom-V",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "api",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 353852,
-    "title": "Glaucous-winged Gull, Brown Pelican, Snowy Egret, Canada Goose",
-    "url": "https://simonwillison.net/2026/May/18/sighting-362781627/#atom-everything",
-    "published_at": "2026-05-18T14:51:00+00:00",
-    "fetched_at": "2026-05-18T18:01:43+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><img alt=\"Glaucous-winged Gull\" src=\"https://static.inaturalist.org/photos/662161673/large.jpg\" /></p><p><img alt=\"Glaucous-winged Gull\" src=\"https://static.inaturalist.org/photos/662161721/large.jpg\" /></p><p><img alt=\"Brown Pelican\" src=\"https://static.inaturalist.org/photos/662161937/large.jpg\" /></p><p><img alt=\"Snowy Egret\" src=\"https://static.inaturalist.org/photos/662161148/large.jpg\" /></p><p><img alt=\"Snowy Egret\" src=\"https://static.inaturalist.org/photos/662161189/large.jpg\" /></p><p><img alt=\"Canada Goose\" src=\"https://static.inaturalist.org/photos/662160828/large.jpg\" /></p><p><img alt=\"Canada Goose\" src=\"https://static.inaturalist.org/photos/662160866/large.jpg\" /></p><p>Glaucous-winged Gull, Brown Pelican, Snowy Egret, Canada Goose, in Los Angeles River, CA, US</p><p>I'm heading home from PyCon US today so I went on a last morning walk to try and spot a pelican. I saw one! Didn't get a great photo of that, but I did see some goslings down by the swan boat lake.</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 352354,
-    "title": "Build Agents That Run for Hours (Without Losing the Plot) \u2014 Ash Prabaker & Andrew Wilson, Anthropic",
-    "url": "https://www.youtube.com/watch?v=mR-WAvEPRwE",
-    "published_at": "2026-05-18T13:00:06+00:00",
-    "fetched_at": "2026-05-18T15:53:03+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Why self-evaluation is a trap and adversarial evaluator agents work better; why context compaction doesn't cure coherence drift but structured handoffs do; how to decompose work into testable sprint contracts; how to grade subjective output with rubrics an LLM can actually apply; and how to read traces as your primary debugging loop. Plus the question nobody asks: which parts of your harness should you delete when the next model drops?\n\nSpeaker info:\n- Ash Prabaker  |  https://www.linkedin.com/in/ash-prabaker/\n- Andrew Wilson  |  https://www.linkedin.com/in/anddwilson/",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "agents",
-      "benchmark",
-      "infrastructure",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 352293,
-    "title": "I've been waiting for this Codex feature",
-    "url": "https://www.youtube.com/shorts/gVMz2vKzYRY",
-    "published_at": "2026-05-18T12:44:30+00:00",
-    "fetched_at": "2026-05-18T15:53:02+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "\ud83d\udea8 OpenAI just dropped the feature we've all been waiting for: Codex on mobile.\n\nIf you watched my recent video on how I built my custom wiki, you know how much I\u2019ve been relying on Codex. So I was super excited for this feature and I know a bunch of other people have been asking for it as well.\n\nBy just scanning a quick QR code, you can now connect your phone directly to your computer. My wiki and files still live safely on my Mac Studio\u2019s hard drive, but I can now search my \"second brain\" vault, run queries, and manage EVERYTHING remotely from my phone.\n\nYou can prompt Codex to start coding an app, go chill in the living room to watch TV, and just check its progress or answer its questions straight from your couch. I honestly can't overstate how excited I am about this.\n\n\u27a1\ufe0f SHARE this post with someone who would use this!\n\n#OpenAI #Codex #AI #Ainews #ChatGPT",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 373128,
-    "title": "Demis Hassabis: Agents, AGI & The Next Big Scientific Breakthrough",
-    "url": "https://www.youtube.com/watch?is=glpNyjjVkJ69aQlr&v=JNyuX1zoOgU&feature=youtu.be",
-    "published_at": "2026-05-18T12:31:33+00:00",
-    "fetched_at": "2026-05-19T21:11:45+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. love the insights on distillation and edge inference. i want that.\n\notoh you have the host claiming \"engineers are now 500-1000x more productive\"\n\n\ud83e\udee0\n\nat around 16:15 he roasts the army of agents folks. it's hilarious.\n\n\"we still need craft and human taste. why haven't we seen a kid make a hit game? we aren't there yet.\"\n\nthis coming from someone who deeply knows the entire stack down to the machine level should give you pause.\n\ni love him.",
-    "topic": "infrastructure",
-    "tags": [
-      "agents",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 373129,
-    "title": "Yann LeCun on What Comes After LLMs",
-    "url": "https://www.youtube.com/watch?is=cFUVMS-1KhaP5bl9&v=ngBraLDqzdI&feature=youtu.be",
-    "published_at": "2026-05-18T10:39:46+00:00",
-    "fetched_at": "2026-05-19T21:11:45+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing.\n\nit's a really good interview with @ylecun. feeling a lot of good european energy wrt open systems, societal chances and risks, etc. :)",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 352885,
-    "title": "OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments",
-    "url": "https://openai.com/index/dell-codex-enterprise-partnership",
-    "published_at": "2026-05-18T10:00:00+00:00",
-    "fetched_at": "2026-05-18T18:01:42+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI and Dell partner to bring Codex to hybrid and on-premise environments, helping enterprises deploy AI coding agents securely across data and workflows.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 354125,
-    "title": "Anthropic acquires Stainless",
-    "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
-    "published_at": "2026-05-18T00:00:00+00:00",
-    "fetched_at": "2026-05-18T18:01:44+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Anthropic acquires Stainless",
-    "topic": "funding",
-    "tags": [
-      "funding",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 383365,
-    "title": "Codex-maxxing - Jason Liu",
-    "url": "https://jxnl.github.io/blog/writing/2026/05/10/codex-maxxing/",
-    "published_at": "2026-05-17T23:14:38+00:00",
-    "fetched_at": "2026-05-20T12:33:41+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 373130,
-    "title": "Programming as Theory Building: Why Senior Developers Are More Valuable Than Ever",
-    "url": "https://cekrem.github.io/posts/programming-as-theory-building-naur/",
-    "published_at": "2026-05-17T21:05:31+00:00",
-    "fetched_at": "2026-05-19T21:11:45+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. also read part II. also read naur's original article.\n\n> As the paper puts it: when AI is \u201cright,\u201d people become less skilled. When AI is \u201cwrong,\u201d you need skilled people to catch and fix the errors. Either way, the institution suffers.",
-    "topic": "coding",
-    "tags": [
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 383367,
-    "title": "Programming as Theory Building: Why Senior Developers Are More Valuable Than Ever",
-    "url": "https://cekrem.github.io/posts/programming-as-theory-building-naur/",
-    "published_at": "2026-05-17T21:05:03+00:00",
-    "fetched_at": "2026-05-20T12:33:41+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. also read part II. alsomread naur's original article.",
-    "topic": "coding",
-    "tags": [
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 373131,
-    "title": "recommended reading. still relevant.",
-    "url": "https://worrydream.com/refs/Brooks_1986_-_No_Silver_Bullet.pdf",
-    "published_at": "2026-05-17T20:59:12+00:00",
-    "fetched_at": "2026-05-19T21:11:45+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. still relevant.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367966,
-    "title": "Simulate real-world places with Project Genie and Street View",
-    "url": "https://deepmind.google/blog/simulate-real-world-places-with-project-genie-and-street-view/",
-    "published_at": "2026-05-17T19:53:18+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "We\u2019re expanding access to Google AI Ultra subscribers globally and introducing a new capability powered by Street View.",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "release"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367967,
-    "title": "Introducing Gemini Omni",
-    "url": "https://deepmind.google/blog/introducing-gemini-omni/",
-    "published_at": "2026-05-17T19:50:57+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367968,
-    "title": "Introducing Google Antigravity 2.0",
-    "url": "https://deepmind.google/blog/introducing-google-antigravity-2-0/",
-    "published_at": "2026-05-17T19:43:45+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 338600,
-    "title": "Harnesses in AI: A Deep Dive \u2014 Tejas Kumar, IBM",
-    "url": "https://www.youtube.com/watch?v=C_GG5g38vLU",
-    "published_at": "2026-05-17T17:30:06+00:00",
-    "fetched_at": "2026-05-17T18:35:48+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "The agent hit a login page, panicked, reported success anyway, and the upvote never happened. Tejas Kumar's diagnosis: not a prompt problem. A harness problem.\n\nThe demo builds a browser agent on GPT-3.5 Turbo against Hacker News and layers in a harness without touching the prompt once. Guardrails cap iterations and compact context. A verify step reads the tool call history to catch the agent lying about what it did. A login handler watches the browser URL each loop and injects credentials programmatically when it hits the login page. By the end the cheap old model reliably logs in and upvotes the post.\n\nSpeaker info:\n- https://x.com/tejask\n- https://www.linkedin.com/in/tejasq/\n- https://github.com/TejasQ",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "tools",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 336879,
-    "title": "Fighting AI with AI \u2014 Lawrence Jones, Incident",
-    "url": "https://www.youtube.com/watch?v=L2r6vLlLgs8",
-    "published_at": "2026-05-17T16:30:07+00:00",
-    "fetched_at": "2026-05-17T17:09:30+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Incident's AI SRE runs hundreds of prompts per investigation across logs, metrics, traces, and code. When it produces a wrong root cause analysis, there is no tractable way for a human to read through the full trace and find where the reasoning went sideways. Lawrence Jones, founding engineer at Incident.io, describes the moment the team realized they needed AI to debug their AI.\n\nThe talk covers three patterns they built. A small CLI lets coding agents read and edit eval YAML files that had grown too large for agents to work with directly, enabling a red-green runbook where the agent writes a failing eval, fixes the prompt, and checks nothing else broke. Their bigger unlock was serializing every UI debugging view as a downloadable file system: drop it into a Claude Code session, describe the bad behavior, and the agent traces through the prompt hierarchy to tell you exactly which prompt to change. For fleet-scale analysis, 25 agents run in parallel each analyzing one investigation, then a second stage clusters the results to surface systemic failure patterns across customer accounts.\n\nSpeaker info:\n- https://x.com/lawrjones\n- https://www.linkedin.com/in/lawrence2jones/",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "models",
-      "agents",
-      "benchmark",
-      "coding",
-      "policy",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 336621,
-    "title": "GDS weighs in on the NHS's decision to retreat from Open Source",
-    "url": "https://simonwillison.net/2026/May/17/gds-weighs-in/#atom-everything",
-    "published_at": "2026-05-17T15:59:41+00:00",
-    "fetched_at": "2026-05-17T17:09:29+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://shkspr.mobi/blog/2026/05/gds-weighs-in-on-the-nhss-decision-to-retreat-from-open-source/\">GDS weighs in on the NHS&#x27;s decision to retreat from Open Source</a></strong></p>\nTerence Eden continues his coverage of the NHS' <a href=\"https://shkspr.mobi/blog/2026/05/nhs-goes-to-war-against-open-source/\">poorly considered decision</a> to close down access to their open source repositories in response to vulnerabilities reported to them as part of <a href=\"https://simonwillison.net/2026/Apr/7/project-glasswing/\">Project Glasswing</a>.</p>\n<p>Now the Government Digital Service have joined the conversation with <a href=\"https://www.gov.uk/guidance/ai-open-code-and-vulnerability-risk-in-the-public-sector\">AI, open code and vulnerability risk in the public sector</a>, published May 14th. Their key recommendation:</p>\n<blockquote>\n<p>Keep open by default. Making everything private adds additional delivery and policy costs, and can reduce reuse and scrutiny. Openness should remain the default posture, with closure used sparingly and deliberately. </p>\n</blockquote>\n<p>While they don't mention the NHS by name, Terence speaks the language of the civil service and interprets this as a major escalation:</p>\n<blockquote>\n<p>Within the UK's Civil Service you occasionally hear the expression \"being invited to a meeting <em>without biscuits</em>\". It implies a rather frosty discussion without any of the polite niceties of a normal meeting. In general though, even when people have severe disagreements, it is rare for tempers to fray. It is even rarer for those internal disagreements to spill over into public.</p>\n</blockquote>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/open-source\">open-source</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/gov-uk\">gov-uk</a>, <a href=\"https://simonwillison.net/tags/terence-eden\">terence-eden</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "safety",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 335123,
-    "title": "Why Your AI UX Is Broken (and It's Not the Model's Fault) \u2014 Mike Christensen, Ably",
-    "url": "https://www.youtube.com/watch?v=YNJvm7t3yq8",
-    "published_at": "2026-05-17T15:30:06+00:00",
-    "fetched_at": "2026-05-17T15:59:45+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "SSE ties a response stream to a single connection. The user refreshes the page, walks out of WiFi range, or opens a second tab and the in-progress response is gone. Abort and resume are mutually exclusive for the same reason: the only signal a client can send over a one-way pipe is closing it, so the agent cannot tell the difference between a cancel and a disconnect. Vercel's AI SDK documents this explicitly.\n\nMike Christensen from Ably makes the case for treating the session itself as a durable shared resource, decoupled from any individual connection, device, or agent instance. Clients subscribe to the session rather than to a request, so reconnects resume automatically, any tab or device has full visibility of live activity, and concurrent agents write independently without routing everything through an orchestrator. The demo shows all of this: multi-tab sync, a forced network disconnect that self-recovers, two agents running in parallel, and a handoff to a human support agent who joins the session mid-conversation with the full interaction history already visible.\n\nSpeaker info:\n- https://x.com/christensencode\n- https://www.linkedin.com/in/mikescottchristensen/",
-    "topic": "hardware",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "coding",
-      "hardware",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367969,
-    "title": "Gemini for Science: AI experiments and tools for a new era of discovery",
-    "url": "https://deepmind.google/blog/gemini-for-science-ai-experiments-and-tools-for-a-new-era-of-discovery/",
-    "published_at": "2026-05-17T13:50:34+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "A collection of science tools and experiments to expand the scale and precision of scientific exploration.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 367970,
-    "title": "Making it easier to understand how content was created and edited",
-    "url": "https://deepmind.google/blog/making-it-easier-to-understand-how-content-was-created-and-edited/",
-    "published_at": "2026-05-17T13:43:50+00:00",
-    "fetched_at": "2026-05-19T18:21:52+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "We're expanding our tools to help you understand how content was created and edited across the web.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 331676,
-    "title": "AIE Singapore Day 2 ft. Google DeepMind, OpenClaw, Adaption, Arize, Cloudflare, Robot Company & more",
-    "url": "https://www.youtube.com/watch?v=m12vGjfbNlo",
-    "published_at": "2026-05-17T10:50:09+00:00",
-    "fetched_at": "2026-05-17T11:18:58+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "May 17, 2026 - all times in SGT\n\n-- 9am - kickoff\nhttps://www.ai.engineer/singapore#schedule\n\njoin us in person and on all side events https://luma.com/1eofvp02?tk=kN58jG",
-    "topic": "robotics",
-    "tags": [
-      "coding",
-      "robotics",
-      "policy",
-      "events",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 322098,
-    "title": "AIE Singapore Day 2 ft. Google DeepMind, OpenClaw, Adaption, Arize, Cloudflare, Robot Company & more",
-    "url": "https://www.youtube.com/watch?v=m12vGjfbNlo",
-    "published_at": "2026-05-17T00:48:11+00:00",
-    "fetched_at": "2026-05-17T01:17:15+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "May 17, 2026 - all times in SGT\n\n-- 9am - kickoff\nhttps://www.ai.engineer/singapore#schedule\n\njoin us in person and on all side events https://luma.com/1eofvp02?tk=kN58jG",
-    "topic": "robotics",
-    "tags": [
-      "coding",
-      "robotics",
-      "policy",
-      "events",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 320498,
-    "title": "New AI Model Can Do Shocking Things",
-    "url": "https://www.youtube.com/shorts/HdLTWc3KOfk",
-    "published_at": "2026-05-16T23:48:39+00:00",
-    "fetched_at": "2026-05-17T00:26:44+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "This might be the first AI demo in a LONG time that felt like there was actually a big step up in intelligence. \n\nThinking Machines Labs just showed off their new \u201cInteraction Models\u201d and some of these demos genuinely feel like the next evolution of AI.\n\nThey showed off real-time translation while someone is still speaking and a deep understanding of timing, pauses, posture, and context during a conversation.\n\nI was genuinely impressed.\n\nHere's the link if you want to check out all the demos and read more information: thinkingmachines.ai/blog/interaction-models\n\n#ai #ainews #aimodels #thinkingmachineslabs",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 316393,
-    "title": "Warelay -> OpenClaw",
-    "url": "https://simonwillison.net/2026/May/16/openclaw-names/#atom-everything",
-    "published_at": "2026-05-16T20:23:30+00:00",
-    "fetched_at": "2026-05-16T23:19:33+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "16th May 2026\nIn preparation for a lightning talk I'm giving at PyCon US [this afternoon](https://us.pycon.org/2026/schedule/presentation/175/) I decided to figure out how many names OpenClaw has actually had since that [first commit](https://github.com/openclaw/openclaw/commit/f6dd362d39b8e30bd79ef7560aab9575712ccc11) back in November.\nThanks to this [first_line_history.py tool](https://tools.simonwillison.net/python/#first_line_historypy) ([code here](https://github.com/simonw/tools/blob/main/python/first_line_history.py)) the answer, according to the Git history of the OpenClaw README, is:\nWarelay \u2192 CLAWDIS \u2192 CLAWDBOT \u2192 Clawdbot \u2192 Moltbot \u2192\ud83e\udd9e OpenClaw\nOr in detail (the output from the tool):\n2025-11-24T11:23:15+01:00[16dfc1a]# Warelay \u2014 WhatsApp Relay CLI (Twilio) 2025-11-24T11:41:37+01:00[d4153da]# \ud83d\udce1 Warelay \u2014 WhatsApp Relay CLI (Twilio) 2025-11-24T17:47:57+01:00[343ef9b]# \ud83d\udce1 warelay \u2014 WhatsApp Relay CLI (Twilio) 2025-11-25T04:44:10+01:00[14b3c6f]# \ud83d\udce1 warelay \u2014 WhatsApp Relay CLI 2025-11-25T12:48:40+01:00[4814021]# \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp\u2014Twilio-backed or QR-linked. 2025-11-25T13:50:18+01:00[d51a3e9]# warelay \ud83d\udce1 - Send, receive, and auto-reply on WhatsApp via Twilio or QR-linked WhatsApp Web; webhook setup in one command 2025-11-25T13:51:13+01:00[4d2a8a8]# \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp\u2014Twilio-backed or QR-linked. 2025-11-25T14:52:43+01:00[1ef7f4d]# \ud83d\udce1 warelay \u2014 Send, receive, and auto-reply on WhatsApp. 2025-12-03T15:45:32+00:00[a27ee23]# \ud83e\udd9e CLAWDIS \u2014 WhatsApp Gateway for AI Agents 2025-12-08T12:43:13+01:00[17fa2f4]# \ud83e\udd9e CLAWDIS \u2014 WhatsApp & Telegram Gateway for AI Agents 2025-12-19T18:41:17+01:00[7710439]# \ud83e\udd9e CLAWDIS \u2014 Personal AI Assistant 2026-01-04T14:32:47+00:00[246adaa]# \ud83e\udd9e CLAWDBOT \u2014 Personal AI Assistant 2026-01-10T05:14:09+01:00[cdb915d]# \ud83e\udd9e Clawdbot \u2014 Personal AI Assistant 2026-01-27T13:37:47-05:00[3fe4b25]# \ud83e\udd9e Moltbot \u2014 Personal AI Assistant 2026-01-30T03:15:10+01:00[9a71607]# \ud83e\udd9e OpenClaw \u2014 Personal AI Assistant\nRecent articles\n[Notes on the xAI/Anthropic data center deal](/2026/May/7/xai-anthropic/)- 7th May 2026[Live blog: Code w/ Claude 2026](/2026/May/6/code-w-claude-2026/)- 6th May 2026[Vibe coding and agentic engineering are getting closer than I'd like](/2026/May/6/vibe-coding-and-agentic-engineering/)- 6th May 2026",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "models",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 373132,
-    "title": "The CTF scene is dead - kabir.au",
-    "url": "https://kabir.au/blog/the-ctf-scene-is-dead",
-    "published_at": "2026-05-16T19:50:13+00:00",
-    "fetched_at": "2026-05-19T21:11:45+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.\n\nthis is our field's version of \"i hoped AI would be able to do my laundry, but instead it does my art\"",
-    "topic": "general",
-    "tags": [
       "general"
     ],
     "dearrow_thumbnail_url": "",
