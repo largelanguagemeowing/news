@@ -1,5 +1,68 @@
 [
   {
+    "article_id": 576953,
+    "title": "Who\u2019s Afraid of Chinese Models?",
+    "url": "http://stratechery.com/2026/whos-afraid-of-chinese-models/",
+    "published_at": "2026-07-21T06:15:36+00:00",
+    "fetched_at": "2026-07-21T07:07:55+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 576462,
+    "title": "Your agent architecture has a half-life of 6 months \u2014 Dan Farrelly, CTO, Inngest",
+    "url": "https://www.youtube.com/watch?v=X1kp-ABIIxQ",
+    "published_at": "2026-07-21T03:14:22+00:00",
+    "fetched_at": "2026-07-21T07:07:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A short history of the right way to build an agent: RAG, ReAct, prompt chaining, orchestrator-workers, MCP, CLI, MCP again... CLI again?? Every time you adopt a trend you rebuild your architecture. In this talk, Dan Farrelly, Inngest cofounder and CTO, is not going to tell you what comes next. He's going to show you how to build so it doesn't matter. He'll cover the core primitives that show up in every production agent, how bringing decisions closer to code provides more stack flexibility, and why the right execution layer unlocks faster iteration.\n\n### Dan Farrelly\nCTO and Co-founder \u00b7 Inngest\n[LinkedIn](https://www.linkedin.com/in/djfarrelly)\n\nDan Farrelly is CTO and co-founder of Inngest, a platform for durable serverless functions, workflows and agent orchestration. He was previously CTO at Buffer and created developer tools including Timezone.io and MailDev.",
+    "topic": "research",
+    "tags": [
+      "research",
+      "agents",
+      "coding",
+      "tutorials",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 576463,
+    "title": "The Desktop Frontier \u2014 Ahmad Osman, Osmantic",
+    "url": "https://www.youtube.com/watch?v=XV2oYi7kojc",
+    "published_at": "2026-07-21T02:28:29+00:00",
+    "fetched_at": "2026-07-21T07:07:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ahmad Osman shows the power of local AI on stage, running frontier open models on a DGX Station.\n\nSpeaker:\nAhmad Osman \u2014 Founder, Osmantic\nAhmad builds local and open AI systems, with a focus on making frontier intelligence practical on personal hardware.\n\nLinks:\nX: https://x.com/TheAhmadOsman\nLinkedIn: https://linkedin.com/in/TheAhmadOsman\nWebsite: https://ahmadosman.com/\n\ntimestamps\n0:00 Introduction and the Desktop Frontier concept\n0:47 Future predictions: GLM 5.2 on an RTX 5090\n1:17 Efficiency over raw size: The move toward compact intelligence\n1:51 The concept of impact per parameter\n2:48 Shifting hardware footprints: From server-grade to consumer-grade\n3:38 Architecture hacks and the compounding nature of AI research\n4:33 Explaining the Densing Law: Getting more intelligence from fewer parameters\n5:09 Running frontier-class models like GLM 5.2 on local hardware\n7:32 The case for sovereign AI: Owning your own compute stack\n9:08 A retrospective on open-weight models: Mistral to Qwen\n11:12 The evolution of reasoning: DeepSeek R1 and beyond\n12:08 The rise of agentic performance and tool calling\n15:33 Economic value: Does hardware appreciate as models become more efficient?\n16:38 Closing thoughts: Why you should own your own GPU\n\nKey Quotes for Virality:\n\n\"It's not that small models are beating big models. It's that newer, more efficient models are beating older, less efficient ones.\" (4:23)\n\"Within roughly 18 months we are going to have the equivalent of GLM 5.2 class intelligence running on a single RTX 5090.\" (0:52)\n\"Why wouldn't you want to be in control of the models that you run? Why wouldn't you want to make sure that nothing gets taken away from you?\" (7:56)\n\"The hardware purchase today... does it get more valuable as models become more efficient and smaller in size?\" (15:33)",
+    "topic": "hardware",
+    "tags": [
+      "hardware",
+      "models",
+      "agents",
+      "research",
+      "infrastructure",
+      "policy",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 568692,
     "title": "Claude Code plugin has been approved - now just a countdown until the next version release. Soon, you'll be able to get a properly managed installation of my skills you never need to think about again.",
     "url": "https://nitter.net/mattpocockuk/status/2079318617041035618#m",
@@ -9731,71 +9794,6 @@
       "ai-models",
       "release",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 389115,
-    "title": "Why Multi-Threaded Code Can Sometimes Misbehave (Weak Memory Concurrency) - Computerphile",
-    "url": "https://www.youtube.com/watch?is=4vnwLgbMtgCmHhtj&v=E3hvLz717zM&feature=youtu.be",
-    "published_at": "2026-05-20T19:08:14+00:00",
-    "fetched_at": "2026-05-20T20:59:47+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. even if you are a seasoned engineer, watching computerphile is awesome. master classes in breaking down complex topics. learn how to do that. super power.",
-    "topic": "tutorials",
-    "tags": [
-      "infrastructure",
-      "coding",
-      "tutorials",
-      "education",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 386543,
-    "title": "How fast is 10 tokens per second really?",
-    "url": "https://simonwillison.net/2026/May/20/tokens-per-second/#atom-everything",
-    "published_at": "2026-05-20T17:57:45+00:00",
-    "fetched_at": "2026-05-20T18:40:43+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://mikeveerman.github.io/tokenspeed/\">How fast is 10 tokens per second really?</a></strong></p>\nNeat little HTML app by Mike Veerman (<a href=\"https://github.com/MikeVeerman/tokenspeed/blob/master/index.html\">source code here</a>) which simulates LLM token output speeds from 5/second to 800/second.</p>\n<p>Useful if you see a model advertised as \"30 tokens/second\" and want to get a feel for what that actually looks like.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=48174920\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 386801,
-    "title": "Any-to-Any: Building Native Multimodal Agents - Patrick L\u00f6ber, Google DeepMind",
-    "url": "https://www.youtube.com/watch?v=GIRpQEfYf3U",
-    "published_at": "2026-05-20T17:00:07+00:00",
-    "fetched_at": "2026-05-20T18:40:44+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Draw arrows on a map and ask Gemini to generate a picture of what you see. It produces the Golden Gate Bridge. Not because it matched pixels, but because the image generation model is built on top of Gemini's world understanding and knows what those arrows are pointing at.\n\nPatrick L\u00f6ber walks through the full any-to-any stack: multimodal understanding where Gemini ingests PDFs, video, and audio up to nine-plus hours at once, native image and speech generation called as tools from an agentic loop, and a live audio model where audio goes in and audio comes out through a single architecture with no cascaded pipeline. The session ends with the building blocks for a Notebook LM clone where a reasoning agent decides what to generate rather than a hardcoded workflow.\n\nSpeaker info:\n- https://x.com/patloeber\n- https://linkedin.com/in/patrick-l%C3%B6ber-403022137\n- https://github.com/patrickloeber",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
