@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 589350,
+    "title": "HTML Is All Agents Need \u2014 James Russo, HeyGen",
+    "url": "https://www.youtube.com/watch?v=Cz4v1WHVyZc",
+    "published_at": "2026-07-21T18:54:01+00:00",
+    "fetched_at": "2026-07-21T19:22:35+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "LLMs are great at writing code. So the question we kept asking was: can they write code that produces a video? We thought it would be easy. The reality was a year of trying. We started with massive prompts to get very mediocre output. We made it more agentic to iterate and improve its output. This worked okay but wasn't production-ready. Eventually we tried Remotion. It got us deterministic video, but the React framework kept boxing the agent in. The more guardrails we added, the safer and more boring the outputs got. When we utilized plain HTML, CSS, and JavaScript, the creativity came back to the output. So we set out to build a video rendering framework on top of HTML. But it needed to work with Gemini Flash. Why? Because one tell that a framework is fighting an agent is needing the biggest model just to get usable output. So from there we shaped the framework around what small models could reliably author. That left one real engineering question: can we keep the freedom of HTML and still render a deterministic MP4? Browsers don't want to do that. Image decoders, font loaders, and animation clocks all run async on their own schedule. Great for performance. Terrible for \"render the same pixels every time.\" Throughout, we iterated constantly with agentic loops and self-improving evals to test out the framework, find issues in our renderer, and shape a set of skills that gave the agents Taste instead of guardrails. This talk is what it took to get there.\n\nSpeaker:\nJames Russo \u2014 Software Engineer, HeyGen\nEngineering lead for HyperFrames. Currently at HeyGen building the future of video storytelling, Previously at Brex\nX: https://x.com/Rames_Jusso\nLinkedIn: https://www.linkedin.com/in/james-russo-56026897/\nWebsite: https://boredhacking.com/\n\nTimeline:\n\n0:00 Introduction and the HeyGen mission\n0:58 The challenge of creating launch videos\n1:27 The importance of A-roll, B-roll, and composition\n2:13 Why HTML, CSS, and JavaScript are the native languages of LLMs\n3:06 Comparing HTML to other frameworks like Remotion\n5:24 Designing the Hyperframes framework with Gemini Flash\n6:54 How Hyperframes works in the browser\n8:56 Leveraging browser-native technologies like Three.js and WebGL\n9:25 Using Skills to teach agents video taste\n10:56 Crafting videos: the human-in-the-loop workflow\n12:09 Keyframes integration\n12:35 Scaling and performance metrics\n13:28 Future goals: Code-to-Video benchmarking\n\nQuotes:\n\n\"Why not let the LLMs and agents talk in their native tongue when creating videos?\" (2:58)\n\"One tell that a framework is fighting an agent is needing the biggest model just to get usable output.\" (5:24)\n\"We don't have to teach them the language. We just teach them how to create good videos.\" (9:46)\n\"Agents have made building incredibly easy. Launching is still quite hard.\" (14:31)",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 587183,
     "title": "Local AI 201",
     "url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
@@ -714,6 +736,29 @@
     "tags": [
       "models",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 589364,
+    "title": "Active Graph Agent Runtime (BabyAGI 4) \u2014 Yohei Nakajima, Untapped Capital",
+    "url": "https://www.youtube.com/watch?v=khVX_BUnEwU",
+    "published_at": "2026-07-20T12:07:21+00:00",
+    "fetched_at": "2026-07-21T19:22:35+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Yohei Nakajima was running a 500 question eval when his API key died at question 350. Normally that means restarting the whole long agent from scratch. Instead it rolled back one step and resumed at 353, because in ActiveGraph the log is the agent. Most people build agents around the LLM and bolt on memory and logging; Nakajima, the creator of BabyAGI, flips it and builds around an immutable event log. Every action and every change to the agent flattens into one typed log, which projects a graph that is the agent's state, so you get replays, rollbacks, and forks for free.\n\nOn top of the log sit behaviors that react to graph changes and emit events, policies that decide what the agent may change on its own versus what needs a human or a contradiction check, and swappable packs for memory, tools, and chat. The LLMs never talk to each other; they only touch shared state, an idea he borrows from 1970s blackboard systems and Kafka, and his hunch is that AI writes this style better than modern agent code because it has decades of training data on it. The payoff is self improvement: a loop that forks the agent, proposes a patch, gates it behind sandbox tests, and keeps it only if accuracy actually rises, and a lab that reads his blog posts, runs its own experiments, and once found a bug in its own code and opened the PR.\n\nSpeaker info:\n- https://x.com/yoheinakajima\n- https://www.linkedin.com/in/yoheinakajima\n- https://yohei.me\n\nTimestamps:\n0:00 - ActiveGraph and three years of BabyAGI\n1:55 - Build around the log, not the LLM\n3:24 - Behaviors, policies, and views\n6:43 - Packs and the blackboard architecture lineage\n8:12 - The log as memory, and the API key that resumed itself\n9:53 - Reference agents built natively on the log\n11:11 - Self improvement: regimes and controlled self modification\n12:25 - ActiveGraph Lab writes its own experiments\n13:02 - A Pokemon card competition as a testbed\n14:33 - Surprises: why AI architects this better\n15:49 - Why an agent needs an experiential world model",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "coding",
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9745,45 +9790,6 @@
       "api",
       "agents",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 402561,
-    "title": "We\u2019re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks",
-    "url": "https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/",
-    "published_at": "2026-05-21T19:46:42+00:00",
-    "fetched_at": "2026-05-21T20:20:02+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 403633,
-    "title": "datasette-agent-sprites 0.1a0",
-    "url": "https://simonwillison.net/2026/May/21/datasette-agent-sprites/#atom-everything",
-    "published_at": "2026-05-21T18:21:07+00:00",
-    "fetched_at": "2026-05-21T20:20:03+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent-sprites/releases/tag/0.1a0\">datasette-agent-sprites 0.1a0</a></p>\n        <p>A Datasette Agent plugin for running commands in a <a href=\"https://sprites.dev\">Fly Sprites</a> sandbox.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/sandboxing\">sandboxing</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/fly\">fly</a>, <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
