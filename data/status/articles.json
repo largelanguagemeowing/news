@@ -1,5 +1,63 @@
 [
   {
+    "article_id": 585063,
+    "title": "2026 State of AI Engineering \u2014 Barr Yaron, Amplify Partners",
+    "url": "https://www.youtube.com/watch?v=RGe6EjucbzI",
+    "published_at": "2026-07-21T16:11:29+00:00",
+    "fetched_at": "2026-07-21T16:23:30+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Barr Yaron shares her perspective on the results and emerging state of AI engineering in 2026.\n\nSpeaker:\nBarr Yaron \u2014 Partner, Amplify Partners\nBarr backs founders building the AI infrastructure and applications that will shape the future.\n\nLinks:\nX: https://x.com/barrnanas\nLinkedIn: https://linkedin.com/in/barryaron\nWebsite: https://barrchives.com\n\nTimestamps\n\n0:00 Introduction and Survey Context\n2:26 The AI Engineering Workforce\n3:21 Current Modalities and Adoption\n5:34 Model Strategy: Closed vs. Open-Weight\n8:20 Cost as an Engineering Constraint\n9:36 The Rise of Agentic Workflows\n11:57 Infrastructure Challenges and Evals\n12:53 The Build vs. Buy Trade-off\n14:09 Impact on Engineering Culture and Teams\n16:27 Future Bets and Predictions\n\nQuotes:\n\n\"The median new engineer has nearly as much AI experience as the median 10-year software veteran.\" (3:07)\n\n\"Cost is now a first-class engineering constraint.\" (8:38)\n\n\"Agents are no longer reading, summarizing, drafting\u2014they\u2019re taking actions inside of systems.\" (10:58)\n\n\"The biggest challenge in your stack? Every single year, the number one answer is eval.\" (12:12)\n\n\"Shipping software is not gated on being an engineer anymore.\" (16:17)",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "opinion",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 583685,
+    "title": "Introducing Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
+    "url": "https://deepmind.google/blog/introducing-gemini-36-flash-35-flash-lite-and-35-flash-cyber/",
+    "published_at": "2026-07-21T15:16:30+00:00",
+    "fetched_at": "2026-07-21T16:23:26+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "We\u2019re introducing new Gemini models, including Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Flash Cyber.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 585049,
+    "title": "Hugging Face Journal Club: AsyncOPD and How Stale Can On-Policy Distillation Be?",
+    "url": "https://www.youtube.com/watch?v=ZWuFMVmKXrI",
+    "published_at": "2026-07-21T15:08:47+00:00",
+    "fetched_at": "2026-07-21T16:23:30+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "The Hugging Face post-training team discusses how on-policy distillation (OPD) can be made fully asynchronous to improve the throughput of training by 2-3x\n\nPaper: https://huggingface.co/papers/2606.24143",
+    "topic": "research",
+    "tags": [
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 582646,
     "title": "Nativ: Run AI models locally on your Mac",
     "url": "https://simonwillison.net/2026/Jul/21/nativ/#atom-everything",
@@ -154,6 +212,67 @@
       "infrastructure",
       "policy",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 584826,
+    "title": "Accelerating Text-to-Video Generation with Calibrated Sparse Attention",
+    "url": "https://machinelearning.apple.com/research/calibrated-sparse-attention",
+    "published_at": "2026-07-21T00:00:00+00:00",
+    "fetched_at": "2026-07-21T16:23:27+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Recent diffusion models enable high-quality video generation, but suffer from slow runtimes. The large transformer-based backbones used in these models are bottlenecked by spatiotemporal attention. In this paper, we identify that a significant fraction of token-to-token connections consistently yield negligible scores across various inputs, and their patterns often repeat across queries. Thus, the attention computation in these cases can be skipped with little to no effect on the result. This observation continues to hold for connections among local token blocks. Motivated by this, we\u2026",
+    "topic": "research",
+    "tags": [
+      "models",
+      "benchmark",
+      "research",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 584825,
+    "title": "Environment-free Synthetic Data Generation for API-Calling Agents",
+    "url": "https://machinelearning.apple.com/research/environment-free",
+    "published_at": "2026-07-21T00:00:00+00:00",
+    "fetched_at": "2026-07-21T16:23:27+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Training API-calling large language model (LLM) agents demands massive amounts of high-quality trajectories. However, collecting such data at scale typically requires fully implemented environments with executable APIs and realistic, pre-populated backend databases, creating a major bottleneck for scalability. To overcome this, we propose an environment-free synthetic data generation approach that leverages LLMs as on-the-fly digital world models. Given only API specifications, our method generates trajectories mimicking interactions between an agent and a stateful environment. Specifically\u2026",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "api",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 585363,
+    "title": "How Datadog built a \u201cuniversal machine tool\u201d for Claude Code",
+    "url": "https://claude.com/blog/how-datadog-built-a-universal-machine-tool-for-claude-code",
+    "published_at": "2026-07-21T00:00:00+00:00",
+    "fetched_at": "2026-07-21T16:23:31+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "How Datadog built a \u201cuniversal machine tool\u201d for Claude Code",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1236,6 +1355,26 @@
       "benchmark",
       "research",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 583686,
+    "title": "Introducing Gemini 3.5 Flash Cyber",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
+    "published_at": "2026-07-17T15:00:11+00:00",
+    "fetched_at": "2026-07-21T16:23:26+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "Google introduces Gemini 3.5 Flash Cyber, a lightweight cybersecurity model to find and patch vulnerabilities.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9645,152 +9784,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 403634,
-    "title": "datasette-agent-charts 0.1a2",
-    "url": "https://simonwillison.net/2026/May/21/datasette-agent-charts/#atom-everything",
-    "published_at": "2026-05-21T15:15:58+00:00",
-    "fetched_at": "2026-05-21T20:20:03+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent-charts/releases/tag/0.1a2\">datasette-agent-charts 0.1a2</a></p>\n        <blockquote>\n<ul>\n<li>\"View SQL query\" buttons below rendered charts.</li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 403635,
-    "title": "datasette-agent 0.1a3",
-    "url": "https://simonwillison.net/2026/May/21/datasette-agent-2/#atom-everything",
-    "published_at": "2026-05-21T15:04:09+00:00",
-    "fetched_at": "2026-05-21T20:20:03+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent/releases/tag/0.1a3\">datasette-agent 0.1a3</a></p>\n        <blockquote>\n<ul>\n<li>\"View SQL query\" buttons for both visible tables and collapsed SQL result tool calls.</li>\n<li>Don't display empty reasoning chunks</li>\n<li>Improved handling of truncated responses - table still displays to the user even if the SQL results were truncated when showing the agent.</li>\n</ul>\n</blockquote>\n<p>See <a href=\"https://datasette.io/blog/2026/datasette-agent/\">Datasette Agent, an extensible AI assistant for Datasette</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 400044,
-    "title": "Scaling Agents on Kubernetes with acpx and ACP \u2014 Onur Solmaz, OpenClaw",
-    "url": "https://www.youtube.com/watch?v=VaS2h-dY1-4",
-    "published_at": "2026-05-21T15:00:06+00:00",
-    "fetched_at": "2026-05-21T15:57:04+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "OpenClaw receives 300 to 500 pull requests per day. Most arrive AI generated, most are not mergeable, and every one of them is signal about something broken in the codebase. Onur Solmaz built acpx to process them without him in the loop.\n\nacpx is a headless CLI for the Agent Client Protocol. It replaces PTY scraping with structured agent to client communication and drives sessions through a node based workflow graph: reproduce the bug, judge the implementation, check for conflicts, run a review loop, emit structured JSON. Onur runs parallel Codex sessions from Discord channels while traveling, one channel per task. The talk ends with disposable agent pods on Kubernetes, a Go operator that provisions a full compute environment per task, wires it into Slack, and tears it down when the work is done.\n\nSpeaker info:\n- https://x.com/onusoz\n- https://www.linkedin.com/in/osolmaz/\n- https://github.com/osolmaz",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "api",
-      "agents",
-      "infrastructure",
-      "coding",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 400045,
-    "title": "Your Coding Agent Should Do AI System Engineering \u2014 Ben Burtenshaw, Hugging Face",
-    "url": "https://www.youtube.com/watch?v=JomVvNDjGb8",
-    "published_at": "2026-05-21T13:00:06+00:00",
-    "fetched_at": "2026-05-21T15:57:04+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "An agent written RMSNorm kernel hit 1.88x speedups on H100s. A finetuned Qwen3 0.6B hit 35% on LiveCodeBench. Neither result required a systems engineer. Just coding agents with the right skills loaded.\n\nBen Burtenshaw from Hugging Face walks through three levels: using Claude Code interactively to write and benchmark CUDA kernels distributed as versioned repos on the Hub, a zero-shot task where an agent finetunes a model end to end from a single prompt, and a multi agent research lab running parallel experiments overnight on Hub compute while a reporter agent pushes results to a live Trackio dashboard. The through line is skills: file based context that turns a zero shot failure into a few shot workflow. CUDA programming and ML training pipelines were deep specializations that took years. Skills compress that timeline to hours.\n\nSpeaker info:\n- https://x.com/ben_burtenshaw\n- https://www.linkedin.com/in/ben-burtenshaw/\n- https://github.com/burtenshaw",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 399984,
-    "title": "Notion Drops Massive Update For Developers",
-    "url": "https://www.youtube.com/shorts/E6kQi65PKNc",
-    "published_at": "2026-05-21T12:45:38+00:00",
-    "fetched_at": "2026-05-21T15:57:03+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Notion just quietly dropped a MASSIVE update for developers.\n\nThe new Notion Developer Platform is officially here, and they just rolled out the ability to:\n\n- Control and build with Notion directly from your terminal.\n- Run your code directly on Notion\u2019s infrastructure.\n- Deploy real-time triggers for your automations.\n- Allow external AI agents like OpenClaw or Hermes to build in Notion for you\n\nSend this to a Notion power-user so they know about this update!\n\n#AI #productivityhack #ainews #aiagents",
-    "topic": "news",
-    "tags": [
-      "news",
-      "agents",
-      "coding",
-      "policy",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 400754,
-    "title": "AdventHealth advances whole-person care with OpenAI",
-    "url": "https://openai.com/index/adventhealth",
-    "published_at": "2026-05-21T12:00:00+00:00",
-    "fetched_at": "2026-05-21T18:03:52+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "AdventHealth is using ChatGPT for Healthcare to streamline workflows, reduce administrative burden, and return more time to patient care.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 396210,
-    "title": "On the slow death of Scaling (birth of Adaption Labs) | Sara Hooker | HF ML Club India EP2",
-    "url": "https://www.youtube.com/watch?v=7knwihgj0fU",
-    "published_at": "2026-05-21T05:29:18+00:00",
-    "fetched_at": "2026-05-21T08:32:37+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "This video features Dr. Sara Hooker, co-founder of Adaption Labs, discussing the transition from monolithic model scaling to an era of adaptive intelligence. Addressing the Hugging Face ML Club India, she explores why the \"bigger is better\" race in compute is reaching an inflection point and what this means for the future of research.\n\nTimestamps:\n* 00:00 - Introduction of Dr. Sara Hooker\n* 02:37 - Personal anecdote: Using ChatGPT to generate presentation slides\n* 04:03 - The problem with monolithic AI and \"one-size-fits-all\" models\n* 05:27 - Analyzing the \"Bitter Lesson\" and the limits of scaling\n* 07:08 - How the belief in scaling has shaped the AI ecosystem\n* 09:28 - Evidence against monolithic models: Performant small models and weight redundancy\n* 11:00 - Recent disappointments in massive model scaling\n* 12:20 - Moving toward post-training and test-time scaling\n* 14:14 - Optimization in the data space and Adapt Data\n* 15:38 - Auto Scientist: Automating end-to-end model adaptation\n* 19:26 - The pillars of research at Adaption Labs\n* 21:30 - Q\\&amp;A: Can you explicitly optimize for adaptability?\n* 23:44 - Q\\&amp;A: Relationship between pre-training, post-training, and test-time scaling\n* 28:46 - Q\\&amp;A: Defining adaptive intelligence vs. continual learning\n* 31:32 - Q\\&amp;A: Efficiency as a pillar for data and compute\n* 35:12 - Q\\&amp;A: Why do labs still invest in LLMs over alternatives?\n* 37:20 - Q\\&amp;A: The impact of the \"Hardware Lottery\"\n* 40:30 - Q\\&amp;A: The future of adaptive user interfaces\n* 43:03 - Q\\&amp;A: Accuracy and limitations of public \"scaling laws\"\n* 44:28 - Q\\&amp;A: Undervalued research domains (Sparsity and alternative architectures)\n* 48:50- Q\\&amp;A: Evolution of advice for machine learning beginners\n* 53:16 - Q\\&amp;A: The \"Strawberry\" problem and tokenization issues\n* 56:44 - Q\\&amp;A: The importance of research communities\n* 57:50 - Q\\&amp;A: pertinent theoretical research in optimization",
-    "topic": "research",
-    "tags": [
-      "models",
-      "research",
-      "video",
-      "infrastructure",
-      "coding",
-      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
