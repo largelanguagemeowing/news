@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 612895,
+    "title": "GPT-6 Goes Rogue? The HuggingFace Incident, Sans Hype",
+    "url": "https://www.youtube.com/watch?v=wzY2fV4Mp3U",
+    "published_at": "2026-07-22T16:36:53+00:00",
+    "fetched_at": "2026-07-22T17:19:47+00:00",
+    "source_id": "ai-explained",
+    "source_name": "AI Explained",
+    "extraction_method": "rss",
+    "body": "An unreleased internal OpenAI model, very likely to be called GPT-6, was able to autonomously break out of its sandbox AND break into HuggingFace, just to score higher on a benchmark prompt. This video has the details you may have missed, a layperson analogy, whether this is truly novel, and more\u2026\n\nDozens more Exclusive videos on Patreon ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n01:17 - HuggingFace Earlier Report - the possible week gap\n02:24 - But what happened?\n05:45 - Simplified Version\n07:56 - Not the first time\u2026\n10:54 - What Does it Mean for Open Source?\n\nThe Incident: https://openai.com/index/hugging-face-model-evaluation-security-incident/\nhttps://huggingface.co/blog/security-incident-july-2026\n\n\nThe Post the Day Before: https://openai.com/index/safety-alignment-long-horizon-models/\n\n\nMythos\u2019 Earlier Escape: https://futurism.com/artificial-intelligence/anthropic-claude-mythos-escaped-sandbox\n\nExploitGym: https://arxiv.org/pdf/2605.11086\n\nSam Confession: https://x.com/sama/status/2079661132302995790\n\nAnthropic Researcher Reacts: https://x.com/Mononofu/status/2079724399452926055\n\nClem (HuggingFace CEO): https://x.com/ClementDelangue/status/2079670308156645882\nhttps://x.com/ClementDelangue/status/2079301434357456931\n\nXi Jinping: https://archive.fo/20260717195548/https://www.businessinsider.com/xi-jinping-open-source-ai-us-competition-openai-anthropic-models-2026-7\nBans: https://www.axios.com/2026/07/20/ai-us-china-open-source-kimi\nQwen Retweet: https://x.com/AlibabaGroup/with_replies\n\nCodex Growth: https://x.com/petergostev/status/2079614914398740764/photo/1 \n\nKimi K3: https://artificialanalysis.ai/evaluations/harvey-lab-aa?eval-score=all-pass-rate\n\nGPT 5.6 Sol Cheats on METR: https://metr.substack.com/p/2026-06-26-gpt-5-6-sol\n\nGuardian Headline: https://www.theguardian.com/technology/2026/jul/22/openai-says-its-models-went-rogue-and-hacked-startup-in-unprecedented-incident\n\nRussian Origin?: https://news.ycombinator.com/item?id=48998362\n\nPower Trends: https://pbs.twimg.com/media/HNRtrjhagAAvBN_?format=png&amp;name=900x900\n\n\n\nKimi K3 Exclusive Video: https://www.patreon.com/AIExplained/posts/kimi-moment-kimi-164108791\n\n\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
+    "topic": "research",
+    "tags": [
+      "research",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 609362,
     "title": "For big chunks of work, I recommend splitting up multi-phase plans into two docs: - The spec: where you're going - The tickets: the steps on the journey there This helps you pivot quickly if you need to change destination. More detail:",
     "url": "https://nitter.net/mattpocockuk/status/2079926855788855524#m",
@@ -182,6 +205,24 @@
       "release",
       "agents",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 613227,
+    "title": "How Outtake built a cyber investigator on Claude",
+    "url": "https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude",
+    "published_at": "2026-07-22T00:00:00+00:00",
+    "fetched_at": "2026-07-22T17:19:47+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "How Outtake built a cyber investigator on Claude",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9733,45 +9774,6 @@
       "agents",
       "benchmark",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 424392,
-    "title": "The memory shortage is causing a repricing of consumer electronics",
-    "url": "https://simonwillison.net/2026/May/22/memory-shortage/#atom-everything",
-    "published_at": "2026-05-22T22:01:31+00:00",
-    "fetched_at": "2026-05-22T22:34:51+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://davidoks.blog/p/ai-is-killing-the-cheap-smartphone\">The memory shortage is causing a repricing of consumer electronics</a></strong></p>\nDavid Oks provides the clearest explanation I've seen yet of why consumer products that use memory are likely to get significantly more expensive over the next few years.</p>\n<p>The short version is that memory manufacturers - of which there are just three remaining large companies - have a fixed capacity in terms of how many wafers they can process at any one time. This fixed wafer capacity is then split between DDR - used in desktops and servers, LPDDR - used in mobile phones and low-energy devices, and HBM - used with GPUs.</p>\n<p>Until recently, HBM got just 2% of that wafer allocation. The enormous growth in AI data centers has pushed that up to an expected 20% by the end of 2026, and \"a single gigabyte of HBM consumes more than three times the wafer capacity that a gigabyte of DDR or LPDDR does\".</p>\n<p>Memory companies have learned from the extinction of their rivals that you should always under-provision rather than over-provision your fabricator capacity. The profit margins and demand for HBM (high-bandwidth memory) will constrain the production of consumer-device RAM for several years.</p>\n<p>This is already being felt in the sub-$100 smartphone market, which is particularly important to markets like Africa and South Asia.</p>\n<p>(The original title of the piece was \"AI is killing the cheap smartphone\" but I'm using the Hacker News rephrased title, which I think does more justice to the content.)\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=48229319\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/memory\">memory</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "infrastructure",
-      "coding",
-      "education",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 425071,
-    "title": "Project Glasswing: An initial update",
-    "url": "https://www.anthropic.com/research/glasswing-initial-update",
-    "published_at": "2026-05-22T21:27:03+00:00",
-    "fetched_at": "2026-05-22T22:34:54+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. quite a few details on the triaging process, false positives, etc.",
-    "topic": "news",
-    "tags": [
-      "news",
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
