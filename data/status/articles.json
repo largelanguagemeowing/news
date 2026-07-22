@@ -1,5 +1,90 @@
 [
   {
+    "article_id": 615076,
+    "title": "CrabRAG: Why Automated Assistants Need Graph Memory, Not More Tokens \u2014 Stephen Chin, Neo4j",
+    "url": "https://www.youtube.com/watch?v=Q0VkgCyNVUg",
+    "published_at": "2026-07-22T18:30:02+00:00",
+    "fetched_at": "2026-07-22T18:42:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Stephen Chin gave two copies of the same agent the same facts about his home network, one storing them as a vector database, the other as a graph. He asked both what was running end of life software exposed to the internet. The vector agent said it could not find specific details. The graph agent traced the connections and flagged his daughter's Minecraft server running an out of date OS, then found real open management ports he quietly patched after the demo. Same data, and only one of them could actually answer.\n\nThat gap is the whole talk. Most assistants, OpenClaw included, keep their memory as markdown files, which is why Chin's agents burn over 100,000 tokens a round loading everything in case some of it matters. It holds at small scale and breaks at large scale, because similarity in vector space is not a real relationship, so multi hop questions hallucinate. A graph stores entities and the edges between them, seeds the search with vectors, then traverses, so answers come back precise, explainable, and auditable. And if you do not know graphs, Claude writes Cypher better than he does.\n\nSpeaker info:\n- https://x.com/steveonjava\n- https://www.linkedin.com/in/steveonjava/\n- https://www.oreilly.com/library/view/graphrag-the-definitive/9798341630147/\n\nTimestamps:\n0:00 - Meet Crab D and the agent memory problem\n2:34 - Why markdown memory wastes tokens\n4:43 - Skills are just markdown too\n5:49 - Goose: memory as an MCP server\n7:44 - Vector databases and why similarity is not a relationship\n9:54 - Enter graphs: precise, explainable, auditable\n11:38 - You do not need to be a graph expert, Claude writes Cypher\n12:04 - The demo: a home lab digital twin, vector versus graph\n13:23 - Live: finding end of life software on the network\n15:30 - Live: finding exposed management ports\n16:49 - Why large scale needs graph memory\n18:05 - Resources: the GraphRAG book and GraphAcademy",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "policy",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615031,
+    "title": "Kimi K3 just parameter mogged every open-weight model\u2026",
+    "url": "https://www.youtube.com/watch?v=YP73B9D20V4",
+    "published_at": "2026-07-22T17:43:52+00:00",
+    "fetched_at": "2026-07-22T18:42:23+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Get 20% off Mobbin Pro to help your agent design UIs that don't suck - https://mobbin.com/fireship\n\nMoonshot just released Kimi K3, a 2.8 trillion parameter open-weight monster. Does it live up to the hype? Let's break it down.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "release",
+      "models",
+      "agents",
+      "coding",
+      "education",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615077,
+    "title": "Thinner Agents on a Smarter Substrate: The Ontology-based Semantic Layer \u2014 Emil Eifrem, Neo4j",
+    "url": "https://www.youtube.com/watch?v=VGN22pPpb-8",
+    "published_at": "2026-07-22T17:00:38+00:00",
+    "fetched_at": "2026-07-22T18:42:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "To automate opening a bank account, your agent needs to verify identity, so a team wires it to the DMV and a passport service and ships it. Then the next team builds the next agent and rediscovers, from scratch, where its data lives, across a hundred databases plus Snowflake, Databricks, and S3, whether it can trust the version, and whether it is even allowed to touch it. Every agent repeats that wiring, nothing updates when a source moves without a manual rewire, and no agent is smarter tomorrow than today. Emil Eifrem's fix is to make the agents thin and put the intelligence in a shared substrate underneath.\n\nThat substrate is an ontology based semantic layer with three parts. A business ontology names the real concepts, customers, accounts, checks, in the words people actually use, not f_name. A technical ontology catalogs every data source and its schema, with a mapping between the two. And execution traces record what each agent tried and whether it worked, so the layer learns bottom up: an agent that succeeded with the DMV lookup last time is more likely to reach for it next time. Discovery, trust, deduplication, and learning stop being every team's problem and become the substrate's.\n\nSpeaker info:\n- https://x.com/emileifrem\n- https://www.linkedin.com/in/emileifrem/\n\nTimestamps:\n0:00 - The account opening agent and its data sources\n1:53 - The problem: every team rewires data from scratch\n4:00 - Thin agents on a smarter shared substrate\n4:37 - Pillar 1: a business facing ontology\n5:26 - Pillar 2: a technical ontology and the mapping\n6:19 - Pillar 3: execution traces that make it learn\n8:01 - Solving discovery, trust, DRY, and learning",
+    "topic": "education",
+    "tags": [
+      "agents",
+      "coding",
+      "education",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615078,
+    "title": "Claude for Long-Horizon Tasks \u2014 Lance Martin, Anthropic",
+    "url": "https://www.youtube.com/watch?v=9QebvrrY3KY",
+    "published_at": "2026-07-22T17:00:06+00:00",
+    "fetched_at": "2026-07-22T18:42:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Claude is capable of long horizon tasks. In this talk, we'll share lessons learned about building agent harnesses for reliable and secure long-horizon work. This include decoupling the brain and hands, self-verification, self-learning, and design for evolving agent harnesses.\n\n### Lance Martin\nMember of Technical Staff \u00b7 Anthropic\n[X/Twitter](https://x.com/RLanceMartin) \u00b7 [LinkedIn](https://www.linkedin.com/in/lance-martin-64a33b5) \u00b7 [Website](https://rlancemartin.github.io)\n\nMember of technical staff at Anthropic. Working on the Claude Platform, including Claude Managed Agents and the claude-api skill in Claude Code. Prior to Anthropic, was one of the early team at LangChain. Prior to LangChain, spent several years focused on vision for self-driving cars (Uber ATG, Ike, Nuro) and got a PhD from Stanford.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 612895,
     "title": "GPT-6 Goes Rogue? The HuggingFace Incident, Sans Hype",
     "url": "https://www.youtube.com/watch?v=wzY2fV4Mp3U",
@@ -205,6 +290,60 @@
       "release",
       "agents",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615091,
+    "title": "Ask Claude about the Anthropic Economic Index",
+    "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+    "published_at": "2026-07-22T00:00:00+00:00",
+    "fetched_at": "2026-07-22T18:42:23+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Ask Claude about the Anthropic Economic Index",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615092,
+    "title": "A research agenda for the Economic Futures Research Fund",
+    "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+    "published_at": "2026-07-22T00:00:00+00:00",
+    "fetched_at": "2026-07-22T18:42:23+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "A research agenda for the Economic Futures Research Fund",
+    "topic": "research",
+    "tags": [
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615381,
+    "title": "Building verification loops in Claude Code with skills",
+    "url": "https://claude.com/blog/building-verification-loops-in-claude-code-with-skills",
+    "published_at": "2026-07-22T00:00:00+00:00",
+    "fetched_at": "2026-07-22T18:42:24+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Building verification loops in Claude Code with skills",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9627,152 +9766,6 @@
       "open-source",
       "agents",
       "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 464642,
-    "title": "Scaling the Next Paradigm of Heterogeneous Intelligence \u2014 Adrian Bertagnoli, Callosum",
-    "url": "https://www.youtube.com/watch?v=WRBNDpUhsJQ",
-    "published_at": "2026-05-24T14:00:06+00:00",
-    "fetched_at": "2026-05-24T14:24:48+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A mixture of Qwen 3 VL8B and Kimi K2.5 beat the state of the art on Video Web Arena, outperforming the leading GPT and Gemini models by 18 and 25 percent while costing 3.7 times less and running 3 times faster. The reason it worked is that visual web navigation decomposes into subtasks that do not all need a frontier model: routing zoom and visual parsing to a smaller model alone produced 11x speed and 43x cost improvements on those steps.\n\nAdrian Bertagnoli from Callosum makes the case that the GPU cluster era of identical hardware and monolithic models is ending. Heterogeneous intelligence treats model architectures, chip types, and workflows as variables to optimize together. A second result: running recursive long context reasoning tasks on Cerebras instead of a frontier model cuts cost by 7x and latency by 5x while matching accuracy. Callosum is building the automation layer that routes tasks to the right chip and model without bespoke decisions for each subtask.\n\nSpeaker info:\n- https://www.linkedin.com/in/adrian-bertagnoli-bb3467178/",
-    "topic": "hardware",
-    "tags": [
-      "models",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 449338,
-    "title": "The Only Important Announcements From Google I/O",
-    "url": "https://www.youtube.com/shorts/fIO7yCTtrng",
-    "published_at": "2026-05-23T20:38:57+00:00",
-    "fetched_at": "2026-05-23T21:55:46+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "I had the opportunity to attend Google I/O this past week and speak directly with the Google DeepMind team about their latest releases. There were a bajillion announcements, so here's only what matters most:\n\n\u25aa\ufe0f Gemini 3.5 Flash: it's the first release in the new Gemini 3.5 family of models. It is designed to be a faster, more cost-effective option and is available now, with the full-fledged Gemini 3.5 Pro scheduled to launch later.\n\n\u25aa\ufe0f Gemini Omni: a new multimodal model focused on content editing and creation (they're calling it the \"Nano Banana of video\"). Right now it accepts video inputs with audio and image capabilities coming soon. \n\n\u25aa\ufe0f Gemini Spark: Google's version of OpenClaw or Hermes. It's a 24/7 autonomous AI agent, but unlike the open-source options that require local computing power, Spark runs entirely on Google\u2019s servers. \n\nSave this video so you remember to give one or all of these a try!\n\n#GoogleIO #AI #gemini #ainews #aiagents",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 447232,
-    "title": "On the <dl>",
-    "url": "https://simonwillison.net/2026/May/23/on-the-dl/#atom-everything",
-    "published_at": "2026-05-23T20:24:48+00:00",
-    "fetched_at": "2026-05-23T20:53:45+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://benmyers.dev/blog/on-the-dl/\">On the &lt;dl&gt;</a></strong></p>\nI learned a few new-to-me things about the <code>&lt;dl&gt;</code> element from this article by Ben Meyer:</p>\n<ol>\n<li>A <code>&lt;dt&gt;</code> can be followed by <em>multiple</em> <code>&lt;dd&gt;</code></li>\n<li>You can optionally group the <code>&lt;dt&gt;</code> and <code>&lt;dd&gt;</code> elements in a <code>&lt;div&gt;</code> for styling - but only a <code>&lt;div&gt;</code>.</li>\n<li>You can label them using ARIA.</li>\n<li>They've been called \"description lists\", not \"definition lists\", since <a href=\"https://www.w3.org/TR/2008/WD-html5-20080122/#the-dl\">an HTML5 draft in 2008</a>.\nSo this is valid:</li>\n</ol>\n<pre><span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">h2</span> <span class=\"pl-c1\">id</span>=\"<span class=\"pl-s\">credits</span>\"<span class=\"pl-kos\">&gt;</span>Credits<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">h2</span><span class=\"pl-kos\">&gt;</span>\n<span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">dl</span> <span class=\"pl-c1\">aria-labelledby</span>=\"<span class=\"pl-s\">credits</span>\"<span class=\"pl-kos\">&gt;</span>\n  <span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">div</span><span class=\"pl-kos\">&gt;</span>\n    <span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">dt</span><span class=\"pl-kos\">&gt;</span>Author<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">dt</span><span class=\"pl-kos\">&gt;</span>\n    <span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">dd</span><span class=\"pl-kos\">&gt;</span>Jeffrey Zeldman<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">dd</span><span class=\"pl-kos\">&gt;</span>\n    <span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">dd</span><span class=\"pl-kos\">&gt;</span>Ethan Marcotte<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">dd</span><span class=\"pl-kos\">&gt;</span>\n  <span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">div</span><span class=\"pl-kos\">&gt;</span>\n<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">dl</span><span class=\"pl-kos\">&gt;</span></pre>\n\n<p>Here's a useful note from Adrian Roselli on <a href=\"https://adrianroselli.com/2025/01/updated-brief-note-on-description-list-support.html\">screen reader support for description lists</a>.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=48247325\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/css\">css</a>, <a href=\"https://simonwillison.net/tags/html\">html</a>, <a href=\"https://simonwillison.net/tags/screen-readers\">screen-readers</a>, <a href=\"https://simonwillison.net/tags/web-standards\">web-standards</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 445973,
-    "title": "recommended reading.",
-    "url": "https://x.com/i/article/2058013399091724289",
-    "published_at": "2026-05-23T18:42:14+00:00",
-    "fetched_at": "2026-05-23T19:44:49+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 445557,
-    "title": "Your Agent Is an Infinite Canvas \u2014 RL Nabors, Dressed for Space",
-    "url": "https://www.youtube.com/watch?v=LMbeDEQO6QM",
-    "published_at": "2026-05-23T18:00:06+00:00",
-    "fetched_at": "2026-05-23T19:44:49+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "RL Nabors built a comic reader that renders inside Claude. Full panels, navigation, transcript mode, design matched to the original site. No browser tabs. She is reading her own web comic archive entirely through an agent, and it looks like the website.\n\nThe talk is a case against chat as the permanent UI of agentic software. Chat is to agents what the terminal was to desktop computing: developers love it, everyone else gets the iPhone eventually. MCP apps bundle HTML, CSS, and JavaScript into a single file that agent interfaces render in an iframe, turning any tool response into a real interactive surface. WebMCP goes the other direction: add tool name and description attributes to forms you already have, and browser agents can call your site's functions directly without screenshot parsing or DOM traversal. Both specs exist now. The web platform has been the infinite canvas all along.\n\nSpeaker info:\n- https://x.com/nearestnabors\n- https://www.linkedin.com/in/nearestnabors\n- https://github.com/rachelnabors",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 441748,
-    "title": "The Missing Primitive for Agent Swarms \u2014 Lou Bichard, Ona",
-    "url": "https://www.youtube.com/watch?v=5Sui_OnSRlY",
-    "published_at": "2026-05-23T16:00:06+00:00",
-    "fetched_at": "2026-05-23T16:31:44+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Stripe called theirs Minions. RAMP called theirs Inspect. Both are internal infrastructure for running fleets of background agents, and both teams built it from scratch. Lou Bichard's argument is that this shouldn't keep happening.\n\nThe talk breaks down what agent swarm infrastructure actually needs: a runtime (largely solved), orchestration and triggers (solved), and coordination, which is not. Coordination is the gap where agents pick up tasks from each other, pass messages, and verify they have cleared a stage of the development cycle before moving on. GitHub is a poor substitute: noisy, designed for humans, and not built for agents raising hundreds of parallel pull requests. Lou covers what a proper primitive looks like, shows how Owner ships VM level isolation for agent fleets today, and makes the case that the coordination layer probably needs to be a CLI gateway that any local coding agent can invoke to check its progress and proceed.\n\nSpeaker info:\n- https://x.com/loujaybee\n- https://www.linkedin.com/in/loujaybee",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "coding",
-      "development",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 439841,
-    "title": "Prompt to Pipeline: Building with Google's Gen Media Stack \u2014 Paige & Guillaume, Google DeepMind",
-    "url": "https://www.youtube.com/watch?v=ns9f1fjLD7Y",
-    "published_at": "2026-05-23T14:00:06+00:00",
-    "fetched_at": "2026-05-23T15:11:00+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A public domain book, a notebook, and three gen media models. Guom from Google DeepMind fed Wind in the Willows into Gemini, generated character portraits with Nano Banana, animated chapter scenes with VO, and scored each chapter with LIA, all live in the workshop.\n\nThe full three hour session covers more ground. Paige Bailey demos AI Studio's Build feature creating a bookshelf scanning app with Google login and Firestore from a single prompt, Gemini 3.1 Flash Light analyzing a dinosaur video frame by frame for under a dollar, and Genie 3 rendering a playable world with a pink sparkly squirrel on Regent's Canal. Ian Valentine closes with Gemma 4 running on device: 10 sub agents generating SVGs in parallel on a local 26B model, then open code building and debugging a game from a spec with no cloud API involved.\n\nSpeaker info:\n- https://x.com/DynamicWebPaige\n- https://linkedin.com/in/dynamicwebpaige\n- https://github.com/dynamicwebpaige\n- https://x.com/Giom_V\n- https://www.linkedin.com/in/guillaumevernade\n- https://github.com/Giom-V",
-    "topic": "coding",
-    "tags": [
-      "coding",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
       "video"
     ],
     "dearrow_thumbnail_url": "",
