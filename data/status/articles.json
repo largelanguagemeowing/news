@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 617235,
+    "title": "Active Graph Agent Runtime (BabyAGI 4) \u2014 Yohei Nakajima, Untapped Capital",
+    "url": "https://www.youtube.com/watch?v=khVX_BUnEwU",
+    "published_at": "2026-07-22T20:00:06+00:00",
+    "fetched_at": "2026-07-22T20:11:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Yohei Nakajima was running a 500 question eval when his API key died at question 350. Normally that means restarting the whole long agent from scratch. Instead it rolled back one step and resumed at 353, because in ActiveGraph the log is the agent. Most people build agents around the LLM and bolt on memory and logging; Nakajima, the creator of BabyAGI, flips it and builds around an immutable event log. Every action and every change to the agent flattens into one typed log, which projects a graph that is the agent's state, so you get replays, rollbacks, and forks for free.\n\nOn top of the log sit behaviors that react to graph changes and emit events, policies that decide what the agent may change on its own versus what needs a human or a contradiction check, and swappable packs for memory, tools, and chat. The LLMs never talk to each other; they only touch shared state, an idea he borrows from 1970s blackboard systems and Kafka, and his hunch is that AI writes this style better than modern agent code because it has decades of training data on it. The payoff is self improvement: a loop that forks the agent, proposes a patch, gates it behind sandbox tests, and keeps it only if accuracy actually rises, and a lab that reads his blog posts, runs its own experiments, and once found a bug in its own code and opened the PR.\n\nSpeaker info:\n- https://github.com/yoheinakajima/activegraph\n- https://x.com/yoheinakajima\n- https://www.linkedin.com/in/yoheinakajima\n\nTimestamps:\n0:00 - ActiveGraph and three years of BabyAGI\n1:55 - Build around the log, not the LLM\n3:24 - Behaviors, policies, and views\n6:43 - Packs and the blackboard architecture lineage\n8:12 - The log as memory, and the API key that resumed itself\n9:53 - Reference agents built natively on the log\n11:11 - Self improvement: regimes and controlled self modification\n12:25 - ActiveGraph Lab writes its own experiments\n13:02 - A Pokemon card competition as a testbed\n14:33 - Surprises: why AI architects this better\n15:49 - Why an agent needs an experiential world model",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 615076,
     "title": "CrabRAG: Why Automated Assistants Need Graph Memory, Not More Tokens \u2014 Stephen Chin, Neo4j",
     "url": "https://www.youtube.com/watch?v=Q0VkgCyNVUg",
@@ -198,6 +221,26 @@
       "agents",
       "coding",
       "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615961,
+    "title": "How news organizations are using AI to advance their vital missions",
+    "url": "https://openai.com/index/how-news-organizations-are-using-ai",
+    "published_at": "2026-07-22T13:00:00+00:00",
+    "fetched_at": "2026-07-22T20:11:40+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide.",
+    "topic": "enterprise",
+    "tags": [
+      "open-source",
+      "coding",
+      "enterprise",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9723,50 +9766,6 @@
       "api",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 477788,
-    "title": "Mad House \u2014 Usborne Creepy Computer Games",
-    "url": "https://simonwillison.net/2026/May/24/usborne-mad-house/#atom-everything",
-    "published_at": "2026-05-24T17:14:11+00:00",
-    "fetched_at": "2026-05-25T00:00:15+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/usborne-mad-house\">Mad House \u2014 Usborne Creepy Computer Games</a></p>\n        <p>Via <a href=\"https://news.ycombinator.com/item?id=48258194\">Hacker News</a> I learned that UK publisher Usborne published <a href=\"https://usborne.com/us/books/computer-and-coding-books\">free PDFs of their 1980s Computer Books</a>, some of which I remember working through on my Commodore 64 as a child.</p>\n<p>These were so great! Beautifully illustrated books with fun projects made up of code you could type into your own machine.</p>\n<p>I remember playing \"Mad House\" typed in from the 1983 book \"Creepy Computer Games\", so I fed that PDF <a href=\"https://claude.ai/share/7b4a5617-f586-4744-b082-1650cab607cb\">into Claude</a> and had it build an interactive version of that game in JavaScript and HTML:</p>\n<blockquote>\n<p><code>Build a vanilla JS artifact that exactly recreates the game Mad House from this book, make sure it's mobile friendly and has a suitable retro aesthetic</code></p>\n<p><code>Credit the book title and link to https://usborne.com/us/books/computer-and-coding-books</code></p>\n</blockquote>\n<p><img alt=\"Screenshot of a retro green-on-black terminal-style game interface titled &quot;MAD HOUSE \u2014 A REAL NIGHTMARE \u2014&quot; with a REC indicator, FOOTSTEPS 240, DOORS counter, three rows of ASCII corridors made of asterisks with &quot;&gt;&quot; and &quot;&lt;&quot; door markers, &quot;PRESS START TO BEGIN&quot; text, NEAR DOOR controls (X and C) and FAR DOOR controls (N and M), and a &quot;\u25b6 START / RESTART&quot; button at the bottom.\" src=\"https://static.simonwillison.net/static/2026/mad-house.jpg\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/computer-history\">computer-history</a>, <a href=\"https://simonwillison.net/tags/games\">games</a>, <a href=\"https://simonwillison.net/tags/tools\">tools</a></p>",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "safety",
-      "infrastructure",
-      "coding",
-      "education",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 468453,
-    "title": "Let's Talk About FOMAT: Fear of Missing Agent Time \u2014 Michael Richman, Cmd+Ctrl",
-    "url": "https://www.youtube.com/watch?v=W-SX_srBa3Y",
-    "published_at": "2026-05-24T16:00:06+00:00",
-    "fetched_at": "2026-05-24T17:02:27+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "You kicked off an agent 30 minutes ago. It stopped after two minutes, blocked on a question, and has been waiting ever since. Michael Richman calls this FOMAT: fear of missing agent time. His answer is Cmd+Ctrl, a system that sends you a push notification when the agent needs input, lets you respond from your phone or watch, and lets you start new sessions from wherever you are.\n\nThe demo shows Claude Code running in a terminal while the Cmd+Ctrl app on an iPhone mirrors the session in real time. Walk away, get notified when the agent completes or gets stuck, reply from the phone, pick up in the terminal. The same setup works across Claude Code, Cursor, Codex, Gemini CLI, and others through a daemon that runs alongside each agent and reports to a shared control plane. The daemon layer is open source. A standup dashboard summarizes all recent sessions so you can catch up without reading every thread.\n\nSpeaker info:\n- https://x.com/mrwoofster\n- https://www.linkedin.com/in/michael-richman-b7807b2/\n- https://github.com/mrwoof",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
