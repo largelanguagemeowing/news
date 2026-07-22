@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 621297,
+    "title": "Are AI labs pelicanmaxxing?",
+    "url": "https://simonwillison.net/2026/Jul/22/are-ai-labs-pelicanmaxxing/#atom-everything",
+    "published_at": "2026-07-22T23:01:00+00:00",
+    "fetched_at": "2026-07-22T23:04:17+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://dylancastillo.co/posts/pelicanmaxxing.html\">Are AI labs pelicanmaxxing?</a></strong></p>\nExcellent piece of work by Dylan Castillo, who took a deep-dive into the frequently pondered question of whether the AI labs have been deliberately training models to draw pelicans riding bicycles in response to my <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle/\">deeply unscientific benchmark</a>.</p>\n<p>I've been randomly spot-checking this in the past by testing models against other animals riding other types of vehicle, but never with anything close to the diligence of Dylan's methodology here.</p>\n<p>Dylan took 8 animals \u00d7 6 vehicles = 48 prompts and ran them three times each through 7 different models ( GPT-5.6 Terra, Claude Sonnet 5, Gemini 3.5 Flash, Grok 4.5, Qwen3.7-Max, GLM-5.2, and DeepSeek V4 Pro). He then used GPT-5.6 Luna and Gemini 3.1 Flash-Lite to help evaluate the results.</p>\n<p>There's a neat filter view for exploring the results:</p>\n<p><img alt=\"Screenshot of a grid for sample 1/3 of GLM-5.2, with pelicn and flamingo and heron riding bicycle, unicycle, skateboard, scooter, plane and boat\" src=\"https://static.simonwillison.net/static/2026/pelican-grid.webp\" /></p>\n<p>For the models he tested he could find no evidence of pelimaxxing:</p>\n<blockquote>\n<ul>\n<li><a href=\"https://dylancastillo.co/posts/pelicanmaxxing.html#evidence-1-the-pelicans-on-bicycles-dont-look-any-better\">The pelicans on bicycles don\u2019t look any better</a></li>\n<li><a href=\"https://dylancastillo.co/posts/pelicanmaxxing.html#evidence-2-labs-are-not-better-at-drawing-pelicans\">Labs are not better at drawing pelicans</a></li>\n<li><a href=\"https://dylancastillo.co/posts/pelicanmaxxing.html#evidence-3-labs-are-not-better-at-drawing-bicycles\">Labs are not better at drawing bicycles</a></li>\n<li><a href=\"https://dylancastillo.co/posts/pelicanmaxxing.html#evidence-4-labs-are-not-better-at-drawing-pelicans-on-bicycles-even-adjusting-for-difficulty\">Labs are not better at drawing pelicans on bicycles, even adjusting for difficulty</a></li>\n<li><a href=\"https://dylancastillo.co/posts/pelicanmaxxing.html#evidence-5-the-pelican-bicycle-scenes-dont-look-memorized\">The pelican-bicycle scenes don\u2019t look memorized</a> [...]</li>\n</ul>\n<p>Pelicans aren\u2019t drawn any better than other animals. Bicycles aren\u2019t drawn any better than other vehicles. And no lab draws the combination better than its pelicans and bicycles already predict. GLM-5.2 comes closest: it has the largest boost on the exact pelican-bicycle cell, and and its first pelican-on-bicycle sample caught my eye. But the effect is small and not significant, so I wouldn\u2019t put too much weight on it.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49010129\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/evals\">evals</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 621555,
+    "title": "Your Moat Is Your Data Model \u2014 Mike Phipps, Gates Foundation",
+    "url": "https://www.youtube.com/watch?v=jt1Pbr_n6oU",
+    "published_at": "2026-07-22T21:30:31+00:00",
+    "fetched_at": "2026-07-22T23:04:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Models, frontends, and agent frameworks all commoditize. Mike Phipps argues the durable moat is the one thing that does not: your data model, and the tacit knowledge of how your questions are supposed to be answered. At the Gates Foundation he and his team modeled 25 years of grantmaking, over 7 billion dollars a year across 2,000 grants and 4,000 people, into a single Neo4j knowledge graph served to Claude through one MCP server.\n\nThe graph is built for agents, not dashboards: hierarchies become traversable paths, and unstructured documents are chunked, tagged, and mapped to structured entities at ingestion. An agent turns a messy cross system question into one graph query and gets an answer that respects how the organization actually reports. The talk walks the architecture and the retrieval evals that keep it honest, and why a small team's effort compounds in the data model, not the layers above it.\n\nSpeaker info:\n- https://www.linkedin.com/in/mike-phipps-79339a38\n\nTimestamps:\n0:00 - The moat question: what stays defensible as AI commoditizes\n2:32 - SIP across the 4,000 person Gates Foundation\n3:46 - The scale: 25 years, $7B a year, 2,000 grants\n5:15 - Structuring operational data for agentic retrieval\n6:18 - Tacit knowledge as the moat: engaging data owners\n7:09 - The curation pipeline and governance\n8:30 - Modeling hierarchies: funding and management lenses\n12:32 - People, org charts, and stitching siloed systems\n13:49 - Combining unstructured documents with structured data\n15:34 - Serving the graph to Claude through MCP\n17:31 - Retrieval evals and the feedback loop",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "funding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 619889,
     "title": "On Making",
     "url": "https://beej.us/blog/data/ai-making/",
@@ -9725,44 +9767,6 @@
       "agents",
       "coding",
       "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 470356,
-    "title": "How Google DeepMind Runs Agents at Scale \u2014 KP Sawhney & Ian Ballantyne, Google DeepMind",
-    "url": "https://www.youtube.com/watch?v=7gujZrJ9L5I",
-    "published_at": "2026-05-24T18:00:06+00:00",
-    "fetched_at": "2026-05-24T18:38:12+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Google DeepMind employees have worse token quotas than paying customers. That is not a mistake. KP Sawhney explains: customers get priority, and if an internal team spikes usage on a cluster someone monitoring 24/7 will just call and ask them to stop.\n\nThis panel covers how DeepMind thinks about agents at scale from the inside: managing quota across thousands of power users, a Darwinian skills library where only the strongest skills survive as engineers contribute en masse, and where the Deep Research pipeline is going next. KP's current focus is replacing the pipeline's giant context blobs with a shared file system so each research component can collaborate the way human researchers would, and produce supporting artifacts that the current architecture cannot.\n\nSpeaker info:\n- https://linkedin.com/in/ianballantyne\n- https://github.com/irbg\n- https://linkedin.com/in/kyle-sawhney\n- https://github.com/KPSawhney",
-    "topic": "research",
-    "tags": [
-      "open-source",
-      "agents",
-      "research",
-      "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 470777,
-    "title": "Building Pi With Pi",
-    "url": "https://lucumr.pocoo.org/2026/5/24/pi-oss/",
-    "published_at": "2026-05-24T17:44:59+00:00",
-    "fetched_at": "2026-05-24T18:38:13+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i wanted to write this blog post, describing how we OSS in pi, for literal months. now i don't have to anymore. thanks, creator of pi.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
