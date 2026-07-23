@@ -1,5 +1,102 @@
 [
   {
+    "article_id": 628080,
+    "title": "AI on Your Lakehouse: Context Comes in Shapes, Not Queries \u2014 Zach Blumenfeld, Neo4j",
+    "url": "https://www.youtube.com/watch?v=kRkcNOsRyYg",
+    "published_at": "2026-07-23T07:00:23+00:00",
+    "fetched_at": "2026-07-23T07:33:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your agent can reach your data and still get it wrong. Vector search hands it a slice, Text2SQL hands it another, and neither tells it what is actually relevant or how the pieces connect, so the answer comes back confident and wrong. Zach Blumenfeld's argument in this hands on workshop is that the missing piece is not a better model or a better query. It is context, and context comes in shapes.\n\nHe builds three reusable graph shapes on top of lakehouse data with Neo4j, each answering a question the agent cannot ask a table. Trees give a table of contents, so the agent can navigate what is even there. Communities surface themes, the patterns nobody named. Paths and cycles trace connections, how entities, documents, and records actually relate. The shapes are portable to BigQuery, Databricks, or Snowflake, and you leave with the code to run them on your own data and agents.\n\nSpeaker info:\n- https://www.linkedin.com/in/zachblumenfeld/\n- https://graphacademy.neo4j.com/courses/workshop-lakehouse\n\nTimestamps:\n0:00 - Introduction: context comes in shapes, not queries\n6:25 - The three graph shapes to build\n10:56 - Environment setup: Codespaces and Neo4j\n21:47 - Schema, shared terms, and join paths\n45:25 - Shape 1: a table of contents for your data (trees)\n50:30 - Building the containment tree and links\n59:48 - Serving the graph to the agent over MCP\n1:12:21 - Q&amp;A: naming and the containment shape\n1:22:54 - Shape 2: surfacing themes with communities\n1:24:24 - Community detection with Leiden\n1:31:09 - Hierarchical communities and naming themes\n1:43:22 - Shape 3: connections and cross links\n1:50:20 - Watching the agent use outlines and themes\n1:55:05 - Wrap: theme types and real time linking",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 628579,
+    "title": "recommended viewing also because @dillon_mulroy shows us why and how he uses @pidotdev",
+    "url": "https://video.twimg.com/amplify_video/2080114573697314816/vid/avc1/1920x1080/5Kquf3F1RdyKVgN3.mp4",
+    "published_at": "2026-07-23T06:46:30+00:00",
+    "fetched_at": "2026-07-23T07:33:17+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing also because @dillon_mulroy shows us why and how he uses @pidotdev",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 628580,
+    "title": "recommended viewing.",
+    "url": "https://video.twimg.com/amplify_video/2080114573697314816/vid/avc1/1920x1080/5Kquf3F1RdyKVgN3.mp4",
+    "published_at": "2026-07-23T06:20:31+00:00",
+    "fetched_at": "2026-07-23T07:33:17+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 628081,
+    "title": "Why We Killed Our Multi-Agent Pipeline \u2014 Subbiah Sethuraman and Abhilash Asokan, ZS Associates",
+    "url": "https://www.youtube.com/watch?v=u6jJcIFDLE4",
+    "published_at": "2026-07-23T05:00:02+00:00",
+    "fetched_at": "2026-07-23T07:33:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Their first pharma analytics system mimicked a human analyst: one agent to detect a signal, one to localize it, one to find the cause, one to synthesize, all wired to an orchestrator. It produced answers like this: prescriptions dropped 18% in a territory because a payer moved the drug to a worse tier, so send more sales reps. The cause was right and the action was wrong, because no single agent owned the whole picture. So Subbiah Sethuraman's team at ZS killed the multi agent pipeline.\n\nInstead of redesigning the topology, they opened an empty directory, gave Claude Code bash and the database, and watched what it actually did. The rebuild came out smaller, not bigger. Signal detection moved into a deterministic pipeline that runs before the agent wakes up, so the agent investigates rather than guesses. A single agent owns the reasoning and spawns sub agents only when a focused lookup needs one. A pharma knowledge graph acts as a control plane, not a lookup table: every edge is a hypothesis the agent tests against the data, which bounds the search. The result does in 20 minutes what an analyst did in a month.\n\nSpeaker info:\n- https://www.linkedin.com/in/subbiahsethuraman/\n- https://subbiah-sethuraman.medium.com/\n\nTimestamps:\n0:00 - Pharma commercial analytics and the analyst's four steps\n2:33 - V1: an agent for every step\n3:26 - Why the output was incoherent\n4:32 - Why it failed: signals, handoffs, and missing domain\n5:57 - The rebuild: watching Claude Code in an empty directory\n7:01 - Deterministic signal detection before the agent\n8:05 - Consolidating to a single agent\n9:22 - The knowledge graph as a control plane\n11:04 - Every edge a hypothesis, and the result",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 627822,
+    "title": "Quoting Seth Larson",
+    "url": "https://simonwillison.net/2026/Jul/23/seth-larson/#atom-everything",
+    "published_at": "2026-07-23T04:50:36+00:00",
+    "fetched_at": "2026-07-23T07:33:15+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://blog.pypi.org/posts/2026-07-22-releases-now-reject-new-files-after-14-days/\"><p>The Python Package Index (PyPI) now rejects new files being uploaded to releases that are older than 14 days. This restriction was\u00a0<a href=\"https://github.com/pypi/warehouse/pull/19727\">put in place</a>\u00a0to prevent old and long-stable releases from being poisoned in case publishing tokens or workflows of PyPI projects were compromised. As far as we are aware this has not yet been abused, but there is no technical reason beyond that attackers weren't aware it was possible.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://blog.pypi.org/posts/2026-07-22-releases-now-reject-new-files-after-14-days/\">Seth Larson</a>, PyPI blog</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/packaging\">packaging</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/supply-chain\">supply-chain</a>, <a href=\"https://simonwillison.net/tags/pypi\">pypi</a>, <a href=\"https://simonwillison.net/tags/seth-michael-larson\">seth-michael-larson</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "events",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 625893,
     "title": "Citation Needed: Provenance for LLM-Built Knowledge Graphs \u2014 Daniel Chalef, Zep AI",
     "url": "https://www.youtube.com/watch?v=H7puB0RwJMM",
@@ -9685,106 +9782,6 @@
       "research",
       "video",
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 500656,
-    "title": "California Brown Pelican, Snowy Egret, California Sea Lion, Harbor Seal",
-    "url": "https://simonwillison.net/2026/May/25/sighting-365297287/#atom-everything",
-    "published_at": "2026-05-25T23:08:00+00:00",
-    "fetched_at": "2026-05-26T16:24:59+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><img alt=\"California Brown Pelican\" src=\"https://static.inaturalist.org/photos/666934915/large.jpg\" /></p><p><img alt=\"California Brown Pelican\" src=\"https://static.inaturalist.org/photos/666934945/large.jpg\" /></p><p><img alt=\"Snowy Egret\" src=\"https://static.inaturalist.org/photos/666934484/large.jpg\" /></p><p><img alt=\"California Sea Lion\" src=\"https://static.inaturalist.org/photos/666935110/large.jpg\" /></p><p><img alt=\"Harbor Seal\" src=\"https://static.inaturalist.org/photos/666935468/large.jpg\" /></p><p>California Brown Pelican, Snowy Egret, California Sea Lion, Harbor Seal, in San Mateo County, CA, US</p><p>We took our new <a href=\"https://www.orukayak.com/\">folding kayak</a> out in the harbor and saw sea lions and harbor seals chilling on the docks.</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 489431,
-    "title": "ChatGPT Finance Is Freaking People Out",
-    "url": "https://www.youtube.com/shorts/b6Ek6-E5V88",
-    "published_at": "2026-05-25T18:34:40+00:00",
-    "fetched_at": "2026-05-25T19:41:02+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "This is getting a lot of controversy...\n\nOpenAI just rolled out a new personal finance experience that lets you link your bank accounts directly to ChatGPT via Plaid. \n\nThe pros are that it allows you to basically have a financial advisor at your fingertips. But the cons is that people are worried about the privacy and safety implications of giving a for-profit company that makes money off ads access to your spending habits, investments, and travel history.\n\nAre the potential financial gains and knowledge worth the risk, or is it a big NO for you?\n\n#ai #AInews #chatGPT #openai #aiprivacy",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "safety",
-      "funding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 487583,
-    "title": "Agentic Evaluations at Scale, For Everybody \u2014 Nicholas Kang & Michael Aaron, Google DeepMind",
-    "url": "https://www.youtube.com/watch?v=Ubwb6NzegyA",
-    "published_at": "2026-05-25T17:00:06+00:00",
-    "fetched_at": "2026-05-25T17:44:21+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "On SWE-Bench Pro, six frontier models land within a couple of percentage points of each other. The harness they run inside shifts performance by 22%. A competing lab once took a Kaggle benchmark, reran it with their own compaction settings, and published much better results. Neither number was wrong. Both were useless.\n\nThe talk is from Nicholas Kang and Michael Aaron at Google DeepMind's Kaggle team, who are building the infrastructure to fix evals at the community level: an open benchmark platform anyone can contribute to, a PvP Game Arena where models play poker and chess for an ELO rating that cannot saturate, and a standardized agent exam that returned 500 plus submissions in its first week without any promotion. The wastewater treatment plant engineer from Turkey who built a novel safety benchmark from 20 years of field experience, data that does not exist anywhere else, is the use case they keep coming back to.\n\nSpeaker info:\n- https://www.linkedin.com/in/nicholaskangjj",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "coding",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 487999,
-    "title": "Distributing LLM inference in DwarfStar - <antirez>",
-    "url": "https://antirez.com/news/167",
-    "published_at": "2026-05-25T15:37:05+00:00",
-    "fetched_at": "2026-05-25T17:44:22+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 485672,
-    "title": "Does GenAI \"belong\" to data scientists? \u2014 Phil Hetzel, Braintrust",
-    "url": "https://www.youtube.com/watch?v=NKwIX3CiRgU",
-    "published_at": "2026-05-25T15:00:06+00:00",
-    "fetched_at": "2026-05-25T15:51:54+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "At most traditional enterprises, GenAI got handed to the ML platform team because it had AI in the name. Phil Hetzel from Braintrust argues that was the wrong move, not because data scientists lack value, but because Anthropic and OpenAI already ran the data pipeline. What is left is prompt and context engineering, distributed systems, human annotation, and functional evaluation across a much broader surface area than precision and recall. The mistake is isolating it to one team. The answer is a diverse one.\n\nSpeaker info:\n- https://www.linkedin.com/in/philliphetzel",
-    "topic": "enterprise",
-    "tags": [
-      "benchmark",
-      "funding",
-      "enterprise",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
