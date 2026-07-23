@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 641041,
+    "title": "The Unreasonable Effectiveness of Separating the Task from the Model \u2014 Maxime Rivest, DSPy",
+    "url": "https://www.youtube.com/watch?v=GgLQ02aO-hs",
+    "published_at": "2026-07-23T17:45:06+00:00",
+    "fetched_at": "2026-07-23T19:18:08+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "By declaring a task's inputs and outputs without initially considering model capability, you create the space needed to determine execution later. DSPy's promise is that AI engineering should happen above a particular prompt template or provider API shape: the Signature.\n\nThat remains useful in a world of tools, RLMs, and Skills. Define a task strictly through its inputs and outputs, and the underlying implementation becomes flexible: experiment with models, settings, weights, templates, and output formats without touching the workflow. The talk covers DSPy 3.5 and previews DSPy 4.0, where models can write code beneath a signature and programs can learn directly from interactions with users while still respecting the signature's inputs and outputs.\n\nSpeakers:\n\nMaxime Rivest \u2014 Core Contributor, DSPy\nMaxime builds tools and content that make LLMs more accessible and powerful. He is a DSPy core contributor and an open-source Python library author.\nX/Twitter: https://x.com/MaximeRivest\nLinkedIn: https://linkedin.com/in/maximerivest\nWebsite: https://maximerivest.com\n\nIsaac Miller \u2014 Lead Maintainer of DSPy; Co-Founder, cmpnd\nIsaac leads DSPy and co-founded cmpnd, building an open-source framework for self-improving, modular AI systems.\nX/Twitter: https://x.com/isaacbmiller1\nLinkedIn: https://www.linkedin.com/in/miller-isaac/",
+    "topic": "education",
+    "tags": [
+      "education",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 638868,
     "title": "Notion's Token Town \u2014 Sarah Sachs, Notion",
     "url": "https://www.youtube.com/watch?v=-I5W5QVAT8E",
@@ -9763,28 +9786,6 @@
     "topic": "education",
     "tags": [
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 502782,
-    "title": "10 weird OSS projects you need to know about...",
-    "url": "https://www.youtube.com/watch?v=qPuzWFvRajk",
-    "published_at": "2026-05-26T17:53:11+00:00",
-    "fetched_at": "2026-05-26T18:42:28+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Get $1,000 in Hyperagent inference credits: https://www.hyperagent.com/fireship \n\nApply to the Founding 500 to get $20k for your project: https://www.hyperagent.com\n\nIn today's video, we'll look at 10 new open source projects that are saving developers from prompt bro hell.\n\n#coding #programming #coding #oss #opensource \n\n\ud83d\udd16 Topics Covered\n\n- Ratty 3D Terminal https://ratty-term.org/\n- TheyLive Adblocker https://github.com/davmlaw/they_live_adblocker\n- TerminalPhone https://gitlab.com/here_forawhile/terminalphone\n- Cuda Oxide https://nvlabs.github.io/cuda-oxide/index.html\n- Wario Synth https://www.wario.style/\n- Jmail & EpstienExposed https://epsteinexposed.com/\n- Wikipedia Doomscroller https://xikipedia.org/\n- Puter https://github.com/HeyPuter/puter\n- Honker https://github.com/russellromney/honker\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "coding",
-    "tags": [
-      "open-source",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding",
-      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
