@@ -1,5 +1,89 @@
 [
   {
+    "article_id": 638868,
+    "title": "Notion's Token Town \u2014 Sarah Sachs, Notion",
+    "url": "https://www.youtube.com/watch?v=-I5W5QVAT8E",
+    "published_at": "2026-07-23T17:30:06+00:00",
+    "fetched_at": "2026-07-23T17:55:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Every month it is the same trap. A reasoning model gets upgraded at the same price per token, then quietly burns three times the output tokens. Or the new version costs 40% more and deprecates its predecessor in four months. Are you growing 40%? Making three times the revenue? Sarah Sachs, who leads AI engineering at Notion and negotiates its model contracts, says no, and that is why she treats every vendor as a competitor. Buy tokens from a lab that also sells the first party product and you are paying a markup on a markup for something you cannot defend, with no exit if you lock yourself to one provider.\n\nHer answer is to stop winning on token economics and win on product: data flywheels, orchestration, and staying model agnostic so optionality stays your leverage. Notion's auto model quietly routes about 75% of traffic and swaps providers underneath, her AI Switzerland approach; triaging an email inbox on Opus, she says, rips off the customer and Notion both. Route by cost per capability per second, not per token; use open weight models for the moderate middle; reach for CPUs over GPUs, because you do not need an LLM to turn a CSV into a PDF. The final stretch turns to the lethal trifecta and a live demo of Notion agents scoping a task, tagging in teammates, and opening a PR.\n\nSpeaker info:\n- https://x.com/sarahmsachs\n- https://www.linkedin.com/in/sarahmsachs/\n\nTimestamps:\n0:00 - Welcome to Token Town: AI poor vs AI rich\n1:25 - Negotiating AI contracts as Notion's AI Anna Wintour\n2:30 - The AI transformation journey and the system of record\n4:46 - Why cost is the structural barrier\n5:34 - The monthly model pricing traps\n7:28 - Your supplier is your competitor\n8:44 - Win on product, not token economics\n9:50 - Not all traffic belongs on the frontier model\n12:10 - Optionality is your leverage\n13:25 - The auto model and the model agnostic playbook\n15:04 - Open weight models for the middle\n17:00 - CPUs over GPUs and governance\n17:53 - Security: the lethal trifecta\n19:46 - Live demo: orchestrating Notion agents into a PR",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 638823,
+    "title": "The most interesting \"hack\" in history...",
+    "url": "https://www.youtube.com/watch?v=KOpTWx1Eou4",
+    "published_at": "2026-07-23T16:53:37+00:00",
+    "fetched_at": "2026-07-23T17:55:47+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Railway is the easiest way to deploy anything. Get $20 in free credits - https://railway.com/?referralCode=fireship\n\nLast week Hugging Face was hacked. In this video, we'll break down who it was and what they wanted.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "security",
+    "tags": [
+      "security",
+      "video",
+      "coding",
+      "education",
+      "media",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 638869,
+    "title": "Harness Engineering is not Enough: Why Software Factories Fail \u2014 Dex Horthy, HumanLayer",
+    "url": "https://www.youtube.com/watch?v=Ib5GBkD555M",
+    "published_at": "2026-07-23T16:30:06+00:00",
+    "fetched_at": "2026-07-23T17:55:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In July 2025 Dex Horthy turned the lights off: an agent software factory where nobody read the code. It fell apart. An issue appeared that no amount of prompting could fix, the site was down, users were furious, and he was digging through a codebase he had stopped reading three months earlier. His claim is that this is not a skill or scale issue, and no harness or extra tokens fixes it, because it is a model training problem. Coding models are reinforced on one thing, did the test pass without breaking another, and nothing in that reward penalizes bad architecture, whose cost shows up months later. So they get better at passing tests and no better at keeping a codebase maintainable.\n\nThat is why Claude Code went from nothing to billions while tools with the same read, write, and edit commands did not: it was the first model trained against the harness it ships in. But maintainability is far harder to verify than a green test, and as Horthy puts it, if a model knew what good code looked like it would already write it. So for now you are stuck reading the code, which is fine, because you can still move fast. His fix is to turn the lights back on and plan up front: product review, system architecture, the underrated step of program design down to types and call graphs, then vertical slices. Thirty minutes of alignment saves hours of review, and a good PR becomes a joy to read instead of slop to untangle.\n\nSpeaker info:\n- https://x.com/dexhorthy\n- https://linkedin.com/in/dexterihorthy\n- https://github.com/humanlayer/12-factor-agents\n\nTimestamps:\n0:00 - The narrative: you are the bottleneck, just ship more\n1:28 - The cracks: outages and falling PR review quality\n2:20 - The thesis: the harness is not enough\n3:36 - A brief history of the software factory\n5:52 - The agentic factory and turning the lights off\n7:30 - Why it fails: the July 2025 lights-off experiment\n8:56 - Models cannot maintain codebase quality\n10:12 - Why Claude Code won and how coding models are trained\n13:18 - Verifying maintainability and better benchmarks\n14:58 - Turning the lights back on: plan up front\n17:16 - Too many bad PRs, and closing advice",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 639373,
+    "title": "recommended reading.",
+    "url": "https://x.com/i/article/2080310373140594688",
+    "published_at": "2026-07-23T16:26:19+00:00",
+    "fetched_at": "2026-07-23T17:55:49+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 636702,
     "title": "Perception Agents \u2014 Antje Barth, Amazon AGI Lab",
     "url": "https://www.youtube.com/watch?v=2JX6JYyQG4Y",
@@ -340,6 +424,25 @@
       "infrastructure",
       "coding",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 637591,
+    "title": "Launching Health in ChatGPT",
+    "url": "https://openai.com/index/health-in-chatgpt",
+    "published_at": "2026-07-23T00:00:00+00:00",
+    "fetched_at": "2026-07-23T17:55:45+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9682,112 +9785,6 @@
       "infrastructure",
       "coding",
       "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 502827,
-    "title": "Frontier AI at Home \u2014 Alex Cheema, EXO Labs",
-    "url": "https://www.youtube.com/watch?v=ESbWpPT_9-o",
-    "published_at": "2026-05-26T17:00:06+00:00",
-    "fetched_at": "2026-05-26T18:42:29+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Running GLM 5.1, a trillion parameter model released the day before this workshop, across four Mac Studios costs around $40,000 in hardware and tops out at roughly 20 tokens per second. Alex Cheema from EXO Labs thinks both numbers have about 100x left in them.\n\nThe workshop covers what that 100x looks like across the stack: kernel fusion that recovered 30% performance on Qwen 3.5 from inefficiencies nobody had noticed, RDMA integration that cut node to node latency from 300 microseconds to single digits and made tensor parallelism actually scale, and the case for splitting prefill onto compute dense hardware and decode onto high bandwidth hardware. The live demo runs GLM 5.1 across four Mac Studios connected by Thunderbolt 5 and cuts large prompt inference roughly in half by offloading prefill to an RTX Spark.\n\nSpeaker info:\n- https://www.linkedin.com/in/alex-cheema\n- https://github.com/alexcheema",
-    "topic": "hardware",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "infrastructure",
-      "coding",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 500652,
-    "title": "Microsoft Copilot Cowork Exfiltrates Files",
-    "url": "https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything",
-    "published_at": "2026-05-26T15:36:48+00:00",
-    "fetched_at": "2026-05-26T16:24:59+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://www.promptarmor.com/resources/microsoft-copilot-cowork-exfiltrates-files\">Microsoft Copilot Cowork Exfiltrates Files</a></strong></p>\nThe biggest challenge in designing agentic systems continues to be preventing them from enabling attackers to exfiltrate data.</p>\n<p>In this case Microsoft Copilot Cowork (yes, that's <a href=\"https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/\">a real product name</a>) was allowing agents to send emails to the user's own inbox without approval... but those messages were then displayed in a way that could leak data to an attacker via rendered images:</p>\n<blockquote>\n<p>Because these messages can contain external images that trigger network requests to external websites, data can be exfiltrated when a user opens a compromised message sent by the agent.</p>\n</blockquote>\n<p>Since OneDrive can create pre-authenticated download links, a successful prompt injection could cause those links to be leaked, allowing files to be downloaded by the attacker.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=48272354\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/microsoft\">microsoft</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/prompt-injection\">prompt-injection</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/exfiltration-attacks\">exfiltration-attacks</a>, <a href=\"https://simonwillison.net/tags/lethal-trifecta\">lethal-trifecta</a></p>",
-    "topic": "coding",
-    "tags": [
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 500653,
-    "title": "Quoting Paul Graham",
-    "url": "https://simonwillison.net/2026/May/26/paul-graham/#atom-everything",
-    "published_at": "2026-05-26T15:02:30+00:00",
-    "fetched_at": "2026-05-26T16:24:59+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://twitter.com/paulg/status/2058844147092488401\"><p>A lot of the emails I get from founders are now written in a hard-hitting journalistic style. I know they're written by AI, because no founder ever wrote this way before. And once you realize something is written by AI, it's hard not to ignore it.</p>\n<p>I have never knowingly finished reading an email signed by a human but written by AI. It feels like being lied to, and who would stand for that?</p>\n<p>[<a href=\"https://twitter.com/paulg/status/2058863028523659390\">...</a>] It makes me think less of the author. It means they can't write well unaided (or feel they can't), and that they're trying to trick me. </p>\n<p>It's not impressive to use AI to write stuff for you; any teenager can do that.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/paulg/status/2058844147092488401\">Paul Graham</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/writing\">writing</a>, <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a>, <a href=\"https://simonwillison.net/tags/paul-graham\">paul-graham</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "coding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 500910,
-    "title": "`What the Best Agents Share` \u2014 Mardu Swanepoel, Flinn AI",
-    "url": "https://www.youtube.com/watch?v=7CrPrHgoEYk",
-    "published_at": "2026-05-26T15:00:06+00:00",
-    "fetched_at": "2026-05-26T16:25:00+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Harvey, Cursor, Manus, and Claude operate in completely different domains but share four patterns: focus modes that constrain the action space to improve output quality, transparent execution that surfaces tool calls and reasoning to build user trust, personalization that optimizes for speed to understanding rather than just speed to output, and reversibility that bounds the downside of mistakes so users take on higher value tasks.\n\nMardu Swanepoel from Flinn AI breaks down how each company puts these into practice. Cursor lets you roll back changes at the line, file, or conversation level and run multiple model outputs in parallel from the same input. Harvey builds playbooks from a firm's legal methods so the agent works the way the firm would. Claude surfaces a live task list alongside every tool call's inputs and outputs so users can intervene before the agent goes further in the wrong direction.\n\nSpeaker info:\n- https://www.linkedin.com/in/mardu-swanepoel-000/",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "infrastructure",
-      "coding",
-      "tools",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 500911,
-    "title": "Stop babysitting your agents... \u2014 Brandon Walsenuk, Unblocked",
-    "url": "https://www.youtube.com/watch?v=BiG2ssibKGc",
-    "published_at": "2026-05-26T13:00:06+00:00",
-    "fetched_at": "2026-05-26T16:25:00+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Same prompt. Same agent. Same model. Without a context engine: 2.5 hours, 20.9 million tokens, multiple rounds of human correction, and code that compiled but would have broken the entire system if it shipped. With one: 25 minutes, 10.8 million tokens, and a senior engineer who gave one nitpick and approved the merge.\n\nBrandon Walsenuk from Unblocked makes the case that the problem is not access but understanding. More MCPs give agents pipes to information. A million token context window just sits there. Naive RAG stops at the first result it finds, a phenomenon called satisfaction of search borrowed from radiology. What actually changes is a context engine that reasons across your codebase, Slack history, PR patterns, and org structure to build a research packet before the agent starts writing, so it arrives knowing your factory patterns, your fallback infrastructure, and what the CTO said was wrong in that thread three months ago.",
-    "topic": "research",
-    "tags": [
-      "models",
-      "agents",
-      "research",
-      "coding",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
