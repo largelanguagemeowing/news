@@ -1,5 +1,94 @@
 [
   {
+    "article_id": 625893,
+    "title": "Citation Needed: Provenance for LLM-Built Knowledge Graphs \u2014 Daniel Chalef, Zep AI",
+    "url": "https://www.youtube.com/watch?v=H7puB0RwJMM",
+    "published_at": "2026-07-23T04:00:02+00:00",
+    "fetched_at": "2026-07-23T04:51:30+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An agent hands a doctor a clean, confident fact: the patient has a penicillin allergy. But that fact was synthesized from three sources, an EHR record, a lab report, and something the patient typed into an intake chatbot, and by the time it reaches the doctor, which one it came from is gone. You cannot just stamp a source ID on it, because the LLM merged entities and later data invalidated earlier facts, so the store keeps shifting under your pointer. Daniel Chalef's argument is that provenance for a knowledge graph an LLM builds has to be a graph itself.\n\nIn Graphiti, the open source framework behind Zep, sources become episodes and every derived fact links back to them, so tracing a fact to its origin is just a graph walk. Tag a source once and the tag follows every node and edge derived from it, which lets an agent keep only facts from verified clinical sources. Deletion is the same walk in reverse: a GDPR erasure removes a source, and a fact survives only if another source still supports it. Compliance gets an audit trail, and engineers get agents they can debug instead of black boxes.\n\nSpeaker info:\n- https://x.com/danielchalef\n- https://www.linkedin.com/in/danielchalef/\n- https://github.com/getzep/graphiti\n\nTimestamps:\n0:00 - Why LLM synthesis destroys the paper trail\n1:10 - Graphiti, Zep, and the provenance problem\n1:47 - The failure mode: a penicillin allergy from three sources\n2:53 - Why a source ID does not survive an LLM pipeline\n4:20 - Provenance as a graph: tracing a fact is a walk\n5:09 - Keeping lineage correct through merges and invalidation\n6:06 - Metadata projection: tag a source once\n7:25 - Mixed trust parents: allergy flags versus consent\n8:57 - Deletion: GDPR erasure through the same edges\n10:26 - Benefits: compliance, veracity, and debuggability\n11:31 - Q&amp;A: cost, dedup, and why not just markdown",
+    "topic": "policy",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "research",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 625894,
+    "title": "Local Agentic Theory For Mobile Games \u2014 Shafik Quoraishee & Joanne Song, The New York Times",
+    "url": "https://www.youtube.com/watch?v=418t26CVz-w",
+    "published_at": "2026-07-23T03:00:01+00:00",
+    "fetched_at": "2026-07-23T04:51:30+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An agent runs entirely on your phone, no cloud, and plays Space Invaders, perceiving the scene, predicting the aliens, and dodging bullets in a loop. Another solves the New York Times mini crossword with a constraint graph that backtracks when the fills stop fitting. These are experimental, and the Times is emphatic that its actual puzzles are made by people with no AI in the games. The hard part is the budget: a local agent has to plan its next move inside a single 16 millisecond frame, without draining the battery or starving the renderer, or you get jank.\n\nShafik Quoraishee and Joanne Song use that to argue accessibility and difficulty should stop being separate toggles. Model the game as a continuous negotiation and they become two ends of one dial the agent tunes to you in real time: it watches eye gaze and shaky taps, resizes controls on the fly, and breaks a keyboard trap the moment it detects one, all on the device. Their closing bet is that the future of AI is not one giant centralized brain but billions of small local ones, each shaped by the person it runs for.\n\nSpeaker info:\n- https://x.com/squoraishee\n- https://www.linkedin.com/in/shafik-quoraishee/\n- https://www.shafikquoraishee.com/\n\nTimestamps:\n0:00 - Disclaimers and the experimental frame\n1:55 - A short history of AI in games\n2:49 - Why run the AI on the device, not the cloud\n4:56 - From reinforcement learning to agentic play\n7:00 - Demo: an agent playing Space Invaders\n8:19 - The on device budget: space, time, and energy\n11:15 - Demo: solving the mini crossword by backtracking\n12:33 - Accessibility: from toggles to graded dials\n14:40 - The agent tuning the game to you in real time\n16:28 - What is still needed, and billions of local brains",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "education",
+      "hardware",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 625895,
+    "title": "Video Has No Memory. Here's How We Built One. \u2014 James Le, TwelveLabs",
+    "url": "https://www.youtube.com/watch?v=mOf-PP4mVjA",
+    "published_at": "2026-07-23T02:00:03+00:00",
+    "fetched_at": "2026-07-23T04:51:30+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Feed it 67 videos from the 2022 World Cup and ask for the near misses, the shots that almost scored but did not, each with a reason, and it returns them. Ask it to track Messi across the entire corpus and describe the camera framing, and it finds the moment he slaloms past a sliding defender. James Le's point is that this is unusual because video has no memory. Almost every video AI system answers each query from scratch, and a bigger context window does not fix it, because the real problem is that there is no durable representation to retrieve into.\n\nHis fix is to stop treating video as a bag of frames and start treating it as a spatial temporal volume, then build a memory layer over it: a context graph of time bounded moments, the entities and where they appear, the relationships between them, and corpus level themes. At TwelveLabs that is an embedding encoder, a context store, and a video language model exposed as an API. The design rules are blunt: ingest once and reason many times, store primitives not answers, ground every claim to a timestamp, and let intent decide what to remember, because brand safety and sports highlights need different things from the same footage.\n\nSpeaker info:\n- https://x.com/le_james94\n- https://www.linkedin.com/in/khanhnamle94/\n- https://jameskle.com/\n\nTimestamps:\n0:00 - Video has no memory\n0:50 - Video is a spatial temporal volume, not a bag of frames\n2:06 - Three problems: wrong context, wrong memory, weak reasoning\n3:36 - Five properties that make video memory hard\n4:53 - The TwelveLabs stack: Marengo, the context store, and Pegasus\n5:56 - Search versus memory\n7:48 - The context graph\n9:04 - Five design principles for a video memory layer\n10:45 - From a static model to a video worker\n12:51 - Demo: sports and tracking Messi across the World Cup\n15:37 - Demos: traffic security and ad placement",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "api",
+      "safety",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 625896,
+    "title": "Why Agentic Systems Need Ontologies \u2014 Frank Coyle, UC Berkeley",
+    "url": "https://www.youtube.com/watch?v=Sir59K8ZDPU",
+    "published_at": "2026-07-23T01:00:07+00:00",
+    "fetched_at": "2026-07-23T04:51:30+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A second refund on the same order. A payout sent to the support desk instead of the buyer. An order status of \"probably shipped.\" These are the kinds of mistakes a probabilistic agent makes and a paragraph of instructions cannot reliably stop. Frank Coyle argues that most agent failures, from brittle tools to fragile handoffs, are symptoms of one missing layer: a formal ontology sitting outside the model as logical guardrails. LLMs reason probabilistically over domains they only half understand, and no amount of prompt engineering closes that gap.\n\nHis fix is neurosymbolic: probabilistic reasoning inside, logic outside. An ontology is just typed entities, relationships, and constraints, expressed with old and boring standards like RDFS and OWL, that let you say a payment status must be one of three values, that a customer and a support rep are different things, that an order can only be refunded once. Wrap a Claude tool use loop with a validator: when the model proposes a tool call, check its types with Pydantic and its results against the ontology, and only then let it act. The catches that are painful to write in English become a few lines of logic.\n\nSpeaker info:\n- https://x.com/coyle_frankp\n- https://www.linkedin.com/in/frank-coyle/\n- https://www.frank-coyle.ai/\n\nTimestamps:\n0:00 - Intro and an educator's philosophy\n2:21 - Two lineages: agents and ontologies\n4:04 - Neurosymbolic AI: guardrails around a probabilistic model\n5:23 - What an ontology actually is\n6:14 - Building one, and the expert systems era\n7:55 - Reusing existing taxonomies\n9:12 - RDFS and OWL: inference and constraints\n12:12 - Agents, loops, and how they break\n14:22 - A Claude tool use loop with an ontology validator\n17:47 - Pydantic at the door, ontology at the ledger\n18:52 - The errors an ontology catches that English cannot",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 623742,
     "title": "Learned Execution Graphs for Anomaly Detection & Drift in APIs \u2014 Ritvik Pandya, JP Morgan Chase",
     "url": "https://www.youtube.com/watch?v=u1yaOeEX4e8",
@@ -9696,84 +9785,6 @@
       "funding",
       "enterprise",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 485673,
-    "title": "Bounded Autonomy: Between Free Will and Determinism \u2014 Angus J. McLean, Oliver",
-    "url": "https://www.youtube.com/watch?v=t4359sKBu4w",
-    "published_at": "2026-05-25T13:00:06+00:00",
-    "fetched_at": "2026-05-25T15:51:54+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Angus McLean spent time building a complex agent application to generate his CV. Four letters beat it: HTML. He puts the improvement at 100x.\n\nThe talk is from Oliver's AI Director, where agents generate around 4,000 creative assets a day for 200 plus brands, assets you have probably seen and had no idea were AI. The core argument: models are naturally verbose and tend toward complexity, and so are the developers working with them. His counter is to strip back. Replace internet access with curated documentation, ask how little context you can use and still complete the task, and never automate a job you cannot do yourself.\n\nSpeaker info:\n- https://uk.linkedin.com/in/angusjmclean",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents",
-      "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 484182,
-    "title": "Jira IS Turing-Complete",
-    "url": "https://seriot.ch/computation/jira.html",
-    "published_at": "2026-05-25T10:57:58+00:00",
-    "fetched_at": "2026-05-25T12:37:10+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. beautifully done.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 480367,
-    "title": "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation",
-    "url": "https://arxiv.org/abs/2605.06445",
-    "published_at": "2026-05-25T00:25:09+00:00",
-    "fetched_at": "2026-05-25T04:45:59+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. (haven't read it yet)",
-    "topic": "coding",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 504969,
-    "title": "How we contain Claude across products",
-    "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
-    "published_at": "2026-05-25T00:00:00+00:00",
-    "fetched_at": "2026-05-26T20:53:52+00:00",
-    "source_id": "anthropic-engineering",
-    "source_name": "Anthropic Engineering",
-    "extraction_method": "rss",
-    "body": "As agents grow more capable, so does their potential blast radius. The engineering question is how to cap it. Here\u2019s what we\u2019ve learned building containment for claude.ai, Claude Code, and Cowork.\\n",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding",
-      "tutorials",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
