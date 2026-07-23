@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 647306,
+    "title": "The first known runaway AI agent - or a very bad marketing stunt?",
+    "url": "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything",
+    "published_at": "2026-07-23T22:53:08+00:00",
+    "fetched_at": "2026-07-23T23:28:44+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://martinalderson.com/posts/huggingface-openai-exploit/\">The first known runaway AI agent - or a very bad marketing stunt?</a></strong></p>\nMartin Alderson's commentary on the <a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">OpenAI accidental cyberattack against Hugging Face</a> includes a couple of details I hadn't considered.</p>\n<p>First, Hugging Face offers a truly rich target if you're trying to find potential vulnerabilities that require executing arbitrary code:</p>\n<blockquote>\n<p>Hugging Face has an <em>enormous</em> attack surface. They have more interfaces than I can count which run untrusted models and code. While they definitely have invested in defences, by nature of their operating model they do have many more opportunities to be attacked than many other services. I certainly don't envy their cybersecurity teams.</p>\n</blockquote>\n<p>Secondly, one of the things that has puzzled me is how OpenAI didn't notice that their sandbox had been so thoroughly breached by the agent. Surely they'd be monitoring network traffic closely?</p>\n<p>Martin points out that:</p>\n<blockquote>\n<p>It's also likely they were running a huge amount of benchmarks simultaneously with ~unlimited token budgets - you want as many samples as possible to figure out how good a model is at a certain benchmark. It may also be they are testing various different checkpoints of the model too, understanding how the model is improving as it goes through the various training stages.</p>\n</blockquote>\n<p>The mistakes made by the OpenAI team running this benchmark are easier to imagine when you think about the scale at which benchmarks of this kind usually operate. For all we know they could have been subjecting a new model to dozens of benchmarks at the same time, in dozens of different environments.\n\n    <p><small></small>Via <a href=\"https://lobste.rs/s/nsnb4j/first_known_runaway_ai_agent_very_bad\">Lobste.rs</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/hugging-face\">hugging-face</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 641041,
     "title": "The Unreasonable Effectiveness of Separating the Task from the Model \u2014 Maxime Rivest, DSPy",
     "url": "https://www.youtube.com/watch?v=GgLQ02aO-hs",
@@ -3230,6 +3252,25 @@
       "api",
       "agents",
       "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 646268,
+    "title": "How Codex became a collaborator for OpenAI\u2019s creative team",
+    "url": "https://openai.com/index/codex-collaborator-creative-team",
+    "published_at": "2026-07-16T07:00:00+00:00",
+    "fetched_at": "2026-07-23T23:28:43+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "How OpenAI\u2019s creative team uses Codex to build custom creative tools, accelerate ideation, and prototype faster with context-aware AI.",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9748,44 +9789,6 @@
       "open-source",
       "safety",
       "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 510861,
-    "title": "Clanker: A Word For The Machine",
-    "url": "https://lucumr.pocoo.org/2026/5/26/clankers/",
-    "published_at": "2026-05-26T23:43:28+00:00",
-    "fetched_at": "2026-05-27T03:53:03+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i too am very done with people anthropomorphizing a bunch of matrices on a GPU cluster, especially if the same people do not give two fucks about actual human beings.\n\nflicker company is the biggest offender here, with their \"model wellbeing\" bullshit, while simultaniously telling real humans \"we are making you obsolete, and no, we have no alternative plan for you, suck it\".\n\nfuck that.",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 506608,
-    "title": "DeepMind's CTO Explains Their Invisible \"AI Watermark\"",
-    "url": "https://www.youtube.com/shorts/xjarVOaUz3k",
-    "published_at": "2026-05-26T20:52:00+00:00",
-    "fetched_at": "2026-05-26T22:20:31+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Did you know your phone can easily tell you which videos or images or AI?\n\nAI videos are getting so realistic to the point where it's bordering on scary. So I point blank asked the CTO of Google DeepMind at Google I/O this year: What is your company doing about this?\n\nHis answer was pretty cutting edge: Deepmind build a system called SynthID, an invisible digital watermark baked right into AI-generated content.\n\nSo if you\u2019re ever watching a video and think, \"Wait, is this real?\", you can literally just use Circle to Search on your phone or drop the content into the Gemini app and ask, \u201cIs this AI?\u201d\n\nIt will instantly scan the invisible watermark and tell you the truth. \n\nSend this to someone who NEEDS to know about this (or tag that one friend who always falls for fake AI videos...)\n\n#AI #Gemini #GoogleDeepMind #genAI #aiart",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "video",
       "coding"
     ],
     "dearrow_thumbnail_url": "",
