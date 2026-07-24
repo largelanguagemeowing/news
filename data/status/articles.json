@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 673514,
+    "title": "Building Closed-Loop Evals for a Multimodal Agent at Scale \u2014 Soumya Gupta & Jai Chopra, Uber",
+    "url": "https://www.youtube.com/watch?v=31GUkCBD-Uc",
+    "published_at": "2026-07-24T22:00:25+00:00",
+    "fetched_at": "2026-07-24T23:02:51+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "This talk covers how Uber designed evals for its food enhancement agent, which edits food photography to better present dishes for smaller, independent Uber Eats merchants, along with the pitfalls and lessons learned along the way.\n\nThe problem is uniquely hard: the system must stay faithful to the original dish, preserve each merchant's brand and packaging, and avoid homogenizing the marketplace, all without an existing playbook for multimodal evals in a narrow domain. Soumya Gupta and Jai Chopra explain how they navigated reward hacking, built a closed feedback loop combining offline and online signals, and balanced creativity against rigid safety guardrails at scale.\n\nML and applied AI practitioners working on multimodal systems, agentic pipelines, or eval design will take away practical strategies for narrow-domain multimodal evaluations, countering reward hacking, and production feedback loops.\n\nSpeakers:\n\nSoumya Gupta \u2014 ML Engineer, Uber\nSoumya is a Tech Lead and Applied AI Engineer who architects and scales production-grade generative AI and computer vision systems at Uber.\nX/Twitter: https://x.com/guptasoumya12\nLinkedIn: https://www.linkedin.com/in/guptasoumya12/\n\nJai Chopra \u2014 Product Manager, Uber\nJai is a Product Lead on Uber's Applied AI team and previously worked at Cruise and several startups.\nX/Twitter: https://x.com/jai_chopra\nLinkedIn: https://linkedin.com/in/jaichopra",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents",
+      "safety",
+      "benchmark",
+      "infrastructure",
+      "funding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 672099,
     "title": "I have also found that writing a generic 'review' skill is really, really hard Mostly because it really needs a custom set of curated standards for that project And once you've done that, you might as well just run your own review agent",
     "url": "https://nitter.net/mattpocockuk/status/2080760177494577332#m",
@@ -9777,25 +9800,6 @@
       "coding",
       "education",
       "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 533538,
-    "title": "Introducing Claude Opus 4.8",
-    "url": "https://www.anthropic.com/news/claude-opus-4-8",
-    "published_at": "2026-05-28T00:00:00+00:00",
-    "fetched_at": "2026-05-28T19:36:07+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Introducing Claude Opus 4.8",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
