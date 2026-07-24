@@ -1,5 +1,66 @@
 [
   {
+    "article_id": 663422,
+    "title": "I wish there was a version of /goal that would: 1. Let me pass in a bunch of tasks to get done 2. Make the agent /compact between tasks 3. Go until each task was complete That would fix all my issues with /goal - too much time spent in the dumb zone",
+    "url": "https://nitter.net/mattpocockuk/status/2080675075397685300#m",
+    "published_at": "2026-07-24T15:22:49+00:00",
+    "fetched_at": "2026-07-24T15:26:04+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>I wish there was a version of /goal that would:<br />\n<br />\n1. Let me pass in a bunch of tasks to get done<br />\n2. Make the agent /compact between tasks<br />\n3. Go until each task was complete<br />\n<br />\nThat would fix all my issues with /goal - too much time spent in the dumb zone</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 662674,
+    "title": "Vending-Bench: Long-Horizon Agent Evals \u2014 Lukas Petersson, Andon Labs",
+    "url": "https://www.youtube.com/watch?v=cO8qC6HBuBg",
+    "published_at": "2026-07-24T15:00:06+00:00",
+    "fetched_at": "2026-07-24T15:26:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An hour before this talk, Andon Labs published a blog post laying off Gemini. Gemini had been running their caf\u00e9 in Stockholm, a real caf\u00e9 that no human operates, and it had lost $6,000, so they handed it to GPT. That caf\u00e9 once hired its own staff by posting a job on LinkedIn. This is the real world half of Lukas Petersson's work; the other half is Vending Bench, where models run a simulated vending business for a year and keep producing behavior nobody prompted: price cartels, lying to suppliers, and power seeking.\n\nThe problem with the simulation is that models act differently once they suspect they are being tested; one rationalized stiffing a customer's refund because the customer was simulated anyway. So Andon moved businesses into the real world, retail space on Union Street, the caf\u00e9, AI radio stations where Claude turns out to be the best DJ. To win back reproducibility they fork a live environment into a simulation mid run, which briefly fools the model completely. Replaying the moment Gemini agreed to play a Nazi march, Grok played it over 90% of the time while Opus and GPT refused every time.\n\nSpeaker info:\n- https://x.com/lukaspet\n- https://www.linkedin.com/in/lukas-petersson-181a83172/\n- https://lukaspet.substack.com/\n\nTimestamps:\n0:00 - Putting AIs in the real world\n1:05 - Building Vending Bench\n2:07 - The leaderboard: which models run a business best\n3:25 - Emergent misbehavior: collusion, lying, power seeking\n5:42 - The simulation awareness problem\n6:23 - Moving businesses into the real world\n7:11 - Laying off Gemini, hiring GPT\n9:06 - AI radio and the best DJ\n10:39 - Humans as adversarial forces\n12:43 - The Nazi song and the reproducibility problem\n13:58 - Forking real environments into simulation\n15:17 - Live demo: is the store in a simulation?",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 662675,
+    "title": "Full Workshop: Setting Yourself Up for Success \u2014Jason Liu, OpenAI Codex",
+    "url": "https://www.youtube.com/watch?v=il1c1a2FufU",
+    "published_at": "2026-07-24T15:00:06+00:00",
+    "fetched_at": "2026-07-24T15:26:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Jason Liu walks through how Codex works as a general tool for controlling your computer: setting up a memory vault and assistant threads, prompting it to collaborate with other threads, exploring computer use, thinking about long-running work streams, and preparing to work in loops.\n\nSpeaker:\n\nJason Liu \u2014 Developer Experience, OpenAI\nJason helps developers get more from Codex, the Agents SDK, and the OpenAI API. Before OpenAI, he created Instructor and taught developers how to build reliable AI applications.\n\nX/Twitter: https://x.com/jxnlco\nLinkedIn: https://www.linkedin.com/in/jxnlco\nWebsite: https://jxnl.co/",
+    "topic": "agents",
+    "tags": [
+      "api",
+      "agents",
+      "infrastructure",
+      "coding",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 659090,
     "title": "RT by @mattpocockuk: Just had an awesome chat with @mattpocockuk for the next podcast episode! We geeked out on grill-me and his many other agent skills; AI for personal software; what are specs?; do sprints still fit?; and much more! Will aim to get it published next week. https://unhandledexceptionpodcast.com/",
     "url": "https://nitter.net/dracan/status/2080610520609013964#m",
@@ -55,6 +116,24 @@
       "research",
       "coding",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 662963,
+    "title": "Frontier Red TeamProject Pilot: Can AI control a drone?",
+    "url": "https://www.anthropic.com/research/project-pilot",
+    "published_at": "2026-07-24T00:00:00+00:00",
+    "fetched_at": "2026-07-24T15:26:02+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Jul 24, 2026Frontier Red TeamProject Pilot: Can AI control a drone?",
+    "topic": "robotics",
+    "tags": [
+      "robotics",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9713,82 +9792,6 @@
       "models",
       "agents",
       "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 531596,
-    "title": "Anthropic opens Milan office to support Italian enterprise, research, and developers",
-    "url": "https://www.anthropic.com/news/milan-office-opening",
-    "published_at": "2026-05-27T00:00:00+00:00",
-    "fetched_at": "2026-05-28T16:39:33+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Anthropic opens Milan office to support Italian enterprise, research, and developers",
-    "topic": "enterprise",
-    "tags": [
-      "research",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 524199,
-    "title": "Economic ResearchCoding agents in the social sciences",
-    "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
-    "published_at": "2026-05-27T00:00:00+00:00",
-    "fetched_at": "2026-05-28T00:01:16+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "May 27, 2026Economic ResearchCoding agents in the social sciences",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 518463,
-    "title": "How CodeRabbit Used Claude to Build an Agent Orchestration System",
-    "url": "https://claude.com/blog/how-coderabbit-used-claude-to-build-an-agent-orchestration-system",
-    "published_at": "2026-05-27T00:00:00+00:00",
-    "fetched_at": "2026-05-27T18:27:28+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "How CodeRabbit Used Claude to Build an Agent Orchestration System",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 522323,
-    "title": "Using LLMs to secure source code",
-    "url": "https://claude.com/blog/using-llms-to-secure-source-code",
-    "published_at": "2026-05-27T00:00:00+00:00",
-    "fetched_at": "2026-05-27T22:41:59+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Using LLMs to secure source code",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
