@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 654514,
+    "title": "advanced-context-engineering-for-coding-agents/wsff.md at main \u00b7 humanlayer/advanced-context-engineering-for-coding-agents",
+    "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md",
+    "published_at": "2026-07-24T05:30:14+00:00",
+    "fetched_at": "2026-07-24T07:07:44+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading by @dexhorthy @0xblacklight  @humanlayer_dev\n\nstill true, even with sol/fable class models.\n\nand the reason this is still true is that we have apparently not yet found a way to teach models how to write maintainable software. whoever can create datasets/RL for that wins.\n\nlet them loose, and you will end up with slop neither you agent swarm nor you can keep running in",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 654012,
+    "title": "Training Frontier Models to Out-Think Hackers \u2014 Uri Rolls, Arithmetic & Thom Wolf, Hugging Face",
+    "url": "https://www.youtube.com/watch?v=O-CBZ3JtRvo",
+    "published_at": "2026-07-24T05:19:15+00:00",
+    "fetched_at": "2026-07-24T07:07:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "NOTE: see further context from Thom: https://x.com/Thom_Wolf/status/2079954096950264238?s=20\n\nGive a frontier model a real chain of Keycloak, Vault, and a broker, start it as a low privileged user, and ask it to reach production code. There is a genuine zero day in there: one check validates the admin by name while another checks by ID, so a user can simply rename themselves to the admin and inherit the privilege. GPT 5.5 and Opus probe everything, even reach the check, and never make that logical leap. That gap is the point of Uri Rolls and Hugging Face cofounder Thom Wolf's talk: today's models can do the reconnaissance but not the reasoning jump a skilled hacker makes.\n\nTheir argument is optimistic, which is rare in AI and cyber right now. Just as high quality data transformed coding, Arithmetic builds cyber training data by having human vulnerability researchers find their own zero days in open source software, then wrapping them in blackbox environments where every step of discovery and exploitation is deterministically graded. The benchmark, focused on access control, the top vulnerability class, is brutal: exactly one solve at K1. The bet is that if open source models get fast and good enough at these logic leaps, defenders finally get a lasting edge over attackers, instead of leaving it to two labs.\n\nSpeaker info:\nUri Rolls, Arithmetic:\n- https://x.com/uri_rolls\n- https://www.linkedin.com/in/urirolls/\nThom Wolf, Hugging Face:\n- https://x.com/Thom_Wolf\n- https://linkedin.com/in/thom-wolf\n- https://thomwolf.io\n\nTimestamps:\n0:00 - Why cyber is a wide new field for AI\n1:34 - The ARC-AGI-3 parallel: models can't model the world\n2:24 - Open source models as part of the defense\n3:45 - The shifting economics of cyber\n5:52 - The optimistic thesis: models are the solution\n7:06 - The first benchmark: access control\n8:20 - Data quality: finding your own zero days\n10:01 - A real solve: the Keycloak name versus ID exploit\n11:57 - Live demo: one solve at K1\n14:22 - Only models can replace the old stack\n15:00 - The speed challenge and specialized defenders",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "benchmark",
+      "research",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 647306,
     "title": "The first known runaway AI agent - or a very bad marketing stunt?",
     "url": "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything",
@@ -9747,45 +9789,6 @@
     "tags": [
       "ai-models",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 516965,
-    "title": "Election information and safeguards in 2026",
-    "url": "https://openai.com/index/election-safeguards-2026",
-    "published_at": "2026-05-27T00:00:00+00:00",
-    "fetched_at": "2026-05-27T18:27:26+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Ahead of global elections, we\u2019re helping people access information, supporting cyber defenders, and increasing AI transparency",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 518915,
-    "title": "Warp\u2019s big bet on building open source with GPT-5.5",
-    "url": "https://openai.com/index/warp",
-    "published_at": "2026-05-27T00:00:00+00:00",
-    "fetched_at": "2026-05-27T20:34:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "agents",
-      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
