@@ -1,5 +1,48 @@
 [
   {
+    "article_id": 664798,
+    "title": "The Easiest AI Business Idea \ud83d\udca1\ud83d\udcb0",
+    "url": "https://www.youtube.com/shorts/kURp6YM6O5Q",
+    "published_at": "2026-07-24T16:03:56+00:00",
+    "fetched_at": "2026-07-24T17:05:43+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "This might be one of the easiest AI business ideas I\u2019ve seen.\n\nYouTuber Corey Ganim built a @Hyperagentapp skill that finds local businesses with outdated websites, creates improved versions for them, and even generates the outreach emails you can use to pitch them.\n\nHe published the entire workflow to the new Hyperagent Marketplace, so anyone can use the same team of AI agents without building it new from scratch.\n\nI also added my own B-Roll Video Generator to the Marketplace, which turns a video script into organized B-roll ideas and assets.\n\nYou can use either of our skills or describe your own idea and have Hyperagent build a specialized team of agents to handle the workflow.\n\nTry it today and get $1,000 in free credits for Hyperagent here: https://www.hyperagent.com/matt\n\n#HyperagentPartner #AIagents #businessidea #startup #AI",
+    "topic": "enterprise",
+    "tags": [
+      "agents",
+      "video",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 664858,
+    "title": "Everything Is a Rollout \u2014 Alex Shaw + Ryan Marten, Terminal-Bench, Harbor, Laude Institute",
+    "url": "https://www.youtube.com/watch?v=jRCpXUjz4CI",
+    "published_at": "2026-07-24T16:00:06+00:00",
+    "fetched_at": "2026-07-24T17:05:44+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Alex Shaw and Ryan Marten present a rollout-centered view of evaluating and improving AI agents. Drawing on their work on Harbor, Terminal-Bench, and OpenThoughts-Agent, they connect sandboxed environments, agent evaluations, and optimization workflows into a practical framework for generating and learning from rollouts.\n\nSpeakers:\n\nAlex Shaw \u2014 Member of Technical Staff, Laude Institute\nAlex is the creator of Harbor, a framework for evaluating and optimizing agents and language models in sandboxed environments.\n\nRyan Marten \u2014 Member of Technical Staff, Laude Institute\nRyan builds Harbor and works on research-to-production efforts including Terminal-Bench and OpenThoughts-Agent.\n\nHarbor: https://www.harborframework.com/\nGitHub: https://github.com/harbor-framework/harbor",
+    "topic": "education",
+    "tags": [
+      "education",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 663422,
     "title": "I wish there was a version of /goal that would: 1. Let me pass in a bunch of tasks to get done 2. Make the agent /compact between tasks 3. Go until each task was complete That would fix all my issues with /goal - too much time spent in the dumb zone",
     "url": "https://nitter.net/mattpocockuk/status/2080675075397685300#m",
@@ -134,6 +177,26 @@
     "tags": [
       "robotics",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 664620,
+    "title": "LEAD: Breaking the No-Recovery Bottleneck in Long-Horizon Reasoning",
+    "url": "https://machinelearning.apple.com/research/lead-no-recovery-bottleneck",
+    "published_at": "2026-07-24T00:00:00+00:00",
+    "fetched_at": "2026-07-24T17:05:41+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Long-horizon execution in Large Language Models (LLMs) remains unstable even when high-level strategies are provided. Evaluating on controlled algorithmic puzzles, we demonstrate that while decomposition is essential for stability, extreme decomposition creates a \u201cno-recovery bottleneck\u201d. We show that this bottleneck becomes critical due to highly non-uniform error distribution, where consistent errors on a few \u201chard\u201d steps become irreversible. To address this, we propose Lookahead-Enhanced Atomic Decomposition (LEAD). By incorporating short-horizon future validation and aggregating\u2026",
+    "topic": "media",
+    "tags": [
+      "models",
+      "benchmark",
+      "coding",
+      "media"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9732,66 +9795,6 @@
       "coding",
       "development",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 514295,
-    "title": "How Transformers.js Works: AI Models in JavaScript, Explained",
-    "url": "https://www.youtube.com/watch?v=A_6UOxQSvvY",
-    "published_at": "2026-05-27T08:26:22+00:00",
-    "fetched_at": "2026-05-27T11:54:48+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "00:00 Intro\n01:16 Machine Learning\n03:11 ONNX\n04:04 Quantization\n05:15 The core Library\n06:56 Pipeline API\n10:26 Pipe\n13:06 Wrap-up\n\nTransformers.js brings state-of-the-art machine learning to JavaScriprt.\n\nIn this intro, I explain the mental model behind Transformers.js: tensors, neural networks, ONNX, quantization, model loading, preprocessing, postprocessing, and the pipeline() API.\n\nWe also look at what happens under the hood for text-generation and depth-estimation, and why one high-level API can support many different AI tasks.\n\nLinks:\n\nFull documentation:\nhttps://huggingface.co/docs/transformers.js/index\n\nGitHub:\nhttps://github.com/huggingface/transformers.js\n\nDemos in this video:\nhttps://huggingface.co/spaces/webml-community/GPT-OSS-WebGPU\nhttps://huggingface.co/spaces/webml-community/whisper-large-v3-turbo-webgpu\nhttps://huggingface.co/spaces/webml-community/remove-background-webgpu",
-    "topic": "education",
-    "tags": [
-      "education",
-      "models",
-      "open-source",
-      "api",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 515031,
-    "title": "Building self-improving tax agents with Codex",
-    "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
-    "published_at": "2026-05-27T07:00:00+00:00",
-    "fetched_at": "2026-05-27T15:46:26+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how OpenAI, Thrive, and Crete built a self-improving tax agent with Codex, automating filings, improving accuracy, and accelerating workflows.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 512130,
-    "title": "Quoting Kyle Ferrana",
-    "url": "https://simonwillison.net/2026/May/27/kyle-ferrana/#atom-everything",
-    "published_at": "2026-05-27T06:41:43+00:00",
-    "fetched_at": "2026-05-27T08:05:31+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://twitter.com/kyletrainemoji/status/2059301102814953511\"><p>PICARD: Data, shields up</p>\n<p>DATA: Brilliant! Shields can reduce damage we sustain. Not immunity. Not hubris. Just prudence. It's not precaution\u2014it's strategy.</p>\n<p>[camera shakes]</p>\n<p>WORF: HULL BREACHES ON NINE DECKS</p>\n<p>DATA: Here's what happened: you told me to raise shields, and I didn't</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/kyletrainemoji/status/2059301102814953511\">Kyle Ferrana</a>, @KyleTrainEmoji</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "agents",
-      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
