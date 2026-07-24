@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 669179,
+    "title": "From Signal to PR: Anatomy of a Self-Improving Agent \u2014 Jason Lopatecki, Arize",
+    "url": "https://www.youtube.com/watch?v=9HbzAWnKbo4",
+    "published_at": "2026-07-24T20:15:32+00:00",
+    "fetched_at": "2026-07-24T20:24:56+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Instead of getting paged at midnight and starting to dig, you wake up to an issue that has already been investigated: the traces pulled, the root cause found, and a pull request with the fix waiting for review. That is what Arize built with Signal, and Jason Lopatecki walks through the anatomy of it. The unlock is boring and specific: traces on a filesystem. A skill pulls the relevant production traces and logs down as files into the repo, right next to the code, sometimes ten megabytes of them, because coding harnesses like Claude Code are magical with files and hopeless with a dashboard.\n\nFrom there the agent has the exact code path the software took, not a guess among a million branches, and can produce a real fix. You pick the harness, the sandbox, and the skills, and Arize can run it inside your VPC, because companies like Uber and Booking will not point production systems at an external model. The deeper shift is that observability stops being a dashboard you click and becomes the smoke a system throws off for agents to read, which is why you now log and trace ten times more, not less. He is honest about the limits: a one line fix is the easy case, bigger fixes still need a human to drive, and the job moves from responder to reviewer.\n\nSpeaker info:\n- https://www.linkedin.com/in/jason-lopatecki-9509941/\n- https://arize.com/author/jason-lopatecki/\n\nTimestamps:\n0:00 - Arize, its agent Alyx, and why v1 sucked\n1:36 - Observability is changing: from dashboards to telemetry for agents\n2:55 - The goal: systems that fix themselves\n4:14 - Inverting the loop: the agent investigates first\n6:08 - Traces on a filesystem, the key unlock\n7:23 - From your laptop to sandboxes\n8:13 - A real fix: the Alyx stream canceled bug\n9:39 - Why you should trace ten times more\n11:10 - Product demo: Signal, AX, and Phoenix\n13:09 - Sandboxes, VPC, and why customers won't call out\n16:20 - Q&amp;A: why not just point Claude Code at your data?\n18:04 - Q&amp;A: where do the evals come in?",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 669180,
+    "title": "The Future of Evals: From LLM as a Judge to Agent as a Judge \u2014 Aparna Dhinakaran, Arize AI",
+    "url": "https://www.youtube.com/watch?v=q2JrUKBMf0w",
+    "published_at": "2026-07-24T20:00:06+00:00",
+    "fetched_at": "2026-07-24T20:24:56+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Across a dozen eval jobs Arize watches the top teams run, one pattern holds: the eval has to change as fast as the agent it grades. In 2023 an agent was barely more than a prompt; since then reasoning, tool calls, and long multi step loops piled on, and every jump in capability quietly broke the eval that came before. So the evals evolved with them. Deterministic checks catch what you can define up front, LLM as a judge adds the analysis a fixed rule cannot, and the newest step, agent as a judge, hunts for failure modes you would never think to write a check for and can open a pull request to fix what it finds. Aparna Dhinakaran's argument is that this arc, from static checks to an agent grading another agent, is where evals go next.\n\nSpeaker info:\n- https://x.com/aparnadhinak\n- https://www.linkedin.com/in/aparnadhinakaran/\n\nTimestamps:\n0:00 - Opening: the future of the Evals track\n2:06 - Why evals got harder as agents evolved\n3:45 - From deterministic checks to LLM as a judge\n4:36 - Agent as a judge, and where evals go next",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "opinion",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 666950,
     "title": "AI News: This New Model Has Big AI Labs Panicking!",
     "url": "https://www.youtube.com/watch?v=Ww3EYbuHSfo",
@@ -9748,46 +9792,6 @@
       "models",
       "agents",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 530381,
-    "title": "OpenAI\u2019s Frontier Governance Framework",
-    "url": "https://openai.com/index/openai-frontier-governance-framework",
-    "published_at": "2026-05-28T00:00:00+00:00",
-    "fetched_at": "2026-05-28T16:39:32+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Explore OpenAI\u2019s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
-    "topic": "policy",
-    "tags": [
-      "safety",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 523745,
-    "title": "sqlite AGENTS.md",
-    "url": "https://simonwillison.net/2026/May/27/sqlite-agents/#atom-everything",
-    "published_at": "2026-05-27T23:44:37+00:00",
-    "fetched_at": "2026-05-28T00:01:07+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://github.com/sqlite/sqlite/blob/master/AGENTS.md\">sqlite AGENTS.md</a></strong></p>\nSQLite gained an AGENTS.md file <a href=\"https://github.com/sqlite/sqlite/commit/a1e5778889252d2609a59fd9b819d70392c5789e\">five days ago</a> - but it's not intended for their own development, it's presumably aimed at people who are pointing agents at the SQLite codebase. It includes:</p>\n<blockquote>\n<p>SQLite does not accept pull requests without prior agreement and/or accompanying legal paperwork that places the pull request in the public domain. However, the human SQLite developers will review a concise and well-written pull request as a proof-of-concept prior to reimplementing the changes themselves.</p>\n<p>SQLite does not accept agentic code. However the project will accept agentic bug reports that include a reproducible test case. Patches or pull requests demonstrating a possible fix, for documentation purposes, are welcomed.</p>\n</blockquote>\n<p>The <a href=\"https://github.com/sqlite/sqlite/commit/db7fe319ed5a18dbc732ab8eacea557f41cd910f\">most recent commit</a> to that file removed the word \"(currently)\" from \"SQLite does not accept agentic code, with the commit message \"Strengthen the statement about not accepting agentic code\".</p>\n<p>Meanwhile the SQLite forum was being flooded with so many AI-generated bug reports - of varying quality - that they've now <a href=\"https://sqlite.org/forum/forumpost/2e7a8d6ba4b46d8315e80fd4a1e2feb40948dff5b7b11d5ba9cea5cb40aa252b\">split those off</a> into a <a href=\"https://sqlite.org/bugs/forum\">new SQLite Bug Forum</a>. D. Richard Hipp is resolving issues on there with a flurry of commits to the codebase.\n\n    <p><small></small>Via <a href=\"https://discord.com/channels/823971286308356157/1097032579812687943/1507447792598253748\">Alex Garcia on the Datasette Discord</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/d-richard-hipp\">d-richard-hipp</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "research",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
