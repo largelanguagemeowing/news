@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 672099,
+    "title": "I have also found that writing a generic 'review' skill is really, really hard Mostly because it really needs a custom set of curated standards for that project And once you've done that, you might as well just run your own review agent",
+    "url": "https://nitter.net/mattpocockuk/status/2080760177494577332#m",
+    "published_at": "2026-07-24T21:00:59+00:00",
+    "fetched_at": "2026-07-24T21:37:42+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>I have also found that writing a generic 'review' skill is really, really hard<br />\n<br />\nMostly because it really needs a custom set of curated standards for that project<br />\n<br />\nAnd once you've done that, you might as well just run your own review agent</p>\n<hr />\n<blockquote>\n<b>Kyle Mistele \ud83c\udff4\u200d\u2620\ufe0f (@0xblacklight)</b>\n<p>\n<p>I have never found a code review agent i like<br />\n<br />\nprobably it should just be a git or claude hook that runs when you try to push to github <br />\n<br />\nand kicks off subagents with skills for review so you can customize the prompts and skills and context<br />\n<br />\nbut off the shelf review bots aren't it</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/0xblacklight/status/2080715407137427522#m\">https://nitter.net/0xblacklight/status/2080715407137427522#m</a>\n</footer>\n</blockquote>",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 671346,
+    "title": "How Evals and Prompts Shape Agent Behavior \u2014 Preetika Bhateja & Daniel Bump, YouTube Ads",
+    "url": "https://www.youtube.com/watch?v=xyL2Ltkh-SA",
+    "published_at": "2026-07-24T21:00:00+00:00",
+    "fetched_at": "2026-07-24T21:37:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Getting an AI agent to behave the way you want isn't just about writing better prompts. In real systems, behavior emerges from a loop: prompts, evals, iteration, and feedback. Small changes in any part of that loop can completely change outcomes.\n\nThe Google team shares lessons from building a seed-asset agent that turns messy advertising creatives \u2014 low-quality images, cluttered visuals, and heavy text overlays \u2014 into clean, reusable assets for downstream generative AI tools. They explain why prompting alone did not produce stable behavior, how evals became feedback signals rather than scorecards, how agent trace logs exposed why failures happened, and how they iterated without breaking problems they had already fixed.\n\nSpeakers:\n\nChris Souza \u2014 Google\nChris works on the Google team behind this seed-asset agent and its evaluation workflow.\n\nPreetika Bhateja \u2014 Product Manager, Google/YouTube\nPreetika works on ads, evaluations, agents, and LLM-as-judge systems.\n\nDaniel Bump \u2014 Engineer, Google\nDaniel focuses on image and video generation and computer vision.\nX/Twitter: https://x.com/DanielJBump\nLinkedIn: https://www.linkedin.com/in/danielbump",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 669179,
     "title": "From Signal to PR: Anatomy of a Self-Improving Agent \u2014 Jason Lopatecki, Arize",
     "url": "https://www.youtube.com/watch?v=9HbzAWnKbo4",
@@ -17,6 +59,24 @@
       "benchmark",
       "coding",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 672100,
+    "title": "Opus 5 As usual I have no take, other than: If you've designed your harness/environment well, and not over-optimised around a specific model, today should feel like any other day... ...with a slightly lower failure rate",
+    "url": "https://nitter.net/mattpocockuk/status/2080748648120439249#m",
+    "published_at": "2026-07-24T20:15:10+00:00",
+    "fetched_at": "2026-07-24T21:37:42+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Opus 5<br />\n<br />\nAs usual I have no take, other than:<br />\n<br />\nIf you've designed your harness/environment well, and not over-optimised around a specific model, today should feel like any other day...<br />\n<br />\n...with a slightly lower failure rate</p>",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9736,62 +9796,6 @@
       "product",
       "release",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 533537,
-    "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
-    "url": "https://www.anthropic.com/news/series-h",
-    "published_at": "2026-05-28T00:00:00+00:00",
-    "fetched_at": "2026-05-28T19:36:07+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
-    "topic": "funding",
-    "tags": [
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 533796,
-    "title": "Introducing dynamic workflows in Claude Code",
-    "url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
-    "published_at": "2026-05-28T00:00:00+00:00",
-    "fetched_at": "2026-05-28T19:36:07+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Introducing dynamic workflows in Claude Code",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 540065,
-    "title": "MUFG aims to become AI-native with OpenAI",
-    "url": "https://openai.com/index/mufg",
-    "published_at": "2026-05-28T00:00:00+00:00",
-    "fetched_at": "2026-05-29T06:16:08+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "agents",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
