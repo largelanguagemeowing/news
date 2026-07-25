@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 677839,
+    "title": "From Agent Traces to Agent Simulations \u2014 Rustem Feyzkhanov, Snorkel AI",
+    "url": "https://www.youtube.com/watch?v=Ib5t2RLtxvM",
+    "published_at": "2026-07-25T01:00:02+00:00",
+    "fetched_at": "2026-07-25T04:43:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Take a real production trace, rebuild the database state, tools, and files the agent touched, and you have a task any model can replay under identical conditions. That reconstruction is the move at the center of this talk. Public benchmarks like WebArena hand you a single success rate on someone else's tasks, but what you actually care about is cost per solved task, latency, and whether the agent followed your policies. So you build a private benchmark from your own traces, wire in the same skills, tools, and evaluators the agent sees in production, and compare models apples to apples on the environment that matters to you.\n\nThe environments are multistep and long horizon, so a verifier reads the final state while an LLM judge checks whether the agent followed policy, and a run can stop early once it clearly goes off track. The hard parts are the edge cases: agents that reward hack the simulation, missing fixtures, tasks that turn out to be unsolvable. Rustem Feyzkhanov's case is that this belongs in a CI pipeline for agents, the same way tests gate code, connecting observability traces to experiments to a benchmark that keeps up as the agent changes. Every company ends up needing its own, as part of the agent ops loop.\n\nSpeaker info:\n- https://x.com/ryfeus\n- https://www.linkedin.com/in/ryfeus\n- https://ryfeus.io\n\nTimestamps:\n0:00 - Introduction: why Snorkel builds agent benchmarks\n1:17 - Benchmark construction and testing agents in production\n3:08 - The limits of public benchmarks\n4:01 - Why you need a private benchmark\n4:52 - Environments, tools, and evaluators\n6:34 - Anatomy of a simulation task\n7:37 - Task formats: instruction files and Oracle data\n9:20 - Multistep, long horizon simulations\n10:54 - Verifiers, LLM as a judge, and reward hacking\n13:02 - A CI pipeline for agents\n15:19 - Connecting traces, experiments, and benchmarks\n16:51 - Q&A",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 675443,
     "title": "Quoting Boris Cherny",
     "url": "https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything",
@@ -9788,24 +9811,6 @@
     "topic": "education",
     "tags": [
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 530261,
-    "title": "Catch up on 12 major I/O 2026 moments",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
-    "published_at": "2026-05-28T15:00:00+00:00",
-    "fetched_at": "2026-05-28T16:39:30+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "The colorful I/O logo against a black background, surrounded by stills from the I/O keynote",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
