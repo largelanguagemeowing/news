@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 695213,
+    "title": "Why Large? Tiny LMs & Agents on Edge/Robotics \u2014 Cormac Brick, Google",
+    "url": "https://www.youtube.com/watch?v=hacEQHHhu2Q",
+    "published_at": "2026-07-25T17:00:06+00:00",
+    "fetched_at": "2026-07-25T18:01:13+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The constraint on edge AI is not compute, it is RAM, and it is getting worse: phone makers are shipping less of it this year, and a 6GB Raspberry Pi costs 2.5 times what it did at launch. So Cormac Brick's team at Google AI Edge spends its effort making models small enough to fit. A 2 billion parameter Gemma, quantized to 2.9 bits per weight, runs on a Raspberry Pi at about 8 tokens per second and on a Qualcomm NPU fast enough for a few frames of vision a second.\n\nBelow that sit tiny models, from 500 million parameters down to 50, that reach the older laptops and cheap devices where even a small model will not fit. They usually need fine tuning rather than prompting, but the payoff is real: a fine tuned Gemma turns free text into the right function call across ten actions at over 86% reliability, and putting a speech model in front gives you voice to function calling. One shipped example is an offline voice dictation app with no subscription, built on two sub billion Gemma models that also strip your ums and ahs.\n\nSpeaker info:\n- https://x.com/cormacb\n- https://www.linkedin.com/in/cbrick/\n- https://github.com/google-ai-edge/gallery\n\nTimestamps:\n0:00 - Why intelligence at scale needs tiny models\n1:17 - The Google AI Edge team and its open source stack\n2:35 - Why run on the edge at all\n3:25 - The real constraint: DRAM cost\n4:40 - Small models: 1 to 4 billion parameters\n6:08 - Shrinking Gemma to 2.9 bits per weight\n7:36 - Decode speeds across Raspberry Pi, Jetson, and NPUs\n9:30 - Try it yourself: AI Edge Gallery and a hobby robot\n12:07 - When small is still too big: tiny models\n13:24 - Off the shelf tiny models: ASR, vision, embeddings\n14:28 - Fine tuning for voice to function calling\n17:50 - In production: offline voice dictation\n19:30 - Takeaways and Q&A",
+    "topic": "robotics",
+    "tags": [
+      "robotics",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 688637,
     "title": "Instagram Nuked This Feature After Only 3 DAYS",
     "url": "https://www.youtube.com/shorts/n0JhhZyGP_w",
@@ -9790,23 +9813,6 @@
       "infrastructure",
       "coding",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 539759,
-    "title": "Distributed inference in DwarfStar",
-    "url": "https://www.youtube.com/watch?v=aAWdlLfJmqw&feature=youtu.be",
-    "published_at": "2026-05-28T23:15:26+00:00",
-    "fetched_at": "2026-05-29T01:32:37+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing! i still didn't have time to get my hands dirty on either my new macbook nor my beautiful, amazing @FrameworkPuter at least i already setup the framework. it's awesome!",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
