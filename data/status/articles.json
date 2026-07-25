@@ -1,5 +1,42 @@
 [
   {
+    "article_id": 699559,
+    "title": "Loop Engineering from First Principles \u2014 Kyle Mistele, HumanLayer",
+    "url": "https://www.youtube.com/watch?v=xIt_mTQp6mY",
+    "published_at": "2026-07-25T20:41:40+00:00",
+    "fetched_at": "2026-07-25T20:53:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A coding agent will happily hand you a 40,000 line pull request that nobody can review and that quietly does the wrong thing. Kyle Mistele's argument is that the fix is not a better prompt but a better loop, borrowed from control theory: a thermostat senses the error between where a system is and where you want it, emits a control signal, and measures again, over and over. Infrastructure as code already approximates this. The point is to design agent loops the same way, so each iteration makes a small, readable change you can actually verify, instead of one giant diff you have to trust.\n\nThe working example is migrating a codebase one procedure at a time. A sensor, often just Grep or a structural search, finds the smallest unmigrated piece, a controller picks what to work on next, and an actuator agent makes the change against golden patterns defined by hand, gated by deterministic CI like a single loop iteration in CircleCI. The loop tracks its own PRs in version control, refuses to stack a new change while an earlier one is still open, and keeps improving the code incrementally, even while the team is away.\n\nSpeaker info:\n- https://x.com/0xBlacklight\n- https://www.linkedin.com/in/kyle-mistele\n- https://blacklight.sh\n\nTimestamps:\n0:00 - Introduction: the 40,000 line PR problem\n1:55 - Why more code is not the goal\n3:37 - Is the generated code any good?\n4:43 - Control loops from control theory\n5:49 - Infrastructure as code and Ralph loops\n7:06 - Applying control loops to coding\n8:35 - Migrating a codebase one procedure at a time\n10:40 - Tracking the loop in version control\n12:35 - The actuator agent and golden patterns\n13:51 - Wiring the loop into CI\n15:44 - Avoiding stacked PRs and scaling the controller",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 700319,
+    "title": "A bowl is most useful when it is empty - Lao Tzu Same for your context window",
+    "url": "https://nitter.net/mattpocockuk/status/2081105631591698694#m",
+    "published_at": "2026-07-25T19:53:42+00:00",
+    "fetched_at": "2026-07-25T20:53:33+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>A bowl is most useful when it is empty - Lao Tzu<br />\n<br />\nSame for your context window</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 695213,
     "title": "Why Large? Tiny LMs & Agents on Edge/Robotics \u2014 Cormac Brick, Google",
     "url": "https://www.youtube.com/watch?v=hacEQHHhu2Q",
@@ -94,6 +131,28 @@
     "tags": [
       "product",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 699561,
+    "title": "The Messy Reality of Scale: Synthetic Data and Pre-Training \u2014 Marah Abdin & Robert McHardy, poolside",
+    "url": "https://www.youtube.com/watch?v=KhYifX22yhE",
+    "published_at": "2026-07-25T08:05:08+00:00",
+    "fetched_at": "2026-07-25T20:53:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Good code data runs out, so poolside manufactures more of it, and the hard part is making it teach. Their synthetic pipeline pairs templates with supplementary context and spreads generations across an axis of phrasing, with difficulty tuned so a task is neither trivial nor so hard the model learns nothing from it. Multistage pipelines port existing data into new shapes, swapping character styles or plots and turning single prompts into multi turn chats, while an orchestrator polices every generation and drops the ones that miss.\n\nOn the training side the team trusts nothing: run two replicas of the same model on the same data and they must return the same number, or the run gets killed. That is how the messy failures surface. Broken GPUs show up as a spiky loss curve, a numerical precision bug in tensor parallel accumulation quietly flattened another until they patched it, and silently corrupted gradients from a race condition were a blind spot nothing caught. The payoff is a 118 billion parameter model built for agentic coding whose early results already edge out GLM 4.5 Air, on a recipe that held as it scaled.\n\nSpeaker info:\nMarah Abdin, poolside:\n- https://x.com/marah_i_abdin\n- https://www.linkedin.com/in/marah-abdin\n- https://marahabdin.com\n\nRobert McHardy, poolside:\n- https://x.com/robert_mchardy\n- https://www.linkedin.com/in/robert-mchardy\n- https://www.robertmchardy.de\n\nTimestamps:\n0:00 - Introduction: synthetic data and pre-training at poolside\n1:52 - Why synthetic data\n3:11 - Limitations and the training budget\n4:44 - Inside the synthetic data pipeline\n6:37 - Multistage pipelines and porting data\n7:43 - Multi turn chats and policing generations\n9:03 - Pre-training: trust nothing, crash on mismatch\n10:41 - Failures at scale: broken GPUs\n11:56 - Numerical precision and corrupted gradients\n13:15 - A 118B model for agentic coding\n15:07 - Early results vs GLM 4.5 Air",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9747,72 +9806,6 @@
       "infrastructure",
       "funding",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 545837,
-    "title": "A shared playbook for trustworthy third party evaluations",
-    "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
-    "published_at": "2026-05-29T00:00:00+00:00",
-    "fetched_at": "2026-05-29T17:34:40+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI shares guidance on third-party AI evaluations, covering how to assess model capabilities, safeguards, and validity for frontier systems.",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "benchmark",
-      "tutorials",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 539100,
-    "title": "Claude Opus 4.8: \"a modest but tangible improvement\"",
-    "url": "https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything",
-    "published_at": "2026-05-28T23:59:50+00:00",
-    "fetched_at": "2026-05-29T01:32:29+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>Anthropic shipped <a href=\"https://www.anthropic.com/news/claude-opus-4-8\">Claude Opus 4.8</a> today. My favourite thing about it is this note in the release announcement:</p>\n<blockquote>\n<p>Users will find Opus 4.8 to be a modest but tangible improvement on its predecessor. There\u2019s still more to be done: we\u2019re working on developing and releasing models that provide many of the same capabilities as Opus at a lower cost.</p>\n</blockquote>\n<p>It's so refreshing to see an AI lab honestly describe a release as a minor incremental improvement over the previous model!</p>\n<p>Honesty seems to be a theme. Here's my other favorite note from that announcement:</p>\n<blockquote>\n<p>One of the most prominent improvements in Opus 4.8 is its <em>honesty</em>. We train all our models to be honest---for instance, to avoid making claims that they can't support. But a general problem with AI models is that they sometimes jump to conclusions, confidently claiming to have made progress in their work despite the evidence being thin. Early testers report that Opus 4.8 is more likely to flag uncertainties about its work and less likely to make unsupported claims. This is borne out in <a href=\"https://www.anthropic.com/claude-opus-4-8-system-card\">our evaluations</a>, which show that Opus 4.8 is around four times less likely than its predecessor to allow flaws in code it has written to pass unremarked.</p>\n</blockquote>\n<p>That linked system card includes the following:</p>\n<blockquote>\n<p>Claude Opus 4.8 had the lowest incorrect-rate of the six models on every benchmark\u2014the most direct measure of factual hallucination. It achieved this mainly by abstaining on questions about which it was uncertain rather than by answering more questions correctly.</p>\n</blockquote>\n<h4 id=\"model-characteristics\">Model characteristics</h4>\n<p>Not much has changed since 4.7.</p>\n<p>It's priced the same as Opus 4.5/4.6/4.7 - $5/million input and $25 per million output. \"Fast mode\" is twice that price, which is a significant reduction from their previous models - fast mode on 4.6/4.7 remains at $30/$150. Note that <a href=\"https://platform.claude.com/docs/en/build-with-claude/fast-mode\">fast mode</a> is only available to organizations that are part of the research preview, \"Contact your account manager to request access\".</p>\n<p>Both the reliable knowledge cutoff and the training data cutoff are January 2026, the same as for 4.7.</p>\n<p>The context window is still 1,000,000 tokens, and the max output is 128,000 tokens.</p>\n<p>The <a href=\"https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8\">What's new in Claude Opus 4.8</a> document has some of the more interesting details. These caught my eye:</p>\n<blockquote>\n<p><strong>Mid-conversation system messages</strong>. Claude Opus 4.8 accepts <code>role: \"system\"</code> messages immediately after a user turn in the <code>messages</code> array (subject to <a href=\"https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages#limitations\">placement rules</a>). This lets you append updated instructions later in a long-running conversation without restating the full system prompt, which preserves <a href=\"https://platform.claude.com/docs/en/build-with-claude/prompt-caching\">prompt cache</a> hits on the earlier turns and reduces input cost on agentic loops.</p>\n</blockquote>\n<p>See also <a href=\"https://github.com/anthropics/anthropic-sdk-python/commit/2b826760101664ef89db42132932f53ba97c894d#diff-a947c9c02eab58e8ddbe799a11832d533836d242e07c7251997f8543f0981f2f\">this update</a> to the Anthropic Python SDK. Being able to steer the system prompt mid-conversation sounds really powerful. I was worried this would be incompatible with the abstraction provided by my own <a href=\"https://llm.datasette.io/en/stable/python-api.html#system-prompts\">LLM library</a>, which expects a single system prompt per conversation... but it turns out my recent <a href=\"https://simonwillison.net/2026/Apr/29/llm/\">redesign</a> should handle that <a href=\"https://github.com/simonw/llm-anthropic/issues/73\">just fine</a>.</p>\n<blockquote>\n<p><strong>Lower prompt cache minimum</strong>. The minimum cacheable prompt length on Claude Opus 4.8 is 1,024 tokens, lower than on Claude Opus 4.7.</p>\n</blockquote>\n<p>I checked and 4.7's minimum <a href=\"https://platform.claude.com/docs/en/build-with-claude/prompt-caching#cache-limitations\">was 4,096</a>.</p>\n<h4 id=\"and-some-pelicans\">And some pelicans</h4>\n<p>Here are <a href=\"https://tools.simonwillison.net/markdown-svg-renderer#url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Ffea4f7546626d627862dc241a4e3a86a\">pelicans riding bicycles</a> for all five thinking levels, <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, and <code>max</code>:</p>\n\n<div>\n    <figure style=\"margin: 0; text-align: center;\">\n        <img alt=\"Flat-style cartoon illustration of a white duck with an orange beak and legs riding a black bicycle, its feet on the pedals, against a blue sky and green grass background.\" src=\"https://static.simonwillison.net/static/2026/claude-opus-4.8-low.png\" style=\"width: 100%; height: auto; border: 1px solid #ccc;\" />\n        <figcaption style=\"font-family: system-ui, sans-serif; font-weight: bold;\">\n            <a href=\"https://gist.github.com/simonw/fea4f7546626d627862dc241a4e3a86a#response\">low</a>\n        </figcaption>\n    </figure>\n    <figure style=\"margin: 0; text-align: center;\">\n        <img alt=\"Flat-style illustration of a white egret or heron with an orange beak and legs riding a black bicycle, against a blue sky and green grass background.\" src=\"https://static.simonwillison.net/static/2026/claude-opus-4.8-medium.png\" style=\"width: 100%; height: auto; border: 1px solid #ccc;\" />\n        <figcaption style=\"font-family: system-ui, sans-serif; font-weight: bold;\">\n            <a href=\"https://gist.github.com/simonw/fea4f7546626d627862dc241a4e3a86a#response-1\">medium</a>\n        </figcaption>\n    </figure>\n    <figure style=\"margin: 0; text-align: center;\">\n        <img alt=\"Cartoon illustration of a white duck with an orange beak riding a black bicycle, against a light blue sky with a pale yellow sun in the upper left and a green ground line at the bottom.\" src=\"https://static.simonwillison.net/static/2026/claude-opus-4.8-high.png\" style=\"width: 100%; height: auto; border: 1px solid #ccc;\" />\n        <figcaption style=\"font-family: system-ui, sans-serif; font-weight: bold;\">\n            <a href=\"https://gist.github.com/simonw/fea4f7546626d627862dc241a4e3a86a#response-2\">high</a>\n        </figcaption>\n    </figure>\n    <figure style=\"margin: 0; text-align: center;\">\n        <img alt=\"Cartoon illustration of a white pelican with an orange beak riding a black bicycle, its orange legs extending down to the pedals, against a blue sky with a yellow sun and green ground.\" src=\"https://static.simonwillison.net/static/2026/claude-opus-4.8-xhigh.png\" style=\"width: 100%; height: auto; border: 1px solid #ccc;\" />\n        <figcaption style=\"font-family: system-ui, sans-serif; font-weight: bold;\">\n            <a href=\"https://gist.github.com/simonw/fea4f7546626d627862dc241a4e3a86a#response-3\">xhigh</a>\n        </figcaption>\n    </figure>\n    <figure style=\"margin: 0; text-align: center;\">\n        <img alt=\"Cartoon illustration of a white pelican with an orange beak riding a red bicycle on green grass, against a light blue sky with a fluffy white cloud and a yellow sun.\" src=\"https://static.simonwillison.net/static/2026/claude-opus-4.8-max.png\" style=\"width: 100%; height: auto; border: 1px solid #ccc;\" />\n        <figcaption style=\"font-family: system-ui, sans-serif; font-weight: bold;\"><a href=\"https://gist.github.com/simonw/fea4f7546626d627862dc241a4e3a86a#response-4\">max</a></figcaption>\n    </figure>\n</div>\n\n\n<p>This time I ran them using the <a href=\"https://llm.datasette.io/en/stable/usage.html\">LLM CLI</a>, exported the logs to Markdown and then had Claude Opus 4.8 <a href=\"https://github.com/simonw/tools/commit/71e4944766b577a327ff048cc63b739ba4cbade9\">build me</a> an HTML tool that could render that Markdown with the <code>svg</code> fenced code blocks displayed as SVGs on the page.</p>\n\n<p>(I later had GPT-5.5 xhigh in Codex <a href=\"https://gist.github.com/simonw/bb5a267f8144dfe4e92e50a014e49e98\">update that code</a> to remove any XSS holes. I'm sure Claude could have done that if I'd asked, but GPT-5.5 is my code security blanket at the moment.)</p>\n\n<p>The max one  was clearly the best, but it did take 25 input, 17,167 output tokens for a total cost of <a href=\"https://www.llm-prices.com/#it=25&amp;ot=17167&amp;ic=5&amp;oc=25&amp;sel=claude-opus-4-5\">43 cents</a>!</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a></p>",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 539101,
-    "title": "llm-anthropic 0.25.1",
-    "url": "https://simonwillison.net/2026/May/28/llm-anthropic/#atom-everything",
-    "published_at": "2026-05-28T23:54:56+00:00",
-    "fetched_at": "2026-05-29T01:32:29+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-anthropic/releases/tag/0.25.1\">llm-anthropic 0.25.1</a></p>\n        <blockquote>\n<ul>\n<li>New model: <a href=\"https://www.anthropic.com/news/claude-opus-4-8\">Claude Opus 4.8</a> (<code>claude-opus-4.8</code>).</li>\n<li>New <code>-o fast 1</code> option for <a href=\"https://platform.claude.com/docs/en/build-with-claude/fast-mode\">fast mode</a>, for organizations with that feature enabled on their account.</li>\n<li>Default max_tokens for each model now defaults to that model's maximum output rather than\u00a08,192. <a href=\"https://github.com/simonw/llm-anthropic/issues/72\">#72</a></li>\n</ul>\n</blockquote>\n<p>See also my <a href=\"https://simonwillison.net/2026/May/28/claude-opus-4-8/\">notes on Opus 4.8</a> - I used this new release of <code>llm-anthropic</code> to generate the pelicans.</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "infrastructure",
-      "coding",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
