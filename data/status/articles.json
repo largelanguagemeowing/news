@@ -1,5 +1,70 @@
 [
   {
+    "article_id": 675443,
+    "title": "Quoting Boris Cherny",
+    "url": "https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything",
+    "published_at": "2026-07-25T00:42:59+00:00",
+    "fetched_at": "2026-07-25T01:02:46+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://twitter.com/bcherny/status/2080713091688583312\"><p>More than any of these eval scores, what is most exciting to me is something else: Opus 5 is our least prompt injectable model yet. It is a bit buried in the system card, but across PI evals and red teaming, Opus 5 is very hard to prompt inject successfully.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/bcherny/status/2080713091688583312\">Boris Cherny</a>, here's that <a href=\"https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf#page=73\">System Card section</a>, page 73</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/prompt-injection\">prompt-injection</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/boris-cherny\">boris-cherny</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "benchmark",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 675701,
+    "title": "Evaling Video Slop \u2014 Maor Bril, Character.ai",
+    "url": "https://www.youtube.com/watch?v=b_PmGocP4rc",
+    "published_at": "2026-07-25T00:00:02+00:00",
+    "fetched_at": "2026-07-25T01:02:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A generated clip where the character stands frozen for four seconds can still score well, because the judge rewarded the gloss and the vibe instead of what actually happened. That failure is the whole problem with evaling video: CLIP score misses temporal incoherence, a team watching clips on Friday does not scale, and any AI judge you wire up drifts from human preference unless you measure the drift. Video breaks the text playbook because it has to hold temporal consistency, shot continuity, and a coherent story across frames, not just look good in a single still.\n\nThe fix that stuck was to stop scoring and start comparing. Absolute scores collapsed to one dimension, but pairwise preference, is B a better story than A, held up, so Maor Bril's team trained a Qwen3-VL judge with Bradley-Terry loss on pairs of real and deliberately broken footage to catch slop before it ships. Drift is cheapest to catch early, especially on longer form video, so the judge runs as a regression gate in CI: every AgentX release at Character.ai clears an eval wall, calibrated against human scores, before users ever see it.\n\nSpeaker info:\n- https://x.com/maorbril\n- https://www.linkedin.com/in/maorbril\n- https://github.com/character-ai/judgejudy\n\nTimestamps:\n0:00 - Introduction: evaluating AI generated video\n1:19 - Why video generation drifts between frames\n3:14 - Story and sound: what a clip has to get right\n4:43 - LLM as a judge, and catching drift early\n7:01 - Story and sound failure modes\n8:28 - Small model vs bigger model as judge\n9:20 - Don't score, compare: pairwise preference\n10:47 - When the judge scores vibe over substance\n11:53 - Pairing real footage to train a quality detector\n13:27 - Self verification in the generation loop\n15:05 - Q&A",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 675444,
+    "title": "Introducing Claude Opus 5",
+    "url": "https://simonwillison.net/2026/Jul/24/introducing-claude-opus-5/#atom-everything",
+    "published_at": "2026-07-24T23:48:50+00:00",
+    "fetched_at": "2026-07-25T01:02:46+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://www.anthropic.com/news/claude-opus-5\">Introducing Claude Opus 5</a></strong></p>\nI've been offline <a href=\"https://en.wikipedia.org/wiki/Elkhorn_Slough\">kayaking with sea otters</a> for much of today so I haven't had a chance to put Anthropic's new model Claude Opus 5 through its paces yet. The buzz is positive, and Anthropic's description of it as a \"thoughtful and proactive model that comes close to the frontier intelligence of Claude Fable 5 at half the price\" sounds promising. It's currently <a href=\"https://twitter.com/artificialanlys/status/2080777718933995967\">leading the Artificial Analysis leaderboard</a>, in front of even Fable 5.</p>\n<p>It's priced the same as Opus 4.8, and continues to offer a \"fast mode\" at twice the cost of the base model.</p>\n<p>Based on this anecdote in the release post it sounds like it might be <a href=\"https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/\">relentlessly proactive</a>:</p>\n<blockquote>\n<p>On one Frontier-Bench task, Opus 5 was given a drawing of a machine part and asked to write code to rebuild it as a 3D FreeCAD model. However, in this task, the model was intentionally given no way to directly viewthe drawing. Opus 5 responded by writing its own computer vision pipeline to pull the geometry from the raw pixels, then reconstructed the full machine part.</p>\n</blockquote>\n<p>It's better at finding vulnerabilities but has deliberately not been trained on how to exploit them. Hopefully this means the US government won't shut it down!</p>\n<blockquote>\n<p>As with its predecessor, Opus 4.8, we\u2019ve intentionally avoided training Opus 5 on cyber tasks. The model has nevertheless improved substantially on these tasks as a result of becoming more generally capable, and it comes close to Mythos 5 at <em>finding</em> cybersecurity vulnerabilities. However, it remains substantially behind Mythos 5 on the <em>exploitation</em> of those vulnerabilities\u2014that is, in turning vulnerabilities into material cyber threats.</p>\n</blockquote>\n<p>Anthropic have published a <a href=\"https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5\">prompting guide for Claude Opus 5</a>. Thariq Shihipar has also written <a href=\"https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models\">The new rules of context engineering for Claude 5 generation models</a>.</p>\n<p>The <a href=\"https://tools.simonwillison.net/markdown-svg-renderer#url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimonw%2Fllm-anthropic%2F8272dfee5bdb65d5c88eef083da3ad885539b7df%2Flog.md\">first pelican I got</a> was missing the bicycle wheels; the <a href=\"https://tools.simonwillison.net/markdown-svg-renderer#url=https%3A%2F%2Fraw.githubusercontent.com%2Fsimonw%2Fllm-anthropic%2Ffeaab840ea20eb15e29d8f72a9e42feceb23876a%2Flog.md\">second attempt</a> was better.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "safety",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 673514,
     "title": "Building Closed-Loop Evals for a Multimodal Agent at Scale \u2014 Soumya Gupta & Jai Chopra, Uber",
     "url": "https://www.youtube.com/watch?v=31GUkCBD-Uc",
@@ -9741,65 +9806,6 @@
     "tags": [
       "ai-models",
       "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 531581,
-    "title": "Context Graphs for Explainable, Decision-Aware AI Agents \u2014 Andreas Kollegger & Zaid Zaim, Neo4j",
-    "url": "https://www.youtube.com/watch?v=abvQEhvRI_c",
-    "published_at": "2026-05-28T14:00:18+00:00",
-    "fetched_at": "2026-05-28T16:39:33+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Prescribing drug X is correct 99% of the time for symptom Y. For the 1% where it is fatal, statistical reasoning does not help you. Andreas Kollegger calls this reference class validation: before the agent acts, it has to know which group it is in.\n\nContext graphs give agents the why. Not just knowledge and tools but the policies, rules, and prior decisions that explain why a certain action is right in a given context. The decision making framework in this talk has five stages: frame the problem with its causality and environment, pull in global rules and past precedent, run a risk value analysis, either act or escalate to someone with authority, and write the full reasoning chain back into the graph. That last step is the point. Every decision becomes precedent. Future agents inherit it.\n\nSpeaker info:\n- https://x.com/akollegger\n- https://www.linkedin.com/in/akollegger\n- https://github.com/akollegger",
-    "topic": "opinion",
-    "tags": [
-      "open-source",
-      "agents",
-      "safety",
-      "opinion",
-      "tools",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 532010,
-    "title": "recommended viewing. dax is a smart cookie.",
-    "url": "https://video.twimg.com/amplify_video/2059684844523675650/vid/avc1/1920x1080/T4YHBfgieHuVBEiW.mp4",
-    "published_at": "2026-05-28T12:24:02+00:00",
-    "fetched_at": "2026-05-28T16:39:35+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. dax is a smart cookie.\n\nalso best beard in the industry.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 538126,
-    "title": "How Endava builds an agentic organization with Codex",
-    "url": "https://openai.com/index/endava",
-    "published_at": "2026-05-28T12:00:00+00:00",
-    "fetched_at": "2026-05-29T01:32:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how Endava uses Codex to build an agentic organization, accelerating software delivery and reducing requirements analysis from weeks to hours.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding",
-      "education",
-      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
