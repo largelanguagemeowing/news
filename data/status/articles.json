@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 708282,
+    "title": "The Messy Reality of Scale: Synthetic Data and Pre-Training \u2014 Marah Abdin & Robert McHardy, poolside",
+    "url": "https://www.youtube.com/watch?v=KhYifX22yhE",
+    "published_at": "2026-07-26T01:00:06+00:00",
+    "fetched_at": "2026-07-26T04:06:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Good code data runs out, so poolside manufactures more of it, and the hard part is making it teach. Their synthetic pipeline pairs templates with supplementary context and spreads generations across an axis of phrasing, with difficulty tuned so a task is neither trivial nor so hard the model learns nothing from it. Multistage pipelines port existing data into new shapes, swapping character styles or plots and turning single prompts into multi turn chats, while an orchestrator polices every generation and drops the ones that miss.\n\nOn the training side the team trusts nothing: run two replicas of the same model on the same data and they must return the same number, or the run gets killed. That is how the messy failures surface. Broken GPUs show up as a spiky loss curve, a numerical precision bug in tensor parallel accumulation quietly flattened another until they patched it, and silently corrupted gradients from a race condition were a blind spot nothing caught. The payoff is a 118 billion parameter model built for agentic coding whose early results already edge out GLM 4.5 Air, on a recipe that held as it scaled.\n\nSpeaker info:\nMarah Abdin, poolside:\n- https://x.com/marah_i_abdin\n- https://www.linkedin.com/in/marah-abdin\n- https://marahabdin.com\n\nRobert McHardy, poolside:\n- https://x.com/robert_mchardy\n- https://www.linkedin.com/in/robert-mchardy\n- https://www.robertmchardy.de\n\nTimestamps:\n0:00 - Introduction: synthetic data and pre-training at poolside\n1:52 - Why synthetic data\n3:11 - Limitations and the training budget\n4:44 - Inside the synthetic data pipeline\n6:37 - Multistage pipelines and porting data\n7:43 - Multi turn chats and policing generations\n9:03 - Pre-training: trust nothing, crash on mismatch\n10:41 - Failures at scale: broken GPUs\n11:56 - Numerical precision and corrupted gradients\n13:15 - A 118B model for agentic coding\n15:07 - Early results vs GLM 4.5 Air",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 706111,
     "title": "Evals-Driven Development for a Mental Health AI Coach \u2014 Akele Reed & Dave Revere, SonderMind",
     "url": "https://www.youtube.com/watch?v=O72p-rBb2bA",
@@ -9790,24 +9812,6 @@
     "body": "recommended viewing by @helloiamleonie !",
     "topic": "agents",
     "tags": [
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 545520,
-    "title": "We should be more tired than the model",
-    "url": "https://vickiboykis.com/2026/05/28/we-should-be-more-tired-than-the-model/",
-    "published_at": "2026-05-29T11:32:36+00:00",
-    "fetched_at": "2026-05-29T13:46:20+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. entirely unsurprisingly, vicki also has good takes on agentic coding.",
-    "topic": "agents",
-    "tags": [
-      "models",
       "agents"
     ],
     "dearrow_thumbnail_url": "",
