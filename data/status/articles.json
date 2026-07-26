@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 706111,
+    "title": "Evals-Driven Development for a Mental Health AI Coach \u2014 Akele Reed & Dave Revere, SonderMind",
+    "url": "https://www.youtube.com/watch?v=O72p-rBb2bA",
+    "published_at": "2026-07-25T23:00:36+00:00",
+    "fetched_at": "2026-07-26T00:02:14+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In the world of AI mental health, vibes can be dangerous, with real consequences. Building SonderMind's Mental Health AI Coach required a new playbook for eval-driven development that balances effectiveness and safety.\n\nThe team explains the clinical feedback loop that turns human therapist insights into machine-readable evaluations across thousands of conversations; the Ethics Engine of modular guardrails that can evolve with clinical guidelines; the move from single-prompt agents to a closed-loop Supervisor/Executor/Evaluator architecture; and the human oversight used to improve safety and quality.\n\nSpeakers:\n\nAkele Reed \u2014 Principal AI Engineer, SonderMind\nAkele leads the team behind SonderMind's conversational AI mental health feature and helped architect its guardrails and evaluations framework.\nLinkedIn: https://www.linkedin.com/in/akele-reed\n\nDave Revere \u2014 Staff AI Engineer, SonderMind\nDave builds evaluation, guardrail, clinical-feedback, and regression-testing infrastructure for high-stakes mental health AI.\nX/Twitter: https://x.com/daverevere\nLinkedIn: https://www.linkedin.com/in/daverevere\n\nDoug Keller \u2014 Senior Staff AI Engineer, SonderMind\nDoug is the lead architect of SonderMind's agent platform and a core builder of its mental health coach.\nLinkedIn: https://www.linkedin.com/in/doug-keller/",
+    "topic": "safety",
+    "tags": [
+      "api",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 703677,
     "title": "Ruff v0.16.0",
     "url": "https://simonwillison.net/2026/Jul/25/ruff/#atom-everything",
@@ -18,6 +40,23 @@
       "agents",
       "infrastructure",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 706617,
+    "title": "recommended reading",
+    "url": "https://x.com/i/article/2080408648560578560",
+    "published_at": "2026-07-25T22:31:32+00:00",
+    "fetched_at": "2026-07-26T00:02:15+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading",
+    "topic": "general",
+    "tags": [
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9770,44 +9809,6 @@
     "tags": [
       "models",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 541037,
-    "title": "datasette 1.0a31",
-    "url": "https://simonwillison.net/2026/May/29/datasette/#atom-everything",
-    "published_at": "2026-05-29T03:32:02+00:00",
-    "fetched_at": "2026-05-29T06:16:09+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette/releases/tag/1.0a31\">datasette 1.0a31</a></p>\n        <p>Another significant alpha release, with two new headline features.</p>\n<blockquote>\n<p>Datasette now offers users with the necessary permissions the ability to both <strong>execute write queries</strong> against their database and to <strong>save stored queries</strong> (renamed from \"canned queries\") both privately and for use by other members of their Datasette instance.</p>\n</blockquote>\n<p>There's more detail in <a href=\"https://datasette.io/blog/2026/sql-write-queries/\">SQL write queries and stored queries in Datasette 1.0a31</a> on the Datasette blog, which now has <a href=\"https://datasette.io/blog/\">three posts introducing new features</a> since the blog launched two weeks ago.</p>\n<p>Here's an animated demo from <a href=\"https://datasette.io/blog/2026/sql-write-queries/\">the blog post</a> showing how the new execute query interface lets people get started with templated insert/update/delete queries from tables they have permission to edit:</p>\n<p><img alt=\"The user starts on the data database page, selects actions and &quot;Execute write SQL&quot;, then selects the insert document template on the next page and executes it with a title of &quot;My document!&quot;. Also demonstrates that a create table statement cannot be executed because the user does not have create-table permission.\" src=\"https://datasette.io/static/blog/2026/sql-write-ui.gif\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/sql\">sql</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/annotated-release-notes\">annotated-release-notes</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 543889,
-    "title": "Strengthening societal resilience with Rosalind Biodefense",
-    "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
-    "published_at": "2026-05-29T03:00:00+00:00",
-    "fetched_at": "2026-05-29T13:46:16+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through frontier AI.",
-    "topic": "policy",
-    "tags": [
-      "policy",
-      "release",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
