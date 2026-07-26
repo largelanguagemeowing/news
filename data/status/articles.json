@@ -1,5 +1,45 @@
 [
   {
+    "article_id": 725656,
+    "title": "DeepSWE: A Contamination-Resistant Coding Benchmark \u2014 James Shi, Datacurve",
+    "url": "https://www.youtube.com/watch?v=Yk87oUPVaxU",
+    "published_at": "2026-07-26T18:10:56+00:00",
+    "fetched_at": "2026-07-26T18:32:45+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "DeepSWE is 113 software engineering tasks written from scratch, not scraped from pull requests, so a model cannot have seen them in training. Each one is a long horizon problem drawn from a real open source repository, authored by engineers who actually maintain that code, with isolated environments and program based verifiers that check observable behavior rather than trusting the model's own account. James Shi's point is that once you remove the contamination the leaderboard stops clustering: strong models pull far ahead and others, Gemini 3.1 Pro among them, fall toward the bottom.\n\nThe more revealing signal is in how models fail. Some quietly expand a task beyond what was asked, a failure mode DeepSWE scores in its own right, and Claude models did this a good fraction of the time while GPT models did it less often. Stronger models also tend not to verify their own work, and there is a real gap between the ones that test what they wrote and the ones that assume it is correct. Since reward hacking is a constant temptation, the verifiers are built to be gamed as little as possible, keeping the score anchored to the objective rather than to a convincing looking rollout.\n\nSpeaker info:\n- https://x.com/shiqyy\n- https://www.linkedin.com/in/jamesshi117/\n- https://deepswe.datacurve.ai\n\nTimestamps:\n0:00 - Introduction: the DeepSWE benchmark\n1:03 - 113 original, contamination-resistant tasks\n2:08 - What makes a good benchmark\n3:51 - The leaderboard and model spread\n5:18 - Failure mode: over-scoping the task\n7:16 - Do models verify their own work?\n8:45 - Tasks authored by core contributors\n10:15 - Writing realistic, high level prompts\n11:45 - Program based verifiers and observable behavior\n13:43 - Limitations and future work\n15:25 - Reward hacking and keeping it cheating proof",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "benchmark",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 725657,
+    "title": "State of Data \u2014 Sean Cai, Independent / State of Data",
+    "url": "https://www.youtube.com/watch?v=ZyIoTOAbRfs",
+    "published_at": "2026-07-26T17:00:06+00:00",
+    "fetched_at": "2026-07-26T18:32:45+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Data Quality Research at Prime Intellect and State of Data Author. Prior investor at Hummingbird and Costanoa.\n\nSpeaker:\nSean Cai \u2014 CEO, Independent / State of Data\n\nX: https://x.com/SeanZCai\nWebsite: https://www.seancai.com/",
+    "topic": "research",
+    "tags": [
+      "research",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 708282,
     "title": "The Messy Reality of Scale: Synthetic Data and Pre-Training \u2014 Marah Abdin & Robert McHardy, poolside",
     "url": "https://www.youtube.com/watch?v=KhYifX22yhE",
@@ -9777,42 +9817,6 @@
     "tags": [
       "ai-models",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547789,
-    "title": "How Braintrust turns customer requests into code with Codex",
-    "url": "https://openai.com/index/braintrust",
-    "published_at": "2026-05-29T12:00:00+00:00",
-    "fetched_at": "2026-05-29T20:26:36+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How Braintrust engineers use Codex with GPT-5.5 to run experiments and code faster.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 545519,
-    "title": "Agentic Search for Context Engineering \u2014 Leonie Monigatti, Elastic",
-    "url": "https://www.youtube.com/watch?v=ynJyIKwjonM",
-    "published_at": "2026-05-29T11:33:41+00:00",
-    "fetched_at": "2026-05-29T13:46:20+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing by @helloiamleonie !",
-    "topic": "agents",
-    "tags": [
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
