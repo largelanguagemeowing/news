@@ -1,5 +1,22 @@
 [
   {
+    "article_id": 746019,
+    "title": "First day of course filming with a teleprompter So good. Still 90% improvising, but doing it from a pre-written text is far less exhausting and makes the quality higher",
+    "url": "https://nitter.net/mattpocockuk/status/2081766847477666147#m",
+    "published_at": "2026-07-27T15:41:08+00:00",
+    "fetched_at": "2026-07-27T16:20:23+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>First day of course filming with a teleprompter<br />\n<br />\nSo good. Still 90% improvising, but doing it from a pre-written text is far less exhausting and makes the quality higher</p>",
+    "topic": "education",
+    "tags": [
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 740883,
     "title": "The Hugging Face Hub for Enterprise & Academia",
     "url": "https://www.youtube.com/watch?v=wUzfRBi9wZ0",
@@ -38,6 +55,26 @@
       "models",
       "api",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 745026,
+    "title": "GH-ESD: Grounded Hypothesis-Driven Error Slice Discovery for Instance-Level Vision Tasks",
+    "url": "https://machinelearning.apple.com/research/gh-esd",
+    "published_at": "2026-07-27T00:00:00+00:00",
+    "fetched_at": "2026-07-27T16:20:19+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Systematic failures of vision models on semantically coherent subsets, known as error slices, reveal limitations in robustness and evaluation. Existing slice discovery approaches largely model slices as clusters in representation space or combinations of predefined attributes. While effective for image-level classification, such formulations are insufficient for instance-level tasks such as object detection and segmentation, where failures often arise from contextual relational and spatially grounded visual patterns. We propose GH-ESD (Grounded Hypothesis-Driven Error Slice Discovery), a\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "benchmark",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9777,49 +9814,6 @@
       "video",
       "infrastructure",
       "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547041,
-    "title": "Why your agents need decision traces, not just documents \u2014 Zach Blumenfeld, Neo4j",
-    "url": "https://www.youtube.com/watch?v=B9h9ovW5H9U",
-    "published_at": "2026-05-29T16:00:33+00:00",
-    "fetched_at": "2026-05-29T17:34:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A knowledge base tells a financial analyst agent the risk factors. A context graph tells it whether to reject or accept, because it also carries past decision traces, the reasoning behind them, and how similar cases resolved. Zach from Neo4j walks through how context graphs extend a standard RAG setup with three layers: short term conversation history, long term extracted entities, and reasoning traces that embed into vectors so structurally similar past decisions surface alongside semantically similar ones.\n\nThe fastest path in is `uvx create-context-graph`, a one-command scaffold that gives you a backend, frontend, demo data, and an MCP server. It ships with 22 built-in domains or generates a graph ontology from a custom domain you describe. The underlying `neo4j-agent-memory` package handles entity extraction through a spaCy to GLiNER to LLM pipeline with deduplication and merging baked in, and plugs into pydantic AI, LangGraph, Crew, Google ADK, and others.\n\nSpeaker info:\n- https://www.linkedin.com/in/zachblumenfeld/",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547010,
-    "title": "New Claude Opus 4.8: 15 Things You May\u2019ve Missed",
-    "url": "https://www.youtube.com/watch?v=aJvP3nXWkwM",
-    "published_at": "2026-05-29T15:07:35+00:00",
-    "fetched_at": "2026-05-29T17:34:42+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "rss",
-    "body": "The \u2018best\u2019 generally available AI model just dropped, but there is plenty I bet you missed about what it is, how it performs, and what the release tells us. 15 highlights from the 244 page system card, plus private testing, leader interview and more.\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n00:49 - Mythos in Weeks\n01:49 - Adaptive not necessary\n02:26 - Honesty?\n04:37 - Flagging Uncertainty\n04:57 - Benchmarks\n08:54 - Mythos will be even better\n10:30 - Business skillz\n11:15 - Model Welfare\n12:16 - Cyber Comparable\n13:10 - Misalignment Concerns\n16:22 - Meta Inabilities\n17:58 - Code flagging\n18:34 - Go to sleep\n18:50 - Fast Mode\n20:21 - Dynamic Workflows\n\n\nOpus 4.8 Paper: https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf\n\nRelease: https://www.anthropic.com/news/claude-opus-4-8\n\nChips: https://www.theinformation.com/articles/anthropic-talks-use-microsofts-ai-chips?rc=sy0ihq\nhttps://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services\nhttps://www.anthropic.com/news/higher-limits-spacex\n\nPatreon Vid: https://www.patreon.com/posts/re-up-anthropics-159289449\n\nGDPVal: https://artificialanalysis.ai/evaluations/omniscience\nhttps://arxiv.org/abs/2510.04374\n\nAmodei Technical Debt: https://www.youtube.com/watch?v=7xco5Qd2Oo8\n\nDynamic Workflows: https://x.com/ClaudeDevs/status/2060044853279617150\nhttps://x.com/_catwu/status/2060054180379689074/photo/1\nhttps://claude.com/blog/introducing-dynamic-workflows-in-claude-code\n\nhttps://simple-bench.com/\n\n\n\nCheck out my fast-growing (!) app, free to use, and code INSIDER15 for paid tiers: https://lmcouncil.ai\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
