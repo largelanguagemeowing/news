@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 753732,
+    "title": "An opinionated guide to which AI to use to do stuff",
+    "url": "https://simonwillison.net/2026/Jul/27/an-opinionated-guide-to-which-ai-to-use-to-do-stuff/#atom-everything",
+    "published_at": "2026-07-27T21:55:53+00:00",
+    "fetched_at": "2026-07-27T23:01:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22\">An opinionated guide to which AI to use to do stuff</a></strong></p>\nIt's interesting watching the evolution of Ethan Mollick's guide over time. </p>\n<p><a href=\"https://www.oneusefulthing.org/p/using-ai-right-now-a-quick-guide\">A year ago</a> it was still all about chat - ChatGPT, Claude, Gemini - with o3, Claude 4 Opus, and Gemini 2.5 Pro as the models and Deep Research as a useful alternative mode.</p>\n<p>Today it's much more about agentic systems - \"where the AI is capable of doing the equivalent of many hours of real human work in one go\".</p>\n<p>Gemini has fallen off Ethan's list, since Google still doesn\u2019t have an established entry in the Codex/ChatGPT Work/Cowork category. <a href=\"https://gemini.google/overview/agent/spark/\">Gemini Spark</a> has yet to prove itself!</p>\n<p>Ethan offers a useful explanation of the ways you can give ChatGPT or Claude a computer to use:</p>\n<blockquote>\n<p>To use the computers provided by the AI companies, the mode you want is called ChatGPT Work in ChatGPT, and Cowork in Claude (the naming will not get less confusing, I am sorry to say). [...]</p>\n<p>The most powerful way to use AI is to give it access to your computer. You do that by downloading the ChatGPT or Claude apps and picking a mode to use. ChatGPT's two agent modes are Work and Codex; Claude's are Cowork and Code. The names do not map onto each other in any way that will help you remember them. And yes, these use the same names as the Work and Cowork modes we discussed above, but operate differently, and have more features and capabilities because they can access your computer.</p>\n</blockquote>\n<p>I think the difference between ChatGPT Work on a mobile device and ChatGPT Work inside the desktop app (where it's effectively a less intimidating skin on top of Codex) is spectacularly unintuitive.</p>\n<p>Short version: if you flip ChatGPT mobile from \"Chat\" to \"Work\" mode you get a version where its Code Interpreter container is no longer restricted from accessing the internet!\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ethan-mollick\">ethan-mollick</a>, <a href=\"https://simonwillison.net/tags/code-interpreter\">code-interpreter</a>, <a href=\"https://simonwillison.net/tags/general-agents\">general-agents</a></p>",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "infrastructure",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 750122,
     "title": "recommended reading.",
     "url": "https://x.com/i/article/2081753730534506496",
@@ -108,6 +130,25 @@
       "models",
       "coding",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 754006,
+    "title": "Our position on open-weights models",
+    "url": "https://www.anthropic.com/news/position-open-weights-models",
+    "published_at": "2026-07-27T00:00:00+00:00",
+    "fetched_at": "2026-07-27T23:01:59+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Our position on open-weights models",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9766,46 +9807,6 @@
     "tags": [
       "agents",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547668,
-    "title": "Take our I/O 2026 quiz, vibe coded in Google AI Studio.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
-    "published_at": "2026-05-29T19:00:00+00:00",
-    "fetched_at": "2026-05-29T20:26:35+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/IOQuiz2026_social.max-600x600.format-webp.webp\" />We used Google AI Studio to vibe code a quiz about our top I/O 2026 announcements.",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "api",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 548934,
-    "title": "These 3 Things Will Stop AI From Taking Your Job",
-    "url": "https://www.youtube.com/shorts/5wx8e-JJT90",
-    "published_at": "2026-05-29T18:00:08+00:00",
-    "fetched_at": "2026-05-29T20:26:38+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "If you want to prevent AI from taking your job in the future, these are my top 3 pieces of advice:\n\n1. Fall in love with learning. It\u2019s one of the most common trait amongst successful people. 2. Build stuff. Companies don't just want book smarts anymore, they want people who can build in the real world. Yes, build with AI, but also understanding how things actually work too.\n3. Get good at talking to people. This will be the ultimate competitive advantage in an AI world. A lot of people will lose their social skills from spending too much time online and connecting with bots and people through a screen. Don\u2019t be one of them. \n\n#ai #aitools #careeradvice",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "education",
-      "events",
-      "tools",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
