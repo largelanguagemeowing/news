@@ -17,6 +17,23 @@
     "available": true
   },
   {
+    "article_id": 746033,
+    "title": "Fantasy Premier League Companion gives managers a new tool for success",
+    "url": "https://news.microsoft.com/source/emea/features/fantasy-premier-league-companion-gives-managers-a-new-tool-for-success/",
+    "published_at": "2026-07-27T14:56:09+00:00",
+    "fetched_at": "2026-07-27T18:05:43+00:00",
+    "source_id": "microsoft-ai-blog",
+    "source_name": "Microsoft AI Blog",
+    "extraction_method": "rss",
+    "body": "<p>The post <a href=\"https://news.microsoft.com/source/emea/features/fantasy-premier-league-companion-gives-managers-a-new-tool-for-success/\">Fantasy Premier League Companion gives managers a new tool for success</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
+    "topic": "tools",
+    "tags": [
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 740883,
     "title": "The Hugging Face Hub for Enterprise & Academia",
     "url": "https://www.youtube.com/watch?v=wUzfRBi9wZ0",
@@ -55,6 +72,25 @@
       "models",
       "api",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 747457,
+    "title": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients",
+    "url": "https://www.anthropic.com/news/cognizant-anthropic",
+    "published_at": "2026-07-27T00:00:00+00:00",
+    "fetched_at": "2026-07-27T18:05:46+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "coding",
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9771,49 +9807,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 546995,
-    "title": "The forgotten developer who saved JavaScript...",
-    "url": "https://www.youtube.com/watch?v=JfPWbttemYE",
-    "published_at": "2026-05-29T17:06:48+00:00",
-    "fetched_at": "2026-05-29T17:34:41+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Clerk's new CLI sets up end-to-end auth for your entire app. Try it - https://go.clerk.com/0mR9oMU\n\nJavaScript was terrible... until one man was brave enough to save it.\n\n#coding #programming #javascript \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "coding",
-    "tags": [
-      "coding",
-      "education",
-      "media",
-      "news",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547040,
-    "title": "Reachy Mini: the $300 open source robot you can actually hack \u2014 Andres Marafioti, Hugging Face",
-    "url": "https://www.youtube.com/watch?v=0jeZfjJMfmo",
-    "published_at": "2026-05-29T17:00:06+00:00",
-    "fetched_at": "2026-05-29T17:34:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Qwen3-TTS shipped at 0.8x real time: one second of audio took 1.2 seconds to generate. Andres Marafioti from Hugging Face spent two weeks fixing it. The culprits were no streaming, 500 autoregressive steps per audio packet with a CPU GPU round trip on each, and a dynamic KV cache that blocked compilation. Static KV cache plus CUDA graph captures brought it to 5.8x real time with time to first audio under 200 milliseconds.\n\nThe platform is Reachy Mini, a $300 open source robot Hugging Face has shipped to 7,500 people. It arrives unassembled. Talking to it is their most used app by far. The voice stack runs Parakeet transcription every 150 milliseconds with partial results feeding back to the robot mid-sentence, Qwen 3.5 27B for the LLM, and this optimized TTS. At that speed, infrastructure round trips match model latency, so the load balancer separates LLM endpoints from conversation nodes to handle the difference in how much different users actually talk.",
-    "topic": "robotics",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "video",
-      "infrastructure",
-      "robotics"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
