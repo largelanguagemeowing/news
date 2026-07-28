@@ -1,5 +1,64 @@
 [
   {
+    "article_id": 771366,
+    "title": "The Dirty Secret of Forward Deployed Engineering \u2014 Natalie Meurer, Sierra",
+    "url": "https://www.youtube.com/watch?v=Byv311hdoHE",
+    "published_at": "2026-07-28T18:00:18+00:00",
+    "fetched_at": "2026-07-28T18:14:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "At Palantir, forward deployed started as a literal description: you were deployed, physically, at the customer's site, and the onboarding project was keeping the platform from falling over. Natalie Meurer's dirty secret is that the title never settled after that. It stretched across DevOps, data integration, ontology work in Slate and then Foundry, and solution architecture, until forward deployed engineering meant so many different jobs that the label stopped meaning much. Every company hiring for it, whether they call it forward deployed, customer, or deployed engineering, is describing a slightly different role of a particular vintage.\n\nHer argument is that the through line was never the code. As coding agents make writing software cheap, the durable part of the job is the rest of it: integrating the data, understanding the customer, and being accountable to an outcome. That is also why she thinks what the industry now calls agent engineering is really forward deployed engineering under a new name. The tell is in how you charge for it: seat based pricing assumes a tool, while pricing to usage or outcome assumes you are on the hook for the result, which is exactly what a forward deployed engineer has always been.\n\nSpeaker info:\n- https://x.com/natalie_meurer\n- https://www.linkedin.com/in/nataliemeurer\n\nTimestamps:\n0:00 - Introduction: the dirty secret of FDE\n1:54 - FDE as a subdiscipline of AI engineering\n3:46 - Palantir origins: leading with location\n4:51 - Firefighting platform stability\n6:37 - DevOps, data, and the ontology in Slate\n9:02 - Why FDE is not one thing\n10:46 - Every company hires a different vintage\n12:28 - When code gets cheap, outcomes matter\n13:55 - Pricing: seats vs usage vs outcome\n15:26 - Agent engineering is FDE reborn",
+    "topic": "tools",
+    "tags": [
+      "agents",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 771367,
+    "title": "How Forward Deployed Engineering is done at Decagon \u2014 Sunny Rekhi",
+    "url": "https://www.youtube.com/watch?v=7wu2hsRfvV0",
+    "published_at": "2026-07-28T17:00:35+00:00",
+    "fetched_at": "2026-07-28T18:14:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Decagon builds the customer support agent that answers when you email a brand, and making that agent good for a specific enterprise is the forward deployed job. It splits in two: one side configures the agent brain, the instructions and the handoff rules for when a human should take over; the other works like product engineering, figuring out what a new enterprise needs and anticipating the requests that have not been made yet. Sunny Rekhi's point is that the line between forward deployed and product is thin, because a customer ask is often just a product feature waiting to be built.\n\nWhat changes at scale, from 50 people to 500, is that this splits into specialized lanes and a few disciplines start to matter. One is restraint: some problems belong to the customer, and getting the boundary in writing keeps everyone honest. The bigger one is that custom work does not stay custom. Every integration a forward deployed engineer builds gets upstreamed into the platform, so custom becomes self serve and the agent compounds, and the next customer inherits it for free. You still have to prove value fast, because the relationship is multi year but the trust is won in the first weeks.\n\nSpeaker info:\n- https://www.linkedin.com/in/sunny-rekhi/\n\nTimestamps:\n0:00 - Introduction: forward deployed at Decagon\n1:06 - What Decagon's support agent does\n2:24 - Offloading support and proactive outreach\n3:40 - Two kinds of forward deployed work\n6:12 - Scaling from 50 to 500 people\n8:20 - Restraint, and getting it in writing\n9:59 - Ramping a new enterprise deal\n11:18 - Solving a problem so it scales\n13:00 - Proving value fast\n14:18 - Custom becomes self serve",
+    "topic": "enterprise",
+    "tags": [
+      "agents",
+      "coding",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 770086,
+    "title": "Scientific computing in the age of agentic AI",
+    "url": "https://openai.com/index/scientific-computing-agentic-ai",
+    "published_at": "2026-07-28T17:00:00+00:00",
+    "fetched_at": "2026-07-28T18:14:46+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "A new field report shows how scientists use AI coding agents to modernize scientific computing, accelerating software development and discovery in genomics and beyond.",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "agents",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 769172,
     "title": "Training Agents 3: Reinforcement Learning",
     "url": "https://www.youtube.com/watch?v=ztdTed5egrM",
@@ -275,6 +334,42 @@
       "coding",
       "events",
       "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 771657,
+    "title": "Frontier Red TeamDiscovering cryptographic weaknesses with Claude",
+    "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+    "published_at": "2026-07-28T00:00:00+00:00",
+    "fetched_at": "2026-07-28T18:14:49+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Jul 28, 2026Frontier Red TeamDiscovering cryptographic weaknesses with Claude",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 771673,
+    "title": "Bringing MCP 2026-07-28 to Claude",
+    "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
+    "published_at": "2026-07-28T00:00:00+00:00",
+    "fetched_at": "2026-07-28T18:14:49+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Bringing MCP 2026-07-28 to Claude",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9735,97 +9830,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553263,
-    "title": "Lessons from building Claude Code: How we use skills",
-    "url": "https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills",
-    "published_at": "2026-06-03T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Lessons from building Claude Code: How we use skills",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553261,
-    "title": "Running an AI-native engineering org",
-    "url": "https://claude.com/blog/running-an-ai-native-engineering-org",
-    "published_at": "2026-06-03T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Running an AI-native engineering org",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553467,
-    "title": "recommended reading. i really like the durability aspect of dynamic workflows. looked into how it's implemented, and while there are some minor footguns, it's smart!",
-    "url": "https://x.com/i/article/2061850535708483585",
-    "published_at": "2026-06-02T22:41:28+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i really like the durability aspect of dynamic workflows. looked into how it's implemented, and while there are some minor footguns, it's smart!",
-    "topic": "general",
-    "tags": [
-      "general",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551553,
-    "title": "AI alone won\u2019t change your business. The system running it will.",
-    "url": "https://blogs.microsoft.com/blog/2026/06/02/ai-alone-wont-change-your-business-the-system-running-it-will/",
-    "published_at": "2026-06-02T16:25:45+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "microsoft-ai-blog",
-    "source_name": "Microsoft AI Blog",
-    "extraction_method": "rss",
-    "body": "<p>The post <a href=\"https://blogs.microsoft.com/blog/2026/06/02/ai-alone-wont-change-your-business-the-system-running-it-will/\">AI alone won\u2019t change your business. The system running it will.</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551746,
-    "title": "Travelers deploys AI-powered claims countrywide with OpenAI",
-    "url": "https://openai.com/index/travelers",
-    "published_at": "2026-06-02T12:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Travelers built an AI-powered Claim Assistant with OpenAI to guide customers through filing claims, provide 24/7 support, and scale operations during peak demand.",
-    "topic": "tutorials",
-    "tags": [
-      "coding",
-      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
