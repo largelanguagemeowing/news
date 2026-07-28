@@ -1,5 +1,80 @@
 [
   {
+    "article_id": 767764,
+    "title": "There's really no feeling like kicking off a /wayfinder session /wayfinder <extremely ambitious idea> And knowing that you're going to see something awesome come to life",
+    "url": "https://nitter.net/mattpocockuk/status/2082100294960152753#m",
+    "published_at": "2026-07-28T13:46:08+00:00",
+    "fetched_at": "2026-07-28T14:59:43+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>There's really no feeling like kicking off a /wayfinder session<br />\n<br />\n/wayfinder &lt;extremely ambitious idea&gt;<br />\n<br />\nAnd knowing that you're going to see something awesome come to life</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 767005,
+    "title": "Serving 2 Million Models Without Melting: Scaling the Hugging Face Hub \u2014 Arek Borucki, Hugging Face",
+    "url": "https://www.youtube.com/watch?v=lyL5QhgIOxc",
+    "published_at": "2026-07-28T13:41:11+00:00",
+    "fetched_at": "2026-07-28T14:59:42+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Type llama into a catalog of 3 million public models and the result still has to feel instant. At 20,000 models any query is fast; at Hugging Face's scale, 14 million users and a million datasets on top, search becomes the hard part. Arek Borucki shows how the Hub keeps it quick: full text search on Apache Lucene, served through MongoDB Atlas, which stores only the metadata while the model artifacts sit in S3 so compute scales on its own. Regex ranking did not hold, so relevance now runs through one unified query with the $search operator, sorted by downloads, likes, and trending.\n\nUnderneath is a seven node MongoDB cluster where only the primary takes writes, with a hidden analytics node soaking up the heavy queries so production traffic never feels them. Keep queries light, push everything else elsewhere, and once the catalog outgrows a single primary, shard the data across nodes by key. The front end scales the same way: Kubernetes goes from 10 to 500 pods and CastAI adds machines underneath, and because HPA only watches CPU and memory, they scale on event loop utilization through KEDA, which sees the request queue HPA cannot.\n\nSpeaker info:\n- https://x.com/_Aras_B\n- https://www.linkedin.com/in/arekborucki/\n- https://arekborucki.cloud/\n\nTimestamps:\n0:00 - Introduction: scaling the Hugging Face Hub\n1:44 - The numbers: 14 million users, millions of models\n3:57 - Why search at scale is the hard part\n5:09 - Full text search on Apache Lucene\n5:46 - Request flow: autoscaling, MongoDB Atlas, and S3\n7:55 - How a search for \"llama\" works\n10:11 - Ranking and Atlas Search with the $search operator\n13:00 - The seven node cluster and a hidden analytics node\n16:42 - Sharding the database\n18:14 - Kubernetes autoscaling: 10 to 500 pods and CastAI\n20:07 - Scaling on event loop utilization with KEDA",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "infrastructure",
+      "events",
+      "hardware",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 765606,
+    "title": "5 ways AI Mode in Search helps you enjoy the real world",
+    "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+    "published_at": "2026-07-28T13:00:00+00:00",
+    "fetched_at": "2026-07-28T14:59:39+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Illustration of a black magnifying glass in a white circle on green grass surrounded by items related to fun activities like tennis and games",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 765607,
+    "title": "5 ways to host the ultimate dinner party with Google Search",
+    "url": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
+    "published_at": "2026-07-28T13:00:00+00:00",
+    "fetched_at": "2026-07-28T14:59:39+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "An illustrated black magnifying glass with a sparkle in a white circle surrounded by a dinner party tablescape",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 765581,
     "title": "Added a section on 'pruning an AGENTS.md file' in the course Expected it to be a short, simple video Turned out to be the longest and most in-depth in the whole course",
     "url": "https://nitter.net/mattpocockuk/status/2082060853319213481#m",
@@ -15,6 +90,27 @@
       "video",
       "coding",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 767006,
+    "title": "Forward Deployed Engineering 101 \u2014 Kevin Bai, Anthropic",
+    "url": "https://www.youtube.com/watch?v=KwhgfwOSToQ",
+    "published_at": "2026-07-28T09:04:22+00:00",
+    "fetched_at": "2026-07-28T14:59:42+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Look at public software companies and very few ever crack half a million dollars in average contract value, and that gap is where forward deployed engineering lives. Kevin Bai's 101 starts from the shape of the deal: when your buyer is not technical and the thing you sell is not a finished product they can pick up and configure themselves, you cannot just ship software and walk away. You loan them engineers who build a real solution on top of your platform, so the customer is neither buying a product nor a service but the outcome in between. That is the model Palantir made famous, and it is how you land Fortune 500 contracts a self serve motion never reaches.\n\nThe trap is doing it as pure custom work. Build a bespoke thing for every customer and you reinvent the wheel each time; what makes a forward deployed program work is a platform of reusable pieces the engineers assemble against, not a pile of one offs. So starting one comes down to two questions: is your product complex enough to need hand holding into a non technical org, and do you have engineers who can carry that. What has changed since the Palantir days is that building is easy now and nearly everything is agentic, which pulls this once niche motion toward the center of how software gets sold.\n\nSpeaker info:\n- https://x.com/zkevinbai\n- https://www.linkedin.com/in/zkevinbai\n- https://zkevinbai.com/\n\nTimestamps:\n0:00 - Introduction: what this 101 covers\n1:47 - What Palantir does, and where FDE fits\n3:14 - Selling a solution, not a product or a service\n4:18 - When your buyer isn't technical\n5:59 - The business case: landing large contracts\n7:16 - FDE as a partnership on a reusable platform\n9:48 - How to start: two questions to ask\n11:34 - What has changed since Palantir\n13:08 - Q&A",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "tutorials",
+      "enterprise",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9723,100 +9819,6 @@
       "coding",
       "opinion",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552964,
-    "title": "Expanding Project Glasswing",
-    "url": "https://www.anthropic.com/news/expanding-project-glasswing",
-    "published_at": "2026-06-02T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Expanding Project Glasswing",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553265,
-    "title": "A harness for every task: dynamic workflows in Claude Code",
-    "url": "https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code",
-    "published_at": "2026-06-02T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "A harness for every task: dynamic workflows in Claude Code",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551751,
-    "title": "Our views on AI policy and political advocacy",
-    "url": "https://openai.com/index/our-views-on-ai-policy-and-political-advocacy",
-    "published_at": "2026-06-01T17:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Our approach to AI policy and political advocacy, transparency, support for thoughtful regulation and AI safety, and that no outside political group speaks on the company\u2019s behalf.",
-    "topic": "safety",
-    "tags": [
-      "safety",
-      "coding",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551575,
-    "title": "How we used Gemini to build Google I/O 2026",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
-    "published_at": "2026-06-01T16:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "A collage of I/O-related images, including the Antigravity Coffee Co. pop-up, a colorful jellyfish and a still from the Timmy TPU video. The word AI repeats three times on the left of the image, and there are colorful icons, including a sparkle, as well.",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551752,
-    "title": "Building the infrastructure for the Intelligence Age in Michigan",
-    "url": "https://openai.com/index/stargate-michigan-data-center",
-    "published_at": "2026-06-01T12:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI breaks ground on a 1GW data center project in Michigan as part of Stargate, building AI infrastructure to expand access, create jobs, and support communities.",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
