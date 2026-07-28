@@ -1,5 +1,90 @@
 [
   {
+    "article_id": 769172,
+    "title": "Training Agents 3: Reinforcement Learning",
+    "url": "https://www.youtube.com/watch?v=ztdTed5egrM",
+    "published_at": "2026-07-28T16:41:53+00:00",
+    "fetched_at": "2026-07-28T16:47:02+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Training Agents, Session 3: from a fine-tuned baseline to reinforcement learning with GRPO.\n\nIn this live session, we'll move past imitation and start training on outcomes. We'll take the model from the earlier sessions and run Group Relative Policy Optimization: sample multiple completions per prompt, score them with a reward function, and use the group's relative scores as the training signal \u2014 no value model, no reward model, no critic to train. Everything runs in TRL.\n\nWhat we'll cover:\n- Why GRPO after SFT, and what RL adds that imitation can't\n- How GRPO works: group sampling, relative advantages, and why that replaces a critic\n- Writing verifiable reward functions for agent tasks\n- Running TRL GRPO on Hugging Face Jobs\n- Reading the training curves: reward, KL, and completion length\n- Common failure modes: reward hacking, collapse, and length gaming\n\nRepo: https://github.com/burtenshaw/training-agents\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 769187,
+    "title": "How Forward Deployed Engineering is done at Kepler \u2014 Vinoo Ganesh",
+    "url": "https://www.youtube.com/watch?v=1OMHGsUZiqA",
+    "published_at": "2026-07-28T16:00:00+00:00",
+    "fetched_at": "2026-07-28T16:47:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A shipping and dispatch customer wanted alerts, a massive BI tool, and a dev environment. What they actually needed Monday morning was one Slack message, so that is what got shipped first, and the real thing followed. Vinoo Ganesh spent seven years doing this at Palantir, where he later ran the rotation program that turned software engineers into forward deployed engineers, and his throughline is that the work was never a sales motion, it was product strategy in disguise. The engineer sits in the customer's environment, solves the concrete problem in under a day, and then generalizes it into something the whole product can use.\n\nThe compounding lessons are less obvious. Watch what people actually do: any task a user repeats is a hint at a missing feature, and someone pulling out their phone in the middle of a workflow is a bug report you will never find in documentation. The deepest one is language. When a customer says clients, finance says billing, and support says accounts, the ambiguity costs real money, so the forward deployed engineer defines the terms, the ontology, and becomes the linguistic layer the rest of the system is built on. A throwaway Groovy script that quietly became a product a year later is the whole pattern: forward deployed engineers drive product strategy without anyone calling it that.\n\nSpeaker info:\n- https://x.com/vinooganesh\n- https://www.linkedin.com/in/vinoo-ganesh/\n- https://vinoo.io\n\nTimestamps:\n0:00 - Introduction: FDE's origins at Palantir\n2:05 - Not a role, a product strategy\n4:51 - Real stories: scoping down to a Slack alert\n7:11 - Solve in a day, then ship the real thing\n8:33 - The data quality engineer story\n10:03 - Watch what users actually do\n12:33 - Own the language: clients vs billing\n14:54 - The ontology and the linguistic layer\n16:51 - The Groovy script that became a product\n18:09 - The most important skill: what to discard\n19:38 - Ship everything like it runs forever\n21:11 - FDE as an extension of product",
+    "topic": "tools",
+    "tags": [
+      "open-source",
+      "agents",
+      "coding",
+      "education",
+      "media",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 767788,
+    "title": "Gemini API Managed Agents: 3.6 Flash, hooks, and more",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+    "published_at": "2026-07-28T16:00:00+00:00",
+    "fetched_at": "2026-07-28T16:46:59+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Managed Agents Gemini 3.6 Flash, Hooks and Triggers",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "api",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 769188,
+    "title": "Forward Deployed Engineering 101 \u2014 Kevin Bai, Anthropic, ex Palantir & Rippling Founding FDE",
+    "url": "https://www.youtube.com/watch?v=KwhgfwOSToQ",
+    "published_at": "2026-07-28T15:00:06+00:00",
+    "fetched_at": "2026-07-28T16:47:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Look at public software companies and very few ever crack half a million dollars in average contract value, and that gap is where forward deployed engineering lives. Kevin Bai's 101 starts from the shape of the deal: when your buyer is not technical and the thing you sell is not a finished product they can pick up and configure themselves, you cannot just ship software and walk away. You loan them engineers who build a real solution on top of your platform, so the customer is neither buying a product nor a service but the outcome in between. That is the model Palantir made famous, and it is how you land Fortune 500 contracts a self serve motion never reaches.\n\nThe trap is doing it as pure custom work. Build a bespoke thing for every customer and you reinvent the wheel each time; what makes a forward deployed program work is a platform of reusable pieces the engineers assemble against, not a pile of one offs. So starting one comes down to two questions: is your product complex enough to need hand holding into a non technical org, and do you have engineers who can carry that. What has changed since the Palantir days is that building is easy now and nearly everything is agentic, which pulls this once niche motion toward the center of how software gets sold.\n\nSpeaker info:\n- https://x.com/zkevinbai\n- https://www.linkedin.com/in/zkevinbai\n- https://zkevinbai.com/\n\nTimestamps:\n0:00 - Introduction: what this 101 covers\n1:47 - What Palantir does, and where FDE fits\n3:14 - Selling a solution, not a product or a service\n4:18 - When your buyer isn't technical\n5:59 - The business case: landing large contracts\n7:16 - FDE as a partnership on a reusable platform\n9:48 - How to start: two questions to ask\n11:34 - What has changed since Palantir\n13:08 - Q&A",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "tutorials",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 767764,
     "title": "There's really no feeling like kicking off a /wayfinder session /wayfinder <extremely ambitious idea> And knowing that you're going to see something awesome come to life",
     "url": "https://nitter.net/mattpocockuk/status/2082100294960152753#m",
@@ -9741,84 +9826,6 @@
     "tags": [
       "coding",
       "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551747,
-    "title": "ChatGPT Sites",
-    "url": "https://openai.com/academy/chatgpt-sites",
-    "published_at": "2026-06-02T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Create that kind of lightweight website or app with Codex.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551748,
-    "title": "Codex for every role, tool, and workflow",
-    "url": "https://openai.com/index/codex-for-every-role-tool-workflow",
-    "published_at": "2026-06-02T09:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Discover new Codex plugins, sites, and annotations that help analysts, marketers, designers, investors, and other teams get more done with AI.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551749,
-    "title": "Advancing youth safety and opportunity through global leadership",
-    "url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
-    "published_at": "2026-06-02T07:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI calls for global action on youth AI safety, proposing an international institute to strengthen safeguards, standards, and opportunities for young people.",
-    "topic": "safety",
-    "tags": [
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551750,
-    "title": "Codex is becoming a productivity tool for everyone",
-    "url": "https://openai.com/index/codex-for-knowledge-work",
-    "published_at": "2026-06-02T02:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "The Next Era of Knowledge Work report explores how Codex is transforming productivity through AI-powered research, data analysis, workflow automation, and content creation.",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "research",
-      "coding",
-      "opinion",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
