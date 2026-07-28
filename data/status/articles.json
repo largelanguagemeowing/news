@@ -1,5 +1,65 @@
 [
   {
+    "article_id": 773550,
+    "title": "How Forward Deployed Engineering is done at Ramp \u2014 Leo Mehr",
+    "url": "https://www.youtube.com/watch?v=ITMXwI6QL6A",
+    "published_at": "2026-07-28T19:00:06+00:00",
+    "fetched_at": "2026-07-28T20:01:38+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "It's Friday night, an enterprise sales rep needs an SAP S4 HANA integration to hit quota, and the reflexive Forward Deployed answer is yes. Leo Mehr's first principle is to pause instead: always be scoping. Saying yes to everything buries the team and often does not even serve the customer, so the job is to weigh what actually matters against the rest of the queue and decide with that context. Ramp's FDE function looks different from its Palantir origins, pointed at enterprise customers, but the discipline is the same: scope hard before you roll up your sleeves and ship.\n\nThe second half is what tokens change. Look at the FDE pipeline and ask which stages an agent can take over. Intake is a good one: requests pour in through account managers and solutions engineers, and someone has to read each and turn it into a spec. Ramp wired that step to an agent with Notion as the surface, and after a couple of iterations account reps were using it directly. The unglamorous parts are what make it work: an agent harness, evals with rubrics and human feedback, and past requests and help articles as grounding. The close is that the future of Forward Deployed needs both, humans for judgment and agents for the volume.\n\nSpeaker info:\n- https://x.com/leomehr\n- https://www.linkedin.com/in/leomehr\n- https://leomehr.com/\n\nTimestamps:\n0:00 - Introduction: FDE principles at Ramp\n2:10 - Principle one: always be scoping\n3:16 - The Friday night SAP integration ask\n5:04 - When scoping goes wrong\n6:33 - Using agents for the FDE pipeline\n7:57 - Automating request intake into specs\n9:14 - Building the spec agent in Notion\n11:16 - The agent harness and evals\n13:27 - The future of FDE needs both",
+    "topic": "enterprise",
+    "tags": [
+      "agents",
+      "benchmark",
+      "coding",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 773490,
+    "title": "#ad Why AI Intelligence Is Overrated",
+    "url": "https://www.youtube.com/shorts/_3qXTqdEFm4",
+    "published_at": "2026-07-28T18:59:54+00:00",
+    "fetched_at": "2026-07-28T20:01:37+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Unpopular opinion: AI intelligence is kind of overrated. #ServiceNowPartner\n\nThe hardest part about AI right now ISN\u2019T making it smarter, but making it work safely across real businesses with approvals, security requirements, compliance rules, dozens of software systems, and thousands of employees.\n\nA lot of companies aren\u2019t getting that, and they\u2019re going to run into disaster.  \n\n@servicenow sits at the center of countless enterprise workflows, which means they bring decades of operational knowledge about how businesses actually function.\n\nThe organizations that get the most value from AI will do so because they have the best systems for coordinating models across their business.\n\nSo check out the article linked in my bio if you want to learn how businesses are moving from AI chaos to AI control.\n\n#Ad #AI #Aiagents #EnterpriseAI",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "policy",
+      "education",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 774064,
+    "title": "recommended reading. very cool. should be even easier once the new harness hits.",
+    "url": "https://x.com/i/article/2082137754788646912",
+    "published_at": "2026-07-28T18:14:53+00:00",
+    "fetched_at": "2026-07-28T20:01:40+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. very cool. should be even easier once the new harness hits.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 771366,
     "title": "The Dirty Secret of Forward Deployed Engineering \u2014 Natalie Meurer, Sierra",
     "url": "https://www.youtube.com/watch?v=Byv311hdoHE",
@@ -312,6 +372,73 @@
     "topic": "general",
     "tags": [
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 773556,
+    "title": "How Forward Deployed Engineering is done at Cognition \u2014 Jia Wu",
+    "url": "https://www.youtube.com/watch?v=RVxym6mmIns",
+    "published_at": "2026-07-28T05:22:24+00:00",
+    "fetched_at": "2026-07-28T20:01:38+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most of the coding agent market quietly optimizes for token usage; Cognition's deployed engineering team measures the opposite, the outcomes a customer can actually see, and reports something like an 82% reduction on the work they targeted. Jia Wu's argument is that you measure before Devin ever lands, then again once it is fully activated inside the customer, so the value is a real delta and not a vanity number. The way that value shows up is not linear: one team using the agent is a step function, a whole enterprise using it is parabolic, because the products Cognition builds and the customer's backlog start to overlap.\n\nThat changes what a deployed engineer is. As the pure engineering part trends toward zero, the job leans on business and people skills: understand the customer's real problem space, find the highest leverage place to point the agent, and communicate it back into the roadmap, since customers are the lifeblood. Each deployment is meant to derisk and improve the next, because the challenges recur in similar shapes across companies. The value underneath it all is blunt: correctness and customer success at all costs, ship the hard thing and leave nothing on the table.\n\nSpeaker info:\n- https://www.linkedin.com/in/jia-rong-wu/\n\nTimestamps:\n0:00 - Introduction: deployed engineering at Cognition\n2:05 - Step function to parabolic productivity\n3:35 - Where products meet the customer's problems\n5:16 - Pointing agents at the highest leverage work\n7:07 - How deployment challenges recur\n8:34 - What a deployed engineer actually is\n10:25 - Measuring outcomes, not token usage\n12:56 - The 82% result, measured before and after\n14:38 - Developers plus Devin, autonomously\n15:53 - Core values: correctness and customer success",
+    "topic": "enterprise",
+    "tags": [
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 773557,
+    "title": "AI tools for Forward Deployed Engineering \u2014 Vasuman Moza, Varick Agents",
+    "url": "https://www.youtube.com/watch?v=l0FLhNqBOic",
+    "published_at": "2026-07-28T05:22:13+00:00",
+    "fetched_at": "2026-07-28T20:01:38+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A customer spent five million dollars and five years migrating to SAP, and has zero appetite to rip anything out again. That constraint is the whole design at Varick Agents: instead of asking an enterprise to migrate, you drop forward deployed agents on top of the systems they already run. Vasuman Moza's version of the role maps how a department actually works today, the reconciliations between a purchase order and an invoice, the handoffs nobody documented, and then automates those processes end to end. It answers the stat everyone cites, that most AI projects never reach production, by starting from the customer's real workflow instead of a generic tool.\n\nMaking one forward deployed engineer that productive takes tooling of its own. Varick builds a spec from the raw material of an engagement, the granola notes and Slack threads, then lets the engineer shape the workflow with Claude or Codex against a single source of truth that can just live in Postgres. The harder problem is context: frontier models are surprisingly bad at traversing a messy enterprise and knowing that person A and person B are the same entity, so Varick post trains its own models to extract the right context and strip the redundancy, and only then does the agent run autonomously. Every engagement starts by finding the bottleneck and grows out from there.\n\nSpeaker info:\n- https://x.com/vasuman\n- https://www.linkedin.com/in/vasumanmoza/\n\nTimestamps:\n0:00 - Introduction: forward deployed agents\n1:55 - The question: what can an agent actually do?\n3:27 - What a forward deployed agent is\n4:44 - Automating a department end to end\n6:14 - Why enterprises need deployed engineers, no migrations\n8:30 - Hiring the top 1 percent\n10:51 - The platform and department wide ROI\n11:53 - Demo: tools for forward deployed engineers\n13:07 - Turning notes into a workflow spec\n14:22 - Engineering workflows with a source of truth\n16:53 - Post training models to extract context\n18:37 - Where this leaves us",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "enterprise",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 773558,
+    "title": "How Forward Deployed Engineering is done at Factory \u2014 Eno Reyes",
+    "url": "https://www.youtube.com/watch?v=wpOA-UXynoM",
+    "published_at": "2026-07-28T05:21:42+00:00",
+    "fetched_at": "2026-07-28T20:01:38+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Factory's forward deployed engineers sit at the tip of the product, embedded with the largest customers and piping a constant stream of real world signals back into how the agent, Droid, gets built. Eno Reyes frames the whole thing as a software factory: signals flow in from the outside, become plans, pass through validation stages, and come out as shipped outcomes, a loop most orgs run badly until they actually invest in the system around it. The non negotiable piece is a model independent harness the customer owns, so the traces and the data stay theirs and Droid can even run air gapped inside their environment.\n\nThe frontier is autonomy. Factory scores a codebase on how agent ready it is, whether it runs linters and type checkers and how much of the work an agent can finish and verify without a human, and the payoff shows up on jobs like migrating 30 to 50 million line equities systems at a bank. Push too hard, though, and you hit the trap Eno Reyes borrows from city planning: an exemplar city built too far ahead of its time becomes a theme park, not a place people live. So the forward deployed job is a balancing act, moving customers up the autonomy curve fast enough to matter but not so fast that nothing holds, which is why the role now leans as much on business judgment as on engineering.\n\nSpeaker info:\n- https://x.com/EnoReyes\n- https://www.linkedin.com/in/enoreyes/\n- https://enoreyes.com/\n\nTimestamps:\n0:00 - Introduction: where forward deployed sits\n2:08 - The role inside the customer's environment\n3:49 - The tip of the spear of the product\n5:03 - The software factory: signals in, outcomes out\n6:57 - Why you own the agent harness\n8:11 - Air gapping Droid inside the customer\n10:08 - The autonomy maturity model\n12:05 - Making a codebase agent ready\n14:53 - Migrating 40 million line codebases\n16:38 - The city of the future analogy\n18:34 - Constrained autonomy and legal droid\n20:04 - Redefining the forward deployed role",
+    "topic": "development",
+    "tags": [
+      "development",
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "enterprise",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9722,114 +9849,6 @@
       "agents",
       "coding",
       "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551745,
-    "title": "A blueprint for democratic governance of frontier AI",
-    "url": "https://openai.com/index/frontier-safety-blueprint",
-    "published_at": "2026-06-03T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "topic": "policy",
-    "tags": [
-      "safety",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551744,
-    "title": "OpenAI public policy agenda",
-    "url": "https://openai.com/index/public-policy-agenda",
-    "published_at": "2026-06-03T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
-    "topic": "safety",
-    "tags": [
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552962,
-    "title": "What we learned mapping a year\u2019s worth of AI-enabled cyber threats",
-    "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
-    "published_at": "2026-06-03T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "What we learned mapping a year\u2019s worth of AI-enabled cyber threats",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552963,
-    "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
-    "url": "https://www.anthropic.com/news/services-track-partner-hub",
-    "published_at": "2026-06-03T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553262,
-    "title": "Best practices for getting started with Claude Cowork",
-    "url": "https://claude.com/blog/best-practices-for-getting-started-with-claude-cowork",
-    "published_at": "2026-06-03T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Best practices for getting started with Claude Cowork",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553264,
-    "title": "How Anthropic enables self-service data analytics with Claude",
-    "url": "https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude",
-    "published_at": "2026-06-03T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "How Anthropic enables self-service data analytics with Claude",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
