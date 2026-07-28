@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 758308,
+    "title": "AI Agents for Performance: Ship Faster, Pay Less \u2014 Rajat Shah, Netflix",
+    "url": "https://www.youtube.com/watch?v=CgsWxRUY5Eo",
+    "published_at": "2026-07-28T00:59:04+00:00",
+    "fetched_at": "2026-07-28T04:10:00+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An inefficient quadratic-time pattern was hiding inside a tensor merge method on a live Netflix service, quietly wasting CPU on every request - nothing in a code review caught it, but it stood out clearly in a call stack. That's usually how this kind of waste gets missed - the normal process of catching it (profiling, reading a flamegraph, tracing it through the codebase, writing a fix, validating it) takes long enough that inefficiencies sit in production for months before anyone looks at them. AI-assisted coding adds to this, since it produces more code optimized for how fast it's written, not how fast it runs. Rajat Shah's team at Netflix built an agent to handle this loop: it took a call stack, traced the issue to the exact source line, proposed a fix, and validated it against a canary - a real production traffic split, with no regression allowed before it could ship. The result was based on measured outcomes, not the model's own assessment.\n\nThe talk covers what it took to get an agent to a point where it could act in production, and walks through this specific case from start to finish - found, fixed, and confirmed by canary without anyone stepping in. It also covers what's next: the same pattern turned up independently in seven other services in one session, which is why it makes sense to build a shared catalog of patterns like this so they aren't rediscovered each time, and which could eventually be used to catch these issues in coding agents before the code ships at all. We'll also share the approach itself - how it was built, what it took to trust it, and what it caught - so other teams can adopt the same loop in their own SDLC rather than starting from scratch.\n\nSpeaker info:\n- https://www.linkedin.com/in/rajatsshah/\n- https://github.com/shahrajat\n- https://shahrajat.com/\n\nTimestamps:\n0:00 - Introduction: performance for ML serving\n2:24 - The manual profiling loop today\n4:46 - The experiment: can an LLM read a profile?\n7:37 - From call stack to the exact method\n9:07 - How the agent locates and reads the code\n11:01 - First finding: an O(N) fix, canary confirmed\n12:41 - The same antipattern across seven services\n15:31 - Building a shared pattern catalog\n17:16 - Storing and sharing findings across services\n19:40 - Feeding the catalog to coding agents\n20:56 - Human approval and verification\n22:13 - Canary validation on real traffic\n24:18 - Reactive vs proactive paths\n26:54 - Catching waste before production\n29:32 - Autonomy levels and what is next",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "events",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 755932,
     "title": "moonshotai/Kimi-K3",
     "url": "https://simonwillison.net/2026/Jul/27/kimi-k3/#atom-everything",
@@ -9794,25 +9816,6 @@
     "tags": [
       "ai-models",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553470,
-    "title": "the solution might be cancelling my AI subscription",
-    "url": "https://thoughts.hmmz.org/2026-05-31.html",
-    "published_at": "2026-05-31T15:15:59+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.\n\n> On that last point, this technology is horrific for attention\n\n> I have no idea how to manage AI at present except by curtailing use, because a tool producing a cheap reward with minimal input and no friction can only be a liability, and achieving that realisation is probably the only real contribution of AI to date.\n\nnice",
-    "topic": "tutorials",
-    "tags": [
-      "coding",
-      "tutorials",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
