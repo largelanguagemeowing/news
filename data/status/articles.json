@@ -1,5 +1,69 @@
 [
   {
+    "article_id": 791718,
+    "title": "We\u2019re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control",
+    "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
+    "published_at": "2026-07-29T16:02:10+00:00",
+    "fetched_at": "2026-07-29T16:02:34+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 793098,
+    "title": "Your Agent Didn't Fail. Your Harness Did. \u2014 Vinoth Govindarajan, OpenAI",
+    "url": "https://www.youtube.com/watch?v=BInpv7lGp1o",
+    "published_at": "2026-07-29T16:00:06+00:00",
+    "fetched_at": "2026-07-29T16:02:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Two runs touch the same session, the second write silently erases the first, and the agent keeps answering with total confidence from stale state. Nothing crashed and the model did not hallucinate, so this is a harness failure, the kind that lives in the system around the model rather than in the weights. Using OpenClaw as a public case study, Vinoth Govindarajan walks the usual suspects: state that was never persisted, overlapping writers with no single writer lane, a tool call that never returns because nothing set a deadline, and an approval that outlived the action it was supposed to authorize.\n\nThe through line is that a model only proposes; the harness has to commit, and a receipt has to prove it. A transcript shows what the agent said, but a receipt is the evidence that survives: it records the mutation, the authority used, and whether the message actually reached the user, since an internal success that never becomes visible proof is its own failure. You leave with a run receipt audit to run on your own agents, five questions per incident: what woke it up, what state did it inherit, what authority did it use, what executed, and what evidence survived.\n\nSpeaker info:\n- https://x.com/iamvinoth\n- https://www.linkedin.com/in/vinothgovindarajan/\n- https://theagentstack.substack.com/\n\nTimestamps:\n0:00 - Introduction: harness failures vs model failures\n1:32 - Delivery can succeed while the truth fails\n2:46 - A model proposes, the harness commits, the receipt proves\n4:14 - How events enter and state is rehydrated\n5:48 - Idempotency, locks, and ordering\n7:22 - Ownership: who persists the turn\n8:28 - Single writer lanes and overlapping writes\n10:09 - Time, deadlines, and cancellation\n11:23 - Approval drift and bounded authority\n13:05 - Internal success vs user-visible proof\n14:08 - The run receipt audit: five questions",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "models",
+      "open-source",
+      "agents",
+      "research",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 793038,
+    "title": "Claude Geolocated My Photo With ZERO Metadata",
+    "url": "https://www.youtube.com/shorts/zdG2bgFPxl4",
+    "published_at": "2026-07-29T14:13:44+00:00",
+    "fetched_at": "2026-07-29T16:02:38+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "I gave Claude Code a random photo with zero geotags and it searched the web to figure out where it was taken \ud83e\udd2f\n\nAnthropic recently launched a native, sandboxed in-app browser built directly into Claude Code on desktop that can open a real browser pane beside your workspace. It can read web pages, click links, and interact with elements\u2014making it incredibly useful for researching documentation, debugging, or building web tools side-by-side.\n\nHere's how to access and try it yourself \ud83d\udc47\n- Open up Claude Code Desktop.\n- Press Cmd + Shift + B on macOS (or Ctrl + Shift + B on Windows) to open the built-in browser panel.\n- Give Claude a task that requires web research, live testing, or coding based on web resources, and watch it work in real time.\n\n\ud83d\udcc1 Save this reel so you can reference these steps later, and follow for more updates, hands-on tutorials, and practical AI use cases!\n\n#AI #claudecode #anthropic #vibecoding #aihacks",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "release",
+      "models",
+      "research",
+      "coding",
+      "tutorials",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 791674,
     "title": "Another absolute BEAST of a spec, produced from doing /to-spec on a /wayfinder map Do your specs look like this? https://github.com/mattpocock/course-video-manager/issues/1455",
     "url": "https://nitter.net/mattpocockuk/status/2082456028717654525#m",
@@ -2650,6 +2714,24 @@
       "agents",
       "safety",
       "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 791689,
+    "title": "A new approach to AI data puts communities in charge",
+    "url": "https://news.microsoft.com/signal/articles/a-new-approach-to-ai-data-puts-communities-in-charge/",
+    "published_at": "2026-07-22T15:12:02+00:00",
+    "fetched_at": "2026-07-29T16:02:20+00:00",
+    "source_id": "microsoft-ai-blog",
+    "source_name": "Microsoft AI Blog",
+    "extraction_method": "rss",
+    "body": "<p>The post <a href=\"https://news.microsoft.com/signal/articles/a-new-approach-to-ai-data-puts-communities-in-charge/\">A new approach to AI data puts communities in charge</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9812,78 +9894,6 @@
     "topic": "safety",
     "tags": [
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553220,
-    "title": "SciencePaving the way for agents in biology",
-    "url": "https://www.anthropic.com/research/agents-in-biology",
-    "published_at": "2026-06-08T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jun 8, 2026SciencePaving the way for agents in biology",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553219,
-    "title": "Frontier Red TeamMeasuring LLMs\u2019 impact on N-day exploits",
-    "url": "https://www.anthropic.com/research/n-days",
-    "published_at": "2026-06-08T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jun 8, 2026Frontier Red TeamMeasuring LLMs\u2019 impact on N-day exploits",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553258,
-    "title": "Building intelligent apps for Apple platforms with Claude in the Foundation Models framework",
-    "url": "https://claude.com/blog/claude-for-foundation-models",
-    "published_at": "2026-06-08T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Building intelligent apps for Apple platforms with Claude in the Foundation Models framework",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553257,
-    "title": "Observability for developers building connectors",
-    "url": "https://claude.com/blog/observability-for-developers-building-connectors",
-    "published_at": "2026-06-08T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Observability for developers building connectors",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
