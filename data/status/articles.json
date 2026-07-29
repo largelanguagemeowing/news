@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 806276,
+    "title": "Wearing the Agent: From Group Chats to Glasses \u2014 Sai Krishna Rallabandi",
+    "url": "https://www.youtube.com/watch?v=s67bE2Ur3bY",
+    "published_at": "2026-07-29T22:58:19+00:00",
+    "fetched_at": "2026-07-29T23:59:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Almost every agent today is built for one user, and Sai Krishna Rallabandi has spent about eight months on what breaks when you drop one into a group chat instead. Running a personal agent across a real group, and eventually onto glasses, forces two hard problems. The first is memory: conversations that last for days across several people, where the agent has to track who said what and surface only what is relevant without bloating its context.\n\nThe second is security, and it is where the talk digs in. He points to a finding that two skills, each safe on its own, can collide once they share infrastructure, so a reporting agent leaks information at low frequency. His defense is to have an agent read everything and design a guard, then fine tune a small model with a per user adapter that only releases information appropriate to the context and catches prompt injection that regex would miss. The through line is that group and wearable settings break the single user assumptions most agent harnesses are built on, so memory and security have to be redesigned around the group.\n\nSpeaker info:\n- https://x.com/Saikallis9012\n- https://www.linkedin.com/in/sai-krishna-rallabandi-8595418b/\n- https://saikrishnarallabandi.github.io/\n\nTimestamps:\n0:00 - Introduction: agents for groups, not one user\n1:28 - Why single user agents fall short\n2:45 - Eight months in a real group chat\n3:47 - What changes when the agent joins a group\n5:17 - Two problems: guarding and memory\n5:55 - Securing an agentic system\n7:44 - When two safe skills collide\n9:27 - Designing a guard agent\n10:21 - A small model with per user adapters\n11:49 - Catching prompt injection\n12:29 - Designing memory for groups\n15:29 - Context growth and token cost",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 804080,
     "title": "We Vetted 2000 AI Skills Before They Reached Developers \u2014 Lucas Palma, Nubank",
     "url": "https://www.youtube.com/watch?v=iKQ78wyJEXU",
@@ -381,6 +404,26 @@
       "research",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 804993,
+    "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
+    "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+    "published_at": "2026-07-29T15:00:00+00:00",
+    "fetched_at": "2026-07-29T23:59:46+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "How two API settings improved GPT-5.6 performance on ARC-AGI-3, boosting scores and efficiency by retaining reasoning and enabling compaction.",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "api",
+      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9898,49 +9941,6 @@
     "tags": [
       "general",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555024,
-    "title": "Anthropic begged the world to stop AI\u2026 then shipped this",
-    "url": "https://www.youtube.com/watch?v=1PBRhm5ZnjU",
-    "published_at": "2026-06-11T17:17:48+00:00",
-    "fetched_at": "2026-07-20T10:11:30+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Render is the easiest place to ship full-stack apps and agents. The first 2,000 people to use the code RENDER-FIRESHIP will get $50 in credits: https://dashboard.render.com/register?utm_source=youtube&amp;utm_medium=organic_video&amp;utm_campaign=2026_partnership_fireship\n\nThis week, Anthropic released Claude Fable, a Mythos class model that's been carefully lobotomized for public consumption. But is it legit? Let's run it...\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- Claude Fable release\n- Fable 5 vs Opus 4.8\n- Fable 5 Demo\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "agents",
-      "video",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555058,
-    "title": "Build Small with OpenBMB",
-    "url": "https://www.youtube.com/watch?v=B7XvicdImIE",
-    "published_at": "2026-06-11T04:35:56+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "As part of the Build Small hackathon we are inviting our partners to share their knowledge on how to get the most out of the tiny models available today.\n\nToday we are joined by OpenBMB who will walk us through some of the best real-world uses cases for their family of tiny models and answer any questions from the community!\n\n---\n\nBuild Small Hackathon: https://huggingface.co/build-small-hackathon\n\nOpenBMB resources: https://build-small-hackathon-field-guide.hf.space/partners/openbmb\n\nOpenBMB Wesbite: https://www.openbmb.cn/en/home\nOpenBMB Hugging Face: https://huggingface.co/openbmb\nOpenBMB GitHub: https://github.com/OpenBMB\nOpenBMB X: https://x.com/OpenBMB",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "coding",
-      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
