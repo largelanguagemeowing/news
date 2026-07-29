@@ -1,5 +1,43 @@
 [
   {
+    "article_id": 801643,
+    "title": "Quoting D. Richard Hipp",
+    "url": "https://simonwillison.net/2026/Jul/29/d-richard-hipp/#atom-everything",
+    "published_at": "2026-07-29T21:15:21+00:00",
+    "fetched_at": "2026-07-29T21:30:11+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://www.youtube.com/watch?v=R57nUGzo7CA&amp;t=848s\"><p>Years ago, we didn\u2019t have SQL. There were people whose job was to generate software that would query large data sets. Their job title was COBOL programmer.</p>\n<p>Then SQL comes along\u2014I\u2019m simplifying this only a little bit\u2014and it gives you this convenient way so people could just specify. With a very simple specification, you can generate all of that code that you had to pay the expensive COBOL programmer to do before.</p>\n<p>That didn\u2019t mean programmers went away. It just meant the job changed a little bit.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.youtube.com/watch?v=R57nUGzo7CA&amp;t=848s\">D. Richard Hipp</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/d-richard-hipp\">d-richard-hipp</a>, <a href=\"https://simonwillison.net/tags/sql\">sql</a>, <a href=\"https://simonwillison.net/tags/careers\">careers</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "video",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 801901,
+    "title": "How Kepler Built Verifiable AI for Financial Services \u2014 Vinoo Ganesh",
+    "url": "https://www.youtube.com/watch?v=Tt2kX2sgQio",
+    "published_at": "2026-07-29T21:00:06+00:00",
+    "fetched_at": "2026-07-29T21:30:12+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In finance a number is worthless until you can say where it came from. Vinoo Ganesh, CEO of Kepler, starts from the fact that language models are probability machines, brilliant at next token prediction and unreliable at the deterministic work, like arithmetic, that finance actually runs on. So Kepler treats the model as one part of a system rather than the whole answer, wrapping it in a deterministic substrate that makes every figure traceable.\n\nIt rests on three tenets. Atomic provenance means every number is tied to its source and stripped out if it cannot be independently verified. Scope determinism keeps the model on the nondeterministic tasks it is good at and pulls the actual figure, say revenue from a 10K filing, deterministically behind the scenes, with reconciliation on top. The third is treating every extracted number like a pull request that gets reviewed, so entities are caught and nothing is invented. The result is a grounded system where the edge comes not from producing content but from verifying it.\n\nSpeaker info:\n- https://x.com/vinooganesh\n- https://www.linkedin.com/in/vinoo-ganesh/\n- https://vinoo.io\n\nTimestamps:\n0:00 - Introduction: a data background in finance\n1:42 - Why trust and verifiability matter now\n2:57 - Models are probability machines\n4:27 - Why analysts still put in the hours\n8:22 - Modeling AI like an overworked VP\n9:26 - Atomic provenance\n12:01 - Scope determinism\n13:52 - Reconciliation and pulling real numbers\n15:06 - Extracting entities without misses\n16:34 - Toward zero invented securities\n20:31 - Where a number really comes from",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 800456,
     "title": "Added icons to my custom @tldraw diagram app Funny how a small thing makes a big difference",
     "url": "https://nitter.net/mattpocockuk/status/2082562900258852901#m",
@@ -35,6 +73,23 @@
       "research",
       "coding",
       "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 802409,
+    "title": "recommended reading, if you don't follow dex you're ngmi. also, please stop posting useful stuff. haven't written a blog post in ages and this makes me feel bad.",
+    "url": "https://x.com/i/article/2082133743893204992",
+    "published_at": "2026-07-29T20:03:42+00:00",
+    "fetched_at": "2026-07-29T21:30:13+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading, if you don't follow dex you're ngmi. also, please stop posting useful stuff. haven't written a blog post in ages and this makes me feel bad.",
+    "topic": "general",
+    "tags": [
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9884,64 +9939,6 @@
       "research",
       "coding",
       "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552959,
-    "title": "Introducing Claude Corps",
-    "url": "https://www.anthropic.com/news/claude-corps",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Introducing Claude Corps",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552960,
-    "title": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
-    "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551729,
-    "title": "BBVA puts AI at the core of banking with OpenAI",
-    "url": "https://openai.com/index/bbva",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "coding",
-      "education",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
