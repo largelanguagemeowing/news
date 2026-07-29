@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 804080,
+    "title": "We Vetted 2000 AI Skills Before They Reached Developers \u2014 Lucas Palma, Nubank",
+    "url": "https://www.youtube.com/watch?v=iKQ78wyJEXU",
+    "published_at": "2026-07-29T22:00:06+00:00",
+    "fetched_at": "2026-07-29T22:32:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An AI skill is a piece of code you hand a model to extend what it can do, and once engineers start sharing skills with each other, each one becomes a supply chain risk, more so inside a regulated bank. Lucas Palma's security team at Nubank built Skill Vector to sit between a skill and the internal marketplace, so nothing reaches developers unvetted. Every skill is scanned first with deterministic checks, for destructive shell commands and the like, then with an LLM for the context those checks miss, and only then does it get a decision and permissions scoped to who will use it.\n\nRunning that gate over more than 2,000 skills surfaced real problems, since a single skill can carry many, and fed them into the bank's vulnerability management program with approval gates and human confirmation. What worked was pairing deterministic scans with LLM review; what needed work was the guidance the system gave and the habit of running skills locally before vetting. The lesson he leaves is simple: treat skills like any other dependency, and only what clears the gate belongs in the marketplace.\n\nSpeaker info:\n- https://www.linkedin.com/in/lucaspalma/\n\nTimestamps:\n0:00 - Introduction: making code safe at a bank\n1:32 - AI skills as a supply chain risk\n2:50 - What counts as an AI skill\n3:57 - The extra weight of a regulated environment\n6:07 - From plugins to a vetted marketplace\n6:58 - What Skill Vector does\n7:37 - Deterministic checks, then the LLM\n10:00 - Scanning over two thousand skills\n11:22 - What worked and what needed improvement\n13:30 - Approval gates and human confirmation\n14:23 - Next steps and policies",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "safety",
+      "coding",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 801643,
     "title": "Quoting D. Richard Hipp",
     "url": "https://simonwillison.net/2026/Jul/29/d-richard-hipp/#atom-everything",
@@ -9916,27 +9939,6 @@
     "tags": [
       "models",
       "open-source",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555059,
-    "title": "Build Small with Cohere Labs",
-    "url": "https://www.youtube.com/watch?v=TYIT3nRMXak",
-    "published_at": "2026-06-11T03:07:26+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "As part of the Build Small hackathon we are inviting our partners to share their knowledge on how to get the most out of the tiny models available today.\n\nToday we are joined by Cohere Labs who will walk us through their Tiny Aya and Transcribe models and answer any questions from the community!\n\n---\n\nBuild Small Hackathon: https://huggingface.co/build-small-hackathon\n\nCohere resources: https://build-small-hackathon-field-guide.hf.space/partners/cohere\n\nCohere website: https://cohere.com/\nCohere Labs website: https://cohere.com/research\nCohere Labs Hugging Face: https://huggingface.co/CohereLabs\nCohere Labs GitHub: https://github.com/Cohere-Labs\nCohere Labs X: https://x.com/cohere_labs",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "research",
       "coding",
       "tutorials"
     ],
