@@ -1,5 +1,127 @@
 [
   {
+    "article_id": 797499,
+    "title": "SimulationMaxxing: How Nubank ships agents 20\u00d7 faster with simulations \u2014 Shreya Rajpal, Snowglobe",
+    "url": "https://www.youtube.com/watch?v=KMR_RBoCa4M",
+    "published_at": "2026-07-29T19:00:06+00:00",
+    "fetched_at": "2026-07-29T19:16:22+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Nubank serves 135 million customers, so an AI agent that mishandles a support conversation fails at scale. The talk opens with the result: five agents in production, higher customer satisfaction, and roughly 20 times faster shipping. Shreya Rajpal, CEO of Snowglobe, argues the thing that unlocked that pace was evals, and specifically simulated data standing in for real conversations. Good agent evals are hard because the data is multi turn and stateful, not single turn question and answer, and hand curating it and waiting on production to confirm can take forever.\n\nSnowglobe points at the agent and generates grounded simulations, a customer like Maria trying to order a credit card, complete with account context, tone, and intent, so you can ship, observe, simulate, and feed the results back in a tight loop. Human review found the simulated conversations comparable to real ones about 80% of the time, enough to bring up new agents, derisk changes, and protect the self service rate. With aligned metrics and cheap simulation, the team now tests open models and variant agents freely, because the eval bottleneck is gone.\n\nSpeaker info:\n- https://x.com/ShreyaR\n- https://www.linkedin.com/in/shreya-rajpal/\n- http://shreya-rajpal.com\n\nTimestamps:\n0:00 - Opening with the results\n0:39 - Nubank at 135 million customers\n2:34 - Why evals matter most\n2:47 - Why simulated data works\n3:49 - What makes agent eval data hard\n4:49 - How teams get eval data today\n6:44 - Simulations in minutes, not weeks\n7:35 - Pointing Snowglobe at your agent\n8:48 - A grounded simulation: Maria orders a card\n10:31 - Ship, observe, simulate, repeat\n11:34 - How close simulations are to real\n13:43 - Testing models and variants",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 797241,
+    "title": "AI Worming through Word",
+    "url": "https://simonwillison.net/2026/Jul/29/ai-worming-through-word/#atom-everything",
+    "published_at": "2026-07-29T18:43:03+00:00",
+    "fetched_at": "2026-07-29T19:16:21+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/\">AI Worming through Word</a></strong></p>\nNeat new prompt injection variant by H\u00e5kon M\u00e5l\u00f8y, who found a way to upgrade prompt injection attacks against Microsoft Word to full self-replicating worms:</p>\n<blockquote>\n<p>An attacker places hidden instructions in a document that is later used as source material in Copilot for Word. Copilot may interpret those instructions as part of the user\u2019s request, causing it to manipulate the document being drafted or edited. Copilot may then also copy the hidden instructions into the resulting document, turning that document into a new carrier. If the carrier is subsequently used in another Copilot-assisted workflow, the instructions can trigger again and propagate into further documents, even without the attacker\u2019s original document being present.</p>\n</blockquote>\n<p>We've seen plenty of hidden white-on-white text before - the kids <a href=\"https://x.com/ScienceYael/status/2082175224007848019\">are using it in their job applications now</a> - but this is the first one I've seen that deliberately copies instructions to self-replicate itself.</p>\n<p>It was responsibly disclosed to Microsoft who then had 144 days to work on a fix, but so far (unsurprisingly) there's no mitigation that covers the full class of attack.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49096188\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/microsoft\">microsoft</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/prompt-injection\">prompt-injection</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "agents",
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 797484,
+    "title": "Hugging Face Journal Club: Kimi K3",
+    "url": "https://www.youtube.com/watch?v=MW8-kqd2SD8",
+    "published_at": "2026-07-29T18:31:00+00:00",
+    "fetched_at": "2026-07-29T19:16:22+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "The Hugging Face research team discusses the Kimi K3 tech report: https://huggingface.co/papers/2607.24653",
+    "topic": "research",
+    "tags": [
+      "open-source",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 797242,
+    "title": "Quoting Matthew Green",
+    "url": "https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything",
+    "published_at": "2026-07-29T18:18:15+00:00",
+    "fetched_at": "2026-07-29T19:16:21+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/\"><p>Right now we\u2019re in the midst of a historic transition from traditional public-key algorithms based on EC-based cryptography and RSA, moving over to new\u00a0<em>post-quantum</em>\u00a0algorithms based on novel problems. This is why there are so many standards like HAWK being considered. If there was ever a perfect time for a massive new public cryptanalysis capability to come on line,\u00a0<em>we\u2019re in it.</em>\u00a0So unless AIs succeed in undermining all of our hard problems altogether (or we live in\u00a0<a href=\"https://blog.computationalcomplexity.org/2004/06/impagliazzos-five-worlds.html\">Impagliazzo\u2019s Minicrypt</a>) then this could not be a better time for AI to get good at cryptanalysis. In the best case, the result is that we gain real confidence in the problems we\u2019ve identified, and the cryptanalysis literature gets a lot more robust. Hopefully.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/\">Matthew Green</a>, on <a href=\"https://simonwillison.net/2026/Jul/28/discovering-cryptographic-weaknesses-with-claude/\">Anthropic's recent cryptography work</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/cryptography\">cryptography</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "safety",
+      "research",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 798262,
+    "title": "I have it on good authority that sales of A Philosophy Of Software Design have skyrocketed recently Long may it continue, @JohnOusterhout",
+    "url": "https://nitter.net/mattpocockuk/status/2082528210319745433#m",
+    "published_at": "2026-07-29T18:06:31+00:00",
+    "fetched_at": "2026-07-29T19:16:24+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>I have it on good authority that sales of A Philosophy Of Software Design have skyrocketed recently<br />\n<br />\nLong may it continue, <a href=\"https://nitter.net/JohnOusterhout\" title=\"John Ousterhout\">@JohnOusterhout</a></p>\n<hr />\n<blockquote>\n<b>Uncle Bob Martin (@unclebobmartin)</b>\n<p>\n<p>People keep on telling me that my message about AI is undercutting my own books.  Those people do not understand how agents work and who actually controls them.  You can't tell an agent to be clean.  You have to measure the cleanliness that they produce and have them correct failures of cleanliness.  <br />\n<br />\nWithout such constraints agents are more than happy to build big balls of mud that they can't maintain.</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/unclebobmartin/status/2082497764223492161#m\">https://nitter.net/unclebobmartin/status/2082497764223492161#m</a>\n</footer>\n</blockquote>",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 797500,
+    "title": "Skills are new features: Building Skill-Centric Harness \u2014 Yogendra Miraje, FactSet",
+    "url": "https://www.youtube.com/watch?v=7jjudsEhBtM",
+    "published_at": "2026-07-29T18:00:06+00:00",
+    "fetched_at": "2026-07-29T19:16:22+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Since skills were open sourced, Yogendra Miraje's team at FactSet stopped thinking about shipping features and started thinking about shipping skills. A skill is a capability you hand the agent, and its heart is a short skill.md whose name and description are really routing signals: get them distinct and the agent triggers the right one, blur them and it fires the wrong skill or none at all. He walks through a minimal skill registry, progressive disclosure so the agent only loads what it needs, and trigger words, like asking for a PDF versus an HTML report, that decide which skill runs.\n\nThe harder lessons show up at scale. Skills without evals drift, because a new model quietly stops obeying them, so he treats skills as contracts you test. Past ten skills you need search and embeddings to keep the library coherent; past a hundred you need real governance, admission, ownership, periodic audits, change management, and a human deciding whether a skill should exist at all. His close is that skills are the interface to your agentic products, and at enterprise scale governing them matters as much as writing them.\n\nSpeaker info:\n- https://x.com/YogiNotTheBear\n- https://www.linkedin.com/in/mirajey/\n- https://yogimiraje.com\n\nTimestamps:\n0:00 - From blueprints to skills\n1:46 - Building skill centric agents\n2:52 - Skills in context at enterprise scale\n3:46 - Skills as the new features\n5:04 - Inside a skill: the skill.md\n6:37 - A minimal skill registry\n7:42 - Progressive disclosure\n9:13 - Trigger words and routing\n12:17 - Skills without evals drift\n12:56 - Search and embeddings past ten skills\n13:46 - Governance past a hundred skills\n16:36 - Skills as the product interface",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 795285,
     "title": "Morgan Stanley's ALPHALAB: Multi-Agent Research Across Optimization Domains \u2014 Brendan Rappazzo",
     "url": "https://www.youtube.com/watch?v=kiqubc5b5Yo",
@@ -410,6 +532,25 @@
       "funding",
       "policy",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 797243,
+    "title": "Adding a custom MCP server to Claude and ChatGPT",
+    "url": "https://simonwillison.net/2026/Jul/29/mcp-in-claude-and-chatgpt/#atom-everything",
+    "published_at": "2026-07-29T00:13:18+00:00",
+    "fetched_at": "2026-07-29T19:16:21+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>TIL:</strong> <a href=\"https://til.simonwillison.net/llms/mcp-in-claude-and-chatgpt\">Adding a custom MCP server to Claude and ChatGPT</a></p>\n        <p>Connecting a custom MCP server to Claude and ChatGPT's standard chat interfaces is possible, but can take quite a few steps.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/chatgpt\">chatgpt</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1405,6 +1546,26 @@
     "tags": [
       "research",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 797251,
+    "title": "sqlite-utils 3.39.1",
+    "url": "https://simonwillison.net/2026/Jul/26/sqlite-utils/#atom-everything",
+    "published_at": "2026-07-26T04:38:46+00:00",
+    "fetched_at": "2026-07-29T19:16:21+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/sqlite-utils/releases/tag/3.39.1\">sqlite-utils 3.39.1</a></p>\n        <p>I back-ported <a href=\"https://github.com/simonw/sqlite-utils/issues/815\">a fix</a> for <code>table.delete_where()</code> that shipped in version 4.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/sqlite-utils\">sqlite-utils</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "open-source",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9776,163 +9937,6 @@
       "coding",
       "policy",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555033,
-    "title": "Claude Fable 5 - Full 319 page Breakdown",
-    "url": "https://www.youtube.com/watch?v=haK1KoQWm18",
-    "published_at": "2026-06-10T18:43:12+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "rss",
-    "body": "Fable 5 is out - and it\u2019s good, very good. But beyond the splashy demos, I want to bring you the 20+ nuggets from the 319 page system card, which I read in full, all day, plus benchmarks you may not have noticed. \n\nhttps://assemblyai.com/aiexplained\n\nPlus two worrying trends inside the \u2018mind\u2019 of Claude, how OpenAI counter, and the transformer inventor\u2019s warning.\n\n\n\nCheck out my fast-growing (!) app, free to use, and code INSIDER15 for paid tiers: https://lmcouncil.ai\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n01:06 - Blocks + Better Models\n02:42 - Fable 5 Upgrade over Mythos Preview\n04:49 - ML Acceleration Bombshell\n07:11 - No RSI yet\n07:41 - Bio-capable\n14:51 - Creative Writing \u2026 no\n17:23 - Does need bug-checks\n18:57 - OpenAI Response\n19:23 - Benchmark Bonanza\n28:06 - Chain of Thought worrying trend\n\nFable 5 Release: https://www.anthropic.com/news/claude-fable-5-mythos-5\n\nSystem Card: https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf\n\nIntelligence Explosion: https://www.patreon.com/posts/anthropic-charts-160231656\n\nAnnotated: https://x.com/Miles_Brundage/status/2064500190523113816/photo/1\n\nOpenAI Counter: https://x.com/thsottiaux/status/2064572118264913923\nhttps://x.com/thsottiaux/status/2043177597434306699\n\nDouble Lifespan: https://darioamodei.com/essay/machines-of-loving-grace\n\nAutomationBench: https://zapier.com/benchmarks\nVending Bench: https://x.com/andonlabs/status/2064429817530085804\nCritPt: https://critpt.com/\nRiemann Bench: https://surgehq.ai/leaderboards/riemann-bench\nGDPVal: https://artificialanalysis.ai/evaluations/gdpval-aa\nBluePrint Bench 2: https://andonlabs.com/evals/blueprint-bench-2\nMCP Atlas: https://labs.scale.com/leaderboard/mcp_atlas\nFutureSim: https://x.com/nikhilchandak29/status/2064676801440358774\n\nRoon Stun Lock: https://x.com/tszzl/status/2064454617568874669\n\nNoam Brown Inference Ceiling: https://x.com/polynoamial/status/2064210146558136827\n\nIsochronic Chart: https://isochronic-passage-chart.netlify.app/#nyc\nRose Tavern: https://claude.ai/public/artifacts/2295bebe-77e6-43e2-ae94-0fe49e9a776b\nRedwall Game: https://redwall-mossflower.surge.sh/\n\nRisk Report: https://www-cdn.anthropic.com/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf\n\nTransformer Inventor Warning: https://x.com/tszzl/status/2064563986914554125\n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551588,
-    "title": "DiffusionGemma: 4x faster text generation",
-    "url": "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation/",
-    "published_at": "2026-06-10T16:24:11+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551731,
-    "title": "PRC-linked influence operations are targeting AI debates in the US",
-    "url": "https://openai.com/index/prc-linked-influence-operations-ai-debates",
-    "published_at": "2026-06-10T12:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "A new report from OpenAI details PRC-linked influence operations using AI to target U.S. tech debates, data center narratives, tariffs, and false claims  about ChatGPT.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551589,
-    "title": "Investing in multi-agent AI safety research",
-    "url": "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/",
-    "published_at": "2026-06-10T10:21:19+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Google DeepMind and partners announce a $10M funding call for multi-agent safety research.",
-    "topic": "safety",
-    "tags": [
-      "agents",
-      "safety",
-      "research",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553255,
-    "title": "The evolution of agentic surfaces: building with Claude Managed Agents",
-    "url": "https://claude.com/blog/building-with-claude-managed-agents",
-    "published_at": "2026-06-10T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "The evolution of agentic surfaces: building with Claude Managed Agents",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551732,
-    "title": "From data to decisions: how LSEG is scaling trusted AI",
-    "url": "https://openai.com/index/lseg",
-    "published_at": "2026-06-10T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how LSEG uses OpenAI to scale trusted AI across its global business, accelerating insights, shrinking release cycles, and empowering 4,000 employees.",
-    "topic": "enterprise",
-    "tags": [
-      "release",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555025,
-    "title": "Anthropic is starting to panic\u2026",
-    "url": "https://www.youtube.com/watch?v=0pgCBV8CTZY",
-    "published_at": "2026-06-09T17:32:30+00:00",
-    "fetched_at": "2026-07-20T10:11:30+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Get $30 of Pioneer inference credits for only $5 - https://pioneer.ai/?utm_source=youtube&amp;utm_medium=ext_social&amp;utm_campaign=pioneer_launch&amp;utm_content=FS\n\nAnthropic just proposed something insane - the idea that maybe we should wait a second and pause all AI development. But why now?\n\n#coding #programming #ai #nthropic\n\n\ud83d\udcda Resources\n- https://www.anthropic.com/institute/recursive-self-improvement\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "video",
-      "infrastructure",
-      "coding",
-      "development",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551590,
-    "title": "Fluid, natural voice translation with Gemini 3.5 Live Translate",
-    "url": "https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate/",
-    "published_at": "2026-06-09T15:16:25+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Gemini 3.5 Live Translate brings near real-time, natural speech translation to Google AI Studio, Google Translate and Google Meet.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
