@@ -1,5 +1,86 @@
 [
   {
+    "article_id": 800456,
+    "title": "Added icons to my custom @tldraw diagram app Funny how a small thing makes a big difference",
+    "url": "https://nitter.net/mattpocockuk/status/2082562900258852901#m",
+    "published_at": "2026-07-29T20:24:22+00:00",
+    "fetched_at": "2026-07-29T20:30:29+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Added icons to my custom <a href=\"https://nitter.net/tldraw\" title=\"tldraw\">@tldraw</a> diagram app<br />\n<br />\nFunny how a small thing makes a big difference</p>\n<img src=\"https://nitter.net/pic/media%2FHOa_zzqWgAAv7d0.png\" />",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 799687,
+    "title": "Persona Engineering: A Field Guide to AI Synthetic Personas \u2014 Ishan Anand, InsightSciences.ai",
+    "url": "https://www.youtube.com/watch?v=YnNF55QV0zs",
+    "published_at": "2026-07-29T20:15:35+00:00",
+    "fetched_at": "2026-07-29T20:30:26+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A team ran about a thousand people through a market research survey, then had LLM agents replay the same questions, and the agents matched the humans closely while carrying less noise than the humans did themselves. That is exactly the tell: a synthetic respondent smooths over the messiness that makes a real population real. Ishan Anand walks through where it breaks. Nudge one variable in the prompt template and purchase probability swings, because the model infers latent confounders nobody stated, a little like it is playing improv. So how you ask matters as much as which model you pick, and the persona and the study have to be specified richly, from the participant's point of view.\n\nAccuracy can hide the damage. A model that looks right on average can still distort subgroups and flatten the shape of the distribution, collapsing the variation that mattered. The fix here is a noise floor: score humans against other humans first, so you know the best agreement any method could reach, then judge synthetic against human relative to that floor rather than against a perfect match that never existed. Treat a synthetic persona as an economic actor, not ground truth, since even the human study is not ground truth, and validate it against real outcomes before you let it drive a decision.\n\nSpeaker info:\n- https://x.com/ianand\n- https://www.linkedin.com/in/ishananand/\n- https://ishananand.com/\n\nTimestamps:\n0:00 - Introduction: synthetic personas for market research\n1:43 - Why this talk: separating signal from noise\n2:46 - Forecasting people like we forecast the weather\n4:04 - A thousand humans vs their agent replicas\n5:22 - Purchase probability and prompt sensitivity\n6:41 - Invented confounders and specifying the persona\n7:45 - Question order and framing effects\n8:50 - Predicting stated attitudes vs experts\n10:07 - Prompting techniques and subpopulation methods\n13:08 - Reconstructing and scoring the full distribution\n16:09 - Calibrating personas against real forecasts\n17:38 - Setting a noise floor with human vs human\n18:40 - Treat personas as economic actors, and what's next",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 799688,
+    "title": "Why Off-the-Shelf AI Doesn't Understand Money \u2014 Udi Menkes, Intuit",
+    "url": "https://www.youtube.com/watch?v=Owb8g3yDyzo",
+    "published_at": "2026-07-29T20:00:06+00:00",
+    "fetched_at": "2026-07-29T20:30:26+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask a frontier model how to make a rental property more profitable and it will tell you, with total confidence, to raise a good tenant's rent by 5% to 10%. Udi Menkes calls this the fluent bluff: advice that reads perfectly and is quietly wrong, because the model has fluency but no experience. He points to a Princeton study where models handed a million dollars to run a business barely turned a profit, and to his own tests where off the shelf advice would have cost real customers real money.\n\nHis argument is that context is not experience, and the fix is grounding. At Intuit he turns real business data into millions of state, action, and outcome records, so the model can reason from what companies actually did and what actually followed rather than from a textbook. Tested head to head, the grounded system wins, because it separates advice that sounds right from advice that produced results. The moat, he says, belongs to whoever owns the best system of context in the coming era of outcome driven finance.\n\nSpeaker info:\n- https://x.com/menkesu\n- https://www.linkedin.com/in/udimenkes/\n- https://genaipm.com/about\n\nTimestamps:\n0:00 - A three year old's theory of money\n2:21 - Why off the shelf models fail at money\n2:48 - The rental property example\n4:34 - The fluent bluff\n6:42 - The Princeton million dollar study\n9:45 - Context is not experience\n11:03 - Correlation versus causation in pricing\n13:37 - Building state, action, outcome data\n15:17 - Testing it head to head\n16:37 - The era of outcome driven finance\n17:55 - Three things to remember",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "research",
+      "coding",
+      "tutorials",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 800457,
+    "title": "Now I've got all of my 'input' work channels syncing into a private wiki The next obvious step is to have an agent control my calendar Starting tomorrow, I'm doing a daily morning standup to plan my whole week Powered by a custom CLI + a month's worth of wiki data LFG",
+    "url": "https://nitter.net/mattpocockuk/status/2082545875922882718#m",
+    "published_at": "2026-07-29T19:16:43+00:00",
+    "fetched_at": "2026-07-29T20:30:29+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Now I've got all of my 'input' work channels syncing into a private wiki<br />\n<br />\nThe next obvious step is to have an agent control my calendar<br />\n<br />\nStarting tomorrow, I'm doing a daily morning standup to plan my whole week<br />\n<br />\nPowered by a custom CLI + a month's worth of wiki data<br />\n<br />\nLFG</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 797499,
     "title": "SimulationMaxxing: How Nubank ships agents 20\u00d7 faster with simulations \u2014 Shreya Rajpal, Snowglobe",
     "url": "https://www.youtube.com/watch?v=KMR_RBoCa4M",
@@ -551,6 +632,26 @@
       "product",
       "models",
       "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 798406,
+    "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
+    "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
+    "published_at": "2026-07-29T00:00:00+00:00",
+    "fetched_at": "2026-07-29T20:30:24+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "GPT-5.6 improves AI efficiency across models, inference, and agentic workflows, helping deliver more useful intelligence per dollar.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9840,102 +9941,6 @@
       "models",
       "coding",
       "education",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551726,
-    "title": "OpenAI to acquire Ona",
-    "url": "https://openai.com/index/openai-to-acquire-ona",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551727,
-    "title": "Supporting Europe\u2019s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551728,
-    "title": "How an astrophysicist uses Codex to help simulate black holes",
-    "url": "https://openai.com/index/using-codex-to-simulate-black-holes",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein\u2019s theory of general relativity.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553460,
-    "title": "Dario Amodei \u2014\u00a0Policy on the AI Exponential",
-    "url": "https://darioamodei.com/post/policy-on-the-ai-exponential",
-    "published_at": "2026-06-10T22:03:20+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.\n\nthe future he envisions.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551730,
-    "title": "Access OpenAI models and Codex through your Oracle cloud commitment",
-    "url": "https://openai.com/index/openai-on-oracle-cloud",
-    "published_at": "2026-06-10T20:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Access OpenAI models and Codex through Oracle Cloud, using existing commitments to build and deploy AI with enterprise security and governance.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "policy",
       "enterprise"
     ],
     "dearrow_thumbnail_url": "",
