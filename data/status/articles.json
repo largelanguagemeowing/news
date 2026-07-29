@@ -1,5 +1,69 @@
 [
   {
+    "article_id": 795285,
+    "title": "Morgan Stanley's ALPHALAB: Multi-Agent Research Across Optimization Domains \u2014 Brendan Rappazzo",
+    "url": "https://www.youtube.com/watch?v=kiqubc5b5Yo",
+    "published_at": "2026-07-29T17:06:26+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "When coding agents got good enough at the end of 2025, Morgan Stanley's roughly thirty person research group asked what would happen if agents ran the research, not just wrote the code. The result is AlphaLab, a multi agent system they built and open sourced. You hand it a problem in plain language and it writes the code, sets up back tests and evals, configures and submits cluster jobs, and runs the statistical tests, managing its own context as it goes. They skipped every off the shelf framework and wrote their own harness so they could watch how it reasons and bake in their own standards.\n\nThe shape is a strategist that proposes experiments and workers that run them, laid out as a board of cards people can read, edit, and approve before the loop optimizes against a weak eval. Rappazzo shows it finding real gains now used internally, from fine tuning a model to predicting credit bonds, and argues the lasting human job is designing the verifiable environment the agents compete in, like a private Kaggle, while they handle the middle.\n\nSpeaker info:\n- https://x.com/brendanh0gan\n- https://www.linkedin.com/in/brendan-rappazzo-hogan-763734115/\n- https://www.bhogan.net\n\nTimestamps:\n0:00 - Introduction: a thirty person research group\n1:30 - What changed when coding agents arrived\n2:55 - Building AlphaLab 1.0, open sourced\n4:34 - Encoding enterprise standards into the system\n6:40 - Why they skipped off the shelf harnesses\n8:21 - How the research loop runs\n9:36 - Strategist and worker agents\n10:40 - Guarding against a bad eval\n13:23 - Finding real improvements\n16:12 - Verifiable environments, like Kaggle\n18:45 - The human job in the limit",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795240,
+    "title": "Did Anthropic just kill the indie hacker...?",
+    "url": "https://www.youtube.com/watch?v=jxGJT1weu4w",
+    "published_at": "2026-07-29T16:33:51+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Try Blacksmith for free to run your GitHub Actions 2x faster - https://www.blacksmith.sh/\n\nAnthropic just dropped Opus 5 and it may be killing the indie hacker dream. Let's dive in.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "open-source",
+      "coding",
+      "education",
+      "media",
+      "news",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795799,
+    "title": "recommended reading. being in the business of shipping software for artists, it's a pretty good analogy.\n\nit's also why i think the \"generate single digital artifact based on millions of examples\" (music, images, videos) and \"coding agent trained on all the intermediary traces up",
+    "url": "https://x.com/i/article/2082158799104659456",
+    "published_at": "2026-07-29T16:21:17+00:00",
+    "fetched_at": "2026-07-29T17:48:03+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. being in the business of shipping software for artists, it's a pretty good analogy.\n\nit's also why i think the \"generate single digital artifact based on millions of examples\" (music, images, videos) and \"coding agent trained on all the intermediary traces up",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "video",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 791718,
     "title": "We\u2019re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control",
     "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
@@ -120,6 +184,25 @@
     "available": true
   },
   {
+    "article_id": 794004,
+    "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
+    "url": "https://openai.com/index/chatgpt-for-academic-researchers",
+    "published_at": "2026-07-29T10:00:00+00:00",
+    "fetched_at": "2026-07-29T17:48:00+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI is giving 100,000 academic researchers free access to ChatGPT's most advanced AI models to accelerate scientific research, collaboration, and discovery.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 789228,
     "title": "LearnVector \u2014 A new AI company from Andrew Ng",
     "url": "https://learnvector.ai/",
@@ -132,6 +215,201 @@
     "topic": "education",
     "tags": [
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795287,
+    "title": "Your Finance Agent's Bottleneck Is You \u2014 Ramana Siddanth Emani, Auditoria AI",
+    "url": "https://www.youtube.com/watch?v=z0sh8HyTrDo",
+    "published_at": "2026-07-29T06:16:07+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The slowest part of shipping a production finance agent is not the model or the GPUs, it is you, the developer in the loop. Ramana Siddanth Emani's point is that the same agent harnesses you use to build products can automate your own developer loop. Coding agents can multiply how much you ship; run an army of them across separate git worktrees and they clear tasks in parallel, with skills making sure each one uses the right patterns.\n\nThe tasks come from where they already live, QA reports, Jira tickets, GitHub pull requests, and a sub agent pulls the traces and logs, writes and runs end to end tests, builds, and reports back, needing your context only at a few steps. Point this at your bug queue and a month later you have shipped far more, having stepped further out of the loop as the agents improve, while keeping a human as the final verifier. At Auditoria, where the work is finance, that means agents talking to agents and reconciling source data, so you spend your time verifying rather than grinding.\n\nSpeaker info:\n- https://x.com/siddanth2486\n- https://www.linkedin.com/in/siddanth-emani\n\nTimestamps:\n0:00 - Your bottleneck is you\n1:05 - From bugs to pilots to production\n2:37 - Automating the developer loop\n3:03 - Coding agents that multiply output\n3:39 - Skills for the right patterns\n4:22 - Sub agents and where tasks come from\n5:18 - Pulling traces, testing, reporting back\n7:56 - Auditoria in the finance sector\n9:04 - Stepping out of the loop safely\n11:35 - Turning customer patterns into features\n13:04 - Keep a human as verifier",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795288,
+    "title": "How Kepler Built Verifiable AI for Financial Services \u2014 Vinoo Ganesh",
+    "url": "https://www.youtube.com/watch?v=Tt2kX2sgQio",
+    "published_at": "2026-07-29T06:16:03+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In finance a number is worthless until you can say where it came from. Vinoo Ganesh, CEO of Kepler, starts from the fact that language models are probability machines, brilliant at next token prediction and unreliable at the deterministic work, like arithmetic, that finance actually runs on. So Kepler treats the model as one part of a system rather than the whole answer, wrapping it in a deterministic substrate that makes every figure traceable.\n\nIt rests on three tenets. Atomic provenance means every number is tied to its source and stripped out if it cannot be independently verified. Scope determinism keeps the model on the nondeterministic tasks it is good at and pulls the actual figure, say revenue from a 10K filing, deterministically behind the scenes, with reconciliation on top. The third is treating every extracted number like a pull request that gets reviewed, so entities are caught and nothing is invented. The result is a grounded system where the edge comes not from producing content but from verifying it.\n\nSpeaker info:\n- https://x.com/vinooganesh\n- https://www.linkedin.com/in/vinoo-ganesh/\n- https://vinoo.io\n\nTimestamps:\n0:00 - Introduction: a data background in finance\n1:42 - Why trust and verifiability matter now\n2:57 - Models are probability machines\n4:27 - Why analysts still put in the hours\n8:22 - Modeling AI like an overworked VP\n9:26 - Atomic provenance\n12:01 - Scope determinism\n13:52 - Reconciliation and pulling real numbers\n15:06 - Extracting entities without misses\n16:34 - Toward zero invented securities\n20:31 - Where a number really comes from",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795289,
+    "title": "Wearing the Agent: From Group Chats to Glasses \u2014 Sai Krishna Rallabandi, Fidelity Investments",
+    "url": "https://www.youtube.com/watch?v=s67bE2Ur3bY",
+    "published_at": "2026-07-29T06:15:59+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Almost every agent today is built for one user, and Sai Krishna Rallabandi has spent about eight months on what breaks when you drop one into a group chat instead. Running a personal agent across a real group, and eventually onto glasses, forces two hard problems. The first is memory: conversations that last for days across several people, where the agent has to track who said what and surface only what is relevant without bloating its context.\n\nThe second is security, and it is where the talk digs in. He points to a finding that two skills, each safe on its own, can collide once they share infrastructure, so a reporting agent leaks information at low frequency. His defense is to have an agent read everything and design a guard, then fine tune a small model with a per user adapter that only releases information appropriate to the context and catches prompt injection that regex would miss. The through line is that group and wearable settings break the single user assumptions most agent harnesses are built on, so memory and security have to be redesigned around the group.\n\nSpeaker info:\n- https://x.com/Saikallis9012\n- https://www.linkedin.com/in/sai-krishna-rallabandi-8595418b/\n- https://saikrishnarallabandi.github.io/\n\nTimestamps:\n0:00 - Introduction: agents for groups, not one user\n1:28 - Why single user agents fall short\n2:45 - Eight months in a real group chat\n3:47 - What changes when the agent joins a group\n5:17 - Two problems: guarding and memory\n5:55 - Securing an agentic system\n7:44 - When two safe skills collide\n9:27 - Designing a guard agent\n10:21 - A small model with per user adapters\n11:49 - Catching prompt injection\n12:29 - Designing memory for groups\n15:29 - Context growth and token cost",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795290,
+    "title": "Skills are new features: Building Skill-Centric Harness \u2014 Yogendra Miraje, FactSet",
+    "url": "https://www.youtube.com/watch?v=7jjudsEhBtM",
+    "published_at": "2026-07-29T06:15:55+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Since skills were open sourced, Yogendra Miraje's team at FactSet stopped thinking about shipping features and started thinking about shipping skills. A skill is a capability you hand the agent, and its heart is a short skill.md whose name and description are really routing signals: get them distinct and the agent triggers the right one, blur them and it fires the wrong skill or none at all. He walks through a minimal skill registry, progressive disclosure so the agent only loads what it needs, and trigger words, like asking for a PDF versus an HTML report, that decide which skill runs.\n\nThe harder lessons show up at scale. Skills without evals drift, because a new model quietly stops obeying them, so he treats skills as contracts you test. Past ten skills you need search and embeddings to keep the library coherent; past a hundred you need real governance, admission, ownership, periodic audits, change management, and a human deciding whether a skill should exist at all. His close is that skills are the interface to your agentic products, and at enterprise scale governing them matters as much as writing them.\n\nSpeaker info:\n- https://x.com/YogiNotTheBear\n- https://www.linkedin.com/in/mirajey/\n- https://yogimiraje.com\n\nTimestamps:\n0:00 - From blueprints to skills\n1:46 - Building skill centric agents\n2:52 - Skills in context at enterprise scale\n3:46 - Skills as the new features\n5:04 - Inside a skill: the skill.md\n6:37 - A minimal skill registry\n7:42 - Progressive disclosure\n9:13 - Trigger words and routing\n12:17 - Skills without evals drift\n12:56 - Search and embeddings past ten skills\n13:46 - Governance past a hundred skills\n16:36 - Skills as the product interface",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795291,
+    "title": "Let's integrate AI Agents in Event-Sourced Systems \u2014 Divakar Kumar, FlyersSoft",
+    "url": "https://www.youtube.com/watch?v=o6U_2vd967Y",
+    "published_at": "2026-07-29T06:15:50+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A card gets declined and no one, including the customer, can say exactly why. That gray zone is where Divakar Kumar points his agents. In a payments and fraud system, a rule based engine and an ML model already score most transactions cleanly; the hard cases are the ambiguous ones that neither can resolve. His approach adds an agentic layer on top of an existing event sourced architecture rather than replacing it, so the bounded contexts already in the system, transaction, device, and account, become the context the agents reason over.\n\nEvents flow through change feeds into projections and a semantic layer that the agents read, communicating asynchronously through a message broker in a saga style loop. A risk analyzer agent, a second agent that reaches a verdict, and a third work the case while guarding against infinite loops and keeping memory short, all runnable serverless. The takeaway is architectural: event sourcing already carries the state and history an agent needs, so the cleanest way to add judgment to a production system is to layer agents onto the events you are already emitting.\n\nSpeaker info:\n- https://www.linkedin.com/in/divakar-kumar/\n- https://iamdivakarkumar.com\n\nTimestamps:\n0:00 - Introduction: adding agents to an existing system\n1:20 - A declined transaction you can't explain\n3:04 - Where rule based and ML systems fall short\n5:40 - Handling the gray zone with agents\n5:53 - Bounded contexts: transaction, device, account\n8:24 - Event sourcing and change feeds\n10:57 - Building the semantic layer\n13:16 - Avoiding infinite loops\n14:07 - The risk analyzer and verdict agents\n15:24 - The saga orchestration loop\n19:00 - Putting the architecture together",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795292,
+    "title": "SimulationMaxxing: How Nubank ships agents 20\u00d7 faster with simulations \u2014 Shreya Rajpal, Snowglobe",
+    "url": "https://www.youtube.com/watch?v=KMR_RBoCa4M",
+    "published_at": "2026-07-29T06:15:48+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Nubank serves 135 million customers, so an AI agent that mishandles a support conversation fails at scale. The talk opens with the result: five agents in production, higher customer satisfaction, and roughly 20 times faster shipping. Shreya Rajpal, CEO of Snowglobe, argues the thing that unlocked that pace was evals, and specifically simulated data standing in for real conversations. Good agent evals are hard because the data is multi turn and stateful, not single turn question and answer, and hand curating it and waiting on production to confirm can take forever.\n\nSnowglobe points at the agent and generates grounded simulations, a customer like Maria trying to order a credit card, complete with account context, tone, and intent, so you can ship, observe, simulate, and feed the results back in a tight loop. Human review found the simulated conversations comparable to real ones about 80% of the time, enough to bring up new agents, derisk changes, and protect the self service rate. With aligned metrics and cheap simulation, the team now tests open models and variant agents freely, because the eval bottleneck is gone.\n\nSpeaker info:\n- https://x.com/ShreyaR\n- https://www.linkedin.com/in/shreya-rajpal/\n- http://shreya-rajpal.com\n\nTimestamps:\n0:00 - Opening with the results\n0:39 - Nubank at 135 million customers\n2:34 - Why evals matter most\n2:47 - Why simulated data works\n3:49 - What makes agent eval data hard\n4:49 - How teams get eval data today\n6:44 - Simulations in minutes, not weeks\n7:35 - Pointing Snowglobe at your agent\n8:48 - A grounded simulation: Maria orders a card\n10:31 - Ship, observe, simulate, repeat\n11:34 - How close simulations are to real\n13:43 - Testing models and variants",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795293,
+    "title": "We Vetted 2000 AI Skills Before They Reached Developers \u2014 Lucas Palma, Nubank",
+    "url": "https://www.youtube.com/watch?v=iKQ78wyJEXU",
+    "published_at": "2026-07-29T06:15:45+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An AI skill is a piece of code you hand a model to extend what it can do, and once engineers start sharing skills with each other, each one becomes a supply chain risk, more so inside a regulated bank. Lucas Palma's security team at Nubank built Skill Vector to sit between a skill and the internal marketplace, so nothing reaches developers unvetted. Every skill is scanned first with deterministic checks, for destructive shell commands and the like, then with an LLM for the context those checks miss, and only then does it get a decision and permissions scoped to who will use it.\n\nRunning that gate over more than 2,000 skills surfaced real problems, since a single skill can carry many, and fed them into the bank's vulnerability management program with approval gates and human confirmation. What worked was pairing deterministic scans with LLM review; what needed work was the guidance the system gave and the habit of running skills locally before vetting. The lesson he leaves is simple: treat skills like any other dependency, and only what clears the gate belongs in the marketplace.\n\nSpeaker info:\n- https://www.linkedin.com/in/lucaspalma/\n\nTimestamps:\n0:00 - Introduction: making code safe at a bank\n1:32 - AI skills as a supply chain risk\n2:50 - What counts as an AI skill\n3:57 - The extra weight of a regulated environment\n6:07 - From plugins to a vetted marketplace\n6:58 - What Skill Vector does\n7:37 - Deterministic checks, then the LLM\n10:00 - Scanning over two thousand skills\n11:22 - What worked and what needed improvement\n13:30 - Approval gates and human confirmation\n14:23 - Next steps and policies",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "safety",
+      "coding",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795294,
+    "title": "Why Off-the-Shelf AI Doesn't Understand Money \u2014 Udi Menkes, Intuit",
+    "url": "https://www.youtube.com/watch?v=Owb8g3yDyzo",
+    "published_at": "2026-07-29T06:15:43+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask a frontier model how to make a rental property more profitable and it will tell you, with total confidence, to raise a good tenant's rent by 5% to 10%. Udi Menkes calls this the fluent bluff: advice that reads perfectly and is quietly wrong, because the model has fluency but no experience. He points to a Princeton study where models handed a million dollars to run a business barely turned a profit, and to his own tests where off the shelf advice would have cost real customers real money.\n\nHis argument is that context is not experience, and the fix is grounding. At Intuit he turns real business data into millions of state, action, and outcome records, so the model can reason from what companies actually did and what actually followed rather than from a textbook. Tested head to head, the grounded system wins, because it separates advice that sounds right from advice that produced results. The moat, he says, belongs to whoever owns the best system of context in the coming era of outcome driven finance.\n\nSpeaker info:\n- https://x.com/menkesu\n- https://www.linkedin.com/in/udimenkes/\n- https://genaipm.com/about\n\nTimestamps:\n0:00 - A three year old's theory of money\n2:21 - Why off the shelf models fail at money\n2:48 - The rental property example\n4:34 - The fluent bluff\n6:42 - The Princeton million dollar study\n9:45 - Context is not experience\n11:03 - Correlation versus causation in pricing\n13:37 - Building state, action, outcome data\n15:17 - Testing it head to head\n16:37 - The era of outcome driven finance\n17:55 - Three things to remember",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "research",
+      "coding",
+      "tutorials",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795295,
+    "title": "Build for the Memo, Not the Demo \u2014 Shawn Chan, China Resources Holdings",
+    "url": "https://www.youtube.com/watch?v=tJFjeMBKbIY",
+    "published_at": "2026-07-29T06:15:32+00:00",
+    "fetched_at": "2026-07-29T17:48:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "When a company is about to spend $100 million, Shawn Chan is the person in the room deciding whether it happens, and after fifteen years and roughly 200 investment committees he can spot the flaw fast. Now some of the decks in front of him are AI generated: cleaner formatting, never defensive, and confidently wrong. His frame is the difference between a demo and a memo. A demo is a beautiful confident slice built to impress; a memo is what survives a room whose entire job is to find what breaks. One marketing demo with a single wrong sentence, he reminds you, once erased enormous value the moment the market noticed.\n\nSo he lays out what an AI product needs to pass the memo test. Not every source deserves equal trust, since an audited filing is not a number from a group chat. Figures have to reconcile, and a contradiction between two numbers is not a bug but the most important signal in the room. Facts and guesses must stay labeled, because across three drafts an estimate quietly hardens into a fact nobody remembers assuming. Attach provenance rather than a citation tab, lock who claimed what, and the product that wins is the one that lets someone approve a deal without opening seven tabs at midnight.\n\nSpeaker info:\n- https://www.linkedin.com/in/shawn-chan-2b58a9129/\n\nTimestamps:\n0:00 - A fifteen year confession\n3:27 - Two hundred investment committees\n4:22 - Money follows trust\n5:46 - Two machines: the demo and the memo\n7:31 - When one wrong sentence costs billions\n9:45 - Not every source deserves equal trust\n11:22 - The numbers have to agree\n14:59 - Facts and guesses stay separate\n17:06 - When fake citations reach a court\n19:21 - The airline chatbot that made a promise\n21:30 - Attach provenance, not a citation tab\n22:52 - The products that will win",
+    "topic": "funding",
+    "tags": [
+      "coding",
+      "funding",
+      "policy",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9655,245 +9933,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551552,
-    "title": "Why don\u2019t cancer medicines work the same for everyone?",
-    "url": "https://news.microsoft.com/signal/articles/why-dont-cancer-medicines-work-the-same-for-everyone-ex-vivo/",
-    "published_at": "2026-06-09T15:05:35+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "microsoft-ai-blog",
-    "source_name": "Microsoft AI Blog",
-    "extraction_method": "rss",
-    "body": "<p>The post <a href=\"https://news.microsoft.com/signal/articles/why-dont-cancer-medicines-work-the-same-for-everyone-ex-vivo/\">Why don\u2019t cancer medicines work the same for everyone? </a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551591,
-    "title": "Introducing Gemma 4 12B: a unified, encoder-free multimodal model",
-    "url": "https://deepmind.google/blog/introducing-gemma-4-12b-a-unified-encoder-free-multimodal-model/",
-    "published_at": "2026-06-09T14:10:19+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551592,
-    "title": "Powering the future of robotics in Europe",
-    "url": "https://deepmind.google/blog/powering-the-future-of-robotics-in-europe/",
-    "published_at": "2026-06-09T14:02:33+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "robotics",
-    "tags": [
-      "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551733,
-    "title": "How engineers at Nextdoor use Codex to build without limits",
-    "url": "https://openai.com/index/nextdoor",
-    "published_at": "2026-06-09T12:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How engineers at Nextdoor use Codex with GPT-5.5 to investigate hard-to-reproduce issues, build across platforms, and focus on product outcomes.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551734,
-    "title": "What Codex unlocks for Notion",
-    "url": "https://openai.com/index/notion",
-    "published_at": "2026-06-09T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How Notion uses Codex to one-shot specs, build AI Voice Input for the web, and multiply engineering power across small teams.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552961,
-    "title": "Claude Fable 5 and Claude Mythos 5",
-    "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
-    "published_at": "2026-06-09T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Claude Fable 5 and Claude Mythos 5",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553256,
-    "title": "New in Claude Managed Agents: run agents on a schedule and store environment variables in vaults",
-    "url": "https://claude.com/blog/whats-new-in-claude-managed-agents",
-    "published_at": "2026-06-09T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "New in Claude Managed Agents: run agents on a schedule and store environment variables in vaults",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551735,
-    "title": "Industrial policy for the Intelligence Age",
-    "url": "https://openai.com/index/industrial-policy-for-the-intelligence-age",
-    "published_at": "2026-06-09T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Explore our ambitious, people-first industrial policy ideas for the AI era\u2014focused on expanding opportunity, sharing prosperity, and building resilient institutions as advanced intelligence evolves.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553461,
-    "title": "Andrew Kelley: A Practical Guide to Applying Data Oriented Design (DoD)",
-    "url": "https://www.youtube.com/watch?v=IroPQ150F6c",
-    "published_at": "2026-06-08T22:08:10+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. andrew is a class act, both technically and as a human.",
-    "topic": "tutorials",
-    "tags": [
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551736,
-    "title": "Confidential submission of draft S-1 to the SEC",
-    "url": "https://openai.com/index/openai-submits-confidential-s-1",
-    "published_at": "2026-06-08T14:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI confirms a confidential S-1 submission to the SEC and has not yet determined timing for further action.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551593,
-    "title": "Measuring the impact of learning with AI in Sierra Leone and beyond",
-    "url": "https://deepmind.google/blog/measuring-the-impact-of-learning-with-ai-in-sierra-leone-and-beyond/",
-    "published_at": "2026-06-08T13:04:59+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Results from a randomized controlled trial show the potential of Gemini\u2019s Guided Learning feature to boost engagement and accelerate learning.",
-    "topic": "education",
-    "tags": [
-      "models",
-      "coding",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553462,
-    "title": "GitHub - openclaw/clawsweeper: ClawSweeper scans all issues and PRs and suggest what we can close, and why. It runs every PR / Issue once a week.",
-    "url": "https://github.com/openclaw/clawsweeper",
-    "published_at": "2026-06-08T10:34:18+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "open-source",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551737,
-    "title": "Built to benefit everyone: our plan",
-    "url": "https://openai.com/index/built-to-benefit-everyone-our-plan",
-    "published_at": "2026-06-08T01:30:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "A vision for the future of AI, focusing on access, safety, and shared prosperity as OpenAI works to ensure AGI benefits everyone.",
-    "topic": "safety",
-    "tags": [
-      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
