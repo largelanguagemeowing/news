@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 828118,
+    "title": "The Inference Inflection from First Principles \u2014 Rob Wachen, Etched (special @LatentSpacePod live)",
+    "url": "https://www.youtube.com/watch?v=sJHg0mC5Png",
+    "published_at": "2026-07-30T21:29:33+00:00",
+    "fetched_at": "2026-07-30T21:43:33+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Recorded live at the AI Engineer World's Fair, swyx sits down with Rob Wachen, co founder and president of Etched, to trace the inference inflection from first principles. Etched's bet is narrow on purpose: rather than build another general GPU designed for the lowest common denominator, they burn transformers into custom silicon and design the whole system around running today's large mixture of experts models at very high throughput. Wachen frames the company around a chunk of the world's inference capacity, built in house, where the chip is only the starting point and everything from the board to the rack has to be reinvented to actually serve tokens at scale.\n\nThe conversation goes deep on the engineering reality behind that pitch. Power, not raw flops, is the wall you hit, so the team obsesses over how many cores they can light up, clock speed, voltage, and advanced packaging, alongside yield, testing, and mean time between failures. Wachen talks through a culture where production is the product, a mini data center built in their own office with a chiller piped up to the roof, a Taiwan team assembling racks ahead of time, and a memory roadmap reaching toward wafer scale and ten thousand plus chips in a single scale up. He is candid about staying cagey on the parts that are still trade secrets, and closes with a straight call to action: they are hiring across production, supply, and infrastructure for people who want to build something that has never been shown before.\n\nSpeaker info:\n- swyx (host):\n  - https://x.com/swyx\n  - https://www.latent.space\n- Rob Wachen (Etched):\n  - https://x.com/robertwachen\n  - https://www.etched.com\n\n\nTimestamps\n0:00 \u2013 Introduction and the Reveal of the Etched Chip\n2:30 \u2013 Why Today\u2019s Hardware Struggles with Inference\n3:47 \u2013 The Logic Behind Vertical Integration at Etched\n5:52 \u2013 The \"Social Problem\" of Engineering and Co-design\n9:21 \u2013 Defining the Transformer North Star\n11:57 \u2013 Recruiting Strategy: Polarizing Talent\n14:33 \u2013 Defining Frontier Inference Clusters\n18:34 \u2013 Breaking the Power Wall: Low Voltage Inference (LVI)\n23:45 \u2013 Philosophy: \"Production is the Product\"\n24:10 \u2013 The In-Office Data Center\n26:31 \u2013 The Taiwan/US Night-Shift Integration\n29:04 \u2013 Cluster Scale Memory and Future Scalability\n33:41 \u2013 The $4 Trillion Dollar Gap in Efficiency\n38:17 \u2013 Lessons from Shipping Real Hardware\n42:09 \u2013 Call to Action: Hiring and Closing Thoughts\n\nQuotes\n\"Many people talk about chips, but few people have them. And we have a chip.\" (0:39)\n\"The opex of every business is going to be: how many agents per megawatt can they run simultaneously?\" (2:38)\n\"The goal when recruiting is to be a zero out of 10 company for most, and a 10 out of 10 company for few.\" (12:12)\n\"We have a saying internally: hardware, not slideware.\" (23:55)\n\"The space between the green line (Nvidia) and the red line (the rest) is roughly $4 trillion.\" (33:38)",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 823489,
     "title": "Quoting Bruce Schneier",
     "url": "https://simonwillison.net/2026/Jul/30/bruce-schneier/#atom-everything",
@@ -9931,25 +9953,6 @@
       "ai-models",
       "models",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553218,
-    "title": "Economic ResearchAgentic coding and persistent returns to expertise",
-    "url": "https://www.anthropic.com/research/claude-code-expertise",
-    "published_at": "2026-06-16T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jun 16, 2026Economic ResearchAgentic coding and persistent returns to expertise",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
