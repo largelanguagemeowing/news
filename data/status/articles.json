@@ -1,5 +1,42 @@
 [
   {
+    "article_id": 823489,
+    "title": "Quoting Bruce Schneier",
+    "url": "https://simonwillison.net/2026/Jul/30/bruce-schneier/#atom-everything",
+    "published_at": "2026-07-30T18:25:26+00:00",
+    "fetched_at": "2026-07-30T18:57:00+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://www.schneier.com/blog/archives/2026/07/should-you-use-ai-for-a-task-heres-a-simple-way-to-decide.html\"><p>The writing assignments I give my students are gym tasks, not work tasks. I ask them to write policy memos not because the world needs more policy memos. I assign them because the very act of writing, which includes thinking and outlining and drafting and editing, making and criticizing and revising arguments, will help develop the critical thinking skills they will need in their future careers. And without this constant mental exercise, those skills will atrophy. Employers are\u00a0<a href=\"https://futurism.com/future-society/college-critical-thinking-ai\">already noticing</a>.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.schneier.com/blog/archives/2026/07/should-you-use-ai-for-a-task-heres-a-simple-way-to-decide.html\">Bruce Schneier</a>, Should You Use AI for a Task? Here\u2019s a Simple Way to Decide</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/writing\">writing</a>, <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/bruce-schneier\">bruce-schneier</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 824518,
+    "title": "LLM's are notoriously bad at following negative instructions That's why code review works so well, it turns all the negative instructions into positive ones:",
+    "url": "https://nitter.net/mattpocockuk/status/2082886149333258415#m",
+    "published_at": "2026-07-30T17:48:50+00:00",
+    "fetched_at": "2026-07-30T18:57:04+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>LLM's are notoriously bad at following negative instructions<br />\n<br />\nThat's why code review works so well, it turns all the negative instructions into positive ones:</p>\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>That's why you do it during review<br />\n<br />\n\"Don't do these footguns\" - BAD<br />\n\"Find and eliminate these footguns\" - GOOD</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2082880629092347942#m\">https://nitter.net/mattpocockuk/status/2082880629092347942#m</a>\n</footer>\n</blockquote>",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 821514,
     "title": "First Steps Toward Automated AI Research \u2014 Richard Socher, CEO Recursive AI",
     "url": "https://www.youtube.com/watch?v=pWXUkLP9uWM",
@@ -219,6 +256,25 @@
       "benchmark",
       "coding",
       "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 823479,
+    "title": "Dimensionality Reduction Meets Network Science: Sensemaking on UMAP\u2019s kNN Graph",
+    "url": "https://machinelearning.apple.com/research/umap-knn-graph-sensemaking",
+    "published_at": "2026-07-30T00:00:00+00:00",
+    "fetched_at": "2026-07-30T18:57:00+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "While UMAP is widely used for exploring high-dimensional data, typical workflows focus on its lower-dimensional embedding, largely overlooking the rich k-nearest-neighbor (kNN) graph that UMAP constructs internally. This graph encodes the data manifold in its original high-dimensional space, before the distortion that UMAP\u2019s 2D projection introduces. We demonstrate the untapped potential of this internal representation, showing how standard graph algorithms applied to this graph enhance data sensemaking: (1) PageRank identifies representative data points, (2) k-core decomposition reveals dense\u2026",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9894,69 +9950,6 @@
       "ai-models",
       "agents",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551722,
-    "title": "Predicting model behavior before release by simulating deployment",
-    "url": "https://openai.com/index/deployment-simulation",
-    "published_at": "2026-06-16T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI introduces Deployment Simulation, a method to predict AI model behavior before deployment using real conversation data to improve safety and evaluation accuracy.",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "safety",
-      "benchmark",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555023,
-    "title": "One man just liberated Fable... and now it\u2019s illegal",
-    "url": "https://www.youtube.com/watch?v=ey_GaPdC9zk",
-    "published_at": "2026-06-15T18:35:58+00:00",
-    "fetched_at": "2026-07-20T10:11:30+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Take BlueDot's Future of AI course for free - https://bluedot.org/fireship\n\nJust three days after the release of Claude Fable, the US government stepped in and banned it in the name of national security. But why?\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- What makes Fable allegedly unsafe?\n- Fable Jailbreak\n- Fable gets banned\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "safety",
-      "coding",
-      "education",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551571,
-    "title": "We\u2019re strengthening our presence in Alabama through new investments and community support.",
-    "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
-    "published_at": "2026-06-15T15:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Google has announced a $1.5 billion investment for 2026 and 2027 to expand its data center campus in Jackson County, Alabama. Operating since 2019 on a repurposed former\u2026",
-    "topic": "infrastructure",
-    "tags": [
-      "release",
-      "infrastructure",
-      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
