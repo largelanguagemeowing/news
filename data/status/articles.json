@@ -1,5 +1,69 @@
 [
   {
+    "article_id": 810582,
+    "title": "Your Finance Agent's Bottleneck Is You \u2014 Ramana Siddanth Emani, Auditoria AI",
+    "url": "https://www.youtube.com/watch?v=z0sh8HyTrDo",
+    "published_at": "2026-07-30T03:00:06+00:00",
+    "fetched_at": "2026-07-30T06:06:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The slowest part of shipping a production finance agent is not the model or the GPUs, it is you, the developer in the loop. Ramana Siddanth Emani's point is that the same agent harnesses you use to build products can automate your own developer loop. Coding agents can multiply how much you ship; run an army of them across separate git worktrees and they clear tasks in parallel, with skills making sure each one uses the right patterns.\n\nThe tasks come from where they already live, QA reports, Jira tickets, GitHub pull requests, and a sub agent pulls the traces and logs, writes and runs end to end tests, builds, and reports back, needing your context only at a few steps. Point this at your bug queue and a month later you have shipped far more, having stepped further out of the loop as the agents improve, while keeping a human as the final verifier. At Auditoria, where the work is finance, that means agents talking to agents and reconciling source data, so you spend your time verifying rather than grinding.\n\nSpeaker info:\n- https://x.com/siddanth2486\n- https://www.linkedin.com/in/siddanth-emani\n\nTimestamps:\n0:00 - Your bottleneck is you\n1:05 - From bugs to pilots to production\n2:37 - Automating the developer loop\n3:03 - Coding agents that multiply output\n3:39 - Skills for the right patterns\n4:22 - Sub agents and where tasks come from\n5:18 - Pulling traces, testing, reporting back\n7:56 - Auditoria in the finance sector\n9:04 - Stepping out of the loop safely\n11:35 - Turning customer patterns into features\n13:04 - Keep a human as verifier",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 810583,
+    "title": "Build for the Memo, Not the Demo \u2014 Shawn Chan, China Resources Holdings",
+    "url": "https://www.youtube.com/watch?v=tJFjeMBKbIY",
+    "published_at": "2026-07-30T02:00:06+00:00",
+    "fetched_at": "2026-07-30T06:06:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "When a company is about to spend $100 million, Shawn Chan is the person in the room deciding whether it happens, and after fifteen years and roughly 200 investment committees he can spot the flaw fast. Now some of the decks in front of him are AI generated: cleaner formatting, never defensive, and confidently wrong. His frame is the difference between a demo and a memo. A demo is a beautiful confident slice built to impress; a memo is what survives a room whose entire job is to find what breaks. One marketing demo with a single wrong sentence, he reminds you, once erased enormous value the moment the market noticed.\n\nSo he lays out what an AI product needs to pass the memo test. Not every source deserves equal trust, since an audited filing is not a number from a group chat. Figures have to reconcile, and a contradiction between two numbers is not a bug but the most important signal in the room. Facts and guesses must stay labeled, because across three drafts an estimate quietly hardens into a fact nobody remembers assuming. Attach provenance rather than a citation tab, lock who claimed what, and the product that wins is the one that lets someone approve a deal without opening seven tabs at midnight.\n\nSpeaker info:\n- https://www.linkedin.com/in/shawn-chan-2b58a9129/\n\nTimestamps:\n0:00 - A fifteen year confession\n3:27 - Two hundred investment committees\n4:22 - Money follows trust\n5:46 - Two machines: the demo and the memo\n7:31 - When one wrong sentence costs billions\n9:45 - Not every source deserves equal trust\n11:22 - The numbers have to agree\n14:59 - Facts and guesses stay separate\n17:06 - When fake citations reach a court\n19:21 - The airline chatbot that made a promise\n21:30 - Attach provenance, not a citation tab\n22:52 - The products that will win",
+    "topic": "funding",
+    "tags": [
+      "coding",
+      "funding",
+      "policy",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 810584,
+    "title": "Let's integrate AI Agents in Event-Sourced Systems \u2014 Divakar Kumar, FlyersSoft",
+    "url": "https://www.youtube.com/watch?v=o6U_2vd967Y",
+    "published_at": "2026-07-30T00:00:06+00:00",
+    "fetched_at": "2026-07-30T06:06:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A card gets declined and no one, including the customer, can say exactly why. That gray zone is where Divakar Kumar points his agents. In a payments and fraud system, a rule based engine and an ML model already score most transactions cleanly; the hard cases are the ambiguous ones that neither can resolve. His approach adds an agentic layer on top of an existing event sourced architecture rather than replacing it, so the bounded contexts already in the system, transaction, device, and account, become the context the agents reason over.\n\nEvents flow through change feeds into projections and a semantic layer that the agents read, communicating asynchronously through a message broker in a saga style loop. A risk analyzer agent, a second agent that reaches a verdict, and a third work the case while guarding against infinite loops and keeping memory short, all runnable serverless. The takeaway is architectural: event sourcing already carries the state and history an agent needs, so the cleanest way to add judgment to a production system is to layer agents onto the events you are already emitting.\n\nSpeaker info:\n- https://www.linkedin.com/in/divakar-kumar/\n- https://iamdivakarkumar.com\n\nTimestamps:\n0:00 - Introduction: adding agents to an existing system\n1:20 - A declined transaction you can't explain\n3:04 - Where rule based and ML systems fall short\n5:40 - Handling the gray zone with agents\n5:53 - Bounded contexts: transaction, device, account\n8:24 - Event sourcing and change feeds\n10:57 - Building the semantic layer\n13:16 - Avoiding infinite loops\n14:07 - The risk analyzer and verdict agents\n15:24 - The saga orchestration loop\n19:00 - Putting the architecture together",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 806276,
     "title": "Wearing the Agent: From Group Chats to Glasses \u2014 Sai Krishna Rallabandi",
     "url": "https://www.youtube.com/watch?v=s67bE2Ur3bY",
@@ -9886,61 +9950,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551725,
-    "title": "How Preply combines AI and human tutors to personalize learning",
-    "url": "https://openai.com/index/preply",
-    "published_at": "2026-06-12T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.",
-    "topic": "education",
-    "tags": [
-      "release",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551572,
-    "title": "Our new community investments in Virginia support local jobs and expand energy affordability.",
-    "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
-    "published_at": "2026-06-11T20:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/VirginiaSocial.max-600x600.format-webp.webp\" />We\u2019re helping build the state\u2019s next-generation workforce and investing in energy programs.",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "api",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553459,
-    "title": "Lines of Code Got a Better Publicist",
-    "url": "https://curlewis.co.nz/posts/lines-of-code-got-a-better-publicist/",
-    "published_at": "2026-06-11T18:15:16+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
