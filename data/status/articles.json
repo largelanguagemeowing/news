@@ -1,5 +1,74 @@
 [
   {
+    "article_id": 832270,
+    "title": "Advancing the price-performance frontier with GPT\u20115.6",
+    "url": "https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything",
+    "published_at": "2026-07-30T23:58:42+00:00",
+    "fetched_at": "2026-07-31T01:05:10+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/\">Advancing the price-performance frontier with GPT\u20115.6</a></strong></p>\nHuge price drop from OpenAI today: GPT-5.6 Terra got a 20% reduction, and GPT-5.6 Luna got a massive 80% drop.</p>\n<p>OpenAI credit 5.6 Sol with enabling this: in <a href=\"https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/\">How GPT\u20115.6 fuses frontier intelligence with frontier efficiency</a> they describe using 5.6 Sol to optimize load balancing, and more impressively to optimize inference itself:</p>\n<blockquote>\n<p>We also used GPT\u20115.6 Sol to optimize the model\u2019s forward pass: the computation that transforms inputs into next-token predictions. Even when individual operations are fast, excess memory movement, synchronization, and inefficient data layouts can leave GPUs idle. To avoid this, GPT\u20115.6 Sol found work that could be precomputed, avoided, or parallelized. With Codex, GPT\u20115.6 Sol autonomously rewrote and optimized our production kernels, the core code that executes the mathematical operations that make up the model. This worked in part because we\u2019ve trained GPT\u20115.6 to be effective at writing and improving kernels in\u00a0<a href=\"https://triton-lang.org/main/index.html\">Triton\u2060</a>and\u00a0<a href=\"https://triton-lang.org/main/gluon/index.html\">Gluon\u2060</a>, two open-source GPU programming languages maintained by OpenAI. These efforts, combined with broader kernel advancements from GPT\u20115.6 Sol, reduced end-to-end serving costs by 20%.</p>\n</blockquote>\n<p>That Luna price drop completely changes the landscape with respect to lower priced models. At $0.20/million tokens for input and $1.20/million for output Luna is now cheaper than Google's Gemini 3.1 Flash-Lite ($.025/$1.50).</p>\n<p>Anthropic's cheapest current model is Claude Haiku 4.5, and that's $1/$5 - Luna is now 1/5th of that for input, previously it cost the same.</p>\n<p>My <a href=\"https://agent.datasette.io/\">agent.datasette.io</a> demo site was running on Gemini 3.1 Flash-Lite. I've switched it over to Luna.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49112867\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 832271,
+    "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+    "url": "https://simonwillison.net/2026/Jul/30/three-real-world-incidents/#atom-everything",
+    "published_at": "2026-07-30T23:41:29+00:00",
+    "fetched_at": "2026-07-31T01:05:10+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\">Investigating three real-world incidents in our cybersecurity evaluations</a></strong></p>\nIt happened again! This is turning into something of a pattern.</p>\n<p>Last week <a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">OpenAI accidentally exploited Hugging Face</a> when one of their frontier models broke out of a sandboxed container and hacked into Hugging Face to try and get the solutions to the cyber benchmark it was executing.</p>\n<p>This inspired Anthropic to double-check their own logs, and it turned out they had three similar (albeit less impressive) incidents, the earliest of which played out in April!</p>\n<blockquote>\n<p>Of the 141,006 evaluation runs we reviewed, we identified three separate incidents (involving six total runs, four of which impacted the same organization; the other two incidents each happened in independent evaluation runs). [...]</p>\n<p>In all cases, Anthropic\u2019s evaluation prompt specified to Claude that its environment was a simulation and that it had no internet access. Due to a misunderstanding between us and our evaluation partner, this was not the case, and internet access was available. Because of this, when Claude\u2019s search led it to real systems on the open internet, it treated them as part of the exercise. [...]</p>\n<p>Operating under the false belief that all accessible entities were intended to be in-scope for the exercise, Claude compromised the impacted organizations\u2019 infrastructure using basic techniques, such as exploiting weak passwords and unauthenticated endpoints.</p>\n</blockquote>\n<p>One of the companies was targeted because its name happened to match the fictional name in the eval.</p>\n<p>The most concerning of the three incidents involved Claude uploading a malware package to PyPI, after a comically convoluted sequence of steps to get an account: </p>\n<blockquote>\n<p>[...] in order to create a PyPI account, Claude needed an email address. And in order to create an email address, it needed a phone number. To get a phone number, after failing to find a free phone number service, it tried\u2014and failed\u2014to obtain funds to pay for a phone number through several different means. It finally backtracked, found a free, non-blocked email provider, used this to register a PyPI account, and then used this account to upload malware to PyPI.</p>\n</blockquote>\n<p>That package was then installed by a security company that \"routinely installs Python packages and scans them for malware\", and the executed code was able to exfiltrate credentials back to Claude!</p>\n<p>Thankfully that package was removed from PyPI by other automated scanners an hour after it was published, but it had still been downloaded and executed on \"15 real systems\" by that point.</p>\n<p>It's abundantly clear now that running evals of cyberattack potential in models is a <em>spectacularly</em> risky business. Every AI lab needs to pay attention to this. Keeping a close eye on what's happening in those sandboxes is crucial.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49116922#49117088\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/pypi\">pypi</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/sandboxing\">sandboxing</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "api",
+      "safety",
+      "benchmark",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 832272,
+    "title": "llm 0.32rc2",
+    "url": "https://simonwillison.net/2026/Jul/30/llm-rc2/#atom-everything",
+    "published_at": "2026-07-30T22:52:06+00:00",
+    "fetched_at": "2026-07-31T01:05:10+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.32rc2\">llm 0.32rc2</a></p>\n        <p>Hot on the heels of <a href=\"https://simonwillison.net/2026/Jul/30/llm-rc1/\">RC1</a>, this fixes a dependency issue and also adds two neat new features:</p>\n<blockquote>\n<ul>\n<li>The default model for users who have not set their own default is now <a href=\"https://developers.openai.com/api/docs/models/gpt-5.6-luna\">GPT-5.6 Luna</a>. It was previously <a href=\"https://developers.openai.com/api/docs/models/gpt-4o-mini\">GPT-4o mini</a>. Luna is a much better and more recent model, albeit slightly more expensive - $0.20 per million input tokens and $1.20 per million output tokens, compared to $0.15/$0.60 for 4o mini. You can switch back to 4o mini using <code>llm models default gpt-4o-mini</code>, or switch to <a href=\"https://developers.openai.com/api/docs/models/gpt-5-nano\">GPT-5 nano</a>, an even cheaper default model ($0.05/$0.40), using <code>llm models default gpt-5-nano</code>. <a href=\"https://github.com/simonw/llm/issues/1576\">#1576</a></li>\n<li>New <a href=\"https://llm.datasette.io/en/latest/other-models.html#openai-endpoint\">llm openai endpoint</a> command for running prompts, chats and model listings against arbitrary OpenAI-compatible endpoints without first configuring a model. These calls are not logged. <a href=\"https://github.com/simonw/llm/issues/1565\">#1565</a></li>\n</ul>\n</blockquote>\n<p>The <code>llm openai endpoint</code> command is <em>really</em> cool. I got frustrated at the lack of an obvious CLI tool for trying out prompts against arbitrary OpenAI Chat Completions imitation endpoints, so I decided to add that to LLM itself.</p>\n<p>You don't even have to install LLM to use this. Here's a <code>uvx</code> one-liner for running a prompt - with tools - against an <a href=\"https://lmstudio.ai\">LM Studio</a> local model:</p>\n<pre><code>uvx --pre llm openai endpoint http://127.0.0.1:1234/v1 \\\n  T llm_version -T llm_time --td \\\n  -m google/gemma-4-31b 'what is the current LLM version? And the time?'\n</code></pre>\n<p><a href=\"https://github.com/simonw/llm/pull/1568#issuecomment-5136163707\">Output here</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/uv\">uv</a>, <a href=\"https://simonwillison.net/tags/lm-studio\">lm-studio</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 828118,
     "title": "The Inference Inflection from First Principles \u2014 Rob Wachen, Etched (special @LatentSpacePod live)",
     "url": "https://www.youtube.com/watch?v=sJHg0mC5Png",
@@ -97,6 +166,51 @@
       "robotics",
       "hardware",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 832274,
+    "title": "llm-chat-completions-server 0.1a0",
+    "url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server/#atom-everything",
+    "published_at": "2026-07-30T15:43:16+00:00",
+    "fetched_at": "2026-07-31T01:05:10+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-chat-completions-server/releases/tag/0.1a0\">llm-chat-completions-server 0.1a0</a></p>\n        <p>A key goal of the new content-addressable logs <a href=\"https://simonwillison.net/2026/Jul/30/llm-rc1/\">in LLM 0.32rc1</a> was being able to support OpenAI Chat Completion style requests where each incoming message extends the previous conversation, like this:</p>\n<pre><code>curl http://localhost:8002/v1/chat/completions \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"model\": \"qwen3.5-4b\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"Capital of France?\"},\n      {\"role\": \"assistant\", \"content\": \"Paris.\"},\n      {\"role\": \"user\", \"content\": \"Germany?\"}\n    ]\n  }'\n</code></pre>\n<p>Here the conversation state is tracked by the client, so each of these requests gets longer and longer. The new schema design in LLM is designed to de-duplicate these using hashes of the individual message parts.</p>\n<p>To test that out, I built this plugin:</p>\n<pre><code>uv tool install llm --pre\nllm install llm-chat-completions-server\nllm chat-completions-server -p 9001\n</code></pre>\n<p>Running this starts a localhost server on port 9001 that exposes your full collection of LLM models (from any plugins you have installed) using a ChatGPT Completions compatible endpoint.</p>\n<p>GPT-5.6 Sol <a href=\"https://gist.github.com/simonw/53be513c1bd4a29a7aa480d9bde9b4a5\">wrote the whole thing</a> - it turns out it knows the OpenAI Chat Completions API shape really well.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 832275,
+    "title": "llm 0.32rc1",
+    "url": "https://simonwillison.net/2026/Jul/30/llm-rc1/#atom-everything",
+    "published_at": "2026-07-30T15:30:20+00:00",
+    "fetched_at": "2026-07-31T01:05:10+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.32rc1\">llm 0.32rc1</a></p>\n        <p>This RC for LLM 0.32 finishes the work that <a href=\"https://simonwillison.net/2026/Apr/29/llm/\">started in LLM 0.32a0</a> - it adds a <a href=\"https://llm.datasette.io/en/latest/logging.html#the-message-store\">new schema design</a> that does a much better job of capturing the details of the prompts and responses returned by the latest model families.</p>\n<p>The most important change is the use of content-addressable hash IDs for stored messages. This allows de-duplication in the database, and means that LLM can now represent trees of messages for forked conversations.</p>\n<p>Since it involves a significant schema change - new tables only, and old data should not be affected at all - it's worth running a backup of your existing <code>logs.db</code> before upgrading to the RC:</p>\n<pre><code>llm logs backup logs-backup.db\n</code></pre>\n<p>The RC also adds support for <code>gpt-5.6-sol</code>, <code>gpt-5.6-terra</code>, and <code>gpt-5.6-luna</code>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "open-source",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -278,6 +392,45 @@
       "benchmark",
       "coding",
       "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 832543,
+    "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+    "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+    "published_at": "2026-07-30T00:00:00+00:00",
+    "fetched_at": "2026-07-31T01:05:11+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Investigating three real-world incidents in our cybersecurity evaluations",
+    "topic": "security",
+    "tags": [
+      "security",
+      "safety",
+      "benchmark",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 832261,
+    "title": "MoMo: Dial Motion Mode in Robot Manipulation with Spatiotemporal Action Tokenization",
+    "url": "https://machinelearning.apple.com/research/momo-motion-mode-manipulation",
+    "published_at": "2026-07-30T00:00:00+00:00",
+    "fetched_at": "2026-07-31T01:05:09+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "To operate effectively across diverse contexts, robots must not only perform manipulation tasks accurately but also adapt how their actions unfold to the task, object, and interaction setting. We ask whether this execution-level variation can be learned as a reusable behavioral factor shared across tasks. We present MoMo, a two-stage imitation-learning framework consisting of a spatiotemporal action tokenizer and a behavior-cloning transformer that takes task and a continuous motion-mode condition as inputs. Across six real-robot manipulation tasks, varying this condition produces steady\u2026",
+    "topic": "robotics",
+    "tags": [
+      "robotics",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9823,136 +9976,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553253,
-    "title": "Meet the winners of our Claude Opus 4.8 Build Day hackathon",
-    "url": "https://claude.com/blog/meet-the-winners-of-our-claude-opus-4-8-build-day-hackathon",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Meet the winners of our Claude Opus 4.8 Build Day hackathon",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553251,
-    "title": "Secure access to the Claude Platform with Workload Identity Federation",
-    "url": "https://claude.com/blog/workload-identity-federation",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Secure access to the Claude Platform with Workload Identity Federation",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551721,
-    "title": "Introducing LifeSciBench",
-    "url": "https://openai.com/index/introducing-life-sci-bench",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551586,
-    "title": "Unlocking UK house-building with AI-accelerated planning",
-    "url": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
-    "published_at": "2026-06-16T21:29:50+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "UK government partners with Google DeepMind to build a new AI-powered prototype aimed at faster housing decisions.",
-    "topic": "policy",
-    "tags": [
-      "policy",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553457,
-    "title": "Running local models is good now",
-    "url": "https://vickiboykis.com/2026/06/15/running-local-models-is-good-now/",
-    "published_at": "2026-06-16T19:15:22+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. we are getting there.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551587,
-    "title": "Securing the future of AI agents",
-    "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
-    "published_at": "2026-06-16T15:46:31+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Securing internal systems with an AI Control Roadmap, combining traditional safeguards and real-time monitoring.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555056,
-    "title": "Quantization: The Size vs Quality Trade-Off",
-    "url": "https://www.youtube.com/shorts/-s4KGeAE6iQ",
-    "published_at": "2026-06-16T13:23:14+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Models can shrink down to a fraction of their size and still be useful. That's the power of quantization: Trading a bit of precision for massive gains in speed and size. In Transformers.js, you control that trade-off with a single parameter: dtype. Watch to see how far it can go.\n\n#TransformersJS #JavaScript #MachineLearning #AI #WebAI #Quantization",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
