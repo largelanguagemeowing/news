@@ -19,6 +19,68 @@
     "available": true
   },
   {
+    "article_id": 850135,
+    "title": "The Base Model Is Dead \u2014 Varun Singh, Arcee AI",
+    "url": "https://www.youtube.com/watch?v=xbPriQWXtWM",
+    "published_at": "2026-07-31T20:30:21+00:00",
+    "fetched_at": "2026-07-31T20:42:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The old story is that a base model is a mirror of the internet, a good model of human web text that everything else gets bolted onto. Varun Singh, who leads pre-training at Arcee AI, argues that story is dead: no modern base model reflects the web the way GPT-3 once did. Instruction data and synthetic reasoning traces have moved earlier and earlier into training, and a distinct mid-training stage has emerged for longer datapoints that look much more like the downstream capabilities you actually want. Reading recent open recipes, from Nemotron to Kimi K2, the pattern is clear: raw web text is taking a backseat.\n\nThe rest of the talk is what that shift does to how you build. Once reinforcement learning became the thing that got models to reason, the base model stopped being a cherry on top and started needing to carry the prior that RL builds on, which changes the data mix and pulls post-training-flavored data forward. Singh walks through the practical pitfalls his team hit training the Trinity series, like getting the balancing coefficients right and establishing stable representations early so the model is prepared for what it must compose during RL. The message is that as capabilities advance, the base model's job keeps redefining itself, and pretending it still just mirrors the internet will cost you.\n\nSpeaker info:\n- https://x.com/stochasticchasm\n- https://www.linkedin.com/in/varun-singh-cs\n\nTimestamps:\n0:00 - The base model as a mirror of the web\n1:26 - How knowledge accumulates in training\n2:49 - When instruction data moves earlier\n4:11 - After o1: RL and reasoning\n5:41 - What prior the base model must carry\n6:18 - Filtering web text, adding synthetic\n8:01 - Reading the open data recipes\n9:41 - Lessons from training Trinity\n12:02 - Balancing coefficients and early stability\n13:30 - Why RL keeps raising the stakes\n15:55 - The base model's shifting job",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 850136,
+    "title": "Verifiable Environments for AI in Biology \u2014 Kenny Workman, LatchBio",
+    "url": "https://www.youtube.com/watch?v=3ZMUiFaQ3qg",
+    "published_at": "2026-07-31T20:00:35+00:00",
+    "fetched_at": "2026-07-31T20:42:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A single spatial biology run can yield two to six terabytes of data, far more than a scientist can eyeball, and Kenny Workman argues that this is the raw material for teaching AI to actually do science. LatchBio, five years deep in pharma, treats experimental biology as a verifiable substrate: lay a chunk of a tumor over a sequencing surface and you get a giant matrix of numbers whose analysis has a right answer, which is exactly what you need to benchmark and improve a model. They adapted coding models into biology tools and built benchmarks like sequencing based spatial analysis, and found what everyone in post training now knows, that frontier models cannot yet be trusted with this and that measurement is what drives progress.\n\nThe reason biology is hard is that it is messy and the field rarely agrees on the answer, so much of the work is designing tasks where reasoning, not memorized knowledge, is what gets rewarded. Workman walks through trajectory data from real scientists, tasks like finding the part of a tumor that matters, and why an ambiguous prompt quietly makes a benchmark uninformative. He also gets candid about biosecurity, where model refusals are their own evaluation problem and red team tasks have to be handled carefully, and frames the whole effort as a flywheel: better benchmarks, better tools, more of the program landscape indexed, repeat.\n\nSpeaker info:\n- https://x.com/kenbwork\n- https://www.linkedin.com/in/kennyworkman\n- https://kenbw.com/\n\nTimestamps:\n0:00 - Terabytes of experimental data\n1:41 - Decomposing a new paper into tasks\n2:44 - A verifiable substrate for science\n3:23 - Five years in pharma\n4:13 - Coding models as biology tools\n5:40 - Why frontier models can't be trusted yet\n6:44 - Sequencing based spatial analysis\n9:16 - Reasoning, not memorized knowledge\n10:07 - Trajectory data from real scientists\n12:14 - Why biology tasks are messy\n15:36 - Biosecurity and refusals",
+    "topic": "research",
+    "tags": [
+      "models",
+      "safety",
+      "benchmark",
+      "research",
+      "funding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 850137,
+    "title": "Ending AI Slop \u2014 Thais Castello Branco, Taste Labs",
+    "url": "https://www.youtube.com/watch?v=lCBf9slCanI",
+    "published_at": "2026-07-31T19:26:20+00:00",
+    "fetched_at": "2026-07-31T20:42:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Thais Castello Branco's starting point is that AI is still badly behind on the subjective work, the writing and design where quality is real but hard to pin down, and that ending the slop means building data and reinforcement environments for taste. She sorts domains along a spectrum: at one end things that verify and execute cleanly, at the other pure preference with no ground truth, and most valuable work sits in between. The move that makes taste tractable is decomposition, breaking something like a brand or a page into elements that can each be graded against an original rather than judged whole.\n\nThe deeper problem she names is collapse to the mean. A model optimizing for the most likely output drifts toward the average and quietly kills the creativity that good design depends on, so the goal is data and rewards that reward breaking from the obvious when the situation calls for it. Taste Labs builds this by turning expert judgment into structured, high signal preference data, pairing it with human QA where reviewers tie their commentary to specific choices, and being careful that preference signal stays rich instead of noisy. Her argument is that as more subjective domains become measurable this way, taste becomes something you can actually train.\n\nSpeaker info:\n- https://x.com/thaiscbranco_\n- https://www.linkedin.com/in/thais-castello-branco/\n\nTimestamps:\n0:00 - What ending AI slop means\n1:06 - Working with frontier labs on taste\n2:33 - The verifiable to preference spectrum\n3:38 - Decomposing design to grade it\n5:30 - Verifying whether something is on brand\n7:40 - Collapse to the mean\n9:18 - Shifting preference toward verifiable\n11:25 - Building a preference vector\n13:05 - Human QA tied to specific choices\n15:00 - Training taste in subjective domains",
+    "topic": "media",
+    "tags": [
+      "models",
+      "infrastructure",
+      "media",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 848660,
     "title": "What seems more likely: 1. The CEO of Microsoft is using my skill and got the name wrong 2. The CEO of Microsoft is using a skill which a redditor posted on r/ClaudeCode, receiving 2 upvotes Crazy world we live in",
     "url": "https://nitter.net/mattpocockuk/status/2083252369853194524#m",
@@ -319,6 +381,25 @@
       "video",
       "coding",
       "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 848806,
+    "title": "Disrupting a Criminal Scam Operation",
+    "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
+    "published_at": "2026-07-31T00:00:00+00:00",
+    "fetched_at": "2026-07-31T20:42:28+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9917,91 +9998,6 @@
       "coding",
       "hardware",
       "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555053,
-    "title": "Training Agents: Live tutorial on how to fine-tune a coding agent for continual learning",
-    "url": "https://www.youtube.com/watch?v=rNgUoH7Wbv8",
-    "published_at": "2026-06-22T19:13:46+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Training Agents, Session 1: from raw agent traces to a supervised fine-tuning baseline.\n\nIn this live session, I\u2019ll set up the first rung of an agentic post-training workflow: SFT. We\u2019ll take public coding-agent traces, turn them into prompt/completion training data, run a small TRL + LoRA fine-tune, and inspect what the first metrics can and cannot tell us.\n\nWhat we\u2019ll cover:\n- Why start with SFT before GRPO or environment RL\n- How agent traces become training examples\n- Completion-only loss for chat/tool traces\n- Running TRL SFT on Hugging Face Jobs\n- Keeping experiments reproducible without checking in logs or checkpoints\n- What the first eval metrics do and do not prove\n\nRepo:\nhttps://github.com/burtenshaw/training-agents\n\nGuide:\nhttps://x.com/ben_burtenshaw/status/2067615361428545566?s=20\n\nSlides:\nhttps://docs.google.com/presentation/d/1hcGZ4U9TjZZzcGNbH2K6wYD45qwZTyo_gosCQsnHlnc/edit?usp=sharing\n\nAgent Trace:\nhttps://huggingface.co/buckets/burtenshaw/sft-on-traces/tree/example.jsonl\n\nTrackIO:\nhttps://huggingface.co/spaces/burtenshaw/youtube-livestream-1-gemma4-pi-mono-trackio\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #FineTuning",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555054,
-    "title": "What can you build during 48h Robotics Hackathon?",
-    "url": "https://www.youtube.com/watch?v=FLxFBU-Kodk",
-    "published_at": "2026-06-22T13:00:28+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "One year ago thousands of people worked for 48h to build something cool with LeRobot library: https://huggingface.co/lerobot\n\nLeRobot Worldwide Hackathon was a global AI robotics challenge that took place June 14-15, 2025. Discover how one weekend of open-source building launched careers, inspired new research, and turned total beginners into robotics experts.\n\nFrom folding t-shirts to Lego sorting factories, see what is possible when the community gets their hands dirty with open source AI and robotics.\n\n\ud83c\udfc6 See all winners from the event: https://huggingface.co/spaces/LeRobot-worldwide-hackathon/all-winners\n\ud83c\udf0d Learn more about the hackathon: https://huggingface.co/LeRobot-worldwide-hackathon\n\n#robotics #lerobot",
-    "topic": "robotics",
-    "tags": [
-      "release",
-      "open-source",
-      "research",
-      "coding",
-      "robotics",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551713,
-    "title": "Daybreak: Tools for securing every organization in the world",
-    "url": "https://openai.com/index/daybreak-securing-the-world",
-    "published_at": "2026-06-22T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551714,
-    "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
-    "url": "https://openai.com/index/patch-the-planet",
-    "published_at": "2026-06-22T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "open-source"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
