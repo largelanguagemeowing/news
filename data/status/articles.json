@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 843414,
+    "title": "Reinforcement Learning without Verifiable Rewards \u2014 Will Brown, Prime Intellect",
+    "url": "https://www.youtube.com/watch?v=AQv3qRCG6Gw",
+    "published_at": "2026-07-31T15:00:06+00:00",
+    "fetched_at": "2026-07-31T15:38:09+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Reinforcement learning has been easy to sell where the answer is checkable, like math or code, and Will Brown's talk is about everything else. Most valuable tasks have no clean verifier, so Prime Intellect's work is on how you build reward signal when there is no ground truth waiting. He frames RL simply first, a model acting in a harness with tools and skills, getting a reward, and nudging its weights, then asks how you keep climbing once you leave the verifiable island behind.\n\nHis answer leans on environments as the anchor. You can set up judges, generate question and answer pairs grounded in real documents and repos, and use a reverse direction trick where you hide something, like a bug or a backdoor, so the model can learn to find it again, which conveniently gives you a difficulty dial to keep tasks not too easy and not too hard. He is direct about the dangers: reward hacking will find you if you are not careful, so you inspect traces, run small experiments, and bring in expert understanding. The goal he keeps returning to is making this a real science, with open models and shared benchmarks, where environments turn into new tasks and higher levels of ability.\n\nSpeaker info:\n- https://x.com/willccbb\n- https://www.linkedin.com/in/willcb/\n- https://willcb.com\n\nTimestamps:\n0:00 - RL without verifiable rewards\n1:17 - How RL works, simply\n2:43 - The tooling that powers it\n4:13 - Where verifiable rewards run out\n6:24 - Being careful about reward design\n8:04 - Making RL a science\n9:20 - Judges and grounded question answer pairs\n10:46 - The reverse direction trick\n14:19 - Calibrating difficulty\n15:08 - Hunting for reward hacks\n18:27 - Environments as the anchor",
+    "topic": "education",
+    "tags": [
+      "models",
+      "open-source",
+      "benchmark",
+      "coding",
+      "education",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 835557,
     "title": "Advancing responsible AI across Europe",
     "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
@@ -13,6 +35,66 @@
     "tags": [
       "safety",
       "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 842127,
+    "title": "Building abundant intelligence",
+    "url": "https://openai.com/index/building-abundant-intelligence",
+    "published_at": "2026-07-31T15:00:00+00:00",
+    "fetched_at": "2026-07-31T15:38:06+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful.",
+    "topic": "development",
+    "tags": [
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 843354,
+    "title": "AI News: Opus 5, the Slack Killer & Google Earth AI",
+    "url": "https://www.youtube.com/watch?v=sUmx-Yi6TwE",
+    "published_at": "2026-07-31T14:30:14+00:00",
+    "fetched_at": "2026-07-31T15:38:08+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Here's The AI News From The Past Week! Build with Retool here: https://fandf.co/3RjilvK \n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nClaude Opus 5: https://www.anthropic.com/news/claude-opus-5\nOpus 5 Game Demo: https://x.com/mattshumer_/status/2081054356405731740\nAI Gaming Progress: https://x.com/chrisgpt/status/2082265122949542149\n24-Hour Game Build: https://x.com/kimmonismus/status/2082101266961023452\nClaude-of-Duty Prompt: https://github.com/mshumer/Claude-of-Duty/blob/main/prompt.md\nNano Banana Earth: https://blog.google/products-and-platforms/products/earth/nano-banana-google-earth-image-generation/\nMeta AI Acts: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/\nBUZZ Groupchat Platform: https://x.com/jack/status/2079605800998146171\nGrok Build Mode: https://x.ai/news/grok-build-mode\nGemini macOS Voice: https://blog.google/innovation-and-ai/products/gemini-app/speak-naturally-gemini-app-mac-os/\nFree Gemini Videos: https://x.com/GeminiApp/status/2082563490431246623\nMidjourney Version 8.2: https://www.midjourney.com/updates/version-8-2\nMirage Avatar X: https://x.com/trymirage/status/2082120270618530053\nHeyGen Video Podcast: https://x.com/HeyGen/status/2082510248489943367\nLinkedIn AI Slop Button: https://www.theverge.com/ai-artificial-intelligence/973384/linkedin-seems-like-ai-slop-button\nFriend Wearable Returns: https://techcrunch.com/2026/07/30/friend-the-lonely-ai-wearable-returns-with-a-new-voice-and-a-much-bigger-price-tag/\nChinese Robot Ban: https://www.bbc.com/news/articles/cp9e2ex3ekyo\nGemini Robotics ER 2: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:04 Opus 5 Sentiment\n2:30 Opus 5 Strength\n4:47 Opus 5 My Tests\n10:02 Retool\n11:22 Google Earth Nano Banana\n13:28 Meta AI Agent\n14:30 BUZZ\n19:30 Grok Build Mode\n19:54 Gemini Natural Language\n20:04 Gemini Omni FREE\n20:22 Midjourney V8.2\n20:41 Mirage Avatar X\n21:53 HeyGen Video Podcasts\n23:48 LinkedIn AI Slop Button\n24:18 New Friend Wearable\n25:12 Banning Humanoids\n25:25 Gemini Robotics ER 2\n26:19 Final Thoughts",
+    "topic": "media",
+    "tags": [
+      "media",
+      "models",
+      "open-source",
+      "agents",
+      "research",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 844180,
+    "title": "My fastest ever video to 100K view. Thanks pals!",
+    "url": "https://nitter.net/mattpocockuk/status/2083188543946457451#m",
+    "published_at": "2026-07-31T13:50:27+00:00",
+    "fetched_at": "2026-07-31T15:38:12+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>My fastest ever video to 100K view. Thanks pals!</p>\n<img src=\"https://nitter.net/pic/media%2FHOj46MEW0AAQYNm.png\" />",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9914,84 +9996,6 @@
       "models",
       "coding",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551718,
-    "title": "Improving health intelligence in ChatGPT",
-    "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
-    "published_at": "2026-06-18T11:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how GPT-5.5 Instant improves ChatGPT\u2019s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "benchmark",
-      "funding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551719,
-    "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
-    "url": "https://openai.com/index/diagnose-rare-childhood-diseases",
-    "published_at": "2026-06-18T08:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553217,
-    "title": "Frontier Red TeamProject Fetch: Phase two",
-    "url": "https://www.anthropic.com/research/project-fetch-phase-two",
-    "published_at": "2026-06-18T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jun 18, 2026Frontier Red TeamProject Fetch: Phase two",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553250,
-    "title": "Claude Code now supports artifacts",
-    "url": "https://claude.com/blog/artifacts-in-claude-code",
-    "published_at": "2026-06-18T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Claude Code now supports artifacts",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
