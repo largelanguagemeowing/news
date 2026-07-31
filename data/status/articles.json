@@ -19,6 +19,112 @@
     "available": true
   },
   {
+    "article_id": 852912,
+    "title": "The Four Horsemen of the AI Bubble Apocalypse",
+    "url": "https://www.derekthompson.org/p/the-four-horsemen-of-the-ai-bubble",
+    "published_at": "2026-07-31T21:33:53+00:00",
+    "fetched_at": "2026-07-31T22:06:13+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852145,
+    "title": "Oxide and Friends: The Open Weight Revolution with Simon Willison",
+    "url": "https://simonwillison.net/2026/Jul/31/oxide-and-friends/#atom-everything",
+    "published_at": "2026-07-31T21:33:13+00:00",
+    "fetched_at": "2026-07-31T22:06:10+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://oxide-and-friends.transistor.fm/episodes/the-open-weight-revolution-with-simon-willison\">Oxide and Friends: The Open Weight Revolution with Simon Willison</a></strong></p>\nOn Monday Bryan Cantrill and Adam Leventhal invited me to join their podcast to talk about the <em>wild</em> week we've had - with Kimi K3 showing open weight models can stand toe-to-toe with proprietary frontier ones, <a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">accidental cybersecurity attacks</a>, and public letters about <a href=\"https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/\">Open Weights and American AI Leadership</a> signed by almost every big name in AI (with one <a href=\"https://www.anthropic.com/news/position-open-weights-models\">notable exception</a>).</p>\n<p>It was a great conversation, even though it's already out-of-date! <a href=\"https://artificialanalysis.ai/models/deepseek-v4-flash\">DeepSeek V4 Flash 0731</a> and <a href=\"https://simonwillison.net/2026/Jul/30/three-real-world-incidents/\">Anthropic's own embarrassing cyber incident</a> would absolutely have made the cut if we had recorded just a few days later.</p>\n<p>We also talk about <a href=\"https://www.anthropic.com/news/golden-gate-claude\">Golden Gate Claude</a>, the <a href=\"https://en.wikipedia.org/wiki/Zizians\">Zizians</a>, <a href=\"https://abc7news.com/post/83-year-old-alameda-woman-attacked-wild-turkeys-city-warns-residents-take-precautions-during-mating-season/19190785/\">Alameda wild turkey attacks</a>, <a href=\"https://en.wikipedia.org/wiki/Soviet_biological_weapons_program\">Soviet Marburg virus research</a>, the <a href=\"https://en.wikipedia.org/wiki/Lead\u2013crime_hypothesis\">Lead-crime hypothesis</a>, and a bunch of other worthy digressions.</p>\n<p>Finally, we revisited some of <a href=\"https://simonwillison.net/2026/Jan/8/llm-predictions-for-2026/\">our predictions from January</a>, and we <a href=\"https://simonwillison.net/2026/May/25/encyclical-on-ai/#another-2026-prediction-down\">added a new Pope prediction</a>:</p>\n<blockquote>\n<p>Prediction by the end of this year: the Pope says something about open models.</p>\n</blockquote>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/predictions\">predictions</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/local-llms\">local-llms</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/oxide\">oxide</a>, <a href=\"https://simonwillison.net/tags/bryan-cantrill\">bryan-cantrill</a>, <a href=\"https://simonwillison.net/tags/ai-in-china\">ai-in-china</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "safety",
+      "research",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852403,
+    "title": "Scaling to Long Horizons \u2014 Ross Taylor & Chengxi Taylor, General Reasoning",
+    "url": "https://www.youtube.com/watch?v=2bvtay8wGYI",
+    "published_at": "2026-07-31T21:30:06+00:00",
+    "fetched_at": "2026-07-31T22:06:11+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ross Taylor opens with some history: back in 2022 he worked on Galactica, an early large model for science that briefly crossed the Rubicon on curated high quality data and intermediate reasoning tokens before the reaction overshadowed the work. That obsession, optimizing what happens between the question and the answer, is where this talk on long horizon reinforcement learning picks up. He and Chengxi Taylor of General Reasoning treat long horizon less as a benchmark and more as a mindset: if you want agents that stay coherent over hours, you have to be patient about signal and deliberate about how you spend tokens.\n\nThe mechanics they walk through are the ones that make long rollouts trainable. Value models reduce variance and help with credit assignment, bootstrapping pulls signal out of sparse rewards, and the real constraint becomes the tradeoff between off policy staleness and GPU utilization as sequences get longer. They make it concrete with a task where frontier models were handed real money to trade football matches and did poorly, exposing how little the environment was actually simulated. The takeaway is that scaling to long horizons demands better environments and simulation, not just bigger context windows, and they point listeners to openreward.ai to go deeper.\n\nSpeaker info:\n- Ross Taylor (General Reasoning):\n  - https://x.com/rosstaylor90\n  - https://www.linkedin.com/in/rosstaylor90/\n  - https://rossjtaylor.com\n- Chengxi Taylor (General Reasoning):\n  - https://x.com/chengxitaylor\n  - https://www.linkedin.com/in/chengxi-taylor/\n  - https://www.chengxitaylor.com/\n\nTimestamps:\n0:00 - Introduction and a look back\n1:57 - The Galactica story\n5:15 - Curated data and thinking tokens\n8:09 - What got RL cooking\n9:12 - Long horizon as a mindset\n10:16 - Why value models help\n11:08 - Credit assignment and bootstrapping\n12:38 - Trading football matches for real money\n13:44 - Why models struggled\n14:36 - Off policy staleness versus GPU use\n16:18 - openreward.ai and what's next",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852146,
+    "title": "smevals - a small eval suite for evaluating models, prompts, and harnesses",
+    "url": "https://simonwillison.net/2026/Jul/31/smevals/#atom-everything",
+    "published_at": "2026-07-31T21:15:23+00:00",
+    "fetched_at": "2026-07-31T22:06:10+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://primeradiant.com/blog/2026/smevals.html\">smevals - a small eval suite for evaluating models, prompts, and harnesses</a></strong></p>\nI've been working with Jesse Vincent's <a href=\"https://primeradiant.com\">Prime Radiant</a> applied AI research lab building out this evals framework to help answer questions about the capabilities of different models.</p>\n<p>The result is <strong><a href=\"https://github.com/prime-radiant-inc/smevals\">smevals</a></strong>, a new tool for running small eval suites across different model configurations and grading the results.</p>\n<p>This blog entry describes the tool in detail. Here's the 10 second version:</p>\n<ol>\n<li>Tell your coding agent to <code>run uvx smevals docs</code> to learn the tool (this outputs <a href=\"https://github.com/prime-radiant-inc/smevals/blob/main/README.md\">the README</a>)</li>\n<li>Then tell it to build you an eval suite</li>\n</ol>\n<p>Once you've created an eval - which takes the form of a directory with some YAML files - you can run it against models like this:</p>\n<pre><code>uvx smevals run path-to-eval/ -m gpt-5.5 -m claude-opus-4.6\n</code></pre>\n<p>Runs are treated separately from grading operations - you can grade your runs (against your defined set of checks) using:</p>\n<pre><code>uvx smevals grade path-to-eval/\n</code></pre>\n<p>Then you can run a localhost web server to explore the results:</p>\n<pre><code>uvx smevals serve path-to-eval/\n</code></pre>\n<p>Or run the <code>smevals build</code> command to build that report as static HTML, which you can then host anywhere. Here's <a href=\"https://static.simonwillison.net/static/2026/smevals-haiku-build/#/haiku\">an example</a> showing an eval suite I built to evaluate how well models can write haikus.</p>\n<p><img alt=\"Screenshot of an evaluation dashboard for a haiku-writing benchmark, testing whether models can reply with exactly three non-empty lines. A header describes the eval, with panels below showing a leaderboard ranking three GPT models by score, lists of recent runs and recent grades, tag pass rates, the two haiku prompts that were tested, and details of the graders used with a 0.8 pass threshold.\" src=\"https://static.simonwillison.net/static/2026/smevals-report.webp\" /></p>\n<p>I've been trying to figure out an approach I like for evals for several years now. <code>smevals</code> is my third iteration on the idea and it feels right to me. I'm looking forward to expanding this more in the future, as well as pointing it at some of my own projects.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/evals\">evals</a>, <a href=\"https://simonwillison.net/tags/jesse-vincent\">jesse-vincent</a></p>",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852404,
+    "title": "Emulated: The Data for Fully Autonomous Software Engineers and Companies \u2014 Joseph Wang",
+    "url": "https://www.youtube.com/watch?v=zkX03APVj0M",
+    "published_at": "2026-07-31T21:00:03+00:00",
+    "fetched_at": "2026-07-31T22:06:11+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "To train an agent that can run production software, you need training data that looks like production, and that is what Joseph Wang's team at Emulated builds. Coming from network infrastructure backgrounds, they know what happens when something like a database goes down at scale, and they argue that current post training environments do not capture it. A real task is not a tidy code diff; it is fifty to a hundred turns of solving live traffic while distributed nodes fail, configs conflict, and unforeseen problems appear mid incident.\n\nSo Emulated simulates whole companies. Imagine acting as an engineer inside a cloud provider or an infrastructure service, provisioning resources across VPCs, subnets, and security groups, meeting real bars around cost and deployment, and keeping a service alive as it grows, all inside a high fidelity environment rather than a stub. Wang's bet is that domain expertise plus faithful simulation is what lets agents learn the messy, end to end reality of infrastructure work, and he closes looking for people who have trained models or run real infrastructure to help push that fidelity further across more domains.\n\nSpeaker info:\n- https://emulated.so/\n\nTimestamps:\n0:00 - Useful work over longer horizons\n1:20 - Backgrounds in network infrastructure\n2:26 - How environments shape capability\n3:16 - Fifty to a hundred turn tasks\n4:59 - Why real incidents are messy\n7:11 - Real infrastructure isn't a code diff\n7:40 - Acting as an engineer inside the cloud\n9:37 - Deployment, cost, and scaling bars\n13:29 - Why it's called Emulated\n15:01 - Simulating full companies",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 850135,
     "title": "The Base Model Is Dead \u2014 Varun Singh, Arcee AI",
     "url": "https://www.youtube.com/watch?v=xbPriQWXtWM",
@@ -451,6 +557,95 @@
     "available": true
   },
   {
+    "article_id": 852412,
+    "title": "Data Quality Is the Compute Multiplier \u2014 Ari Morcos, DatologyAI",
+    "url": "https://www.youtube.com/watch?v=_PdK6x7PQNM",
+    "published_at": "2026-07-30T23:26:10+00:00",
+    "fetched_at": "2026-07-31T22:06:11+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Swap compute for data on the scaling curve and the same money buys a better model, which is why Ari Morcos calls data quality the compute multiplier and the most underinvested part of training. His frame is an oil refinery for data rather than a firehose: clean, curate, create, and compose, with quality classifiers, deduplication, and synthetic generation each earning their place, and the sequencing across stages mattering as much as any single step. The scarce resource now is not tokens but signal per token, and finding data that is optimal for a given target is where the leverage hides.\n\nThe proof points are concrete. Better curated data lets a small multilingual model beat far larger ones trained on many more tokens, and it buys real inference efficiency because a model reaches the same quality with less. Morcos points to DatologyAI's customer results, from Thomson Reuters gaining on proprietary legal data in mid-training to Arcee's Trinity reaching the open frontier on public data alone. The closing argument is blunt: it is cheaper to manufacture high quality data than to buy more compute, so data curation is quietly shaping the future of model training.\n\nSpeaker info:\n- https://x.com/arimorcos\n- https://www.linkedin.com/in/arimorcos/\n- http://www.arimorcos.com/\n\nTimestamps:\n0:00 - Data is all we think about\n0:52 - Why good data became scarce\n2:19 - Swapping compute for data on the curve\n3:48 - An oil refinery for data\n5:52 - Curation work at DatologyAI\n6:54 - Proof: small models beating bigger ones\n8:58 - Inference efficiency from better data\n9:24 - Multilingual gains\n12:16 - Synthetic data done right\n14:10 - Thomson Reuters and Arcee results\n17:43 - Cheaper than buying compute",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "api",
+      "infrastructure",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852413,
+    "title": "Rethinking Environments for Long-Horizon Work \u2014 Rayan Garg, Theta Software",
+    "url": "https://www.youtube.com/watch?v=2aS7aKoXn64",
+    "published_at": "2026-07-30T23:25:30+00:00",
+    "fetched_at": "2026-07-31T22:06:11+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Everyone wants agents that handle long horizon work, but Rayan Garg starts with the awkward question of what long horizon even means. One popular answer measures the time horizon as the task length at which an agent crosses a success threshold, like the sixteen hour mark, which is a useful endpoint but a noisy one, since human time estimates vary and the same wall clock hides very different amounts of real difficulty. How you choose to measure this has an outsized effect on what you conclude about a model.\n\nFrom there Theta Software's work is about designing the environments and verifiers that make those measurements honest. A task can be artificially stretched by forcing serial dependencies, or made genuinely hard when a bad early query cascades through everything after it, and as environments grow more complex, standardized evaluation gets harder and correctness is best verified from the final state rather than a judge's guess. Garg walks through collapsing a huge state space with sample trajectories, being careful that judges do not see information they should not, and reusing agents to sift artifacts like CI logs. The recurring principle is that long horizon progress lives or dies on environment and verifier design, not on the headline benchmark number.\n\nSpeaker info:\n- https://x.com/RayanGarg\n- https://www.linkedin.com/in/rayan-garg/\n\nTimestamps:\n0:00 - What does long horizon mean?\n1:13 - Time horizon and the threshold metric\n3:17 - Why the metric is noisy\n4:20 - Measuring what actually matters\n6:38 - Creating tasks and environments\n7:42 - When a bad early step cascades\n10:01 - Why standardized evaluation is hard\n11:17 - Verifying from the final state\n13:46 - Judges, tools, and reused agents\n17:45 - Rubrics, QA, and careful grading",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852414,
+    "title": "Teaching AI to Find Real Vulnerabilities \u2014 David Brumley, Bugcrowd",
+    "url": "https://www.youtube.com/watch?v=ZFxh7sqbUZo",
+    "published_at": "2026-07-30T23:24:37+00:00",
+    "fetched_at": "2026-07-31T22:06:11+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "David Brumley has spent two decades turning people into hackers, from founding picoCTF to recruiting pwn2own winners at Carnegie Mellon, and his argument is that you teach a model to hack the same way: a ladder of tasks that climbs from triggering a crash to reading and writing arbitrary memory to a full working exploit. The catch is measurement. Hacking has no single answer, so the usual benchmark setup breaks down when a target has multiple vulnerabilities and a language model can always claim it found one, and grading oracles that just ask the model whether it succeeded are hopeless.\n\nSo Brumley's team builds real reinforcement learning environments instead: reproducible, sandboxed, and scored by deterministic graders that check whether an exploit actually triggers the specific bug, borrowing precision and recall from his DARPA Cyber Challenge work where he designed the scoring. He shows it on V8, the JavaScript engine in Chrome, running against 41 real vulnerabilities where the strongest models reached about 95% and, in the hard cases, produced genuine out of sandbox exploits including a real zero day. The point that lands is a warning against benchmaxxing security: build environments grounded in real bugs and honest graders, because that is what separates a model that looks like it can hack from one that actually can.\n\nSpeaker info:\n- https://www.linkedin.com/in/thedavidbrumley\n\nTimestamps:\n0:00 - Two decades of teaching hacking\n1:54 - From CTF scoreboards to CMU\n3:34 - A ladder of exploitation tasks\n6:44 - Why measuring hacking is hard\n7:46 - Flawed grading oracles\n10:30 - When a target has many bugs\n13:22 - Deterministic graders and AIXCC scoring\n14:49 - Precision and recall for vulnerabilities\n17:35 - Attacking V8 in Chrome\n21:10 - 41 vulnerabilities and a real zero day\n25:24 - Don't benchmaxx security",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "safety",
+      "benchmark",
+      "coding",
+      "policy",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852415,
+    "title": "Data and Environment Curation for Post-Training LLMs \u2014 Mahesh Sathiamoorthy, Bespoke Labs",
+    "url": "https://www.youtube.com/watch?v=ewtOo0scUh0",
+    "published_at": "2026-07-30T23:20:52+00:00",
+    "fetched_at": "2026-07-31T22:06:11+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Mahesh Sathiamoorthy's pitch is to stand in the researcher's shoes: the hard part of post-training is not the algorithm but the data and the environments that feed it. As agents get pushed to run autonomously for hours, something eventually falls over, and reinforcement learning is the tool for stretching that reliability, but RL environments are really just data in a different shape. Bespoke Labs works on curating both, from supervised fine-tuning sets to the environments models learn in.\n\nHe grounds it in OpenThoughts, the widely used reasoning dataset his team built, and the counterintuitive lessons that came out of curating it: diversity of reasoning traces matters, keeping multiple answers per question helps, and the obvious recipe often is not the best one. A favorite example is teaching a model to reason about credit card compliance, where fine-tuning on the right tagged data lifted the compliance metrics that a raw model kept getting wrong. The through line, supported by their Curator tooling, is that a disciplined curation stack, not just more compute, is what turns a base model into a capable post-trained one.\n\nSpeaker info:\n- https://x.com/madiator\n- https://linkedin.com/in/smaheswaran\n- https://smahesh.com\n\nTimestamps:\n0:00 - Standing in the researcher's shoes\n1:30 - Post-training at Bespoke Labs\n3:13 - When agents fall over on long tasks\n4:44 - RL environments as data\n6:29 - Building OpenThoughts\n7:36 - Finding a curation recipe\n10:27 - Counterintuitive lessons\n13:49 - A credit card compliance example\n16:13 - Curating reasoning data with Curator\n17:16 - The full curation stack",
+    "topic": "policy",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "infrastructure",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 832272,
     "title": "llm 0.32rc2",
     "url": "https://simonwillison.net/2026/Jul/30/llm-rc2/#atom-everything",
@@ -716,6 +911,29 @@
       "coding",
       "education",
       "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852417,
+    "title": "Learning on the Job: The Future of Post-Training \u2014 Raymond Feng, Applied Compute",
+    "url": "https://www.youtube.com/watch?v=k35LeKZEhiE",
+    "published_at": "2026-07-30T11:22:55+00:00",
+    "fetched_at": "2026-07-31T22:06:11+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The next step after a model ships is teaching it to keep learning on the job, and Raymond Feng lays out how Applied Compute trains custom models with reinforcement learning that plug into whatever harness an enterprise already runs. The setup is an orchestrator that fans interactions out to inference engines, collects the graded rollouts, and feeds a training engine that updates the weights, the same GRPO style loop used for RL today, but pointed at real multi turn, long horizon work rather than toy question and answer pairs. The promise is a model you deploy once that adapts to a specific company's tasks.\n\nThe hard parts are all about the environment. Feng is candid about reward hacking, where a model learns to time out a tool or exploit a scoring gap instead of doing the task, and about the trouble of faithfully replicating a production environment so training reflects reality. He walks through why replaying real customer interactions is tempting but breaks on non replayability and off policy data, and where automated data pipelines and self evaluation might take this. The vision at the end is a model that learns from every interaction it has, treating each nook and cranny of the job as new training signal.\n\nSpeaker info:\n- https://x.com/raymondmfeng\n- https://raymondhfeng.github.io/\n\nTimestamps:\n0:00 - Learning on the job\n0:39 - Custom models inside your harness\n2:37 - Deploy once and adapt\n2:49 - The RL training loop\n4:40 - Toward longer horizon tasks\n6:48 - Reward hacking in practice\n9:06 - Replicating production environments\n9:45 - Why replaying real traffic is hard\n11:57 - Non-replayability and off-policy data\n13:41 - Automated data pipelines\n15:24 - A model that learns every interaction",
+    "topic": "education",
+    "tags": [
+      "education",
+      "models",
+      "open-source",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9809,195 +10027,6 @@
     "tags": [
       "general",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551711,
-    "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-    "url": "https://openai.com/index/gpt-5-immunology-mystery",
-    "published_at": "2026-06-23T17:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555020,
-    "title": "Midjourney has a new side quest... death",
-    "url": "https://www.youtube.com/watch?v=a2i9h2ip-nY",
-    "published_at": "2026-06-23T16:46:50+00:00",
-    "fetched_at": "2026-07-20T10:11:30+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Try out Retool's new AI app builder to safely connect your apps to your team's data and APIs - https://fandf.co/4e2lDe2\n\nFounder of Midjourney, David Holz, just announced plans to make a new medical imaging device capable of full body scans which he claims is faster and cheaper than an MRI. But how does it work,  if at all?\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- Midjourney Medical\n- Fullbody Ultrasonic Computational Tomography (FUCT)\n- Midjourney Spa\n- Will it work?\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "coding",
-    "tags": [
-      "release",
-      "api",
-      "coding",
-      "education",
-      "hardware",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553451,
-    "title": "AI's Affordability Crisis",
-    "url": "https://blog.dshr.org/2026/06/ais-affordability-crisis.html?m=1",
-    "published_at": "2026-06-23T16:10:14+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. not because i think all of it is neccesserily true. but it is a perspective with some napkin data points.",
-    "topic": "opinion",
-    "tags": [
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551710,
-    "title": "Helping build shared standards for advanced AI",
-    "url": "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
-    "published_at": "2026-06-23T13:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI helps build shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation through the Appia Foundation.",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "safety",
-      "benchmark",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553452,
-    "title": "The Coming Loop",
-    "url": "https://lucumr.pocoo.org/2026/6/23/the-coming-loop/",
-    "published_at": "2026-06-23T10:54:21+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555052,
-    "title": "How One API Runs 27 ML Tasks",
-    "url": "https://www.youtube.com/shorts/Xe67WF8Hfu8",
-    "published_at": "2026-06-23T07:50:42+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "One API. 27 different ML tasks. The secret is a simple input/output contract. The task ID defines what goes in and what comes out. Same pattern, every time.\n\n#TransformersJS #JavaScript #MachineLearning #AI #WebAI #Pipeline",
-    "topic": "product",
-    "tags": [
-      "product",
-      "api",
-      "infrastructure",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552954,
-    "title": "Introducing Claude Tag",
-    "url": "https://www.anthropic.com/news/introducing-claude-tag",
-    "published_at": "2026-06-23T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Introducing Claude Tag",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551712,
-    "title": "How Omio is building the future of conversational travel",
-    "url": "https://openai.com/index/omio",
-    "published_at": "2026-06-23T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Discover how Omio uses OpenAI to power conversational travel experiences, accelerate product development, and transform into an AI-native company.",
-    "topic": "development",
-    "tags": [
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553453,
-    "title": "recommended viewing. as are all of her videos.",
-    "url": "https://video.twimg.com/amplify_video/2069093096017817603/vid/avc1/3840x2160/0wxXlOGPnBFOP94S.mp4",
-    "published_at": "2026-06-22T20:30:53+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. as are all of her videos.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553454,
-    "title": "Die analysis of the 8087 math coprocessor's fast bit shifter",
-    "url": "https://www.righto.com/2020/05/die-analysis-of-8087-math-coprocessors.html",
-    "published_at": "2026-06-22T19:38:11+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i love this type of forensics. an internet friend thought me 8087 fpu programming in the 90ies. first time i had contact with a stack. good times.",
-    "topic": "opinion",
-    "tags": [
-      "coding",
-      "hardware",
-      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
