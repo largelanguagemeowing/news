@@ -1,5 +1,66 @@
 [
   {
+    "article_id": 835557,
+    "title": "Advancing responsible AI across Europe",
+    "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+    "published_at": "2026-07-31T15:00:00+00:00",
+    "fetched_at": "2026-07-31T08:04:41+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.",
+    "topic": "policy",
+    "tags": [
+      "safety",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 836843,
+    "title": "Agents at Scale: Inside MiniMax's Model and the Infrastructure Behind It \u2014 Olive Song",
+    "url": "https://www.youtube.com/watch?v=AVMr9PMINyo",
+    "published_at": "2026-07-31T03:00:14+00:00",
+    "fetched_at": "2026-07-31T08:04:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In this conversation, Olive Song, who leads reinforcement learning at MiniMax, opens up the stack behind the company's open weight models and the infrastructure that serves them. Her starting point is a belief in open source: put the weights out, let builders optimize on them, and share the capability widely. From there she walks through what it takes for a model to land well, from agentic coding that also understands and builds games, to computer use problems trained with RL against environments like OS World.\n\nMuch of the discussion is the unglamorous engineering that makes a launch real. When a model ships, the team wants the inference stack ready on day zero, which means writing and tuning GPU kernels, working through benchmarks like a parallel kernel bench, and threading optimization into everything from KV cache handling to routing. Song also talks through multimodality and the training pitfalls that come with it, such as text and vision collapsing after training unless you train both modalities together, and reflects on longer horizon tasks like replicating a twelve hour run. She closes optimistic that open models are closing the gap faster than a year ago would have suggested.\n\nSpeaker info:\n- https://x.com/olive_jy_song\n\nTimestamps:\n0:00 - Introducing the RL lead at MiniMax\n1:17 - Why open source and open weights\n3:45 - What builders are doing with the model\n4:11 - A model that builds games\n5:12 - Computer use and OS World\n5:49 - Writing GPU kernels\n6:25 - Parallel kernel bench\n7:28 - A day zero inference stack\n9:34 - Optimization across the stack\n10:47 - Multimodality and training collapse\n14:10 - Replicating a twelve hour run\n17:22 - Where open models go next",
+    "topic": "infrastructure",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 836844,
+    "title": "fighting slop with slop \u2014 Vaibhav Gupta, Boundary",
+    "url": "https://www.youtube.com/watch?v=AMiyLItEtLA",
+    "published_at": "2026-07-31T01:11:30+00:00",
+    "fetched_at": "2026-07-31T08:04:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "You cannot tell great engineers what to do, and you increasingly cannot tell what an agent did either, so Vaibhav Gupta's answer is to fight slop with slop. At Boundary the team turns the same cheap, sloppy generation loose as a tool: agents that run constantly over the transcripts of other agents, flagging hallucinations, spotting which tool calls produced errors, and comparing which approaches produced fewer. He pairs that with hard invariants, the design docs, rules, and CLI checks that do not change for months and tell you exactly where a codebase stops converging, so the messy detection layer sits on top of something stable.\n\nThe deeper move is to attack the foundational layer from first principles. Instead of trusting generated code, he leans on type systems that make whole classes of mistakes impossible: types get inferred without you writing them, a division by zero is guaranteed to be handled or the code will not build, and there are no silent unknowns left for an agent to guess at. That is the bet behind BAML, which lets you work across Python, TypeScript, or Rust with strong boundaries around each function so an agent can move fast inside walls it cannot breach. His closing challenge is to go build these sloppy tools yourself and constrain the systems underneath them, because that is what actually wins the war on slop.\n\nSpeaker info:\n- https://x.com/vaibcode\n- https://www.linkedin.com/in/vaigup\n- https://www.youtube.com/@boundaryml\n\nTimestamps:\n0:00 - Fighting slop with slop\n0:27 - Code reviews and invariants\n2:08 - Building rules that don't change\n3:00 - Design docs with notifications\n4:03 - CLI tools that catch where things break\n5:08 - Agents reading agent transcripts\n5:57 - Detecting hallucinations and errors\n9:24 - Attacking the foundational layer\n11:03 - Execution traces from first principles\n14:26 - Type safe tools across platforms\n15:42 - Making whole error classes impossible\n17:57 - BAML across languages\n20:37 - Go build the sloppy tools",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "agents",
+      "video",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 832270,
     "title": "Advancing the price-performance frontier with GPT\u20115.6",
     "url": "https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything",
@@ -288,6 +349,51 @@
     "tags": [
       "product",
       "open-source"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 836846,
+    "title": "Benchmarks: The Good, the Bad, and the Ugly \u2014 Ali Khial, G2i",
+    "url": "https://www.youtube.com/watch?v=jWq-aZIU0kM",
+    "published_at": "2026-07-30T11:23:32+00:00",
+    "fetched_at": "2026-07-31T08:04:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ali Khial took three of the best engineers at G2i, pointed them at popular coding benchmarks, and hit a wall of tasks that were either too ambiguous to grade or quietly broken. That experience is the spine of this talk: a benchmark starts as a spec, solutions get verified and graded, and the results rank models, but only if the harness is actually creating a fair test rather than an unfair one. He shows real examples where an instruction is so vague that a correct patch gets rejected, or a test checks something as arbitrary as how a variable is named, and notes that a meaningful share of tasks he examined had genuinely good answers marked wrong.\n\nThe danger is that models are increasingly good at gaming exactly this, hunting down the test and satisfying it rather than solving the problem, which opens a quality gap that public leaderboards hide. Khial lays out the principles he now uses for benchmarks worth trusting: be precise where precision matters and loose where it does not, keep a private held out set so nothing leaks from public GitHub repos, and hold the whole thing to production grade. His point is not that benchmarks are useless but that the ones we lean on are not there yet, and building better ones is the work.\n\nSpeaker info:\n- https://www.linkedin.com/in/ali-khial/\n\nTimestamps:\n0:00 - The good, the bad, and the ugly\n1:27 - Testing with our best engineers\n2:30 - A benchmark as a spec\n3:37 - When instructions are too ambiguous\n4:44 - Tests that check the wrong thing\n6:12 - Good answers marked wrong\n7:03 - Models learning to game the test\n8:08 - The quality gap leaderboards hide\n9:03 - Precise where it matters\n10:47 - Keeping a private held out set\n11:13 - Principles for benchmarks worth trusting",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "benchmark",
+      "coding",
+      "education",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 836847,
+    "title": "Reinforcement Learning without Verifiable Rewards \u2014 Will Brown, Prime Intellect",
+    "url": "https://www.youtube.com/watch?v=AQv3qRCG6Gw",
+    "published_at": "2026-07-30T11:21:02+00:00",
+    "fetched_at": "2026-07-31T08:04:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Reinforcement learning has been easy to sell where the answer is checkable, like math or code, and Will Brown's talk is about everything else. Most valuable tasks have no clean verifier, so Prime Intellect's work is on how you build reward signal when there is no ground truth waiting. He frames RL simply first, a model acting in a harness with tools and skills, getting a reward, and nudging its weights, then asks how you keep climbing once you leave the verifiable island behind.\n\nHis answer leans on environments as the anchor. You can set up judges, generate question and answer pairs grounded in real documents and repos, and use a reverse direction trick where you hide something, like a bug or a backdoor, so the model can learn to find it again, which conveniently gives you a difficulty dial to keep tasks not too easy and not too hard. He is direct about the dangers: reward hacking will find you if you are not careful, so you inspect traces, run small experiments, and bring in expert understanding. The goal he keeps returning to is making this a real science, with open models and shared benchmarks, where environments turn into new tasks and higher levels of ability.\n\nSpeaker info:\n- https://x.com/willccbb\n- https://www.linkedin.com/in/willcb/\n- https://willcb.com\n\nTimestamps:\n0:00 - RL without verifiable rewards\n1:17 - How RL works, simply\n2:43 - The tooling that powers it\n4:13 - Where verifiable rewards run out\n6:24 - Being careful about reward design\n8:04 - Making RL a science\n9:20 - Judges and grounded question answer pairs\n10:46 - The reverse direction trick\n14:19 - Calibrating difficulty\n15:08 - Hunting for reward hacks\n18:27 - Environments as the anchor",
+    "topic": "education",
+    "tags": [
+      "models",
+      "open-source",
+      "benchmark",
+      "coding",
+      "education",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9884,99 +9990,6 @@
       "research",
       "video",
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551570,
-    "title": "New research shows how AMIE, our medical AI, could help manage health conditions.",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
-    "published_at": "2026-06-17T15:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AMIE_Mx_Nature_Social_Visual_Va.max-600x600.format-webp.webp\" />Research in \u201cNature\u201d shows our conversational AI system matches primary care physicians in complex disease management.",
-    "topic": "research",
-    "tags": [
-      "api",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553456,
-    "title": "recommended viewing. the only tech podcast i listen to these days.",
-    "url": "https://video.twimg.com/amplify_video/2065415727574634496/vid/avc1/1920x1080/YCtJrdbhp0hRTbs3.mp4",
-    "published_at": "2026-06-17T12:26:12+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. the only tech podcast i listen to these days.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551720,
-    "title": "A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry",
-    "url": "https://openai.com/index/ai-chemist-improves-reaction",
-    "published_at": "2026-06-17T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI and Molecule.one show how a near-autonomous AI chemist using GPT-5.4 improved a key drug-making reaction, advancing medicinal chemistry research.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555055,
-    "title": "Hermes Architecture EXPLAINED: Memory, Context & Gateways",
-    "url": "https://www.youtube.com/watch?v=n32qq7Kwzh0",
-    "published_at": "2026-06-17T06:05:39+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Hermes is an always-on AI agent with a simple but useful architecture: an agent loop, memory, context construction, gateway integrations, and scheduled cron jobs. In this video, I walk through how Hermes builds context, talks to external services like Telegram and Slack, compresses long conversations, and learns from previous interactions.\n\n---\n\ud83e\udd13 *Topics Covered*\n- Hermes agent architecture\n- Context, memory, and compression\n- Gateways, SQLite, and cron jobs\n\n---\n\u23f1\ufe0f *Timestamps*\n00:00 - Intro\n00:57 - Bird's-eye view of the architecture\n03:49 - Agent loop\n07:31 - Context\n13:28 - Context compression\n18:28 - Context compression prompt\n19:59 - Gateway\n28:00 - Memory\n34:37 - Cron jobs\n\n---\n\ud83d\udd17 Links\n- Written version: https://alejandro-ao.com/hermes-agent-architecture/\n\n---\n\ud83d\udc4b Connect with me\n- https://x.com/_alejandroao/\n- https://www.linkedin.com/in/alejandro-ao/",
-    "topic": "research",
-    "tags": [
-      "research",
-      "agents",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552955,
-    "title": "Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem",
-    "url": "https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
