@@ -19,6 +19,28 @@
     "available": true
   },
   {
+    "article_id": 883585,
+    "title": "datasette-apps 0.2a0",
+    "url": "https://simonwillison.net/2026/Aug/1/datasette-apps/#atom-everything",
+    "published_at": "2026-08-01T21:23:56+00:00",
+    "fetched_at": "2026-08-01T21:57:38+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-apps/releases/tag/0.2a0\">datasette-apps 0.2a0</a></p>\n        <blockquote>\n<p>Changes that improve Datasette Apps when created and edited using <a href=\"https://agent.datasette.io/\">Datasette Agent</a>:</p>\n<ul>\n<li>New <code>app_debug()</code> tool allowing agent to open an app (invisibly) and test it using JavaScript. <a href=\"https://github.com/datasette/datasette-apps/pull/33\">#33</a></li>\n<li>New <code>app_list()</code> tool for listing apps the user has permission to edit, so the agent can edit them. <a href=\"https://github.com/datasette/datasette-apps/issues/36\">#36</a></li>\n</ul>\n</blockquote>\n<p>The <code>app_debug()</code> tool is pretty neat: it works by displaying the app in a <code>opacity: 0</code> iframe with <code>pointer-events: none</code> (so it can't be seen or interacted with) and then executing agent-provided JavaScript inside that sandboxed iframe. This means the agent can smoke test that the app is working and even do things like measure the dimensions of different elements.</p>\n<p>This uses the new <code>context.browser_task()</code> mechanism added in <a href=\"https://simonwillison.net/2026/Jul/31/datasette-agent/\">datasette-agent 0.4a0</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/iframes\">iframes</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/datasette-apps\">datasette-apps</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "coding",
+      "events",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 881319,
     "title": "Ten advances in mathematics and theoretical computer science",
     "url": "https://simonwillison.net/2026/Aug/1/ten-advances-in-mathematics/#atom-everything",
@@ -10054,24 +10076,6 @@
       "coding",
       "hardware",
       "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551703,
-    "title": "Inside Genebench-Pro",
-    "url": "https://openai.com/index/genebench-pro/case-studies",
-    "published_at": "2026-06-30T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
