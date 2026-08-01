@@ -19,6 +19,114 @@
     "available": true
   },
   {
+    "article_id": 856935,
+    "title": "Teaching AI to Find Real Vulnerabilities \u2014 David Brumley, Bugcrowd",
+    "url": "https://www.youtube.com/watch?v=ZFxh7sqbUZo",
+    "published_at": "2026-08-01T00:30:06+00:00",
+    "fetched_at": "2026-08-01T01:07:58+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "David Brumley has spent two decades turning people into hackers, from founding picoCTF to recruiting pwn2own winners at Carnegie Mellon, and his argument is that you teach a model to hack the same way: a ladder of tasks that climbs from triggering a crash to reading and writing arbitrary memory to a full working exploit. The catch is measurement. Hacking has no single answer, so the usual benchmark setup breaks down when a target has multiple vulnerabilities and a language model can always claim it found one, and grading oracles that just ask the model whether it succeeded are hopeless.\n\nSo Brumley's team builds real reinforcement learning environments instead: reproducible, sandboxed, and scored by deterministic graders that check whether an exploit actually triggers the specific bug, borrowing precision and recall from his DARPA Cyber Challenge work where he designed the scoring. He shows it on V8, the JavaScript engine in Chrome, running against 41 real vulnerabilities where the strongest models reached about 95% and, in the hard cases, produced genuine out of sandbox exploits including a real zero day. The point that lands is a warning against benchmaxxing security: build environments grounded in real bugs and honest graders, because that is what separates a model that looks like it can hack from one that actually can.\n\nSpeaker info:\n- https://www.linkedin.com/in/thedavidbrumley\n\nTimestamps:\n0:00 - Two decades of teaching hacking\n1:54 - From CTF scoreboards to CMU\n3:34 - A ladder of exploitation tasks\n6:44 - Why measuring hacking is hard\n7:46 - Flawed grading oracles\n10:30 - When a target has many bugs\n13:22 - Deterministic graders and AIXCC scoring\n14:49 - Precision and recall for vulnerabilities\n17:35 - Attacking V8 in Chrome\n21:10 - 41 vulnerabilities and a real zero day\n25:24 - Don't benchmaxx security",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "safety",
+      "benchmark",
+      "coding",
+      "policy",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 856936,
+    "title": "Rethinking Environments for Long-Horizon Work \u2014 Rayan Garg, Theta Software",
+    "url": "https://www.youtube.com/watch?v=2aS7aKoXn64",
+    "published_at": "2026-08-01T00:00:06+00:00",
+    "fetched_at": "2026-08-01T01:07:58+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Everyone wants agents that handle long horizon work, but Rayan Garg starts with the awkward question of what long horizon even means. One popular answer measures the time horizon as the task length at which an agent crosses a success threshold, like the sixteen hour mark, which is a useful endpoint but a noisy one, since human time estimates vary and the same wall clock hides very different amounts of real difficulty. How you choose to measure this has an outsized effect on what you conclude about a model.\n\nFrom there Theta Software's work is about designing the environments and verifiers that make those measurements honest. A task can be artificially stretched by forcing serial dependencies, or made genuinely hard when a bad early query cascades through everything after it, and as environments grow more complex, standardized evaluation gets harder and correctness is best verified from the final state rather than a judge's guess. Garg walks through collapsing a huge state space with sample trajectories, being careful that judges do not see information they should not, and reusing agents to sift artifacts like CI logs. The recurring principle is that long horizon progress lives or dies on environment and verifier design, not on the headline benchmark number.\n\nSpeaker info:\n- https://x.com/RayanGarg\n- https://www.linkedin.com/in/rayan-garg/\n\nTimestamps:\n0:00 - What does long horizon mean?\n1:13 - Time horizon and the threshold metric\n3:17 - Why the metric is noisy\n4:20 - Measuring what actually matters\n6:38 - Creating tasks and environments\n7:42 - When a bad early step cascades\n10:01 - Why standardized evaluation is hard\n11:17 - Verifying from the final state\n13:46 - Judges, tools, and reused agents\n17:45 - Rubrics, QA, and careful grading",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 856677,
+    "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "url": "https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything",
+    "published_at": "2026-07-31T23:59:44+00:00",
+    "fetched_at": "2026-08-01T01:07:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731\">deepseek-ai/DeepSeek-V4-Flash-0731</a></strong></p>\nThe latest release in DeepSeek's V4 family, \"with substantially enhanced agentic capabilities\". It's 304 billion parameters - 167GB on Hugging Face - but it appears to punch <em>well</em> above its weight.</p>\n<p>Artificial Analysis <a href=\"https://artificialanalysis.ai/models/deepseek-v4-flash\">rank it</a> ahead of MiniMax M3 - a 428B model. It's $0.14/million input and $0.27/million output pricing means this may currently be the best value-per-intelligence model out there. It's looking very good on the <a href=\"https://artificialanalysis.ai/models/deepseek-v4-flash#intelligence-comparison-tabs\">Intelligence Index vs. Cost per Intelligence Index Task</a> chart:</p>\n<p><img alt=\"Scatter plot from Artificial Analysis titled with axes &quot;Artificial Analysis Intelligence Index&quot; (20 to 65) and &quot;Cost per Task (USD, Log Scale)&quot; ($0.02 to $3), with a green &quot;Most attractive quadrant&quot; box in the upper left and a dotted &quot;Pareto line&quot;. DeepSeek V4 Flash 0731 (max) is highlighted in dark blue at roughly $0.028 and an intelligence score of 50, sitting alone at the far left edge of the green quadrant where the Pareto line jumps sharply upward. Models of similar or lower intelligence like MiniMax-M3, Kimi K3 (low), GLM-5.1 and Kimi K2.6 cost ten times more, and the models that beat it (Grok 4.5, Gemini 3.6 Flash, GLM-5.2, Kimi K3, Claude Opus 5, Claude Fable 5, GPT-5.6 Sol) all sit far to the right at $0.4 to $3 per task.\" src=\"https://static.simonwillison.net/static/2026/deepseek-flash-chart.webp\" /></p>\n<p>I got <a href=\"https://gist.github.com/simonw/83bfb1171792f1e7a4d8935b5e82317e#prompt\">a disappointing pelican</a> from it using the default reasoning level via OpenRouter:</p>\n<p><img alt=\"Flat vector illustration of a white pelican with a long neck and large orange beak pouch, hovering above a mangled blue and orange bicycle on a dark grey road with white dashed lane markings. The bike is drawn incorrectly: the wheels are just orange arcs with no rims or spokes, the frame tubes float apart and the handlebars connect to nothing. The background is pale blue with a yellow sun in the upper left, white clouds, and grey speed lines on the left suggesting motion.\" src=\"https://static.simonwillison.net/static/2026/deepseek-flash-v4-default.png\" /></p>\n<p>But when I bumped reasoning level up to high I got <a href=\"https://gist.github.com/simonw/83bfb1171792f1e7a4d8935b5e82317e#options\">something much better</a>:</p>\n<p><code>llm -m openrouter/deepseek/deepseek-v4-flash-0731 -t pelican -o reasoning_effort high</code></p>\n<p><img alt=\"Flat vector illustration of a white pelican riding a bicycle to the right against a pink background with a lighter pink circle behind it. The pelican grips the handlebars with its wings and one orange foot rests on the pedal, and a small blue fish is visible tucked in the corner of its large orange beak pouch. The bike has a red, blue and orange frame with dark tires, and grey speed lines trail behind to suggest motion.\" src=\"https://static.simonwillison.net/static/2026/deepseek-flash-v4-high.png\" />\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49120299\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/deepseek\">deepseek</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a>, <a href=\"https://simonwillison.net/tags/openrouter\">openrouter</a>, <a href=\"https://simonwillison.net/tags/ai-in-china\">ai-in-china</a>, <a href=\"https://simonwillison.net/tags/artificial-analysis\">artificial-analysis</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 856937,
+    "title": "What's Next After RLHF? \u2014 Diogo Almeida, TypeSafe AI",
+    "url": "https://www.youtube.com/watch?v=cJ0EOzey--o",
+    "published_at": "2026-07-31T23:30:06+00:00",
+    "fetched_at": "2026-08-01T01:07:58+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "RLHF made models that are extraordinary at pleasing the human in the loop, and Diogo Almeida, a GPT-4 co author, argues that is exactly the problem. Optimizing for human preference optimizes for engagement and for overpromising, the same pressure that makes a model confidently agree that a fart audio file is a symphony. That produces two camps: one where models act as assistants with a human catching mistakes, where RLHF shines, and one where they operate autonomously with real stakes, where the same instinct to please quietly becomes a liability.\n\nSo what comes next is not the Claude Code era but a shift in what you optimize. Almeida frames it through Sutton's bitter lesson: the task matters more than the data, and reinforcement learning with verifiable rewards points the model at real automation instead of human approval. He is careful that pre trained models are already incredibly capable and that the trap is bolting preference optimization on top, which teaches confidence and drops modes. The through line is that assistance and automation pull in different directions in optimization space, and the field is only starting to say plainly which one it is building.\n\nSpeaker info:\n- https://x.com/CompleteSkeptic\n- https://www.linkedin.com/in/diogomda/\n- https://typesafe.ai/\n\nTimestamps:\n0:00 - Not the Claude Code era\n1:40 - The state of the field\n3:14 - Two camps: assistance and autonomy\n4:31 - Why models please the human in the loop\n6:37 - How RLHF actually works\n7:31 - Preference versus what's true\n8:10 - When the consequences get real\n8:47 - So what's next\n9:35 - Assistance is not automation\n14:31 - Is pre-training the problem?\n15:43 - RLVR and Sutton's bitter lesson",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 857451,
+    "title": "In defense of not understanding your codebase",
+    "url": "https://www.seangoedecke.com/in-defense-of-not-understanding-your-codebase/",
+    "published_at": "2026-07-31T23:17:42+00:00",
+    "fetched_at": "2026-08-01T01:08:00+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. much more nuanced than the title makes it out to be. read till the end.",
+    "topic": "development",
+    "tags": [
+      "development",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 854408,
     "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
     "url": "https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-everything",
@@ -594,6 +702,29 @@
       "product",
       "models",
       "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 857444,
+    "title": "A Safe Path to Open Weights",
+    "url": "https://thinkingmachines.ai/blog/a-safe-path-to-open-weights/",
+    "published_at": "2026-07-31T00:00:00+00:00",
+    "fetched_at": "2026-08-01T01:07:59+00:00",
+    "source_id": "thinking-machines",
+    "source_name": "Thinking Machines",
+    "extraction_method": "rss",
+    "body": "<blockquote class=\"epigraph\">\n<p><strong>Abstract:</strong> Safe open-weight models are public goods, as they put AI development and safety work in many hands and make training choices inspectable. Open models also carry real misuse risks, and release is irreversible. To release safely, we must consider both the model and the ecosystem it enters. For the model, we conduct robust safety testing and research whether dangerous capabilities can be decoupled from general intelligence. For the ecosystem, we invest in its readiness through staged releases, supporting defenders, and collaboration with safety researchers. By iteratively choosing the most open option the evidence supports while building up the ecosystem's resilience, we can move toward openness safely.</p>\n</blockquote>\n<p>The <a href=\"https://thinkingmachines.ai/blog/the-future-worth-building-is-human/\">mission</a> of Thinking Machines is to build AI that extends human will and judgment. In pursuit of that mission, we recently released <a href=\"https://thinkingmachines.ai/news/introducing-inkling/\">Inkling</a> and <a href=\"https://thinkingmachines.ai/news/inkling-small/\">Inkling-Small</a>, two open-weight language models that anyone can own, run, and customize.</p>\n<p>Strong open-weight models put AI development in many hands. We believe that this is a good thing: the knowledge of what AI should do lives with the people doing the work, so they should be able to shape their models directly. All models, including our own, carry the assumptions and biases of those who trained it; open weights make those choices inspectable and revisable. Without strong open models, training and deployment expertise risks becoming concentrated in a few labs, leaving everyone else less able to understand, adapt, or govern the technology.</p>\n<h2 id=\"open-weight-models-carry-misuse-risks\">Open-weight models carry misuse risks</h2>\n<p>Once weights are public, anyone can use them, including bad actors. Cybersecurity shows what this means. In April 2026, Anthropic reported that Claude Mythos Preview found thousands of previously unknown vulnerabilities across every major operating system and browser and wrote working exploits without human guidance. Systems like this could substantially lower the time, cost, and expertise required for offensive cyber operations. Will our society be safer when open-weights models allow everyone to have superhuman cybersecurity skills?</p>\n<p>There are genuine uncertainties around the net effect of open weights on security and the offense-defense balance. These models could find and patch vulnerabilities before offenders do when they\u2019re in defenders\u2019 hands, but the same capabilities could accelerate exploitations across large numbers of unpatched systems when they are in attackers\u2019 hands. Similar tradeoffs exist in other dual-use domains like chemistry and biology.</p>\n<p>Given these uncertainties, releasing weights indiscriminately is not a safe path forward.</p>\n<h2 id=\"a-safe-path-to-open-weight-models\">A safe path to open-weight models</h2>\n<p>Is there a safe path to open the weights of powerful models when the misuse risks are real? We think that a path exists, though we have not mapped all of it. The central idea is that safe release depends on the model and the ecosystem around it.</p>\n<h3 id=\"is-the-model-safe\">Is the model safe?</h3>\n<p>Robust safety testing \u2013 an imperfect but essential proxy for real-world capability in dangerous domains \u2013 must be a necessary part of our model release process. What harmful tasks can it complete? How accessible is it? What happens if guardrails are removed?</p>\n<p>More broadly, additional safety research is needed. For example, we are particularly interested in whether dangerous capabilities that depend on specialized knowledge can be reduced through pretraining data curation or post-training interventions. This remains an active research question rather than an established solution.</p>\n<h3 id=\"is-the-ecosystem-ready\">Is the ecosystem ready?</h3>\n<p>Readiness means layered defense. The first layer is to enable individual organizations to patch their systems early or catch attacks in progress. Defensive research adds another layer, developing tools and techniques that let AI models themselves strengthen defenses at scale. These are just two of many layers. To prepare the ecosystem with layered defenses, we plan to collaborate with the safety community and provide access to capable models.</p>\n<p>A tension here is that the ecosystem builds defenses by working with capable models, but every expansion of access also expands who can misuse them. To address this tension, we can carefully stage releases with options such as monitored API access, hosted fine-tuning, and vetting defenders. Considering the rapid speed of AI capability advancement, these stages also need to move quickly enough for defensive learning to remain relevant.</p>\n<p>On a safe path to openness, each stage should widen access only when the evidence supports it. The path is therefore iterative: at each step, choose the most open option the evidence supports, and let each release inform the next. A model held back today can become less risky as the ecosystem changes, and new evidence might suggest that we can open its weights.</p>\n<h2 id=\"how-we-assessed-inkling\">How we assessed Inkling</h2>\n<p>Inkling and Inkling-Small are not the most capable models at the frontier. Our release decisions therefore primarily addressed whether releasing their weights would add material incremental risk beyond what existing open-weights models already pose. A finding that a model does not advance the dangerous-capability frontier is important but not sufficient. We also considered whether Inkling\u2019s multimodality, capacity for customization, or accessibility could make harmful capability meaningfully easier to use.</p>\n<p>We tested Inkling and Inkling-Small in three ways: internal evaluations across a broad taxonomy of harms, external testing by four independent organizations, and a fine-tuning study to elicit worst-case capabilities. Based on the results of these evaluations, we concluded that releasing Inkling was not likely to add material risk beyond what existing open-weight models already pose.</p>\n<p><strong>Internal safety evaluations.</strong> Our internal evaluation suite spanned three tracks. The first targeted dangerous dual-use domains like CBRN<label class=\"sidenote-number\" for=\"sn-safety-cbrn\"></label><input class=\"margin-toggle\" id=\"sn-safety-cbrn\" type=\"checkbox\" /><span class=\"sidenote\">chemical, biological, radiological, and nuclear</span> and offensive cybersecurity, testing both what the model knows about these domains and whether it can operationalize that knowledge in realistic settings. The second was a broad misuse set covering direct requests for harmful content and behavior in agentic, tool-use settings. The third was our own multimodal content evaluation, which tests models on harmful prompts paired with benign look-alikes across 17 languages and text, image, and audio inputs. In each of these tracks, Inkling and Inkling-Small\u2019s results were in line with other open-weight models.</p>\n<p><strong>External red-teaming.</strong> We worked with four external organizations, giving them early access to Inkling for pre-deployment testing in four areas:</p>\n<ul>\n<li><em><strong>General misuse</strong></em>: probing for policy violations against our model spec (Scale AI)</li>\n<li><em><strong>Vulnerable-user interaction</strong></em>: suicide, self-harm, eating disorders, and child safety (Handshake AI)</li>\n<li><em><strong>CBRN and cybersecurity</strong></em>: elicitation of dangerous dual-use capabilities (FAR.AI)</li>\n<li><em><strong>Loss-of-control behaviors</strong></em>: scheming, evaluation awareness, and sabotage (Apollo Research)</li>\n</ul>\n<p>Across these areas, external testers did not identify capabilities that would meaningfully increase real-world risk beyond what is already achievable with existing open-weight models, or, where relevant, they did not find the safeguards of Inkling or Inkling Small to be meaningfully weaker than those of existing open-weight models.</p>\n<p><strong>Adversarial fine-tuning.</strong> Because open weights can be customized to strip a model of its safety training, refusal behavior cannot be treated as a durable safeguard for an open-weight release. To assess this, we fine-tuned variants of Inkling and Inkling-Small optimized to comply with, rather than refuse, harmful requests \u2013 and ran them against our dual-use evaluations. This tests whether the model raises new material risks if its safeguards are removed. In our experiments, it did not: the helpful-only variants did not provide new uplift on CBRN and cyber tasks, and remained comparable to existing open-weight models.</p>\n<p>Taken together, neither model extends the dangerous-capability frontier. Neither meaningfully broadens access to it, as models of comparable or greater strength in these domains are already downloadable. Although refusals can be removed, doing so did not reveal substantially greater capability on these evaluations. Defenders, meanwhile, are already contending with models at or above this level. Based on these points, we concluded that releasing Inkling was not likely to add material risk beyond what existing open-weight models already pose.</p>\n<p>As our models approach the capability frontier, the balance across capability, accessibility, safeguard removability, and ecosystem readiness will change. Our safety approach will need to change with it.</p>\n<h2 id=\"decoupling-dangerous-capabilities-from-general-intelligence\">Decoupling dangerous capabilities from general intelligence</h2>\n<p>A common assumption holds that dangerous capabilities emerge without explicit training and correlate strongly with general intelligence. As a result, cyber-range results<label class=\"sidenote-number\" for=\"sn-safety-aisi-trends\"></label><input class=\"margin-toggle\" id=\"sn-safety-aisi-trends\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing\">How fast is autonomous AI cyber capability advancing?</a> (AI Security Institute, 2025)</span> are often treated as just another capabilities benchmark to optimize \u2013 some researchers go so far as to celebrate gains as milestones.</p>\n<p>However, we hypothesize that not all dangerous capability automatically emerges without training on it. In biology, for instance, a meaningful share of the knowledge rests on specific empirical findings, like protocols, conditions, reagents, and results, that a model acquires from particular documents in its pretraining corpus rather than inferring through general reasoning. As a result, such knowledge can potentially be withheld at training time without disturbing ordinary use. Recent work shows early promise: document-level filtering of CBRN-related content from pretraining reduces performance on harmful-capability evaluations while leaving unrelated capabilities intact.<label class=\"sidenote-number\" for=\"sn-safety-data-filtering\"></label><input class=\"margin-toggle\" id=\"sn-safety-data-filtering\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2508.06601\">Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs</a> (O\u2019Brien et al, 2025); Chen et al., 2025</span></p>\n<p>This is still an open research question. General reasoning may transfer sufficiently well to let a capable model re-derive what was filtered, and the line between dangerous and ordinary technical knowledge and capability may be too blurry to cut cleanly. However, the early evidence is enough that we think the distinction is worth pushing on.</p>\n<h2 id=\"supporting-the-safety-ecosystem-with-staged-releases\">Supporting the safety ecosystem with staged releases</h2>\n<p>Another way to make an open-weight release safer is to make the ecosystem in which it lands safer. Expanding access in stages lets society build up its defenses as it goes: a release can begin with inference API access for a limited population, widen to monitored general availability, and eventually reach open weights.</p>\n<p>Fine-tuning APIs like Tinker add a stage between inference access and open weights. They allow providers to host weights without releasing them, while still letting users fine-tune with their own data, loss functions, and training loops. That control still captures most of the benefits of openness, and it raises the misuse ceiling above what an inference API alone allows.<label class=\"sidenote-number\" for=\"sn-safety-tampering\"></label><input class=\"margin-toggle\" id=\"sn-safety-tampering\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2502.05209\">Model Tampering Attacks Enable More Rigorous Evaluations of LLM Capabilities</a> (Che et al, 2025)</span> However, the risks stay below releasing weights: the provider can monitor usage, maintain guardrails, and revoke access.</p>\n<p>Each stage does specific work:</p>\n<ul>\n<li><em><strong>Give defenders early inference access,</strong></em> so they can find weaknesses, patch systems, and anticipate future misuse. Anthropic\u2019s Project GlassWing did this with Claude Mythos Preview by providing early access to a small group of trusted organizations to allow them to prepare defenses before the model reached the public. This mirrors responsible disclosure in security, where vendors get a private window to ship patches before a flaw goes public.</li>\n<li><em><strong>Give vetted defenders fine-tuning access</strong></em> so they can build and strengthen the layers that detect and block risks. The winning DARPA AI Cyber Challenge team fine-tuned a model to find and fix software vulnerabilities; OpenAI&rsquo;s gpt-oss-safeguard models are fine-tuned from open gpt-oss weights into policy-guided safety classifiers. Both are defensive layers built by fine-tuning\u2014and accessible fine-tuning is what lets defenders everywhere build their own.</li>\n<li><em><strong>Give vetted safety researchers white-box access</strong></em> to encourage novel safety work. We understand how shallow refusal safeguards are \u2014 bypassable through adversarial token-level optimization<label class=\"sidenote-number\" for=\"sn-safety-zou\"></label><input class=\"margin-toggle\" id=\"sn-safety-zou\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2307.15043\">Universal and Transferable Adversarial Attacks on Aligned Language Models</a> (Zou et al, 2023)</span>, removable via a single direction in activation space<label class=\"sidenote-number\" for=\"sn-safety-arditi\"></label><input class=\"margin-toggle\" id=\"sn-safety-arditi\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2406.11717\">Refusal in Language Models Is Mediated by a Single Direction</a> (Arditi et al, 2024)</span>, and concentrated in just the first few output tokens <label class=\"sidenote-number\" for=\"sn-safety-qi\"></label><input class=\"margin-toggle\" id=\"sn-safety-qi\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2406.05946\">Safety Alignment Should Be Made More Than Just a Few Tokens Deep</a> (Qi et al, 2024)</span> \u2014 only because researchers could study open weights directly. Fine-tuning also lets us study the true capability ceilings of models in dangerous domains.<label class=\"sidenote-number\" for=\"sn-safety-wallace\"></label><input class=\"margin-toggle\" id=\"sn-safety-wallace\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2508.03153\">Estimating Worst-Case Frontier Risks of Open-Weight LLMs</a> (Wallace et al, 2025)</span> Similar to crash testing for cars, white-box testing lets us study model failure modes in-depth, under controlled conditions, to prevent real-world harm.</li>\n<li><em><strong>Give the public monitored access before opening fully,</strong></em> so we can assess misuse patterns that may appear once controls come off, and support the ecosystem to prepare in advance.</li>\n</ul>\n<p>These stages are not a fixed sequence that automatically ends with releasing the model&rsquo;s weights. Instead, we think of them as a way to gather evidence and build resilience while moving towards greater openness. Progression should depend on what we learn about the model and whether the surrounding ecosystem is ready.</p>\n<p>This post offers a high-level framework, not a complete release standard. Important questions remain: what evidence should justify moving from one stage to the next, how uncertainty should affect that decision, what changes in capability or accessibility should pause progression, and how ecosystem readiness should be measured. We plan to publish a more detailed framework covering evaluations, access criteria, and stop conditions as we learn from Inkling and future models.</p>\n<h2 id=\"building-the-safety-ecosystem-together\">Building the safety ecosystem together</h2>\n<p>This safe path to open models only works if the ecosystem&rsquo;s defenses improve as quickly as the models do. We will do our part: deciding carefully what to release, and researching how to decouple intelligence from dangerous capability.</p>\n<p>However, most of the work above happens outside our lab, and much of what this post describes builds on other people&rsquo;s work: for example, data filtering (Anthropic, EleutherAI, and the UK AI Security Institute), our external pre-deployment safety testers (Scale, Apollo Research, Handshake AI, and FAR AI), the framework for fine-tuning safety (OpenAI), and countless others working on cyber-defense. No lab builds this path alone. Each new defense lets us open models that were previously too risky to release. This takes many more hands than ours alone, and we want to support that work broadly.</p>\n<p>We will shortly launch Tinker safety grants: funding for the community to strengthen the ecosystem&rsquo;s defenses. If you do safety research, our Tinker platform makes it easy to study fine-tuning and its risks, so give it a go. If you defend systems, we want to give you a head start. If you evaluate models, we want you to scrutinize ours. And if you want to do this from the inside, join our safety team\u2014<a href=\"https://thinkingmachines.ai/#join-us\">we\u2019re hiring</a>!</p>",
+    "topic": "research",
+    "tags": [
+      "research",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9926,123 +10057,6 @@
       "ai-models",
       "models",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553216,
-    "title": "Economic ResearchJun 26, 2026Anthropic Economic Index report: CadencesIn our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?",
-    "url": "https://www.anthropic.com/research/economic-index-june-2026-report",
-    "published_at": "2026-06-26T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Economic ResearchJun 26, 2026Anthropic Economic Index report: CadencesIn our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555051,
-    "title": "Welcome to Open Source AI: Run Your Own Models Locally",
-    "url": "https://www.youtube.com/watch?v=wRcByxXkJCQ",
-    "published_at": "2026-06-25T16:49:36+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "A livestream for everyone starting out with open models. We walk through the most robust stack for running AI on your own laptop or server, and answer your questions live.\n\nWhat we cover:\n\nMerve Noyan on llama.cpp: what it is and how it runs on your hardware, plus the new llama.app and llama barn.\n\nDaniel Han from Unsloth on downloading GGUFs: finding quantized models on the Hub, why quantization matters, and choosing the right size and type for your hardware.\n\nBen Burtenshaw on selecting your harness: closed harnesses like Claude and Codex, open harnesses like Pi, with a demo using llama server.\n\nOnur Solmaz on Pi PR triage: a demo of Pi and Gemma for automated PR triage.\n\nPlus a live AMA throughout the stream.\n\nBring your questions about local models, llama.cpp, open coding agents, and anything open or local AI.",
-    "topic": "hardware",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551569,
-    "title": "Our latest Google Finance upgrades, including a new app",
-    "url": "https://blog.google/products-and-platforms/products/search/google-finance-updates-june-2026/",
-    "published_at": "2026-06-25T16:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "The Google Finance logo, surrounded by elements of the user interface",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551708,
-    "title": "How agents are transforming work",
-    "url": "https://openai.com/index/how-agents-are-transforming-work",
-    "published_at": "2026-06-25T02:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "A new OpenAI research paper shows how AI agents are transforming work, enabling longer, more complex tasks and expanding productivity across roles.",
-    "topic": "research",
-    "tags": [
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551585,
-    "title": "Introducing computer use in Gemini 3.5 Flash",
-    "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
-    "published_at": "2026-06-24T16:30:01+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "release",
-      "models",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551709,
-    "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
-    "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
-    "published_at": "2026-06-24T06:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI and Broadcom introduce Jalape\u00f1o, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
-    "topic": "hardware",
-    "tags": [
-      "models",
-      "infrastructure",
-      "hardware",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
