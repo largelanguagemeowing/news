@@ -19,6 +19,48 @@
     "available": true
   },
   {
+    "article_id": 881319,
+    "title": "Ten advances in mathematics and theoretical computer science",
+    "url": "https://simonwillison.net/2026/Aug/1/ten-advances-in-mathematics/#atom-everything",
+    "published_at": "2026-08-01T20:34:49+00:00",
+    "fetched_at": "2026-08-01T20:53:09+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://openai.com/index/ten-advances-in-mathematics/\">Ten advances in mathematics and theoretical computer science</a></strong></p>\nA few days ago it was Anthropic <a href=\"https://simonwillison.net/2026/Jul/28/discovering-cryptographic-weaknesses-with-claude/\">discovering cryptographic weaknesses with Claude</a> using Mythos Preview, spending $100,000 on tokens and with prompts that included \"again we are not looking for low hanging fruit, we want proper research to find genuinly hard findings.\"</p>\n<p>Now it's OpenAI's turn to flex. They set \"an internal version of Astra, our next major model\" on finding solutions to ten mathematical problems that \"have seen no progress on the main result for at least a decade\". They claim to have spent less than $2,000 at GPT-5.6 Sol token prices on each one.</p>\n<p>(No news on how many problems they spent $2,000 on <em>without</em> reaching a solution though.)</p>\n<p>The <a href=\"https://github.com/openai/ten-proofs\">openai/ten-proofs</a> repository has Lean 4 formalizations of their results, and there's also <a href=\"https://cdn.openai.com/pdf/ten-proofs-oai.pdf\">a paper</a> describing the solutions and an additional <a href=\"https://cdn.openai.com/pdf/reasoning-walkthroughs.pdf\">LLM-generated PDF</a> where the model \"reconstructs how the proof came together\" based on the unpublished reasoning traces.</p>\n<p>That's a decent level of transparency, but I want to see the prompts they used!</p>\n<p>A lot of mathematicians online are experiencing a collective burst of <a href=\"https://simonwillison.net/2026/Feb/15/deep-blue/\">Deep Blue</a>.</p>\n<p>OpenAI's results reminds me of what Terence Tao described as \"big mathematics\" in <a href=\"https://spectrum.ieee.org/ai-in-mathematics\">IEEE Spectrum in June</a>:</p>\n<blockquote>\n<p>Unlike some of his peers, Tao is neither dismissive of AI nor fearful. Instead, he sees it as the catalyst for a fundamental shift in the discipline\u2014a transition toward what he calls \u201cbig mathematics.\u201d He envisions a future of large-scale, decentralized collaborations between humans and machines, where complex mathematical tasks can be diced and sliced, with humans claiming the creative parts and AI doing the lion\u2019s share of the technical grunt work.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49132058\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/mathematics\">mathematics</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/deep-blue\">deep-blue</a></p>",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "research",
+      "infrastructure",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 882346,
+    "title": "Domain language is unbelievably powerful with agents",
+    "url": "https://nitter.net/mattpocockuk/status/2083641584705253414#m",
+    "published_at": "2026-08-01T19:50:40+00:00",
+    "fetched_at": "2026-08-01T20:53:15+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Domain language is unbelievably powerful with agents</p>\n<hr />\n<blockquote>\n<b>Alex Sidorenko (@asidorenko_)</b>\n<p>\n<p>Find the right terms</p>\n<a href=\"https://nitter.net/asidorenko_/status/2083639815891755059#m\">\n<br />Video<br />\n  <img src=\"https://nitter.net/pic/amplify_video_thumb%2F2083627431848464384%2Fimg%2Fk0plVoVLbccHxiO6.jpg\" />\n</a>\n\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/asidorenko_/status/2083639815891755059#m\">https://nitter.net/asidorenko_/status/2083639815891755059#m</a>\n</footer>\n</blockquote>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 873362,
     "title": "Everyone always confuses my skills with spec-driven-development. It really annoys me. The specs my skills create are intended to be deleted immediately - not kept around, or treated as source code. Birgitta Boeckeler calls this 'spec-first' development, but still groups this under the SDD umbrella (link below). I disagree - I think it needs its own term. The specs aren't that important. They're just a projection of the decisions made during grilling. GDD? Grill-driven-development. IDK",
     "url": "https://nitter.net/mattpocockuk/status/2083563195671667176#m",
@@ -199,6 +241,29 @@
       "api",
       "agents",
       "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 881322,
+    "title": "llm-mcp-client 0.1a0",
+    "url": "https://simonwillison.net/2026/Jul/31/llm-mcp-client/#atom-everything",
+    "published_at": "2026-07-31T23:03:47+00:00",
+    "fetched_at": "2026-08-01T20:53:09+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-mcp-client/releases/tag/0.1a0\">llm-mcp-client 0.1a0</a></p>\n        <p>See <a href=\"https://simonwillison.net/2026/Jul/31/stateless-mcp/#llm-mcp-client\">this blog entry</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -391,6 +456,24 @@
       "models",
       "education",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 881325,
+    "title": "Slack Emoji Maker",
+    "url": "https://simonwillison.net/2026/Jul/31/slack-emoji-maker/#atom-everything",
+    "published_at": "2026-07-31T20:18:05+00:00",
+    "fetched_at": "2026-08-01T20:53:09+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/slack-emoji-maker\">Slack Emoji Maker</a></p>\n        <p>I wanted to create a new Slack emoji, and their tool recommends a square that's 128x128 and has a transparent background... so I <a href=\"https://github.com/simonw/tools/pull/305\">had Fable build me</a> this simple image editor against those requirements.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/tools\">tools</a>, <a href=\"https://simonwillison.net/tags/slack\">slack</a></p>",
+    "topic": "tools",
+    "tags": [
+      "open-source",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -636,6 +719,28 @@
       "research",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 881326,
+    "title": "datasette-agent 0.4a0",
+    "url": "https://simonwillison.net/2026/Jul/31/datasette-agent/#atom-everything",
+    "published_at": "2026-07-31T14:14:23+00:00",
+    "fetched_at": "2026-08-01T20:53:09+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent/releases/tag/0.4a0\">datasette-agent 0.4a0</a></p>\n        <blockquote>\n<ul>\n<li>New <code>await context.browser_task()</code> mechanism allowing agent tools to run code directly in the user's browser. <a href=\"https://github.com/datasette/datasette-agent/pull/33\">#33</a></li>\n</ul>\n</blockquote>\n<p>This is an exciting new capability: it makes it easy for Datasette Agent plugins to provide tools that execute custom JavaScript <em>in the user's browser</em>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/llm-tool-use\">llm-tool-use</a>, <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9967,99 +10072,6 @@
     "tags": [
       "ai-models",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551702,
-    "title": "Introducing GeneBench-Pro",
-    "url": "https://openai.com/index/introducing-genebench-pro",
-    "published_at": "2026-06-30T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551568,
-    "title": "Ask an AI expert: What exactly is the full stack?",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/",
-    "published_at": "2026-06-29T16:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:09+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "An illustration depicting a full-stack AI infrastructure against a dark background",
-    "topic": "development",
-    "tags": [
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551705,
-    "title": "Mapping Europe\u2019s AI Workforce Opportunity",
-    "url": "https://openai.com/index/mapping-ai-jobs-transition-eu",
-    "published_at": "2026-06-29T07:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "A new OpenAI report maps how AI could reshape jobs across the EU, highlighting which occupations may face automation, growth, or workflow changes.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "open-source",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553243,
-    "title": "Claude in Microsoft Foundry is now generally available",
-    "url": "https://claude.com/blog/claude-in-microsoft-foundry",
-    "published_at": "2026-06-29T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Claude in Microsoft Foundry is now generally available",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553244,
-    "title": "Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud",
-    "url": "https://claude.com/blog/introducing-the-claude-apps-gateway",
-    "published_at": "2026-06-29T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Introducing the Claude apps gateway for Amazon Bedrock and Google Cloud",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
