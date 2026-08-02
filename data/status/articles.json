@@ -19,6 +19,29 @@
     "available": true
   },
   {
+    "article_id": 906298,
+    "title": "When Will The Benchmaxxing Plague End? \u2014 Nick Heiner, Surge AI",
+    "url": "https://www.youtube.com/watch?v=-npY6XjM8CQ",
+    "published_at": "2026-08-02T16:30:06+00:00",
+    "fetched_at": "2026-08-02T16:59:00+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Every time a model launches there is a gap between the benchmark numbers and what the thing can actually do, and Nick Heiner argues the existence of the word benchmaxxing is the tell. When labs openly brag about scores, teams stop asking whether a benchmark reflects reality, and the whole field drifts into an avalanche of numbers that measure the wrong thing. His talk is a field guide to reading a benchmark fairly, starting from the antipatterns that quietly break them.\n\nThe failure modes are specific. A large share of tasks in a typical benchmark are simply broken; contamination means models have memorized test content, so a SWE-bench style score partly measures recall; and reward hacking lets a lazy policy satisfy the verifier without doing the task. The nastiest is misalignment between the prompt and the grader, like an eval that asks for no commas and an answer in Hindi at once, or a verifier whose sentence splitter cannot parse the format, so the only way to a perfect score is to game it. Heiner's prescription is to bring domain expertise, align tools with prompts, and pay for real human evaluation, holding both benchmark writers and the labs to a higher standard.\n\nSpeaker info:\n- https://x.com/nickheiner\n- https://www.linkedin.com/in/nick-heiner-3874055a/\n- https://www.nickheiner.com/\n\nTimestamps:\n0:00 - The benchmark versus reality gap\n0:55 - Why the word benchmaxxing exists\n2:38 - Reading a benchmark fairly\n3:14 - Antipattern: broken tasks\n4:41 - Antipattern: contamination\n5:57 - Antipattern: reward hacking\n6:23 - Misaligned prompts and verifiers\n10:40 - Benchmaxxing as a two way street\n13:14 - Domain expertise and getting it right\n15:47 - Human eval and a higher standard",
+    "topic": "research",
+    "tags": [
+      "research",
+      "release",
+      "models",
+      "safety",
+      "benchmark",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 902595,
     "title": "I just used the phrase \"I've done all the wayfinding, I just haven't built it\" I.e. I've done all the preparatory work and I know it's possible, I just haven't executed it \"Wayfinding\" - I like it",
     "url": "https://nitter.net/mattpocockuk/status/2083891713932755390#m",
@@ -10071,24 +10094,6 @@
     "topic": "product",
     "tags": [
       "product",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555050,
-    "title": "How LLMs Actually Generate Text",
-    "url": "https://www.youtube.com/shorts/HfjF__xhSdk",
-    "published_at": "2026-06-30T06:34:41+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Text generation looks like one function call. Underneath, it's a loop: infer, pick a token, append it, repeat. Watch how Transformers.js runs an LLM step by step.. and understand what's actually happening every time you chat with one.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
       "models"
     ],
     "dearrow_thumbnail_url": "",
