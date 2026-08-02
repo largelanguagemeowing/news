@@ -19,6 +19,45 @@
     "available": true
   },
   {
+    "article_id": 913529,
+    "title": "recommended reading. if we get \"stuck\" with improvements in verifiable domains only (which makes sense from a data point of view), i'm already a very happy camper, as that includes a lot of STEM.",
+    "url": "https://x.com/i/article/2083631047120748544",
+    "published_at": "2026-08-02T20:09:25+00:00",
+    "fetched_at": "2026-08-02T20:55:57+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. if we get \"stuck\" with improvements in verifiable domains only (which makes sense from a data point of view), i'm already a very happy camper, as that includes a lot of STEM.",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 913020,
+    "title": "MCP Tasks (async): Why Aren't Any Agents Supporting Them? \u2014 Cornelia Davis, Temporal",
+    "url": "https://www.youtube.com/watch?v=s4r6nk5WsZw",
+    "published_at": "2026-08-02T20:00:06+00:00",
+    "fetched_at": "2026-08-02T20:55:56+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "You invoke a tool and expect an answer, but real work takes time, and over that time connections drop, networks blip, and processes crash. Cornelia Davis, a distributed systems veteran who wrote the book on cloud native patterns, argues that this is exactly the gap the MCP tasks specification exists to close, and walks through why almost no agents support it yet. A task lets a tool run long, report progress, and pause for human input without losing its place, which means the interaction has to be durable: it survives the client disconnecting and picks up right where it left off.\n\nShe demonstrates it with an invoice processing flow, a dashboard tracking task state, and a step that waits for a human to submit input before the backend continues, then traces how the spec evolved from V1 to V2. The design she keeps returning to is a stateless core with the harder long running behavior layered on as an extension, RPC requests replaced by the server pushing updates, and life cycle state carefully mapped so clients know what to resume. Her honest takeaway is that just because you can open a long lived stateful connection does not mean you should, and that getting durable long running tasks right is what will finally let agents handle work that does not finish in a single call.\n\nSpeaker info:\n- https://x.com/cdavisafc\n- https://www.linkedin.com/in/corneliadavis/\n\nTimestamps:\n0:00 - What MCP tasks are, and why they're hard\n1:29 - A distributed systems point of view\n2:34 - A first look at a task running\n4:03 - What a task actually allows\n4:43 - Why long running work breaks\n6:02 - Durability across disconnections\n7:04 - Demo: invoice processing dashboard\n9:10 - Waiting for human input\n11:18 - What changed in tasks V1\n12:35 - The stateless core\n16:37 - Extensions and server pushed updates\n20:09 - V2 and what you need to implement",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "agents",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 906298,
     "title": "When Will The Benchmaxxing Plague End? \u2014 Nick Heiner, Surge AI",
     "url": "https://www.youtube.com/watch?v=-npY6XjM8CQ",
@@ -10059,41 +10098,6 @@
     "topic": "ai-models",
     "tags": [
       "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553446,
-    "title": "The primitive is the product | Amplify Partners",
-    "url": "https://www.amplifypartners.com/blog-posts/the-primitive-is-the-product",
-    "published_at": "2026-06-30T15:41:02+00:00",
-    "fetched_at": "2026-07-20T06:46:25+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551701,
-    "title": "How ChatGPT adoption has expanded",
-    "url": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
-    "published_at": "2026-06-30T09:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages.",
-    "topic": "product",
-    "tags": [
-      "product",
       "models"
     ],
     "dearrow_thumbnail_url": "",
