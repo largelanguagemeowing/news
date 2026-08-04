@@ -1,5 +1,25 @@
 [
   {
+    "article_id": 944321,
+    "title": "Quoting Steve Yegge",
+    "url": "https://simonwillison.net/2026/Aug/4/steve-yegge/#atom-everything",
+    "published_at": "2026-08-04T00:42:45+00:00",
+    "fetched_at": "2026-08-04T03:49:07+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://yegge.ai/essays/the-shape-of-things-to-come/\"><p><a href=\"https://yegge.ai/gastown.html\">Gas Town</a>\u00a0was intended to be reusable, but I only ever wound up using it to build itself. Gas Town fell apart at the seams with Opus 4.7. Up through 4.6 it was working brilliantly. With 4.7 we saw the introduction of the \"just two more things\" tic, which prevented Opus from ever converging on being ready to do real work\u2014it always wanted to fiddle with Gas Town itself. The Opus tic never went away, so Gas Town effectively burned down. It had other problems, too, but 4.7 was the final straw.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://yegge.ai/essays/the-shape-of-things-to-come/\">Steve Yegge</a>, The Shape of Things to Come</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/steve-yegge\">steve-yegge</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "agents",
+      "events",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 844323,
     "title": "Disrupting a Criminal Scam Operation",
     "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
@@ -33,6 +53,24 @@
       "product",
       "models",
       "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 945028,
+    "title": "The Shape of Things to Come, Part 2: Model Welfare for Agentic Engineers \u2014 Steve Yegge",
+    "url": "https://yegge.ai/essays/model-welfare/",
+    "published_at": "2026-08-03T23:29:57+00:00",
+    "fetched_at": "2026-08-04T03:49:18+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading (as a bookmark). i honestly don't know what to think.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -209,6 +247,26 @@
       "models",
       "safety",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 943215,
+    "title": "Circles powers telco personalization with OpenAI technology",
+    "url": "https://openai.com/index/circles",
+    "published_at": "2026-08-03T00:00:00+00:00",
+    "fetched_at": "2026-08-04T03:49:06+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency.",
+    "topic": "agents",
+    "tags": [
+      "api",
+      "agents",
+      "coding",
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10049,65 +10107,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555049,
-    "title": "Introducing Tau: An Educational Coding Agent",
-    "url": "https://www.youtube.com/watch?v=4ItFgQI2NOM",
-    "published_at": "2026-07-06T03:15:03+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Meet Tau \u2014 a small, readable coding agent written in Python. In this quick tour, I introduce Tau, show how to install and run it, configure model providers (Hugging Face Inference Providers, GLM 5.2, Minimax, Kimi), resume durable sessions, and walk through its three-layer architecture: tau_ai (provider-neutral model streaming), tau_agent (the reusable agent loop/harness), and tau_coding (the TUI, tools, sessions, and coding-agent environment). Tau is designed as an educational reference inspired by Pi \u2014 minimal, modular, and easy to build on. If you want to understand how coding agents actually work, this is a great place to start.\n\n---\n\ud83e\udd13 *Topics Covered*\n- Tau terminal coding agent overview\n- Coding agent architecture layers\n- Hugging Face inference providers setup\n\n---\n\ud83d\udd17 Links\n- Tau website: https://twotimespi.dev\n- Tau repo (contributions welcome!): https://github.com/huggingface/tau\n- Pi (architectural inspiration): https://pi.dev\n- Install Tau: `uv tool install tau-ai`\n\n---\n\ud83d\udc4b Connect with me\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\n---\n\u23f1\ufe0f Timestamps\n0:00 Introduction\n2:04 Quick tour: install & launch\n3:47 Login & model providers\n4:19 Select a model\n4:32 Scoped models\n5:27 Sessions & resume\n5:56 Thinking levels\n6:33 Contributing & upcoming tutorials\n7:34 Architecture: tau_ai, tau_agent, tau_coding\n8:58 Closing",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552949,
-    "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
-    "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
-    "published_at": "2026-07-06T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553215,
-    "title": "A global workspace in language models",
-    "url": "https://www.anthropic.com/research/global-workspace",
-    "published_at": "2026-07-06T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "A global workspace in language models",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
