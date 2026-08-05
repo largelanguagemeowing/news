@@ -1,5 +1,51 @@
 [
   {
+    "article_id": 966843,
+    "title": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging",
+    "url": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-everything",
+    "published_at": "2026-08-04T23:58:24+00:00",
+    "fetched_at": "2026-08-05T00:55:02+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>I released <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">LLM 0.32</a> this morning, the most significant new version of LLM since the initial launch of the project. The new version includes support for visible reasoning traces, server-side provider tools, redesigned content-addressable SQLite logs, new models, and new features enabled by the OpenAI Responses API. I also released a new version of the <a href=\"https://github.com/simonw/llm-anthropic\">llm-anthropic plugin</a> with substantial updates of its own.</p>\n<h4 id=\"headline-features-for-llm-cli-users\">Headline features for LLM CLI users</h4>\n<p>Running LLM against reasoning models now <strong>displays their reasoning traces</strong> to standard error, so you can see what they are \"thinking\" without that information being included in the standard output that you might pipe to another tool. Add <code>-R/--hide-reasoning</code> to turn this off.</p>\n<p><img alt=\"Running llm &quot;think about the best thing about pelicans&quot; in the macOS terminal window - grey text outputs saying Exploring pelican qualities, then after a paragraph of that a white paragraph of text comes out saying: The best thing about pelicans is their wonderfully oversized, practical design: that enormous bill and pouch look comical, but they make pelicans remarkably skilled fishers. Even better, many species cooperate\u2014working together to herd fish before scooping them up. They\u2019re a great mix of goofy, graceful, and surprisingly clever.\" src=\"https://static.simonwillison.net/static/2026/best-pelicans.gif\" /></p>\n<p>LLM includes support out-of-the-box for the <strong>GPT-5.6 model family</strong>, and the new default model used with <code>llm \"prompt\"</code> is now the inexpensive but capable <strong>GPT-5.6 Luna</strong>.</p>\n<p>LLM calls can now use <strong>server-side tools</strong> from various providers. OpenAI provide <a href=\"https://llm.datasette.io/en/stable/openai-models.html#code-interpreter\">a code execution environment</a> as a server-side tool; LLM can now run prompts that benefit from that like so:</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm --tool CodeInterpreter <span class=\"pl-s\"><span class=\"pl-pds\">'</span>Show current python and SQLite versions<span class=\"pl-pds\">'</span></span></pre></div>\n<p>OpenAI also gets a <a href=\"https://llm.datasette.io/en/stable/openai-models.html#web-search\">WebSearch</a> tool.</p>\n<p>The <a href=\"https://github.com/simonw/llm-anthropic\">llm-anthropic</a> plugin adds <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#web-search\">WebSearch</a>, <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#web-fetch\">WebFetch</a>, <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#code-execution\">CodeExecution</a>, and <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#mcp-connector\">AnthropicMCP</a>, which looks like this:</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm -m claude-sonnet-5 -T <span class=\"pl-s\"><span class=\"pl-pds\">'</span>AnthropicMCP(\"https://datasette.simonwillison.net/-/mcp\")<span class=\"pl-pds\">'</span></span> \\\n  <span class=\"pl-s\"><span class=\"pl-pds\">'</span>how many rows in the blog_blogmark table?<span class=\"pl-pds\">'</span></span></pre></div>\n<p>That causes Anthropic to execute MCP calls against my new <a href=\"https://simonwillison.net/2026/Jul/31/stateless-mcp/#datasette-mcp\">datasette-mcp</a> plugin as part of a single request/response interaction with their API.</p>\n<p>The new <strong>llm openai endpoint</strong> command provides a tool for <a href=\"https://llm.datasette.io/en/stable/other-models.html#run-against-an-endpoint-without-configuring-it\">executing prompts against <em>any</em> OpenAI compatible endpoint</a> as a one-liner. These aren't logged, which makes this a handy tool for running one-off prompts against anything that speaks the lingua franca of the LLM API world.</p>\n<p>Here's how I use that to run prompts against Gemma 4 12B running in my localhost <a href=\"https://lmstudio.ai\">LM Studio</a> API, via <code>uvx</code> (no LLM installation required) and mixing in the <a href=\"https://github.com/simonw/llm-tools-quickjs\">llm-tools-quickjs</a> tool plugin for good measure:</p>\n<div class=\"highlight highlight-source-shell\"><pre>uvx --with llm-tools-quickjs \\\n  llm openai endpoint http://localhost:1234/v1 -m google/gemma-4-12b \\\n  -T QuickJS <span class=\"pl-s\"><span class=\"pl-pds\">'</span>Use QuickJS to multiply 3434 * 2434<span class=\"pl-pds\">'</span></span> --td</pre></div>\n<p><img alt=\"Output reads Tool call: QuickJS_execute_javascript({'javascript': '3434 * 2434'})  8358356 The result of 3434 * 2434 is 8,358,356.\" src=\"https://static.simonwillison.net/static/2026/openai-endpoint-gemma.webp\" /></p>\n<h4 id=\"new-features-in-the-python-api\">New features in the Python API</h4>\n<p>LLM's Python API previously required you to create a conversation and then send messages to it one at a time. This was an abstraction over the true nature of LLMs, where each request carries a complete history of the messages that came before it. That abstraction started to get in the way for some more advanced cases, so the new release introduces a <code>model.prompt(messages=[])</code> parameter that can be used like this:</p>\n<pre><span class=\"pl-k\">import</span> <span class=\"pl-s1\">llm</span>\n<span class=\"pl-k\">from</span> <span class=\"pl-s1\">llm</span> <span class=\"pl-k\">import</span> <span class=\"pl-s1\">user</span>, <span class=\"pl-s1\">assistant</span>, <span class=\"pl-s1\">system</span>\n\n<span class=\"pl-s1\">model</span> <span class=\"pl-c1\">=</span> <span class=\"pl-s1\">llm</span>.<span class=\"pl-c1\">get_model</span>(<span class=\"pl-s\">\"gpt-5.6-luna\"</span>)\n\n<span class=\"pl-s1\">response</span> <span class=\"pl-c1\">=</span> <span class=\"pl-s1\">model</span>.<span class=\"pl-c1\">prompt</span>(<span class=\"pl-s1\">messages</span><span class=\"pl-c1\">=</span>[\n    <span class=\"pl-en\">system</span>(<span class=\"pl-s\">\"You are a helpful pirate.\"</span>),\n    <span class=\"pl-en\">user</span>(<span class=\"pl-s\">\"What is the capital of France?\"</span>),\n    <span class=\"pl-en\">assistant</span>(<span class=\"pl-s\">\"Paris, matey.\"</span>),\n    <span class=\"pl-en\">user</span>(<span class=\"pl-s\">\"And Germany?\"</span>),\n])\n<span class=\"pl-en\">print</span>(<span class=\"pl-s1\">response</span>.<span class=\"pl-c1\">text</span>())</pre>\n<p>LLM previously returned an iterable sequence of strings from each prompt. This worked great when models returned a string response, but failed to predict the weird shape that models would evolve towards. Today many models return a mix of reasoning text, output strings, tool calls, and even image attachments. With LLM 0.32 you can <a href=\"https://llm.datasette.io/en/stable/python-api.html#structured-messages-and-streaming-events\">do this instead</a>:</p>\n<pre><span class=\"pl-k\">for</span> <span class=\"pl-s1\">event</span> <span class=\"pl-c1\">in</span> <span class=\"pl-s1\">model</span>.<span class=\"pl-c1\">prompt</span>(<span class=\"pl-s\">\"Explain cats\"</span>).<span class=\"pl-c1\">stream_events</span>():\n    <span class=\"pl-k\">if</span> <span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">type</span> <span class=\"pl-c1\">==</span> <span class=\"pl-s\">\"reasoning\"</span>:\n        <span class=\"pl-en\">print</span>(<span class=\"pl-s\">f\"[thinking] <span class=\"pl-s1\"><span class=\"pl-kos\">{</span><span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">chunk</span><span class=\"pl-kos\">}</span></span>\"</span>, <span class=\"pl-s1\">end</span><span class=\"pl-c1\">=</span><span class=\"pl-s\">\"\"</span>, <span class=\"pl-s1\">flush</span><span class=\"pl-c1\">=</span><span class=\"pl-c1\">True</span>)\n    <span class=\"pl-k\">elif</span> <span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">type</span> <span class=\"pl-c1\">==</span> <span class=\"pl-s\">\"text\"</span>:\n        <span class=\"pl-en\">print</span>(<span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">chunk</span>, <span class=\"pl-s1\">end</span><span class=\"pl-c1\">=</span><span class=\"pl-s\">\"\"</span>, <span class=\"pl-s1\">flush</span><span class=\"pl-c1\">=</span><span class=\"pl-c1\">True</span>)\n    <span class=\"pl-k\">else</span>:\n        <span class=\"pl-en\">print</span>(<span class=\"pl-s\">f\"Other event: <span class=\"pl-s1\"><span class=\"pl-kos\">{</span><span class=\"pl-s1\">event</span><span class=\"pl-kos\">}</span></span>\"</span>)</pre>\n<p>Combine these features and we can <em>finally</em> provide a robust implementation of the semi-standard OpenAI chat completions API, which I've now released as the <a href=\"https://github.com/simonw/llm-chat-completions-server\">llm-chat-completions-server</a> plugin:</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm install llm-chat-completions-server\nllm chat-completions-server --port 9000\n<span class=\"pl-c\"><span class=\"pl-c\">#</span> Server is now running on http://127.0.0.1:9000/v1</span></pre></div>\n<p>Now you can run prompts against LLM via that server, using the new <code>llm openai endpoint</code> command!</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm openai endpoint http://127.0.0.1:9000/v1 <span class=\"pl-s\"><span class=\"pl-pds\">'</span>hello<span class=\"pl-pds\">'</span></span> -m gpt-5.4-mini</pre></div>\n<p>The bigger challenge with that kind of API concerns logging. If we're going to support the pattern where the message sequence is appended to on every request, ideally we can avoid logging all of that duplicate JSON for every turn.</p>\n<p>The solution is the new <a href=\"https://llm.datasette.io/en/stable/logging.html#the-message-store\">content-addressable message store</a>, modeled after Git. You can see the new schema for that <a href=\"https://llm.datasette.io/en/stable/logging.html#sql-schema\">in the documentation</a>, but the <code>llm logs</code> and <code>llm logs --json</code> commands have both been upgraded to convert that format back into something that's easy to consume.</p>\n<h4 id=\"and-the-rest\">And the rest</h4>\n<p>There is a whole lot more in this release. The <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">0.32 release notes</a> are pretty comprehensive, and the notes for <a href=\"https://llm.datasette.io/en/stable/changelog.html#rc2-2026-07-30\">0.32rc2</a>, <a href=\"https://llm.datasette.io/en/stable/changelog.html#rc1-2026-07-30\">0.32rc</a>, <a href=\"https://llm.datasette.io/en/stable/changelog.html#a3-2026-06-09\">0.32a3</a>, <a href=\"https://llm.datasette.io/en/stable/changelog.html#a2-2026-05-12\">0.32a2</a>, and <a href=\"https://llm.datasette.io/en/stable/changelog.html#a0-2026-04-28\">0.32a0</a> should fill in any gaps.</p>\n<p>Existing LLM plugins should all continue to work, but plugins that provide extra models will need to be upgraded to 0.32 in order to participate fully in the new streaming events system. There's a guide to implementing plugins with <a href=\"https://llm.datasette.io/en/stable/plugins/advanced-model-plugins.html#structured-messages-and-streaming-events\">Structured messages and streaming events</a> in the documentation.</p>\n<p>I've updated some of my own plugins:</p>\n<ul>\n<li>\n<a href=\"https://github.com/simonw/llm-anthropic/releases/tag/0.26\">llm-anthropic 0.26</a> adds support for the Claude 5 family of models, plus <code>WebSearch</code>, <code>WebFetch</code>, <code>CodeExecution</code>, and <code>AnthropicMCP</code> server-side tools.</li>\n<li>\n<a href=\"https://github.com/simonw/llm-gemini\">llm-gemini</a> and <a href=\"https://github.com/simonw/llm-openrouter\">llm-openrouter</a> and <a href=\"https://github.com/simonw/llm-mistral\">llm-mistral</a> are nearly there, releases coming soon.</li>\n</ul>\n<h4 id=\"i-guess-llm-is-an-agent-framework-now\">I guess LLM is an agent framework now</h4>\n<p>Quite a few of the lower-level tools changes in this release were driven by the needs of <a href=\"https://agent.datasette.io/\">Datasette Agent</a>. When I started work on LLM, the term \"agent\" had such a vague definition that I refused to use it. In <a href=\"https://simonwillison.net/2025/Sep/18/agents/\">September 2025</a> I came around to the idea that \"<strong>An LLM agent runs tools in a loop to achieve a goal</strong>\" is well established enough now that I could stop avoiding the term entirely.</p>\n<p>Tool chains can now <a href=\"https://llm.datasette.io/en/stable/python-api.html#python-api-tools-pause\">pause for human approval</a> and <a href=\"https://llm.datasette.io/en/stable/python-api.html#python-api-tools-resume\">resume from a stored message history</a> - both needed by Datasette Agent.</p>\n<p>Looking at LLM today it's beginning to look very agent-shaped to me. There's something neat about having a CLI utility that can mix and match different tools from different sources with different models all as a one-liner, and that includes a Python library powerful enough to build systems like <a href=\"https://agent.datasette.io/\">Datasette Agent</a> and <a href=\"https://github.com/simonw/llm-coding-agent\">llm-coding-agent</a>.</p>\n<p>Maybe the next version of LLM will bake the concept of an \"agent\" into the core library. I'm still trying to figure out what that would look like.</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/releases\">releases</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/llm-tool-use\">llm-tool-use</a>, <a href=\"https://simonwillison.net/tags/llm-reasoning\">llm-reasoning</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 966844,
+    "title": "llm-anthropic 0.26",
+    "url": "https://simonwillison.net/2026/Aug/4/llm-anthropic/#atom-everything",
+    "published_at": "2026-08-04T22:00:58+00:00",
+    "fetched_at": "2026-08-05T00:55:02+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-anthropic/releases/tag/0.26\">llm-anthropic 0.26</a></p>\n        <p>Includes new features enabled by <a href=\"https://simonwillison.net/2026/Aug/4/new-release-of-llm/\">LLM 0.32</a>:</p>\n<blockquote>\n<ul>\n<li>New models: <code>claude-fable-5</code>, <code>claude-sonnet-5</code>, and <code>claude-opus-5</code>. <a href=\"https://github.com/simonw/llm-anthropic/issues/75\">#75</a>, <a href=\"https://github.com/simonw/llm-anthropic/issues/76\">#76</a></li>\n<li>Added server-side tools for <code>WebSearch</code>, <code>WebFetch</code>, <code>CodeExecution</code>, and <code>AnthropicMCP</code>, available through LLM's <code>-T</code> interface or Python <code>tools=</code>. The previous <code>-o web_search*</code> options have been removed in favor of <code>-T WebSearch</code>. <a href=\"https://github.com/simonw/llm-anthropic/issues/79\">#79</a></li>\n<li>Upgraded to <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">llm&gt;=0.32</a>. Reasoning, tool calls, tool results, and server-side tool results now stream as typed events. Reasoning for <code>llm</code> CLI prompts now displays to standard error unless you pass <code>--hide-reasoning/-R</code>.</li>\n<li>Simplified extended thinking to <code>thinking</code> and <code>thinking_effort</code> (<code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, or <code>max</code>). Claude 5 models think by default; <code>-o thinking 0</code> disables thinking for Sonnet 5 and Opus 5, while Fable 5 always thinks. <code>-R/--hide-reasoning</code> now omits reasoning from responses and logs. The <code>thinking_budget</code>, <code>thinking_display</code>, and <code>thinking_adaptive</code> options have been removed. <a href=\"https://github.com/simonw/llm-anthropic/issues/80\">#80</a></li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 963341,
     "title": "Experimenting with a rare addition to my global CLAUDE.md: \"Always talk in ASD-STE100 Simplified Technical English. Always read CONTEXT.md files, and use their ubiquitous language.\"",
     "url": "https://nitter.net/mattpocockuk/status/2084753070437609606#m",
@@ -75,6 +121,26 @@
     "tags": [
       "product",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 966846,
+    "title": "llm 0.32",
+    "url": "https://simonwillison.net/2026/Aug/4/llm/#atom-everything",
+    "published_at": "2026-08-04T17:15:33+00:00",
+    "fetched_at": "2026-08-05T00:55:02+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.32\">llm 0.32</a></p>\n        <p>See <a href=\"https://simonwillison.net/2026/Aug/4/new-release-of-llm/\">my detailed blog post about this release</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -242,6 +308,25 @@
     "tags": [
       "ai-models",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 967410,
+    "title": "A guide to cost visibility and control in Claude",
+    "url": "https://claude.com/blog/a-guide-to-cost-visibility-and-control-in-claude",
+    "published_at": "2026-08-04T00:00:00+00:00",
+    "fetched_at": "2026-08-05T00:55:04+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "A guide to cost visibility and control in Claude",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -514,6 +599,27 @@
     "tags": [
       "product",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 966851,
+    "title": "condense-json 1.1",
+    "url": "https://simonwillison.net/2026/Aug/3/condense-json/#atom-everything",
+    "published_at": "2026-08-03T04:56:26+00:00",
+    "fetched_at": "2026-08-05T00:55:02+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/condense-json/releases/tag/1.1\">condense-json 1.1</a></p>\n        <p>After shipping <a href=\"https://simonwillison.net/2026/Aug/2/condense-json/\">condense-json 1.0</a> I started integrating it into LLM, and found there were some desirable new features already:</p>\n<blockquote>\n<ul>\n<li>Replacements object can now include values other than strings. These will be identified and used as structural replacements by <code>condense_json()</code> and <code>uncondense_json()</code>. <a href=\"https://github.com/simonw/condense-json/pull/8\">#8</a></li>\n<li>Objects can be used as the basis for merge operations. <code>condense_json()</code> will identify if there are objects that are a close match and will store instructions for keys to update or delete. <code>uncondense_json()</code> can then apply these merges.</li>\n</ul>\n</blockquote>\n<p>I also added <a href=\"https://github.com/simonw/condense-json/blob/1.1/tests/test_properties.py\">some round-trip tests</a> using the <a href=\"https://hypothesis.readthedocs.io/\">Hypothesis</a> property-based Python testing library.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/json\">json</a></p>",
+    "topic": "news",
+    "tags": [
+      "news",
+      "release",
+      "models",
+      "open-source",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10005,108 +10111,6 @@
       "funding",
       "enterprise",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551696,
-    "title": "Separating signal from noise in coding evaluations",
-    "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
-    "published_at": "2026-07-08T13:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models.",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "benchmark",
-      "funding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551697,
-    "title": "Helping K\u201312 educators build practical AI skills",
-    "url": "https://openai.com/index/k-12-educators-practical-skills",
-    "published_at": "2026-07-08T10:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:10+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI Academy and the Walton Family Foundation are bringing hands-on AI Skills Jams to help K\u201312 educators build practical AI skills for the classroom.",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 555048,
-    "title": "Training Agents 2: Live tutorial on model distillation for training custom agents.",
-    "url": "https://www.youtube.com/watch?v=GZT_oNQnLV4",
-    "published_at": "2026-07-08T04:46:10+00:00",
-    "fetched_at": "2026-07-20T10:11:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "In this live session, we'll cover how to transfer capability from a teacher model to a smaller student through distillation. We'll work through supervised fine-tuning on teacher-generated data, then on-policy and online methods where the teacher scores the student live, then self-distillation where the model teaches itself. Each one runs in TRL.\nWhat we'll cover:\n\n- What distillation is, and the four axes that organize it: signal, data source, timing, and teacher identity\n- White-box vs black-box: distilling from open weights vs strings\n- Off-policy distillation: generate from the teacher, then SFT on the outputs\n- On-policy distillation: sample from the student, score with the teacher in the loop\n- Distillation as reinforcement learning: the KD distance as a dense, token-level reward\n- Self-distillation: the model as its own teacher, and when that beats a stronger one\n\nRepo: https://github.com/burtenshaw/training-agents\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #Distillation",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552939,
-    "title": "AI Can FINALLY Edit Videos For You",
-    "url": "https://www.youtube.com/shorts/bxdsBsbtoSg",
-    "published_at": "2026-07-08T00:09:25+00:00",
-    "fetched_at": "2026-07-20T06:46:14+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Imagine typing \"edit this for me\" and letting AI handle your entire video timeline. \ud83e\udd2f\n\nThat's the promise behind Palmier (not sponsored), a new AI video editor powered by Claude. From organizing media and trimming clips to generating missing B-roll on the fly, it\u2019s designed to automate the manual side of editing.\n\nAt $29/month for around 3 to 7 minutes of generated video, it's not the cheapest product to use, especially when you factor in potential revisions. BUT it's still probably cheaper than a professional video editor. \n\nI haven\u2019t run any footage through it yet, but I'm curious to see how it performs and if it's worth it. Let me know in the comments if you'd want to see a hands-on test \ud83d\udc47\ud83c\udffb\n\n#ai #videoediting #contentcreator",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "video",
-      "coding",
-      "news"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553214,
-    "title": "AlignmentAn off switch for dual-use knowledge in AI models",
-    "url": "https://www.anthropic.com/research/off-switch-dual-use",
-    "published_at": "2026-07-08T00:00:00+00:00",
-    "fetched_at": "2026-07-20T06:46:23+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jul 8, 2026AlignmentAn off switch for dual-use knowledge in AI models",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
