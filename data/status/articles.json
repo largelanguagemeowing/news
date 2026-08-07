@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 575633,
+    "title": "Local Models: Trust, Control, Optimization \u2014 Carter Abdallah, NVIDIA",
+    "url": "https://www.youtube.com/watch?v=FWMJQDH3iK0",
+    "published_at": "2026-08-07T02:00:06+00:00",
+    "fetched_at": "2026-08-07T03:28:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "When Fable was pulled back and access to frontier systems stopped looking guaranteed, Lucas Atkins watched enterprises move to Chinese open models, not because they scored better but because availability could be counted on. That is his working definition of trust, and he separates it hard from safety: an open model is a directory of files you can inspect, running on code you can read, while the same claim about a closed API is unverifiable by construction. Arcee's response was to reorient the whole company and pretrain a 400 billion parameter model in six months, which he says plenty of people called impossible.\n\nThe rest is control. Vincent Weisser describes a customer specializing an open model to automate finance work in a week or two and landing better results than Opus at a fraction of Haiku's cost. Closed terms of service bar you from training on outputs, so owning the model also means owning the traces, which is what makes a data flywheel possible at all; Nemotron and Trinity both adopted the open MDW license to put that permission in writing. Chris Alexiuk's framing is the mismanaged genius: a model tuned to be good across every harness is optimal for nobody's, and open weights let you fit it to the one or two things you actually do. The predictions land where you would expect from this panel, including open models reaching Fable level capability inside a year, and Atkins hoping the share of people who have ever run a model locally climbs from a rounding error to 10% to 15%.\n\nSpeaker info:\nCarter Abdallah, moderator (NVIDIA):\n- https://x.com/Baxate\n- https://baxate.com\n\nVincent Weisser (Prime Intellect):\n- https://www.linkedin.com/in/vincentweisser\n- https://www.primeintellect.ai/\n\nLucas Atkins (Arcee AI):\n- https://x.com/latkins\n- https://arcee.ai\n\nChris Alexiuk (NVIDIA):\n- https://x.com/llm_wizard\n- https://www.alexi.uk/\n\nTimestamps:\n0:00 - Welcome and why this panel is the whole stack\n1:14 - Prime Intellect: keeping the training stack open\n2:15 - Arcee: why the west was losing the open model lead\n3:22 - Pretraining a 400 billion parameter model in six months\n4:23 - Nemotron: faster models are smarter models\n6:35 - Is open source actually less trustworthy\n7:40 - Trust is not safety\n9:48 - When access stopped being guaranteed\n10:56 - Releasing the data sets alongside the weights\n11:59 - The open superintelligence stack\n13:02 - Post training as the accessible layer\n14:07 - Beating frontier models on a specific use case\n15:11 - Making your costs predictable\n16:11 - When the model and the harness blend together\n18:15 - The mismanaged genius\n19:19 - A call to action for builders\n20:24 - Who owns the data you generate\n21:27 - Owning your outputs, not just your weights\n22:35 - The open MDW license\n23:36 - Where post training unlocks new use cases\n27:46 - You do not need frontier intelligence for most tasks\n28:53 - Why efficiency has to happen in the open\n29:55 - Closed models are not the enemy\n33:05 - Predictions for the next year\n38:22 - Running everything on your laptop\n39:29 - Agent operating systems and the next Siri moment\n41:36 - Closing",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety",
+      "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 575634,
+    "title": "Compression at the Edge \u2014 Chris Alexiuk, NVIDIA",
+    "url": "https://www.youtube.com/watch?v=J4_jCrTxMkk",
+    "published_at": "2026-08-07T01:00:06+00:00",
+    "fetched_at": "2026-08-07T03:28:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Quantize a single number in a model and it gets 20% dumber. That finding, from the super weights paper, is why Daniel Han's claim is less absurd than it sounds: GLM 5.2 goes from 1.5 terabytes to 250 GB, 86% smaller, without being 86% dumber. Layers are wildly unequal. The first and last carry enormous weight, the middle ones barely matter, and a model trained on 30 trillion tokens never saturates its parameters, so many sit near zero and can simply be set there. Choosing which layers stay in high precision is a combinatorial search, not a setting.\n\nNVFP4 is the format the NVIDIA side leans on, a 4 bit float where every group of 16 values shares one FP8 scale, targeting under 1% accuracy loss. New architectures keep breaking the old heuristics: quantize the linear attention layers and the model looks fine right up until a long context turns it to gibberish. Post training quantization works out of the box above roughly 20 billion parameters and needs quantization aware distillation below that. The panel is blunt that benchmarks only cover verifiable tasks, so the real test is running the model in an actual harness, and Han's preferred signal is KL divergence between the BF16 and quantized output logits rather than any accuracy score.\n\nSpeaker info:\nChris Alexiuk, moderator (NVIDIA):\n- https://x.com/llm_wizard\n- https://www.linkedin.com/in/csalexiuk\n\nDaniel Han (Unsloth):\n- https://x.com/danielhanchen\n- https://unsloth.ai\n\nAsma Beevi (NVIDIA):\n- https://www.linkedin.com/in/asma-beevi-k-t-433053a2\n- https://realasma.github.io\n\nMerve Noyan (Hugging Face):\n- https://x.com/mervenoyann\n- https://hf.co/merve\n\nParth Sareen (Ollama):\n- https://github.com/parthsareen\n- https://parthsareen.com\n\nTimestamps:\n0:00 - Welcome and the panel\n0:53 - What compression means to each of them\n3:05 - GLM 5.2 from 1.5 terabytes to 250 GB\n4:08 - When each of them got the compression bug\n8:19 - QLoRA and finetuning on a T4\n11:44 - 86% smaller without being 86% dumber\n12:46 - Why layer importance is so uneven\n14:26 - The super weight: one number, 20% dumber\n14:51 - Evaluating the quantized checkpoints\n16:37 - What NVFP4 actually is\n17:55 - Does compression matter beyond the toaster\n21:49 - Why compress a big model instead of using a small one\n24:30 - Where Ollama fits\n28:54 - How hard NVFP4 is to produce\n32:46 - The cursed era of model architectures\n35:17 - Why linear attention layers break quantization\n37:22 - Where compression goes next\n43:22 - How do you know a quant is any good",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "benchmark",
+      "research",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 573880,
     "title": "recommended reading. i would also warmly recommend getting into electronics, do some soldering, some PCB design. you can teach yourself in 6 months, don't need a lot of gear. feels great slapping together a bunch of resistors, caps and ICs onto a PCB and have it work first time",
     "url": "https://x.com/i/article/2085457619372691456",
@@ -438,6 +482,27 @@
       "benchmark",
       "coding",
       "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 575396,
+    "title": "DeepAmbigQA: Ambiguous Multi-hop Questions for Benchmarking LLM Answer Completeness",
+    "url": "https://machinelearning.apple.com/research/deepambigqa-multihop-questions",
+    "published_at": "2026-08-06T00:00:00+00:00",
+    "fetched_at": "2026-08-07T03:28:40+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Large language models (LLMs) with integrated search tools show strong promise in open-domain question answering (QA), yet they often struggle to produce complete answer set to complex questions such as \u201cWhich actor from the film Heat won at least one Academy Award?\u201d, which requires (1) distinguishing between multiple films sharing the same title and (2) reasoning across a large set of actors to gather and integrate evidence. Existing QA benchmarks rarely evaluate both challenges jointly. To address this, we introduce DEEPAMBIGQAGEN, an automatic data generation pipeline that constructs QA\u2026",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "benchmark",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9611,63 +9676,6 @@
     "topic": "education",
     "tags": [
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 530261,
-    "title": "Catch up on 12 major I/O 2026 moments",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
-    "published_at": "2026-05-28T15:00:00+00:00",
-    "fetched_at": "2026-05-28T16:39:30+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "The colorful I/O logo against a black background, surrounded by stills from the I/O keynote",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 531581,
-    "title": "Context Graphs for Explainable, Decision-Aware AI Agents \u2014 Andreas Kollegger & Zaid Zaim, Neo4j",
-    "url": "https://www.youtube.com/watch?v=abvQEhvRI_c",
-    "published_at": "2026-05-28T14:00:18+00:00",
-    "fetched_at": "2026-05-28T16:39:33+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Prescribing drug X is correct 99% of the time for symptom Y. For the 1% where it is fatal, statistical reasoning does not help you. Andreas Kollegger calls this reference class validation: before the agent acts, it has to know which group it is in.\n\nContext graphs give agents the why. Not just knowledge and tools but the policies, rules, and prior decisions that explain why a certain action is right in a given context. The decision making framework in this talk has five stages: frame the problem with its causality and environment, pull in global rules and past precedent, run a risk value analysis, either act or escalate to someone with authority, and write the full reasoning chain back into the graph. That last step is the point. Every decision becomes precedent. Future agents inherit it.\n\nSpeaker info:\n- https://x.com/akollegger\n- https://www.linkedin.com/in/akollegger\n- https://github.com/akollegger",
-    "topic": "opinion",
-    "tags": [
-      "open-source",
-      "agents",
-      "safety",
-      "opinion",
-      "tools",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 532010,
-    "title": "recommended viewing. dax is a smart cookie.",
-    "url": "https://video.twimg.com/amplify_video/2059684844523675650/vid/avc1/1920x1080/T4YHBfgieHuVBEiW.mp4",
-    "published_at": "2026-05-28T12:24:02+00:00",
-    "fetched_at": "2026-05-28T16:39:35+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. dax is a smart cookie.\n\nalso best beard in the industry.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
