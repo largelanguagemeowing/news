@@ -1,5 +1,24 @@
 [
   {
+    "article_id": 589634,
+    "title": "BTW this didn't work Not as CLAUDE.md, nor as an output style Still spamming /wait-what on Opus 5",
+    "url": "https://nitter.net/mattpocockuk/status/2085681281795232026#m",
+    "published_at": "2026-08-07T10:55:42+00:00",
+    "fetched_at": "2026-08-07T11:45:13+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>BTW this didn't work<br />\n<br />\nNot as CLAUDE.md, nor as an output style<br />\n<br />\nStill spamming /wait-what on Opus 5</p>\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>Experimenting with a rare addition to my global CLAUDE.md:<br />\n<br />\n\"Always talk in ASD-STE100 Simplified Technical English. Always read CONTEXT.md files, and use their ubiquitous language.\"</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2084753070437609606#m\">https://nitter.net/mattpocockuk/status/2084753070437609606#m</a>\n</footer>\n</blockquote>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 583230,
     "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
     "url": "https://openai.com/index/hsp-gruppe",
@@ -9654,27 +9673,6 @@
     "topic": "infrastructure",
     "tags": [
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 537396,
-    "title": "How agent o11y differs from traditional o11y \u2014 Phil Hetzel, Braintrust",
-    "url": "https://www.youtube.com/watch?v=XBaznoTRDFI",
-    "published_at": "2026-05-28T23:00:06+00:00",
-    "fetched_at": "2026-05-28T23:17:37+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Traditional observability answers one question: is the system up? Phil Hetzel from Braintrust argues that question is not the right one for agents. An individual agent trace can exceed a gigabyte. A single span can hit 20 megabytes. The data is semistructured, packed with unstructured text, and still arrives in real time. None of the systems built for uptime monitoring were designed to ingest, index, and actually use that.\n\nBraintrust built a custom database from scratch for this problem: a write ahead log for instant visibility, analytical indexes for fast filtering, and a forked version of Tantivy (a Rust based full text search library similar to Apache Lucene) so an engineer can query every trace that mentioned a specific word. The other difference is who does this work: clinicians, lawyers, and wealth advisers now open traces directly to grade whether an agent responded correctly, and their written justifications become the training signal for automated scoring functions. The human annotations surface the failure modes. The scoring functions scale them.\n\nSpeaker info:\n- https://www.linkedin.com/in/philliphetzel/",
-    "topic": "research",
-    "tags": [
-      "research",
-      "agents",
-      "coding",
-      "policy",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
