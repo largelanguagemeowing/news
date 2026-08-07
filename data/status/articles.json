@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 604240,
+    "title": "Moonlight & Mayhem (Raccoon Heist by Codex + GPT-5.6 Sol Ultra)",
+    "url": "https://simonwillison.net/2026/Aug/7/moonlight-mayhem/#atom-everything",
+    "published_at": "2026-08-07T19:18:09+00:00",
+    "fetched_at": "2026-08-07T19:53:50+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://simonw.github.io/raccoon-heist-codex/\">Moonlight &amp; Mayhem (Raccoon Heist by Codex + GPT-5.6 Sol Ultra)</a></strong></p>\nOn Wednesday I wrote about <a href=\"https://simonwillison.net/2026/Aug/5/raccoon-heist/\">One-shotting a Raccoon Heist game using Claude Fable 5</a>, where I had Claude Fable 5 build a full working game from a premise I generated with GPT-3 and DALL-E <a href=\"https://twitter.com/simonw/status/1555626060384911360\">four years ago</a>.</p>\n<p>I decided to pose the <a href=\"https://simonwillison.net/2026/Aug/5/raccoon-heist/#the-fable-5-prompt\">exact same prompt</a> to Codex Desktop running GPT-5.6 Sol Ultra - the mode where Sol makes <em>aggressive</em> use of sub-agents - to see how it would do.</p>\n<p>It produced a much better game! Here's <a href=\"https://simonw.github.io/raccoon-heist-codex/\">Moonlight &amp; Mayhem</a> - <a href=\"https://github.com/simonw/raccoon-heist-codex/\">GitHub repository here</a>, including the <a href=\"https://github.com/simonw/raccoon-heist-codex/tree/main/output/imagegen\">textures and prompts</a> it generated using <code>gpt-image-2</code>.</p>\n<p><video controls=\"controls\" height=\"720\" poster=\"https://static.simonwillison.net/static/2026/raccoon-heist-codex-poster.jpg\" preload=\"none\" style=\"display: block; width: 100%; height: auto;\" width=\"1280\">\n    <source src=\"https://static.simonwillison.net/static/2026/raccoon-heist-codex-720p.mp4\" type=\"video/mp4\" />\n    Your browser does not support HTML5 video.\n  </video>\n</p>\n\n<p>The original GPT-3 generated game description included:</p>\n<blockquote>\n<p>In \u201cRaccoon Heist\u201d, you and your team of thieving raccoons are tasked with pulling off a series of daring heists. From robbing banks to stealing priceless art, no job is too big or too small for your furry crew.</p>\n</blockquote>\n<p>Fable's version had you as a single raccoon running around a back yard collecting coins and fish. GPT-5.6 Sol has you in a museum, rescuing your two other raccoon crewmates in order to stack on top of each other and bust the golden sardine out of its case.</p>\n<p>Much more heisty!</p>\n<p>There was one catch though: the version produced from the one-shot prompt had a bug where each raccoon had an eyeball that was enlarged to the size of a giant sphere floating over their head!</p>\n<p><img alt=\"The main player character racoon is visible with an enormous polygon-based black sphere four times the size of its body overlapping its head, with a white pupil on it.\" src=\"https://static.simonwillison.net/static/2026/raccoon-heist-codex-bug.jpg\" /></p>\n<p>You can <a href=\"https://static.simonwillison.net/static/2026/raccoon-heist-eyeball-edition/\">play that version here</a>.</p>\n<p>Despite reviewing screenshots during development Codex failed to spot and correct this bug.</p>\n<p>I fixed it by prompting:</p>\n<blockquote>\n<p><code>Why do the raccoons have huge black spheres on them?</code></p>\n</blockquote>\n<p>And then:</p>\n<blockquote>\n<p><code>Fix it</code></p>\n</blockquote>\n<p>Which resulted in <a href=\"https://github.com/simonw/raccoon-heist-codex/commit/4e9a390dfbe80533324ee61a37aa661813c08446\">this fix</a>.</p>\n<p>I shared <a href=\"https://github.com/simonw/raccoon-heist-codex/blob/main/transcript.md\">the full Codex transcript</a> in the repository - I wish Claude Code had the same \"copy as Markdown\" feature.</p>\n<p>Codex spent 52 minutes on the project. Here's the <a href=\"https://www.agentsview.io\">AgentsView</a> cost estimate for that session if I had been paying full API prices as opposed to using my monthly Codex subscription:</p>\n<p><img alt=\"Total Cost: $23.28. Input Tokens: 700.7K, plus 32.5M cached tokens. Output Tokens: 148K\" src=\"https://static.simonwillison.net/static/2026/raccoon-heist-codex-cost.webp\" />\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/game-design\">game-design</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/codex\">codex</a>, <a href=\"https://simonwillison.net/tags/gpt\">gpt</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 602992,
     "title": "OK, here we go AI Coding Crash Course, fully shipped and ready Get caught up on what this AI Coding thing is all about. With any harness + my skills repo. Join the waitlist now. Going on sale in 10 days. https://www.aihero.dev/workshops/ai-coding-crash-course",
     "url": "https://nitter.net/mattpocockuk/status/2085796061361078718#m",
@@ -198,6 +221,43 @@
       "ai-models",
       "models",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 604809,
+    "title": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
+    "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
+    "published_at": "2026-08-07T00:00:00+00:00",
+    "fetched_at": "2026-08-07T19:53:53+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 604808,
+    "title": "Running auto mode in production",
+    "url": "https://claude.com/blog/auto-mode-in-production",
+    "published_at": "2026-08-07T00:00:00+00:00",
+    "fetched_at": "2026-08-07T19:53:53+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Running auto mode in production",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9615,62 +9675,6 @@
     "topic": "agents",
     "tags": [
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 545520,
-    "title": "We should be more tired than the model",
-    "url": "https://vickiboykis.com/2026/05/28/we-should-be-more-tired-than-the-model/",
-    "published_at": "2026-05-29T11:32:36+00:00",
-    "fetched_at": "2026-05-29T13:46:20+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. entirely unsurprisingly, vicki also has good takes on agentic coding.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 541037,
-    "title": "datasette 1.0a31",
-    "url": "https://simonwillison.net/2026/May/29/datasette/#atom-everything",
-    "published_at": "2026-05-29T03:32:02+00:00",
-    "fetched_at": "2026-05-29T06:16:09+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette/releases/tag/1.0a31\">datasette 1.0a31</a></p>\n        <p>Another significant alpha release, with two new headline features.</p>\n<blockquote>\n<p>Datasette now offers users with the necessary permissions the ability to both <strong>execute write queries</strong> against their database and to <strong>save stored queries</strong> (renamed from \"canned queries\") both privately and for use by other members of their Datasette instance.</p>\n</blockquote>\n<p>There's more detail in <a href=\"https://datasette.io/blog/2026/sql-write-queries/\">SQL write queries and stored queries in Datasette 1.0a31</a> on the Datasette blog, which now has <a href=\"https://datasette.io/blog/\">three posts introducing new features</a> since the blog launched two weeks ago.</p>\n<p>Here's an animated demo from <a href=\"https://datasette.io/blog/2026/sql-write-queries/\">the blog post</a> showing how the new execute query interface lets people get started with templated insert/update/delete queries from tables they have permission to edit:</p>\n<p><img alt=\"The user starts on the data database page, selects actions and &quot;Execute write SQL&quot;, then selects the insert document template on the next page and executes it with a title of &quot;My document!&quot;. Also demonstrates that a create table statement cannot be executed because the user does not have create-table permission.\" src=\"https://datasette.io/static/blog/2026/sql-write-ui.gif\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/sql\">sql</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/annotated-release-notes\">annotated-release-notes</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 543889,
-    "title": "Strengthening societal resilience with Rosalind Biodefense",
-    "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
-    "published_at": "2026-05-29T03:00:00+00:00",
-    "fetched_at": "2026-05-29T13:46:16+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through frontier AI.",
-    "topic": "policy",
-    "tags": [
-      "policy",
-      "release",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
