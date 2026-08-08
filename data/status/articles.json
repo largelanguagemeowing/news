@@ -1,5 +1,46 @@
 [
   {
+    "article_id": 665456,
+    "title": "Realtime multiplayer, automation, and you! \u2014 Idan Gazit, GitHub",
+    "url": "https://www.youtube.com/watch?v=iQ5xldZ9StU",
+    "published_at": "2026-08-08T21:30:06+00:00",
+    "fetched_at": "2026-08-08T21:30:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Idan Gazit's personal site runs on Astro, which ships often enough to keep him permanently on the upgrade treadmill, so he wrote an agentic workflow in about three lines of plain English, the kind of message you would send a teammate. Copilot expanded it into a full playbook: check for new releases, read the changelog and upgrade guide, apply the changes, open a pull request. It then carried him from Astro 5 to Astro 7, two major versions at once, found and fixed the code that broke, verified the build, and flagged the manual steps it could not take itself. The workflow is a Markdown document. The YAML actions file is a compiled artifact nobody reads, so changing how the automation behaves means editing the English.\n\nThe guardrails are the part he wants remembered. Prompting an agent to behave is not a guardrail, because anyone who can prompt inject it can undo the instruction, and you have let the fox into the henhouse. Permissions, allowed tools, reachable network destinations and safe outputs get declared deterministically in front matter instead. His upgrade workflow may open exactly one pull request, and is explicitly allowed to do nothing at all, since an automation that cannot stay quiet turns into a denial of service against its own owner. Secrets stay outside the agent's jail entirely, because a secret an agent can see should be treated as already compromised. The second prototype, ACE, runs every session in a cloud microVM and deliberately resembles a chat app, on the theory that what belongs in the shared surface is everything not already in the code: the political constraints, the infrastructure deal that quietly picks your cloud provider, the plan two people edit together before telling the agent to go make the document true. He ends on a study of around a hundred developers over thousands of hours which found that hands on keyboard typing is about 5% of the work, and that is the only 5% the tools have helped with so far.\n\nSpeaker info:\n- https://twitter.com/idangazit\n- https://linkedin.com/in/idangazit\n- https://githubnext.com",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "release",
+      "open-source",
+      "agents",
+      "safety",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 665969,
+    "title": "\"Code was never the hard part\" is an insult to all programmers",
+    "url": "https://blog.senko.net/code-was-never-the-hard-part-is-an-insult-to-all-programmers",
+    "published_at": "2026-08-08T20:34:53+00:00",
+    "fetched_at": "2026-08-08T21:30:34+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 659155,
     "title": "Benchmarking Coding Agents on New vs Legacy Codebases \u2014 Denys Linkov, Wisedocs",
     "url": "https://www.youtube.com/watch?v=7vn4WpqNpck",
@@ -9660,47 +9701,6 @@
     "topic": "infrastructure",
     "tags": [
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553653,
-    "title": "Zig 2026: No-AI Policy, $670K Foundation, Left GitHub & Why Zig Isn\u2019t 1.0 - Andrew Kelley Explains",
-    "url": "https://www.youtube.com/watch?is=0Nhw68pGLjE9zgpY&v=iqddnwKF8HQ&feature=youtu.be",
-    "published_at": "2026-06-01T10:52:57+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. andrew kelley, creator of zig, on why he built zig, ai ban, move to codeberg. i like his ethos.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "open-source",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551781,
-    "title": "OpenAI frontier models and Codex are now available on AWS",
-    "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
-    "published_at": "2026-06-01T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Customers can get started with OpenAI on AWS and move faster from evaluation to production.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "benchmark",
-      "coding",
-      "funding",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
