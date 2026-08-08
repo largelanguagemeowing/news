@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 659155,
+    "title": "Benchmarking Coding Agents on New vs Legacy Codebases \u2014 Denys Linkov, Wisedocs",
+    "url": "https://www.youtube.com/watch?v=7vn4WpqNpck",
+    "published_at": "2026-08-08T19:00:06+00:00",
+    "fetched_at": "2026-08-08T19:30:10+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Wisedocs processes medical claims that arrive as PDFs over 10,000 pages long, some of them larger than video files, through a pipeline of ML models spread across ten repositories nobody enjoyed touching. Denys Linkov's team spent six months collapsing that into a monorepo, and this talk is an honest audit of whether they should have just waited for the models to get good enough to do it for them. The benchmark he keeps coming back to is a single refactor task. With o3 it took three hours of back and forth in Cursor and still shipped ten major mistakes. Rerun on newer models, Sonnet 4.6 needed one extra iteration and Opus 4.8 essentially got it in one pass, at roughly a fifth of the original effort.\n\nThe counterweight is what happens when you hand a current model the whole job. GPT 5.5 extra high declared the refactor done in 10 minutes 22 seconds and wrote 2,000 lines, which turned out to be scaffolding with the actual models missing, something it admitted in its own output by noting it had not added the deployment or bootstrap command yet. That gap is why Linkov reads the METR task length curve at 80% or 90% success instead of the usual 50%. Launching an hour long agent run on coin flip odds mostly buys you a wasted hour and a broken attention span. His verdict is that doing the refactor beat deferring it, and the evidence is as much social as technical: commit velocity rose and never flattened, work that used to take months ships in under a week, and developers across the company now volunteer into the repo even outside their own area, which was never true of the ten it replaced.\n\nSpeaker info:\n- https://x.com/denyslinkov\n- https://www.linkedin.com/in/denyslinkov/",
+    "topic": "development",
+    "tags": [
+      "development",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 653620,
     "title": "For the first time in my teaching career, I'm having rate limit issues with my newsletter signup forms Sounds like one of them good problems",
     "url": "https://nitter.net/mattpocockuk/status/2086131948993257797#m",
@@ -9678,23 +9701,6 @@
       "coding",
       "funding",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553654,
-    "title": "How Did the Metaverse Fail So Badly?",
-    "url": "https://www.youtube.com/watch?is=zgnQ75LMuc9t8ORA&v=8BaSBjxNg-M&feature=youtu.be",
-    "published_at": "2026-06-01T09:50:36+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. recounts the hilarious history of meta's VR adventures.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
