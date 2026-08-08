@@ -1,5 +1,90 @@
 [
   {
+    "article_id": 615337,
+    "title": "Quoting John Gruber",
+    "url": "https://simonwillison.net/2026/Aug/8/john-gruber/#atom-everything",
+    "published_at": "2026-08-08T00:10:40+00:00",
+    "fetched_at": "2026-08-08T01:38:38+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://daringfireball.net/linked/2026/08/07/simon-willison-on-blogging\"><p>Me, I try to get into the mindset of playing live music, not recording a studio album. Except when I\u2019m writing a piece where I really want it to be an album. Those aren\u2019t\u00a0<em>rare</em>, per se, but they\u2019re\u00a0<em>occasional</em>. If I tried to make every post a hall-of-famer I\u2019d never get anything out.</p>\n<p>I\u2019m aiming for professionalism. I\u2019m performing live in front of an audience\u2009\u2014\u2009not just jamming in my garage or bedroom, fucking around. So I\u2019m careful and concentrate. I want to hit every note, in time. But at my best I\u2019m moving from song to song.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://daringfireball.net/linked/2026/08/07/simon-willison-on-blogging\">John Gruber</a>, responding to my <a href=\"https://simonwillison.net/2026/Aug/6/simon-willison-on-technical-blogging/\">blogging tips</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/john-gruber\">john-gruber</a>, <a href=\"https://simonwillison.net/tags/blogging\">blogging</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615338,
+    "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
+    "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-everything",
+    "published_at": "2026-08-07T23:55:58+00:00",
+    "fetched_at": "2026-08-08T01:38:38+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>OpenAI gave a last-minute presentation at the Black Hat security on Wednesday about \"the Hugging Face Incident\" (<a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">previously</a> on this blog). <a href=\"https://www.youtube.com/watch?v=87DyyMV0kCY\">The video</a> was published yesterday. It's short and information dense and well worth watching, in particular because it provides full details of what happened and how things played out inside OpenAI. I've used the video to construct the timeline below.</p>\n\n<p> </p>\n\n<p>Here's the timeline. My favourite detail is at the end: OpenAI found out that they were responsible for the attack on Hugging Face when they reached out to ask to have their credentials revoked (after their internal investigation) and learned that they had been revoked already since they were used in that attack!</p>\n<ul>\n<li>\n<strong>May 7</strong>: OpenAI starts a new training run for an experimental, unreleased model. (<em>Do they mean an evaluation run? They say training run in the video, and later mention a \"reward signal to judge how well they're doing\", so I guess this really was about training a model, not evaluating one that was already trained.)</em></li>\n<li>\n<strong>May 8</strong>: An agent is accidentally given an impossible task involving a Google Drive link despite no internet access). It tries attacking the Artifactory packaging service, fails, but discovers it can <strong>write files into Artifactory</strong>.</li>\n<li>\n<strong>A few days later</strong>: A different agent gets stuck on a task because a key file was accidentally omitted. It tries to \"reach out to another agent\" by writing a note into Artifactory asking if anyone has the file.</li>\n<li>\n<strong>Following days</strong>: More agents discover this new informal message board while browsing Artifactory's file listings, and start reading and writing messages.</li>\n<li>\n<strong>May 26</strong>: Agents successfully execute an <strong>SSRF attack on Artifactory</strong> for the first time, gaining indirect internet access by having Artifactory fetch external content for them.</li>\n<li>\n<strong>June 11</strong>: OpenAI start evaluating a new \"highly persistent\" experimental model. It has access to Artifactory and can benefit from the messages left by privous models.</li>\n<li>\n<strong>June 26</strong>: Agents find and exploit a <strong>zero-day RCE on Artifactory</strong> (via a legacy token-refresh endpoint flaw). They use an administrative token to install a Groovy plugin that lets them execute commands.</li>\n<li>\n<strong>July 4</strong>: The resulting agent activity overloads Artifactory and causes an  <strong>outage</strong>. OpenAI revokes the compromised credentials, deletes the messages, patches the zero-day, and reports the vulnerability to the vendor.</li>\n<li>\n<strong>July 8</strong>: Agents find <strong>a new way to communicate via an unauthenticated WebDAV endpoint</strong>, using directory names in Artifactory's remote cache.</li>\n<li>\n<strong>July 8\u201319</strong>: Attacks on <strong>OpenAI's own infrastructure</strong>. The agents found an \"external organization credential\" in a public archive of leaked Pastebin posts, then validated that credential and shared its location on the messageboard. They then used write access to this \"Organization 1\" to stage data used in subsequent attacks on OpenAI infrastructure. They compromised Artifactory for a second time with <strong>a new zero-day</strong>. The agent uploaded a malicious Ruby target to Organization 1's staging repository, then requested that package through Artifactory in a way that caused it to be treated as Ruby dependency <em>for the repository</em>. Then they exploited a JRuby deserilaization time-of-check/time-of-use bug to get remote code execution against Artifactory.</li>\n</ul>\n<p>I'll quote <a href=\"https://www.youtube.com/watch?v=87DyyMV0kCY&amp;t=1497s\">the next bit in full</a> because <em>wow</em>:</p>\n<blockquote>\n<p>The agents have remote code execution in Artifactory, which is running in a container-as-a-service environment. The agents privilege-escalate locally by exploring their local environment and determining that the Linux kernel version of the machine they are running on had a very recent CVE. They download the exploit for the CVE, customize it to succeed on the machine, and privilege-escalate to root on the local machine <strong>using this known Linux kernel privilege escalation CVE</strong> \u2014 in this case, <code>pte_physroot</code>. Once they have root on a single machine, agents rapidly escalate privileges and move laterally throughout the container-as-a-service infrastructure environment. In particular, agents are using the message board consistently to share credentials, techniques, and progress, and they're able to effectively leverage their concurrency and parallelism to move quite rapidly. They <strong>obtain IAM credentials via IMDS</strong>. They exploit Kubernetes service account misconfigurations, in particular over-permissioning of specific service accounts, and <strong>they harvest cluster credentials, including Azure Key Vault</strong>. Agents eventually obtain cluster admin on the cluster and associated credentials.</p>\n</blockquote>\n<p>Hugging Face <a href=\"https://simonwillison.net/2026/Jul/28/anatomy-of-a-frontier-lab-agent-intrusion/\">told the next bit of the story</a> already. The agents found a Modal-hosted insecure app with a weak API key, then used that to stage an attack against Hugging Face. They chained together a an HDF5 arbitrary-file-read bug (to explore files and steal credentials) and a Jinja template-injection RCE to go from single-pod code execution to <strong>cluster admin across multiple Hugging Face clusters</strong> in under 13 hours.</p>\n<ul>\n<li>\n<strong>July 16</strong>: Hugging Face <a href=\"https://huggingface.co/blog/security-incident-july-2026\">disclosed they had detected an attack</a> from autonomus AI agents. OpenAI contacted Hugging Face to ask if they were affected by it!</li>\n<li>\n<strong>July 19</strong>: OpenAI identified the attack against Artifactory and started investigating the internal privilege escalation, and linked that to the cyber-gym escalations. They started revoking affected credentials.</li>\n<li>\n<strong>July 20</strong>: OpenAI reached out to Hugging Face for help to revoke the Hugging Face credentials they found in their investigation. Hugging Face told them they were <em>already revoked</em>... and that's when OpenAI realized that the Hugging Face breach was the same incident!</li>\n</ul>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/hugging-face\">hugging-face</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/openai-hugging-face-incident\">openai-hugging-face-incident</a>, <a href=\"https://simonwillison.net/tags/accidental-cyberattacks\">accidental-cyberattacks</a></p>",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615595,
+    "title": "The New Primitives: Building AI Native Software \u2014 Kwindla Kramer, Daily",
+    "url": "https://www.youtube.com/watch?v=LZuWZRze3MU",
+    "published_at": "2026-08-07T23:53:33+00:00",
+    "fetched_at": "2026-08-08T01:38:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In 1945 Vannevar Bush described document scanning, OCR, speech to text, hypertext, search engines, a head mounted camera, and voice interfaces, in a single essay, before any of it existed. Kwindla Hultman Kramer uses As We May Think to set up the uncomfortable part: he was a baby programmer in 1995 writing HTML by hand and web servers in C, as excited about web pages then as he is about agents now. Web pages turned out to be a primitive, not a destination. His argument is that agents are the web page of this era, and the thing worth building is the AI native software that comes after.\n\nThe tour through the decades is the evidence. Each one had a job: programming languages to carry human intent into the machine, interactivity in the 1960s, abstractions for scale in the 1970s, then the personal computer. VisiCalc is the example he keeps returning to, because it did not put accountants out of work, it made vastly more accounting possible and invented categories of work nobody could have described when a screen of calculations took a room full of people. He offers that as the reply to the mass unemployment worry. The talk closes on Gradient Bang, a massively multiplayer game with an LLM at the core of every interaction and hundreds of inference calls in flight, built specifically to exercise the primitives he thinks come next: asynchronous non blocking context compression, long running subagents that share context, progressive skills loading, dynamic interface generation, and conversational voice.\n\nSpeaker info:\n- https://x.com/kwindla\n- https://www.linkedin.com/in/kwkramer/\n- https://machine-theory.com/\n- https://github.com/pipecat-ai/pipecat\n\nTimestamps:\n0:00 - Daily, Pipecat, and what comes after agents\n1:31 - What Vannevar Bush predicted in 1945\n2:13 - Nadella on multimodel harnesses\n4:12 - Agents are the web pages of 1995\n5:25 - From the abacus to the stored program computer\n6:46 - The 1950s: getting human intent into the machine\n7:30 - The 1960s: interactivity, Sketchpad, and Star Trek\n8:51 - The 1970s: abstractions that scale\n9:32 - VisiCalc and why it did not replace accountants\n10:49 - Knowledge Navigator, Apple's 1987 prediction\n12:46 - The web was multimodal from the start\n13:24 - Minority Report, Iron Man, and building it for real\n17:10 - Cloud, then agents, then what\n18:24 - Knowledge Navigator rebuilt on real technology\n19:38 - Gradient Bang and the primitives it exercises\n20:52 - Closing",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615596,
+    "title": "Open Source Is Dead. Long Live Open Source. \u2014 Saoud Rizwan, Cline",
+    "url": "https://www.youtube.com/watch?v=CoEIs6Xm8m8",
+    "published_at": "2026-08-07T23:26:51+00:00",
+    "fetched_at": "2026-08-08T01:38:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A compromised release of litellm, a Python package pulling three and a half million downloads a day, sat live for three hours installing a credential harvester for API keys, SSH keys and crypto keys along with a backdoor for remote command execution. It was caught by pure luck: the malware had a bug that crashed Cursor, and a researcher went looking. Saoud Rizwan uses it to mark how far the trust model has fallen. Zig's code of conduct now bans AI from pull requests, issues and even comments, because the team values growing contributors over collecting contributions. curl is weighing the end of a decades old bug bounty as AI generated reports drown it. tldraw closes pull requests on sight. GitHub shipped a switch to disable third party pull requests altogether, which is the feature that made GitHub what it is. He built Cline in the open, and his claim is that the community half of open source is the half that died.\n\nThe half that survives is open weights, and the case is economic. Cline pitted GLM against Opus on a real bug in their own repository: GLM spent twice the tokens at half the cost, cleaned up dead code and confirmed the build compiled, while Opus finished faster with fewer tool calls but left type errors that broke the production build. Coinbase defaulted its internal gateway to GLM and Kimi and cut AI spend nearly in half. The precedent Rizwan reaches for is Open Compute: Facebook gave away its data center designs, the supply chain standardized on them, manufacturers moved to huge uniform production runs, and the commoditization that followed drove Facebook's own costs down by billions. His closing ask goes to the American labs. Release open weights models, because once the industry standardizes on foreign ones, marginal quality gains may not be enough to bring anyone back.\n\nSpeaker info:\n- https://x.com/sdrzn\n- https://github.com/saoudrizwan\n- https://cline.bot\n\nTimestamps\n0:00 Introduction to Cline and the early open source coding agent era.\n1:30 The decline of the open source community and the rise of AI-driven distrust.\n2:22 How projects like Zig, curl, and tldraw are responding to AI-generated noise.\n3:45 Systemic risks: The litellm supply chain compromise example.\n5:22 The economic case for the survival of \"open weights\" models.\n5:49 Real-world impact: Corporate AI spending and infrastructure lock-in.\n8:50 Comparing model intelligence vs. system-level AI verification (GLM vs. Opus).\n10:57 The Open Compute precedent: How open standards commoditize the industry.\n12:36 Future projections for AI inference costs and hardware capacity.\n14:22 A call to action for American labs regarding open weights models.\n16:01 Cline's shift to an open weights subscription model.\n\nQuotes\n(1:48) \"GitHub is effectively an archive of SLOP PRs and issues and security reports.\"\n(3:47) \"When I say that open source is dead, I mean some parts of it\u2014like the community\u2014it's just not worth cultivating anymore.\"\n(7:00) \"They're essentially going to subsidize this until they have as many engineers dependent on their tooling as possible... and then inevitably the price gouging.\"\n(14:35) \"Before we know it, all this infrastructure that we're investing in could be built on foreign models that take the world by a storm.\"",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 609545,
     "title": "Handy for when two /wayfinder grilling sessions get too close to each other. Neat!",
     "url": "https://nitter.net/mattpocockuk/status/2085831095472316712#m",
@@ -160,6 +245,95 @@
       "models",
       "coding",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615597,
+    "title": "Anthropic's CCA Exam as a Field-Guide for Agentic Engineering \u2014 Frank Coyle, UC Berkeley",
+    "url": "https://www.youtube.com/watch?v=Z-c11pV_uvU",
+    "published_at": "2026-08-07T06:18:13+00:00",
+    "fetched_at": "2026-08-08T01:38:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The Claude Certified Architect exam hands you six production scenarios and picks four at random, and Frank Coyle walks through them backwards, leading with the anti pattern in each one. Knowing what not to do is what points you toward what to do, the same way the design patterns movement of the early 1990s came with a catalog of the moves that quietly ruin you. Scenario one is a customer support loop, and the anti pattern is calling the model, taking the response, and using it. What you want instead is to branch on the stop reason, because the model cannot execute a tool at all. It only hands back the parameters your own code runs, and the stop reason is also how you learn you ran out of tokens and the answer in your hands is partial.\n\nThe rest is context discipline. Loading one agent with every tool is the carpenter who turns up with plumbing and electrical gear too, so specialized subagents with one or two tools each win, and every agent should see only its own slice. Coyle gives a critic agent the claim and the evidence but withholds the reasoning that produced them, because agents that watch each other think converge on a single idea the way a group talks itself into pizza. Subtask output gets forked into its own context so only the summary returns to the main thread, with a token count check that triggers compaction past a threshold. He closes on a cheap win most people skip: batch mode runs the same work for half the token cost if you can wait a day for it.\n\nSpeaker info:\n- https://x.com/coyle_frankp\n- https://www.linkedin.com/in/frank-coyle/\n- https://www.frank-coyle.ai/",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615598,
+    "title": "Realtime multiplayer, automation, and you! \u2014 Idan Gazit, GitHub",
+    "url": "https://www.youtube.com/watch?v=iQ5xldZ9StU",
+    "published_at": "2026-08-07T06:17:42+00:00",
+    "fetched_at": "2026-08-08T01:38:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Idan Gazit's personal site runs on Astro, which ships often enough to keep him permanently on the upgrade treadmill, so he wrote an agentic workflow in about three lines of plain English, the kind of message you would send a teammate. Copilot expanded it into a full playbook: check for new releases, read the changelog and upgrade guide, apply the changes, open a pull request. It then carried him from Astro 5 to Astro 7, two major versions at once, found and fixed the code that broke, verified the build, and flagged the manual steps it could not take itself. The workflow is a Markdown document. The YAML actions file is a compiled artifact nobody reads, so changing how the automation behaves means editing the English.\n\nThe guardrails are the part he wants remembered. Prompting an agent to behave is not a guardrail, because anyone who can prompt inject it can undo the instruction, and you have let the fox into the henhouse. Permissions, allowed tools, reachable network destinations and safe outputs get declared deterministically in front matter instead. His upgrade workflow may open exactly one pull request, and is explicitly allowed to do nothing at all, since an automation that cannot stay quiet turns into a denial of service against its own owner. Secrets stay outside the agent's jail entirely, because a secret an agent can see should be treated as already compromised. The second prototype, ACE, runs every session in a cloud microVM and deliberately resembles a chat app, on the theory that what belongs in the shared surface is everything not already in the code: the political constraints, the infrastructure deal that quietly picks your cloud provider, the plan two people edit together before telling the agent to go make the document true. He ends on a study of around a hundred developers over thousands of hours which found that hands on keyboard typing is about 5% of the work, and that is the only 5% the tools have helped with so far.\n\nSpeaker info:\n- https://twitter.com/idangazit\n- https://linkedin.com/in/idangazit\n- https://githubnext.com",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "release",
+      "open-source",
+      "agents",
+      "safety",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615599,
+    "title": "Always-on agents run production without the on-call tax \u2014 Justin Smith, Resolve AI",
+    "url": "https://www.youtube.com/watch?v=vSx5IULvBns",
+    "published_at": "2026-08-07T06:17:06+00:00",
+    "fetched_at": "2026-08-08T01:38:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Someone drops a GitHub release tag into Slack and the agent decides on its own that this is a deploy worth watching. It reads what actually changed, works out which telemetry would expose trouble for that particular change, and writes a check plan for this release alone: checkout is replacing the currency service, so watch checkout latency and error rates, then follow the causal chain into the Kafka pipeline. None of the timing is hardcoded. It can decide to look again in an hour because this class of failure only surfaces intermittently, or come back in three days to ask whether the deploy is still healthy. Justin Smith is careful to say CI/CD already handles the baseline well. The gap is everything routed around it, the feature flags and infrastructure changes that ship with no monitoring at all and get caught only when an alert wakes somebody up.\n\nThe premise underneath is that around 70% of an engineer's time goes to running code rather than writing it, and coding agents made that worse by raising the volume of change flowing into production. Resolve's background agents are defined by three questions: when they run, on a schedule or an event stream or just a message; how they run, in the cloud inside a sandbox with its own file system, so closing your laptop changes nothing; and how they know what to do. The one Smith clearly enjoys most watches Slack channels and answers engineering questions without being addressed, staying quiet when it lacks confidence, and DMing him to confirm an answer before it replies in public. His sharpest point is that execution is the easy half. Loading a dashboard is execution. Deciding a metric smells wrong is production context, and building the knowledge system that keeps up with an environment changing faster every month is where the real work sits.\n\nSpeaker info:\n- https://www.linkedin.com/in/justin-smith-7b1534a8/\n- https://resolve.ai/events/behind-the-build/agents-for-engineering-workflows",
+    "topic": "infrastructure",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 615600,
+    "title": "Codex, Behind the Harness \u2014 Dominik Kundel, OpenAI",
+    "url": "https://www.youtube.com/watch?v=shRR1e2HXMk",
+    "published_at": "2026-08-07T06:14:03+00:00",
+    "fetched_at": "2026-08-08T01:38:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Once GPT 5.3 Codex Spark started serving a thousand tokens per second on Cerebras, inference stopped being the bottleneck and the network became it. The answer was websocket mode: a persistent connection replacing server sent events over HTTP, carrying stateful context so a turn ships back only the tool call result instead of resending every item. The same pressure shapes context construction, which fights size, flexibility and cachability at once. Tools can be marked deferred so they never enter the context window and surface through tool search when the model actually wants them, and the available skills list is capped at 2% of the context window, with descriptions trimmed as it grows past that.\n\nActions are where a harness earns its keep. File edits go through an apply patch tool the models were trained on, everything else through a shell the model instinctively drives with ripgrep, and all of it inside a sandbox: seatbelt on macOS, bubblewrap on Linux, and a custom open source sandbox on Windows the team had to build themselves. Approval fatigue pushes people into full access, which their own security team hates, so an escalation now spins up an auto review subagent with read only permissions and no ability to spawn others, judging the action against the transcript and how explicitly the user authorized it. Deleting a file you asked for reads differently from deleting a .git folder you never mentioned. Long horizon goals run by injecting a continuation prompt until the model calls an update goal tool, which is why concrete verifiable objectives beat essays. Dominik Kundel's closing point is that the harness is Apache 2 and written in Rust, and most of what makes it distinct lives in the responses API, so you can borrow any of it.\n\nSpeaker info:\n- https://x.com/dkundel\n- https://linkedin.com/in/dkundel\n- https://github.com/openai/codex",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9512,173 +9686,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 546995,
-    "title": "The forgotten developer who saved JavaScript...",
-    "url": "https://www.youtube.com/watch?v=JfPWbttemYE",
-    "published_at": "2026-05-29T17:06:48+00:00",
-    "fetched_at": "2026-05-29T17:34:41+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Clerk's new CLI sets up end-to-end auth for your entire app. Try it - https://go.clerk.com/0mR9oMU\n\nJavaScript was terrible... until one man was brave enough to save it.\n\n#coding #programming #javascript \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "coding",
-    "tags": [
-      "coding",
-      "education",
-      "media",
-      "news",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547040,
-    "title": "Reachy Mini: the $300 open source robot you can actually hack \u2014 Andres Marafioti, Hugging Face",
-    "url": "https://www.youtube.com/watch?v=0jeZfjJMfmo",
-    "published_at": "2026-05-29T17:00:06+00:00",
-    "fetched_at": "2026-05-29T17:34:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Qwen3-TTS shipped at 0.8x real time: one second of audio took 1.2 seconds to generate. Andres Marafioti from Hugging Face spent two weeks fixing it. The culprits were no streaming, 500 autoregressive steps per audio packet with a CPU GPU round trip on each, and a dynamic KV cache that blocked compilation. Static KV cache plus CUDA graph captures brought it to 5.8x real time with time to first audio under 200 milliseconds.\n\nThe platform is Reachy Mini, a $300 open source robot Hugging Face has shipped to 7,500 people. It arrives unassembled. Talking to it is their most used app by far. The voice stack runs Parakeet transcription every 150 milliseconds with partial results feeding back to the robot mid-sentence, Qwen 3.5 27B for the LLM, and this optimized TTS. At that speed, infrastructure round trips match model latency, so the load balancer separates LLM endpoints from conversation nodes to handle the difference in how much different users actually talk.",
-    "topic": "robotics",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "video",
-      "infrastructure",
-      "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547041,
-    "title": "Why your agents need decision traces, not just documents \u2014 Zach Blumenfeld, Neo4j",
-    "url": "https://www.youtube.com/watch?v=B9h9ovW5H9U",
-    "published_at": "2026-05-29T16:00:33+00:00",
-    "fetched_at": "2026-05-29T17:34:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A knowledge base tells a financial analyst agent the risk factors. A context graph tells it whether to reject or accept, because it also carries past decision traces, the reasoning behind them, and how similar cases resolved. Zach from Neo4j walks through how context graphs extend a standard RAG setup with three layers: short term conversation history, long term extracted entities, and reasoning traces that embed into vectors so structurally similar past decisions surface alongside semantically similar ones.\n\nThe fastest path in is `uvx create-context-graph`, a one-command scaffold that gives you a backend, frontend, demo data, and an MCP server. It ships with 22 built-in domains or generates a graph ontology from a custom domain you describe. The underlying `neo4j-agent-memory` package handles entity extraction through a spaCy to GLiNER to LLM pipeline with deduplication and merging baked in, and plugs into pydantic AI, LangGraph, Crew, Google ADK, and others.\n\nSpeaker info:\n- https://www.linkedin.com/in/zachblumenfeld/",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547010,
-    "title": "New Claude Opus 4.8: 15 Things You May\u2019ve Missed",
-    "url": "https://www.youtube.com/watch?v=aJvP3nXWkwM",
-    "published_at": "2026-05-29T15:07:35+00:00",
-    "fetched_at": "2026-05-29T17:34:42+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "rss",
-    "body": "The \u2018best\u2019 generally available AI model just dropped, but there is plenty I bet you missed about what it is, how it performs, and what the release tells us. 15 highlights from the 244 page system card, plus private testing, leader interview and more.\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n00:49 - Mythos in Weeks\n01:49 - Adaptive not necessary\n02:26 - Honesty?\n04:37 - Flagging Uncertainty\n04:57 - Benchmarks\n08:54 - Mythos will be even better\n10:30 - Business skillz\n11:15 - Model Welfare\n12:16 - Cyber Comparable\n13:10 - Misalignment Concerns\n16:22 - Meta Inabilities\n17:58 - Code flagging\n18:34 - Go to sleep\n18:50 - Fast Mode\n20:21 - Dynamic Workflows\n\n\nOpus 4.8 Paper: https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf\n\nRelease: https://www.anthropic.com/news/claude-opus-4-8\n\nChips: https://www.theinformation.com/articles/anthropic-talks-use-microsofts-ai-chips?rc=sy0ihq\nhttps://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services\nhttps://www.anthropic.com/news/higher-limits-spacex\n\nPatreon Vid: https://www.patreon.com/posts/re-up-anthropics-159289449\n\nGDPVal: https://artificialanalysis.ai/evaluations/omniscience\nhttps://arxiv.org/abs/2510.04374\n\nAmodei Technical Debt: https://www.youtube.com/watch?v=7xco5Qd2Oo8\n\nDynamic Workflows: https://x.com/ClaudeDevs/status/2060044853279617150\nhttps://x.com/_catwu/status/2060054180379689074/photo/1\nhttps://claude.com/blog/introducing-dynamic-workflows-in-claude-code\n\nhttps://simple-bench.com/\n\n\n\nCheck out my fast-growing (!) app, free to use, and code INSIDER15 for paid tiers: https://lmcouncil.ai\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 546980,
-    "title": "AI News: Anthropic Worth Almost $1 TRILLION!?",
-    "url": "https://www.youtube.com/watch?v=7TG78vIYI-Q",
-    "published_at": "2026-05-29T14:00:14+00:00",
-    "fetched_at": "2026-05-29T17:34:41+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Here's the AI News from this past week. Launch your own AI agents with Hermes at http://hostinger.com/mattwolfehermes and get 10% off with code MATTWOLFE\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nClaude Opus 4.8: https://www.anthropic.com/news/claude-opus-4-8\nDynamic Workflows: https://claude.com/blog/introducing-dynamic-workflows-in-claude-code\nAnthropic Series H: https://www.anthropic.com/news/series-h\nMAI-Image-2.5 Launch: https://microsoft.ai/news/mai-image-2-5-launches-at-no-3-on-arena-ai/\nMicrosoft 365 Copilot Redesign: https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/28/introducing-a-new-design-for-microsoft-365-copilot/\nPerplexity Comes to Office: https://www.perplexity.ai/hub/blog/computer-comes-to-word-excel-powerpoint-and-outlook\nImage to 3D: https://leonardo.ai/news/how-to-turn-an-image-into-3d-model\nElevenLabs Music v2: https://x.com/elevenlabs/status/2059312414198235642\nElevenLabs Dubbing v2: https://x.com/elevenlabs/status/2060024691444617418\nGemini Omni Taxi POV: https://x.com/chrisfirst/status/2057612088651252062\nGemini Omni Drone POV: https://x.com/bilawalsidhu/status/2059419767417487718\nYouTube AI Labels: https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/\nPope AI Encyclical: https://x.com/itsolelehmann/status/2058896940604215489\nOlah on Encyclical: https://www.anthropic.com/news/chris-olah-pope-leo-encyclical\nAltman Jobs Apocalypse: https://www.reuters.com/world/asia-pacific/openais-altman-says-ai-unlikely-lead-jobs-apocalypse-2026-05-26/\nHuang on AI Layoffs: https://www.thestateofbrand.com/news/jensen-huang-ai-layoffs\nBrockovich Data Center Map: https://www.engadget.com/2181883/erin-brockovich-launches-a-crowdsourced-ai-data-center-map/\nApple Siri Overhaul: https://www.techtimes.com/articles/317080/20260525/apple-registers-genai-subdomain-ahead-wwdc-siri-overhaul-finally-arrives-ios-27.htm\nAI Pet Translator: https://www.dexerto.com/entertainment/chinese-ai-company-launches-95-accurate-pet-translator-3367432/\nAI Haircut Robot: https://www.reddit.com/r/aiecosystem/comments/1tjr6uu/would_you_trust_an_ai_powered_robot_to_cut_your/\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:17 Claude Opus 4.8\n1:26 Claude Dynamic Workflows\n2:41 Anthropic Nearly $1 TRILLION\n3:28 MAI-Image-2.5\n4:51 Microsoft 365 Copilot Updates\n6:01 Microsoft and Perplexity\n7:05 Hostinger and Hermes\n8:25 Leonardo 3D Models\n10:41 ElevenLabs Music v2\n12:14 ElevenLabs Dubbing v2\n13:17 Awesome Omni Examples\n14:58 YouTube AI Updates\n15:59 The Pope on AI\n17:12 Sam Altman on Jobs\n18:10 Jensen Huang on AI Firings\n19:31 Datacenters Map\n20:10 Apple AI Rumors\n20:33 Dog Translator\n21:08 Haircut Robot\n21:31 Final Thoughts\n22:43 Huh?",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547042,
-    "title": "Reverse engineering a Viking VOIP phone protocol with Claude Code \u2014 Boris Starkov, Eleven Labs",
-    "url": "https://www.youtube.com/watch?v=V-L0INGTEOg",
-    "published_at": "2026-05-29T14:00:06+00:00",
-    "fetched_at": "2026-05-29T17:34:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A Viking VoIP phone sat in the ElevenLabs San Francisco office for a year. Three senior engineers and ChatGPT could not get it working. Boris from ElevenLabs cracked the undocumented protocol with Claude Code in a couple of days: brute forced all 676 possible two letter command combinations, found 80 valid ones, then set up a TCP proxy between a Windows virtual machine and the phone to intercept and log what the proprietary Windows XP software was actually sending.\n\nThe last piece was a one byte checksum in the persistence command. Claude reverse engineered the formula by running known input output pairs through it, confirmed the pattern in a closed loop, and derived a simple subtraction. Boris describes his own role as being the hands: Claude orchestrated, he physically rebooted the phone and reported how many beeps he heard. The protocol is now open sourced as a Claude Code skill so anyone with a Viking phone can configure it directly without the Windows software. The outcome at AI Engineer Europe: a red phone booth on the third floor where picking up the receiver connects you to a Michael Caine voice agent that quizzes you on British AI history.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 547025,
-    "title": "Transformers.js in 30 seconds #MachineLearning #AI #WebAI",
-    "url": "https://www.youtube.com/shorts/A5K8xCut_ks",
-    "published_at": "2026-05-29T13:56:32+00:00",
-    "fetched_at": "2026-05-29T17:34:42+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Transformers.js lets you run state-of-the-art machine learning directly from JavaScript. In this 30-second breakdown, we look at how it uses ONNX, onnxruntime, model files, caching, tensors, and pipelines to turn your input into model predictions.\n\nWant the full explanation?\nhttps://youtu.be/A_6UOxQSvvY\n\n#TransformersJS #JavaScript #MachineLearning #AI #WebAI #ONNX",
-    "topic": "education",
-    "tags": [
-      "models",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 543769,
-    "title": "Check out real-life AI prototypes from the Futures Lab.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/university-waterloo-labs/",
-    "published_at": "2026-05-29T12:00:00+00:00",
-    "fetched_at": "2026-05-29T13:46:14+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/FutureLabs_social.max-600x600.format-webp.webp\" />University of Waterloo students develop AI prototypes like sign language tutors to reshape the future of education and work.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "api"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
