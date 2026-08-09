@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 711894,
+    "title": "Guide, Verify, Solve \u2014 Anirban Chatterjee, Sonar",
+    "url": "https://www.youtube.com/watch?v=03l29gJXpCE",
+    "published_at": "2026-08-09T17:45:13+00:00",
+    "fetched_at": "2026-08-09T18:40:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A Carnegie Mellon study sorted GitHub projects by whether an AI tool wrote the code, and found the productivity gain ran out after about three months while the static analysis warnings and the added complexity stayed. That residue is verification debt, and how much it costs scales with criticality: a short lived internal tool can live with the gap between the quality a model gives you and the quality the application needs, a large codebase with adversarial users cannot. The obvious backstop is human review, and a Wharton study suggests it leaks badly. Participants took the AI's advice 92.7% of the time when it was correct, and still followed it nearly 80% of the time when it had been instructed to lie confidently.\n\nAnirban Chatterjee's argument is that the check has to be zero trust and multi layered. Zero trust means assuming the code could have come from anywhere and verifying it by a different method than the one that wrote it, since a model grading its own output inherits its own blind spots. Multi layered means computational review running alongside reasoning based review, because no single technique catches syntax, data flow, architecture and control flow at once. Sonar's leaderboard makes the blind spots concrete: across their metrics one Claude model rates well on correctness and reliability while the other is the better choice when maintainability, security or lower complexity is what matters. The loop he proposes wraps generation on both sides, handing the agent architectural constraints and coding standards before it starts, running verification inside the inner loop so issues get fixed before they propagate into later loops, and giving the agent the tools to remediate what comes back instead of queueing it for a person who is already rubber stamping too much.\n\nSpeaker info:\n- https://www.linkedin.com/in/anirbanc/\n- https://www.sonarsource.com/the-coding-personalities-of-leading-llms/leaderboard/",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 709627,
     "title": "Velocity Sickness: What Happens When Your Whole Team Gets 10x Faster \u2014 Matt Dailey, Ref.",
     "url": "https://www.youtube.com/watch?v=Kz4QJmNrVXU",
@@ -9691,28 +9714,6 @@
     "topic": "safety",
     "tags": [
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551778,
-    "title": "Codex is becoming a productivity tool for everyone",
-    "url": "https://openai.com/index/codex-for-knowledge-work",
-    "published_at": "2026-06-02T02:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "The Next Era of Knowledge Work report explores how Codex is transforming productivity through AI-powered research, data analysis, workflow automation, and content creation.",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "research",
-      "coding",
-      "opinion",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
