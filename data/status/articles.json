@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 709627,
+    "title": "Velocity Sickness: What Happens When Your Whole Team Gets 10x Faster \u2014 Matt Dailey, Ref.",
+    "url": "https://www.youtube.com/watch?v=Kz4QJmNrVXU",
+    "published_at": "2026-08-09T16:30:28+00:00",
+    "fetched_at": "2026-08-09T17:31:45+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A newsletter writer walked Matt Dailey through an agentic pipeline good enough to amplify their own voice instead of flattening it, then mentioned they were now effectively writing a book every week. Dailey asked whether the audience was reading a book every week. They were not. Those pages go unread, and that gap is what he calls velocity sickness: the stress of a sudden output increase that delivers output without impact. On engineering teams it arrives as too many pull requests to merge, work sprinting in too many directions at once, and the ritual of declaring agent bankruptcy, walking back to twelve terminals the next morning, recognizing none of it, throwing all of it out and paying for the same work twice.\n\nThe failure that actually worries him is critical decisions getting made by agents, because an engineer who lets that happen has stopped owning the code, and a team doing it at scale no longer owns the product. His fix is to separate the decision layer from the implementation layer and give the decision layer its own primitive: a document rather than a chat. Chats are isolated, ephemeral and built for implementation, so the decisions made inside one evaporate while only the code survives. A durable shared doc holds the state and the agent supplies the action, which keeps agents effectively stateless, lets several start from identical context, and turns rebuilding your own understanding into rereading a file. The tell that it is working, he says, is people writing plans they never implement, which is what prioritizing looks like once idea velocity replaces code velocity. Three things to try immediately: notice which gear you are in, treat the plan as a portal into the system rather than a prompt, and hand a plan to a teammate before you hand it to an agent.\n\nSpeaker info:\n- https://www.linkedin.com/in/matthewjdailey\n- https://ref.tools/",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "infrastructure",
+      "coding",
+      "media",
+      "news",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 703082,
     "title": "Always-on agents run production without the on-call tax \u2014 Justin Smith, Resolve AI",
     "url": "https://www.youtube.com/watch?v=vSx5IULvBns",
@@ -9691,24 +9713,6 @@
       "coding",
       "opinion",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553104,
-    "title": "Expanding Project Glasswing",
-    "url": "https://www.anthropic.com/news/expanding-project-glasswing",
-    "published_at": "2026-06-02T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Expanding Project Glasswing",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
