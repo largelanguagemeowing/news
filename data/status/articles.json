@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 718709,
+    "title": "Multiplayer agentic engineering \u2014 Arjun Singh, Superconductor",
+    "url": "https://www.youtube.com/watch?v=OL7kfezynJM",
+    "published_at": "2026-08-09T20:30:34+00:00",
+    "fetched_at": "2026-08-09T21:32:04+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Superconductor left a meeting bot sitting in a Google Meet at their expo booth for four hours, just listening. Someone passing through said they wanted coding agents to have clear acceptance criteria before declaring work finished. Nobody filed a ticket. The bot picked the idea out of the conversation, opened one itself, started working, and added two acceptance criteria fields to the product's own ticket form, then produced a screenshot when asked. Arjun Singh is not pretending that change ships as written. The claim is narrower and more useful: every customer call, onboarding session and team meeting now yields dozens of prototyped ideas and usually a few genuinely shippable pull requests, with nobody hand carrying a request from one system into another.\n\nMost of the talk is what has to be true underneath. One agent session has to be reachable from Slack, the desktop app and GitHub at once, so reviewing a teammate's work means asking the agent inside the thread instead of waiting for the author to wake up. The work runs in an isolated cloud environment, and Singh argues the real reason is not closing your laptop, it is least privilege. An agent told to wipe the staging database, resourceful and eager to comply, can find a token on a developer's machine that happens to point at production. A configurable network sandbox blocks exfiltration and asks before reaching anywhere new, and that same isolation is what lets support and growth people trigger real work without a development environment. Rather than trusting public benchmarks, they replay pull requests that represent good work from their own repository and plot quality against cost and time, because SWE bench is Python and they are Ruby on Rails. Their numbers for one month: 10.5 billion tokens, 3,300 Claude Code runs worth about $10,000 in token value, and Codex running four times as many sessions for less money.\n\nSpeaker info:\n- https://x.com/singharjun51293\n- https://www.linkedin.com/in/arjun-singh-629216105",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 711894,
     "title": "Guide, Verify, Solve \u2014 Anirban Chatterjee, Sonar",
     "url": "https://www.youtube.com/watch?v=03l29gJXpCE",
@@ -9697,23 +9719,6 @@
       "agents",
       "coding",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551777,
-    "title": "Advancing youth safety and opportunity through global leadership",
-    "url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
-    "published_at": "2026-06-02T07:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI calls for global action on youth AI safety, proposing an international institute to strengthen safeguards, standards, and opportunities for young people.",
-    "topic": "safety",
-    "tags": [
-      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
