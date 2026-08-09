@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 703082,
+    "title": "Always-on agents run production without the on-call tax \u2014 Justin Smith, Resolve AI",
+    "url": "https://www.youtube.com/watch?v=vSx5IULvBns",
+    "published_at": "2026-08-09T14:45:06+00:00",
+    "fetched_at": "2026-08-09T15:01:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Someone drops a GitHub release tag into Slack and the agent decides on its own that this is a deploy worth watching. It reads what actually changed, works out which telemetry would expose trouble for that particular change, and writes a check plan for this release alone: checkout is replacing the currency service, so watch checkout latency and error rates, then follow the causal chain into the Kafka pipeline. None of the timing is hardcoded. It can decide to look again in an hour because this class of failure only surfaces intermittently, or come back in three days to ask whether the deploy is still healthy. Justin Smith is careful to say CI/CD already handles the baseline well. The gap is everything routed around it, the feature flags and infrastructure changes that ship with no monitoring at all and get caught only when an alert wakes somebody up.\n\nThe premise underneath is that around 70% of an engineer's time goes to running code rather than writing it, and coding agents made that worse by raising the volume of change flowing into production. Resolve's background agents are defined by three questions: when they run, on a schedule or an event stream or just a message; how they run, in the cloud inside a sandbox with its own file system, so closing your laptop changes nothing; and how they know what to do. The one Smith clearly enjoys most watches Slack channels and answers engineering questions without being addressed, staying quiet when it lacks confidence, and DMing him to confirm an answer before it replies in public. His sharpest point is that execution is the easy half. Loading a dashboard is execution. Deciding a metric smells wrong is production context, and building the knowledge system that keeps up with an environment changing faster every month is where the real work sits.\n\nSpeaker info:\n- https://www.linkedin.com/in/justin-smith-7b1534a8/\n- https://resolve.ai/events/behind-the-build/agents-for-engineering-workflows",
+    "topic": "infrastructure",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 671531,
     "title": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
     "url": "https://simonwillison.net/2026/Aug/8/auto-mode/#atom-everything",
@@ -9687,25 +9709,6 @@
     "tags": [
       "ai-models",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553419,
-    "title": "A harness for every task: dynamic workflows in Claude Code",
-    "url": "https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code",
-    "published_at": "2026-06-02T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "A harness for every task: dynamic workflows in Claude Code",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
