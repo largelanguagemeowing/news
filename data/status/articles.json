@@ -1,5 +1,82 @@
 [
   {
+    "article_id": 748192,
+    "title": "Codex, Behind the Harness \u2014 Dominik Kundel, OpenAI",
+    "url": "https://www.youtube.com/watch?v=shRR1e2HXMk",
+    "published_at": "2026-08-10T16:00:06+00:00",
+    "fetched_at": "2026-08-10T16:05:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Once GPT 5.3 Codex Spark started serving a thousand tokens per second on Cerebras, inference stopped being the bottleneck and the network became it. The answer was websocket mode: a persistent connection replacing server sent events over HTTP, carrying stateful context so a turn ships back only the tool call result instead of resending every item. The same pressure shapes context construction, which fights size, flexibility and cachability at once. Tools can be marked deferred so they never enter the context window and surface through tool search when the model actually wants them, and the available skills list is capped at 2% of the context window, with descriptions trimmed as it grows past that.\n\nActions are where a harness earns its keep. File edits go through an apply patch tool the models were trained on, everything else through a shell the model instinctively drives with ripgrep, and all of it inside a sandbox: seatbelt on macOS, bubblewrap on Linux, and a custom open source sandbox on Windows the team had to build themselves. Approval fatigue pushes people into full access, which their own security team hates, so an escalation now spins up an auto review subagent with read only permissions and no ability to spawn others, judging the action against the transcript and how explicitly the user authorized it. Deleting a file you asked for reads differently from deleting a .git folder you never mentioned. Long horizon goals run by injecting a continuation prompt until the model calls an update goal tool, which is why concrete verifiable objectives beat essays. Dominik Kundel's closing point is that the harness is Apache 2 and written in Rust, and most of what makes it distinct lives in the responses API, so you can borrow any of it.\n\nSpeaker info:\n- https://x.com/dkundel\n- https://linkedin.com/in/dkundel\n- https://github.com/openai/codex",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 748977,
+    "title": "Vibed out an app today and I haven't looked at the internals at all Things are going wrong with it, I'm scared and frustrated Then I remembered /improve-codebase-architecture What a lovely, warm bath of a skill",
+    "url": "https://nitter.net/mattpocockuk/status/2086838432102228008#m",
+    "published_at": "2026-08-10T15:33:48+00:00",
+    "fetched_at": "2026-08-10T16:05:42+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Vibed out an app today and I haven't looked at the internals at all<br />\n<br />\nThings are going wrong with it, I'm scared and frustrated<br />\n<br />\nThen I remembered /improve-codebase-architecture<br />\n<br />\nWhat a lovely, warm bath of a skill</p>\n<img src=\"https://nitter.net/pic/media%2FHPXwfImWQAAf5mv.png\" />",
+    "topic": "product",
+    "tags": [
+      "product",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 746707,
+    "title": "How to build an AI agent: A\u202fsimple\u202fguide\u202ffor anyone",
+    "url": "https://news.microsoft.com/signal/articles/how-to-build-an-ai-agent-guide/",
+    "published_at": "2026-08-10T15:07:06+00:00",
+    "fetched_at": "2026-08-10T16:05:37+00:00",
+    "source_id": "microsoft-ai-blog",
+    "source_name": "Microsoft AI Blog",
+    "extraction_method": "rss",
+    "body": "<p>The post <a href=\"https://news.microsoft.com/signal/articles/how-to-build-an-ai-agent-guide/\">How to build an AI agent: A\u202fsimple\u202fguide\u202ffor anyone</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
+    "topic": "tutorials",
+    "tags": [
+      "agents",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 748978,
+    "title": "Less \"let me write tests to catch the next time that error happens\" More \"let me make that class of error impossible with a better design\"",
+    "url": "https://nitter.net/mattpocockuk/status/2086830429416333758#m",
+    "published_at": "2026-08-10T15:02:00+00:00",
+    "fetched_at": "2026-08-10T16:05:42+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Less \"let me write tests to catch the next time that error happens\"<br />\n<br />\nMore \"let me make that class of error impossible with a better design\"</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 744438,
     "title": "Evolve your marketing with new AI tools",
     "url": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
@@ -9666,84 +9743,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551770,
-    "title": "Introducing new capabilities to GPT-Rosalind",
-    "url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind",
-    "published_at": "2026-06-03T13:15:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "GPT-Rosalind advances life sciences research with enhanced biological reasoning, medicinal chemistry expertise, genomics analysis, and experimental workflow capabilities.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "agents",
-      "research",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551580,
-    "title": "5 ways Google Search can level up your thrift and vintage shopping",
-    "url": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
-    "published_at": "2026-06-03T13:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "A colorful, grain-textured collage of various items scattered across a light blue background. The items include a green bucket hat, a wooden clothes hanger, a blue-and-red striped collar, blue sunglasses, denim shorts, a yellow price tag, a red high-heele",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551771,
-    "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
-    "url": "https://openai.com/index/wasmer",
-    "published_at": "2026-06-03T12:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how Wasmer used Codex with GPT-5.5 to build a Node.js runtime for the edge, accelerating development 10x to 20x and shipping in weeks instead of months.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551772,
-    "title": "A blueprint for democratic governance of frontier AI",
-    "url": "https://openai.com/index/frontier-safety-blueprint",
-    "published_at": "2026-06-03T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
-    "topic": "policy",
-    "tags": [
-      "safety",
-      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
