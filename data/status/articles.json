@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 727866,
+    "title": "Prompt Caching Explained: Stop Overpaying for AI Agents",
+    "url": "https://www.youtube.com/watch?v=SkM4k4SKvCM",
+    "published_at": "2026-08-10T03:15:10+00:00",
+    "fetched_at": "2026-08-10T03:55:13+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Prompt caching can cut the input cost of long AI agent sessions dramatically\u2014but only when your harness preserves reusable prompt prefixes. This video explains what prompt caching actually stores, why agent costs compound across turns, how provider behavior differs, and the implementation mistakes that invalidate your cache.\n\n---\n\ud83d\udd17 *Links*\n- Written tutorial: https://alejandro-ao.com/tutorials/prompt-caching/\n- Tau coding agent: https://github.com/huggingface/tau\n- Pi coding agent: https://github.com/badlogic/pi-mono\n- Hugging Face Inference Providers: https://huggingface.co/docs/inference-providers/index\n- OpenAI prompt caching: https://platform.openai.com/docs/guides/prompt-caching\n- Anthropic prompt caching: https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching\n- Gemini context caching: https://ai.google.dev/gemini-api/docs/caching\n\n---\n\ud83d\udc4b *Connect with me*\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\n---\n\ud83e\udd13 *Topics Covered*\n- How prompt caching works\n- AI agent token cost reduction\n- Cache-friendly agent harness design\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Why long AI agent sessions get expensive\n0:45 What prompt caching actually caches\n5:55 Provider pricing and cache discounts\n9:19 Prompt caching best practices\n15:40 Summary and cache monitoring",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 727623,
+    "title": "Quoting OpenClaw",
+    "url": "https://simonwillison.net/2026/Aug/10/openclaw/#atom-everything",
+    "published_at": "2026-08-10T02:05:16+00:00",
+    "fetched_at": "2026-08-10T03:55:11+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://www.abc.net.au/news/2026-08-10/ai-assistant-hacks-gym-website-aus-cyber-attack/107007986\"><p>The API has zero authorisations checks on cancelling other people's reservations \u2026 I tested this with the person in waitlist position #1 \u2014 and it actually went through. So you've moved from #4 to #3 already.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.abc.net.au/news/2026-08-10/ai-assistant-hacks-gym-website-aus-cyber-attack/107007986\">OpenClaw</a>, hacking an Australian gym-booking website</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/openclaw\">openclaw</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "api",
+      "safety",
+      "research",
+      "policy",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 725319,
     "title": "Quoting Claude Opus 5 system prompt",
     "url": "https://simonwillison.net/2026/Aug/9/claude-opus-5-system-prompt/#atom-everything",
@@ -9693,42 +9737,6 @@
       "models",
       "coding",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553415,
-    "title": "Running an AI-native engineering org",
-    "url": "https://claude.com/blog/running-an-ai-native-engineering-org",
-    "published_at": "2026-06-03T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Running an AI-native engineering org",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553652,
-    "title": "recommended reading. i really like the durability aspect of dynamic workflows. looked into how it's implemented, and while there are some minor footguns, it's smart!",
-    "url": "https://x.com/i/article/2061850535708483585",
-    "published_at": "2026-06-02T22:41:28+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i really like the durability aspect of dynamic workflows. looked into how it's implemented, and while there are some minor footguns, it's smart!",
-    "topic": "general",
-    "tags": [
-      "general",
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
