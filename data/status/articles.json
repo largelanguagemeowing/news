@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 790859,
+    "title": "Evolution of agentic surfaces \u2014 Gagan Bhat & Isabella Kai He, Anthropic",
+    "url": "https://www.youtube.com/watch?v=K0X9QDRkIdg",
+    "published_at": "2026-08-11T16:00:06+00:00",
+    "fetched_at": "2026-08-11T16:00:56+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Sonnet 4.5 developed what Anthropic's Applied AI team came to call context anxiety: approaching its context window limit, it would wrap work up early and stop with room to spare. They built context resets into the harness to compensate. Then Opus 4.5 shipped without the behavior, and the fix turned into pure overhead, adding latency and discarding cache it should have kept. That is the principle Gagan Bhat and Isabella Kai He build the whole session on: a harness encodes assumptions about what the model cannot do on its own, and those assumptions go stale as models improve.\n\nThe architectural consequence is decoupling the brain, meaning the agent loop, from the hands, meaning the tool execution environment. Both started in one container, so the model could not begin reasoning until setup finished and either half failing took the whole agent down. Splitting them lets reasoning start while the container builds in parallel, which they measured at 60% faster time to first token at P50 and over 90% at P95. It also changes failure into something recoverable: a dead sandbox is simply retried, and a dead brain resumes from a durable session log. That log ends up doing triple duty, providing observability, letting the harness read context slices back in after Claude discards them mid run, and feeding a periodic batch process they call dreaming that rewrites the agent's memory so the next day's sessions start smarter.\n\nSpeaker info:\nGagan Bhat (Anthropic):\n- https://www.linkedin.com/in/gagan-bhat/\n\nIsabella Kai He (Anthropic):\n- https://x.com/IsabellaKHe\n- https://www.linkedin.com/in/isabella-kai-he/\n\nTimestamps:\n0:00 - Who the Applied AI team is\n1:52 - From simple questions to owning outcomes\n2:45 - The Messages API and the hand rolled agentic loop\n4:29 - Six production infrastructure problems\n5:20 - The Claude Agent SDK\n6:13 - What managed agents takes off your plate\n7:02 - Harnesses encode assumptions that go stale\n7:51 - Context anxiety, and the fix that outlived its need\n9:34 - Designing for the model capabilities of tomorrow\n10:25 - What long running agents demand\n11:16 - Decoupling the brain from the hands\n12:59 - Three primitives: agent, environment, session\n13:51 - Reliability and the four session states\n15:32 - Recovering discarded context from the session log\n16:23 - What the developer still owns\n17:14 - Demo: an SRE agent for a latency spike\n18:58 - Defining the environment and its network limits\n19:49 - Kicking off a session\n20:38 - Root cause, and the observability trace\n22:25 - Lesson one: keep credentials away from the agent\n23:15 - Lesson two: where the latency went\n24:58 - Lesson three: session logs as memory\n25:47 - Lesson four: self hosted sandboxes and MCP tunnels\n27:28 - Dreaming\n29:08 - Outcomes and grader agents\n30:49 - Harnesses as the limiting factor",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 789365,
     "title": "RT by @mattpocockuk: Is your AGENTS.md helping AI coding agents do their best work? A well-structured AGENTS.md gives agents the right context without overwhelming them. @mattpocockuk shares why keeping instructions focused, using progressive disclosure, and organizing documentation can improve agent performance while making AGENTS.md easier to maintain. Read the complete guide: https://www.aihero.dev/a-complete-guide-to-agents-md",
     "url": "https://nitter.net/AgenticAIFdn/status/2087162203891806293#m",
@@ -9745,24 +9767,6 @@
     "tags": [
       "ai-models",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553646,
-    "title": "Andrew Kelley: A Practical Guide to Applying Data Oriented Design (DoD)",
-    "url": "https://www.youtube.com/watch?v=IroPQ150F6c",
-    "published_at": "2026-06-08T22:08:10+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. andrew is a class act, both technically and as a human.",
-    "topic": "tutorials",
-    "tags": [
-      "coding",
-      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
