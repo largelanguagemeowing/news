@@ -1,5 +1,43 @@
 [
   {
+    "article_id": 795411,
+    "title": "Hugging Face Journal Club: Direct On-Policy Distillation",
+    "url": "https://www.youtube.com/watch?v=S5wE1sjyiQY",
+    "published_at": "2026-08-11T18:05:57+00:00",
+    "fetched_at": "2026-08-11T18:25:12+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "The Hugging Face research team discusses the paper \"Weak-to-Strong Generalization via Direct On-Policy Distillation\" which proposes a cheap way to transfer the benefits of reinforcement learning from small models to much larger ones. Instead of imitating the smaller model directly, it measures how RL changed the small model\u2019s policy and uses that change as a dense reward signal to train the larger model. The result is a form of weak-to-strong generalization that can match or outperform direct RL on the larger model at a fraction of the compute cost.\n\nPaper link: https://huggingface.co/papers/2607.05394",
+    "topic": "research",
+    "tags": [
+      "models",
+      "research",
+      "infrastructure",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 796219,
+    "title": "mattpocock/skills fans - how are you getting on with the docs? Anything I could improve? Feels a little low on conceptual explainers to me. https://www.aihero.dev/skills",
+    "url": "https://nitter.net/mattpocockuk/status/2087230143492157650#m",
+    "published_at": "2026-08-11T17:30:19+00:00",
+    "fetched_at": "2026-08-11T18:25:15+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>mattpocock/skills fans - how are you getting on with the docs?<br />\n<br />\nAnything I could improve? Feels a little low on conceptual explainers to me.<br />\n<br />\n<a href=\"https://www.aihero.dev/skills\">aihero.dev/skills</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://www.aihero.dev/skills\">\n<img src=\"https://nitter.net/pic/card_img%2F2083117636703965184%2F9iqIOIN5%3Fformat%3Djpg%26name%3D800x419\" />\n<br />\n<b>AI Skills for Real Engineers</b>\n</a>\n<p>A practical skill system for engineers who want to use AI without giving up their standards.</p>\n<small><a href=\"https://www.aihero.dev/skills\">aihero.dev</a></small>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 791669,
     "title": "AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities in a first-of-its-kind study.",
     "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
@@ -172,6 +210,27 @@
       "agents",
       "coding",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 795736,
+    "title": "Compliance API coverage extends to Claude Cowork and Claude Code",
+    "url": "https://claude.com/blog/compliance-api-cowork-and-claude-code",
+    "published_at": "2026-08-11T00:00:00+00:00",
+    "fetched_at": "2026-08-11T18:25:13+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Compliance API coverage extends to Claude Cowork and Claude Code",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
+      "api",
+      "coding",
+      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9716,62 +9775,6 @@
     "tags": [
       "ai-models",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551597,
-    "title": "Introducing Gemma 4 12B: a unified, encoder-free multimodal model",
-    "url": "https://deepmind.google/blog/introducing-gemma-4-12b-a-unified-encoder-free-multimodal-model/",
-    "published_at": "2026-06-09T14:10:19+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551598,
-    "title": "Powering the future of robotics in Europe",
-    "url": "https://deepmind.google/blog/powering-the-future-of-robotics-in-europe/",
-    "published_at": "2026-06-09T14:02:33+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "robotics",
-    "tags": [
-      "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551761,
-    "title": "How engineers at Nextdoor use Codex to build without limits",
-    "url": "https://openai.com/index/nextdoor",
-    "published_at": "2026-06-09T12:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How engineers at Nextdoor use Codex with GPT-5.5 to investigate hard-to-reproduce issues, build across platforms, and focus on product outcomes.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
