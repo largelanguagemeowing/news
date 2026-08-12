@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 836354,
+    "title": "Designing Agents (The Floor Is the Frontier) \u2014 Ben Hylak, Raindrop",
+    "url": "https://www.youtube.com/watch?v=jHMiYtjoJfA",
+    "published_at": "2026-08-12T18:00:34+00:00",
+    "fetched_at": "2026-08-12T18:29:18+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Build the thousand example eval suite everyone tells you to build, switch harnesses, and 80% of it stops meaning anything. Ben Hylak's complaint is that eval advice is still written for the chatbot era, back when you knew the answer to nearly every question a user would ask. His reframing is that the useful question is not what issues your agent has, since it will have effectively infinite issues, but which ones matter. That turns on the gap between your ceiling, the most impressive thing your agent can do, and your floor, the worst. The floor is what breaks trust: recommending a competitor, deleting data, sending slop to a customer because the agent happened to have email access.\n\nThe practical core is two numbers per issue, when it started and what share of users it hits. Learning that something began yesterday is what makes you ask what changed. Learning it hit three users rather than a hundred thousand is what tells you whether to care at all. From there he offers three findings from running this at Raindrop. Clustering traces is not issue detection, because boundaries drift, you do not control them, and what counts as one issue is specific to your product, so a cluster called price issues quietly merges a wrong quote with a wrong refund that have nothing in common. Code mode scales to traces, meaning you write classifiers and run them in a sandbox at production volume. And agents are poor at finding anomalies while being good at investigating them, so surface something deterministic like a keyword spike first and hand them that. Underneath all of it is the argument that evals now belong in your repo as tests rather than in a prompt playground, because the harness is the product.\n\nSpeaker info:\n- https://x.com/benhylak\n- https://www.linkedin.com/in/benhylak/\n\nTimestamps:\n0:00 - Raising the floor, and how little continual learning is real\n2:07 - What agents looked like a year ago\n3:23 - Why agent creativity cuts both ways\n4:01 - Eval advice stuck in the chatbot era\n4:38 - Switch harnesses and 80% of your evals break\n5:16 - Safety without theater\n5:57 - What Raindrop sees in production\n7:12 - The real question: how do you make it better\n8:26 - Benchmark maxer or floor raiser\n9:05 - Why labs and companies have different jobs\n9:42 - How much responsibility sits with the user\n10:56 - Ceiling against floor, and which breaks trust\n11:35 - Offline evals should look like tests\n12:52 - Keep evals as code\n13:30 - Two things you must know about every issue\n14:45 - How many users do you actually have\n16:02 - Lesson one: clusters are not issues\n17:17 - Why cluster boundaries fail you\n18:35 - Lesson two: code mode scales to traces\n19:14 - Lesson three: agents cannot spot anomalies",
+    "topic": "education",
+    "tags": [
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 836355,
+    "title": "Bringing Continual Learning into Enterprises \u2014 Samuel Denton, Applied Compute",
+    "url": "https://www.youtube.com/watch?v=ZTA0GwpAUak",
+    "published_at": "2026-08-12T17:30:06+00:00",
+    "fetched_at": "2026-08-12T18:29:18+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A Qwen thinking model was taking up to 80 turns to submit on SWE bench. Applied Compute wanted it wrapping up by turn 40 and got the submit tool call rate from 22% to 60% with test pass rate flat. The interesting part is the mechanism: because the rollout was conditioned on an old production trace that never called the tool, the teacher never touched the tool call tokens at all. It moved the reasoning path toward the call instead, and the call followed.\n\nSam Denton's frame is a grid. One axis is how online the traces are, from a single dump of production traces to a unified engine where serving and training are the same loop. The other is where the hint comes from, either static priors, such as knowing a support agent is too quick to refund, or a hint built dynamically from what the on policy model just did. Applied Compute works two corners of that grid. Offline hints on offline traces need no replayable environment and can improve an enterprise agent from a data dump on day one. Online hints on online traces have the far higher ceiling, and that is what fixed a customer whose harness required unusual hyperlink formatting: rewarding the format directly and finetuning on correct examples both degraded coding ability, while a hint written against each rollout took correct formatting from 15% to 80%. Two things he says make it work in practice. Let a judge pick where in the rollout the hint goes and distill only the next few steps, since the learning signal decays with distance from the hint. And mask which tokens you learn from, because the teacher has strong opinions about connector words that have nothing to do with the lesson. Throughout, the constraint he keeps is doing all of this without a golden answer to distill toward.\n\nSpeaker info:\n- https://x.com/samueldenton\n- https://www.linkedin.com/in/sam-denton-161b50126/\n\nTimestamps:\n0:00 - The distillation spectrum, offline to online\n2:46 - The holy grail: serving and training as one loop\n4:00 - Where the hint comes from\n4:42 - Online hints built from the rollout\n5:19 - Four quadrants of distillation\n7:50 - The two corners they actually work in\n9:44 - Improve for free today, raise ceilings tomorrow\n10:22 - Doing it without a golden answer\n11:00 - SWE bench: wrapping up by turn 40\n11:38 - The three metrics that matter\n12:17 - What the hint actually says\n12:55 - Moving the reasoning path, not the tool call\n13:36 - Adding a single on policy step\n14:17 - The hyperlink formatting problem\n14:56 - Why rewards and finetuning both failed\n15:34 - From 15% to 80% with online hints\n16:13 - Per step hinting\n16:50 - Why the signal decays with distance\n17:27 - Relevance masked self distillation\n18:07 - What it adds up to",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "education",
+      "enterprise",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 834064,
     "title": "LLM Knowledge Bases: a practical guide \u2014 Ben Holmes, Warp",
     "url": "https://www.youtube.com/watch?v=I3bpdgFJCUY",
@@ -262,6 +306,25 @@
       "research",
       "coding",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 836648,
+    "title": "Economic ResearchReviewing the evidence on worker retraining programs",
+    "url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs",
+    "published_at": "2026-08-12T00:00:00+00:00",
+    "fetched_at": "2026-08-12T18:29:18+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Aug 12, 2026Economic ResearchReviewing the evidence on worker retraining programs",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "research",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9755,61 +9818,6 @@
     "body": "recommended reading",
     "topic": "general",
     "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551752,
-    "title": "New OpenAI Academy courses for the next era of work",
-    "url": "https://openai.com/index/academy-courses-applying-ai-at-work",
-    "published_at": "2026-06-12T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI introduces three Academy courses that help people build practical AI skills, create repeatable workflows, and apply agents in everyday work.",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "agents",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553097,
-    "title": "Results from the first Anthropic Public Record",
-    "url": "https://www.anthropic.com/news/anthropic-public-record",
-    "published_at": "2026-06-12T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Results from the first Anthropic Public Record",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553098,
-    "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
-    "url": "https://www.anthropic.com/news/fable-mythos-access",
-    "published_at": "2026-06-12T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
-    "topic": "policy",
-    "tags": [
-      "policy",
       "general"
     ],
     "dearrow_thumbnail_url": "",
