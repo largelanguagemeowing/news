@@ -1,5 +1,72 @@
 [
   {
+    "article_id": 838637,
+    "title": "Improving Agents is a Data Mining Problem \u2014 Vivek Trivedy, LangChain",
+    "url": "https://www.youtube.com/watch?v=CvRngaQZQ3Y",
+    "published_at": "2026-08-12T19:00:01+00:00",
+    "fetched_at": "2026-08-12T19:40:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Does your agent get dumber after the first compaction? After the second? You cannot read that off the code, only off the traces, and there are far too many to read yourself. So LangChain points agents at the traces of other agents and asks exactly that, alongside questions like where users got upset and what a different model would have done at the same step. Vivek Trivedy's argument is that observability and continual learning are the same problem in different clothing, because an agent acting in an environment produces the only real record of what happened, and that record is the substrate everything else is built on.\n\nThe economics fall out of reading it. Working with Harvey on a legal benchmark, they found an open model could match their frontier model's trace judging at one to two orders of magnitude lower cost, arrived at through harness engineering that the traces themselves pointed to. His rule for when to stop tuning prompts and start finetuning is speed of feedback: harness engineering answers in about two minutes, so you exhaust that ceiling first, finetune to break through it, then return to harness engineering. He also argues that dense feedback is what agents lack most, since a benchmark returning only pass or fail gives an agent nothing to act on, while traces already hold the fine grained signal. The claim worth arguing with is that you can describe an agent's behavior just by showing the evals it was measured against, because those are what it hill climbs.\n\nSpeaker info:\n- https://x.com/Vtrivedy10\n- https://www.linkedin.com/in/vivek-trivedy-433509134/\n- https://www.vtrivedy.com/\n\nTimestamps:\n0:00 - My agent made mistakes, now what\n1:28 - Ship it, collect traces, mine them\n2:44 - Observability and continual learning are the same problem\n4:00 - Why agents are harder to reason about than code\n4:36 - Trading determinism for autonomy\n5:15 - Sending agents to read other agents' traces\n6:29 - Today's data is the least we will ever have\n7:09 - When a trace no longer fits in context\n7:48 - Not reaching for a frontier model every time\n8:24 - Matching frontier trace judging with an open model\n9:02 - Where harness engineering stops paying\n9:40 - Finetuning on a narrow vertical\n10:17 - Trading token costs for hardware costs\n11:34 - Distillation from your own good traces\n12:10 - Evals as a description of behavior\n12:48 - What scikit learn has to do with any of this\n13:28 - Model, harness, task fit\n14:07 - Finding fit functions and finding data\n15:24 - Why dense feedback matters\n16:01 - Harness engineer, finetune, harness engineer again\n17:22 - Updating agent state across three axes\n18:39 - Sleep time compute and memory that is not append only\n19:17 - Takeaways",
+    "topic": "education",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 838638,
+    "title": "Lessons from Studying Every Memory System \u2014 Shlok Khemani, Independent",
+    "url": "https://www.youtube.com/watch?v=5ZGyKWjQDr0",
+    "published_at": "2026-08-12T18:30:06+00:00",
+    "fetched_at": "2026-08-12T19:40:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A profile ChatGPT keeps on Shlok Khemani says he travelled to Turkey in 2025. He never has. The memory came from conversations where he was choosing between Turkey and Thailand, he went to Thailand, and the profile kept both with overlapping dates. What bothers him is not the mistake but the incuriosity: nothing notices the conflict, and the evidence to settle it was sitting in his email as flight and hotel bookings. He calls that a product problem, not a technology one.\n\nThe rest is a year of reverse engineering how consumer memory systems are built, all of it his reading from the outside rather than anything documented. By his account ChatGPT went from a user managed list of facts to a running profile rebuilt in the background, roughly 4,000 tokens of dense keyword clues he could only inspect by jailbreaking his way to it. Claude started opposite, with no profile and two retrieval tools over past conversations, then added one about a quarter the size, in full sentences, refreshed daily and visible in settings. His frame for the difference is that memory is a function of compute: a profile costs to maintain and costs again in every context window it enters, so a large profile updated rarely and a small one updated daily are two answers to one budget question.\n\nSpeaker info:\n- https://x.com/shloked\n- https://www.linkedin.com/in/shlokkhemani/\n- https://shloked.com\n\nTimestamps:\n0:00 - What memory means here: consumer personalization\n2:09 - ChatGPT memory v1, a list of facts\n4:08 - The running profile arrives\n6:04 - The trip that never happened\n6:45 - A profile you cannot look at\n7:23 - Claude's first version, tools instead of a profile\n8:03 - Publishing that they were opposites\n9:18 - Three years of convergence\n11:14 - There is no single way to do memory\n12:30 - Memory is a function of compute\n13:47 - Continual learning is already here\n15:39 - The context problem no architecture solves\n17:34 - Products that each know you separately",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "safety",
+      "benchmark",
+      "research",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 838592,
+    "title": "Meta's new model wants \"deep access\" to your personal life...",
+    "url": "https://www.youtube.com/watch?v=G55HSGpuh1M",
+    "published_at": "2026-08-12T18:29:41+00:00",
+    "fetched_at": "2026-08-12T19:40:48+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "OpenRouter is the only API you need for AI. Every model, the best uptime and no subscription. Try it free: https://openrouter.ai/?utm_source=fireship&amp;utm_medium=video&amp;utm_campaign=2026-08_dev-sponsorships&amp;utm_content=description\n\nMeta just released Muse Glimmer, a 30 billion parameter agentic model under a fully permissive Apache 2.0 license. Let's dive in.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "api",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 836354,
     "title": "Designing Agents (The Floor Is the Frontier) \u2014 Ben Hylak, Raindrop",
     "url": "https://www.youtube.com/watch?v=jHMiYtjoJfA",
@@ -9760,65 +9827,6 @@
       "agents",
       "models",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551751,
-    "title": "Introducing the OpenAI Partner Network",
-    "url": "https://openai.com/index/introducing-openai-partner-network",
-    "published_at": "2026-06-14T17:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553032,
-    "title": "Claude Fable Blocked - 11 Quiet Details on What\u2019s Next",
-    "url": "https://www.youtube.com/watch?v=Qj71N0tBzRo",
-    "published_at": "2026-06-14T14:52:27+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "rss",
-    "body": "Claude Fable 5 banned, but what\u2019s the bigger story. We go through 11 under-reported details, so you have the context to see what\u2019s coming next for your use of AI. From whether the ban will last, what the possible motives are, what the model can actually do, and some wild over-extrapolations going on.\n\n\nCheck out my fast-growing (!) app, free to use, and code INSIDER15 for paid tiers: https://lmcouncil.ai\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n00:51 - Came from an Anthropic Investor \u2018and other tech leaders\u2019\n01:47 - Govt pressured by CEOs like Jamie Dimon\n03:01 - \u2018Already decided\u2019\n04:02 - Prompt Injection Robustness Comparison\n05:15 - Wellness?\n06:36 - \u201cOverreach\u201d\n08:17 - Anthropic Did Admit it would cause Difficulty\n09:32 - 90 Minutes\n10:02 - Equity Absence \n10:31 - Lobbying and OpenAI\n\n\u2018Already Decided\u2019 - https://www.theinformation.com/articles/amazons-jassy-raised-concerns-anthropic-model-trump-crackdown?rc=sy0ihq\n\nNot for Other Models: https://www.theinformation.com/briefings/u-s-government-unlikely-extend-anthropic-export-control-ai-companies?rc=sy0ihq\n\n90 Minutes: https://archive.fo/20260614001605/https://www.politico.com/news/2026/06/13/inside-the-whirlwind-24-hours-that-led-the-white-house-to-slap-export-controls-on-anthropic-00961519#selection-807.1-807.219\n\nAnthropic Statement: https://www.anthropic.com/news/fable-mythos-access\n\nLife Comes at you Fast: https://x.com/etbrooking/status/2065638276388495742\n\nAnthropic Deputy CISO: https://x.com/TheTranscript_/status/2065883670053847324\n\nHegseth Gloat: https://x.com/PeteHegseth/status/2065897156226015690\n\nRoon Speculation: https://x.com/tszzl/status/2065939227167392147\n\nMythos System Card: https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf\n\nSachs Statement: https://x.com/DavidSacks/status/2065853007619588171\n\n\nOpenAI Lobbying: https://thehill.com/policy/technology/5912720-altman-openai-get-bogged-down-in-political-spending-fight/\n\nAbsent from Equity Talks: https://finance.yahoo.com/sectors/technology/articles/trump-ai-ownership-plan-could-131053732.html\n\nPliny Jaibreak: https://x.com/elder_plinius/status/2064776322979676227\n\nFusion: https://x.com/OpenRouter/status/2065856871215329545\n\nhttps://lmcouncil.ai \n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "video",
-      "coding",
-      "education",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553643,
-    "title": "Dangerous Technology For Americans Only",
-    "url": "https://lucumr.pocoo.org/2026/6/13/americans-only/",
-    "published_at": "2026-06-13T15:52:49+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
