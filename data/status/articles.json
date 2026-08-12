@@ -1,5 +1,86 @@
 [
   {
+    "article_id": 829977,
+    "title": "The human is the loop",
+    "url": "https://brentfitzgerald.com/posts/the-human-is-the-loop/",
+    "published_at": "2026-08-12T14:36:35+00:00",
+    "fetched_at": "2026-08-12T15:01:44+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 829451,
+    "title": "Scaling up Continual Learning \u2014 Ronak Malde, Trajectory",
+    "url": "https://www.youtube.com/watch?v=zL1kLftVTlo",
+    "published_at": "2026-08-12T14:30:11+00:00",
+    "fetched_at": "2026-08-12T15:01:42+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Scale on policy self distillation to trajectories with a hundred tool calls and the model collapses into hedging. The tokens it learns to favor fill up with wait, but, and maybe, until, as Ronak Malde puts it, everything just turns into maybe. He calls it the but wait problem, and it happens because the student drifts far enough on a long task that the teacher course corrects at every opportunity, leaving the model parked between two divergent distributions.\n\nThe algorithm underneath is a good trick. At the frontier there is no smarter model to distill from, so you make the model its own teacher: put privileged information, a hint, in the teacher's prompt, and match the log probs of the student that never saw it. Malde scores post training methods against four properties, an online task distribution, on policy sampling, no parallel rollouts, and a per token reward, and shows SFT, RLHF, and GRPO each buying some at the cost of others. GRPO gets on policy sampling but explodes parallelism and collapses feedback into one sequence level score, which he compares to being handed 87 out of 100 on an essay and told to work out why. Self distillation gets all four, and it optimizes across the entire vocabulary at every token instead of sharpening the one that was sampled, which is why it keeps climbing past where GRPO plateaus while tokens to solve go down rather than up. The failure modes are the useful part: step level KL weighting to handle divergence, and residual guidance for hint leakage, the self distillation analogue of reward hacking, where a hint containing the answer teaches the model to state it and back fill the reasoning afterward.\n\nSpeaker info:\n- https://x.com/rronak_\n- https://www.linkedin.com/in/ronak-malde\n\nTimestamps:\n0:00 - From Windsurf to Trajectory\n1:05 - Benchmarks are saturating and getting expensive\n1:58 - The signal we throw away every day\n2:51 - Four things a training algorithm should have\n3:42 - SFT, and what it got right\n4:31 - DPO and RLHF\n5:22 - GRPO and the Faustian bargain\n6:15 - How GRPO actually works\n7:04 - Scored 87 out of 100 and told to figure it out\n7:52 - Distillation, then on policy distillation\n8:43 - Self distillation: make the model its own teacher\n10:21 - Optimizing the whole vocabulary, not the top token\n11:11 - Results on short horizon tasks\n12:52 - What breaks at 120B and a hundred tool calls\n13:41 - The but wait problem\n14:31 - Step level divergence weighting\n16:11 - Hint leakage, the new reward hacking\n17:51 - Residual guidance\n19:35 - All four properties, finally\n20:25 - What Trajectory is building\n21:16 - Q&amp;A: how continual is continual learning\n22:08 - Q&amp;A: model and harness improving together",
+    "topic": "education",
+    "tags": [
+      "models",
+      "benchmark",
+      "coding",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 827998,
+    "title": "Putting sign language AI into users\u2019 hands",
+    "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+    "published_at": "2026-08-12T14:01:59+00:00",
+    "fetched_at": "2026-08-12T15:01:39+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 829452,
+    "title": "Beyond Static Intelligence: Evaluating Continual Learning \u2014 Parth Asawa, UC Berkeley",
+    "url": "https://www.youtube.com/watch?v=iqloyWCGYQQ",
+    "published_at": "2026-08-12T14:00:19+00:00",
+    "fetched_at": "2026-08-12T15:01:42+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Every leaderboard you have seen was built by asking a model to do one task, wiping its memory, and asking it another. Parth Asawa's objection is that this quietly assumes learning across instances does not count. His benchmark measures what that assumption hides, using a metric called gain: run a system with state, then run the identical system reset between every single instance, and take the difference. Cumulative reward cannot show you this, because a stronger base model can post a higher total while learning less than a weaker one that genuinely improves.\n\nBuilding tasks that can measure learning turns out to be the hard part, and he sets three requirements. Headroom, so the task is not already solved by pretraining. Shared latent structure across instances, since standard benchmarks are deliberately independent and therefore offer nothing to improve on, which is why chaining existing benchmarks together does not work. And a learning signal in the environment, whether reward, error messages, or plain text. Continual Learning Bench 1.0 spans six domains including database exploration, where a system should need fewer SQL queries by the tenth question, after which a schema migration tests whether it can throw away stale knowledge without throwing away the useful kind. The headline result is uncomfortable: plain in context learning tops the leaderboard, beating the more elaborate context management systems on reward, on gain, and on cost. Failure modes land on either side of stability and plasticity, including a forecasting model that overpredicts, is corrected, underpredicts, is corrected again, and then jumps straight back to its original overprediction instead of splitting the difference.\n\nSpeaker info:\n- https://x.com/pgasawa\n- https://www.linkedin.com/in/pgasawa/\n- https://pgasawa.github.io/\n\nTimestamps:\n0:00 - How we evaluate models today\n1:28 - Imagine forgetting everything after every task\n2:05 - What continual learning actually means\n2:42 - In context, external memory, or parametric\n3:18 - The case that we are not measuring it at all\n3:58 - What the existing literature does\n4:37 - Why those evaluations are not enough\n5:13 - Why you cannot chain existing benchmarks\n5:51 - Design criterion one: headroom\n7:06 - Shared structure and a learning mechanism\n7:42 - Reward, and why cumulative reward misleads\n8:58 - Gain: the same system with memory wiped\n10:15 - Isolating learning from base capability\n10:54 - The database exploration task\n12:06 - Adding concept drift with a migration\n13:20 - Six domains in the benchmark\n13:57 - Results, and the in context learning surprise\n15:12 - Failure modes on stability and plasticity\n15:51 - A forecast that forgets its own correction\n16:28 - A notepad that refuses to update\n17:07 - Why the training stack was never built for this\n17:47 - The sunk cost fallacy in continual learning\n19:02 - Rethinking third party AI research\n19:38 - Roadmap",
+    "topic": "education",
+    "tags": [
+      "education",
+      "models",
+      "open-source",
+      "benchmark",
+      "research",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 825680,
     "title": "Getting more and more convinced that if you understand the \"shared language\" of your codebase... (i.e. the terms used, the names for things, relationships between them) ...AND those terms are used consistently in the codebase, then you understand the codebase. Whether you read the actual code or not. DDD has never been more powerful.",
     "url": "https://nitter.net/mattpocockuk/status/2087508057932615740#m",
@@ -9716,80 +9797,6 @@
       "coding",
       "education",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551756,
-    "title": "OpenAI to acquire Ona",
-    "url": "https://openai.com/index/openai-to-acquire-ona",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI plans to acquire Ona to expand Codex with secure, persistent cloud environments, enabling long-running AI agents across enterprise workflows.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551757,
-    "title": "Supporting Europe\u2019s work in ensuring a trustworthy AI ecosystem",
-    "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI supports the EU Code of Practice on AI content transparency, advancing provenance standards and tools to help people understand AI-generated content.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551754,
-    "title": "How an astrophysicist uses Codex to help simulate black holes",
-    "url": "https://openai.com/index/using-codex-to-simulate-black-holes",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Discover how astrophysicist Chi-kwan Chan uses Codex to build black hole simulations, helping scientists study extreme physics and test Einstein\u2019s theory of general relativity.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553645,
-    "title": "Dario Amodei \u2014\u00a0Policy on the AI Exponential",
-    "url": "https://darioamodei.com/post/policy-on-the-ai-exponential",
-    "published_at": "2026-06-10T22:03:20+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.\n\nthe future he envisions.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
