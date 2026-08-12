@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 834064,
+    "title": "LLM Knowledge Bases: a practical guide \u2014 Ben Holmes, Warp",
+    "url": "https://www.youtube.com/watch?v=I3bpdgFJCUY",
+    "published_at": "2026-08-12T17:00:22+00:00",
+    "fetched_at": "2026-08-12T17:29:12+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Talking runs about 200 words a minute and typing does not, which is why Ben Holmes starts a knowledge base with voice dictation rather than with organization. The pipeline only works if there is enough raw material, so the capture step is deliberately sloppy: ramble into your phone after a podcast or a meeting, skip the formatting, and let agents impose structure afterward. He points at Handy and Voice Ink as local, on device options, so none of it needs a subscription.\n\nStructure then arrives in passes. An enrich note skill stamps each file with a timestamp so later runs know what has been processed, assigns tags from a fixed reference list instead of inventing new ones, since as he puts it Claude loves to get creative, researches the source on the web, and adds backlinks found by key term search. On top of that pile, a wiki generated from a Karpathy gist produces browsable entries for the people, concepts, organizations, and sources buried in your own notes. Then the whole thing runs on a schedule in a cloud sandbox: the Obsidian headless CLI syncs the markdown down, the agent enriches whatever is not yet stamped, and it syncs back, so you wake up to a refreshed wiki he describes as the daily paper except it is yours. The closing trick is a graph view of every note, built in HTML and Tailwind purely by asking an agent for it, which turns out to be a decent map of where your own thinking has gaps.\n\nSpeaker info:\n- https://x.com/bholmesdev\n- https://bholmes.dev\n- https://linkedin.com/in/bholmesdev\n\nTimestamps:\n0:00 - The disorganized notes folder problem\n1:30 - Where we are going: raw notes to a browsable wiki\n2:46 - Getting raw thoughts down is the hard part\n3:25 - Why dictation beats typing\n4:02 - Local voice tools that need no subscription\n5:17 - Be scrappy, you need volume\n5:53 - What an enriched note looks like\n6:32 - The enrich note skill\n7:11 - Tagging from a fixed list, not inventing new ones\n7:49 - Running the skill\n9:07 - Following your own rabbit holes\n9:45 - Generating a wiki over the notes\n11:40 - The Karpathy gist behind the idea\n12:54 - Wikis for work: people, meetings, sources\n13:31 - Making it run without you\n14:10 - Local automations against cloud ones\n15:29 - Syncing markdown into a sandbox and back\n16:45 - Waking up to a fresh wiki\n18:01 - Visualizing the whole notebook\n18:39 - A graph view built by asking for it\n19:17 - Finding the gaps in your own thinking\n20:30 - Tools mentioned",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "coding",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 834065,
+    "title": "Adaption Labs: Gradient-Free Continual Learning \u2014 Sara Hooker, Adaption",
+    "url": "https://www.youtube.com/watch?v=XEd_SRVHBgU",
+    "published_at": "2026-08-12T16:30:19+00:00",
+    "fetched_at": "2026-08-12T17:29:12+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Fewer than five thousand people in the world know how to train a frontier model at scale, by Sara Hooker's estimate, and that knowledge travels like an apprenticeship rather than a literature. Modern computer science is 77 years old, two generations, and in that time the route to contributing at the frontier narrowed into one funnel: the right PhD, the right industry lab, the right problem at the right moment. She calls it the unreasonably narrow path, and notes it got compounded in this field by compute, so that a handful of labs build what everyone else uses and whole regions of the world appear nowhere on the map of where breakthroughs happen.\n\nHer case that the funnel is about to widen rests on two things. AutoScientist automates the training of models, optimizing the whole loop together from data through alignment and evolving itself per domain, and it beats research staff partly because people carry priors about particular architectures while the search ranges across sizes and across dense and mixture of experts designs. It only started paying off once they controlled data quality alongside the model rather than leaving that to the agent. One nice piece of honesty: the win rates all sit just above 60% because the budget was set to stop there, and lifting that ceiling let them keep climbing. The second reason is her slow death of scaling argument, that pretraining size is no longer the most rewarding axis. That matters for access, because pretraining compute has to be colocated and enormous while the compute that now pays off is distributable. If no lab is going to quadruple model size again on this architecture, recipes and algorithms start to matter more than hoarded GPUs.\n\nSpeaker info:\n- https://x.com/sarahookr\n- https://www.linkedin.com/in/sararosehooker/\n- https://www.sarahooker.me/\n\nTimestamps:\n0:00 - Seventy seven years of computer science\n1:15 - From gentleman scientists to professional labs\n1:56 - The unreasonably narrow path\n3:13 - GPU poor and GPU rich\n3:52 - Where breakthroughs come from, and where they do not\n4:30 - Why we are ripe for a revolution\n5:08 - AutoScientist\n5:47 - Why it beats research staff\n6:24 - It only worked once they controlled the data\n7:02 - The 60% that was a budget stop\n7:41 - Where the demand is: medical, legal, science, code\n8:59 - Languages from day one, and non verifiable tasks\n10:16 - The compute problem that would undo all this\n10:53 - The slow death of scaling\n11:31 - Smaller models overtaking larger ones\n12:09 - A broader action space, and why that opens the field\n12:47 - Q&amp;A begins\n14:06 - Fewer than five thousand people\n14:43 - Why the cost of asking shapes what gets asked\n15:57 - Q&amp;A: the safety objection to open frontier AI\n17:10 - Q&amp;A: parametric against nonparametric storage\n18:28 - Q&amp;A: are large models still needed for distillation\n19:04 - Why this architecture has hit its size ceiling",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "research",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 831771,
     "title": "Intelligence + Continual Learning = Expertise \u2014 Yu Su, NeoCognition",
     "url": "https://www.youtube.com/watch?v=I6aiEf3aEFQ",
@@ -9767,42 +9811,6 @@
     "tags": [
       "policy",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553096,
-    "title": "TCS and Anthropic partner to bring Claude to regulated industries",
-    "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
-    "published_at": "2026-06-12T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "TCS and Anthropic partner to bring Claude to regulated industries",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551753,
-    "title": "How Preply combines AI and human tutors to personalize learning",
-    "url": "https://openai.com/index/preply",
-    "published_at": "2026-06-12T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.",
-    "topic": "education",
-    "tags": [
-      "release",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
