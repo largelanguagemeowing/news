@@ -1,5 +1,108 @@
 [
   {
+    "article_id": 831771,
+    "title": "Intelligence + Continual Learning = Expertise \u2014 Yu Su, NeoCognition",
+    "url": "https://www.youtube.com/watch?v=I6aiEf3aEFQ",
+    "published_at": "2026-08-12T16:00:08+00:00",
+    "fetched_at": "2026-08-12T16:26:05+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Scheduling a meeting is not finding a shared slot on everyone's calendar. It is a constraint optimization over authority, priority, and urgency, and an expert sees that immediately where a very capable model does not. Yu Su uses examples like that one to separate two things the field keeps collapsing together. Intelligence is reasoning through an unfamiliar problem from the context you were handed, which frontier models keep getting better at and where each episode stands alone. Expertise is accumulated, situated competence, and almost nobody is scaling it.\n\nHis account of why coding agents work while everything else stays brittle is a modern Moravec's paradox. Code is already a language native world, symbolic and structured, with tests standing in for rewards. The rest of digital work is millions of micro worlds, each with its own local physics, far too heterogeneous for one static model to compress. The slide he calls the most important plots raw intelligence against expertise and finds them roughly orthogonal: scale intelligence alone and you get what he calls the world's smartest novice, brilliant at whatever is put in front of it and accumulating nothing between problems. Intelligence expands the search, spinning up a hundred parallel attempts. Expertise compresses it, because the shortcuts are already learned. The provocation he leaves is unbounded expertise from bounded intelligence: if continual learning gets good enough past some threshold of raw capability, the thing worth scaling stops being the model.\n\nSpeaker info:\n- https://x.com/ysu_nlp\n- https://www.linkedin.com/in/ysu1989/\n- https://ysu1989.github.io/\n\nTimestamps:\n0:00 - Why coding agents work and little else does\n1:30 - Agents before language models\n2:06 - What multimodal language agents changed\n3:26 - Why code was the ideal first market\n4:06 - Leaving the privileged world of code\n4:46 - A modern Moravec's paradox\n5:25 - Millions of micro worlds, each with local physics\n6:44 - Defining intelligence\n7:20 - Defining expertise\n8:00 - Experts see differently, not just more\n8:39 - Conditionality, judgment, and knowing when to stop\n9:53 - Expanding the search against compressing it\n10:32 - Continual learning as the bridge\n11:08 - Four parts of a working definition\n13:10 - The world's smartest novice\n14:32 - Unbounded expertise from bounded intelligence\n15:51 - Reliability against plasticity\n16:32 - Parametric and nonparametric learning together\n17:08 - Specialization as the next data opportunity\n17:53 - Making expertise abundant",
+    "topic": "education",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 831772,
+    "title": "Scaling Compute on Context \u2014 Jack Morris, Engram",
+    "url": "https://www.youtube.com/watch?v=WiqDvX6isc4",
+    "published_at": "2026-08-12T15:30:14+00:00",
+    "fetched_at": "2026-08-12T16:26:05+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Train a model directly on ten thousand financial reports and you can drive the loss to 0.00001. It knows the documents perfectly. Then you generate from it and it collapses. Jack Morris uses that failure to set up the real problem. The three axes that powered the entire deep learning revolution, more data, more compute, bigger models, all run on public data. Models are superb on Wikipedia, arXiv, and GitHub, and know nothing about your emails, your meetings, or your company. Against your own corpus the data axis is fixed and training from scratch is off the table, which leaves compute as the only axis you can still push, and that is what he means by scaling compute on context.\n\nThe rest is a tour of what people try and exactly where each one stops. KV compaction only reaches what already fits in context and skips the gradients entirely. On policy distillation works, but raises the question of what you distill, since raw documents will not do, which is the gap self study in the cartridges paper is aimed at. Continued pretraining on synthetic data conditioned on your corpus is promising, but it overwrites some of the pretraining and assumes you have a base model rather than the post trained one most people actually start from. Every approach shares a ceiling: you define a dataset, you train, and unless the model is underparameterized it eventually absorbs everything you made. A synthetic data wall, with none of pretraining's scaling behavior. The property he wants is the one that made AlphaGo work, where getting better makes the training questions harder, so that adding compute keeps buying depth instead of flattening out.\n\nSpeaker info:\n- https://x.com/jxmnop\n- https://jxmo.io\n- https://substack.com/@jxmnop\n\nTimestamps:\n0:00 - Scaling compute on context, and Engram\n1:28 - Terence Tao on breadth against depth\n2:43 - What models cannot know after training\n3:22 - Long tail skills and AMD kernels\n3:59 - Why a model knows nothing about you\n4:37 - The many names for this problem\n5:14 - Three axes of scaling\n5:52 - Even post training data is public by definition\n6:30 - Applying scale to your data\n7:45 - Why compute is the only axis left\n8:21 - The data budget is less fixed than it looks\n9:40 - Stating the problem properly\n10:55 - Just train on it, and why that fails\n11:34 - Perfect loss, collapsed generation\n12:13 - Making the model think the data is in context\n12:52 - KV compaction\n13:31 - On policy distillation and what to distill\n14:46 - Simulating pretraining with synthetic data\n16:00 - Unsupervised RL environments\n16:38 - The synthetic data wall\n17:54 - Self improvement, and what AlphaGo had\n18:33 - The curve they are chasing",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "research",
+      "infrastructure",
+      "funding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 831513,
+    "title": "Quoting Florian Herrengt",
+    "url": "https://simonwillison.net/2026/Aug/12/florian-herrengt/#atom-everything",
+    "published_at": "2026-08-12T15:08:47+00:00",
+    "fetched_at": "2026-08-12T16:26:03+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html\"><p>But then users start to report a weird bug. It's the 4th time your team has been trying to fix it. I mean... asking AI to fix it. Unfortunately, it seems like not even Fable can figure it out.</p>\n<p>You go talk to the person who worked on this feature.</p>\n<p>\"So where does the data come from?\"</p>\n<p>\"Hmm... actually I don't know. Let me ask Claude.\"</p>\n<p>You sit next to each other watching an endless wall of text appear on the screen. Neither of you has any idea whether any of it is true but Claude seems very confident. [...]</p>\n<p>This project has become so convoluted, with so many layers and services, that no one on your team could possibly start to understand what's going on.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html\">Florian Herrengt</a>, AI is removing the middle class of software engineering</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a>, <a href=\"https://simonwillison.net/tags/cognitive-debt\">cognitive-debt</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "open-source",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 832565,
+    "title": "My IDE is Discord",
+    "url": "https://nitter.net/mattpocockuk/status/2087555290174566491#m",
+    "published_at": "2026-08-12T15:02:20+00:00",
+    "fetched_at": "2026-08-12T16:26:07+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>My IDE is Discord</p>\n<img src=\"https://nitter.net/pic/media%2FHPh8d3LWEAAA2xO.png\" />",
+    "topic": "coding",
+    "tags": [
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 831773,
+    "title": "Memory Harnesses for Long-Running Research Agents \u2014 Stefania Druga, Sakana.ai",
+    "url": "https://www.youtube.com/watch?v=R3-anFK1YM8",
+    "published_at": "2026-08-12T15:00:06+00:00",
+    "fetched_at": "2026-08-12T16:26:05+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "On a literature review task where every paper already fit inside the context window, adding a memory harness changed nothing: the same accuracy, at higher cost. That negative result is the most useful thing in Stefania Druga's experiment, because it marks the boundary. Move to a long horizon task where the answer sits at step 124 and the question arrives at step 500, far outside the window, and the harness becomes the entire game.\n\nHer framing is that memory is a write, manage, read control loop wrapped around the model, not a database you attach to it. She held the model fixed and varied only the recall policy across a ladder: no recall at all, vector RAG, a decisions ledger that tracks and prioritizes what was decided each turn, and an oracle handed the correct memory outright. Across 68 xbench questions the ranked ledger won, beating even the approach of gating the harness on whether memory seemed necessary. The oracle pointedly does not reach the ceiling, because giving a model the right memory does not make it use the right memory. Ranked recall was also cheaper, which is the line worth keeping: bad memory is expensive, since it burns tokens and sends the agent the wrong way. The whole thing runs on a local M3 Ultra in Tokyo that she is driving from her phone, with fans stacked around it because the evals have not stopped.\n\nSpeaker info:\n- https://x.com/Stefania_druga\n- https://www.linkedin.com/in/drugastefania/\n- https://stefania11.github.io/\n\nTimestamps:\n0:00 - Context rot on long horizon tasks\n1:04 - Longer tasks, fewer model releases\n1:56 - Cutting spend by moving work local\n2:24 - Local models crossing the usefulness line\n2:50 - The machine in Tokyo, and the fans\n3:44 - Memory as a write, manage, read loop\n4:11 - The harness: core, recall, archival\n4:36 - The recall ladder, from nothing to an oracle\n5:27 - Task one: a retracted claim in a literature review\n6:19 - When everything fits, memory only adds cost\n6:47 - Task two: an answer 376 steps out of reach\n8:08 - Results across 68 questions\n8:35 - Why the oracle does not reach the ceiling\n8:59 - Ablations, and generalizing across models\n9:49 - Bad memory is expensive\n10:16 - Treat recall policy as a first class metric\n11:07 - The wider memory landscape\n11:33 - What running locally bought her\n12:29 - Sovereign AI at Sakana",
+    "topic": "research",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 829977,
     "title": "The human is the loop",
     "url": "https://brentfitzgerald.com/posts/the-human-is-the-loop/",
@@ -158,6 +261,27 @@
       "api",
       "safety",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 831516,
+    "title": "datasette-upload-dbs 0.5a0",
+    "url": "https://simonwillison.net/2026/Aug/11/datasette-upload-dbs/#atom-everything",
+    "published_at": "2026-08-11T20:35:13+00:00",
+    "fetched_at": "2026-08-12T16:26:04+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette-upload-dbs/releases/tag/0.5a0\">datasette-upload-dbs 0.5a0</a></p>\n        <p>This plugin has been around for a while - it lets users upload a brand new SQLite database to a hosted Datasette instance, at which point that database will start being served by that instance.</p>\n<p>It can also be used to atomically swap a database with a more recent version. The uploaded database is saved to a file, verified, then swapped in so <code>/name</code> starts serving the new one.</p>\n<p>The new release adds a formalized API, so you can replace an existing database (or add a new one) like this:</p>\n<pre><code>curl -X POST \\\n  -H \"Authorization: Bearer $API_TOKEN\" \\\n  -H \"Accept: application/json\" \\\n  -F \"db=@content.db\" \\\n  -F \"db_name=content\" \\\n  https://your-instance.example.com/-/upload-dbs\n</code></pre>\n<p>This means you can build fresh databases in an environment such as GitHub Actions and swap them in production as soon as that build has completed.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "api",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9679,124 +9803,6 @@
     "tags": [
       "release",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551578,
-    "title": "Our new community investments in Virginia support local jobs and expand energy affordability.",
-    "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
-    "published_at": "2026-06-11T20:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/VirginiaSocial.max-600x600.format-webp.webp\" />We\u2019re helping build the state\u2019s next-generation workforce and investing in energy programs.",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "api",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553644,
-    "title": "Lines of Code Got a Better Publicist",
-    "url": "https://curlewis.co.nz/posts/lines-of-code-got-a-better-publicist/",
-    "published_at": "2026-06-11T18:15:16+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553028,
-    "title": "Anthropic begged the world to stop AI\u2026 then shipped this",
-    "url": "https://www.youtube.com/watch?v=1PBRhm5ZnjU",
-    "published_at": "2026-06-11T17:17:48+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Render is the easiest place to ship full-stack apps and agents. The first 2,000 people to use the code RENDER-FIRESHIP will get $50 in credits: https://dashboard.render.com/register?utm_source=youtube&amp;utm_medium=organic_video&amp;utm_campaign=2026_partnership_fireship\n\nThis week, Anthropic released Claude Fable, a Mythos class model that's been carefully lobotomized for public consumption. But is it legit? Let's run it...\n\n#coding #programming #ai\n\n\ud83d\udd16 Topics Covered\n- Claude Fable release\n- Fable 5 vs Opus 4.8\n- Fable 5 Demo\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "agents",
-      "video",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553099,
-    "title": "Introducing Claude Corps",
-    "url": "https://www.anthropic.com/news/claude-corps",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Introducing Claude Corps",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553100,
-    "title": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
-    "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551755,
-    "title": "BBVA puts AI at the core of banking with OpenAI",
-    "url": "https://openai.com/index/bbva",
-    "published_at": "2026-06-11T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how BBVA scaled ChatGPT Enterprise to 100,000 employees and partnered with OpenAI to accelerate AI-powered banking transformation worldwide.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "coding",
-      "education",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
