@@ -1,5 +1,25 @@
 [
   {
+    "article_id": 927403,
+    "title": "Don't classify. Hallucinate!",
+    "url": "https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate/",
+    "published_at": "2026-08-14T21:54:35+00:00",
+    "fetched_at": "2026-08-14T22:22:32+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://softwaredoug.com/blog/2026/08/10/hypothetical-classifications\">Don&#x27;t classify. Hallucinate!</a></strong></p>\nI still have quite a bit of older content on my blog that I never got round to tagging. My blog has <a href=\"https://simonwillison.net/\">1,856 tags</a> - likely too many to feed to an LLM in one go and say \"which of these tags match the following content\".</p>\n<p>Doug Turnbull has a neat solution. Tell the model to output tags without any details of the existing vocabulary, then use vector embeddings against the existing corpus to find the concrete tags that are closest to the ones the model imagined might fit!</p>\n<p>His example prompt suggests including an example of the shape of your tags to help the model make a more useful guess:</p>\n<blockquote>\n<p><code>Your task is to create novel, never seen before, furniture, home goods, or hardware classification that best fit a search query.</code></p>\n<p><code>Product classifications might look like:</code></p>\n<p><code>Furniture / Living Room Furniture / Coffee Tables &amp; End Tables / Coffee Tables</code><br />\n<code>D\u00e9cor &amp; Pillows / Decorative Pillows &amp; Blankets / Throw Pillows</code><br />\n<code>Furniture / Bedroom Furniture / Dressers &amp; Chests</code><br />\n<code>Kitchen &amp; Tabletop / Kitchen Organization / Food Storage &amp; Canisters</code><br />\n<code>School Furniture and Supplies / School Furniture / School Chairs &amp; Seating / Stackable Chairs</code><br />\n<code>Baby &amp; Kids / Toddler &amp; Kids Bedroom Furniture / Kids Beds</code></p>\n<p><code>Here's the query to generate classifications for:</code></p>\n<p><code>brown coffee table</code></p>\n</blockquote>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/search\">search</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/embeddings\">embeddings</a>, <a href=\"https://simonwillison.net/tags/doug-turnbull\">doug-turnbull</a></p>",
+    "topic": "hardware",
+    "tags": [
+      "models",
+      "infrastructure",
+      "coding",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 916617,
     "title": "The edge ML pipeline that jailbroke the 4th Amendment...",
     "url": "https://www.youtube.com/watch?v=E7la7-dtfVM",
@@ -372,6 +392,28 @@
       "release",
       "open-source",
       "api",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 927406,
+    "title": "llm-gemini 0.33",
+    "url": "https://simonwillison.net/2026/Aug/13/llm-gemini/",
+    "published_at": "2026-08-13T19:37:34+00:00",
+    "fetched_at": "2026-08-14T22:22:32+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.33\">llm-gemini 0.33</a></p>\n        <p>It's been a while since the last <code>llm-gemini</code> release. This version of the plugin adds support for today's <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/\">Gemini 3.7 Flash</a> release, plus <code>gemini-3.6-flash</code>, <code>gemini-3.5-flash-lite</code> and two embedding models <code>gemini-embedding-2</code> and <code>gemini-embedding-001</code>.</p>\n<p>The plugin is also upgraded for compatibility with LLM 0.32, which means you can now see reasoning traces and you can also enable server-side tools using this pattern:</p>\n<pre><code>llm -m gemini-3.7-flash -T CodeExecution \\\n  'use python to calculate (factorial of 13) * 3'\n</code></pre>\n<p>I had Gemini 3.7 Flash <a href=\"https://tools.simonwillison.net/markdown-svg-renderer.html#url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F6779a22d5e7bb6bdf29936f1600a5259\">draw me some pelicans riding bicycles</a> at high, medium, and low thinking efforts (minimal, which was an option in 3.6 Flash, has been removed in 3.7.) Here's the high level one, which is pretty great:</p>\n<p><img alt=\"This pelican has  a very cool curved green bicycle, a fish in its basket, a lovely red and white spotted scarf and a captain's hat\" src=\"https://static.simonwillison.net/static/2026/gemini-3.7-flash-high-pelican.jpg\" /></p>\n<p><strong>Update 14th August 2026</strong>: I had originally said that the SVG <a href=\"https://static.simonwillison.net/static/2026/broken-pelican-safari.jpg\">rendered incorrectly</a> in Chrome and Firefox, and blamed Gemini 3.7 Flash for producing invalid SVG. That was entirely incorrect: the rendering glitch was my fault, caused by <a href=\"https://github.com/simonw/tools/commit/78fca0e647a9e20eff16900cf4485a6d622087e9\">a bug In my rendering tool</a>. I've now fixed that bug.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/google\">google</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "research",
       "coding",
       "tools"
     ],
@@ -9835,43 +9877,6 @@
     "tags": [
       "ai-models",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553635,
-    "title": "recommended reading. deepmind's new AI control roadmap. looks like they've given up on solving the lethal trifecta directly. the new direction seems to be a tower of LLMs. i suppose that's as good as it gets.",
-    "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/securing-the-future-of-ai-agents/gdm-ai-control-roadmap.pdf",
-    "published_at": "2026-06-23T22:24:04+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. deepmind's new AI control roadmap. looks like they've given up on solving the lethal trifecta directly. the new direction seems to be a tower of LLMs. i suppose that's as good as it gets.\n\nlove it",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551739,
-    "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-    "url": "https://openai.com/index/gpt-5-immunology-mystery",
-    "published_at": "2026-06-23T17:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
