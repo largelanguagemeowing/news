@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 914358,
+    "title": "How Web Data Infrastructure Powers the Next Generation of AI \u2014 Patricija \u017demaityt\u0117, Oxylabs",
+    "url": "https://www.youtube.com/watch?v=1UmZHb_E_SM",
+    "published_at": "2026-08-14T17:00:37+00:00",
+    "fetched_at": "2026-08-14T17:53:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Minutes into a call to demo a search API rebuilt to answer in under a second, the system got blocked, badly, in front of the client. Patricija \u017demaityt\u0117 treats that as the useful distinction: something that works in development, something that passes tests, and something that survives reality are three different systems. The rebuild had no trick to it. Browsers are slow, expensive, and incompatible with low latency, and they were unavoidable, so the team went hunting for time across layouts, parsers, sessions, and proxies until the seconds were gone. It averages 550 milliseconds now, against a 4 second baseline.\n\nTwo other stories run the same way. A video API request arrived with a two week deadline and a floor of 5 petabytes a month, then kept moving. The transcripts the client asked for turned out to be subtitles, then came search, then metadata, until a one off feature request had quietly become a product suite. The punchline she offers is that the client has since collected 30 petabytes and has not paid yet. Scaling the unblocker from 10,000 to 60,000 requests per second hit a wall around 20,000 in load testing, where the real difficulty was not generating synthetic traffic but knowing whether the number meant anything, since telemetry at that volume becomes part of the load it measures. Project 60 is already Project 150. Her argument throughout is that this is not a build once business, it is an adapt forever one.\n\nSpeaker info:\n- https://www.linkedin.com/in/patricijazemaityte\n- https://oxylabs.io/press-area/from-web-to-artificial-intelligence\n\nTimestamps:\n0:00 - Infrastructure, not models, as the starting point\n2:23 - A video API with a two week deadline\n4:08 - Transcripts, subtitles, search, metadata\n5:51 - Thirty petabytes later, still unpaid\n7:25 - A subsecond request, built and then shelved\n8:42 - The rebuild, and getting blocked live on the call\n10:53 - Hunting for time, second by second\n12:26 - Scaling the unblocker to 60,000 per second\n14:09 - Load testing, and the wall at 20,000\n15:31 - Project 60 becomes Project 150",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "api",
+      "video",
+      "infrastructure",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 912327,
     "title": "The Rise of CaaS: Context-as-a-Service for Agentic AI \u2014 Omer Primor, Bright Data",
     "url": "https://www.youtube.com/watch?v=Ot4OPrPH4xY",
@@ -9847,26 +9870,6 @@
     "topic": "opinion",
     "tags": [
       "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551738,
-    "title": "Helping build shared standards for advanced AI",
-    "url": "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
-    "published_at": "2026-06-23T13:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI helps build shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation through the Appia Foundation.",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "safety",
-      "benchmark",
-      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
