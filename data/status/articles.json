@@ -696,6 +696,50 @@
     "available": true
   },
   {
+    "article_id": 893959,
+    "title": "Computer-use models will agentify the web, not APIs \u2014 Dhruv Batra, Yutori",
+    "url": "https://www.youtube.com/watch?v=Ki980nV0__0",
+    "published_at": "2026-08-12T13:37:06+00:00",
+    "fetched_at": "2026-08-14T07:24:30+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "To learn what a US school district is buying, you file a Freedom of Information Act request. Someone scans the email you sent, puts the scan on Google Drive, and attaches the relevant PDFs. Dhruv Batra's question is whether anyone seriously expects that office to publish an MCP server. He grants the popular claim that agents will drive most of the action on the web, then rejects its usual next step, that the web will meet them with APIs. The head of the distribution might. The long tail, some 200 million active sites where infrastructure changes over decades, will not.\n\nReading the HTML instead does not save you, because much of what you see was never written down anywhere. A basketball score is missing from the page that first loads and arrives later as JSON. A product page contains no text reading sold out, only a quantity of zero and a script that grays the option out. State is calculated and rendered rather than stored, which makes the browser closer to a game engine than a document and makes pixels the source of truth. He calls this the bitter lesson for web agents: scaffolding built per site does not generalize, and the general solution is the one the web was actually built for. Their Navigator model runs screenshot in and clicks out, now writes JavaScript when that is quicker, and checks the result on screen. It misses 8 of 300 trajectories on a benchmark he thinks should be retired.\n\nSpeaker info:\n- https://x.com/DhruvBatra_\n- https://www.linkedin.com/in/dhruv-batra-dbatra/\n- https://dhruvbatra.com\n\nTimestamps:\n0:00 - The argument, and the part of it that is wrong\n3:23 - Restaurant menus on easy, medium, and hard mode\n5:31 - School district procurement, up to a FOIA request\n7:38 - 200 million active sites that change slowly\n8:42 - Why reading the HTML does not rescue it\n10:14 - Sold out is not text, it is a rendered zero\n11:33 - The browser is a rendering engine, pixels are the truth\n12:53 - Navigator, and writing JavaScript when that is faster\n15:51 - Are computer use models actually good enough\n17:20 - Latency and cost per task\n18:28 - Another layer of mess that we will call an API",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 893960,
+    "title": "From RL to IRL \u2014 Gaurav Mishra, Amazon AGI Lab",
+    "url": "https://www.youtube.com/watch?v=Cc0_nyxROBA",
+    "published_at": "2026-08-12T13:35:16+00:00",
+    "fetched_at": "2026-08-14T07:24:30+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Asked to file an expense, the agent gets signed out mid task, reasons that it can infer the password, guesses twice, and locks the account. In a second run it clicks a sponsored button styled like the real submit button, lands on a different site, and begins typing personal details into it. Both are real trajectories from early browser training runs at the Amazon AGI Lab, and Gaurav Mishra's summary is that RL worked while the world was a game, and IRL starts when the game fights back.\n\nThe talk catalogues what a reward function meets on contact with a real login screen. Observability is partial, since the DOM misses content baked into images and the screenshot misses whatever needs scrolling. Actions are irreversible, credentials expire mid trajectory, and done routinely does not mean successful. His answer is flight school rather than exams. Sandboxes train on layout shift, slow loads, pop ups, focus stealing, and stale tabs, and recovery becomes a native model action instead of an infra reset, so the agent refreshes, backtracks, waits, or escalates. A process reward model penalizes dangerous steps along the path instead of scoring only the outcome, and calibrated confidence teaches the agent to weigh whether an action is authorized, reversible, and visible before committing. The closing trajectory runs the same task correctly, including the agent refusing to guess the password and handing control back. Over time the model gets better and the harness gets thinner.\n\nSpeaker info:\n- https://www.linkedin.com/in/gaurav-mishra-b307a437\n\nTimestamps:\n0:00 - RL to IRL, and a lightning review of RL for agents\n3:26 - Why coding agents can do computer use at all\n4:05 - The agent that guesses its own password\n5:47 - The sponsored button that looks like submit\n6:37 - Partial observability, irreversibility, expiring credentials\n8:29 - Flight school, not exams\n9:54 - Process rewards and calibrated confidence\n11:11 - The pilot and the cockpit\n14:07 - Assumption versus reality, point by point\n15:11 - The same task, done right",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 825680,
     "title": "Getting more and more convinced that if you understand the \"shared language\" of your codebase... (i.e. the terms used, the names for things, relationships between them) ...AND those terms are used consistently in the codebase, then you understand the codebase. Whether you read the actual code or not. DDD has never been more powerful.",
     "url": "https://nitter.net/mattpocockuk/status/2087508057932615740#m",
@@ -9802,46 +9846,6 @@
       "media",
       "news",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551745,
-    "title": "New usage analytics and updated spend controls for enterprises",
-    "url": "https://openai.com/index/chatgpt-enterprise-spend-controls",
-    "published_at": "2026-06-18T17:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551746,
-    "title": "Improving health intelligence in ChatGPT",
-    "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
-    "published_at": "2026-06-18T11:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how GPT-5.5 Instant improves ChatGPT\u2019s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "benchmark",
-      "funding",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
