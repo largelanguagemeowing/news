@@ -1,5 +1,92 @@
 [
   {
+    "article_id": 910033,
+    "title": "The Dark Arts of Web Automation: Teaching Agents to Use Websites Like Humans \u2014 Corey Gallon, Rexmore",
+    "url": "https://www.youtube.com/watch?v=26RtyAm9y_Q",
+    "published_at": "2026-08-14T15:30:00+00:00",
+    "fetched_at": "2026-08-14T15:52:21+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Preparing this talk got Corey Gallon a warning from OpenAI that his account faced a ban for cyber abuse with a web browser. The offending work was an agent clearing Cloudflare Turnstile, two image captchas, and finally reCAPTCHA v2 with no human in the loop. His premise fits on one slide: a browser driven through the Chrome DevTools Protocol is just a meat bag with a mouse, because the agent's clicks and keystrokes travel the same path inside Chrome that yours do. Chrome stamps every event as trusted or untrusted, which is why a synthetic JavaScript click that works fine in Outlook gets silently dropped by Amazon's add to cart button.\n\nThe method is a loop of sense, act, verify, climbed up a three rung ladder only as high as the page forces. A synthetic click first, then a real CDP input event, then a human mouse path with jitter and a deliberate overshoot. He argues for a CLI over an MCP server on speed rather than capability, citing a study where both cleared tasks about 83% of the time while MCP took 71 round trips and eight minutes against seven turns and under a minute. That gap decides the last fight, because reCAPTCHA rounds expire on a clock. His solution splits the work: deterministic code drives the whole challenge and rearms itself, and the agent is called in only to look at the grid and name the tiles. Everything demonstrated runs on infrastructure and accounts he owns.\n\nSpeaker info:\n- https://x.com/coreygallon\n- https://www.linkedin.com/in/coreygallon\n- https://gallon.me\n- https://github.com/captivus/chrome-agent\n\nTimestamps:\n0:00 - Threatened with a ban for preparing this talk\n1:50 - The premise: a CDP browser is a meat bag with a mouse\n2:43 - Why a CLI beats an MCP server\n4:06 - The DevTools Protocol and the agent's digital senses\n5:47 - The loop: sense, act, verify\n6:38 - The three rung ladder\n8:27 - Rung one: batch emails, and the web UI as a permissionless API\n10:44 - Rung two: trusted clicks and the add to cart button\n12:51 - Rung three: Cloudflare Turnstile\n14:26 - Image captchas, drag puzzles, and human motion\n16:36 - Final boss: reCAPTCHA v2, solver and operator\n19:47 - The methodology is the takeaway",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "api",
+      "agents",
+      "research",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 910034,
+    "title": "Bringing agents onto the world wide web \u2014 Paul Klein IV, Browserbase",
+    "url": "https://www.youtube.com/watch?v=GqoNrUz8hEU",
+    "published_at": "2026-08-14T15:00:31+00:00",
+    "fetched_at": "2026-08-14T15:52:21+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "When OpenClaw shipped, people started buying Mac minis to run it from home, SSHing in and clearing captchas off a residential IP. Paul Klein IV points out he has yet to see a SOC 2 compliant Mac Mini setup at scale, and that this felt like a reasonable answer is itself the problem. His argument is that browser agents are no longer held back by the models. The capability is already there and the engineering around it is missing, which makes the overhang something any team can close rather than wait on a lab for.\n\nThat engineering has three parts. The most reliable browser agents in production are multimodal and write code alongside clicking, often intercepting network requests and replaying them rather than driving pixels. They carry a real harness, with skills and memory so a site is not rediscovered every run, and with page context compressed rather than dumped whole into the model. And they sit on infrastructure that renders a page identically every time, since a layout that comes back mobile on one run and desktop on the next produces results the agent cannot account for. He then turns to what the web owes agents: accessibility trees, Chrome's new Web MCP, and two unsolved problems, how an agent logs in on your behalf and who certifies that an agent can be trusted. The payoff is not in San Francisco. It is the logistics company in Singapore, the bank in South Africa, and the lumber factory in Mexico, all running on PHP forms with people clicking buttons every day.\n\nSpeaker info:\n- https://x.com/pk_iv\n- https://www.linkedin.com/in/paulkleiniv/\n- https://github.com/browserbase/stagehand\n\nTimestamps:\n0:00 - Why web agents have not happened yet, and is it the models\n3:17 - The missing piece is the harness\n4:32 - Harnesses that beat the baseline model\n6:01 - The capabilities overhang in computer use\n7:05 - Multimodal agents, skills, and token efficiency\n9:09 - Infrastructure, and the SOC 2 Mac Mini problem\n10:24 - What the web owes agents: accessibility and Web MCP\n11:40 - Authentication, trust, and who issues the certificate\n14:07 - What a real platform has to provide\n15:45 - The real economy runs on PHP forms",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 909973,
+    "title": "AI News: A Flood of New Models (Here's What Matters)",
+    "url": "https://www.youtube.com/watch?v=NC4h5kWH_-A",
+    "published_at": "2026-08-14T15:00:28+00:00",
+    "fetched_at": "2026-08-14T15:52:20+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Here's the AI News you likely missed this week. Try Seedance 2.5 on Artlist here \ud83d\udc49 https://artlist.io/?artlist_aid=Mattwolfe_4110&amp;utm_source=affiliate_p&amp;utm_medium=Mattwolfe_4110&amp;utm_campaign=Mattwolfe_4110\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nWorldClaw 3D Generation: https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/\nIntroducing Grok Bot: https://x.ai/news/introducing-grok-bot\nClaude AI Content Labels: https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content\nSuno Music Responsibility: https://suno.com/blog/building-the-future-of-music-responsibly\nSpotify AI Artist Labels: https://newsroom.spotify.com/2026-08-11/ai-persona-badges-transparency/\nIntroducing Grok 4.6: https://x.ai/news/grok-4-6\nGrok 4.7 Coming Soon: https://x.com/elonmusk/status/2087604711767896527\nGemini 3.7 Flash: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/\nMeta Muse Glimmer: https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model\nNVIDIA Nemotron 3.5 Lightning: https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/\nDeepSeek-V4-Pro Release: https://api-docs.deepseek.com/news/news260813/\nMAI-Code-1.1-Flash Launch: https://microsoft.ai/news/mai-code-1-1-flash-br-better-faster-at-a-quarter-of-the-cost/\nGPT-5.6 Ultrafast Mode: https://openai.com/index/previewing-ultrafast/\nChatGPT Linux Desktop App: https://x.com/OpenAI/status/2087231350134980830\nClaude Code Auto Mode: https://claude.com/blog/auto-mode-default-in-claude-code\nCowork Chrome Side Panel: https://claude.com/blog/cowork-chrome-side-panel\nClaude Code Session Messaging: https://x.com/ClaudeDevs/status/2085817074816070014\nLTX-2.5 Fast Video: https://venturebeat.com/technology/ltx-2-5-can-generate-a-10-second-ai-video-from-an-image-in-just-6-8-seconds-on-nvidia-superchips-and-its-open-weights\nAlibaba Unveils Wan3.0: https://www.alibabacloud.com/blog/alibaba-unveils-wan3-0-with-twice-as-long-video-outputs-from-a-richer-variety-of-inputs_603439\nMAI-Image-2.6 Ranks Second: https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai/\nTwitch AI Opt-Out: https://appleinsider.com/articles/26/08/12/twitch-will-train-amazons-ai-on-your-streams-unless-you-opt-out\nSign Language AI: https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:13 WorldClaw\n3:29 Grok Bot\n8:33 Seedance 2.5 in Artlist\n9:25 Anthropic Watermark\n11:48 Suno Watermark and Limits\n14:57 Spotify AI Labels\n16:20 A Flood of New Models\n17:44 Grok 4.6\n20:14 Gemini 3.7 Flash\n22:13 Muse Glimmer\n23:48 Nemotron 3.5 Lightning\n24:26 Deepseek-v4-Pro\n25:12 MAI-Code-1.1-Flash\n25:29 GPT-5.6 Sol Ultrafast\n26:50 ChatGPT on Linux\n27:06 Claude Code Auto Mode\n27:42 Claude Chrome Update\n28:15 Claude Sessions Message Each Other\n28:36 LTX-2.5\n28:59 Wan3.0\n29:14 MAI-Image-2.6\n29:50 Twitch AI Training\n30:14 Deepmind SL2T\n30:44 Final Thoughts\n33:49 WTF?",
+    "topic": "media",
+    "tags": [
+      "media",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 909974,
+    "title": "Did This AI Device Cross The Line...?",
+    "url": "https://www.youtube.com/shorts/MVOWGGrVTOs",
+    "published_at": "2026-08-14T14:56:41+00:00",
+    "fetched_at": "2026-08-14T15:52:20+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Friend 2.0 might be the weirdest AI product launch I\u2019ve seen all year \ud83d\ude2d\n\nThe AI necklace can now talk back to you, and somehow the ad they made for it raises even more questions than the product itself.\n\nThe founder has described Friend as a kind of \u201cconfidant, friend, God,\u201d says the first 5,000 devices sold out, and now wants to sell 50,000 of these.\n\nAnd there are clearly people who genuinely want this. One commenter on X even said AI makes a better counselor than therapy.\n\nSo\u2026 am I being old-fashioned, or is this where we\u2019re actually headed?\n\n#AI #aitech #ainews",
+    "topic": "funding",
+    "tags": [
+      "release",
+      "funding",
+      "hardware",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 908529,
     "title": "When you realise @theo has filmed a video about my skills... ...PERFECTLY timed for my next product launch Serendipity slaps",
     "url": "https://nitter.net/mattpocockuk/status/2088272462618247478#m",
@@ -9772,84 +9859,6 @@
       "product",
       "release",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551740,
-    "title": "How Omio is building the future of conversational travel",
-    "url": "https://openai.com/index/omio",
-    "published_at": "2026-06-23T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Discover how Omio uses OpenAI to power conversational travel experiences, accelerate product development, and transform into an AI-native company.",
-    "topic": "development",
-    "tags": [
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553638,
-    "title": "recommended viewing. as are all of her videos.",
-    "url": "https://video.twimg.com/amplify_video/2069093096017817603/vid/avc1/3840x2160/0wxXlOGPnBFOP94S.mp4",
-    "published_at": "2026-06-22T20:30:53+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. as are all of her videos.",
-    "topic": "general",
-    "tags": [
-      "general",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553639,
-    "title": "Die analysis of the 8087 math coprocessor's fast bit shifter",
-    "url": "https://www.righto.com/2020/05/die-analysis-of-8087-math-coprocessors.html",
-    "published_at": "2026-06-22T19:38:11+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i love this type of forensics. an internet friend thought me 8087 fpu programming in the 90ies. first time i had contact with a stack. good times.",
-    "topic": "opinion",
-    "tags": [
-      "coding",
-      "hardware",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553058,
-    "title": "Training Agents: Live tutorial on how to fine-tune a coding agent for continual learning",
-    "url": "https://www.youtube.com/watch?v=rNgUoH7Wbv8",
-    "published_at": "2026-06-22T19:13:46+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Training Agents, Session 1: from raw agent traces to a supervised fine-tuning baseline.\n\nIn this live session, I\u2019ll set up the first rung of an agentic post-training workflow: SFT. We\u2019ll take public coding-agent traces, turn them into prompt/completion training data, run a small TRL + LoRA fine-tune, and inspect what the first metrics can and cannot tell us.\n\nWhat we\u2019ll cover:\n- Why start with SFT before GRPO or environment RL\n- How agent traces become training examples\n- Completion-only loss for chat/tool traces\n- Running TRL SFT on Hugging Face Jobs\n- Keeping experiments reproducible without checking in logs or checkpoints\n- What the first eval metrics do and do not prove\n\n0:00 - Introduction and welcome to the first class\n4:42 - Meet the team: Introduction of Sergio and the TRL maintainers\n5:36 - The starting point: Exploring an agent trace\n6:22 - Using agents to train agents (the \"meta\" approach)\n8:03 - Defining the prompt and training parameters\n8:45 - Selecting the dataset: Real-world agent traces\n10:19 - Deep dive into Supervised Fine-Tuning (SFT) for agents\n16:42 - Understanding the agent \"contract\" and planning\n18:42 - Why train on traces? Learning the agent language\n21:56 - Anatomy of a trace: Multi-turn tool calls and logic\n24:32 - Agent execution: Loading skills and interacting with the Hub\n26:05 - Exploring the repository and custom skills\n29:39 - Reviewing the agent-generated training script\n41:10 - Educational overview: What is SFT at a code level?\n44:34 - Data formatting: Prompt completions and masking\n51:39 - Monitoring progress: Using the Trackio dashboard for metrics\n55:45 - Evaluating performance: Benchmarks and human eval\n58:00 - Summary of resources and next steps for the series\n\nRepo:\nhttps://github.com/burtenshaw/training-agents\n\nGuide:\nhttps://x.com/ben_burtenshaw/status/2067615361428545566?s=20\n\nSlides:\nhttps://docs.google.com/presentation/d/1hcGZ4U9TjZZzcGNbH2K6wYD45qwZTyo_gosCQsnHlnc/edit?usp=sharing\n\nAgent Trace:\nhttps://huggingface.co/buckets/burtenshaw/sft-on-traces/tree/example.jsonl\n\nTrackIO:\nhttps://huggingface.co/spaces/burtenshaw/youtube-livestream-1-gemma4-pi-mono-trackio\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #FineTuning",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
