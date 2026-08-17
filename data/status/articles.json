@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 1143563,
+    "title": "How to Kill the Code Review \u2014 Ankit Jain, Aviator",
+    "url": "https://www.youtube.com/watch?v=YgEv7IQzGdM",
+    "published_at": "2026-08-17T20:00:08+00:00",
+    "fetched_at": "2026-08-17T20:27:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Over 30% of changes now merge with no review at all, and the wait on the ones that do get reviewed is four times what it used to be. Ankit Jain's read is that the debate about when we stop reading code line by line is already over, because we stopped. His sharper point is what replaced it: an AI writes the code, an AI reviews the code, the two go back and forth in a web UI, and a human skims the thread and merges. When AI reviews and nobody reads, he says, we have configured the wrong thing.\n\nHe is also here to correct his own five layer trust model from a few months earlier, which missed that review was never only about correctness. It also carries knowledge sharing, mentorship, architectural feedback, and onboarding, and that half has to survive. Spec driven development does not rescue it, because a spec written up front with no feedback loop is the 1970 waterfall model, and the decisions that actually matter end up in the prompts, which teams throw away the moment the pull request opens. His proposal keeps them: capture the session, turn those decisions into acceptance criteria, pair that with a registry built from your own recurring review comments, and generate a test plan that a verification system runs against a live preview. The review surface becomes intent and evidence instead of the diff.\n\nSpeaker info:\n- https://x.com/ankitxg\n- https://www.linkedin.com/in/ankitjaindce/\n- https://www.latent.space/p/reviews-dead\n\nTimestamps:\n0:00 - The five layer trust model, and what it got wrong\n1:17 - We already stopped reviewing, and AI reviews nobody reads\n3:05 - What code review was actually for\n4:21 - Spec driven development is waterfall again\n5:53 - Intent lives in the prompts, which we throw away\n6:42 - The AI slop registry\n7:58 - Session to acceptance criteria to test plan\n11:51 - Deterministic where you can, and reviewing intent not the diff\n14:12 - Homework: mine your last 1,000 review comments",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "coding",
+      "tutorials",
+      "development",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1136907,
     "title": "Security Firewall for Agents \u2014 Ryan Dahl, Deno",
     "url": "https://www.youtube.com/watch?v=MkRYPFIMCSA",
@@ -9886,28 +9907,6 @@
     "tags": [
       "release",
       "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553023,
-    "title": "The weird history of the internet...",
-    "url": "https://www.youtube.com/watch?v=7B0ydm64cV8",
-    "published_at": "2026-07-01T16:33:28+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Try CodeRabbit Review free and turn your next big PR into a guided walkthrough - https://coderabbit.link/fireship\n\nThe internet might seem like it's always been around but the path to today's bombardment of cookies, pup-ups and brain rot has been long and hard. This is the history of the internet in 8 minutes...\n\n#coding #programming #internet #tech \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "coding",
-    "tags": [
-      "coding",
-      "tutorials",
-      "education",
-      "media",
-      "news",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
