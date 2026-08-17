@@ -1,5 +1,44 @@
 [
   {
+    "article_id": 1132811,
+    "title": "Context Engineering in 2026 \u2014 Louis-Fran\u00e7ois Bouchard, Omar Solano & Samridhi Vaid, Towards AI",
+    "url": "https://www.youtube.com/watch?v=WP3hjUXd918",
+    "published_at": "2026-08-17T16:26:35+00:00",
+    "fetched_at": "2026-08-17T16:57:05+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The cheapest configuration they tested was the one sending the most tokens. Across 11 presets run against their open source AI tutor, doing nothing at all to the context beat every compaction technique on recall, cost, and latency at once, and their own production defaults scored worse than leaving the history alone. Prompt caching is why. With 97% of tokens served from cache, and cached tokens up to 50 times cheaper on some APIs, compaction has to shrink a context by more than 50 times before it pays for itself, because rewriting the context invalidates the cache. Louis-Fran\u00e7ois Bouchard's framing is that summarization is potentially a trap.\n\nOmar Solano walks through the architecture and the first run, including a knowledge base browsing tool they built, measured, and found returned identical recall while running 50% slower. Samridhi Vaid extends it: keeping the full history recovered specific details 95% of the time against 32% after summarizing, and distinctive facts survived to 800,000 tokens without visible rot. Hardware changes the answer, though. Capped locally at a 32k window, keeping everything stops being possible, and a larger parameter count does not buy a larger context window. Dense retrieval fell to 0% recall on facts buried at 400k tokens where BM25 still found them every time. The rule they land on is to name the constraint you actually have before reaching for compaction, rather than compacting by default.\n\nSpeaker info:\nLouis-Fran\u00e7ois Bouchard (Towards AI):\n- https://x.com/Whats_AI\n- https://www.linkedin.com/in/whats-ai/\n- https://www.louisbouchard.ai\n\nOmar Solano (Towards AI):\n- https://x.com/omar_solano1\n- https://www.linkedin.com/in/omar-solano1\n\nSamridhi Vaid (Towards AI):\n- https://x.com/samridhivaid\n- https://www.linkedin.com/in/samridhivaid/\n\nProject:\n- https://github.com/towardsai/ai-tutor-app\n\nTimestamps:\n0:00 - The problem is the context, not the model\n1:30 - The AI tutor, and its five requirements\n5:21 - Two root problems: a finite window, a stateless model\n7:52 - Context rot, cost, and latency\n9:13 - The compaction toolkit, with and without an LLM\n12:58 - Offloading to files, the LLM wiki, progressive disclosure\n16:47 - Prompt caching, and why compaction can backfire\n19:20 - When to clear, compact, and optimize for cache hits\n21:53 - The tutor's architecture, a single ReAct agent\n25:49 - Hybrid search over an 8 million token corpus\n28:28 - Letting the agent browse the knowledge base\n31:01 - The browse tool measured: same recall, 50% slower\n36:23 - The experiment setup: presets, tasks, harness\n42:55 - Results: doing nothing wins on all three fronts\n48:13 - Should you ever compact?\n49:32 - DeepSeek, and a 50 times cache discount\n50:53 - Memory: 95% against 32% after summarizing\n54:38 - Cost at scale, and going local\n57:09 - Local limits: bigger models, same window\n58:25 - Where dense retrieval fails and BM25 holds\n1:01:01 - What they finally chose",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1133104,
+    "title": "recommended reading.",
+    "url": "https://x.com/i/article/2080691655238107136",
+    "published_at": "2026-08-17T16:01:51+00:00",
+    "fetched_at": "2026-08-17T16:57:06+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1126434,
     "title": "We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
     "url": "https://simonwillison.net/2026/Aug/17/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-tra/",
@@ -9864,41 +9903,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553630,
-    "title": "Grant Sanderson (@3blue1brown) \u2013 AI and the future of math",
-    "url": "https://www.youtube.com/watch?is=6DpKlQgUSk2df6tb&v=TfyPshgMbug&feature=youtu.be",
-    "published_at": "2026-06-30T19:05:07+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551590,
-    "title": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
-    "url": "https://deepmind.google/blog/start-building-with-nano-banana-2-lite-and-gemini-omni-flash/",
-    "published_at": "2026-06-30T16:02:40+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
