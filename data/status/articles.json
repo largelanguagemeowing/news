@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 1199622,
+    "title": "Voice agents with Realtime Video \u2014 Sidney Primas, LemonSlice",
+    "url": "https://www.youtube.com/watch?v=z1dqv74SpUs",
+    "published_at": "2026-08-18T16:00:06+00:00",
+    "fetched_at": "2026-08-18T16:31:21+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An avatar of Teddy Roosevelt holds court in a replica Oval Office, generating video continuously for eight hours with no reset, and a second deployment is being built to run for sixteen. That duration is the hard part. Sidney Primas explains that a real time avatar can only look backward, because the future frames do not exist yet, so every block it generates inherits the errors of the blocks before it and compounds them. LemonSlice trains with an attention mask that enforces this during training rather than discovering it at inference, and collapses roughly 30 denoising steps down to a single step to hit real time.\n\nThe less obvious bottleneck is audio. Emotion and facial expression turn out to depend on the audio embedding, and most audio encoders are trained on audiobooks, which are monotone by construction, so an expressive model needs its own. The wider bet is to take a world model and point it at humans, paying a harder training and deployment cost up front in exchange for full body movement, object interaction, and physics arriving closer to free. Two things surprised him. Serving this costs about what serving a voice model costs, despite the difference in pixels. And the model harness, meaning the orchestration of threads and queues across GPU and CPU so that video never stutters through an interrupt, is where he now thinks much of the durable value will sit.\n\nSpeaker info:\n- https://www.linkedin.com/in/sidneyprimas/\n\nTimestamps:\n0:00 - Breaking the avatar Turing test\n2:26 - Teddy Roosevelt in a replica Oval Office\n4:40 - Why the visual layer matters\n5:46 - Pointing a world model at humans\n6:58 - One image in, any style out, and being the API layer\n9:12 - Audio is what makes it expressive\n10:15 - Making a video model interactive, then real time\n12:22 - Error accumulation over hours of generation\n14:34 - Cost parity with a voice model\n15:36 - The model harness nobody talks about\n16:38 - An emotion engine for the next model\n19:55 - A single end to end EQ layer\n22:09 - Questions: internal state, and a real Turing test",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1199623,
+    "title": "While my guitar gently speaks \u2014 Todd Fisher, Philo Ventures",
+    "url": "https://www.youtube.com/watch?v=E_Txocq-Lrw",
+    "published_at": "2026-08-18T15:30:23+00:00",
+    "fetched_at": "2026-08-18T16:31:21+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Someone in the audience asked the guitar what reality is, and the guitar answered. Todd Fisher's build routes a microphone through speech recognition into a local model and pushes the reply back out through the strings, which is the most recent step in a project that began with a much simpler question: how hard could it be to make a guitar speak?\n\nThe lineage he draws runs from a pickup and an amplifier, through stomp boxes, to Peter Frampton sending guitar sound down a physical hose into his mouth. His own version is a plugin built with JUCE that drops into a DAW like any other effect. Getting it to say one word was straightforward. Getting it to say several meant slicing synthesized speech into words automatically, and that turned out to be the hard part. Energy gap segmentation cuts wherever the signal falls toward silence, which fails because running speech often has no silence between words at all. A sonority peak syllabifier looks for vowels instead. Combining the two got close enough that he finished by dragging segment boundaries by hand. Singing needed a different stack again: the YIN algorithm to pull a fundamental frequency off each fretted note, a synthesized tone shaped by an envelope, then a vocoder, with pitch shifted samples from an open singing dataset baked ahead of time because the processing is far too heavy to run live. He also declines to play the song his title alludes to, on the grounds that this recording was going online.\n\nSpeaker info:\n- https://www.linkedin.com/in/todd-b-fisher\n\nTimestamps:\n0:00 - Live performances that stayed with him\n2:44 - The guitar's evolution, up to the talk box\n4:24 - A Halloween project on a garage door\n6:06 - Building it as a JUCE plugin, and saying one word\n7:50 - Slicing speech into words, and why that is hard\n10:23 - Pitch detection with the YIN algorithm\n11:15 - Synthesis, vocoder, and jamming with it\n13:28 - A guitar that answers questions from the room\n16:01 - Pitch shifted samples, and getting closer to singing\n17:51 - Go build your passion project",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1197313,
     "title": "The Next Game Engine Won't Have a Manual \u2014 Arturo Nunez, Nereu",
     "url": "https://www.youtube.com/watch?v=VBCDhRrvlYo",
@@ -195,6 +237,25 @@
       "research",
       "coding",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1199933,
+    "title": "The Claude Science product guide",
+    "url": "https://claude.com/blog/the-claude-science-product-guide",
+    "published_at": "2026-08-18T00:00:00+00:00",
+    "fetched_at": "2026-08-18T16:31:22+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "The Claude Science product guide",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9870,62 +9931,6 @@
       "models",
       "api",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553393,
-    "title": "Bringing Claude Code and Claude Cowork to government",
-    "url": "https://claude.com/blog/bringing-claude-code-and-claude-cowork-to-government",
-    "published_at": "2026-07-07T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Bringing Claude Code and Claude Cowork to government",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553392,
-    "title": "Choosing a Claude model and effort level in Claude Code",
-    "url": "https://claude.com/blog/claude-model-and-effort-level-in-claude-code",
-    "published_at": "2026-07-07T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Choosing a Claude model and effort level in Claude Code",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553391,
-    "title": "Claude Cowork is coming to mobile and web",
-    "url": "https://claude.com/blog/cowork-web-mobile",
-    "published_at": "2026-07-07T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Claude Cowork is coming to mobile and web",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
