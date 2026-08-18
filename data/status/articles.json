@@ -1,5 +1,25 @@
 [
   {
+    "article_id": 1193506,
+    "title": "We need a concept like \"grep hygiene\" I.e. when your coding agent searches for a concept, it should receive relevant results Not a huge sludge of specs, plans, and old research docs So many codebases have the grep hygiene of a compulsive hoarder",
+    "url": "https://nitter.net/mattpocockuk/status/2089701313676284316#m",
+    "published_at": "2026-08-18T13:09:52+00:00",
+    "fetched_at": "2026-08-18T13:42:46+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>We need a concept like \"grep hygiene\"<br />\n<br />\nI.e. when your coding agent searches for a concept, it should receive relevant results<br />\n<br />\nNot a huge sludge of specs, plans, and old research docs<br />\n<br />\nSo many codebases have the grep hygiene of a compulsive hoarder</p>",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "research",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1191198,
     "title": "Going to try bitter lesson-ing myself this week Instead of hand-rolling a deterministic loop to tackle tickets from /to-tickets I'll just get an agent to delegate to subagents. Probably more expensive, less reliable, but may have emergent benefits",
     "url": "https://nitter.net/mattpocockuk/status/2089685052015673604#m",
@@ -765,6 +785,51 @@
     "topic": "education",
     "tags": [
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1192695,
+    "title": "Training Krea 2: What matters in generative model training \u2014 Sangwu Lee, Krea.ai",
+    "url": "https://www.youtube.com/watch?v=-tviRdpmHvs",
+    "published_at": "2026-08-15T04:52:18+00:00",
+    "fetched_at": "2026-08-18T13:42:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The most reliable way to render a person is to render the most boring average person and put them in the center of the frame. Sangwu Lee offers that as the price the big image models pay for consistency: ask a production model for a burning skull and every output comes back clean, competent, and nearly identical. Krea 2, whose medium variant is now open source, trades the other way, optimizing for fast generation and stylistic range so that a studio that does not yet know what it wants can actually explore.\n\nMost of the talk is about data, which he says twice over is basically everything once the architecture is locked. The examples are specific. A painting photographed on a wall is perfectly good training data except that captioners consistently omit the frame and the white wall behind it, so the model learns to hang every painting it generates. They refuse to train on AI generated images at all, because the aesthetic is sticky and you inherit somebody else's model. Deduplication runs on hashes first across two to ten billion images, then on embeddings for near duplicates. A large vision language model's judgment gets distilled down into a classifier cheap enough to sweep a billion images. Sparse autoencoders double as an unsupervised tagging system for catching watermarks and border artifacts. World knowledge coverage is checked against Wikipedia concepts ranked by PageRank. Thirty to forty in house filters in total.\n\nSpeaker info:\n- https://github.com/RE-N-Y\n- https://re-n-y.github.io/devlog/\n- https://github.com/krea-ai/krea-2\n\nTimestamps:\n0:00 - Open sourcing Krea 2 medium\n1:40 - Consistency versus diversity in production models\n3:23 - How diffusion models train, and why latent space\n5:59 - Data is basically everything\n6:53 - Bad data, and why they refuse AI images\n8:34 - The captioning pipeline, and the painting on a white wall\n10:15 - Deduplication and cheap classifiers at billion image scale\n11:56 - Sparse autoencoders as an unsupervised tagging system\n13:39 - Wikipedia PageRank for world knowledge coverage\n14:35 - The training pipeline, borrowed wholesale from LLMs\n18:54 - What actually mattered for iterating fast\n19:46 - The stack is inverting back toward DALL-E 2",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "infrastructure",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1192696,
+    "title": "Voice agents with Realtime Video \u2014 Sidney Primas, LemonSlice",
+    "url": "https://www.youtube.com/watch?v=z1dqv74SpUs",
+    "published_at": "2026-08-15T04:44:57+00:00",
+    "fetched_at": "2026-08-18T13:42:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An avatar of Teddy Roosevelt holds court in a replica Oval Office, generating video continuously for eight hours with no reset, and a second deployment is being built to run for sixteen. That duration is the hard part. Sidney Primas explains that a real time avatar can only look backward, because the future frames do not exist yet, so every block it generates inherits the errors of the blocks before it and compounds them. LemonSlice trains with an attention mask that enforces this during training rather than discovering it at inference, and collapses roughly 30 denoising steps down to a single step to hit real time.\n\nThe less obvious bottleneck is audio. Emotion and facial expression turn out to depend on the audio embedding, and most audio encoders are trained on audiobooks, which are monotone by construction, so an expressive model needs its own. The wider bet is to take a world model and point it at humans, paying a harder training and deployment cost up front in exchange for full body movement, object interaction, and physics arriving closer to free. Two things surprised him. Serving this costs about what serving a voice model costs, despite the difference in pixels. And the model harness, meaning the orchestration of threads and queues across GPU and CPU so that video never stutters through an interrupt, is where he now thinks much of the durable value will sit.\n\nSpeaker info:\n- https://www.linkedin.com/in/sidneyprimas/\n\nTimestamps:\n0:00 - Breaking the avatar Turing test\n2:26 - Teddy Roosevelt in a replica Oval Office\n4:40 - Why the visual layer matters\n5:46 - Pointing a world model at humans\n6:58 - One image in, any style out, and being the API layer\n9:12 - Audio is what makes it expressive\n10:15 - Making a video model interactive, then real time\n12:22 - Error accumulation over hours of generation\n14:34 - Cost parity with a voice model\n15:36 - The model harness nobody talks about\n16:38 - An emotion engine for the next model\n19:55 - A single end to end EQ layer\n22:09 - Questions: internal state, and a real Turing test",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "video",
+      "infrastructure",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9851,64 +9916,6 @@
     "tags": [
       "coding",
       "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553627,
-    "title": "Growing on Purpose: The Work That Makes You. Jeremy Howard on human flourishing in the time of AI.",
-    "url": "https://www.youtube.com/watch?v=SUZwYV5JYBM&feature=youtu.be",
-    "published_at": "2026-07-06T08:34:33+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553054,
-    "title": "Introducing Tau: An Educational Coding Agent",
-    "url": "https://www.youtube.com/watch?v=4ItFgQI2NOM",
-    "published_at": "2026-07-06T03:15:03+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Meet Tau \u2014 a small, readable coding agent written in Python. In this quick tour, I introduce Tau, show how to install and run it, configure model providers (Hugging Face Inference Providers, GLM 5.2, Minimax, Kimi), resume durable sessions, and walk through its three-layer architecture: tau_ai (provider-neutral model streaming), tau_agent (the reusable agent loop/harness), and tau_coding (the TUI, tools, sessions, and coding-agent environment). Tau is designed as an educational reference inspired by Pi \u2014 minimal, modular, and easy to build on. If you want to understand how coding agents actually work, this is a great place to start.\n\n---\n\ud83e\udd13 *Topics Covered*\n- Tau terminal coding agent overview\n- Coding agent architecture layers\n- Hugging Face inference providers setup\n\n---\n\ud83d\udd17 Links\n- Tau website: https://twotimespi.dev\n- Tau repo (contributions welcome!): https://github.com/huggingface/tau\n- Pi (architectural inspiration): https://pi.dev\n- Install Tau: `uv tool install tau-ai`\n\n---\n\ud83d\udc4b Connect with me\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\n---\n\u23f1\ufe0f Timestamps\n0:00 Introduction\n2:04 Quick tour: install & launch\n3:47 Login & model providers\n4:19 Select a model\n4:32 Scoped models\n5:27 Sessions & resume\n5:56 Thinking levels\n6:33 Contributing & upcoming tutorials\n7:34 Architecture: tau_ai, tau_agent, tau_coding\n8:58 Closing",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553089,
-    "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
-    "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
-    "published_at": "2026-07-06T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
