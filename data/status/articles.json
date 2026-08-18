@@ -250,6 +250,25 @@
     "available": true
   },
   {
+    "article_id": 1206490,
+    "title": "Pacing model development in an era of cyber-critical capabilities",
+    "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+    "published_at": "2026-08-18T11:00:00+00:00",
+    "fetched_at": "2026-08-18T19:28:02+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI is strengthening monitoring, alignment, and security for frontier AI models. See how new safeguards are guiding the pace of model development.",
+    "topic": "development",
+    "tags": [
+      "models",
+      "safety",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1185214,
     "title": "Partnering with CodeAI to prepare the first AI generation",
     "url": "https://openai.com/index/partnering-with-codeai",
@@ -9913,29 +9932,6 @@
     "tags": [
       "tutorials",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553053,
-    "title": "Training Agents 2: Live tutorial on model distillation for training custom agents.",
-    "url": "https://www.youtube.com/watch?v=GZT_oNQnLV4",
-    "published_at": "2026-07-08T04:46:10+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "In this live session, we'll cover how to transfer capability from a teacher model to a smaller student through distillation. We'll work through supervised fine-tuning on teacher-generated data, then on-policy and online methods where the teacher scores the student live, then self-distillation where the model teaches itself. Each one runs in TRL.\nWhat we'll cover:\n\n- What distillation is, and the four axes that organize it: signal, data source, timing, and teacher identity\n- White-box vs black-box: distilling from open weights vs strings\n- Off-policy distillation: generate from the teacher, then SFT on the outputs\n- On-policy distillation: sample from the student, score with the teacher in the loop\n- Distillation as reinforcement learning: the KD distance as a dense, token-level reward\n- Self-distillation: the model as its own teacher, and when that beats a stronger one\n\n01:04 - Introduction to the stream and distillation for training agents.\n02:51 - Overview of the session\u2019s running order (off-policy vs. on-policy distillation).\n04:06 - Understanding the three main phases of training: pre-training, mid-training, and post-training.\n05:22 - Why distillation is useful for smaller, more efficient models.\n06:01 - Recap of Supervised Fine-Tuning (SFT) and how it fits into distillation.\n08:31 - Breaking down distillation into four axes: Signal, Data, Timing, and Teacher.\n09:56 - Hard labels vs. Soft labels (SFT vs. Logit-based distillation).\n12:50 - Comparing Reinforcement Learning (RL), off-policy learning, and on-policy learning.\n17:16 - Deep dive into off-policy distillation.\n20:00 - Implementing off-policy distillation in TRL (using the GKD trainer).\n26:40 - Reproducing experiments: training a smaller coding agent via distillation.\n32:01 - Deep dive into on-policy distillation and the reverse KL loss.\n38:49 - Setting lambda and beta parameters for on-policy distillation in TRL.\n48:37 - Introduction to self-distillation (Simple, SDPO, and SDFT).\n56:52 - The limits and ceilings of distillation.\n58:12 - Final recap and transition to future sessions on Reinforcement Learning.\n59:51 - Q&amp;A: Addressing viewer questions on multi-teacher models and closed-model distillation.\n\nRepo: https://github.com/burtenshaw/training-agents\n\nSlides: https://docs.google.com/presentation/d/1Vo1AOj1FRemm2NrC9z2RspeJC9VInflQiKeSzr11Kw4/edit?usp=sharing\n\nThis is part of the Training Agents series: using coding agents to design, run, monitor, and review post-training experiments, while training models to become better agents.\n\n#TRL #HuggingFace #PostTraining #AIAgents #Distillation",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "infrastructure",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
