@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1195011,
+    "title": "Training Krea 2: What matters in generative model training \u2014 Sangwu Lee, Krea.ai",
+    "url": "https://www.youtube.com/watch?v=-tviRdpmHvs",
+    "published_at": "2026-08-18T14:00:06+00:00",
+    "fetched_at": "2026-08-18T14:34:07+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The most reliable way to render a person is to render the most boring average person and put them in the center of the frame. Sangwu Lee offers that as the price the big image models pay for consistency: ask a production model for a burning skull and every output comes back clean, competent, and nearly identical. Krea 2, whose medium variant is now open source, trades the other way, optimizing for fast generation and stylistic range so that a studio that does not yet know what it wants can actually explore.\n\nMost of the talk is about data, which he says twice over is basically everything once the architecture is locked. The examples are specific. A painting photographed on a wall is perfectly good training data except that captioners consistently omit the frame and the white wall behind it, so the model learns to hang every painting it generates. They refuse to train on AI generated images at all, because the aesthetic is sticky and you inherit somebody else's model. Deduplication runs on hashes first across two to ten billion images, then on embeddings for near duplicates. A large vision language model's judgment gets distilled down into a classifier cheap enough to sweep a billion images. Sparse autoencoders double as an unsupervised tagging system for catching watermarks and border artifacts. World knowledge coverage is checked against Wikipedia concepts ranked by PageRank. Thirty to forty in house filters in total.\n\nSpeaker info:\n- https://github.com/RE-N-Y\n- https://re-n-y.github.io/devlog/\n- https://github.com/krea-ai/krea-2\n\nTimestamps:\n0:00 - Open sourcing Krea 2 medium\n1:40 - Consistency versus diversity in production models\n3:23 - How diffusion models train, and why latent space\n5:59 - Data is basically everything\n6:53 - Bad data, and why they refuse AI images\n8:34 - The captioning pipeline, and the painting on a white wall\n10:15 - Deduplication and cheap classifiers at billion image scale\n11:56 - Sparse autoencoders as an unsupervised tagging system\n13:39 - Wikipedia PageRank for world knowledge coverage\n14:35 - The training pipeline, borrowed wholesale from LLMs\n18:54 - What actually mattered for iterating fast\n19:46 - The stack is inverting back toward DALL-E 2",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "infrastructure",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1193506,
     "title": "We need a concept like \"grep hygiene\" I.e. when your coding agent searches for a concept, it should receive relevant results Not a huge sludge of specs, plans, and old research docs So many codebases have the grep hygiene of a compulsive hoarder",
     "url": "https://nitter.net/mattpocockuk/status/2089701313676284316#m",
@@ -109,6 +132,26 @@
     "topic": "education",
     "tags": [
       "agents",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1194773,
+    "title": "GRPO Beyond English: A Large-Scale Study of GRPO in Non-English and Multilingual Settings",
+    "url": "https://machinelearning.apple.com/research/grpo-beyond-english",
+    "published_at": "2026-08-18T00:00:00+00:00",
+    "fetched_at": "2026-08-18T14:34:06+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Reinforcement Learning with Verifiable Rewards (RLVR), often optimized with Group Relative Policy Optimization (GRPO), has become a central recipe for improving the reasoning capabilities of pretrained language models but current studies remain heavily English-centric. We conduct a large-scale empirical study of multilingual and non-English GRPO across a wide range of base models, training languages, and different reasoning language rewards. We find that training to reason in the native language often leaves only a small gap to training for English reasoning. We further observe strong\u2026",
+    "topic": "research",
+    "tags": [
+      "models",
+      "research",
+      "coding",
       "education"
     ],
     "dearrow_thumbnail_url": "",
@@ -9879,43 +9922,6 @@
       "agents",
       "coding",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551728,
-    "title": "MUFG aims to become AI-native with OpenAI",
-    "url": "https://openai.com/index/mufg",
-    "published_at": "2026-07-07T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "agents",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553626,
-    "title": "Field Guide to Fable \u2014 Thariq Shihipar, Anthropic",
-    "url": "https://www.youtube.com/watch?is=ejZTRy8t85FIbSGQ&v=9fubhllmsBU&feature=youtu.be",
-    "published_at": "2026-07-06T18:33:35+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing.",
-    "topic": "tutorials",
-    "tags": [
-      "coding",
-      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
