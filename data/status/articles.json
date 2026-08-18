@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 1197313,
+    "title": "The Next Game Engine Won't Have a Manual \u2014 Arturo Nunez, Nereu",
+    "url": "https://www.youtube.com/watch?v=VBCDhRrvlYo",
+    "published_at": "2026-08-18T15:00:29+00:00",
+    "fetched_at": "2026-08-18T15:32:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask a coding agent for a camera that follows your character and it will reinvent that camera from scratch, every time, slightly differently. Arturo Nunez's diagnosis is that the context sits on the game engine's vocabulary rather than the game's. Controlling a character in a conventional engine means a mesh, a renderer, an animator, a rigid body, a collider, an audio source, and only then your actual movement logic, nearly all of which is boilerplate that every character in every game already carries.\n\nNereu inverts that. Everything is an asset, and you attach tags describing intent instead of implementation: character, animated, double jump. Systems then query by tag and move everything marked vehicle and drivable, which is Entity Component System thinking lifted from data oriented design. The pleasant consequence is that nothing stops you tagging a building as drivable and dropping it into a Mario Kart style race. The assistant is there to get you unstuck rather than to one shot a finished game, and the vocabulary it expects is the one tutorials already use: press A to jump, press A again in the air.\n\nThe engineering detail worth stealing is how context gets assembled. Rather than feed the whole scene to a model, he borrows level of detail from rendering. Assets near whatever you are editing arrive with their full tag values, distant ones collapse to a position and a type, and the hundred pieces of grass are simply left out.\n\nSpeaker info:\n- https://x.com/arturonereu\n- https://www.linkedin.com/in/arturonereu/\n- https://www.arturonereu.com/\n\nTimestamps:\n0:00 - Building a game live by describing it\n2:45 - Why making games is hard\n4:27 - Ten years at Unity watching the same struggles repeat\n6:59 - Powerful engines and LLMs that still do not compose\n7:49 - The boilerplate behind controlling a character\n8:45 - Everything is an asset, and tags describe intent\n9:37 - The asset tag system, and tagging a building as drivable\n11:21 - How the prompt gets its context\n14:52 - Level of detail, applied to context assembly\n16:37 - Getting unstuck rather than one shotting a game\n17:28 - World models are a different medium",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "tutorials",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1197314,
+    "title": "Building an Agentic Video Editor for Mass Consumer \u2014 Ekaterina Deyneka, Reelful",
+    "url": "https://www.youtube.com/watch?v=pPj_tjlvYjA",
+    "published_at": "2026-08-18T14:30:38+00:00",
+    "fetched_at": "2026-08-18T15:32:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Nearly every hand in the room went up when she asked who had recorded video at the conference. Almost none stayed up for who had actually posted any of it. Ekaterina Deyneka counts herself in that gap, and Reelful is her answer to it: drop in raw footage with a line of direction, and an agent finds the usable moments, cuts them together, and generates captions, music, voiceover, and b roll around them.\n\nHer framing for an AI engineering audience is that an agentic video editor is structurally the same thing as an agentic app builder. A prompt goes in, a sandbox spins up, an agent works inside it with tools and skills, and something renders out the other end. The difference that matters is editing rather than generating. A blank canvas lets an agent do anything it likes, while real footage forces it to judge which take is best and what to drop, and to produce something polished from material that is often messy or incomplete. The composition layer is Remotion, which expresses video as React code, chosen precisely because agents write code well. Skills carry the taste: cut rules, font pairings, when a cutaway actually helps. A verification pass catches compositions that will not render and sends the agent back around. All of it hides behind mobile templates, since the point is that a consumer never sees the pipeline at all.\n\nSpeaker info:\n- https://x.com/katedeyneka\n- https://www.linkedin.com/in/katedeyneka\n- https://www.katedeyneka.com\n\nTimestamps:\n0:00 - Who recorded video here, and who actually posted it\n1:29 - What agentic video editing means\n3:33 - The same shape as an agentic app builder\n4:10 - Editing real footage is harder than generating\n5:30 - The pipeline, from media understanding to a creative plan\n6:50 - Remotion, video as React code, and the verification layer\n8:49 - Hiding all of it behind mobile templates",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "video",
+      "coding",
+      "events",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1195011,
     "title": "Training Krea 2: What matters in generative model training \u2014 Sangwu Lee, Krea.ai",
     "url": "https://www.youtube.com/watch?v=-tviRdpmHvs",
@@ -9884,44 +9926,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553390,
-    "title": "How people are using Claude Cowork",
-    "url": "https://claude.com/blog/how-people-are-using-claude-cowork",
-    "published_at": "2026-07-07T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "How people are using Claude Cowork",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551727,
-    "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
-    "url": "https://openai.com/index/australian-payments-plus",
-    "published_at": "2026-07-07T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
