@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1204003,
+    "title": "The Next Medium: Why Real-Time Interactive Video Changes Everything \u2014 Ahmed Ahres, Reactor",
+    "url": "https://www.youtube.com/watch?v=5dCAmSDOAjI",
+    "published_at": "2026-08-18T17:30:18+00:00",
+    "fetched_at": "2026-08-18T17:36:44+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Uber could not exist without GPS. Ahmed Ahres uses that to argue real time is a change of medium rather than a speedup: before GPS you consulted a map somebody else had already made, and afterwards your own position became something you could act on continuously. He runs the same argument through film. Once a viewfinder showed you what you were shooting, you could adjust while shooting, and that is the reason Instagram and TikTok were possible at all.\n\nGenerated video today sits on the wrong side of that line. You prompt, you wait, you get a file back, and there is nothing further to do with it. His definition of world models is not Gaussian splatting and not a longer clip, but video that is interactive, effectively infinite, and generated fast enough to steer, which he demonstrates by prompting a cat into a scene while that scene is still generating. What it unlocks divides three ways: control, which he sums up as instant feedback being the ultimate form of it; character driven worlds that reach past games into robotics training data and into education; and live avatars, which he is refreshingly candid are still not working properly. The engineering consequence is that none of the batch playbook carries over. You are streaming pixels rather than returning files, every session is stateful and has to remember what happened when a character looked away, and sub 100 millisecond latency means putting GPUs near users rather than in one region.\n\nSpeaker info:\n- https://x.com/Boudatw\n- https://www.linkedin.com/in/ahmedahres/\n- https://www.ahmedahres.com\n\nTimestamps:\n0:00 - World models, defined as real time interactive video\n1:44 - What happens when video becomes programmable\n3:25 - Maps to GPS, and film to viewfinder\n5:04 - Model one: infinite, interactive, real time\n5:52 - Control, advertising, and instant feedback\n7:32 - Model two: controllable worlds, robotics, education\n9:13 - Model three: live avatars, not cracked yet\n10:06 - What people are actually building on it\n12:37 - Why real time infrastructure is not batch infrastructure\n16:10 - Evaluation is still an unsolved problem",
+    "topic": "robotics",
+    "tags": [
+      "models",
+      "benchmark",
+      "video",
+      "infrastructure",
+      "coding",
+      "robotics"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1204004,
+    "title": "Infra behind Krea 2: How to train and serve at scale \u2014 Gabriel Jorge Menezes, Krea.ai",
+    "url": "https://www.youtube.com/watch?v=byn9PURoBNY",
+    "published_at": "2026-08-18T17:00:05+00:00",
+    "fetched_at": "2026-08-18T17:36:44+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "GPU utilization is a lie. It read 100% straight through pretraining while the cluster was nowhere near well used, so Gabriel Jorge Menezes tracks tensor core utilization instead, and watched it climb as training resolution stepped from 128 pixels up to 1024. That is one of several numbers he argues you cannot train at this scale without. InfiniBand counters are exported by nothing off the shelf, and most of their failures turned out to be cross node communication, so they built that collection themselves. Any GPU running hotter than 78 degrees gets pulled rather than debugged, because one warm card throttles and destabilizes the entire run.\n\nThis is the infrastructure half of Krea 2, the model trained from scratch on thousands of GPUs. Crashes scaled with the cluster and often failed silently, with communication timing out while every dashboard stayed green, and the practical answer was to stop treating each one as a mystery. Let it crash, and the same nodes running the same code will frequently go 24 hours on the next attempt. What made that survivable was checkpointing aggressively against a filesystem quick enough to write a terabyte in under 30 seconds. Production and training then share one cluster, with training holding priority and inference evicted to outside providers through a fake Kubernetes node, migrated back gradually rather than all at once so the site never drops.\n\nSpeaker info:\n- https://www.linkedin.com/in/gabriel-jorge-menezes/\n- https://gab-menezes.github.io/\n\nTimestamps:\n0:00 - Krea 2, trained from scratch, and two open checkpoints\n3:26 - Crashes at scale, and the silent ones\n4:18 - Metrics are everything, starting with temperature\n5:58 - GPU utilization is a lie, use tensor cores\n6:48 - InfiniBand and NVLink metrics you have to build yourself\n8:29 - Checkpointing hard against a fast filesystem\n9:21 - Gang scheduling, and training outranking production\n11:01 - Flipping inference out through a fake node\n14:23 - Taints that stop you wasting GPUs\n16:03 - Inference runs on almost any GPU",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "infrastructure",
+      "coding",
+      "tutorials",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1201923,
     "title": "Generative Video at the Speed of Light \u2014 Keegan McCallum, uRun",
     "url": "https://www.youtube.com/watch?v=Xln-On3syJk",
@@ -276,6 +320,24 @@
       "research",
       "coding",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1203766,
+    "title": "MVICAD2: Multi-View Independent Component Analysis with Delays and Dilations",
+    "url": "https://machinelearning.apple.com/research/mvicad2-delays-dilations",
+    "published_at": "2026-08-18T00:00:00+00:00",
+    "fetched_at": "2026-08-18T17:36:42+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Machine learning techniques in multi-view settings face significant challenges, particularly when integrating heterogeneous data, aligning feature spaces, and managing view-specific biases. These issues are prominent in neuroscience, where data from multiple subjects exposed to the same stimuli are analyzed to uncover brain activity dynamics. In magnetoencephalography (MEG), where signals are captured at the scalp level, estimating the brain\u2019s underlying sources is crucial, especially in group studies where sources are assumed to be similar for all subjects. Common methods, such as Multi-View\u2026",
+    "topic": "opinion",
+    "tags": [
+      "education",
+      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9875,62 +9937,6 @@
       "ai-models",
       "models",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553388,
-    "title": "How Anthropic's marketing operations team uses Claude Cowork to automate reporting and campaign builds",
-    "url": "https://claude.com/blog/how-anthropics-marketing-operations-team-uses-claude-cowork-to-automate-reporting-and-campaign-builds",
-    "published_at": "2026-07-08T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "How Anthropic's marketing operations team uses Claude Cowork to automate reporting and campaign builds",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553389,
-    "title": "Working at the frontier: How Thomson Reuters builds AI for high-stakes professional work",
-    "url": "https://claude.com/blog/working-at-the-frontier-how-thomson-reuters-builds-ai-for-high--stakes-professional-work",
-    "published_at": "2026-07-08T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Working at the frontier: How Thomson Reuters builds AI for high-stakes professional work",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551726,
-    "title": "Introducing GPT-Live",
-    "url": "https://openai.com/index/introducing-gpt-live",
-    "published_at": "2026-07-08T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
