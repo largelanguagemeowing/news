@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1259506,
+    "title": "AI is the World\u2019s largest Relationship Therapist \u2014 Clay Cockrell & Tony Fabrikant, CoupleWork AI",
+    "url": "https://www.youtube.com/watch?v=yoONZwV2smc",
+    "published_at": "2026-08-19T15:30:30+00:00",
+    "fetched_at": "2026-08-19T15:31:38+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The springs in the middle of the loveseat in Clay Cockrell's counseling office gave out years ago, so gravity now tips a couple toward each other however hard they grip the arms. He kept it. The harder argument arrives with two numbers. BetterHelp spent a decade assembling roughly 35,000 licensed clinicians and reaching 5 million users. ChatGPT sees roughly 900 million weekly active users, and enough open it at 11pm after a fight that Cockrell calls the world's largest relationship therapist a language model optimized to keep you engaged.\n\nHis objection is not that the model is unqualified but that it is agreeable. Ask why your partner never listens and it validates you, which he calls a very expensive mirror that only shows you in your best light. Sycophancy here is a clinical failure mode. The user does not get more self aware, they get more certain, and they return with a cleaner case and less curiosity about what their partner experienced. Against that he sets the real standard of care, John Gottman's lab predicting divorce from a 15 minute conversation with over 90% accuracy, and emotionally focused therapy, both largely absent from commercial products. The safety gap is sharper, since a general assistant cannot hear the difference between we fight a lot and I am afraid of what happens when I disagree with him. Tony Fabrikant closes on the engineering: start with the clinician rather than the prompt, encode what good looks like as hundreds of evals, and treat one failing safety test as disqualifying.\n\nSpeaker info:\n- https://www.linkedin.com/in/clay-cockrell-906b0b4/\n- https://www.linkedin.com/in/tony-fabrikant\n- https://www.walkandtalk.com/\n\nTimestamps:\n0:00 - The couch that leans a couple toward each other\n1:42 - A show of hands, and who is already doing this\n3:12 - BetterHelp's decade against ChatGPT's week\n4:29 - Optimizing for engagement is a clinical fire alarm\n5:21 - Why being validated is not therapy\n6:37 - Sycophancy as a clinical failure mode\n7:52 - Gottman, EFT, and the real standard of care\n9:33 - What a general assistant cannot hear\n10:37 - The data you hand a relationship coach\n11:40 - Building Maxine to know when to stop coaching\n14:27 - Tony Fabrikant on evals when safety is on the line",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "api",
+      "safety",
+      "benchmark",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1259507,
+    "title": "Shipping AI to a Million Patients Without an A/B Test \u2014 Jared Joselowitz, Ufonia",
+    "url": "https://www.youtube.com/watch?v=McknwOzbmyg",
+    "published_at": "2026-08-19T15:00:31+00:00",
+    "fetched_at": "2026-08-19T15:31:38+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "You cannot A/B test on patients, because randomizing someone into the worse variant is unethical and often illegal. You cannot undo a call once spoken. And a vendor's benchmark number is not a defense at a post incident review. Jared Joselowitz builds the safety and evaluation stack behind Dora, a Ufonia voice agent that phones patients for post op follow ups and pre op checks. It has made roughly 200,000 real clinical calls across 20 UK hospitals and is contracted to reach a million patients within two years. Because it asks about symptoms and gives advice, it is a regulated medical device.\n\nShip to 5% and watch the dashboard does not survive that. 5% is thousands of patients, and a dashboard turning red means someone was already harmed. So the reactive loop moves into simulation, as self driving did with millions of simulated miles. Their framework has one model play the patient against hazards written with clinicians, and a second model judge every dialogue. Both were validated rather than assumed. In a patient and public involvement study, real patients shown a genuine consultation beside a simulated one picked the simulated patient as more realistic in three of four sets. The judge, checked against 10 clinicians from 10 specialties on 240 cases, matched or beat them at near perfect sensitivity, the metric that counts when a missed red flag is catastrophic and a false alarm is merely annoying. Prompts are then optimized against a cost matrix instead of hand tuned. You do not ship the model, you ship the evidence.\n\nSpeaker info:\n- https://x.com/JaredJoselowitz\n- https://www.linkedin.com/in/jaredjoselowitz/\n- https://jossy.co.za/\n\nTimestamps:\n0:00 - Proving a product is safe before a patient hears it\n1:28 - What Dora is, and the scale it runs at\n2:18 - A call with a patient after cataract surgery\n3:22 - Giving advice makes it a regulated medical device\n3:59 - Starting from what could actually harm someone\n4:35 - Why ship to 5% and roll back breaks here\n5:53 - Borrowing the simulation playbook from self driving\n6:32 - Matrix, and a model that plays the patient\n8:24 - Can real patients tell which one is simulated\n9:43 - An automated judge, and validating it against clinicians\n11:35 - How brittle prompts really are\n12:50 - Optimizing prompts instead of hand tuning them\n13:30 - Making the metric a real cost function\n14:42 - The flywheel that replaces the reactive loop\n15:20 - Simulation is necessary, not sufficient\n16:38 - Shipping the evidence, not the model\n17:14 - New modalities bring new hazards, same framework",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1257430,
     "title": "Guardrails First: Engineering Member-Facing Health AI \u2014 Rashi Agrawal, Hinge Health",
     "url": "https://www.youtube.com/watch?v=YXEqC05WEI0",
@@ -9915,42 +9959,6 @@
       "agents",
       "safety",
       "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551717,
-    "title": "How Deutsche Telekom is rewiring telecommunications with AI",
-    "url": "https://openai.com/index/deutsche-telekom",
-    "published_at": "2026-07-10T07:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How Deutsche Telekom is becoming an AI-native telco with OpenAI-transforming customer service, employee workflows, network operations, and the future of voice.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553387,
-    "title": "Working at the frontier: How Cognition trusts Claude Fable 5 to work through the night",
-    "url": "https://claude.com/blog/working-at-the-frontier-how-cognition-trusts-claude-fable-5-to-work-through-the-night",
-    "published_at": "2026-07-10T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Working at the frontier: How Cognition trusts Claude Fable 5 to work through the night",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
