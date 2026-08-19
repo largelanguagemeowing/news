@@ -19,6 +19,29 @@
     "available": true
   },
   {
+    "article_id": 1267831,
+    "title": "Don\u2019t be data poor \u2014 Anuj Iravane, Anterior",
+    "url": "https://www.youtube.com/watch?v=XAsb7MIAzm8",
+    "published_at": "2026-08-19T18:00:17+00:00",
+    "fetched_at": "2026-08-19T18:35:04+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Roughly 70% of medical communication still moves by fax. What reaches Anterior is scanned fax bundles that can run past 300 pages, carrying handwriting, checkboxes, tables and images across one patient's entire clinical trajectory. Anuj Iravane calls it an observation through a fuzzy lens over a lifespan. It is exactly the data his evals need, and the data he is least allowed to keep: their contracts rule out retaining it, deriving from it, or holding redacted or anonymized copies. Nothing survives into a dataset. In a domain where 95% accuracy is not good enough, that is a real problem.\n\nSo they generate it, by running the inference workflow backwards. The forward task takes unstructured data plus a policy, follows a reasoning trace and arrives at a label. Reversed, you sample a label, sample a reasoning trace, then build the record that would have produced it. That works because Anterior already models policies explicitly as decision trees, so traces come from a far more uniform distribution than a model asked to invent variety, which tends to collapse onto the same few cases. A coarse to fine pipeline layers patient invariants into a journey of provider encounters, then fans out into documents, with a consistency eval catching contradictions between documents written in parallel. Because generation starts from the label, labels are correct by construction and ground truthing disappears. Clinicians own the pipeline as skills rather than code. Roughly 90% of their datasets are now synthetic, and in a blind review clinicians separated synthetic from real only about 60% of the time.\n\nSpeaker info:\n- https://x.com/anujiravane\n- https://www.linkedin.com/in/anujiravane/\n- https://www.anterior.com/\n\nTimestamps:\n0:00 - Policy guided decisions over highly unstructured data\n1:05 - Most medical communication still arrives by fax\n2:11 - Why 95% is not good enough\n2:37 - The data you need most is the data you cannot keep\n3:05 - Betting on generating it instead\n3:55 - Why one shotting a 300 page record fails\n5:00 - Reversing the forward task\n5:51 - Policies as decision trees you can sample from\n7:19 - Testing the edge cases production data never had\n8:09 - Building a record coarse to fine\n9:54 - The refinement loop and the round trip check\n11:09 - Why it never becomes a PDF\n11:34 - Giving clinicians the keys through skills\n14:12 - Results, and datasets built just in time",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1265742,
     "title": "How to build an AI-Native Health Company \u2014 Dan Feng, Maven Clinic",
     "url": "https://www.youtube.com/watch?v=WJRdLNhrsLQ",
@@ -863,6 +886,24 @@
       "models",
       "coding",
       "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267591,
+    "title": "Git at any scale",
+    "url": "https://cursor.com/blog/git-at-any-scale",
+    "published_at": "2026-08-18T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "Cursor is now a part of SpaceX",
+    "topic": "product",
+    "tags": [
+      "product",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -2068,6 +2109,23 @@
     "available": true
   },
   {
+    "article_id": 1267592,
+    "title": "Cursor is now a part of SpaceX",
+    "url": "https://cursor.com/blog/joining-spacex",
+    "published_at": "2026-08-14T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "coding",
+    "tags": [
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 887212,
     "title": "sqlite-utils 4.2.1",
     "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2/",
@@ -2399,6 +2457,62 @@
     "tags": [
       "ai-models",
       "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267594,
+    "title": "Cursor earns",
+    "url": "https://cursor.com/blog/aiuc-1",
+    "published_at": "2026-08-13T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "AIUC-1 certification for agent security and reliability",
+    "topic": "product",
+    "tags": [
+      "product",
+      "agents",
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267595,
+    "title": "Cloud agents start 3x faster with builds",
+    "url": "https://cursor.com/blog/builds",
+    "published_at": "2026-08-13T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267593,
+    "title": "Firetiger joins Cursor",
+    "url": "https://cursor.com/blog/firetiger",
+    "published_at": "2026-08-13T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "product",
+    "tags": [
+      "product",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -2940,6 +3054,24 @@
       "ai-models",
       "models",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267596,
+    "title": "Introducing Grok 4.6",
+    "url": "https://cursor.com/blog/grok-4-6",
+    "published_at": "2026-08-12T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -5331,6 +5463,25 @@
     "available": true
   },
   {
+    "article_id": 1267597,
+    "title": "How Cursor Router chooses the right model for the task",
+    "url": "https://cursor.com/blog/how-cursor-router-works",
+    "published_at": "2026-08-06T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 571988,
     "title": "From asking to doing: How the world is putting ChatGPT to work",
     "url": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
@@ -6007,6 +6158,24 @@
       "models",
       "coding",
       "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267598,
+    "title": "Mixture-of-Kittens: our open-source",
+    "url": "https://cursor.com/blog/mixture-of-kittens",
+    "published_at": "2026-08-04T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "MoE megakernel for NVL72s",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "open-source"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -7438,6 +7607,24 @@
     "available": true
   },
   {
+    "article_id": 1267599,
+    "title": "How we set up our cloud agent environment",
+    "url": "https://cursor.com/blog/cloud-agent-environment",
+    "published_at": "2026-07-30T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551692,
     "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
     "url": "https://openai.com/index/avatarin",
@@ -7930,6 +8117,24 @@
     "tags": [
       "models",
       "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267600,
+    "title": "Introducing Cursor Start",
+    "url": "https://cursor.com/blog/cursor-start-india",
+    "published_at": "2026-07-28T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "coding",
+    "tags": [
+      "release",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -8772,6 +8977,24 @@
     "available": true
   },
   {
+    "article_id": 1267601,
+    "title": "Introducing Cursor Router",
+    "url": "https://cursor.com/blog/router",
+    "published_at": "2026-07-22T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "coding",
+    "tags": [
+      "release",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551703,
     "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
     "url": "https://openai.com/index/ntt-data",
@@ -9212,6 +9435,25 @@
     "source_name": "Claude Blog",
     "extraction_method": "rss",
     "body": "Working at the frontier: How Rakuten builds agents overnight with Claude Fable 5",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1267602,
+    "title": "Agent swarms and the new model economics",
+    "url": "https://cursor.com/blog/agent-swarm-model-economics",
+    "published_at": "2026-07-20T00:00:00+00:00",
+    "fetched_at": "2026-08-19T18:35:03+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "",
     "topic": "ai-models",
     "tags": [
       "ai-models",
@@ -9734,247 +9976,6 @@
     "topic": "ai-models",
     "tags": [
       "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553613,
-    "title": "recommended reading.",
-    "url": "https://x.com/i/article/2076946210397552640",
-    "published_at": "2026-07-14T15:21:05+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553013,
-    "title": "Try This Awesome AI Video Transition!",
-    "url": "https://www.youtube.com/shorts/KzJkS00Ztd8",
-    "published_at": "2026-07-14T14:31:02+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "How to \"Time Travel\" in your next video with this SUPER easy editing trick!\n\nYou don't need complex VFX software to create seamless, mind-bending transitions anymore. Here is a straightforward way to jump between locations using AI tools like Runway, Kling, or Leonardo:\n\nStep 1: Record your intro in Location A, then head to Location B. Try to wear the same outfit and match your pose at the start of the second clip\u2014it makes the final transition much more believable.\nStep 2: Take a screenshot of the very last frame of Clip A, and the very first frame of Clip B.\nStep 3: Upload these two images as your starting and ending keyframes in an AI tool (I used Runway's Seedance 2.0 for the edit you see in this video).\nStep 4: Use a prompt like this: \u201cThe camera shoots up like a big jump transition and reveals the second location in one smooth motion. The man does not speak.\u201d (Pro-tip: Adding \"does not speak\" stops the AI from generating weird facial movements).\nStep 5: Download the generated clip, place it between your two original videos, and apply a short crossfade or smooth cut to hide the seams.\n\nThis method works for teleporting, outfit changes, mic tosses, and more.\n\nSave this post so you can reference the prompt later, and tag a creator who needs to try this! \ud83c\udfac\n\n#videoediting #contentcreator #editingtips #AI #genAI",
-    "topic": "tutorials",
-    "tags": [
-      "video",
-      "coding",
-      "tutorials",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551714,
-    "title": "How to manage AI investments in the agentic era",
-    "url": "https://openai.com/index/managing-ai-investments-in-agentic-era",
-    "published_at": "2026-07-14T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows.",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "tutorials",
-      "funding",
-      "education",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553083,
-    "title": "Anthropic commits $10 million to Canadian AI research",
-    "url": "https://www.anthropic.com/news/canadian-ai-research",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Anthropic commits $10 million to Canadian AI research",
-    "topic": "research",
-    "tags": [
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553084,
-    "title": "Introducing Claude for Teachers",
-    "url": "https://www.anthropic.com/news/claude-for-teachers",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Introducing Claude for Teachers",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553354,
-    "title": "Economic ResearchHow Canada uses Claude: Findings from the Anthropic Economic Index",
-    "url": "https://www.anthropic.com/research/how-canada-uses-claude",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jul 14, 2026Economic ResearchHow Canada uses Claude: Findings from the Anthropic Economic Index",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 844212,
-    "title": "How data science teams use ChatGPT Work",
-    "url": "https://openai.com/academy/chatgpt-work/how-data-science-teams-use-codex",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-08-12T22:40:19+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 844213,
-    "title": "How sales teams use ChatGPT Work",
-    "url": "https://openai.com/academy/chatgpt-work/how-sales-teams-use-codex",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-08-12T22:40:19+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551715,
-    "title": "How data science teams use ChatGPT Work",
-    "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551716,
-    "title": "How sales teams use ChatGPT Work",
-    "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551588,
-    "title": "Empowering India\u2019s next generation of innovators with ATL Saathi",
-    "url": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
-    "published_at": "2026-07-13T12:37:28+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators in robotics labs.",
-    "topic": "robotics",
-    "tags": [
-      "release",
-      "models",
-      "robotics",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553614,
-    "title": "Control the ideas, not the code - <antirez>",
-    "url": "https://antirez.com/news/169",
-    "published_at": "2026-07-13T12:01:14+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. don't despair. learn and adapt.",
-    "topic": "education",
-    "tags": [
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553615,
-    "title": "recommended viewing. listen to me sound stupid on the internet again.\n\nalso starring: my knees.",
-    "url": "https://video.twimg.com/amplify_video/2076595754844516352/vid/avc1/1920x1080/jv3V86zYl6C7_W-p.mp4",
-    "published_at": "2026-07-13T11:17:21+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. listen to me sound stupid on the internet again.\n\nalso starring: my knees.",
-    "topic": "general",
-    "tags": [
       "general"
     ],
     "dearrow_thumbnail_url": "",
