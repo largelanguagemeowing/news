@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1261575,
+    "title": "200 Million Patient Interactions Later \u2014 Vivek Muppalla, Hippocratic AI",
+    "url": "https://www.youtube.com/watch?v=AN65uc645mE",
+    "published_at": "2026-08-19T16:00:06+00:00",
+    "fetched_at": "2026-08-19T16:32:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Asked how many in the room had ever received a proactive call from their healthcare provider, almost no hands went up. Vivek Muppalla treats that as the signature of scarcity: too few clinicians and too few hours, so the system triages and only the sickest get called. Hippocratic AI is past 200 million clinical conversations across more than 60 health systems, which is what changes the arithmetic. The tradeoff they refused is the familiar one: models accurate enough for this work can take tens of seconds to answer, and models fast enough for a phone call are not safe enough to make one.\n\nSo the stack was built end to end. Polaris runs 31 models on every conversation, one holding the thread and 30 specialists covering labs, medications and scheduling, executed in parallel with each specialist first making a fast check on whether it has anything to say at all. A single model would be a single point of failure. Their speech recognition is a decoder only audio system fed the conversation so far and the domain context alongside the audio, so a drug name resolves against a finite list rather than an unbounded one, and prosody survives the projection so it hears the how as well as the what. Single word answers get a second scoring pass, because a heard as no is catastrophic. On evaluation he does the arithmetic that makes 99% unacceptable: at 10,000 calls a day that is 100 people sent to the wrong appointment, and catching a 1% failure rate takes roughly 450 tests.\n\nSpeaker info:\n- https://x.com/vim1up\n- https://www.linkedin.com/in/vivekmuppalla/\n- https://hippocraticai.com/\n\nTimestamps:\n0:00 - Who has ever been called by their provider\n1:05 - Triage as a math problem, and what flips it\n1:54 - The oath every employee takes\n2:44 - A call with a patient, start to escalation\n5:12 - Why a generic voice stack does not work\n6:04 - Building vertically to get speed and intelligence\n7:44 - Latency and intelligence as a compounding flywheel\n8:36 - Polaris, and running 31 models at once\n9:29 - What speech recognition gets wrong in the real world\n10:27 - Feeding context and domain knowledge into the audio model\n11:19 - A finite list of medications instead of an infinite one\n12:10 - Rescoring single word answers\n13:51 - How a specialist decides to speak up\n14:43 - Verifiers for tool calls\n15:34 - Quantization, speculative decoding, cache\n16:25 - Why 99% is a bad number here\n17:14 - The tests needed to catch a 1% failure\n18:03 - Grading on the scale used for humans\n18:55 - Building a benchmark for empathy",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "funding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1259506,
     "title": "AI is the World\u2019s largest Relationship Therapist \u2014 Clay Cockrell & Tony Fabrikant, CoupleWork AI",
     "url": "https://www.youtube.com/watch?v=yoONZwV2smc",
@@ -1188,6 +1211,25 @@
     "available": true
   },
   {
+    "article_id": 1261415,
+    "title": "Origin Code Hosting",
+    "url": "https://cursor.com/changelog/origin-code-hosting",
+    "published_at": "2026-08-17T00:00:00+00:00",
+    "fetched_at": "2026-08-19T16:32:17+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Aug 17, 2026 \u00b7 Changelog",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1091244,
     "title": "Markdown SVG upgrades",
     "url": "https://simonwillison.net/2026/Aug/16/markdown-svg-upgrades/",
@@ -2231,6 +2273,25 @@
     "tags": [
       "ai-models",
       "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1261416,
+    "title": "Cloud Agents Start 3x Faster with Builds",
+    "url": "https://cursor.com/changelog/08-13-26",
+    "published_at": "2026-08-13T00:00:00+00:00",
+    "fetched_at": "2026-08-19T16:32:17+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Aug 13, 2026 \u00b7 Changelog",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -6064,6 +6125,25 @@
     "available": true
   },
   {
+    "article_id": 1261417,
+    "title": "Google Workspace Plugins",
+    "url": "https://cursor.com/changelog/google-workspace-plugins",
+    "published_at": "2026-08-03T00:00:00+00:00",
+    "fetched_at": "2026-08-19T16:32:17+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Aug 3, 2026 \u00b7 Changelog",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551685,
     "title": "Circles powers telco personalization with OpenAI technology",
     "url": "https://openai.com/index/circles",
@@ -7444,6 +7524,24 @@
     "available": true
   },
   {
+    "article_id": 1261418,
+    "title": "Cursor, now on iPad",
+    "url": "https://cursor.com/changelog/ipad",
+    "published_at": "2026-07-29T00:00:00+00:00",
+    "fetched_at": "2026-08-19T16:32:17+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Jul 29, 2026 \u00b7 Changelog",
+    "topic": "coding",
+    "tags": [
+      "release",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 551695,
     "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
     "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
@@ -7614,6 +7712,24 @@
     "tags": [
       "ai-models",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1261419,
+    "title": "Cursor Start",
+    "url": "https://cursor.com/changelog/cursor-start",
+    "published_at": "2026-07-28T12:00:00+00:00",
+    "fetched_at": "2026-08-19T16:32:17+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Jul 28, 2026 \u00b7 Changelog",
+    "topic": "coding",
+    "tags": [
+      "release",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9843,122 +9959,6 @@
     "tags": [
       "agents",
       "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553620,
-    "title": "recommended reading. good advise for now.",
-    "url": "https://x.com/i/article/2076072720559972352",
-    "published_at": "2026-07-12T12:43:08+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. good advise for now.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553621,
-    "title": "I reinvented the C64 tape drive from the 80s... but tiny and USB",
-    "url": "https://www.youtube.com/watch?is=gzXuwQURagijzp8O&v=GQwTPH67YqY&feature=youtu.be",
-    "published_at": "2026-07-11T19:38:11+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. i love all of bitluni's projects.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553622,
-    "title": "AI Can't Recreate Thrust (But It Can Help You Understand It) | James Randall",
-    "url": "https://www.jamesdrandall.com/posts/thrust_ai_powered_software_archaeology/",
-    "published_at": "2026-07-11T17:57:24+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. don't get turned off by the title. this is how i use LLMs too for many tasks.\n\nthat said, when used as an exploratory tool, don't trust their explanations. that ibckudes fable and sol. really...",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553052,
-    "title": "Build Small Winners Reveal",
-    "url": "https://www.youtube.com/watch?v=tYU7erNVfA0",
-    "published_at": "2026-07-10T22:14:59+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "After reviewing hundreds of creative projects from builders around the world, it's finally time to announce the Build Small Hackathon winners \ud83c\udf89\n\nCongratulations to all our winners, and thank you to everyone who joined us and built something amazing.\n\n\ud83c\udf99\ufe0f New to streaming or looking to level up? Check out StreamYard and get $10 discount! \ud83d\ude0d https://streamyard.com/pal/d/5371923545718784",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553021,
-    "title": "OpenAI is so back... GPT 5.6 Sol first look",
-    "url": "https://www.youtube.com/watch?v=URKml8lgw8Y",
-    "published_at": "2026-07-10T17:25:44+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Try Blacksmith for free to run your GitHub Actions 2x faster - https://www.blacksmith.sh/\n\nOpenAI just released GPT-5.6, which includes their new Sol model that appears to outsmart Claude Fable. But why is it releasing now? And can it live up to the benchmarks?\n\n#coding #programming #ai #openai\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "models",
-      "open-source",
-      "benchmark",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553030,
-    "title": "A Model Explosion: GPT 5.6 Sol, Grok 4.5 and Meta Muse Rewrite the Rules",
-    "url": "https://www.youtube.com/watch?v=mWlCituW7wo",
-    "published_at": "2026-07-10T12:40:15+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "rss",
-    "body": "What a week in AI, for real. GPT 5.6 may actually beat Claude Fable, in what you get for your money, while the new Grok 4.5 and Meta Muse Spark 1.1 make the choice even harder. Uncovering a dozen nuggets of gold you may have missed from all the viral headlines, I can also assure you you\u2019ll learn something you didn\u2019t know before.\n\nFor Exclusive Videos, go to AI Insiders (less than $9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n01:03 - GPT 5.6 Sol Reveals\n05:08 - Missing benches, plus Grok 4.5\n07:17 - Gaming as the new frontier?\n08:31 - Muse Spark 1.1\n10:03 - SimpleBench Upgrade\n11:17 - Ultra Sol + Self-Improvement\n13:44 - well, this is awkward\n15:41 - Why model improvement will not plateau anytime soon\n\n\nAI Consciousness: https://www.patreon.com/AIExplained/posts/anthropics-quite-163360718\n\n\nI Smell Fear: https://x.com/thsottiaux/status/2075287108680601929\nGPT 5.6: https://openai.com/index/gpt-5-6/\n\nGrok 4.5: https://x.ai/news/grok-4-5?twclid=2ezs408o0z23pw07tmxcwbzibd\nMeta Muse Spark 1.1: https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/\n\nProliferating GPT Toggles: https://x.com/rasbt/status/2075369179817902176/photo/1\nAnthropic Call-out: https://x.com/Mononofu\nAI Security Institute Finding: https://x.com/alxndrdavies/status/2075279480331874306\nCompetitive Coding: https://x.com/FakePsyho/status/2075128093891801305/photo/1\n\nAgents Last Exam: https://agents-last-exam.org/\nDawn Song: https://x.com/dawnsongtweets/status/2065095757988868190\n\nhttps://simple-bench.com/\n\nSWE-Marathon: https://www.swe-marathon.org/\nhttps://www.frontierswe.com/\nARC-AGI 3: https://x.com/arcprize/status/2075270869992264003\nAutomation Bench: https://zapier.com/benchmarks\nVibeCode Bench: https://www.vals.ai/benchmarks/vibe-code\n\n\u2018Post-Train Claim\u2019: https://posttrainbench.com/\n\nRedwall Game: https://redwall-bellmaker-7e03e4.surge.sh/\n\n\n\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
