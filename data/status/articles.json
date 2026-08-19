@@ -19,6 +19,28 @@
     "available": true
   },
   {
+    "article_id": 1265742,
+    "title": "How to build an AI-Native Health Company \u2014 Dan Feng, Maven Clinic",
+    "url": "https://www.youtube.com/watch?v=WJRdLNhrsLQ",
+    "published_at": "2026-08-19T17:30:19+00:00",
+    "fetched_at": "2026-08-19T17:51:55+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Implementation used to be the expensive step, so teams spent weeks settling requirements before anyone wrote code. Dan Feng's observation is that the cost moved. Building takes minutes now, and arguing is what is expensive. Planning at Maven Clinic changed to match. A one year view survives only as direction, assuming models will handle whatever you need by then, while real commitment runs two to four weeks. Long requirement documents gave way to a page or two meant to be argued with. The awkward casualty is the three to six month plan, which he treats as close to unplannable when nobody knows what models will do by then.\n\nThe rest is what breaks at that speed. Engineers who once wrote hundreds of lines a day now write thousands, so review had to change rather than scale. Engineers self certify which pull requests need a second reader and stay accountable either way, requests are capped near 500 lines, and large features are stacked into several. The failure he names is the rubber stamp, which buys false confidence rather than none. On reliability he refuses a single bar and sorts failures into tolerable and not. A scheduling action that fails one time in 10,000 is survivable, since the user clicks again. A reimbursement claim is not, because asking for $50 and receiving $200 is an escalation in either direction, so several models read the same receipt and it proceeds only if they agree. Integration tests run many times rather than once, since passing a nondeterministic system on one attempt proves very little.\n\nSpeaker info:\n- https://www.linkedin.com/in/dan-feng-2bb5703/\n- https://www.mavenclinic.com/\n\nTimestamps:\n0:00 - Who here is already AI native\n0:51 - Maven Clinic, and starting the journey two years ago\n1:29 - Tractors do not replace farmers\n2:08 - Adopting internally, then building it into the product\n3:25 - Early adopters, the majority, and the reluctant\n4:04 - Meeting engineers on whichever tool they moved to\n4:43 - Why senior engineers stopped delegating implementation\n6:03 - The blurring line between product and engineering\n6:42 - Rewarding it in performance reviews\n7:21 - When building is cheap and arguing is expensive\n8:00 - Dream big for the year, commit for the sprint\n9:16 - Why three to six month plans became the hard part\n9:56 - Starting with the lowest risk coding tasks\n10:36 - Pushing it to the whole team\n11:13 - Code review when volume goes up tenfold\n11:54 - Self certifying, capping size, stacking changes\n12:34 - The rubber stamp problem\n13:57 - Deciding which failures are acceptable\n14:35 - Claims, where the tolerance is zero\n15:54 - Automated evaluation plus human spot checks",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "safety",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1263672,
     "title": "Trading Desks to Clinical Trials: Parallels in Applied Vertical AI \u2014 Ayush Bhardwaj, Allos AI",
     "url": "https://www.youtube.com/watch?v=Yphdry8ttAQ",
@@ -9954,25 +9976,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553616,
-    "title": "Prompting | ChatGPT Learn",
-    "url": "https://learn.chatgpt.com/docs/prompting",
-    "published_at": "2026-07-13T09:55:33+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
