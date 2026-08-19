@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 1285259,
+    "title": "Quoting Jeremy Morrell",
+    "url": "https://simonwillison.net/2026/Aug/19/jeremy-morrell/",
+    "published_at": "2026-08-19T22:56:31+00:00",
+    "fetched_at": "2026-08-19T23:22:19+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms/\"><p>My hypothesis is that\u00a0<strong>there is a new opportunity for Extensible Software on the web</strong>. LLMs radically lower the cost of authoring extensions, and modern sandbox primitives lower the deployment cost and provide good security boundaries. We can build our app as a solid, accountable core, and allow users to safely extend it in many directions by having LLMs fill in the missing pieces.\u00a0<strong>We can give our users super powers.</strong></p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms/\">Jeremy Morrell</a>, Extensible Software in the age of LLMs</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/sandboxing\">sandboxing</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "safety",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1285260,
+    "title": "Conceptual integrity and counting lines of code",
+    "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
+    "published_at": "2026-08-19T22:46:07+00:00",
+    "fetched_at": "2026-08-19T23:22:19+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>Last week I recorded <a href=\"https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison\">an episode of the Talking Postgres podcast</a> with Claire Giordano on the subject of \"How AI is changing software development\". We had a really great conversation. Here are a couple of my highlights from a lightly edited transcript (prompt to Claude: \"very minor edits to remove disfluencies\").</p>\n<p>This is the latest version of an argument I've been trying to build about why sometimes it <em>does</em> make sense to talk about lines of code as an indicator of productivity with coding agents, at <a href=\"https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison#t=35m1s\">35:01</a>:</p>\n<blockquote>\n<p>A lot of people will tell you it makes no sense to measure productivity in lines of code. I\u2019d actually disagree, because there\u2019s a hard limit. In the before-times, a software engineer could produce a few hundred lines of production-ready code per day \u2014 and 200 lines of working, debugged, production-level code is an incredibly good day. Most days you\u2019d produce 50 or 60.</p>\n<p>If agents let you produce a thousand lines of debugged code, that really is a very meaningful improvement \u2014 as long as the code is the same quality: maintainable, tested, all of that. You can get to that point with agents, but it takes a huge amount of skill and knowledge and experience. That\u2019s what senior engineers are made of.</p>\n<p>I can do way more work as a single engineer than I could without agents. So you could argue, why should a company have more than one engineer? Beyond the obvious bus factor thing \u2014 a team of one is a very badly designed team \u2014 the answer is that the new limiting factor is cognitive capacity. I can churn out code a hundred times faster. I don\u2019t have the cognitive capacity to stay on top of 100 times the amount of code. So you still need a team of engineers, so you can load balance that cognitive capacity across the team.</p>\n</blockquote>\n<p>And this section on conceptual integrity at <a href=\"https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison#t=46m3s\">46:03</a>, which Claire equated to the <a href=\"https://en.wikipedia.org/wiki/Winchester_Mystery_House\">Winchester Mystery House</a>!</p>\n<blockquote>\n<p><strong>Simon</strong>: There\u2019s a concept in <em>The Mythical Man-Month</em> \u2014 conceptual integrity \u2014 where well-designed software has an integrity to it: there are no surprises in it, it covers exactly the right domain of things, everything fits together and makes sense. That\u2019s so much harder with coding agents, where you can have an idea for a feature, run a prompt, and five minuteslater you\u2019ve got the feature. Your software grows little weird bumps in funny different directions.</p>\n<p><strong>Claire</strong>: You know my analogy for that? The Winchester Mystery House.</p>\n<p><strong>Simon</strong>: It\u2019s got 140 rooms, because the woman who built it was the widow of the guy who invented the Winchester rifle, and her psychic told her she\u2019d be haunted by the ghosts of everyone killed with that rifle unless she kept building the house forever. So for 40 years she kept adding new rooms.\n\nThat\u2019s exactly the problem with coding agents and software: it\u2019s very easy to keep adding new rooms, because the cost of adding those rooms is so much cheaper. What you end up with is something where the conceptual integrity falls apart \u2014 and then it\u2019s harder to make decisions about it.</p>\n<p>It all keeps coming back to discipline. It used to be that the discipline was enforced on you by the amount of time it took. You\u2019d come up with an idea for a crazy feature and think \u201cyeah, but that would take me a week \u2014 I cannot justify that, so I\u2019ll forget about it.\u201d If it takes an hour, it\u2019s so much easier to justify.</p>\n</blockquote>\n<p>(Side-note: the Wikipedia article includes credible sources that dispute the story about the psychic.)</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/podcast-appearances\">podcast-appearances</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a></p>",
+    "topic": "development",
+    "tags": [
+      "models",
+      "agents",
+      "video",
+      "coding",
+      "development",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1268140,
     "title": "5 new ways to level up your learning with Search",
     "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
@@ -9941,51 +9983,6 @@
     "topic": "agents",
     "tags": [
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553012,
-    "title": "The New ChatGPT Playbook & Prompting Guide",
-    "url": "https://www.youtube.com/watch?v=MDy_b9F7oUc",
-    "published_at": "2026-07-15T22:17:52+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Here's your complete guide to the new ChatGPT app - Download it free here: https://chatgpt.com/download/?utm_source=creator&amp;utm_campaign=youtube&amp;utm_content=partnership-mattwolfe\n\nThe complete guide to ChatGPT 5.6 and the new ChatGPT app, from someone who used 6.8 billion tokens on it in the last two weeks.\n\nOpenAI just combined ChatGPT, Codex, their browser, and ChatGPT Work into one platform. The 5.6 models running underneath are the best I've used. In this video I walk through the full app, the prompts I actually use every day, and some of the wildest things the community has built with it.\n\nI cover the personal assistant setup that reads everything in my business, ChatGPT Work mode, Codex for development, the Sites feature, scheduled tasks, real builds from the community, and the Wolf Control Tower I built just for myself to run Future Tools.\nThis video is sponsored by OpenAI. Everything I say is my honest experience.\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#ChatGPT56 #GPT56 #openai \n\nTIMESTAMPS: \n00:00 Intro\n00:52 New ChatGPT App Tour\n03:14 Scheduled Tasks & Side Chat\n04:26 Connecting Your Apps\n05:54 Prompt Demos Begin\n07:22 Building a Personal Assistant\n09:02 Teaching It Your Voice\n10:15 Book One-Pager\n11:25 AI-Made Slide Deck\n12:25 Researching With Logged-In Browser\n13:59 Panel Prep Doc\n15:40 Weekly Task Rundown\n17:20 Cold Leads & Email Drafts\n18:48 Assistant Prompt\n22:20 Switching to Codex & GPT-5.6\n23:00 Rebuilding Craigslist\n24:48 Building a Game\n27:05 Fully AI-Generated Videos\n28:55 Controlling Blender With AI\n29:55 3D City Builds\n32:00 Future Tools Overhaul\n32:40 BuseyBench\n33:48 The Wolf Control Tower\n36:00 One-Prompt Mini Apps\n37:20 Final Thoughts",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "research",
-      "video",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553020,
-    "title": "The most controversial rewrite in history just shipped...",
-    "url": "https://www.youtube.com/watch?v=CXSvKcLovAk",
-    "published_at": "2026-07-15T17:39:02+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Try CodeRabbit Review free and turn your next big PR into a guided walkthrough - https://coderabbit.link/fireship\n\nBun just refactored their entire codebase from Zig to Rust in just 11 days. But not everybody is celebrating... \n\n#coding #programming #ai \n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "coding",
-    "tags": [
-      "coding",
-      "tutorials",
-      "development",
-      "education",
-      "media",
-      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
