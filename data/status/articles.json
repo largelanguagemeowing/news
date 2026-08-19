@@ -1,5 +1,24 @@
 [
   {
+    "article_id": 1239930,
+    "title": "RT by @mattpocockuk: So I finally tried out @mattpocockuk's skills...",
+    "url": "https://nitter.net/theo/status/2089913970841055331#m",
+    "published_at": "2026-08-19T03:14:54+00:00",
+    "fetched_at": "2026-08-19T07:41:54+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>So I finally tried out <a href=\"https://nitter.net/mattpocockuk\" title=\"Matt Pocock\">@mattpocockuk</a>'s skills...</p>\n<a href=\"https://nitter.net/theo/status/2089913970841055331#m\">\n<br />Video<br />\n  <img src=\"https://nitter.net/pic/amplify_video_thumb%2F2089912389097717760%2Fimg%2FTlwxITBaBstpJLRx.jpg\" />\n</a>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1232232,
     "title": "ChatGPT Ads expands across Europe",
     "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
@@ -799,6 +818,52 @@
     "tags": [
       "general",
       "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1239645,
+    "title": "From Ambient Documentation to Clinical Intelligence \u2014 Chaitanya Asawa, Abridge",
+    "url": "https://www.youtube.com/watch?v=u6q-byPWUuo",
+    "published_at": "2026-08-17T10:06:41+00:00",
+    "fetched_at": "2026-08-19T07:41:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Clinicians call it pajama time: the roughly two hours a day spent writing visit notes after work has finished. Abridge started there, and within two to three years the documentation product alone reached 300 of the largest health systems in the United States. Chaitanya Asawa's framing is that everything in healthcare sits downstream of a single conversation between a doctor and a patient, and that the administrative machinery got built around that conversation rather than out of it. The notes are high stakes in both directions. They are the basis of billing, and they are the context the next clinician inherits.\n\nThe engineering problem he stays with longest is evaluation, because clinical decision support leaves almost no gap between generating an answer and checking one. Sudoku is hard to solve and trivial to verify. Here, a verifier good enough to trust would already be your generator. Their approach abandons the idea of a single correct answer, since many different responses can be right. Two physicians independently write rubrics describing the elements a good response should contain, a third adjudicates those into one rubric, a fourth runs quality assurance, and only then does a judge score responses against those elements. Separate judges cover safety, adversarial boundaries and tone. On cost, at a run rate near 100 million medical conversations a year, they decompose the note into its sections and post train smaller models per section rather than running frontier intelligence over everything, betting that a dataset nobody else holds plus a narrow enough problem can outrun the frontier's rate of change.\n\nSpeaker info:\n- https://x.com/c_asawa\n- https://www.linkedin.com/in/casawa\n\nTimestamps:\n0:00 - Reading the room, and hearing from clinicians\n2:08 - Why healthcare gets dismissed as a technical domain\n2:59 - From robotics to search to healthcare\n5:25 - Costs that only go up, and a productivity paradox\n6:14 - Closures, thin margins, and clinician burnout\n7:04 - The note after every visit, and pajama time\n7:56 - Why documentation was the wedge\n8:48 - Everything is downstream of the conversation\n9:38 - Asking about trials and placing an order by voice\n10:27 - What context the system actually reads\n11:27 - Quality, latency and cost on hard mode\n13:08 - Evaluation as the operating system\n13:57 - Encoding clinician judgment into judges\n14:48 - Contextual clinical decision support\n15:38 - When the generator and verifier gap collapses\n16:27 - Four physicians to build one rubric\n18:05 - Cost at 100 million conversations a year\n18:56 - Smaller models per section of the note\n19:49 - Catching orders spoken during a visit",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "safety",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "robotics"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1239646,
+    "title": "200 Million Patient Interactions Later \u2014 Vivek Muppalla, Hippocratic AI",
+    "url": "https://www.youtube.com/watch?v=AN65uc645mE",
+    "published_at": "2026-08-17T10:05:27+00:00",
+    "fetched_at": "2026-08-19T07:41:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Asked how many in the room had ever received a proactive call from their healthcare provider, almost no hands went up. Vivek Muppalla treats that as the signature of scarcity: too few clinicians and too few hours, so the system triages and only the sickest get called. Hippocratic AI is past 200 million clinical conversations across more than 60 health systems, which is what changes the arithmetic. The tradeoff they refused is the familiar one: models accurate enough for this work can take tens of seconds to answer, and models fast enough for a phone call are not safe enough to make one.\n\nSo the stack was built end to end. Polaris runs 31 models on every conversation, one holding the thread and 30 specialists covering labs, medications and scheduling, executed in parallel with each specialist first making a fast check on whether it has anything to say at all. A single model would be a single point of failure. Their speech recognition is a decoder only audio system fed the conversation so far and the domain context alongside the audio, so a drug name resolves against a finite list rather than an unbounded one, and prosody survives the projection so it hears the how as well as the what. Single word answers get a second scoring pass, because a heard as no is catastrophic. On evaluation he does the arithmetic that makes 99% unacceptable: at 10,000 calls a day that is 100 people sent to the wrong appointment, and catching a 1% failure rate takes roughly 450 tests.\n\nSpeaker info:\n- https://x.com/vim1up\n- https://www.linkedin.com/in/vivekmuppalla/\n- https://hippocraticai.com/\n\nTimestamps:\n0:00 - Who has ever been called by their provider\n1:05 - Triage as a math problem, and what flips it\n1:54 - The oath every employee takes\n2:44 - A call with a patient, start to escalation\n5:12 - Why a generic voice stack does not work\n6:04 - Building vertically to get speed and intelligence\n7:44 - Latency and intelligence as a compounding flywheel\n8:36 - Polaris, and running 31 models at once\n9:29 - What speech recognition gets wrong in the real world\n10:27 - Feeding context and domain knowledge into the audio model\n11:19 - A finite list of medications instead of an infinite one\n12:10 - Rescoring single word answers\n13:51 - How a specialist decides to speak up\n14:43 - Verifiers for tool calls\n15:34 - Quantization, speculative decoding, cache\n16:25 - Why 99% is a bad number here\n17:14 - The tests needed to catch a 1% failure\n18:03 - Grading on the scale used for humans\n18:55 - Building a benchmark for empathy",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "funding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9877,60 +9942,6 @@
       "product",
       "models",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551721,
-    "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
-    "url": "https://openai.com/index/gpt-5-6",
-    "published_at": "2026-07-09T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553086,
-    "title": "Ben Bernanke appointed to Anthropic\u2019s Long-Term Benefit Trust",
-    "url": "https://www.anthropic.com/news/ben-bernanke",
-    "published_at": "2026-07-09T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Ben Bernanke appointed to Anthropic\u2019s Long-Term Benefit Trust",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553088,
-    "title": "Inviting hard questions",
-    "url": "https://www.anthropic.com/news/hard-questions",
-    "published_at": "2026-07-09T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Inviting hard questions",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
