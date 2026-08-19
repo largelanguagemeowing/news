@@ -1,5 +1,22 @@
 [
   {
+    "article_id": 1268140,
+    "title": "5 new ways to level up your learning with Search",
+    "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
+    "published_at": "2026-08-19T19:00:00+00:00",
+    "fetched_at": "2026-08-19T19:25:20+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "an illustrated image with icons and phrasing like \"Add Notebook\" and \"Ask Google\"",
+    "topic": "education",
+    "tags": [
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1262293,
     "title": "Offering Zero Data Retention for frontier models",
     "url": "https://openai.com/index/our-commitment-to-zero-data-retention",
@@ -14,6 +31,68 @@
       "models",
       "api",
       "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1269596,
+    "title": "The summer Math fell to the machines...",
+    "url": "https://www.youtube.com/watch?v=iuZPTE5qsJY",
+    "published_at": "2026-08-19T18:45:57+00:00",
+    "fetched_at": "2026-08-19T19:25:23+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Railway is the smoothest way to deploy software. Get $20 in free credits - https://railway.com/?referralCode=fireship\n\nAI has killed more open math problems in the last few weeks than the entire human race managed in the previous decade. Let's dive in.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "coding",
+      "education",
+      "media",
+      "news",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1269641,
+    "title": "Why Your Enterprise Tech Stack Isn\u2019t Ready for AI Agents \u2014 Christopher Lovejoy & Saul Howard",
+    "url": "https://www.youtube.com/watch?v=mav15aW9lLM",
+    "published_at": "2026-08-19T18:30:15+00:00",
+    "fetched_at": "2026-08-19T19:25:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The proof of concept works. It hits the accuracy targets, it is fast, it is cheap, and the room is happy. Then someone from compliance raises a hand and asks to see the audit trail, and the whole thing stops. Christopher Lovejoy and Saul Howard have watched that meeting happen repeatedly, and their point is that an audit trail is not a developer log. Under the frameworks enterprises actually answer to, it is a complete record of every action an agent took, every place it touched data, and the authorization behind each one, durable enough to stand up as a chain of evidence if the decision were ever examined in court.\n\nTheir answer is to take the constraints seriously first and rebuild toward the accuracy afterwards, rather than bolting requirements onto a demo. An immutable append only event log makes auditability fall out of the storage model instead of being reconstructed later, at the cost of harder reads. Patient data lives in schema driven object storage alongside that log rather than inside it, so the events hold only references, which lets engineers debug what an agent did without being exposed to the health data itself, and gives a natural place to enforce zero trust and constrain prompt injection. Escalation works because humans and models are both treated as agents, so any action either can take, the other can take too. Evaluation then emerges from those three primitives rather than being attached to the side, including on production data that never leaves the customer's environment.\n\nSpeaker info:\n- https://x.com/ChrisLovejoy_\n- https://www.chrislovejoy.me\n- https://x.com/saulhoward\n- https://linkedin.com/in/saulhoward\n\nTimestamps:\n0:00 - Why healthcare is hard, and what transfers to other regulated work\n1:57 - The enterprise proof of concept\n2:49 - What the buildout actually connects to\n3:39 - Everyone assumes the hard part is done\n4:28 - The questions that arrive the next day\n5:19 - An audit trail is not a developer log\n7:03 - The immutable event log, and its tradeoff\n8:46 - What shape healthcare data actually has\n10:28 - Object storage beside the log, not inside it\n11:20 - Debugging an agent without seeing the data\n12:15 - Zero trust and the lethal trifecta\n13:07 - Escalation when you cannot predict it\n13:58 - Treating humans and models as the same kind of agent\n14:49 - Why evals are hard here\n15:39 - Evaluation as a byproduct of the primitives\n17:20 - Architecture as choosing what stays simple\n18:08 - Where it goes wrong, and where it goes right",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "funding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1270216,
+    "title": "Still can't believe @unclebobmartin showed up to our livestream in his bathrobe 10/10 brand awareness",
+    "url": "https://nitter.net/mattpocockuk/status/2090143412615786706#m",
+    "published_at": "2026-08-19T18:26:37+00:00",
+    "fetched_at": "2026-08-19T19:25:27+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>Still can't believe <a href=\"https://nitter.net/unclebobmartin\" title=\"Uncle Bob Martin\">@unclebobmartin</a> showed up to our livestream in his bathrobe<br />\n<br />\n10/10 brand awareness</p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9904,78 +9983,6 @@
     "body": "recommended reading.",
     "topic": "general",
     "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551712,
-    "title": "The US is advancing AI safety through state and federal action",
-    "url": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
-    "published_at": "2026-07-15T12:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI outlines a \u201creverse federalism\u201d approach to AI governance, where state laws help build a national framework for safe, democratic AI.",
-    "topic": "safety",
-    "tags": [
-      "safety",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551713,
-    "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
-    "url": "https://openai.com/index/unlocking-self-improvement-gpt-red",
-    "published_at": "2026-07-15T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Explore GPT-Red, OpenAI\u2019s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness.",
-    "topic": "safety",
-    "tags": [
-      "models",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553385,
-    "title": "Working at the frontier: Why Base44 trusts Claude Fable 5 with their most challenging engineering work",
-    "url": "https://claude.com/blog/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work",
-    "published_at": "2026-07-15T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Working at the frontier: Why Base44 trusts Claude Fable 5 with their most challenging engineering work",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551569,
-    "title": "Celebrating 25 years of visual search innovation",
-    "url": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
-    "published_at": "2026-07-14T16:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Google Images logo surrounded by illustrations of people searching for different images",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
       "general"
     ],
     "dearrow_thumbnail_url": "",
