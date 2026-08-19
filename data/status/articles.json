@@ -1,5 +1,88 @@
 [
   {
+    "article_id": 1262293,
+    "title": "Offering Zero Data Retention for frontier models",
+    "url": "https://openai.com/index/our-commitment-to-zero-data-retention",
+    "published_at": "2026-08-19T19:00:00+00:00",
+    "fetched_at": "2026-08-19T17:27:01+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "api",
+      "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1263672,
+    "title": "Trading Desks to Clinical Trials: Parallels in Applied Vertical AI \u2014 Ayush Bhardwaj, Allos AI",
+    "url": "https://www.youtube.com/watch?v=Yphdry8ttAQ",
+    "published_at": "2026-08-19T17:00:31+00:00",
+    "fetched_at": "2026-08-19T17:27:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ayush Bhardwaj could build the agent. What he could not do was tell whether it was any good. He moved from applied AI at a hedge fund to a pharma tech company expecting a different world, and found the job identical, including the wall. An engineer glances at generated code and knows instantly that it is weak, because years of training built that judgment. Nobody on his team had the equivalent instinct for a trade thesis or a drug candidate. He calls this the point where vertical AI projects quietly die, because the thing looks finished and then nobody buys it.\n\nJudging his way out with a model was, in his words, a stupid mistake, since it jargons its way through without knowing what alpha means. Verifiable rewards work for math and code because answer keys exist. Worse, the data that would teach a model to reason in these fields is deliberately withheld. Funds must file their holdings quarterly, and their returns drop once competitors reverse engineer them. Disclosing every clinical trial is legally required, yet roughly 30% of firms never do, and in 2026 the FDA publicly reminded more than 2,000 sponsors. The frontier labs do not have it either. So his answer is to hire the user, which for a team of young engineers meant hiring a senior scientist, after which their tools started speaking big pharma's language. That expert curates sources, sharpens prompts and does the judging, starting from error analysis as the cheapest rung. The moat is never the model or the infrastructure. Both are commodities.\n\nSpeaker info:\n- https://x.com/aybh08\n- https://www.linkedin.com/in/aybh/\n- https://ayushb.me/\n\nTimestamps:\n0:00 - Reading the room\n1:04 - What applied vertical AI actually means\n2:43 - Leaving a hedge fund for pharma and changing nothing\n3:34 - The wrong question about agents in production\n4:27 - Step one, make the task narrow\n5:18 - Proprietary data is the only real differentiator\n6:57 - The easy part fits on one screen\n7:50 - Why you cannot iterate on what you cannot judge\n9:30 - Trying to use a model as the judge\n10:21 - The data was never there, by design\n12:05 - Hire the user\n12:55 - Building the learning loop around a domain expert\n14:39 - From error analysis up to preference training\n16:20 - Reaching production is not the same as working\n17:10 - The seven steps\n18:00 - AI in the loop, not human in the loop\n19:00 - Your moat is domain expertise and data",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "models",
+      "agents",
+      "coding",
+      "policy",
+      "education",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1263673,
+    "title": "Healthcare\u2019s Agent Bytecode: X12 as the Harness for AI Agents \u2014 Vasant Kearney, Onlay",
+    "url": "https://www.youtube.com/watch?v=UyyOoJmuATU",
+    "published_at": "2026-08-19T16:30:32+00:00",
+    "fetched_at": "2026-08-19T17:27:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Call the payer, open their web portal, and read their X12 feed, and all three can tell you the patient is covered. You treat the patient anyway, and the claim comes back denied because they were not covered at the time. Vasant Kearney's point is that none of those surfaces is ground truth. A payer's phone system, portal and X12 layer are often built by different teams, sometimes by different contractors entirely, so they can contradict each other and they can just as easily agree on the wrong answer together.\n\nHis response is to treat X12 as a harness rather than a file format. Models do their best work confined, the way a strict language confines, and X12 already encodes the contract between a provider and a payer. Every stage of the claim lifecycle has an X12 correspondence, from an eligibility check as a 270 through the 999 that acknowledges syntax to the 835 that records payment, so an agent placing a phone call or driving a portal is emitting the same transaction by another route. Everything normalizes into an internal representation held as correct only until downstream evidence says otherwise. Two constraints travel with it. Memory has to live in a database rather than on local disk the way coding agents do it, for logical separation. And a stronger model cannot simply be dropped in, because better on a benchmark is not the same as better inside a system built around the model it replaces. He describes the posture as being AI pilled and AI skeptical at once.\n\nSpeaker info:\n- https://x.com/vasantkearney\n- https://www.linkedin.com/in/vasant-kearney-7b7a48b3\n- https://onlay.ai/\n\nTimestamps:\n0:00 - Reading the room\n1:06 - The goal is cost and patient experience\n1:58 - How we arrived at an execution layer\n3:06 - Solving handwritten digits does not cash the check\n4:42 - What gets lost when you flatten a multimodal record\n6:16 - What the agentic execution layer actually touches\n7:23 - Why enterprise memory cannot live on local disk\n7:49 - A better model is not automatically better for you\n8:31 - Harness, and why X12 belongs in it\n9:44 - Fifty steps, error propagation, and the cost of pure reasoning\n11:16 - Memory that helps without steering the user\n12:36 - The claim lifecycle, transaction by transaction\n13:29 - A phone call is an X12 transaction underneath\n14:47 - The schema is public, so agents can look it up\n15:30 - X12 is a system of rules, not ground truth\n16:47 - Normalizing to an internal representation\n19:02 - Be AI pilled and AI skeptical",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1264240,
+    "title": "RT by @mattpocockuk: This was a ton of fun!",
+    "url": "https://nitter.net/unclebobmartin/status/2090112530874077434#m",
+    "published_at": "2026-08-19T16:23:54+00:00",
+    "fetched_at": "2026-08-19T17:27:06+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>This was a ton of fun!</p>\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>In just over an hour, I'll be live with <a href=\"https://nitter.net/unclebobmartin\" title=\"Uncle Bob Martin\">@unclebobmartin</a> <br />\n<br />\nWe'll be figuring out if software fundamentals still matter in the age of AI.<br />\n<br />\nDon't miss it:<br />\n<br />\n<a href=\"https://piped.video/live/zcLPGC-tvgk?feature=share\">piped.video/live/zcLPGC-tvgk\u2026</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://piped.video/watch?v=zcLPGC-tvgk\">\n<img src=\"https://nitter.net/pic/card_img%2F2089041855878979584%2F8ULQ6K1x%3Fformat%3Djpg%26name%3D800x320_1\" />\n<br />\n<b>LIVE: Uncle Bob on Software Fundamentals in the Age of AI</b>\n</a>\n<p>Matt Pocock talks with Robert C. Martin (Uncle Bob) about why softw...</p>\n<small><a href=\"https://piped.video/watch?v=zcLPGC-tvgk\">youtube.com</a></small>\n\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2090074211104465239#m\">https://nitter.net/mattpocockuk/status/2090074211104465239#m</a>\n</footer>\n</blockquote>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1261575,
     "title": "200 Million Patient Interactions Later \u2014 Vivek Muppalla, Hippocratic AI",
     "url": "https://www.youtube.com/watch?v=AN65uc645mE",
@@ -206,6 +289,27 @@
       "coding",
       "funding",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1263435,
+    "title": "The P-Completeness of Inverted Index Traversal: On the Complexity of Evaluating Boolean Query DAGs",
+    "url": "https://machinelearning.apple.com/research/the-p-completeness-of-inverted-index-traversal",
+    "published_at": "2026-08-19T00:00:00+00:00",
+    "fetched_at": "2026-08-19T17:27:02+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Modern AI agents increasingly rely on search infrastructure to execute complex, neuro-symbolic reasoning workflows. These workflows often compile into deeply nested, non-monotonic Boolean queries over text fields. However, standard query evaluation strategies over inverted indices face severe theoretical limits when handling these structures. Stateful iterator models (Document-at-a-Time) are structurally bounded by NC^1 formula evaluation, suffering a worst-case O(2^|Q|) exponential blowup in query complexity when unrolling re-convergent logic. Conversely, recursive materialization models\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "agents",
+      "benchmark",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9869,96 +9973,6 @@
       "product",
       "models",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553617,
-    "title": "recommended reading.",
-    "url": "https://x.com/i/article/2076319195718090753",
-    "published_at": "2026-07-13T09:46:13+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553355,
-    "title": "Societal ImpactsClaude\u2019s values across models and languages",
-    "url": "https://www.anthropic.com/research/claude-values-models-languages",
-    "published_at": "2026-07-13T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jul 13, 2026Societal ImpactsClaude\u2019s values across models and languages",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553386,
-    "title": "Working at the frontier: How Hebbia builds AI for financial diligence that can't miss a detail",
-    "url": "https://claude.com/blog/working-at-the-frontier-how-hebbia-builds-ai-for-financial-diligence-that-cant-miss-a-detail",
-    "published_at": "2026-07-13T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Working at the frontier: How Hebbia builds AI for financial diligence that can't miss a detail",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553618,
-    "title": "Are Scientists Sacrificing Originality for Speed With the Use of AI?",
-    "url": "https://spectrum.ieee.org/ai-science-research-flattens-discovery",
-    "published_at": "2026-07-12T18:20:03+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.\n\n> Evans\u2019s analysis suggests that AI is largely automating the most tractable parts of science rather than expanding its frontiers.\n\nquick anecdote. about a year ago i taught my linguist wife how to use a coding agent as a personal programmer. those two evenings took away the drudgery of transforming huge excel sheets and creating charts. what would have taken her weeks to a few evenings.\n\ni'm bullish that",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "tutorials",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553619,
-    "title": "Old and new apps, via modern coding agents",
-    "url": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/",
-    "published_at": "2026-07-12T18:07:58+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. terry tao vibe coding.",
-    "topic": "development",
-    "tags": [
-      "agents",
-      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
