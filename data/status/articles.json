@@ -1,5 +1,108 @@
 [
   {
+    "article_id": 1257430,
+    "title": "Guardrails First: Engineering Member-Facing Health AI \u2014 Rashi Agrawal, Hinge Health",
+    "url": "https://www.youtube.com/watch?v=YXEqC05WEI0",
+    "published_at": "2026-08-19T14:30:18+00:00",
+    "fetched_at": "2026-08-19T14:33:56+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A healthy 60 year old man asked a popular AI assistant how to cut salt from his diet. It pointed him at sodium bromide. Three months later he arrived in an emergency room with paranoia and hallucinations, bromide at 200 times the safe level, and stayed three weeks. Rashi Agrawal stacks that against the first independent safety test of a consumer health AI, out of Mount Sinai, which under triaged life threatening emergencies half the time, and against ECRI naming chatbot misuse the top health technology hazard of 2026. Roughly 40 million people already triage themselves this way. None of it is a frontier problem. It is the production baseline.\n\nHer argument is that most healthcare AI safety failures are architectural decisions made before a single token is generated. PHI is stripped at the pipeline boundary on ingestion, so a developer who opens a dashboard finds nothing to redact because it was never stored. Anything that can never be wrong lives in a code layer above the model rather than in its prompt: routing to 911 or 988, deciding which capability owns a turn, verifying who is on the other end. The frontier labs publish an authority hierarchy in which every layer above the user sits one prompt injection from being overridden, and her reading is blunt: if they will not treat a prompt as a security boundary, neither should you. Safety then runs as a continuous layer of judges scoring live traffic, with one discipline attached. When a score drops, first ask whether the judge is right.\n\nSpeaker info:\n- https://www.linkedin.com/in/rashi283/\n- https://sessionize.com/rashiagrawal/\n\nTimestamps:\n0:00 - The state of healthcare AI, and 40 million self triagers\n1:04 - Poisoned by a chatbot\n1:30 - Under triaging emergencies half the time\n2:35 - Three non negotiable foundations\n3:41 - Where PHI actually lives\n5:53 - Deterministic rules belong above the model\n7:27 - If the labs will not trust the prompt, neither should you\n7:54 - Escalation, intent routing, identity\n9:39 - Safety as a continuous evaluation layer\n12:47 - Five stakeholders, five risks, five days to launch\n14:02 - The five rules for deciding\n18:10 - Verify the scorer before you trust the score\n20:24 - The whole talk in one slide",
+    "topic": "safety",
+    "tags": [
+      "release",
+      "models",
+      "safety",
+      "benchmark",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1257431,
+    "title": "From Ambient Documentation to Clinical Intelligence \u2014 Chaitanya Asawa, Abridge",
+    "url": "https://www.youtube.com/watch?v=u6q-byPWUuo",
+    "published_at": "2026-08-19T14:00:06+00:00",
+    "fetched_at": "2026-08-19T14:33:56+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Clinicians call it pajama time: the roughly two hours a day spent writing visit notes after work has finished. Abridge started there, and within two to three years the documentation product alone reached 300 of the largest health systems in the United States. Chaitanya Asawa's framing is that everything in healthcare sits downstream of a single conversation between a doctor and a patient, and that the administrative machinery got built around that conversation rather than out of it. The notes are high stakes in both directions. They are the basis of billing, and they are the context the next clinician inherits.\n\nThe engineering problem he stays with longest is evaluation, because clinical decision support leaves almost no gap between generating an answer and checking one. Sudoku is hard to solve and trivial to verify. Here, a verifier good enough to trust would already be your generator. Their approach abandons the idea of a single correct answer, since many different responses can be right. Two physicians independently write rubrics describing the elements a good response should contain, a third adjudicates those into one rubric, a fourth runs quality assurance, and only then does a judge score responses against those elements. Separate judges cover safety, adversarial boundaries and tone. On cost, at a run rate near 100 million medical conversations a year, they decompose the note into its sections and post train smaller models per section rather than running frontier intelligence over everything, betting that a dataset nobody else holds plus a narrow enough problem can outrun the frontier's rate of change.\n\nSpeaker info:\n- https://x.com/c_asawa\n- https://www.linkedin.com/in/casawa\n\nTimestamps:\n0:00 - Reading the room, and hearing from clinicians\n2:08 - Why healthcare gets dismissed as a technical domain\n2:59 - From robotics to search to healthcare\n5:25 - Costs that only go up, and a productivity paradox\n6:14 - Closures, thin margins, and clinician burnout\n7:04 - The note after every visit, and pajama time\n7:56 - Why documentation was the wedge\n8:48 - Everything is downstream of the conversation\n9:38 - Asking about trials and placing an order by voice\n10:27 - What context the system actually reads\n11:27 - Quality, latency and cost on hard mode\n13:08 - Evaluation as the operating system\n13:57 - Encoding clinician judgment into judges\n14:48 - Contextual clinical decision support\n15:38 - When the generator and verifier gap collapses\n16:27 - Four physicians to build one rubric\n18:05 - Cost at 100 million conversations a year\n18:56 - Smaller models per section of the note\n19:49 - Catching orders spoken during a visit",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "safety",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "robotics"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1258005,
+    "title": "In just over an hour, I'll be live with @unclebobmartin We'll be figuring out if software fundamentals still matter in the age of AI. Don't miss it: https://youtube.com/live/zcLPGC-tvgk?feature=share",
+    "url": "https://nitter.net/mattpocockuk/status/2090074211104465239#m",
+    "published_at": "2026-08-19T13:51:38+00:00",
+    "fetched_at": "2026-08-19T14:33:58+00:00",
+    "source_id": "matt-pocock-x",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "<p>In just over an hour, I'll be live with <a href=\"https://nitter.net/unclebobmartin\" title=\"Uncle Bob Martin\">@unclebobmartin</a> <br />\n<br />\nWe'll be figuring out if software fundamentals still matter in the age of AI.<br />\n<br />\nDon't miss it:<br />\n<br />\n<a href=\"https://piped.video/live/zcLPGC-tvgk?feature=share\">piped.video/live/zcLPGC-tvgk\u2026</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://piped.video/watch?v=zcLPGC-tvgk\">\n<img src=\"https://nitter.net/pic/card_img%2F2089041855878979584%2F8ULQ6K1x%3Fformat%3Djpg%26name%3D800x320_1\" />\n<br />\n<b>LIVE: Uncle Bob on Software Fundamentals in the Age of AI</b>\n</a>\n<p>Matt Pocock talks with Robert C. Martin (Uncle Bob) about why softw...</p>\n<small><a href=\"https://piped.video/watch?v=zcLPGC-tvgk\">youtube.com</a></small>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1257370,
+    "title": "Your New Backup Brain Is Here",
+    "url": "https://www.youtube.com/shorts/r-ORCmsRHOE",
+    "published_at": "2026-08-19T13:37:12+00:00",
+    "fetched_at": "2026-08-19T14:33:55+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "The amount of times I\u2019ve said \u201cI\u2019ll remember that later\u201d and absolutely did not\u2026 \ud83d\ude05\n\n@MemoketAI Gem is basically designed to catch all those little follow-ups, ideas, and action items that disappear the second a meeting ends.\n\nIt can remember context across multiple conversations, pull out what you still need to do, and sync those action items into Google Calendar or Apple Reminders. You can also bring your Memoket memories into ChatGPT, Claude, Notion, and Slack.\n\nTheir pre-order offer is live now: get the Gem, the charging dock, your choice of wristband, and a full year of our Pro subscription plan for $179.  Link is in the pinned comment.\n\n#ai #aiwristband #MemoketGem #productivityhack #memoketpartner",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1256052,
+    "title": "Replit expands access to software creation with GPT-5.6 Luna",
+    "url": "https://openai.com/index/replit",
+    "published_at": "2026-08-19T07:00:00+00:00",
+    "fetched_at": "2026-08-19T14:33:54+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1239930,
     "title": "RT by @mattpocockuk: So I finally tried out @mattpocockuk's skills...",
     "url": "https://nitter.net/theo/status/2089913970841055331#m",
@@ -14,6 +117,28 @@
       "product",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1257192,
+    "title": "Examining Human-Like Behaviors in LLMs: A Multi-Dimensional Analysis of Model Behaviors, User Factors, and System Prompts",
+    "url": "https://machinelearning.apple.com/research/human-like-behaviors-llms",
+    "published_at": "2026-08-19T00:00:00+00:00",
+    "fetched_at": "2026-08-19T14:33:54+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Large language models (LLMs) exhibit a wide range of human-like behaviors, from expressing thoughts and emotions, to engaging in relationship-building with users, to refusing requests and maintaining boundaries. Despite their prevalence, researchers and practitioners lack methods and empirical insights to make informed decisions about when and what types of human-like behaviors LLMs should exhibit. To fill this gap, we present a multi-dimensional analysis of the prevalence, potential effects, and controllability of these behaviors using LLM-as-a-judge and human evaluation. Across 21,000\u2026",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "benchmark",
+      "research",
+      "coding",
+      "funding",
+      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9826,122 +9951,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551718,
-    "title": "Getting started with ChatGPT",
-    "url": "https://openai.com/academy/getting-started",
-    "published_at": "2026-07-10T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how to use ChatGPT, start your first conversation, and discover simple ways to write, brainstorm, and solve problems with AI.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553572,
-    "title": "The Future Worth Building Is Human",
-    "url": "https://thinkingmachines.ai/blog/the-future-worth-building-is-human/",
-    "published_at": "2026-07-10T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:42+00:00",
-    "source_id": "thinking-machines",
-    "source_name": "Thinking Machines",
-    "extraction_method": "rss",
-    "body": "<p>The mission of Thinking Machines is to build AI that extends human will and\u00a0judgment.</p>\n<p>Artificial intelligence can do more every day, but deciding what it should do is up to us: individuals, organizations, humanity as a whole. These decisions require knowledge and judgment that people acquire through continuous contact with the work, increasingly done alongside AI. Shaping the goals of advanced intelligence is also a continuous process of feedback, learning, and realignment.</p>\n<p>Most AI in use today is trained in a handful of places and then frozen. It isn\u2019t shaped by the people it serves, and doesn\u2019t learn much from the work they do together. Extending human will and judgment calls for AIs as diverse and distributed as people themselves are. This is the path we have chosen.</p>\n<p>To progress on that path, we are pursuing these technical directions:</p>\n<ul>\n<li><strong><a href=\"https://thinkingmachines.ai/news/introducing-inkling/\">We train strong models</a></strong>, advancing capabilities such as multimodal interaction and customizability. Sharp instruments extend human will, and human judgment needs to shape models that compete on the frontier.</li>\n<li><strong><a href=\"https://thinkingmachines.ai/tinker/\">We build tools</a></strong> that enable people to make AI their own, customizing models to serve their unique needs. This includes the ability to train model weights.</li>\n<li><strong><a href=\"https://thinkingmachines.ai/blog/interaction-models/\">We develop interfaces</a></strong> that broaden the communication channel between human and machine, allowing personal judgment to continuously influence the work of AI.</li>\n<li><strong><a href=\"https://thinkingmachines.ai/blog/\">We publish research</a></strong> for the scientific community, because the power to shape AI requires deep understanding of how it\u2019s made.</li>\n</ul>\n<p>We believe the future worth building is human \u2014 shaped by human knowledge, guided by human will, and decided by human judgment. What follows is the case for that future, and the work we\u2019re doing to bring it about.</p>\n<h2 id=\"bringing-intelligence-to-knowledge\">Bringing intelligence to knowledge</h2>\n<p>AI exists to serve the work that we do. This work runs on knowledge of how things are done and what is worth doing, knowledge that is generated continuously by people engaged in the work.</p>\n<p>Think of a chef crafting a new recipe or a shopkeeper rearranging the items and prices on display. They are pursuing a complex set of goals and applying know-how that isn\u2019t immediately legible to outsiders. This knowledge is constantly updated through feedback; it\u2019s not a static repository that can be written into a database. It\u2019s local \u2014 a different restaurant or shop pursues different outcomes by different means. The collective knowledge of shops and kitchens is scattered across every shopkeeper and chef.<label class=\"sidenote-number\" for=\"sn-mission-1\"></label><input class=\"margin-toggle\" id=\"sn-mission-1\" type=\"checkbox\" /><span class=\"sidenote\">Michael Polanyi, <a href=\"https://press.uchicago.edu/ucp/books/book/chicago/T/bo6035368.html\" rel=\"noopener\" target=\"_blank\">The Tacit Dimension</a> (1966)</span></p>\n<p>The dispersion of knowledge is a collective strength; it\u2019s the source of variety, adaptability, and resilience of the overall system. It\u2019s the reason that free markets outperform planned economies. Central planning fails not because of insufficient intelligence, but because of the nature of productive knowledge: tacit, local, fleeting, and held privately by those who acquired it through their work.<label class=\"sidenote-number\" for=\"sn-mission-2\"></label><input class=\"margin-toggle\" id=\"sn-mission-2\" type=\"checkbox\" /><span class=\"sidenote\">Friedrich Hayek, <a href=\"https://www.econlib.org/library/Essays/hykKnw.html\" rel=\"noopener\" target=\"_blank\">The Use of Knowledge in Society</a> (1945)</span> Attempting to aggregate knowledge for the use of a centralized intelligence faces the same challenge.</p>\n<p>There are domains where intelligence alone is sufficient, and where autonomous AI doesn\u2019t require human participation to race ahead. Two examples are chess, where the strongest engines are trained purely on self-play, and math, where frontier models are solving long-standing problems on their own. These examples share two traits. First, the goal given to AI is static and expressible: to win a chess match, to prove a theorem. Second, these domains don\u2019t contain hidden knowledge. The rules of chess and math are universal; the board is visible to all. Outside the board, intelligence alone is not enough.</p>\n<p>For artificial intelligence to benefit from distributed knowledge, it must itself be distributed. Every organization is powered by the expert knowledge of its people, gained and expressed through their work. We believe in AI that helps the organization cultivate that unique knowledge, not AI that extracts a snapshot of it and replaces it with a standard offering. This cultivation is an ongoing process that requires AI to work with people, not in their stead.</p>\n<p>In 2014, Toyota, long a master of the automated plant, brought its expert craftsmen back onto the line with the explicit goal of growing craftsmanship and knowledge. The man who led this, Mitsuru Kawai, put the reason this way: \u201cTo be the master of the machine, you have to have the knowledge and the skills to teach the machine.\u201d<label class=\"sidenote-number\" for=\"sn-mission-3\"></label><input class=\"margin-toggle\" id=\"sn-mission-3\" type=\"checkbox\" /><span class=\"sidenote\">Craig Trudell, Yuki Hagiwara and Ma Jie, <a href=\"https://www.bloomberg.com/news/articles/2014-04-06/humans-replacing-robots-herald-toyota-s-vision-of-future\" rel=\"noopener\" target=\"_blank\">Humans Replacing Robots Herald Toyota\u2019s Vision of Future</a> (2014)</span> The production of knowledge and application of intelligence lift each other; they are not substitutes.</p>\n<p>The work people do may change, and turn toward more of what only people bring, but the best organizations will make the fullest use of both. AI should enable each organization to be excellent in its own way, not to erase the differences between them.</p>\n<p>We aim to bring intelligence to where knowledge is made and used. <a href=\"https://thinkingmachines.ai/tinker/\">We build tools</a> that enable everyone to fine-tune models with their unique knowledge, and to keep adapting the models as their knowledge evolves. <a href=\"https://thinkingmachines.ai/blog/\">We publish research</a> and <a href=\"https://tinker-docs.thinkingmachines.ai/cookbook/\">recipes</a> that put this capability within reach of more people. We envision frontier AI as a collective, as diverse as the people it serves because it was shaped by them in each unique location.</p>\n<h2 id=\"human-participation-is-a-technical-challenge\">Human participation is a technical challenge</h2>\n<p>Keeping people engaged in setting goals and sharing knowledge with AI doesn\u2019t mean resisting automation for its own sake. What a machine does reliably on its own, it should do. But it should also know when to act alone and when to invite oversight and feedback, as people themselves do when working in teams. The best collaborators anticipate: they learn what someone is reaching for and bring it before being asked, earning over time the right to act on their behalf. These are technical challenges, requiring a new approach to how AI is designed and evaluated.</p>\n<p>A major bottleneck for bringing human knowledge and judgment to work with LLMs is the communication channel between human and AI \u2014 a small text box and a long wait. This is too narrow to carry the richness of human wisdom and intent, and too slow for ongoing feedback. People collaborate best when they collaborate live. We interrupt and correct, take second looks and make gestures, change our minds aloud. This is why we\u2019re making a long-term bet on <a href=\"https://thinkingmachines.ai/blog/interaction-models/\">interaction models</a>: models that handle live, multimodal interaction natively, in the model itself rather than in scaffolding bolted around it. Built this way, interactivity scales with intelligence; the same training that makes the model smarter makes it a better collaborator. The right interface doesn\u2019t just allow human participation, it invites and rewards it.</p>\n<p>Another challenge is setting the right target for evaluation and optimization. The common measure of AI intelligence today is the time horizon of software tasks models can execute autonomously, tracked on charts like METR\u2019s.<label class=\"sidenote-number\" for=\"sn-mission-4\"></label><input class=\"margin-toggle\" id=\"sn-mission-4\" type=\"checkbox\" /><span class=\"sidenote\">Thomas Kwa and Ben West et al., <a href=\"https://metr.org/time-horizons/\" rel=\"noopener\" target=\"_blank\">Task-Completion Time Horizons of Frontier AI Models</a> (2025)</span> We expect progress on this benchmark to continue, but it ultimately measures only what AI is capable of on its own, not what people and machines can accomplish together.</p>\n<p>Measuring the latter is more complex, and can\u2019t be done by a lab on its own. Every organization evaluates for itself whether AI helps it sharpen its judgment, develop new knowledge, and achieve its objectives.</p>\n<p>Building AI that makes its users stronger in the long run also aligns incentives well. An AI lab offering a single model for every customer benefits by absorbing what makes each user distinct and devaluing the cultivation of specialized knowledge. By optimizing AI to be customized and collaborated with, we benefit when our customers leverage their unique advantages. These advantages are maximized not by renting an AI and outsourcing to it, but by organizations owning it and tailoring it to their goals.</p>\n<h2 id=\"decentralized-alignment\">Decentralized alignment</h2>\n<p>Human values, just like human knowledge, reside in the heads of individual people and resist consolidation. But today, the values and voice of AI are decided in a handful of places. A single locus of value alignment, however well run, becomes a locus of power to be captured.</p>\n<p>This creates danger, especially if most valuable work is done by AI on its own with little need for human input. The social contract between corporations, governments, and citizens relies on individuals\u2019 productive capabilities on which the government\u2019s sovereignty and corporations\u2019 profits ultimately depend. Power that needs nothing from people loses the incentive to care for their needs and values, caring instead for its own preservation.<label class=\"sidenote-number\" for=\"sn-mission-5\"></label><input class=\"margin-toggle\" id=\"sn-mission-5\" type=\"checkbox\" /><span class=\"sidenote\">Luke Drago and Rudolf Laine, <a href=\"https://intelligence-curse.ai/\" rel=\"noopener\" target=\"_blank\">The Intelligence Curse</a> (2025)</span></p>\n<p>Even with the best intentions, a model shaped in one place inevitably encodes the values of its owner, not the individual users it serves.<label class=\"sidenote-number\" for=\"sn-mission-6\"></label><input class=\"margin-toggle\" id=\"sn-mission-6\" type=\"checkbox\" /><span class=\"sidenote\">\u201cA more moral AI is not enough if that morality is determined by a few.\u201d Leo XIV, <a href=\"https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html\" rel=\"noopener\" target=\"_blank\">Magnifica Humanitas</a> (2026)</span> Today each lab trains its next flagship model by using its previous flagship model to generate training data and a reward signal. Whatever character emerges from that loop, everyone gets the same one, and each generation inherits the traits of the last, raised on its parent\u2019s outputs and judged by its parent\u2019s tastes. A single alignment spec suppresses creativity and diversity and stultifies progress. Free speech and free markets let new ideas, goods, and services emerge and compete, rather than averaging out the preferences that exist at a point in time.</p>\n<p>For organizations and individuals to align AI to their own values, these values must be encoded in the model weights. If the user\u2019s values and desires only impact the model through a prompt, the user finds that surface properties change while the deeper habits remain. Allowing core model behavior to change significantly with prompts sacrifices safety, making a malleable centralized model vulnerable to repeated attacks.<label class=\"sidenote-number\" for=\"sn-mission-7\"></label><input class=\"margin-toggle\" id=\"sn-mission-7\" type=\"checkbox\" /><span class=\"sidenote\">Gwern Branwen, <a href=\"https://gwern.net/guardian-angel\" rel=\"noopener\" target=\"_blank\">Guardian Angels: LLM Personalization for Productivity and Security</a> (2026)</span></p>\n<p>The power to shape a model profoundly is also the power to shape it for ill. John von Neumann remarked on this problem in 1955,<label class=\"sidenote-number\" for=\"sn-mission-8\"></label><input class=\"margin-toggle\" id=\"sn-mission-8\" type=\"checkbox\" /><span class=\"sidenote\">John von Neumann, <a href=\"https://sseh.uchicago.edu/doc/von_Neumann_1955.pdf\" rel=\"noopener\" target=\"_blank\">Can We Survive Technology?</a> (1955)</span> writing that the useful and the harmful aspects of technology \u201clie everywhere so close together that it is never possible to separate the lions from the lambs.\u201d Keeping the lambs safe is an ongoing process, the result of judgment exercised and choices made continuously. We aim to give the people making these choices stronger tools, pursuing research that enables safer models without taking away ownership.</p>\n<p>Humanity has flourished through individual weirdness and creative tension. We envision alignment as a feature not of a single model but of an ecosystem of AIs raised in different places, disagreeing, competing, and learning from each other. We believe in keeping the weirdness alive.</p>\n<h2 id=\"the-future-worth-building\">The future worth building</h2>\n<p>The technology industry has made incredible progress in teaching machines to think; what they should think about must remain with us. What is worth wanting, what is worth making, what\u2019s the right use of the time we have.<label class=\"sidenote-number\" for=\"sn-mission-9\"></label><input class=\"margin-toggle\" id=\"sn-mission-9\" type=\"checkbox\" /><span class=\"sidenote\">\u201cThe only way out of the dilemma of meaninglessness in all strictly utilitarian philosophy is to turn away from the objective world of use things and fall back upon the subjectivity of use itself. Only in a strictly anthropocentric world, where the user, that is, man himself, becomes the ultimate end which puts a stop to the unending chain of ends and means, can utility as such acquire the dignity of meaningfulness\u2026The anthropocentric utilitarianism of <em>homo faber</em> has found its greatest expression in the Kantian formula that no man must ever become a means to an end, that every human being is an end in himself.\u201d Hannah Arendt, <a href=\"https://press.uchicago.edu/ucp/books/book/chicago/H/bo29137972.html\" rel=\"noopener\" target=\"_blank\">The Human Condition</a> (1958)</span> We are not looking to hand down a single answer to this, but to give every person the ability to make their own answer part of the development of frontier AI.</p>\n<p>The current path of AI development, pushing towards centralization and autonomy, frames human involvement as a trade-off: participation vs. capability, ownership vs. safe alignment. We see these as technical challenges to solve: AI that is more capable because it encourages human participation, organizations that benefit in the long run from tailoring AI to their advantages, alignment that arises from diverse AIs shaped by the people who own them. Solving these challenges is what our mission requires.</p>\n<p>The future is not a choice between human dominance and rapid obsolescence in the face of AI. Different roads lead to many different futures, and we get to choose which one to take. We are building technology that lets the born and the made walk the road together.</p>",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553623,
-    "title": "recommended viewing, tho the \"just dropped\" is a bit misleading. this is from april. still an excellent talk. @mattpocockuk is a true educator and i admire how he brings structure to this mess we are in.",
-    "url": "https://video.twimg.com/amplify_video/2075149416692920320/vid/avc1/1280x720/wN_9Tmxo3lBxGIRI.mp4",
-    "published_at": "2026-07-09T21:19:45+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing, tho the \"just dropped\" is a bit misleading. this is from april. still an excellent talk. @mattpocockuk is a true educator and i admire how he brings structure to this mess we are in.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551719,
-    "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
-    "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
-    "published_at": "2026-07-09T13:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work.",
-    "topic": "coding",
-    "tags": [
-      "models",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551722,
-    "title": "GPT-5.5 Bio Bug Bounty",
-    "url": "https://openai.com/index/bio-bug-bounty",
-    "published_at": "2026-07-09T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Details about the OpenAI Bio Bounty program",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551720,
-    "title": "ChatGPT is now a partner for your most ambitious work",
-    "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-    "published_at": "2026-07-09T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
