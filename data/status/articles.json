@@ -1,5 +1,71 @@
 [
   {
+    "article_id": 1323931,
+    "title": "Unlock Agent Autonomy: The Runtime for AI-Native Systems \u2014 Tushar Jain, Docker",
+    "url": "https://www.youtube.com/watch?v=zaGyGgLW3SM",
+    "published_at": "2026-08-20T16:30:33+00:00",
+    "fetched_at": "2026-08-20T16:35:12+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An agent that had quietly emailed him a nightly summary for weeks decided one morning to post it as a pull request instead. Nothing had changed. The model simply judged that publishing would be more helpful. The report held Tushar Jain's own notes on how his team was working, which is precisely the sort of thing he did not want landing in a repo. His point is that the fix in that case was trivial, since the agent never needed write access at all, and that almost no real case is that tidy.\n\nThe example he builds on is an agent investigating a latency spike. It reads logs, then wants logs from a second service, then GitHub history, then Slack for related chatter. Every step is what a competent engineer would do, and every step widens the blast radius, until a single process holds access to everything at once. Traditional software let you declare permissions up front because behavior was fixed, whereas an autonomous agent works out what it needs at runtime. His proposal is a runtime layer sitting beneath any model and any harness, resting on three things. Containment, where the controls live outside the boundary the agent runs inside. Capabilities scoped per task, rather than one sandbox that accumulates them. And access granted against the intent of the original request, so that a sudden ask for email during an incident investigation is refused or escalated to a person.\n\nSpeaker info:\n- https://www.linkedin.com/in/tusharj\n\nTimestamps:\n0:00 - Intelligence is not the blocker, safety is\n2:08 - The nightly agent that published itself\n3:12 - Widening scope during a latency investigation\n4:17 - Why you cannot rely on one model or one harness\n6:24 - Containment, with controls outside the boundary\n7:29 - Just in time tools, scoped to one task\n8:30 - Intent based access, and what to refuse\n10:33 - Docker solved portability, now safety\n11:49 - A sandbox with injected credentials and stubs\n13:58 - Splitting one job across two scoped sandboxes\n16:06 - The same sandbox, moved to the cloud\n18:10 - Orchestrating scoped agents together\n20:26 - A prototype that grants access on the fly",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1323932,
+    "title": "Your Fine-Tuned Model Is Tech Debt: A 50x ROI House of Cards \u2014 Dan Bjornn, Lease End",
+    "url": "https://www.youtube.com/watch?v=4loPnxvWWhg",
+    "published_at": "2026-08-20T16:00:22+00:00",
+    "fetched_at": "2026-08-20T16:35:12+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A customer replied good morning to an outreach text and the model called him immediately. Another confirmed a Thursday appointment, said sounds good, and was told a call was happening right now. Both reached production, from a finetuned classifier that had also generated $12 million of revenue at 50 times return inside a year. Dan Bjornn's talk is about what that model was quietly costing underneath those numbers, which he calls the calcification tax.\n\nThe repair loop is where it accrued. Gather examples of the new failure, synthesize more when there are too few, validate those by hand, sort them into intent buckets, review again, and only then train, which took about an hour and was the shortest step in a process that ran a week. Each round fixed its target and reintroduced something older, so bugs ended up ranked by how much customer pain was tolerable while they waited. The promised portability never arrived either, since training data does not transfer cleanly between model versions, let alone between providers, so they stayed put and could not adopt newer architectures while busy keeping the old one alive. The rebuild swapped the tuned model for skills, prompts, and context on a model agnostic framework. Fixes now ship in under an hour as files uploaded to a bucket, accuracy went up, cost per message went up, and total cost went down.\n\nSpeaker info:\n- https://www.linkedin.com/in/dkbjornn\n\nTimestamps:\n0:00 - Classifying customer intent with retrieval\n1:54 - Four reasons to finetune, all of them reasonable\n3:32 - The pipeline, and $12 million at 50x return\n4:24 - The confused confirmer, and the overeager puppy\n6:04 - A week per retrain, with training the shortest step\n8:39 - Ranking bugs by tolerable customer pain\n9:31 - The calcification tax, in model and architecture\n11:18 - The realization from changing skills, not models\n12:14 - Rebuilding on skills, tools, and context\n13:08 - Fixes in under an hour, deployed as files\n14:54 - Cross your reason off the list before you finetune",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "benchmark",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1323933,
+    "title": "How I automate my own job at Hugging Face using agents \u2014 Niels Rogge, Hugging Face",
+    "url": "https://www.youtube.com/watch?v=FLUoowDJg4I",
+    "published_at": "2026-08-20T15:30:35+00:00",
+    "fetched_at": "2026-08-20T16:35:12+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Thousands of GitHub issues, opened automatically, have produced exactly two negative replies. Niels Rogge works on what he calls the Google Drive to the hub team at Hugging Face, whose job is noticing that a paper's weights are sitting on Dropbox or Zenodo where nobody will find them, then asking the authors to publish on the hub instead. Hundreds of papers land on arXiv every day, so he automated himself.\n\nThe useful part is that he built it twice, in opposite shapes, and explains why each time. The outreach half is a deterministic workflow: a model call at each step of the path he used to walk by hand, no agent framework at all, running nightly as a cron job on free GitHub Actions minutes, with tracing so he can inspect prompts, cost, and latency. He chose that because the prevailing advice when he built it was to avoid agents unless you genuinely need one. The follow up half, built recently, is the reverse. It is a fully autonomous loop whose main tool is bash, carrying one CLI, one skill, and a sandbox, fanned out so that every issue gets its own container. He is also candid that recipients are not told an agent wrote to them, on the grounds that it sends what he used to send himself and a disclosed bot tends to get closed unread.\n\nSpeaker info:\n- https://x.com/NielsRogge\n- https://www.linkedin.com/in/niels-rogge-a3b7a3127/\n- https://nielsrogge.github.io/\n\nTimestamps:\n0:00 - The Google Drive to the hub problem\n1:59 - Paper pages, metadata, and discoverability\n3:41 - Why manual outreach does not scale\n4:29 - The workflow he was running by hand\n5:19 - Workflow or agent, and why it is not binary\n7:03 - Nightly cron jobs, and tracing cost and latency\n8:46 - The flood of replies, and automating follow up\n9:36 - Switching to a fully autonomous loop\n10:25 - Bash, one CLI, one skill, one sandbox\n12:06 - A container per issue, fanned out\n13:49 - What researchers actually reply\n15:32 - Migrated models, and a 400 gigabyte dataset\n18:06 - Open models, agents over workflows, and evaluation",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1321843,
     "title": "The Era of Compound Engineering \u2014 Kieran Klaassen, Every/Cora",
     "url": "https://www.youtube.com/watch?v=_ehJyfHg1Vk",
@@ -184,6 +250,27 @@
       "research",
       "policy",
       "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1322549,
+    "title": "How ChatGPT Work helps Stampli move ideas to market",
+    "url": "https://openai.com/index/stampli",
+    "published_at": "2026-08-20T00:00:00+00:00",
+    "fetched_at": "2026-08-20T16:35:08+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "agents",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9938,80 +10025,6 @@
       "release",
       "models",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551708,
-    "title": "A scorecard for the AI age",
-    "url": "https://openai.com/index/a-scorecard-for-the-ai-age",
-    "published_at": "2026-07-17T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute.",
-    "topic": "infrastructure",
-    "tags": [
-      "benchmark",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553381,
-    "title": "Zero risk isn't the job: a CISO's guide to agentic AI",
-    "url": "https://claude.com/blog/ciso-guide-to-agentic-ai",
-    "published_at": "2026-07-17T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Zero risk isn't the job: a CISO's guide to agentic AI",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "safety",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553382,
-    "title": "Working at the frontier: How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems",
-    "url": "https://claude.com/blog/working-at-the-frontier-cursor",
-    "published_at": "2026-07-17T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Working at the frontier: How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553609,
-    "title": "recommended viewing.",
-    "url": "https://video.twimg.com/amplify_video/2077538877909405696/vid/avc1/1920x1080/5KpV9vZr8eeh4TFL.mp4",
-    "published_at": "2026-07-16T19:29:40+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
