@@ -42,6 +42,28 @@
     "available": true
   },
   {
+    "article_id": 1303715,
+    "title": "Your Agent Evolved. Your Evals Didn't. \u2014 Ameya Bhatawdekar, Braintrust",
+    "url": "https://www.youtube.com/watch?v=nxokqOq1imY",
+    "published_at": "2026-08-19T22:50:52+00:00",
+    "fetched_at": "2026-08-20T07:49:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Teams built orchestration graphs because the models of 2024 could not be trusted to orchestrate, and then the models learned to orchestrate and the graphs became the thing holding them back. Ameya Bhatawdekar traces that loop across five generations of architecture, each one forced by a step change in model capability, and argues that evals have to move with it. A single prompt needed only answer quality. A retrieval chain added a parser that grabs the wrong field and a retriever that returns the wrong context. Graphs added branch logic, contracts between nodes, and classifier nodes that misfire quietly, which is a great deal of new surface to check.\n\nWhat changed most recently is not another layer but the unit of measurement. Once a loop is reliable enough to run free, the same input produces visibly different trajectories on every run, so a single eval result stops meaning very much. He separates the two questions it hides. Pass at k asks whether the system succeeds at least once across k attempts, which measures capability. The stricter variant asks how many of those k attempts succeed, which measures reliability. A system can look strong on the first and weak on the second, and you only learn that by running the distribution rather than the sample. Underneath it all is the claim that evals are the durable asset across replatformings, and that the ones which go stale are the ones nobody feeds from production.\n\nSpeaker info:\n- https://www.linkedin.com/in/ameyab\n\nTimestamps:\n0:00 - Replatforming, not iterating\n2:24 - Step function model changes, not incremental ones\n3:30 - Why you cannot just drop in a new model\n5:34 - Grounding it in a site reliability agent\n6:40 - One prompt, one call, one answer to grade\n7:44 - The chain, and where retrieval goes wrong\n8:48 - The first ReAct loop, and why it fell short\n9:49 - Taking control back with workflow graphs\n11:58 - The eval surface a graph creates\n13:07 - Models get good enough to loop again\n15:19 - Pass at k for capability, the stricter one for reliability\n16:21 - Memory, sandboxes, and skills around the loop\n19:34 - The flywheel most teams accept but never run",
+    "topic": "education",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1285260,
     "title": "Conceptual integrity and counting lines of code",
     "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
@@ -59,6 +81,28 @@
       "coding",
       "development",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1303716,
+    "title": "The Era of Compound Engineering \u2014 Kieran Klaassen, Every/Cora",
+    "url": "https://www.youtube.com/watch?v=_ehJyfHg1Vk",
+    "published_at": "2026-08-19T22:36:44+00:00",
+    "fetched_at": "2026-08-20T07:49:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "He has not written a line of code this year, and has not read most of it either, yet he ships a full email client that thousands of people trust with their inbox. Kieran Klaassen has been rebuilding Cora alone since January, and the useful part of his account is the sequence of bottlenecks he moved through. Two years ago the code itself was bad, so he layered on review and skills until it got good. Then the plans were the constraint, until those got good too. Then knowing what to build at all. What was left after that was him repeating himself, which is what a memory system exists to fix.\n\nThat is where compound engineering came from, and the rule attached to it is the demanding one. Spend half your time building the feature and the other half teaching the system whatever it got wrong. His counterintuitive claim is that this ends up cheaper in tokens rather than more expensive, because a stored solution means no correction pass and no research detour the next time around. The loop puts the human at both ends, brain on to decide what the problem actually is, then brain on again at the finish to raise the bar rather than to run QA, with hours of autonomous work in between. The bar he holds it to is that the next feature should be easier to build because this one shipped, which inverts the way complexity normally accumulates.\n\nSpeaker info:\n- https://x.com/kieranklaassen\n- https://www.linkedin.com/in/kieran-klaassen/\n- https://cora.computer\n\nTimestamps:\n0:00 - Shipping without writing or reading the code\n2:52 - Building an email client alone, on purpose\n4:40 - The bottleneck moved from code to plans to judgment\n5:30 - Where compound engineering came from\n6:25 - The loop, and the human at both ends\n8:10 - Half your time teaching the system what it got wrong\n9:03 - Why stored solutions are cheaper in tokens\n9:55 - The plugin, and building it while building the product\n10:45 - Turning a backlog into an argued set of ideas\n12:26 - Sharp questions on a document, and only enough of them\n15:01 - The overnight loop, and polish as raising the bar\n17:33 - Doing this without the plugin\n19:14 - The next feature should be easier than this one",
+    "topic": "tools",
+    "tags": [
+      "research",
+      "infrastructure",
+      "coding",
+      "education",
+      "tools",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9951,43 +9995,6 @@
       "agents",
       "coding",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553384,
-    "title": "How Anthropic runs large-scale code migrations with Claude Code",
-    "url": "https://claude.com/blog/ai-code-migration",
-    "published_at": "2026-07-16T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "How Anthropic runs large-scale code migrations with Claude Code",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553383,
-    "title": "Working with Claude Fable 5 in Claude Cowork",
-    "url": "https://claude.com/blog/working-with-claude-fable-5-in-claude-cowork",
-    "published_at": "2026-07-16T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Working with Claude Fable 5 in Claude Cowork",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
