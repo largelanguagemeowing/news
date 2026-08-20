@@ -300,6 +300,25 @@
     "available": true
   },
   {
+    "article_id": 1345747,
+    "title": "Progressive Refinement: An Iterative Pseudo-Labeling Approach for Mandarin-English Code-Switching ASR",
+    "url": "https://machinelearning.apple.com/research/progressive-refinement-pseudo-labeling",
+    "published_at": "2026-08-20T00:00:00+00:00",
+    "fetched_at": "2026-08-20T23:52:52+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Code-switching (CS), alternating languages within the same utterance, poses significant challenges for automatic speech recognition (ASR) due to limited CS training data. This paper applies an iterative pseudo-labeling training approach to CS-ASR for the first time, demonstrating its effectiveness in leveraging unlabeled data to improve CS-ASR performance. The approach comprises three phases: pseudo-label generation, two-stage bilingual model training, and iterative improvements. It begins by generating pseudo-labels from a large unlabeled corpus, creating a semi-supervised dataset. This\u2026",
+    "topic": "research",
+    "tags": [
+      "models",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1321594,
     "title": "Scaling Laws for Mixture Pretraining Under Data Constraints",
     "url": "https://machinelearning.apple.com/research/scaling-laws-mixture-pretraining",
@@ -10006,25 +10025,6 @@
       "ai-models",
       "models",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553608,
-    "title": "Reliable unreliability | David Gasquez",
-    "url": "https://davidgasquez.com/reliable-unreliability",
-    "published_at": "2026-07-19T13:25:56+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. in a few systems i built over the past 2 years i ended up with this flow for a given task:\n\n- start with full inference for all steps, observe behaviour, judge correctness\n- find inference steps that can be replaced with deterministic steps\n\neventually, most\n\nas  a programmer, i always tried to automate myself away.\n\nturns out, agents can also (help) automate themselves away.\n\nalso much cheaper.",
-    "topic": "infrastructure",
-    "tags": [
-      "agents",
-      "infrastructure",
-      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
