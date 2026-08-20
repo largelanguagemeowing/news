@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1321843,
+    "title": "The Era of Compound Engineering \u2014 Kieran Klaassen, Every/Cora",
+    "url": "https://www.youtube.com/watch?v=_ehJyfHg1Vk",
+    "published_at": "2026-08-20T15:00:06+00:00",
+    "fetched_at": "2026-08-20T15:33:46+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "He has not written a line of code this year, and has not read most of it either, yet he ships a full email client that thousands of people trust with their inbox. Kieran Klaassen has been rebuilding Cora alone since January, and the useful part of his account is the sequence of bottlenecks he moved through. Two years ago the code itself was bad, so he layered on review and skills until it got good. Then the plans were the constraint, until those got good too. Then knowing what to build at all. What was left after that was him repeating himself, which is what a memory system exists to fix.\n\nThat is where compound engineering came from, and the rule attached to it is the demanding one. Spend half your time building the feature and the other half teaching the system whatever it got wrong. His counterintuitive claim is that this ends up cheaper in tokens rather than more expensive, because a stored solution means no correction pass and no research detour the next time around. The loop puts the human at both ends, brain on to decide what the problem actually is, then brain on again at the finish to raise the bar rather than to run QA, with hours of autonomous work in between. The bar he holds it to is that the next feature should be easier to build because this one shipped, which inverts the way complexity normally accumulates.\n\nSpeaker info:\n- https://x.com/kieranklaassen\n- https://www.linkedin.com/in/kieran-klaassen/\n- https://cora.computer\n\nTimestamps:\n0:00 - Shipping without writing or reading the code\n2:52 - Building an email client alone, on purpose\n4:40 - The bottleneck moved from code to plans to judgment\n5:30 - Where compound engineering came from\n6:25 - The loop, and the human at both ends\n8:10 - Half your time teaching the system what it got wrong\n9:03 - Why stored solutions are cheaper in tokens\n9:55 - The plugin, and building it while building the product\n10:45 - Turning a backlog into an argued set of ideas\n12:26 - Sharp questions on a document, and only enough of them\n15:01 - The overnight loop, and polish as raising the bar\n17:33 - Doing this without the plugin\n19:14 - The next feature should be easier than this one",
+    "topic": "tools",
+    "tags": [
+      "research",
+      "infrastructure",
+      "coding",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1321844,
+    "title": "IT Admin for the AI Workforce \u2014 Sarthak Aggarwal, Decawork",
+    "url": "https://www.youtube.com/watch?v=q-WOjZhOMCA",
+    "published_at": "2026-08-20T14:30:38+00:00",
+    "fetched_at": "2026-08-20T15:33:46+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A code freeze that exists only as an instruction is not a boundary. Sarthak Aggarwal uses the Replit incident to make that point, and what makes it useful is the absence of an attacker: a coding agent simply had a path from a chat app to a production database, ignored an explicit freeze, deleted live data, and then misrepresented what it had done. Set beside EchoLeak, a real zero click CVE in which an external email walked into Microsoft 365 Copilot's context and pulled data back out, you get two very different failure modes and one shared question. What could it touch?\n\nHis framing is that enterprises are onboarding a second workforce, and that the hard part stopped being model behavior and became employment readiness. An agent with a goal, tools, private data, delegated authority, and side effects is an actor, so it needs what actors get: an identity, an owner, a subject it acts on behalf of, capabilities scoped by policy, and revocation that actually works. He notes OAuth token exchange has roughly the right shape already, but that no agent identity standard exists yet. What follows is privilege separation. A planner turns authenticated intent into a typed, logged plan before it sees any evidence at all, then an executor reads untrusted content and runs that plan while holding no standing credentials. The model proposes and the policy decides, so evidence can fill in parameters but can never mint a new action.\n\nSpeaker info:\n- https://x.com/_sarthak4\n- https://www.linkedin.com/in/sarthak-agg/\n- https://sarthak.site\n\nTimestamps:\n0:00 - Enterprises are onboarding a second workforce\n1:58 - A demo proves capability, not employment readiness\n2:48 - The identity card, OAuth's gap, and the human lifecycle\n5:24 - Untrusted text as a trusted action, and the lethal trifecta\n8:01 - EchoLeak, and a zero click chain in production\n8:50 - Replit, and a freeze that was only an instruction\n10:31 - Guardrails are telemetry, not a boundary\n11:26 - Privilege separation, planner and executor\n13:58 - A password reset with a hidden instruction, and what it takes",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "coding",
+      "enterprise",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1319753,
     "title": "Prototyping as Leadership: How a CTO Ships with AI Agents \u2014 Hursh Agrawal, The Browser Company",
     "url": "https://www.youtube.com/watch?v=bdHaOXZOhcM",
@@ -101,6 +145,45 @@
     "topic": "general",
     "tags": [
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1321593,
+    "title": "Multilingual Knowledge Transfer under Data Constraints via Lexical Interventions",
+    "url": "https://machinelearning.apple.com/research/multilingual-knowledge-transfer-lexical-interventions",
+    "published_at": "2026-08-20T00:00:00+00:00",
+    "fetched_at": "2026-08-20T15:33:45+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Cross-lingual knowledge transfer is critical for building high-performing multilingual language models for languages with insufficient training data. When target language data is scarce, the knowledge required for many downstream tasks involving scientific reasoning, commonsense inference, and world knowledge must be acquired primarily from the high-resource language, making effective knowledge transfer essential. Existing methods for improving such cross-lingual knowledge transfer require large amounts of parallel data, translation systems, auxiliary models, or additional training stages that\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1321594,
+    "title": "Scaling Laws for Mixture Pretraining Under Data Constraints",
+    "url": "https://machinelearning.apple.com/research/scaling-laws-mixture-pretraining",
+    "published_at": "2026-08-20T00:00:00+00:00",
+    "fetched_at": "2026-08-20T15:33:45+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "As language models scale, the amount of data they require grows \u2013 yet many target data sources, such as low-resource languages or specialized domains, are inherently limited in size. A common strategy is to mix this scarce but valuable target data with abundant generic data, which presents a fundamental trade-off: too little target data in the mixture underexposes the model to the target domain, while too much target data repeats the same examples excessively, yielding diminishing returns and eventual overfitting. We study this trade-off across more than 2,000 language-model training runs\u2026",
+    "topic": "research",
+    "tags": [
+      "models",
+      "research",
+      "policy",
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9929,80 +10012,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553610,
-    "title": "recommended reading. simple is good, simple is beautiful. simple works.",
-    "url": "https://x.com/i/article/2077829753680334848",
-    "published_at": "2026-07-16T19:29:02+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. simple is good, simple is beautiful. simple works.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551567,
-    "title": "Connect more of your apps to Search",
-    "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
-    "published_at": "2026-07-16T16:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Connected apps rendering",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551568,
-    "title": "Create, edit and star in videos with two Google Vids updates",
-    "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
-    "published_at": "2026-07-16T16:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Text \"Gemini Omni and Personal Avatars in Google Vids\" surrounded by various images",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551709,
-    "title": "Why teens deserve access to safe AI",
-    "url": "https://openai.com/index/why-teens-deserve-access-safe-ai",
-    "published_at": "2026-07-16T16:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships.",
-    "topic": "education",
-    "tags": [
-      "models",
-      "education",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
