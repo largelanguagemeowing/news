@@ -1,5 +1,71 @@
 [
   {
+    "article_id": 1317676,
+    "title": "The Last Human Code Review: Building Trust in AI-Generated Code \u2014 Itamar Friedman, Qodo",
+    "url": "https://www.youtube.com/watch?v=s-aixZYJG4c",
+    "published_at": "2026-08-20T13:30:38+00:00",
+    "fetched_at": "2026-08-20T13:46:05+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "If you are shipping AI generated code faster than your humans can review it, Itamar Friedman's position is that you are inside the problem rather than ahead of it. He asks the room whether developers will still be reading diffs line by line by the end of the year, then reports finding two incompatible camps among engineering leaders the night before: one holding that every line must be human trusted, the other content to ship bugs and fix them quickly because velocity wins. Which camp you sit in decides what you have to build.\n\nHis claim is that models stopped being the constraint. Code review benchmarks have barely moved across recent model releases, and the difference between a review that catches a real contract break and one that asks whether you considered error handling is context, not reasoning. That context is scattered across competing instruction files, differs between teams inside the same company, and largely is not written down at all, living instead in senior developers' heads and in Slack threads. Codifying it means building for two audiences at once, because the format an agent parses cleanly is not the format developers will actually maintain. The deeper version encodes the architecture itself, including which service contract broke production three months ago, so that review shifts from reading one pull request to reading a graph and noticing that three changes in flight are about to collide.\n\nSpeaker info:\n- https://twitter.com/itamar_mar\n- https://www.linkedin.com/in/itamarf\n- https://www.qodo.ai/authors/itamar-f\n\nTimestamps:\n0:00 - Where the bottleneck moved, and why code review exists\n3:38 - Two camps: trust every line, or ship and fix fast\n5:19 - Models are not the barrier, context is\n7:03 - Context scattered across competing instruction files\n8:48 - The knowledge lives in heads and in Slack\n9:42 - Codifying for agents and humans at once\n10:34 - Interfaces for both: rules shown, and a note to the next agent\n12:19 - Fewer human comments as the readiness signal\n13:11 - Encoding architecture, contracts, and past outages\n14:05 - Automatic approve and block, added gradually\n16:38 - Reviewing the software graph instead of the PR",
+    "topic": "coding",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317677,
+    "title": "Your Agent Evolved. Your Evals Didn't. \u2014 Ameya Bhatawdekar, Braintrust",
+    "url": "https://www.youtube.com/watch?v=nxokqOq1imY",
+    "published_at": "2026-08-20T13:00:06+00:00",
+    "fetched_at": "2026-08-20T13:46:05+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Teams built orchestration graphs because the models of 2024 could not be trusted to orchestrate, and then the models learned to orchestrate and the graphs became the thing holding them back. Ameya Bhatawdekar traces that loop across five generations of architecture, each one forced by a step change in model capability, and argues that evals have to move with it. A single prompt needed only answer quality. A retrieval chain added a parser that grabs the wrong field and a retriever that returns the wrong context. Graphs added branch logic, contracts between nodes, and classifier nodes that misfire quietly, which is a great deal of new surface to check.\n\nWhat changed most recently is not another layer but the unit of measurement. Once a loop is reliable enough to run free, the same input produces visibly different trajectories on every run, so a single eval result stops meaning very much. He separates the two questions it hides. Pass at k asks whether the system succeeds at least once across k attempts, which measures capability. The stricter variant asks how many of those k attempts succeed, which measures reliability. A system can look strong on the first and weak on the second, and you only learn that by running the distribution rather than the sample. Underneath it all is the claim that evals are the durable asset across replatformings, and that the ones which go stale are the ones nobody feeds from production.\n\nSpeaker info:\n- https://www.linkedin.com/in/ameyab\n\nTimestamps:\n0:00 - Replatforming, not iterating\n2:24 - Step function model changes, not incremental ones\n3:30 - Why you cannot just drop in a new model\n5:34 - Grounding it in a site reliability agent\n6:40 - One prompt, one call, one answer to grade\n7:44 - The chain, and where retrieval goes wrong\n8:48 - The first ReAct loop, and why it fell short\n9:49 - Taking control back with workflow graphs\n11:58 - The eval surface a graph creates\n13:07 - Models get good enough to loop again\n15:19 - Pass at k for capability, the stricter one for reliability\n16:21 - Memory, sandboxes, and skills around the loop\n19:34 - The flywheel most teams accept but never run",
+    "topic": "education",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317616,
+    "title": "Claude\u2019s Text Watermark Could Follow It Everywhere",
+    "url": "https://www.youtube.com/shorts/O-8TbMFOAfg",
+    "published_at": "2026-08-20T12:41:43+00:00",
+    "fetched_at": "2026-08-20T13:46:04+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Anthropic is working on a watermark for Claude-generated text that could follow the text even after you copy, paste, or edit it \ud83d\udc40\n\nThey haven't revealed exactly how this watermark works yet, but one way could be by creating a statistical pattern in Claude's word choices that humans can\u2019t see, but a detector potentially could.\n\nAnd the implications of this have taken the internet by storm. \n\n\nPeople are wondering what happens if Claude only edits something that you originally wrote? Does that now get flagged as AI-generated? What about code, copyright, privacy, or people simply rewriting the text enough to remove the watermark entirely?\n\nAnd then there\u2019s the bigger debate: Do people have a right to know when something was created with AI? \n\n\nCurious where you land on this one. Let me know in the comments \ud83d\udc47\n\nAnd follow for more AI news and updates.\n\n#AI #ainews #anthropic #claude",
+    "topic": "media",
+    "tags": [
+      "models",
+      "safety",
+      "coding",
+      "policy",
+      "media",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1315893,
     "title": "Don't paste the AI.",
     "url": "https://dontpastetheai.com/",
@@ -9935,64 +10001,6 @@
       "agents",
       "education",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553611,
-    "title": "The Human-in-the-Loop is Tired",
-    "url": "https://pydantic.dev/articles/the-human-in-the-loop-is-tired",
-    "published_at": "2026-07-16T09:49:33+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading by Laura Summers who appears to be not on this hellsite because she's a smart human.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551587,
-    "title": "Our approach to bioresilience",
-    "url": "https://deepmind.google/blog/our-approach-to-bioresilience/",
-    "published_at": "2026-07-16T09:30:42+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Google DeepMind and Isomorphic Labs are sharing our joint approach to bioresilience and AI models.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553051,
-    "title": "New Model: Inkling by Thinking Machine on Hugging Face",
-    "url": "https://www.youtube.com/watch?v=EOK_haQSMIA",
-    "published_at": "2026-07-16T07:07:24+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Inkling by Thinking Machines is here, a 1 TRILLION parameter open model that natively understands images, text, AND audio, with a 1M token context window. In this video, we break down the architecture, show you how to run it, and share our vibe-eval results.\n\nNow on Hugging Face \ud83e\udd17 https://huggingface.co/thinkingmachines/Inkling\n\n\u26a1 TL;DR\n\u2022 975B total / 41B active params (MoE, 256 experts)\n\u2022 Native image, text & audio input \u2014 one model, no separate encoders\n\u2022 1M context window, trained on 45T tokens\n\u2022 BF16 + calibrated NVFP4 checkpoints, MTP layers for speculative decoding\n\u2022 Day-0 support: transformers, SGLang, vLLM, llama.cpp\n\n\u23f1\ufe0f CHAPTERS\n00:00 Intro \u2014 What is Inkling? \n05:50 Architecture deep dive (Relative attention, Hybrid attention, SConv) \n10:00 Interview with Thinking Machines (John Schulman & Soumith Chintala) \n13:12 Vision & audio towers explained \n16:18 Why 1 Trillion parameters? \n18:22 Relative embedding vs. Rotary (RoPE) \n21:28 Working with PyTorch modules in Transformers \n22:11 1-bit GGUFs with llama.cpp & Unsloth \n25:07 Hardware requirements & performance (8x H100 benchmarks) \n27:38 Running it: Transformers pipeline & source code \n29:21 Serving with SGLang & vLLM \n29:53 Agentic coding demo with Pi harness \n31:09 Vision & audio vibe evals (Physics puzzles & Big Bench) \n33:10 Post-training with Tinker + OpenEnv \n34:38 Free inference via Inference Providers \n35:20 Final thoughts and credits\n\n\ud83d\udd27 TRY IT\n\u2022 Model (BF16): https://huggingface.co/thinkingmachines/Inkling\n\u2022 Model (NVFP4): https://huggingface.co/thinkingmachines/Inkling-NVFP4\n\u2022 GGUF quants: https://huggingface.co/unsloth/inkling-GGUF\n\u2022 Inference Providers (free for 2h at launch): https://huggingface.co/thinkingmachines/inkling?inference_api=true\n\u2022 Quick start: pip install -U transformers, then pipeline(\"any-to-any\", model=\"thinkingmachines/Inkling\")\n\n\ud83d\udcda RESOURCES\n\u2022 Full blog post: https://huggingface.co/blog/thinkingmachines-inkling\n\u2022 Vibe eval images & results: https://huggingface.co/buckets/merve/inkling\n\u2022 RL example (tinker + OpenEnv): https://github.com/huggingface/OpenEnv\n\u2022 Distillation with TRL (GOLD): https://github.com/huggingface/trl\n\n\ud83d\udca1 KEY TAKEAWAYS\n\u2022 Needs ~2TB VRAM in BF16 (600GB in NVFP4) \u2014 but 1-bit GGUFs retain ~74% top-1 accuracy at 86% smaller\n\u2022 Reasoning effort is tunable from \"none\" to \"max\"; medium (0.7) is the sweet spot\n\u2022 The model transcribes/OCRs inputs first, then reasons \u2014 prompt accordingly\n\u2022 Great for multimodal reasoning apps, document processing, and fine-tuning\n\n\ud83d\udc65 By burtenshaw, merve, pcuenq & ariG23498 from Hugging Face\n\n#Inkling #ThinkingMachines #HuggingFace #OpenSource #LLM #Multimodal #AI #MachineLearning",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
