@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1382957,
+    "title": "Building Agents Is Trivial Now, Context Is the Next Frontier \u2014 Jeff Ng, Unblocked",
+    "url": "https://www.youtube.com/watch?v=HvMyYLTfvhg",
+    "published_at": "2026-08-21T17:00:30+00:00",
+    "fetched_at": "2026-08-21T17:28:45+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An agent built to enrich Linear tickets read a report that time to first character in Unblocked's own QA pipeline had gone from hundreds of milliseconds to three or four seconds, and recommended turning async dispatch back on. The recommendation was wrong. A support engineer had explicitly disabled that setting days earlier because it caused an outage. The agent had the ticket and the repository and reasoned soundly from both, but never saw the Slack thread where the engineers worked through the failure, or the postmortem that came out of it. Jeff Ng's point: standing an agent up has become the easy part, and missing context is what still breaks them.\n\nSix months ago the same build took a team a quarter, because checkpointing, sandbox isolation, and observability all had to be solved first, none of which improves what an agent can do. Cloud primitives and agent frameworks have absorbed that work, so defining an agent now comes down to a model, instructions, tools, and a sandbox. What that removes is the plumbing, not the judgment a person supplies on every turn: why the code is the way it is, what broke last time, what the team decided to do about it. Something has to carry that load once nobody is babysitting, and Ng argues MCP does not, because access is not understanding and an agent left to reconcile contradictory results picks badly. He reruns the same agent against a context engine spanning docs, code, tickets, and conversations, and the recommendation flips from repeating the outage to preventing it.\n\nSpeaker info:\n- https://getunblocked.com\n\nTimestamps:\n0:00 - Six months ago this took a team a quarter\n1:02 - The taxes: state, sandboxes, observability\n3:02 - Primitives and frameworks remove the plumbing\n4:21 - Demo: enriching a Linear ticket\n5:36 - The fix that had already caused an outage\n7:00 - Why this does not happen locally\n8:17 - What a context engine does\n10:36 - The same agent, grounded",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "events",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1380598,
     "title": "Stop Making TUIs",
     "url": "https://simonwillison.net/2026/Aug/21/stop-making-tuis/",
@@ -10017,27 +10039,6 @@
     "topic": "policy",
     "tags": [
       "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553009,
-    "title": "This ring replaces your keyboard?",
-    "url": "https://www.youtube.com/shorts/Yoz0CeZYO8E",
-    "published_at": "2026-07-20T18:59:51+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "This RING Replaces Your Keyboard??\n\nMeet the OASIS 1, a titanium smart ring designed to change how you interact with your devices.\n\nInstead of typing, you simply whisper your emails, messages, or AI prompts. The ring's noise-isolating microphone captures your voice, and Wispr Flow instantly converts it into text.\n\nTo navigate, the top of the ring features a miniature 2D trackpad with haptic feedback, allowing you to scroll, move your cursor, and edit text using just your thumb.\n\nI haven't seen any AI device like this before.\n\nWould you swap your keyboard and mouse for a smart ring? Let me know your thoughts in the comments! \ud83d\udc47\n\n#AI #futuretech #AInews",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding",
-      "hardware",
-      "opinion",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
