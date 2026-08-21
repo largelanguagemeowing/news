@@ -1,5 +1,22 @@
 [
   {
+    "article_id": 1371023,
+    "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
+    "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
+    "published_at": "2026-08-21T11:59:48+00:00",
+    "fetched_at": "2026-08-21T12:46:37+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
+    "topic": "research",
+    "tags": [
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1366540,
     "title": "Hugging Face Journal Club: Training AI Scientists to Replicate Research",
     "url": "https://www.youtube.com/watch?v=HxahKqN1q2g",
@@ -14,6 +31,27 @@
       "models",
       "agents",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1372506,
+    "title": "The Missing Layer: Design Taste in AI Agents \u2014 Hassan El Mghari, Together AI",
+    "url": "https://www.youtube.com/watch?v=7GMKdpLsxwU",
+    "published_at": "2026-08-21T10:08:28+00:00",
+    "fetched_at": "2026-08-21T12:46:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most people can spot a vibe coded app in two seconds and cannot say why. Hassan El Mghari names it: the purple gradient background, italics in the header, a scroll to explore prompt nobody asked for, all caps pills with wide letter spacing, too many emoji. He reckons you could list thirty such tells, and naming them is what lets you tell an agent to avoid them. That is most of what Hallmark does, the design skill he shipped six weeks ago to more than 10,000 users. It codifies the patterns as gates and hands the model a library of themes, on the through line that strong inspiration produces much better work.\n\nEl Mghari leads developer experience at Together AI and is not a designer. He has shipped roughly ten apps a year for five years, a few reaching millions of users, and credits design for that reach. He starts an app in Codex or Claude Code, then iterates with a smaller open source model, and made the case by putting up two landing pages, one from GLM 5.2 and one from Opus 4.8, and asking the room to guess which was which. Almost nobody could. The rest is practical: keep a vault of screenshots you admire and paste them in, the one habit he says to take away; record a voice note and let the prompt run three paragraphs; send one or two features per prompt instead of seven; write accumulated preferences into a skill file or AGENTS.md. Whatever the agent hands back is a base, never the finished app.\n\nSpeaker info:\n- https://x.com/nutlope\n- https://www.linkedin.com/in/nutlope/\n- https://nutlope.com\n\nTimestamps:\n0:00 - Ten apps a year, and why design is the edge\n1:41 - The apps: logos, comics, subtitles, a cloud agent\n3:08 - The tells that give away a vibe coded app\n4:11 - Hallmark: slop gates and a theme library\n6:53 - Iterating with a smaller open source model\n7:30 - Guess which page came from which model\n10:50 - Give the agent references and screenshots\n12:18 - One or two features per prompt",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9987,48 +10025,6 @@
     "topic": "research",
     "tags": [
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552800,
-    "title": "LVSum: A Benchmark for Timestamp-Aware Long Video Summarization",
-    "url": "https://machinelearning.apple.com/research/lvsum-video-summarization",
-    "published_at": "2026-07-20T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Long video summarization presents significant challenges for multimodal large language models (MLLMs), particularly in maintaining temporal fidelity over extended durations and producing summaries that are both semantically and temporally grounded. We introduce LVSum, a human-annotated benchmark for evaluating long-form video summarization with fine-grained temporal alignment. LVSum comprises 72 diverse videos spanning 13 domains with an average duration of 16 minutes, each annotated with up to 10 human-generated summaries containing temporal references. We conduct a comprehensive evaluation\u2026",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "safety",
-      "benchmark",
-      "video",
-      "coding",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552799,
-    "title": "RayRoPE: Projective Ray Positional Encoding for Multi-View Attention",
-    "url": "https://machinelearning.apple.com/research/rayrope-projective-ray",
-    "published_at": "2026-07-20T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "We study positional encodings for multi-view transformers that process tokens from a set of posed input images, and seek a mechanism that encodes patches uniquely, allows SE(3)-invariant attention with multi-frequency similarity, and can be adaptive to the geometry of the underlying scene. We find that prior (absolute or relative) encoding schemes for multi-view attention do not meet the above desiderata, and present RayRoPE to address this gap. RayRoPE represents patch positions based on associated rays but leverages a predicted point along the ray instead of the direction for a\u2026",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "research",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
