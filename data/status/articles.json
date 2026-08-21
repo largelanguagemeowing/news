@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 1396698,
+    "title": "llm 0.32.1",
+    "url": "https://simonwillison.net/2026/Aug/21/llm/",
+    "published_at": "2026-08-21T17:16:13+00:00",
+    "fetched_at": "2026-08-21T21:24:14+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.32.1\">llm 0.32.1</a></p>\n        <p>Fresh installs of LLM stopped working the other day because the OpenAI Python library dropped its usage of <code>httpx</code>, and it turned out LLM depended on that library but only installed it via a transitive <code>openai</code> dependency.</p>\n<p>This dot-release fixes that for the moment by pinning to <code>openai&lt;3</code>, and a soon-to-drop 0.33 release will switch from <code>httpx</code> to <a href=\"https://github.com/pydantic/httpx2\">httpx2</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/httpx\">httpx</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1382957,
     "title": "Building Agents Is Trivial Now, Context Is the Next Frontier \u2014 Jeff Ng, Unblocked",
     "url": "https://www.youtube.com/watch?v=HvMyYLTfvhg",
@@ -16,6 +37,28 @@
       "agents",
       "coding",
       "events",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1396699,
+    "title": "llm-openrouter 0.7",
+    "url": "https://simonwillison.net/2026/Aug/21/llm-openrouter/",
+    "published_at": "2026-08-21T16:58:19+00:00",
+    "fetched_at": "2026-08-21T21:24:14+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-openrouter/releases/tag/0.7\">llm-openrouter 0.7</a></p>\n        <p>Now that this plugin is compatible with <a href=\"https://simonwillison.net/2026/Aug/4/new-release-of-llm/\">LLM 0.32</a> it works much better with reasoning LLMs available through OpenRouter.</p>\n<blockquote>\n<ul>\n<li>Updated for compatibility with <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">LLM 0.32</a>.</li>\n<li>Models now use OpenRouter's implementation of the <a href=\"https://openrouter.ai/docs/api_reference/responses/overview\">Responses API</a>.</li>\n<li>Three new server-side tools: <a href=\"https://github.com/simonw/llm-openrouter#shell\">Shell</a>, <a href=\"https://github.com/simonw/llm-openrouter#web-fetch\">WebFetch</a>, and <a href=\"https://github.com/simonw/llm-openrouter#web-search\">WebSearch</a>. Enable these with options like <code>-T WebSearch</code>.</li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/openrouter\">openrouter</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "coding",
       "tools"
     ],
     "dearrow_thumbnail_url": "",
@@ -10002,43 +10045,6 @@
     "topic": "development",
     "tags": [
       "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553378,
-    "title": "How Datadog built a \u201cuniversal machine tool\u201d for Claude Code",
-    "url": "https://claude.com/blog/how-datadog-built-a-universal-machine-tool-for-claude-code",
-    "published_at": "2026-07-21T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "How Datadog built a \u201cuniversal machine tool\u201d for Claude Code",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551706,
-    "title": "David V\u00e9lez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
-    "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
-    "published_at": "2026-07-21T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "David V\u00e9lez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance.",
-    "topic": "policy",
-    "tags": [
-      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
