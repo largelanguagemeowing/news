@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1374585,
+    "title": "Agentic SDLC at Uber \u2014 Uday Kiran Medisetty & Adam Huda, Uber",
+    "url": "https://www.youtube.com/watch?v=17-YSUHo6Lk",
+    "published_at": "2026-08-21T13:00:06+00:00",
+    "fetched_at": "2026-08-21T13:45:01+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "More than 70% of pull requests at Uber now come from local or cloud agents, and lines of code per engineer has doubled year over year. Uday Kiran Medisetty walks through the six pieces of infrastructure underneath that, and the constraint shaping all of them shows up in the first one: every model call in the company goes through a single gateway doing Spire identity, redaction of 20 plus PII types, and five specialized safety models, with that entire guardrail budget held under 100 milliseconds. It carries 100 million requests a day across 800 projects, each one attributable to a caller, team, and project.\n\nMost of the rest is about not drowning agents in tokens. An MCP gateway crawls internal APIs into MCP servers, then projects them into a CLI so responses stay out of the context window, which cut fleetwide token use by more than 40%. A skills marketplace holds 2,500 entries behind lint checks and automated review, running 20,000 executions a day. A context graph of 150 node and edge types and 40 million entries replaces the 20 to 30 separate systems agents used to crawl for basic ownership and dependency facts. Adam Huda then takes one feature end to end, from a Slack thread to a draft PR that deliberately stops short of CI so that validation happens in the inner loop, comparing simulator screenshots against Figma specs before anything reaches a build queue. His closing point is that the bottleneck has moved to whether a thing should be built at all.\n\nSpeaker info:\nUday Kiran Medisetty:\n- https://x.com/udaykiran\n- https://www.linkedin.com/in/udaykiran/\n\nAdam Huda:\n- https://x.com/hudaman\n- https://www.linkedin.com/in/thinktopdown/\n- https://adamhuda.com\n\nTimestamps:\n0:00 - The numbers: 70% of PRs, twice the code per engineer\n1:26 - The model gateway, and a 100 millisecond guardrail budget\n3:51 - MCP gateway, and cutting the token tax\n5:48 - Dev pods, agentified into pre-provisioned balloon pods\n7:18 - A managed skills marketplace\n8:39 - The context graph, 40 million entries\n10:19 - Cortana across Slack, CLI, and web\n11:34 - One feature end to end, starting from a Slack thread\n13:28 - Minion, and stopping short of CI on purpose\n16:01 - Maintenance as a managed loop\n17:29 - The bottleneck is now whether you should build it",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "safety",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1371023,
     "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
     "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
@@ -10008,23 +10030,6 @@
       "models",
       "safety",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553082,
-    "title": "Apply for Anthropic\u2019s AI for Science rare disease research grants",
-    "url": "https://www.anthropic.com/news/rare-disease-research-grants",
-    "published_at": "2026-07-20T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Apply for Anthropic\u2019s AI for Science rare disease research grants",
-    "topic": "research",
-    "tags": [
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
