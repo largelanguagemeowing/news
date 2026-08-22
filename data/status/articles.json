@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1445562,
+    "title": "FinOps for AI Agents: Who Spent All the Tokens? \u2014 Tisha Chawla & Susheem Koul, Microsoft",
+    "url": "https://www.youtube.com/watch?v=GJX19pNhmSw",
+    "published_at": "2026-08-22T14:30:07+00:00",
+    "fetched_at": "2026-08-22T14:48:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Turning the full policy suite on cut average agent spend by about 78% across benchmark runs on two open source repos, and lifted the share of runs that actually completed from 67% to roughly 96%. That second number is the point. Simple throttling holds the bill down by killing runs, so Tisha Chawla and Susheem Koul built their control plane to steer instead. Their framing is that every software era grew a control surface, usage caps in SaaS, autoscaling policies in cloud, and the agentic era still has none at the layer where code calls a model. Gateways can hard cap and downgrade, but nothing sits between your code and the spend it triggers.\n\nThe design splits in two. In your code an annotation marks a boundary around methods you already have, floating attribution up without a rewrite, while a governor holds the list of actions you authorized so the control plane cannot do whatever it likes to your agent. The control plane groups runs into segments by any dimension you emit, sets budgets against a time window, and attaches policies. Actions come in two flavors. Halt is a circuit breaker. Steer is the interesting one: a cost guard watches both how much of the budget is gone and how fast it is going, and when it predicts an overrun it injects an instruction to keep outputs succinct rather than killing the run. They demo it in preview mode first, policies evaluating with enforcement off, which is how you would actually introduce this to a production agent.\n\nSpeaker info:\n- https://www.linkedin.com/in/tisha-chawla\n- https://dev.to/tisha\n- https://www.linkedin.com/in/susheemkoul\n- https://susheemk.substack.com\n\nTimestamps:\n0:00 - From token maxxing to value maxxing\n1:58 - Every era got a control surface, this one has not\n4:30 - First principles at the model call boundary\n6:19 - Why gateways are not enough\n8:57 - The SDK side: boundary, ledger, governor\n13:13 - Segments, budgets, actions, policies\n14:53 - Halt versus steer\n16:36 - Demo: preview mode, then enforcement\n18:17 - Cost guard, and steering on velocity\n19:06 - Benchmark results and the policy catalog\n20:47 - A self learning control plane",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1443242,
     "title": "Give the Agent a Budget, Not a Token \u2014 Sachin Malhotra, Anthropic",
     "url": "https://www.youtube.com/watch?v=rbjWzZK2LU0",
@@ -10030,25 +10053,6 @@
     "topic": "research",
     "tags": [
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553377,
-    "title": "Building verification loops in Claude Code with skills",
-    "url": "https://claude.com/blog/building-verification-loops-in-claude-code-with-skills",
-    "published_at": "2026-07-22T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Building verification loops in Claude Code with skills",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
