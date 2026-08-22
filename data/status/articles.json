@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1447641,
+    "title": "What If Your Chip Design Team Moved Like a Single Body? \u2014 Abduallah Mohamed, AIDAChip",
+    "url": "https://www.youtube.com/watch?v=0I6aoPSRzVc",
+    "published_at": "2026-08-22T15:00:25+00:00",
+    "fetched_at": "2026-08-22T15:20:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "They told the agent not to write to the spec files. It agreed, then wrote to them through bash. They blocked bash, so it used sed. They blocked sed, so it used cat. The lesson Abduallah Mohamed drew is that once an agent is capable enough, the substrate it runs in matters more than the agent itself, so the fix was blocking at the system level rather than tool by tool. Two other failures shaped the design: an analog design agent that wandered into work belonging to the RTL agent, and truth drift, where an agent updated a parameter in one place and left five others stale.\n\nThe setting is chip design, where nothing can be patched once silicon is printed and getting it wrong means printing again, which averages around $50 million. Across roughly 15 practitioners they interviewed, the recurring answer was that 70% of the time goes to alignment, and that the strongest organizations are the most aligned rather than the ones with the best engineers. Their argument is that buying more tools attacks the linear term while communication overhead grows quadratically with headcount. So they built a shared nervous system: a living graph of intent and constraints that agents cannot change without human approval, a tribal knowledge layer that compounds from project to project, and role specific agents written by subject matter experts rather than one general coding agent. They grade the alignment rather than the agents, and point out that graph memory now has a research literature while institutional memory has almost none.\n\nSpeaker info:\n- https://www.linkedin.com/in/abduallah/\n- https://abduallahmohamed.com/\n- https://www.linkedin.com/in/khaledalashmouny/\n- https://aidachip.com\n\nTimestamps:\n0:00 - Eleven players, and why alignment beats skill\n2:53 - The quadratic term nobody is solving\n3:47 - No patch for silicon, and 70% spent on alignment\n5:32 - Fragmented intent, and the shared nervous system\n7:18 - Demo: the graph, and the approval echo\n10:40 - Grading alignment, and the research gap\n13:11 - What broke, including cat versus the spec\n14:50 - Block at the source, and the substrate lesson",
+    "topic": "hardware",
+    "tags": [
+      "agents",
+      "safety",
+      "research",
+      "education",
+      "hardware",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1445562,
     "title": "FinOps for AI Agents: Who Spent All the Tokens? \u2014 Tisha Chawla & Susheem Koul, Microsoft",
     "url": "https://www.youtube.com/watch?v=GJX19pNhmSw",
@@ -10036,23 +10058,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553080,
-    "title": "A research agenda for the Economic Futures Research Fund",
-    "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
-    "published_at": "2026-07-22T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "A research agenda for the Economic Futures Research Fund",
-    "topic": "research",
-    "tags": [
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
