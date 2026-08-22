@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1449689,
+    "title": "Preferences Over Benchmarks: Model Routing \u2014 Archana Kamath & Tyler Gillam, DigitalOcean",
+    "url": "https://www.youtube.com/watch?v=FvxY8oPoI8o",
+    "published_at": "2026-08-22T15:30:18+00:00",
+    "fetched_at": "2026-08-22T15:47:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Two terminals run the same prompt, build me a spinning wheel app. On the left every request goes to a single premium model. On the right they go through a router that picks a model per task. Both finish at about the same time with comparable output, and by then the router's session has cost 8 cents against 25. The gap widens with every prompt after that. Archana Kamath and Tyler Gillam use it to argue that picking a model by climbing a leaderboard is the wrong instinct, because there is no single best model, only the right one for a given request.\n\nWhat makes a model right is a mix no public leaderboard encodes: the task itself, the system prompt and tools around it, the cost you are willing to spend, the latency the use case needs, and what the end user actually wants. Their router takes those as preferences you declare, in natural language or as decision tree rules, then honors them per request. It runs on a purpose built mixture of experts model that decides in under 200 milliseconds, costs nothing extra, and is open sourced along with the proxy in front of it. Gillam then shows the part that separates it from a vibe check, an evaluation scoring the router at 90% correctness against 95% for the single premium model while using far fewer tokens and returning faster. Routing is the foundation layer, with evaluation, caching and personalization built on top.\n\nSpeaker info:\n- https://www.linkedin.com/in/tdgillam\n\nTimestamps:\n0:00 - Why the one model habit is breaking\n2:42 - There is no single best model\n4:21 - A router you can customize and evaluate\n6:57 - Configuring tasks, model pools and failover\n7:48 - Side by side in the playground\n9:29 - Proving it with an evaluation\n10:18 - Two coding agents, and the session cost gap\n13:49 - Under 200ms, open sourced, no code changes\n14:43 - Evaluation, caching, personalization",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1447641,
     "title": "What If Your Chip Design Team Moved Like a Single Body? \u2014 Abduallah Mohamed, AIDAChip",
     "url": "https://www.youtube.com/watch?v=0I6aoPSRzVc",
@@ -10040,24 +10063,6 @@
       "release",
       "agents",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553079,
-    "title": "Ask Claude about the Anthropic Economic Index",
-    "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
-    "published_at": "2026-07-22T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Ask Claude about the Anthropic Economic Index",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
