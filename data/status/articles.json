@@ -558,6 +558,51 @@
     "available": true
   },
   {
+    "article_id": 1422546,
+    "title": "The Agent Behind the Curtain: Building the Oz Cloud Agent Platform \u2014 Safia Abdalla, Warp",
+    "url": "https://www.youtube.com/watch?v=L173Z8DpaJg",
+    "published_at": "2026-08-20T06:34:53+00:00",
+    "fetched_at": "2026-08-22T07:31:32+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Warp open sourced about three months ago and went from roughly 20,000 GitHub stars to over 60,000, with thousands of pull requests and hundreds of contributors arriving at once. Rather than let agents fire off code, Safia Abdalla's team put them inside the repository's process. File an issue and an agent triages it, researches the codebase, and asks you questions when the request is too abstract to act on. Every pull request then goes through an agent managed review, and nobody on the team gets pinged until an agent has approved it. The humans only ever see the high signal ones.\n\nThat is one payoff of a principle she applies all the way down the cloud agent platform, that a platform should absorb complexity before it reaches the user. Agents need somewhere to run, so sandboxes come both managed and self hosted, because teams doing serious work already run their own infrastructure. Developers are attached to their harness, so the platform accepts any of them while keeping conversation state and artifacts consistent across all of them. Real engineering rarely fits in one prompt, so agents orchestrate sub agents, either by prompt or through an API that exposes every primitive in the stack. People outside engineering at Warp used that API to build their own Slack tooling for triaging social mentions. Abdalla closes by pushing back on the phrase software factory, which she thinks loses the people in it, and offers a potter's workshop instead: stations, sourcing, verification, and an owner who keeps refining the system around the work.\n\nSpeaker info:\n- https://github.com/captainsafia\n- https://x.com/captainsafia\n- https://captainsafia.com\n\nTimestamps:\n0:00 - Eight years of building developer tooling\n2:43 - Why the work moved to the cloud\n3:35 - Absorb complexity before it reaches the user\n5:18 - Multi harness support without fragmentation\n6:59 - One agent is rarely enough\n7:53 - Orchestration by prompt, and by API\n9:33 - What non engineers built on the SDK\n11:16 - Agents inside the open source repo\n14:44 - Why the term software factory falls short\n17:14 - The workshop as a serious system",
+    "topic": "product",
+    "tags": [
+      "product",
+      "open-source",
+      "api",
+      "agents",
+      "research",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1422547,
+    "title": "Coding Agents Don't Scale Themselves. Neither Do Your Teams. \u2014 Patrick Debois, Tessl",
+    "url": "https://www.youtube.com/watch?v=zCJtYuqwm7E",
+    "published_at": "2026-08-20T06:32:46+00:00",
+    "fetched_at": "2026-08-22T07:31:32+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In 2009 people told Patrick Debois that continuous delivery was crazy. He hears the same thing now about the dark factory, and reads it the same way: not that the technology cannot work, but that the organization is not set up for it yet. His starting assumption is that harnesses and loops will commoditize, possibly into a service a frontier lab just sells you, so none of that will be anyone's differentiator. What actually changes is the team, the platform and the organization around them.\n\nDevelopers pushed back on the conductor framing, telling him they did not sign up to write better prompts. What brought them back was tooling. Once the team started building harnesses for the agent, a genuinely technical path reopened, and the loudest skeptics turned out to be the right people to hand context authoring to, precisely because they were angry about the output. The shift he pushes is to stop fixing the code the agent produced and improve the system instead. Retros stop being about the code and become about where the agent hit the same wall repeatedly. Planning splits into work scoped tightly enough to hand off and work that still needs a conversation. He tracks two numbers: how many human touches it takes to get the right result, which should fall, and how much of each fix is shared, because one improvement to a common harness lands for everybody rather than making a single person 10x. Above the team it is paved roads and a named owner, not a thousand flowers blooming.\n\nSpeaker info:\n- https://x.com/patrickdebois\n- https://www.linkedin.com/in/patrickdebois/\n- https://jedi.be\n\nTimestamps:\n0:00 - It will not work here, and what that signals\n2:46 - Developers who did not sign up for prompting\n5:20 - Stop fixing the code, improve the system\n7:04 - Retros, planning, and the downstream squeeze\n9:38 - Two metrics: human touches and reuse\n10:29 - The platform team's new problems\n12:12 - Sprawl, paved roads, and making spend visible\n14:43 - Enabling the organization without a champions program\n15:36 - Hiring when the job titles mean nothing\n18:07 - Optimize the spend instead of capping it\n20:38 - A dim factory, and knowledge as the moat",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "agents",
+      "infrastructure",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1321593,
     "title": "Multilingual Knowledge Transfer under Data Constraints via Lexical Interventions",
     "url": "https://machinelearning.apple.com/research/multilingual-knowledge-transfer-lexical-interventions",
@@ -10009,47 +10054,6 @@
     "tags": [
       "ai-models",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552798,
-    "title": "Accelerating Text-to-Video Generation with Calibrated Sparse Attention",
-    "url": "https://machinelearning.apple.com/research/calibrated-sparse-attention",
-    "published_at": "2026-07-21T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Recent diffusion models enable high-quality video generation, but suffer from slow runtimes. The large transformer-based backbones used in these models are bottlenecked by spatiotemporal attention. In this paper, we identify that a significant fraction of token-to-token connections consistently yield negligible scores across various inputs, and their patterns often repeat across queries. Thus, the attention computation in these cases can be skipped with little to no effect on the result. This observation continues to hold for connections among local token blocks. Motivated by this, we\u2026",
-    "topic": "research",
-    "tags": [
-      "models",
-      "benchmark",
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552797,
-    "title": "Environment-free Synthetic Data Generation for API-Calling Agents",
-    "url": "https://machinelearning.apple.com/research/environment-free",
-    "published_at": "2026-07-21T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Training API-calling large language model (LLM) agents demands massive amounts of high-quality trajectories. However, collecting such data at scale typically requires fully implemented environments with executable APIs and realistic, pre-populated backend databases, creating a major bottleneck for scalability. To overcome this, we propose an environment-free synthetic data generation approach that leverages LLMs as on-the-fly digital world models. Given only API specifications, our method generates trajectories mimicking interactions between an agent and a stateful environment. Specifically\u2026",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "api",
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
