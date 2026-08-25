@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 1682586,
+    "title": "EVE Online: The Move to Python 3 Begins!",
+    "url": "https://simonwillison.net/2026/Aug/25/eve-online-move-to-python-3/",
+    "published_at": "2026-08-25T22:59:30+00:00",
+    "fetched_at": "2026-08-25T23:26:20+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://www.eveonline.com/news/view/the-move-to-python-3-begins\">EVE Online: The Move to Python 3 Begins!</a></strong></p>\nEVE Online has been one of the most interesting case studies in Python at scale for over twenty years now.</p>\n<p>They've been running on <a href=\"https://github.com/stackless-dev/stackless/wiki/\">Stackless Python</a> since their launch in 2003, and their last major upgrade was 16 years ago, to Stackless Python 2.7 <a href=\"https://www.eveonline.com/news/view/stackless-python-2.7\">in 2010</a>.</p>\n<p>Their upgrade to Python 3 will start using the <a href=\"https://python-future.org/futurize.html\">futurize</a> script against 2.4 million lines of code, followed by careful manual review of the ~20,000 places where Python 2 and 3 behavior differ - for example <code>1 / 2</code> is <code>0</code> in Python 2 but is <code>0.5</code> in Python 3.</p>\n<p>There's nothing in this announcement about how they plan to replace Stackless, but at their conference last year they presented <a href=\"https://youtu.be/-x299qHLQs0\">Scheduling in Carbon: Leaving Stackless Python Behind</a> describing how they replaced Stackless in the Carbon engine for their more recent game EVE Frontier, using their (now open source) <a href=\"https://github.com/carbonengine/scheduler\">carbonengine/scheduler</a> library.\n\n    <p><small></small>Via <a href=\"https://lobste.rs/s/e1oalq/move_python_3_begins\">Lobster.rs</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/eve-online\">eve-online</a>, <a href=\"https://simonwillison.net/tags/migrations\">migrations</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/python3\">python3</a>, <a href=\"https://simonwillison.net/tags/stackless\">stackless</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "release",
+      "open-source",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1678945,
     "title": "Turn off Claude Code's Memory",
     "url": "https://www.youtube.com/watch?is=-viErLVotaS7xKdF&v=Jf54k7tFeEc&feature=youtu.be",
@@ -10079,28 +10100,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553006,
-    "title": "Literally everyone hated this feature",
-    "url": "https://www.youtube.com/shorts/n0JhhZyGP_w",
-    "published_at": "2026-07-25T13:38:23+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Did Meta actually think we wouldn\u2019t notice this? \ud83e\udee3\n\nRecently, Meta rolled out a new image-generation feature called Muse Image. On paper, it was pitched as a creative new AI tool. In reality, it turned into a massive privacy and safety concern overnight.\n\nBy default, the feature automatically opted in public accounts, allowing anyone to simply @ a handle and use Meta AI to generate entirely new images using that person's likeness with NO permission required.\n\nUnsurprisingly, after immense backlash from users, privacy advocates, and talent agencies, Meta pulled the feature just three days after launch.\n\nBut this whole ordeal leaves us with a pretty big question\u2026 did Meta genuinely not anticipate this backlash, or was this a calculated move to get eyes on their new AI model?\n\nLet me know which one you think it is in the comments. \ud83d\udc47\n\n#AI #Ainews #genAI",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "safety",
-      "research",
-      "tools",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
