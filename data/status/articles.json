@@ -1,5 +1,50 @@
 [
   {
+    "article_id": 1721403,
+    "title": "How AI Agents Let GTM Teams Scale \u2014 Justin Joyce, Cloudflare",
+    "url": "https://www.youtube.com/watch?v=Qw_tC68KKes",
+    "published_at": "2026-08-26T16:30:09+00:00",
+    "fetched_at": "2026-08-26T16:54:13+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Cloudflare's weekly go to market summary is written by three agents in sequence: one drafts from the data, a second checks that draft against the data, and a third, the tone agent, rewrites it so risks and opportunities land with equal weight. Justin Joyce's team read every run for two to three months before trusting it. Joyce works in sales operations and strategy at Cloudflare, after seven years on the machine learning side, and his diagnosis is that traditional go to market does not scale. Operations rebuilds the same analysis in spreadsheets every week, or ships dashboards that meet most needs and not all. Salespeople carry two gaps: the context gap, switching between a prospect call and an adoption call while gathering everything in between, and the expert gap between your best rep and one still ramping.\n\nHis answer is three pillars. Scale analysis with skill files carrying business context and the questions people actually ask, so someone who cannot write SQL stops queuing behind someone who can, and two hours of work becomes five minutes. Scale insight by pushing the story out rather than waiting for someone to open a dashboard, since metric adoption is always uneven. Then self service: Cloudflare OS, an internal agentic workspace on Workers and Durable Objects where reps pull forecast briefs, QBR decks, account plans, and renewal prep against centrally reviewed expert skills. He puts the result at twice the efficiency, credits skill curation and a tight feedback loop, and is candid that quoting, approvals, and CRM writes are the harder problems still ahead.\n\nSpeaker info:\n- https://www.linkedin.com/in/justin-j-22132912/\n- https://www.cloudflare.com/\n\nTimestamps:\n0:00 - AGI pills, and a route into sales ops via machine learning\n2:09 - Why traditional go to market does not scale\n3:01 - The context gap and the expert gap\n4:56 - Three pillars\n6:53 - Skill files that let non SQL users query the data\n9:00 - There is a story in the data; stop making them search\n11:18 - Drafter, reviewer, tone agent\n12:09 - Cloudflare OS: a self service agentic workspace\n15:43 - What worked: curation, feedback loops, layering\n17:11 - Next: CRM writes, and reining in the explosion",
+    "topic": "opinion",
+    "tags": [
+      "agents",
+      "safety",
+      "coding",
+      "education",
+      "enterprise",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1721404,
+    "title": "Knowledge Systems: The New GTM Stack \u2014 Jeffrey Wang, Exa",
+    "url": "https://www.youtube.com/watch?v=6pbQgnJ9Voc",
+    "published_at": "2026-08-26T16:00:26+00:00",
+    "fetched_at": "2026-08-26T16:54:13+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Over a week off, Jeffrey Wang built an AI clone of himself. He analyzed 760 of his own emails to derive his voice, down to averaging 18 words and signing off with best rather than sincerely, then turned hundreds of past decisions into evals to calibrate the agent's judgment against his own. Anyone at Exa can now ask Jeffbot to draft a Slack message. Wang cofounded Exa, a search engine for agents, and his framing is that go to market is now an AI engineering problem. The product versus distribution argument he treats as settled: you need both. Underneath, go to market is a data problem, which means keeping a live model of your world agents can act on.\n\nTwo interfaces and two agents make it concrete. An ICP dashboard classifies effectively every company in the addressable market, with anticipated spend attached, built by running Exa's embeddings over the web. Request Lens fires when something meaningful happens to a customer: a signup, a surge in searches, a sudden stop. The go to market team runs about a dozen agents in Slack against internal data. Wang closes on three principles: agent first requires API first, since agents cannot reach data without a programmatic interface; not everything should be a chatbot, because a consistent UI you learn once still beats a generated one; and buy versus build is a false dichotomy where what matters is whether the system is arbitrarily customizable. In the Q&amp;A: Jeffbot reads and writes only when Wang calls it, and can only draft for anyone else.\n\nSpeaker info:\n- https://x.com/jeffzwang\n- https://www.linkedin.com/in/wangzjeff/\n\nTimestamps:\n0:00 - Exa, and why engineers should care about go to market\n2:56 - Go to market is a data problem\n3:58 - A live model of your world that agents can act on\n5:18 - The ICP dashboard: classifying your whole market\n6:59 - Request Lens: alerts when something matters\n7:41 - A dozen agents in Slack, and the go to market spend\n8:22 - Jeffbot: cloning yourself from 760 emails\n10:19 - Agent first means API first\n12:01 - Buy or build is a false dichotomy\n13:36 - Q&amp;A: security boundaries and the FDE model",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "api",
+      "agents",
+      "safety",
+      "benchmark",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1719059,
     "title": "How We Got LLMs to Recommend Our Open Source Library \u2014 Christopher Burns, Inth",
     "url": "https://www.youtube.com/watch?v=V_5bn4q-vAI",
@@ -211,6 +256,26 @@
       "coding",
       "events",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1721153,
+    "title": "PROOF-Gen: From Optimized Data to Better Distillation",
+    "url": "https://machinelearning.apple.com/research/proof-gen-optimized-distillation",
+    "published_at": "2026-08-26T00:00:00+00:00",
+    "fetched_at": "2026-08-26T16:54:11+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Supervised fine-tuning on teacher-generated trajectories is the standard first stage for distilling tool-calling capabilities into deployable models. Post-training pipelines that drive shipped tool-calling agents re-run this stage on a daily or weekly cadence, paying the frontier-teacher cost each cycle, yet the mechanism is generate-and-filter (keep the teacher\u2019s passing trajectories, discard the rest) and each cycle leaves behind the same hard scenarios because failures supply no signal. On \u03c4 2-bench, 57% of teacher trials fail, two-thirds of them near-misses (most tool calls correct, undone\u2026",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "agents",
+      "education",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10082,59 +10147,6 @@
     "topic": "ai-models",
     "tags": [
       "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551565,
-    "title": "5 ways to host the ultimate dinner party with Google Search",
-    "url": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
-    "published_at": "2026-07-28T13:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "An illustrated black magnifying glass with a sparkle in a white circle surrounded by a dinner party tablescape",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1261419,
-    "title": "Cursor Start",
-    "url": "https://cursor.com/changelog/cursor-start",
-    "published_at": "2026-07-28T12:00:00+00:00",
-    "fetched_at": "2026-08-19T16:32:17+00:00",
-    "source_id": "cursor-changelog",
-    "source_name": "Cursor Changelog",
-    "extraction_method": "rss",
-    "body": "Jul 28, 2026 \u00b7 Changelog",
-    "topic": "coding",
-    "tags": [
-      "release",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553592,
-    "title": "recommended reading.",
-    "url": "https://x.com/i/article/2081948601752715264",
-    "published_at": "2026-07-28T05:40:08+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
-    "tags": [
       "general"
     ],
     "dearrow_thumbnail_url": "",
