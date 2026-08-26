@@ -1,5 +1,72 @@
 [
   {
+    "article_id": 1719059,
+    "title": "How We Got LLMs to Recommend Our Open Source Library \u2014 Christopher Burns, Inth",
+    "url": "https://www.youtube.com/watch?v=V_5bn4q-vAI",
+    "published_at": "2026-08-26T15:30:07+00:00",
+    "fetched_at": "2026-08-26T16:00:00+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Their onboarding form asks how you heard about us. On April 13th the answers started spiking, and the single largest source of inbound for c15t is now an LLM telling someone to install it. Christopher Burns is not a researcher and says so twice. He founded Inth, built c15t, the open source consent banner library, and reckons he has been hacking on this only slightly longer than the room has. The Collison brothers used to install Stripe by taking your laptop off you; going through Y Combinator, Burns found himself handing people a prompt instead. Good developer experience primitives turned out to be agent primitives. No single trick covers it, so the optimizations got abstracted into a framework neutral docs pipeline that generates the agent facing files from MDX.\n\nThe rest is practical. Write llms.txt by hand rather than generating it, because forty good lines beat a thousand lines of noise. Agents fetch, they do not browse, so hand them links and a line on what each page is for. Serve markdown instead of HTML, three ways, since not every agent can set a header: a .md suffix, content negotiation, and a query parameter. The part Burns thinks matters most: coding agents mostly never open your documentation site. They read the repository and node_modules, working from stale training data and compiled source. Ship bundled markdown and an AGENTS.md inside the package and he measures close to half the tokens saved. He closes on a caution he applies to his own slides: the ground moves weekly and nothing stays perfect.\n\nSpeaker info:\n- https://x.com/burnedchris\n- https://www.linkedin.com/in/burnedchris\n- https://github.com/burnedchris\n- https://burnedchris.com\n\nTimestamps:\n0:00 - Not a scientist, just hacking on it\n2:23 - The spike, and where the inbound came from\n4:20 - No single fix, so they built a docs pipeline\n5:52 - Write llms.txt by hand, not generated\n7:07 - Ship markdown instead of HTML\n9:17 - Web MCP: letting an agent ask your docs\n10:09 - Agents never visit your site, they read node_modules\n12:53 - Testing whether your site is agent ready\n14:36 - Q&amp;A: where to start on a plain website",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "research",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1719060,
+    "title": "Building GTM AI Agents: Lessons from Deploying to 6,000 Users \u2014 Sait Izmit, Snowflake",
+    "url": "https://www.youtube.com/watch?v=DrTdD-ttjCY",
+    "published_at": "2026-08-26T15:00:06+00:00",
+    "fetched_at": "2026-08-26T16:00:00+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Before trying the agent at all, Sait Izmit wrote out 150 questions taken straight from Snowflake's sales process. The engineering team objected that the data behind most of them was not connected. That was the point. The first run scored 50 percent, and the rule that came out of it governs everything since: quality over coverage. Answer 50 questions at 95 percent rather than 100 at 70, because a free form chat box gets judged on its first five answers, and winning back a rep who bounced costs ten times more than earning them. Trust is slow to build and lost overnight. The assistant launched last September and has since answered over a million questions, roughly 40,000 a week, for about 6,000 go to market users.\n\nAround 60 percent of its data arrived after launch. It now spans 15 semantic views, 85 tables and 3,000 columns, with MCP connections and some 20 skills layered on. Rollout ran pilot, then a 10 percent beta of 600 people held to a retention bar above 70 percent, then general availability, where the real problem surfaced: only a fifth of the organization had tried it. Izmit reckons 60 to 70 percent of the job is sales meetings and demos, and argues these projects fail at activation, not technology. The second warning is the collapsing wow factor. Talking to your data stops feeling magic within months and becomes the baseline, so the roadmap has to keep moving into workflow automation and team built tooling. Expect to rearchitect rather than shop for the perfect architecture.\n\nSpeaker info:\n- https://www.linkedin.com/in/saitizmit/\n\nTimestamps:\n0:00 - One million questions, 40,000 a week\n1:31 - Half the company is sales, and the data is siloed\n3:24 - Trust is earned slowly and lost overnight\n4:16 - 150 questions written before touching the agent\n5:08 - What the agent grew into\n5:46 - Phased launch: pilot, 10% beta, GA\n7:14 - Change management is where these fail\n8:56 - The collapsing wow factor\n9:44 - Talk to your data, then automate, then build\n11:49 - Stop shopping for the perfect architecture\n14:18 - Logs as a gold mine, and closing lessons",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "agents",
+      "benchmark",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1719061,
+    "title": "The Building Blocks of GTM Orchestration \u2014 Arman Vaziri, Ramp",
+    "url": "https://www.youtube.com/watch?v=VjEP0xqTUI0",
+    "published_at": "2026-08-26T14:30:38+00:00",
+    "fetched_at": "2026-08-26T16:00:00+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Offer Pro V1 golf balls to golfers at East Coast construction companies. Arman Vaziri uses that as a running example and mentions in passing that it works really well. The golf balls are not the point. Getting from that one sentence to a targeted audience, outbound sequences, paid creative, a landing page and in app nudges should be a matter of describing the intent. Vaziri leads product and sales led growth engineering at Ramp and says the bottleneck was never ideas. Everyone across product, data and go to market has good ones. It is everything after: pulling the audience, writing the enablement material, persuading people to adopt the playbook, all on a timescale of months.\n\nThe foundation is an internal customer data platform. CRM, product, enrichment and buying signals alongside interaction data, real time events onto Kafka, and a Postgres store that keeps referential integrity between entities living in different systems, with the unstructured half embedded for search. They solve for one team, then scale sideways. Pre meeting briefs for account managers gather usage, vitals, open tickets and agenda in one place, which first meant mapping attendee emails to accounts when one person works for several businesses. Every run is a durable Temporal thread with each tool and model call as an activity, so a worker that dies resumes instead of reprocessing. A skill library lets people define their own brief format, which is what drove adoption. For a smaller team, Vaziri says build narrow automations first, because nobody gets a year to design the perfect architecture.\n\nSpeaker info:\n- https://www.linkedin.com/in/armanvaziri/\n\nTimestamps:\n0:00 - What go to market orchestration means\n1:56 - Golf balls for construction golfers\n2:50 - Three bottlenecks: data, busy work, coordination\n5:34 - Building an internal customer data platform\n8:10 - Solve one team, then scale sideways\n8:37 - Pre meeting briefs for account managers\n10:14 - Durable threads on Temporal\n12:20 - A skill library so people set their own format\n15:33 - Back to the golf example\n18:32 - Q&amp;A: where a smaller team should start",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "enterprise",
+      "events",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1716708,
     "title": "AI in GTM at Notion \u2014 Flora Liu",
     "url": "https://www.youtube.com/watch?v=L4I7WgiEquo",
@@ -10069,63 +10136,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553352,
-    "title": "Frontier Red TeamDiscovering cryptographic weaknesses with Claude",
-    "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
-    "published_at": "2026-07-28T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Jul 28, 2026Frontier Red TeamDiscovering cryptographic weaknesses with Claude",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552794,
-    "title": "Memory Efficient Audio Synthesis with Decoupled Temporal Depth Diffusion Transformers",
-    "url": "https://machinelearning.apple.com/research/audio-synthesis-diffusion-transformers",
-    "published_at": "2026-07-28T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Siri Expressive Voices synthesize rich, configurable speech in real time and entirely on device, powered by AFM 3 Core Advanced, Apple\u2019s most powerful on-device foundation model. This work presents the memory-efficient audio synthesis architecture behind that capability: a detokenizer that converts the semantic audio tokens emitted by the foundation model into high-fidelity audio within the tight compute and memory budget of the Apple Matrix Coprocessor (AMX). We convert semantic audio tokens to a residual vector quantization (RVQ) representation with a three-component design\u2014a streaming\u2026",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "infrastructure",
-      "coding",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553370,
-    "title": "Bringing MCP 2026-07-28 to Claude",
-    "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude",
-    "published_at": "2026-07-28T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Bringing MCP 2026-07-28 to Claude",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
