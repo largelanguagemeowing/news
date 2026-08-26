@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1700578,
+    "title": "The Missing Layer in Agentic AI \u2014 Giedrius \u0160teimantas, Oxylabs",
+    "url": "https://www.youtube.com/watch?v=XsvUhpnHepE",
+    "published_at": "2026-08-26T07:00:06+00:00",
+    "fetched_at": "2026-08-26T07:46:10+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Point an agent at ten product pages, get real content back from three, and send all ten to the model anyway: seventy percent of those tokens go to reading CAPTCHAs. Giedrius \u0160teimantas says most teams never notice, because the status code and the response size both look fine. A 200 does not mean the page is real. He got here through a friend who vibe coded a personal shopping agent, a chatbot that talks through your style then hands a second agent prompts to go buy things. It ran a browser automation framework at every stage, which made it slow, expensive, and unreliable enough not to work. The gap was not model quality. It was the layer underneath that lets an agent work on the open web.\n\nHe rebuilds it on stage using rules from ten years of scraping at Oxylabs: cost matters, and use a browser only when you have to. Discovery drops the fixed retailer list for a search API returning compact JSON, under 2,000 tokens and about 700 milliseconds per call, so the agent fans out queries and picks its own URLs. The decision stage loses the browser for a scraper that returns markdown, fails loudly with an explicit error when blocked instead of passing a CAPTCHA to the model, runs hundreds of requests in parallel, and bills only for successful results. Checkout does need a browser, so Playwright MCP stays and a hardened headless browser slots in behind it, bringing stealth, a residential proxy, and geolocation that stops items showing in stock and vanishing at the till.\n\nSpeaker info:\n- https://www.linkedin.com/in/steimantas\n- https://oxylabs.io\n\nTimestamps:\n0:00 - A friend's personal shopping agent that did not work\n2:32 - Ten years of scraping, and one rule: cost matters\n5:09 - Discovery on a browser, and what it costs\n6:50 - A search API instead: 2,000 tokens, 700 milliseconds\n8:35 - The blocked pages you still pay tokens for\n10:29 - Rebuilding the decision stage without a browser\n12:14 - Checkout is where you actually need a browser\n14:00 - Validate before you spend tokens",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "coding",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1682586,
     "title": "EVE Online: The Move to Python 3 Begins!",
     "url": "https://simonwillison.net/2026/Aug/25/eve-online-move-to-python-3/",
@@ -10083,23 +10105,6 @@
       "models",
       "benchmark",
       "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553595,
-    "title": "recommended reading",
-    "url": "https://x.com/i/article/2080408648560578560",
-    "published_at": "2026-07-25T22:31:32+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
