@@ -1,5 +1,102 @@
 [
   {
+    "article_id": 1730800,
+    "title": "KV Cache-Aware Routing and P/D Disaggregation on Kubernetes \u2014 Yuchen Fama & Ashish Kamra, Red Hat",
+    "url": "https://www.youtube.com/watch?v=YXowceUKYJI",
+    "published_at": "2026-08-27T14:00:06+00:00",
+    "fetched_at": "2026-08-27T14:31:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Agentic sessions in Red Hat's traces run from a few turns to 3,000, cache hit rates routinely clear 90%, and input to output token ratios often pass 100 to 1. A public inference benchmark shows none of that, because it reports steady state numbers from one sanitized run. Yuchen Fama and Ashish Kamra spend the talk on the two levers that matter once the client rather than the server controls the cache lifecycle, and a live demo makes the first one concrete. An opening request takes about 3 seconds, the next turn reuses the cache on the same pod and takes about 1, and a fresh system prompt lands on a different pod and pays the full 3 again. With a 10x gap between cached and uncached token costs, routing is the cheaper lever to reach for before adding GPUs.\n\nThe second lever splits compute bound prefill from memory bound decode, so a long incoming prompt cannot stall token generation midstream. Across 16 H100s serving gpt-oss, P99 inter token latency falls from roughly 900 milliseconds to about 100, and the curve gets visibly smoother. The useful part is where they draw the boundary. Disaggregation wins in the middle concurrency band, roughly ties at both ends, and needs an RDMA or RoCE fabric to move cache between workers at all. Without one, stay aggregated. The closing case study runs GLM 5.2 on the H200s customers actually have instead of B200s, at three prefill workers to one decode, for 4x faster time to first token and 60% more requests.\n\nSpeaker info:\n- https://www.linkedin.com/in/yuchen-fama\n- https://www.linkedin.com/in/ashishkamra/\n- https://github.com/llm-d/llm-d\n\nTimestamps:\n0:00 - What public inference benchmarks leave out\n1:28 - Red Hat's inference stack, and the agenda\n3:29 - Agentic traces: 3,000 turns, 90% cache hits, 100 to 1 ratios\n5:12 - Volatile cache, and the 10x cached token gap\n6:28 - How llm-d routes: endpoint picker, offload tiers, eviction\n7:46 - Demo: cache hits, pod affinity, 3 seconds versus 1\n9:28 - What llm-d is, and why prefill and decode interfere\n12:03 - How disaggregation works in practice\n13:08 - P99 inter token latency: 900ms versus 100ms\n14:14 - Where PD shines across the concurrency curve\n15:45 - When to use PD, and when to stay aggregated\n18:10 - GLM 5.2 on H200s: 4x faster TTFT",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1730740,
+    "title": "This Company Will Buy Your AI Training Data",
+    "url": "https://www.youtube.com/shorts/Z93MPi8ZO3A",
+    "published_at": "2026-08-27T13:06:18+00:00",
+    "fetched_at": "2026-08-27T14:31:39+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "AI companies want your data so badly that we may be entering the era where they just start paying you for it. \ud83d\udc40\n\nI came across a company called Verb that lets you choose what data you\u2019re willing to share, block certain companies, and even set your own price.\n\nAnd I think this could become a much bigger trend.\n\nAs people get more protective of their data\u2014but AI companies need more of it for training and advertising\u2014the solution might simply become: pay people directly.\n\nObviously, there are some MASSIVE privacy questions here.\n\nSo I\u2019m curious: Would you sell your data to big tech if the price was right? \n\n#AI #Ainews #chatgpt",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "safety",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1729306,
+    "title": "Piloting the world's first double-blind AI evaluations",
+    "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+    "published_at": "2026-08-27T12:59:16+00:00",
+    "fetched_at": "2026-08-27T14:31:37+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "Piloting the world's first double-blind AI evaluations",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "benchmark",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1731349,
+    "title": "Intelligence is collective, not artificial \u2014 Prof. Michael I. Jordan (UC Berkeley / Inria)",
+    "url": "https://www.youtube.com/watch?is=BWVtrjeJVxxI1dEw&v=AREWYbVtX64&feature=youtu.be",
+    "published_at": "2026-08-27T06:41:08+00:00",
+    "fetched_at": "2026-08-27T14:31:44+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1729406,
+    "title": "Expanding OpenAI\u2019s presence in Brazil",
+    "url": "https://openai.com/index/expanding-our-presence-in-brazil",
+    "published_at": "2026-08-27T03:00:00+00:00",
+    "fetched_at": "2026-08-27T14:31:37+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI is expanding its presence in Brazil, deepening engagement with developers, businesses, and communities to support AI adoption across the country.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1728233,
     "title": "Qwen3.8-Flash-Next",
     "url": "https://simonwillison.net/2026/Aug/26/qwen38-flash-next/",
@@ -39,6 +136,29 @@
       "agents",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1730801,
+    "title": "How Anthropic Builds: Lessons from Labs \u2014 Mike Krieger, Anthropic",
+    "url": "https://www.youtube.com/watch?v=qqrk7CtkuIw",
+    "published_at": "2026-08-26T21:40:54+00:00",
+    "fetched_at": "2026-08-27T14:31:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Over a single weekend, Mike Krieger had Claude port a few hundred thousand lines of Python to TypeScript, verify it, and churn on its own output until the thing was deployable. He came back Monday to a finished port. He offers it as an example of a habit he thinks most people still lack, which is being unreasonable in what you ask for. The first generation of AI products boxed models in, granting so little access to tools and environment that ambition felt pointless, and the instinct to ask small has outlived the constraint. He knows the pull of the old way from the inside. He spent two years as Anthropic's chief product officer, watched everyone around him building, and moved into an individual contributor role at Labs because the FOMO became unbearable.\n\nLabs runs on two week persevere or pivot reviews, and projects get wound down in nearly every cycle, which is the design rather than a failure. Teams assemble fresh around each bet, so the org chart deliberately does not track projects and bet leads usually manage nobody. The bottleneck he cares about is not review time but whether a human can still hold the change in their head. A 2,000 line pull request now travels with an artifact laying out intent and tradeoffs, and he admits he no longer reads every line. He ends somewhere most technical keynotes do not go, on burnout, and on the reminder that no job is so important you cannot be offline for two days.\n\nSpeaker info:\n- https://x.com/mikeyk\n- https://www.linkedin.com/in/mikekrieger\n\nTimestamps:\n0:00 - From chief product officer to IC at Labs\n2:55 - Be unreasonable, and why people still ask small\n4:51 - Porting Python to TypeScript over a weekend\n6:48 - Scaling lessons from 2010: measure everything, build knobs\n8:06 - Tagging Claude in Slack, and multiplayer delegation\n10:37 - The review bottleneck is comprehension, not time\n11:53 - Persevere or pivot, and bet leads who manage nobody\n13:43 - Where Claude Design goes next\n15:37 - Project unhip, and what he would delete\n17:34 - Why start a company when the labs ship this fast\n20:06 - Vertical AI and finance\n22:00 - Burnout, 996, and staying sane\n25:04 - Verbalizing emotions as a leader",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "infrastructure",
+      "coding",
+      "education",
+      "events",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10037,121 +10157,6 @@
     "tags": [
       "ai-models",
       "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551692,
-    "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
-    "url": "https://openai.com/index/avatarin",
-    "published_at": "2026-07-30T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "avatarin uses OpenAI\u2019s GPT-Realtime to give Yamada Denki shoppers 24/7 multilingual support. In two weeks, 30,000 people used the agent and 92% of survey responses were positive.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552830,
-    "title": "Quoting D. Richard Hipp",
-    "url": "https://simonwillison.net/2026/Jul/29/d-richard-hipp/#atom-everything",
-    "published_at": "2026-07-29T21:15:21+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://www.youtube.com/watch?v=R57nUGzo7CA&amp;t=848s\"><p>Years ago, we didn\u2019t have SQL. There were people whose job was to generate software that would query large data sets. Their job title was COBOL programmer.</p>\n<p>Then SQL comes along\u2014I\u2019m simplifying this only a little bit\u2014and it gives you this convenient way so people could just specify. With a very simple specification, you can generate all of that code that you had to pay the expensive COBOL programmer to do before.</p>\n<p>That didn\u2019t mean programmers went away. It just meant the job changed a little bit.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.youtube.com/watch?v=R57nUGzo7CA&amp;t=848s\">D. Richard Hipp</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/d-richard-hipp\">d-richard-hipp</a>, <a href=\"https://simonwillison.net/tags/sql\">sql</a>, <a href=\"https://simonwillison.net/tags/careers\">careers</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "video",
-      "coding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553588,
-    "title": "recommended reading, if you don't follow dex you're ngmi. also, please stop posting useful stuff. haven't written a blog post in ages and this makes me feel bad.",
-    "url": "https://x.com/i/article/2082133743893204992",
-    "published_at": "2026-07-29T20:03:42+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading, if you don't follow dex you're ngmi. also, please stop posting useful stuff. haven't written a blog post in ages and this makes me feel bad.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553046,
-    "title": "Hugging Face Journal Club: Kimi K3",
-    "url": "https://www.youtube.com/watch?v=MW8-kqd2SD8",
-    "published_at": "2026-07-29T18:31:00+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "The Hugging Face research team discusses the Kimi K3 tech report: https://huggingface.co/papers/2607.24653",
-    "topic": "research",
-    "tags": [
-      "open-source",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553015,
-    "title": "Did Anthropic just kill the indie hacker...?",
-    "url": "https://www.youtube.com/watch?v=jxGJT1weu4w",
-    "published_at": "2026-07-29T16:33:51+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "Try Blacksmith for free to run your GitHub Actions 2x faster - https://www.blacksmith.sh/\n\nAnthropic just dropped Opus 5 and it may be killing the indie hacker dream. Let's dive in.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "coding",
-    "tags": [
-      "open-source",
-      "coding",
-      "education",
-      "media",
-      "news",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553589,
-    "title": "recommended reading. being in the business of shipping software for artists, it's a pretty good analogy.\n\nit's also why i think the \"generate single digital artifact based on millions of examples\" (music, images, videos) and \"coding agent trained on all the intermediary traces up",
-    "url": "https://x.com/i/article/2082158799104659456",
-    "published_at": "2026-07-29T16:21:17+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. being in the business of shipping software for artists, it's a pretty good analogy.\n\nit's also why i think the \"generate single digital artifact based on millions of examples\" (music, images, videos) and \"coding agent trained on all the intermediary traces up",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "video",
-      "coding",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
