@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1728233,
+    "title": "Qwen3.8-Flash-Next",
+    "url": "https://simonwillison.net/2026/Aug/26/qwen38-flash-next/",
+    "published_at": "2026-08-26T23:52:58+00:00",
+    "fetched_at": "2026-08-27T03:27:45+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://qwen.ai/blog?id=qwen3.8-flash-next\">Qwen3.8-Flash-Next</a></strong></p>\nAnother open weights model from Qwen. This one is \"a multimodal MoE model that also serves as an early preview of the architecture used in Qwen4\".</p>\n<p>It's pretty big: 125B tokens, but only 6B active which means it gets a significant performance boost.</p>\n<p>I've been trying it out on a DGX Spark using <a href=\"https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF\">these Unsloth quantized models</a>. I'm still exploring the model - so far I've tried the 72.5GB UD-IQ1_S one (producing <a href=\"https://tools.simonwillison.net/markdown-svg-renderer#url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Ff9c69ebdab90d8a45b8de4742cc7b840\">these pelicans</a>) and the 78.9GB UD-Q2_K_XL (producing <a href=\"https://tools.simonwillison.net/markdown-svg-renderer#url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F6ba7cbfc1a9336986703b41f7fccd73a\">these</a>).</p>\n<p>My favorite so far was this xhigh reasoning effort one from UD-Q2_K_XL:</p>\n<p><img alt=\"Flat vector illustration: a white pelican with an orange beak and orange legs rides a red bicycle along a sandy path, a wicker basket on the handlebars holding a blue fish, with green rolling hills, a small tree and bushes, white clouds and a bright yellow sun in a blue sky behind it\" src=\"https://static.simonwillison.net/static/2026-08-27/IMG_7667.png\" />\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49448210\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/qwen\">qwen</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/ai-in-china\">ai-in-china</a>, <a href=\"https://simonwillison.net/tags/nvidia-spark\">nvidia-spark</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1728443,
+    "title": "I Built a FREE App That Runs Your Entire Business",
+    "url": "https://www.youtube.com/watch?v=rKo9iLGjUbs",
+    "published_at": "2026-08-26T22:36:30+00:00",
+    "fetched_at": "2026-08-27T03:27:47+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "I vibe coded a free productivity app that keeps my entire business in one place, and I built it so anyone can download and customize it. I already use an earlier version of this dashboard every day, but this time I rebuilt it from scratch to see how far I could push Codex on a genuinely useful business tool. I used Codex inside ChatGPT for the initial build, then spent hours testing, debugging, and refining it.\n\nThe result is Control Center: one dashboard for industry news, brand mentions, reminders, audience analytics, newsletters, and recurring tasks. It connects to Gmail, tracks social growth across YouTube, X, Instagram, and more, and can optionally use OpenAI, Anthropic, Gemini, Grok, or local models to rank and summarize what matters. No AI API key is required. You can install it locally from GitHub for free, customize every section, and optionally host it online.\n\nDownload your own control center on GitHub: http://github.com/mreflow/control-center\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n00:00 Why Building With AI Matters\n01:23 Control Center Tour\n03:03 Building the App From Scratch\n05:12 Testing, Debugging & Dark Mode\n06:56 Today Page & Industry News\n08:56 Mentions & Reminders\n10:39 Audience Tracking & Tasks\n12:04 Newsletters, Settings & AI\n19:35 Installing, Updating & Hosting the App\n\n#AIProductivity #VibeCoding #ProductivityApp",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1722265,
     "title": "Intelligent transcription with Gemini 3.5 Transcribe",
     "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
@@ -396,6 +440,24 @@
       "agents",
       "education",
       "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1728225,
+    "title": "Luce: Relightable Gaussians for 3D Asset Generation",
+    "url": "https://machinelearning.apple.com/research/relightable-gaussians-3d-generation",
+    "published_at": "2026-08-26T00:00:00+00:00",
+    "fetched_at": "2026-08-27T03:27:45+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "High-fidelity image-to-3D generation requires a 3D representation that captures both geometry and appearance. To support relighting and integration into standard rendering pipelines, the representation should include physically based rendering (PBR) modalities such as albedo, metallic-roughness, and surface normals. We propose Luce, a 3D representation that unifies geometry and PBR materials within a voxelized multimodal Gaussian cloud, using dedicated Gaussian primitives for each modality. A variational autoencoder compresses this representation into a unified material-aware latent space. A\u2026",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1865,6 +1927,25 @@
     "source_name": "OpenAI Blog",
     "extraction_method": "rss",
     "body": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1727080,
+    "title": "Introducing Intelligence Age",
+    "url": "https://openai.com/index/introducing-intelligence-age",
+    "published_at": "2026-08-20T07:00:00+00:00",
+    "fetched_at": "2026-08-27T03:27:44+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Introducing Intelligence Age, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom.",
     "topic": "product",
     "tags": [
       "product",
@@ -10071,86 +10152,6 @@
       "video",
       "coding",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551582,
-    "title": "We\u2019re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control",
-    "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
-    "published_at": "2026-07-29T16:02:10+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551693,
-    "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
-    "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
-    "published_at": "2026-07-29T15:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "How two API settings improved GPT-5.6 performance on ARC-AGI-3, boosting scores and efficiency by retaining reasoning and enabling compaction.",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "api",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553004,
-    "title": "I can't believe Claude figured this out",
-    "url": "https://www.youtube.com/shorts/zdG2bgFPxl4",
-    "published_at": "2026-07-29T14:13:44+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "I gave Claude Code a random photo with zero geotags and it searched the web to figure out where it was taken \ud83e\udd2f\n\nAnthropic recently launched a native, sandboxed in-app browser built directly into Claude Code on desktop that can open a real browser pane beside your workspace. It can read web pages, click links, and interact with elements\u2014making it incredibly useful for researching documentation, debugging, or building web tools side-by-side.\n\nHere's how to access and try it yourself \ud83d\udc47\n- Open up Claude Code Desktop.\n- Press Cmd + Shift + B on macOS (or Ctrl + Shift + B on Windows) to open the built-in browser panel.\n- Give Claude a task that requires web research, live testing, or coding based on web resources, and watch it work in real time.\n\n\ud83d\udcc1 Save this reel so you can reference these steps later, and follow for more updates, hands-on tutorials, and practical AI use cases!\n\n#AI #claudecode #anthropic #vibecoding #aihacks",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "release",
-      "models",
-      "research",
-      "coding",
-      "tutorials",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551694,
-    "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
-    "url": "https://openai.com/index/chatgpt-for-academic-researchers",
-    "published_at": "2026-07-29T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI is giving 100,000 academic researchers free access to ChatGPT's most advanced AI models to accelerate scientific research, collaboration, and discovery.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
