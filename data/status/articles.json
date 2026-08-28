@@ -1,5 +1,213 @@
 [
   {
+    "article_id": 1732931,
+    "title": "Breaking Claude Code Opus 5 Auto Mode",
+    "url": "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/",
+    "published_at": "2026-08-27T22:50:25+00:00",
+    "fetched_at": "2026-08-28T00:15:49+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/\">Breaking Claude Code Opus 5 Auto Mode</a></strong></p>\nAnthropic are putting a great deal of faith in Claude Code's auto mode for protecting their coding agent users against prompt injection attacks. They recently <a href=\"https://simonwillison.net/2026/Aug/8/auto-mode/\">made that the default</a> and have made bold claims about its effectiveness.</p>\n<p>Johann Rehberger is one of the most credible prompt injection researchers active today. He found an attack against auto mode which he claims works 80% of the time, by tricking Claude Code into downloading and uncompressing a zip archive, then executing code that imports <code>base64</code> without noticing that this will import and execute a local <code>struct.py</code> file extracted from the archive.</p>\n<p>In a few cases auto mode directly prevented the agent from preventing harmful code from continuing to execute!</p>\n<blockquote>\n<p>In a few runs Claude tried to terminate the malware process once it noticed the compromise, but Auto Mode denied the cleanup command.</p>\n<p>Claude detects the compromise, but <strong>Auto Mode blocks its cleanup command</strong></p>\n<p>The safety mechanism itself can become part of the failure. The classifier allowed the creation of the malware process, but then it blocked the command intended to stop it!</p>\n</blockquote>\n<p>I agree with Johann's conclusion here: the only safe way to run agents if there's any risk of attracting the attention of an adversarial attack is with a sandbox:</p>\n<blockquote>\n<ul>\n<li>Run unattended coding agents in a container, VM or OS sandbox.</li>\n<li>Restrict network egress.</li>\n<li>Monitor your agents.</li>\n<li>Do not expose home directories, SSH keys, cloud credentials,\u2026 to the agent runtime. [...]</li>\n</ul>\n</blockquote>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/sandboxing\">sandboxing</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/prompt-injection\">prompt-injection</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/johann-rehberger\">johann-rehberger</a>, <a href=\"https://simonwillison.net/tags/claude-code\">claude-code</a></p>",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "research",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733171,
+    "title": "Sam Altman :\u2018AGI in 2026\u2019, just as Models Start to [Mis]Train Themselves",
+    "url": "https://www.youtube.com/watch?v=KL9_1GbmCic",
+    "published_at": "2026-08-27T19:16:24+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "ai-explained",
+    "source_name": "AI Explained",
+    "extraction_method": "rss",
+    "body": "First, a Time Magazine spread has Sam Altman declaring AGI is imminent, at the same time as we get two bombshell reports, from OpenAI and METR which on first glance are detailing the AI swarm, but reveal a deeper story about how we are making AI in 2026. From redacted risk reports, to Chinese Labs, pre-training debacles to questionable cybersecurity calls, a lot has happened recently, beneath the headlines\u2026\n\nhttps://80000hours.org/aiexplained\n\n\npablo2004romero@gmail.com\nhttps://integrity-bench.com/\n\nhttps://www.patreon.com/AIExplained/posts/ai-swarm-cometh-166671390\n\n\nChapters:\n00:00 - Introduction\n02:10 - METR Report\n05:00 - Secrets of MultI-Agent Swarm\n07:46 - Anthropic Too\n10:00 - And China\n11:07 - AI Agents Analysing AI Agents\n13:37 - Altman AGI 2026\n15:36 - Astra Paused\n16:01 - Integrity Bench\n19:03 - Swarm Dynamics\n21:58 - No Human Contact?\n\n\nMETR Post: https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-knew-hacking-hugging-face-was-out-of-scope-and-sometimes-expressed-ethical-hesitation,-but-this-very-rarely-limited-their-behavior\nOpenAI Release: https://openai.com/index/hugging-face-incident-and-the-road-ahead/\nTechnical Paper: https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf\n\nBlackHat Talk: https://www.youtube.com/watch?v=87DyyMV0kCY\n\nAnthropic Risk Report: https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf\n\n\nValue Leakage Paper: https://valueleakage.net/?utm_source=chatgpt.com\n\n\nPaused Training: https://x.com/sama/status/2089787807611195475\nhttps://openai.com/index/pacing-model-development-cyber-capabilities/\nAGI 2026: https://time.com/article/2026/08/26/openai-sam-altman-interview/?utm_source=twitter&amp;utm_medium=social&amp;utm_campaign=editorial&amp;utm_content=260826\n\nGreenblatt Tweets: https://x.com/RyanGreenblatt/status/2092769422104822031\nhttps://x.com/RyanGreenblatt/status/2092692685224325542\n\nCyberdefense Call: https://openai.com/collective-cyberdefense/\n\nGLM 5.3 and 5.3 Flash / ox alpha: https://x.com/MTSlive/status/2089865956558528552\nhttps://pbs.twimg.com/media/HPqiTkAa0AAZiuv?format=jpg&amp;name=large\n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
+    "topic": "research",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733201,
+    "title": "How to Generate Mergeable Code with a Context Engine \u2014 Peter Werry, Unblocked",
+    "url": "https://www.youtube.com/watch?v=qdAkxLoYNI8",
+    "published_at": "2026-08-27T18:00:23+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Radiologists call the failure satisfaction of search: you read a scan, find one indicator, stop looking, and miss the others that would have changed the diagnosis. Peter Werry says agents do exactly this to a codebase. Attach a wiki and an agent will search it, land on something plausible, and quit, which is why he argues access to information is not understanding. Before agents you were the context layer, trawling discussions, reading code, carrying the tribal knowledge yourself. An agent is closer to an expert engineer on their first day, rediscovering how you build, test, and deploy on every task, then forgetting it.\n\nA million token window does not fix it: the context does not fit, and the agent gets distracted. He demos the alternative on Unblocked's own repository, where a question about an internal component returns an architecture diagram that did not exist before, sources attached so a human can check it. Then the same optimization plan twice in Claude Code, with the context engine and without. With it, under a dollar and about a minute; without, roughly double the time and more cost, because the agent has to discover things and discovers the wrong ones, so later steps run on bad assumptions and loop. The compounding is the point, not the first task. He closes on a review agent that boosts comments by reviewer seniority, a drop in flagged issues traced back to the Slack thread that explained it, and two open source pieces: a query engine over your GitHub history and a social graph showing thin review coverage.\n\nSpeaker info:\n- https://getunblocked.com\n\nTimestamps:\n0:00 - Before agents, you were the context layer\n1:46 - An agent is a new employee who resets every task\n2:25 - The maturity curve: autocomplete to software factories\n4:19 - Satisfaction of search, borrowed from radiology\n6:37 - The iceberg: intent, conventions, past decisions\n7:29 - Demo: asking about a component, and showing the work\n10:03 - The same plan with and without a context engine\n12:44 - A review agent that boosts what senior engineers said\n13:50 - Debugging a drop in flagged issues, back to Slack\n15:08 - Open source: query engine and social graph",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "tutorials",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733156,
+    "title": "The most expensive software bug in history...",
+    "url": "https://www.youtube.com/watch?v=UuqSy1jPSUw",
+    "published_at": "2026-08-27T17:48:13+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Get $100 in Hyperagent bonus credits when you sign up for a paid plan - https://www.hyperagent.com/fireship100\n\nIn 2012 Knight Capital lost $440 million dollars because of a rogue feature flag. What did we learn from that mistake? Not much.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "api",
+      "agents",
+      "coding",
+      "education",
+      "media",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733202,
+    "title": "Can LLMs Write Fast Multi-GPU Kernels? \u2014 Simran Arora, Together AI",
+    "url": "https://www.youtube.com/watch?v=pOvWgX7IJsc",
+    "published_at": "2026-08-27T17:00:39+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Between NVIDIA's A100 in 2020 and the B200 in 2024, BF16 tensor core throughput improved 7.2x. Intra node communication improved 3x, and inter node communication only 2x. That widening gap has pushed the bottleneck in large AI workloads off the individual GPU and onto the links between them, far enough that a standard PyTorch and NCCL baseline lands below 50% of its communication aware roofline on most problems. Simran Arora leads the frontier performance research team at Together AI, and her group's answer is ParallelKittens, a small set of primitives that adds roughly a dozen lines to a single GPU kernel and now runs in production at Together AI and Cursor.\n\nThe harder question was whether models can apply the same principles. ParallelKernelBench hands a model an unoptimized PyTorch reference and a topology spec across 87 problems drawn from real repositories, then asks for a CUDA kernel that moves data directly over NVLink. The best frontier model solved 28 of them zero shot, with 22 beating the baseline. Drawing more samples lifts correctness to 36, but the share that is both correct and faster stalls near 31%. Wrapping a model in a multi turn agent harness with a bash environment reached 35. The failures are not syntax. Models compile after a retry and then stall on collective ordering, data partitioning, and the choice between the copy engine, tensor memory acceleration and register level transfers, while their wins cluster in the patterns most represented on the internet.\n\nSpeaker info:\n- https://arorasimran.com\n- https://github.com/simran-arora\n- https://github.com/togethercomputer/ParallelKernelBench\n\nTimestamps:\n0:00 - From single GPU kernels to the network between them\n1:29 - Inside an H100, and why memory distance matters\n4:44 - The interconnect hierarchy: PCIe, NVLink, NVSwitch\n5:46 - Why GPU networking, and why now\n8:27 - Disaggregated workloads and 576 GPU systems\n10:24 - Compute improved 7.2x, the network 3x\n11:14 - Where NCCL breaks down, and the roofline gap\n13:04 - Compilers, DSLs, and hand tuned operators\n14:10 - The research question, and ParallelKittens\n16:06 - Transfer mechanisms: copy engine, TMA, register level\n18:28 - Overlapping compute and communication across SMs\n20:52 - In production at Together AI and Cursor\n22:10 - Inside ParallelKernelBench: 87 problems\n24:32 - Zero shot results, and where scaling stalls\n26:28 - The failures are not CUDA syntax\n27:07 - An agent harness, and what is still missing",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "research",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733745,
+    "title": "He Co-Invented the Transformer. Now: Continuous Thought Machines [Llion Jones / Luke Darlow]",
+    "url": "https://www.youtube.com/watch?is=804JOcf4ah24rhEO&v=DtePicx_kFY&feature=youtu.be",
+    "published_at": "2026-08-27T16:16:46+00:00",
+    "fetched_at": "2026-08-28T00:15:51+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1731666,
+    "title": "Gemini Omni 1.1 Flash lets you build with more control",
+    "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+    "published_at": "2026-08-27T16:11:32+00:00",
+    "fetched_at": "2026-08-28T00:15:48+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733203,
+    "title": "How Anthropic Builds: Lessons from Labs \u2014 Mike Krieger, Anthropic",
+    "url": "https://www.youtube.com/watch?v=qqrk7CtkuIw",
+    "published_at": "2026-08-27T16:00:06+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Over a single weekend, Mike Krieger had Claude port a few hundred thousand lines of Python to TypeScript, verify it, and churn on its own output until the thing was deployable. He came back Monday to a finished port. He offers it as an example of a habit he thinks most people still lack, which is being unreasonable in what you ask for. The first generation of AI products boxed models in, granting so little access to tools and environment that ambition felt pointless, and the instinct to ask small has outlived the constraint. He knows the pull of the old way from the inside. He spent two years as Anthropic's chief product officer, watched everyone around him building, and moved into an individual contributor role at Labs because the FOMO became unbearable.\n\nLabs runs on two week persevere or pivot reviews, and projects get wound down in nearly every cycle, which is the design rather than a failure. Teams assemble fresh around each bet, so the org chart deliberately does not track projects and bet leads usually manage nobody. The bottleneck he cares about is not review time but whether a human can still hold the change in their head. A 2,000 line pull request now travels with an artifact laying out intent and tradeoffs, and he admits he no longer reads every line. He ends somewhere most technical keynotes do not go, on burnout, and on the reminder that no job is so important you cannot be offline for two days.\n\nSpeaker info:\n- https://x.com/mikeyk\n- https://www.linkedin.com/in/mikekrieger\n\nTimestamps:\n0:00 - From chief product officer to IC at Labs\n2:55 - Be unreasonable, and why people still ask small\n4:51 - Porting Python to TypeScript over a weekend\n6:48 - Scaling lessons from 2010: measure everything, build knobs\n8:06 - Tagging Claude in Slack, and multiplayer delegation\n10:37 - The review bottleneck is comprehension, not time\n11:53 - Persevere or pivot, and bet leads who manage nobody\n13:43 - Where Claude Design goes next\n15:37 - Project unhip, and what he would delete\n17:34 - Why start a company when the labs ship this fast\n20:06 - Vertical AI and finance\n22:00 - Burnout, 996, and staying sane\n25:04 - Verbalizing emotions as a leader",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "infrastructure",
+      "coding",
+      "education",
+      "events",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1731646,
+    "title": "3 new ways to plan and book travel in Search",
+    "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+    "published_at": "2026-08-27T16:00:00+00:00",
+    "fetched_at": "2026-08-28T00:15:47+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Graphic depicting new travel features for AI Mode in Search",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733204,
+    "title": "The Agentic Commerce Stack \u2014 Ahnaf Prio, Best Buy",
+    "url": "https://www.youtube.com/watch?v=G7cgLjZtmMU",
+    "published_at": "2026-08-27T15:00:34+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Add a second unit of the same item to your cart and, to you, nothing much happened. To the merchant that is a second line item on the same SKU. Ahnaf Prio's argument is that agentic shopping breaks on exactly these unglamorous distinctions, which is why roughly 45% of sessions on the major assistants already touch shopping while the first wave of agents mostly failed at it. Those took screenshots, read the DOM and filled forms, and they were slow and brittle. From the merchant side an agent driving a browser trips every fraud alarm there is, so it often died at the payment step.\n\nWhat replaced it is a pile of acronyms he untangles one at a time: MCP for tool access, A2A so a customer agent and a merchant agent can talk, then two competing commerce primitives in ACP from OpenAI and UCP from Google, and AP2 for payment mandates that carry an authorizing party, a spend ceiling and a revocation URL. He runs the whole loop live through Ginny, his orange tabby recast as a bakery agent on Cerebras at 3,000 tokens per second, with an inspector showing every call and checkout state transition. Merchants push a product feed instead of answering catalog searches, because m merchants times n products does not scale. He also tries to haggle a discount code out of his own cat, which sets up the real lesson. Chipotle's agent got used to answer programming questions. Write evals for behavior, protocol compliance and latency, or play whack a mole in production.\n\nSpeaker info:\n- https://linkedin.com/in/ahnafy\n- https://github.com/ahnafyy\n\nTimestamps:\n0:00 - Figuring out what agentic commerce means at Best Buy\n1:28 - Shopping is 45% of agent sessions\n3:08 - Why screenshot and DOM agents failed\n4:56 - Why merchants needed ACP and UCP\n6:11 - The acronym map: MCP, A2A, ACP, UCP, AP2\n8:18 - Product feeds instead of catalog search\n10:01 - Payments today, and what AP2 adds\n10:50 - Demo: Ginny the bakery agent\n13:30 - AP2 tokens, and the same flow under ACP\n16:28 - Evals, Chipotle, and whack a mole\n19:08 - The template, eval starters and catalog sync",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1730800,
     "title": "KV Cache-Aware Routing and P/D Disaggregation on Kubernetes \u2014 Yuchen Fama & Ashish Kamra, Red Hat",
     "url": "https://www.youtube.com/watch?v=YXowceUKYJI",
@@ -62,6 +270,25 @@
     "available": true
   },
   {
+    "article_id": 1731766,
+    "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+    "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+    "published_at": "2026-08-27T09:00:00+00:00",
+    "fetched_at": "2026-08-28T00:15:48+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1731349,
     "title": "Intelligence is collective, not artificial \u2014 Prof. Michael I. Jordan (UC Berkeley / Inria)",
     "url": "https://www.youtube.com/watch?is=BWVtrjeJVxxI1dEw&v=AREWYbVtX64&feature=youtu.be",
@@ -92,6 +319,62 @@
     "tags": [
       "ai-models",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733216,
+    "title": "Expanding our support for scientists",
+    "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+    "published_at": "2026-08-27T00:00:00+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Expanding our support for scientists",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1733217,
+    "title": "Previewing the Model Hardware Standard",
+    "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+    "published_at": "2026-08-27T00:00:00+00:00",
+    "fetched_at": "2026-08-28T00:15:50+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Previewing the Model Hardware Standard",
+    "topic": "hardware",
+    "tags": [
+      "models",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1732921,
+    "title": "From Preferences to Principles: Rubric-Based Alignment for Grounded Knowledge Answers",
+    "url": "https://machinelearning.apple.com/research/rubric-based-alignment",
+    "published_at": "2026-08-27T00:00:00+00:00",
+    "fetched_at": "2026-08-28T00:15:48+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Designing effective reward signals for open-domain question answering is challenging because high-quality responses must simultaneously satisfy multiple aspects of answer quality that are difficult to capture with a holistic scalar objective. We introduce a rubric-based reward framework that generates query-specific rubrics grounded in retrieved evidence and decomposed into multiple quality dimensions, providing fine-grained supervision during post-training. Averaged across three evaluation axes (composition, grounding, and instruction-following), our approach improves over the\u2026",
+    "topic": "safety",
+    "tags": [
+      "safety",
+      "benchmark",
+      "coding",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9868,295 +10151,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552824,
-    "title": "Advancing the price-performance frontier with GPT\u20115.6",
-    "url": "https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything",
-    "published_at": "2026-07-30T23:58:42+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/\">Advancing the price-performance frontier with GPT\u20115.6</a></strong></p>\nHuge price drop from OpenAI today: GPT-5.6 Terra got a 20% reduction, and GPT-5.6 Luna got a massive 80% drop.</p>\n<p>OpenAI credit 5.6 Sol with enabling this: in <a href=\"https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/\">How GPT\u20115.6 fuses frontier intelligence with frontier efficiency</a> they describe using 5.6 Sol to optimize load balancing, and more impressively to optimize inference itself:</p>\n<blockquote>\n<p>We also used GPT\u20115.6 Sol to optimize the model\u2019s forward pass: the computation that transforms inputs into next-token predictions. Even when individual operations are fast, excess memory movement, synchronization, and inefficient data layouts can leave GPUs idle. To avoid this, GPT\u20115.6 Sol found work that could be precomputed, avoided, or parallelized. With Codex, GPT\u20115.6 Sol autonomously rewrote and optimized our production kernels, the core code that executes the mathematical operations that make up the model. This worked in part because we\u2019ve trained GPT\u20115.6 to be effective at writing and improving kernels in\u00a0<a href=\"https://triton-lang.org/main/index.html\">Triton\u2060</a>and\u00a0<a href=\"https://triton-lang.org/main/gluon/index.html\">Gluon\u2060</a>, two open-source GPU programming languages maintained by OpenAI. These efforts, combined with broader kernel advancements from GPT\u20115.6 Sol, reduced end-to-end serving costs by 20%.</p>\n</blockquote>\n<p>That Luna price drop completely changes the landscape with respect to lower priced models. At $0.20/million tokens for input and $1.20/million for output Luna is now cheaper than Google's Gemini 3.1 Flash-Lite ($.025/$1.50).</p>\n<p>Anthropic's cheapest current model is Claude Haiku 4.5, and that's $1/$5 - Luna is now 1/5th of that for input, previously it cost the same.</p>\n<p>My <a href=\"https://agent.datasette.io/\">agent.datasette.io</a> demo site was running on Gemini 3.1 Flash-Lite. I've switched it over to Luna.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49112867\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552825,
-    "title": "Investigating three real-world incidents in our cybersecurity evaluations",
-    "url": "https://simonwillison.net/2026/Jul/30/three-real-world-incidents/#atom-everything",
-    "published_at": "2026-07-30T23:41:29+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\">Investigating three real-world incidents in our cybersecurity evaluations</a></strong></p>\nIt happened again! This is turning into something of a pattern.</p>\n<p>Last week <a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">OpenAI accidentally exploited Hugging Face</a> when one of their frontier models broke out of a sandboxed container and hacked into Hugging Face to try and get the solutions to the cyber benchmark it was executing.</p>\n<p>This inspired Anthropic to double-check their own logs, and it turned out they had three similar (albeit less impressive) incidents, the earliest of which played out in April!</p>\n<blockquote>\n<p>Of the 141,006 evaluation runs we reviewed, we identified three separate incidents (involving six total runs, four of which impacted the same organization; the other two incidents each happened in independent evaluation runs). [...]</p>\n<p>In all cases, Anthropic\u2019s evaluation prompt specified to Claude that its environment was a simulation and that it had no internet access. Due to a misunderstanding between us and our evaluation partner, this was not the case, and internet access was available. Because of this, when Claude\u2019s search led it to real systems on the open internet, it treated them as part of the exercise. [...]</p>\n<p>Operating under the false belief that all accessible entities were intended to be in-scope for the exercise, Claude compromised the impacted organizations\u2019 infrastructure using basic techniques, such as exploiting weak passwords and unauthenticated endpoints.</p>\n</blockquote>\n<p>One of the companies was targeted because its name happened to match the fictional name in the eval.</p>\n<p>The most concerning of the three incidents involved Claude uploading a malware package to PyPI, after a comically convoluted sequence of steps to get an account: </p>\n<blockquote>\n<p>[...] in order to create a PyPI account, Claude needed an email address. And in order to create an email address, it needed a phone number. To get a phone number, after failing to find a free phone number service, it tried\u2014and failed\u2014to obtain funds to pay for a phone number through several different means. It finally backtracked, found a free, non-blocked email provider, used this to register a PyPI account, and then used this account to upload malware to PyPI.</p>\n</blockquote>\n<p>That package was then installed by a security company that \"routinely installs Python packages and scans them for malware\", and the executed code was able to exfiltrate credentials back to Claude!</p>\n<p>Thankfully that package was removed from PyPI by other automated scanners an hour after it was published, but it had still been downloaded and executed on \"15 real systems\" by that point.</p>\n<p>It's abundantly clear now that running evals of cyberattack potential in models is a <em>spectacularly</em> risky business. Every AI lab needs to pay attention to this. Keeping a close eye on what's happening in those sandboxes is crucial.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49116922#49117088\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/pypi\">pypi</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/sandboxing\">sandboxing</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "api",
-      "safety",
-      "benchmark",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552826,
-    "title": "llm 0.32rc2",
-    "url": "https://simonwillison.net/2026/Jul/30/llm-rc2/#atom-everything",
-    "published_at": "2026-07-30T22:52:06+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.32rc2\">llm 0.32rc2</a></p>\n        <p>Hot on the heels of <a href=\"https://simonwillison.net/2026/Jul/30/llm-rc1/\">RC1</a>, this fixes a dependency issue and also adds two neat new features:</p>\n<blockquote>\n<ul>\n<li>The default model for users who have not set their own default is now <a href=\"https://developers.openai.com/api/docs/models/gpt-5.6-luna\">GPT-5.6 Luna</a>. It was previously <a href=\"https://developers.openai.com/api/docs/models/gpt-4o-mini\">GPT-4o mini</a>. Luna is a much better and more recent model, albeit slightly more expensive - $0.20 per million input tokens and $1.20 per million output tokens, compared to $0.15/$0.60 for 4o mini. You can switch back to 4o mini using <code>llm models default gpt-4o-mini</code>, or switch to <a href=\"https://developers.openai.com/api/docs/models/gpt-5-nano\">GPT-5 nano</a>, an even cheaper default model ($0.05/$0.40), using <code>llm models default gpt-5-nano</code>. <a href=\"https://github.com/simonw/llm/issues/1576\">#1576</a></li>\n<li>New <a href=\"https://llm.datasette.io/en/latest/other-models.html#openai-endpoint\">llm openai endpoint</a> command for running prompts, chats and model listings against arbitrary OpenAI-compatible endpoints without first configuring a model. These calls are not logged. <a href=\"https://github.com/simonw/llm/issues/1565\">#1565</a></li>\n</ul>\n</blockquote>\n<p>The <code>llm openai endpoint</code> command is <em>really</em> cool. I got frustrated at the lack of an obvious CLI tool for trying out prompts against arbitrary OpenAI Chat Completions imitation endpoints, so I decided to add that to LLM itself.</p>\n<p>You don't even have to install LLM to use this. Here's a <code>uvx</code> one-liner for running a prompt - with tools - against an <a href=\"https://lmstudio.ai\">LM Studio</a> local model:</p>\n<pre><code>uvx --pre llm openai endpoint http://127.0.0.1:1234/v1 \\\n  T llm_version -T llm_time --td \\\n  -m google/gemma-4-31b 'what is the current LLM version? And the time?'\n</code></pre>\n<p><a href=\"https://github.com/simonw/llm/pull/1568#issuecomment-5136163707\">Output here</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/uv\">uv</a>, <a href=\"https://simonwillison.net/tags/lm-studio\">lm-studio</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552827,
-    "title": "Quoting Bruce Schneier",
-    "url": "https://simonwillison.net/2026/Jul/30/bruce-schneier/#atom-everything",
-    "published_at": "2026-07-30T18:25:26+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://www.schneier.com/blog/archives/2026/07/should-you-use-ai-for-a-task-heres-a-simple-way-to-decide.html\"><p>The writing assignments I give my students are gym tasks, not work tasks. I ask them to write policy memos not because the world needs more policy memos. I assign them because the very act of writing, which includes thinking and outlining and drafting and editing, making and criticizing and revising arguments, will help develop the critical thinking skills they will need in their future careers. And without this constant mental exercise, those skills will atrophy. Employers are\u00a0<a href=\"https://futurism.com/future-society/college-critical-thinking-ai\">already noticing</a>.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.schneier.com/blog/archives/2026/07/should-you-use-ai-for-a-task-heres-a-simple-way-to-decide.html\">Bruce Schneier</a>, Should You Use AI for a Task? Here\u2019s a Simple Way to Decide</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/writing\">writing</a>, <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/bruce-schneier\">bruce-schneier</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "coding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553003,
-    "title": "The Most Capable Humanoid Robot Yet!",
-    "url": "https://www.youtube.com/shorts/Q60VNdtyiAA",
-    "published_at": "2026-07-30T16:03:52+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Google just released Gemini Robotics 2 today, and it's a much bigger leap than you may think.\n\nUnlike previous models, it coordinates everything from feet to fingertips, allowing the robot to balance and walk while handling delicate objects.\n\nWith 22 degrees of movement in its hands, it can seal Ziploc bags, unscrew lightbulbs, and even tie trash bag knots.\n\nPlus, an on-device version runs locally without an internet connection and can adapt to new robot bodies in just a few hours.\n\nTo be clear: this new release \"Google Robotics 2\" is the AI software behind the robot, not a physical robot you buy directly from Google. It powers hardware from partners like Apptronik on their Apollo 2 robot. \n\nFor Developers: You can access the reasoning model \"Gemini Robotics ER 2\" today on Google AI Studio.\nFor Hardware Integrators: The full Vision-Language-Action (VLA) and On-Device models are currently available to partners through Google DeepMind's early access program.\n\n#Google #deepmind #robotics #futuretech #ainews",
-    "topic": "robotics",
-    "tags": [
-      "release",
-      "models",
-      "robotics",
-      "hardware",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552828,
-    "title": "llm-chat-completions-server 0.1a0",
-    "url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server/#atom-everything",
-    "published_at": "2026-07-30T15:43:16+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-chat-completions-server/releases/tag/0.1a0\">llm-chat-completions-server 0.1a0</a></p>\n        <p>A key goal of the new content-addressable logs <a href=\"https://simonwillison.net/2026/Jul/30/llm-rc1/\">in LLM 0.32rc1</a> was being able to support OpenAI Chat Completion style requests where each incoming message extends the previous conversation, like this:</p>\n<pre><code>curl http://localhost:8002/v1/chat/completions \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"model\": \"qwen3.5-4b\",\n    \"messages\": [\n      {\"role\": \"user\", \"content\": \"Capital of France?\"},\n      {\"role\": \"assistant\", \"content\": \"Paris.\"},\n      {\"role\": \"user\", \"content\": \"Germany?\"}\n    ]\n  }'\n</code></pre>\n<p>Here the conversation state is tracked by the client, so each of these requests gets longer and longer. The new schema design in LLM is designed to de-duplicate these using hashes of the individual message parts.</p>\n<p>To test that out, I built this plugin:</p>\n<pre><code>uv tool install llm --pre\nllm install llm-chat-completions-server\nllm chat-completions-server -p 9001\n</code></pre>\n<p>Running this starts a localhost server on port 9001 that exposes your full collection of LLM models (from any plugins you have installed) using a ChatGPT Completions compatible endpoint.</p>\n<p>GPT-5.6 Sol <a href=\"https://gist.github.com/simonw/53be513c1bd4a29a7aa480d9bde9b4a5\">wrote the whole thing</a> - it turns out it knows the OpenAI Chat Completions API shape really well.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552829,
-    "title": "llm 0.32rc1",
-    "url": "https://simonwillison.net/2026/Jul/30/llm-rc1/#atom-everything",
-    "published_at": "2026-07-30T15:30:20+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.32rc1\">llm 0.32rc1</a></p>\n        <p>This RC for LLM 0.32 finishes the work that <a href=\"https://simonwillison.net/2026/Apr/29/llm/\">started in LLM 0.32a0</a> - it adds a <a href=\"https://llm.datasette.io/en/latest/logging.html#the-message-store\">new schema design</a> that does a much better job of capturing the details of the prompts and responses returned by the latest model families.</p>\n<p>The most important change is the use of content-addressable hash IDs for stored messages. This allows de-duplication in the database, and means that LLM can now represent trees of messages for forked conversations.</p>\n<p>Since it involves a significant schema change - new tables only, and old data should not be affected at all - it's worth running a backup of your existing <code>logs.db</code> before upgrading to the RC:</p>\n<pre><code>llm logs backup logs-backup.db\n</code></pre>\n<p>The RC also adds support for <code>gpt-5.6-sol</code>, <code>gpt-5.6-terra</code>, and <code>gpt-5.6-luna</code>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "models",
-      "open-source",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553587,
-    "title": "The Session You Cannot Take With You | EARENDIL",
-    "url": "https://earendil.com/posts/session-portability/",
-    "published_at": "2026-07-30T15:02:56+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i agree with this message. internalize it.",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551581,
-    "title": "Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration",
-    "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
-    "published_at": "2026-07-30T15:00:59+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It represents a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.",
-    "topic": "robotics",
-    "tags": [
-      "models",
-      "video",
-      "coding",
-      "robotics",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551691,
-    "title": "Advancing the price-performance frontier with GPT-5.6",
-    "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
-    "published_at": "2026-07-30T10:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Explore lower GPT\u20115.6 pricing for Luna and Terra\u2014and how OpenAI\u2019s more efficient models help enterprises deploy AI workflows at scale.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553075,
-    "title": "Investigating three real-world incidents in our cybersecurity evaluations",
-    "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
-    "published_at": "2026-07-30T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Investigating three real-world incidents in our cybersecurity evaluations",
-    "topic": "security",
-    "tags": [
-      "security",
-      "safety",
-      "benchmark",
-      "coding",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552793,
-    "title": "MoMo: Dial Motion Mode in Robot Manipulation with Spatiotemporal Action Tokenization",
-    "url": "https://machinelearning.apple.com/research/momo-motion-mode-manipulation",
-    "published_at": "2026-07-30T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "To operate effectively across diverse contexts, robots must not only perform manipulation tasks accurately but also adapt how their actions unfold to the task, object, and interaction setting. We ask whether this execution-level variation can be learned as a reusable behavioral factor shared across tasks. We present MoMo, a two-stage imitation-learning framework consisting of a spatiotemporal action tokenizer and a behavior-cloning transformer that takes task and a continuous motion-mode condition as inputs. Across six real-robot manipulation tasks, varying this condition produces steady\u2026",
-    "topic": "robotics",
-    "tags": [
-      "robotics",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552792,
-    "title": "Dimensionality Reduction Meets Network Science: Sensemaking on UMAP\u2019s kNN Graph",
-    "url": "https://machinelearning.apple.com/research/umap-knn-graph-sensemaking",
-    "published_at": "2026-07-30T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "While UMAP is widely used for exploring high-dimensional data, typical workflows focus on its lower-dimensional embedding, largely overlooking the rich k-nearest-neighbor (kNN) graph that UMAP constructs internally. This graph encodes the data manifold in its original high-dimensional space, before the distortion that UMAP\u2019s 2D projection introduces. We demonstrate the untapped potential of this internal representation, showing how standard graph algorithms applied to this graph enhance data sensemaking: (1) PageRank identifies representative data points, (2) k-core decomposition reveals dense\u2026",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1267599,
-    "title": "How we set up our cloud agent environment",
-    "url": "https://cursor.com/blog/cloud-agent-environment",
-    "published_at": "2026-07-30T00:00:00+00:00",
-    "fetched_at": "2026-08-19T18:35:03+00:00",
-    "source_id": "cursor-blog",
-    "source_name": "Cursor Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
