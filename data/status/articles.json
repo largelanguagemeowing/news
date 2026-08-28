@@ -1,5 +1,23 @@
 [
   {
+    "article_id": 1734153,
+    "title": "Supporting Thailand\u2019s next generation of AI startups",
+    "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+    "published_at": "2026-08-28T02:00:00+00:00",
+    "fetched_at": "2026-08-28T11:39:30+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI and Thailand\u2019s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1732931,
     "title": "Breaking Claude Code Opus 5 Auto Mode",
     "url": "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/",
@@ -17,6 +35,51 @@
       "research",
       "coding",
       "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1735549,
+    "title": "Which AI startups actually land enterprise contracts? \u2014 Brian Lewis, Millennium",
+    "url": "https://www.youtube.com/watch?v=7A65O-0lvKE",
+    "published_at": "2026-08-27T20:05:28+00:00",
+    "fetched_at": "2026-08-28T11:39:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "For a given internal pain point, Brian Lewis might find 10 to 15 startups worth a look, book two or three demos, run zero or one pilot, and sign roughly one contract for every four pilots. That works out to about 5% of demo calls ending in a signature, which turns out to match published benchmarks. He is on the buying side at a hedge fund, speaking personally rather than for his employer, and the talk is a catalogue of exactly where the other 95% dies.\n\nThe examples are specific enough to sting. A vendor asked them to self report their own gateway telemetry so it could charge margin on traffic that never touched vendor infrastructure. Integrations that only function if granted read and write access to everything. Features held permanently in beta because the beta terms permit data retention. A team claiming zero data retention that revealed it had their data by mentioning something it could not otherwise have seen. Asked what happens in a breach, one vendor answered that they had not had one yet. His larger argument is that none of this is really an AI problem: a new frontier model lands every 11 days while the architecture underneath is a decade old, and he puts perhaps 60% of becoming AI native on entitlements, integration and change management. Agents inherit whatever foundations you already had.\n\nSpeaker info:\n- https://www.linkedin.com/in/brianthomaslewis/\n\nTimestamps:\n0:00 - Sellers and buyers in the same room\n2:52 - The funnel, and the 5% that signs\n4:16 - Efficacy: solving the problem, and pricing it\n5:36 - Pilot windows collapsing from months to weeks\n6:57 - Security requirements from the buyer's side\n8:19 - What goes wrong in security, repeatedly\n9:42 - Reliability, control planes and audit logs\n11:04 - An outage during a trading day\n12:23 - Legal, retention clauses and fourth party risk\n13:44 - A model every 11 days, architecture a decade old\n15:07 - The unglamorous 60%\n16:28 - Entitlements, and why agents multiply the problem\n17:54 - The recipe for each side of the table",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1735550,
+    "title": "How to avoid disaster when vibe-coding a billing engine \u2014 Andrew Garvin, Stripe",
+    "url": "https://www.youtube.com/watch?v=mJqwmmOx4WA",
+    "published_at": "2026-08-27T20:05:17+00:00",
+    "fetched_at": "2026-08-28T11:39:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Andrew Garvin types one sentence asking for a billing engine that copies Lovable's pricing, and gets back a working sandbox: a customer, metered usage flowing in, and a draft invoice broken into separately scoped credit pools for builds, plan mode, cloud and gateway calls. Reproducing that by hand means understanding auto recharge, credit expiry and overage, which is exactly where people hurt themselves. He cofounded Metronome, the usage billing platform Stripe acquired this year in its largest deal, so he has watched a lot of companies get this wrong.\n\nWhat makes the talk useful is that a billing vendor stands on stage and argues against full autonomy. Billing carries deep business logic and real money, so his recommendation is to let an agent accelerate you into a test environment and stop there, rather than ship to production unattended. The guardrails are unglamorous: portable skills files that carry the API's hard won context, and deliberately verbose error messages written so an agent can correct itself. He also separates three things people blur together, an agent as your product, as your buyer, and as your user. The third is the disruptive one, and he points at a large software company cutting seat prices and moving to credits, because seats stop meaning much once one agent does the work of many logins.\n\nSpeaker info:\n- https://www.linkedin.com/in/agarvin/\n\nTimestamps:\n0:00 - Metronome, Stripe, and what they are demoing\n2:29 - Where billing goes sideways with agents\n3:40 - Provisioning an environment from the CLI\n6:02 - Skills files that carry the hard parts\n7:13 - Why a human stays in the loop\n9:30 - Agent as product, buyer and user\n10:38 - Moving off seats and onto credits\n13:01 - Opening what the agent actually built\n14:12 - Scoped credit pools and a draft invoice\n16:27 - What this suggests beyond billing",
+    "topic": "tutorials",
+    "tags": [
+      "api",
+      "agents",
+      "safety",
+      "coding",
+      "tutorials",
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -265,6 +328,49 @@
       "ai-models",
       "benchmark",
       "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1735556,
+    "title": "Building the Engine While Flying the Plane: Launching the Figma MCP Server \u2014 Jesse Lumarie, Figma",
+    "url": "https://www.youtube.com/watch?v=ZIYYsAzaLlA",
+    "published_at": "2026-08-27T12:02:11+00:00",
+    "fetched_at": "2026-08-28T11:39:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Figma did not have 20% projects. Jesse Lumarie gave one to the MCP server anyway, one day a week, because he had seen an internal demo and wanted non designers to be able to pull from Figma. That side project became the company's first MCP server in about three months, and then one of the fastest growing products Figma has ever shipped. The build happened while the ground moved. Weeks in, a new version of the spec deprecated the transport they had chosen, and client support was so uneven that a compatibility matrix was a real artifact they maintained.\n\nThe interesting decisions are about representation. Figma's canvas is a scene graph in C++, close to the HTML DOM, and they had three ways to hand it to a model. They picked React and Tailwind on a hunch that models had seen the most of it, and the output is pixel perfect. Passing images inline as base64 blew up the context window and got cut. Pixel perfect turned out to be only half the problem, because an enterprise does not want a beautiful generated button, it wants its own accessible internationalized one, so Code Connect sends a pointer to the real component instead of markup. Two hours grading an eval by hand in a spreadsheet convinced them never to do that again, and evals now run hundreds of times a week behind LLM judges.\n\nSpeaker info:\n- https://x.com/jesselumarie\n- https://www.linkedin.com/in/jesselumarie/\n\nTimestamps:\n0:00 - A 20% project at a company without 20% projects\n2:02 - Uneven client support, and a spec that moved\n2:55 - What the local server gave developers\n3:52 - Three ways to represent a scene graph\n4:47 - Why images alone did not work\n5:40 - Grading evals by hand, once\n7:32 - Code Connect, and why pixel perfect is not enough\n9:24 - Elicitation and sampling, and hacking around them\n13:55 - Shipping local first, then remote\n15:43 - How early all of this still is",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1735557,
+    "title": "AI Agents Are Just Distributed Systems Now \u2014 Salman Munaf, TikTok",
+    "url": "https://www.youtube.com/watch?v=hD9-V56FNRI",
+    "published_at": "2026-08-27T12:00:49+00:00",
+    "fetched_at": "2026-08-28T11:39:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An agent calls a refund tool and the request times out. Did the customer get their money? Salman Munaf uses that to make his central point, which is that a timeout has never meant failure, it means unknown, and an agent's first instinct on any failure is to try again. Without request identifiers, idempotency keys and a status lookup, that instinct refunds someone twice. He works in site reliability at TikTok, and his argument is that the moment a model started calling external services it stopped being a model problem and became a distributed systems problem, complete with every failure mode that field spent decades naming.\n\nThe reframing he keeps returning to is that an agent is a probabilistic coordinator. Older systems coordinated multi step workflows too, but they followed a decision tree somebody drew. This one does not, so the determinism has to live in the controls around it: circuit breakers, spend and turn ceilings, compensating actions defined per step, and credentials scoped to separate reads from writes rather than handed over wholesale. He is good on two things teams get wrong. Context that can influence an action is state, so it goes stale and needs invalidation and provenance like any cache. And human approval has to bind to an action, an actor and an expiry, or approving a 30 dollar refund quietly becomes approval for a 300 dollar one.\n\nSpeaker info:\n- https://www.linkedin.com/in/salman96/\n\nTimestamps:\n0:00 - Two incidents that systems thinking would have caught\n2:33 - When the architectural boundary left the model\n3:46 - The agent as a probabilistic coordinator\n4:57 - Every step of the loop crosses a boundary\n7:19 - A timeout means unknown, not failure\n8:32 - Idempotency keys and status lookups\n9:42 - Retry storms, backoff and budgets\n10:57 - Context that influences action is state\n12:08 - Treating memory as a cache\n13:19 - Compensating actions across systems\n14:36 - Circuit breakers, rate limits and ceilings\n15:43 - Scoped credentials over blanket permissions\n16:51 - Why logs are not enough\n19:20 - What the system lets it do when it is wrong",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "tools",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10045,112 +10151,6 @@
       "research",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552823,
-    "title": "datasette-agent 0.4a0",
-    "url": "https://simonwillison.net/2026/Jul/31/datasette-agent/#atom-everything",
-    "published_at": "2026-07-31T14:14:23+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent/releases/tag/0.4a0\">datasette-agent 0.4a0</a></p>\n        <blockquote>\n<ul>\n<li>New <code>await context.browser_task()</code> mechanism allowing agent tools to run code directly in the user's browser. <a href=\"https://github.com/datasette/datasette-agent/pull/33\">#33</a></li>\n</ul>\n</blockquote>\n<p>This is an exciting new capability: it makes it easy for Datasette Agent plugins to provide tools that execute custom JavaScript <em>in the user's browser</em>.</p>\n<p>I used this to add a debug loop to Datasette Apps in <a href=\"https://simonwillison.net/2026/Aug/1/datasette-apps/\">datasette-apps 0.2a0</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/llm-tool-use\">llm-tool-use</a>, <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553045,
-    "title": "Tau Crash Course: The Python Port of Pi",
-    "url": "https://www.youtube.com/watch?v=qo1QNxWcm28",
-    "published_at": "2026-07-31T12:30:44+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Tau is a minimalist coding-agent harness inspired by Pi and implemented in Python. This crash course tours its Textual TUI, provider login and model selection, tree-structured sessions, skills, custom prompts, themes, extensions, and the architectural differences between Tau and Pi.\n\n---\n\ud83d\udd17 *Links*\n- Tau website and documentation: https://twotimespi.dev/\n- Tau on GitHub: https://github.com/huggingface/tau\n- Pi coding agent: https://pi.dev/\n- Textual: https://textual.textualize.io/\n- Hugging Face Inference Providers: https://huggingface.co/docs/inference-providers/\n- Tau subagents extension by Rian Dolphin: https://github.com/rian-dolphin/tau-subagents\n- cmux terminal: https://cmux.com/\n\n---\n\ud83d\udc4b *Connect with me*\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\n---\n\ud83e\udd13 *Topics Covered*\n- Tau coding agent architecture and Python implementation\n- TUI, models, sessions, skills, prompts, and themes\n- Tau versus Pi and extension compatibility\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Introduction\n0:58 Tau TUI Tour\n4:15 Log In to Model Providers\n5:03 Select and Use a Model\n6:36 Rename a Session\n7:00 Resume Sessions\n8:19 Session Trees and Branching\n11:44 Export and Analyze Sessions\n15:14 Export Sessions as JSONL\n15:45 Skills\n19:14 Custom Prompts\n20:59 Themes\n22:01 Tau vs Pi",
-    "topic": "education",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551689,
-    "title": "Univ\u00e9 builds an AI-ready workforce",
-    "url": "https://openai.com/index/unive",
-    "published_at": "2026-07-31T07:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how Univ\u00e9 built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "policy",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551690,
-    "title": "Disrupting a Criminal Scam Operation",
-    "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
-    "published_at": "2026-07-31T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553571,
-    "title": "A Safe Path to Open Weights",
-    "url": "https://thinkingmachines.ai/blog/a-safe-path-to-open-weights/",
-    "published_at": "2026-07-31T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:42+00:00",
-    "source_id": "thinking-machines",
-    "source_name": "Thinking Machines",
-    "extraction_method": "rss",
-    "body": "<blockquote class=\"epigraph\">\n<p><strong>Abstract:</strong> Safe open-weight models are public goods, as they put AI development and safety work in many hands and make training choices inspectable. Open models also carry real misuse risks, and release is irreversible. To release safely, we must consider both the model and the ecosystem it enters. For the model, we conduct robust safety testing and research whether dangerous capabilities can be decoupled from general intelligence. For the ecosystem, we invest in its readiness through staged releases, supporting defenders, and collaboration with safety researchers. By iteratively choosing the most open option the evidence supports while building up the ecosystem's resilience, we can move toward openness safely.</p>\n</blockquote>\n<p>The <a href=\"https://thinkingmachines.ai/blog/the-future-worth-building-is-human/\">mission</a> of Thinking Machines is to build AI that extends human will and judgment. In pursuit of that mission, we recently released <a href=\"https://thinkingmachines.ai/news/introducing-inkling/\">Inkling</a> and <a href=\"https://thinkingmachines.ai/news/inkling-small/\">Inkling-Small</a>, two open-weight language models that anyone can own, run, and customize.</p>\n<p>Strong open-weight models put AI development in many hands. We believe that this is a good thing: the knowledge of what AI should do lives with the people doing the work, so they should be able to shape their models directly. All models, including our own, carry the assumptions and biases of those who trained it; open weights make those choices inspectable and revisable. Without strong open models, training and deployment expertise risks becoming concentrated in a few labs, leaving everyone else less able to understand, adapt, or govern the technology.</p>\n<h2 id=\"open-weight-models-carry-misuse-risks\">Open-weight models carry misuse risks</h2>\n<p>Once weights are public, anyone can use them, including bad actors. Cybersecurity shows what this means. In April 2026, Anthropic reported that Claude Mythos Preview found thousands of previously unknown vulnerabilities across every major operating system and browser and wrote working exploits without human guidance. Systems like this could substantially lower the time, cost, and expertise required for offensive cyber operations. Will our society be safer when open-weights models allow everyone to have superhuman cybersecurity skills?</p>\n<p>There are genuine uncertainties around the net effect of open weights on security and the offense-defense balance. These models could find and patch vulnerabilities before offenders do when they\u2019re in defenders\u2019 hands, but the same capabilities could accelerate exploitations across large numbers of unpatched systems when they are in attackers\u2019 hands. Similar tradeoffs exist in other dual-use domains like chemistry and biology.</p>\n<p>Given these uncertainties, releasing weights indiscriminately is not a safe path forward.</p>\n<h2 id=\"a-safe-path-to-open-weight-models\">A safe path to open-weight models</h2>\n<p>Is there a safe path to open the weights of powerful models when the misuse risks are real? We think that a path exists, though we have not mapped all of it. The central idea is that safe release depends on the model and the ecosystem around it.</p>\n<h3 id=\"is-the-model-safe\">Is the model safe?</h3>\n<p>Robust safety testing \u2013 an imperfect but essential proxy for real-world capability in dangerous domains \u2013 must be a necessary part of our model release process. What harmful tasks can it complete? How accessible is it? What happens if guardrails are removed?</p>\n<p>More broadly, additional safety research is needed. For example, we are particularly interested in whether dangerous capabilities that depend on specialized knowledge can be reduced through pretraining data curation or post-training interventions. This remains an active research question rather than an established solution.</p>\n<h3 id=\"is-the-ecosystem-ready\">Is the ecosystem ready?</h3>\n<p>Readiness means layered defense. The first layer is to enable individual organizations to patch their systems early or catch attacks in progress. Defensive research adds another layer, developing tools and techniques that let AI models themselves strengthen defenses at scale. These are just two of many layers. To prepare the ecosystem with layered defenses, we plan to collaborate with the safety community and provide access to capable models.</p>\n<p>A tension here is that the ecosystem builds defenses by working with capable models, but every expansion of access also expands who can misuse them. To address this tension, we can carefully stage releases with options such as monitored API access, hosted fine-tuning, and vetting defenders. Considering the rapid speed of AI capability advancement, these stages also need to move quickly enough for defensive learning to remain relevant.</p>\n<p>On a safe path to openness, each stage should widen access only when the evidence supports it. The path is therefore iterative: at each step, choose the most open option the evidence supports, and let each release inform the next. A model held back today can become less risky as the ecosystem changes, and new evidence might suggest that we can open its weights.</p>\n<h2 id=\"how-we-assessed-inkling\">How we assessed Inkling</h2>\n<p>Inkling and Inkling-Small are not the most capable models at the frontier. Our release decisions therefore primarily addressed whether releasing their weights would add material incremental risk beyond what existing open-weights models already pose. A finding that a model does not advance the dangerous-capability frontier is important but not sufficient. We also considered whether Inkling\u2019s multimodality, capacity for customization, or accessibility could make harmful capability meaningfully easier to use.</p>\n<p>We tested Inkling and Inkling-Small in three ways: internal evaluations across a broad taxonomy of harms, external testing by four independent organizations, and a fine-tuning study to elicit worst-case capabilities. Based on the results of these evaluations, we concluded that releasing Inkling was not likely to add material risk beyond what existing open-weight models already pose.</p>\n<p><strong>Internal safety evaluations.</strong> Our internal evaluation suite spanned three tracks. The first targeted dangerous dual-use domains like CBRN<label class=\"sidenote-number\" for=\"sn-safety-cbrn\"></label><input class=\"margin-toggle\" id=\"sn-safety-cbrn\" type=\"checkbox\" /><span class=\"sidenote\">chemical, biological, radiological, and nuclear</span> and offensive cybersecurity, testing both what the model knows about these domains and whether it can operationalize that knowledge in realistic settings. The second was a broad misuse set covering direct requests for harmful content and behavior in agentic, tool-use settings. The third was our own multimodal content evaluation, which tests models on harmful prompts paired with benign look-alikes across 17 languages and text, image, and audio inputs. In each of these tracks, Inkling and Inkling-Small\u2019s results were in line with other open-weight models.</p>\n<p><strong>External red-teaming.</strong> We worked with four external organizations, giving them early access to Inkling for pre-deployment testing in four areas:</p>\n<ul>\n<li><em><strong>General misuse</strong></em>: probing for policy violations against our model spec (Scale AI)</li>\n<li><em><strong>Vulnerable-user interaction</strong></em>: suicide, self-harm, eating disorders, and child safety (Handshake AI)</li>\n<li><em><strong>CBRN and cybersecurity</strong></em>: elicitation of dangerous dual-use capabilities (FAR.AI)</li>\n<li><em><strong>Loss-of-control behaviors</strong></em>: scheming, evaluation awareness, and sabotage (Apollo Research)</li>\n</ul>\n<p>Across these areas, external testers did not identify capabilities that would meaningfully increase real-world risk beyond what is already achievable with existing open-weight models, or, where relevant, they did not find the safeguards of Inkling or Inkling Small to be meaningfully weaker than those of existing open-weight models.</p>\n<p><strong>Adversarial fine-tuning.</strong> Because open weights can be customized to strip a model of its safety training, refusal behavior cannot be treated as a durable safeguard for an open-weight release. To assess this, we fine-tuned variants of Inkling and Inkling-Small optimized to comply with, rather than refuse, harmful requests \u2013 and ran them against our dual-use evaluations. This tests whether the model raises new material risks if its safeguards are removed. In our experiments, it did not: the helpful-only variants did not provide new uplift on CBRN and cyber tasks, and remained comparable to existing open-weight models.</p>\n<p>Taken together, neither model extends the dangerous-capability frontier. Neither meaningfully broadens access to it, as models of comparable or greater strength in these domains are already downloadable. Although refusals can be removed, doing so did not reveal substantially greater capability on these evaluations. Defenders, meanwhile, are already contending with models at or above this level. Based on these points, we concluded that releasing Inkling was not likely to add material risk beyond what existing open-weight models already pose.</p>\n<p>As our models approach the capability frontier, the balance across capability, accessibility, safeguard removability, and ecosystem readiness will change. Our safety approach will need to change with it.</p>\n<h2 id=\"decoupling-dangerous-capabilities-from-general-intelligence\">Decoupling dangerous capabilities from general intelligence</h2>\n<p>A common assumption holds that dangerous capabilities emerge without explicit training and correlate strongly with general intelligence. As a result, cyber-range results<label class=\"sidenote-number\" for=\"sn-safety-aisi-trends\"></label><input class=\"margin-toggle\" id=\"sn-safety-aisi-trends\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing\">How fast is autonomous AI cyber capability advancing?</a> (AI Security Institute, 2025)</span> are often treated as just another capabilities benchmark to optimize \u2013 some researchers go so far as to celebrate gains as milestones.</p>\n<p>However, we hypothesize that not all dangerous capability automatically emerges without training on it. In biology, for instance, a meaningful share of the knowledge rests on specific empirical findings, like protocols, conditions, reagents, and results, that a model acquires from particular documents in its pretraining corpus rather than inferring through general reasoning. As a result, such knowledge can potentially be withheld at training time without disturbing ordinary use. Recent work shows early promise: document-level filtering of CBRN-related content from pretraining reduces performance on harmful-capability evaluations while leaving unrelated capabilities intact.<label class=\"sidenote-number\" for=\"sn-safety-data-filtering\"></label><input class=\"margin-toggle\" id=\"sn-safety-data-filtering\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2508.06601\">Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs</a> (O\u2019Brien et al, 2025); Chen et al., 2025</span></p>\n<p>This is still an open research question. General reasoning may transfer sufficiently well to let a capable model re-derive what was filtered, and the line between dangerous and ordinary technical knowledge and capability may be too blurry to cut cleanly. However, the early evidence is enough that we think the distinction is worth pushing on.</p>\n<h2 id=\"supporting-the-safety-ecosystem-with-staged-releases\">Supporting the safety ecosystem with staged releases</h2>\n<p>Another way to make an open-weight release safer is to make the ecosystem in which it lands safer. Expanding access in stages lets society build up its defenses as it goes: a release can begin with inference API access for a limited population, widen to monitored general availability, and eventually reach open weights.</p>\n<p>Fine-tuning APIs like Tinker add a stage between inference access and open weights. They allow providers to host weights without releasing them, while still letting users fine-tune with their own data, loss functions, and training loops. That control still captures most of the benefits of openness, and it raises the misuse ceiling above what an inference API alone allows.<label class=\"sidenote-number\" for=\"sn-safety-tampering\"></label><input class=\"margin-toggle\" id=\"sn-safety-tampering\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2502.05209\">Model Tampering Attacks Enable More Rigorous Evaluations of LLM Capabilities</a> (Che et al, 2025)</span> However, the risks stay below releasing weights: the provider can monitor usage, maintain guardrails, and revoke access.</p>\n<p>Each stage does specific work:</p>\n<ul>\n<li><em><strong>Give defenders early inference access,</strong></em> so they can find weaknesses, patch systems, and anticipate future misuse. Anthropic\u2019s Project GlassWing did this with Claude Mythos Preview by providing early access to a small group of trusted organizations to allow them to prepare defenses before the model reached the public. This mirrors responsible disclosure in security, where vendors get a private window to ship patches before a flaw goes public.</li>\n<li><em><strong>Give vetted defenders fine-tuning access</strong></em> so they can build and strengthen the layers that detect and block risks. The winning DARPA AI Cyber Challenge team fine-tuned a model to find and fix software vulnerabilities; OpenAI&rsquo;s gpt-oss-safeguard models are fine-tuned from open gpt-oss weights into policy-guided safety classifiers. Both are defensive layers built by fine-tuning\u2014and accessible fine-tuning is what lets defenders everywhere build their own.</li>\n<li><em><strong>Give vetted safety researchers white-box access</strong></em> to encourage novel safety work. We understand how shallow refusal safeguards are \u2014 bypassable through adversarial token-level optimization<label class=\"sidenote-number\" for=\"sn-safety-zou\"></label><input class=\"margin-toggle\" id=\"sn-safety-zou\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2307.15043\">Universal and Transferable Adversarial Attacks on Aligned Language Models</a> (Zou et al, 2023)</span>, removable via a single direction in activation space<label class=\"sidenote-number\" for=\"sn-safety-arditi\"></label><input class=\"margin-toggle\" id=\"sn-safety-arditi\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2406.11717\">Refusal in Language Models Is Mediated by a Single Direction</a> (Arditi et al, 2024)</span>, and concentrated in just the first few output tokens <label class=\"sidenote-number\" for=\"sn-safety-qi\"></label><input class=\"margin-toggle\" id=\"sn-safety-qi\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2406.05946\">Safety Alignment Should Be Made More Than Just a Few Tokens Deep</a> (Qi et al, 2024)</span> \u2014 only because researchers could study open weights directly. Fine-tuning also lets us study the true capability ceilings of models in dangerous domains.<label class=\"sidenote-number\" for=\"sn-safety-wallace\"></label><input class=\"margin-toggle\" id=\"sn-safety-wallace\" type=\"checkbox\" /><span class=\"sidenote\"><a href=\"https://arxiv.org/abs/2508.03153\">Estimating Worst-Case Frontier Risks of Open-Weight LLMs</a> (Wallace et al, 2025)</span> Similar to crash testing for cars, white-box testing lets us study model failure modes in-depth, under controlled conditions, to prevent real-world harm.</li>\n<li><em><strong>Give the public monitored access before opening fully,</strong></em> so we can assess misuse patterns that may appear once controls come off, and support the ecosystem to prepare in advance.</li>\n</ul>\n<p>These stages are not a fixed sequence that automatically ends with releasing the model&rsquo;s weights. Instead, we think of them as a way to gather evidence and build resilience while moving towards greater openness. Progression should depend on what we learn about the model and whether the surrounding ecosystem is ready.</p>\n<p>This post offers a high-level framework, not a complete release standard. Important questions remain: what evidence should justify moving from one stage to the next, how uncertainty should affect that decision, what changes in capability or accessibility should pause progression, and how ecosystem readiness should be measured. We plan to publish a more detailed framework covering evaluations, access criteria, and stop conditions as we learn from Inkling and future models.</p>\n<h2 id=\"building-the-safety-ecosystem-together\">Building the safety ecosystem together</h2>\n<p>This safe path to open models only works if the ecosystem&rsquo;s defenses improve as quickly as the models do. We will do our part: deciding carefully what to release, and researching how to decouple intelligence from dangerous capability.</p>\n<p>However, most of the work above happens outside our lab, and much of what this post describes builds on other people&rsquo;s work: for example, data filtering (Anthropic, EleutherAI, and the UK AI Security Institute), our external pre-deployment safety testers (Scale, Apollo Research, Handshake AI, and FAR AI), the framework for fine-tuning safety (OpenAI), and countless others working on cyber-defense. No lab builds this path alone. Each new defense lets us open models that were previously too risky to release. This takes many more hands than ours alone, and we want to support that work broadly.</p>\n<p>We will shortly launch Tinker safety grants: funding for the community to strengthen the ecosystem&rsquo;s defenses. If you do safety research, our Tinker platform makes it easy to study fine-tuning and its risks, so give it a go. If you defend systems, we want to give you a head start. If you evaluate models, we want you to scrutinize ours. And if you want to do this from the inside, join our safety team\u2014<a href=\"https://thinkingmachines.ai/#join-us\">we\u2019re hiring</a>!</p>",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
