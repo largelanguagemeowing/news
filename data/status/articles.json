@@ -1,5 +1,249 @@
 [
   {
+    "article_id": 1737924,
+    "title": "AI-Native Organisations Run on Skills: How to Structure and Scale Them \u2014 Imad Touil, QuantumBlack",
+    "url": "https://www.youtube.com/watch?v=M05vON8i0aI",
+    "published_at": "2026-08-28T18:30:04+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Imad Touil opens with a show of hands. Who has built a skill? Most of the room. Who shares them with their team? Fewer. Who governs and maintains them across the organization? A handful. That collapsing sequence is the talk, because he argues skills are where an organization's actual know how ends up living. Of the four things inside a workflow, hooks only fire on events, sub agents mostly exist to protect the context window, and almost nobody writes their own MCP servers. What is left is skills, and if those are unstructured then the workflow was never deterministic to begin with.\n\nHis warning is that ungoverned skills become a recognizable kind of technical debt. Teams on the same stack quietly build the same skill repeatedly. Quality decays unless skills are retested against new models, not just against their original task. Nobody knows who owns one. Composability does not happen by accident. There is a real security edge too, since skills carry scripts, so pulling a public one without a checking pipeline is a supply chain decision. His fix borrows from the microservices era wholesale: a catalog with metadata and search, dependencies, versioning so a harness pulls the current release, access control, and named human owners across architecture, infrastructure and security. He is blunt that governance is where technology stops solving it.\n\nSpeaker info:\n- https://www.linkedin.com/in/imad-touil/\n\nTimestamps:\n0:00 - Three questions, and the hands that drop\n1:33 - The agentic stack, inner loop and outer\n2:56 - Why specify, plan, task, implement is one step\n4:19 - What the full lifecycle actually contains\n5:39 - Organizations run many lifecycles, not one\n7:03 - Where the know how actually lives\n8:27 - Designing skills like microservices\n9:48 - Progressive disclosure and token cost\n11:09 - Composing regulation skills into an audit trail\n12:30 - Ungoverned skills as technical debt\n13:52 - What a central skills platform needs\n15:14 - Governance, and who owns which domain\n16:34 - Simulating fifteen teams over six months\n17:58 - Applying the same idea to whole workflows\n19:22 - Registries, evaluation and auto evolving skills",
+    "topic": "policy",
+    "tags": [
+      "policy",
+      "release",
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737925,
+    "title": "Your Code Has Bugs. Lean4 Has Proofs: Formal Verification for Engineers \u2014 Varun Pant, AWS",
+    "url": "https://www.youtube.com/watch?v=lRa9sPaMyy4",
+    "published_at": "2026-08-28T18:00:17+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An AI spent about a week rewriting zlib in Lean and emitted 32,000 lines of proof. Not tests, proof. It decomposed the job into lemmas, closed each one with tactics, assembled them into a single theorem, and a small independent kernel checked the result. Varun Pant opens on the gap that makes this worth caring about now. Coding agents are producing hundreds or thousands of pull requests a week, and none of the usual checks actually clear them. A model grading code is probabilistic, tests cover the inputs someone thought of, and human review does not scale to agent throughput. None of the three can say the code is correct for every input.\n\nHis division of labor is the memorable part: humans own the specification, machines own the code and the proof. That puts all the weight on the spec being right, which is why he insists on validating it before anything downstream runs, whether a person reviews it or it gets tested against real inputs. The chess analogy carries the rest, with tactics as moves, a theorem as checkmate, and backtracking when a branch will not close. AWS runs this in production on Cedar, whose authorization semantics live in Lean while the shipping code is Rust, reconciled by roughly 100 million differential tests nightly. Nothing ships until they agree.\n\nSpeaker info:\n- https://x.com/varun_pant_\n- https://www.linkedin.com/in/varunp1/\n\nTimestamps:\n0:00 - Why none of the usual checks clear agent output\n1:06 - Specifications humans own, proofs machines own\n2:00 - Lean as one language for code and proof\n3:01 - Tactics, theorems, and the chess analogy\n3:58 - A small kernel you can independently rebuild\n4:52 - Rewriting zlib into Lean, and 32,000 lines of proof\n6:44 - Cedar: Lean semantics, Rust in production\n7:40 - Solvers, preconditions, and code erased at runtime\n8:37 - Bringing any language into the same core",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737926,
+    "title": "How do you diffuse AI into the real world? \u2014 Varun Shenoy, Long Lake",
+    "url": "https://www.youtube.com/watch?v=B0fjR3yaZFU",
+    "published_at": "2026-08-28T17:30:33+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Long Lake does not sell software. It buys the company. Thirty five services businesses so far across property management, architecture and HR, plus a 6.3 billion dollar take private of the world's largest corporate travel platform. Varun Shenoy is blunt about why that matters: when the AI does not work, there is no customer to blame, because they are the operator and the owner. His framing for the whole problem is diffusion. Electricity was demoed in the 1880s and Ford's electrified assembly line arrived in 1924, because it was never enough to have the technology, you had to rip out the motors and retrain everyone.\n\nWhat he wants is the services equivalent of an asynchronous coding agent, and he is candid that nobody has it. Engineers happily launch ten jobs and accept that the seventh finishes before the third. Nobody clears an inbox ten emails at a time. Meanwhile the valuable tasks are absent from the internet entirely: closing books when receipts are missing, scoping a building from a blueprint, coordinating vendors to fix a roof. That work does come with ground truth, though, which is what makes their evals real. Did the roof actually get repaired. His closing argument is that none of this can be codesigned over Zoom, which is why the job involves showing up, running a stand at somebody's trade conference, and asking questions on a mountain bike.\n\nSpeaker info:\n- https://x.com/varunshenoy_\n- https://www.linkedin.com/in/varunshenoy\n- https://varunshenoy.com\n\nTimestamps:\n0:00 - Everyone has seen the demo, nothing has changed\n1:30 - Electricity, Ford, and how long diffusion takes\n2:36 - Who Long Lake is, and why they buy the businesses\n4:54 - The ladder from copilot to coworker\n6:02 - Earning the right to more autonomy\n8:16 - Why engineers parallelize and nobody else does\n9:24 - Representing knowledge work as code\n10:32 - The valuable tasks that are not on the internet\n11:42 - Traces, ground truth, and evals that mean something\n14:00 - Continual learning and enablement as one loop\n15:09 - The elephant: getting the first usage at all\n16:19 - Codesigning in person, not over Zoom",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "agents",
+      "benchmark",
+      "coding",
+      "education",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737927,
+    "title": "How to Get Your Org to Adopt Coding Agents (Without Shipping Garbage) \u2014 Eyal Blum, Figma",
+    "url": "https://www.youtube.com/watch?v=5Bn0xro2ol8",
+    "published_at": "2026-08-28T17:00:33+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The engineers slowest to adopt agents at Figma are the best ones. Eyal Blum's explanation is that they are the people holding the codebase together with mental duct tape, carrying the institutional context nobody ever wrote down, and so they see every failure mode first and trust it least. His answer is not to talk them into using AI. It is to hand them the roadmap for making agents safe in the codebase, because their complaints are an ordered list of where verification is missing, and they come along once the fixes start making their own work easier.\n\nHe is equally direct about the costs nobody puts on slides. Developer agency drops, and engineers who took real pleasure in writing code find themselves waiting on output instead. Documents and Slack messages have gotten three to four times longer while saying the same thing. His team's fix for the last one is a convention rather than a tool: a pull request description opens with a line a human actually typed, then the generated text below it, so readers know where to spend scarce attention. That habit came from getting it wrong, sending a senior skeptic an unmarked AI analysis and being told it read as slop. Plans get a week; the agent gets the night.\n\nSpeaker info:\n- https://www.linkedin.com/in/eyalg/\n\nTimestamps:\n0:00 - The three acts of AI adoption\n2:28 - Uneven adoption, and teams that must coexist\n3:35 - Why the best engineers adopt last\n4:45 - Investing in verification first\n5:55 - Encoding what works into deterministic flows\n7:04 - A testing pyramid for agent review\n8:12 - Planning instead of prompting\n9:21 - What makes a plan an agent can follow\n11:45 - Handing skeptics the roadmap\n12:55 - Attention aware communication\n15:16 - Sending unmarked AI output, and what it cost\n16:29 - Meeting people where they already work",
+    "topic": "tutorials",
+    "tags": [
+      "agents",
+      "infrastructure",
+      "coding",
+      "tutorials",
+      "opinion",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737928,
+    "title": "From AI-Assisted to AI-Native: Building a Frontier Development Team \u2014 Clare Liguori, AWS",
+    "url": "https://www.youtube.com/watch?v=pqlWNihgdjI",
+    "published_at": "2026-08-28T16:30:19+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Amazon watched 50 ordinary teams for the better part of a year, teams with normal seniority mixes working in existing codebases. Ninety percent of them used the same coding assistant. Half saw under 3x improvement in deployment velocity to production. The other half saw a median of 4.5x and sometimes past 10x. The tool was not the variable. The teams that pulled ahead had deliberately changed how they worked, and the rest had sprinkled agents on top of the way they already worked. Clare Liguori calls the result frontier development, and defines it by behavior: engineers writing one to two percent of their own code, agents running for hours without interruption, several running at once.\n\nHer five habits are mostly unglamorous. Write down what lives in your head, then keep pruning it as models improve so old workarounds stop bloating context. Expect to get slower first, because brownfield codebases need real work before agents succeed in them, which for some teams meant better error messages, new tools, or restructuring outright. Feed agents rather than babysitting them, since a running conversation keeps you in the loop and makes parallelism impossible. Fix the intent in a document before arguing with generated code. Shift testing left, with local deterministic mocks, so the feedback loop is fast enough for an agent to self correct. The new bottleneck is decision speed.\n\nSpeaker info:\n- https://x.com/clare_liguori\n- https://www.linkedin.com/in/clareliguori/\n- https://clare.dev/\n\nTimestamps:\n0:00 - Four phases, and only 10% to 20% felt\n1:22 - What the pilots actually measured\n2:34 - Thirty people for 18 months, or six people for 76 days\n3:43 - Why that team was not reproducible\n4:51 - A ten day sprint, and its asterisks\n5:57 - Fifty ordinary teams, and the real split\n7:04 - Same tools, different ways of working\n8:14 - Habit one: invest in agent context\n9:21 - Pruning context as models improve\n10:31 - Habit two: slow down to speed up\n12:50 - Feeding agents instead of babysitting them\n13:58 - Making intent explicit before writing code\n15:09 - Shifting testing left with local mocks\n16:15 - Burnout, FOMO and cognitive load\n17:23 - What organizations have to change\n19:41 - When decision speed becomes the bottleneck",
+    "topic": "development",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "coding",
+      "development",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737929,
+    "title": "How to avoid disaster when vibe-coding a billing engine \u2014 Andrew Garvin, Stripe",
+    "url": "https://www.youtube.com/watch?v=mJqwmmOx4WA",
+    "published_at": "2026-08-28T16:00:06+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Andrew Garvin types one sentence asking for a billing engine that copies Lovable's pricing, and gets back a working sandbox: a customer, metered usage flowing in, and a draft invoice broken into separately scoped credit pools for builds, plan mode, cloud and gateway calls. Reproducing that by hand means understanding auto recharge, credit expiry and overage, which is exactly where people hurt themselves. He cofounded Metronome, the usage billing platform Stripe acquired this year in its largest deal, so he has watched a lot of companies get this wrong.\n\nWhat makes the talk useful is that a billing vendor stands on stage and argues against full autonomy. Billing carries deep business logic and real money, so his recommendation is to let an agent accelerate you into a test environment and stop there, rather than ship to production unattended. The guardrails are unglamorous: portable skills files that carry the API's hard won context, and deliberately verbose error messages written so an agent can correct itself. He also separates three things people blur together, an agent as your product, as your buyer, and as your user. The third is the disruptive one, and he points at a large software company cutting seat prices and moving to credits, because seats stop meaning much once one agent does the work of many logins.\n\nSpeaker info:\n- https://www.linkedin.com/in/agarvin/\n\nTimestamps:\n0:00 - Metronome, Stripe, and what they are demoing\n2:29 - Where billing goes sideways with agents\n3:40 - Provisioning an environment from the CLI\n6:02 - Skills files that carry the hard parts\n7:13 - Why a human stays in the loop\n9:30 - Agent as product, buyer and user\n10:38 - Moving off seats and onto credits\n13:01 - Opening what the agent actually built\n14:12 - Scoped credit pools and a draft invoice\n16:27 - What this suggests beyond billing",
+    "topic": "tutorials",
+    "tags": [
+      "api",
+      "agents",
+      "safety",
+      "coding",
+      "tutorials",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737930,
+    "title": "Productionizing LLM Gateways: Architecture, Tradeoffs and Hard Lessons \u2014 Kanish Manuja, Twilio",
+    "url": "https://www.youtube.com/watch?v=zrZ1amZBSPw",
+    "published_at": "2026-08-28T15:30:03+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Something went wrong, please try again. Kanish Manuja opens on that message and then explains why it exists, which is more interesting than laziness. Once a response starts streaming you have committed to that provider. Tokens already sent cannot be recalled, so the fallback you carefully built is unavailable exactly when you need it. Streaming buys perceived speed by trading away your levers, and that error string is what the trade costs. His frame for an LLM gateway is a permanent fight between availability, latency, guardrails and cost, where degradation forces you to give one of them up.\n\nThe advice is refreshingly specific about where normal engineering instincts mislead. Retrying a slow expensive call eats the latency budget and multiplies spend, and tripping a circuit breaker is silly when a healthy second provider is sitting right there, so prefer per request fallback. Do not measure gateway wide latency, because a reasoning model's normal is a chat model's outage; track P99 per model per route and set timeouts the same way, since a missing timeout is his top cause of silent outages. Treat guardrails as services that fail too, and decide in advance whether you fail open or closed. He also argues most teams asking for a central gateway actually want centralized governance, which does not require centralizing the traffic.\n\nSpeaker info:\n- https://www.linkedin.com/in/kanish-manuja-a99bb923/\n\nTimestamps:\n0:00 - The message behind the message\n1:21 - Four things you cannot all maximize\n2:33 - Why retries and breakers mislead here\n3:39 - Per request fallback, and where failure counts live\n4:49 - Fallbacks are not transparent\n5:55 - Give the backup provider more headroom, not less\n7:08 - Mixed workloads and the aggregate latency lie\n8:17 - Reasoning and router models, 2 seconds to 60\n9:28 - Hedging the tail\n10:40 - Guardrails that fail open or closed\n11:53 - Time budgets, fallbacks and placement\n13:02 - The gateway as a new dependency\n14:11 - Load shedding under a retry storm\n15:18 - Centralized governance without a central gateway",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "safety",
+      "infrastructure",
+      "coding",
+      "policy",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737864,
+    "title": "AI News: OpenAI Made a Massive Move Against NVIDIA",
+    "url": "https://www.youtube.com/watch?v=TInwQglNkzo",
+    "published_at": "2026-08-28T15:00:09+00:00",
+    "fetched_at": "2026-08-28T21:45:52+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Here's the AI news you probably missed this week. Download the Codex app and try Sites here: https://chatgpt.com/download/?utm_source=creator&amp;utm_campaign=youtube&amp;utm_content=partnership-mattwolfe\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nJalape\u00f1o Inference Results: https://openai.com/index/jalapeno-first-results/\nNvidia Acquires Hugging Face: https://www.theinformation.com/articles/nvidia-agrees-buy-open-source-model-repository-hugging-face-12-9-billion\nOpen Weight Token Share: https://x.com/rauchg/status/2091234105702887879\nApple M6 Chips: https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/\nGLM-5.3-Flash Released: https://z.ai/blog/glm-5.3-flash\nQwen3.8-Flash Released: https://www.alibabacloud.com/blog/alibaba-releases-qwen3-8-flash-with-innovative-model-architecture-delivering-optimal-price-performance_603503\nGemini Omni Flash: https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/\nText-to-Video Leaderboard: https://arena.ai/leaderboard/text-to-video\nGemini 3.5 Transcribe: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/\nAI Mode Travel Booking: https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/\nGemini Notebook Expert Intelligence: https://blog.google/innovation-and-ai/products/gemini-notebook/expert-intelligence-leading-sources/\nAntigravity Remote Control: https://www.antigravity.google/blog/remote-control-for-antigravity\nChatGPT Work Website Sign-In: https://x.com/ChatGPT/status/2092366554965107164\nChatGPT Scheduled Tasks Update: https://x.com/ChatGPT/status/2092335329110004140\nGPT-5.6 Sol Price Drop: https://x.com/OpenAI/status/2090885187634905500\nCowork Built-In Browser: https://claude.com/blog/cowork-built-in-browser\nClaude In Chrome GA: https://claude.com/blog/claude-in-chrome-generally-available\nClaude Memory Everywhere: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it\nPerplexity Local-First Agent: https://www.perplexity.ai/hub/blog/a-local-first-agent-for-private-and-cost-effective-knowledge-work\nDr. Dre Uses AI: https://gizmodo.com/dr-dre-says-he-uses-ai-to-produce-songs-2000802009\nStability AI Funding: https://stability.ai/news-updates/stability-ai-latest-funding-backed-by-entertainment-industry-biggest-names\nTIME100 AI 2026: https://time.com/collection/time100-ai/2026/\nSkild AI S1: https://x.com/SkildAI/status/2092300842900865389\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:16 OpenAI Jalapeno\n1:46 Nvidia Buying Hugging Face\n3:56 Open Weight Takeover\n5:21 Apple M5 Ultra\n7:01 GLM-5.3-Flash / 0x Alpha\n9:13 Qwen3.8-Flash\n10:08 ChatGPT Sites\n11:42 Gemini Omni 1.1 Flash\n15:17 Gemini 3.5 Transcribe\n15:42 AI Search Travel Updates\n15:56 Gemini Notebook Update\n16:20 Antigravity Remote Control\n17:14 ChatGPT Work Sign-in\n18:03 ChatGPT Scheduled Tasks Update\n18:31 GPT-5.6 Sol Pricing Change\n18:42 Claude Cowork Browser\n19:18 Claude in Chrome\n19:39 Claude Memory Update\n20:21 Perplexity Portable Computer\n21:40 Dr. Dre Likes AI\n23:11 Stability AI Investments\n23:44 TIME 100 AI Influence\n25:56 Skild S1\n26:44 Personal Achievement\n28:33 Thank You All (With Cameos)",
+    "topic": "media",
+    "tags": [
+      "media",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "research",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737931,
+    "title": "AI Evals for Cross-Functional Teams \u2014 Nachiket Paranjape & Swaroop Chitlur Haridas, DoorDash",
+    "url": "https://www.youtube.com/watch?v=bMjlRrWjdT0",
+    "published_at": "2026-08-28T15:00:03+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The people annotating DoorDash's eval data are not engineers, and they build their own annotation tools. Because the GenAI platform team went API first, strategy and operations staff can point a coding agent at those endpoints and vibe code whatever interface their use case needs, whether that is grading restaurant menus or reviewing images. The platform team stopped trying to anticipate every UI, and shipped stable APIs instead. Nachiket Paranjape and Swaroop Chitlur Haridas make the broader case that evals stopped being an engineering harness for them and became a cross functional job.\n\nThat reframing has an org chart attached. Strategy and operations set the quality bar, product managers turn it into rubrics, operations run the annotations, and engineering supplies telemetry, datasets and judges. Which group actually owns a judge prompt varies by team, and they treat that variation as a sign the org is still learning rather than a problem to standardize away. The loop underneath is deliberately plain: trace, sample down to something a human will really look at, annotate, promote a golden set, calibrate the judge against it, then monitor and go again. Judge calibration runs self serve through a UI, showing the original and optimized prompts side by side so a product manager can see what changed and decide whether to trust it. Per annotation cost fell sharply.\n\nSpeaker info:\nNachiket Paranjape:\n- https://x.com/nmparanjape\n- https://www.linkedin.com/in/nachiketparanjape/\n\nTimestamps:\n0:00 - The GenAI platform team, and its three forces\n2:05 - Why eval became the fourth pillar\n3:05 - UI first, then API first, then workflow first\n4:01 - Evals as a team sport, not an engineering harness\n4:57 - Who owns which part of quality\n5:53 - The continuous loop: trace, sample, annotate, calibrate\n7:42 - Telemetry and workflow as two surfaces\n9:32 - Operators vibe coding their own annotation UIs\n11:21 - Calibrating judge prompts, self serve\n13:10 - Different teams, different prompt owners\n14:04 - What it did to annotation cost",
+    "topic": "product",
+    "tags": [
+      "product",
+      "api",
+      "agents",
+      "benchmark",
+      "coding",
+      "development",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737932,
+    "title": "Building uReview, Uber\u2019s Multi-Agent Code Review Engine \u2014 Will Bond & Ameya Ketkar, Uber",
+    "url": "https://www.youtube.com/watch?v=EL123UNokkI",
+    "published_at": "2026-08-28T14:30:12+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In 2024 an Uber engineer waited about three hours for a first review on a pull request. In 2026 that wait is nine hours. Volume and size both grew, and code review became the bottleneck for thousands of engineers spread across hundreds of teams, twelve sites and six language specific monorepos. Will Bond and Ameya Ketkar walk through uReview, the system Uber built rather than bought, partly because most vendors do not support Phabricator and partly because they wanted agents in the inner loop reviewed against exactly the same rules as humans.\n\nThe instructive half is what they had to measure before it worked. Early observability was cost, an NPS survey and a Google form, and the quality to cost ratio landed all over the chart. Tracking reply sentiment, whether a comment actually got addressed, and the agent's own trajectory is what let them tune it, because a model never signals that it is wrong and will assert a bad review with full confidence. Teams write their own reviewers, and Ketkar is blunt that authoring a skill was the easy part while running skills at scale cheaply was not. It now posts about 25,000 comments a week, roughly 67% get addressed, and cost fell 60% against their naive first build.\n\nSpeaker info:\nWill Bond:\n- https://x.com/wbond\n- http://linkedin.com/in/wbond\nAmeya Ketkar:\n- https://www.linkedin.com/in/ameya-ketkar\n- https://scholar.google.com/citations?user=6JO46GMAAAAJ&amp;hl=en\n\nTimestamps:\n0:00 - Three hours to review in 2024, nine in 2026\n1:53 - Why Uber built this instead of buying it\n3:42 - The architecture, and deduplicating comment volume\n4:37 - Humble beginnings, and cost as the only metric\n5:33 - Sentiment, addressal rate, agent trajectory\n6:32 - The model never knows that it is wrong\n7:26 - Letting hundreds of teams customize reviews\n10:10 - Results: 25,000 comments a week\n11:08 - Inner loop versus outer loop\n13:57 - Expanding the outer loop rather than killing it",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737933,
+    "title": "Building the Engine While Flying the Plane: Launching the Figma MCP Server \u2014 Jesse Lumarie, Figma",
+    "url": "https://www.youtube.com/watch?v=ZIYYsAzaLlA",
+    "published_at": "2026-08-28T14:00:06+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Figma did not have 20% projects. Jesse Lumarie gave one to the MCP server anyway, one day a week, because he had seen an internal demo and wanted non designers to be able to pull from Figma. That side project became the company's first MCP server in about three months, and then one of the fastest growing products Figma has ever shipped. The build happened while the ground moved. Weeks in, a new version of the spec deprecated the transport they had chosen, and client support was so uneven that a compatibility matrix was a real artifact they maintained.\n\nThe interesting decisions are about representation. Figma's canvas is a scene graph in C++, close to the HTML DOM, and they had three ways to hand it to a model. They picked React and Tailwind on a hunch that models had seen the most of it, and the output is pixel perfect. Passing images inline as base64 blew up the context window and got cut. Pixel perfect turned out to be only half the problem, because an enterprise does not want a beautiful generated button, it wants its own accessible internationalized one, so Code Connect sends a pointer to the real component instead of markup. Two hours grading an eval by hand in a spreadsheet convinced them never to do that again, and evals now run hundreds of times a week behind LLM judges.\n\nSpeaker info:\n- https://x.com/jesselumarie\n- https://www.linkedin.com/in/jesselumarie/\n\nTimestamps:\n0:00 - A 20% project at a company without 20% projects\n2:02 - Uneven client support, and a spec that moved\n2:55 - What the local server gave developers\n3:52 - Three ways to represent a scene graph\n4:47 - Why images alone did not work\n5:40 - Grading evals by hand, once\n7:32 - Code Connect, and why pixel perfect is not enough\n9:24 - Elicitation and sampling, and hacking around them\n13:55 - Shipping local first, then remote\n15:43 - How early all of this still is",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1734153,
     "title": "Supporting Thailand\u2019s next generation of AI startups",
     "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
@@ -13,6 +257,86 @@
     "tags": [
       "product",
       "release"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1738222,
+    "title": "AlignmentAutomated researchers can reliably mitigate alignment failures",
+    "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+    "published_at": "2026-08-28T00:00:00+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Aug 28, 2026AlignmentAutomated researchers can reliably mitigate alignment failures",
+    "topic": "safety",
+    "tags": [
+      "safety",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737675,
+    "title": "Agent Seer: Synthesizing Scenarios from Specification Understanding",
+    "url": "https://machinelearning.apple.com/research/agent-seer-synthesizing-scenarios",
+    "published_at": "2026-08-28T00:00:00+00:00",
+    "fetched_at": "2026-08-28T21:45:51+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Evaluating AI agents that use external tools requires realistic test scenarios that capture how practitioners compose tools and iterate across conversation turns. Constructing such scenarios by hand demands deep domain expertise, does not scale across tool ecosystems, and produces static benchmarks that cannot track evolving APIs. We observe that tool specifications\u2014function names, natural-language descriptions, and typed parameter schemas\u2014already encode sufficient semantic information to synthesize realistic evaluation scenarios without manual curation or live tool execution. Agent Seer\u2026",
+    "topic": "tools",
+    "tags": [
+      "api",
+      "agents",
+      "benchmark",
+      "coding",
+      "funding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1737674,
+    "title": "LLMs Are Not (Consistently) Bayesian: Quantifying Internal (In)consistencies of LLMs\u2019 Probabilistic Beliefs",
+    "url": "https://machinelearning.apple.com/research/llms-not-consistently-bayesian",
+    "published_at": "2026-08-28T00:00:00+00:00",
+    "fetched_at": "2026-08-28T21:45:51+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Modern AI systems are being deployed in complex domains such as medicine, science, and law, where there is often not a single correct answer given the observed evidence. Such systems must be able to represent and update uncertain beliefs about the world as new evidence arrives to make rational decisions. We introduce the novel technique of studying LLMs as information processing rules and utilize the information processing gap\u2014the deviation from Bayes updates\u2014to study the internal (in)consistencies of how LLMs update their probabilistic beliefs from evidence. Our extensive experiments evaluate\u2026",
+    "topic": "policy",
+    "tags": [
+      "models",
+      "benchmark",
+      "research",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1738239,
+    "title": "Claude for Teachers, now available for schools and districts",
+    "url": "https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts",
+    "published_at": "2026-08-28T00:00:00+00:00",
+    "fetched_at": "2026-08-28T21:45:54+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Claude for Teachers, now available for schools and districts",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9847,310 +10171,6 @@
       "infrastructure",
       "coding",
       "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553068,
-    "title": "Data and Environment Curation for Post-Training LLMs \u2014 Mahesh Sathiamoorthy, Bespoke Labs",
-    "url": "https://www.youtube.com/watch?v=ewtOo0scUh0",
-    "published_at": "2026-07-31T22:00:06+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Mahesh Sathiamoorthy's pitch is to stand in the researcher's shoes: the hard part of post-training is not the algorithm but the data and the environments that feed it. As agents get pushed to run autonomously for hours, something eventually falls over, and reinforcement learning is the tool for stretching that reliability, but RL environments are really just data in a different shape. Bespoke Labs works on curating both, from supervised fine-tuning sets to the environments models learn in.\n\nHe grounds it in OpenThoughts, the widely used reasoning dataset his team built, and the counterintuitive lessons that came out of curating it: diversity of reasoning traces matters, keeping multiple answers per question helps, and the obvious recipe often is not the best one. A favorite example is teaching a model to reason about credit card compliance, where fine-tuning on the right tagged data lifted the compliance metrics that a raw model kept getting wrong. The through line, supported by their Curator tooling, is that a disciplined curation stack, not just more compute, is what turns a base model into a capable post-trained one.\n\nSpeaker info:\n- https://x.com/madiator\n- https://linkedin.com/in/smaheswaran\n- https://smahesh.com\n\nTimestamps:\n0:00 - Standing in the researcher's shoes\n1:30 - Post-training at Bespoke Labs\n3:13 - When agents fall over on long tasks\n4:44 - RL environments as data\n6:29 - Building OpenThoughts\n7:36 - Finding a curation recipe\n10:27 - Counterintuitive lessons\n13:49 - A credit card compliance example\n16:13 - Curating reasoning data with Curator\n17:16 - The full curation stack",
-    "topic": "policy",
-    "tags": [
-      "models",
-      "agents",
-      "research",
-      "infrastructure",
-      "coding",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553585,
-    "title": "The Four Horsemen of the AI Bubble Apocalypse",
-    "url": "https://www.derekthompson.org/p/the-four-horsemen-of-the-ai-bubble",
-    "published_at": "2026-07-31T21:33:53+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552820,
-    "title": "Oxide and Friends: The Open Weight Revolution with Simon Willison",
-    "url": "https://simonwillison.net/2026/Jul/31/oxide-and-friends/#atom-everything",
-    "published_at": "2026-07-31T21:33:13+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://oxide-and-friends.transistor.fm/episodes/the-open-weight-revolution-with-simon-willison\">Oxide and Friends: The Open Weight Revolution with Simon Willison</a></strong></p>\nOn Monday Bryan Cantrill and Adam Leventhal invited me to join their podcast to talk about the <em>wild</em> week we've had - with Kimi K3 showing open weight models can stand toe-to-toe with proprietary frontier ones, <a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">accidental cybersecurity attacks</a>, and public letters about <a href=\"https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/\">Open Weights and American AI Leadership</a> signed by almost every big name in AI (with one <a href=\"https://www.anthropic.com/news/position-open-weights-models\">notable exception</a>).</p>\n<p>It was a great conversation, even though it's already out-of-date! <a href=\"https://artificialanalysis.ai/models/deepseek-v4-flash\">DeepSeek V4 Flash 0731</a> and <a href=\"https://simonwillison.net/2026/Jul/30/three-real-world-incidents/\">Anthropic's own embarrassing cyber incident</a> would absolutely have made the cut if we had recorded just a few days later.</p>\n<p>We also talk about <a href=\"https://www.anthropic.com/news/golden-gate-claude\">Golden Gate Claude</a>, the <a href=\"https://en.wikipedia.org/wiki/Zizians\">Zizians</a>, <a href=\"https://abc7news.com/post/83-year-old-alameda-woman-attacked-wild-turkeys-city-warns-residents-take-precautions-during-mating-season/19190785/\">Alameda wild turkey attacks</a>, <a href=\"https://en.wikipedia.org/wiki/Soviet_biological_weapons_program\">Soviet Marburg virus research</a>, the <a href=\"https://en.wikipedia.org/wiki/Lead\u2013crime_hypothesis\">Lead-crime hypothesis</a>, and a bunch of other worthy digressions.</p>\n<p>Finally, we revisited some of <a href=\"https://simonwillison.net/2026/Jan/8/llm-predictions-for-2026/\">our predictions from January</a>, and we <a href=\"https://simonwillison.net/2026/May/25/encyclical-on-ai/#another-2026-prediction-down\">added a new Pope prediction</a>:</p>\n<blockquote>\n<p>Prediction by the end of this year: the Pope says something about open models.</p>\n</blockquote>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/predictions\">predictions</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/local-llms\">local-llms</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/oxide\">oxide</a>, <a href=\"https://simonwillison.net/tags/bryan-cantrill\">bryan-cantrill</a>, <a href=\"https://simonwillison.net/tags/podcast-appearances\">podcast-appearances</a>, <a href=\"https://simonwillison.net/tags/ai-in-china\">ai-in-china</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/openai-hugging-face-incident\">openai-hugging-face-incident</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "safety",
-      "research",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553069,
-    "title": "Scaling to Long Horizons \u2014 Ross Taylor & Chengxi Taylor, General Reasoning",
-    "url": "https://www.youtube.com/watch?v=2bvtay8wGYI",
-    "published_at": "2026-07-31T21:30:06+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Ross Taylor opens with some history: back in 2022 he worked on Galactica, an early large model for science that briefly crossed the Rubicon on curated high quality data and intermediate reasoning tokens before the reaction overshadowed the work. That obsession, optimizing what happens between the question and the answer, is where this talk on long horizon reinforcement learning picks up. He and Chengxi Taylor of General Reasoning treat long horizon less as a benchmark and more as a mindset: if you want agents that stay coherent over hours, you have to be patient about signal and deliberate about how you spend tokens.\n\nThe mechanics they walk through are the ones that make long rollouts trainable. Value models reduce variance and help with credit assignment, bootstrapping pulls signal out of sparse rewards, and the real constraint becomes the tradeoff between off policy staleness and GPU utilization as sequences get longer. They make it concrete with a task where frontier models were handed real money to trade football matches and did poorly, exposing how little the environment was actually simulated. The takeaway is that scaling to long horizons demands better environments and simulation, not just bigger context windows, and they point listeners to openreward.ai to go deeper.\n\nSpeaker info:\n- Ross Taylor (General Reasoning):\n  - https://x.com/rosstaylor90\n  - https://www.linkedin.com/in/rosstaylor90/\n  - https://rossjtaylor.com\n- Chengxi Taylor (General Reasoning):\n  - https://x.com/chengxitaylor\n  - https://www.linkedin.com/in/chengxi-taylor/\n  - https://www.chengxitaylor.com/\n\nTimestamps:\n0:00 - Introduction and a look back\n1:57 - The Galactica story\n5:15 - Curated data and thinking tokens\n8:09 - What got RL cooking\n9:12 - Long horizon as a mindset\n10:16 - Why value models help\n11:08 - Credit assignment and bootstrapping\n12:38 - Trading football matches for real money\n13:44 - Why models struggled\n14:36 - Off policy staleness versus GPU use\n16:18 - openreward.ai and what's next",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "agents",
-      "benchmark",
-      "infrastructure",
-      "education",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552821,
-    "title": "smevals - a small eval suite for evaluating models, prompts, and harnesses",
-    "url": "https://simonwillison.net/2026/Jul/31/smevals/#atom-everything",
-    "published_at": "2026-07-31T21:15:23+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://primeradiant.com/blog/2026/smevals.html\">smevals - a small eval suite for evaluating models, prompts, and harnesses</a></strong></p>\nI've been working with Jesse Vincent's <a href=\"https://primeradiant.com\">Prime Radiant</a> applied AI research lab building out this evals framework to help answer questions about the capabilities of different models.</p>\n<p>The result is <strong><a href=\"https://github.com/prime-radiant-inc/smevals\">smevals</a></strong>, a new tool for running small eval suites across different model configurations and grading the results.</p>\n<p>The <a href=\"https://primeradiant.com/blog/2026/smevals.html\">blog entry</a> describes the tool in detail. Here's the 10 second version:</p>\n<ol>\n<li>Tell your coding agent to <code>run uvx smevals docs</code> to learn the tool (this outputs <a href=\"https://github.com/prime-radiant-inc/smevals/blob/main/README.md\">the README</a>)</li>\n<li>Then tell it to build you an eval suite</li>\n</ol>\n<p>Once you've created an eval - which takes the form of a directory with some YAML files - you can run it against models like this:</p>\n<pre><code>uvx smevals run path-to-eval/ -m gpt-5.5 -m claude-opus-4.6\n</code></pre>\n<p>Runs are treated separately from grading operations - you can grade your runs (against your defined set of checks) using:</p>\n<pre><code>uvx smevals grade path-to-eval/\n</code></pre>\n<p>Then you can run a localhost web server to explore the results:</p>\n<pre><code>uvx smevals serve path-to-eval/\n</code></pre>\n<p>Or run the <code>smevals build</code> command to build that report as static HTML, which you can then host anywhere. Here's <a href=\"https://static.simonwillison.net/static/2026/smevals-haiku-build/#/haiku\">an example</a> showing an eval suite I built to evaluate how well models can write haikus.</p>\n<p><img alt=\"Screenshot of an evaluation dashboard for a haiku-writing benchmark, testing whether models can reply with exactly three non-empty lines. A header describes the eval, with panels below showing a leaderboard ranking three GPT models by score, lists of recent runs and recent grades, tag pass rates, the two haiku prompts that were tested, and details of the graders used with a 0.8 pass threshold.\" src=\"https://static.simonwillison.net/static/2026/smevals-report.webp\" /></p>\n<p>The most time-consuming part of this project was figuring out the vocabulary for it! Here's what I settled on, quoted from the announcement:</p>\n<blockquote>\n<ul>\n<li>An\u00a0<strong>eval</strong>\u00a0is a collection of challenges designed to answer a question about a model, for example, how good is that model at generating SVGs?</li>\n<li>Each eval is a collection of\u00a0<strong>tasks</strong>. A task is a specific challenge, for example \"Generate an SVG of a pelican riding a bicycle\".</li>\n<li>When you run the eval you do so against one or more\u00a0<strong>configs</strong>. Each config specifies a model to be evaluated, but may also include other parameters to test, such as different system prompts, model parameters, or agent harnesses.</li>\n<li>A\u00a0<strong>run</strong>\u00a0records what happened when a specific config was used to execute a specific task. A\u00a0<strong>runner</strong>\u00a0is the script that executes a run.</li>\n<li>Once you have collected one or more runs, you need to evaluate the results to see how well the model (or config) did. This is done by a\u00a0<strong>grader</strong>, which produces a\u00a0<strong>grade</strong>.</li>\n<li>Each grader runs a sequence of\u00a0<strong>checks</strong>. These can be simple operations, like checking for a specific string in the output, or confirming that the output is valid XML. They can also be more complicated custom operations (implemented as scripts called\u00a0<strong>checkers</strong>), including using other models to answer questions about the run.</li>\n</ul>\n</blockquote>\n<p>I've been trying to figure out an approach I like for evals for several years now. <code>smevals</code> is my third iteration on the idea and it feels right to me. I'm looking forward to expanding this more in the future, as well as pointing it at some of my own projects.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/evals\">evals</a>, <a href=\"https://simonwillison.net/tags/jesse-vincent\">jesse-vincent</a></p>",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553070,
-    "title": "Emulated: The Data for Fully Autonomous Software Engineers and Companies \u2014 Joseph Wang",
-    "url": "https://www.youtube.com/watch?v=zkX03APVj0M",
-    "published_at": "2026-07-31T21:00:03+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "To train an agent that can run production software, you need training data that looks like production, and that is what Joseph Wang's team at Emulated builds. Coming from network infrastructure backgrounds, they know what happens when something like a database goes down at scale, and they argue that current post training environments do not capture it. A real task is not a tidy code diff; it is fifty to a hundred turns of solving live traffic while distributed nodes fail, configs conflict, and unforeseen problems appear mid incident.\n\nSo Emulated simulates whole companies. Imagine acting as an engineer inside a cloud provider or an infrastructure service, provisioning resources across VPCs, subnets, and security groups, meeting real bars around cost and deployment, and keeping a service alive as it grows, all inside a high fidelity environment rather than a stub. Wang's bet is that domain expertise plus faithful simulation is what lets agents learn the messy, end to end reality of infrastructure work, and he closes looking for people who have trained models or run real infrastructure to help push that fidelity further across more domains.\n\nSpeaker info:\n- https://emulated.so/\n\nTimestamps:\n0:00 - Useful work over longer horizons\n1:20 - Backgrounds in network infrastructure\n2:26 - How environments shape capability\n3:16 - Fifty to a hundred turn tasks\n4:59 - Why real incidents are messy\n7:11 - Real infrastructure isn't a code diff\n7:40 - Acting as an engineer inside the cloud\n9:37 - Deployment, cost, and scaling bars\n13:29 - Why it's called Emulated\n15:01 - Simulating full companies",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "education",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553071,
-    "title": "The Base Model Is Dead \u2014 Varun Singh, Arcee AI",
-    "url": "https://www.youtube.com/watch?v=xbPriQWXtWM",
-    "published_at": "2026-07-31T20:30:21+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "The old story is that a base model is a mirror of the internet, a good model of human web text that everything else gets bolted onto. Varun Singh, who leads pre-training at Arcee AI, argues that story is dead: no modern base model reflects the web the way GPT-3 once did. Instruction data and synthetic reasoning traces have moved earlier and earlier into training, and a distinct mid-training stage has emerged for longer datapoints that look much more like the downstream capabilities you actually want. Reading recent open recipes, from Nemotron to Kimi K2, the pattern is clear: raw web text is taking a backseat.\n\nThe rest of the talk is what that shift does to how you build. Once reinforcement learning became the thing that got models to reason, the base model stopped being a cherry on top and started needing to carry the prior that RL builds on, which changes the data mix and pulls post-training-flavored data forward. Singh walks through the practical pitfalls his team hit training the Trinity series, like getting the balancing coefficients right and establishing stable representations early so the model is prepared for what it must compose during RL. The message is that as capabilities advance, the base model's job keeps redefining itself, and pretending it still just mirrors the internet will cost you.\n\nSpeaker info:\n- https://x.com/stochasticchasm\n- https://www.linkedin.com/in/varun-singh-cs\n\nTimestamps:\n0:00 - The base model as a mirror of the web\n1:26 - How knowledge accumulates in training\n2:49 - When instruction data moves earlier\n4:11 - After o1: RL and reasoning\n5:41 - What prior the base model must carry\n6:18 - Filtering web text, adding synthetic\n8:01 - Reading the open data recipes\n9:41 - Lessons from training Trinity\n12:02 - Balancing coefficients and early stability\n13:30 - Why RL keeps raising the stakes\n15:55 - The base model's shifting job",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "education",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552822,
-    "title": "Slack Emoji Maker",
-    "url": "https://simonwillison.net/2026/Jul/31/slack-emoji-maker/#atom-everything",
-    "published_at": "2026-07-31T20:18:05+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/slack-emoji-maker\">Slack Emoji Maker</a></p>\n        <p>I wanted to create a new Slack emoji, and their tool recommends a square that's 128x128 and has a transparent background... so I <a href=\"https://github.com/simonw/tools/pull/305\">had Fable build me</a> this simple image editor against those requirements.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/tools\">tools</a>, <a href=\"https://simonwillison.net/tags/slack\">slack</a></p>",
-    "topic": "tools",
-    "tags": [
-      "open-source",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553072,
-    "title": "Verifiable Environments for AI in Biology \u2014 Kenny Workman, LatchBio",
-    "url": "https://www.youtube.com/watch?v=3ZMUiFaQ3qg",
-    "published_at": "2026-07-31T20:00:35+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A single spatial biology run can yield two to six terabytes of data, far more than a scientist can eyeball, and Kenny Workman argues that this is the raw material for teaching AI to actually do science. LatchBio, five years deep in pharma, treats experimental biology as a verifiable substrate: lay a chunk of a tumor over a sequencing surface and you get a giant matrix of numbers whose analysis has a right answer, which is exactly what you need to benchmark and improve a model. They adapted coding models into biology tools and built benchmarks like sequencing based spatial analysis, and found what everyone in post training now knows, that frontier models cannot yet be trusted with this and that measurement is what drives progress.\n\nThe reason biology is hard is that it is messy and the field rarely agrees on the answer, so much of the work is designing tasks where reasoning, not memorized knowledge, is what gets rewarded. Workman walks through trajectory data from real scientists, tasks like finding the part of a tumor that matters, and why an ambiguous prompt quietly makes a benchmark uninformative. He also gets candid about biosecurity, where model refusals are their own evaluation problem and red team tasks have to be handled carefully, and frames the whole effort as a flywheel: better benchmarks, better tools, more of the program landscape indexed, repeat.\n\nSpeaker info:\n- https://x.com/kenbwork\n- https://www.linkedin.com/in/kennyworkman\n- https://kenbw.com/\n\nTimestamps:\n0:00 - Terabytes of experimental data\n1:41 - Decomposing a new paper into tasks\n2:44 - A verifiable substrate for science\n3:23 - Five years in pharma\n4:13 - Coding models as biology tools\n5:40 - Why frontier models can't be trusted yet\n6:44 - Sequencing based spatial analysis\n9:16 - Reasoning, not memorized knowledge\n10:07 - Trajectory data from real scientists\n12:14 - Why biology tasks are messy\n15:36 - Biosecurity and refusals",
-    "topic": "research",
-    "tags": [
-      "models",
-      "safety",
-      "benchmark",
-      "research",
-      "funding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553073,
-    "title": "Ending AI Slop \u2014 Thais Castello Branco, Taste Labs",
-    "url": "https://www.youtube.com/watch?v=lCBf9slCanI",
-    "published_at": "2026-07-31T19:26:20+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Thais Castello Branco's starting point is that AI is still badly behind on the subjective work, the writing and design where quality is real but hard to pin down, and that ending the slop means building data and reinforcement environments for taste. She sorts domains along a spectrum: at one end things that verify and execute cleanly, at the other pure preference with no ground truth, and most valuable work sits in between. The move that makes taste tractable is decomposition, breaking something like a brand or a page into elements that can each be graded against an original rather than judged whole.\n\nThe deeper problem she names is collapse to the mean. A model optimizing for the most likely output drifts toward the average and quietly kills the creativity that good design depends on, so the goal is data and rewards that reward breaking from the obvious when the situation calls for it. Taste Labs builds this by turning expert judgment into structured, high signal preference data, pairing it with human QA where reviewers tie their commentary to specific choices, and being careful that preference signal stays rich instead of noisy. Her argument is that as more subjective domains become measurable this way, taste becomes something you can actually train.\n\nSpeaker info:\n- https://x.com/thaiscbranco_\n- https://www.linkedin.com/in/thais-castello-branco/\n\nTimestamps:\n0:00 - What ending AI slop means\n1:06 - Working with frontier labs on taste\n2:33 - The verifiable to preference spectrum\n3:38 - Decomposing design to grade it\n5:30 - Verifying whether something is on brand\n7:40 - Collapse to the mean\n9:18 - Shifting preference toward verifiable\n11:25 - Building a preference vector\n13:05 - Human QA tied to specific choices\n15:00 - Training taste in subjective domains",
-    "topic": "media",
-    "tags": [
-      "models",
-      "infrastructure",
-      "media",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553586,
-    "title": "recommended viewing.",
-    "url": "https://video.twimg.com/amplify_video/2083040900876218368/vid/avc1/3840x2160/Wq0Az01WT6Rols58.mp4",
-    "published_at": "2026-07-31T15:10:41+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551687,
-    "title": "Advancing responsible AI across Europe",
-    "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-    "published_at": "2026-07-31T15:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.",
-    "topic": "policy",
-    "tags": [
-      "safety",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551688,
-    "title": "Building abundant intelligence",
-    "url": "https://openai.com/index/building-abundant-intelligence",
-    "published_at": "2026-07-31T15:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful.",
-    "topic": "development",
-    "tags": [
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553001,
-    "title": "How To Skip The Kimi K3 Waitlist",
-    "url": "https://www.youtube.com/shorts/qXp5NHz0KSo",
-    "published_at": "2026-07-31T14:59:36+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Here's how to access the secret AI model everyone is trying to get their hands on \ud83d\udc40\n\nKimi K3 is apparently so powerful that they had to pause new subscriptions because of the massive surge in demand. But you don\u2019t have to sit on the waitlist with everyone else. \n\nHere's a backdoor workaround to access the single-agent version of Kimi K3 right now:\n\n1\ufe0f\u20e3 Go to platform.kimi.ai (their developer platform) and create an account.\n2\ufe0f\u20e3 Head to the billing section and add a small credit (even $1 works).\n3\ufe0f\u20e3 Open the AI Playground and select \"Kimi K3\" from the model selector.\n4\ufe0f\u20e3 Adjust your settings: Crank the context window up toward the 1-million-token limit and increase the reasoning effort.\n5\ufe0f\u20e3 Start prompting directly in the Playground like a regular chatbot.\n\nThat's it. You're now using one of the most capable models available while everyone else is stuck in line. \n\n\ud83d\udccc Save this reel so you can refer back to the steps, and share it with someone who needs this workaround before it gets patched (or banned by the government...)",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "agents",
-      "tutorials",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553002,
-    "title": "AI News: An INSANE Week\u2026 Here\u2019s What Matters",
-    "url": "https://www.youtube.com/watch?v=sUmx-Yi6TwE",
-    "published_at": "2026-07-31T14:30:14+00:00",
-    "fetched_at": "2026-08-05T20:08:40+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Here's The AI News From The Past Week! Build with Retool here: https://fandf.co/3RjilvK \n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nClaude Opus 5: https://www.anthropic.com/news/claude-opus-5\nOpus 5 Game Demo: https://x.com/mattshumer_/status/2081054356405731740\nAI Gaming Progress: https://x.com/chrisgpt/status/2082265122949542149\n24-Hour Game Build: https://x.com/kimmonismus/status/2082101266961023452\nClaude-of-Duty Prompt: https://github.com/mshumer/Claude-of-Duty/blob/main/prompt.md\nNano Banana Earth: https://blog.google/products-and-platforms/products/earth/nano-banana-google-earth-image-generation/\nMeta AI Acts: https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts/\nBUZZ Groupchat Platform: https://x.com/jack/status/2079605800998146171\nGrok Build Mode: https://x.ai/news/grok-build-mode\nGemini macOS Voice: https://blog.google/innovation-and-ai/products/gemini-app/speak-naturally-gemini-app-mac-os/\nFree Gemini Videos: https://x.com/GeminiApp/status/2082563490431246623\nMidjourney Version 8.2: https://www.midjourney.com/updates/version-8-2\nMirage Avatar X: https://x.com/trymirage/status/2082120270618530053\nHeyGen Video Podcast: https://x.com/HeyGen/status/2082510248489943367\nLinkedIn AI Slop Button: https://www.theverge.com/ai-artificial-intelligence/973384/linkedin-seems-like-ai-slop-button\nFriend Wearable Returns: https://techcrunch.com/2026/07/30/friend-the-lonely-ai-wearable-returns-with-a-new-voice-and-a-much-bigger-price-tag/\nChinese Robot Ban: https://www.bbc.com/news/articles/cp9e2ex3ekyo\nGemini Robotics ER 2: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:04 Opus 5 Sentiment\n2:30 Opus 5 Strength\n4:47 Opus 5 My Tests\n10:02 Retool\n11:22 Google Earth Nano Banana\n13:28 Meta AI Agent\n14:30 BUZZ\n19:30 Grok Build Mode\n19:54 Gemini Natural Language\n20:04 Gemini Omni FREE\n20:22 Midjourney V8.2\n20:41 Mirage Avatar X\n21:53 HeyGen Video Podcasts\n23:48 LinkedIn AI Slop Button\n24:18 New Friend Wearable\n25:12 Banning Humanoids\n25:25 Gemini Robotics ER 2\n26:19 Final Thoughts",
-    "topic": "media",
-    "tags": [
-      "media",
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "video",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
