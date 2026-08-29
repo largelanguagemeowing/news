@@ -1,5 +1,73 @@
 [
   {
+    "article_id": 1744953,
+    "title": "Guardians of the State: An Air-Gapped AI Fortress for Consumer Data \u2014 Rachna Srivastava, DFPI",
+    "url": "https://www.youtube.com/watch?v=2WZsT-znFTQ",
+    "published_at": "2026-08-29T15:00:25+00:00",
+    "fetched_at": "2026-08-29T15:31:04+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The fiber optic cable carrying data into California's financial fraud system has been cut in half. One end sits on the internet with a laser transmitter. The other end, inside the building, has only a receiver. There is no transmitter pointing outward, so data physically cannot leave. Rachna Srivastava's team chose that over a software firewall for a blunt reason: any configuration can be misconfigured, and a misconfigured secure system is an exploited one. Everything her group builds has to survive a defense attorney whose entire job is attacking it, which means every step must be explainable, reproducible and auditable years later.\n\nThey did not get there gracefully. The first build was the obvious one, an open model in an isolated environment with guardrails, and it collapsed within two hours. The diagnosis was not a weak model. They had treated it as a magic box rather than a data pipeline, so Kafka took ingestion and replay, Spark took cleaning, and the model was left to reason over data that had already been made sane. Her framing is that most AI data problems are data engineering problems wearing an AI mask. Running one frontier model for every task was making a neurosurgeon take everyone's blood pressure, so a router now sends over 80% of work to the smallest model that can do it, tripling throughput on the same GPUs.\n\nSpeaker info:\n- https://www.linkedin.com/in/rachana-srivastava-ms-mba-78bab86\n- https://dfpi.ca.gov/\n\nTimestamps:\n0:00 - When seeing and hearing stopped being proof\n2:32 - Building for the courtroom, not the demo\n3:44 - Why encryption and private endpoints were not enough\n6:08 - Certifications as paper\n7:22 - The first build, and two hours to collapse\n8:29 - Kafka for spikes, ordering and replay\n10:56 - Data engineering problems wearing an AI mask\n12:01 - A key bolted to the server rack\n13:13 - One frontier model doing every job\n14:23 - Routing 80% of work to smaller models\n15:38 - Learning without opening a hole\n16:53 - A cable cut in half\n18:05 - Time travelling to the moment of a decision\n20:27 - Trust as a physical property",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "api",
+      "safety",
+      "research",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1744954,
+    "title": "The Half Life of Agent Infrastructure \u2014 Ben Kus, Box",
+    "url": "https://www.youtube.com/watch?v=sM1iYgz93HI",
+    "published_at": "2026-08-29T14:30:22+00:00",
+    "fetched_at": "2026-08-29T15:31:04+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ben Kus stood on this same stage last year and recommended a graph based approach to building agents. Someone found him afterward to say it was exactly the answer he needed. Kus opens this talk by retracting it, and admits he has since wondered what became of that person. Nothing about the advice was wrong when he gave it. A better way simply arrived, as it did for most of what was presented at that conference. He runs the same exercise across models, agent design and retrieval, and each chain lands somewhere unrecognizable from where it started twelve months earlier.\n\nThe number that reframes it: infrastructure normally has a half life of three to five years, which is why the standard advice is to pick a stack, go deep and switch rarely, since every migration breaks something. Agent infrastructure has a half life measured in months. That breaks the usual advice, and it lands hardest on people. He tells it against himself, having asked an engineer to rebuild working agentic search in a new style, then proposed rebuilding it again the day after shipping. His answer is not a technology, it is preparation. Tell teams that change is normal rather than a failure, build abstractions that let the layer underneath be swapped, and only switch when eval sets say it matters, not when a paper is exciting. Box now reviews every AI technology on a six month clock.\n\nSpeaker info:\n- https://x.com/benatbox\n- https://www.linkedin.com/in/benkus/\n\nTimestamps:\n0:00 - An exabyte, and now a trillion tokens\n2:27 - The advice that used to work\n4:48 - Retracting last year's talk from this stage\n5:57 - How the model choices kept moving\n7:07 - Agent design, from single calls to harnesses\n8:15 - Retrieval, from keywords back to agents\n10:31 - What does not change this fast\n11:37 - Who a months long half life hurts\n13:49 - Rebuilding it the day after shipping\n14:57 - Telling teams that change is not a mistake\n16:04 - Changing on evals, not on trends\n17:13 - Judging vendors by how they handled change",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1744955,
+    "title": "Which AI startups actually land enterprise contracts? \u2014 Brian Lewis, Millennium",
+    "url": "https://www.youtube.com/watch?v=7A65O-0lvKE",
+    "published_at": "2026-08-29T14:00:06+00:00",
+    "fetched_at": "2026-08-29T15:31:04+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "For a given internal pain point, Brian Lewis might find 10 to 15 startups worth a look, book two or three demos, run zero or one pilot, and sign roughly one contract for every four pilots. That works out to about 5% of demo calls ending in a signature, which turns out to match published benchmarks. He is on the buying side at a hedge fund, speaking personally rather than for his employer, and the talk is a catalogue of exactly where the other 95% dies.\n\nThe examples are specific enough to sting. A vendor asked them to self report their own gateway telemetry so it could charge margin on traffic that never touched vendor infrastructure. Integrations that only function if granted read and write access to everything. Features held permanently in beta because the beta terms permit data retention. A team claiming zero data retention that revealed it had their data by mentioning something it could not otherwise have seen. Asked what happens in a breach, one vendor answered that they had not had one yet. His larger argument is that none of this is really an AI problem: a new frontier model lands every 11 days while the architecture underneath is a decade old, and he puts perhaps 60% of becoming AI native on entitlements, integration and change management. Agents inherit whatever foundations you already had.\n\nSpeaker info:\n- https://www.linkedin.com/in/brianthomaslewis/\n\nTimestamps:\n0:00 - Sellers and buyers in the same room\n2:52 - The funnel, and the 5% that signs\n4:16 - Efficacy: solving the problem, and pricing it\n5:36 - Pilot windows collapsing from months to weeks\n6:57 - Security requirements from the buyer's side\n8:19 - What goes wrong in security, repeatedly\n9:42 - Reliability, control planes and audit logs\n11:04 - An outage during a trading day\n12:23 - Legal, retention clauses and fourth party risk\n13:44 - A model every 11 days, architecture a decade old\n15:07 - The unglamorous 60%\n16:28 - Entitlements, and why agents multiply the problem\n17:54 - The recipe for each side of the table",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1740034,
     "title": "Just a rumour of a bug is enough to find a security exploit these days",
     "url": "https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/",
@@ -10100,68 +10168,6 @@
     "tags": [
       "ai-models",
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552817,
-    "title": "deepseek-ai/DeepSeek-V4-Flash-0731",
-    "url": "https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything",
-    "published_at": "2026-07-31T23:59:44+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731\">deepseek-ai/DeepSeek-V4-Flash-0731</a></strong></p>\nThe latest release in DeepSeek's V4 family, \"with substantially enhanced agentic capabilities\". It's 304 billion parameters - 167GB on Hugging Face - but it appears to punch <em>well</em> above its weight.</p>\n<p>Artificial Analysis <a href=\"https://artificialanalysis.ai/models/deepseek-v4-flash\">rank it</a> ahead of MiniMax M3 - a 428B model. It's $0.14/million input and $0.27/million output pricing means this may currently be the best value-per-intelligence model out there. It's looking very good on the <a href=\"https://artificialanalysis.ai/models/deepseek-v4-flash#intelligence-comparison-tabs\">Intelligence Index vs. Cost per Intelligence Index Task</a> chart:</p>\n<p><img alt=\"Scatter plot from Artificial Analysis titled with axes &quot;Artificial Analysis Intelligence Index&quot; (20 to 65) and &quot;Cost per Task (USD, Log Scale)&quot; ($0.02 to $3), with a green &quot;Most attractive quadrant&quot; box in the upper left and a dotted &quot;Pareto line&quot;. DeepSeek V4 Flash 0731 (max) is highlighted in dark blue at roughly $0.028 and an intelligence score of 50, sitting alone at the far left edge of the green quadrant where the Pareto line jumps sharply upward. Models of similar or lower intelligence like MiniMax-M3, Kimi K3 (low), GLM-5.1 and Kimi K2.6 cost ten times more, and the models that beat it (Grok 4.5, Gemini 3.6 Flash, GLM-5.2, Kimi K3, Claude Opus 5, Claude Fable 5, GPT-5.6 Sol) all sit far to the right at $0.4 to $3 per task.\" src=\"https://static.simonwillison.net/static/2026/deepseek-flash-chart.webp\" /></p>\n<p>I got <a href=\"https://gist.github.com/simonw/83bfb1171792f1e7a4d8935b5e82317e#prompt\">a disappointing pelican</a> from it using the default reasoning level via OpenRouter:</p>\n<p><img alt=\"Flat vector illustration of a white pelican with a long neck and large orange beak pouch, hovering above a mangled blue and orange bicycle on a dark grey road with white dashed lane markings. The bike is drawn incorrectly: the wheels are just orange arcs with no rims or spokes, the frame tubes float apart and the handlebars connect to nothing. The background is pale blue with a yellow sun in the upper left, white clouds, and grey speed lines on the left suggesting motion.\" src=\"https://static.simonwillison.net/static/2026/deepseek-flash-v4-default.png\" /></p>\n<p>But when I bumped reasoning level up to high I got <a href=\"https://gist.github.com/simonw/83bfb1171792f1e7a4d8935b5e82317e#options\">something much better</a>:</p>\n<p><code>llm -m openrouter/deepseek/deepseek-v4-flash-0731 -t pelican -o reasoning_effort high</code></p>\n<p><img alt=\"Flat vector illustration of a white pelican riding a bicycle to the right against a pink background with a lighter pink circle behind it. The pelican grips the handlebars with its wings and one orange foot rests on the pedal, and a small blue fish is visible tucked in the corner of its large orange beak pouch. The bike has a red, blue and orange frame with dark tires, and grey speed lines trail behind to suggest motion.\" src=\"https://static.simonwillison.net/static/2026/deepseek-flash-v4-high.png\" />\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49120299\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/deepseek\">deepseek</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a>, <a href=\"https://simonwillison.net/tags/openrouter\">openrouter</a>, <a href=\"https://simonwillison.net/tags/ai-in-china\">ai-in-china</a>, <a href=\"https://simonwillison.net/tags/artificial-analysis\">artificial-analysis</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553065,
-    "title": "What's Next After RLHF? \u2014 Diogo Almeida, TypeSafe AI",
-    "url": "https://www.youtube.com/watch?v=cJ0EOzey--o",
-    "published_at": "2026-07-31T23:30:06+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "RLHF made models that are extraordinary at pleasing the human in the loop, and Diogo Almeida, a GPT-4 co author, argues that is exactly the problem. Optimizing for human preference optimizes for engagement and for overpromising, the same pressure that makes a model confidently agree that a fart audio file is a symphony. That produces two camps: one where models act as assistants with a human catching mistakes, where RLHF shines, and one where they operate autonomously with real stakes, where the same instinct to please quietly becomes a liability.\n\nSo what comes next is not the Claude Code era but a shift in what you optimize. Almeida frames it through Sutton's bitter lesson: the task matters more than the data, and reinforcement learning with verifiable rewards points the model at real automation instead of human approval. He is careful that pre trained models are already incredibly capable and that the trap is bolting preference optimization on top, which teaches confidence and drops modes. The through line is that assistance and automation pull in different directions in optimization space, and the field is only starting to say plainly which one it is building.\n\nSpeaker info:\n- https://x.com/CompleteSkeptic\n- https://www.linkedin.com/in/diogomda/\n- https://typesafe.ai/\n\nTimestamps:\n0:00 - Not the Claude Code era\n1:40 - The state of the field\n3:14 - Two camps: assistance and autonomy\n4:31 - Why models please the human in the loop\n6:37 - How RLHF actually works\n7:31 - Preference versus what's true\n8:10 - When the consequences get real\n8:47 - So what's next\n9:35 - Assistance is not automation\n14:31 - Is pre-training the problem?\n15:43 - RLVR and Sutton's bitter lesson",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding",
-      "education",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553584,
-    "title": "In defense of not understanding your codebase",
-    "url": "https://www.seangoedecke.com/in-defense-of-not-understanding-your-codebase/",
-    "published_at": "2026-07-31T23:17:42+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. much more nuanced than the title makes it out to be. read till the end.",
-    "topic": "development",
-    "tags": [
-      "development",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
