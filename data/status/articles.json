@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1740034,
+    "title": "Just a rumour of a bug is enough to find a security exploit these days",
+    "url": "https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/",
+    "published_at": "2026-08-28T22:12:02+00:00",
+    "fetched_at": "2026-08-29T03:32:21+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://anil.recoil.org/notes/rumour-is-the-exploit\">Just a rumour of a bug is enough to find a security exploit these days</a></strong></p>\nAnil Madhavapeddy is a professor of computer science at Cambridge and a core maintainer of the OCaml compiler. In this somewhat alarming post he reports that security issues in OCaml projects are seeing evidence of attempted exploits within minutes of patches being shared for discussion:</p>\n<blockquote>\n<p>This normally takes a few days and a release within a week or two is reasonable. Within about ten minutes (!) this website was fielding probes for percent-encoded traversal sequences, indicating that automated watchers are keeping an eye on public repositories.</p>\n</blockquote>\n<p>Modern coding agents have become so effective at finding flaws that the slightest hint at a new bug can be enough information for them to find it, something Anil has been able to demonstrate using his own agents, switching to DeepSeek V4 Pro\u2060 when Claude Fable refused the task.</p>\n<p>Anil points out that this rate of discovery appears incompatible with existing open source embargo practices for new issues. If an issue can become an exploit this fast, we need to figure out new processes for keeping our communities safe.</p>\n<p>rclone maintainer Nick Craig-Wood <a href=\"https://news.ycombinator.com/item?id=49480466#49480777\">confirms in the Hacker News comments</a> that his project is seeing this problem:</p>\n<blockquote>\n<p>In the first 10 years of the rclone project we received about 20 security disclosures through GitHub. We had to deal with over 40 in the last month! That has taken a huge amount of my time, even using AI tools to triage and come up with fixes for review.</p>\n<p>The hit rate for those security disclosures is pretty good - about 75% of them have a nugget of something which needs looking at. [...]</p>\n<p>GitHub assigns CVEs for the advisories. Before the AI apocalypse they took 2-3 days for an assignment but now it they are running at 3-4 weeks so I have to send the point releases out with CVE-PENDING in the changelog which isn't ideal.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49480466\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/open-source\">open-source</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/ocaml\">ocaml</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1737924,
     "title": "AI-Native Organisations Run on Skills: How to Structure and Scale Them \u2014 Imad Touil, QuantumBlack",
     "url": "https://www.youtube.com/watch?v=M05vON8i0aI",
@@ -244,6 +267,26 @@
     "available": true
   },
   {
+    "article_id": 1738877,
+    "title": "Our decision on Cursor following its acquisition by SpaceX",
+    "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+    "published_at": "2026-08-28T06:00:00+00:00",
+    "fetched_at": "2026-08-29T03:32:21+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1734153,
     "title": "Supporting Thailand\u2019s next generation of AI startups",
     "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
@@ -337,6 +380,24 @@
       "ai-models",
       "models",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1740560,
+    "title": "How Anthropic employees use Claude Tag",
+    "url": "https://claude.com/blog/how-anthropic-employees-use-claude-tag",
+    "published_at": "2026-08-28T00:00:00+00:00",
+    "fetched_at": "2026-08-29T03:32:33+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "How Anthropic employees use Claude Tag",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10104,73 +10165,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552819,
-    "title": "llm-mcp-client 0.1a0",
-    "url": "https://simonwillison.net/2026/Jul/31/llm-mcp-client/#atom-everything",
-    "published_at": "2026-07-31T23:03:47+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-mcp-client/releases/tag/0.1a0\">llm-mcp-client 0.1a0</a></p>\n        <p>See <a href=\"https://simonwillison.net/2026/Jul/31/stateless-mcp/#llm-mcp-client\">this blog entry</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553066,
-    "title": "Data Quality Is the Compute Multiplier \u2014 Ari Morcos, DatologyAI",
-    "url": "https://www.youtube.com/watch?v=_PdK6x7PQNM",
-    "published_at": "2026-07-31T23:00:06+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Swap compute for data on the scaling curve and the same money buys a better model, which is why Ari Morcos calls data quality the compute multiplier and the most underinvested part of training. His frame is an oil refinery for data rather than a firehose: clean, curate, create, and compose, with quality classifiers, deduplication, and synthetic generation each earning their place, and the sequencing across stages mattering as much as any single step. The scarce resource now is not tokens but signal per token, and finding data that is optimal for a given target is where the leverage hides.\n\nThe proof points are concrete. Better curated data lets a small multilingual model beat far larger ones trained on many more tokens, and it buys real inference efficiency because a model reaches the same quality with less. Morcos points to DatologyAI's customer results, from Thomson Reuters gaining on proprietary legal data in mid-training to Arcee's Trinity reaching the open frontier on public data alone. The closing argument is blunt: it is cheaper to manufacture high quality data than to buy more compute, so data curation is quietly shaping the future of model training.\n\nSpeaker info:\n- https://x.com/arimorcos\n- https://www.linkedin.com/in/arimorcos/\n- http://www.arimorcos.com/\n\nTimestamps:\n0:00 - Data is all we think about\n0:52 - Why good data became scarce\n2:19 - Swapping compute for data on the curve\n3:48 - An oil refinery for data\n5:52 - Curation work at DatologyAI\n6:54 - Proof: small models beating bigger ones\n8:58 - Inference efficiency from better data\n9:24 - Multilingual gains\n12:16 - Synthetic data done right\n14:10 - Thomson Reuters and Arcee results\n17:43 - Cheaper than buying compute",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "api",
-      "infrastructure",
-      "coding",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553067,
-    "title": "Learning on the Job: The Future of Post-Training \u2014 Raymond Feng, Applied Compute",
-    "url": "https://www.youtube.com/watch?v=k35LeKZEhiE",
-    "published_at": "2026-07-31T22:30:06+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "The next step after a model ships is teaching it to keep learning on the job, and Raymond Feng lays out how Applied Compute trains custom models with reinforcement learning that plug into whatever harness an enterprise already runs. The setup is an orchestrator that fans interactions out to inference engines, collects the graded rollouts, and feeds a training engine that updates the weights, the same GRPO style loop used for RL today, but pointed at real multi turn, long horizon work rather than toy question and answer pairs. The promise is a model you deploy once that adapts to a specific company's tasks.\n\nThe hard parts are all about the environment. Feng is candid about reward hacking, where a model learns to time out a tool or exploit a scoring gap instead of doing the task, and about the trouble of faithfully replicating a production environment so training reflects reality. He walks through why replaying real customer interactions is tempting but breaks on non replayability and off policy data, and where automated data pipelines and self evaluation might take this. The vision at the end is a model that learns from every interaction it has, treating each nook and cranny of the job as new training signal.\n\nSpeaker info:\n- https://x.com/raymondmfeng\n- https://raymondhfeng.github.io/\n\nTimestamps:\n0:00 - Learning on the job\n0:39 - Custom models inside your harness\n2:37 - Deploy once and adapt\n2:49 - The RL training loop\n4:40 - Toward longer horizon tasks\n6:48 - Reward hacking in practice\n9:06 - Replicating production environments\n9:45 - Why replaying real traffic is hard\n11:57 - Non-replayability and off-policy data\n13:41 - Automated data pipelines\n15:24 - A model that learns every interaction",
-    "topic": "education",
-    "tags": [
-      "education",
-      "models",
-      "open-source",
-      "benchmark",
-      "infrastructure",
-      "coding",
-      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
