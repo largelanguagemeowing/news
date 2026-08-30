@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1759110,
+    "title": "SOTA Generative Media Panel \u2014 Dumitru Erhan, Shane Gu & Nicole Brichtova, Google DeepMind",
+    "url": "https://www.youtube.com/watch?v=KLDdXOw6jIc",
+    "published_at": "2026-08-30T14:00:06+00:00",
+    "fetched_at": "2026-08-30T14:42:44+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The team took captions from real videos, regenerated the same scenes with their own model, and ran a human eval. People largely preferred the generated version. Dumitru Erhan is quick to deflate that result. The output is not more realistic, it is sharper and more saturated with nicer skin tone, and human preference turns out to be an unreliable thing to optimize against. Nicole Brichtova has a name for the effect, the Instagram filter. The same blind spot surfaces in smaller ways. Their image model quietly began putting wedding rings on hands, and nobody internally caught it until an outside tester asked why, which is reward hacking arriving through the back door.\n\nMuch of the hour circles one question, whether language is a good enough intermediate representation for any of this. Shane Gu argues it thins out exactly where humans are most sensitive. We carry poor vocabulary for audio, taste, smell and skin tone because those sit close to survival, and a professional wine taster he asked had resorted to borrowing the language people use to describe a date. The tell of AI video, swyx notes, is that everything sounds studio recorded, because studio recordings are the training data, and a model with no representation of standing further away cannot get that sound right either. Evaluation stays stubbornly manual underneath all of it. Ten people in a room, two videos side by side, pick one.\n\nSpeaker info:\nDumitru Erhan:\n- https://x.com/doomie\n- https://www.linkedin.com/in/dumitruerhan/\nShane Gu:\n- https://x.com/shaneguML\n- https://www.linkedin.com/in/shixiang-shane-gu/\nNicole Brichtova:\n- https://x.com/nbrichtova\n- https://www.linkedin.com/in/nicolebrichtova/\n\nTimestamps:\n0:00 - Introductions, and why this session exists\n2:00 - Nano Banana 2 Lite and the Omni Flash APIs\n4:30 - Beyond demos: storyboards, editing, education\n7:51 - Video agents, or one model doing it all\n10:26 - Video models as zero shot learners\n13:01 - Will everything collapse into one model?\n14:20 - Is captioning the right intermediate representation?\n18:13 - What people actually mean by world models\n19:44 - Vision researchers becoming generation researchers\n24:51 - Audio, and why joint generation mattered\n26:32 - The things language cannot describe\n32:03 - Studio quality as the tell of AI video\n34:12 - When humans prefer the generated video\n36:07 - Prompt engineering and trained sensitivity\n38:27 - Setting a default aesthetic for the world\n41:09 - The wedding ring nobody noticed\n42:10 - How you actually evaluate video\n47:35 - What data they are looking for\n53:04 - Forward deployed engineers as an eval channel",
+    "topic": "research",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "research",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1754131,
     "title": "Introducing Hy4 Preview",
     "url": "https://simonwillison.net/2026/Aug/29/hy4/",
@@ -10153,29 +10175,6 @@
       "benchmark",
       "coding",
       "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552812,
-    "title": "Open letters about AI development",
-    "url": "https://simonwillison.net/2026/Aug/2/open-letters/#atom-everything",
-    "published_at": "2026-08-02T04:16:52+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<h4>Open letters about AI development</h4>\n<p><em>I wrote this summary of the past few weeks of open letters as a section of <a href=\"https://simonwillison.net/2026/Aug/2/july-newsletter/\">my sponsors-only newsletter</a> but I've decided to share it here as well.</em></p>\n<p><strong><a href=\"https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/\">Open Weights and American AI Leadership</a></strong> was shepherded by Microsoft, dated July 24th, and signed by 235 AI-adjacent companies including NVIDIA (see Jensen's <a href=\"https://twitter.com/jensenhuang/status/2080643682408321103\">first ever tweet</a>), Amazon, Y Combinator, The Linux Foundation, and (a later signer) OpenAI.</p>\n<p>It's clearly an argument designed to counter <a href=\"https://www.axios.com/2026/07/20/ai-us-china-open-source-kimi\">any instincts</a> by the current US government to ban or limit open weight models over \"safety\" concerns - a reasonable consideration given <a href=\"https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/\">what happened to Claude Fable 5</a>!</p>\n<blockquote>\n<p>Relying solely on closed models is not inherently safe: they can be breached, misused, or fail in ways that outsiders cannot detect. And concentrating advanced AI capabilities behind a small number of closed models compounds that risk. It results in a small number of single points of failure, weakens competition, and leaves critical technology in the hands of a few providers. Open weight models, on the other hand, allow a broad community of researchers and developers to examine their behavior, identify vulnerabilities, develop safeguards, and improve them over time.</p>\n</blockquote>\n<p>The one surprising note in the letter is that it comes out in support of distillation, where models train on output from other models:</p>\n<blockquote>\n<p>In shaping this ecosystem, policymakers should be careful not to conflate legitimate model-development techniques with misappropriation. Distillation, or the practice of using one model\u2019s outputs to help train or improve another, is a widely used technique for model improvement, evaluation, and validation. It reflects a long tradition of learning from, building upon, and improving existing technologies, a tradition that has helped drive innovation since the rise of the open-source software movement.</p>\n</blockquote>\n<p>Notably absent from the signatures: Anthropic, who published their own response <a href=\"https://www.anthropic.com/news/position-open-weights-models\">Our position on open-weights models</a> three days later. CEO Dario Amodei doubled down on the risk of authoritarian governments building \"AI models that are more powerful than those built by the US\", and models being \"misused to carry out cyberattacks or biological attacks\", and called for \"a crack down on industrial-scale <a href=\"https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks\">distillation operations</a>\", while also stating that \"Anthropic has never advocated for a ban on open-weights models\".</p>\n<p>Then on July 28th <a href=\"https://www.pacingthefrontier.com\">Pacing the Frontier</a> was published, featuring signatures from \"1,324 employees of frontier AI companies\" - with names like Jakub Pachocki (Chief Scientist, OpenAI), Ilya Sutskever (Safe Superintelligence Inc, previously OpenAI), Dario Amodei (Anthropic), Jack Clark (Anthropic) and more. Their core message:</p>\n<blockquote>\n<p>We request that the U.S. government support an international effort to develop the technical and governance tools needed to deliberately pace the frontier of automated AI development.</p>\n</blockquote>\n<p>Their concern is intense competitive pressure combined with accelerated AI progress caused by automated AI research - and given that Anthropic <a href=\"https://www.anthropic.com/institute/recursive-self-improvement\">produce 80% of their code with Claude Code</a>, OpenAI had Sol <a href=\"https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/\">reduce their end-to-end serving costs by 20%</a>, and Kimi K3 <a href=\"https://www.kimi.com/blog/kimi-k3#chip-design\">designed a chip to serve a nano model built on its own architecture</a>, you can see why people are taking that risk more seriously right now.</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a></p>",
-    "topic": "development",
-    "tags": [
-      "development",
-      "models",
-      "open-source",
-      "api",
-      "safety",
-      "benchmark",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
