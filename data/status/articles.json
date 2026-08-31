@@ -1,5 +1,23 @@
 [
   {
+    "article_id": 1771870,
+    "title": "A milestone in expanding access to AI",
+    "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "fetched_at": "2026-08-31T17:55:58+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1768288,
     "title": "Understanding ChatGPT Work",
     "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
@@ -10154,27 +10172,6 @@
     "tags": [
       "opinion",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553061,
-    "title": "MCP Tasks (async): Why Aren't Any Agents Supporting Them? \u2014 Cornelia Davis, Temporal",
-    "url": "https://www.youtube.com/watch?v=s4r6nk5WsZw",
-    "published_at": "2026-08-02T20:00:06+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "You invoke a tool and expect an answer, but real work takes time, and over that time connections drop, networks blip, and processes crash. Cornelia Davis, a distributed systems veteran who wrote the book on cloud native patterns, argues that this is exactly the gap the MCP tasks specification exists to close, and walks through why almost no agents support it yet. A task lets a tool run long, report progress, and pause for human input without losing its place, which means the interaction has to be durable: it survives the client disconnecting and picks up right where it left off.\n\nShe demonstrates it with an invoice processing flow, a dashboard tracking task state, and a step that waits for a human to submit input before the backend continues, then traces how the spec evolved from V1 to V2. The design she keeps returning to is a stateless core with the harder long running behavior layered on as an extension, RPC requests replaced by the server pushing updates, and life cycle state carefully mapped so clients know what to resume. Her honest takeaway is that just because you can open a long lived stateful connection does not mean you should, and that getting durable long running tasks right is what will finally let agents handle work that does not finish in a single call.\n\nSpeaker info:\n- https://x.com/cdavisafc\n- https://www.linkedin.com/in/corneliadavis/\n\nTimestamps:\n0:00 - What MCP tasks are, and why they're hard\n1:29 - A distributed systems point of view\n2:34 - A first look at a task running\n4:03 - What a task actually allows\n4:43 - Why long running work breaks\n6:02 - Durability across disconnections\n7:04 - Demo: invoice processing dashboard\n9:10 - Waiting for human input\n11:18 - What changed in tasks V1\n12:35 - The stateless core\n16:37 - Extensions and server pushed updates\n20:09 - V2 and what you need to implement",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "coding",
-      "tools",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
