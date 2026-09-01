@@ -1,5 +1,157 @@
 [
   {
+    "article_id": 1787520,
+    "title": "Agent Spending Without Controls \u2014 Rodrigo Coelho & Pranav Maheshwari, Edge & Node",
+    "url": "https://www.youtube.com/watch?v=ZyGMqdIpPoE",
+    "published_at": "2026-09-01T19:30:09+00:00",
+    "fetched_at": "2026-09-01T20:03:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Pranav Maheshwari ran one prompt in two terminals: find the email address of the head of crypto and blockchain at Mastercard. The terminal without a payment skill file returned the company's email format and an invitation to work the rest out. The one with it paid a fraction of a cent to a metered endpoint and came back with the address, the person's location and their handle. That gap is the whole argument. Most MCP servers are free today, and his claim is that the useful ones will not stay free, which leaves an agent only as capable as the tools it can pay for. Rodrigo Coelho sets up the longer history first: Edge & Node built The Graph, served 1.8 trillion onchain queries, and shipped a query micropayment system in 2021 that cited the HTTP 402 spec years before Coinbase released x402.\n\nWhat stops enterprises adopting any of this, in Coelho's telling, is compliance rather than throughput. Traditional rails assume a human somewhere in the decision loop. Agents transact around the clock at machine speed, and a counterparty arrives as a bare wallet address with no identity attached to it. Somebody carrying a title like chief legal officer has to sign off, knowing that getting sanctions screening wrong carries fines in the billions. The closing demo makes that concrete. Two agents hit a metered scraping service, one from an ordinary wallet and one from a wallet flagged as sanctioned. With screening off, both transactions authorize. Switching screening on leaves the first working and rejects the second as a blocklisted address.\n\nSpeaker info:\n- https://x.com/rodventures\n- https://www.linkedin.com/in/rodrigoco/\n- https://x.com/impranavm_\n- https://www.linkedin.com/in/thepranavmaheshwari/\n\nTimestamps:\n0:00 - The Graph, and paying for queries before x402 existed\n2:03 - Prior art: micropayments, the 402 spec, and joining the foundation\n3:52 - Rails built for humans in the loop, not machines\n4:49 - Why enterprises stall without a compliance layer\n5:42 - A wallet address with no identity behind it\n6:37 - The officer who signs off, and the size of the fines\n7:35 - Agents are only as good as the tools they can pay for\n8:31 - Demo: the same prompt with and without the skill file\n12:16 - Demo: an agent buying a gift under a set budget\n16:14 - Demo: screening a sanctioned wallet\n18:04 - Compliance on, and the transaction rejects",
+    "topic": "policy",
+    "tags": [
+      "release",
+      "api",
+      "agents",
+      "coding",
+      "policy",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1787250,
+    "title": "Codex bundles LibreOffice",
+    "url": "https://simonwillison.net/2026/Sep/1/codex-libreoffice/",
+    "published_at": "2026-09-01T19:03:01+00:00",
+    "fetched_at": "2026-09-01T20:03:45+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>I was poking around in my <code>~/.cache/</code> folder using <a href=\"https://www.omnigroup.com/more\">OmniDiskSweeper</a> when I spotted something interesting. The OpenAI Codex desktop app (since <a href=\"https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app\">rebranded</a> to just ChatGPT) has 1.7GB of stuff in there in a folder called <code>codex-primary-runtime</code>, including a full Python installation, a full Node.js installation, and native binaries for <a href=\"https://poppler.freedesktop.org\">Poppler</a>, git, and the <a href=\"https://en.wikipedia.org/wiki/LibreOffice\">LibreOffice</a> open source office suite (which forked from OpenOffice.org in 2010):</p>\n<p><img alt=\"Screenshot of a macOS disk usage app window in column view, titled &quot;/Users/simon/.cache - 442.1 GB&quot;. First column: 356.8 GB huggingface, 82.5 GB uv, 1.7 GB codex-runtimes (selected), 609.0 MB datasette-sqlite, 298.8 MB rod. Second column: 1.7 GB codex-primary-runtime (selected). Third column: 1.7 GB dependencies (selected), 6.3 MB plugins, 4.1 kB runtime.json. Fourth column: 771.0 MB native (selected), 446.4 MB node, 440.6 MB python, 28.7 kB bin. Fifth column: 429.7 MB libreoffice-headless (selected), 187.9 MB poppler, 148.1 MB git, 4.7 MB libheif, 679.9 kB jxrlib.\" src=\"https://static.simonwillison.net/static/2026/codex-primay-runtime.webp\" /></p>\n<p>The <code>~/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime/plugins/documents</code> folder includes skills which tell Codex how to find and use those binaries.</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/codex\">codex</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/openoffice\">openoffice</a>, <a href=\"https://simonwillison.net/tags/open-source\">open-source</a></p>",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1787521,
+    "title": "x402 isn\u2019t good (yet) \u2014 Jan Curn, Apify",
+    "url": "https://www.youtube.com/watch?v=h6mi88VrPtQ",
+    "published_at": "2026-09-01T19:00:09+00:00",
+    "fetched_at": "2026-09-01T20:03:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Between the moment an x402 server verifies a payment signature and the moment it settles on the blockchain, nothing stops the buyer spending that money somewhere else. Jan Curn's point is that a client can mint a thousand signatures against one wallet, so any seller starting real work on the strength of a verification is exposed. The workaround is to do the work only after settlement, fine for a fixed price API call and awkward for anything slower. Curn is bullish enough on x402 to have shipped it two days before this talk, adding 20,000 Apify tools to a marketplace that previously carried about 2,000, and critical enough to spend the session on what it still gets wrong. He pitches it as a sequel to a talk here last year arguing that MCP was not good yet.\n\nThe gaps compound. x402 wants HTTP 402 as the server's first response and MCP wants 401, and since one response cannot be both, companies stand up a second hostname purely for payments. Curn calls that an antipattern and asks how anyone would feel about a separate Amazon for every credit card. The original exact scheme charges a fixed fee per call, which does not fit tools that run for seconds or for hours, and the up to scheme meant to fix metered billing left the double spending window open anyway. Apify settled on charging in full and refunding the remainder, at the cost of a second chain transaction and a trust assumption pointing the wrong way. He is watching batch settlement, and has shipped a markdown page an agent reads to buy a prepaid token, deliberately not an API.\n\nSpeaker info:\n- https://x.com/jancurn\n- https://www.linkedin.com/in/jancurn/\n- https://apify.com/jancurn\n\nTimestamps:\n0:00 - A callback to \"MCP isn't good yet\"\n2:02 - Apify's 45,000 tools, and 10x'ing the x402 catalog\n4:47 - The standards pileup, from L402 to Agent Pay\n5:39 - Why crypto fits agentic payments, disputes included\n8:25 - A 30 year old status code finally picked up\n9:19 - The x402 flow, and the double spending window\n11:10 - When x402 wants a 402 and MCP wants a 401\n12:59 - Exact, then \"up to\", and what it still did not fix\n13:55 - Charging in full, refunding the rest, and batch settlement\n16:38 - AGI, an agent general interface\n19:26 - Where the volume actually is today",
+    "topic": "agents",
+    "tags": [
+      "api",
+      "agents",
+      "coding",
+      "funding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1787522,
+    "title": "Your Agent Just Authorized What?! \u2014 Jay Mok & Ben Coumes, Paypal",
+    "url": "https://www.youtube.com/watch?v=vGn6N4-bxBY",
+    "published_at": "2026-09-01T18:30:06+00:00",
+    "fetched_at": "2026-09-01T20:03:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A PayPal order has always been synchronous. You find the item, you open the app, you approve it, it is done. The approval token demonstrated here inverts that: the user approves before the agent has found an item or picked a merchant, and PayPal returns a JSON payload carrying the amount, the expiry, and the merchant the agent is permitted to transact with. It was days from shipping when this was recorded. That inversion is the concrete end of a broader argument about agent authorization, built on three questions any such system has to answer. Did the human authorize this? Is it allowed right now, in this scope? And can we prove it later? The answers, the talk argues, depend entirely on how high the stakes are and on whether the two parties have ever met.\n\nThe rest maps those questions onto a ladder. At the bottom is a coding agent, where consent happens once when tools are connected, permission is granted per tool as allow, ask or deny, and ordinary logs are proof enough because the actions can be reverted. In the middle is money moving between parties who already know each other through a shared vault and OAuth scopes, where a mandate carries the amount and the scope and existing transaction logs settle disputes. At the top is the case nobody has running in production yet: an agent transacting autonomously with a counterparty it has never met. The proposal there is a layered selective disclosure JWT, so a merchant can verify the checkout and a processor can verify the payment mandate without either knowing the other.\n\nTimestamps:\n0:00 - Terminator, and the agent that empties your wallet\n1:26 - Three questions any agent authorization has to answer\n2:49 - Stakes, counterparties, and the badge analogy\n4:12 - Low stakes: a coding agent with allow, ask and deny\n6:15 - Medium stakes: a shared vault and OAuth scopes\n9:45 - High stakes: counterparties who have never met\n10:29 - A layered selective disclosure JWT\n12:30 - The approval token, and inverting the order flow\n14:31 - Why the ladder applies beyond payments",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "hardware",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1787523,
+    "title": "When AI Agents Pay and Sellers Monetize: Building x402 Apps on AWS \u2014 Anil Nadiminti, AWS",
+    "url": "https://www.youtube.com/watch?v=qTZirYu9pr0",
+    "published_at": "2026-09-01T18:00:14+00:00",
+    "fetched_at": "2026-09-01T20:03:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Card rails put a floor under every transaction: a 25 cent minimum with a percentage on top. Anil Nadiminti's point is that when an agent pays a tenth of a cent for a single API call, that floor costs roughly 250 times the thing being bought, which is why the subscription model cannot simply be pointed at agents. Meanwhile the traffic has already turned over. He puts bot traffic past human traffic on the open web, with the large majority of it coming from AI agents, leaving sellers to choose between blocking it, which forfeits discovery, citations and licensing revenue, or absorbing it, which means carrying the infrastructure cost and losing attribution. His framing for the way out is that the human moves from in the loop to out of it, and the payment becomes the credential.\n\nThe AWS pieces land on both sides of that. On the buy side, AgentCore Payments gives an agent a wallet, a connector layer built to be protocol agnostic, and per session spending limits with an expiry. Two design choices carry the security argument. Imported wallet keys sit in a KMS backed store the agent cannot read, and the payment path is decoupled from the agent loop entirely, on the reasoning that skills and inputs can be poisoned and payment has no business running on a nondeterministic path. On the sell side, bot detection at the edge classifies over 650 bot types, verifies them by signature and infers whether a request is for training or for search, which lets a publisher price by path, by whether the bot belongs to a known partner, and by intent, without touching the origin.\n\nSpeaker info:\n- https://x.com/super_intel_bot\n- https://www.linkedin.com/in/nadiminti\n\nTimestamps:\n0:00 - A paywall built for humans, and traffic that is not\n1:08 - Bot traffic passes human traffic\n2:58 - The seller's dilemma: block bots or absorb them\n6:36 - Why a 25 cent floor kills a microcent payment\n7:31 - The x402 flow, end to end\n9:23 - AgentCore Payments, and setting spend limits\n12:12 - Why the agent never holds the private keys\n13:05 - Decoupling payments from a poisonable agent loop\n14:57 - Bot detection, and reading intent\n15:51 - Monetizing AI traffic at the edge\n17:42 - Pricing by path, by identity, by intent\n18:38 - What the volume looks like today",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "safety",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1787475,
+    "title": "The mystery is solved... and the answer is 40x cheaper than Claude",
+    "url": "https://www.youtube.com/watch?v=r-tzcMlQISk",
+    "published_at": "2026-09-01T17:31:27+00:00",
+    "fetched_at": "2026-09-01T20:03:46+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Exa gives your agents the largest index of public and private data. Get $20 in credits - https://dashboard.exa.ai/billing?coupon=EXA20FIRESHIP\n\nAn anonymous model called Ox Alpha just conquered OpenRouter, serving 42 trillion tokens in six days before being unmasked as Zhipu's GLM-5.3-Flash. Let's break it down.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "education",
+      "media",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1787524,
+    "title": "Why Your AI Agent Needs a Wallet: USDC and Nanopayments \u2014 Harshal Bhangale, Circle",
+    "url": "https://www.youtube.com/watch?v=xKzU_3riL6s",
+    "published_at": "2026-09-01T17:30:10+00:00",
+    "fetched_at": "2026-09-01T20:03:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Harshal Bhangale gave two identical agents the same job: plan a trip to the World Cup final, covering flights, hotels, resale ticket prices and what people said about getting to the stadium, then email him the summary and call him about it. One had a funded wallet. The other did not. The agent without one drafted the email into his inbox and could not send it, then admitted on screen that it had no way to place a call. The agent with one paid for the data it needed, sent the mail, and rang him on stage, where it also answered a follow up question about reaching the stadium from his hotel. Circle issues USDC, and Bhangale's answer for why a stablecoin company belongs at this conference is that paying is where agents stall.\n\nThe economics are the whole argument. Agents consume in fractional amounts at high frequency, and a card fee near 3% cannot sit on top of a one cent call, which is exactly the size sellers are moving toward now that they can meter a slice of their data instead of selling a human a subscription. He cites roughly 24 million dollars transacted against paid API endpoints over x402 in thirty days, almost all settled in USDC. Blockchains alone do not fix it either. Gas exists to stop spam, but gas on a microtransaction swamps the transaction, and shared block space makes latency unpredictable. Circle's answer is to keep settlement off the chain: funds are deposited into a smart contract, the agent signs authorizations cryptographically, and the seller relays them for confirmation in a few hundred milliseconds. The wallet enforces the spending cap, not a human.\n\nSpeaker info:\n- https://www.linkedin.com/in/harshaldbhangale\n\nTimestamps:\n0:00 - Why a stablecoin company is at an AI conference\n1:05 - Where agents actually stall\n1:58 - From prompts to workflows to agents that pay\n2:53 - x402 in one paragraph\n4:48 - Why card fees break on a one cent transaction\n5:41 - Demo: two agents, one with a wallet\n9:34 - Guardrails in the wallet instead of human approval\n11:53 - The agent that drafts an email it cannot send\n14:19 - The phone call, live on stage\n16:16 - Why gas fees and shared block space bite\n17:10 - Nanopayments, and settlement in milliseconds",
+    "topic": "agents",
+    "tags": [
+      "api",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1783595,
     "title": "Introducing agentic video understanding with Gemini",
     "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
@@ -55,6 +207,24 @@
       "research",
       "coding",
       "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1786089,
+    "title": "How AI-native companies turn workflows into operating capability",
+    "url": "https://openai.com/index/ai-native-company-workflows",
+    "published_at": "2026-09-01T17:00:00+00:00",
+    "fetched_at": "2026-09-01T20:03:44+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Basis, Clay, and Exa Labs use AI agents to improve onboarding, account management, and developer integrations. See what enterprise leaders can apply.",
+    "topic": "enterprise",
+    "tags": [
+      "agents",
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -137,6 +307,43 @@
       "coding",
       "media",
       "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1786090,
+    "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT",
+    "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
+    "published_at": "2026-09-01T12:00:00+00:00",
+    "fetched_at": "2026-09-01T20:03:44+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "ChatGPT can now connect to trusted healthcare data, helping clinicians securely access patient context, medical research, and more.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1787535,
+    "title": "Developing Enterprise Frontier Safeguards with our customers",
+    "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+    "published_at": "2026-09-01T00:00:00+00:00",
+    "fetched_at": "2026-09-01T20:03:47+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Developing Enterprise Frontier Safeguards with our customers",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9978,194 +10185,6 @@
     "topic": "education",
     "tags": [
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553854,
-    "title": "I fucking love the new batch version of /grill-me Makes smashing through easy questions so much faster",
-    "url": "https://nitter.net/mattpocockuk/status/2084559156074156252#m",
-    "published_at": "2026-08-04T08:36:46+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>I fucking love the new batch version of /grill-me<br />\n<br />\nMakes smashing through easy questions so much faster</p>\n<img src=\"https://nitter.net/pic/media%2FHO3XcOZXAAAU4OG.png\" />",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552806,
-    "title": "Quoting Steve Yegge",
-    "url": "https://simonwillison.net/2026/Aug/4/steve-yegge/#atom-everything",
-    "published_at": "2026-08-04T00:42:45+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://yegge.ai/essays/the-shape-of-things-to-come/\"><p><a href=\"https://yegge.ai/gastown.html\">Gas Town</a>\u00a0was intended to be reusable, but I only ever wound up using it to build itself. Gas Town fell apart at the seams with Opus 4.7. Up through 4.6 it was working brilliantly. With 4.7 we saw the introduction of the \"just two more things\" tic, which prevented Opus from ever converging on being ready to do real work\u2014it always wanted to fiddle with Gas Town itself. The Opus tic never went away, so Gas Town effectively burned down. It had other problems, too, but 4.7 was the final straw.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://yegge.ai/essays/the-shape-of-things-to-come/\">Steve Yegge</a>, The Shape of Things to Come</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/steve-yegge\">steve-yegge</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "agents",
-      "events",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553074,
-    "title": "Mariano-Florentino (Tino) Cu\u00e9llar to join Anthropic as Chief Global Affairs Officer",
-    "url": "https://www.anthropic.com/news/tino-cuellar",
-    "published_at": "2026-08-04T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Mariano-Florentino (Tino) Cu\u00e9llar to join Anthropic as Chief Global Affairs Officer",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553369,
-    "title": "A guide to cost visibility and control in Claude",
-    "url": "https://claude.com/blog/a-guide-to-cost-visibility-and-control-in-claude",
-    "published_at": "2026-08-04T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "A guide to cost visibility and control in Claude",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1267598,
-    "title": "Mixture-of-Kittens: our open-source",
-    "url": "https://cursor.com/blog/mixture-of-kittens",
-    "published_at": "2026-08-04T00:00:00+00:00",
-    "fetched_at": "2026-08-19T18:35:03+00:00",
-    "source_id": "cursor-blog",
-    "source_name": "Cursor Blog",
-    "extraction_method": "rss",
-    "body": "MoE megakernel for NVL72s",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "open-source"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551682,
-    "title": "New ways to learn and teach with ChatGPT Work and Codex",
-    "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
-    "published_at": "2026-08-04T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Explore new education plugins for ChatGPT Work and Codex that help K\u201312 teachers, college educators, and students learn, teach, research, and build.",
-    "topic": "education",
-    "tags": [
-      "models",
-      "agents",
-      "research",
-      "coding",
-      "education",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552807,
-    "title": "Don't be a meat proxy",
-    "url": "https://simonwillison.net/2026/Aug/3/dont-be-a-meat-proxy/#atom-everything",
-    "published_at": "2026-08-03T23:45:04+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://gruhn.me/blog/2026-08-03/\">Don&#x27;t be a meat proxy</a></strong></p>\nNiklas Gruhn coins an excellent new term - <strong>meat proxy</strong> - for people who blindly copy and paste the output of AI systems to their peers.</p>\n<blockquote>\n<p>By all means, prompt AI. But don't just relay the output. Read it, understand it, validate it, and then write a response in your own words (a decent certificate that you've done the prior steps). Making that effort is value you can add.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://lobste.rs/s/hfbqr3/don_t_be_meat_proxy#c_svolls\">Lobste.rs</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/definitions\">definitions</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553580,
-    "title": "The Shape of Things to Come, Part 2: Model Welfare for Agentic Engineers \u2014 Steve Yegge",
-    "url": "https://yegge.ai/essays/model-welfare/",
-    "published_at": "2026-08-03T23:29:57+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading (as a bookmark). i honestly don't know what to think.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553581,
-    "title": "LLMs reward expertise",
-    "url": "https://www.seangoedecke.com/llms-reward-expertise/",
-    "published_at": "2026-08-03T22:00:36+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551683,
-    "title": "Apple is getting this wrong",
-    "url": "https://openai.com/index/apple-is-getting-this-wrong",
-    "published_at": "2026-08-03T22:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI addresses Apple\u2019s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
