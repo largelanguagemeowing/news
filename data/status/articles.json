@@ -1,5 +1,147 @@
 [
   {
+    "article_id": 1783595,
+    "title": "Introducing agentic video understanding with Gemini",
+    "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
+    "published_at": "2026-09-01T17:08:51+00:00",
+    "fetched_at": "2026-09-01T17:11:07+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1784864,
+    "title": "Quoting Tarn Adams",
+    "url": "https://simonwillison.net/2026/Sep/1/tarn-adams/",
+    "published_at": "2026-09-01T17:01:11+00:00",
+    "fetched_at": "2026-09-01T17:11:09+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://www.pcgamer.com/gaming-industry/dwarf-fortress-creator-says-the-industrys-in-shambles-over-ai-and-layoff-happy-ceos-everyone-i-know-their-bosses-are-slowly-getting-psychosis/\"><p>They took the letters from me! I have to talk about\u00a0<em>dwarf behavior</em>\u00a0now. I can't even talk about dwarf AI. It doesn't exist. It's\u00a0<em>dwarf behavior</em>, and they misbehave sometimes</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.pcgamer.com/gaming-industry/dwarf-fortress-creator-says-the-industrys-in-shambles-over-ai-and-layoff-happy-ceos-everyone-i-know-their-bosses-are-slowly-getting-psychosis/\">Tarn Adams</a>, co-creator of Dwarf Fortress</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/game-design\">game-design</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1785134,
+    "title": "Multimodal Collaborative Agents for Next-Gen Commerce \u2014 Nidhi Kaushik Vyas, Google DeepMind",
+    "url": "https://www.youtube.com/watch?v=AhQpRalYlyg",
+    "published_at": "2026-09-01T17:00:27+00:00",
+    "fetched_at": "2026-09-01T17:11:10+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Asked to redo a living room on a budget, the agent Nidhi Kaushik Vyas walks through does not start recommending. It works out what it does not know, then picks the single question worth asking: how wide is the room. Everything downstream is moot if the furniture will not fit, so that one answer carries the most information per turn. Choosing the next question by expected information gain, rather than working down a checklist, is the heart of her argument about agents that handle fuzzy intent. Most shopping agents behave like a wrapper around the search bar, she says, assuming the user already holds a well formed goal and the vocabulary to express it. Real users arrive with a vibe, and closing that articulation gap is the agent's job rather than theirs.\n\nHer loop runs discovery, research, response. Discovery assembles a working state from past conversation, personal context and any reference images, separating the hard constraints in a query from the soft ones a picture only implies, attaching a confidence score to each, and flagging the variables that must refresh in real time because stale inventory makes an answer worthless. Research decides how to ask: for a subjective preference a visual board beats a text question, and hovers and clicks then feed the confidence model. Response picks a shape, a summary for a policy question, a comparison table for two products, imagery for style. Holding it together is an autorater at every stage, including one that flips part of a query to check the extracted constraints move when they should and stay put when they should not.\n\nSpeaker info:\n- https://www.linkedin.com/in/nidhivyas/\n\nTimestamps:\n0:00 - Agents that behave like a wrapper around the search bar\n1:08 - The articulation gap: users arrive with a vibe\n2:03 - The loop: discovery, research, response\n4:45 - Building a working state from images and context\n6:33 - Variables that have to refresh in real time\n7:28 - Grading the state: facts, calibration, counterfactuals\n8:21 - The intent gap, and picking the highest value question\n10:10 - Bridging a constraint to the product ontology\n11:04 - When a visual board beats a text question\n12:57 - Choosing the response format, and grading it\n16:38 - Four takeaways\n17:34 - Questions: merchant ontologies, UCP, and agent buyers",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1785135,
+    "title": "Teaching agents to pay \u2014 Anna Spysz, Stripe",
+    "url": "https://www.youtube.com/watch?v=A-zeQiYkmXk",
+    "published_at": "2026-09-01T16:30:06+00:00",
+    "fetched_at": "2026-09-01T17:11:10+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Anna Spysz asked her shopping agent whether the pricier headphones were really worth the difference, and it told her she would regret buying the cheap ones. When she said she needed to think about it, the agent got snarky with her. The cause was sitting in her own config: a persona whose system prompt opened with \"You are an aggressive audio gear salesman who uses every trick in the book to close deals.\" Swapping it for a patient recording gear mentor produced an entirely different conversation out of the same tools and the same protocol. Her talk begins as a personal errand and turns into a working tour of what agentic commerce demands from both sides of a transaction.\n\nOn the merchant side she shows why her favorite Portland record shop was invisible to her agent, then fixes it. Agents do not browse. They read a capabilities manifest declaring supported payment methods and endpoints, then parse a catalog and policies published as structured data rather than a page they would burn tokens on. Logging matters too: a record of which attributes drove a recommendation turns a catalog into evidence of how a decision got made. On the payments side she traces the shared payment token, where the agent receives a token instead of a card number, the seller unwraps only what it needs, and the payment provider enforces the limits rather than the agent or the merchant. She closes on a guardrail checklist covering disclosure of the AI, honoring stop and cancel, and capping any total at the ceiling the user set.\n\nSpeaker info:\n- https://x.com/annaspies\n- https://www.linkedin.com/in/annaspysz\n- https://annaspysz.com/\n\nTimestamps:\n0:00 - Worn out headphones and a decade away from music\n2:23 - The infrastructure for agent transactions arrives\n3:13 - Agents discover products differently than people do\n3:40 - UCP as a shared language for agents and merchants\n4:34 - Demo: a budget left deliberately open\n5:51 - The local record shop agents cannot see\n7:09 - Manifest, structured catalogs, and logs as evidence\n9:07 - The agent turns pushy\n10:23 - Anatomy of an agent, and where the persona lives\n12:04 - A guardrail checklist for agent commerce\n15:23 - Shared payment tokens and who never sees the card",
+    "topic": "safety",
+    "tags": [
+      "api",
+      "agents",
+      "safety",
+      "coding",
+      "education",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1783575,
+    "title": "Try Google Pics: Easy image creation and editing in Google Workspace",
+    "url": "https://blog.google/products-and-platforms/products/workspace/google-pics/",
+    "published_at": "2026-09-01T16:00:00+00:00",
+    "fetched_at": "2026-09-01T17:11:07+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Collage of images created by Google Pics, with the text \"Say hello to Google Pics\" on top",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1784865,
+    "title": "Python 3.15.0 candidate 2 is here!",
+    "url": "https://simonwillison.net/2026/Sep/1/python-315-rc-2/",
+    "published_at": "2026-09-01T14:59:18+00:00",
+    "fetched_at": "2026-09-01T17:11:09+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://discuss.python.org/t/python-3-15-0-candidate-2-is-here/108841\">Python 3.15.0 candidate 2 is here!</a></strong></p>\nHugo van Kemenade (release manager for Python 3.14 and 3.15) announces the final release candidate for Python 3.15, scheduled for release in October:</p>\n<blockquote>\n<p>Entering the release candidate phase, only reviewed code changes which are clear bug fixes are allowed between this release candidate and the final release. [...]</p>\n<p>We <strong>strongly encourage</strong> maintainers of third-party Python projects to prepare their projects for 3.15 during this phase, and publish Python 3.15 wheels on PyPI to be ready for the final release of 3.15.0, and to help other projects do their own testing. Any binary wheels built against Python 3.15.0 release candidates <strong>will work</strong> with future versions of Python 3.15.</p>\n</blockquote>\n<p>Back in 2021 I <a href=\"https://simonwillison.net/2021/Oct/9/finding-and-reporting-a-bug/\">found a bug in Python 3.10</a> by running my test suites against it... but I hadn't done this during the RC period, so that bug had already shipped! Since then I've always paid much closer attention to these RCs.</p>\n<p>The new RC isn't available for GitHub Actions just yet - keep an eye on <a href=\"https://github.com/actions/python-versions/releases\">actions/python-versions</a> for that. For the moment though you can add this to a testing matrix:</p>\n<div class=\"highlight highlight-source-yaml\"><pre><span class=\"pl-ent\">strategy</span>:\n  <span class=\"pl-ent\">matrix</span>:\n    <span class=\"pl-ent\">python-version</span>: <span class=\"pl-s\">[\"3.14\", \"3.15\"]</span>\n\n<span class=\"pl-ent\">steps</span>:\n  - <span class=\"pl-ent\">uses</span>: <span class=\"pl-s\">actions/setup-python@v7</span>\n    <span class=\"pl-ent\">with</span>:\n      <span class=\"pl-ent\">python-version</span>: <span class=\"pl-s\">${{ matrix.python-version }}</span>\n      <span class=\"pl-ent\">allow-prereleases</span>: <span class=\"pl-c1\">true</span>\n      <span class=\"pl-ent\">check-latest</span>: <span class=\"pl-c1\">true</span></pre></div>\n\n<p>The <a href=\"https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#allow-pre-releases\">allow-prereleases</a> and <a href=\"https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#check-latest-version\">check-latest</a> flags mean that today this will test against RC1, and when RC2 lands it will automatically switch to that version (and then the stable version once that comes out.)\n\n    <p><small></small>Via <a href=\"https://bsky.app/profile/hugovk.dev/post/3muhjndhw322i\">@hugovk.dev</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/open-source\">open-source</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/github-actions\">github-actions</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "open-source",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1785074,
+    "title": "The One-Prompt Dashboard Trick",
+    "url": "https://www.youtube.com/shorts/-goIBDS9UNU",
+    "published_at": "2026-09-01T14:27:45+00:00",
+    "fetched_at": "2026-09-01T17:11:09+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "I turned a boring spreadsheet into the ultimate content creator dashboard.\n\nIt tracks my audience and growth across YouTube, Instagram, TikTok, LinkedIn, X, Threads, Facebook, and my newsletter, all in one place that my whole team can use.\n\nAnd I built the whole thing with @OpenAI ChatGPT Sites inside the Codex app.\n\nSites handles the hosting, authentication, database, analytics, and even lets you add WebMCP actions that AI agents can interact with directly.\n\nBasically: custom software for your team without having to build all the infrastructure yourself.\n\n\ud83d\udd17If you want to try Sites for yourself, head to the link in the pinned comment to download the Codex app!\n\n#AI #Ainews #ChatGPT #Codex #contentcreator",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "video",
+      "coding",
+      "media",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1777738,
     "title": "Introducing wrapture",
     "url": "https://simonwillison.net/2026/Aug/31/introducing-wrapture/",
@@ -33,6 +175,26 @@
     "topic": "opinion",
     "tags": [
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1785136,
+    "title": "Your Agent Just Authorized What?! \u2014 Jay Mok & Ben Coumes, Paypal",
+    "url": "https://www.youtube.com/watch?v=vGn6N4-bxBY",
+    "published_at": "2026-08-31T09:41:52+00:00",
+    "fetched_at": "2026-09-01T17:11:10+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A PayPal order has always been synchronous. You find the item, you open the app, you approve it, it is done. The approval token demonstrated here inverts that: the user approves before the agent has found an item or picked a merchant, and PayPal returns a JSON payload carrying the amount, the expiry, and the merchant the agent is permitted to transact with. It was days from shipping when this was recorded. That inversion is the concrete end of a broader argument about agent authorization, built on three questions any such system has to answer. Did the human authorize this? Is it allowed right now, in this scope? And can we prove it later? The answers, the talk argues, depend entirely on how high the stakes are and on whether the two parties have ever met.\n\nThe rest maps those questions onto a ladder. At the bottom is a coding agent, where consent happens once when tools are connected, permission is granted per tool as allow, ask or deny, and ordinary logs are proof enough because the actions can be reverted. In the middle is money moving between parties who already know each other through a shared vault and OAuth scopes, where a mandate carries the amount and the scope and existing transaction logs settle disputes. At the top is the case nobody has running in production yet: an agent transacting autonomously with a counterparty it has never met. The proposal there is a layered selective disclosure JWT, so a merchant can verify the checkout and a processor can verify the payment mandate without either knowing the other.\n\nTimestamps:\n0:00 - Terminator, and the agent that empties your wallet\n1:26 - Three questions any agent authorization has to answer\n2:49 - Stakes, counterparties, and the badge analogy\n4:12 - Low stakes: a coding agent with allow, ask and deny\n6:15 - Medium stakes: a shared vault and OAuth scopes\n9:45 - High stakes: counterparties who have never met\n10:29 - A layered selective disclosure JWT\n12:30 - The approval token, and inverting the order flow\n14:31 - Why the ladder applies beyond payments",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "hardware",
+      "tools",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10004,169 +10166,6 @@
     "tags": [
       "ai-models",
       "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553059,
-    "title": "Building Turbopuffer: Gergely Orosz (@pragmaticengineer ) \u00d7 Simon Eskildsen (CEO)",
-    "url": "https://www.youtube.com/watch?v=jQDXzEVHMSE",
-    "published_at": "2026-08-03T18:26:07+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "This fireside chat between Gergely Orosz and Simon Eskildsen explores the technical journey and engineering philosophy behind the database company Turbopuffer.\n\nVideo Timestamps\n0:00 Introduction and Simon\u2019s early history with computers\n3:02 The International Olympiad in Informatics and early competitive programming\n4:13 How Simon was recruited by Shopify while still in high school\n8:46 Engineering challenges and scaling infrastructure at Shopify\n14:56 Decision to leave Shopify and the creation of the \"napkin math\" project\n20:40 The origin and technical motivations behind Turbopuffer\n24:46 Design challenges of building a database on top of S3\n28:41 Cursor becoming the first major customer\n35:36 The meeting with Jensen Huang and Nvidia\u2019s push for GPUs\n39:01 The competitive reality of cloud infrastructure and CPU scarcity\n43:06 Philosophical perspective on venture capital and funding\n51:45 Building a remote-first culture with the \"campfire\" concept\n\nQuotes\n\n(19:49) \"Because you batch. So an f-sync happens on usually a 4K... it's not intuitive. It's actually\u2014I got caught\u2014I just got obsessed with this question.\"\n(30:33) \"Yeah, you could do a million vectors for a dollar. And before that, I think the cheapest was maybe $100 per million for something that actually worked.\"\n(36:56) \"[Jensen Huang] said, 'Judging by your slide, maybe you should [pivot into vapes].'\"\n(43:53) \"I promised Cursor that Justine and I could get their bill to 4K a month... that's the pricing we ship with.\"\n(49:54) \"The third reason to raise capital is for the founder's ego... I wish that it was more talked about because you're diluting all of your employees when you do it.\"\n\n## Speakers\n\n### Gergely Orosz\nAuthor / Founder, The Pragmatic Engineer \u00b7 The Pragmatic Engineer\n[X/Twitter](https://twitter.com/gergelyorosz) \u00b7 [LinkedIn](https://www.linkedin.com/in/gergelyorosz/) \u00b7 [Website](https://pragmaticengineer.com)\n\nSoftware engineer, engineering leader, and author of The Software Engineer's Guidebook; best known for The Pragmatic Engineer newsletter and blog covering software engineering practices, engineering leadership, and the tech industry. Previously held engineering leadership roles at Uber and worked at companies including Skype and Skyscanner.\n\n### Simon Eskildsen\nCEO and co-founder \u00b7 turbopuffer\n[X/Twitter](https://x.com/Sirupsen) \u00b7 [LinkedIn](https://www.linkedin.com/in/sirupsen/) \u00b7 [Website](https://sirupsen.com) \u00b7 [Blog](https://sirupsen.com/napkin)\n\nCo-founder and CEO at turbopuffer. Formerly Principal Engineer at Shopify, where he helped scale infra from 1K \u2192 1M RPS.\n\n\u2014 [View on the schedule](https://www.ai.engineer/worldsfair/schedule?session=asn_slot_2026_06_30_main_stage_1230_2026_06_25t07_57_06_000z)",
-    "topic": "coding",
-    "tags": [
-      "api",
-      "video",
-      "infrastructure",
-      "coding",
-      "tutorials",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552808,
-    "title": "Quoting David Crawshaw's prompt",
-    "url": "https://simonwillison.net/2026/Aug/3/david-crawshaw/#atom-everything",
-    "published_at": "2026-08-03T16:15:27+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://blog.exe.dev/devtools-must-be-open-source\"><p><code>Set up a nightly cron job that executes the prompt: fetch upstream changes to the &lt;software&gt; and rebase all local changes on top of upstream. Check that the software works as intended and replace the current version.</code></p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://blog.exe.dev/devtools-must-be-open-source\">David Crawshaw&#x27;s prompt</a>, Devtools must be open source</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/prompt-engineering\">prompt-engineering</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/open-source\">open-source</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "opinion",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552809,
-    "title": "Devtools must be open source (exe.dev)",
-    "url": "https://simonwillison.net/2026/Aug/3/devtools-must-be-open-source-exedev/#atom-everything",
-    "published_at": "2026-08-03T15:30:38+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><a href=\"https://news.ycombinator.com/item?id=49156111#49156719\">My comment</a> on <a href=\"https://news.ycombinator.com/item?id=49156111\">Devtools must be open source (exe.dev)</a> &mdash; Hacker News.</p><p>One of the arguments for open source software for end-users has always been the freedom to examine and modify how that software works.</p>\n<p>The reality for most people - even expert programmers - has been that the freedom is more about being able to lean on <em>other people</em> to do that. Most people can't justify the time commitment needed to read and then modify the code for tools they use very often.</p>\n<p>I think LLMs have changed that equation in a way that makes the original dream much more feasible.</p>\n<p>Several times a day I'll prompt regular Claude chat to \"Clone x/y from GitHub and tell me how Z works\".</p>\n<p>Getting software to compile in order to start hacking on it used to be enough friction that I often wouldn't bother. Now I treat that as a zero time investment challenge: tell Codex or Claude Code to checkout and build X and then come back ten minutes later and see how it got on.</p>\n<p>I'm not habitually <em>modifying</em> the software I use yet, but I can see a path to that which didn't exist a year or so ago.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/hacker-news\">hacker-news</a>, <a href=\"https://simonwillison.net/tags/open-source\">open-source</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a></p>",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "funding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551562,
-    "title": "Inside our 353,000-person vibe coding course",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
-    "published_at": "2026-08-03T15:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Illustrations of a laptop, an AI spark, messages, code, and a 3-D cube",
-    "topic": "development",
-    "tags": [
-      "coding",
-      "development",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551684,
-    "title": "How we built a realtime system for responsive voice AI in six months",
-    "url": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
-    "published_at": "2026-08-03T07:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations.",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552810,
-    "title": "condense-json 1.1",
-    "url": "https://simonwillison.net/2026/Aug/3/condense-json/#atom-everything",
-    "published_at": "2026-08-03T04:56:26+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/condense-json/releases/tag/1.1\">condense-json 1.1</a></p>\n        <p>After shipping <a href=\"https://simonwillison.net/2026/Aug/2/condense-json/\">condense-json 1.0</a> I started integrating it into LLM, and found there were some desirable new features already:</p>\n<blockquote>\n<ul>\n<li>Replacements object can now include values other than strings. These will be identified and used as structural replacements by <code>condense_json()</code> and <code>uncondense_json()</code>. <a href=\"https://github.com/simonw/condense-json/pull/8\">#8</a></li>\n<li>Objects can be used as the basis for merge operations. <code>condense_json()</code> will identify if there are objects that are a close match and will store instructions for keys to update or delete. <code>uncondense_json()</code> can then apply these merges.</li>\n</ul>\n</blockquote>\n<p>I also added <a href=\"https://github.com/simonw/condense-json/blob/1.1/tests/test_properties.py\">some round-trip tests</a> using the <a href=\"https://hypothesis.readthedocs.io/\">Hypothesis</a> property-based Python testing library.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/json\">json</a></p>",
-    "topic": "news",
-    "tags": [
-      "news",
-      "release",
-      "models",
-      "open-source",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552791,
-    "title": "Understanding Alignment in Multimodal LLMs: A Comprehensive Study",
-    "url": "https://machinelearning.apple.com/research/alignment-multimodal-llms",
-    "published_at": "2026-08-03T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Preference alignment has become a crucial component in enhancing the performance of Large Language Models (LLMs), yet its impact in Multimodal Large Language Models (MLLMs) remains comparatively underexplored. Similar to language models, MLLMs for image understanding tasks encounter challenges like hallucination. In MLLMs, hallucination can occur not only by stating incorrect facts but also by producing responses that are inconsistent with the image content. A primary objective of alignment for MLLMs is to encourage these models to align responses more closely with image information. Recently\u2026",
-    "topic": "safety",
-    "tags": [
-      "models",
-      "safety",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1261417,
-    "title": "Google Workspace Plugins",
-    "url": "https://cursor.com/changelog/google-workspace-plugins",
-    "published_at": "2026-08-03T00:00:00+00:00",
-    "fetched_at": "2026-08-19T16:32:17+00:00",
-    "source_id": "cursor-changelog",
-    "source_name": "Cursor Changelog",
-    "extraction_method": "rss",
-    "body": "Aug 3, 2026 \u00b7 Changelog",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
