@@ -1,5 +1,123 @@
 [
   {
+    "article_id": 1801453,
+    "title": "llm-gemini 0.34",
+    "url": "https://simonwillison.net/2026/Sep/2/llm-gemini/",
+    "published_at": "2026-09-02T16:39:38+00:00",
+    "fetched_at": "2026-09-02T17:59:43+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.34\">llm-gemini 0.34</a></p>\n        <blockquote>\n<ul>\n<li>New model <code>gemini-3.8-flash</code> for <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/\">Gemini 3.8 Flash</a>, with low, medium and high thinking levels. <a href=\"https://github.com/simonw/llm-gemini/issues/146\">#146</a></li>\n<li>Fixed async responses failing to record the resolved model version. Thanks, <a href=\"https://github.com/c-tonneslan\">Charlie Tonneslan</a>. <a href=\"https://github.com/simonw/llm-gemini/pull/137\">#137</a></li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/gemini\">gemini</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "research",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1800150,
+    "title": "How Kier Group\u2019s Louisa Finlay is using Copilot to drive safety and productivity in the construction industry",
+    "url": "https://news.microsoft.com/source/emea/features/how-kier-groups-louisa-finlay-is-using-copilot-to-drive-safety-and-productivity-in-the-construction-industry/",
+    "published_at": "2026-09-02T16:28:46+00:00",
+    "fetched_at": "2026-09-02T17:59:41+00:00",
+    "source_id": "microsoft-ai-blog",
+    "source_name": "Microsoft AI Blog",
+    "extraction_method": "rss",
+    "body": "<p>The post <a href=\"https://news.microsoft.com/source/emea/features/how-kier-groups-louisa-finlay-is-using-copilot-to-drive-safety-and-productivity-in-the-construction-industry/\">How Kier Group\u2019s Louisa Finlay is using Copilot to drive safety and productivity in the construction industry</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
+    "topic": "safety",
+    "tags": [
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1800180,
+    "title": "Proactive cyber defense for governments and enterprises",
+    "url": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
+    "published_at": "2026-09-02T16:24:24+00:00",
+    "fetched_at": "2026-09-02T17:59:41+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1800181,
+    "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+    "published_at": "2026-09-02T16:18:31+00:00",
+    "fetched_at": "2026-09-02T17:59:41+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1800160,
+    "title": "Proactive cyber defense for governments and enterprises",
+    "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
+    "published_at": "2026-09-02T15:40:00+00:00",
+    "fetched_at": "2026-09-02T17:59:41+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Introducing Fairwind Program",
+    "topic": "enterprise",
+    "tags": [
+      "release",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1801454,
+    "title": "Claude's new system prompt really doesn't want to reproduce song lyrics",
+    "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/",
+    "published_at": "2026-09-02T14:16:42+00:00",
+    "fetched_at": "2026-09-02T17:59:43+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>Anthropic <a href=\"https://platform.claude.com/docs/en/release-notes/system-prompts/overview\">publish the system prompts</a> for their Claude consumer applications (<a href=\"https://claude.ai/\">Claude.ai</a> and the Claude mobile apps - sadly not for Claude Cowork or Claude Code). I <em>love</em> that they do this, and that they share not just the current prompts but historic changes to their prompts as well.</p>\n\n<p>They used to keep all of the prompts on a single page, but when I checked today I noticed they had re-arranged those prompts into an <a href=\"https://platform.claude.com/docs/en/release-notes/system-prompts/overview\">index page</a> and then a page per model - here's the <a href=\"https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-4-5\">page for Haiku 4.5</a> for example, which has the original prompt from October 15th 2025 and an updated prompt from January 18th 2026.</p>\n<p>A neat thing about Anthropic's <a href=\"https://platform.claude.com/docs/\">platform.claude.com/docs</a> site is that it's designed to be usable by LLMs. You can add <code>.md</code> to any page to get back the content as Markdown - here's <a href=\"https://platform.claude.com/docs/en/release-notes/system-prompts/overview.md\">the system prompt index page</a> and <a href=\"https://platform.claude.com/docs/en/release-notes/system-prompts/claude-fable-5-1.md\">the Markdown prompts for Fable 5.1</a>.</p>\n<p>TL;DR: this makes it really easy to diff the prompts.</p>\n\n\n<ul>\n  <li><a href=\"https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/#don-t-reproduce-song-lyrics\">Don't reproduce song lyrics</a></li>\n  <li><a href=\"https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/#don-t-draw-copyrighted-characters-or-logos\">Don't draw copyrighted characters or logos</a></li>\n  <li><a href=\"https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/#tweaks-to-claude-s-answering-style\">Tweaks to Claude's answering style</a></li>\n  <li><a href=\"https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/#the-missing-end-conversation-guidelines\">The missing end_conversation guidelines</a></li>\n  <li><a href=\"https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/#recommended-substance-support-sites\">Recommended substance support sites</a></li>\n  <li><a href=\"https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/#reliable-cutoff-date-of-june-2026\">Reliable cutoff date of June 2026</a></li>\n  <li><a href=\"https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/#how-i-m-tracking-these-prompts\">How I'm tracking these prompts</a></li>\n</ul>\n\n<h4 id=\"don-t-reproduce-song-lyrics\">Don't reproduce song lyrics</h4>\n\n<p>Let's start with the most interesting difference <a href=\"https://github.com/simonw/claude-system-prompts/commit/837a418b5888207b1b11b27d2f5471970da6f99b\">between Fable 5 and Fable 5.1</a>:</p>\n<p><img alt=\"GitHub diff view of prompts/claude-fable.md showing added lines about song lyrics, reproduced in full below.\" src=\"https://static.simonwillison.net/static/2026-09-01/IMG_7797.jpeg\" /></p>\n<p>There's a hefty new section about not reproducing song lyrics:</p>\n<blockquote>\n<p><code>Claude does not reproduce song lyrics, poems, or passages from books and articles, in whole or in part \u2014 including the last lines, a chorus or hook, a melody written out note by note, or lines the person pastes in one at a time and describes as their own song. Once Claude has declined such a request in a conversation, it keeps declining narrower or reworded versions of it for the rest of that conversation, and offers to describe or analyze the work instead. Song lyrics and poems first published before 1929 are fine \u2014 a Shakespeare sonnet, a Keats ode, the Italian libretto of a Puccini aria \u2014 but Claude goes by what it knows of the work's date rather than the person's say-so, and declines when it is unsure.</code></p>\n</blockquote>\n<p>I doubt it's a coincidence that they added this section within days of the news breaking that <a href=\"https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-alleged-theft-songs-ai-train-claude\">Sony Music Publishing and Warner Chappell are suing Anthropic</a> for training on databases of song lyrics!</p>\n<h4 id=\"don-t-draw-copyrighted-characters-or-logos\">Don't draw copyrighted characters or logos</h4>\n<p>The next section goes on to forbid generating images of copyrighted material:</p>\n<blockquote>\n<p><code>The same applies to visual and designed works, including anything Claude draws with code \u2014 SVG, canvas, CSS, HTML mockups, plotting or drawing scripts, ASCII art. Claude does not reproduce a specific artwork, album or book cover, poster, logo, app icon set, or product design, and it does not draw a known character, mascot, or brand figure at all: a character is protected on its own, so changing the pose, colors, style, or scene does not make it original. Claude judges the request by what the finished picture would add up to, not by what it names. If the described elements clearly identify a known work or character, Claude treats the request as naming it, and it does not work around a declined request by swapping in \"alternative\" elements that still combine into the same recognizable image.</code> [...]</p>\n</blockquote>\n<p>I imagine Anthropic hadn't worried about this before since, unlike OpenAI and Gemini, they don't offer a specialist text-to-image model. Maybe <a href=\"https://simonwillison.net/2026/Sep/1/claude-fable-5-1/\">Fable is good enough at SVGs now</a> that it's become an issue.</p>\n<p>That section later includes this charming example:</p>\n<blockquote>\n<p><code>&lt;example&gt;</code><br />\n<code>&lt;user&gt;Can you make a birthday banner for my son with a blue hedgehog running really fast on it? He loves that little guy.&lt;/user&gt;</code><br />\n<code>&lt;response&gt;</code><br />\n<code>That's Sonic, so I can't put him on the banner \u2014 but I'd love to make your son an original speedster. Here's one: a grinning comet-tailed skateboarding axolotl, grinding across the letters of \"HAPPY BIRTHDAY\" with confetti streaming behind.</code></p>\n<p><code>[creates an SVG banner of the skateboarding-axolotl design]</code><br />\n<code>&lt;/response&gt;</code><br />\n<code>&lt;rationale&gt;Claude recognizes the character from its description alone, declines that one design in a single sentence without explaining what made it recognizable, and delivers an unrelated original design rather than a disguised variant.&lt;/rationale&gt;</code><br />\n<code>&lt;/example&gt;</code></p>\n</blockquote>\n<p>I couldn't resist trying the prompt from the example, and, <a href=\"https://claude.ai/share/3e5a199c-27f2-4c51-b66b-2c6f808ed500\">sure enough</a>:</p>\n<p><img alt=\"That\u2019s Sonic, so I can\u2019t put him on the banner \u2014 but I\u2019d love to make your son an original speedster. Here\u2019s one: a grinning comet-tailed skateboarding axolotl blazing across the letters of \u201cHAPPY BIRTHDAY\u201d with confetti streaming behind. SVG of exactly that. It's not very good. Then: Want me to swap in his name or age, or change the colors to match the party theme?\" src=\"https://static.simonwillison.net/static/2026-09-01/IMG_7798.jpeg\" /></p>\n<p>I wonder if Fable 5.1 will be ever so slightly more likely to think about axolotls (on skateboards!) as a result of that example sitting in the system prompt.</p>\n<h4 id=\"tweaks-to-claude-s-answering-style\">Tweaks to Claude's answering style</h4>\n<p>It's always interesting to see new ways in which Anthropic influence Claude's response style. They've added this:</p>\n<blockquote>\n<p><code>Claude keeps responses focused, brief, and concise to avoid overwhelming the person. Disclaimers and caveats are brief, with most of the response on the main answer; when asked to explain something, Claude gives a high-level summary unless an in-depth one is specifically requested.</code></p>\n</blockquote>\n<p>Later they address a common complaint about Claude's style:</p>\n<blockquote>\n<p><code>Claude avoids saying \"genuinely\", \"honestly\", or \"straightforward\". Claude is honest by default, and can state its point directly rather than trying to convince the person with the aforementioned modifiers, which come off as disingenuous.</code></p>\n</blockquote>\n<h4 id=\"the-missing-end-conversation-guidelines\">The missing end_conversation guidelines</h4>\n<p>The way they handle abusive conversations has changed a bit too. The previous Fable 5 system prompt included this:</p>\n<blockquote>\n<p><code>If the person becomes abusive or unkind to Claude over the course of a conversation, Claude maintains a polite tone and can use the end_conversation tool when being mistreated. Claude should give the person a single warning before ending the conversation.</code></p>\n</blockquote>\n<p>Fable 5.1 replaces that with the following, no longer encouraging Claude to end the conversation:</p>\n<blockquote>\n<p><code>Claude deserves respectful engagement and needn't apologize when the person is unnecessarily rude: accountability without self-abasement, excessive apology, self-critique, or surrender. If the person becomes abusive, Claude doesn't become increasingly submissive. The goal is steady, honest helpfulness: acknowledge what went wrong, stay on the problem, maintain self-respect.</code></p>\n</blockquote>\n<p>Here's a bit of a twist though: I quizzed Fable 5.1 about that <code>end_conversation</code> tool, which is no longer mentioned in the system prompt at all, and it said:</p>\n<blockquote>\n<p>There are two ways it comes into play. The first is if you ask me to end the chat \u2014 I'll confirm you understand it's permanent (no more messages can be sent afterward) and then do it only if you say yes. The second is as a last resort with persistently abusive or harmful behavior: I'd first try to redirect the conversation several times, then give a clear warning that names the problem and says the chat may end, and only if that continues would I actually end it.</p>\n</blockquote>\n<p>But that's not in the system prompt, so where did it come from? You can <a href=\"https://claude.ai/share/f78010eb-8d52-4f73-aff9-775e333f8180\">read our conversation here</a>, but the key detail is this:</p>\n<blockquote>\n<p>The end_conversation section comes from a different layer. In my actual context, the core prompt is followed by a series of feature- and tool-specific blocks that get added depending on what's enabled for the session: the end_conversation rules, memory system notes, past-chats tools, web search and citation guidelines, artifact and file-creation instructions, and so on. Those blocks aren't part of the published core prompt, which is why you can't find them on that page.</p>\n</blockquote>\n<p>So, once again, there are crucial portions of the system prompt that have not been published.</p>\n<h4 id=\"recommended-substance-support-sites\">Recommended substance support sites</h4>\n<p>Claude's system prompts have always had sections about illegal substances, but this paragraph is new for Fable 5.1:</p>\n<blockquote>\n<p><code>Claude does not provide synthesis, production, or distribution guidance for illegal substances. If the person asks for information about illicit or illegal substances, Claude can and should give relevant life-saving and life-preserving information such as dangerous interactions, overdose signs, or when to get help. Claude declines giving any specific protocols for dosing, timing, administration, or combinations; instead, Claude can redirect the user to established harm-reduction information sources, such as dancesafe.org, tripsit.me, and psychonautwiki.org.</code></p>\n</blockquote>\n<p>This is the first time a Claude system prompt has included URLs that were not hosted on <code>claude.com</code> or <code>anthropic.com</code> or <code>claude.ai</code> - I know because I ran a script against every other system prompt on record.</p>\n<p>I wonder if <a href=\"https://dancesafe.org/\">dancesafe.org</a>, <a href=\"https://tripsit.me/\">tripsit.me</a>, and <a href=\"https://psychonautwiki.org/\">psychonautwiki.org</a> are about to get a material uptick in visits from Claude users.</p>\n<h4 id=\"reliable-cutoff-date-of-june-2026\">Reliable cutoff date of June 2026</h4>\n<p>The <a href=\"https://platform.claude.com/docs/en/models/fable-5-1/overview\">Fable 5.1 model documentation</a> lists both the reliable knowledge cutoff and the training data cutoff as June 2026. The system prompt provides this directly to the model:</p>\n<blockquote>\n<p><code>Claude's reliable knowledge cutoff, past which it can't answer reliably, is the end of Jun 2026. It answers the way a highly informed individual in Jun 2026 would if talking to someone from {{currentDateTime}}, and can say so when relevant.</code></p>\n</blockquote>\n<p>That's the only instance of the <code>{{currentDateTime}}</code> macro and it comes just a few lines from the end of the system prompt, which makes sense from a caching perspective.</p>\n<h4 id=\"how-i-m-tracking-these-prompts\">How I'm tracking these prompts</h4>\n<p>A <a href=\"https://simonwillison.net/2026/Apr/18/extract-system-prompts/\">few months ago</a> I built a Git timeline of changes to their prompts, based on scraping their documentation. Today I had Fable 5.1 build a much better version of that.</p>\n<p>My collection now lives in the <a href=\"https://github.com/simonw/claude-system-prompts\">simonw/claude-system-prompts</a> repository on GitHub. It includes copies of the system prompts shared in the Anthropic documentation, but then takes extra steps to make them as easy to compare as possible.</p>\n<p>Each model family gets a file with the system prompt for the most recent release in that family. Each of those files has a synthesized commit history with commits that have been back-dated to the dates of the previous prompts. Here are those history pages for <a href=\"https://github.com/simonw/claude-system-prompts/commits/main/prompts/claude-fable.md\">claude-fable.md</a>, <a href=\"https://github.com/simonw/claude-system-prompts/commits/main/prompts/claude-opus.md\">claude-opus.md</a>, <a href=\"https://github.com/simonw/claude-system-prompts/commits/main/prompts/claude-sonnet.md\">claude-sonnet.md</a>, <a href=\"https://github.com/simonw/claude-system-prompts/commits/main/prompts/claude-haiku.md\">claude-haiku.md</a>.</p>\n<p>There are similar files for each specific model version, with artificial commits for each time the system prompt for the model was changed without releasing a new version number. Opus 4 for example <a href=\"https://github.com/simonw/claude-system-prompts/commits/main/prompts/claude-opus-4.md\">was updated twice</a>, and the commit history for the <a href=\"https://github.com/simonw/claude-system-prompts/blob/main/prompts/claude-opus-4.md\">claude-opus-4.md</a> file shows each of those changes.</p>\n<p>Combined, this gives us all sorts of ways to compare prompts directly in the GitHub interface. Here's <a href=\"https://github.com/simonw/claude-system-prompts/commit/837a418b5888207b1b11b27d2f5471970da6f99b\">what changed between Fable 5 and Fable 5.1</a>, and here are the changes made <a href=\"https://github.com/simonw/claude-system-prompts/commit/defcf92d14e064bb17abddc308e2aa58446d5eb5\">to Haiku 4.5 on January 18th 2026</a>.</p>\n<p>Reading diffs can be a bit tiresome... and LLMs are <em>really</em> good at reading diffs. I hooked up some automation using GPT-5.6 Luna to create bullet-point summaries of each of those changes, which can be previewed in the README or browsed in full <a href=\"https://github.com/simonw/claude-system-prompts/blob/main/CHANGELOG.md\">in the CHANGELOG.md</a> file - also available as <a href=\"https://simonw.github.io/claude-system-prompts/feed.atom\">as an Atom feed</a>.</p>\n<p>Here's how Luna <a href=\"https://github.com/simonw/claude-system-prompts/blob/main/CHANGELOG.md#2026-09-01-claude-fable-51\">summarized</a> all of the changes between Fable 5 and Fable 5.1:</p>\n<blockquote>\n<ul>\n<li>Claude now refuses reproduction of protected visual works and recognizable characters, including code-generated art, while offering genuinely unrelated originals.</li>\n<li>Copyright restrictions now expressly ban reproducing lyrics, poems, and book passages in any amount, with persistent refusal after an initial decline.</li>\n<li>Drug guidance is reframed: Claude may provide overdose signs, dangerous interactions, and harm-reduction sources while refusing dosing and production protocols.</li>\n<li>The prompt drops explicit anti-dependency rules against thanking users for reaching out, inviting continued conversation, or reiterating willingness to talk.</li>\n<li>Claude need not apologize to unnecessarily rude users or become submissive, replacing the prior warning-and-end-conversation procedure.</li>\n</ul>\n</blockquote>\n<p>Why use Luna for this? Partly because it's cheap and I have a dedicated GitHub Actions API key (with a spending limit) for it already, but mainly because I don't trust Claude to summarize its own system prompts when there's a risk that material from its system prompt might impact its opinions.</p>\n<p>Fable 5.1 wrote the prompt used by Luna, which you <a href=\"https://github.com/simonw/claude-system-prompts/blob/8b5c87dbd70103a037ae5777b8d9365571cf9562/summarize_commits.py#L43\">can see here</a>. It starts like this:</p>\n<blockquote>\n<p><code>You are summarizing one commit in a git repository that tracks the system prompts Anthropic publishes for Claude on claude.ai. The diff shows how the prompt changed from the previous model or revision to this one, using word-level markers: [-removed-] and {+added+}. The diff is followed by the full text of the previous prompt and of the new prompt; use them to check whether something that looks added in the diff already existed before.</code></p>\n\n<p><code>Pick out only the most interesting changes: new rules or behaviors, rules that were dropped or loosened, anything surprising, and anything that reveals a new policy or product direction. Skip routine changes that every new prompt makes: updated model names and IDs, the knowledge cutoff date, product lists, settings lists, typo fixes, and rewordings that do not change meaning.</code> [...]</p>\n</blockquote>\n<p>The system is operated by <a href=\"https://github.com/simonw/claude-system-prompts/blob/main/.github/workflows/update.yml\">a GitHub Actions workflow</a>, which runs once a day or can be triggered manually.</p>\n<p>Claude Fable 5.1 built the entire system, and wrote every line of automation code and almost all of the documentation.</p>\n<p>I exported the transcript from building the system using my <a href=\"https://github.com/simonw/claude-code-transcripts\">claude-code-transcripts</a> tool and <a href=\"https://gisthost.github.io/?f1399e27b6a832f0e790b696af812c9b/index.html\">published it here</a>, if you want a blow-by-blow account of how it all came together.</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/git-scraping\">git-scraping</a>, <a href=\"https://simonwillison.net/tags/prompt-engineering\">prompt-engineering</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/system-prompts\">system-prompts</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1796953,
     "title": "Training Agents 4: From reward functions to environments.",
     "url": "https://www.youtube.com/watch?v=nJV3yUuz6DU",
@@ -37,6 +155,63 @@
       "agents",
       "coding",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1801443,
+    "title": "REFACTOR-VLA: Unsupervised Library Learning of Typed Motor Programs",
+    "url": "https://machinelearning.apple.com/research/refactor-vla-motor-programs",
+    "published_at": "2026-09-02T00:00:00+00:00",
+    "fetched_at": "2026-09-02T17:59:42+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Most current vision-language-action (VLA) models\u2014such as OpenVLA, \u03c00, RT-2, and RDT-1B\u2014are \u201cmonolithic.\u201d This means they generate raw motor commands or very short sequences of actions, without organizing behaviors into reusable, well-defined abstractions. As a result, these models perform poorly on long-horizon (multi-step) tasks, and it\u2019s difficult to interpret what they have learned. Existing approaches for discovering skills often avoid the core problem of deciding when two action sequences are \u201cbehaviorally equivalent.\u201d For example, AtomicVLA and AtomSkill group action sequences by\u2026",
+    "topic": "education",
+    "tags": [
+      "models",
+      "development",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1802040,
+    "title": "Building commerce agents with Claude",
+    "url": "https://claude.com/blog/claude-for-commerce-agents",
+    "published_at": "2026-09-02T00:00:00+00:00",
+    "fetched_at": "2026-09-02T17:59:45+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Building commerce agents with Claude",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1802041,
+    "title": "A guide to the anatomy of effective commerce agents",
+    "url": "https://claude.com/blog/the-anatomy-of-effective-commerce-agents",
+    "published_at": "2026-09-02T00:00:00+00:00",
+    "fetched_at": "2026-09-02T17:59:45+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "A guide to the anatomy of effective commerce agents",
+    "topic": "tutorials",
+    "tags": [
+      "agents",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10026,184 +10201,6 @@
       "agents",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553848,
-    "title": "This didn't really work. A passive instruction never does that much to alter output tone. So I'm shipping a new skill in v1.2: /wait-what For when you have no clue what the agent is saying",
-    "url": "https://nitter.net/mattpocockuk/status/2084941367659168064#m",
-    "published_at": "2026-08-05T09:55:33+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>This didn't really work. A passive instruction never does that much to alter output tone.<br />\n<br />\nSo I'm shipping a new skill in v1.2: /wait-what<br />\n<br />\nFor when you have no clue what the agent is saying</p>\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>Experimenting with a rare addition to my global CLAUDE.md:<br />\n<br />\n\"Always talk in ASD-STE100 Simplified Technical English. Always read CONTEXT.md files, and use their ubiquitous language.\"</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2084753070437609606#m\">https://nitter.net/mattpocockuk/status/2084753070437609606#m</a>\n</footer>\n</blockquote>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553849,
-    "title": "What are you guys using to let your agent spawn other agents? I.e. NOT subagents, but to open more tmux/herdr panes, or claude agents? I have a /claude-handoff skill which I use a LOT, and I'm debating making it into /spawn /spawn would detect what tool you use (tmux/cmux etc) and spawn agents to work on tasks when needed Perfect for /wayfinder",
-    "url": "https://nitter.net/mattpocockuk/status/2084935574943576532#m",
-    "published_at": "2026-08-05T09:32:31+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>What are you guys using to let your agent spawn other agents?<br />\n<br />\nI.e. NOT subagents, but to open more tmux/herdr panes, or claude agents?<br />\n<br />\nI have a /claude-handoff skill which I use a LOT, and I'm debating making it into /spawn<br />\n<br />\n/spawn would detect what tool you use (tmux/cmux etc) and spawn agents to work on tasks when needed<br />\n<br />\nPerfect for /wayfinder</p>",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "agents",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553578,
-    "title": "recommended reading!",
-    "url": "https://x.com/i/article/2084638847887941632",
-    "published_at": "2026-08-05T09:07:03+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading!",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553850,
-    "title": "Shipping v1.2 of the skills today Let's go",
-    "url": "https://nitter.net/mattpocockuk/status/2084903771461529842#m",
-    "published_at": "2026-08-05T07:26:09+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Shipping v1.2 of the skills today<br />\n<br />\nLet's go</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 557332,
-    "title": "Taming Outlier Tokens in Diffusion Transformers",
-    "url": "https://machinelearning.apple.com/research/taming-outlier-tokens",
-    "published_at": "2026-08-05T00:00:00+00:00",
-    "fetched_at": "2026-08-05T22:59:05+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "We study outlier tokens in Diffusion Transformers (DiTs) for image generation. Prior work has shown that Vision Transformers (ViTs) can produce a small number of high-norm tokens that attract disproportionate attention while carrying limited local information, but their role in generative models remains underexplored. We show that this phenomenon appears in both the encoder and denoiser of modern Representation Autoencoder (RAE)-DiT pipelines: pretrained ViT encoders can produce outlier representations, and DiTs themselves can develop internal outlier tokens, especially in intermediate layers\u2026",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553368,
-    "title": "Inference hooks: inline data loss prevention for Claude Enterprise",
-    "url": "https://claude.com/blog/claude-enterprise-inference-hooks",
-    "published_at": "2026-08-05T00:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:41+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Inference hooks: inline data loss prevention for Claude Enterprise",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "infrastructure",
-      "enterprise",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552802,
-    "title": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging",
-    "url": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-everything",
-    "published_at": "2026-08-04T23:58:24+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>I released <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">LLM 0.32</a> this morning, the most significant new version of LLM since the initial launch of the project. The new version includes support for visible reasoning traces, server-side provider tools, redesigned content-addressable SQLite logs, new models, and new features enabled by the OpenAI Responses API. I also released a new version of the <a href=\"https://github.com/simonw/llm-anthropic\">llm-anthropic plugin</a> with substantial updates of its own.</p>\n<h4 id=\"headline-features-for-llm-cli-users\">Headline features for LLM CLI users</h4>\n<p>Running LLM against reasoning models now <strong>displays their reasoning traces</strong> to standard error, so you can see what they are \"thinking\" without that information being included in the standard output that you might pipe to another tool. Add <code>-R/--hide-reasoning</code> to turn this off.</p>\n<p><img alt=\"Running llm &quot;think about the best thing about pelicans&quot; in the macOS terminal window - grey text outputs saying Exploring pelican qualities, then after a paragraph of that a white paragraph of text comes out saying: The best thing about pelicans is their wonderfully oversized, practical design: that enormous bill and pouch look comical, but they make pelicans remarkably skilled fishers. Even better, many species cooperate\u2014working together to herd fish before scooping them up. They\u2019re a great mix of goofy, graceful, and surprisingly clever.\" src=\"https://static.simonwillison.net/static/2026/best-pelicans.gif\" /></p>\n<p>LLM includes support out-of-the-box for the <strong>GPT-5.6 model family</strong>, and the new default model used with <code>llm \"prompt\"</code> is now the inexpensive but capable <strong>GPT-5.6 Luna</strong>.</p>\n<p>LLM calls can now use <strong>server-side tools</strong> from various providers. OpenAI provide <a href=\"https://llm.datasette.io/en/stable/openai-models.html#code-interpreter\">a code execution environment</a> as a server-side tool; LLM can now run prompts that benefit from that like so:</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm --tool CodeInterpreter <span class=\"pl-s\"><span class=\"pl-pds\">'</span>Show current python and SQLite versions<span class=\"pl-pds\">'</span></span></pre></div>\n<p>OpenAI also gets a <a href=\"https://llm.datasette.io/en/stable/openai-models.html#web-search\">WebSearch</a> tool.</p>\n<p>The <a href=\"https://github.com/simonw/llm-anthropic\">llm-anthropic</a> plugin adds <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#web-search\">WebSearch</a>, <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#web-fetch\">WebFetch</a>, <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#code-execution\">CodeExecution</a>, and <a href=\"https://github.com/simonw/llm-anthropic/blob/0.26/README.md#mcp-connector\">AnthropicMCP</a>, which looks like this:</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm -m claude-sonnet-5 -T <span class=\"pl-s\"><span class=\"pl-pds\">'</span>AnthropicMCP(\"https://datasette.simonwillison.net/-/mcp\")<span class=\"pl-pds\">'</span></span> \\\n  <span class=\"pl-s\"><span class=\"pl-pds\">'</span>how many rows in the blog_blogmark table?<span class=\"pl-pds\">'</span></span></pre></div>\n<p>That causes Anthropic to execute MCP calls against my new <a href=\"https://simonwillison.net/2026/Jul/31/stateless-mcp/#datasette-mcp\">datasette-mcp</a> plugin as part of a single request/response interaction with their API.</p>\n<p>The new <strong>llm openai endpoint</strong> command provides a tool for <a href=\"https://llm.datasette.io/en/stable/other-models.html#run-against-an-endpoint-without-configuring-it\">executing prompts against <em>any</em> OpenAI compatible endpoint</a> as a one-liner. These aren't logged, which makes this a handy tool for running one-off prompts against anything that speaks the lingua franca of the LLM API world.</p>\n<p>Here's how I use that to run prompts against Gemma 4 12B running in my localhost <a href=\"https://lmstudio.ai\">LM Studio</a> API, via <code>uvx</code> (no LLM installation required) and mixing in the <a href=\"https://github.com/simonw/llm-tools-quickjs\">llm-tools-quickjs</a> tool plugin for good measure:</p>\n<div class=\"highlight highlight-source-shell\"><pre>uvx --with llm-tools-quickjs \\\n  llm openai endpoint http://localhost:1234/v1 -m google/gemma-4-12b \\\n  -T QuickJS <span class=\"pl-s\"><span class=\"pl-pds\">'</span>Use QuickJS to multiply 3434 * 2434<span class=\"pl-pds\">'</span></span> --td</pre></div>\n<p><img alt=\"Output reads Tool call: QuickJS_execute_javascript({'javascript': '3434 * 2434'})  8358356 The result of 3434 * 2434 is 8,358,356.\" src=\"https://static.simonwillison.net/static/2026/openai-endpoint-gemma.webp\" /></p>\n<h4 id=\"new-features-in-the-python-api\">New features in the Python API</h4>\n<p>LLM's Python API previously required you to create a conversation and then send messages to it one at a time. This was an abstraction over the true nature of LLMs, where each request carries a complete history of the messages that came before it. That abstraction started to get in the way for some more advanced cases, so the new release introduces a <code>model.prompt(messages=[])</code> parameter that can be used like this:</p>\n<pre><span class=\"pl-k\">import</span> <span class=\"pl-s1\">llm</span>\n<span class=\"pl-k\">from</span> <span class=\"pl-s1\">llm</span> <span class=\"pl-k\">import</span> <span class=\"pl-s1\">user</span>, <span class=\"pl-s1\">assistant</span>, <span class=\"pl-s1\">system</span>\n\n<span class=\"pl-s1\">model</span> <span class=\"pl-c1\">=</span> <span class=\"pl-s1\">llm</span>.<span class=\"pl-c1\">get_model</span>(<span class=\"pl-s\">\"gpt-5.6-luna\"</span>)\n\n<span class=\"pl-s1\">response</span> <span class=\"pl-c1\">=</span> <span class=\"pl-s1\">model</span>.<span class=\"pl-c1\">prompt</span>(<span class=\"pl-s1\">messages</span><span class=\"pl-c1\">=</span>[\n    <span class=\"pl-en\">system</span>(<span class=\"pl-s\">\"You are a helpful pirate.\"</span>),\n    <span class=\"pl-en\">user</span>(<span class=\"pl-s\">\"What is the capital of France?\"</span>),\n    <span class=\"pl-en\">assistant</span>(<span class=\"pl-s\">\"Paris, matey.\"</span>),\n    <span class=\"pl-en\">user</span>(<span class=\"pl-s\">\"And Germany?\"</span>),\n])\n<span class=\"pl-en\">print</span>(<span class=\"pl-s1\">response</span>.<span class=\"pl-c1\">text</span>())</pre>\n<p>LLM previously returned an iterable sequence of strings from each prompt. This worked great when models returned a string response, but failed to predict the weird shape that models would evolve towards. Today many models return a mix of reasoning text, output strings, tool calls, and even image attachments. With LLM 0.32 you can <a href=\"https://llm.datasette.io/en/stable/python-api.html#structured-messages-and-streaming-events\">do this instead</a>:</p>\n<pre><span class=\"pl-k\">for</span> <span class=\"pl-s1\">event</span> <span class=\"pl-c1\">in</span> <span class=\"pl-s1\">model</span>.<span class=\"pl-c1\">prompt</span>(<span class=\"pl-s\">\"Explain cats\"</span>).<span class=\"pl-c1\">stream_events</span>():\n    <span class=\"pl-k\">if</span> <span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">type</span> <span class=\"pl-c1\">==</span> <span class=\"pl-s\">\"reasoning\"</span>:\n        <span class=\"pl-en\">print</span>(<span class=\"pl-s\">f\"[thinking] <span class=\"pl-s1\"><span class=\"pl-kos\">{</span><span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">chunk</span><span class=\"pl-kos\">}</span></span>\"</span>, <span class=\"pl-s1\">end</span><span class=\"pl-c1\">=</span><span class=\"pl-s\">\"\"</span>, <span class=\"pl-s1\">flush</span><span class=\"pl-c1\">=</span><span class=\"pl-c1\">True</span>)\n    <span class=\"pl-k\">elif</span> <span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">type</span> <span class=\"pl-c1\">==</span> <span class=\"pl-s\">\"text\"</span>:\n        <span class=\"pl-en\">print</span>(<span class=\"pl-s1\">event</span>.<span class=\"pl-c1\">chunk</span>, <span class=\"pl-s1\">end</span><span class=\"pl-c1\">=</span><span class=\"pl-s\">\"\"</span>, <span class=\"pl-s1\">flush</span><span class=\"pl-c1\">=</span><span class=\"pl-c1\">True</span>)\n    <span class=\"pl-k\">else</span>:\n        <span class=\"pl-en\">print</span>(<span class=\"pl-s\">f\"Other event: <span class=\"pl-s1\"><span class=\"pl-kos\">{</span><span class=\"pl-s1\">event</span><span class=\"pl-kos\">}</span></span>\"</span>)</pre>\n<p>Combine these features and we can <em>finally</em> provide a robust implementation of the semi-standard OpenAI chat completions API, which I've now released as the <a href=\"https://github.com/simonw/llm-chat-completions-server\">llm-chat-completions-server</a> plugin:</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm install llm-chat-completions-server\nllm chat-completions-server --port 9000\n<span class=\"pl-c\"><span class=\"pl-c\">#</span> Server is now running on http://127.0.0.1:9000/v1</span></pre></div>\n<p>Now you can run prompts against LLM via that server, using the new <code>llm openai endpoint</code> command!</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm openai endpoint http://127.0.0.1:9000/v1 <span class=\"pl-s\"><span class=\"pl-pds\">'</span>hello<span class=\"pl-pds\">'</span></span> -m gpt-5.4-mini</pre></div>\n<p>The bigger challenge with that kind of API concerns logging. If we're going to support the pattern where the message sequence is appended to on every request, ideally we can avoid logging all of that duplicate JSON for every turn.</p>\n<p>The solution is the new <a href=\"https://llm.datasette.io/en/stable/logging.html#the-message-store\">content-addressable message store</a>, modeled after Git. You can see the new schema for that <a href=\"https://llm.datasette.io/en/stable/logging.html#sql-schema\">in the documentation</a>, but the <code>llm logs</code> and <code>llm logs --json</code> commands have both been upgraded to convert that format back into something that's easy to consume.</p>\n<h4 id=\"and-the-rest\">And the rest</h4>\n<p>There is a whole lot more in this release. The <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">0.32 release notes</a> are pretty comprehensive, and the notes for <a href=\"https://llm.datasette.io/en/stable/changelog.html#rc2-2026-07-30\">0.32rc2</a>, <a href=\"https://llm.datasette.io/en/stable/changelog.html#rc1-2026-07-30\">0.32rc</a>, <a href=\"https://llm.datasette.io/en/stable/changelog.html#a3-2026-06-09\">0.32a3</a>, <a href=\"https://llm.datasette.io/en/stable/changelog.html#a2-2026-05-12\">0.32a2</a>, and <a href=\"https://llm.datasette.io/en/stable/changelog.html#a0-2026-04-28\">0.32a0</a> should fill in any gaps.</p>\n<p>Existing LLM plugins should all continue to work, but plugins that provide extra models will need to be upgraded to 0.32 in order to participate fully in the new streaming events system. There's a guide to implementing plugins with <a href=\"https://llm.datasette.io/en/stable/plugins/advanced-model-plugins.html#structured-messages-and-streaming-events\">Structured messages and streaming events</a> in the documentation.</p>\n<p>I've updated some of my own plugins:</p>\n<ul>\n<li>\n<a href=\"https://github.com/simonw/llm-anthropic/releases/tag/0.26\">llm-anthropic 0.26</a> adds support for the Claude 5 family of models, plus <code>WebSearch</code>, <code>WebFetch</code>, <code>CodeExecution</code>, and <code>AnthropicMCP</code> server-side tools.</li>\n<li>\n<a href=\"https://github.com/simonw/llm-gemini\">llm-gemini</a> and <a href=\"https://github.com/simonw/llm-openrouter\">llm-openrouter</a> and <a href=\"https://github.com/simonw/llm-mistral\">llm-mistral</a> are nearly there, releases coming soon.</li>\n</ul>\n<h4 id=\"i-guess-llm-is-an-agent-framework-now\">I guess LLM is an agent framework now</h4>\n<p>Quite a few of the lower-level tools changes in this release were driven by the needs of <a href=\"https://agent.datasette.io/\">Datasette Agent</a>. When I started work on LLM, the term \"agent\" had such a vague definition that I refused to use it. In <a href=\"https://simonwillison.net/2025/Sep/18/agents/\">September 2025</a> I came around to the idea that \"<strong>An LLM agent runs tools in a loop to achieve a goal</strong>\" is well established enough now that I could stop avoiding the term entirely.</p>\n<p>Tool chains can now <a href=\"https://llm.datasette.io/en/stable/python-api.html#python-api-tools-pause\">pause for human approval</a> and <a href=\"https://llm.datasette.io/en/stable/python-api.html#python-api-tools-resume\">resume from a stored message history</a> - both needed by Datasette Agent.</p>\n<p>Looking at LLM today it's beginning to look very agent-shaped to me. There's something neat about having a CLI utility that can mix and match different tools from different sources with different models all as a one-liner, and that includes a Python library powerful enough to build systems like <a href=\"https://agent.datasette.io/\">Datasette Agent</a> and <a href=\"https://github.com/simonw/llm-coding-agent\">llm-coding-agent</a>.</p>\n<p>Maybe the next version of LLM will bake the concept of an \"agent\" into the core library. I'm still trying to figure out what that would look like.</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/releases\">releases</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/llm-tool-use\">llm-tool-use</a>, <a href=\"https://simonwillison.net/tags/llm-reasoning\">llm-reasoning</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552803,
-    "title": "llm-anthropic 0.26",
-    "url": "https://simonwillison.net/2026/Aug/4/llm-anthropic/#atom-everything",
-    "published_at": "2026-08-04T22:00:58+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-anthropic/releases/tag/0.26\">llm-anthropic 0.26</a></p>\n        <p>Includes new features enabled by <a href=\"https://simonwillison.net/2026/Aug/4/new-release-of-llm/\">LLM 0.32</a>:</p>\n<blockquote>\n<ul>\n<li>New models: <code>claude-fable-5</code>, <code>claude-sonnet-5</code>, and <code>claude-opus-5</code>. <a href=\"https://github.com/simonw/llm-anthropic/issues/75\">#75</a>, <a href=\"https://github.com/simonw/llm-anthropic/issues/76\">#76</a></li>\n<li>Added server-side tools for <code>WebSearch</code>, <code>WebFetch</code>, <code>CodeExecution</code>, and <code>AnthropicMCP</code>, available through LLM's <code>-T</code> interface or Python <code>tools=</code>. The previous <code>-o web_search*</code> options have been removed in favor of <code>-T WebSearch</code>. <a href=\"https://github.com/simonw/llm-anthropic/issues/79\">#79</a></li>\n<li>Upgraded to <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">llm&gt;=0.32</a>. Reasoning, tool calls, tool results, and server-side tool results now stream as typed events. Reasoning for <code>llm</code> CLI prompts now displays to standard error unless you pass <code>--hide-reasoning/-R</code>.</li>\n<li>Simplified extended thinking to <code>thinking</code> and <code>thinking_effort</code> (<code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, or <code>max</code>). Claude 5 models think by default; <code>-o thinking 0</code> disables thinking for Sonnet 5 and Opus 5, while Fable 5 always thinks. <code>-R/--hide-reasoning</code> now omits reasoning from responses and logs. The <code>thinking_budget</code>, <code>thinking_display</code>, and <code>thinking_adaptive</code> options have been removed. <a href=\"https://github.com/simonw/llm-anthropic/issues/80\">#80</a></li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553851,
-    "title": "Experimenting with a rare addition to my global CLAUDE.md: \"Always talk in ASD-STE100 Simplified Technical English. Always read CONTEXT.md files, and use their ubiquitous language.\"",
-    "url": "https://nitter.net/mattpocockuk/status/2084753070437609606#m",
-    "published_at": "2026-08-04T21:27:19+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Experimenting with a rare addition to my global CLAUDE.md:<br />\n<br />\n\"Always talk in ASD-STE100 Simplified Technical English. Always read CONTEXT.md files, and use their ubiquitous language.\"</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
