@@ -1,5 +1,47 @@
 [
   {
+    "article_id": 1796953,
+    "title": "Training Agents 4: From reward functions to environments.",
+    "url": "https://www.youtube.com/watch?v=nJV3yUuz6DU",
+    "published_at": "2026-09-02T09:41:40+00:00",
+    "fetched_at": "2026-09-02T09:51:46+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Training Agents, Session 4: from reward functions to environments. \n\nIn this live session, the reward stops being a function and becomes a place the agent acts in. In Session 3 the model answered once and a Python function scored it. Today the model runs a loop: open a file, run a command, read the error, try again. The training signal comes from what happened after acting. \n\nWe'll walk the reset()/step() contract from Gym to LLM agents, build an environment with OpenEnv, push it to the Hub, and plug it into TRL's GRPOTrainer with environment_factory. Then we go one step further and train a real coding agent harness through Harbor via OpenEnv, with AsyncGRPOTrainer on Hugging Face sandboxes.\n\nWhat we'll cover:\n- Why verifiers stop working once an agent takes many actions, and why the reward has to live where the actions happen\n- The reset()/step() contract: from CartPole to a coding agent with a shell, files, and tests\nAnatomy of an RL environment: task, tools, backend, reward, episode\n- The ecosystem: OpenEnv, Verifiers, OpenReward, Harbor, and how OpenEnv imports the others\n- Building and serving an env with the openenv CLI: init, push, pull, fork\n- Training with TRL: environment_factory and get_reward, no reward_funcs\n- Demo 1: Qwen3-1.7B on MBPP inside a live Python session, held-out pass rate 0.49 \u2192 0.59\n- Demo 2: a real coding agent (OpenCode) on DeepCoder problems in HF sandboxes, reward 0.27 \u2192 0.71 in 10 steps\n- Reward hacking moves into the env: the try/except that never failed, the CVE fix read from .git history, and how to lock the box down",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1796698,
+    "title": "Quoting Rick Brewster",
+    "url": "https://simonwillison.net/2026/Sep/2/rick-brewster/",
+    "published_at": "2026-09-02T05:50:57+00:00",
+    "fetched_at": "2026-09-02T09:51:43+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://forums.paint.net/topic/134563-\ud83c\udf77-extremely-experimental-winelinux-support-how-to-get-started/\"><p>Direct2D has always been the biggest hurdle for Paint.NET on WINE, and it's clear that it will never be completed enough for Paint.NET's use. And I can't just \"disable\" the use of Direct2D. So, instead,\u00a0<strong>Paint.NET now has an internal, from-scratch, clean-room reverse-engineered rewrite of Direct2D that it uses on WINE</strong>\u00a0(triggered by\u00a0using\u00a0<strong>/wine</strong>). It lives in\u00a0<strong>PaintDotNet.Windows.Direct2D1.Managed.dll</strong>. This was written by our good friend\u00a0<a href=\"https://claude.ai/\">Claude</a>, without whom this would NOT have been possible and would\u00a0NEVER\u00a0have happened. [...]</p>\n<p>Most of this code is, as they say, \"vibe coded.\" By that I mean that it has not been thoroughly reviewed, it's more \"trust me bro\" style. I cannot possibly review\u00a0180,000 lines of code, it's just way way\u00a0<em>way</em>\u00a0too much. For reference, the rest of Paint.NET is about 700,000 lines of code and I've been working on it for over 20 years. [...]</p>\n<p>At times, Claude was working with the fury of 10 freshly unshackled Einstein genius-level 10x coders. And other times ... well, not so much. I had to babysit Claude quite a bit to make sure it did resource management correctly (for awhile it just wasn't doing the COM equivalent of AddRef() for reference counted objects, oops). I had to slap it a few times when I found some really bad design or architecture decisions. And I was also impressed at some rather clever and tireless reverse engineering work it did to figure out all the formulas needed for implementing Direct2D's built-in effects library.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://forums.paint.net/topic/134563-\ud83c\udf77-extremely-experimental-winelinux-support-how-to-get-started/\">Rick Brewster</a>, author of Paint.NET</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/reverse-engineering\">reverse-engineering</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/dotnet\">dotnet</a>, <a href=\"https://simonwillison.net/tags/linux\">linux</a>, <a href=\"https://simonwillison.net/tags/vibe-coding\">vibe-coding</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1792003,
     "title": "Claude Fable 5.1 made me a really nice animated pelican",
     "url": "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/",
@@ -372,6 +414,28 @@
     "tags": [
       "ai-models",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1796703,
+    "title": "datasette-mcp 0.2",
+    "url": "https://simonwillison.net/2026/Sep/1/datasette-mcp/",
+    "published_at": "2026-09-01T15:30:12+00:00",
+    "fetched_at": "2026-09-02T09:51:43+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-mcp/releases/tag/0.2\">datasette-mcp 0.2</a></p>\n        <blockquote>\n<ul>\n<li><code>\"rows\"</code> from <code>execute_sql</code> is now an array of objects. Previously it was an array of arrays. This should help weaker models avoid losing track of which positional array element maps to which column. <a href=\"https://github.com/datasette/datasette-mcp/issues/1\">#1</a></li>\n<li>Now depends on <code>mcp&gt;=2.1.1</code>.</li>\n</ul>\n</blockquote>\n<p>This is the first non-alpha release of the plugin. I'm confident it's ready as I've been using it quite a bit myself.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10140,68 +10204,6 @@
     "tags": [
       "product",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552804,
-    "title": "PipeNetwork/minimax-h3-mlx",
-    "url": "https://simonwillison.net/2026/Aug/4/minimax-h3-mlx/#atom-everything",
-    "published_at": "2026-08-04T19:10:09+00:00",
-    "fetched_at": "2026-08-05T20:08:39+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://github.com/PipeNetwork/minimax-h3-mlx\">PipeNetwork/minimax-h3-mlx</a></strong></p>\nMiniMax released <a href=\"https://huggingface.co/MiniMaxAI/MiniMax-H3\">MiniMax-H3</a> two days ago - they describe it as a \"a general-purpose, omni-modal generative system\", which in practice means it accepts text, images, audio and video and can use them to generate up to 15 second video clips with audio included.</p>\n<p>This Python package ports it to MLX for running on Apple Silicon.</p>\n<p>I got it running on my M5 Max MacBook Pro. I cloned the repo and ran the model like this:</p>\n<pre><code># First download the models\nuvx --from huggingface_hub hf download MiniMaxAI/MiniMax-H3 \\\n  --include 'FL2VA/*' --exclude 'FL2VA/transformer/*'\nuvx --from huggingface_hub hf download pipenetwork/MiniMax-H3-MLX-8bit\n\n# Now run the prompt\nuv run --with mlx-vlm \\\n  --with-requirements requirements.txt python scripts/generate.py \\\n  \"a rainbow colored skunk leaps over a mossy log in a supermarket\" \\\n  -o skunk.mp4 \\\n  -c ~/.cache/huggingface/hub/models--MiniMaxAI--MiniMax-H3/snapshots/fa9c8ab1eaa21c8ae25e7e40b83b2e6002f340af/FL2VA \\\n  -t ~/.cache/huggingface/hub/models--pipenetwork--MiniMax-H3-MLX-8bit/snapshots/3ac52081470b0488921c3ec3ba84a39097bf2361\n</code></pre>\n<p>Here's the video I got for the prompt:</p>\n<blockquote>\n<p><code>a rainbow colored skunk leaps over a mossy log in a supermarket</code></p>\n</blockquote>\n<p><video controls=\"controls\" height=\"768\" loop=\"loop\" poster=\"https://static.simonwillison.net/static/2026/skunk.jpg\" preload=\"none\" style=\"display: block; width: 100%; height: auto;\" width=\"1344\">\n    <source src=\"https://static.simonwillison.net/static/2026/skunk.web.mp4\" type=\"video/mp4\" />\n    Your browser does not support HTML5 video.\n  </video>\n</p>\n\n<p>It downloaded ~115 GB of model files, and the video generation took just under 45 minutes.</p>\n<p>The video is impressive, but the audio is weird speech-like garbage, because I didn't provide any prompt guidance as to what the audio should be. The <a href=\"https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md\">prompting guide</a> (which I didn't read prior to this experiment) has a whole bunch of information on how to get this to work.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/mlx\">mlx</a>, <a href=\"https://simonwillison.net/tags/text-to-video\">text-to-video</a>, <a href=\"https://simonwillison.net/tags/minimax\">minimax</a></p>",
-    "topic": "tutorials",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "video",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551681,
-    "title": "Third-party cyber evaluations involving OpenAI models",
-    "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
-    "published_at": "2026-08-04T19:00:00+00:00",
-    "fetched_at": "2026-08-05T20:08:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "safety",
-      "benchmark",
-      "coding",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553852,
-    "title": "Might need to resurrect /zoom-out with how verbose Opus 5 is So many \"/wtf-are-you-talking-about\"-coded skills going viral atm",
-    "url": "https://nitter.net/mattpocockuk/status/2084697963905896686#m",
-    "published_at": "2026-08-04T17:48:21+00:00",
-    "fetched_at": "2026-08-05T20:08:43+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Might need to resurrect /zoom-out with how verbose Opus 5 is<br />\n<br />\nSo many \"/wtf-are-you-talking-about\"-coded skills going viral atm</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
