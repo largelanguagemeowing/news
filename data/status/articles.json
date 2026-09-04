@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1827476,
+    "title": "August newsletter is out",
+    "url": "https://simonwillison.net/2026/Sep/4/august-newsletter/",
+    "published_at": "2026-09-04T05:54:40+00:00",
+    "fetched_at": "2026-09-04T08:09:43+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>The August edition of my <a href=\"https://github.com/sponsors/simonw/\">sponsors-only monthly newsletter</a> is out. If you are a sponsor (or if you start a sponsorship now) you can <a href=\"https://github.com/simonw-private/monthly/blob/main/2026-08-august.md\">access it here</a>.</p>\n<p>This month:</p>\n<ul>\n<li>We got more details on OpenAl's accidental cyberattacks</li>\n<li>One-shotting Raccoon Heist games with Fable 5 and Sol 5.6</li>\n<li>Claude auto mode</li>\n<li>Understanding ChatGPT Work</li>\n<li>Model releases</li>\n<li>Miscellaneous bits and bobs</li>\n<li>My projects</li>\n<li>What I'm using at the moment</li>\n</ul>\n<p>Here's <a href=\"https://github.com/simonw/monthly-newsletter-archive/blob/main/2026-07-july.md\">a copy of the July newsletter</a> as a preview of what you'll get. Pay $10/month to stay a month ahead of the free copy!</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/newsletter\">newsletter</a></p>",
+    "topic": "news",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "coding",
+      "media",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1822956,
     "title": "GPT-6 Astra Is Finally Here (And It\u2019s REALLY Good)",
     "url": "https://www.youtube.com/watch?v=GGzT7zVrRTU",
@@ -10178,28 +10200,6 @@
     "topic": "product",
     "tags": [
       "product",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 573368,
-    "title": "Compression at the Edge \u2014 Chris Alexiuk, NVIDIA",
-    "url": "https://www.youtube.com/watch?v=J4_jCrTxMkk",
-    "published_at": "2026-08-06T08:13:20+00:00",
-    "fetched_at": "2026-08-07T00:24:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Quantize a single number in a model and it gets 20% dumber. That finding, from the super weights paper, is why Daniel Han's claim is less absurd than it sounds: GLM 5.2 goes from 1.5 terabytes to 250 GB, 86% smaller, without being 86% dumber. Layers are wildly unequal. The first and last carry enormous weight, the middle ones barely matter, and a model trained on 30 trillion tokens never saturates its parameters, so many sit near zero and can simply be set there. Choosing which layers stay in high precision is a combinatorial search, not a setting.\n\nNVFP4 is the format the NVIDIA side leans on, a 4 bit float where every group of 16 values shares one FP8 scale, targeting under 1% accuracy loss. New architectures keep breaking the old heuristics: quantize the linear attention layers and the model looks fine right up until a long context turns it to gibberish. Post training quantization works out of the box above roughly 20 billion parameters and needs quantization aware distillation below that. The panel is blunt that benchmarks only cover verifiable tasks, so the real test is running the model in an actual harness, and Han's preferred signal is KL divergence between the BF16 and quantized output logits rather than any accuracy score.\n\nSpeaker info:\nChris Alexiuk, moderator (NVIDIA):\n- https://x.com/llm_wizard\n- https://www.linkedin.com/in/csalexiuk\n\nDaniel Han (Unsloth):\n- https://x.com/danielhanchen\n- https://unsloth.ai\n\nAsma Beevi (NVIDIA):\n- https://www.linkedin.com/in/asma-beevi-k-t-433053a2\n- https://realasma.github.io\n\nMerve Noyan (Hugging Face):\n- https://x.com/mervenoyann\n- https://hf.co/merve\n\nParth Sareen (Ollama):\n- https://github.com/parthsareen\n- https://parthsareen.com\n\nTimestamps:\n0:00 - Welcome and the panel\n0:53 - What compression means to each of them\n3:05 - GLM 5.2 from 1.5 terabytes to 250 GB\n4:08 - When each of them got the compression bug\n8:19 - QLoRA and finetuning on a T4\n11:44 - 86% smaller without being 86% dumber\n12:46 - Why layer importance is so uneven\n14:26 - The super weight: one number, 20% dumber\n14:51 - Evaluating the quantized checkpoints\n16:37 - What NVFP4 actually is\n17:55 - Does compression matter beyond the toaster\n21:49 - Why compress a big model instead of using a small one\n24:30 - Where Ollama fits\n28:54 - How hard NVFP4 is to produce\n32:46 - The cursed era of model architectures\n35:17 - Why linear attention layers break quantization\n37:22 - Where compression goes next\n43:22 - How do you know a quant is any good",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "benchmark",
-      "research",
-      "infrastructure",
       "coding"
     ],
     "dearrow_thumbnail_url": "",
