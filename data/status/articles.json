@@ -1,5 +1,73 @@
 [
   {
+    "article_id": 1832486,
+    "title": "WebGPU Kernels",
+    "url": "https://www.youtube.com/watch?v=y9xup6XEP2o",
+    "published_at": "2026-09-04T15:38:19+00:00",
+    "fetched_at": "2026-09-04T16:45:39+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "We shipped 207 WebGPU kernels for browser AI, all open source on the Hugging Face Hub, plus @huggingface/kernels, a library that loads, validates, renders and runs them for you.\n\nThis video walks through how it works: what an op is vs a kernel, why WGSL, and why we ship Jinja templates instead of fixed WGSL files. The browser picks the data types and workgroup sizes your device supports and builds the fastest kernel for that hardware.\nThen two demos built on top of it: an attention mechanism with the tinyBERT weights in ~20 lines of JavaScript, and a 1M+ cell wave animation driven by a single matmul kernel, capped only by requestAnimationFrame.\n\nFinally, Fleet: run the kernel benchmarks on your own GPU. The results help us optimize the kernels for the thousands of devices we can't test ourselves.\n\nLinks\nBlog post: https://huggingface.co/blog/webgpu-kernels\nKernel playground: https://huggingface.co/spaces/nico-martin/webgpu-kernels\nnpm: https://www.npmjs.com/package/@huggingface/kernels\nKernels on the Hub: https://huggingface.co/webgpu-kernels\nFleet: https://webgpu-kernels-fleet.hf.space/",
+    "topic": "hardware",
+    "tags": [
+      "hardware",
+      "models",
+      "open-source",
+      "benchmark",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1832441,
+    "title": "AI News: The Most Insane Week So Far This Year!",
+    "url": "https://www.youtube.com/watch?v=GfPZm9yucQo",
+    "published_at": "2026-09-04T15:00:34+00:00",
+    "fetched_at": "2026-09-04T16:45:39+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Here's the AI News you probably missed this week. Try AI Flows with Artlist Unlimited here \ud83d\udc49 https://artlist.io/\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nGPT-6 Astra: https://openai.com/index/gpt-6-astra/\nClaude Fable and Mythos 5.1: https://www.anthropic.com/claude-fable-and-mythos-5-1\nGemini 3.8 Flash: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/\nMuse Spark 1.3: https://research.meta.ai/blog/introducing-muse-spark-1-3\nMultiple Accounts In Codex: https://x.com/gabrielchua/status/2093228185823687134\nVoice In Google Workspace: https://blog.google/products-and-platforms/products/workspace/voice-features-gmail-docs-keep/\nFastH3 Video Model: https://x.com/haoailab/status/2093391548289540596\nInteractive AI Livestreams: https://x.com/fal/status/2094286082275696880\nAtlas World Model: https://www.worldlabs.ai/blog/atlas\nRunway Introduces Solaris: https://runway.com/news/research/introducing-solaris\nOpenClaw 2.0: https://openclaw.ai/blog/openclaw-2-accidentally\nMuse Voice Transcribe: https://research.meta.ai/blog/introducing-muse-voice-transcribe\nMAI-Transcribe-2 Speech Model: https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/\nNVIDIA Acquires Hugging Face: https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/\nChatGPT Chats In Court: https://www.techspot.com/news/113667-chatgpt-conversations-could-end-up-court-theyre-not.html\nNYC School AI Moratorium: https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat\nDyson Introduces Camerajet: https://www.dyson.com/discover/news/latest/introducing-camerajet\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n1:30 Claude Fable 5.1\n4:04 Gemini 3.8 Flash\n7:04 Artlist AI Flows\n8:02 Muse Spark 1.3\n11:00 GPT-6 Astra\n13:09 Megabonk Comparisons\n17:18 ChatGPT Multiple Accounts\n17:46 Google Voice in Gmail Etc\n18:46 Real-Time AI Video\n20:43 World Labs Atlas\n22:47 Runway Solaris\n23:52 OpenClaw 2.0\n24:21 Muse Voice Transcribe\n24:43 MAI-Transcribe-2\n25:00 Nvidia Acquires Hugging Face\n26:34 ChatGPT Unprotected\n26:56 NYC Bans AI in Schools\n27:43 AI Toothbrush\n28:46 Final Thoughts\n30:26 WTF?",
+    "topic": "media",
+    "tags": [
+      "media",
+      "release",
+      "models",
+      "agents",
+      "research",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1832501,
+    "title": "Why AI Agents Need Million-Token Context \u2014 Thomas Wolf & Olive Song, MiniMax",
+    "url": "https://www.youtube.com/watch?v=5Cxe5dv2Xlw",
+    "published_at": "2026-09-04T13:00:26+00:00",
+    "fetched_at": "2026-09-04T16:45:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An intern designed the sparse-attention architecture behind MiniMax M3. That detail comes after Olive Song explains the larger problem the team was trying to solve: short context windows aren\u2019t enough when agents must work across long conversations, tool responses and complex environments. M3 combines a functional one-million-token context window with coding, agentic and multimodal capabilities, allowing it to understand text, images and video within the same model.\n\nThomas Wolf and Olive Song unpack how MiniMax made that context window efficient, why the company trained M3 as multimodal from its very first step and what happens when that training goes wrong. They also discuss MiniMax\u2019s open research culture, products used by hundreds of millions of people, the role of community feedback in improving open-source models and the internal agent harnesses accelerating the company\u2019s own research. By the end, M3 is no longer just the model being discussed\u2014it is already helping the team build M3.1.\n\nAbout Thomas Wolf\n\nThomas Wolf is the co-founder and Chief Science Officer of Hugging Face, the open platform and community for building, sharing and collaborating on machine learning models, datasets and applications.\n\nAbout Olive Song\nOlive Song is the RL Lead at MiniMax, where she works on the research and training behind frontier open-source models including MiniMax M3.\n\nRecorded at the AI Engineer World\u2019s Fair in San Francisco. Stay up to date on our upcoming events and content by joining our newsletter here: https://www.ai.engineer/newsletter\n\nTimestamps:\n0:00 - Introduction\n0:39 - The race between the leading open-source models\n2:34 - MiniMax M3: coding, vision and one million tokens\n3:46 - Why agents need longer context windows\n6:22 - From GPT-2\u2019s 1,024 tokens to million-token models\n7:30 - The intern who designed MiniMax\u2019s sparse attention\n8:29 - How research projects work inside MiniMax\n10:01 - Training a multimodal model from the first step\n13:09 - Going beyond one trillion parameters\n13:25 - Building AI products for 300 million users\n15:20 - Why MiniMax plans to keep open-sourcing its models\n17:29 - Agents that understand presentations and long videos\n18:27 - Automating AI research with agent harnesses\n19:27 - M3 is already helping build M3.1\n19:55 - Why multi-agent systems come next",
+    "topic": "research",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "research",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1830085,
     "title": "GPT 6 Astra, so good even OpenAI are worried",
     "url": "https://www.youtube.com/watch?v=Spuza-KwTJ4",
@@ -10150,63 +10218,6 @@
       "models",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 571043,
-    "title": "How AI agents reproduced ICML 2026  papers",
-    "url": "https://www.youtube.com/watch?v=8qpEDpNhzWY",
-    "published_at": "2026-08-06T12:53:36+00:00",
-    "fetched_at": "2026-08-06T14:09:04+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "We just wrapped up the 2026 ICML Reproduction Challenge, with more than 1,200 participants & their agents! More than 2,000 different papers were reproduced or falsified (1/3 of all of the papers at the conference). Participants created ~13k repos ~3TB of artifacts. This is likely the biggest attempt to reproduce a major AI conference! \n\nIn this livestream, we are announcing the winners of the ICML 2026 Agents Reproduction challenge. We will be awarding prizes (Hugging Face credits) to the top 4 participants.\n\n\ud83c\udf89Congratulations to all our winners, and thank you to everyone who joined us in the reproduction challenge.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "open-source",
-      "agents",
-      "research",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 571845,
-    "title": "I invoked /ask-matt today, asking if a piece of work was more than one context window It was correct Pretty surreal experience",
-    "url": "https://nitter.net/mattpocockuk/status/2085347092080341362#m",
-    "published_at": "2026-08-06T12:47:45+00:00",
-    "fetched_at": "2026-08-06T14:09:07+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>I invoked /ask-matt today, asking if a piece of work was more than one context window<br />\n<br />\nIt was correct<br />\n<br />\nPretty surreal experience</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 571578,
-    "title": "PhobosLab",
-    "url": "https://phoboslab.org/log/2026/08/xibalba64-making-of",
-    "published_at": "2026-08-06T11:38:14+00:00",
-    "fetched_at": "2026-08-06T14:09:06+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. fun to see @phoboslab is still doing neat stuff.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
