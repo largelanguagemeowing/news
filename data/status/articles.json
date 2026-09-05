@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 1841792,
+    "title": "The Pelican comparison grid for Astra is pretty interesting",
+    "url": "https://simonwillison.net/2026/Sep/4/astra-pelicans/",
+    "published_at": "2026-09-04T23:59:05+00:00",
+    "fetched_at": "2026-09-05T03:14:01+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>I got access to GPT-6 Astra this afternoon, so naturally I used it to generate <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle/\">SVGs of pelicans riding bicycles</a> - at low, medium, high, xhigh and max reasoning levels (Astra doesn't support reasoning=none). Then I rendered those pelicans in <a href=\"https://static.simonwillison.net/static/2026/gpt-6-and-5.6-pelicans.html\">a comparison grid</a> with GPT-5.6 Sol, Terra, and Luna, and beyond being fun the result was surprisingly useful.</p>\n<p><img alt=\"Comparison grid showing gpt-6-astra, gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna at 6 different reasoning levels with pelicans and token counts and prices for each one.\" src=\"https://static.simonwillison.net/static/2026/astra-grid-3.webp\" />\nSee <a href=\"https://static.simonwillison.net/static/2026/gpt-6-and-5.6-pelicans.html\">the grid</a> for full quality images. Here's <a href=\"\">the transcript</a> that created the GPT-6 Nova pelicans.</p>\n<p>There are a few interesting things that stand out from this grid.</p>\n<ul>\n<li>The Astra pelicans are <em>much better</em>. The very best GPT-5.6-Sol pelican (I liked xhigh better than max) is still pretty clearly a bunch of abstract shapes. Every single one of the Astra pelicans, from low to xhigh, looks better than that. The Astra max one is really good.</li>\n<li>Astra below max still doesn't reliably get the pelican legs on both sides of the frame.</li>\n<li>In terms of cost, Astra may be around twice the price of Sol ($10/million input, $50/million output, compared to $5/$30 for Sol), but it uses significantly less tokens at each of the levels, making the prices at the different levels closer than they might otherwise be.</li>\n<li>Astra low produces a better pelican than ANY of the GPT-5.6 Sol models at any level, for 9.55 cents. Spending 10 cents on any other model gets a much worse result.</li>\n<li>Look at the input token counts: Astra and Luna both used 16 input tokens, Sol and Terra used 26. That's interesting.</li>\n</ul>\n<p>I wonder if Astra and Luna are more related to each other than OpenAI let on?</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/gpt-6-astra\">gpt-6-astra</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1837241,
     "title": "Did OpenAI actually build AGI? GPT-6 Astra first look",
     "url": "https://www.youtube.com/watch?v=FluKUJyeYD8",
@@ -479,6 +500,27 @@
       "ai-models",
       "models",
       "open-source"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1840625,
+    "title": "GPT-6 Astra: A new generation of intelligence",
+    "url": "https://openai.com/index/gpt-6-astra",
+    "published_at": "2026-09-03T11:00:00+00:00",
+    "fetched_at": "2026-09-05T03:14:00+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science.",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "safety",
+      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10175,47 +10217,6 @@
     "tags": [
       "product",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 573367,
-    "title": "The State of Model Routing \u2014 NVIDIA, Cognition, OpenRouter",
-    "url": "https://www.youtube.com/watch?v=QHBjufYK8TA",
-    "published_at": "2026-08-06T17:07:24+00:00",
-    "fetched_at": "2026-08-07T00:24:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Run terminal bench on Opus and on Haiku and Opus scores about three times better at a tenth of the cost, even though Haiku is far cheaper per token. Alex Atallah's point is that a small model pushed outside its training distribution thrashes, calling tools in loops until it costs more than the expensive model ever would. That inverts the obvious version of model routing, where you send each task to whichever model benchmarks best on it. Walden Yan calls that approach fragile for exactly the reason agents make it worse: a session starts as a question about a codebase, becomes a feature request, then becomes live debugging, and the model you picked at the start is stranded.\n\nCognition's answer keeps a frontier model planning and delegates the implementation, which cut the cost of Fable level intelligence by 40% while going deeper, because a cheaper model can afford to spin off three sub agents to explore a codebase. They also avoid sub agents in favor of one sidekick with a continuous running context, so the KV cache stays warm and cached tokens cost roughly ten times less. Compaction, Yan argues, is worth doing for intelligence rather than cost, since compacting forces a cache miss and model quality falls off a cliff well before the advertised million token window. The most telling story is OpenRouter's: its auto router sat almost unused for two years until openclaw began sending heartbeats every ten minutes, creating one popular app with two completely different intelligence needs.\n\nSpeaker info:\nNader Khalil, moderator (NVIDIA):\n- https://x.com/naderlikeladder\n- https://nader.coffee\n\nWalden Yan (Cognition):\n- https://x.com/walden_yan\n- https://www.linkedin.com/in/waldenyan\n\nAlex Atallah (OpenRouter):\n- https://x.com/alexatallah\n- https://openrouter.ai\n\nTanay Varshney (NVIDIA):\n- https://www.linkedin.com/in/tanayvarshney\n\nCarter Abdallah (NVIDIA):\n- https://x.com/Baxate\n- https://www.linkedin.com/in/carter-abdallah\n\nTimestamps:\n0:00 - Welcome and the multimodel premise\n1:16 - Panel introductions\n3:24 - How Devin Fusion beats the frontier models\n4:25 - Let the frontier model plan and delegate the work\n6:31 - Jagged capabilities: no one model wins everything\n9:42 - Why naive task based routing is fragile\n11:48 - Sharing context without paying for it twice\n13:56 - Should the orchestrator be the big or the small model\n16:01 - In distribution versus out of distribution\n19:12 - Training models to collaborate\n20:12 - Flex Run and flexible model sizes\n22:24 - Lossy context and the systems you fall back to\n26:41 - How a heartbeat created the auto router\n29:43 - Routing between local and cloud\n31:51 - Compaction versus routing\n32:55 - How a small model signals it is out of its depth\n35:00 - Cache duration and self hosting economics\n40:12 - Are prompts portable across models\n43:20 - Is the router a product or plumbing",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents",
-      "benchmark",
-      "coding",
-      "policy",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 571886,
-    "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
-    "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
-    "published_at": "2026-08-06T15:06:15+00:00",
-    "fetched_at": "2026-08-07T00:24:25+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
