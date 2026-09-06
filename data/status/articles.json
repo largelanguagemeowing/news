@@ -1,5 +1,24 @@
 [
   {
+    "article_id": 1867957,
+    "title": "The purpose of DNS is to spread scams",
+    "url": "https://simonwillison.net/2026/Sep/6/the-purpose-of-dns-is-to-spread-scams/",
+    "published_at": "2026-09-06T14:40:07+00:00",
+    "fetched_at": "2026-09-06T15:38:47+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://shkspr.mobi/blog/2026/09/the-purpose-of-dns-is-to-spread-scams/\">The purpose of DNS is to spread scams</a></strong></p>\nTerence Eden shares some daunting statistics in support of his take that \"the Domain Name System's purpose seems to be a vector for criminals to run scams on people at a terrifyingly high rate\".</p>\n<p>On <a href=\"https://interisle.net/insights/cybercriminaldomaindemand\">this Interisle report</a> (<a href=\"https://labs.ripe.net/author/andrew_campling/dns-abuse-and-criminal-infrastructure-beyond-definitions-and-blocklists/\">via Andrew Campling</a>), Terence says:</p>\n<blockquote>\n<p>It says 85 million new registrations of gTLDs were made in 2025. Of those 8.5 million were added to blocklists by May 2025. It reckons that a 10% abuse rate is the likely floor for these numbers and it's probably closer to 20%. One in five newly registered domains with a gTLD are scams. That's a bloody crisis.</p>\n</blockquote>\n<p>I had no idea. Apparently ICANN have been discussing this problem for years.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/dns\">dns</a>, <a href=\"https://simonwillison.net/tags/scams\">scams</a>, <a href=\"https://simonwillison.net/tags/terence-eden\">terence-eden</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "open-source",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1865557,
     "title": "Quoting Zach Kehs",
     "url": "https://simonwillison.net/2026/Sep/6/zach-kehs/",
@@ -10201,27 +10220,6 @@
       "product",
       "models",
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 573109,
-    "title": "datasette 1.0a38",
-    "url": "https://simonwillison.net/2026/Aug/6/datasette/#atom-everything",
-    "published_at": "2026-08-06T18:24:34+00:00",
-    "fetched_at": "2026-08-07T00:24:26+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette/releases/tag/1.0a38\">datasette 1.0a38</a></p>\n        <blockquote>\n<p>This release fixes a <strong>SQL injection</strong> security issue that affects Datasette instances that serve a <strong>mixture of public and private tables</strong> in the same database, with access configured using the <a href=\"https://docs.datasette.io/en/latest/authentication.html\">Datasette permissions system</a>.</p>\n<p>Site administrators who serve private tables in this way are advised to disable the <a href=\"https://docs.datasette.io/en/latest/authentication.html#execute-sql\">execute-sql permission</a> ` on that database to prevent users from accessing private tables using raw SQL queries. The bug that has been fixed would have allowed users with access to any public table to execute SQL injection attacks despite that restriction, giving them read-only access to data in private tables in the same database.</p>\n<p>This fix is also available in <a href=\"https://simonwillison.net/2026/Aug/6/datasette-2/\">Datasette 0.65.3</a>.</p>\n</blockquote>\n<p>Thankfully this particular configuration - private tables and public tables exposed for the same database within the same instance - is likely to be rare. I've not encountered an instance like that myself.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/sql-injection\">sql-injection</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "safety",
-      "events",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
