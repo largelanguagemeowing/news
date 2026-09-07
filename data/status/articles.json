@@ -1,5 +1,66 @@
 [
   {
+    "article_id": 1889401,
+    "title": "Creepy crawlies",
+    "url": "https://simonwillison.net/2026/Sep/7/creepy-crawlies/",
+    "published_at": "2026-09-07T23:08:58+00:00",
+    "fetched_at": "2026-09-07T23:18:20+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://people.kernel.org/monsieuricon/creepy-crawlies\">Creepy crawlies</a></strong></p>\nKonstantin Ryabitsev discusses how bad the \"background radiation\" of abusive crawlers has become from the perspective of <a href=\"https://git.kernel.org/\">git.kernel.org</a>, the official Git repository for the Linux kernel:</p>\n<blockquote>\n<p>TL;DR: we spend more CPU cycles rendering commits for scrapers than we spend on all other kinds of legitimate access, including git clones. At any one time, across 5 geo-distributed nodes, there are 14 CPU cores doing nothing but rendering git commits as html.</p>\n</blockquote>\n<p>I worry about this a lot from the perspective of Datasette, which serves a huge number of crawlable web pages.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49491791\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/crawling\">crawling</a>, <a href=\"https://simonwillison.net/tags/git\">git</a>, <a href=\"https://simonwillison.net/tags/linux\">linux</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a></p>",
+    "topic": "tools",
+    "tags": [
+      "open-source",
+      "hardware",
+      "opinion",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1889402,
+    "title": "Quoting Jakub Pachocki",
+    "url": "https://simonwillison.net/2026/Sep/7/jakub-pachocki/",
+    "published_at": "2026-09-07T22:26:25+00:00",
+    "fetched_at": "2026-09-07T23:18:20+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://openai.com/index/an-alien-mind/#scalable-defense\"><p>The strongest argument I see for continuing to train much smarter models quickly is the need to build defensive systems against the dangers posed by other AI. [...]</p>\n<p>We will need powerful, aligned AI for defense; to secure infrastructure, to protect against rogue agents in real time, and to invent entirely new protective measures. This will be a primary focus of OpenAI\u2019s deployment efforts.</p>\n<p>At the same time, even with the uncertainty that comes from anticipated broad AI progress and the need to build defensive systems, we must not let that become an excuse for recklessness. The idea of racing forward at all costs seems absurd once one internalizes the seriousness of the stakes.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://openai.com/index/an-alien-mind/#scalable-defense\">Jakub Pachocki</a>, Chief Scientist at OpenAI</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1889403,
+    "title": "Video compressor",
+    "url": "https://simonwillison.net/2026/Sep/7/video-compressor/",
+    "published_at": "2026-09-07T18:29:07+00:00",
+    "fetched_at": "2026-09-07T23:18:20+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/video-compressor\">Video compressor</a></p>\n        <p>I recorded a short demo video of <a href=\"https://simonwillison.net/2026/Sep/7/equal-earth/\">my Equal Earth</a> animation on my phone and wanted to publish an optimized version of that video (using FFMPEG) on my blog, so I had Claude Fable 5.1 in Claude Code for web <a href=\"https://claude.ai/code/session_01QHTdJZ4xg6TZfDXCmuvAE9\">build me this tool</a> using the WebAssembly build of FFMPEG.</p>\n<p><img alt=\"Screenshot of a video compression web tool. Under &quot;Versions to generate&quot; is a table of five presets (Largest, Large, Medium, Small, Smallest) with output sizes of 854\u00d7370 or 640\u00d7276, CRF quality settings from 22 to 28, and audio bitrates from 128 to 64 kbps, plus options for encoder speed, H.264 profile, 30 fps limit, stripping metadata, dropping audio, and encoding only the first 10 seconds. A green &quot;Generate versions&quot; button reads &quot;Done: 5 versions in 11.8s.&quot; Below, &quot;Results, smallest first&quot; shows three video players: Smallest at 145 KB (48% of original), Medium at 241 KB (79%), and Small at 264 KB (87%), each with a Download .mp4 button and a collapsible ffmpeg command.\" src=\"https://static.simonwillison.net/static/2026-09-07/video-compressor.webp\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ffmpeg\">ffmpeg</a>, <a href=\"https://simonwillison.net/tags/video\">video</a>, <a href=\"https://simonwillison.net/tags/webassembly\">webassembly</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/claude-code\">claude-code</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "video",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1887217,
     "title": "5 open source tools that replaced my $320/mo AI stack...",
     "url": "https://www.youtube.com/watch?v=Y5rSSvXfL4g",
@@ -17,6 +78,27 @@
       "coding",
       "education",
       "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1889404,
+    "title": "Mercator \u2194 Equal Earth",
+    "url": "https://simonwillison.net/2026/Sep/7/equal-earth/",
+    "published_at": "2026-09-07T16:24:16+00:00",
+    "fetched_at": "2026-09-07T23:18:20+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/equal-earth\">Mercator \u2194 Equal Earth</a></p>\n        <p>I got curious about the Equal Earth map projection that was recently <a href=\"https://www.theguardian.com/world/2026/sep/04/un-vote-world-map-mercator-equal-earth-africa\">voted on at the UN</a> so I had GPT-6 Astra (medium) in ChatGPT Work <a href=\"https://chatgpt.com/share/6a9ee520-c82c-83ea-8111-2f7050c08638\">build me</a> this animated transition between Mercator and Equal Earth using D3.</p>\n<center><video controls=\"controls\" height=\"476\" poster=\"https://static.simonwillison.net/static/2026-09-07/equal-earth.jpg\" preload=\"none\" width=\"360\">\n  <source src=\"https://static.simonwillison.net/static/2026-09-07/equal-earth-medium.mp4\" type=\"video/mp4\" />\n</video></center>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/geospatial\">geospatial</a>, <a href=\"https://simonwillison.net/tags/d3\">d3</a>, <a href=\"https://simonwillison.net/tags/vibe-coding\">vibe-coding</a>, <a href=\"https://simonwillison.net/tags/gpt-6-astra\">gpt-6-astra</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "video",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10148,82 +10230,6 @@
     "tags": [
       "ai-models",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 610796,
-    "title": "Arbitrage: Efficient Reasoning via Advantage-Aware Speculation",
-    "url": "https://machinelearning.apple.com/research/arbitrage-efficient-reasoning",
-    "published_at": "2026-08-07T00:00:00+00:00",
-    "fetched_at": "2026-08-07T22:35:10+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Modern Large Language Models achieve impressive reasoning capabilities with long Chain of Thoughts, but they incur substantial computational cost during inference, and this motivates techniques to improve the performance-cost ratio. Among these techniques, Speculative Decoding accelerates inference by employing a fast but inaccurate draft model to auto-regressively propose tokens, which are then verified in parallel by a more capable target model. However, due to unnecessary rejections caused by token mismatches in semantically equivalent steps, traditional token-level Speculative Decoding\u2026",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "infrastructure",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 610795,
-    "title": "Beyond Next-Token Prediction: A Performance Characterization of Diffusion versus Autoregressive Language Models",
-    "url": "https://machinelearning.apple.com/research/diffusion-autoregressive-performance",
-    "published_at": "2026-08-07T00:00:00+00:00",
-    "fetched_at": "2026-08-07T22:35:10+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Large Language Models (LLMs) have achieved state-of-the-art performance on a broad range of Natural Language Processing (NLP) tasks, including document processing and code generation. Autoregressive Language Models (ARMs), which generate tokens sequentially conditioned on all previous tokens, have been the predominant paradigm for LLMs. While these models have achieved high accuracy across a range of downstream tasks, they exhibit low arithmetic intensity due to the inherent sequential dependency in next-token prediction. Recently, Diffusion Language Models (DLMs) have emerged as a promising\u2026",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 595406,
-    "title": "Scaling Categorical Flow Maps",
-    "url": "https://machinelearning.apple.com/research/scaling-categorical-flow-maps",
-    "published_at": "2026-08-07T00:00:00+00:00",
-    "fetched_at": "2026-08-07T15:55:57+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "Continuous diffusion and flow matching models could represent a powerful alternative to autoregressive approaches for language modelling (LM), as they unlock a host of advantages currently reserved for continuous modalities, including accelerated sampling and tilting. Recently, several works have demonstrated the possibility of generating discrete data continuously by a simple flow matching process between a Gaussian and the one-hot encoded data distribution. They have further shown the feasibility of accelerated sampling via Categorical Flow Maps (CFMs), resulting in competitive sample\u2026",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 604809,
-    "title": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
-    "url": "https://claude.com/blog/auto-mode-default-in-claude-code",
-    "published_at": "2026-08-07T00:00:00+00:00",
-    "fetched_at": "2026-08-07T19:53:53+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
