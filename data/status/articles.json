@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1877489,
+    "title": "Research acceleration: The view inside OpenAI",
+    "url": "https://simonwillison.net/2026/Sep/6/research-acceleration-the-view-inside-openai/",
+    "published_at": "2026-09-06T23:57:40+00:00",
+    "fetched_at": "2026-09-07T00:43:35+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://openai.com/index/research-acceleration-view-inside-openai/\">Research acceleration: The view inside OpenAI</a></strong></p>\nApparently today is RSI day at OpenAI, for Recursive Self-Improvement - I think it's their new AGI. Both this piece and the new essay <a href=\"https://openai.com/index/an-alien-mind/\">An Alien Mind</a> (by Chief Scientist Jakub Pachocki) talk about it, and this one doesn't even bother to expand the acronym.</p>\n<p>Included are details on how OpenAI's own research team are using coding agents. Like pretty much everyone else 2026 has been the year that agentic engineering really took off at OpenAI, best illustrated by this chart:</p>\n<p><img alt=\"Screenshot of a line chart from a report, headed &quot;1. Coding agents are reshaping daily work for OpenAI researchers&quot; with a partially visible chart title ending &quot;significantly\u2014Median researcher&quot;. Y-axis: &quot;Daily $ / researcher&quot; from 0 to 700. X-axis labels: &quot;Feb 2026&quot;, &quot;Apr 2026&quot;, &quot;Jun 2026&quot;, &quot;Aug 2026&quot;. A blue line stays near 0 through February, rises slowly to about 50 by April and 150 by June, plateaus around 150\u2013165 into July, then climbs steeply to roughly 600 by late August 2026.\" src=\"https://static.simonwillison.net/static/2026/openai-agent-usage.webp\" /></p>\n<p>I'm intrigued at what caused that significant acceleration in AI spend per researcher in late July - my best guess is that's when internal employees gained access to the model later released as GPT-6 Astra.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/chatgpt\">chatgpt</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/november-2025-inflection\">november-2025-inflection</a>, <a href=\"https://simonwillison.net/tags/recursive-self-improvement\">recursive-self-improvement</a></p>",
+    "topic": "research",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1867957,
     "title": "The purpose of DNS is to spread scams",
     "url": "https://simonwillison.net/2026/Sep/6/the-purpose-of-dns-is-to-spread-scams/",
@@ -14,6 +36,29 @@
       "opinion",
       "open-source",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1877491,
+    "title": "There's No Limit to How Bad Code Can Get",
+    "url": "https://simonwillison.net/2026/Sep/6/theres-no-limit-to-how-bad-code-can-get/",
+    "published_at": "2026-09-06T09:08:06+00:00",
+    "fetched_at": "2026-09-07T00:43:35+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><a href=\"https://lobste.rs/s/rfn2mn/there_s_no_limit_how_bad_code_can_get#c_8kdtaw\">My comment</a> on <a href=\"https://lobste.rs/s/rfn2mn/there_s_no_limit_how_bad_code_can_get\">There&#x27;s No Limit to How Bad Code Can Get</a> &mdash; Lobste.rs.</p><p><em>[In reply to a comment about burning it down to start from scratch when technical debt becomes overwhelming]</em></p>\n<p>In my experience it's\u00a0<em>so rare</em>\u00a0for that to work.</p>\n<p>You announce the old thing is irrecoverably drowning in tech debt. You spin up a team to rewrite it from scratch. Work begins.</p>\n<p>Meanwhile the old thing remains a moving target: it's running the core business, so changes are still necessary. The developers working on it know that it's going to be made obsolete by the new thing soon, so they don't have any incentive to go beyond the smallest effort possible to add the new features. Technical debt continues to mount.</p>\n<p>Meanwhile, the team working on the new thing are ambitious and probably a little naive. They start out at a great pace - it's greenfield after all - but as time progresses it becomes apparent that nobody fully understands the behavior and scope of the thing they are replacing. If it was well documented and tested it wouldn't\u00a0<em>need</em>\u00a0to be replaced, after all...</p>\n<p>After months (or even years) without delivering value, the pressure is on to \"ship it\", so the new system is launched to handle a subset of what the old system handled - or often for some new feature that was too hard to build with the now mostly unmaintained old system.</p>\n<p>... so now you have TWO systems in production - the janky old system that nobody wants to touch, and a new system which handles just a few production features and is 80% inactive code that is meant to replace the old system, eventually.</p>\n<p>If you're\u00a0<em>really lucky</em>\u00a0the company won't have lost patience with the new system and will allow that work to continue. The longer this all takes, and the longer the old system stays in production and stubbornly continues to work, the higher the risk that \"priorities have changed\" and the new system total replacement work is abandoned, leaving you with two systems where you used to have one.</p>\n<p>The best article I've read about completing this process responsibly is\u00a0<a href=\"https://lethain.com/migrations/\">Migrations: the sole scalable fix to tech debt</a>\u00a0by Will Larson.</p>\n<p>If I run into a situation like this in the future, my strong recommendation will be to shore up the old system with as much automated testing as possible and then seeing if targeted refactors can get it to the desired shape. My hunch is that in many cases that will have a much higher chance of success than the siren call of a greenfield replacement.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/migrations\">migrations</a>, <a href=\"https://simonwillison.net/tags/technical-debt\">technical-debt</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "safety",
+      "coding",
+      "development",
+      "enterprise",
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10175,47 +10220,6 @@
       "release",
       "open-source",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 573880,
-    "title": "recommended reading. i would also warmly recommend getting into electronics, do some soldering, some PCB design. you can teach yourself in 6 months, don't need a lot of gear. feels great slapping together a bunch of resistors, caps and ICs onto a PCB and have it work first time",
-    "url": "https://x.com/i/article/2085457619372691456",
-    "published_at": "2026-08-06T21:57:32+00:00",
-    "fetched_at": "2026-08-07T00:24:29+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i would also warmly recommend getting into electronics, do some soldering, some PCB design. you can teach yourself in 6 months, don't need a lot of gear. feels great slapping together a bunch of resistors, caps and ICs onto a PCB and have it work first time\n\ne.g. this was the result of 6 months of self study. still in use daily. truely my proudest achievement.\n\ni have also to repair electronics toys like tiptois and toni boxes from kids around the neighbourhood. roughly saved parents \u20ac1000 in repurchase expenses.\n\nyou can also build very shitty robots that make kods want to learn how to build shitty robots.\n\nor just build fun little toys for the hood rats so they can annoy neighbours during halloween.\n\nit is really really enjoyable to build electronic gadgets from start to finish, including the little software you need. don't buy off the shelf doodads you can merely program. challenge yourself. you're an engineer.\n\nnothing wrong with getting started with a waveshare gadget you just plug in and have the agent program it.\n\nbut i guarantee you'll find more fulfillment getting your hands and brain dirty instead of asking your agent to program a thing for a prebuilt usb connected device.\n\ncc @steve",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "agents",
-      "research",
-      "robotics",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 574149,
-    "title": "RT by @mattpocockuk: okay, this is big. together with @techgirl1908, @theo, @johnlindquist, and @kentcdodds, we\u2019re building something MEGA. coming this autumn. you\u2019re not ready for this. details below \ud83d\udd25",
-    "url": "https://nitter.net/_overment/status/2085475773666738585#m",
-    "published_at": "2026-08-06T21:19:05+00:00",
-    "fetched_at": "2026-08-07T00:24:29+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>okay, this is big.<br />\n<br />\ntogether with <a href=\"https://nitter.net/techgirl1908\" title=\"Angie Jones\">@techgirl1908</a>, <a href=\"https://nitter.net/theo\" title=\"Theo - t3.gg\">@theo</a>, <a href=\"https://nitter.net/johnlindquist\" title=\"John Lindquist\">@johnlindquist</a>, and <a href=\"https://nitter.net/kentcdodds\" title=\"Kent C. Dodds \ud83d\udc28\">@kentcdodds</a>, we\u2019re building something MEGA.<br />\n<br />\ncoming this autumn.<br />\n<br />\nyou\u2019re not ready for this. details below \ud83d\udd25</p>\n<hr />\n<blockquote>\n<b>Kent C. Dodds \ud83d\udc28 (@kentcdodds)</b>\n<p>\n<p>I'm doing something new and it's gonna be MEGA epic \ud83d\udd25</p>\n<a href=\"https://nitter.net/kentcdodds/status/2085467280461496626#m\">\n<br />Video<br />\n  <img src=\"https://nitter.net/pic/amplify_video_thumb%2F2085466677513465856%2Fimg%2F8DAwheYEpLaa1w2A.jpg\" />\n</a>\n\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/kentcdodds/status/2085467280461496626#m\">https://nitter.net/kentcdodds/status/2085467280461496626#m</a>\n</footer>\n</blockquote>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "video",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
