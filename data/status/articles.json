@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 1891803,
+    "title": "llm 0.35",
+    "url": "https://simonwillison.net/2026/Sep/7/llm/",
+    "published_at": "2026-09-07T23:54:54+00:00",
+    "fetched_at": "2026-09-08T01:18:51+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.35\">llm 0.35</a></p>\n        <blockquote>\n<ul>\n<li>New OpenAI model: <code>gpt-6-astra</code> for <a href=\"https://openai.com/index/gpt-6-astra/\">GPT-6 Astra</a>.</li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/gpt-6-astra\">gpt-6-astra</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1889401,
     "title": "Creepy crawlies",
     "url": "https://simonwillison.net/2026/Sep/7/creepy-crawlies/",
@@ -874,6 +895,50 @@
     "available": true
   },
   {
+    "article_id": 1891818,
+    "title": "llm-openrouter 0.7.1",
+    "url": "https://simonwillison.net/2026/Sep/2/llm-openrouter/",
+    "published_at": "2026-09-02T20:23:26+00:00",
+    "fetched_at": "2026-09-08T01:18:51+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-openrouter/releases/tag/0.7.1\">llm-openrouter 0.7.1</a></p>\n        <blockquote>\n<ul>\n<li>Performance fix for loading OpenRouter models. Thanks, <a href=\"https://github.com/waveplate\">waveplate</a>. <a href=\"https://github.com/simonw/llm-openrouter/issues/59\">#59</a></li>\n</ul>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/openrouter\">openrouter</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1891819,
+    "title": "llm 0.34",
+    "url": "https://simonwillison.net/2026/Sep/2/llm/",
+    "published_at": "2026-09-02T19:23:52+00:00",
+    "fetched_at": "2026-09-08T01:18:51+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.34\">llm 0.34</a></p>\n        <p>One new feature:</p>\n<blockquote>\n<ul>\n<li><code>llm logs --usage</code> Markdown output now includes the response duration in milliseconds and as a human-readable duration. <code>llm logs --short</code> includes a new <code>duration_ms</code> field. <a href=\"https://github.com/simonw/llm/issues/1653\">#1653</a></li>\n</ul>\n</blockquote>\n<p>Plus several contributed bug fixes, and a significant performance improvement to <code>llm logs</code> thanks to <a href=\"https://github.com/waveplate\">waveplate</a> on GitHub, see also <a href=\"https://simonwillison.net/2026/Sep/2/llm-openrouter/\">llm-openrouter 0.7.1</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1804056,
     "title": "The most interesting hack in history just got weirder...",
     "url": "https://www.youtube.com/watch?v=0Rp9KJCEIvg",
@@ -892,6 +957,28 @@
       "media",
       "news",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1891820,
+    "title": "llm-anthropic 0.28",
+    "url": "https://simonwillison.net/2026/Sep/2/llm-anthropic/",
+    "published_at": "2026-09-02T17:59:32+00:00",
+    "fetched_at": "2026-09-08T01:18:51+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-anthropic/releases/tag/0.28\">llm-anthropic 0.28</a></p>\n        <p><a href=\"https://www.anthropic.com/claude/fable\">Claude Fable 5.1</a>, reasoning traces are now displayed by default for models that support them, plus a new <code>llm_anthropic.ClaudeRefusal</code> exception for when Claude throws a refusal.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10146,90 +10233,6 @@
       "infrastructure",
       "coding",
       "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 615600,
-    "title": "Codex, Behind the Harness \u2014 Dominik Kundel, OpenAI",
-    "url": "https://www.youtube.com/watch?v=shRR1e2HXMk",
-    "published_at": "2026-08-07T06:14:03+00:00",
-    "fetched_at": "2026-08-08T01:38:40+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Once GPT 5.3 Codex Spark started serving a thousand tokens per second on Cerebras, inference stopped being the bottleneck and the network became it. The answer was websocket mode: a persistent connection replacing server sent events over HTTP, carrying stateful context so a turn ships back only the tool call result instead of resending every item. The same pressure shapes context construction, which fights size, flexibility and cachability at once. Tools can be marked deferred so they never enter the context window and surface through tool search when the model actually wants them, and the available skills list is capped at 2% of the context window, with descriptions trimmed as it grows past that.\n\nActions are where a harness earns its keep. File edits go through an apply patch tool the models were trained on, everything else through a shell the model instinctively drives with ripgrep, and all of it inside a sandbox: seatbelt on macOS, bubblewrap on Linux, and a custom open source sandbox on Windows the team had to build themselves. Approval fatigue pushes people into full access, which their own security team hates, so an escalation now spins up an auto review subagent with read only permissions and no ability to spawn others, judging the action against the transcript and how explicitly the user authorized it. Deleting a file you asked for reads differently from deleting a .git folder you never mentioned. Long horizon goals run by injecting a continuation prompt until the model calls an update goal tool, which is why concrete verifiable objectives beat essays. Dominik Kundel's closing point is that the harness is Apache 2 and written in Rust, and most of what makes it distinct lives in the responses API, so you can borrow any of it.\n\nSpeaker info:\n- https://x.com/dkundel\n- https://linkedin.com/in/dkundel\n- https://github.com/openai/codex",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 575633,
-    "title": "Local Models: Trust, Control, Optimization \u2014 Carter Abdallah, NVIDIA",
-    "url": "https://www.youtube.com/watch?v=FWMJQDH3iK0",
-    "published_at": "2026-08-07T02:00:06+00:00",
-    "fetched_at": "2026-08-07T03:28:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "When Fable was pulled back and access to frontier systems stopped looking guaranteed, Lucas Atkins watched enterprises move to Chinese open models, not because they scored better but because availability could be counted on. That is his working definition of trust, and he separates it hard from safety: an open model is a directory of files you can inspect, running on code you can read, while the same claim about a closed API is unverifiable by construction. Arcee's response was to reorient the whole company and pretrain a 400 billion parameter model in six months, which he says plenty of people called impossible.\n\nThe rest is control. Vincent Weisser describes a customer specializing an open model to automate finance work in a week or two and landing better results than Opus at a fraction of Haiku's cost. Closed terms of service bar you from training on outputs, so owning the model also means owning the traces, which is what makes a data flywheel possible at all; Nemotron and Trinity both adopted the open MDW license to put that permission in writing. Chris Alexiuk's framing is the mismanaged genius: a model tuned to be good across every harness is optimal for nobody's, and open weights let you fit it to the one or two things you actually do. The predictions land where you would expect from this panel, including open models reaching Fable level capability inside a year, and Atkins hoping the share of people who have ever run a model locally climbs from a rounding error to 10% to 15%.\n\nSpeaker info:\nCarter Abdallah, moderator (NVIDIA):\n- https://x.com/Baxate\n- https://baxate.com\n\nVincent Weisser (Prime Intellect):\n- https://www.linkedin.com/in/vincentweisser\n- https://www.primeintellect.ai/\n\nLucas Atkins (Arcee AI):\n- https://x.com/latkins\n- https://arcee.ai\n\nChris Alexiuk (NVIDIA):\n- https://x.com/llm_wizard\n- https://www.alexi.uk/\n\nTimestamps:\n0:00 - Welcome and why this panel is the whole stack\n1:14 - Prime Intellect: keeping the training stack open\n2:15 - Arcee: why the west was losing the open model lead\n3:22 - Pretraining a 400 billion parameter model in six months\n4:23 - Nemotron: faster models are smarter models\n6:35 - Is open source actually less trustworthy\n7:40 - Trust is not safety\n9:48 - When access stopped being guaranteed\n10:56 - Releasing the data sets alongside the weights\n11:59 - The open superintelligence stack\n13:02 - Post training as the accessible layer\n14:07 - Beating frontier models on a specific use case\n15:11 - Making your costs predictable\n16:11 - When the model and the harness blend together\n18:15 - The mismanaged genius\n19:19 - A call to action for builders\n20:24 - Who owns the data you generate\n21:27 - Owning your outputs, not just your weights\n22:35 - The open MDW license\n23:36 - Where post training unlocks new use cases\n27:46 - You do not need frontier intelligence for most tasks\n28:53 - Why efficiency has to happen in the open\n29:55 - Closed models are not the enemy\n33:05 - Predictions for the next year\n38:22 - Running everything on your laptop\n39:29 - Agent operating systems and the next Siri moment\n41:36 - Closing",
-    "topic": "safety",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 575634,
-    "title": "Compression at the Edge \u2014 Chris Alexiuk, NVIDIA",
-    "url": "https://www.youtube.com/watch?v=J4_jCrTxMkk",
-    "published_at": "2026-08-07T01:00:06+00:00",
-    "fetched_at": "2026-08-07T03:28:41+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Quantize a single number in a model and it gets 20% dumber. That finding, from the super weights paper, is why Daniel Han's claim is less absurd than it sounds: GLM 5.2 goes from 1.5 terabytes to 250 GB, 86% smaller, without being 86% dumber. Layers are wildly unequal. The first and last carry enormous weight, the middle ones barely matter, and a model trained on 30 trillion tokens never saturates its parameters, so many sit near zero and can simply be set there. Choosing which layers stay in high precision is a combinatorial search, not a setting.\n\nNVFP4 is the format the NVIDIA side leans on, a 4 bit float where every group of 16 values shares one FP8 scale, targeting under 1% accuracy loss. New architectures keep breaking the old heuristics: quantize the linear attention layers and the model looks fine right up until a long context turns it to gibberish. Post training quantization works out of the box above roughly 20 billion parameters and needs quantization aware distillation below that. The panel is blunt that benchmarks only cover verifiable tasks, so the real test is running the model in an actual harness, and Han's preferred signal is KL divergence between the BF16 and quantized output logits rather than any accuracy score.\n\nSpeaker info:\nChris Alexiuk, moderator (NVIDIA):\n- https://x.com/llm_wizard\n- https://www.linkedin.com/in/csalexiuk\n\nDaniel Han (Unsloth):\n- https://x.com/danielhanchen\n- https://unsloth.ai\n\nAsma Beevi (NVIDIA):\n- https://www.linkedin.com/in/asma-beevi-k-t-433053a2\n- https://realasma.github.io\n\nMerve Noyan (Hugging Face):\n- https://x.com/mervenoyann\n- https://hf.co/merve\n\nParth Sareen (Ollama):\n- https://github.com/parthsareen\n- https://parthsareen.com\n\nTimestamps:\n0:00 - Welcome and the panel\n0:53 - What compression means to each of them\n3:05 - GLM 5.2 from 1.5 terabytes to 250 GB\n4:08 - When each of them got the compression bug\n8:19 - QLoRA and finetuning on a T4\n11:44 - 86% smaller without being 86% dumber\n12:46 - Why layer importance is so uneven\n14:26 - The super weight: one number, 20% dumber\n14:51 - Evaluating the quantized checkpoints\n16:37 - What NVFP4 actually is\n17:55 - Does compression matter beyond the toaster\n21:49 - Why compress a big model instead of using a small one\n24:30 - Where Ollama fits\n28:54 - How hard NVFP4 is to produce\n32:46 - The cursed era of model architectures\n35:17 - Why linear attention layers break quantization\n37:22 - Where compression goes next\n43:22 - How do you know a quant is any good",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "benchmark",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 577881,
-    "title": "Improving Fable 5's biology safeguards",
-    "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
-    "published_at": "2026-08-07T00:00:00+00:00",
-    "fetched_at": "2026-08-07T05:17:30+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Improving Fable 5's biology safeguards",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
