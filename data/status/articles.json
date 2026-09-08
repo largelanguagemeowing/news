@@ -1,5 +1,104 @@
 [
   {
+    "article_id": 1899140,
+    "title": "Deep dive on LLM Inference at Scale \u2014 Harshul Jain, Audible & Tanmay Sah, Independent AI Researcher",
+    "url": "https://www.youtube.com/watch?v=y2W4FNAuPEA",
+    "published_at": "2026-09-08T15:00:06+00:00",
+    "fetched_at": "2026-09-08T16:06:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A single token of KV cache on Mistral 7B costs 131 KB. Multiply that by 16,000 tokens of context and 80 concurrent users and the cache alone wants 42 GB of GPU memory, which is why requests start failing on a 24 GB card. Harshul Jain, a senior software engineer at Audible, and Tanmay Sah, an independent AI researcher, spend this workshop building that number up from first principles. They open on three symptoms every team hits: memory that climbs with context length, time to first token that degrades as prompts grow, and throughput that collapses because a naive server answers requests one after another. The rest of the session explains what causes each one, working down through the inference pipeline into the attention layer, then into how a GPU actually splits its memory between fixed model weights and the cache that has to grow.\n\nFrom there the workshop splits optimization in two. Sah takes the model side, using two deliberately silly teaching devices, the ostrich algorithm for assumptions you wave through and the world cup algorithm for problems you cut into brackets, to move from quantization through multi head, multi query, grouped query, and latent attention, then flash attention and tiling. Jain takes the serving side: paged attention borrowed from operating system paging, continuous batching, prefix caching, and KV quantization, each benchmarked against a plain baseline. They close on engine selection, where their own testing found no statistical difference between vLLM and SGLang on standard workloads but a three to four times gap once agentic branching enters the picture. Slides and runnable notebooks are linked in the repo.\n\nSpeaker info:\n- https://x.com/hj1393\n- https://www.linkedin.com/in/hjain1393/\n- https://harshuljain.substack.com/\n- https://www.linkedin.com/in/tanmay-sah/\n\nTimestamps:\n0:00 - Introductions and what the workshop covers\n2:43 - What LLM inference is, and why it costs so much\n5:21 - The repo, the slides, and the free GPU notebooks\n8:23 - Three pain points, memory, first token, throughput\n12:18 - Foundations, the pipeline and the attention layer\n14:53 - KV cache math and how GPU memory divides\n20:41 - Prefill and decode, and why decode is memory bound\n28:41 - Throughput, concurrency, and the trade off triangle\n34:02 - The capacity calculator and picking a GPU\n37:10 - Model optimization, quantization and attention variants\n48:04 - Flash attention, the scorecard, and a demo\n1:00:14 - Serving optimizations, paging, batching, caching\n1:06:12 - Benchmarking vLLM, and speculative decoding\n1:17:27 - vLLM against SGLang, choosing an engine, what to study next",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1899125,
+    "title": "Run Local Models in Pi: llama.cpp, GGUF, and the /llama Command",
+    "url": "https://www.youtube.com/watch?v=5DsFr19wJFg",
+    "published_at": "2026-09-08T15:00:00+00:00",
+    "fetched_at": "2026-09-08T16:06:20+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Run local models in Pi with llama.cpp \u2014 fully private, offline, and with no per-token cost. In this tutorial I show you how to install llama.cpp, pick the right GGUF model and quantization for your hardware using Hugging Face's hardware compatibility feature, and download, load, and use the model directly from Pi with the `/llama` command. By the end you'll have Qwen3 8B running locally as a coding agent, with no prompts, code, or data ever leaving your machine.\n\n---\n\ud83d\udd17 *Links*\n- llama.app (llama.cpp installer + model recommendations): https://llama.app\n- Qwen3 8B on Hugging Face (GGUF): https://huggingface.co/Qwen/Qwen3-8B-GGUF\n- Pi llama.cpp documentation: https://pi.dev/docs/latest/llama-cpp\n- llama.cpp repository: https://github.com/ggml-org/llama.cpp\n\n---\n\ud83d\udc4b *Connect with me*\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n- Courses: https://aibootcamp.dev/\n\n---\n\ud83e\udd13 *Topics Covered*\n- Run local GGUF models in Pi with llama.cpp\n- Choose the right quantization for your hardware\n- Download and load models with Pi's `/llama` command\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Intro \u2014 why local models in Pi\n0:59 Install llama.cpp\n1:49 Choose and load a model (Qwen3 8B)\n5:24 Outro \u2014 hybrid local/cloud workflows",
+    "topic": "hardware",
+    "tags": [
+      "hardware",
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1897625,
+    "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+    "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+    "published_at": "2026-09-08T14:00:15+00:00",
+    "fetched_at": "2026-09-08T16:06:15+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1897725,
+    "title": "The Work Now Within Reach",
+    "url": "https://openai.com/index/the-work-now-within-reach",
+    "published_at": "2026-09-08T13:00:00+00:00",
+    "fetched_at": "2026-09-08T16:06:16+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Explore how more capable, affordable AI can expand the work people and businesses can accomplish\u2014and make growth more economical.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1897726,
+    "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
+    "url": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms",
+    "published_at": "2026-09-08T00:00:00+00:00",
+    "fetched_at": "2026-09-08T16:06:16+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI is expanding support for journalism with tools, training, and partnerships for students, educators, journalists, and news organizations.",
+    "topic": "research",
+    "tags": [
+      "research",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1891803,
     "title": "llm 0.35",
     "url": "https://simonwillison.net/2026/Sep/7/llm/",
@@ -10127,112 +10226,6 @@
       "safety",
       "benchmark",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 589634,
-    "title": "BTW this didn't work Not as CLAUDE.md, nor as an output style Still spamming /wait-what on Opus 5",
-    "url": "https://nitter.net/mattpocockuk/status/2085681281795232026#m",
-    "published_at": "2026-08-07T10:55:42+00:00",
-    "fetched_at": "2026-08-07T11:45:13+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>BTW this didn't work<br />\n<br />\nNot as CLAUDE.md, nor as an output style<br />\n<br />\nStill spamming /wait-what on Opus 5</p>\n<hr />\n<blockquote>\n<b>Matt Pocock (@mattpocockuk)</b>\n<p>\n<p>Experimenting with a rare addition to my global CLAUDE.md:<br />\n<br />\n\"Always talk in ASD-STE100 Simplified Technical English. Always read CONTEXT.md files, and use their ubiquitous language.\"</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/mattpocockuk/status/2084753070437609606#m\">https://nitter.net/mattpocockuk/status/2084753070437609606#m</a>\n</footer>\n</blockquote>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 583230,
-    "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
-    "url": "https://openai.com/index/hsp-gruppe",
-    "published_at": "2026-08-07T09:00:00+00:00",
-    "fetched_at": "2026-08-07T09:31:54+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 615597,
-    "title": "Anthropic's CCA Exam as a Field-Guide for Agentic Engineering \u2014 Frank Coyle, UC Berkeley",
-    "url": "https://www.youtube.com/watch?v=Z-c11pV_uvU",
-    "published_at": "2026-08-07T06:18:13+00:00",
-    "fetched_at": "2026-08-08T01:38:40+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "The Claude Certified Architect exam hands you six production scenarios and picks four at random, and Frank Coyle walks through them backwards, leading with the anti pattern in each one. Knowing what not to do is what points you toward what to do, the same way the design patterns movement of the early 1990s came with a catalog of the moves that quietly ruin you. Scenario one is a customer support loop, and the anti pattern is calling the model, taking the response, and using it. What you want instead is to branch on the stop reason, because the model cannot execute a tool at all. It only hands back the parameters your own code runs, and the stop reason is also how you learn you ran out of tokens and the answer in your hands is partial.\n\nThe rest is context discipline. Loading one agent with every tool is the carpenter who turns up with plumbing and electrical gear too, so specialized subagents with one or two tools each win, and every agent should see only its own slice. Coyle gives a critic agent the claim and the evidence but withholds the reasoning that produced them, because agents that watch each other think converge on a single idea the way a group talks itself into pizza. Subtask output gets forked into its own context so only the summary returns to the main thread, with a token count check that triggers compaction past a threshold. He closes on a cheap win most people skip: batch mode runs the same work for half the token cost if you can wait a day for it.\n\nSpeaker info:\n- https://x.com/coyle_frankp\n- https://www.linkedin.com/in/frank-coyle/\n- https://www.frank-coyle.ai/",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "infrastructure",
-      "coding",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 615598,
-    "title": "Realtime multiplayer, automation, and you! \u2014 Idan Gazit, GitHub",
-    "url": "https://www.youtube.com/watch?v=iQ5xldZ9StU",
-    "published_at": "2026-08-07T06:17:42+00:00",
-    "fetched_at": "2026-08-08T01:38:40+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Idan Gazit's personal site runs on Astro, which ships often enough to keep him permanently on the upgrade treadmill, so he wrote an agentic workflow in about three lines of plain English, the kind of message you would send a teammate. Copilot expanded it into a full playbook: check for new releases, read the changelog and upgrade guide, apply the changes, open a pull request. It then carried him from Astro 5 to Astro 7, two major versions at once, found and fixed the code that broke, verified the build, and flagged the manual steps it could not take itself. The workflow is a Markdown document. The YAML actions file is a compiled artifact nobody reads, so changing how the automation behaves means editing the English.\n\nThe guardrails are the part he wants remembered. Prompting an agent to behave is not a guardrail, because anyone who can prompt inject it can undo the instruction, and you have let the fox into the henhouse. Permissions, allowed tools, reachable network destinations and safe outputs get declared deterministically in front matter instead. His upgrade workflow may open exactly one pull request, and is explicitly allowed to do nothing at all, since an automation that cannot stay quiet turns into a denial of service against its own owner. Secrets stay outside the agent's jail entirely, because a secret an agent can see should be treated as already compromised. The second prototype, ACE, runs every session in a cloud microVM and deliberately resembles a chat app, on the theory that what belongs in the shared surface is everything not already in the code: the political constraints, the infrastructure deal that quietly picks your cloud provider, the plan two people edit together before telling the agent to go make the document true. He ends on a study of around a hundred developers over thousands of hours which found that hands on keyboard typing is about 5% of the work, and that is the only 5% the tools have helped with so far.\n\nSpeaker info:\n- https://twitter.com/idangazit\n- https://linkedin.com/in/idangazit\n- https://githubnext.com",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "open-source",
-      "agents",
-      "safety",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 615599,
-    "title": "Always-on agents run production without the on-call tax \u2014 Justin Smith, Resolve AI",
-    "url": "https://www.youtube.com/watch?v=vSx5IULvBns",
-    "published_at": "2026-08-07T06:17:06+00:00",
-    "fetched_at": "2026-08-08T01:38:40+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Someone drops a GitHub release tag into Slack and the agent decides on its own that this is a deploy worth watching. It reads what actually changed, works out which telemetry would expose trouble for that particular change, and writes a check plan for this release alone: checkout is replacing the currency service, so watch checkout latency and error rates, then follow the causal chain into the Kafka pipeline. None of the timing is hardcoded. It can decide to look again in an hour because this class of failure only surfaces intermittently, or come back in three days to ask whether the deploy is still healthy. Justin Smith is careful to say CI/CD already handles the baseline well. The gap is everything routed around it, the feature flags and infrastructure changes that ship with no monitoring at all and get caught only when an alert wakes somebody up.\n\nThe premise underneath is that around 70% of an engineer's time goes to running code rather than writing it, and coding agents made that worse by raising the volume of change flowing into production. Resolve's background agents are defined by three questions: when they run, on a schedule or an event stream or just a message; how they run, in the cloud inside a sandbox with its own file system, so closing your laptop changes nothing; and how they know what to do. The one Smith clearly enjoys most watches Slack channels and answers engineering questions without being addressed, staying quiet when it lacks confidence, and DMing him to confirm an answer before it replies in public. His sharpest point is that execution is the easy half. Loading a dashboard is execution. Deciding a metric smells wrong is production context, and building the knowledge system that keeps up with an environment changing faster every month is where the real work sits.\n\nSpeaker info:\n- https://www.linkedin.com/in/justin-smith-7b1534a8/\n- https://resolve.ai/events/behind-the-build/agents-for-engineering-workflows",
-    "topic": "infrastructure",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding",
-      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
