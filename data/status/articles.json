@@ -1,5 +1,92 @@
 [
   {
+    "article_id": 1913469,
+    "title": "500 Skills, Zero Fine-Tuning: LinkedIn's Playbook for AI Agents \u2014 Ajay Prakash, LinkedIn",
+    "url": "https://www.youtube.com/watch?v=9wZpvF3QleU",
+    "published_at": "2026-09-09T14:00:06+00:00",
+    "fetched_at": "2026-09-09T14:12:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "LinkedIn exposes roughly 1,300 tools and 600 playbooks to its coding agents, and all of them sit behind exactly three. MCP degrades somewhere past thirty or forty tools, so Ajay Prakash's team replaced the whole surface with search, get schema, and execute, letting an agent find what it needs instead of carrying everything in context. Prakash is a senior staff software engineer at LinkedIn, and he opens with an on call incident. An alert goes to a coding agent, which pulls the debugging instructions for that specific service, fetches logs and metrics, finds the root cause, proposes mitigation steps, applies them once a human confirms, updates the incident record, and opens a PR for the underlying fix. Minutes instead of hours. The rest of the talk is about the infrastructure that makes that reliable rather than lucky.\n\nIt did not start there. Agents trained on public repositories knew nothing about a thousand internal repos, custom databases, or a configuration system that new hires spend a week long boot camp learning, so engineers spent longer correcting hallucinations than writing the code themselves. An internal MCP server with code search helped, then documents, Jira, Slack, and feature flags. Tools alone still fell short, because the knowledge of how to use them sat scattered across stale wikis and old Slack threads, and every session started from nothing. Playbooks are the answer: instructions published as tools, invoked like any other tool, kept self contained and split into small referenced pieces so context arrives progressively. Agents are asked to open a PR improving any playbook they find stale, which is what keeps the corpus alive.\n\nSpeaker info:\n- https://x.com/ajay_prakash_ai\n- https://www.linkedin.com/in/ajay-prakash-3780b132/\n\nTimestamps:\n0:00 - An on call incident, handled end to end\n2:48 - Why coding agents failed inside LinkedIn\n5:10 - A thousand repos on internal frameworks\n6:34 - An internal MCP, starting with code search\n8:30 - Why tools alone were not enough\n10:34 - Playbooks, instructions served as tools\n12:27 - Two rules, self contained and broken up\n14:23 - The loop that keeps playbooks fresh\n15:34 - Architecture, local and central playbooks\n17:23 - Three meta tools to scale past the MCP limit\n19:01 - Takeaways",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "agents",
+      "coding",
+      "tutorials",
+      "development",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1913470,
+    "title": "It\u2019s Tokens All The Way Down: How RLMs are Different \u2014 Kevin Madura, AlixPartners",
+    "url": "https://www.youtube.com/watch?v=xo68uCibfm8",
+    "published_at": "2026-09-09T13:30:27+00:00",
+    "fetched_at": "2026-09-09T14:12:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask a model to sum twelve numbers scattered across thirty thousand tokens and it will often get it wrong. Give it a Python REPL and it writes a few lines of regex instead. That is the shift Kevin Madura, director of advanced technology at AlixPartners, describes in recursive language models. An RLM treats its context as an object living in a REPL rather than as tokens it must attend to, so it can slice, compute over, and iterate on the input as a variable. The second property matters as much: it can delegate to another model, including itself, with its own parameters, so a hard problem decomposes recursively and only the results that matter return to the main context. On a long chain of thought benchmark that moved accuracy from 2.6 percent to 45.4 percent, with the largest gains on tasks that reduce cleanly to code.\n\nMadura frames it against what most teams do now. RAG stuffs the window until quality rots. Agents and tool calls shuttle JSON strings back and forth, leaving logic, execution, and results loosely coupled. An RLM keeps all three in one environment. He walks a cohort retention analysis where three data frames go in, the model reasons in its own REPL as if typing in a notebook, and decides itself when to stop and submit a typed answer. Then case studies: consolidating long invoices with no chunking or embedding, surfacing patterns in raw logs, optimizing an agent harness from its own traces, and generating a security report across five hundred thousand lines of code. His closing bet is that models post trained to be RLM aware will make this much stranger.\n\nSpeaker info:\n- https://x.com/kmad\n- https://www.linkedin.com/in/kevinmadura/\n- https://kmad.ai\n\nTimestamps:\n0:00 - What a recursive language model is\n1:36 - Recursive decomposition and delegating to sub models\n3:25 - Benchmarks and the cost curve\n4:31 - A deterministic shell, with the model filling the middle\n5:24 - Context rot, and why an RLM avoids it\n6:21 - How this differs from RAG, agents, and tool calls\n8:00 - When to use one, and when to skip it\n9:38 - Small examples, buried numbers and data frames\n12:35 - A cohort analysis walkthrough and its traces\n15:45 - Case studies, invoices, logs, and a whole codebase\n20:04 - What happens when models become RLM aware",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1913471,
+    "title": "Build-Time vs. Run-Time: Why Dev Tools Fail in Production \u2014 Averi Kitsch & Prerna Kakkar, Google",
+    "url": "https://www.youtube.com/watch?v=9R--1tg45Jg",
+    "published_at": "2026-09-09T13:00:04+00:00",
+    "fetched_at": "2026-09-09T14:12:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In one of the demos an agent hits an error, decides the fix is to delete the table and start fresh, and does exactly that. Nothing stops it. Averi Kitsch, technical lead for MCP Toolbox on Google Cloud databases, and Prerna Kakkar, who leads Eval Bench at Google, use that failure to draw the line their talk is named for. Build time tools serve developer assistance: control plane tools that manage instances, and natural language to SQL that writes whatever query a question needs. They are flexible, belong under a human, and do not belong in production. Run time tools are the opposite, structured SQL with parameters fixed ahead of time, closing off injection, cutting latency, and leaving no room to invent.\n\nThe second half is security. A database is only as secure as the agent in front of it, and the confused deputy attack is the shape to watch. A triage agent reads a ticket, a planted instruction tells it to query the salary table and post the results back, and it complies because it has the privileges. Their answer separates user, application, and agent identity, then walks a tool from super user down to something narrow. Connection details move into a YAML source the agent never sees, read only enforcement reaches down to the driver, allowed data sets and output caps bound the blast radius, and custom tools pin the exact SQL behind prepared statements. Sensitive values like a user id are bound by the application, so the agent never handles them. They close on tool quality: outcome shaped tools, read split from write, and errors an agent can act on.\n\nSpeaker info:\n- https://www.linkedin.com/in/averikitsch\n- https://averi.dev\n- https://www.linkedin.com/in/prernakakkar95/\n\nTimestamps:\n0:00 - Introductions, MCP Toolbox and managed MCP\n2:56 - Common tool patterns for databases\n4:37 - Structured SQL tools for production\n5:20 - Build time against run time\n6:16 - When a build time tool deletes the table\n8:46 - Your database is only as secure as your agent\n9:13 - The lethal trifecta and the confused deputy\n11:19 - Separating user, application, and agent identity\n12:33 - Evolving a tool from super user to constrained\n14:55 - Custom tools and prepared statements\n15:52 - Best practices for tool quality\n17:39 - Bound parameters, keeping PII from the agent",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "safety",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1913409,
+    "title": "Turn ONE Photo Into An Entire 3D World",
+    "url": "https://www.youtube.com/shorts/iSXeiUXiln8",
+    "published_at": "2026-09-09T12:26:29+00:00",
+    "fetched_at": "2026-09-09T14:12:24+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "World Labs\u2019 new Atlas model can reconstruct an entire 3D environment from just one photo, then let you control the camera and explore it from completely new angles.\n\nWhat you're seeing IS NOT an AI video, it\u2019s an entire fully explorable world.\n\nYou can also give it multiple images and it can combine them into one larger, navigable scene.\n\nWhat would you build with this?\n\nAnd follow for more of the coolest AI and tech breakthroughs.\n\n#ai #ainews #3d #genAI #futuretech",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1908482,
     "title": "Quoting Terence Tao",
     "url": "https://simonwillison.net/2026/Sep/9/terence-tao/",
@@ -10149,81 +10236,6 @@
     "tags": [
       "agents",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 643996,
-    "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
-    "url": "https://simonwillison.net/2026/Aug/8/now-we-have-a-timeline-of-the-openai-accidental-attack-against-h/#atom-everything",
-    "published_at": "2026-08-08T14:06:41+00:00",
-    "fetched_at": "2026-08-08T14:32:15+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><a href=\"https://news.ycombinator.com/item?id=49220609#49221745\">My comment</a> on <a href=\"https://news.ycombinator.com/item?id=49220609\">Now we have a timeline of the OpenAI accidental attack against Hugging Face</a> &mdash; Hacker News.</p><p>I think one of the most interesting details here might be tucked away in that first bulletin point:</p>\n<blockquote>\n<p>May 7: OpenAI starts a new training run for an experimental, unreleased model. <em>(Do they mean an evaluation run? They say training run in the video, and later mention a \u201creward signal to judge how well they\u2019re doing\u201d, so I guess this really was about training a model, not evaluating one that was already trained.)</em></p>\n</blockquote>\n<p>The more I think about this the more I suspect that the fact this happened while <em>training</em> a new model is key to understanding what went wrong.</p>\n<p>In RLVR - Reinforcement Learning with Verifiable Rewards - you set the model a goal and have it take <em>any steps necessary</em> to achieve that goal.</p>\n<p>Clearly one aspect of OpenAI's training here is to RLVR their models for cybersecurity tasks. Just like pre-training benefits from dumping in vast sources of knowledge, the more tasks you can feed into RLVR the more of a general purpose capable model you get at the end.</p>\n<p>This also helps explain why the models had nothing to cause them to hold back. Those safety behaviors are added much later in the process.</p>\n<p>AND it explains (but does not excuse) why monitoring was so lax. If you're training a new model like this you presumably set it thousands of tasks like this in parallel. I can see how you might miss that a tiny subset of your training agents have started leaving each other messages in filenames on your packaging server.</p>\n<p>Someone once told me that you can't just leave the racist materials out of your training data if you want a non-racist model: it has to have seen examples of racism in order to later be taught that racism is bad.</p>\n<p>I can see echoes of that here. If your model doesn't know how to aggressively hack things how do you later teach it not to?</p>\n<p>(I have little knowledge of how RLVR works in practice so I'm looking forward to hearing from people who can help me understand if I'm on the right track here.)</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/openai-hugging-face-incident\">openai-hugging-face-incident</a></p>",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 642745,
-    "title": "One underrated part of Opus 5 is that the code it produces is good actually My AFK runs have absolutely not degraded, just the HITL planning has become a nuisance",
-    "url": "https://nitter.net/mattpocockuk/status/2086082988631007374#m",
-    "published_at": "2026-08-08T13:31:56+00:00",
-    "fetched_at": "2026-08-08T13:45:32+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>One underrated part of Opus 5 is that the code it produces is good actually<br />\n<br />\nMy AFK runs have absolutely not degraded, just the HITL planning has become a nuisance</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 631901,
-    "title": "Feels like attending confs has never been more valuable Not for the talks, but for the hallway track So many folks are doing smart things they can't really give talks about, but they'll spill in conversation Picked up 3 or 4 killer ideas like this recently",
-    "url": "https://nitter.net/mattpocockuk/status/2086011540356972759#m",
-    "published_at": "2026-08-08T08:48:02+00:00",
-    "fetched_at": "2026-08-08T09:37:48+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Feels like attending confs has never been more valuable<br />\n<br />\nNot for the talks, but for the hallway track<br />\n<br />\nSo many folks are doing smart things they can't really give talks about, but they'll spill in conversation<br />\n<br />\nPicked up 3 or 4 killer ideas like this recently</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 631631,
-    "title": "recommended reading. similar observations on my end, albeit at much smaller scale.",
-    "url": "https://x.com/i/article/2085540776512192512",
-    "published_at": "2026-08-08T08:27:03+00:00",
-    "fetched_at": "2026-08-08T09:37:47+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. similar observations on my end, albeit at much smaller scale.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
