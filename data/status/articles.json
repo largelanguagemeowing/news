@@ -188,6 +188,51 @@
     "available": true
   },
   {
+    "article_id": 1911073,
+    "title": "500 Skills, Zero Fine-Tuning: LinkedIn's Playbook for AI Agents \u2014 Ajay Prakash, LinkedIn",
+    "url": "https://www.youtube.com/watch?v=9wZpvF3QleU",
+    "published_at": "2026-09-08T11:39:52+00:00",
+    "fetched_at": "2026-09-09T09:36:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "LinkedIn exposes roughly 1,300 tools and 600 playbooks to its coding agents, and all of them sit behind exactly three. MCP degrades somewhere past thirty or forty tools, so Ajay Prakash's team replaced the whole surface with search, get schema, and execute, letting an agent find what it needs instead of carrying everything in context. Prakash is a senior staff software engineer at LinkedIn, and he opens with an on call incident. An alert goes to a coding agent, which pulls the debugging instructions for that specific service, fetches logs and metrics, finds the root cause, proposes mitigation steps, applies them once a human confirms, updates the incident record, and opens a PR for the underlying fix. Minutes instead of hours. The rest of the talk is about the infrastructure that makes that reliable rather than lucky.\n\nIt did not start there. Agents trained on public repositories knew nothing about a thousand internal repos, custom databases, or a configuration system that new hires spend a week long boot camp learning, so engineers spent longer correcting hallucinations than writing the code themselves. An internal MCP server with code search helped, then documents, Jira, Slack, and feature flags. Tools alone still fell short, because the knowledge of how to use them sat scattered across stale wikis and old Slack threads, and every session started from nothing. Playbooks are the answer: instructions published as tools, invoked like any other tool, kept self contained and split into small referenced pieces so context arrives progressively. Agents are asked to open a PR improving any playbook they find stale, which is what keeps the corpus alive.\n\nSpeaker info:\n- https://x.com/ajay_prakash_ai\n- https://www.linkedin.com/in/ajay-prakash-3780b132/\n\nTimestamps:\n0:00 - An on call incident, handled end to end\n2:48 - Why coding agents failed inside LinkedIn\n5:10 - A thousand repos on internal frameworks\n6:34 - An internal MCP, starting with code search\n8:30 - Why tools alone were not enough\n10:34 - Playbooks, instructions served as tools\n12:27 - Two rules, self contained and broken up\n14:23 - The loop that keeps playbooks fresh\n15:34 - Architecture, local and central playbooks\n17:23 - Three meta tools to scale past the MCP limit\n19:01 - Takeaways",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "agents",
+      "coding",
+      "tutorials",
+      "development",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1911074,
+    "title": "How long can your skills be before your agent forgets what you told it? \u2014 Laurie Voss, Arize AI",
+    "url": "https://www.youtube.com/watch?v=XzJD1bvXKjs",
+    "published_at": "2026-09-08T11:38:57+00:00",
+    "fetched_at": "2026-09-09T09:36:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Laurie Voss reran a year old benchmark and the models walked straight through its ceiling without noticing it was there. IFScale asks a model to write a business report containing a list of exact words, then counts how many actually appear. A year ago frontier models started dropping instructions somewhere around 200 to 300, which is a hard limit on how much you can put in a skills file. Voss, head of developer relations at Arize AI and a cofounder of npm, first replicated that result on the three models from the original paper still reachable by API, then pointed the same test at the current frontier. They scored 100 percent immediately. He had to raise the benchmark from 500 words to 10,000 before anything broke at all. The boundary now sits near 2,000 instructions, and for the best model closer to 5,000, roughly a tenfold gain in twelve months.\n\nThe stranger finding is that the models no longer fail the same way. One simply forgets, shedding nearly half its rules by 2,000. One refuses at the API level, because a pile of random words trips its safety classifier. One spends its whole thinking budget verifying instructions and leaves no room to answer. The last writes five thousand words of the report, decides the request is stupid, says so politely, and stops, which reads like a finished answer unless you get to the end. Voss argues this moves the work: fitting rules into a small budget was a compression problem and it is gone, while knowing whether the model obeyed is a verification problem that only checking outputs solves. The whole study cost 29 dollars.\n\nSpeaker info:\n- https://x.com/seldo\n- https://www.linkedin.com/in/seldo/\n- https://seldo.com\n\nTimestamps:\n0:00 - The 200 instruction ceiling and where it came from\n1:49 - Not knowing whether it followed your rules\n2:58 - How the IFScale benchmark works\n4:19 - Replicating last year's result\n6:12 - Pointing the same test at current models\n7:07 - The headline, a tenfold jump in a year\n9:01 - Four models, four different ways to fail\n14:27 - What this changes in your workflow\n16:29 - Caveats, and what the test does not prove\n19:32 - Capacity went up, reliability did not\n21:06 - Compression solved, verification remains",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety",
+      "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1900100,
     "title": "Introducing ChatGPT Images 2.5",
     "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
@@ -10179,46 +10224,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 620113,
-    "title": "How AI agents reproduced ICML 2026  papers",
-    "url": "https://www.youtube.com/watch?v=8qpEDpNhzWY",
-    "published_at": "2026-08-08T04:30:48+00:00",
-    "fetched_at": "2026-08-08T04:35:47+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "We just wrapped up the 2026 ICML Reproduction Challenge, with more than 1,200 participants & their agents! More than 2,000 different papers were reproduced or falsified (1/3 of all of the papers at the conference). Participants created ~13k repos ~3TB of artifacts. This is likely the biggest attempt to reproduce a major AI conference! \n\nIn this livestream, we are announcing the winners of the ICML 2026 Agents Reproduction challenge. We will be awarding prizes (Hugging Face credits) to the top 4 participants.\n\n\ud83c\udf89Congratulations to all our winners, and thank you to everyone who joined us in the reproduction challenge.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "open-source",
-      "agents",
-      "research",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 642746,
-    "title": "RT by @mattpocockuk: Holy shit @mattpocockuk's ai tooling is pretty fucking cool. Come to my RenderATL workshop to learn more \ud83d\ude2c\ud83c\udf7b",
-    "url": "https://nitter.net/AdamRackis/status/2085919138065555894#m",
-    "published_at": "2026-08-08T02:40:51+00:00",
-    "fetched_at": "2026-08-08T13:45:32+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Holy shit <a href=\"https://nitter.net/mattpocockuk\" title=\"Matt Pocock\">@mattpocockuk</a>'s ai tooling is pretty fucking cool. <br />\n<br />\nCome to my RenderATL workshop to learn more \ud83d\ude2c\ud83c\udf7b</p>",
-    "topic": "education",
-    "tags": [
-      "education",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
