@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 1920587,
+    "title": "I Built An AI Slop Detector",
+    "url": "https://www.youtube.com/watch?v=-KcHn0QcSb0",
+    "published_at": "2026-09-09T22:18:17+00:00",
+    "fetched_at": "2026-09-09T22:58:32+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "AI video is getting REALLY hard to spot\u2026 So I tried to build a tool that could detect it for me.\n\nThe idea was simple: paste in a YouTube, TikTok, Instagram, or X link and have the app tell me whether the video was AI-generated.\n\nWhat I thought would be a pretty straightforward build turned into multiple days of testing, broken detection logic, Gemini getting fooled, a third-party AI detection API, thousands of API operations, and a whole lot of \u201cinconclusive\u201d results.\n\nEventually\u2026 I got it working. Kinda.\n\nAnd the whole experiment left me with a much bigger question about AI and all of the claims that we\u2019ve already reached AGI.\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nhttps://github.com/mreflow/ai-slop-detector\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n00:00 AI Slop Is Everywhere\n01:16 Can We Actually Detect It?\n02:44 Building The AI Slop Detector\n04:46 Well\u2026 It Doesn\u2019t Work\n06:34 8 Hours Later\n08:38 Testing A Real AI Detector\n10:09 Finally Getting It Working\n15:42 This Gets Expensive FAST\n16:49 So\u2026 Is This Really AGI?\n18:49 The Final Result",
+    "topic": "media",
+    "tags": [
+      "media",
+      "models",
+      "open-source",
+      "api",
+      "video",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1918256,
     "title": "The exact tools used to port a massive codebase in days #programming #typescript #dev",
     "url": "https://www.youtube.com/shorts/AJhjm4_UJIk",
@@ -266,6 +289,26 @@
       "models",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1919225,
+    "title": "GPT-6 Astra: The next generation in intelligence for work",
+    "url": "https://openai.com/index/gpt-6-astra-next-generation-work",
+    "published_at": "2026-09-09T11:00:00+00:00",
+    "fetched_at": "2026-09-09T22:58:31+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Meet GPT-6 Astra, OpenAI\u2019s most capable model for business, with advanced reasoning, computer use, and stronger writing and design judgment.",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
+      "infrastructure",
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10186,51 +10229,6 @@
       "benchmark",
       "coding",
       "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 711894,
-    "title": "Guide, Verify, Solve \u2014 Anirban Chatterjee, Sonar",
-    "url": "https://www.youtube.com/watch?v=03l29gJXpCE",
-    "published_at": "2026-08-09T17:45:13+00:00",
-    "fetched_at": "2026-08-09T18:40:16+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A Carnegie Mellon study sorted GitHub projects by whether an AI tool wrote the code, and found the productivity gain ran out after about three months while the static analysis warnings and the added complexity stayed. That residue is verification debt, and how much it costs scales with criticality: a short lived internal tool can live with the gap between the quality a model gives you and the quality the application needs, a large codebase with adversarial users cannot. The obvious backstop is human review, and a Wharton study suggests it leaks badly. Participants took the AI's advice 92.7% of the time when it was correct, and still followed it nearly 80% of the time when it had been instructed to lie confidently.\n\nAnirban Chatterjee's argument is that the check has to be zero trust and multi layered. Zero trust means assuming the code could have come from anywhere and verifying it by a different method than the one that wrote it, since a model grading its own output inherits its own blind spots. Multi layered means computational review running alongside reasoning based review, because no single technique catches syntax, data flow, architecture and control flow at once. Sonar's leaderboard makes the blind spots concrete: across their metrics one Claude model rates well on correctness and reliability while the other is the better choice when maintainability, security or lower complexity is what matters. The loop he proposes wraps generation on both sides, handing the agent architectural constraints and coding standards before it starts, running verification inside the inner loop so issues get fixed before they propagate into later loops, and giving the agent the tools to remediate what comes back instead of queueing it for a person who is already rubber stamping too much.\n\nSpeaker info:\n- https://www.linkedin.com/in/anirbanc/\n- https://www.sonarsource.com/the-coding-personalities-of-leading-llms/leaderboard/",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 709627,
-    "title": "Velocity Sickness: What Happens When Your Whole Team Gets 10x Faster \u2014 Matt Dailey, Ref.",
-    "url": "https://www.youtube.com/watch?v=Kz4QJmNrVXU",
-    "published_at": "2026-08-09T16:30:28+00:00",
-    "fetched_at": "2026-08-09T17:31:45+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A newsletter writer walked Matt Dailey through an agentic pipeline good enough to amplify their own voice instead of flattening it, then mentioned they were now effectively writing a book every week. Dailey asked whether the audience was reading a book every week. They were not. Those pages go unread, and that gap is what he calls velocity sickness: the stress of a sudden output increase that delivers output without impact. On engineering teams it arrives as too many pull requests to merge, work sprinting in too many directions at once, and the ritual of declaring agent bankruptcy, walking back to twelve terminals the next morning, recognizing none of it, throwing all of it out and paying for the same work twice.\n\nThe failure that actually worries him is critical decisions getting made by agents, because an engineer who lets that happen has stopped owning the code, and a team doing it at scale no longer owns the product. His fix is to separate the decision layer from the implementation layer and give the decision layer its own primitive: a document rather than a chat. Chats are isolated, ephemeral and built for implementation, so the decisions made inside one evaporate while only the code survives. A durable shared doc holds the state and the agent supplies the action, which keeps agents effectively stateless, lets several start from identical context, and turns rebuilding your own understanding into rereading a file. The tell that it is working, he says, is people writing plans they never implement, which is what prioritizing looks like once idea velocity replaces code velocity. Three things to try immediately: notice which gear you are in, treat the plan as a portal into the system rather than a prompt, and hand a plan to a teammate before you hand it to an agent.\n\nSpeaker info:\n- https://www.linkedin.com/in/matthewjdailey\n- https://ref.tools/",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "infrastructure",
-      "coding",
-      "media",
-      "news",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
