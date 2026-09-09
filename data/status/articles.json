@@ -1,5 +1,25 @@
 [
   {
+    "article_id": 1918256,
+    "title": "The exact tools used to port a massive codebase in days #programming #typescript #dev",
+    "url": "https://www.youtube.com/shorts/AJhjm4_UJIk",
+    "published_at": "2026-09-09T20:07:49+00:00",
+    "fetched_at": "2026-09-09T20:32:02+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Why porting a massive codebase from Python to TypeScript was the right move.\n\nMike Krieger, co-lead of Anthropic and founder of Instagram, breaks down the unconventional engineering decision behind this switch. He details how integrating Bun and a new deployment strategy justified the migration despite the scale of the project.\n\nSubscribe for more deep dives into complex engineering choices.",
+    "topic": "development",
+    "tags": [
+      "development",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1914438,
     "title": "Paul Christiano joins OpenAI Foundation Board",
     "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
@@ -264,6 +284,25 @@
     "tags": [
       "research",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1918556,
+    "title": "AlignmentAn alignment assessment of recent cybersecurity incidents",
+    "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+    "published_at": "2026-09-09T00:00:00+00:00",
+    "fetched_at": "2026-09-09T20:32:02+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Sep 9, 2026AlignmentAn alignment assessment of recent cybersecurity incidents",
+    "topic": "security",
+    "tags": [
+      "security",
+      "safety",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10192,50 +10231,6 @@
       "media",
       "news",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 703082,
-    "title": "Always-on agents run production without the on-call tax \u2014 Justin Smith, Resolve AI",
-    "url": "https://www.youtube.com/watch?v=vSx5IULvBns",
-    "published_at": "2026-08-09T14:45:06+00:00",
-    "fetched_at": "2026-08-09T15:01:39+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Someone drops a GitHub release tag into Slack and the agent decides on its own that this is a deploy worth watching. It reads what actually changed, works out which telemetry would expose trouble for that particular change, and writes a check plan for this release alone: checkout is replacing the currency service, so watch checkout latency and error rates, then follow the causal chain into the Kafka pipeline. None of the timing is hardcoded. It can decide to look again in an hour because this class of failure only surfaces intermittently, or come back in three days to ask whether the deploy is still healthy. Justin Smith is careful to say CI/CD already handles the baseline well. The gap is everything routed around it, the feature flags and infrastructure changes that ship with no monitoring at all and get caught only when an alert wakes somebody up.\n\nThe premise underneath is that around 70% of an engineer's time goes to running code rather than writing it, and coding agents made that worse by raising the volume of change flowing into production. Resolve's background agents are defined by three questions: when they run, on a schedule or an event stream or just a message; how they run, in the cloud inside a sandbox with its own file system, so closing your laptop changes nothing; and how they know what to do. The one Smith clearly enjoys most watches Slack channels and answers engineering questions without being addressed, staying quiet when it lacks confidence, and DMing him to confirm an answer before it replies in public. His sharpest point is that execution is the easy half. Loading a dashboard is execution. Deciding a metric smells wrong is production context, and building the knowledge system that keeps up with an environment changing faster every month is where the real work sits.\n\nSpeaker info:\n- https://www.linkedin.com/in/justin-smith-7b1534a8/\n- https://resolve.ai/events/behind-the-build/agents-for-engineering-workflows",
-    "topic": "infrastructure",
-    "tags": [
-      "release",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 736922,
-    "title": "Evolution of agentic surfaces \u2014 Gagan Bhat & Isabella Kai He, Anthropic",
-    "url": "https://www.youtube.com/watch?v=K0X9QDRkIdg",
-    "published_at": "2026-08-09T09:12:27+00:00",
-    "fetched_at": "2026-08-10T09:58:45+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Sonnet 4.5 developed what Anthropic's Applied AI team came to call context anxiety: approaching its context window limit, it would wrap work up early and stop with room to spare. They built context resets into the harness to compensate. Then Opus 4.5 shipped without the behavior, and the fix turned into pure overhead, adding latency and discarding cache it should have kept. That is the principle Gagan Bhat and Isabella Kai He build the whole session on: a harness encodes assumptions about what the model cannot do on its own, and those assumptions go stale as models improve.\n\nThe architectural consequence is decoupling the brain, meaning the agent loop, from the hands, meaning the tool execution environment. Both started in one container, so the model could not begin reasoning until setup finished and either half failing took the whole agent down. Splitting them lets reasoning start while the container builds in parallel, which they measured at 60% faster time to first token at P50 and over 90% at P95. It also changes failure into something recoverable: a dead sandbox is simply retried, and a dead brain resumes from a durable session log. That log ends up doing triple duty, providing observability, letting the harness read context slices back in after Claude discards them mid run, and feeding a periodic batch process they call dreaming that rewrites the agent's memory so the next day's sessions start smarter.\n\nSpeaker info:\nGagan Bhat (Anthropic):\n- https://www.linkedin.com/in/gagan-bhat/\n\nIsabella Kai He (Anthropic):\n- https://x.com/IsabellaKHe\n- https://www.linkedin.com/in/isabella-kai-he/\n\nTimestamps:\n0:00 - Who the Applied AI team is\n1:52 - From simple questions to owning outcomes\n2:45 - The Messages API and the hand rolled agentic loop\n4:29 - Six production infrastructure problems\n5:20 - The Claude Agent SDK\n6:13 - What managed agents takes off your plate\n7:02 - Harnesses encode assumptions that go stale\n7:51 - Context anxiety, and the fix that outlived its need\n9:34 - Designing for the model capabilities of tomorrow\n10:25 - What long running agents demand\n11:16 - Decoupling the brain from the hands\n12:59 - Three primitives: agent, environment, session\n13:51 - Reliability and the four session states\n15:32 - Recovering discarded context from the session log\n16:23 - What the developer still owns\n17:14 - Demo: an SRE agent for a latency spike\n18:58 - Defining the environment and its network limits\n19:49 - Kicking off a session\n20:38 - Root cause, and the observability trace\n22:25 - Lesson one: keep credentials away from the agent\n23:15 - Lesson two: where the latency went\n24:58 - Lesson three: session logs as memory\n25:47 - Lesson four: self hosted sandboxes and MCP tunnels\n27:28 - Dreaming\n29:08 - Outcomes and grader agents\n30:49 - Harnesses as the limiting factor",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "infrastructure",
-      "coding",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
