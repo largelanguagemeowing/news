@@ -1,5 +1,45 @@
 [
   {
+    "article_id": 1930164,
+    "title": "The Spatial Harness: Bringing Agents to the Canvas \u2014 Max Drake, tldraw",
+    "url": "https://www.youtube.com/watch?v=XWcXwnysmpY",
+    "published_at": "2026-09-10T14:00:06+00:00",
+    "fetched_at": "2026-09-10T14:52:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "One of Max Drake's colleagues turned a whiteboard app into a window manager, then used it to play Pong with real desktop windows. Drake is a product engineer at tldraw, the London company behind the free infinite canvas app and, more importantly to him, the SDK powering other people's canvases, including Replit's. tldraw exists because people building canvas apps got stuck on the canvas itself, on selection and resizing and matrix math, and never reached their actual product. His talk is about the same trap one layer up. Coding agents work well because code is text in and text out, the medium they were trained on. Ask one to align something in two dimensions and it falls apart. Teaching agents to understand space takes real engineering.\n\nThe progression starts with getting a model to read a canvas at all, from a screenshot plus the underlying JSON. Told in one shot to make a mouse blow out a candle, it produces wind and then smoke, positioned correctly, out of ordinary shapes. That becomes the agent starter kit, MIT licensed, where an agent sets its own todos and moves its viewport to go looking for things. Then come fairies, agents rendered as visible characters you can throw around and recolor. The whimsy is load bearing: with ten agents running you read their state by glancing at them rather than reading a chat log. Select several and you get a group chat, one of them acting as orchestrator, assigning work and waiting to review it. Last is a dependency graph where every node is a coding agent, and a desktop build that lets any agent script the editor directly.\n\nSpeaker info:\n- https://x.com/max__drake\n- https://www.linkedin.com/in/maxdrake1/\n- https://maxdrake.md\n\nTimestamps:\n0:00 - A demo kicked off before the talk begins\n1:08 - tldraw, the app and the SDK behind other canvases\n4:14 - Why coding agents work and canvas agents struggle\n5:08 - Teaching a model to read and act on the canvas\n7:01 - The agent starter kit goes agentic\n8:26 - Fairies, multiplayer agents you can see working\n9:49 - A group chat of agents with an orchestrator\n12:06 - One node per coding agent, in a dependency graph\n15:48 - Code mode, a window manager, and Pong\n18:05 - The canvas as a place to work with agents",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1928611,
+    "title": "What if everything changes tomorrow? A Canadian company is using AI to help businesses navigate supply chain uncertainty",
+    "url": "https://news.microsoft.com/source/canada/features/ai/kinaxis-supply-chain/",
+    "published_at": "2026-09-10T13:08:37+00:00",
+    "fetched_at": "2026-09-10T14:52:41+00:00",
+    "source_id": "microsoft-ai-blog",
+    "source_name": "Microsoft AI Blog",
+    "extraction_method": "rss",
+    "body": "<p>The post <a href=\"https://news.microsoft.com/source/canada/features/ai/kinaxis-supply-chain/\">What if everything changes tomorrow? A Canadian company is using AI to help businesses navigate supply chain uncertainty</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1922796,
     "title": "Quoting Calif Research",
     "url": "https://simonwillison.net/2026/Sep/10/calif-research/",
@@ -200,6 +240,28 @@
       "safety",
       "benchmark",
       "education",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1930168,
+    "title": "One Designer + AI. Hundreds of Deliverables. \u2014 Vincent Wendy, AI Engineer",
+    "url": "https://www.youtube.com/watch?v=O1FN4awNEtM",
+    "published_at": "2026-09-09T15:13:34+00:00",
+    "fetched_at": "2026-09-10T14:52:43+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Vincent Wendy pointed an agent at the sponsor banner in the lobby, a wall carrying more than 140 logos, and asked it which ones were missing. It caught every omission in the checks he ran, and he used the same trick on the conference shirt. Wendy is the senior creative designer at AI Engineer, a company of roughly twelve to fifteen people, and he is its only designer. The conference he designs for grew to 7,000 attendees, more than 140 sponsors, more than 300 speakers, and more than 600 sessions, and all of it needs something drawn: stickers, signage, landing pages, wayfinding. A thousand details, as he puts it, means a thousand ways to fail.\n\nHis method has five parts: build the foundation first, make designs reusable, automate the workflows, validate the output, and remove friction. The foundation is an ordinary design system, pinned down tightly enough that a model cannot invent its own font size, which lets the marketing team build emails and flyers from the website without involving him. Room schedules once laid out by hand in Figma are now pulled fresh from live data, exported, and carried to the screens on a flash drive. A generator produces announcement graphics and trading cards for all 300 speakers, pixel perfect, pulling in headshots on its own. He shows Devin, which lives in Slack, matching a photographer's shots to the right speaker, and adding an edit button to the schedule tool the morning he needed one. His closing claim: tools stopped being the constraint, so having a real problem is the advantage.\n\nSpeaker info:\n- https://id.linkedin.com/in/vinwendy\n\nTimestamps:\n0:00 - One designer for a 7,000 person conference\n2:07 - A thousand details, a thousand ways to fail\n3:22 - The design team: Devin, GPT, and Figma\n4:45 - Five ways to solve the scale problem\n6:54 - Reusable design and the schedule signage pipeline\n9:16 - The speaker announcement generator\n11:50 - Matching photos to the right speaker\n13:15 - Checking 140 sponsor logos for gaps\n14:21 - Removing friction and handling exceptions",
+    "topic": "news",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "events",
+      "news",
       "tools"
     ],
     "dearrow_thumbnail_url": "",
@@ -10164,67 +10226,6 @@
       "product",
       "models",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 762313,
-    "title": "Virgin Atlantic sharpens customer journeys with ChatGPT Work",
-    "url": "https://openai.com/index/virgin-atlantic/chatgpt-work",
-    "published_at": "2026-08-10T00:00:00+00:00",
-    "fetched_at": "2026-08-10T23:07:05+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 762312,
-    "title": "How Zapier transformed core marketing processes with ChatGPT Work",
-    "url": "https://openai.com/index/zapier",
-    "published_at": "2026-08-10T00:00:00+00:00",
-    "fetched_at": "2026-08-10T23:07:05+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "api",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 725319,
-    "title": "Quoting Claude Opus 5 system prompt",
-    "url": "https://simonwillison.net/2026/Aug/9/claude-opus-5-system-prompt/#atom-everything",
-    "published_at": "2026-08-09T23:31:39+00:00",
-    "fetched_at": "2026-08-10T01:47:28+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://platform.claude.com/docs/en/release-notes/system-prompts#claude-opus-5\"><p>Claude Fable 5 and Claude Mythos 5 were first released on June 9, 2026. On June 12, 2026, Anthropic suspended access to both models to comply with U.S. Department of Commerce export controls; the Department lifted those controls on June 30, 2026, and Anthropic restored access on July 1, 2026 (Anthropic's statement: <a href=\"https://www.anthropic.com/news/fable-mythos-access\">https://www.anthropic.com/news/fable-mythos-access</a>). These events are after Claude's training-data cutoff, so Claude knows about them only from this notice. If asked, Claude confirms them accurately and matter-of-factly \u2014 it doesn't deny the suspension happened \u2014 and otherwise treats the export controls like any other current political topic: it gives a fair, accurate account rather than sharing personal opinions, and points to the linked statement for anything further. Things may have developed since this notice, so Claude checks for newer information when it can search, and otherwise suggests checking Anthropic's site.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://platform.claude.com/docs/en/release-notes/system-prompts#claude-opus-5\">Claude Opus 5 system prompt</a>, ensuring Claude doesn't provide incorrect answers about the <a href=\"https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/\">export controls situation</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/system-prompts\">system-prompts</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "release",
-      "models",
-      "coding",
-      "events",
-      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
