@@ -301,6 +301,27 @@
     "available": true
   },
   {
+    "article_id": 1933542,
+    "title": "Introducing ChatGPT for Financial Services",
+    "url": "https://openai.com/index/introducing-chatgpt-financial-services",
+    "published_at": "2026-09-10T07:00:00+00:00",
+    "fetched_at": "2026-09-10T21:05:03+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1922796,
     "title": "Quoting Calif Research",
     "url": "https://simonwillison.net/2026/Sep/10/calif-research/",
@@ -373,6 +394,28 @@
       "product",
       "models",
       "api"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1933545,
+    "title": "Introducing the Agents API",
+    "url": "https://openai.com/index/introducing-the-agents-api",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "fetched_at": "2026-09-10T21:05:03+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "api",
+      "agents",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10183,51 +10226,6 @@
     "tags": [
       "ai-models",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 748192,
-    "title": "Codex, Behind the Harness \u2014 Dominik Kundel, OpenAI",
-    "url": "https://www.youtube.com/watch?v=shRR1e2HXMk",
-    "published_at": "2026-08-10T16:00:06+00:00",
-    "fetched_at": "2026-08-10T16:05:40+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Once GPT 5.3 Codex Spark started serving a thousand tokens per second on Cerebras, inference stopped being the bottleneck and the network became it. The answer was websocket mode: a persistent connection replacing server sent events over HTTP, carrying stateful context so a turn ships back only the tool call result instead of resending every item. The same pressure shapes context construction, which fights size, flexibility and cachability at once. Tools can be marked deferred so they never enter the context window and surface through tool search when the model actually wants them, and the available skills list is capped at 2% of the context window, with descriptions trimmed as it grows past that.\n\nActions are where a harness earns its keep. File edits go through an apply patch tool the models were trained on, everything else through a shell the model instinctively drives with ripgrep, and all of it inside a sandbox: seatbelt on macOS, bubblewrap on Linux, and a custom open source sandbox on Windows the team had to build themselves. Approval fatigue pushes people into full access, which their own security team hates, so an escalation now spins up an auto review subagent with read only permissions and no ability to spawn others, judging the action against the transcript and how explicitly the user authorized it. Deleting a file you asked for reads differently from deleting a .git folder you never mentioned. Long horizon goals run by injecting a continuation prompt until the model calls an update goal tool, which is why concrete verifiable objectives beat essays. Dominik Kundel's closing point is that the harness is Apache 2 and written in Rust, and most of what makes it distinct lives in the responses API, so you can borrow any of it.\n\nSpeaker info:\n- https://x.com/dkundel\n- https://linkedin.com/in/dkundel\n- https://github.com/openai/codex",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 827173,
-    "title": "Lessons from Studying Every Memory System \u2014 Shlok Khemani, Independent",
-    "url": "https://www.youtube.com/watch?v=5ZGyKWjQDr0",
-    "published_at": "2026-08-10T15:40:06+00:00",
-    "fetched_at": "2026-08-12T13:57:27+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A profile ChatGPT keeps on Shlok Khemani says he travelled to Turkey in 2025. He never has. The memory came from conversations where he was choosing between Turkey and Thailand, he went to Thailand, and the profile kept both with overlapping dates. What bothers him is not the mistake but the incuriosity: nothing notices the conflict, and the evidence to settle it was sitting in his email as flight and hotel bookings. He calls that a product problem, not a technology one.\n\nThe rest is a year of reverse engineering how consumer memory systems are built, all of it his reading from the outside rather than anything documented. By his account ChatGPT went from a user managed list of facts to a running profile rebuilt in the background, roughly 4,000 tokens of dense keyword clues he could only inspect by jailbreaking his way to it. Claude started opposite, with no profile and two retrieval tools over past conversations, then added one about a quarter the size, in full sentences, refreshed daily and visible in settings. His frame for the difference is that memory is a function of compute: a profile costs to maintain and costs again in every context window it enters, so a large profile updated rarely and a small one updated daily are two answers to one budget question.\n\nSpeaker info:\n- https://x.com/shloked\n- https://www.linkedin.com/in/shlokkhemani/\n- https://shloked.com\n\nTimestamps:\n0:00 - What memory means here: consumer personalization\n2:09 - ChatGPT memory v1, a list of facts\n4:08 - The running profile arrives\n6:04 - The trip that never happened\n6:45 - A profile you cannot look at\n7:23 - Claude's first version, tools instead of a profile\n8:03 - Publishing that they were opposites\n9:18 - Three years of convergence\n11:14 - There is no single way to do memory\n12:30 - Memory is a function of compute\n13:47 - Continual learning is already here\n15:39 - The context problem no architecture solves\n17:34 - Products that each know you separately",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "safety",
-      "benchmark",
-      "research",
-      "infrastructure",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
