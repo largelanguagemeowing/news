@@ -1,5 +1,248 @@
 [
   {
+    "article_id": 1932567,
+    "title": "One Designer + AI. Hundreds of Deliverables. \u2014 Vincent Wendy, AI Engineer",
+    "url": "https://www.youtube.com/watch?v=O1FN4awNEtM",
+    "published_at": "2026-09-10T17:00:06+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Vincent Wendy pointed an agent at the sponsor banner in the lobby, a wall carrying more than 140 logos, and asked it which ones were missing. It caught every omission in the checks he ran, and he used the same trick on the conference shirt. Wendy is the senior creative designer at AI Engineer, a company of roughly twelve to fifteen people, and he is its only designer. The conference he designs for grew to 7,000 attendees, more than 140 sponsors, more than 300 speakers, and more than 600 sessions, and all of it needs something drawn: stickers, signage, landing pages, wayfinding. A thousand details, as he puts it, means a thousand ways to fail.\n\nHis method has five parts: build the foundation first, make designs reusable, automate the workflows, validate the output, and remove friction. The foundation is an ordinary design system, pinned down tightly enough that a model cannot invent its own font size, which lets the marketing team build emails and flyers from the website without involving him. Room schedules once laid out by hand in Figma are now pulled fresh from live data, exported, and carried to the screens on a flash drive. A generator produces announcement graphics and trading cards for all 300 speakers, pixel perfect, pulling in headshots on its own. He shows Devin, which lives in Slack, matching a photographer's shots to the right speaker, and adding an edit button to the schedule tool the morning he needed one. His closing claim: tools stopped being the constraint, so having a real problem is the advantage.\n\nSpeaker info:\n- https://id.linkedin.com/in/vinwendy\n\nTimestamps:\n0:00 - One designer for a 7,000 person conference\n2:07 - A thousand details, a thousand ways to fail\n3:22 - The design team: Devin, GPT, and Figma\n4:45 - Five ways to solve the scale problem\n6:54 - Reusable design and the schedule signage pipeline\n9:16 - The speaker announcement generator\n11:50 - Matching photos to the right speaker\n13:15 - Checking 140 sponsor logos for gaps\n14:21 - Removing friction and handling exceptions",
+    "topic": "news",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "events",
+      "news",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1932568,
+    "title": "Generative UI... in Python? \u2014 Jeremiah Lowin, Prefect",
+    "url": "https://www.youtube.com/watch?v=Krzs8GeiWTc",
+    "published_at": "2026-09-10T16:30:07+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Because only the agent can reach an MCP server, a naive file upload tool makes the agent retype the file into the server character by character. Jeremiah Lowin calls it the world's most expensive copy paste operation, and it is the problem MCP apps exist to remove. Lowin is founder and CEO of Prefect and the author of FastMCP. MCP apps, a protocol extension added this year, let a tool result skip the agent and arrive at the user as HTML, CSS, and JavaScript: a real interface a person can click. That solves one problem and creates another, because FastMCP's users are overwhelmingly Python engineers inside enterprises, and shipping React from Python is not something he would pretend to do.\n\nThe way out was constraining the problem. His users are not building consumer facing branded products; they share and collect information, which means tables, forms, and charts. Prefab is the result, a Python DSL where nesting context managers builds the interface structure and every component is a class that renders as a polished one. Reactive variables give client side interactivity with no JavaScript. The pipeline runs Python to a declarative representation to a JSON protocol to a React app, and Lowin is blunt that the JSON is the actual point: a serializable UI is one an agent can generate, receive, or edit. The Python DSL, he says, was an accident he noticed later. Two details land. The Prefab documentation is rendered entirely in Prefab, editable in place. And a UI streamed as Python turned out roughly seventy percent smaller than the same UI as JSON, so they now send Python over the wire and convert it in a sandbox.\n\nSpeaker info:\n- https://x.com/jlowin\n- https://www.linkedin.com/in/jlowin/\n- https://jlowin.dev\n\nTimestamps:\n0:00 - MCP apps, and bypassing the agent\n3:20 - Shipping UIs to an audience of Python engineers\n4:45 - Constraining the problem to tables, forms, charts\n5:43 - Composing a front end rather than building one\n6:37 - The DSL, and the JSON in the middle\n8:54 - Docs rendered in the thing they document\n10:13 - Interactive tools, and a chart beside a table\n12:56 - Full apps and the expensive copy paste problem\n15:15 - Generative UI, and Python beating JSON on the wire",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "coding",
+      "enterprise",
+      "events",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1933117,
+    "title": "State of Agentic Coding #10 with Armin and Ben",
+    "url": "https://www.youtube.com/watch?v=9UAxrdcDjjU",
+    "published_at": "2026-09-10T16:19:06+00:00",
+    "fetched_at": "2026-09-10T18:09:21+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing.\n\ninternal moltbook",
+    "topic": "agents",
+    "tags": [
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1933118,
+    "title": "Why AI Coding Made Me More Productive - And Less Happy | Dillon Mulroy",
+    "url": "https://www.youtube.com/watch?is=EV3gUTLdLI2I0BR3&v=sYNOgpDKTvE&feature=youtu.be",
+    "published_at": "2026-09-10T16:18:35+00:00",
+    "fetched_at": "2026-09-10T18:09:21+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing with @dillon_mulroy",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1932569,
+    "title": "Training Taste \u2014 Thais Castello Branco, Taste Labs",
+    "url": "https://www.youtube.com/watch?v=sDMGWK4wZ_w",
+    "published_at": "2026-09-10T16:00:20+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Taste Labs analyzed more than two million websites going back a decade, and the finding that complicates the usual story is that the internet was homogenizing before AI arrived: palettes converging, layouts converging, trends spreading faster than they once did. AI did not start the collapse. It accelerated it and made it context blind, so a pet shop and a finance firm end up with the same page. Thais Castello Branco founded Taste Labs, out of stealth weeks before this talk, to attack that. She names three signatures of slop: repetition, lack of fit, and low intent. She is careful about the word taste, preferring judgment, and she rejects the idea that the fix is everyone acquiring some. Designers spend careers on it, through exposure, pattern recognition, restraint, and the nerve to break a rule on purpose.\n\nSo the work is making a fuzzy domain measurable. Some pieces go nearly deterministic once the context is tight: contrast, alignment, and palette selection are things most experts score the same way. Aesthetics is where experts disagree, so that leans on data instead. Her team mined features from those sites and trained what she calls probes, small classifiers that each detect one characteristic. Stacked together, their combined frequency predicts slop, and she reports it beating the usual approach of asking a model to judge. On the solution side she argues inference time matters as much as the model, because intent and context are exchanged there. One product pushes deliberately out of distribution, breaking chosen rules while respecting a category's expectations rather than raising temperature. Another turns a brand into structured components an agent can follow and that you can grade it against.\n\nSpeaker info:\n- https://x.com/thaiscbranco_\n- https://www.linkedin.com/in/thais-castello-branco/\n\nTimestamps:\n0:00 - Taste Labs, and slop as the enemy\n1:33 - Where design gets objective and where it does not\n2:53 - Greatness, and why slop is easier to define\n3:46 - Generation costs nothing, taste takes a lifetime\n5:07 - Three signatures of slop\n6:28 - Two million websites, and what they showed\n7:48 - Probes, small classifiers that predict slop\n10:31 - Going out of distribution on purpose\n11:51 - Turning a brand into something an agent can follow",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1931020,
+    "title": "3 ways to prep for your next big race with Search",
+    "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+    "published_at": "2026-09-10T16:00:00+00:00",
+    "fetched_at": "2026-09-10T18:09:15+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Illustration on a blue background of technicolor runners with a magnifying glass and Gemini spark overlaid",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1931140,
+    "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+    "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+    "published_at": "2026-09-10T16:00:00+00:00",
+    "fetched_at": "2026-09-10T18:09:16+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "C\u00e9sar de la Fuente\u2019s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1933119,
+    "title": "Native is now the future of mobile at Shopify (2026) - Shopify",
+    "url": "https://shopify.engineering/back-to-native",
+    "published_at": "2026-09-10T15:55:35+00:00",
+    "fetched_at": "2026-09-10T18:09:21+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. helix seems like a great idea.",
+    "topic": "general",
+    "tags": [
+      "general",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1932570,
+    "title": "Design at the Speed of Adjectives \u2014 Paul Bakaus, Renaissance Geek, Inc.",
+    "url": "https://www.youtube.com/watch?v=v42opQpCy60",
+    "published_at": "2026-09-10T15:30:14+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The instruction Impeccable loads when you type \"bolder\" ends with a challenge: show someone your work, say AI made this bolder, and if they believe you, you failed. Bakaus has built tools for more than twenty years. Impeccable is a design skill that rides on top of a coding harness rather than replacing it, working across Claude Code, Copilot, Cursor, and Codex. He opens by running the same prompt on the same bland page twice, with the skill and without, and lets the room judge. His observation is that the tells of generated design keep moving. The purple gradients are gone from frontier models. What replaced them is a beige palette, Instrument Serif, and italics, which he calls Claude beige, and which is not bad design so much as identical design.\n\nHis hot take is that you cannot oneshot design, maybe not ever, because good design is context rich, iterative, and full of people with opinions. Someone still has to decide the emotional territory, what this should never feel like, who it is for. So rather than automate the decision, Impeccable hands you vocabulary to steer it: bolder, quieter, distill, polish, denser, harden. Each word is loaded with a specific meaning for your project, so bolder resolves to hierarchy, scale, and decisive type instead of gradients, glass, and neon. He maps the messy workflow, from shaping through crafting and iterating to hardening and design debt cleanup, then picks injection points along it. He also refuses his most requested feature: there will be no automatic mode, and a pull request adding one is getting closed, because the point is steering rather than abdication.\n\nSpeaker info:\n- https://x.com/pbakaus\n- https://linkedin.com/in/paulbakaus\n- https://www.paulbakaus.com/\n\nTimestamps:\n0:00 - Impeccable, and a cold open you can compare\n2:46 - Blurring roles and a broken handoff\n3:51 - Direct manipulation versus fully agentic\n5:15 - Slop moved on: Claude beige, not purple gradients\n5:58 - You cannot oneshot design\n8:16 - Steering with adjectives and verbs\n9:40 - What bolder means in your context\n12:02 - Mapping the messy design workflow\n14:05 - No auto mode, and why taste is not lab grown",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "coding",
+      "opinion",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1932571,
+    "title": "Mousepower: agents that can\u2019t be measured, can\u2019t be managed. \u2014 Maximillian Piras, Yutori",
+    "url": "https://www.youtube.com/watch?v=8KkibGU_DDY",
+    "published_at": "2026-09-10T15:00:39+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Selling steam engines to people who thought in horses, James Watt studied the horse gins that powered mills, worked out what one animal produced, and called it horsepower. The number was not scientific and arguably not accurate. It did not have to be. It made the improvement legible enough that someone who liked horses would try a machine. Maximillian Piras is the founding designer at Yutori, which builds computer use models: agents that drive a computer as a person would, where no API or MCP exists. His thesis is that agents have Watt's problem. This room can run agents all day, but early adopters are a biased sample, and most people cannot judge whether the tokens were worth it.\n\nHe calls the current pattern overspending and underusing: token maxing into austerity, dropping out, then getting pulled back by the fear of missing out. Part of the fix is tracing spend to outcomes rather than tokens, which are only an output: bugs closed, support requests resolved. The harder part is verification. Coding got faster while review did not, so the bottleneck moved to the human reading the diff, and value cannot be judged as fast as it is produced. His framework is an entropy matrix. One axis is uncertainty in the steps a task takes, the other is uncertainty in its acceptance criteria. Too little step uncertainty and you should write a script. Too much and the task sits out of distribution with sparse rewards. Too much criteria uncertainty and verifying costs as much as doing. The sweet spot resembles an NP problem, cheaper to check than to solve, which means you can point agents at the checking too.\n\nSpeaker info:\n- https://x.com/MVXMXM\n- https://www.linkedin.com/in/maximilliannyc/\n- https://www.maximin.design\n\nTimestamps:\n0:00 - Backgrounding agents in parallel, until the bill\n2:17 - Computer use models at Yutori\n3:39 - Agents have a measurement problem\n5:01 - Why early adopters are a biased sample\n5:43 - James Watt and the horse gin\n7:07 - Horsepower, inaccurate but legible\n9:12 - Overspending and underusing\n10:33 - Tokens are an output, outcomes are the point\n11:52 - The bottleneck moved to review\n13:53 - Mousepower, and a joke measuring device\n16:37 - An entropy matrix for choosing agent tasks",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "infrastructure",
+      "hardware",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1931141,
+    "title": "Now everyone can put data to work",
+    "url": "https://openai.com/index/put-data-to-work",
+    "published_at": "2026-09-10T15:00:00+00:00",
+    "fetched_at": "2026-09-10T18:09:16+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1932572,
+    "title": "The Design-Code Roundtrip That Isn't \u2014 Jonathan Gordon, ReWeaver AI",
+    "url": "https://www.youtube.com/watch?v=NW-jwOVr32w",
+    "published_at": "2026-09-10T14:30:11+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Jonathan Gordon was deep in a vibe coding session, ignoring the wall of text scrolling past, when the phrase innerHTML caught his eye. He knew it as an injection risk, stopped the agent, and made it revert. That was the moment he started reading the code again. Gordon has spent more than thirty years building developer tools and IDEs, and he defines his title precisely: a design code roundtrip is a full loop both ways with no loss of fidelity and persistent provenance, so you always know which line of code produced the button in front of you. In three decades he never saw that handoff close, because design and engineering optimize for different outcomes. When a single intelligence could both read design intent and write code, he thought the loop might finally shut.\n\nIt did not. He tried five tool setups for a bidirectional roundtrip and every one was lossy: bindings dropped, or a design change survived while the code did not. So he built ReWeaver, demonstrated publicly here for the first time, with generated code on one side, a Figma canvas on the other, and a button marked show drift. It scans both and reports across dimensions including design quality, performance, tokens, and accessibility, which he carries from his years at Microsoft. Models still emit components with no ARIA live region, so a screen reader announces nothing. Running twelve iterations on one codebase, pure model output started near thirty percent fidelity and decayed, while deterministic guardrails held it up. It never reaches a hundred, because the last stretch is human judgment. His name for drift that accumulates unwatched is the new tech debt.\n\nSpeaker info:\n- https://x.com/reweaver_ai\n- https://www.linkedin.com/in/jongor/\n- https://www.reweaver.ai\n\nTimestamps:\n0:00 - Losing the speaker notes, and what a roundtrip means\n2:10 - Thirty years of handoffs that never closed\n3:37 - Going all in on vibe coding\n5:27 - The innerHTML moment that made him read the code\n6:20 - Testing the claim that the roundtrip is solved\n7:40 - A harness with code on one side, design on the other\n9:33 - Show drift, accessibility, and what it catches\n11:50 - Deterministic guardrails versus pure model output\n14:06 - Human in control, not just in the loop\n16:25 - Nine dimensions, and trying it yourself",
+    "topic": "development",
+    "tags": [
+      "development",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1930164,
     "title": "The Spatial Harness: Bringing Agents to the Canvas \u2014 Max Drake, tldraw",
     "url": "https://www.youtube.com/watch?v=XWcXwnysmpY",
@@ -40,6 +283,24 @@
     "available": true
   },
   {
+    "article_id": 1931142,
+    "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
+    "url": "https://openai.com/index/expanding-ai-access-us-government",
+    "published_at": "2026-09-10T07:00:00+00:00",
+    "fetched_at": "2026-09-10T18:09:16+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1922796,
     "title": "Quoting Calif Research",
     "url": "https://simonwillison.net/2026/Sep/10/calif-research/",
@@ -57,6 +318,61 @@
       "coding",
       "tutorials",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1932867,
+    "title": "Frontier Red TeamMeasuring tactical intelligence targeting and conventional weapons capabilities of AI models",
+    "url": "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Sep 10, 2026Frontier Red TeamMeasuring tactical intelligence targeting and conventional weapons capabilities of AI models",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1932882,
+    "title": "T. Rowe Price brings more of Claude to its investment process",
+    "url": "https://claude.com/blog/t-rowe-price-brings-more-of-claude-to-its-investment-process",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "fetched_at": "2026-09-10T18:09:19+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "T. Rowe Price brings more of Claude to its investment process",
+    "topic": "funding",
+    "tags": [
+      "models",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1931143,
+    "title": "Build more natural voice experiences with GPT\u2011Live\u20111 in the API",
+    "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "fetched_at": "2026-09-10T18:09:16+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "GPT\u2011Live\u20111 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "api"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9912,320 +10228,6 @@
       "research",
       "infrastructure",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 748977,
-    "title": "Vibed out an app today and I haven't looked at the internals at all Things are going wrong with it, I'm scared and frustrated Then I remembered /improve-codebase-architecture What a lovely, warm bath of a skill",
-    "url": "https://nitter.net/mattpocockuk/status/2086838432102228008#m",
-    "published_at": "2026-08-10T15:33:48+00:00",
-    "fetched_at": "2026-08-10T16:05:42+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Vibed out an app today and I haven't looked at the internals at all<br />\n<br />\nThings are going wrong with it, I'm scared and frustrated<br />\n<br />\nThen I remembered /improve-codebase-architecture<br />\n<br />\nWhat a lovely, warm bath of a skill</p>\n<img src=\"https://nitter.net/pic/media%2FHPXwfImWQAAf5mv.png\" />",
-    "topic": "product",
-    "tags": [
-      "product",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 746707,
-    "title": "How to build an AI agent: A\u202fsimple\u202fguide\u202ffor anyone",
-    "url": "https://news.microsoft.com/signal/articles/how-to-build-an-ai-agent-guide/",
-    "published_at": "2026-08-10T15:07:06+00:00",
-    "fetched_at": "2026-08-10T16:05:37+00:00",
-    "source_id": "microsoft-ai-blog",
-    "source_name": "Microsoft AI Blog",
-    "extraction_method": "rss",
-    "body": "<p>The post <a href=\"https://news.microsoft.com/signal/articles/how-to-build-an-ai-agent-guide/\">How to build an AI agent: A\u202fsimple\u202fguide\u202ffor anyone</a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
-    "topic": "tutorials",
-    "tags": [
-      "agents",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 748978,
-    "title": "Less \"let me write tests to catch the next time that error happens\" More \"let me make that class of error impossible with a better design\"",
-    "url": "https://nitter.net/mattpocockuk/status/2086830429416333758#m",
-    "published_at": "2026-08-10T15:02:00+00:00",
-    "fetched_at": "2026-08-10T16:05:42+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Less \"let me write tests to catch the next time that error happens\"<br />\n<br />\nMore \"let me make that class of error impossible with a better design\"</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 744438,
-    "title": "Evolve your marketing with new AI tools",
-    "url": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
-    "published_at": "2026-08-10T14:30:00+00:00",
-    "fetched_at": "2026-08-10T14:58:36+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "Advisor UI in Google Ads and Google Analytics",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 744558,
-    "title": "OpenAI\u2019s letter to Governor Abbott on responsible AI infrastructure in Texas",
-    "url": "https://openai.com/index/responsible-ai-infrastructure-texas",
-    "published_at": "2026-08-10T14:00:00+00:00",
-    "fetched_at": "2026-08-10T14:58:37+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI sent Governor Greg Abbott a letter outlining its commitment to responsible AI infrastructure in Texas. The letter supports reliable, transparent growth that benefits Texans.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 746691,
-    "title": "RT by @mattpocockuk: I've used this skill from @mattpocockuk and I may say I am pretty impressed with the good results. AI for more than coding :-D https://youtu.be/s5T5oQJcJ6U",
-    "url": "https://nitter.net/ydarias/status/2086811433178673264#m",
-    "published_at": "2026-08-10T13:46:31+00:00",
-    "fetched_at": "2026-08-10T14:58:40+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>I've used this skill from <a href=\"https://nitter.net/mattpocockuk\" title=\"Matt Pocock\">@mattpocockuk</a> and I may say I am pretty impressed with the good results. AI for more than coding :-D <br />\n<br />\n<a href=\"https://piped.video/s5T5oQJcJ6U\">piped.video/s5T5oQJcJ6U</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://piped.video/watch?v=s5T5oQJcJ6U\">\n<img src=\"https://nitter.net/pic/card_img%2F2086261397969575936%2FFOvoDZOc%3Fformat%3Djpg%26name%3D800x320_1\" />\n<br />\n<b>Learn anything with the /teach skill</b>\n</a>\n<p>Learn how to use my /teach skill that creates personalized lessons,...</p>\n<small><a href=\"https://piped.video/watch?v=s5T5oQJcJ6U\">youtube.com</a></small>",
-    "topic": "education",
-    "tags": [
-      "video",
-      "coding",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 742283,
-    "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
-    "url": "https://openai.com/index/model-ml",
-    "published_at": "2026-08-10T12:00:00+00:00",
-    "fetched_at": "2026-08-10T13:55:45+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 739980,
-    "title": "Agents exhibit a classic \"bad developer\" trait when debugging They start to get hopeful. They say \"we're getting closer\". \"This is the decisive piece of information\". This narrative builds until they say something like \"we've eliminated all possible hypotheses\". Or \"this is the definitive fix\". Pull back. Don't jump to conclusions. Soft eyes. Just had this happen - it ruled out all possible hypotheses, and said it was an upstream bug. I said \"don't jump to conclusions yet\". 2 turns later, the bug was solved.",
-    "url": "https://nitter.net/mattpocockuk/status/2086770919423258707#m",
-    "published_at": "2026-08-10T11:05:32+00:00",
-    "fetched_at": "2026-08-10T11:14:33+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Agents exhibit a classic \"bad developer\" trait when debugging<br />\n<br />\nThey start to get hopeful. They say \"we're getting closer\". \"This is the decisive piece of information\".<br />\n<br />\nThis narrative builds until they say something like \"we've eliminated all possible hypotheses\". Or \"this is the definitive fix\".<br />\n<br />\nPull back. Don't jump to conclusions. Soft eyes.<br />\n<br />\nJust had this happen - it ruled out all possible hypotheses, and said it was an upstream bug.<br />\n<br />\nI said \"don't jump to conclusions yet\". 2 turns later, the bug was solved.</p>",
-    "topic": "coding",
-    "tags": [
-      "agents",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 753435,
-    "title": "Expanding Daybreak as the Cyber Defense Window Narrows",
-    "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
-    "published_at": "2026-08-10T10:00:00+00:00",
-    "fetched_at": "2026-08-10T19:31:05+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Meet GPT-5.6-Cyber, OpenAI\u2019s cybersecurity-specific model available through Daybreak Red for authorized vulnerability research, exploit validation, and security testing.",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "safety",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 749116,
-    "title": "Putting frontier cyber models in more trusted hands",
-    "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
-    "published_at": "2026-08-10T10:00:00+00:00",
-    "fetched_at": "2026-08-10T17:25:47+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Approved Daybreak partners can use OpenAI\u2019s frontier cyber models to deliver authorized, governed cybersecurity services to customers.",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 827174,
-    "title": "LLM Knowledge Bases: a practical guide \u2014 Ben Holmes, Warp",
-    "url": "https://www.youtube.com/watch?v=I3bpdgFJCUY",
-    "published_at": "2026-08-10T05:04:23+00:00",
-    "fetched_at": "2026-08-12T13:57:27+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Talking runs about 200 words a minute and typing does not, which is why Ben Holmes starts a knowledge base with voice dictation rather than with organization. The pipeline only works if there is enough raw material, so the capture step is deliberately sloppy: ramble into your phone after a podcast or a meeting, skip the formatting, and let agents impose structure afterward. He points at Handy and Voice Ink as local, on device options, so none of it needs a subscription.\n\nStructure then arrives in passes. An enrich note skill stamps each file with a timestamp so later runs know what has been processed, assigns tags from a fixed reference list instead of inventing new ones, since as he puts it Claude loves to get creative, researches the source on the web, and adds backlinks found by key term search. On top of that pile, a wiki generated from a Karpathy gist produces browsable entries for the people, concepts, organizations, and sources buried in your own notes. Then the whole thing runs on a schedule in a cloud sandbox: the Obsidian headless CLI syncs the markdown down, the agent enriches whatever is not yet stamped, and it syncs back, so you wake up to a refreshed wiki he describes as the daily paper except it is yours. The closing trick is a graph view of every note, built in HTML and Tailwind purely by asking an agent for it, which turns out to be a decent map of where your own thinking has gaps.\n\nSpeaker info:\n- https://x.com/bholmesdev\n- https://bholmes.dev\n- https://linkedin.com/in/bholmesdev\n\nTimestamps:\n0:00 - The disorganized notes folder problem\n1:30 - Where we are going: raw notes to a browsable wiki\n2:46 - Getting raw thoughts down is the hard part\n3:25 - Why dictation beats typing\n4:02 - Local voice tools that need no subscription\n5:17 - Be scrappy, you need volume\n5:53 - What an enriched note looks like\n6:32 - The enrich note skill\n7:11 - Tagging from a fixed list, not inventing new ones\n7:49 - Running the skill\n9:07 - Following your own rabbit holes\n9:45 - Generating a wiki over the notes\n11:40 - The Karpathy gist behind the idea\n12:54 - Wikis for work: people, meetings, sources\n13:31 - Making it run without you\n14:10 - Local automations against cloud ones\n15:29 - Syncing markdown into a sandbox and back\n16:45 - Waking up to a fresh wiki\n18:01 - Visualizing the whole notebook\n18:39 - A graph view built by asking for it\n19:17 - Finding the gaps in your own thinking\n20:30 - Tools mentioned",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "agents",
-      "research",
-      "coding",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 827175,
-    "title": "Memory Harnesses for Long-Running Research Agents \u2014 Stefania Druga, Sakana.ai",
-    "url": "https://www.youtube.com/watch?v=R3-anFK1YM8",
-    "published_at": "2026-08-10T05:03:08+00:00",
-    "fetched_at": "2026-08-12T13:57:27+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "On a literature review task where every paper already fit inside the context window, adding a memory harness changed nothing: the same accuracy, at higher cost. That negative result is the most useful thing in Stefania Druga's experiment, because it marks the boundary. Move to a long horizon task where the answer sits at step 124 and the question arrives at step 500, far outside the window, and the harness becomes the entire game.\n\nHer framing is that memory is a write, manage, read control loop wrapped around the model, not a database you attach to it. She held the model fixed and varied only the recall policy across a ladder: no recall at all, vector RAG, a decisions ledger that tracks and prioritizes what was decided each turn, and an oracle handed the correct memory outright. Across 68 xbench questions the ranked ledger won, beating even the approach of gating the harness on whether memory seemed necessary. The oracle pointedly does not reach the ceiling, because giving a model the right memory does not make it use the right memory. Ranked recall was also cheaper, which is the line worth keeping: bad memory is expensive, since it burns tokens and sends the agent the wrong way. The whole thing runs on a local M3 Ultra in Tokyo that she is driving from her phone, with fans stacked around it because the evals have not stopped.\n\nSpeaker info:\n- https://x.com/Stefania_druga\n- https://www.linkedin.com/in/drugastefania/\n- https://stefania11.github.io/\n\nTimestamps:\n0:00 - Context rot on long horizon tasks\n1:04 - Longer tasks, fewer model releases\n1:56 - Cutting spend by moving work local\n2:24 - Local models crossing the usefulness line\n2:50 - The machine in Tokyo, and the fans\n3:44 - Memory as a write, manage, read loop\n4:11 - The harness: core, recall, archival\n4:36 - The recall ladder, from nothing to an oracle\n5:27 - Task one: a retracted claim in a literature review\n6:19 - When everything fits, memory only adds cost\n6:47 - Task two: an answer 376 steps out of reach\n8:08 - Results across 68 questions\n8:35 - Why the oracle does not reach the ceiling\n8:59 - Ablations, and generalizing across models\n9:49 - Bad memory is expensive\n10:16 - Treat recall policy as a first class metric\n11:07 - The wider memory landscape\n11:33 - What running locally bought her\n12:29 - Sovereign AI at Sakana",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 727866,
-    "title": "Prompt Caching Explained: Stop Overpaying for AI Agents",
-    "url": "https://www.youtube.com/watch?v=SkM4k4SKvCM",
-    "published_at": "2026-08-10T03:15:10+00:00",
-    "fetched_at": "2026-08-10T03:55:13+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "Prompt caching can cut the input cost of long AI agent sessions dramatically\u2014but only when your harness preserves reusable prompt prefixes. This video explains what prompt caching actually stores, why agent costs compound across turns, how provider behavior differs, and the implementation mistakes that invalidate your cache.\n\n---\n\ud83d\udd17 *Links*\n- Written tutorial: https://alejandro-ao.com/tutorials/prompt-caching/\n- Tau coding agent: https://github.com/huggingface/tau\n- Pi coding agent: https://github.com/badlogic/pi-mono\n- Hugging Face Inference Providers: https://huggingface.co/docs/inference-providers/index\n- OpenAI prompt caching: https://platform.openai.com/docs/guides/prompt-caching\n- Anthropic prompt caching: https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching\n- Gemini context caching: https://ai.google.dev/gemini-api/docs/caching\n\n---\n\ud83d\udc4b *Connect with me*\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\n---\n\ud83e\udd13 *Topics Covered*\n- How prompt caching works\n- AI agent token cost reduction\n- Cache-friendly agent harness design\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Why long AI agent sessions get expensive\n0:45 What prompt caching actually caches\n5:55 Provider pricing and cache discounts\n9:19 Prompt caching best practices\n15:40 Summary and cache monitoring",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 727623,
-    "title": "Quoting OpenClaw",
-    "url": "https://simonwillison.net/2026/Aug/10/openclaw/#atom-everything",
-    "published_at": "2026-08-10T02:05:16+00:00",
-    "fetched_at": "2026-08-10T03:55:11+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://www.abc.net.au/news/2026-08-10/ai-assistant-hacks-gym-website-aus-cyber-attack/107007986\"><p>The API has zero authorisations checks on cancelling other people's reservations \u2026 I tested this with the person in waitlist position #1 \u2014 and it actually went through. So you've moved from #4 to #3 already.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://www.abc.net.au/news/2026-08-10/ai-assistant-hacks-gym-website-aus-cyber-attack/107007986\">OpenClaw</a>, hacking an Australian gym-booking website</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/openclaw\">openclaw</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "api",
-      "safety",
-      "research",
-      "policy",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 753002,
-    "title": "Learning more about Claude's mathematical capabilities",
-    "url": "https://www.anthropic.com/research/riemann-zeta",
-    "published_at": "2026-08-10T00:00:00+00:00",
-    "fetched_at": "2026-08-10T18:13:57+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Learning more about Claude's mathematical capabilities",
-    "topic": "education",
-    "tags": [
-      "models",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 749117,
-    "title": "Premium seats are coming to ChatGPT Business",
-    "url": "https://openai.com/index/premium-seats-chatgpt-business",
-    "published_at": "2026-08-10T00:00:00+00:00",
-    "fetched_at": "2026-08-10T17:25:47+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
