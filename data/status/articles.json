@@ -1,5 +1,24 @@
 [
   {
+    "article_id": 1939551,
+    "title": "Any Nix package, live in your browser",
+    "url": "https://simonwillison.net/2026/Sep/10/trynix/",
+    "published_at": "2026-09-10T23:44:15+00:00",
+    "fetched_at": "2026-09-11T01:21:09+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://fzakaria.com/2026/09/04/any-nix-package-live-in-your-browser\">Any Nix package, live in your browser</a></strong></p>\nFarid Zakaria calls this his \"<em>magnum opus</em> of Nix work\", and I can see why.</p>\n<p><a href=\"https://trynix.dev\">trynix.dev</a> provides a <a href=\"https://github.com/ktock/qemu-wasm\">qemu-wasm</a> powered x86_64 Linux virtual machine running entirely in your browser through WebAssembly. That VM can then be booted with <em>any Nix package</em> from the past 13 years. They are URL addressable, so you can navigate to this page:</p>\n<p><a href=\"https://trynix.dev/?pkg=python3%403.6.2\">https://trynix.dev/?pkg=python3%403.6.2</a></p>\n<p>Then click \"Load\" and get an interactive shell against a virtual machine running Python 3.6.2 from 2017.</p>\n<p>Farid is building all sorts of neat things on top of this. One recent example: <a href=\"https://fzakaria.com/2026/09/09/review-a-pull-request-by-booting-it\">Review a pull request by booting it</a> introduces <a href=\"https://github.com/marketplace/actions/trynix-preview\">trynix-preview</a>, described like this:</p>\n<blockquote>\n<p>GitHub action that comments a link on a pull request which lets you boot the PR\u2019s build in the browser using <a href=\"https://trynix.dev/\">https://trynix.dev</a>. No servers, just browsers.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://lobste.rs/s/7lii0g/review_pull_request_by_booting_it\">Lobste.rs</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/code-review\">code-review</a>, <a href=\"https://simonwillison.net/tags/linux\">linux</a>, <a href=\"https://simonwillison.net/tags/webassembly\">webassembly</a>, <a href=\"https://simonwillison.net/tags/github-actions\">github-actions</a></p>",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "open-source",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1937128,
     "title": "Native is now the future of mobile at Shopify",
     "url": "https://simonwillison.net/2026/Sep/10/shopify-react-native/",
@@ -10206,28 +10225,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 752733,
-    "title": "Taking Reinforcement Learning Cross Datacenter \u2014 Nan Jiang, Modal",
-    "url": "https://www.youtube.com/watch?v=maRzp4kImJ4",
-    "published_at": "2026-08-10T17:30:30+00:00",
-    "fetched_at": "2026-08-10T18:13:56+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A frontier scale checkpoint is around 500 GB, so shipping one to a rollout fleet in another region takes minutes to hours and kills any hope of weight updates landing in seconds. Nan Jiang's claim is that you can send roughly 500 MB instead and have the rollout engine reconstruct a bitwise identical weights version. Fewer than 1% of rollout visible weights actually change between consecutive versions, and the reason is not that gradients are sparse. Gradients are dense, about 99% of parameters get a nonzero gradient and the FP32 master update is dense too. It is just small.\n\nThe mechanism is a small Adam step meeting finite precision. The rollout engine serves a BF16 view whose rounding boundary sits near theta over 256, about 0.0039 for a weight around 1, while a typical Adam step at RL post training learning rates runs around 3 millionths, more than a thousand times too small to cross it. The master weights move and the served value does not, which he calls Adam absorption. Lower precision serving makes it sharper still: an internal run serving GLM 4.7 Air in FP8 saw 0.15% of weights change on the first step and settle near 0.05%. Once a lossless patch is the unit of synchronization instead of a checkpoint, the rollout fleet stops needing to live in the trainer's cluster. Training keeps its all reduce and its fast fabric, rollout islands scatter across whatever regions and providers have GPUs right now, a sidecar makes any engine version aware, and scattered inference capacity becomes one elastic rollout fleet. Modal's implementation is called Stitch.\n\nSpeaker info:\n- https://x.com/nanjiangwill\n- https://www.linkedin.com/in/nanjiangwill/\n- https://www.nanjiangwill.com/\n- https://github.com/nanjiangwill\n\nTimestamps:\n0:00 - Where the GPUs actually are\n1:29 - The standard RL post training loop\n2:06 - The cathedral and the bazaar\n2:43 - RL wants four things at once\n3:22 - What can leave the cluster and what cannot\n3:59 - The rollout serving island as the movable unit\n5:16 - Why a full checkpoint is the wrong unit of sync\n6:33 - The bet: under 1% of served weights change\n7:10 - Ingredient one, the precision floor\n8:30 - Ingredient two, the size of an Adam step\n9:48 - Adam absorption, visualized\n11:06 - Shipping a lossless patch, not a delta\n12:21 - What the measurements show\n12:58 - Why this is not gradient sparsity\n13:35 - FP8, NVFP4, and group scaled formats\n14:54 - An internal run on GLM 4.7 Air\n15:33 - The bulletin board architecture\n16:48 - The sidecar that makes engines version aware\n17:26 - 500 GB down to 500 MB\n18:02 - Stitch\n18:43 - Open questions: Muon, fully async RL, and beyond",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "open-source",
-      "infrastructure",
-      "coding",
-      "education",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
