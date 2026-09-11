@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1944554,
+    "title": "Training Agents 4: From reward functions to environments.",
+    "url": "https://www.youtube.com/watch?v=nJV3yUuz6DU",
+    "published_at": "2026-09-11T04:27:25+00:00",
+    "fetched_at": "2026-09-11T11:42:25+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Training Agents, Session 4: from reward functions to environments. \n\nIn this live session, the reward stops being a function and becomes a place the agent acts in. In Session 3 the model answered once and a Python function scored it. Today the model runs a loop: open a file, run a command, read the error, try again. The training signal comes from what happened after acting. \n\nWe'll walk the reset()/step() contract from Gym to LLM agents, build an environment with OpenEnv, push it to the Hub, and plug it into TRL's GRPOTrainer with environment_factory. Then we go one step further and train a real coding agent harness through Harbor via OpenEnv, with AsyncGRPOTrainer on Hugging Face sandboxes.\n\nWhat we'll cover:\n- Why verifiers stop working once an agent takes many actions, and why the reward has to live where the actions happen\n- The reset()/step() contract: from CartPole to a coding agent with a shell, files, and tests\nAnatomy of an RL environment: task, tools, backend, reward, episode\n- The ecosystem: OpenEnv, Verifiers, OpenReward, Harbor, and how OpenEnv imports the others\n- Building and serving an env with the openenv CLI: init, push, pull, fork\n- Training with TRL: environment_factory and get_reward, no reward_funcs\n- Demo 1: Qwen3-1.7B on MBPP inside a live Python session, held-out pass rate 0.49 \u2192 0.59\n- Demo 2: a real coding agent (OpenCode) on DeepCoder problems in HF sandboxes, reward 0.27 \u2192 0.71 in 10 steps\n- Reward hacking moves into the env: the try/except that never failed, the CVE fix read from .git history, and how to lock the box down",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1941981,
     "title": "Datasette 1.0a39 and 0.65.4 security releases",
     "url": "https://simonwillison.net/2026/Sep/11/datasette-security/",
@@ -10212,25 +10234,6 @@
       "agents",
       "research",
       "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 766487,
-    "title": "Ch(e)at GPT? - Computerphile",
-    "url": "https://www.youtube.com/watch?v=XZJc1p6RE78",
-    "published_at": "2026-08-10T22:51:01+00:00",
-    "fetched_at": "2026-08-11T00:01:31+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing if you wonder how anthropic is embedding watermarks in a model's text output (possibly, maybe, probably something like this, maybe not)",
-    "topic": "general",
-    "tags": [
-      "general",
-      "models",
-      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
