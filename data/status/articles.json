@@ -1,5 +1,46 @@
 [
   {
+    "article_id": 1955227,
+    "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+    "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+    "published_at": "2026-09-14T00:00:00+00:00",
+    "fetched_at": "2026-09-12T03:23:35+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1956419,
+    "title": "OpenAI agents attacked RubyGems back in May",
+    "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
+    "published_at": "2026-09-12T00:42:25+00:00",
+    "fetched_at": "2026-09-12T03:23:36+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><a href=\"https://www.rubyhack.ai/\">OpenAI agents carried out an undisclosed attack on RubyGems</a> is a new bombshell report from Spencer Kitts, Thomas Larsen, and Sydney Von Arx - three of the four authors of the <a href=\"https://collusion.wiki/\">report on the agent attack on disused wikis</a> (<a href=\"https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/\">previously</a>) last week.</p>\n<p>This time they're noting that it looks very likely that an OpenAI agent swarm was behind an attack against the RubyGems package repository first reported on May 12th <a href=\"https://twitter.com/maciejmensfeld/status/2054164602577940619\">by Maciej Mensfeld of the RubyGems security team</a>:</p>\n<blockquote>\n<p>We're dealing with a major malicious attack on @rubygems right now. Signups are paused for the time being.</p>\n<p>Hundreds of packages involved - mostly targeting us, but some carrying exploits. The team has been on this for hours. More details to follow once we're through it.</p>\n</blockquote>\n<p>Those packages turned out to carry some very suspicious patterns:</p>\n<ol>\n<li>Many of them included \"oai\" in their name, or the author field, or the fake email address they provided.</li>\n<li>The files they were accessing were similar in character to the files retrieved by the wiki agents, using similar tricks (r.jina.ai) - and OpenAI have confirmed the wiki agents were theirs.</li>\n<li>The code in the packages appeared to be LLM-authored.</li>\n</ol>\n<p>I find point 2 the most convincing, given what we learned from the wiki attack when it was analyzed in September.</p>\n<p>Many of the packages were exploiting the <a href=\"https://rubydoc.info/\">RubyDoc.info</a> documentation build process to exfiltrate (public) data from UK government websites, presumably as part of an information gathering task similar to the research tasks processed by the wiki-exploiting agents. We know this because one agent helpfully left a comment:</p>\n<p><code># malicious crawler/exfil for Southwark Jan 2026 docs via rubydoc.info worker</code></p>\n<p>They also attempted to steal API keys via an exploit that <a href=\"https://blog.rubygems.org/2026/07/22/security-advisory-legacy-api-key-leak.html\">was patched over two months later</a> - it's not clear if those attempts were successful.</p>\n<p>The thing that bothers me most about this incident is that the authors report that OpenAI had not disclosed to RubyGems that they were responsible for the attack prior to now. If that's true there are two options:</p>\n<ol>\n<li>After the Hugging Face and Wiki attacks OpenAI were still unable to review their previous logs and determine that they had previously attacked RubyGems.</li>\n<li>They knew about the attack on RubyGems and made the decision <em>not</em> to reach out to the RubyGems team about it.</li>\n</ol>\n<p>Both of these are bad!</p>\n<p>Given this incident, the <a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">Hugging Face situation</a>, and the Wiki attack, the obvious question right now is <em>how many more incidents</em> like this are out there waiting to be discovered?</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/ruby\">ruby</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/supply-chain\">supply-chain</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/accidental-cyberattacks\">accidental-cyberattacks</a></p>",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1953989,
     "title": "So you want to use OpenRouter?",
     "url": "https://simonwillison.net/2026/Sep/11/so-you-want-to-use-openrouter/",
@@ -150,6 +191,25 @@
       "safety",
       "benchmark",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1955229,
+    "title": "Cognition helps Devin test its own work with GPT\u20116 Astra",
+    "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+    "published_at": "2026-09-11T16:00:00+00:00",
+    "fetched_at": "2026-09-12T03:23:35+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "GPT\u20116 Astra improves Devin\u2019s ability to test software and show that it works, with the goal of helping engineers review less code and ship more.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10195,63 +10255,6 @@
       "ai-models",
       "research",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 841237,
-    "title": "The Claude in Chrome side panel is now Claude Cowork",
-    "url": "https://claude.com/blog/cowork-chrome-side-panel",
-    "published_at": "2026-08-12T00:00:00+00:00",
-    "fetched_at": "2026-08-12T20:43:55+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "The Claude in Chrome side panel is now Claude Cowork",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1267596,
-    "title": "Introducing Grok 4.6",
-    "url": "https://cursor.com/blog/grok-4-6",
-    "published_at": "2026-08-12T00:00:00+00:00",
-    "fetched_at": "2026-08-19T18:35:03+00:00",
-    "source_id": "cursor-blog",
-    "source_name": "Cursor Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 844162,
-    "title": "How RingCentral builds AI-native work from engineering to ops",
-    "url": "https://openai.com/index/ringcentral",
-    "published_at": "2026-08-12T00:00:00+00:00",
-    "fetched_at": "2026-08-12T22:40:19+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "See how RingCentral uses ChatGPT Work and Codex to accelerate AI product development and centralize operational intelligence across engineering and operations.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "coding",
-      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
