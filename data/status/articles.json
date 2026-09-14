@@ -386,6 +386,27 @@
     "available": true
   },
   {
+    "article_id": 1994900,
+    "title": "Tokens Should Have Jobs \u2014 Katelyn Lesse & Angela Jiang, Anthropic",
+    "url": "https://www.youtube.com/watch?v=PXj0p_mW9nI",
+    "published_at": "2026-09-11T11:58:32+00:00",
+    "fetched_at": "2026-09-14T13:41:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Given the same fixed budget of roughly 600,000 tokens, an agent that did nothing but execute scored 76 on a bench of financial analysis tasks. An agent that spent part of that identical budget asking a second agent for advice scored 89. Same tokens, different jobs, better answer. Katelyn Lesse leads platform engineering at Anthropic and Angela Jiang leads platform product, and their talk goes after an assumption buried in how most teams tune agents: that every token is fungible, so the only lever worth pulling is a bigger budget. They propose giving tokens jobs instead. An advising strategy splits an executor from an adviser it can call out to mid task. A grading strategy defines what good looks like as a rubric up front, then provisions a grader that scores each attempt and sends the executor back to iterate. A dreaming strategy reads the executor's own transcripts, writes findings to memory, and hands them to the next run.\n\nThe sharper result comes from rescoring that bench the way a working analyst would. A profit and loss statement that is 80 percent accurate is not 80 percent useful, it is useless, because you cannot make up a cost number. So anything short of a perfect run counts as a failure. Under that lens the execute baseline passes about 42 percent of the time, which means roughly three runs to land one clean answer, and about 1.8 million tokens of true cost. Advise and grade reach the same place for considerably less. Which strategy wins depends on what you are optimizing, because token efficiency and single run reliability point at different answers.\n\nSpeaker info:\n- https://x.com/katelyn_lesse\n- https://www.linkedin.com/in/katelynlesse/\n- https://x.com/angjiang\n- https://www.linkedin.com/in/angelajiang/\n\nTimestamps:\n0:00 - Are all tokens fungible?\n1:34 - Giving tokens jobs other than executing\n2:25 - Advising, grading, and dreaming\n4:28 - The financial analysis bench\n5:45 - Holding the budget constant\n7:00 - Why 80 percent accurate is useless\n8:42 - The true cost of a perfect answer\n10:34 - Building strategies from primitives",
+    "topic": "opinion",
+    "tags": [
+      "agents",
+      "benchmark",
+      "video",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1947970,
     "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
     "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
@@ -9591,6 +9612,24 @@
     "available": true
   },
   {
+    "article_id": 1993528,
+    "title": "How Fyxer built an AI executive assistant people trust",
+    "url": "https://openai.com/index/fyxer",
+    "published_at": "2026-08-13T12:00:00+00:00",
+    "fetched_at": "2026-09-14T13:41:18+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user\u2019s voice.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 872539,
     "title": "The builder\u2019s guide to GPT\u20115.6",
     "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
@@ -10215,48 +10254,6 @@
       "education",
       "tools",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 827998,
-    "title": "Putting sign language AI into users\u2019 hands",
-    "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
-    "published_at": "2026-08-12T14:01:59+00:00",
-    "fetched_at": "2026-08-12T15:01:39+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 829452,
-    "title": "Beyond Static Intelligence: Evaluating Continual Learning \u2014 Parth Asawa, UC Berkeley",
-    "url": "https://www.youtube.com/watch?v=iqloyWCGYQQ",
-    "published_at": "2026-08-12T14:00:19+00:00",
-    "fetched_at": "2026-08-12T15:01:42+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Every leaderboard you have seen was built by asking a model to do one task, wiping its memory, and asking it another. Parth Asawa's objection is that this quietly assumes learning across instances does not count. His benchmark measures what that assumption hides, using a metric called gain: run a system with state, then run the identical system reset between every single instance, and take the difference. Cumulative reward cannot show you this, because a stronger base model can post a higher total while learning less than a weaker one that genuinely improves.\n\nBuilding tasks that can measure learning turns out to be the hard part, and he sets three requirements. Headroom, so the task is not already solved by pretraining. Shared latent structure across instances, since standard benchmarks are deliberately independent and therefore offer nothing to improve on, which is why chaining existing benchmarks together does not work. And a learning signal in the environment, whether reward, error messages, or plain text. Continual Learning Bench 1.0 spans six domains including database exploration, where a system should need fewer SQL queries by the tenth question, after which a schema migration tests whether it can throw away stale knowledge without throwing away the useful kind. The headline result is uncomfortable: plain in context learning tops the leaderboard, beating the more elaborate context management systems on reward, on gain, and on cost. Failure modes land on either side of stability and plasticity, including a forecasting model that overpredicts, is corrected, underpredicts, is corrected again, and then jumps straight back to its original overprediction instead of splitting the difference.\n\nSpeaker info:\n- https://x.com/pgasawa\n- https://www.linkedin.com/in/pgasawa/\n- https://pgasawa.github.io/\n\nTimestamps:\n0:00 - How we evaluate models today\n1:28 - Imagine forgetting everything after every task\n2:05 - What continual learning actually means\n2:42 - In context, external memory, or parametric\n3:18 - The case that we are not measuring it at all\n3:58 - What the existing literature does\n4:37 - Why those evaluations are not enough\n5:13 - Why you cannot chain existing benchmarks\n5:51 - Design criterion one: headroom\n7:06 - Shared structure and a learning mechanism\n7:42 - Reward, and why cumulative reward misleads\n8:58 - Gain: the same system with memory wiped\n10:15 - Isolating learning from base capability\n10:54 - The database exploration task\n12:06 - Adding concept drift with a migration\n13:20 - Six domains in the benchmark\n13:57 - Results, and the in context learning surprise\n15:12 - Failure modes on stability and plasticity\n15:51 - A forecast that forgets its own correction\n16:28 - A notepad that refuses to update\n17:07 - Why the training stack was never built for this\n17:47 - The sunk cost fallacy in continual learning\n19:02 - Rethinking third party AI research\n19:38 - Roadmap",
-    "topic": "education",
-    "tags": [
-      "education",
-      "models",
-      "open-source",
-      "benchmark",
-      "research",
-      "coding",
-      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
