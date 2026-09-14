@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1989910,
+    "title": "commit-rewriter 0.1",
+    "url": "https://simonwillison.net/2026/Sep/14/commit-rewriter/",
+    "published_at": "2026-09-14T00:28:10+00:00",
+    "fetched_at": "2026-09-14T01:24:04+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/commit-rewriter/releases/tag/0.1\">commit-rewriter 0.1</a></p>\n        <p>I built this little web app the other day to help edit the commit messages for the <a href=\"https://datasette.io/blog/2026/september-security-releases/\">Datasette security releases</a>. The initial commits were full of coding agent cruft and references to issue IDs from our private repository, so they weren't fit for publication.</p>\n<p>If you want to edit the commit messages for a repository you can run it like this:</p>\n<pre><code>uvx commit-rewriter path/to/repo\n</code></pre>\n<p>Omit the path if you are already in the directory for that repo.</p>\n<p><img alt=\"Screenshot of the commit-rewriter web interface. A heading reads commit-rewriter above the repository path and current branch and commit hash, with a short description of the tool. A toolbar shows a pending edits count with Discard drafts and Rewrite commit messages buttons, followed by a search box for message, author, or hash and an Edited only checkbox. A left sidebar titled Navigate commits lists recent commit messages with their short hashes. The main panel shows a card for each commit with its hash, author and timestamp, an editable text area containing the commit message, and a View full formatted diff toggle.\" src=\"https://static.simonwillison.net/static/2026/commit-rewriter.webp\" /></p>\n<p>When you submit your edits the tool creates a timestamped branch of your current repo state - to allow you to revert if you need to - and then rewrites every commit from the first one you edited to the most recent.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/git\">git</a>, <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1955227,
     "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
     "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
@@ -13,6 +35,27 @@
     "tags": [
       "ai-models",
       "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1989911,
+    "title": "shot-scraper 1.12",
+    "url": "https://simonwillison.net/2026/Sep/13/shot-scraper/",
+    "published_at": "2026-09-13T23:58:14+00:00",
+    "fetched_at": "2026-09-14T01:24:04+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/shot-scraper/releases/tag/1.12\">shot-scraper 1.12</a></p>\n        <p>I've added WebP support to my <a href=\"https://shot-scraper.datasette.io/\">shot-scraper</a> screenshot automation tool. You can now take a WebP screenshot of a web page like this:</p>\n<pre><code>shot-scraper https://simonwillison.net -o screenshot.webp --quality 80\n</code></pre>\n<p>The <code>--quality</code> option sets the quality - without that option the WebP file will be lossless.</p>\n<p>In my experience WebP screenshots are almost always significantly smaller in file size than their JPEG or PNG equivalents. See <a href=\"https://github.com/simonw/shot-scraper/pull/210\">the PR</a> for some examples.</p>\n<p>I shipped this feature so I could use it to generate the screenshot <a href=\"https://simonwillison.net/2026/Sep/14/commit-rewriter/\">for my new commit-rewriter tool</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/playwright\">playwright</a>, <a href=\"https://simonwillison.net/tags/shot-scraper\">shot-scraper</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10214,50 +10257,6 @@
       "research",
       "coding",
       "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 893959,
-    "title": "Computer-use models will agentify the web, not APIs \u2014 Dhruv Batra, Yutori",
-    "url": "https://www.youtube.com/watch?v=Ki980nV0__0",
-    "published_at": "2026-08-12T13:37:06+00:00",
-    "fetched_at": "2026-08-14T07:24:30+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "To learn what a US school district is buying, you file a Freedom of Information Act request. Someone scans the email you sent, puts the scan on Google Drive, and attaches the relevant PDFs. Dhruv Batra's question is whether anyone seriously expects that office to publish an MCP server. He grants the popular claim that agents will drive most of the action on the web, then rejects its usual next step, that the web will meet them with APIs. The head of the distribution might. The long tail, some 200 million active sites where infrastructure changes over decades, will not.\n\nReading the HTML instead does not save you, because much of what you see was never written down anywhere. A basketball score is missing from the page that first loads and arrives later as JSON. A product page contains no text reading sold out, only a quantity of zero and a script that grays the option out. State is calculated and rendered rather than stored, which makes the browser closer to a game engine than a document and makes pixels the source of truth. He calls this the bitter lesson for web agents: scaffolding built per site does not generalize, and the general solution is the one the web was actually built for. Their Navigator model runs screenshot in and clicks out, now writes JavaScript when that is quicker, and checks the result on screen. It misses 8 of 300 trajectories on a benchmark he thinks should be retired.\n\nSpeaker info:\n- https://x.com/DhruvBatra_\n- https://www.linkedin.com/in/dhruv-batra-dbatra/\n- https://dhruvbatra.com\n\nTimestamps:\n0:00 - The argument, and the part of it that is wrong\n3:23 - Restaurant menus on easy, medium, and hard mode\n5:31 - School district procurement, up to a FOIA request\n7:38 - 200 million active sites that change slowly\n8:42 - Why reading the HTML does not rescue it\n10:14 - Sold out is not text, it is a rendered zero\n11:33 - The browser is a rendering engine, pixels are the truth\n12:53 - Navigator, and writing JavaScript when that is faster\n15:51 - Are computer use models actually good enough\n17:20 - Latency and cost per task\n18:28 - Another layer of mess that we will call an API",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "benchmark",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 893960,
-    "title": "From RL to IRL \u2014 Gaurav Mishra, Amazon AGI Lab",
-    "url": "https://www.youtube.com/watch?v=Cc0_nyxROBA",
-    "published_at": "2026-08-12T13:35:16+00:00",
-    "fetched_at": "2026-08-14T07:24:30+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Asked to file an expense, the agent gets signed out mid task, reasons that it can infer the password, guesses twice, and locks the account. In a second run it clicks a sponsored button styled like the real submit button, lands on a different site, and begins typing personal details into it. Both are real trajectories from early browser training runs at the Amazon AGI Lab, and Gaurav Mishra's summary is that RL worked while the world was a game, and IRL starts when the game fights back.\n\nThe talk catalogues what a reward function meets on contact with a real login screen. Observability is partial, since the DOM misses content baked into images and the screenshot misses whatever needs scrolling. Actions are irreversible, credentials expire mid trajectory, and done routinely does not mean successful. His answer is flight school rather than exams. Sandboxes train on layout shift, slow loads, pop ups, focus stealing, and stale tabs, and recovery becomes a native model action instead of an infra reset, so the agent refreshes, backtracks, waits, or escalates. A process reward model penalizes dangerous steps along the path instead of scoring only the outcome, and calibrated confidence teaches the agent to weigh whether an action is authorized, reversible, and visible before committing. The closing trajectory runs the same task correctly, including the agent refusing to guess the password and handing control back. Over time the model gets better and the harness gets thinner.\n\nSpeaker info:\n- https://www.linkedin.com/in/gaurav-mishra-b307a437\n\nTimestamps:\n0:00 - RL to IRL, and a lightning review of RL for agents\n3:26 - Why coding agents can do computer use at all\n4:05 - The agent that guesses its own password\n5:47 - The sponsored button that looks like submit\n6:37 - Partial observability, irreversibility, expiring credentials\n8:29 - Flight school, not exams\n9:54 - Process rewards and calibrated confidence\n11:11 - The pilot and the cockpit\n14:07 - Assumption versus reality, point by point\n15:11 - The same task, done right",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "infrastructure",
-      "coding",
-      "education",
-      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
