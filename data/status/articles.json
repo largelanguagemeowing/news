@@ -509,6 +509,50 @@
     "available": true
   },
   {
+    "article_id": 2006885,
+    "title": "I Monitored Crime Audio. Voice Agents Scare Me More. \u2014 Sumanyu Sharma, Hamming AI",
+    "url": "https://www.youtube.com/watch?v=qStB9GbppMU",
+    "published_at": "2026-09-12T08:39:43+00:00",
+    "fetched_at": "2026-09-15T12:01:51+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Sumanyu Sharma showed up for a doctor's appointment a voice agent had told him was booked. He was not on the schedule, the front desk turned him away, and he lost two hours. His point is not the inconvenience but the substitution: make that his grandparent, and make it a procedure rather than a checkup, and the same failure costs something else entirely. Sharma founded Hamming after years at a public safety app, where he and his team listened to thousands of hours of police radio and pushed millions of alerts across several US cities. He puts the two experiences side by side deliberately. Crime is decreasing and it is local, touching whoever happens to be involved. Voice agents are scaling fast and they are centralized, so one prompt change propagates to everyone at once. Around a trillion phone calls happen every year. Even at a one percent error rate that is ten billion bad interactions, and across the ten thousand agents his company monitors the real rate is nearer ten percent.\n\nThe failures are rarely dramatic. An agent reports it found the right policy while quietly skipping the eligibility check. It applies a discount nobody authorized. It says it booked something it did not. His remedy is a loop rather than a fix: find the problems, size them by frequency and severity, change something, verify the change did not break something else, and keep watching. He is emphatic that listening to individual calls by hand is where to start and not what to scale, and that the real insight lives in patterns across conversations. Then the harder warning. His team's adversarial testing breaks roughly one agent in five.\n\nSpeaker info:\n- https://x.com/sumanyu\n- https://www.linkedin.com/in/sumanyusharma/\n- https://hamming.ai\n\nTimestamps:\n0:00 - Listening to crime audio at scale\n2:50 - Why reliability still blocks deployment\n4:32 - Crime is local, voice agents are centralized\n5:23 - Sizing severity, from annoying to unsafe\n7:04 - A loop for finding and fixing failures\n7:57 - Coverage: from listening by hand to cross call analysis\n10:32 - Testing whether a fix really worked\n12:13 - When bad actors learn to dial\n13:07 - Breaking one agent in five",
+    "topic": "safety",
+    "tags": [
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "education",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2006886,
+    "title": "Speech-to-Speech Model Research at Google DeepMind \u2014 Valeria Wu Fon & Tom Ouyang, Google DeepMind",
+    "url": "https://www.youtube.com/watch?v=18Um2VjMM_g",
+    "published_at": "2026-09-12T08:39:15+00:00",
+    "fetched_at": "2026-09-15T12:01:51+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Asked in Spanish about a mid century sofa, the model answers in Spanish but leaves the phrase mid century in English, because that is how the term is actually used by Spanish speakers. Nobody wrote a rule for that. It falls out of a model trained on audio, video, and text together rather than stitched from separate parts. Valeria Wu Fon leads product for speech to speech in Gemini and Tom Ouyang engineers it, and they open with how far the field moved to get here. Before roughly 2018, turning speech into text meant a chain of hand built components: feature extraction, acoustic modeling, pronunciation modeling, language modeling, and a rescoring pass. End to end models collapsed that chain but still only did the one job. Ask for the speaker's tone, or emotion, or pace, and you were back to building it yourself.\n\nTheir framing is a three way tension rather than a roadmap. A speech to speech model should be conversational, meaning genuinely low latency; intelligent, meaning it completes tasks and follows instructions; and multimodal in both directions, taking video, screen shares, and documents as readily as speech. Moving any one of those tends to wreck the others, and they give a clean example: turn the thinking budget up and intelligence scores rise while time to first audio falls apart. The demos are chosen to show the corners. Live translation across a multi speaker meeting. A roadside assistance agent reading back a registration plate and a postcode. And a feature they call proactive audio, which is the model knowing that background noise is not its turn.\n\nSpeaker info:\n- https://x.com/valeriawu_\n- https://www.linkedin.com/in/valeriawu/\n- https://www.linkedin.com/in/tom-ouyang-8b5a5142/\n\nTimestamps:\n0:00 - Why voice, and why now\n1:51 - Speech recognition before 2018\n3:27 - Natively multimodal pre training\n4:19 - Streaming translation at offline quality\n6:01 - Three vectors: conversational, intelligent, multimodal\n7:44 - Turning one knob breaks another\n8:37 - Live translation in a multi speaker meeting\n12:14 - A roadside assistance agent under pressure\n14:48 - Adding visual presence",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1956419,
     "title": "OpenAI agents attacked RubyGems back in May",
     "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
@@ -10207,44 +10251,6 @@
     "tags": [
       "ai-models",
       "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1267594,
-    "title": "Cursor earns",
-    "url": "https://cursor.com/blog/aiuc-1",
-    "published_at": "2026-08-13T00:00:00+00:00",
-    "fetched_at": "2026-08-19T18:35:03+00:00",
-    "source_id": "cursor-blog",
-    "source_name": "Cursor Blog",
-    "extraction_method": "rss",
-    "body": "AIUC-1 certification for agent security and reliability",
-    "topic": "product",
-    "tags": [
-      "product",
-      "agents",
-      "safety",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1267595,
-    "title": "Cloud agents start 3x faster with builds",
-    "url": "https://cursor.com/blog/builds",
-    "published_at": "2026-08-13T00:00:00+00:00",
-    "fetched_at": "2026-08-19T18:35:03+00:00",
-    "source_id": "cursor-blog",
-    "source_name": "Cursor Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
