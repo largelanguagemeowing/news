@@ -1,5 +1,384 @@
 [
   {
+    "article_id": 2007759,
+    "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+    "published_at": "2026-09-15T17:05:57+00:00",
+    "fetched_at": "2026-09-15T17:12:21+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009294,
+    "title": "\"My name is... my name is...\": A Linguistic Map for Voice Agents \u2014 Midam Kim, ServiceNow",
+    "url": "https://www.youtube.com/watch?v=IDNfAZVKvPE",
+    "published_at": "2026-09-15T16:30:08+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Midam Kim spells her first name for a voice agent, letter by letter. The bot reads it back with an N on the end. She corrects it. The bot replies thank you for your correction, then says her name wrong anyway, because its pronunciation rules are English and her name is not. Moments later it asks for an account number she has to go looking for, cuts her off while she reads the unfamiliar string aloud, announces it cannot find her record, and asks her to repeat the whole thing without trying anything different. She asks for a human. Kim is an ML engineer at ServiceNow and a longtime researcher of speech in the wild, and she uses that call to argue that voice AI failures are not a scattered list of bugs but a structured one, and that linguistics already has the structure.\n\nHer map is a grid. Each party has a listening channel and a speaking channel, and each channel operates at four levels: sounds, words, interaction, and mental model. Recognition failures sit in one cell, pronunciation in another, turn taking in a third, intent tracking in a fourth. Every familiar problem lands somewhere, which is the point. The cells are interdependent rather than separable, so fixing sounds without words, or words without timing, does not hold. Her sharpest observation concerns what survives a call. In chat the history sits on screen as text. In speech the sounds vanish as they are spoken, and the only thing that accumulates is the user's mental model, which is what you are really designing for.\n\nSpeaker info:\n- https://www.linkedin.com/in/midamkim/\n\nTimestamps:\n0:00 - A call that goes wrong, step by step\n3:39 - Conversation as a joint activity\n5:25 - Replaying the failure through that lens\n7:14 - Eight cells: two channels, four levels\n8:56 - Why the layers cannot be fixed separately\n9:49 - What vanishes, and what accumulates\n10:42 - What to actually work on\n12:28 - Diagnosing your own agent\n14:13 - Speakers adapt, and languages change",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "research",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009295,
+    "title": "Realtime Voice Agents with Frontier Intelligence \u2014 Bohan Li, EliseAI",
+    "url": "https://www.youtube.com/watch?v=MBHOH1NmDqc",
+    "published_at": "2026-09-15T16:00:02+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A background agent quietly makes the tool call, then drops the result into the main model's context so the model believes it made the call itself. That sleight of hand is one of three tricks Bohan Li uses to run a voice agent on a slow, genuinely intelligent model without the caller noticing the wait. Li works on the voice harness at EliseAI and came from self driving, and he maps the cascaded voice stack onto that world: transcription is perception, the language model is planning, and speech synthesis is control. Each layer then gets optimized on its own terms. For transcription he runs two engines at once, a fast streaming one that emits immediately and a slower one with more context that can correct it, where a late correction is thrown away if newer audio has already arrived. The slower engine knows from the question being asked which part of the answer is a name and which is a date of birth.\n\nThe synthesis trick is the neatest. A prefix cache watches the model's output stream and checks whether audio already exists for that run of words from an earlier turn. Openers repeat constantly in a scripted call, so the cache usually hits, and the agent starts speaking from it while the rest of the sentence is still being written. The synthesis provider is handed the whole sentence and generates it with natural prosody, unaware any of it has already played, and the overlapping audio is suppressed so the two halves join without a seam. Li closes by playing a real clinic booking call, where none of this is audible.\n\nSpeaker info:\n- https://x.com/bobowchan\n- https://www.linkedin.com/in/bohan-li-7290b74a/\n- https://eliseai.com/\n\nTimestamps:\n0:00 - Borrowing the self driving stack\n1:52 - Perception: a speculative transcriber\n4:24 - Eager generation and background tool calls\n6:06 - Control: streaming speech synthesis\n6:57 - The prefix cache\n8:37 - Hiding the seam between cache and provider\n10:21 - A full clinic booking call",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "agents",
+      "video",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2007740,
+    "title": "Building AI to accelerate science and improve lives",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+    "published_at": "2026-09-15T16:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:21+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "B-roll showing diverse environments and people, including a teacher and students in a classroom and a patient with a doctor",
+    "topic": "education",
+    "tags": [
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2007741,
+    "title": "AI for everyone in every language",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+    "published_at": "2026-09-15T16:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:21+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Animation of several words in different languages slowly zooming past",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2007739,
+    "title": "AI for Societal Impact",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+    "published_at": "2026-09-15T16:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:21+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Health_Header.gif\" />Explore this collection to see how experts and local leaders are using AI breakthroughs to ensure everyone can share the opportunity of AI.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "api"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009296,
+    "title": "5 Voice Agent Failure Modes You'll Hit in Week One \u2014 Venky B, Plivo",
+    "url": "https://www.youtube.com/watch?v=vblnYHzBgS4",
+    "published_at": "2026-09-15T15:30:09+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Nearly every intelligence gain in language models over the past year has come from letting them think longer. Voice agents have to turn thinking off, because the budget between a user finishing a sentence and the agent starting to speak is measured in hundreds of milliseconds. Venky B is founder and CEO of Plivo, which carries over a billion voice calls a month and has been building telephony infrastructure since 2011, and this talk is a tour of what breaks when a voice agent leaves the demo and meets production. On latency his numbers are blunt. Teams aim for under 550 milliseconds and most land between 750 and 1,200, and past that users simply hang up. His team's answer is smaller open source models hosted themselves, targeting under 300 milliseconds, chosen partly on how many tokens a language needs per word.\n\nThe failure he says wrecks half of all deployments is data collection, and his fix is to stop treating it as transcription at all. Decide the shape before you ask. A phone number is a typed field with a length and a validator, so a stray letter in the middle is either corrected with confidence or sent back to the caller, and evaluation happens per field as a unit test rather than end to end. That reframing took his accuracy from roughly 30 percent to the mid nineties with no fine tuning. He is equally specific about transcription being brittle by default, especially with proper nouns and code switched languages, and about never feeding model output straight into speech synthesis. His own benchmark for a vendor is whether it can pronounce his surname and his company's name.\n\nSpeaker info:\n- https://x.com/bevenky\n- https://www.linkedin.com/in/bevenky/\n\nTimestamps:\n0:00 - Where voice agents break between demo and production\n2:20 - A billion calls a month\n4:28 - The pipeline everyone builds first\n5:34 - Failure one: latency and time to first audio\n6:42 - Balancing cost, intelligence, and latency\n7:48 - Why thinking models do not fit\n9:56 - Choosing and sizing open source models\n13:06 - Failure two: assume transcription is brittle\n15:14 - Code switched languages break everything downstream\n16:17 - Dynamic keyword boosting and LLM post processing\n18:24 - Failure three: collect data as typed fields\n20:31 - Relative dates and other traps\n21:37 - Field level evals instead of end to end\n22:47 - Failure four: normalize before synthesis\n25:00 - Failure five: turn detection and barge in",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009849,
+    "title": "Interpreting Pangram",
+    "url": "https://lucumr.pocoo.org/2026/9/14/interpreting-pangram/",
+    "published_at": "2026-09-15T15:10:36+00:00",
+    "fetched_at": "2026-09-15T17:12:25+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. catching up on armin's latest stuff.\n\nwell well well",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009297,
+    "title": "I Monitored Crime Audio. Voice Agents Scare Me More. \u2014 Sumanyu Sharma, Hamming AI",
+    "url": "https://www.youtube.com/watch?v=qStB9GbppMU",
+    "published_at": "2026-09-15T15:00:06+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Sumanyu Sharma showed up for a doctor's appointment a voice agent had told him was booked. He was not on the schedule, the front desk turned him away, and he lost two hours. His point is not the inconvenience but the substitution: make that his grandparent, and make it a procedure rather than a checkup, and the same failure costs something else entirely. Sharma founded Hamming after years at a public safety app, where he and his team listened to thousands of hours of police radio and pushed millions of alerts across several US cities. He puts the two experiences side by side deliberately. Crime is decreasing and it is local, touching whoever happens to be involved. Voice agents are scaling fast and they are centralized, so one prompt change propagates to everyone at once. Around a trillion phone calls happen every year. Even at a one percent error rate that is ten billion bad interactions, and across the ten thousand agents his company monitors the real rate is nearer ten percent.\n\nThe failures are rarely dramatic. An agent reports it found the right policy while quietly skipping the eligibility check. It applies a discount nobody authorized. It says it booked something it did not. His remedy is a loop rather than a fix: find the problems, size them by frequency and severity, change something, verify the change did not break something else, and keep watching. He is emphatic that listening to individual calls by hand is where to start and not what to scale, and that the real insight lives in patterns across conversations. Then the harder warning. His team's adversarial testing breaks roughly one agent in five.\n\nSpeaker info:\n- https://x.com/sumanyu\n- https://www.linkedin.com/in/sumanyusharma/\n- https://hamming.ai\n\nTimestamps:\n0:00 - Listening to crime audio at scale\n2:50 - Why reliability still blocks deployment\n4:32 - Crime is local, voice agents are centralized\n5:23 - Sizing severity, from annoying to unsafe\n7:04 - A loop for finding and fixing failures\n7:57 - Coverage: from listening by hand to cross call analysis\n10:32 - Testing whether a fix really worked\n12:13 - When bad actors learn to dial\n13:07 - Breaking one agent in five",
+    "topic": "safety",
+    "tags": [
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "education",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009850,
+    "title": "P(doom)",
+    "url": "https://lucumr.pocoo.org/2026/9/12/pdoom/",
+    "published_at": "2026-09-15T14:56:50+00:00",
+    "fetched_at": "2026-09-15T17:12:25+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.\n\ni don't have a well formed opinion. but the non-concious paperclip maximizer can be a thing if we really try. on second thought, it will likely be a thing if we do not try. and we are currently not trying.",
+    "topic": "opinion",
+    "tags": [
+      "research",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009298,
+    "title": "Tolan: Voice-First AI Companion \u2014 Paula Dozsa, Tolan",
+    "url": "https://www.youtube.com/watch?v=xLUQOqjudtA",
+    "published_at": "2026-09-15T14:30:14+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Tolan's response latency once drifted from two seconds to about two and a half. That half second tanked essentially every metric in the product, and users wrote in to say their companion had become slow. Paula Dozsa is an engineer on the iOS app for Tolan, a voice first companion shaped as a small alien, and the team has logged more than four million hours of spoken conversation. Her argument is that voice does not just add a modality to an LLM app, it invalidates the assumptions underneath one. Text chat has slow turns and stable context. People read, they wait, they stay on topic. Voice has fast turns and volatile context. People talk while cooking or walking or falling asleep, they abandon a subject mid sentence and come back to it, they interrupt. Her team stopped trying to reduce interruptions and started reducing the wrong ones, building turn detection that reads speech patterns and paying sixty milliseconds of latency to halve the worst early cutoffs.\n\nThe rest is unusually specific engineering. Every pipeline stage is measured separately, because knowing it feels slow tells you nothing. Turns are routed per turn by a cheap classifier reading the emotional stakes, so a user's first ever conversation gets the strongest model and idle chatter does not, and a third of turns can ride a small model with no measurable retention cost. Memory is a retrieval system rather than a transcript, compressed nightly to merge duplicates and resolve contradictions. And context gets reassembled from parts every single turn, because reusing it to keep a cache warm means being confidently wrong the moment someone changes the subject.\n\nSpeaker info:\n- https://x.com/paularambles\n- https://www.linkedin.com/in/paulacodes/\n\nTimestamps:\n0:00 - The companion humans keep imagining\n2:45 - Why voice breaks how we build LLM apps\n3:38 - The half second that broke everything\n5:20 - Measuring every stage of the pipeline\n6:12 - Routing by stakes, not by cost\n7:52 - Memory as retrieval, compressed nightly\n8:43 - Rebuilding context instead of reusing it\n9:31 - Why the character is an alien\n10:23 - Using agents to build the app\n12:05 - A new character in an afternoon",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009299,
+    "title": "Your Voice Agent is Just a Walkie Talkie \u2014 Neil Zeghidour, Gradium",
+    "url": "https://www.youtube.com/watch?v=a8EcVumh71E",
+    "published_at": "2026-09-15T14:00:39+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "On a phone call with someone close to you, as much as 20 percent of the time you are both talking at once. Every real time voice model shipping today is half duplex: it is either listening or speaking, never both. That gap is the whole argument of this talk. Neil Zeghidour is co founder and CEO of Gradium, a Paris company that trains audio foundation models, and he traces the arc from a 2011 phone assistant that mapped transcripts to app actions, through the first open ended voice chat that could converse but take no action, to cascaded voice agents that call tools competently while inheriting the latency and flattened emotion of routing through text. Speech to speech collapsed that pipeline and fixed latency, but he demonstrates the remaining problem live by back channeling at a model, saying mm hmm and yeah the way people do, and watching it stop dead every time.\n\nThe technical core explains why audio was hard to put in a language model at all. Eight words take about three seconds to say, which at 24 kHz is 72,000 timesteps, and since attention cost grows with the square of sequence length, a sequence thousands of times longer is astronomically more expensive. Neural codecs solve it by compressing audio into token like representations a model can learn on. Full duplex then needs a further step: modeling two token streams at once so both sides can be active, silent, or overlapping. Zeghidour is candid that every gain in naturalness so far has cost intelligence, because a fixed weight budget spent on hearing and speaking is taken from reasoning, and he lays out the two ways forward.\n\nSpeaker info:\n- https://x.com/neilzegh\n- https://gradium.ai\n\nTimestamps:\n0:00 - Gradium and a research lab built around voice\n1:55 - A 2011 assistant, and the pipeline behind it\n3:39 - Open ended conversation, zero agency\n5:18 - A drive through agent that takes real actions\n7:48 - Where speech to speech still falls short\n8:37 - Back channeling breaks turn taking\n10:20 - Why raw audio will not fit in a language model\n11:57 - Two streams instead of one\n13:37 - The tension between naturalness and intelligence\n15:18 - Path one: scale the speech to speech model\n17:00 - Path two: split interface from intelligence",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009300,
+    "title": "Voice Agents Can Just Do Things \u2014 Charlie Guo, OpenAI",
+    "url": "https://www.youtube.com/watch?v=OpY6MmZFeHo",
+    "published_at": "2026-09-15T13:30:00+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The Moviefone hotline was a speech to speech system. The GPS unit in your parents' car was an event to speech system. Charlie Guo works on developer experience at OpenAI, and he opens by pointing out that the three modes of voice interaction are all decades old, which makes the question not what is newly possible but what we stopped noticing. His actual argument is aimed at an assumption almost every builder makes unexamined: that a voice agent has to answer in speech. It does not. Software spent decades learning to reply by highlighting a field, changing a button, raising a notification, or moving a ghost cursor across the screen. A model that hears you can use any of those, and often should.\n\nThe mode he thinks is most neglected is speech to action, where you talk and the model reaches for tools. He nearly titled the talk after it, calling voice the next capability overhang. Filling in a government form by talking for five minutes instead of typing for an hour. Steering creative software when your taste outruns your ability to operate it. And eventually the general case: if a model can drive a computer as well as a person, why are you talking to one app instead of the machine. For developers he offers a concrete on ramp, which is that your application already exposes its verbs as endpoints and handlers, and each of those converts fairly directly into a tool a voice model can call. He closes on accessibility, and on a better opening question than what kind of voice agent to build: what role does voice play here at all?\n\nSpeaker info:\n- https://x.com/charlierguo\n- https://www.linkedin.com/in/charlierguo\n- https://www.ignorance.ai/\n\nTimestamps:\n0:00 - The misconception about talking back\n1:57 - Three modes, none of them new\n2:48 - Speech to speech: coaching, support, translation\n4:29 - Speech to action, the capability overhang\n6:58 - Turning your existing app into tools\n7:48 - Event to speech, and hands free contexts\n9:26 - What this unlocks for accessibility\n12:45 - Reasoning, tool calls, and preambles\n14:23 - Ask what role voice plays",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "models",
+      "api",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009301,
+    "title": "Speech-to-Speech Model Research at Google DeepMind \u2014 Valeria Wu Fon & Tom Ouyang, Google DeepMind",
+    "url": "https://www.youtube.com/watch?v=18Um2VjMM_g",
+    "published_at": "2026-09-15T13:00:06+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Asked in Spanish about a mid century sofa, the model answers in Spanish but leaves the phrase mid century in English, because that is how the term is actually used by Spanish speakers. Nobody wrote a rule for that. It falls out of a model trained on audio, video, and text together rather than stitched from separate parts. Valeria Wu Fon leads product for speech to speech in Gemini and Tom Ouyang engineers it, and they open with how far the field moved to get here. Before roughly 2018, turning speech into text meant a chain of hand built components: feature extraction, acoustic modeling, pronunciation modeling, language modeling, and a rescoring pass. End to end models collapsed that chain but still only did the one job. Ask for the speaker's tone, or emotion, or pace, and you were back to building it yourself.\n\nTheir framing is a three way tension rather than a roadmap. A speech to speech model should be conversational, meaning genuinely low latency; intelligent, meaning it completes tasks and follows instructions; and multimodal in both directions, taking video, screen shares, and documents as readily as speech. Moving any one of those tends to wreck the others, and they give a clean example: turn the thinking budget up and intelligence scores rise while time to first audio falls apart. The demos are chosen to show the corners. Live translation across a multi speaker meeting. A roadside assistance agent reading back a registration plate and a postcode. And a feature they call proactive audio, which is the model knowing that background noise is not its turn.\n\nSpeaker info:\n- https://x.com/valeriawu_\n- https://www.linkedin.com/in/valeriawu/\n- https://www.linkedin.com/in/tom-ouyang-8b5a5142/\n\nTimestamps:\n0:00 - Why voice, and why now\n1:51 - Speech recognition before 2018\n3:27 - Natively multimodal pre training\n4:19 - Streaming translation at offline quality\n6:01 - Three vectors: conversational, intelligent, multimodal\n7:44 - Turning one knob breaks another\n8:37 - Live translation in a multi speaker meeting\n12:14 - A roadside assistance agent under pressure\n14:48 - Adding visual presence",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2007742,
+    "title": "New insights from Google\u2019s AI & Economy ATLAS",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
+    "published_at": "2026-09-15T13:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:21+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Text \"AI & Economy Atlas v1.0 2026\" with the Google G and a spinning globe illustration",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009234,
+    "title": "The Actual Easiest AI Agent Setup",
+    "url": "https://www.youtube.com/shorts/FxcYK5WOk1c",
+    "published_at": "2026-09-15T12:26:35+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Is this the easiest AI agent to use?\n\nI connected Meta's new AI Agent Muse to my email and asked it to audit my subscriptions to see how much I\u2019m spending on AI tools. \n\nBut what impressed me most wasn\u2019t just the audit, it was how easy the agent was to use. It feels like a normal messaging app, runs tasks inside a secure virtual machine, and suggests ways it can help as you connect your apps.\n\nIf you\u2019ve only used AI for chatting and haven\u2019t tried agents yet, this might be one of the easiest places to start.\n\n#AI #Aiagent #aitools #meta #muse",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "coding",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009606,
+    "title": "Building an AI-native revenue organization",
+    "url": "https://claude.com/blog/building-an-ai-native-revenue-organization",
+    "published_at": "2026-09-15T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Building an AI-native revenue organization",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009608,
+    "title": "Claude for Small Business launches new workflows, integrations, and training programs",
+    "url": "https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs",
+    "published_at": "2026-09-15T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Claude for Small Business launches new workflows, integrations, and training programs",
+    "topic": "research",
+    "tags": [
+      "research",
+      "release",
+      "models",
+      "agents",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009607,
+    "title": "Bringing Salesforce into Claude",
+    "url": "https://claude.com/blog/salesforce-in-claude",
+    "published_at": "2026-09-15T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:23+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Bringing Salesforce into Claude",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1999496,
     "title": "The contagion of fear",
     "url": "https://simonwillison.net/2026/Sep/14/the-contagion-of-fear/",
@@ -1474,6 +1853,44 @@
     "topic": "enterprise",
     "tags": [
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009052,
+    "title": "Introducing Projects",
+    "url": "https://cursor.com/blog/projects",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:22+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "Run cloud agents on machines you manage",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009134,
+    "title": "Cursor Projects",
+    "url": "https://cursor.com/changelog/projects",
+    "published_at": "2026-09-10T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:22+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Sep 10, 2026 \u00b7 Changelog",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -3504,6 +3921,43 @@
     "available": true
   },
   {
+    "article_id": 2009053,
+    "title": "Run cloud agents on machines you manage",
+    "url": "https://cursor.com/blog/self-hosted-machines",
+    "published_at": "2026-09-02T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:22+00:00",
+    "source_id": "cursor-blog",
+    "source_name": "Cursor Blog",
+    "extraction_method": "rss",
+    "body": "Introducing Projects",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009135,
+    "title": "Self-hosted machines",
+    "url": "https://cursor.com/changelog/self-hosted-machines",
+    "published_at": "2026-09-02T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:22+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Sep 2, 2026 \u00b7 Changelog",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1792003,
     "title": "Claude Fable 5.1 made me a really nice animated pelican",
     "url": "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/",
@@ -5331,6 +5785,25 @@
       "benchmark",
       "coding",
       "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2009136,
+    "title": "Start from scratch, without a repo",
+    "url": "https://cursor.com/changelog/start-from-scratch",
+    "published_at": "2026-08-27T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:22+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Aug 27, 2026 \u00b7 Changelog",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "open-source"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -8118,6 +8591,26 @@
     "available": true
   },
   {
+    "article_id": 2009137,
+    "title": "Cloud Agents and Cursor Harness Improvements",
+    "url": "https://cursor.com/changelog/08-19-26",
+    "published_at": "2026-08-19T00:00:00+00:00",
+    "fetched_at": "2026-09-15T17:12:22+00:00",
+    "source_id": "cursor-changelog",
+    "source_name": "Cursor Changelog",
+    "extraction_method": "rss",
+    "body": "Aug 19, 2026 \u00b7 Changelog",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1232232,
     "title": "ChatGPT Ads expands across Europe",
     "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
@@ -9761,496 +10254,6 @@
       "release",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 907722,
-    "title": "Computer Use at the Edge of the Statistical Precipice \u2014 Pierluca D'Oro, Programma Labs",
-    "url": "https://www.youtube.com/watch?v=CTLa_p6iOiY",
-    "published_at": "2026-08-14T14:30:31+00:00",
-    "fetched_at": "2026-08-14T14:51:55+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A script under one megabyte that never looks at the screen matches or beats the frontier model it was copied from. Pierluca D'Oro builds it by recording one successful trajectory per task and then replaying those actions blindly, and on deterministic benchmarks like OSWorld that counts as a valid agent and it scores at the top. The paper goes further and proves that pass@k on a deterministic environment is exactly the success rate of that replay script, so a metric the field leans on turns out to be a formal measure of the exploit.\n\nThe fix has two halves. Environments get the PRISM principles: privileged verification, realism, integrity checked configurations, sandboxed execution, and multifactorial variation across data, theme, and starting screen. DIGIWORLD instantiates them in 15 sandboxed mobile apps and 3.2 million verified configurations, generated by a compiler that produces every combination and rejects the broken ones, because a coding agent emitting a lot of software is not the same thing as a good environment. Metrics get honest uncertainty. Naive rollouts on a single base case yield confidence intervals that actually contain the true performance around 20% of the time rather than 95%, and he prices the consequence: a 4% gap between two models, hidden under intervals that look tight, costs hundreds of thousands of dollars a month across a million tasks.\n\nSpeaker info:\n- https://x.com/proceduralia\n- https://www.linkedin.com/in/pierluca-doro/\n- https://www.proceduralia.com\n- https://arxiv.org/abs/2605.08261\n\nTimestamps:\n0:00 - The replay agent, a script that never sees the screen\n1:41 - It matches the model it was copied from\n2:22 - Why pass@k measures exactly that exploit\n3:50 - The PRISM principles for environment design\n5:31 - DIGIWORLD, 15 apps and 3.2 million verified configs\n7:25 - The compiler that rejects invalid combinations\n9:21 - Replay stops working, and frontier models look fragile\n11:05 - Two sources of variance, actions and environment\n12:31 - Intervals that cover 20% of the time, not 95%\n14:56 - A benchmark without rigor is a misleading one",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "benchmark",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 907723,
-    "title": "Computer-use models will agentify the web, not APIs \u2014 Dhruv Batra, Yutori",
-    "url": "https://www.youtube.com/watch?v=Ki980nV0__0",
-    "published_at": "2026-08-14T14:00:06+00:00",
-    "fetched_at": "2026-08-14T14:51:55+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "To learn what a US school district is buying, you file a Freedom of Information Act request. Someone scans the email you sent, puts the scan on Google Drive, and attaches the relevant PDFs. Dhruv Batra's question is whether anyone seriously expects that office to publish an MCP server. He grants the popular claim that agents will drive most of the action on the web, then rejects its usual next step, that the web will meet them with APIs. The head of the distribution might. The long tail, some 200 million active sites where infrastructure changes over decades, will not.\n\nReading the HTML instead does not save you, because much of what you see was never written down anywhere. A basketball score is missing from the page that first loads and arrives later as JSON. A product page contains no text reading sold out, only a quantity of zero and a script that grays the option out. State is calculated and rendered rather than stored, which makes the browser closer to a game engine than a document and makes pixels the source of truth. He calls this the bitter lesson for web agents: scaffolding built per site does not generalize, and the general solution is the one the web was actually built for. Their Navigator model runs screenshot in and clicks out, now writes JavaScript when that is quicker, and checks the result on screen. It misses 8 of 300 trajectories on a benchmark he thinks should be retired.\n\nSpeaker info:\n- https://x.com/DhruvBatra_\n- https://www.linkedin.com/in/dhruv-batra-dbatra/\n- https://dhruvbatra.com\n\nTimestamps:\n0:00 - The argument, and the part of it that is wrong\n3:23 - Restaurant menus on easy, medium, and hard mode\n5:31 - School district procurement, up to a FOIA request\n7:38 - 200 million active sites that change slowly\n8:42 - Why reading the HTML does not rescue it\n10:14 - Sold out is not text, it is a rendered zero\n11:33 - The browser is a rendering engine, pixels are the truth\n12:53 - Navigator, and writing JavaScript when that is faster\n15:51 - Are computer use models actually good enough\n17:20 - Latency and cost per task\n18:28 - Another layer of mess that we will call an API",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "benchmark",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 906228,
-    "title": "One thing I've underplayed in my skill set is how customizable it is Specifically the /code-review skill 1. Notice the agent is doing something bad 2. Write it in CODING_STANDARDS.md (root of the repo) 3. /code-review picks it up and enforces it at review time I have hundreds of lines in my CODING_STANDARDS.md files",
-    "url": "https://nitter.net/mattpocockuk/status/2088256432265167185#m",
-    "published_at": "2026-08-14T13:28:26+00:00",
-    "fetched_at": "2026-08-14T13:53:50+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>One thing I've underplayed in my skill set is how customizable it is<br />\n<br />\nSpecifically the /code-review skill<br />\n<br />\n1. Notice the agent is doing something bad<br />\n2. Write it in CODING_STANDARDS.md (root of the repo)<br />\n3. /code-review picks it up and enforces it at review time<br />\n<br />\nI have hundreds of lines in my CODING_STANDARDS.md files</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "open-source",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 897046,
-    "title": "The grill > shill pipeline is real",
-    "url": "https://nitter.net/mattpocockuk/status/2088169856298348997#m",
-    "published_at": "2026-08-14T07:44:24+00:00",
-    "fetched_at": "2026-08-14T08:45:41+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>The grill &gt; shill pipeline is real</p>\n<hr />\n<blockquote>\n<b>Theo - t3.gg (@theo)</b>\n<p>\n<p>Gotta say that Matt's \"grill-me\" skill is exceptional and helps a ton with getting agents aligned with my brain</p>\n\n</p>\n<footer>\n\u2014 <cite><a href=\"https://nitter.net/theo/status/2088057260807532867#m\">https://nitter.net/theo/status/2088057260807532867#m</a>\n</footer>\n</blockquote>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 921002,
-    "title": "How Claude\u2019s text watermark works",
-    "url": "https://www.anthropic.com/news/claude-text-watermark",
-    "published_at": "2026-08-14T00:00:00+00:00",
-    "fetched_at": "2026-08-14T20:31:18+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "How Claude\u2019s text watermark works",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 908032,
-    "title": "Maximizing the value of your Claude Code sessions",
-    "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
-    "published_at": "2026-08-14T00:00:00+00:00",
-    "fetched_at": "2026-08-14T14:51:55+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Maximizing the value of your Claude Code sessions",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "models",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1267592,
-    "title": "Cursor is now a part of SpaceX",
-    "url": "https://cursor.com/blog/joining-spacex",
-    "published_at": "2026-08-14T00:00:00+00:00",
-    "fetched_at": "2026-08-19T18:35:03+00:00",
-    "source_id": "cursor-blog",
-    "source_name": "Cursor Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "coding",
-    "tags": [
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 887212,
-    "title": "sqlite-utils 4.2.1",
-    "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils-2/",
-    "published_at": "2026-08-13T23:53:47+00:00",
-    "fetched_at": "2026-08-14T01:55:28+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/sqlite-utils/releases/tag/4.2.1\">sqlite-utils 4.2.1</a></p>\n        <p>Fixes a crashing bug in <a href=\"https://simonwillison.net/2026/Aug/13/sqlite-utils/\">sqlite-utils 4.2</a>. I'd introduced code that looks like this:</p>\n<pre><code>from typing_extensions import Self\n</code></pre>\n<p>It turned out the <a href=\"https://pypi.org/project/typing-extensions/\">typing-extensions</a> package was not listed as a dependency for <code>sqlite-utils</code> - it was installed by one of the other dependencies in the <a href=\"https://github.com/simonw/sqlite-utils/blob/56dd09702fdb9e899f577ffd51693c1f2176cb08/pyproject.toml#L34-L55\">dev dependency group</a>, but when you <code>uvx sqlite-utils</code> directly you don't get those dependencies.</p>\n<p>As part of fixing this I figured out how to run a smoke test to ensure the CLI tool still works even without those dev dependencies, which can be run from the project checkout:</p>\n<pre><code>uv run --isolated --no-default-groups sqlite-utils --help\n</code></pre>\n<p>The <code>--no-default-groups</code> argument prevents it from installing that default <code>dev</code> group, and <code>--isolated</code> means that even if there is a <code>.venv/</code> folder containing extra dependencies they will be ignored for the duration of that <code>uv run</code> command.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/packaging\">packaging</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/sqlite-utils\">sqlite-utils</a>, <a href=\"https://simonwillison.net/tags/uv\">uv</a></p>",
-    "topic": "tutorials",
-    "tags": [
-      "release",
-      "open-source",
-      "coding",
-      "tutorials",
-      "events",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 887213,
-    "title": "sqlite-utils 4.2",
-    "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils/",
-    "published_at": "2026-08-13T20:11:29+00:00",
-    "fetched_at": "2026-08-14T01:55:28+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/sqlite-utils/releases/tag/4.2\">sqlite-utils 4.2</a></p>\n        <p>Lots of improvements in this one relating to the <a href=\"https://sqlite-utils.datasette.io/en/stable/python-api.html#transforming-a-table\">table.transform() feature</a>, which adds support for complex alter table operations by creating a fresh table, copying across the data and then dropping and replacing the old one.</p>\n<p><code>transform()</code> now preserves a much larger array of edge-case schema definitions, including check constraints, unique constraints and even comments describing the columns.</p>\n<p>There are also <a href=\"https://sqlite-utils.datasette.io/en/stable/python-api.html#checks\">new introspection properties</a> for check constraints, and a whole lot of other smaller changes.</p>\n<p>Includes contributions from <a href=\"https://github.com/bunlongheng\">Bunlong Heng</a>, <a href=\"https://github.com/ethanhawkes-gif\">ethanhawkes-gif</a>, <a href=\"https://github.com/RamiNoodle733\">Rami Abdelrazzaq</a>, <a href=\"https://github.com/nyxst4ck\">nyxst4ck</a>, and <a href=\"https://github.com/ikatyal2110\">ikatyal2110</a>.</p>\n<p>(It later turned out 4.2 had <a href=\"https://github.com/simonw/sqlite-utils/issues/842\">a crashing bug</a>, fixed in <a href=\"https://sqlite-utils.datasette.io/en/stable/changelog.html#v4-2-1\">4.2.1</a>.)</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/releases\">releases</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/sqlite-utils\">sqlite-utils</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "open-source",
-      "api",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 927406,
-    "title": "llm-gemini 0.33",
-    "url": "https://simonwillison.net/2026/Aug/13/llm-gemini/",
-    "published_at": "2026-08-13T19:37:34+00:00",
-    "fetched_at": "2026-08-14T22:22:32+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.33\">llm-gemini 0.33</a></p>\n        <p>It's been a while since the last <code>llm-gemini</code> release. This version of the plugin adds support for today's <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/\">Gemini 3.7 Flash</a> release, plus <code>gemini-3.6-flash</code>, <code>gemini-3.5-flash-lite</code> and two embedding models <code>gemini-embedding-2</code> and <code>gemini-embedding-001</code>.</p>\n<p>The plugin is also upgraded for compatibility with LLM 0.32, which means you can now see reasoning traces and you can also enable server-side tools using this pattern:</p>\n<pre><code>llm -m gemini-3.7-flash -T CodeExecution \\\n  'use python to calculate (factorial of 13) * 3'\n</code></pre>\n<p>I had Gemini 3.7 Flash <a href=\"https://tools.simonwillison.net/markdown-svg-renderer.html#url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F6779a22d5e7bb6bdf29936f1600a5259\">draw me some pelicans riding bicycles</a> at high, medium, and low thinking efforts (minimal, which was an option in 3.6 Flash, has been removed in 3.7.) Here's the high level one, which is pretty great:</p>\n<p><img alt=\"This pelican has  a very cool curved green bicycle, a fish in its basket, a lovely red and white spotted scarf and a captain's hat\" src=\"https://static.simonwillison.net/static/2026/gemini-3.7-flash-high-pelican.jpg\" /></p>\n<p><strong>Update 14th August 2026</strong>: I had originally said that the SVG <a href=\"https://static.simonwillison.net/static/2026/broken-pelican-safari.jpg\">rendered incorrectly</a> in Chrome and Firefox, and blamed Gemini 3.7 Flash for producing invalid SVG. That was entirely incorrect: the rendering glitch was my fault, caused by <a href=\"https://github.com/simonw/tools/commit/78fca0e647a9e20eff16900cf4485a6d622087e9\">a bug In my rendering tool</a>. I've now fixed that bug.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/google\">google</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a></p>",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "research",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 906229,
-    "title": "RT by @mattpocockuk: Matt Pocock drops an agent\u2011skills masterclass: \ud83d\udd25 grill\u2011me \u2192 interrogates plans before coding \ud83d\uddfa\ufe0f wayfinder \u2192 decision\u2011tree planning w/ fog zones \ud83d\udcda grill\u2011with\u2011docs \u2192 thin DDD\u2011style repo docs \ud83e\udde0 smart vs dumb context zones \ud83c\udfa7 https://buff.ly/vpLKNEE",
-    "url": "https://nitter.net/dotnet/status/2087977829099065652#m",
-    "published_at": "2026-08-13T19:01:21+00:00",
-    "fetched_at": "2026-08-14T13:53:50+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Matt Pocock drops an agent\u2011skills masterclass:<br />\n\ud83d\udd25 grill\u2011me \u2192 interrogates plans before coding<br />\n\ud83d\uddfa\ufe0f wayfinder \u2192 decision\u2011tree planning w/ fog zones<br />\n\ud83d\udcda grill\u2011with\u2011docs \u2192 thin DDD\u2011style repo docs<br />\n\ud83e\udde0 smart vs dumb context zones<br />\n\ud83c\udfa7 <a href=\"https://buff.ly/vpLKNEE\">buff.ly/vpLKNEE</a></p>\n<img src=\"https://nitter.net/pic/media%2FHPn8xSSXcAABirH.jpg\" />",
-    "topic": "product",
-    "tags": [
-      "product",
-      "open-source",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 881581,
-    "title": "RT by @mattpocockuk: It's time! August 25th. Free workshop. Me, @theo, @techgirl1908, and @johnlindquist! Don't miss it.",
-    "url": "https://nitter.net/kentcdodds/status/2087975123529896319#m",
-    "published_at": "2026-08-13T18:50:36+00:00",
-    "fetched_at": "2026-08-13T21:44:51+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>It's time! <br />\n<br />\nAugust 25th. Free workshop. Me, <a href=\"https://nitter.net/theo\" title=\"Theo - t3.gg\">@theo</a>, <a href=\"https://nitter.net/techgirl1908\" title=\"Angie Jones\">@techgirl1908</a>, and <a href=\"https://nitter.net/johnlindquist\" title=\"John Lindquist\">@johnlindquist</a>! Don't miss it.</p>\n<a href=\"https://nitter.net/kentcdodds/status/2087975123529896319#m\">\n<br />Video<br />\n  <img src=\"https://nitter.net/pic/amplify_video_thumb%2F2087974318118449152%2Fimg%2F6nkttz85iY3SFZcY.jpg\" />\n</a>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 870133,
-    "title": "Introducing Gemini 3.7 Flash",
-    "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
-    "published_at": "2026-08-13T17:04:18+00:00",
-    "fetched_at": "2026-08-13T17:04:46+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 872419,
-    "title": "Bring your spreadsheet data to life with Sheets canvas",
-    "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
-    "published_at": "2026-08-13T16:45:00+00:00",
-    "fetched_at": "2026-08-13T18:27:23+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "rss",
-    "body": "The video shows Sheets canvas in action.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1993528,
-    "title": "How Fyxer built an AI executive assistant people trust",
-    "url": "https://openai.com/index/fyxer",
-    "published_at": "2026-08-13T12:00:00+00:00",
-    "fetched_at": "2026-09-14T13:41:18+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user\u2019s voice.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 872539,
-    "title": "The builder\u2019s guide to GPT\u20115.6",
-    "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
-    "published_at": "2026-08-13T11:00:00+00:00",
-    "fetched_at": "2026-08-13T18:27:24+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities.",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "coding",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 870233,
-    "title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
-    "url": "https://openai.com/index/previewing-ultrafast",
-    "published_at": "2026-08-13T10:00:00+00:00",
-    "fetched_at": "2026-08-13T17:04:46+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "Preview Ultrafast, a new OpenAI API service tier that runs GPT-5.6 Sol up to 14\u00d7 faster. Powered by Cerebras, it delivers up to 750 output tokens per second.",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "api",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 870234,
-    "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
-    "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
-    "published_at": "2026-08-13T09:00:00+00:00",
-    "fetched_at": "2026-08-13T17:04:46+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "OpenAI appoints Dali Rajic as Chief Revenue Officer to lead its global revenue organization and help businesses realize the full value of AI.",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 882846,
-    "title": "alchemy-utils 0.1a1",
-    "url": "https://simonwillison.net/2026/Aug/13/alchemy-utils/",
-    "published_at": "2026-08-13T03:03:17+00:00",
-    "fetched_at": "2026-08-13T22:41:31+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/alchemy-utils/releases/tag/0.1a1\">alchemy-utils 0.1a1</a></p>\n        <p>Performance boost for DuckDB exports and CSV imports, <a href=\"https://simonwillison.net/2026/Aug/12/alchemy-utils/\">see here</a>.</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "open-source"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 854329,
-    "title": "Making An Actually Fun 3D Game with AI",
-    "url": "https://www.youtube.com/watch?v=qK4nV_LnXxQ",
-    "published_at": "2026-08-13T01:53:16+00:00",
-    "fetched_at": "2026-08-13T05:57:48+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "I vibe coded a full game sequel using Claude Code and Codex, and it proved something important about AI and game development.\n\nA year ago I built The Librarian, a playable vibe coded game you can still find on GitHub. This time I wanted to see how far AI coding tools have come, and whether one person could build something that actually feels like a real game.\n\nI used Claude Code with Opus 5 for the initial build, then switched to Codex and GPT-5.6 Sol for all the fine-tuning. The result is The Librarian 2, a 3D procedurally generated roguelite with boss enemies, natural disasters, meta progression, and a chaos system. 10,400 lines of code across 33 modules. Zero asset files.\n\nThe verdict: game development is far from cooked. But it's also a lot harder than the one-level demos on X make it look.\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\n\nLibrarian 2: https://the-librarian-2.mreflow.chatgpt.site/\nLibrarian 2 github repo: https://github.com/mreflow/the-librarian-2\nLibrarian : https://the-librarian-game.vercel.app/\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#VibeCoding #ClaudeCode #AIGameDev",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 852390,
-    "title": "Frontier Red TeamPatterns and problems in emerging multiagent systems",
-    "url": "https://www.anthropic.com/research/multiagent-systems",
-    "published_at": "2026-08-13T00:00:00+00:00",
-    "fetched_at": "2026-08-13T04:16:29+00:00",
-    "source_id": "anthropic-research",
-    "source_name": "Anthropic Research",
-    "extraction_method": "rss",
-    "body": "Aug 13, 2026Frontier Red TeamPatterns and problems in emerging multiagent systems",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 871361,
-    "title": "When Unlearning Is Free: Leveraging Low Influence Points to Reduce Computational Costs",
-    "url": "https://machinelearning.apple.com/research/unlearning-low-influence-points",
-    "published_at": "2026-08-13T00:00:00+00:00",
-    "fetched_at": "2026-08-13T17:04:47+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "rss",
-    "body": "As concerns around data privacy in machine learning grow, the ability to unlearn, or remove, specific data points from trained models becomes increasingly important. While state of the art unlearning methods have emerged in response, they typically treat all points in the forget set equally. In this work, we challenge this approach by asking whether points that have a negligible impact on the model\u2019s learning need to be removed. Through a comparative analysis of influence functions across language and vision tasks, we identify subsets of training data with negligible impact on model outputs\u2026",
-    "topic": "education",
-    "tags": [
-      "models",
-      "safety",
-      "infrastructure",
-      "coding",
-      "education",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 867576,
-    "title": "Claude Tag now reads even more of the room",
-    "url": "https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room",
-    "published_at": "2026-08-13T00:00:00+00:00",
-    "fetched_at": "2026-08-13T14:37:30+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Claude Tag now reads even more of the room",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 885451,
-    "title": "Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5",
-    "url": "https://claude.com/blog/how-jetbrains-evaluates-and-deploys-claude-fable-5",
-    "published_at": "2026-08-13T00:00:00+00:00",
-    "fetched_at": "2026-08-13T23:41:00+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 874207,
-    "title": "Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions",
-    "url": "https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions",
-    "published_at": "2026-08-13T00:00:00+00:00",
-    "fetched_at": "2026-08-13T18:27:25+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "rss",
-    "body": "Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
