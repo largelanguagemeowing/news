@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 2021368,
+    "title": "Transformers.js v4.3: Structured Output in the browser",
+    "url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
+    "published_at": "2026-09-16T07:49:24+00:00",
+    "fetched_at": "2026-09-16T12:44:08+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Transformers.js v4.3 is out, and the big one is structured output.\n\nWith the new @huggingface/transformers-structured-output package you can force a model to follow an exact JSON Schema or regex, directly in the browser. No more parsing markdown fences and hoping the model picked the right property names.\n\nIn this video I walk through how constrained decoding works, how the new package hooks into the logits processor in Transformers.js, and the technical story behind it: from a WASM wrapper around llguidance to a pure JavaScript implementation with almost no overhead.\n\nAlso in 4.3: a complete overhaul of the documentation pipeline and a bunch of community-contributed fixes and features. Thank you!\n\nChapters\n0:00 Transformers.js 4.3 is out\n0:26 New documentation pipeline\n1:00 Community contributions\n1:19 The problem: unreliable JSON from LLMs\n2:18 How constrained decoding works\n3:25 Adding the structured output processor\n3:37 The new packages folder and plugin approach\n6:03 Using regex instead of JSON Schema\n6:45 Demo: recipe generator\n7:33 Behind the feature: llguidance\n9:02 Rewriting it in pure JavaScript\n9:22 Performance across Gemma 4, Granite and LFM 2.5\n10:26 Try it out\n\nLinks\nRelease notes: https://github.com/huggingface/transformers.js/releases/tag/4.3.0\nNPM: https://www.npmjs.com/package/@huggingface/transformers/v/4.3.0\nStructured output package: https://www.npmjs.com/package/@huggingface/transformers-structured-output",
+    "topic": "hardware",
+    "tags": [
+      "hardware",
+      "release",
+      "models",
+      "open-source",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 2016294,
     "title": "Gemini Live audio",
     "url": "https://simonwillison.net/2026/Sep/15/gemini-live/",
@@ -401,6 +424,48 @@
       "coding",
       "tools",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2021392,
+    "title": "Stop Chunking Like It's 2022 \u2014 Yuval Belfer, AI21 Labs",
+    "url": "https://www.youtube.com/watch?v=r9OwPx_HoV0",
+    "published_at": "2026-09-15T07:36:28+00:00",
+    "fetched_at": "2026-09-16T12:44:08+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask a corpus of Seinfeld transcripts for the name of Jerry's favorite church and a 100 token chunk returns it at rank one, while every larger window buries it below rank fifty. Ask the same corpus who Jerry calls his nemesis and pure evil and the small chunks fail completely, because the answer is spread across a scene rather than sitting in a sentence. Same data, same index, opposite requirements. Yuval Belfer uses that pair to make a claim most retrieval teams have quietly assumed away: there is no correct chunk size, because the correct size is a property of the query, and you pick it at indexing time when you do not yet have any queries. That is the trap in one sentence. At indexing you control the window and know nothing about the questions. At retrieval you have the question and the window is already frozen.\n\nTo size the cost, his team duplicated several datasets at six different chunk sizes and ran an oracle experiment, choosing per query the size that happened to work best. The gap between that oracle and any single fixed choice ran 20 to 40 percent of recall, which is what an arbitrary 512 has been quietly costing. Their fix refuses the premise rather than tuning it. Index the corpus at every window size, query all of them, and because chunks of different sizes cannot be compared, return whole documents so the rankings become commensurable, then merge them by reciprocal rank fusion. It is a short script rather than a model. The honest accounting is at the end: two to five times the memory, and almost no added latency.\n\nSpeaker info:\n- https://x.com/yuvalinthedeep\n- https://linkedin.com/in/yuval-belfer\n\nTimestamps:\n0:00 - A talk about nothing, and why chunking\n1:43 - Indexing is boring, retrieval tuning is fun\n3:23 - A World Cup directory that cannot answer the query\n4:17 - Chunking as lossy compression\n6:13 - Six copies of the same dataset\n7:07 - Two Seinfeld questions, opposite answers\n8:12 - The oracle experiment\n9:59 - An information problem at both ends\n11:02 - Multiscale indexing and rank fusion\n13:50 - Results across four datasets\n15:24 - What it costs in memory",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "benchmark",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2021393,
+    "title": "Pinecone 2.0 \u2014 Edo Liberty, Pinecone",
+    "url": "https://www.youtube.com/watch?v=IN-rb-9WmiY",
+    "published_at": "2026-09-15T07:35:58+00:00",
+    "fetched_at": "2026-09-16T12:44:08+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "People used to type \"am I fat?\" into Yahoo Answers. Edo Liberty worked there at the time, and the question stuck with him, because a Q and A forum has no possible way to know. It is a failure of theory of mind, our capacity to model what someone else actually knows, and he argues we are making a subtler version of the same mistake with agents right now. He splits knowledge three ways. General knowledge is what a model absorbed in training and can be relied on for. Specific knowledge is the contract or the codebase, which retrieval and vector search have handled for years. The third kind is tribal knowledge: how things get done here, who owns what, which principles actually govern decisions. It is not public, and unlike a contract it cannot be plucked from any single document, because it is the sum of a great many.\n\nThe right mental model for an enterprise agent, then, is a brilliant new hire who is clueless about your company and starts every session on their first day. Liberty's proposal is a persistent, specialized knowledge layer that all agents query, and the requirement he calls hardest is staying current. Replace a CEO and the whole company knows the next morning, while nine thousand documents keep naming the old one, and the new fact has to override all of them. The implementation detail worth the watch is what he calls a runtime coding agent. Rather than answering by query, the system writes and runs code at question time, iterating in something like a notebook until the answer holds, which cut their tooling prompt from roughly 150,000 tokens to under a thousand.\n\nSpeaker info:\n- https://x.com/edoliberty\n- https://www.linkedin.com/in/edoliberty/\n- https://edoliberty.github.io/\n\nTimestamps:\n0:00 - Theory of mind, and why it matters here\n1:06 - The question nobody could answer\n1:57 - Three kinds of knowledge\n3:17 - Tribal knowledge, and why search cannot reach it\n3:56 - A brilliant new hire, every single session\n4:49 - What a knowledge layer has to do\n6:19 - Why staying current is the hard part\n9:07 - The manifest replaces hand written skills\n11:42 - Import, curate, and search\n13:35 - Giving a query a budget\n14:42 - A runtime coding agent\n17:00 - From 150,000 tokens of tooling to under a thousand",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10189,70 +10254,6 @@
       "events",
       "news",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 912328,
-    "title": "From RL to IRL \u2014 Gaurav Mishra, Amazon AGI Lab",
-    "url": "https://www.youtube.com/watch?v=Cc0_nyxROBA",
-    "published_at": "2026-08-14T16:00:06+00:00",
-    "fetched_at": "2026-08-14T16:52:58+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Asked to file an expense, the agent gets signed out mid task, reasons that it can infer the password, guesses twice, and locks the account. In a second run it clicks a sponsored button styled like the real submit button, lands on a different site, and begins typing personal details into it. Both are real trajectories from early browser training runs at the Amazon AGI Lab, and Gaurav Mishra's summary is that RL worked while the world was a game, and IRL starts when the game fights back.\n\nThe talk catalogues what a reward function meets on contact with a real login screen. Observability is partial, since the DOM misses content baked into images and the screenshot misses whatever needs scrolling. Actions are irreversible, credentials expire mid trajectory, and done routinely does not mean successful. His answer is flight school rather than exams. Sandboxes train on layout shift, slow loads, pop ups, focus stealing, and stale tabs, and recovery becomes a native model action instead of an infra reset, so the agent refreshes, backtracks, waits, or escalates. A process reward model penalizes dangerous steps along the path instead of scoring only the outcome, and calibrated confidence teaches the agent to weigh whether an action is authorized, reversible, and visible before committing. The closing trajectory runs the same task correctly, including the agent refusing to guess the password and handing control back. Over time the model gets better and the harness gets thinner.\n\nSpeaker info:\n- https://www.linkedin.com/in/gaurav-mishra-b307a437\n\nTimestamps:\n0:00 - RL to IRL, and a lightning review of RL for agents\n3:26 - Why coding agents can do computer use at all\n4:05 - The agent that guesses its own password\n5:47 - The sponsored button that looks like submit\n6:37 - Partial observability, irreversibility, expiring credentials\n8:29 - Flight school, not exams\n9:54 - Process rewards and calibrated confidence\n11:11 - The pilot and the cockpit\n14:07 - Assumption versus reality, point by point\n15:11 - The same task, done right",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "infrastructure",
-      "coding",
-      "education",
-      "news"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 912864,
-    "title": "Just saw a comment saying that I've never made a proper overview of EVERY skill in my skills repo I thought \"damn it, he's right\". So, here it is. My 25 skills (now @theo-approved), explained in 10 minutes:",
-    "url": "https://nitter.net/mattpocockuk/status/2088290952704151671#m",
-    "published_at": "2026-08-14T15:45:36+00:00",
-    "fetched_at": "2026-08-14T16:53:00+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Just saw a comment saying that I've never made a proper overview of EVERY skill in my skills repo<br />\n<br />\nI thought \"damn it, he's right\".<br />\n<br />\nSo, here it is. My 25 skills (now <a href=\"https://nitter.net/theo\" title=\"Theo - t3.gg\">@theo</a>-approved), explained in 10 minutes:</p>\n<a href=\"https://nitter.net/mattpocockuk/status/2088290952704151671#m\">\n<br />Video<br />\n  <img src=\"https://nitter.net/pic/amplify_video_thumb%2F2088290500604276736%2Fimg%2FpMG3JwrsYIJ96lGZ.jpg\" />\n</a>",
-    "topic": "education",
-    "tags": [
-      "open-source",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 910033,
-    "title": "The Dark Arts of Web Automation: Teaching Agents to Use Websites Like Humans \u2014 Corey Gallon, Rexmore",
-    "url": "https://www.youtube.com/watch?v=26RtyAm9y_Q",
-    "published_at": "2026-08-14T15:30:00+00:00",
-    "fetched_at": "2026-08-14T15:52:21+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Preparing this talk got Corey Gallon a warning from OpenAI that his account faced a ban for cyber abuse with a web browser. The offending work was an agent clearing Cloudflare Turnstile, two image captchas, and finally reCAPTCHA v2 with no human in the loop. His premise fits on one slide: a browser driven through the Chrome DevTools Protocol is just a meat bag with a mouse, because the agent's clicks and keystrokes travel the same path inside Chrome that yours do. Chrome stamps every event as trusted or untrusted, which is why a synthetic JavaScript click that works fine in Outlook gets silently dropped by Amazon's add to cart button.\n\nThe method is a loop of sense, act, verify, climbed up a three rung ladder only as high as the page forces. A synthetic click first, then a real CDP input event, then a human mouse path with jitter and a deliberate overshoot. He argues for a CLI over an MCP server on speed rather than capability, citing a study where both cleared tasks about 83% of the time while MCP took 71 round trips and eight minutes against seven turns and under a minute. That gap decides the last fight, because reCAPTCHA rounds expire on a clock. His solution splits the work: deterministic code drives the whole challenge and rearms itself, and the agent is called in only to look at the grid and name the tiles. Everything demonstrated runs on infrastructure and accounts he owns.\n\nSpeaker info:\n- https://x.com/coreygallon\n- https://www.linkedin.com/in/coreygallon\n- https://gallon.me\n- https://github.com/captivus/chrome-agent\n\nTimestamps:\n0:00 - Threatened with a ban for preparing this talk\n1:50 - The premise: a CDP browser is a meat bag with a mouse\n2:43 - Why a CLI beats an MCP server\n4:06 - The DevTools Protocol and the agent's digital senses\n5:47 - The loop: sense, act, verify\n6:38 - The three rung ladder\n8:27 - Rung one: batch emails, and the web UI as a permissionless API\n10:44 - Rung two: trusted clicks and the add to cart button\n12:51 - Rung three: Cloudflare Turnstile\n14:26 - Image captchas, drag puzzles, and human motion\n16:36 - Final boss: reCAPTCHA v2, solver and operator\n19:47 - The methodology is the takeaway",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "api",
-      "agents",
-      "research",
-      "coding",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
