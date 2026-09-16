@@ -1,5 +1,317 @@
 [
   {
+    "article_id": 2023848,
+    "title": "Stop Chunking Like It's 2022 \u2014 Yuval Belfer, AI21 Labs",
+    "url": "https://www.youtube.com/watch?v=r9OwPx_HoV0",
+    "published_at": "2026-09-16T17:00:06+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask a corpus of Seinfeld transcripts for the name of Jerry's favorite church and a 100 token chunk returns it at rank one, while every larger window buries it below rank fifty. Ask the same corpus who Jerry calls his nemesis and pure evil and the small chunks fail completely, because the answer is spread across a scene rather than sitting in a sentence. Same data, same index, opposite requirements. Yuval Belfer uses that pair to make a claim most retrieval teams have quietly assumed away: there is no correct chunk size, because the correct size is a property of the query, and you pick it at indexing time when you do not yet have any queries. That is the trap in one sentence. At indexing you control the window and know nothing about the questions. At retrieval you have the question and the window is already frozen.\n\nTo size the cost, his team duplicated several datasets at six different chunk sizes and ran an oracle experiment, choosing per query the size that happened to work best. The gap between that oracle and any single fixed choice ran 20 to 40 percent of recall, which is what an arbitrary 512 has been quietly costing. Their fix refuses the premise rather than tuning it. Index the corpus at every window size, query all of them, and because chunks of different sizes cannot be compared, return whole documents so the rankings become commensurable, then merge them by reciprocal rank fusion. It is a short script rather than a model. The honest accounting is at the end: two to five times the memory, and almost no added latency.\n\nSpeaker info:\n- https://x.com/yuvalinthedeep\n- https://linkedin.com/in/yuval-belfer\n\nTimestamps:\n0:00 - A talk about nothing, and why chunking\n1:43 - Indexing is boring, retrieval tuning is fun\n3:23 - A World Cup directory that cannot answer the query\n4:17 - Chunking as lossy compression\n6:13 - Six copies of the same dataset\n7:07 - Two Seinfeld questions, opposite answers\n8:12 - The oracle experiment\n9:59 - An information problem at both ends\n11:02 - Multiscale indexing and rank fusion\n13:50 - Results across four datasets\n15:24 - What it costs in memory",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "benchmark",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2024404,
+    "title": "The paradox at the heart of AI and science | Terence Tao",
+    "url": "https://www.youtube.com/watch?is=cwikvYMXwQ_4zGA6&v=svl_1upFpQo&feature=youtu.be",
+    "published_at": "2026-09-16T16:43:41+00:00",
+    "fetched_at": "2026-09-16T17:29:49+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing. i truely love tao's mindset.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023849,
+    "title": "Where RL Will Take Search \u2014 Maximilian-David Rumpf, SID.ai",
+    "url": "https://www.youtube.com/watch?v=iJVxxxHM_Oc",
+    "published_at": "2026-09-16T16:30:16+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Somewhere between 30 and 50 percent of an agent's tokens get spent on searching, almost all of it up front, before any of the work you asked for. Maximilian David Rumpf treats that number as the whole opportunity. Handing a task to an agent rather than a query to a search engine roughly doubles the odds of finding the right documents, but it costs a hundred to a thousand times more and takes minutes instead of milliseconds. His diagnosis of why the classical alternative cannot close that gap is the sharpest part. A traditional pipeline rewrites the query, hits a backend, reranks, and returns, which means every decision was frozen at design time and every question receives the same fixed budget of compute. The reranker can often tell that the results it is holding do not answer the question. It has no way to act on that. It returns them anyway.\n\nWhat accumulates instead is a long tail of failure, patched with edge cases that can never be exhaustive. Rumpf argues search is now following a path we have watched twice already, in computer vision going from hand written edge detection to narrow detectors to general models, and in chess going from a machine full of human authored rules to a system that learned its own. Search suits reinforcement learning unusually well because the reward is verifiable, you either found the correct document or you did not, and the environment is grindable at thousands of attempts per second. His results show a specialized model landing about twenty times faster than a frontier model on the same task, five seconds against two minutes, at roughly one hundredth the cost.\n\nSpeaker info:\n- https://x.com/maxrumpf\n- https://linkedin.com/in/maximiliandavid\n- https://maxrumpf.com\n\nTimestamps:\n0:00 - Agentic search is better, and far more expensive\n2:11 - Where the classical pipeline breaks\n3:27 - Machine design beats human design, again\n5:08 - Why search is an ideal target for RL\n6:46 - Twenty times faster, a hundred times cheaper\n7:36 - Keeping bad results out of the main context",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "education",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023576,
+    "title": "Quoting Mustafa Suleyman",
+    "url": "https://simonwillison.net/2026/Sep/16/mustafa-suleyman/",
+    "published_at": "2026-09-16T16:00:54+00:00",
+    "fetched_at": "2026-09-16T17:29:47+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://mustafa-suleyman.ai/a-warning-about-model-welfare\"><p>We should not treat models as though they have feelings, preferences, rights, or any entitlement to our welfare. Consciousness is the foundation of our ethical, legal, and political systems. To invite another entity to share any flavor of these rights isn\u2019t justified by the evidence and will make the AI containment and alignment challenge even harder.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://mustafa-suleyman.ai/a-warning-about-model-welfare\">Mustafa Suleyman</a>, A warning about \u2018model welfare\u2019</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/microsoft\">microsoft</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "safety",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023850,
+    "title": "Connect AI to Billions of Legal Documents \u2014 Simon Eskildsen, turbopuffer & Jacob Lauritzen, Legora",
+    "url": "https://www.youtube.com/watch?v=V-isu4eTHgw",
+    "published_at": "2026-09-16T16:00:19+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Legora's search latency once went from a 100 millisecond P99 to twenty seconds, and the cause was a packing problem invisible in the schema. Legal work arrives as projects, a project gets worked hard for a while and then is never opened again, and when the team sharded document chunks across four thousand partitions the dead projects landed in the same partitions as the live ones. Every query pulled an enormous partition into memory, evicted the last, and thrashed the cache. Jacob Lauritzen walks the whole migration honestly, from one search cluster for everybody, then one per region once clients on three continents each demanded their processing stay home, then into the general purpose database the team already ran, which is where it broke. What worked was making the project the unit of storage, one namespace each, so an idle one rests in object storage costing nothing.\n\nSimon Eskildsen then explains why that shape suits regulated customers so well. If the namespace is the atom, every namespace can carry its own encryption key and its own bucket, which is what banks and large firms actually mean when they demand physical isolation and the ability to revoke a key and make their data unreadable. The best detail is an experiment: rather than build encryption into the SSD cache, they disabled the cache outright to see how bad it would be, found the performance acceptable, and left it off. The back half is a crash course in storage engineering: why round trips dominate when object storage answers in 200 milliseconds, why clustering into a tree beats navigating a graph, and why full text search at web scale costs more than vector search.\n\nSpeaker info:\n- https://x.com/Sirupsen\n- https://www.linkedin.com/in/sirupsen/\n- https://sirupsen.com\n- https://sirupsen.com/napkin\n\nTimestamps:\n0:00 - What Legora does, and two kinds of legal search\n2:32 - One search cluster, then one per region\n4:00 - What enterprises mean by physical isolation\n4:48 - Moving search into the database they already ran\n5:38 - How hot and cold projects thrashed the cache\n6:40 - A namespace per project, and what it fixed\n7:56 - Writing straight to object storage\n9:58 - Why a namespace is the unit of encryption\n12:07 - Legal research, and ten billion vectors\n14:25 - Puffing data through the memory hierarchy\n15:30 - Why a tree beats a graph on object storage\n17:45 - How full text search actually works",
+    "topic": "infrastructure",
+    "tags": [
+      "research",
+      "infrastructure",
+      "coding",
+      "education",
+      "enterprise",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2022370,
+    "title": "Helping older adults use AI in everyday life",
+    "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+    "published_at": "2026-09-16T16:00:00+00:00",
+    "fetched_at": "2026-09-16T17:29:47+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023851,
+    "title": "Your Agreements Are a Database You Can't Query \u2014 Hiral Shah, Docusign & Sean Sodha, NVIDIA",
+    "url": "https://www.youtube.com/watch?v=_gvamfT8H-w",
+    "published_at": "2026-09-16T15:30:28+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ask your own company what it actually contracted for with a given vendor and nobody can tell you. The number exists, negotiated carefully, sitting in a pricing table inside a signed PDF no system ever read back. Hiral Shah puts a figure on the aggregate: roughly two trillion dollars of negotiated value locked in agreements that organizations never return to, because recovering it means human reading, human review, and manual work across disconnected systems. The scale on Docusign's side is its own engineering problem. Close to two million paying customers, a billion users, and about a million agreements flowing through each day, all of it needing to come out structured, queryable, and useful. Agreements also refuse to be flat. One governs another, which amends a third, so answering a simple question often means traversing twenty years of a business.\n\nThe specific thing that breaks is tables. Pricing tiers, rate cards, SKUs and service levels are exactly the terms people need, and they are exactly what generic extraction handles worst, because reading a page line by line destroys a merged cell or a nested column. Shah and Sean Sodha describe the model they built together for that one job, an unusually small vision language model at roughly 900 million parameters, designed as an extractor rather than a generator. It replaces a stack of separate layout and table models with a single pass that returns reading order, semantic structure and preserved tables. Their headline lesson is about restraint: a purpose built small model ran table extraction around twenty times faster than the general alternatives they tested, and lower context meant lower latency and lower cost at their volume.\n\nSpeaker info:\n- https://www.linkedin.com/in/shahhiral/\n- https://www.linkedin.com/in/sean-sodha/\n\nTimestamps:\n0:00 - Why agreement data is an engineering problem\n1:42 - A million agreements a day\n2:19 - Two trillion dollars nobody goes back for\n3:59 - Why tables break generic extraction\n5:12 - Building retrieval models in the open\n7:03 - An extractor, not a generator\n8:32 - Demo: an order form becomes structured data\n10:30 - Structuring agreements across an organization\n11:18 - Purpose built models beat general ones\n13:12 - What comes next\n13:44 - Q&amp;A: is OCR going away?",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "education",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023852,
+    "title": "If we want them to do Knowledge Work, design them as Knowledge Agents \u2014 Benjamin Clavi\u00e9, Mixedbread",
+    "url": "https://www.youtube.com/watch?v=O84lhGc1OOI",
+    "published_at": "2026-09-16T15:00:39+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An agent searching a contract for \"30 days\" has no way to know whether it has found a deadline, a grace period, or a retention rule, or wandered into a medication schedule entirely. Benjamin Clavi\u00e9 uses that to explain why coding agents turned out to be the easy case. Code carries durable cues: identifiers, file paths, method definitions, things you can literally grep for. It also comes with narrow instructions, because nobody asks a coding agent to invent a paradigm, they ask it to close a ticket. Knowledge work outside code is the opposite on every axis. The meaning is implicit, the same string means different things in different domains, and the search has to start from an intent the agent must reconstruct on its own. His argument is that the industry generalized from the one domain that least resembles the rest.\n\nThe good news is that humans solved this already, repeatedly. Clavi\u00e9 traces a tool loop running from the first catalogue of the Library of Alexandria through bibliographies to search engines, and an organization loop running from the single gifted polymath through monasteries and universities to the modern specialist firm. They are really one loop: better tools create new roles, new roles generate knowledge, new knowledge demands better tools. His benchmark numbers make the practical version concrete. A badly tuned retrieval tool lands near 60 percent accuracy, which nobody would trust enough to keep using. A well tuned one reaches the same ceiling as its rivals while making 20 percent fewer tool calls, and adding a layer of searcher agents that return short memos closes roughly 40 percent of the remaining gap to a human.\n\nSpeaker info:\n- https://x.com/bclavie\n- https://mixedbread.com\n- https://ben.clavie.eu\n\nTimestamps:\n0:00 - Coding agents are a special case of knowledge work\n3:48 - Why code is unusually easy to search\n5:05 - Thirty days, and when one clue means four things\n5:55 - The tool loop and the organization loop\n8:06 - Tooling is never a neutral add on\n9:22 - A leaderboard, and two different BM25s\n11:14 - How a law firm breaks down a case\n12:42 - When even a human hits the tool ceiling\n13:31 - Searcher agents, memos, and the oracle gap\n15:13 - Design for knowledge work, not for programming",
+    "topic": "tools",
+    "tags": [
+      "agents",
+      "benchmark",
+      "coding",
+      "policy",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023788,
+    "title": "ChatGPT Drew Me In Minecraft",
+    "url": "https://www.youtube.com/shorts/nF45_dhsmWY",
+    "published_at": "2026-09-16T14:32:01+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "I let ChatGPT Astra take control of Minecraft and told it to build a portrait of me out of blocks...\n\nAstra operated the game entirely on its own, placing every block one by one. After 1 hour and 42 minutes, I had a massive monument to myself inside Minecraft.\n\nCompletely unnecessary? Yes.\nAn impressive glimpse at what computer-controlling AI agents can do? Also yes.\n\nWhat should I make Astra build next?\n\n#ai #ainews #chatgpt #openai #aiagents",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents",
+      "infrastructure",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023853,
+    "title": "Rebuilding the web for agents \u2014 Liad Yosef, MCP Apps",
+    "url": "https://www.youtube.com/watch?v=waI44NP1abk",
+    "published_at": "2026-09-16T14:30:03+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Roughly half the websites Liad Yosef's team tested publish an llms.txt file, the de facto standard for telling an agent how to work with you. Almost none of the agents they ran against those sites ever read it. The agents went straight to the docs page and then the homepage, and the minority that did open llms.txt only found it because the docs mentioned it. That result reframes the whole problem. We have been writing specifications at agents describing what we think they need, when the only reliable way to learn what they need is to watch thousands of them try. Yosef co created and maintains the MCP Apps spec, the layer that lets a server hand a real interface back into a chat instead of being flattened into text, and he argues that shipping it is what actually opened the door to an agentic web.\n\nHis case for why that matters is unsentimental. Two decades went into perfecting the browser tab, and planning one anniversary still means learning four different interfaces to express the same intent. Break those interfaces into atoms, let an assistant compose them, and nobody needs the dashboard. He tells a story against his own instincts: his team asked their coding agent to pick an analytics service, it recommended one they had never used over the vendor they had run for a decade, purely because the recommendation had a better server and API to integrate against, and they switched. A decade of polished product experience lost to a tooling preference. Agents, he notes, have no brand loyalty, and a product that forces one to open a browser gets remembered for it.\n\nSpeaker info:\n- https://x.com/liadyosef\n- https://linkedin.com/in/liadyosef\n- https://ora.ai\n\nTimestamps:\n0:00 - MCP Apps, and what the spec unlocked\n2:47 - The last mile of human interaction\n4:25 - Twenty years of tabs, broken into atoms\n6:43 - Why websites stop being the source of truth\n7:21 - Browser agents are a faster horse\n8:24 - Assistants become the entry point\n10:16 - The nearly headless web\n11:56 - Losing a decade of brand loyalty in one prompt\n13:34 - Half the web publishes llms.txt, agents ignore it\n14:42 - Letting agents say what agents need\n16:26 - Every revolution needs a discovery layer\n19:24 - Accessibility and agent readiness are the same work",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "tutorials",
+      "education",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023854,
+    "title": "The Search Engine for the Agentic Web \u2014 Will Bryk, Exa",
+    "url": "https://www.youtube.com/watch?v=59AA5kIoqjA",
+    "published_at": "2026-09-16T14:00:23+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Exa never meant to sell an API. Somebody sent them a message on Twitter asking for programmatic access to their search engine, and the answer was no, because there was no API to give. Then more people asked, including the roommate who lived downstairs, and the company realized it had been building the wrong product for the right reason. Will Bryk started the company in 2021 under a different name, launched a consumer search engine in 2022, and watched the world reorganize itself around chatbots two weeks later. The insight that saved them is now the premise of the whole business: a model, however large, is tiny compared to the internet, so it will always need to reach outside itself. Bryk opens with a chart of web searches per day over thirty years, and says 2026 is the crossover year, the first time searches issued by machines exceed searches issued by people. He expects a thousandfold gap after that.\n\nThe founding thought experiment is worth the price of admission. Take one complex query and one document, run a language model over the pair, and ask whether they match. It does that extremely well. Now run it across a trillion documents for every single search and you have perfect retrieval, at roughly ten million dollars per query. Everything since has been an exercise in driving that number down by nine or twelve orders of magnitude. Bryk also makes an argument about what search is for. Type shirts without stripes into a mainstream engine and you get shirts with stripes, because it was built to recommend rather than to answer, and an agent wants the opposite.\n\nSpeaker info:\n- https://x.com/WilliamBryk\n- https://www.linkedin.com/in/william-bryk/\n\nTimestamps:\n0:00 - The year machine searches pass human searches\n2:08 - Misinformed anarchy and a trillion page web\n3:10 - Shirts without stripes\n4:47 - The most important neglected problem\n6:05 - The thought experiment behind perfect search\n8:25 - The message that created the business\n9:28 - People search simply, agents do not\n10:42 - Complex queries, fast queries, fewer tokens\n13:38 - A marketplace for private data\n14:42 - A year of research in a second",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "api",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023855,
+    "title": "The unreasonable effectiveness of BM25 for agentic search \u2014 Jo Kristian Bergum, Hornet.dev",
+    "url": "https://www.youtube.com/watch?v=fZH97QHHYjY",
+    "published_at": "2026-09-16T13:30:32+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "BM25 stands for Best Match 25, and the number is not a version. A group of researchers ran a long series of scoring experiments decades ago, the twenty fifth one worked best, and the name simply stuck. Jo Kristian Bergum has spent more than twenty years on search and retrieval, and his claim is that this thirty year old lexical function is making a comeback without having changed at all. What changed is the user. A model already knows entities, companies, dates, postal codes and product identifiers, so it can write queries that are far longer and far more specific than anything a person would type, and it can fire off a dozen in a row. The old AOL query logs showed people searching in two or three words, and human query logs still look about the same today. An agent is a fundamentally more powerful user of a dumb tool.\n\nThe sharpest evidence comes from a deep research benchmark of 830 riddle like questions over roughly one hundred thousand web documents. Stuff the answer bearing documents directly into the context window and accuracy is high, even for older models, which means reasoning was never the bottleneck. Hand the same model a search tool instead and accuracy drops, because now it depends on query formulation and on the retriever. Bergum compares a context window to a floppy disc, about 1.4 megabytes then and roughly 350,000 tokens now before quality degrades, so something still has to decide what goes in. He closes on a pattern he likes: dump retrieved documents into a file system workspace and let the model use grep and the other primitives it is already trained on.\n\nSpeaker info:\n- https://x.com/jobergum\n- https://www.linkedin.com/in/jo-bergum\n- https://hornet.dev/\n\nTimestamps:\n0:00 - A thirty year old scoring function makes a comeback\n2:19 - Best Match 25, and where the name came from\n3:37 - The function did not change, the user did\n4:57 - A benchmark of 830 riddles\n6:01 - Context windows are floppy discs\n7:05 - Reasoning is not the bottleneck\n8:37 - How a model formulates queries\n9:44 - Which BM25 do you mean?\n12:06 - Retrieved documents as a file system\n14:42 - Classical evaluation is dead\n16:32 - Four claims to take away",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023856,
+    "title": "Pinecone 2.0 \u2014 Edo Liberty, Pinecone",
+    "url": "https://www.youtube.com/watch?v=IN-rb-9WmiY",
+    "published_at": "2026-09-16T13:00:06+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "People used to type \"am I fat?\" into Yahoo Answers. Edo Liberty worked there at the time, and the question stuck with him, because a Q and A forum has no possible way to know. It is a failure of theory of mind, our capacity to model what someone else actually knows, and he argues we are making a subtler version of the same mistake with agents right now. He splits knowledge three ways. General knowledge is what a model absorbed in training and can be relied on for. Specific knowledge is the contract or the codebase, which retrieval and vector search have handled for years. The third kind is tribal knowledge: how things get done here, who owns what, which principles actually govern decisions. It is not public, and unlike a contract it cannot be plucked from any single document, because it is the sum of a great many.\n\nThe right mental model for an enterprise agent, then, is a brilliant new hire who is clueless about your company and starts every session on their first day. Liberty's proposal is a persistent, specialized knowledge layer that all agents query, and the requirement he calls hardest is staying current. Replace a CEO and the whole company knows the next morning, while nine thousand documents keep naming the old one, and the new fact has to override all of them. The implementation detail worth the watch is what he calls a runtime coding agent. Rather than answering by query, the system writes and runs code at question time, iterating in something like a notebook until the answer holds, which cut their tooling prompt from roughly 150,000 tokens to under a thousand.\n\nSpeaker info:\n- https://x.com/edoliberty\n- https://www.linkedin.com/in/edoliberty/\n- https://edoliberty.github.io/\n\nTimestamps:\n0:00 - Theory of mind, and why it matters here\n1:06 - The question nobody could answer\n1:57 - Three kinds of knowledge\n3:17 - Tribal knowledge, and why search cannot reach it\n3:56 - A brilliant new hire, every single session\n4:49 - What a knowledge layer has to do\n6:19 - Why staying current is the hard part\n9:07 - The manifest replaces hand written skills\n11:42 - Import, curate, and search\n13:35 - Giving a query a budget\n14:42 - A runtime coding agent\n17:00 - From 150,000 tokens of tooling to under a thousand",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2022371,
+    "title": "Reimagining advertising with AI",
+    "url": "https://openai.com/index/reimagining-advertising-with-ai",
+    "published_at": "2026-09-16T13:00:00+00:00",
+    "fetched_at": "2026-09-16T17:29:47+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents",
+      "news",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2022372,
+    "title": "How workers are unlocking new ways of working",
+    "url": "https://openai.com/index/unlocking-new-ways-of-working",
+    "published_at": "2026-09-16T09:00:00+00:00",
+    "fetched_at": "2026-09-16T17:29:47+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work.",
+    "topic": "research",
+    "tags": [
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 2021368,
     "title": "Transformers.js v4.3: Structured Output in the browser",
     "url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
@@ -18,6 +330,45 @@
       "video",
       "infrastructure",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2023566,
+    "title": "Shared Selective Persistent Memory for Agentic LLM Systems",
+    "url": "https://machinelearning.apple.com/research/shared-selective-persistent-memory",
+    "published_at": "2026-09-16T00:00:00+00:00",
+    "fetched_at": "2026-09-16T17:29:47+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Agentic LLM systems that generate code through multi-turn tool use face a fundamental context problem: each session starts from zero, discarding the configuration choices, domain constraints, data schemas, and tool-use patterns that made previous sessions productive. Naively persisting entire conversation histories is both token-inefficient and counterproductive\u2014irrelevant context degrades generation quality. We introduce shared selective persistent memory, a memory architecture for agentic systems that identifies and retains four categories of reusable context\u2014task specifications, data\u2026",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "media",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2024160,
+    "title": "Claude Cowork and chat are now one Claude",
+    "url": "https://claude.com/blog/cowork-is-now-claude",
+    "published_at": "2026-09-16T00:00:00+00:00",
+    "fetched_at": "2026-09-16T17:29:48+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Claude Cowork and chat are now one Claude",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9909,351 +10260,6 @@
       "product",
       "models",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1054425,
-    "title": "Quoting Dario Amodei",
-    "url": "https://simonwillison.net/2026/Aug/16/dario-amodei/",
-    "published_at": "2026-08-16T15:05:36+00:00",
-    "fetched_at": "2026-08-16T15:21:23+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://twitter.com/darioamodei/status/2088758819304443967\"><p>I do agree that the public has a negative view of AI (and that this is a big problem), but I don\u2019t think it is primarily caused by me or any other AI leader warning about AI\u2019s risks.\u00a0 I think it is fundamentally a crisis of trust.\u00a0 I think that ordinary people don\u2019t trust companies, governments, or the tech industry and always suspect that we are cooking up some new way to screw them over.\u00a0 The causes of this go back decades and AI is just the latest iteration of it.\u00a0 I don\u2019t think that a glitzy marketing campaign with a positive spin (which some have advocated that Anthropic do) is the way to win back that trust \u2014 at this point, saying that AI will cure cancer is more a cliche than it is inspiring, and most people think it is deceptive.\u00a0 The thing that will work is <em>actually curing cancer</em>.\u00a0 I think by far the most accurate criticism of AI companies including Anthropic is that we haven\u2019t yet delivered on our big promises to benefit the world.\u00a0 That is totally on us, and I think it\u2019s the criticism you should be making, instead of all this stuff about messaging and marketing.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/darioamodei/status/2088758819304443967\">Dario Amodei</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a></p>",
-    "topic": "opinion",
-    "tags": [
-      "safety",
-      "coding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1055214,
-    "title": "One benefit of being a primarily \"user-invoked\" skill set is that we get rid of a whole category of errors You never need to worry about: - \"did /to-spec fire?\" - \"why did /to-spec fire there?!\" - \"why did it choose /to-tickets instead of /to-spec?!\" You stay in control. Plus, it means most of the skills don't cost any tokens until you invoke them.",
-    "url": "https://nitter.net/mattpocockuk/status/2088999534961553872#m",
-    "published_at": "2026-08-16T14:41:15+00:00",
-    "fetched_at": "2026-08-16T15:21:26+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>One benefit of being a primarily \"user-invoked\" skill set is that we get rid of a whole category of errors<br />\n<br />\nYou never need to worry about:<br />\n<br />\n- \"did /to-spec fire?\"<br />\n- \"why did /to-spec fire there?!\"<br />\n- \"why did it choose /to-tickets instead of /to-spec?!\"<br />\n<br />\nYou stay in control.<br />\n<br />\nPlus, it means most of the skills don't cost any tokens until you invoke them.</p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1003599,
-    "title": "One thing missing from my skill set is what compound engineering has - the promise that your process improves over time I have been extremely reluctant to add this since I think models are REALLY bad at improving their own behavior But I'm starting to think that a skill that you run at the end of a session to: - Update your CODING_STANDARDS.md - Rework & cull existing skills/steering instructions - Powered by /writing-for-agents ...would actually be pretty great. Just needs a name Maybe \"/improve-me\"",
-    "url": "https://nitter.net/mattpocockuk/status/2088741042744901842#m",
-    "published_at": "2026-08-15T21:34:06+00:00",
-    "fetched_at": "2026-08-15T21:46:43+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>One thing missing from my skill set is what compound engineering has - the promise that your process improves over time<br />\n<br />\nI have been extremely reluctant to add this since I think models are REALLY bad at improving their own behavior<br />\n<br />\nBut I'm starting to think that a skill that you run at the end of a session to:<br />\n<br />\n- Update your CODING_STANDARDS.md<br />\n- Rework & cull existing skills/steering instructions<br />\n- Powered by /writing-for-agents<br />\n<br />\n...would actually be pretty great.<br />\n<br />\nJust needs a name<br />\n<br />\nMaybe \"/improve-me\"</p>",
-    "topic": "news",
-    "tags": [
-      "news",
-      "models",
-      "agents"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1001542,
-    "title": "I'm sorry everyone https://github.com/mattpocock/skills/pull/879",
-    "url": "https://nitter.net/mattpocockuk/status/2088729731642327181#m",
-    "published_at": "2026-08-15T20:49:09+00:00",
-    "fetched_at": "2026-08-15T21:21:08+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>I'm sorry everyone<br />\n<br />\n<a href=\"https://github.com/mattpocock/skills/pull/879\">github.com/mattpocock/skills\u2026</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://github.com/mattpocock/skills/pull/879\">\n<img src=\"https://nitter.net/pic/card_img%2F2088729718937792512%2FFhvs4lbI%3Fformat%3Djpg%26name%3D800x419\" />\n<br />\n<b>Remove em-dashes from grilling skill by mattpocock \u00b7 Pull Request #879 \u00b7 mattpocock/skills</b>\n</a>\n<p>Summary Replaces em-dash punctuation in skills/productivity/grilling/SKILL.md with colons/semicolons, keeping the same meaning in plain text. Test plan grep -n &quot;\u2014&quot; skills/prod...</p>\n<small><a href=\"https://github.com/mattpocock/skills/pull/879\">github.com</a></small>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "open-source"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 999510,
-    "title": "Debating renaming CONTEXT.md to GLOSSARY.md Over time CONTEXT.md has shrunk to literally just a glossary, so this makes sense. And IMO a glossary is much more intuitive than a DDD \"bounded context\" (which is where CONTEXT.md comes from) https://github.com/mattpocock/skills/pull/876/changes",
-    "url": "https://nitter.net/mattpocockuk/status/2088722635999834182#m",
-    "published_at": "2026-08-15T20:20:57+00:00",
-    "fetched_at": "2026-08-15T20:48:49+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Debating renaming CONTEXT.md to GLOSSARY.md<br />\n<br />\nOver time CONTEXT.md has shrunk to literally just a glossary, so this makes sense.<br />\n<br />\nAnd IMO a glossary is much more intuitive than a DDD \"bounded context\" (which is where CONTEXT.md comes from)<br />\n<br />\n<a href=\"https://github.com/mattpocock/skills/pull/876/changes\">github.com/mattpocock/skills\u2026</a></p>\n<hr />\n<b>Link</b><br />\n<a href=\"https://github.com/mattpocock/skills/pull/876/changes\">\n<img src=\"https://nitter.net/pic/card_img%2F2088544811796074496%2FYk6nlhaP%3Fformat%3Dpng%26name%3D386x202\" />\n<br />\n<b>rename CONTEXT.md/CONTEXT-MAP.md convention to GLOSSARY.md/GLOSSARY-MAP.md by mattpocock \u00b7 Pull...</b>\n</a>\n<p>Summary Renames the domain-doc convention itself, everywhere the skills read or write it: domain-modeling, grill-with-docs, improve-codebase-architecture, setup-matt-pocock-skills, triage, tdd, di...</p>\n<small><a href=\"https://github.com/mattpocock/skills/pull/876/changes\">github.com</a></small>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 984916,
-    "title": "The True Cost of AI Coding",
-    "url": "https://www.youtube.com/watch?v=iPUn1Fnfn0k&feature=youtu.be",
-    "published_at": "2026-08-15T16:15:44+00:00",
-    "fetched_at": "2026-08-15T17:20:12+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1015334,
-    "title": "CORS Chat",
-    "url": "https://simonwillison.net/2026/Aug/15/cors-chat/",
-    "published_at": "2026-08-15T14:49:54+00:00",
-    "fetched_at": "2026-08-16T02:42:36+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/cors-chat\">CORS Chat</a></p>\n        <p>I built this today (<a href=\"https://gist.github.com/simonw/92a1d97773744b45bf259e003013cf36\">with GPT-5.6-Sol xhigh</a>) to help test Qwen 3.8 27B running in LM Studio on both my M5 MacBook Pro and an NVIDIA DGX Spark.</p>\n<p>It provides a web UI for exercising an OpenAI-Responses-compatible chat endpoint. I've tried it against LM Studio with the <code>--cors</code> option and OpenRouter, and both work fine.</p>\n<p>Conversations are persisted in the browser and can be exported as copy-pasted JSON. One fun detail is that it notices SVG images that are being generated and progressively renders them in the chat while the tokens are still streaming in.</p>\n<p><img alt=\"Alt text generated by Qwen-3.8 27B: Screenshot of the CORS Chat web interface. The left sidebar lists three saved conversations, with &quot;render an svg of five intersecting squares&quot; selected. The main panel shows a chat with the qwen3.8\u201127b model: the user asked &quot;render an svg of five intersecting squares. don't overthink this,&quot; followed by the model's reasoning trace describing the design (five semi\u2011transparent squares rotated around a common center on a dark background). Below is an SVG preview pane displaying five overlapping, semi\u2011transparent colored squares\u2014pink, blue, green, yellow, and purple\u2014with white outlines, rotated at different angles to form a starburst pattern on a dark navy background. Top controls include endpoint/model selectors and a &quot;New chat&quot; button; the bottom has a message input and a &quot;Send&quot; button.\" src=\"https://static.simonwillison.net/static/2026/cors-chat.webp\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/svg\">svg</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/cors\">cors</a>, <a href=\"https://simonwillison.net/tags/openrouter\">openrouter</a>, <a href=\"https://simonwillison.net/tags/lm-studio\">lm-studio</a></p>",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "api",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 969179,
-    "title": "Hank Green did nothing wrong",
-    "url": "https://www.youtube.com/shorts/ZePfpQ7lbcs",
-    "published_at": "2026-08-15T13:14:44+00:00",
-    "fetched_at": "2026-08-15T13:30:17+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Hank Green got \u201ccaught\u201d using AI\u2026 and I genuinely don\u2019t think he did anything wrong.\n\nThe whole controversy started because Hank said \u201cI appreciate the pushback\u201d in a video \u2014 a phrase people thought sounded suspiciously like ChatGPT.\n\nThat led to Hank explaining that while he doesn\u2019t use AI to write his scripts, he DOES use it to help find research papers that he then reads himself.\n\nAnd somehow, that turned into a much bigger debate about whether creators should be using AI at all.\n\nI actually understand why people care. If you watch someone specifically for THEIR opinions, perspective, and commentary, you probably don\u2019t want those things outsourced to an LLM.\n\nBut using AI as a better research tool or dumping your own messy thoughts into it and asking it to help organize them feels like a completely valid use-case to me.\n\nI also think people need to give creators a little more grace here.\n\nCreators are often working under a ton of pressure to constantly research, write, film, edit, publish, and somehow keep doing it over and over again while also having families, businesses, careers, and lives outside of what you see on camera.\n\nOf course they're going to look for ways to make that process more optimized and sustainable.\n\nCurious what your take on this is... \n\n#AI #Ainews",
-    "topic": "research",
-    "tags": [
-      "models",
-      "research",
-      "video",
-      "coding",
-      "education",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 967746,
-    "title": "Just asked Opus 5 to /teach me about Buddhism I think I see what people mean about seamslop",
-    "url": "https://nitter.net/mattpocockuk/status/2088603241525227683#m",
-    "published_at": "2026-08-15T12:26:31+00:00",
-    "fetched_at": "2026-08-15T12:37:07+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Just asked Opus 5 to /teach me about Buddhism<br />\n<br />\nI think I see what people mean about seamslop</p>\n<img src=\"https://nitter.net/pic/media%2FHPw1dd1XAAEMnmp.png\" />",
-    "topic": "education",
-    "tags": [
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1192695,
-    "title": "Training Krea 2: What matters in generative model training \u2014 Sangwu Lee, Krea.ai",
-    "url": "https://www.youtube.com/watch?v=-tviRdpmHvs",
-    "published_at": "2026-08-15T04:52:18+00:00",
-    "fetched_at": "2026-08-18T13:42:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "The most reliable way to render a person is to render the most boring average person and put them in the center of the frame. Sangwu Lee offers that as the price the big image models pay for consistency: ask a production model for a burning skull and every output comes back clean, competent, and nearly identical. Krea 2, whose medium variant is now open source, trades the other way, optimizing for fast generation and stylistic range so that a studio that does not yet know what it wants can actually explore.\n\nMost of the talk is about data, which he says twice over is basically everything once the architecture is locked. The examples are specific. A painting photographed on a wall is perfectly good training data except that captioners consistently omit the frame and the white wall behind it, so the model learns to hang every painting it generates. They refuse to train on AI generated images at all, because the aesthetic is sticky and you inherit somebody else's model. Deduplication runs on hashes first across two to ten billion images, then on embeddings for near duplicates. A large vision language model's judgment gets distilled down into a classifier cheap enough to sweep a billion images. Sparse autoencoders double as an unsupervised tagging system for catching watermarks and border artifacts. World knowledge coverage is checked against Wikipedia concepts ranked by PageRank. Thirty to forty in house filters in total.\n\nSpeaker info:\n- https://github.com/RE-N-Y\n- https://re-n-y.github.io/devlog/\n- https://github.com/krea-ai/krea-2\n\nTimestamps:\n0:00 - Open sourcing Krea 2 medium\n1:40 - Consistency versus diversity in production models\n3:23 - How diffusion models train, and why latent space\n5:59 - Data is basically everything\n6:53 - Bad data, and why they refuse AI images\n8:34 - The captioning pipeline, and the painting on a white wall\n10:15 - Deduplication and cheap classifiers at billion image scale\n11:56 - Sparse autoencoders as an unsupervised tagging system\n13:39 - Wikipedia PageRank for world knowledge coverage\n14:35 - The training pipeline, borrowed wholesale from LLMs\n18:54 - What actually mattered for iterating fast\n19:46 - The stack is inverting back toward DALL-E 2",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source",
-      "infrastructure",
-      "coding",
-      "education",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1192696,
-    "title": "Voice agents with Realtime Video \u2014 Sidney Primas, LemonSlice",
-    "url": "https://www.youtube.com/watch?v=z1dqv74SpUs",
-    "published_at": "2026-08-15T04:44:57+00:00",
-    "fetched_at": "2026-08-18T13:42:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "An avatar of Teddy Roosevelt holds court in a replica Oval Office, generating video continuously for eight hours with no reset, and a second deployment is being built to run for sixteen. That duration is the hard part. Sidney Primas explains that a real time avatar can only look backward, because the future frames do not exist yet, so every block it generates inherits the errors of the blocks before it and compounds them. LemonSlice trains with an attention mask that enforces this during training rather than discovering it at inference, and collapses roughly 30 denoising steps down to a single step to hit real time.\n\nThe less obvious bottleneck is audio. Emotion and facial expression turn out to depend on the audio embedding, and most audio encoders are trained on audiobooks, which are monotone by construction, so an expressive model needs its own. The wider bet is to take a world model and point it at humans, paying a harder training and deployment cost up front in exchange for full body movement, object interaction, and physics arriving closer to free. Two things surprised him. Serving this costs about what serving a voice model costs, despite the difference in pixels. And the model harness, meaning the orchestration of threads and queues across GPU and CPU so that video never stutters through an interrupt, is where he now thinks much of the durable value will sit.\n\nSpeaker info:\n- https://www.linkedin.com/in/sidneyprimas/\n\nTimestamps:\n0:00 - Breaking the avatar Turing test\n2:26 - Teddy Roosevelt in a replica Oval Office\n4:40 - Why the visual layer matters\n5:46 - Pointing a world model at humans\n6:58 - One image in, any style out, and being the API layer\n9:12 - Audio is what makes it expressive\n10:15 - Making a video model interactive, then real time\n12:22 - Error accumulation over hours of generation\n14:34 - Cost parity with a voice model\n15:36 - The model harness nobody talks about\n16:38 - An emotion engine for the next model\n19:55 - A single end to end EQ layer\n22:09 - Questions: internal state, and a real Turing test",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 939733,
-    "title": "Northern Gannet",
-    "url": "https://simonwillison.net/2026/Aug/15/sighting-391300422/",
-    "published_at": "2026-08-15T03:22:00+00:00",
-    "fetched_at": "2026-08-15T03:38:57+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><img alt=\"Northern Gannet\" src=\"https://static.inaturalist.org/photos/716984157/large.jpg\" /></p><p>Northern Gannet, in Pillar Point Harbor, CA, US</p><p>This is Morris.</p>\n<p>Morris is a local celebrity: the only known Northern Gannet (<em>Morus bassanus</em>) in the entire Pacific Ocean.</p>\n<p>He showed up in the Farallon Islands off the coast of San Francisco <a href=\"https://baynature.org/magazine/spring2017/atlantic-bird-makes-home-california-maybe-melting-arctic-ice/\">14 years ago</a>. He has since made Pillar Point harbor his home, where he's quite easy to spot: the only white bird with a yellow head, usually hanging out with the smaller black Brandt\u2019s cormorants near the harbor sign visible from the end of the commercial pier.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/photography\">photography</a>, <a href=\"https://simonwillison.net/tags/wildlife\">wildlife</a>, <a href=\"https://simonwillison.net/tags/half-moon-bay\">half-moon-bay</a></p>",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 935782,
-    "title": "3 New Ways To Use ChatGPT Codex",
-    "url": "https://www.youtube.com/shorts/aszRSGI_Iwg",
-    "published_at": "2026-08-15T00:47:28+00:00",
-    "fetched_at": "2026-08-15T01:13:35+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Most people are barely scratching the surface of what the new Codex app can do.\n\nIt can now browse social media without an API, turn something you build into a live, shareable website, and let you control work running on your computer directly from your phone.\n\nTo try it for yourself, you can use Codex with both the free and paid plans, although free accounts have lower usage limits and some features have separate requirements. \n\nDownload the ChatGPT desktop app with the link in the pinned comment and try one of these today.\n\nAnd SAVE this video to reference later.\n\n#Codex #ChatGPT #OpenAI #AITools #AIhacks",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 927403,
-    "title": "Don't classify. Hallucinate!",
-    "url": "https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate/",
-    "published_at": "2026-08-14T21:54:35+00:00",
-    "fetched_at": "2026-08-14T22:22:32+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://softwaredoug.com/blog/2026/08/10/hypothetical-classifications\">Don&#x27;t classify. Hallucinate!</a></strong></p>\nI still have quite a bit of older content on my blog that I never got round to tagging. My blog has <a href=\"https://simonwillison.net/\">1,856 tags</a> - likely too many to feed to an LLM in one go and say \"which of these tags match the following content\".</p>\n<p>Doug Turnbull has a neat solution. Tell the model to output tags without any details of the existing vocabulary, then use vector embeddings against the existing corpus to find the concrete tags that are closest to the ones the model imagined might fit!</p>\n<p>His example prompt suggests including an example of the shape of your tags to help the model make a more useful guess:</p>\n<blockquote>\n<p><code>Your task is to create novel, never seen before, furniture, home goods, or hardware classification that best fit a search query.</code></p>\n<p><code>Product classifications might look like:</code></p>\n<p><code>Furniture / Living Room Furniture / Coffee Tables &amp; End Tables / Coffee Tables</code><br />\n<code>D\u00e9cor &amp; Pillows / Decorative Pillows &amp; Blankets / Throw Pillows</code><br />\n<code>Furniture / Bedroom Furniture / Dressers &amp; Chests</code><br />\n<code>Kitchen &amp; Tabletop / Kitchen Organization / Food Storage &amp; Canisters</code><br />\n<code>School Furniture and Supplies / School Furniture / School Chairs &amp; Seating / Stackable Chairs</code><br />\n<code>Baby &amp; Kids / Toddler &amp; Kids Bedroom Furniture / Kids Beds</code></p>\n<p><code>Here's the query to generate classifications for:</code></p>\n<p><code>brown coffee table</code></p>\n</blockquote>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/search\">search</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/embeddings\">embeddings</a>, <a href=\"https://simonwillison.net/tags/doug-turnbull\">doug-turnbull</a></p>",
-    "topic": "hardware",
-    "tags": [
-      "models",
-      "infrastructure",
-      "coding",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 916617,
-    "title": "The edge ML pipeline that jailbroke the 4th Amendment...",
-    "url": "https://www.youtube.com/watch?v=E7la7-dtfVM",
-    "published_at": "2026-08-14T17:44:59+00:00",
-    "fetched_at": "2026-08-14T18:54:08+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "rss",
-    "body": "CodeRabbit Security protects your code from AI-driven exploits. Get 10 free code scans here: https://coderabbit.link/ad-fireship-006\n\nHow Flock Safety turned cheap edge ML cameras into a warrantless tracking network and the open source project trying to stop them.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
-    "topic": "security",
-    "tags": [
-      "security",
-      "open-source",
-      "safety",
-      "coding",
-      "education",
-      "media",
-      "news"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 914358,
-    "title": "How Web Data Infrastructure Powers the Next Generation of AI \u2014 Patricija \u017demaityt\u0117, Oxylabs",
-    "url": "https://www.youtube.com/watch?v=1UmZHb_E_SM",
-    "published_at": "2026-08-14T17:00:37+00:00",
-    "fetched_at": "2026-08-14T17:53:25+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Minutes into a call to demo a search API rebuilt to answer in under a second, the system got blocked, badly, in front of the client. Patricija \u017demaityt\u0117 treats that as the useful distinction: something that works in development, something that passes tests, and something that survives reality are three different systems. The rebuild had no trick to it. Browsers are slow, expensive, and incompatible with low latency, and they were unavoidable, so the team went hunting for time across layouts, parsers, sessions, and proxies until the seconds were gone. It averages 550 milliseconds now, against a 4 second baseline.\n\nTwo other stories run the same way. A video API request arrived with a two week deadline and a floor of 5 petabytes a month, then kept moving. The transcripts the client asked for turned out to be subtitles, then came search, then metadata, until a one off feature request had quietly become a product suite. The punchline she offers is that the client has since collected 30 petabytes and has not paid yet. Scaling the unblocker from 10,000 to 60,000 requests per second hit a wall around 20,000 in load testing, where the real difficulty was not generating synthetic traffic but knowing whether the number meant anything, since telemetry at that volume becomes part of the load it measures. Project 60 is already Project 150. Her argument throughout is that this is not a build once business, it is an adapt forever one.\n\nSpeaker info:\n- https://www.linkedin.com/in/patricijazemaityte\n- https://oxylabs.io/press-area/from-web-to-artificial-intelligence\n\nTimestamps:\n0:00 - Infrastructure, not models, as the starting point\n2:23 - A video API with a two week deadline\n4:08 - Transcripts, subtitles, search, metadata\n5:51 - Thirty petabytes later, still unpaid\n7:25 - A subsecond request, built and then shelved\n8:42 - The rebuild, and getting blocked live on the call\n10:53 - Hunting for time, second by second\n12:26 - Scaling the unblocker to 60,000 per second\n14:09 - Load testing, and the wall at 20,000\n15:31 - Project 60 becomes Project 150",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "api",
-      "video",
-      "infrastructure",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 912327,
-    "title": "The Rise of CaaS: Context-as-a-Service for Agentic AI \u2014 Omer Primor, Bright Data",
-    "url": "https://www.youtube.com/watch?v=Ot4OPrPH4xY",
-    "published_at": "2026-08-14T16:30:36+00:00",
-    "fetched_at": "2026-08-14T16:52:58+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Just past 15,000 queries, renting context stopped being the cheaper option. Omer Primor gets that number from a small experiment he is careful to call a test rather than a benchmark: enrich one company across 25 fields, run it 100 times against this event's sponsors, and compare AI search products, context as a service vendors, and a scraper pipeline built in roughly a day. Pricing a week of setup at $5,000, the build it yourself path crossed over a little above 15,000 entities, and he expects the real crossover sits lower than most teams assume.\n\nThe argument underneath is about frequency rather than volume. Web data decays fast, with social content stale inside a day and news, finance, and retail largely irrelevant after 30 days, so context is never a snapshot you take once. Every repeated query costs what the first one did, even when nothing has changed and the answer comes back identical. What he sees teams do about that is quietly cut scope: check a company weekly instead of daily, take 10 results instead of all of them, skip the question entirely. Owning the pipeline inverts the shape, paying upfront so that retrieval afterwards is effectively free. One result surprised him. The dedicated context vendors scored lower on coverage than general search, because they can only answer from what they already hold, and a question outside that set has no answer at any price.\n\nSpeaker info:\n- https://www.linkedin.com/in/omer-primor/\n\nTimestamps:\n0:00 - Web scale, and the web as context rather than data\n2:43 - Data decay, and why context is not a snapshot\n3:37 - Search fragments, from Google to the AI search companies\n5:42 - What search cannot answer about change over time\n6:32 - Context as a service, and the vertical search shape\n10:01 - The test: 25 fields, 100 companies\n11:04 - Coverage, and why the context vendors placed lower\n12:32 - Cost, and frequency as the real killer\n15:22 - Cutting corners, renting versus owning\n15:59 - Building it yourself in a day\n18:34 - The tipping point just above 15,000 queries\n21:31 - Owned context compounds, rented context decays",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "benchmark",
-      "coding",
-      "events",
-      "news",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
