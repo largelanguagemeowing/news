@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 2016294,
+    "title": "Gemini Live audio",
+    "url": "https://simonwillison.net/2026/Sep/15/gemini-live/",
+    "published_at": "2026-09-15T22:47:07+00:00",
+    "fetched_at": "2026-09-16T01:33:06+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/gemini-live\">Gemini Live audio</a></p>\n        <p>Google released <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/\">Gemini 3.8 Live and 3.8 Live Extended Thinking</a> today - two new speech-to-speech models that are a similar shape to OpenAI's <a href=\"https://openai.com/index/introducing-gpt-live/\">GPT-Live</a> family.</p>\n<p>I pointed GPT-6 Astra Extra High at the documentation and <a href=\"https://gist.github.com/simonw/067b7430c5b1f743af9419b0184c38ef\">had it build me this web UI</a> for trying out the new models. You can select a model and voice preset, enter an optional system prompt and then start a voice conversation through your browser, including the ability to interrupt the model while it is talking.</p>\n<p><img alt=\"Screenshot of a voice chat web interface with a transcript. Top buttons: Start session, End session, Mute mic, plus a Mic level meter and a timer showing 0:33. Status: Listening. Use headphones to reduce echo. Starting a session asks for microphone access. Transcript (with Download transcript and Clear buttons). Gemini: Yes, it's working perfectly. I can hear you clearly. How can I help you today? You: Okay, this is pretty good. Tell me some interesting facts about the California brown pelican. Gemini: They're famous for their spectacular plunge-dives to catch fish and have huge throat pouches that can hold up to three gallons of water and fish. They also made a great recovery after being endangered \u2014 marked as Interrupted. You: No, tell me different facts actually. Gemini: They nest in colonies on offshore islands and can hold up to three gallons of water in their throat pouches. At the bottom is a text input reading Or type a message\u2026 with a Send button, and the note: Sending a message interrupts the current response. Transcripts may include speech interrupted before playback.\" src=\"https://static.simonwillison.net/static/2026/gemini-live-tool.webp\" /></p>\n<p>The <a href=\"https://github.com/simonw/tools/blob/main/gemini-live.html\">implementation</a> uses no libraries. It connects to the <code>wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent?key=...</code> WebSocket endpoint and uses a Web Audio API <code>AudioContext</code> for both capture and playback.</p>\n<p>Here's <a href=\"https://ai.google.dev/gemini-api/docs/live-api/get-started-websocket\">the Gemini Live tutorial</a> for getting started with that WebSockets API.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/google\">google</a>, <a href=\"https://simonwillison.net/tags/tools\">tools</a>, <a href=\"https://simonwillison.net/tags/websockets\">websockets</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/gemini\">gemini</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a>, <a href=\"https://simonwillison.net/tags/speech-to-text\">speech-to-text</a></p>",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "research",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 2014116,
     "title": "Flow matching for Beginners | @ariG23498",
     "url": "https://www.youtube.com/watch?v=hXQZ6lyRCsI",
@@ -10230,28 +10253,6 @@
       "research",
       "coding",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 910034,
-    "title": "Bringing agents onto the world wide web \u2014 Paul Klein IV, Browserbase",
-    "url": "https://www.youtube.com/watch?v=GqoNrUz8hEU",
-    "published_at": "2026-08-14T15:00:31+00:00",
-    "fetched_at": "2026-08-14T15:52:21+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "When OpenClaw shipped, people started buying Mac minis to run it from home, SSHing in and clearing captchas off a residential IP. Paul Klein IV points out he has yet to see a SOC 2 compliant Mac Mini setup at scale, and that this felt like a reasonable answer is itself the problem. His argument is that browser agents are no longer held back by the models. The capability is already there and the engineering around it is missing, which makes the overhang something any team can close rather than wait on a lab for.\n\nThat engineering has three parts. The most reliable browser agents in production are multimodal and write code alongside clicking, often intercepting network requests and replaying them rather than driving pixels. They carry a real harness, with skills and memory so a site is not rediscovered every run, and with page context compressed rather than dumped whole into the model. And they sit on infrastructure that renders a page identically every time, since a layout that comes back mobile on one run and desktop on the next produces results the agent cannot account for. He then turns to what the web owes agents: accessibility trees, Chrome's new Web MCP, and two unsolved problems, how an agent logs in on your behalf and who certifies that an agent can be trusted. The payoff is not in San Francisco. It is the logistics company in Singapore, the bank in South Africa, and the lumber factory in Mexico, all running on PHP forms with people clicking buttons every day.\n\nSpeaker info:\n- https://x.com/pk_iv\n- https://www.linkedin.com/in/paulkleiniv/\n- https://github.com/browserbase/stagehand\n\nTimestamps:\n0:00 - Why web agents have not happened yet, and is it the models\n3:17 - The missing piece is the harness\n4:32 - Harnesses that beat the baseline model\n6:01 - The capabilities overhang in computer use\n7:05 - Multimodal agents, skills, and token efficiency\n9:09 - Infrastructure, and the SOC 2 Mac Mini problem\n10:24 - What the web owes agents: accessibility and Web MCP\n11:40 - Authentication, trust, and who issues the certificate\n14:07 - What a real platform has to provide\n15:45 - The real economy runs on PHP forms",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "infrastructure",
-      "coding",
-      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
