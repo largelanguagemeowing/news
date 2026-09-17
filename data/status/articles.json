@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 2038406,
+    "title": "The End of TCP for AI Clusters \u2014 John Ousterhout, Stanford",
+    "url": "https://www.youtube.com/watch?v=eZ8WWZzoaR0",
+    "published_at": "2026-09-17T13:00:08+00:00",
+    "fetched_at": "2026-09-17T17:30:15+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Split a job across several nodes, let their GPUs compute, then have them exchange a little metadata before the next round. While that exchange happens every GPU sits idle, and the whole cluster waits on the slowest one. Back when a compute phase ran five seconds and the exchange took a few milliseconds, nobody cared. Agentic inference has pushed those compute phases down to milliseconds, so the synchronization now costs about what the work costs. John Ousterhout asked the room who had reason to believe small message latency was capping their throughput, and said afterward that more hands went up than he expected. His argument is that AI traffic has quietly changed shape: it used to be gigabytes of gradients where only throughput mattered, and it is increasingly tiny coordination messages, checking whether an entry sits in a distributed KV cache or clearing a barrier, where the 99th percentile is what bites.\n\nThe structural problem he identifies is that congestion control has always been the sender's job, and the sender is at the wrong end of the network. Queues build at the last hop into the receiver, so the sender learns about them secondhand, through roughly one bit of information, several round trips late. It has been known for twenty years and it still oscillates. Homa, built at Stanford out of Behnam Montazeri's dissertation, inverts it: the receiver runs congestion control, because it knows from the first packet exactly how much more is coming, and it releases the rest by issuing grants. Messages replace byte streams, so short ones can overtake long ones instead of queueing behind them.\n\nSpeaker info:\n- https://x.com/johnousterhout\n- https://web.stanford.edu/~ouster/cgi-bin/home.php\n\nTimestamps:\n0:00 - Why latency is becoming the metric that matters\n2:19 - The old workload: gigabytes and throughput\n3:09 - The new workload: metadata and coordination\n4:24 - How one slow exchange stalls every GPU\n6:07 - Incast, and where the queue actually builds\n7:10 - Why congestion control lives on the wrong end\n10:05 - A byte stream has no message boundaries\n11:08 - Homa, and a clean slate redesign\n12:12 - Messages, not streams\n13:30 - Controlling congestion from the receiver\n14:59 - Using the priority queues already in the switch\n15:52 - The benchmark against TCP",
+    "topic": "infrastructure",
+    "tags": [
+      "release",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 2035943,
     "title": "Can you forecast next week's weather?",
     "url": "https://www.youtube.com/watch?v=1jq7sC6IjMk",
@@ -17,6 +39,27 @@
       "research",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 2038154,
+    "title": "REVERSAL-BENCH: A Reversibility Axis and Reset Oracle for Measuring the Reset-Free RL Cliff",
+    "url": "https://machinelearning.apple.com/research/reversal-bench-rl-cliff",
+    "published_at": "2026-09-17T00:00:00+00:00",
+    "fetched_at": "2026-09-17T17:30:13+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "A central goal of autonomous reinforcement learning is continuous policy training without external resets. However, existing paradigms largely depend on underlying environmental reversibility, a property absent in real world manipulation, where events such as pushing objects off tables or spilling granular substances cannot be undone. We introduce REVERSAL-BENCH, a benchmark that controls reversibility via a continuous parameter \u03c1\u2208 [0, 1] and provides a reset oracle, a ground-truth verification mechanism to test state recoverability across eight manipulation settings in five physics engines\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "benchmark",
+      "coding",
+      "education",
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10237,47 +10280,6 @@
       "infrastructure",
       "coding",
       "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1239646,
-    "title": "200 Million Patient Interactions Later \u2014 Vivek Muppalla, Hippocratic AI",
-    "url": "https://www.youtube.com/watch?v=AN65uc645mE",
-    "published_at": "2026-08-17T10:05:27+00:00",
-    "fetched_at": "2026-08-19T07:41:48+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Asked how many in the room had ever received a proactive call from their healthcare provider, almost no hands went up. Vivek Muppalla treats that as the signature of scarcity: too few clinicians and too few hours, so the system triages and only the sickest get called. Hippocratic AI is past 200 million clinical conversations across more than 60 health systems, which is what changes the arithmetic. The tradeoff they refused is the familiar one: models accurate enough for this work can take tens of seconds to answer, and models fast enough for a phone call are not safe enough to make one.\n\nSo the stack was built end to end. Polaris runs 31 models on every conversation, one holding the thread and 30 specialists covering labs, medications and scheduling, executed in parallel with each specialist first making a fast check on whether it has anything to say at all. A single model would be a single point of failure. Their speech recognition is a decoder only audio system fed the conversation so far and the domain context alongside the audio, so a drug name resolves against a finite list rather than an unbounded one, and prosody survives the projection so it hears the how as well as the what. Single word answers get a second scoring pass, because a heard as no is catastrophic. On evaluation he does the arithmetic that makes 99% unacceptable: at 10,000 calls a day that is 100 people sent to the wrong appointment, and catching a 1% failure rate takes roughly 450 tests.\n\nSpeaker info:\n- https://x.com/vim1up\n- https://www.linkedin.com/in/vivekmuppalla/\n- https://hippocraticai.com/\n\nTimestamps:\n0:00 - Who has ever been called by their provider\n1:05 - Triage as a math problem, and what flips it\n1:54 - The oath every employee takes\n2:44 - A call with a patient, start to escalation\n5:12 - Why a generic voice stack does not work\n6:04 - Building vertically to get speed and intelligence\n7:44 - Latency and intelligence as a compounding flywheel\n8:36 - Polaris, and running 31 models at once\n9:29 - What speech recognition gets wrong in the real world\n10:27 - Feeding context and domain knowledge into the audio model\n11:19 - A finite list of medications instead of an infinite one\n12:10 - Rescoring single word answers\n13:51 - How a specialist decides to speak up\n14:43 - Verifiers for tool calls\n15:34 - Quantization, speculative decoding, cache\n16:25 - Why 99% is a bad number here\n17:14 - The tests needed to catch a 1% failure\n18:03 - Grading on the scale used for humans\n18:55 - Building a benchmark for empathy",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "benchmark",
-      "infrastructure",
-      "coding",
-      "funding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1112360,
-    "title": "Having a lot of fun with Sandman Added a /handoff command for spawning new Discord threads",
-    "url": "https://nitter.net/mattpocockuk/status/2089291938868457688#m",
-    "published_at": "2026-08-17T10:03:10+00:00",
-    "fetched_at": "2026-08-17T10:32:31+00:00",
-    "source_id": "matt-pocock-x",
-    "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "<p>Having a lot of fun with Sandman<br />\n<br />\nAdded a /handoff command for spawning new Discord threads</p>\n<img src=\"https://nitter.net/pic/media%2FHP6nzHcXIAEZu4p.jpg\" />",
-    "topic": "product",
-    "tags": [
-      "product",
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
