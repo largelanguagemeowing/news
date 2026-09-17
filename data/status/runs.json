@@ -1,21 +1,51 @@
 [
   {
-    "run_id": "de86d9be8c84",
-    "started_at": "2026-09-17T17:30:11+00:00",
-    "ended_at": "2026-09-17T17:30:16+00:00",
+    "run_id": "69f906137b4c",
+    "started_at": "2026-09-17T23:24:27+00:00",
+    "ended_at": "2026-09-17T23:24:37+00:00",
     "status": "success",
     "error_message": null,
-    "github_run_id": "35253035069",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35253035069",
+    "github_run_id": "35286628698",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35286628698",
     "stage_stats": [
       {
         "stage_name": "fetch",
-        "started_at": "2026-09-17T17:30:11+00:00",
-        "ended_at": "2026-09-17T17:30:16+00:00",
+        "started_at": "2026-09-17T23:24:27+00:00",
+        "ended_at": "2026-09-17T23:24:37+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 729,
+          "duplicate_articles": 1753,
+          "dead_letters": 0,
+          "failed_sources": 1,
+          "skipped_sources": 0,
+          "not_modified_sources": 0,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 10030.12
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "85a5e3cb7545",
+    "started_at": "2026-05-29T22:13:22+00:00",
+    "ended_at": "2026-05-29T22:13:27+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26664851678",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26664851678",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-29T22:13:22+00:00",
+        "ended_at": "2026-05-29T22:13:27+00:00",
         "status": "success",
         "metrics": {
           "inserted_articles": 4,
-          "duplicate_articles": 2437,
+          "duplicate_articles": 1940,
           "dead_letters": 0,
           "failed_sources": 0,
           "skipped_sources": 1,
@@ -23,269 +53,28 @@
           "auto_disabled_sources": 0,
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 5010.75
+          "duration_ms": 4965.38
         }
       }
     ]
   },
   {
-    "run_id": "62f81344693e",
-    "started_at": "2026-09-17T12:43:02+00:00",
-    "ended_at": "2026-09-17T12:43:16+00:00",
+    "run_id": "922bac57f8ff",
+    "started_at": "2026-05-29T20:26:35+00:00",
+    "ended_at": "2026-05-29T20:26:39+00:00",
     "status": "success",
     "error_message": null,
-    "github_run_id": "35222613758",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35222613758",
+    "github_run_id": "26660397300",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26660397300",
     "stage_stats": [
       {
         "stage_name": "fetch",
-        "started_at": "2026-09-17T12:43:02+00:00",
-        "ended_at": "2026-09-17T12:43:08+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 11,
-          "duplicate_articles": 2417,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 5155.26
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "18f739daaedc",
-    "started_at": "2026-09-17T07:14:07+00:00",
-    "ended_at": "2026-09-17T07:14:19+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35193452871",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35193452871",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-17T07:14:07+00:00",
-        "ended_at": "2026-09-17T07:14:13+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 4,
-          "duplicate_articles": 2409,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 4,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 5867.7
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "19a6250648ac",
-    "started_at": "2026-09-17T01:37:07+00:00",
-    "ended_at": "2026-09-17T01:37:34+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35171194804",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35171194804",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-17T01:37:07+00:00",
-        "ended_at": "2026-09-17T01:37:26+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 6,
-          "duplicate_articles": 2379,
-          "dead_letters": 0,
-          "failed_sources": 6,
-          "skipped_sources": 0,
-          "not_modified_sources": 1,
-          "auto_disabled_sources": 1,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 18441.36
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "66073f05be25",
-    "started_at": "2026-09-16T23:10:22+00:00",
-    "ended_at": "2026-09-16T23:10:37+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35161019108",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35161019108",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-16T23:10:22+00:00",
-        "ended_at": "2026-09-16T23:10:29+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 8,
-          "duplicate_articles": 2415,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 6192.37
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "a9ab90c2cf0d",
-    "started_at": "2026-09-16T20:23:24+00:00",
-    "ended_at": "2026-09-16T20:23:35+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35146186288",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35146186288",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-16T20:23:24+00:00",
-        "ended_at": "2026-09-16T20:23:30+00:00",
+        "started_at": "2026-05-29T20:26:35+00:00",
+        "ended_at": "2026-05-29T20:26:39+00:00",
         "status": "success",
         "metrics": {
           "inserted_articles": 7,
-          "duplicate_articles": 2462,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 0,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 6281.05
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "73b857405799",
-    "started_at": "2026-09-16T17:29:46+00:00",
-    "ended_at": "2026-09-16T17:29:56+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35128451860",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35128451860",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-16T17:29:46+00:00",
-        "ended_at": "2026-09-16T17:29:49+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 20,
-          "duplicate_articles": 2440,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 1,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 3625.27
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "190d8cb9fbc5",
-    "started_at": "2026-09-16T12:44:02+00:00",
-    "ended_at": "2026-09-16T12:44:20+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35097449712",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35097449712",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-16T12:44:02+00:00",
-        "ended_at": "2026-09-16T12:44:11+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 5,
-          "duplicate_articles": 2407,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 8794.15
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "fb2fd3f6c533",
-    "started_at": "2026-09-16T07:19:02+00:00",
-    "ended_at": "2026-09-16T07:19:16+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35067809593",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35067809593",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-16T07:19:02+00:00",
-        "ended_at": "2026-09-16T07:19:08+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 4,
-          "duplicate_articles": 2401,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 4,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 6200.75
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "c1d82ffaac16",
-    "started_at": "2026-09-16T01:33:04+00:00",
-    "ended_at": "2026-09-16T01:33:22+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35044459840",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35044459840",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-16T01:33:04+00:00",
-        "ended_at": "2026-09-16T01:33:14+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 3,
-          "duplicate_articles": 2439,
+          "duplicate_articles": 1942,
           "dead_letters": 0,
           "failed_sources": 1,
           "skipped_sources": 0,
@@ -293,239 +82,28 @@
           "auto_disabled_sources": 1,
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 9416.41
+          "duration_ms": 4495.35
         }
       }
     ]
   },
   {
-    "run_id": "25ee95a80258",
-    "started_at": "2026-09-15T23:03:54+00:00",
-    "ended_at": "2026-09-15T23:04:07+00:00",
+    "run_id": "9e450ce2a8cc",
+    "started_at": "2026-05-29T17:34:38+00:00",
+    "ended_at": "2026-05-29T17:34:46+00:00",
     "status": "success",
     "error_message": null,
-    "github_run_id": "35033882056",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35033882056",
+    "github_run_id": "26652322166",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26652322166",
     "stage_stats": [
       {
         "stage_name": "fetch",
-        "started_at": "2026-09-15T23:03:54+00:00",
-        "ended_at": "2026-09-15T23:03:58+00:00",
+        "started_at": "2026-05-29T17:34:38+00:00",
+        "ended_at": "2026-05-29T17:34:46+00:00",
         "status": "success",
         "metrics": {
-          "inserted_articles": 3,
-          "duplicate_articles": 2412,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 3830.87
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "9aa65d0d391a",
-    "started_at": "2026-09-15T20:22:52+00:00",
-    "ended_at": "2026-09-15T20:23:06+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "35019162294",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/35019162294",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-15T20:22:52+00:00",
-        "ended_at": "2026-09-15T20:22:58+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 3,
-          "duplicate_articles": 2419,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 2,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 6108.92
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "dfe51496cfc3",
-    "started_at": "2026-09-15T17:12:20+00:00",
-    "ended_at": "2026-09-15T17:12:33+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "34999675955",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34999675955",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-15T17:12:20+00:00",
-        "ended_at": "2026-09-15T17:12:25+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 26,
-          "duplicate_articles": 2389,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 4592.62
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "1838a0d53718",
-    "started_at": "2026-09-15T12:01:48+00:00",
-    "ended_at": "2026-09-15T12:02:02+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "34966412812",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34966412812",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-15T12:01:48+00:00",
-        "ended_at": "2026-09-15T12:01:54+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 3,
-          "duplicate_articles": 2402,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 6319.72
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "ac0c6ca33dff",
-    "started_at": "2026-09-15T06:28:37+00:00",
-    "ended_at": "2026-09-15T06:29:00+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "34937022271",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34937022271",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-15T06:28:37+00:00",
-        "ended_at": "2026-09-15T06:28:52+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 1,
-          "duplicate_articles": 2322,
-          "dead_letters": 0,
-          "failed_sources": 5,
-          "skipped_sources": 1,
-          "not_modified_sources": 4,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 14919.13
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "39a24b66ff00",
-    "started_at": "2026-09-15T01:12:01+00:00",
-    "ended_at": "2026-09-15T01:12:20+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "34916246793",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34916246793",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-15T01:12:01+00:00",
-        "ended_at": "2026-09-15T01:12:12+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 1,
-          "duplicate_articles": 2389,
-          "dead_letters": 0,
-          "failed_sources": 2,
-          "skipped_sources": 0,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 1,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 10767.21
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "7f7087580efb",
-    "started_at": "2026-09-14T22:39:21+00:00",
-    "ended_at": "2026-09-14T22:39:34+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "34905086890",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34905086890",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-14T22:39:21+00:00",
-        "ended_at": "2026-09-14T22:39:26+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 7,
-          "duplicate_articles": 2421,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 5137.64
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "509bbf469d92",
-    "started_at": "2026-09-14T19:03:49+00:00",
-    "ended_at": "2026-09-14T19:04:03+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "34884499330",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34884499330",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-14T19:03:49+00:00",
-        "ended_at": "2026-09-14T19:03:55+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 17,
-          "duplicate_articles": 2426,
+          "inserted_articles": 11,
+          "duplicate_articles": 1942,
           "dead_letters": 0,
           "failed_sources": 0,
           "skipped_sources": 1,
@@ -533,59 +111,318 @@
           "auto_disabled_sources": 0,
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 6348.59
+          "duration_ms": 7533.12
         }
       }
     ]
   },
   {
-    "run_id": "fbb785040a77",
-    "started_at": "2026-09-14T13:41:16+00:00",
-    "ended_at": "2026-09-14T13:41:28+00:00",
+    "run_id": "55cf2065d92e",
+    "started_at": "2026-05-29T13:46:14+00:00",
+    "ended_at": "2026-05-29T13:46:20+00:00",
     "status": "success",
     "error_message": null,
-    "github_run_id": "34850690290",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34850690290",
+    "github_run_id": "26640880441",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26640880441",
     "stage_stats": [
       {
         "stage_name": "fetch",
-        "started_at": "2026-09-14T13:41:16+00:00",
-        "ended_at": "2026-09-14T13:41:22+00:00",
+        "started_at": "2026-05-29T13:46:14+00:00",
+        "ended_at": "2026-05-29T13:46:20+00:00",
         "status": "success",
         "metrics": {
-          "inserted_articles": 5,
-          "duplicate_articles": 2389,
+          "inserted_articles": 7,
+          "duplicate_articles": 1929,
           "dead_letters": 0,
           "failed_sources": 0,
           "skipped_sources": 1,
-          "not_modified_sources": 4,
+          "not_modified_sources": 3,
           "auto_disabled_sources": 0,
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 5914.4
+          "duration_ms": 5880.18
         }
       }
     ]
   },
   {
-    "run_id": "7841f849e7ea",
-    "started_at": "2026-09-14T06:46:36+00:00",
-    "ended_at": "2026-09-14T06:47:00+00:00",
+    "run_id": "37f565662a0a",
+    "started_at": "2026-05-29T10:30:25+00:00",
+    "ended_at": "2026-05-29T10:30:29+00:00",
     "status": "success",
     "error_message": null,
-    "github_run_id": "34814815465",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/34814815465",
+    "github_run_id": "26632188934",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26632188934",
     "stage_stats": [
       {
         "stage_name": "fetch",
-        "started_at": "2026-09-14T06:46:36+00:00",
-        "ended_at": "2026-09-14T06:46:54+00:00",
+        "started_at": "2026-05-29T10:30:25+00:00",
+        "ended_at": "2026-05-29T10:30:29+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 3,
+          "duplicate_articles": 1935,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 3823.1
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "c72565532c82",
+    "started_at": "2026-05-29T06:15:26+00:00",
+    "ended_at": "2026-05-29T06:16:21+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26621445860",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26621445860",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-29T06:15:26+00:00",
+        "ended_at": "2026-05-29T06:16:21+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 6,
+          "duplicate_articles": 1882,
+          "dead_letters": 0,
+          "failed_sources": 6,
+          "skipped_sources": 1,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 54549.9
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "b4aff49177eb",
+    "started_at": "2026-05-29T01:32:27+00:00",
+    "ended_at": "2026-05-29T01:32:37+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26612581580",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26612581580",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-29T01:32:27+00:00",
+        "ended_at": "2026-05-29T01:32:37+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 9,
+          "duplicate_articles": 1928,
+          "dead_letters": 0,
+          "failed_sources": 2,
+          "skipped_sources": 1,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 10618.6
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "18307c9755e2",
+    "started_at": "2026-05-28T23:17:34+00:00",
+    "ended_at": "2026-05-28T23:17:38+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26607911009",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26607911009",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T23:17:34+00:00",
+        "ended_at": "2026-05-28T23:17:38+00:00",
         "status": "success",
         "metrics": {
           "inserted_articles": 5,
-          "duplicate_articles": 2320,
+          "duplicate_articles": 1935,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4007.91
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "5b6fada6b093",
+    "started_at": "2026-05-28T21:55:25+00:00",
+    "ended_at": "2026-05-28T21:55:29+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26604554236",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26604554236",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T21:55:25+00:00",
+        "ended_at": "2026-05-28T21:55:29+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 6,
+          "duplicate_articles": 1929,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4536.35
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "42d95e06fceb",
+    "started_at": "2026-05-28T19:36:03+00:00",
+    "ended_at": "2026-05-28T19:36:07+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26597594249",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26597594249",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T19:36:03+00:00",
+        "ended_at": "2026-05-28T19:36:07+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 7,
+          "duplicate_articles": 1932,
+          "dead_letters": 0,
+          "failed_sources": 1,
+          "skipped_sources": 0,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 1,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4561.31
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "ead584a91a82",
+    "started_at": "2026-05-28T16:39:30+00:00",
+    "ended_at": "2026-05-28T16:39:35+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26588335377",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26588335377",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T16:39:30+00:00",
+        "ended_at": "2026-05-28T16:39:35+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 7,
+          "duplicate_articles": 1934,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4770.63
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "22ccea855b20",
+    "started_at": "2026-05-28T12:28:12+00:00",
+    "ended_at": "2026-05-28T12:28:16+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26574600219",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26574600219",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T12:28:12+00:00",
+        "ended_at": "2026-05-28T12:28:16+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 3,
+          "duplicate_articles": 1920,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 3,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 3940.17
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "7ec2f80fae04",
+    "started_at": "2026-05-28T08:43:05+00:00",
+    "ended_at": "2026-05-28T08:43:09+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26564347255",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26564347255",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T08:43:05+00:00",
+        "ended_at": "2026-05-28T08:43:09+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 4,
+          "duplicate_articles": 1924,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4212.21
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "0ba78304f545",
+    "started_at": "2026-05-28T04:50:19+00:00",
+    "ended_at": "2026-05-28T04:50:35+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26555350397",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26555350397",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T04:50:19+00:00",
+        "ended_at": "2026-05-28T04:50:35+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 4,
+          "duplicate_articles": 1844,
           "dead_letters": 0,
           "failed_sources": 5,
           "skipped_sources": 1,
@@ -593,8 +430,152 @@
           "auto_disabled_sources": 0,
           "defuddle_enriched_articles": 0,
           "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 17306.99
+          "duration_ms": 16566.36
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "f822e72a9098",
+    "started_at": "2026-05-28T00:01:05+00:00",
+    "ended_at": "2026-05-28T00:01:18+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26545990803",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26545990803",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-28T00:01:05+00:00",
+        "ended_at": "2026-05-28T00:01:18+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 4,
+          "duplicate_articles": 1894,
+          "dead_letters": 0,
+          "failed_sources": 4,
+          "skipped_sources": 1,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 13078.83
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "9e161758ec4e",
+    "started_at": "2026-05-27T22:41:56+00:00",
+    "ended_at": "2026-05-27T22:42:00+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26543008596",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26543008596",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-27T22:41:56+00:00",
+        "ended_at": "2026-05-27T22:42:00+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 6,
+          "duplicate_articles": 1927,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4647.4
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "63d4574f4f38",
+    "started_at": "2026-05-27T20:34:26+00:00",
+    "ended_at": "2026-05-27T20:34:31+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26537114781",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26537114781",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-27T20:34:26+00:00",
+        "ended_at": "2026-05-27T20:34:31+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 5,
+          "duplicate_articles": 1922,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4707.75
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "14a8922a7a0c",
+    "started_at": "2026-05-27T18:27:24+00:00",
+    "ended_at": "2026-05-27T18:27:29+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26530552477",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26530552477",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-27T18:27:24+00:00",
+        "ended_at": "2026-05-27T18:27:29+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 8,
+          "duplicate_articles": 1952,
+          "dead_letters": 0,
+          "failed_sources": 1,
+          "skipped_sources": 0,
+          "not_modified_sources": 1,
+          "auto_disabled_sources": 1,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4380.71
+        }
+      }
+    ]
+  },
+  {
+    "run_id": "aaaadc2cd38f",
+    "started_at": "2026-05-27T15:46:24+00:00",
+    "ended_at": "2026-05-27T15:46:29+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "26521799713",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/26521799713",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-05-27T15:46:24+00:00",
+        "ended_at": "2026-05-27T15:46:29+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 7,
+          "duplicate_articles": 1916,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 2,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "duration_ms": 4472.98
         }
       }
     ]
