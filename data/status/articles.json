@@ -762,6 +762,29 @@
     "available": true
   },
   {
+    "article_id": 560397,
+    "title": "Total Recall: Agent Memory and Harness Engineering \u2014 Ignacio Martinez, Oracle",
+    "url": "https://www.youtube.com/watch?v=xs-ob87TTzg",
+    "published_at": "2026-09-16T07:54:36+00:00",
+    "fetched_at": "2026-09-18T11:38:28+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ignacio Martinez registered the domain for this workshop on the Saturday before he gave it, and then asked the room not to request the biggest machines on offer, because he was paying for everyone's GitHub Codespace out of his own pocket. That improvisation sits oddly beside the argument underneath it, which is one of the more carefully built cases for harness engineering here. A language model, he says, is the frozen part of the reasoning. The weights do not change, you rent them, and you have no say in what you are offered. Everything you control lives in the layer around it. So an agent is a model plus a harness, and harness engineering is the work of turning a nondeterministic core into repeatable output.\n\nHe builds that harness in seven layers, and the sharpest arguments are about where memory physically lives. Files match a model's instincts and cost nothing to append to, but they have no transactional consistency, which is why, when he asks the room how parallel agents avoid trampling each other, the answer comes back immediately: work trees. Databases solved that a long time ago, he notes, and everyone forgot. His semantic layer borrows Umwelt from the biologist Jakob von Uexk\u00fcll, whose claim was that every organism perceives reality only through the lens it happens to have. An agent's lens is whatever institutional knowledge you remembered to write down. Two ideas stay with you. A hysteresis variable encoding how much patience the harness extends to the model before it gives up on a task. And skill promotion, where a workflow that cost you four hours is distilled into a better version and the original retired.\n\nSpeaker info:\n- https://x.com/nacho_martinez\n\nTimestamps:\n0:00 - Getting into the workshop repo\n3:22 - What you should leave with\n4:02 - The frozen part of the reasoning\n6:09 - Five layers of the agent stack\n10:50 - Reasoning you rent, memory you control\n13:43 - The seven layers of a harness\n16:26 - Files versus databases\n18:30 - The room answers: work trees\n23:26 - The data sprawl a RAG pipeline creates\n25:46 - What agent memory means\n28:48 - Context rot and quadratic attention\n34:23 - Umwelt, and an agent's perceptual lens\n37:24 - Context engineering and the toolbox pattern\n39:31 - Skill promotion and workflow promotion\n41:50 - Workshop setup and the app book\n48:13 - Nineteen to dos, starting with a bare model call\n51:58 - Question: what if you have thousands of tools?\n56:41 - A hysteresis variable for patience",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 553156,
     "title": "Transformers.js v4.3: Structured Output in the browser",
     "url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
@@ -9593,25 +9616,6 @@
       "models",
       "agents",
       "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551816,
-    "title": "MUFG aims to become AI-native with OpenAI",
-    "url": "https://openai.com/index/mufg",
-    "published_at": "2026-07-07T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "rss",
-    "body": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "agents",
       "enterprise"
     ],
     "dearrow_thumbnail_url": "",
