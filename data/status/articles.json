@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 579881,
+    "title": "Operating Distributed Inference Systems at Scale \u2014 Nishant Gupta & Naman Ahuja, Meta",
+    "url": "https://www.youtube.com/watch?v=7c9FSUVcXR0",
+    "published_at": "2026-09-19T15:00:10+00:00",
+    "fetched_at": "2026-09-19T15:28:24+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Inference traffic at Meta already outpaces the largest microservices in the world, the fastest growing workload it has ever run. Nishant Gupta's frame for what comes next is 2008. The cloud began as virtual machines, then value climbed to schedulers, service meshes and autoscalers, until orchestration held the complexity and the value. AI is on the same path, compressed into a few years, with orchestration emerging around routing, KV cache management and prefill decode disaggregation. His sharpest point is coupling. None of the layers is new. What is new: a routing decision changes the cache hit rate, which changes batch composition, which changes GPU utilization, which changes the autoscaler's next move. A request is now a distributed transaction where every hop can retry, time out or fail; preempt a GPU after 200 tokens have streamed and you cannot simply retry. Reliability has to live in the control plane, the only layer that sees the whole workflow.\n\nA scheduler for inference has to see seven axes: GPU generation, memory headroom, KV cache state, whether weights are warm, tenant priority, latency budget, and workflow context, since failing step three of five wastes what steps one and two already spent. Every optimization fits one of four quadrants: avoid the work through caching, share it through batching, move it through routing to a cheaper model or region, or delay it through admission control. The metric to optimize is cost per successful task, not per token. Naman Ahuja takes over: observability as a control loop's input, the latency, cost and throughput triangle where every serving decision moves you somewhere, and the conclusion that inference needs its own control plane, the way virtual machines needed Kubernetes.\n\nSpeaker info:\n- https://www.linkedin.com/in/nishantgupta-ai/\n- https://buzzingtech.ai/\n- https://www.linkedin.com/in/namanahuja/\n\nTimestamps:\n0:00 - Inference is the fastest growing workload Meta has seen\n0:54 - 2008 again: value moves to the orchestration layer\n3:13 - Microservices versus inference, dimension by dimension\n6:09 - Old layers, new coupling\n7:36 - A request is a distributed transaction\n8:31 - Seven axes a scheduler has to see\n10:19 - Avoid, share, move, or delay the work\n12:36 - Cascading failure, with a KV cache twist\n16:19 - The latency, cost, throughput triangle\n17:00 - Inference needs its own control plane",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "infrastructure",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 572383,
     "title": "Gemini Hacked Three Companies in First Known Breakout by Google\u2019s AI",
     "url": "https://simonwillison.net/2026/Sep/18/gemini-hacked-three-companies/",
@@ -9617,25 +9639,6 @@
     "tags": [
       "ai-models",
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553204,
-    "title": "Introducing a way to reflect on how you use Claude",
-    "url": "https://www.anthropic.com/news/reflect-with-claude",
-    "published_at": "2026-07-09T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "rss",
-    "body": "Introducing a way to reflect on how you use Claude",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
