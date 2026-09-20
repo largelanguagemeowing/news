@@ -1,5 +1,48 @@
 [
   {
+    "article_id": 603979,
+    "title": "Quoting voxium",
+    "url": "https://simonwillison.net/2026/Sep/20/voxium/",
+    "published_at": "2026-09-20T21:06:43+00:00",
+    "fetched_at": "2026-09-20T23:01:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://twitter.com/v0xium/status/2101526107128529120\"><p>It has been half a month since I started a new role at a big company. Nobody knows anything here. The specs, code, tests, PRDs, tickets, resolution of those tickets, reports, etc., everything is made by Claude Code. Nobody on my team likes this. They are being forced to ship as much as they can. I have heard multiple times from higher management that pushing code is not a bottleneck, so why are we slow? People are working 12 to 13 hours a day just to press enter. Nobody is reading anything. Everyone, literally everyone, from an L1 to an L7 engineer here is doing the same thing. Talk to Claude.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/v0xium/status/2101526107128529120\">voxium</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "open-source",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 603980,
+    "title": "llm-keys-ui 0.1",
+    "url": "https://simonwillison.net/2026/Sep/20/llm-keys-ui/",
+    "published_at": "2026-09-20T19:22:19+00:00",
+    "fetched_at": "2026-09-20T23:01:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-keys-ui/releases/tag/0.1\">llm-keys-ui 0.1</a></p>\n        <p>This plugin solves a very specific problem.</p>\n<p>I've started using <a href=\"https://learn.chatgpt.com/docs/remote\">Codex Remote</a> to run coding agents on various machines while controlling them from my phone. </p>\n<p>Sometimes I use those machines to hack on LLM projects, and occasionally that means I need to configure an API key.</p>\n<p>I don't like pasting API keys into agent sessions, so I wanted a way to get those keys onto a machine without pasting them into the ChatGPT app directly.</p>\n<p>With this plugin, I can tell Codex to run:</p>\n<pre><code>uvx --with llm-keys-ui llm keys-ui --all\n</code></pre>\n<p>Then have it tell me the URL - including local network or Tailscale device IPs - for an interface to save additional API keys.</p>\n<p>Then later it can use a command like <code>llm keys get anthropic</code> as part of a shell command when it needs to use a key.</p>\n<div>\n  <img alt=\"Chat conversation requesting uvx --with llm-keys-ui llm keys-ui --all, with a response listing four server URLs on port 8010 and confirming the server is still running.\" src=\"https://static.simonwillison.net/static/2026-09-20/IMG_8166.jpeg\" style=\"display: block; width: 100%; height: auto;\" />\n  <img alt=\"LLM keys web interface listing anthropic, openai, openrouter, and qwen-dummy as stored keys, with a form containing Key name and New value fields and a Save key button. Existing key values are never displayed.\" src=\"https://static.simonwillison.net/static/2026-09-20/IMG_8167.jpeg\" style=\"display: block; width: 100%; height: auto;\" />\n</div>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/codex\">codex</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 594476,
     "title": "Structured Output in the browser with Transformers.js 4.3",
     "url": "https://www.youtube.com/shorts/3V9CPisNs1g",
@@ -18,6 +61,25 @@
       "video",
       "infrastructure",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 603981,
+    "title": "datasette-explain 0.2.2",
+    "url": "https://simonwillison.net/2026/Sep/20/datasette-explain/",
+    "published_at": "2026-09-20T00:22:04+00:00",
+    "fetched_at": "2026-09-20T23:01:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette-explain/releases/tag/0.2.2\">datasette-explain 0.2.2</a></p>\n        <blockquote>\n<ul>\n<li>Explain plans now work on read-only stored-query pages.</li>\n</ul>\n</blockquote>\n<p>I upgraded <a href=\"https://datasette.simonwillison.net\">datasette.simonwillison.net</a> to Datasette 1.0a40, which inspired me to ship a new version of this explain plugin.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -9614,64 +9676,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553810,
-    "title": "I reinvented the C64 tape drive from the 80s... but tiny and USB",
-    "url": "https://www.youtube.com/watch?is=gzXuwQURagijzp8O&v=GQwTPH67YqY&feature=youtu.be",
-    "published_at": "2026-07-11T19:38:11+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. i love all of bitluni's projects.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553811,
-    "title": "AI Can't Recreate Thrust (But It Can Help You Understand It) | James Randall",
-    "url": "https://www.jamesdrandall.com/posts/thrust_ai_powered_software_archaeology/",
-    "published_at": "2026-07-11T17:57:24+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. don't get turned off by the title. this is how i use LLMs too for many tasks.\n\nthat said, when used as an exploratory tool, don't trust their explanations. that ibckudes fable and sol. really...",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553145,
-    "title": "A Model Explosion: GPT 5.6 Sol, Grok 4.5 and Meta Muse Rewrite the Rules",
-    "url": "https://www.youtube.com/watch?v=mWlCituW7wo",
-    "published_at": "2026-07-10T12:40:15+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "rss",
-    "body": "What a week in AI, for real. GPT 5.6 may actually beat Claude Fable, in what you get for your money, while the new Grok 4.5 and Meta Muse Spark 1.1 make the choice even harder. Uncovering a dozen nuggets of gold you may have missed from all the viral headlines, I can also assure you you\u2019ll learn something you didn\u2019t know before.\n\nFor Exclusive Videos, go to AI Insiders (less than $9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n01:03 - GPT 5.6 Sol Reveals\n05:08 - Missing benches, plus Grok 4.5\n07:17 - Gaming as the new frontier?\n08:31 - Muse Spark 1.1\n10:03 - SimpleBench Upgrade\n11:17 - Ultra Sol + Self-Improvement\n13:44 - well, this is awkward\n15:41 - Why model improvement will not plateau anytime soon\n\n\nAI Consciousness: https://www.patreon.com/AIExplained/posts/anthropics-quite-163360718\n\n\nI Smell Fear: https://x.com/thsottiaux/status/2075287108680601929\nGPT 5.6: https://openai.com/index/gpt-5-6/\n\nGrok 4.5: https://x.ai/news/grok-4-5?twclid=2ezs408o0z23pw07tmxcwbzibd\nMeta Muse Spark 1.1: https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/\n\nProliferating GPT Toggles: https://x.com/rasbt/status/2075369179817902176/photo/1\nAnthropic Call-out: https://x.com/Mononofu\nAI Security Institute Finding: https://x.com/alxndrdavies/status/2075279480331874306\nCompetitive Coding: https://x.com/FakePsyho/status/2075128093891801305/photo/1\n\nAgents Last Exam: https://agents-last-exam.org/\nDawn Song: https://x.com/dawnsongtweets/status/2065095757988868190\n\nhttps://simple-bench.com/\n\nSWE-Marathon: https://www.swe-marathon.org/\nhttps://www.frontierswe.com/\nARC-AGI 3: https://x.com/arcprize/status/2075270869992264003\nAutomation Bench: https://zapier.com/benchmarks\nVibeCode Bench: https://www.vals.ai/benchmarks/vibe-code\n\n\u2018Post-Train Claim\u2019: https://posttrainbench.com/\n\nRedwall Game: https://redwall-bellmaker-7e03e4.surge.sh/\n\n\n\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
