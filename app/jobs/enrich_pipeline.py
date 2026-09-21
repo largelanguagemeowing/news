@@ -22,11 +22,9 @@ from typing import Any
 
 from app.config import load_sources
 from app.db import get_connection, init_db
-from app.incidents import GitHubIssueClient, IncidentSignal, sync_incident_open_or_update
 from app.jobs import pipeline, stages_export
 from app.jobs.pipeline import (
     DEFUDDLE_ENABLED,
-    SETTINGS,
     STATUS_DIR,
     build_articles,
     build_events,
@@ -34,13 +32,12 @@ from app.jobs.pipeline import (
     build_runs,
     build_sources,
     build_summary,
-    log_stage_summary,
     reset_markdown_new_circuit_breaker,
     utc_now_iso,
 )
+from app.logging_helpers import log_stage_summary
 from app.models import ExtractionMethod
 from app.repos import article_repo, run_repo
-from app.settings import get_settings
 from app.utils import normalize_text, sha1_hexdigest, simhash64
 
 logger = logging.getLogger("news.pipeline")

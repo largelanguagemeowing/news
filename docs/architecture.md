@@ -114,7 +114,6 @@ For each article (within `articles_export_limit`):
 |--------|------|---------|
 | Rule-based | `classifier.py` | Keyword scoring, tag extraction, weak label generation |
 | ML-based | `ml_classifier.py` | ML model inference (fallback in `classify_event`) |
-| V2 (unused) | `classifier_v2.py` | Alternative implementation, not integrated |
 
 ## Data Flow Diagram
 

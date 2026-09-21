@@ -42,21 +42,18 @@ DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --limit 300 --onl
 DEFUDDLE_ENABLED=1 uv run python -m app.jobs.backfill_defuddle --all --only-missing
 ```
 
-CI note: `news-pipeline` keeps backfill disabled by default. On manual `workflow_dispatch`, set `enable_backfill=true` to run backfill. Optionally set `backfill_all=true` to process all missing/short items; otherwise it runs a bounded pass (`--limit 300 --only-missing`).
-
 ## Workflow Dispatch
 
-The `news-pipeline` workflow runs every 30 minutes via cron (all sources, no backfill). Manual runs via `workflow_dispatch` support source filtering and backfill options. All selected parameters are printed at the top of each run for verification.
+The pipeline runs as separate GitHub Actions workflows: `pipeline-fetch` (scheduled every 30 minutes), `pipeline-enrich` (scheduled daily), and `pipeline-classify`. `pipeline-all` runs all three stages back-to-back on manual `workflow_dispatch`, supporting source filtering and stage skipping. Enrichment backfill is done via the local CLI below, not via workflow dispatch.
 
-### Inputs
+### Inputs (`pipeline-all`)
 
 | Input | Type | Default | Description |
 |-------|------|---------|-------------|
 | `pipeline_source` | choice | `all` | Which sources to ingest: `all`, `openai-only`, `non-openai`, or a single source ID |
-| `enable_backfill` | boolean | `false` | Run enriched backfill for existing items before the pipeline |
-| `backfill_all` | boolean | `false` | Process all items (ignore default limit of 300) |
-| `backfill_source` | choice | `all` | Which sources to backfill: `all`, `non-openai`, or a single source ID |
-| `backfill_method` | choice | `default` | Force extraction method: `youtube`, `trafilatura`, `markdown_new`, `jina`, `defuddle` |
+| `skip_fetch` | boolean | `false` | Skip the fetch stage |
+| `skip_enrich` | boolean | `false` | Skip the enrich stage |
+| `skip_classify` | boolean | `false` | Skip the classify stage |
 
 Available source IDs: `microsoft-ai-blog`, `google-ai-blog`, `google-deepmind-blog`, `openai-blog`, `apple-machine-learning`, `simon-willison`, `cursor-blog`, `cursor-changelog`, `matt-wolfe`, `fireship`, `ai-explained`, `hugging-face`.
 
@@ -64,48 +61,16 @@ Available source IDs: `microsoft-ai-blog`, `google-ai-blog`, `google-deepmind-bl
 
 ```bash
 # OpenAI blog only
-gh workflow run news-pipeline --repo largelanguagemeowing/news \
+gh workflow run pipeline-all --repo largelanguagemeowing/news \
   -f pipeline_source=openai-only --ref master
 
 # All sources except OpenAI
-gh workflow run news-pipeline --repo largelanguagemeowing/news \
+gh workflow run pipeline-all --repo largelanguagemeowing/news \
   -f pipeline_source=non-openai --ref master
 
 # Single source
-gh workflow run news-pipeline --repo largelanguagemeowing/news \
+gh workflow run pipeline-all --repo largelanguagemeowing/news \
   -f pipeline_source=cursor-blog --ref master
-```
-
-### Backfill examples
-
-```bash
-# Backfill OpenAI blog with markdown.new only
-gh workflow run news-pipeline --repo largelanguagemeowing/news \
-  -f enable_backfill=true \
-  -f backfill_all=true \
-  -f backfill_source=openai-blog \
-  -f backfill_method=markdown_new \
-  --ref master
-
-# Backfill cursor-blog with full fallback chain
-gh workflow run news-pipeline --repo largelanguagemeowing/news \
-  -f enable_backfill=true \
-  -f backfill_all=true \
-  -f backfill_source=cursor-blog \
-  --ref master
-
-# Backfill all sources except OpenAI
-gh workflow run news-pipeline --repo largelanguagemeowing/news \
-  -f enable_backfill=true \
-  -f backfill_all=true \
-  -f backfill_source=non-openai \
-  --ref master
-
-# Backfill all sources with default logic
-gh workflow run news-pipeline --repo largelanguagemeowing/news \
-  -f enable_backfill=true \
-  -f backfill_all=true \
-  --ref master
 ```
 
 ### Local backfill CLI

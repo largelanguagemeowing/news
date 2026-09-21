@@ -3,53 +3,25 @@ from __future__ import annotations
 import json
 import logging
 import os
-import re
 import shutil
 import sqlite3
 import subprocess
 import time
-import traceback
-import uuid
-from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import trafilatura
 from dateutil import parser as dtparser
 
-from app.config import SourceConfig, load_sources
+from app.config import SourceConfig
+from app.db import transaction
 from app.jobs import enrichment, next_flight
-from app.db import get_connection, init_db, transaction
-from app.logging_helpers import log_stage_summary
+from app.jobs.classifier import classify_article, extract_article_tags
+from app.jobs.ml_classifier import classify_with_model
 from app.models import ExtractionMethod
-from app.repos import run_repo
 from app.settings import get_settings
-from app.incidents import (
-    GitHubIssueClient,
-    IncidentSignal,
-    sync_incident_open_or_update,
-    sync_incident_resolve,
-)
-from app.utils import (
-    canonicalize_url,
-    normalize_text,
-    pair_similarity,
-    sha1_hexdigest,
-    simhash64,
-    utc_now_iso,
-)
-
-try:
-    from app.jobs.classifier import classify_article, extract_article_tags
-except ModuleNotFoundError:
-    classify_article = None
-    extract_article_tags = None
-
-try:
-    from app.jobs.ml_classifier import classify_with_model
-except ModuleNotFoundError:
-    classify_with_model = None
+from app.utils import utc_now_iso
 
 
 STATUS_DIR = Path("data/status")
@@ -78,24 +50,6 @@ YOUTUBE_SOURCE_IDS = {
     "youtube-ai-coding",
     "ai-engineer",
 }
-TAG_RULES: list[tuple[str, tuple[str, ...]]] = [
-    ("release", ("release", "launched", "launch", "announced", "introduces", "introducing")),
-    ("models", ("model", "llm", "gpt", "gemini", "claude")),
-    ("open-source", ("open source", "open-source", "github", "repo", "weights")),
-    ("api", ("api", "sdk", "endpoint", "developers")),
-    ("agents", ("agent", "agents", "automation", "workflow")),
-    ("safety", ("safety", "alignment", "guardrail", "risk")),
-    ("benchmark", ("benchmark", "eval", "evaluation", "score")),
-    ("research", ("research", "paper", "arxiv", "study")),
-    ("video", ("youtube", "video")),
-]
-
-
-@dataclass
-class StageResult:
-    status: str
-    metrics: dict[str, Any]
-    error_message: str | None = None
 
 
 SETTINGS = get_settings()
@@ -342,63 +296,16 @@ def upsert_sources(conn: sqlite3.Connection, sources: list[SourceConfig]) -> Non
             )
 
 
-def stage_start(conn: sqlite3.Connection, run_id: str, stage_name: str) -> int:
-    started_at = utc_now_iso()
-    stage_run_id = run_repo.create_stage_run(conn, run_id, stage_name, started_at)
-    conn.commit()
-    return stage_run_id
-
-
-def stage_end(
-    conn: sqlite3.Connection,
-    stage_run_id: int,
-    result: StageResult,
-) -> None:
-    run_repo.complete_stage_run(
-        conn,
-        stage_run_id,
-        utc_now_iso(),
-        result.status,
-        result.metrics,
-    )
-    conn.commit()
-
-
 def classify_event(title: str, body: str, default_category: str) -> tuple[str, float]:
-    if classify_with_model is not None:
-        ml_result = classify_with_model(title, body, default_category=default_category)
-        if ml_result:
-            return ml_result
-    if classify_article is not None:
-        result = classify_article(title, body, default_category)
-        return result.label, result.confidence
-    text = f"{title} {body}".lower()
-    rules: list[tuple[str, tuple[str, ...], float]] = [
-        ("ai-models", ("model release", "llm", "gpt", "openai", "anthropic", "gemini"), 0.85),
-        ("security", ("vulnerability", "cve", "exploit", "breach"), 0.84),
-        ("policy", ("regulation", "policy", "law", "compliance"), 0.8),
-        ("funding", ("funding", "series a", "series b", "valuation"), 0.8),
-        ("product", ("launch", "released", "announced", "introduces"), 0.74),
-    ]
-    for label, tokens, score in rules:
-        if any(token in text for token in tokens):
-            return label, score
-    return default_category, 0.55
+    ml_result = classify_with_model(title, body, default_category=default_category)
+    if ml_result:
+        return ml_result
+    result = classify_article(title, body, default_category)
+    return result.label, result.confidence
 
 
 def extract_tags(title: str, body: str, source_id: str) -> list[str]:
-    if extract_article_tags is not None:
-        return extract_article_tags(title, body, source_id, YOUTUBE_SOURCE_IDS)
-    text = f"{title} {body}".lower()
-    tags: list[str] = []
-    for label, patterns in TAG_RULES:
-        if any(pattern in text for pattern in patterns):
-            tags.append(label)
-    if source_id in YOUTUBE_SOURCE_IDS and "video" not in tags:
-        tags.append("video")
-    if not tags:
-        tags.append("general")
-    return tags[:6]
+    return extract_article_tags(title, body, source_id, YOUTUBE_SOURCE_IDS)
 
 
 def _enrichment_settings() -> enrichment.EnrichmentSettings:
@@ -925,68 +832,6 @@ def enrich_with_policy(
     return current_body, ExtractionMethod.RSS.value, rate_limit_remaining, False
 
 
-def enrich_article_content(
-    url: str, source_id: str, title: str, body: str
-) -> tuple[str, str, list[dict]]:
-    started = time.monotonic()
-    enriched_body, method, _rate_limit_remaining, _rate_limited = enrich_with_policy(
-        url, source_id, title, body
-    )
-    duration_ms = round((time.monotonic() - started) * 1000, 2)
-    output_chars = len(enriched_body or "")
-    status = (
-        "success"
-        if method != ExtractionMethod.RSS.value and output_chars > 0
-        else "failed"
-    )
-    return (
-        enriched_body,
-        method,
-        [
-            {
-                "method": method,
-                "status": status,
-                "duration_ms": duration_ms,
-                "error_message": None,
-                "output_chars": output_chars if output_chars else None,
-            }
-        ],
-    )
-
-
-def ingest_stage(
-    conn: sqlite3.Connection,
-    run_id: str,
-    sources: list[SourceConfig],
-    issue_client: GitHubIssueClient,
-) -> StageResult:
-    from app.jobs import stages_ingest
-
-    metrics = stages_ingest.ingest_stage(
-        conn,
-        run_id,
-        sources,
-        issue_client,
-        defuddle_enabled=DEFUDDLE_ENABLED,
-        source_fail_threshold=SOURCE_FAIL_THRESHOLD,
-        source_auto_disable_cooldown_hours=SOURCE_AUTO_DISABLE_COOLDOWN_HOURS,
-        source_is_in_cooldown=source_is_in_cooldown,
-        should_auto_disable_source=should_auto_disable_source,
-        utc_now_iso=utc_now_iso,
-        iso=iso,
-        parse_date=parse_date,
-        parse_date_inferred=parse_date_inferred,
-        canonicalize_url=canonicalize_url,
-        normalize_text=normalize_text,
-        sha1_hexdigest=sha1_hexdigest,
-        simhash64=simhash64,
-        enrich_article_content=enrich_article_content,
-        get_source_timeout_seconds=get_source_timeout_seconds,
-        slow_source_latency_ms=SLOW_SOURCE_LATENCY_MS,
-    )
-    return StageResult(status="success", metrics=metrics)
-
-
 def migrate_source_ids(conn: sqlite3.Connection) -> None:
     """Rename historical source ids so feed-source identity stays human-readable."""
     with transaction(conn):
@@ -1062,45 +907,6 @@ def migrate_source_ids(conn: sqlite3.Connection) -> None:
             conn.execute("DELETE FROM sources WHERE source_id = ?", (old_id,))
 
 
-def cluster_stage(conn: sqlite3.Connection) -> StageResult:
-    from app.jobs import stages_cluster
-
-    metrics = stages_cluster.cluster_stage(
-        conn,
-        parse_date=parse_date,
-        iso=iso,
-        pair_similarity=pair_similarity,
-        sha1_hexdigest=sha1_hexdigest,
-        similarity_threshold=SIMILARITY_THRESHOLD,
-        cluster_window_hours=CLUSTER_WINDOW_HOURS,
-        cluster_lookback_days=CLUSTER_LOOKBACK_DAYS,
-    )
-    return StageResult(status="success", metrics=metrics)
-
-
-def categorize_stage(conn: sqlite3.Connection) -> StageResult:
-    from app.jobs import stages_cluster
-
-    metrics = stages_cluster.categorize_stage(conn, classify_event=classify_event)
-    return StageResult(status="success", metrics=metrics)
-
-
-def export_status(conn: sqlite3.Connection) -> StageResult:
-    from app.jobs import stages_export
-
-    metrics = stages_export.export_status(
-        conn,
-        status_dir=STATUS_DIR,
-        build_summary_fn=build_summary,
-        build_sources_fn=build_sources,
-        build_runs_fn=build_runs,
-        build_incidents_fn=build_incidents,
-        build_events_fn=build_events,
-        build_articles_fn=build_articles,
-    )
-    return StageResult(status="success", metrics=metrics)
-
-
 def build_summary(conn: sqlite3.Connection) -> dict[str, Any]:
     from app.jobs import stages_export
 
@@ -1151,224 +957,3 @@ def build_articles(conn: sqlite3.Connection) -> list[dict[str, Any]]:
         extract_tags=extract_tags,
         articles_export_limit=ARTICLES_EXPORT_LIMIT,
     )
-
-
-def fetch_stage(
-    conn: sqlite3.Connection,
-    run_id: str,
-    sources: list[SourceConfig],
-    issue_client: GitHubIssueClient,
-) -> StageResult:
-    from app.jobs import stages_ingest
-
-    def _noop_enrich(url, source_id, title, body):
-        return body, ExtractionMethod.RSS.value, []
-
-    metrics = stages_ingest.ingest_stage(
-        conn,
-        run_id,
-        sources,
-        issue_client,
-        defuddle_enabled=DEFUDDLE_ENABLED,
-        source_fail_threshold=SOURCE_FAIL_THRESHOLD,
-        source_auto_disable_cooldown_hours=SOURCE_AUTO_DISABLE_COOLDOWN_HOURS,
-        source_is_in_cooldown=source_is_in_cooldown,
-        should_auto_disable_source=should_auto_disable_source,
-        utc_now_iso=utc_now_iso,
-        iso=iso,
-        parse_date=parse_date,
-        parse_date_inferred=parse_date_inferred,
-        canonicalize_url=canonicalize_url,
-        normalize_text=normalize_text,
-        sha1_hexdigest=sha1_hexdigest,
-        simhash64=simhash64,
-        enrich_article_content=_noop_enrich,
-        get_source_timeout_seconds=get_source_timeout_seconds,
-        slow_source_latency_ms=SLOW_SOURCE_LATENCY_MS,
-    )
-    return StageResult(status="success", metrics=metrics)
-
-
-def enrich_stage(conn: sqlite3.Connection, run_id: str) -> StageResult:
-    from app.jobs import enrich_pipeline as enrich_mod
-
-    limit = os.getenv("ENRICH_LIMIT")
-    only_method = os.getenv("ENRICH_ONLY_METHOD") or None
-
-    try:
-        result = enrich_mod._enrich_articles(
-            conn,
-            run_id,
-            limit=int(limit) if limit else 500,
-            only_missing=True,
-            only_dirty=False,
-            skip_enriched=True,
-            max_markdown_new=100,
-            only_method=only_method,
-            source_id=None,
-            exclude_source=None,
-        )
-        return StageResult(status="success", metrics=result)
-    except Exception as e:
-        return StageResult(status="failed", metrics={}, error_message=str(e))
-
-
-def classify_stage(conn: sqlite3.Connection, run_id: str) -> StageResult:
-    from app.jobs import stages_cluster, stages_export
-
-    cluster_metrics = stages_cluster.cluster_stage(
-        conn,
-        parse_date=parse_date,
-        iso=iso,
-        pair_similarity=pair_similarity,
-        sha1_hexdigest=sha1_hexdigest,
-        similarity_threshold=SIMILARITY_THRESHOLD,
-        cluster_window_hours=CLUSTER_WINDOW_HOURS,
-        cluster_lookback_days=CLUSTER_LOOKBACK_DAYS,
-    )
-
-    categorize_metrics = stages_cluster.categorize_stage(
-        conn,
-        classify_event=classify_event,
-    )
-
-    export_metrics = stages_export.export_status(
-        conn,
-        status_dir=STATUS_DIR,
-        build_summary_fn=build_summary,
-        build_sources_fn=build_sources,
-        build_runs_fn=build_runs,
-        build_incidents_fn=build_incidents,
-        build_events_fn=build_events,
-        build_articles_fn=build_articles,
-    )
-
-    combined_metrics = {
-        "cluster": cluster_metrics,
-        "categorize": categorize_metrics,
-        "export": export_metrics,
-    }
-    return StageResult(status="success", metrics=combined_metrics)
-
-
-def run_pipeline() -> int:
-    reset_markdown_new_circuit_breaker()
-    reset_compress_new_circuit_breaker()
-    conn = get_connection()
-    init_db(conn)
-    migrate_source_ids(conn)
-    sources = load_sources()
-
-    requested_source = (os.getenv("PIPELINE_SOURCE_ID") or "").strip()
-    if requested_source and requested_source.lower() != "all":
-        sources = [s for s in sources if s.source_id == requested_source]
-        if not sources:
-            logger.warning(
-                "PIPELINE_SOURCE_ID=%s did not match any configured source",
-                requested_source,
-            )
-
-    exclude_source = (os.getenv("PIPELINE_EXCLUDE_SOURCE") or "").strip()
-    if exclude_source:
-        exclude_ids = {s.strip() for s in exclude_source.split(",") if s.strip()}
-        before = len(sources)
-        sources = [s for s in sources if s.source_id not in exclude_ids]
-        logger.info(
-            "PIPELINE_EXCLUDE_SOURCE=%s excluded %d sources",
-            exclude_source,
-            before - len(sources),
-        )
-
-    upsert_sources(conn, sources)
-
-    run_id = uuid.uuid4().hex[:12]
-    run_repo.create_pipeline_run(conn, run_id, utc_now_iso())
-    conn.commit()
-    issue_client = GitHubIssueClient()
-    pipeline_metrics: dict[str, Any] = {"run_id": run_id}
-    github_run_id = os.getenv("GITHUB_RUN_ID")
-    github_repo = os.getenv("GITHUB_REPOSITORY")
-    if github_run_id and github_repo:
-        pipeline_metrics["github_run_id"] = github_run_id
-        pipeline_metrics["github_run_url"] = (
-            f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
-        )
-
-    stages = [
-        ("fetch", lambda: fetch_stage(conn, run_id, sources, issue_client)),
-        ("enrich", lambda: enrich_stage(conn, run_id)),
-        ("classify", lambda: classify_stage(conn, run_id)),
-    ]
-
-    logger.info(
-        "Pipeline run started run_id=%s sources=%d defuddle_enabled=%s",
-        run_id,
-        len([s for s in sources if s.enabled]),
-        DEFUDDLE_ENABLED,
-    )
-    try:
-        for stage_name, stage_fn in stages:
-            logger.info("Stage started stage=%s run_id=%s", stage_name, run_id)
-            stage_run_id = stage_start(conn, run_id, stage_name)
-            started = time.time()
-            result = stage_fn()
-            result.metrics["duration_ms"] = round((time.time() - started) * 1000, 2)
-            stage_end(conn, stage_run_id, result)
-            log_stage_summary(
-                logger,
-                stage_name=stage_name,
-                status=result.status,
-                metrics=result.metrics,
-                run_id=run_id,
-            )
-            if result.status != "success":
-                raise RuntimeError(result.error_message or f"{stage_name} failed")
-            pipeline_metrics[stage_name] = result.metrics
-        run_repo.complete_pipeline_run(
-            conn,
-            run_id,
-            utc_now_iso(),
-            pipeline_metrics,
-        )
-        conn.commit()
-        logger.info("Pipeline run succeeded run_id=%s", run_id)
-        sync_incident_resolve(
-            conn,
-            incident_key="pipeline:orchestrator",
-            run_id=run_id,
-            resolution_message="Pipeline completed successfully.",
-            client=issue_client,
-        )
-        conn.commit()
-        return 0
-    except Exception as exc:
-        logger.exception("Pipeline run failed run_id=%s error=%s", run_id, exc)
-        conn.rollback()
-        traceback_text = traceback.format_exc(limit=5)
-        run_repo.fail_pipeline_run(
-            conn,
-            run_id,
-            utc_now_iso(),
-            str(exc),
-            pipeline_metrics,
-        )
-        conn.commit()
-        sync_incident_open_or_update(
-            conn,
-            IncidentSignal(
-                key="pipeline:orchestrator",
-                kind="pipeline-stage",
-                target_id="orchestrator",
-                message=f"Pipeline failed in run {run_id}: {exc}\n\n{traceback_text}",
-                severity="sev2",
-            ),
-            run_id=run_id,
-            client=issue_client,
-        )
-        conn.commit()
-        export_status(conn)
-        return 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(run_pipeline())

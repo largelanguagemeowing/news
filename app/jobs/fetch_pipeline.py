@@ -18,7 +18,6 @@ import os
 import time
 import traceback
 import uuid
-from pathlib import Path
 from typing import Any
 
 from app.config import load_sources
@@ -27,35 +26,23 @@ from app.incidents import GitHubIssueClient, IncidentSignal, sync_incident_open_
 from app.jobs import stages_ingest, stages_export
 from app.jobs.pipeline import (
     DEFUDDLE_ENABLED,
-    REQUEST_TIMEOUT_SECONDS,
-    SETTINGS,
     SLOW_SOURCE_LATENCY_MS,
     SOURCE_AUTO_DISABLE_COOLDOWN_HOURS,
     SOURCE_FAIL_THRESHOLD,
-    SOURCE_TIMEOUTS_SECONDS,
     STATUS_DIR,
-    ARTICLES_EXPORT_LIMIT,
-    EVENTS_EXPORT_LIMIT,
     build_articles,
     build_events,
     build_incidents,
     build_runs,
     build_sources,
     build_summary,
-    canonicalize_url,
-    classify_event,
-    extract_tags,
     get_source_timeout_seconds,
     iso,
-    log_stage_summary,
     migrate_source_ids,
-    normalize_text,
     parse_date,
     parse_date_inferred,
     reset_markdown_new_circuit_breaker,
-    sha1_hexdigest,
     should_auto_disable_source,
-    simhash64,
     source_is_in_cooldown,
     upsert_sources,
     utc_now_iso,
@@ -63,6 +50,7 @@ from app.jobs.pipeline import (
 from app.logging_helpers import log_stage_summary
 from app.models import ExtractionMethod
 from app.repos import run_repo
+from app.utils import canonicalize_url, normalize_text, sha1_hexdigest, simhash64
 
 logger = logging.getLogger("news.pipeline")
 
@@ -135,7 +123,6 @@ def run_fetch_pipeline(export: bool = False) -> int:
 
     stage_run_id = _create_stage_run(conn, run_id, "fetch")
     started = time.time()
-    err = None
     try:
         metrics = stages_ingest.ingest_stage(
             conn,
@@ -186,7 +173,6 @@ def run_fetch_pipeline(export: bool = False) -> int:
         return 0
 
     except Exception as exc:
-        err = exc
         logger.exception("Fetch pipeline failed run_id=%s error=%s", run_id, exc)
         conn.rollback()
         traceback_text = traceback.format_exc(limit=5)

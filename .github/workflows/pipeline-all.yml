@@ -25,28 +25,6 @@ on:
           - fireship
           - ai-explained
           - hugging-face
-      enable_backfill:
-        description: "Run enriched backfill for existing items"
-        required: false
-        default: false
-        type: boolean
-      backfill_all:
-        description: "When backfill is enabled, process all items"
-        required: false
-        default: false
-        type: boolean
-      backfill_method:
-        description: "Force specific extraction method"
-        required: false
-        type: choice
-        default: "default"
-        options:
-          - default
-          - youtube
-          - trafilatura
-          - markdown_new
-          - jina
-          - defuddle
       skip_fetch:
         description: "Skip fetch stage"
         required: false

@@ -24,17 +24,9 @@ from app.db import get_connection, init_db
 from app.incidents import GitHubIssueClient, IncidentSignal, sync_incident_open_or_update, sync_incident_resolve
 from app.jobs import stages_cluster, stages_export
 from app.jobs.pipeline import (
-    ARTICLES_EXPORT_LIMIT,
     CLUSTER_LOOKBACK_DAYS,
     CLUSTER_WINDOW_HOURS,
-    EVENTS_EXPORT_LIMIT,
-    EVENTS_WINDOW_HOURS,
-    SETTINGS,
     SIMILARITY_THRESHOLD,
-    SLOW_SOURCE_LATENCY_MS,
-    SOURCE_CHECKS_HISTORY_LIMIT,
-    SOURCE_FAIL_THRESHOLD,
-    STALE_SOURCE_HOURS,
     STATUS_DIR,
     build_articles,
     build_events,
@@ -42,20 +34,14 @@ from app.jobs.pipeline import (
     build_runs,
     build_sources,
     build_summary,
-    categorize_stage,
     classify_event,
-    cluster_stage,
-    export_status,
-    extract_tags,
     iso,
-    log_stage_summary,
-    pair_similarity,
     parse_date,
-    sha1_hexdigest,
-    source_is_in_cooldown,
     utc_now_iso,
 )
+from app.logging_helpers import log_stage_summary
 from app.repos import run_repo
+from app.utils import pair_similarity, sha1_hexdigest
 
 logger = logging.getLogger("news.pipeline")
 

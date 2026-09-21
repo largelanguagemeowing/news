@@ -31,12 +31,12 @@ Then open http://localhost:8080/ in your browser.
 
 ## Post-update workflow guidance
 
-After pushing to `master`, trigger `news-pipeline` **only when fresh generated data is needed** (for example: source config changes, pipeline/backend changes, or when you want to refresh `data/status/*` immediately).
+After pushing to `master`, trigger `pipeline-all` **only when fresh generated data is needed** (for example: source config changes, pipeline/backend changes, or when you want to refresh `data/status/*` immediately).
 
-For **dashboard-only UI/JS/CSS changes** that do not affect data generation, **do not trigger** `news-pipeline`.
+For **dashboard-only UI/JS/CSS changes** that do not affect data generation, **do not trigger** `pipeline-all`.
 
 ```bash
-gh workflow run news-pipeline --repo largelanguagemeowing/news --ref master
+gh workflow run pipeline-all --repo largelanguagemeowing/news --ref master
 ```
 
 ## Project Skills
