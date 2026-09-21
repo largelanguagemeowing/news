@@ -360,6 +360,90 @@ def fetch_text_url(url: str, request_timeout_seconds: int) -> str:
         return ""
 
 
+# Bot-walled pages (e.g. openai.com) reject the plain requests transport on
+# request-header shape rather than deep TLS fingerprinting, so system curl
+# with a real Chrome header set is accepted where requests gets a 403.
+_CURL_CHROME_UA = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+)
+_CURL_CHROME_HEADERS = (
+    "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,"
+    "image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language: en-US,en;q=0.9",
+    'sec-ch-ua: "Chromium";v="131", "Not_A Brand";v="24"',
+    "sec-ch-ua-mobile: ?0",
+    'sec-ch-ua-platform: "Linux"',
+    "Sec-Fetch-Dest: document",
+    "Sec-Fetch-Mode: navigate",
+    "Sec-Fetch-Site: none",
+    "Sec-Fetch-User: ?1",
+)
+
+
+def fetch_text_url_via_curl(url: str, request_timeout_seconds: int) -> str:
+    """Curl rescue for pages that reject the requests transport.
+
+    Shells out to system curl with a real Chrome header set (preferring no
+    deep-fingerprint impersonation: plain curl is present everywhere). Returns
+    "" when curl is unavailable or the transport fails — the caller keeps its
+    fallback chain.
+    """
+    if not url or is_youtube_url(url):
+        return ""
+    curl = shutil.which("curl")
+    if not curl:
+        logger.debug("curl rescue unavailable: curl not on PATH url=%s", url)
+        return ""
+    seconds = max(1, int(request_timeout_seconds))
+    args = [
+        curl,
+        "-sS",
+        "--http2",
+        "--compressed",
+        "-L",
+        "--max-redirs",
+        "5",
+        "--max-time",
+        str(seconds),
+        "--user-agent",
+        _CURL_CHROME_UA,
+    ]
+    for header in _CURL_CHROME_HEADERS:
+        args.extend(["--header", header])
+    args.extend(["--", url])
+    try:
+        result = subprocess.run(
+            args,
+            capture_output=True,
+            text=True,
+            timeout=seconds + 5,
+            check=False,
+        )
+    except (subprocess.TimeoutExpired, OSError) as exc:
+        logger.debug("curl rescue failed url=%s error=%s", url, exc)
+        return ""
+    if result.returncode != 0 or not result.stdout:
+        logger.debug(
+            "curl rescue non-success url=%s code=%s", url, result.returncode
+        )
+        return ""
+    return result.stdout
+
+
+def fetch_page_html(url: str, request_timeout_seconds: int) -> str:
+    """Fetch page HTML for content extraction.
+
+    Tries the plain requests transport first; on failure (including 403s from
+    bot-walled pages) retries once via system curl with Chrome headers. Returns
+    "" when both transports fail — the caller keeps its fallback chain.
+    """
+    html = fetch_text_url(url, request_timeout_seconds)
+    if html:
+        return html
+    return fetch_text_url_via_curl(url, request_timeout_seconds)
+
+
 def fetch_youtube_oembed(
     url: str, request_timeout_seconds: int
 ) -> dict[str, str] | None:

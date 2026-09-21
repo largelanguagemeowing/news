@@ -8,6 +8,7 @@ class ExtractionMethod(str, Enum):
     YOUTUBE = "youtube"
     YOUTUBE_TRANSCRIPT = "youtube_transcript"
     TRAFILATURA = "trafilatura"
+    NEXT_FLIGHT = "next_flight"
     MARKDOWN_NEW = "markdown_new"
     COMPRESS_NEW = "compress_new"
     JINA = "jina"

@@ -19,7 +19,7 @@ import trafilatura
 from dateutil import parser as dtparser
 
 from app.config import SourceConfig, load_sources
-from app.jobs import enrichment
+from app.jobs import enrichment, next_flight
 from app.db import get_connection, init_db, transaction
 from app.logging_helpers import log_stage_summary
 from app.models import ExtractionMethod
@@ -443,6 +443,10 @@ def fetch_text_url(url: str) -> str:
     return enrichment.fetch_text_url(url, REQUEST_TIMEOUT_SECONDS)
 
 
+def fetch_page_html(url: str) -> str:
+    return enrichment.fetch_page_html(url, REQUEST_TIMEOUT_SECONDS)
+
+
 def fetch_youtube_oembed(url: str) -> dict[str, str] | None:
     return enrichment.fetch_youtube_oembed(url, REQUEST_TIMEOUT_SECONDS)
 
@@ -544,6 +548,34 @@ def parse_with_trafilatura(url: str) -> tuple[str | None, bool]:
     return truncate_for_storage(cleaned), True
 
 
+def parse_with_next_flight(url: str) -> tuple[str | None, bool]:
+    """Local extraction from Next.js App Router pages via their RSC flight payloads.
+
+    Next.js pages (e.g. openai.com) are detected by content — inline
+    ``self.__next_f`` scripts — not by source config, so any client-rendered
+    page gets extracted locally. The fetch falls back to a curl rescue when
+    the requests transport is bot-walled, keeping the extraction entirely
+    off the cloud fetchers (jina, markdown.new, ...).
+    """
+    if not url or is_youtube_url(url):
+        return None, False
+    html = fetch_page_html(url)
+    if not html:
+        return None, False
+    try:
+        flight = next_flight.extract_next_flight_content(html)
+    except Exception as exc:
+        logger.debug("next flight extract failed url=%s error=%s", url, exc)
+        return None, False
+    if not flight:
+        return None, False
+    _title, content = flight
+    cleaned = content.strip()
+    if not cleaned:
+        return None, False
+    return truncate_for_storage(cleaned), True
+
+
 def parse_with_jina_ai(url: str) -> tuple[str | None, bool]:
     return enrichment.parse_with_jina_ai(url, _enrichment_settings())
 
@@ -595,12 +627,16 @@ def enrich_with_policy(
     rate_limit_remaining = -1
 
     # Source-aware extraction priority:
-    # - OpenAI sources: markdown.new -> compress.new -> jina -> defuddle -> trafilatura
-    # - Other sources: trafilatura -> jina -> defuddle
+    # - OpenAI sources: next_flight -> markdown.new -> compress.new -> jina -> defuddle -> trafilatura
+    # - Other sources: trafilatura -> next_flight -> jina -> defuddle
     # - YouTube is only included for YouTube URLs/sources.
+    # next_flight is the local tier for client-rendered Next.js pages: it only
+    # succeeds on flight payloads, and when it does it avoids the cloud
+    # fetchers (and their rate limits) entirely.
     is_youtube_candidate = is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS
     if enrichment.supports_markdown_family(source_id):
         methods_order = [
+            ExtractionMethod.NEXT_FLIGHT.value,
             ExtractionMethod.MARKDOWN_NEW.value,
             ExtractionMethod.COMPRESS_NEW.value,
             ExtractionMethod.JINA.value,
@@ -610,6 +646,7 @@ def enrich_with_policy(
     else:
         methods_order = [
             ExtractionMethod.TRAFILATURA.value,
+            ExtractionMethod.NEXT_FLIGHT.value,
             ExtractionMethod.JINA.value,
             ExtractionMethod.DEFUDDLE.value,
         ]
@@ -829,6 +866,21 @@ def enrich_with_policy(
                     url,
                 )
                 return compress_body, ExtractionMethod.COMPRESS_NEW.value, -1, False
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
+            continue
+
+        if method == ExtractionMethod.NEXT_FLIGHT.value:
+            next_flight_body, used = parse_with_next_flight(url)
+            if used and next_flight_body:
+                logger.info(
+                    "Enrichment success source=%s method=%s url=%s",
+                    source_id,
+                    ExtractionMethod.NEXT_FLIGHT.value,
+                    url,
+                )
+                return next_flight_body, ExtractionMethod.NEXT_FLIGHT.value, -1, False
             logger.info(
                 "Enrichment miss source=%s method=%s url=%s", source_id, method, url
             )
