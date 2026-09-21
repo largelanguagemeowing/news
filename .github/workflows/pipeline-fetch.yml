@@ -123,7 +123,7 @@ jobs:
           else
             # Disconnect staged changes from index by storing in temp commit, then rebase
             git stash push -m "temp-stash" || true
-            git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
+            git pull --rebase --autostash || { echo "ERROR: Rebase conflict"; exit 1; }
             git stash pop || true
             git add data/status
             git commit -m "chore(data): save fetch pipeline progress" || { echo "ERROR: Commit failed"; exit 1; }

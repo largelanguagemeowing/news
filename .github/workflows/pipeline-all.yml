@@ -137,7 +137,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
+            git pull --rebase --autostash || { echo "ERROR: Rebase conflict"; exit 1; }
             git commit -m "chore(data): save fetch stage" || { echo "ERROR: Commit failed"; exit 1; }
             git push || { echo "ERROR: Push failed"; exit 1; }
           fi
@@ -212,7 +212,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
+            git pull --rebase --autostash || { echo "ERROR: Rebase conflict"; exit 1; }
             git commit -m "chore(data): save enrich stage" || { echo "ERROR: Commit failed"; exit 1; }
             git push || { echo "ERROR: Push failed"; exit 1; }
           fi
@@ -279,7 +279,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git pull --rebase || { echo "ERROR: Rebase conflict"; exit 1; }
+            git pull --rebase --autostash || { echo "ERROR: Rebase conflict"; exit 1; }
             git commit -m "chore(data): save classify stage" || { echo "ERROR: Commit failed"; exit 1; }
             git push || { echo "ERROR: Push failed"; exit 1; }
           fi
