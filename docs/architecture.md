@@ -127,3 +127,23 @@ position is: a problem becomes a record the dashboard already shows.
 Exported status is committed back to the repository by the artifact jobs. The
 deployed dashboard is a static snapshot of that data — there is no backend —
 and the git history doubles as a record of what was served and when.
+
+## pipeline.py is a facade, not the pipeline
+
+`app/jobs/pipeline.py` used to be a ~950-line grab bag: the settings snapshot,
+the source-id migrations, the circuit breakers, the parse adapters, the whole
+extraction chain, and the export facade all shared one import surface. That
+pulled unrelated concerns together and pushed tests into monkeypatching
+re-export wrappers that existed only because the chain happened to live there.
+
+That logic now lives in its owner modules — the settings snapshot in
+`app.settings`, migration replay in `app.jobs.migrations`, extraction policy
+and the chain in `app.jobs.enrichment`, the real export stages in
+`app.jobs.stages_export` — and `pipeline.py` keeps only what the pipeline
+genuinely owns (date parsing, the cooldown/auto-disable policy, source
+upserts, the classify wrapper, the export legs) plus a re-export surface for
+call sites that still name it. `DEFUDDLE_ENABLED` is a mutable binding in
+`enrichment.py`, the module whose chain reads it, so the backfill
+`--enable-defuddle` override reaches the code it gates. New code should import
+from the owner modules directly; tests patch the real modules, not the
+facade.

@@ -7,10 +7,10 @@ import time
 import uuid
 
 from app.db import get_connection, init_db, transaction
-from app.jobs import pipeline
+from app.jobs import enrichment
 from app.models import ExtractionMethod
 from app.repos import run_repo
-from app.settings import get_settings
+from app.settings import DEFUDDLE_MAX_CHARS, get_settings
 from app.utils import normalize_text, sha1_hexdigest, simhash64, utc_now_iso
 
 
@@ -36,7 +36,7 @@ def backfill_articles(
     exclude_source: str | None = None,  # Exclude source(s), comma-separated
 ) -> dict[str, int | bool]:
     started_at = time.time()
-    pipeline.reset_markdown_new_circuit_breaker()
+    enrichment.reset_markdown_new_circuit_breaker()
     conn = get_connection()
     init_db(conn)
 
@@ -74,7 +74,7 @@ def backfill_articles(
     rows = conn.execute(query, params).fetchall()
 
     if only_dirty:
-        rows = [r for r in rows if pipeline.is_probably_dirty_body(str(r["body"] or ""))]
+        rows = [r for r in rows if enrichment.is_probably_dirty_body(str(r["body"] or ""))]
 
     total_rows = len(rows)
     logger.info(
@@ -128,7 +128,7 @@ def backfill_articles(
             break
         
         # Try enrichment with rate limit awareness
-        new_body, method, rate_limit_remaining = pipeline.enrich_with_rate_limit(
+        new_body, method, rate_limit_remaining = enrichment.enrich_with_rate_limit(
             url, source_id, title, body, max_markdown_new, markdown_new_used, only_method
         )
         
@@ -147,7 +147,9 @@ def backfill_articles(
         elif not new_body:
             misses += 1
 
-        new_body = pipeline.truncate_for_storage(str(new_body or "").strip())
+        new_body = enrichment.truncate_for_storage(
+            str(new_body or "").strip(), DEFUDDLE_MAX_CHARS
+        )
         old_body = str(row["body"] or "").strip()
         if not new_body or new_body == old_body:
             unchanged += 1
@@ -201,7 +203,7 @@ def backfill_articles(
     )
 
     metrics = {
-        "defuddle_enabled": pipeline.DEFUDDLE_ENABLED,
+        "defuddle_enabled": enrichment.DEFUDDLE_ENABLED,
         "dry_run": dry_run,
         "only_missing": only_missing,
         "only_dirty": only_dirty,
@@ -294,7 +296,7 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.enable_defuddle:
-        pipeline.DEFUDDLE_ENABLED = True
+        enrichment.DEFUDDLE_ENABLED = True
 
     logger.info(
         "Backfill CLI invoked limit=%d all=%s only_missing=%s only_dirty=%s dry_run=%s defuddle_enabled=%s skip_enriched=%s max_markdown_new=%d only_method=%s source_id=%s exclude_source=%s",
@@ -303,7 +305,7 @@ def main() -> int:
         args.only_missing,
         args.only_dirty,
         args.dry_run,
-        pipeline.DEFUDDLE_ENABLED,
+        enrichment.DEFUDDLE_ENABLED,
         args.skip_enriched,
         args.max_markdown_new,
         args.only_method,

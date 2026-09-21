@@ -1,20 +1,20 @@
-from app.jobs import pipeline
+from app.jobs import enrichment
 
 
 def test_get_youtube_video_id_from_watch_url() -> None:
-    assert pipeline.get_youtube_video_id("https://www.youtube.com/watch?v=abc123") == "abc123"
+    assert enrichment.get_youtube_video_id("https://www.youtube.com/watch?v=abc123") == "abc123"
 
 
 def test_get_youtube_video_id_from_shorts_url() -> None:
-    assert pipeline.get_youtube_video_id("https://www.youtube.com/shorts/xyz789") == "xyz789"
+    assert enrichment.get_youtube_video_id("https://www.youtube.com/shorts/xyz789") == "xyz789"
 
 
 def test_get_youtube_embed_url() -> None:
-    assert pipeline.get_youtube_embed_url("https://youtu.be/abc123") == "https://www.youtube.com/embed/abc123"
+    assert enrichment.get_youtube_embed_url("https://youtu.be/abc123") == "https://www.youtube.com/embed/abc123"
 
 
 def test_build_youtube_body() -> None:
-    body = pipeline.build_youtube_body(
+    body = enrichment.build_youtube_body(
         {
             "description": "A useful video description.",
             "author": "Channel Name",
@@ -28,7 +28,7 @@ def test_build_youtube_body() -> None:
 
 
 def test_build_youtube_transcript_body() -> None:
-    body = pipeline.build_youtube_transcript_body(
+    body = enrichment.build_youtube_transcript_body(
         {
             "title": "Video title",
             "author": "Channel Name",
@@ -44,7 +44,7 @@ def test_build_youtube_transcript_body() -> None:
 
 def test_youtube_enrichment_prefers_transcript(monkeypatch) -> None:
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "extract_youtube_metadata",
         lambda *_args: {
             "title": "Video title",
@@ -54,9 +54,9 @@ def test_youtube_enrichment_prefers_transcript(monkeypatch) -> None:
             "video_id": "abc123",
         },
     )
-    monkeypatch.setattr(pipeline, "fetch_youtube_transcript", lambda _video_id: "Transcript " * 80)
+    monkeypatch.setattr(enrichment, "fetch_youtube_transcript", lambda _video_id: "Transcript " * 80)
 
-    body, method, _remaining, _rate_limited = pipeline.enrich_with_policy(
+    body, method, _remaining, _rate_limited = enrichment.enrich_with_policy(
         "https://www.youtube.com/watch?v=abc123",
         "matt-wolfe",
         "Video title",
@@ -70,7 +70,7 @@ def test_youtube_enrichment_prefers_transcript(monkeypatch) -> None:
 
 def test_youtube_enrichment_falls_back_to_description(monkeypatch) -> None:
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "extract_youtube_metadata",
         lambda *_args: {
             "title": "Video title",
@@ -80,9 +80,9 @@ def test_youtube_enrichment_falls_back_to_description(monkeypatch) -> None:
             "video_id": "abc123",
         },
     )
-    monkeypatch.setattr(pipeline, "fetch_youtube_transcript", lambda _video_id: None)
+    monkeypatch.setattr(enrichment, "fetch_youtube_transcript", lambda _video_id: None)
 
-    body, method, _remaining, _rate_limited = pipeline.enrich_with_policy(
+    body, method, _remaining, _rate_limited = enrichment.enrich_with_policy(
         "https://www.youtube.com/watch?v=abc123",
         "matt-wolfe",
         "Video title",
@@ -101,4 +101,4 @@ def test_extract_youtube_schema_description() -> None:
     </script>
     </head></html>
     '''
-    assert pipeline.extract_youtube_schema_description(html) == "Detailed video summary here."
+    assert enrichment.extract_youtube_schema_description(html) == "Detailed video summary here."

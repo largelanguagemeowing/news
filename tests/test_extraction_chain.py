@@ -1,7 +1,7 @@
 """The preference chain as a registry.
 
 enrich_with_policy used to be a nested if/elif dispatch over extraction
-methods with the order built inline. It is now a registry (pipeline.EXTRACTORS)
+methods with the order built inline. It is now a registry (enrichment.EXTRACTORS)
 keyed by method name plus an order builder (_extraction_methods) — adding an
 extractor is one attempt function and one registration line.
 
@@ -14,7 +14,7 @@ data/status files or network are involved.
 
 from __future__ import annotations
 
-from app.jobs import pipeline
+from app.jobs import enrichment
 from app.jobs.quota import DailyQuota
 
 
@@ -23,7 +23,7 @@ def _tmp_quota(tmp_path, limit: int = 500) -> DailyQuota:
 
 
 class _FakeBreaker:
-    """Stands in for pipeline._MARKDOWN_NEW_BREAKER in rate-limit tests."""
+    """Stands in for enrichment._MARKDOWN_NEW_BREAKER in rate-limit tests."""
 
     def __init__(self) -> None:
         self.blocks: list[tuple[int, str]] = []
@@ -42,30 +42,30 @@ class _FakeBreaker:
 
 
 def test_markdown_family_order_prefers_next_flight() -> None:
-    assert pipeline._extraction_methods(
+    assert enrichment._extraction_methods(
         "openai-blog", "https://openai.com/news/x", None
     ) == ["next_flight", "markdown_new", "compress_new", "jina", "defuddle", "trafilatura"]
 
 
 def test_other_sources_start_with_trafilatura() -> None:
-    assert pipeline._extraction_methods(
+    assert enrichment._extraction_methods(
         "some-blog", "https://example.com/x", None
     ) == ["trafilatura", "next_flight", "jina", "defuddle"]
 
 
 def test_youtube_prepended_for_youtube_sources_and_urls() -> None:
-    by_source = pipeline._extraction_methods("matt-wolfe", "https://example.com/x", None)
+    by_source = enrichment._extraction_methods("matt-wolfe", "https://example.com/x", None)
     assert by_source[0] == "youtube"
-    by_url = pipeline._extraction_methods(
+    by_url = enrichment._extraction_methods(
         "some-blog", "https://www.youtube.com/watch?v=abc", None
     )
     assert by_url[0] == "youtube"
-    neither = pipeline._extraction_methods("some-blog", "https://example.com/x", None)
+    neither = enrichment._extraction_methods("some-blog", "https://example.com/x", None)
     assert "youtube" not in neither
 
 
 def test_only_method_pins_the_chain() -> None:
-    assert pipeline._extraction_methods("openai-blog", "https://openai.com/x", "defuddle") == [
+    assert enrichment._extraction_methods("openai-blog", "https://openai.com/x", "defuddle") == [
         "defuddle"
     ]
 
@@ -77,17 +77,17 @@ def test_every_ordered_method_is_registered() -> None:
         ("matt-wolfe", "https://www.youtube.com/watch?v=abc"),
     ]
     for source_id, url in samples:
-        for method in pipeline._extraction_methods(source_id, url, None):
-            assert method in pipeline.EXTRACTORS, f"{method} missing from EXTRACTORS"
-            assert callable(pipeline.EXTRACTORS[method])
+        for method in enrichment._extraction_methods(source_id, url, None):
+            assert method in enrichment.EXTRACTORS, f"{method} missing from EXTRACTORS"
+            assert callable(enrichment.EXTRACTORS[method])
 
 
 # --- chain behaviour (external seam) ----------------------------------------
 
 
 def test_trafilatura_hit_returns_body(monkeypatch) -> None:
-    monkeypatch.setattr(pipeline, "parse_with_trafilatura", lambda _url: ("traf body", True))
-    body, method, remaining, rate_limited = pipeline.enrich_with_policy(
+    monkeypatch.setattr(enrichment, "parse_with_trafilatura", lambda _url: ("traf body", True))
+    body, method, remaining, rate_limited = enrichment.enrich_with_policy(
         "https://example.com/x", "some-blog", "t", "rss"
     )
     assert method == "trafilatura"
@@ -98,14 +98,14 @@ def test_trafilatura_hit_returns_body(monkeypatch) -> None:
 
 def test_chain_falls_through_a_miss(monkeypatch) -> None:
     calls: list[str] = []
-    monkeypatch.setattr(pipeline, "parse_with_trafilatura", lambda _url: (None, False))
+    monkeypatch.setattr(enrichment, "parse_with_trafilatura", lambda _url: (None, False))
 
     def flight_hit(url: str):
         calls.append("next_flight")
         return "nf body", True
 
-    monkeypatch.setattr(pipeline, "parse_with_next_flight", flight_hit)
-    body, method, _remaining, _rate_limited = pipeline.enrich_with_policy(
+    monkeypatch.setattr(enrichment, "parse_with_next_flight", flight_hit)
+    body, method, _remaining, _rate_limited = enrichment.enrich_with_policy(
         "https://example.com/x", "some-blog", "t", "rss"
     )
     assert method == "next_flight"
@@ -119,8 +119,8 @@ def test_all_miss_returns_rss_body(monkeypatch) -> None:
         "parse_with_jina_ai",
         "parse_with_defuddle",
     ):
-        monkeypatch.setattr(pipeline, name, lambda _url: (None, False))
-    body, method, remaining, rate_limited = pipeline.enrich_with_policy(
+        monkeypatch.setattr(enrichment, name, lambda _url: (None, False))
+    body, method, remaining, rate_limited = enrichment.enrich_with_policy(
         "https://example.com/x", "some-blog", "t", "rss body"
     )
     assert method == "rss"
@@ -133,12 +133,12 @@ def test_all_miss_returns_rss_body(monkeypatch) -> None:
 
 
 def test_markdown_budget_exhausted_skips_parse(monkeypatch, tmp_path) -> None:
-    monkeypatch.setattr(pipeline.enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
+    monkeypatch.setattr(enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
     calls: list[str] = []
     monkeypatch.setattr(
-        pipeline, "parse_with_markdown_new", lambda _url: calls.append("parse") or (None, False, -1)
+        enrichment, "parse_with_markdown_new", lambda _url: calls.append("parse") or (None, False, -1)
     )
-    body, method, _remaining, _rate_limited = pipeline.enrich_with_policy(
+    body, method, _remaining, _rate_limited = enrichment.enrich_with_policy(
         "https://openai.com/news/x",
         "openai-blog",
         "t",
@@ -153,12 +153,12 @@ def test_markdown_budget_exhausted_skips_parse(monkeypatch, tmp_path) -> None:
 def test_markdown_quota_exhausted_skips_reserve_and_parse(monkeypatch, tmp_path) -> None:
     quota = _tmp_quota(tmp_path, limit=1)
     assert quota.reserve() is True  # spend the single allowed request
-    monkeypatch.setattr(pipeline.enrichment, "markdown_new_quota", quota)
+    monkeypatch.setattr(enrichment, "markdown_new_quota", quota)
     calls: list[str] = []
     monkeypatch.setattr(
-        pipeline, "parse_with_markdown_new", lambda _url: calls.append("parse") or (None, False, -1)
+        enrichment, "parse_with_markdown_new", lambda _url: calls.append("parse") or (None, False, -1)
     )
-    body, method, _remaining, _rate_limited = pipeline.enrich_with_policy(
+    body, method, _remaining, _rate_limited = enrichment.enrich_with_policy(
         "https://openai.com/news/x", "openai-blog", "t", "rss", only_method="markdown_new"
     )
     assert method == "rss"
@@ -166,13 +166,13 @@ def test_markdown_quota_exhausted_skips_reserve_and_parse(monkeypatch, tmp_path)
 
 
 def test_markdown_hit_carries_rate_limit_remaining(monkeypatch, tmp_path) -> None:
-    monkeypatch.setattr(pipeline.enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
+    monkeypatch.setattr(enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_markdown_new",
         lambda _url: ("md body", True, 42, {"status_code": 200}),
     )
-    body, method, remaining, rate_limited = pipeline.enrich_with_policy(
+    body, method, remaining, rate_limited = enrichment.enrich_with_policy(
         "https://openai.com/news/x", "openai-blog", "t", "rss", only_method="markdown_new"
     )
     assert method == "markdown_new"
@@ -183,15 +183,15 @@ def test_markdown_hit_carries_rate_limit_remaining(monkeypatch, tmp_path) -> Non
 
 def test_markdown_429_with_stop_flag_stops_the_run(monkeypatch, tmp_path) -> None:
     breaker = _FakeBreaker()
-    monkeypatch.setattr(pipeline, "_MARKDOWN_NEW_BREAKER", breaker)
-    monkeypatch.setattr(pipeline.enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
+    monkeypatch.setattr(enrichment, "_MARKDOWN_NEW_BREAKER", breaker)
+    monkeypatch.setattr(enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_markdown_new",
         lambda _url: (None, False, 0, {"status_code": 429}),
     )
-    monkeypatch.setattr(pipeline, "parse_with_compress_new", lambda _url: (None, False))
-    body, method, remaining, rate_limited = pipeline.enrich_with_policy(
+    monkeypatch.setattr(enrichment, "parse_with_compress_new", lambda _url: (None, False))
+    body, method, remaining, rate_limited = enrichment.enrich_with_policy(
         "https://openai.com/news/x",
         "openai-blog",
         "t",
@@ -208,19 +208,19 @@ def test_markdown_429_with_stop_flag_stops_the_run(monkeypatch, tmp_path) -> Non
 
 def test_markdown_429_falls_back_to_compress(monkeypatch, tmp_path) -> None:
     breaker = _FakeBreaker()
-    monkeypatch.setattr(pipeline, "_MARKDOWN_NEW_BREAKER", breaker)
-    monkeypatch.setattr(pipeline.enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
+    monkeypatch.setattr(enrichment, "_MARKDOWN_NEW_BREAKER", breaker)
+    monkeypatch.setattr(enrichment, "markdown_new_quota", _tmp_quota(tmp_path))
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_markdown_new",
         lambda _url: (None, False, 0, {"status_code": 429}),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_compress_new",
         lambda _url: ("compress body", True),
     )
-    body, method, remaining, rate_limited = pipeline.enrich_with_policy(
+    body, method, remaining, rate_limited = enrichment.enrich_with_policy(
         "https://openai.com/news/x", "openai-blog", "t", "rss", only_method="markdown_new"
     )
     assert method == "compress_new"

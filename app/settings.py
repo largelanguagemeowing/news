@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
 
 
 DEFAULT_SOURCE_TIMEOUTS_SECONDS: dict[str, int] = {
@@ -88,6 +89,9 @@ class AppSettings:
     articles_export_limit: int = 500
     slow_source_latency_ms: int = 60000
 
+    compress_new_circuit_breaker_threshold: int = 5
+    compress_new_circuit_breaker_block_seconds: int = 300
+
     backfill_default_limit: int = 300
     backfill_default_markdown_new_limit: int = 400
 
@@ -117,6 +121,8 @@ def load_settings() -> AppSettings:
         events_export_limit=_get_int("EVENTS_EXPORT_LIMIT", 300),
         articles_export_limit=_get_int("ARTICLES_EXPORT_LIMIT", 500),
         slow_source_latency_ms=_get_int("SLOW_SOURCE_LATENCY_MS", 60000),
+        compress_new_circuit_breaker_threshold=_get_int("COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD", 5),
+        compress_new_circuit_breaker_block_seconds=_get_int("COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS", 300),
         backfill_default_limit=_get_int("BACKFILL_DEFAULT_LIMIT", 300),
         backfill_default_markdown_new_limit=_get_int("BACKFILL_DEFAULT_MARKDOWN_NEW_LIMIT", 400),
         min_hours_between_same_incident=_get_int("MIN_HOURS_BETWEEN_SAME_INCIDENT", 4),
@@ -128,3 +134,47 @@ _SETTINGS = load_settings()
 
 def get_settings() -> AppSettings:
     return _SETTINGS
+
+
+# --- Snapshot constants -----------------------------------------------------
+#
+# Single seam: every env var is read once, in load_settings() above, into a
+# frozen AppSettings. The module-level names below mirror that snapshot so the
+# rest of the app (and the thin pipeline facade) can use plain names without
+# ever re-reading the environment. They used to be re-derived inline in
+# app/jobs/pipeline.py; see docs/architecture.md (candidate #4).
+#
+# STATUS_DIR and YOUTUBE_SOURCE_IDS are static (not env-derived) but belong
+# to the same snapshot.
+
+STATUS_DIR = Path("data/status")
+YOUTUBE_SOURCE_IDS = {
+    "matt-wolfe",
+    "fireship",
+    "ai-explained",
+    "youtube-ai-explained",
+    "youtube-threeblueonebrown",
+    "youtube-ai-coding",
+    "ai-engineer",
+}
+
+SIMILARITY_THRESHOLD = _SETTINGS.similarity_threshold
+CLUSTER_WINDOW_HOURS = _SETTINGS.cluster_window_hours
+CLUSTER_LOOKBACK_DAYS = _SETTINGS.cluster_lookback_days
+SOURCE_FAIL_THRESHOLD = _SETTINGS.source_fail_threshold
+SOURCE_AUTO_DISABLE_FAILURES = _SETTINGS.source_auto_disable_failures
+SOURCE_AUTO_DISABLE_MIN_FAILURE_HOURS = _SETTINGS.source_auto_disable_min_failure_hours
+SOURCE_AUTO_DISABLE_COOLDOWN_HOURS = _SETTINGS.source_auto_disable_cooldown_hours
+DEFUDDLE_ENABLED = _SETTINGS.defuddle_enabled
+DEFUDDLE_TIMEOUT_SECONDS = _SETTINGS.defuddle_timeout_seconds
+DEFUDDLE_MAX_CHARS = _SETTINGS.defuddle_max_chars
+REQUEST_TIMEOUT_SECONDS = _SETTINGS.request_timeout_seconds
+SOURCE_TIMEOUTS_SECONDS = _SETTINGS.source_timeouts_seconds
+STALE_SOURCE_HOURS = _SETTINGS.stale_source_hours
+EVENTS_WINDOW_HOURS = _SETTINGS.events_window_hours
+SOURCE_CHECKS_HISTORY_LIMIT = _SETTINGS.source_checks_history_limit
+EVENTS_EXPORT_LIMIT = _SETTINGS.events_export_limit
+ARTICLES_EXPORT_LIMIT = _SETTINGS.articles_export_limit
+SLOW_SOURCE_LATENCY_MS = _SETTINGS.slow_source_latency_ms
+COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD = _SETTINGS.compress_new_circuit_breaker_threshold
+COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS = _SETTINGS.compress_new_circuit_breaker_block_seconds
