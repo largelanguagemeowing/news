@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 import sqlite3
 import time
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from typing import Any, Callable
 
@@ -11,15 +13,26 @@ import feedparser
 import requests
 import tenacity
 
-import re
-
 from app.config import SourceConfig
 from app.db import transaction
 from app.incidents import IncidentSignal, sync_incident_open_or_update, sync_incident_resolve
+from app.jobs.pipeline import (
+    get_source_timeout_seconds,
+    iso,
+    parse_date,
+    parse_date_inferred,
+)
 from app.logging_helpers import log_source_complete
 from app.models import CheckStatus, ExtractionMethod
 from app.repos import article_repo, source_repo
-from app.utils import clean_title
+from app.utils import (
+    canonicalize_url,
+    clean_title,
+    normalize_text,
+    sha1_hexdigest,
+    simhash64,
+    utc_now_iso,
+)
 
 
 logger = logging.getLogger("news.pipeline")
@@ -35,27 +48,33 @@ def _should_skip_entry(entry_title: str, skip_patterns: list[str] | None) -> boo
     return False
 
 
+@dataclass(frozen=True)
+class IngestContext:
+    """The three real seams ingest crosses, bundled as one object.
+
+    Only adapters with more than one implementation belong here: the
+    enrichment adapter (no-op vs full chain), the cooldown policy (used by
+    the fetch pipeline and by the export stage), and the incident client.
+    Everything else ingest needs is a pure function imported at module scope
+    (utc_now_iso, iso, parse_date, canonicalize_url, ...) — threaded through
+    the interface they would only add bindings at the call site.
+    """
+
+    issue_client: Any
+    enrich_article_content: Callable[[str, str, str, str], tuple[str, str, list[dict]]]
+    source_is_in_cooldown: Callable[[str | None, datetime | None], bool]
+    should_auto_disable_source: Callable[[int, str | None, datetime | None], bool]
+
+
 def ingest_stage(
     conn: sqlite3.Connection,
     run_id: str,
     sources: list[SourceConfig],
-    issue_client,
+    ctx: IngestContext,
     *,
     defuddle_enabled: bool,
     source_fail_threshold: int,
     source_auto_disable_cooldown_hours: int,
-    source_is_in_cooldown: Callable[[str | None, datetime | None], bool],
-    should_auto_disable_source: Callable[[int, str | None, datetime | None], bool],
-    utc_now_iso: Callable[[], str],
-    iso: Callable[[datetime], str],
-    parse_date: Callable[[Any], datetime],
-    parse_date_inferred: Callable[[Any], tuple[datetime, bool]],
-    canonicalize_url: Callable[[str], str],
-    normalize_text: Callable[[str], str],
-    sha1_hexdigest: Callable[[str], str],
-    simhash64: Callable[[str], int],
-    enrich_article_content: Callable[[str, str, str, str], tuple[str, str, list[dict]]],
-    get_source_timeout_seconds: Callable[[str], int],
     slow_source_latency_ms: int,
 ) -> dict[str, Any]:
     inserted = 0
@@ -80,7 +99,7 @@ def ingest_stage(
         logger.info("Ingesting source=%s url=%s", source.source_id, source.feed_url)
         source_health = source_repo.get_health(conn, source.source_id)
 
-        if source_health and source_is_in_cooldown(source_health["auto_disabled_until"], now):
+        if source_health and ctx.source_is_in_cooldown(source_health["auto_disabled_until"], now):
             skipped_sources += 1
             logger.info(
                 "Skipping source=%s reason=cooldown until=%s",
@@ -198,7 +217,7 @@ def ingest_stage(
                             continue
                         body = str(entry.get("summary", "")).strip()
 
-                        body, method, enrichment_attempts = enrich_article_content(link, source.source_id, title, body)
+                        body, method, enrichment_attempts = ctx.enrich_article_content(link, source.source_id, title, body)
                         source_extraction_methods[method] = source_extraction_methods.get(method, 0) + 1
                         if method == ExtractionMethod.DEFUDDLE.value:
                             defuddle_enriched += 1
@@ -327,7 +346,7 @@ def ingest_stage(
                 incident_key=f"source:{source.source_id}",
                 run_id=run_id,
                 resolution_message="Feed recovered and ingest succeeded.",
-                client=issue_client,
+                client=ctx.issue_client,
             )
             conn.commit()
 
@@ -339,7 +358,7 @@ def ingest_stage(
             with transaction(conn):
                 row = source_repo.get_failure_state(conn, source.source_id)
                 failures = int(row["consecutive_failures"]) + 1 if row else 1
-                should_disable = should_auto_disable_source(
+                should_disable = ctx.should_auto_disable_source(
                     failures=failures,
                     last_success_at=row["last_success_at"] if row else None,
                     now=now,
@@ -380,7 +399,7 @@ def ingest_stage(
                         target_id=source.source_id,
                         message=f"Source failed {failures} consecutive times. Error: {exc}.{disable_note}",
                     )
-                    sync_incident_open_or_update(conn, signal, run_id, issue_client)
+                    sync_incident_open_or_update(conn, signal, run_id, ctx.issue_client)
 
     logger.info(
         "Ingest stage finished inserted_articles=%d failed_sources=%d skipped_sources=%d not_modified_sources=%d auto_disabled_sources=%d defuddle_enriched_articles=%d dead_letters=%d skipped_entries=%d",

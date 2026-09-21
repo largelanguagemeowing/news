@@ -33,19 +33,13 @@ from app.jobs.pipeline import (
     build_runs,
     build_sources,
     build_summary,
-    get_source_timeout_seconds,
-    iso,
     migrate_source_ids,
-    parse_date,
-    parse_date_inferred,
     reset_markdown_new_circuit_breaker,
     should_auto_disable_source,
     source_is_in_cooldown,
     upsert_sources,
-    utc_now_iso,
 )
 from app.models import ExtractionMethod
-from app.utils import canonicalize_url, normalize_text, sha1_hexdigest, simhash64
 
 logger = logging.getLogger("news.pipeline")
 
@@ -104,22 +98,15 @@ def run_fetch_pipeline(export: bool = False) -> int:
             ctx.conn,
             ctx.run_id,
             sources,
-            ctx.issue_client,
+            stages_ingest.IngestContext(
+                issue_client=ctx.issue_client,
+                enrich_article_content=_noop_enrich,
+                source_is_in_cooldown=source_is_in_cooldown,
+                should_auto_disable_source=should_auto_disable_source,
+            ),
             defuddle_enabled=DEFUDDLE_ENABLED,
             source_fail_threshold=SOURCE_FAIL_THRESHOLD,
             source_auto_disable_cooldown_hours=SOURCE_AUTO_DISABLE_COOLDOWN_HOURS,
-            source_is_in_cooldown=source_is_in_cooldown,
-            should_auto_disable_source=should_auto_disable_source,
-            utc_now_iso=utc_now_iso,
-            iso=iso,
-            parse_date=parse_date,
-            parse_date_inferred=parse_date_inferred,
-            canonicalize_url=canonicalize_url,
-            normalize_text=normalize_text,
-            sha1_hexdigest=sha1_hexdigest,
-            simhash64=simhash64,
-            enrich_article_content=_noop_enrich,
-            get_source_timeout_seconds=get_source_timeout_seconds,
             slow_source_latency_ms=SLOW_SOURCE_LATENCY_MS,
         )
 

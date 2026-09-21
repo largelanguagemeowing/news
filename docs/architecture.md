@@ -69,6 +69,19 @@ or the budgets drift apart, so it lives once as `DailyQuota` with two instances
 rather than as two hand-rolled copies (which is what they were, until they
 diverged in how a failure was recorded).
 
+## The ingest seam crosses only real adapters
+
+`ingest_stage` used to take ~13 callables as parameters, but most of them
+(`parse_date`, `iso`, `canonicalize_url`, `normalize_text`, `sha1_hexdigest`,
+`simhash64`, ...) have exactly one implementation — threading them only created
+bindings for the caller to reconcile. Those are now imported at module scope
+inside the stage, and the interface takes one `IngestContext` object carrying
+the adapters that genuinely have a second implementation: the enrichment
+adapter (no-op in the fetch pipe vs the full chain), the cooldown policy, and
+the incident client. Tests can still swap any of it by monkeypatching the
+module or passing a different context; callers no longer restate seventeen
+arguments at every call site.
+
 ## Classification is ML-first with a rule-based guarantee
 
 Events get labels from an ML model when it produces a result; otherwise a
