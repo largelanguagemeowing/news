@@ -17,6 +17,8 @@ import tenacity
 from bs4 import BeautifulSoup
 from youtube_transcript_api import YouTubeTranscriptApi
 
+from app.jobs.quota import DailyQuota, now_iso
+
 
 
 logger = logging.getLogger("news.pipeline")
@@ -24,6 +26,84 @@ MARKDOWN_NEW_QUOTA_PATH = Path("data/status/markdown_new_quota.json")
 MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
 COMPRESS_NEW_QUOTA_PATH = Path("data/status/compress_new_quota.json")
 COMPRESS_NEW_DAILY_LIMIT = int(os.getenv("COMPRESS_NEW_DAILY_LIMIT", "500"))
+
+# Both daily-limit machines are instances of the same DailyQuota state machine
+# (one class, two state files) — see app/jobs/quota.py.
+markdown_new_quota = DailyQuota(
+    name="markdown.new",
+    path=MARKDOWN_NEW_QUOTA_PATH,
+    daily_limit=MARKDOWN_NEW_DAILY_LIMIT,
+    extra_state=lambda: {
+        "header_observations": [],
+        "last_response": None,
+    },
+)
+compress_new_quota = DailyQuota(
+    name="compress.new",
+    path=COMPRESS_NEW_QUOTA_PATH,
+    daily_limit=COMPRESS_NEW_DAILY_LIMIT,
+    extra_state=lambda: {
+        "consecutive_failures": 0,
+        "total_successes": 0,
+        "total_failures": 0,
+        "last_success": None,
+        "last_failure": None,
+    },
+)
+
+
+def record_markdown_new_response(
+    rate_limit_remaining: int,
+    *,
+    status_code: int | None = None,
+    raw_remaining_header: str | None = None,
+    url: str | None = None,
+) -> None:
+    """Record an HTTP response from markdown.new against the daily quota.
+
+    ``rate_limit_remaining`` follows the chain's convention: -1 unknown/unset,
+    0 exhausted (HTTP 429), -2 retry-after > 24h.
+    """
+    state = markdown_new_quota.load()
+    limit = int(state.get("limit") or markdown_new_quota.daily_limit)
+    response_meta = {
+        "observed_at": now_iso(),
+        "status_code": status_code,
+        "x_rate_limit_remaining": raw_remaining_header,
+        "parsed_remaining": rate_limit_remaining,
+        "url": url,
+    }
+    observations = state.get("header_observations")
+    if not isinstance(observations, list):
+        observations = []
+    observations.append(response_meta)
+    state["header_observations"] = observations[-20:]
+    state["last_response"] = response_meta
+    if rate_limit_remaining >= 0:
+        state["remaining"] = min(rate_limit_remaining, limit)
+        state["requests_made"] = max(
+            int(state.get("requests_made") or 0),
+            max(0, limit - state["remaining"]),
+        )
+    if rate_limit_remaining in {0, -2}:
+        state["remaining"] = 0
+        state["exhausted"] = True
+    markdown_new_quota.save(state)
+
+
+def record_compress_new_response(success: bool, error: str | None = None) -> None:
+    """Record a compress.new outcome (success/failure counters) in the quota state."""
+    state = compress_new_quota.load()
+    now = now_iso()
+    if success:
+        state["consecutive_failures"] = 0
+        state["total_successes"] = int(state.get("total_successes", 0)) + 1
+        state["last_success"] = now
+    else:
+        state["consecutive_failures"] = int(state.get("consecutive_failures", 0)) + 1
+        state["total_failures"] = int(state.get("total_failures", 0)) + 1
+        state["last_failure"] = now
+    compress_new_quota.save(state)
 
 
 def _request_retry(retry_error_callback, log_message: str, url: str):
@@ -65,197 +145,6 @@ class EnrichmentSettings:
     youtube_source_ids: set[str]
 
 
-def _markdown_new_quota_date() -> str:
-    return datetime.now(timezone.utc).date().isoformat()
-
-
-def _new_markdown_quota_state(today: str | None = None) -> dict[str, Any]:
-    date = today or _markdown_new_quota_date()
-    return {
-        "date": date,
-        "header_observations": [],
-        "limit": MARKDOWN_NEW_DAILY_LIMIT,
-        "last_response": None,
-        "requests_made": 0,
-        "remaining": MARKDOWN_NEW_DAILY_LIMIT,
-        "exhausted": False,
-        "updated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-    }
-
-
-def load_markdown_new_quota_state() -> dict[str, Any]:
-    today = _markdown_new_quota_date()
-    if not MARKDOWN_NEW_QUOTA_PATH.exists():
-        return _new_markdown_quota_state(today)
-    try:
-        state = json.loads(MARKDOWN_NEW_QUOTA_PATH.read_text(encoding="utf-8"))
-        if not isinstance(state, dict) or state.get("date") != today:
-            return _new_markdown_quota_state(today)
-        state["limit"] = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-        state["requests_made"] = int(state.get("requests_made") or 0)
-        state["remaining"] = int(state.get("remaining") or 0)
-        state["exhausted"] = bool(state.get("exhausted")) or state["remaining"] <= 0
-        return state
-    except Exception as exc:
-        logger.warning("Failed to read markdown.new quota state error=%s", exc)
-        return _new_markdown_quota_state(today)
-
-
-def save_markdown_new_quota_state(state: dict[str, Any]) -> None:
-    state["updated_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    MARKDOWN_NEW_QUOTA_PATH.parent.mkdir(parents=True, exist_ok=True)
-    MARKDOWN_NEW_QUOTA_PATH.write_text(
-        json.dumps(state, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
-
-
-def markdown_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
-    state = load_markdown_new_quota_state()
-    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-    exhausted = (
-        bool(state.get("exhausted"))
-        or int(state.get("remaining") or 0) <= 0
-        or int(state.get("requests_made") or 0) >= limit
-    )
-    return exhausted, state
-
-
-def reserve_markdown_new_request() -> bool:
-    exhausted, state = markdown_new_quota_exhausted()
-    if exhausted:
-        return False
-    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-    requests_made = int(state.get("requests_made") or 0) + 1
-    state["requests_made"] = requests_made
-    state["remaining"] = max(0, min(int(state.get("remaining") or limit), limit - requests_made))
-    state["exhausted"] = state["remaining"] <= 0
-    save_markdown_new_quota_state(state)
-    return True
-
-
-def record_markdown_new_response(
-    rate_limit_remaining: int,
-    *,
-    status_code: int | None = None,
-    raw_remaining_header: str | None = None,
-    url: str | None = None,
-) -> None:
-    state = load_markdown_new_quota_state()
-    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-    observed_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    response_meta = {
-        "observed_at": observed_at,
-        "status_code": status_code,
-        "x_rate_limit_remaining": raw_remaining_header,
-        "parsed_remaining": rate_limit_remaining,
-        "url": url,
-    }
-    observations = state.get("header_observations")
-    if not isinstance(observations, list):
-        observations = []
-    observations.append(response_meta)
-    state["header_observations"] = observations[-20:]
-    state["last_response"] = response_meta
-    if rate_limit_remaining >= 0:
-        state["remaining"] = min(rate_limit_remaining, limit)
-        state["requests_made"] = max(
-            int(state.get("requests_made") or 0),
-            max(0, limit - state["remaining"]),
-        )
-    if rate_limit_remaining in {0, -2}:
-        state["remaining"] = 0
-        state["exhausted"] = True
-    save_markdown_new_quota_state(state)
-
-
-def _compress_new_quota_date() -> str:
-    return datetime.now(timezone.utc).date().isoformat()
-
-
-def _new_compress_quota_state(today: str | None = None) -> dict[str, Any]:
-    date = today or _compress_new_quota_date()
-    return {
-        "date": date,
-        "requests_made": 0,
-        "limit": COMPRESS_NEW_DAILY_LIMIT,
-        "remaining": COMPRESS_NEW_DAILY_LIMIT,
-        "exhausted": False,
-        "consecutive_failures": 0,
-        "total_successes": 0,
-        "total_failures": 0,
-        "last_success": None,
-        "last_failure": None,
-        "updated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-    }
-
-
-def load_compress_new_quota_state() -> dict[str, Any]:
-    today = _compress_new_quota_date()
-    if not COMPRESS_NEW_QUOTA_PATH.exists():
-        return _new_compress_quota_state(today)
-    try:
-        state = json.loads(COMPRESS_NEW_QUOTA_PATH.read_text(encoding="utf-8"))
-        if not isinstance(state, dict) or state.get("date") != today:
-            return _new_compress_quota_state(today)
-        state["limit"] = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
-        state["requests_made"] = int(state.get("requests_made") or 0)
-        state["remaining"] = int(state.get("remaining") or 0)
-        state["exhausted"] = bool(state.get("exhausted")) or state["remaining"] <= 0
-        state["consecutive_failures"] = int(state.get("consecutive_failures") or 0)
-        state["total_successes"] = int(state.get("total_successes") or 0)
-        state["total_failures"] = int(state.get("total_failures") or 0)
-        return state
-    except Exception as exc:
-        logger.warning("Failed to read compress.new quota state error=%s", exc)
-        return _new_compress_quota_state(today)
-
-
-def save_compress_new_quota_state(state: dict[str, Any]) -> None:
-    state["updated_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    COMPRESS_NEW_QUOTA_PATH.parent.mkdir(parents=True, exist_ok=True)
-    COMPRESS_NEW_QUOTA_PATH.write_text(
-        json.dumps(state, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
-
-
-def compress_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
-    state = load_compress_new_quota_state()
-    limit = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
-    exhausted = (
-        bool(state.get("exhausted"))
-        or int(state.get("remaining") or 0) <= 0
-        or int(state.get("requests_made") or 0) >= limit
-    )
-    return exhausted, state
-
-
-def reserve_compress_new_request() -> bool:
-    exhausted, state = compress_new_quota_exhausted()
-    if exhausted:
-        return False
-    limit = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
-    requests_made = int(state.get("requests_made") or 0) + 1
-    state["requests_made"] = requests_made
-    state["remaining"] = max(0, min(int(state.get("remaining") or limit), limit - requests_made))
-    state["exhausted"] = state["remaining"] <= 0
-    save_compress_new_quota_state(state)
-    return True
-
-
-def record_compress_new_response(success: bool, error: str | None = None) -> None:
-    state = load_compress_new_quota_state()
-    now = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    if success:
-        state["consecutive_failures"] = 0
-        state["total_successes"] = int(state.get("total_successes", 0)) + 1
-        state["last_success"] = now
-    else:
-        state["consecutive_failures"] = int(state.get("consecutive_failures", 0)) + 1
-        state["total_failures"] = int(state.get("total_failures", 0)) + 1
-        state["last_failure"] = now
-    save_compress_new_quota_state(state)
 
 
 def truncate_for_storage(text: str, max_chars: int) -> str:

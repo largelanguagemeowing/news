@@ -53,6 +53,16 @@ A dependable general extractor is the guarantee that every article still gets a
 body when the quality extractors are exhausted or unavailable. `defuddle` is an
 experimental extractor and participates only when explicitly enabled.
 
+## Daily quotas are one machine, not two copies
+
+The two cloud extractors that run on a paid daily budget (markdown.new,
+compress.new) share the same bookkeeping: one quota JSON state file per
+extractor, a one-UTC-day period, reserve-before-request, record-after-response,
+and exhausted-when-requests-reach-limit. That logic has to be identical for both
+or the budgets drift apart, so it lives once as `DailyQuota` with two instances
+rather than as two hand-rolled copies (which is what they were, until they
+diverged in how a failure was recorded).
+
 ## Classification is ML-first with a rule-based guarantee
 
 Events get labels from an ML model when it produces a result; otherwise a

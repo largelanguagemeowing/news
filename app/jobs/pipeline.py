@@ -25,10 +25,6 @@ from app.utils import utc_now_iso
 
 
 STATUS_DIR = Path("data/status")
-MARKDOWN_NEW_QUOTA_PATH = STATUS_DIR / "markdown_new_quota.json"
-MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
-COMPRESS_NEW_QUOTA_PATH = STATUS_DIR / "compress_new_quota.json"
-COMPRESS_NEW_DAILY_LIMIT = int(os.getenv("COMPRESS_NEW_DAILY_LIMIT", "500"))
 COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD = int(os.getenv("COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD", "5"))
 COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS = int(os.getenv("COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS", "300"))
 SOURCE_ID_RENAMES = {
@@ -419,12 +415,12 @@ def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
     if _COMPRESS_NEW_BREAKER.is_blocked():
         logger.warning("compress.new circuit breaker open, skipping")
         return None, False
-    exhausted, state = enrichment.compress_new_quota_exhausted()
+    exhausted, state = enrichment.compress_new_quota.exhausted()
     if exhausted:
         logger.info("compress.new quota exhausted date=%s requests=%d limit=%d",
                     state.get("date"), state.get("requests_made"), state.get("limit"))
         return None, False
-    if not enrichment.reserve_compress_new_request():
+    if not enrichment.compress_new_quota.reserve():
         return None, False
     try:
         result = enrichment.parse_with_compress_new(url, _enrichment_settings())
@@ -433,7 +429,7 @@ def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
         return result
     except Exception as exc:
         enrichment.record_compress_new_response(False, str(exc))
-        state = enrichment.load_compress_new_quota_state()
+        state = enrichment.compress_new_quota.load()
         consecutive_failures = state.get("consecutive_failures", 0)
         if consecutive_failures >= COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD:
             _COMPRESS_NEW_BREAKER.block(
@@ -580,7 +576,7 @@ def enrich_with_policy(
                     url,
                 )
                 continue
-            quota_exhausted, quota_state = enrichment.markdown_new_quota_exhausted()
+            quota_exhausted, quota_state = enrichment.markdown_new_quota.exhausted()
             if quota_exhausted:
                 logger.warning(
                     "Enrichment skip source=%s method=%s url=%s reason=daily_quota_exhausted date=%s requests_made=%s limit=%s",
@@ -603,7 +599,7 @@ def enrich_with_policy(
                     url,
                 )
                 continue
-            if not enrichment.reserve_markdown_new_request():
+            if not enrichment.markdown_new_quota.reserve():
                 logger.warning(
                     "Enrichment skip source=%s method=%s url=%s reason=daily_quota_reserve_failed",
                     source_id,
