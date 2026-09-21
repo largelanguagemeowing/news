@@ -1,175 +1,149 @@
 # Pipeline Architecture
 
-## Overview
+The pipeline turns RSS feeds into deduplicated, labeled events and exports them
+as JSON for a static dashboard. The code is the source of truth for *how* it
+works — entrypoints, stages, tables, and configuration can all be read from the
+repo. This document records only what the code cannot tell you: the *why*
+behind the pipeline's shape, and the constraints those decisions respond to.
+Read it before changing pipeline behavior when you need the reasoning behind a
+structure.
 
-The news aggregator runs a **4-stage pipeline** that ingests RSS feeds, deduplicates articles into events, classifies them by topic, and exports status JSON files for the dashboard.
+## Three runs, not one monolith
 
-```
-[Sources] → Ingest → [articles table] → Cluster → [events table]
-                                              → Categorize → [events.category_labels]
-                                                                 → Export → [articles.json, events.json, ...]
-```
+The pipeline is split into separate runs — fetch, enrich, classify — each with
+its own schedule, plus a combined run for back-to-back execution on demand. The
+split exists because the passes have very different economics:
 
-## Stage 1: Ingest (`stages_ingest.py`)
+- **Fetch** is cheap and frequent: it enqueues articles from feeds.
+- **Enrich** is expensive and quota-bound: it pulls article bodies through
+  external extraction APIs that rate-limit and cost money.
+- **Classify** is discrete and retrainable: it clusters and labels, and improves
+  as training data grows.
 
-Fetches RSS/Atom feeds from configured sources, parses entries, enriches bodies, and stores in SQLite.
+Separating them keeps each run short, limits the blast radius of a failure, and
+lets each pass retry independently. Runs are allowed to overlap rather than
+cancel each other, so a long classify run does not interrupt the feed schedule.
 
-**Flow:**
+## The runs share one orchestration envelope
 
-1. For each enabled source, fetch the feed URL
-2. Parse feed entries with `feedparser`
-3. For each entry: deduplicate (canonical URL + published_at), enrich body content via a priority chain:
-   - YouTube sources: `youtube` metadata + optional transcript
-   - OpenAI sources: `markdown.new` → `compress.new` → `jina` → `defuddle` → `trafilatura`
-   - Other sources: `trafilatura` → `jina` → `defuddle`
-4. Insert into `articles` table (title, body, url, source_id, simhash, etc.)
+Separate runs must not mean separate run bookkeeping. The three entrypoints
+share a single run envelope (`app.jobs.runner`) that owns the run record, the
+stage records, and incident escalation, because those policies have to be
+identical across runs to stay trustworthy. They were copy-pasted once and
+drifted — enrich silently stopped escalating failures while fetch and classify
+kept opening incidents — so the envelope exists to make the policy single
+source of truth rather than a thing each run re-implements. A pipeline is just
+a named list of stages; the envelope records, times, and escalates them the
+same way everywhere.
 
-**Key tables:** `articles`, `source_health`, `source_checks`, `dead_letters`
+## Enrichment is a separate pass because bodies are the expensive part
 
-**Source config:** `config/sources.yml` — list of `{id, name, feed_url, default_category, enabled}`
+Ingest only needs titles, URLs, and metadata to deduplicate. The body is fetched
+afterwards in a bounded, batched pass, so a transient extraction failure does
+not block ingest, and the expensive work happens once per article rather than
+once per feed refresh.
 
-## Stage 2: Cluster (`stages_cluster.py:cluster_stage`)
+## Body extraction is a preference chain, not a fallback stack
 
-Groups duplicate/related articles into events using pairwise similarity.
+Several extractors exist for the same job. They are ordered by the quality of
+their output, and the chain stops at the first success. Rich markdown-oriented
+extractors are favored for content that publishes well, but they are
+quota- and rate-limited, so quota state is persisted and honored between runs.
+A dependable general extractor is the guarantee that every article still gets a
+body when the quality extractors are exhausted or unavailable. `defuddle` is an
+experimental extractor and participates only when explicitly enabled.
 
-**Flow:**
+The chain is implemented as a registry keyed by method name (`EXTRACTORS`):
+each extractor is one attempt function plus one registration line, and the
+ordering policy (`_extraction_methods`) is separate from each method's own
+behaviour. Adding an extractor no longer means editing a nested method dispatch;
+an extractor's quota, breaker, and fallback logic live with that extractor.
 
-1. Query articles within `cluster_lookback_days` window
-2. For each article, compare against existing event groups:
-   - Time window check: articles must be within `cluster_window_hours` of the group representative
-   - Similarity score: `pair_similarity(title_norm, simhash)` — combination of text + hash similarity
-   - Threshold: `similarity_threshold` (configurable)
-3. Clear and rebuild `events` + `event_members` tables
-4. Each event gets: `cluster_key`, `canonical_title`, `first_seen`, `last_seen`, `representative_article_id`, `source_count`
+## Daily quotas are one machine, not two copies
 
-**Key tables:** `events` (created), `event_members` (created)
+The two cloud extractors that run on a paid daily budget (markdown.new,
+compress.new) share the same bookkeeping: one quota JSON state file per
+extractor, a one-UTC-day period, reserve-before-request, record-after-response,
+and exhausted-when-requests-reach-limit. That logic has to be identical for both
+or the budgets drift apart, so it lives once as `DailyQuota` with two instances
+rather than as two hand-rolled copies (which is what they were, until they
+diverged in how a failure was recorded).
 
-## Stage 3: Categorize (`stages_cluster.py:categorize_stage`)
+## The ingest seam crosses only real adapters
 
-Assigns a topic label and confidence to each event.
+`ingest_stage` used to take ~13 callables as parameters, but most of them
+(`parse_date`, `iso`, `canonicalize_url`, `normalize_text`, `sha1_hexdigest`,
+`simhash64`, ...) have exactly one implementation — threading them only created
+bindings for the caller to reconcile. Those are now imported at module scope
+inside the stage, and the interface takes one `IngestContext` object carrying
+the adapters that genuinely have a second implementation: the enrichment
+adapter (no-op in the fetch pipe vs the full chain), the cooldown policy, and
+the incident client. Tests can still swap any of it by monkeypatching the
+module or passing a different context; callers no longer restate seventeen
+arguments at every call site.
 
-**Flow:**
+## Classification is ML-first with a rule-based guarantee
 
-1. For each event, classify the representative article's title + body
-2. Classification chain (`classify_event` in `pipeline.py:249`):
-   ```
-   classify_event(title, body, default_category)
-     → ml_classifier.classify_with_model()  # ML-based, returns (label, confidence) or None
-     → classify_article()                   # Rule-based fallback (see classifier.py)
-   ```
-3. Update `events.category_labels` and `events.confidence`
+Events get labels from an ML model when it produces a result; otherwise a
+deterministic rule set labels them. The rules are not a last-ditch fallback but
+a *guarantee*: every event is labeled, decisions are explainable, and the rules
+generate weak labels used as training data for the model. The model sharpens
+classification where rules are blunt; the rules ensure an absent or
+low-confidence model never leaves an event unlabeled.
 
-### Classifier Rules (`classifier.py`)
+## Events are a deterministic rebuild
 
-**`TOPIC_RULES`**: Per-topic keyword patterns with weights. A topic score is computed as:
-```
-score = sum(weight * occurrences * title_boost for each matching pattern)
-```
-Where `title_boost = 1.8` if the pattern also appears in the title.
+Clustering groups duplicate and related coverage into events using title
+similarity plus a content hash, within a time window. The rebuild is
+deliberately destructive-but-atomic: it clears and recomputes events from the
+current articles so events can never drift from the articles they reference,
+and a failed run rolls back entirely rather than committing a partial rebuild.
+The similarity threshold is a quality-vs-noise tradeoff — too loose merges
+distinct stories, too strict splits one story across events — so it is
+configuration, tuned by inspecting real exports, not a scientific constant.
 
-Available topics (2026):
-`ai-models`, `agents`, `research`, `product`, `security`, `safety`, `policy`, `funding`, `infrastructure`, `coding`, `robotics`, `tutorial`, `development`, `education`, `enterprise`, `hardware`, `media`, `news`, `opinion`, `tools`
+## Export derives; it does not store
 
-**`classify_article()`**: Returns `Classification(label, confidence, scores, evidence)`. Confidence is derived from top score + margin over runner-up.
+Status files are derived from the database at export time instead of from
+long-lived counters. Mutable counters drifted (never reset, never decayed) and
+painted the dashboard with stale numbers; at this scale, deriving them from the
+source tables on each export is both accurate and cheap.
 
-**`extract_article_tags()`**: Generates tags from text by matching `TAG_RULES` patterns (independent of topic classification).
+## The audit tables exist because silence was ambiguous
 
-**`generate_weak_labels()`**: Standalone utility to batch-classify articles for training data generation.
+Ingest and enrichment write attempt logs, and failed entries go to a dead-letter
+record. They exist because silently dropping an entry made "feed is stale"
+indistinguishable from "everything was a duplicate" or "parsing failed". The
+logs turn operational silence into diagnosable history.
 
-## Stage 4: Export (`stages_export.py`)
+## Failures land where the reviewer already looks
 
-Reads DB state and writes JSON status files consumed by the dashboard.
+Pipeline failures escalate to GitHub Issues instead of disappearing into logs,
+and incidents are surfaced in the exported status. The pipeline's operating
+position is: a problem becomes a record the dashboard already shows.
 
-**Files written to `data/status/`:**
+## The repo is part of the state machine
 
-| File | Source | Description |
-|------|--------|-------------|
-| `summary.json` | Aggregated queries | Pipeline health, source counts, event counts |
-| `sources.json` | `sources` + `source_health` | Per-source status, uptime, latency |
-| `runs.json` | `pipeline_runs` + `stage_runs` | Recent pipeline run history |
-| `incidents.json` | `incidents` | Open/resolved incidents |
-| `events.json` | `events` | Recent event clusters |
-| `articles.json` | `articles` + `events` + export logic | Enriched article list (see below) |
-| `source_health.json` | `source_health` | Raw source health rows |
-| `source_checks.json` | `source_checks` | Check history |
-| `event_members.json` | `event_members` | Article-to-event mappings |
-| `ingest_attempts.json` | `article_ingest_attempts` | Ingest attempt log |
-| `enrichment_attempts.json` | `article_enrichment_attempts` | Enrichment attempt log |
-| `dead_letters.json` | `dead_letters` | Failed ingest entries |
+Exported status is committed back to the repository by the artifact jobs. The
+deployed dashboard is a static snapshot of that data — there is no backend —
+and the git history doubles as a record of what was served and when.
 
-### Article Export (`build_articles`)
+## pipeline.py is a facade, not the pipeline
 
-For each article (within `articles_export_limit`):
+`app/jobs/pipeline.py` used to be a ~950-line grab bag: the settings snapshot,
+the source-id migrations, the circuit breakers, the parse adapters, the whole
+extraction chain, and the export facade all shared one import surface. That
+pulled unrelated concerns together and pushed tests into monkeypatching
+re-export wrappers that existed only because the chain happened to live there.
 
-1. Determine **topic**:
-   - If article belongs to an event: `events.category_labels`
-   - Otherwise: `classify_event(title, body, default_category)` fallback
-2. Generate **tags** via `extract_article_tags(title, body, source_id)`
-3. Prepend topic to tags if not already present
-4. Resolve YouTube DeArrow thumbnail mappings
-
-## Classifier Modules
-
-| Module | File | Purpose |
-|--------|------|---------|
-| Rule-based | `classifier.py` | Keyword scoring, tag extraction, weak label generation |
-| ML-based | `ml_classifier.py` | ML model inference (fallback in `classify_event`) |
-| V2 (unused) | `classifier_v2.py` | Alternative implementation, not integrated |
-
-## Data Flow Diagram
-
-```
-                               ┌─────────────┐
-                               │  Sources     │
-                               │ (sources.yml)│
-                               └──────┬──────┘
-                                      │
-                                      ▼
- ┌──────────────────────────────────────────────────────┐
- │                   Ingest Stage                       │
- │  RSS/Atom → feedparser → enrich (defuddle/jina/...) │
- │  → deduplicate → INSERT INTO articles                │
- └──────────────────────┬───────────────────────────────┘
-                        │
-                        ▼
- ┌──────────────────────────────────────────────────────┐
- │                  Cluster Stage                       │
- │  pairwise similarity (title_norm + simhash)          │
- │  → group articles into events                        │
- │  → INSERT INTO events, event_members                 │
- └──────────────────────┬───────────────────────────────┘
-                        │
-                        ▼
- ┌──────────────────────────────────────────────────────┐
- │                Categorize Stage                      │
- │  For each event: classify(title, body)               │
- │  → UPDATE events SET category_labels                 │
- │    (ML classifier → rule-based fallback)             │
- └──────────────────────┬───────────────────────────────┘
-                        │
-                        ▼
- ┌──────────────────────────────────────────────────────┐
- │                  Export Stage                        │
- │  Build JSON files from DB:                           │
- │  • events.category_labels → topic for clustered     │
- │  • classify_event() → topic for unclustered         │
- │  • extract_article_tags() → tags                    │
- │  → WRITE data/status/*.json                         │
- └──────────────────────────────────────────────────────┘
-                        │
-                        ▼
-                  ┌─────────────┐
-                  │  Dashboard  │
-                  │ (static SPA)│
-                  └─────────────┘
-```
-
-## Key Configuration
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `similarity_threshold` | 0.85 | Min score to cluster two articles |
-| `cluster_window_hours` | 48 | Max time gap between clustered articles |
-| `cluster_lookback_days` | 14 | How far back to look for clustering |
-| `articles_export_limit` | 500 | Max articles in exported JSON |
-| `events_export_limit` | 200 | Max events in exported JSON |
+That logic now lives in its owner modules — the settings snapshot in
+`app.settings`, migration replay in `app.jobs.migrations`, extraction policy
+and the chain in `app.jobs.enrichment`, the real export stages in
+`app.jobs.stages_export` — and `pipeline.py` keeps only what the pipeline
+genuinely owns (date parsing, the cooldown/auto-disable policy, source
+upserts, the classify wrapper, the export legs) plus a re-export surface for
+call sites that still name it. `DEFUDDLE_ENABLED` is a mutable binding in
+`enrichment.py`, the module whose chain reads it, so the backfill
+`--enable-defuddle` override reaches the code it gates. New code should import
+from the owner modules directly; tests patch the real modules, not the
+facade.

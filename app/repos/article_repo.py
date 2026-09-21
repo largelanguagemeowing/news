@@ -104,20 +104,3 @@ def record_enrichment_attempt(
         """,
         (article_url, source_id, method, status, duration_ms, error_message, output_chars, created_at),
     )
-
-
-def update_articles_backfill(
-    conn: sqlite3.Connection,
-    updates: list[tuple[str, str, str, str, str, int]],
-) -> int:
-    if not updates:
-        return 0
-    conn.executemany(
-        """
-        UPDATE articles
-        SET body = ?, body_norm = ?, body_hash = ?, simhash = ?, extraction_method = ?
-        WHERE article_id = ?
-        """,
-        updates,
-    )
-    return len(updates)

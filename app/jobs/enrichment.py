@@ -10,7 +10,7 @@ import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
-from typing import Any, Literal
+from typing import Any, Callable, Literal
 from urllib.parse import urlparse
 
 import requests
@@ -19,7 +19,19 @@ import trafilatura
 from bs4 import BeautifulSoup
 from youtube_transcript_api import YouTubeTranscriptApi
 
+from app.jobs import next_flight
+from app.jobs.quota import DailyQuota, now_iso
 from app.models import ExtractionMethod
+from app.settings import (
+    COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS,
+    COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD,
+    DEFUDDLE_ENABLED,
+    DEFUDDLE_MAX_CHARS,
+    DEFUDDLE_TIMEOUT_SECONDS,
+    REQUEST_TIMEOUT_SECONDS,
+    YOUTUBE_SOURCE_IDS,
+)
+
 
 
 logger = logging.getLogger("news.pipeline")
@@ -27,6 +39,150 @@ MARKDOWN_NEW_QUOTA_PATH = Path("data/status/markdown_new_quota.json")
 MARKDOWN_NEW_DAILY_LIMIT = int(os.getenv("MARKDOWN_NEW_DAILY_LIMIT", "500"))
 COMPRESS_NEW_QUOTA_PATH = Path("data/status/compress_new_quota.json")
 COMPRESS_NEW_DAILY_LIMIT = int(os.getenv("COMPRESS_NEW_DAILY_LIMIT", "500"))
+
+# Both daily-limit machines are instances of the same DailyQuota state machine
+# (one class, two state files) — see app/jobs/quota.py.
+markdown_new_quota = DailyQuota(
+    name="markdown.new",
+    path=MARKDOWN_NEW_QUOTA_PATH,
+    daily_limit=MARKDOWN_NEW_DAILY_LIMIT,
+    extra_state=lambda: {
+        "header_observations": [],
+        "last_response": None,
+    },
+)
+compress_new_quota = DailyQuota(
+    name="compress.new",
+    path=COMPRESS_NEW_QUOTA_PATH,
+    daily_limit=COMPRESS_NEW_DAILY_LIMIT,
+    extra_state=lambda: {
+        "consecutive_failures": 0,
+        "total_successes": 0,
+        "total_failures": 0,
+        "last_success": None,
+        "last_failure": None,
+    },
+)
+
+
+# The 429 retry-after that means "stop processing early" for markdown.new.
+MARKDOWN_NEW_BLOCK_SECONDS_ON_429 = 600
+
+
+class _CircuitBreaker:
+    """Tiny in-process circuit breaker keyed off a wall-clock timestamp.
+
+    Shared by the markdown.new and compress.new quota paths; the two
+    breakers were previously hand-rolled copies of the same pattern.
+    """
+
+    def __init__(self, name: str) -> None:
+        self._name = name
+        self._blocked_until = 0.0
+
+    def reset(self) -> None:
+        self._blocked_until = 0.0
+
+    def is_blocked(self) -> bool:
+        return self._blocked_until > time.time()
+
+    def seconds_remaining(self) -> int:
+        return max(0, int(self._blocked_until - time.time()))
+
+    def block(self, seconds: int, reason: str) -> None:
+        seconds = max(1, seconds)
+        self._blocked_until = max(self._blocked_until, time.time() + seconds)
+        logger.warning(
+            "%s circuit breaker open seconds=%d reason=%s",
+            self._name,
+            self.seconds_remaining(),
+            reason,
+        )
+
+
+_MARKDOWN_NEW_BREAKER = _CircuitBreaker("markdown.new")
+_COMPRESS_NEW_BREAKER = _CircuitBreaker("compress.new")
+
+
+def reset_markdown_new_circuit_breaker() -> None:
+    _MARKDOWN_NEW_BREAKER.reset()
+
+
+def reset_compress_new_circuit_breaker() -> None:
+    _COMPRESS_NEW_BREAKER.reset()
+
+
+def record_markdown_new_response(
+    rate_limit_remaining: int,
+    *,
+    status_code: int | None = None,
+    raw_remaining_header: str | None = None,
+    url: str | None = None,
+) -> None:
+    """Record an HTTP response from markdown.new against the daily quota.
+
+    ``rate_limit_remaining`` follows the chain's convention: -1 unknown/unset,
+    0 exhausted (HTTP 429), -2 retry-after > 24h.
+    """
+    state = markdown_new_quota.load()
+    limit = int(state.get("limit") or markdown_new_quota.daily_limit)
+    response_meta = {
+        "observed_at": now_iso(),
+        "status_code": status_code,
+        "x_rate_limit_remaining": raw_remaining_header,
+        "parsed_remaining": rate_limit_remaining,
+        "url": url,
+    }
+    observations = state.get("header_observations")
+    if not isinstance(observations, list):
+        observations = []
+    observations.append(response_meta)
+    state["header_observations"] = observations[-20:]
+    state["last_response"] = response_meta
+    if rate_limit_remaining >= 0:
+        state["remaining"] = min(rate_limit_remaining, limit)
+        state["requests_made"] = max(
+            int(state.get("requests_made") or 0),
+            max(0, limit - state["remaining"]),
+        )
+    if rate_limit_remaining in {0, -2}:
+        state["remaining"] = 0
+        state["exhausted"] = True
+    markdown_new_quota.save(state)
+
+
+def record_compress_new_response(success: bool, error: str | None = None) -> None:
+    """Record a compress.new outcome (success/failure counters) in the quota state."""
+    state = compress_new_quota.load()
+    now = now_iso()
+    if success:
+        state["consecutive_failures"] = 0
+        state["total_successes"] = int(state.get("total_successes", 0)) + 1
+        state["last_success"] = now
+    else:
+        state["consecutive_failures"] = int(state.get("consecutive_failures", 0)) + 1
+        state["total_failures"] = int(state.get("total_failures", 0)) + 1
+        state["last_failure"] = now
+    compress_new_quota.save(state)
+
+
+def _request_retry(retry_error_callback, log_message: str, url: str):
+    """Decorator factory: retry a request on transient errors with backoff.
+
+    Shared retry policy (two attempts, exponential backoff capped at 10s) used
+    by every requests-based fetcher in this module.
+    """
+    return tenacity.retry(
+        stop=tenacity.stop_after_attempt(2),
+        wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
+        retry=tenacity.retry_if_exception_type(
+            (requests.RequestException, requests.HTTPError)
+        ),
+        retry_error_callback=retry_error_callback,
+        before_sleep=lambda retry_state: logger.debug(
+            log_message, retry_state.attempt_number, url
+        ),
+    )
 
 
 MethodName = Literal[
@@ -49,216 +205,20 @@ class EnrichmentSettings:
     youtube_source_ids: set[str]
 
 
-@dataclass(frozen=True)
-class EnrichOptions:
-    only_method: MethodName | None = None
-    markdown_new_budget_remaining: int | None = None
-    stop_on_markdown_rate_limit: bool = False
+def _enrichment_settings() -> EnrichmentSettings:
+    """Build the settings object each parse call needs.
 
-
-@dataclass(frozen=True)
-class EnrichResult:
-    body: str
-    method: MethodName
-    rate_limit_remaining: int = -1
-    markdown_new_rate_limited: bool = False
-    retry_after_seconds: int = 0
-    stop_processing: bool = False
-    attempts: tuple[dict, ...] = ()
-    dearrow_thumbnail_url: str = ""
-
-
-def _markdown_new_quota_date() -> str:
-    return datetime.now(timezone.utc).date().isoformat()
-
-
-def _new_markdown_quota_state(today: str | None = None) -> dict[str, Any]:
-    date = today or _markdown_new_quota_date()
-    return {
-        "date": date,
-        "header_observations": [],
-        "limit": MARKDOWN_NEW_DAILY_LIMIT,
-        "last_response": None,
-        "requests_made": 0,
-        "remaining": MARKDOWN_NEW_DAILY_LIMIT,
-        "exhausted": False,
-        "updated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-    }
-
-
-def load_markdown_new_quota_state() -> dict[str, Any]:
-    today = _markdown_new_quota_date()
-    if not MARKDOWN_NEW_QUOTA_PATH.exists():
-        return _new_markdown_quota_state(today)
-    try:
-        state = json.loads(MARKDOWN_NEW_QUOTA_PATH.read_text(encoding="utf-8"))
-        if not isinstance(state, dict) or state.get("date") != today:
-            return _new_markdown_quota_state(today)
-        state["limit"] = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-        state["requests_made"] = int(state.get("requests_made") or 0)
-        state["remaining"] = int(state.get("remaining") or 0)
-        state["exhausted"] = bool(state.get("exhausted")) or state["remaining"] <= 0
-        return state
-    except Exception as exc:
-        logger.warning("Failed to read markdown.new quota state error=%s", exc)
-        return _new_markdown_quota_state(today)
-
-
-def save_markdown_new_quota_state(state: dict[str, Any]) -> None:
-    state["updated_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    MARKDOWN_NEW_QUOTA_PATH.parent.mkdir(parents=True, exist_ok=True)
-    MARKDOWN_NEW_QUOTA_PATH.write_text(
-        json.dumps(state, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+    Reads the module-level snapshot (DEFUDDLE_ENABLED and friends imported
+    from app.settings) at call time, so the backfill `--enable-defuddle`
+    override of DEFUDDLE_ENABLED is honoured by every parse in the chain.
+    """
+    return EnrichmentSettings(
+        defuddle_enabled=DEFUDDLE_ENABLED,
+        defuddle_timeout_seconds=DEFUDDLE_TIMEOUT_SECONDS,
+        max_chars=DEFUDDLE_MAX_CHARS,
+        request_timeout_seconds=REQUEST_TIMEOUT_SECONDS,
+        youtube_source_ids=YOUTUBE_SOURCE_IDS,
     )
-
-
-def markdown_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
-    state = load_markdown_new_quota_state()
-    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-    exhausted = (
-        bool(state.get("exhausted"))
-        or int(state.get("remaining") or 0) <= 0
-        or int(state.get("requests_made") or 0) >= limit
-    )
-    return exhausted, state
-
-
-def reserve_markdown_new_request() -> bool:
-    exhausted, state = markdown_new_quota_exhausted()
-    if exhausted:
-        return False
-    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-    requests_made = int(state.get("requests_made") or 0) + 1
-    state["requests_made"] = requests_made
-    state["remaining"] = max(0, min(int(state.get("remaining") or limit), limit - requests_made))
-    state["exhausted"] = state["remaining"] <= 0
-    save_markdown_new_quota_state(state)
-    return True
-
-
-def record_markdown_new_response(
-    rate_limit_remaining: int,
-    *,
-    status_code: int | None = None,
-    raw_remaining_header: str | None = None,
-    url: str | None = None,
-) -> None:
-    state = load_markdown_new_quota_state()
-    limit = int(state.get("limit") or MARKDOWN_NEW_DAILY_LIMIT)
-    observed_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    response_meta = {
-        "observed_at": observed_at,
-        "status_code": status_code,
-        "x_rate_limit_remaining": raw_remaining_header,
-        "parsed_remaining": rate_limit_remaining,
-        "url": url,
-    }
-    observations = state.get("header_observations")
-    if not isinstance(observations, list):
-        observations = []
-    observations.append(response_meta)
-    state["header_observations"] = observations[-20:]
-    state["last_response"] = response_meta
-    if rate_limit_remaining >= 0:
-        state["remaining"] = min(rate_limit_remaining, limit)
-        state["requests_made"] = max(
-            int(state.get("requests_made") or 0),
-            max(0, limit - state["remaining"]),
-        )
-    if rate_limit_remaining in {0, -2}:
-        state["remaining"] = 0
-        state["exhausted"] = True
-    save_markdown_new_quota_state(state)
-
-
-def _compress_new_quota_date() -> str:
-    return datetime.now(timezone.utc).date().isoformat()
-
-
-def _new_compress_quota_state(today: str | None = None) -> dict[str, Any]:
-    date = today or _compress_new_quota_date()
-    return {
-        "date": date,
-        "requests_made": 0,
-        "limit": COMPRESS_NEW_DAILY_LIMIT,
-        "remaining": COMPRESS_NEW_DAILY_LIMIT,
-        "exhausted": False,
-        "consecutive_failures": 0,
-        "total_successes": 0,
-        "total_failures": 0,
-        "last_success": None,
-        "last_failure": None,
-        "updated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-    }
-
-
-def load_compress_new_quota_state() -> dict[str, Any]:
-    today = _compress_new_quota_date()
-    if not COMPRESS_NEW_QUOTA_PATH.exists():
-        return _new_compress_quota_state(today)
-    try:
-        state = json.loads(COMPRESS_NEW_QUOTA_PATH.read_text(encoding="utf-8"))
-        if not isinstance(state, dict) or state.get("date") != today:
-            return _new_compress_quota_state(today)
-        state["limit"] = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
-        state["requests_made"] = int(state.get("requests_made") or 0)
-        state["remaining"] = int(state.get("remaining") or 0)
-        state["exhausted"] = bool(state.get("exhausted")) or state["remaining"] <= 0
-        state["consecutive_failures"] = int(state.get("consecutive_failures") or 0)
-        state["total_successes"] = int(state.get("total_successes") or 0)
-        state["total_failures"] = int(state.get("total_failures") or 0)
-        return state
-    except Exception as exc:
-        logger.warning("Failed to read compress.new quota state error=%s", exc)
-        return _new_compress_quota_state(today)
-
-
-def save_compress_new_quota_state(state: dict[str, Any]) -> None:
-    state["updated_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    COMPRESS_NEW_QUOTA_PATH.parent.mkdir(parents=True, exist_ok=True)
-    COMPRESS_NEW_QUOTA_PATH.write_text(
-        json.dumps(state, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
-
-
-def compress_new_quota_exhausted() -> tuple[bool, dict[str, Any]]:
-    state = load_compress_new_quota_state()
-    limit = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
-    exhausted = (
-        bool(state.get("exhausted"))
-        or int(state.get("remaining") or 0) <= 0
-        or int(state.get("requests_made") or 0) >= limit
-    )
-    return exhausted, state
-
-
-def reserve_compress_new_request() -> bool:
-    exhausted, state = compress_new_quota_exhausted()
-    if exhausted:
-        return False
-    limit = int(state.get("limit") or COMPRESS_NEW_DAILY_LIMIT)
-    requests_made = int(state.get("requests_made") or 0) + 1
-    state["requests_made"] = requests_made
-    state["remaining"] = max(0, min(int(state.get("remaining") or limit), limit - requests_made))
-    state["exhausted"] = state["remaining"] <= 0
-    save_compress_new_quota_state(state)
-    return True
-
-
-def record_compress_new_response(success: bool, error: str | None = None) -> None:
-    state = load_compress_new_quota_state()
-    now = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    if success:
-        state["consecutive_failures"] = 0
-        state["total_successes"] = int(state.get("total_successes", 0)) + 1
-        state["last_success"] = now
-    else:
-        state["consecutive_failures"] = int(state.get("consecutive_failures", 0)) + 1
-        state["total_failures"] = int(state.get("total_failures", 0)) + 1
-        state["last_failure"] = now
-    save_compress_new_quota_state(state)
 
 
 def truncate_for_storage(text: str, max_chars: int) -> str:
@@ -332,18 +292,10 @@ def fetch_text_url(url: str, request_timeout_seconds: int) -> str:
     """Fetch page text with retry logic for transient failures."""
     try:
 
-        @tenacity.retry(
-            stop=tenacity.stop_after_attempt(2),
-            wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-            retry=tenacity.retry_if_exception_type(
-                (requests.RequestException, requests.HTTPError)
-            ),
-            retry_error_callback=lambda retry_state: "",
-            before_sleep=lambda retry_state: logger.debug(
-                "Page fetch failed, retrying (attempt %d/2) for url=%s",
-                retry_state.attempt_number,
-                url,
-            ),
+        @_request_retry(
+            lambda retry_state: "",
+            "Page fetch failed, retrying (attempt %d/2) for url=%s",
+            url,
         )
         def _fetch(u: str) -> str:
             response = requests.get(
@@ -450,18 +402,10 @@ def fetch_youtube_oembed(
     """Fetch YouTube oembed data with retry logic for transient failures."""
     try:
 
-        @tenacity.retry(
-            stop=tenacity.stop_after_attempt(2),
-            wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-            retry=tenacity.retry_if_exception_type(
-                (requests.RequestException, requests.HTTPError)
-            ),
-            retry_error_callback=lambda retry_state: None,
-            before_sleep=lambda retry_state: logger.debug(
-                "YouTube oembed fetch failed, retrying (attempt %d/2) for url=%s",
-                retry_state.attempt_number,
-                url,
-            ),
+        @_request_retry(
+            lambda retry_state: None,
+            "YouTube oembed fetch failed, retrying (attempt %d/2) for url=%s",
+            url,
         )
         def _fetch_oembed(u: str) -> dict[str, str]:
             endpoint = "https://www.youtube.com/oembed"
@@ -682,104 +626,20 @@ def build_youtube_transcript_body(metadata: dict[str, str], transcript: str) -> 
     return "\n\n".join(parts).strip()
 
 
-def parse_with_defuddle(
-    url: str, settings: EnrichmentSettings
-) -> tuple[str | None, bool]:
-    """Return extracted content and whether defuddle was used successfully."""
-    if not url:
-        return None, False
-    if not settings.defuddle_enabled:
-        return None, False
-    if not shutil.which("defuddle"):
-        logger.warning("defuddle not found on PATH; continuing without enrichment")
-        return None, False
-    try:
-        result = subprocess.run(
-            ["defuddle", "parse", url, "--json"],
-            capture_output=True,
-            text=True,
-            timeout=settings.defuddle_timeout_seconds,
-            check=False,
-        )
-    except subprocess.TimeoutExpired:
-        logger.debug("defuddle timeout for url=%s", url)
-        return None, False
-    except OSError as exc:
-        logger.debug("defuddle invocation error for url=%s: %s", url, exc)
-        return None, False
-
-    if result.returncode != 0 or not result.stdout.strip():
-        logger.debug(
-            "defuddle returned non-success for url=%s code=%s", url, result.returncode
-        )
-        return None, False
-
-    try:
-        payload = json.loads(result.stdout)
-    except json.JSONDecodeError:
-        logger.debug("defuddle returned invalid json for url=%s", url)
-        return None, False
-
-    content = replace_iframes_with_markdown_links(
-        str(payload.get("content") or "").strip()
-    )
-    markdown = str(payload.get("contentMarkdown") or "").strip()
-    description = str(payload.get("description") or "").strip()
-    extracted = content or markdown or description
-    if not extracted:
-        logger.debug("defuddle produced empty content for url=%s", url)
-        return None, False
-    return truncate_for_storage(extracted, settings.max_chars), True
-
-
-def parse_with_trafilatura(
-    url: str, settings: EnrichmentSettings
-) -> tuple[str | None, bool]:
-    if not url or is_youtube_url(url):
-        return None, False
-    html = fetch_text_url(url, settings.request_timeout_seconds)
-    if not html:
-        return None, False
-    try:
-        extracted = trafilatura.extract(
-            html,
-            output_format="txt",
-            include_links=True,
-            include_images=False,
-            favor_recall=True,
-            deduplicate=True,
-        )
-    except Exception as exc:
-        logger.debug("trafilatura extract failed url=%s error=%s", url, exc)
-        return None, False
-    cleaned = str(extracted or "").strip()
-    if not cleaned:
-        return None, False
-    return truncate_for_storage(cleaned, settings.max_chars), True
-
-
-def parse_with_jina_ai(
-    url: str, settings: EnrichmentSettings
-) -> tuple[str | None, bool]:
+def parse_with_jina_ai(url: str) -> tuple[str | None, bool]:
     """Use r.jina.ai as a fallback for blocked sites.
 
     Uses tenacity to retry on transient failures with exponential backoff.
+    Reads the settings snapshot per call (see _enrichment_settings).
     """
+    settings = _enrichment_settings()
     if not url or is_youtube_url(url):
         return None, False
 
-    @tenacity.retry(
-        stop=tenacity.stop_after_attempt(2),
-        wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-        retry=tenacity.retry_if_exception_type(
-            (requests.RequestException, requests.HTTPError)
-        ),
-        retry_error_callback=lambda retry_state: None,
-        before_sleep=lambda retry_state: logger.debug(
-            "jina.ai fetch failed, retrying (attempt %d/2) for url=%s",
-            retry_state.attempt_number,
-            url,
-        ),
+    @_request_retry(
+        lambda retry_state: None,
+        "jina.ai fetch failed, retrying (attempt %d/2) for url=%s",
+        url,
     )
     def _fetch_jina(u: str) -> str:
         jina_url = f"https://r.jina.ai/http://{u.replace('https://', '').replace('http://', '')}"
@@ -819,9 +679,7 @@ def parse_with_jina_ai(
         return None, False
 
 
-def parse_with_markdown_new(
-    url: str, settings: EnrichmentSettings
-) -> tuple[str | None, bool, int, dict[str, Any]]:
+def parse_with_markdown_new(url: str) -> tuple[str | None, bool, int, dict[str, Any]]:
     """Use markdown.new as a fallback for blocked sites.
 
     Returns: (content, success, rate_limit_remaining, response_metadata)
@@ -831,6 +689,7 @@ def parse_with_markdown_new(
       -2: rate-limited with retry-after > 24h (stop processing early)
       >0: remaining quota from header
     """
+    settings = _enrichment_settings()
     if not url or is_youtube_url(url):
         return None, False, -1, {}
 
@@ -914,10 +773,13 @@ def parse_with_markdown_new(
         return None, False, -1, {"url": url}
 
 
-def parse_with_compress_new(
-    url: str, settings: EnrichmentSettings
-) -> tuple[str | None, bool]:
-    """Fallback extractor using compress.new when markdown.new is rate-limited."""
+def _compress_new_request(url: str) -> tuple[str | None, bool]:
+    """Raw compress.new request, no quota/breaker policy.
+
+    Reads the settings snapshot per call (see _enrichment_settings); the
+    policy (daily quota, circuit breaker) lives in parse_with_compress_new.
+    """
+    settings = _enrichment_settings()
     if not url or is_youtube_url(url):
         return None, False
     try:
@@ -939,6 +801,39 @@ def parse_with_compress_new(
         return truncate_for_storage(content, settings.max_chars), True
     except Exception as exc:
         logger.debug("compress.new extract failed url=%s error=%s", url, exc)
+        return None, False
+
+
+def parse_with_compress_new(url: str) -> tuple[str | None, bool]:
+    """compress.new with the daily-quota and circuit-breaker policy applied.
+
+    Reserves quota, records each response, and opens the breaker on
+    consecutive failures — the raw request itself is _compress_new_request.
+    """
+    if _COMPRESS_NEW_BREAKER.is_blocked():
+        logger.warning("compress.new circuit breaker open, skipping")
+        return None, False
+    exhausted, state = compress_new_quota.exhausted()
+    if exhausted:
+        logger.info("compress.new quota exhausted date=%s requests=%d limit=%d",
+                    state.get("date"), state.get("requests_made"), state.get("limit"))
+        return None, False
+    if not compress_new_quota.reserve():
+        return None, False
+    try:
+        result = _compress_new_request(url)
+        body, used = result
+        record_compress_new_response(bool(used and body))
+        return result
+    except Exception as exc:
+        record_compress_new_response(False, str(exc))
+        state = compress_new_quota.load()
+        consecutive_failures = state.get("consecutive_failures", 0)
+        if consecutive_failures >= COMPRESS_NEW_CIRCUIT_BREAKER_THRESHOLD:
+            _COMPRESS_NEW_BREAKER.block(
+                COMPRESS_NEW_CIRCUIT_BREAKER_BLOCK_SECONDS,
+                f"consecutive_failures={consecutive_failures}",
+            )
         return None, False
 
 
@@ -987,376 +882,510 @@ def is_probably_dirty_body(body: str) -> bool:
     return False
 
 
+# --- Extraction preference chain -------------------------------------------
+#
+# Everything from here down used to live in app/jobs/pipeline.py; the chain,
+# its registry and the per-method extractors are the policy half of this
+# module. The preference chain is a registry keyed by ExtractionMethod value:
+# adding an extractor is one attempt function plus one registration line in
+# EXTRACTORS. The chain loop (enrich_with_policy) has no per-method branches.
+
+
+def parse_with_defuddle(url: str) -> tuple[str | None, bool]:
+    """Extract via the local ``defuddle`` binary, when installed and enabled.
+
+    Reads DEFUDDLE_ENABLED at call time so the backfill ``--enable-defuddle``
+    runtime override is honoured; the flag is a mutable module attribute here,
+    the module that owns this extractor.
+    """
+    if not url:
+        return None, False
+    if not DEFUDDLE_ENABLED:
+        return None, False
+    if not shutil.which("defuddle"):
+        logger.warning("defuddle not found on PATH; continuing without enrichment")
+        return None, False
+    try:
+        result = subprocess.run(
+            ["defuddle", "parse", url, "--json"],
+            capture_output=True,
+            text=True,
+            timeout=DEFUDDLE_TIMEOUT_SECONDS,
+            check=False,
+        )
+    except subprocess.TimeoutExpired:
+        logger.debug("defuddle timeout for url=%s", url)
+        return None, False
+    except OSError as exc:
+        logger.debug("defuddle invocation error for url=%s: %s", url, exc)
+        return None, False
+
+    if result.returncode != 0 or not result.stdout.strip():
+        logger.debug(
+            "defuddle returned non-success for url=%s code=%s", url, result.returncode
+        )
+        return None, False
+
+    try:
+        payload = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        logger.debug("defuddle returned invalid json for url=%s", url)
+        return None, False
+
+    content = replace_iframes_with_markdown_links(
+        str(payload.get("content") or "").strip()
+    )
+    markdown = str(payload.get("contentMarkdown") or "").strip()
+    description = str(payload.get("description") or "").strip()
+    extracted = content or markdown or description
+    if not extracted:
+        logger.debug("defuddle produced empty content for url=%s", url)
+        return None, False
+    return truncate_for_storage(extracted, DEFUDDLE_MAX_CHARS), True
+
+
+def parse_with_trafilatura(url: str) -> tuple[str | None, bool]:
+    """Extract readable text with trafilatura from the fetched page."""
+    if not url or is_youtube_url(url):
+        return None, False
+    html = fetch_text_url(url, REQUEST_TIMEOUT_SECONDS)
+    if not html:
+        return None, False
+    try:
+        extracted = trafilatura.extract(
+            html,
+            output_format="txt",
+            include_links=True,
+            include_images=False,
+            favor_recall=True,
+            deduplicate=True,
+        )
+    except Exception as exc:
+        logger.debug("trafilatura extract failed url=%s error=%s", url, exc)
+        return None, False
+    cleaned = str(extracted or "").strip()
+    if not cleaned:
+        return None, False
+    return truncate_for_storage(cleaned, DEFUDDLE_MAX_CHARS), True
+
+
+def parse_with_next_flight(url: str) -> tuple[str | None, bool]:
+    """Local extraction from Next.js App Router pages via their RSC flight payloads.
+
+    Next.js pages (e.g. openai.com) are detected by content — inline
+    ``self.__next_f`` scripts — not by source config, so any client-rendered
+    page gets extracted locally. The fetch falls back to a curl rescue when
+    the requests transport is bot-walled, keeping the extraction entirely
+    off the cloud fetchers (jina, markdown.new, ...).
+    """
+    if not url or is_youtube_url(url):
+        return None, False
+    html = fetch_page_html(url, REQUEST_TIMEOUT_SECONDS)
+    if not html:
+        return None, False
+    try:
+        flight = next_flight.extract_next_flight_content(html)
+    except Exception as exc:
+        logger.debug("next flight extract failed url=%s error=%s", url, exc)
+        return None, False
+    if not flight:
+        return None, False
+    _title, content = flight
+    cleaned = content.strip()
+    if not cleaned:
+        return None, False
+    return truncate_for_storage(cleaned, DEFUDDLE_MAX_CHARS), True
+
+
+@dataclass(frozen=True)
+class ExtractionAttempt:
+    """Outcome of one extraction attempt; None means the method missed."""
+
+    body: str
+    method: str
+    rate_limit_remaining: int = -1
+    rate_limited: bool = False
+
+
+@dataclass
+class ExtractionContext:
+    """Everything an extractor may consult for one URL."""
+
+    url: str
+    source_id: str
+    title: str
+    body: str
+    markdown_new_budget_remaining: int | None = None
+    stop_on_markdown_rate_limit: bool = False
+
+
+Extractor = Callable[[ExtractionContext], ExtractionAttempt | None]
+
+
+def _try_youtube(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    if not (is_youtube_url(ctx.url) or ctx.source_id in YOUTUBE_SOURCE_IDS):
+        return None
+    youtube_meta = extract_youtube_metadata(ctx.url, ctx.title, ctx.body)
+    transcript = fetch_youtube_transcript(youtube_meta.get("video_id", ""))
+    if transcript:
+        transcript_body = truncate_for_storage(
+            build_youtube_transcript_body(youtube_meta, transcript), DEFUDDLE_MAX_CHARS
+        )
+        logger.info(
+            "Enrichment success source=%s method=%s url=%s",
+            ctx.source_id,
+            ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
+            ctx.url,
+        )
+        return ExtractionAttempt(
+            transcript_body, ExtractionMethod.YOUTUBE_TRANSCRIPT.value
+        )
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.YOUTUBE.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(
+        build_youtube_body(youtube_meta, ctx.body), ExtractionMethod.YOUTUBE.value
+    )
+
+
+def _try_trafilatura(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    trafilatura_body, used = parse_with_trafilatura(ctx.url)
+    if not (used and trafilatura_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.TRAFILATURA.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(trafilatura_body, ExtractionMethod.TRAFILATURA.value)
+
+
+def _try_next_flight(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    next_flight_body, used = parse_with_next_flight(ctx.url)
+    if not (used and next_flight_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.NEXT_FLIGHT.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(next_flight_body, ExtractionMethod.NEXT_FLIGHT.value)
+
+
+def _try_jina(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    jina_body, used = parse_with_jina_ai(ctx.url)
+    if not (used and jina_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.JINA.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(jina_body, ExtractionMethod.JINA.value)
+
+
+def _try_defuddle(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    defuddle_body, used = parse_with_defuddle(ctx.url)
+    if not (used and defuddle_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.DEFUDDLE.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(defuddle_body, ExtractionMethod.DEFUDDLE.value)
+
+
+def _try_compress_new(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    if not supports_markdown_family(ctx.source_id):
+        logger.info(
+            "Enrichment skip source=%s method=%s url=%s reason=unsupported_source",
+            ctx.source_id,
+            ExtractionMethod.COMPRESS_NEW.value,
+            ctx.url,
+        )
+        return None
+    compress_body, used = parse_with_compress_new(ctx.url)
+    if not (used and compress_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.COMPRESS_NEW.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(compress_body, ExtractionMethod.COMPRESS_NEW.value)
+
+
+def _try_markdown_new(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    source_id, url = ctx.source_id, ctx.url
+    if not supports_markdown_family(source_id):
+        logger.info(
+            "Enrichment skip source=%s method=%s url=%s reason=unsupported_source",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        return None
+    if _MARKDOWN_NEW_BREAKER.is_blocked():
+        logger.warning(
+            "Enrichment skip source=%s method=%s url=%s reason=rate_limited_circuit_open retry_after_seconds=%d",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+            _MARKDOWN_NEW_BREAKER.seconds_remaining(),
+        )
+        compress_body, compress_used = parse_with_compress_new(url)
+        if compress_used and compress_body:
+            logger.info(
+                "Enrichment fallback success source=%s method=%s url=%s reason=markdown_circuit_open",
+                source_id,
+                ExtractionMethod.COMPRESS_NEW.value,
+                url,
+            )
+            return ExtractionAttempt(
+                compress_body,
+                ExtractionMethod.COMPRESS_NEW.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+        return None
+    quota_exhausted, quota_state = markdown_new_quota.exhausted()
+    if quota_exhausted:
+        logger.warning(
+            "Enrichment skip source=%s method=%s url=%s reason=daily_quota_exhausted date=%s requests_made=%s limit=%s",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+            quota_state.get("date"),
+            quota_state.get("requests_made"),
+            quota_state.get("limit"),
+        )
+        return None
+    if (
+        ctx.markdown_new_budget_remaining is not None
+        and ctx.markdown_new_budget_remaining <= 0
+    ):
+        logger.info(
+            "Enrichment skip source=%s method=%s url=%s reason=budget_exhausted",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        return None
+    if not markdown_new_quota.reserve():
+        logger.warning(
+            "Enrichment skip source=%s method=%s url=%s reason=daily_quota_reserve_failed",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        return None
+    markdown_result = parse_with_markdown_new(url)
+    if len(markdown_result) == 3:
+        markdown_body, used, rate_limit_remaining = markdown_result
+        response_meta = {}
+    else:
+        markdown_body, used, rate_limit_remaining, response_meta = markdown_result
+    record_markdown_new_response(
+        rate_limit_remaining,
+        status_code=response_meta.get("status_code"),
+        raw_remaining_header=response_meta.get("x_rate_limit_remaining"),
+        url=response_meta.get("url") or url,
+    )
+    if used and markdown_body:
+        logger.info(
+            "Enrichment success source=%s method=%s url=%s rate_limit_remaining=%d",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+            rate_limit_remaining,
+        )
+        return ExtractionAttempt(
+            markdown_body,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            rate_limit_remaining=rate_limit_remaining,
+        )
+    if rate_limit_remaining == -2:
+        _MARKDOWN_NEW_BREAKER.block(24 * 3600, "retry_after_gt_24h")
+        compress_body, compress_used = parse_with_compress_new(url)
+        if compress_used and compress_body:
+            logger.info(
+                "Enrichment fallback success source=%s method=%s url=%s reason=markdown_long_rate_limit",
+                source_id,
+                ExtractionMethod.COMPRESS_NEW.value,
+                url,
+            )
+            return ExtractionAttempt(
+                compress_body,
+                ExtractionMethod.COMPRESS_NEW.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+        return None
+    if rate_limit_remaining == 0:
+        _MARKDOWN_NEW_BREAKER.block(MARKDOWN_NEW_BLOCK_SECONDS_ON_429, "http_429")
+        logger.warning(
+            "Enrichment rate_limited source=%s method=%s url=%s",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        compress_body, compress_used = parse_with_compress_new(url)
+        if compress_used and compress_body:
+            logger.info(
+                "Enrichment fallback success source=%s method=%s url=%s",
+                source_id,
+                ExtractionMethod.COMPRESS_NEW.value,
+                url,
+            )
+            return ExtractionAttempt(
+                compress_body,
+                ExtractionMethod.COMPRESS_NEW.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+        if ctx.stop_on_markdown_rate_limit:
+            logger.warning(
+                "Enrichment stopping source=%s method=%s url=%s reason=markdown_rate_limit",
+                source_id,
+                ExtractionMethod.RSS.value,
+                url,
+            )
+            return ExtractionAttempt(
+                ctx.body,
+                ExtractionMethod.RSS.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+    return None
+
+
+# The preference chain is a registry keyed by ExtractionMethod value: adding an
+# extractor is one attempt function plus one registration line here. The chain
+# loop (enrich_with_policy) has no per-method branches left.
+EXTRACTORS: dict[str, Extractor] = {
+    ExtractionMethod.YOUTUBE.value: _try_youtube,
+    ExtractionMethod.TRAFILATURA.value: _try_trafilatura,
+    ExtractionMethod.NEXT_FLIGHT.value: _try_next_flight,
+    ExtractionMethod.MARKDOWN_NEW.value: _try_markdown_new,
+    ExtractionMethod.COMPRESS_NEW.value: _try_compress_new,
+    ExtractionMethod.JINA.value: _try_jina,
+    ExtractionMethod.DEFUDDLE.value: _try_defuddle,
+}
+
+
+def _extraction_methods(source_id: str, url: str, only_method: str | None) -> list[str]:
+    """Ordered preference chain for a source (a chain, not a fallback stack)."""
+    if only_method:
+        return [only_method]
+    # Source-aware extraction priority:
+    # - OpenAI sources: next_flight -> markdown.new -> compress.new -> jina -> defuddle -> trafilatura
+    # - Other sources: trafilatura -> next_flight -> jina -> defuddle
+    # - YouTube is only included for YouTube URLs/sources.
+    # next_flight is the local tier for client-rendered Next.js pages: it only
+    # succeeds on flight payloads, and when it does it avoids the cloud
+    # fetchers (and their rate limits) entirely.
+    if supports_markdown_family(source_id):
+        methods = [
+            ExtractionMethod.NEXT_FLIGHT.value,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            ExtractionMethod.COMPRESS_NEW.value,
+            ExtractionMethod.JINA.value,
+            ExtractionMethod.DEFUDDLE.value,
+            ExtractionMethod.TRAFILATURA.value,
+        ]
+    else:
+        methods = [
+            ExtractionMethod.TRAFILATURA.value,
+            ExtractionMethod.NEXT_FLIGHT.value,
+            ExtractionMethod.JINA.value,
+            ExtractionMethod.DEFUDDLE.value,
+        ]
+    if is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS:
+        methods.insert(0, ExtractionMethod.YOUTUBE.value)
+    return methods
+
+
 def enrich_with_policy(
     url: str,
     source_id: str,
     title: str,
     body: str,
-    settings: EnrichmentSettings,
-    options: EnrichOptions | None = None,
-) -> EnrichResult:
+    *,
+    only_method: str | None = None,
+    markdown_new_budget_remaining: int | None = None,
+    stop_on_markdown_rate_limit: bool = False,
+) -> tuple[str, str, int, bool]:
+    """Run the preference chain; first successful extractor wins.
+
+    Returns (body, method, rate_limit_remaining, rate_limited). When no
+    extractor succeeds the untouched rss body is returned with method "rss".
+    """
     current_body = str(body or "").strip()
-    opts = options or EnrichOptions()
-    rate_limit_remaining = -1
-    attempts: list[dict] = []
-
-    methods_order: list[MethodName] = [
-        ExtractionMethod.YOUTUBE.value,
-        ExtractionMethod.TRAFILATURA.value,
-        ExtractionMethod.MARKDOWN_NEW.value,
-        ExtractionMethod.JINA.value,
-        ExtractionMethod.DEFUDDLE.value,
-    ]
-    methods_to_try = [opts.only_method] if opts.only_method else methods_order
-
-    for method in methods_to_try:
-        if method == ExtractionMethod.YOUTUBE.value:
-            if is_youtube_url(url) or source_id in settings.youtube_source_ids:
-                t0 = time.monotonic()
-                youtube_meta = extract_youtube_metadata(
-                    url,
-                    title,
-                    current_body,
-                    settings.request_timeout_seconds,
-                )
-                transcript = fetch_youtube_transcript(youtube_meta.get("video_id", ""))
-                if transcript:
-                    transcript_body = truncate_for_storage(
-                        build_youtube_transcript_body(youtube_meta, transcript),
-                        settings.max_chars,
-                    )
-                    dur = round((time.monotonic() - t0) * 1000, 2)
-                    attempts.append(
-                        {
-                            "method": ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
-                            "status": "success",
-                            "duration_ms": dur,
-                            "error_message": None,
-                            "output_chars": len(transcript_body),
-                        }
-                    )
-                    return EnrichResult(
-                        body=transcript_body,
-                        method=ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
-                        attempts=tuple(attempts),
-                    )
-                yt_body = build_youtube_body(youtube_meta, current_body)
-                dur = round((time.monotonic() - t0) * 1000, 2)
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "success",
-                        "duration_ms": dur,
-                        "error_message": None,
-                        "output_chars": len(yt_body),
-                    }
-                )
-                return EnrichResult(
-                    body=yt_body,
-                    method=ExtractionMethod.YOUTUBE.value,
-                    attempts=tuple(attempts),
-                )
-            else:
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "skipped",
-                        "duration_ms": 0,
-                        "error_message": None,
-                        "output_chars": None,
-                    }
-                )
-            continue
-
-        if method == ExtractionMethod.TRAFILATURA.value:
-            t0 = time.monotonic()
-            trafilatura_body, used = parse_with_trafilatura(url, settings)
-            dur = round((time.monotonic() - t0) * 1000, 2)
-            if used and trafilatura_body:
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "success",
-                        "duration_ms": dur,
-                        "error_message": None,
-                        "output_chars": len(trafilatura_body),
-                    }
-                )
-                return EnrichResult(
-                    body=trafilatura_body,
-                    method=ExtractionMethod.TRAFILATURA.value,
-                    attempts=tuple(attempts),
-                )
-            attempts.append(
-                {
-                    "method": method,
-                    "status": "failed",
-                    "duration_ms": dur,
-                    "error_message": None,
-                    "output_chars": None,
-                }
-            )
-            continue
-
-        if method == ExtractionMethod.MARKDOWN_NEW.value:
-            if not supports_markdown_family(source_id):
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "skipped",
-                        "duration_ms": 0,
-                        "error_message": None,
-                        "output_chars": None,
-                    }
-                )
-                continue
-            quota_exhausted, quota_state = markdown_new_quota_exhausted()
-            if quota_exhausted:
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "skipped",
-                        "duration_ms": 0,
-                        "error_message": (
-                            f"daily quota exhausted date={quota_state.get('date')} "
-                            f"requests_made={quota_state.get('requests_made')} "
-                            f"limit={quota_state.get('limit')}"
-                        ),
-                        "output_chars": None,
-                    }
-                )
-                continue
-            if (
-                opts.markdown_new_budget_remaining is not None
-                and opts.markdown_new_budget_remaining <= 0
-            ):
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "skipped",
-                        "duration_ms": 0,
-                        "error_message": "budget exhausted",
-                        "output_chars": None,
-                    }
-                )
-                continue
-            if not reserve_markdown_new_request():
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "skipped",
-                        "duration_ms": 0,
-                        "error_message": "daily quota reserve failed",
-                        "output_chars": None,
-                    }
-                )
-                continue
-            t0 = time.monotonic()
-            (
-                markdown_new_body,
-                used,
-                rate_limit_remaining,
-                response_meta,
-            ) = parse_with_markdown_new(url, settings)
-            record_markdown_new_response(
-                rate_limit_remaining,
-                status_code=response_meta.get("status_code"),
-                raw_remaining_header=response_meta.get("x_rate_limit_remaining"),
-                url=response_meta.get("url") or url,
-            )
-            dur = round((time.monotonic() - t0) * 1000, 2)
-            if used and markdown_new_body:
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "success",
-                        "duration_ms": dur,
-                        "error_message": None,
-                        "output_chars": len(markdown_new_body),
-                    }
-                )
-                return EnrichResult(
-                    body=markdown_new_body,
-                    method=ExtractionMethod.MARKDOWN_NEW.value,
-                    rate_limit_remaining=rate_limit_remaining,
-                    attempts=tuple(attempts),
-                )
-
-            attempts.append(
-                {
-                    "method": method,
-                    "status": "failed",
-                    "duration_ms": dur,
-                    "error_message": None,
-                    "output_chars": None,
-                }
-            )
-
-            if rate_limit_remaining == -2:
-                return EnrichResult(
-                    body=current_body,
-                    method=ExtractionMethod.RSS.value,
-                    rate_limit_remaining=-2,
-                    markdown_new_rate_limited=True,
-                    stop_processing=True,
-                    attempts=tuple(attempts),
-                )
-
-            if rate_limit_remaining == 0:
-                t0c = time.monotonic()
-                compress_body, compress_used = parse_with_compress_new(url, settings)
-                durc = round((time.monotonic() - t0c) * 1000, 2)
-                if compress_used and compress_body:
-                    attempts.append(
-                        {
-                            "method": ExtractionMethod.COMPRESS_NEW.value,
-                            "status": "success",
-                            "duration_ms": durc,
-                            "error_message": None,
-                            "output_chars": len(compress_body),
-                        }
-                    )
-                    return EnrichResult(
-                        body=compress_body,
-                        method=ExtractionMethod.COMPRESS_NEW.value,
-                        rate_limit_remaining=0,
-                        markdown_new_rate_limited=True,
-                        attempts=tuple(attempts),
-                    )
-                attempts.append(
-                    {
-                        "method": ExtractionMethod.COMPRESS_NEW.value,
-                        "status": "failed",
-                        "duration_ms": durc,
-                        "error_message": None,
-                        "output_chars": None,
-                    }
-                )
-                if opts.stop_on_markdown_rate_limit:
-                    return EnrichResult(
-                        body=current_body,
-                        method=ExtractionMethod.RSS.value,
-                        rate_limit_remaining=0,
-                        markdown_new_rate_limited=True,
-                        attempts=tuple(attempts),
-                    )
-            continue
-
-        if method == ExtractionMethod.COMPRESS_NEW.value:
-            if not supports_markdown_family(source_id):
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "skipped",
-                        "duration_ms": 0,
-                        "error_message": None,
-                        "output_chars": None,
-                    }
-                )
-                continue
-            t0 = time.monotonic()
-            compress_body, used = parse_with_compress_new(url, settings)
-            dur = round((time.monotonic() - t0) * 1000, 2)
-            if used and compress_body:
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "success",
-                        "duration_ms": dur,
-                        "error_message": None,
-                        "output_chars": len(compress_body),
-                    }
-                )
-                return EnrichResult(
-                    body=compress_body,
-                    method=ExtractionMethod.COMPRESS_NEW.value,
-                    attempts=tuple(attempts),
-                )
-            attempts.append(
-                {
-                    "method": method,
-                    "status": "failed",
-                    "duration_ms": dur,
-                    "error_message": None,
-                    "output_chars": None,
-                }
-            )
-            continue
-
-        if method == ExtractionMethod.JINA.value:
-            t0 = time.monotonic()
-            jina_body, used = parse_with_jina_ai(url, settings)
-            dur = round((time.monotonic() - t0) * 1000, 2)
-            if used and jina_body:
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "success",
-                        "duration_ms": dur,
-                        "error_message": None,
-                        "output_chars": len(jina_body),
-                    }
-                )
-                return EnrichResult(
-                    body=jina_body,
-                    method=ExtractionMethod.JINA.value,
-                    attempts=tuple(attempts),
-                )
-            attempts.append(
-                {
-                    "method": method,
-                    "status": "failed",
-                    "duration_ms": dur,
-                    "error_message": None,
-                    "output_chars": None,
-                }
-            )
-            continue
-
-        if method == ExtractionMethod.DEFUDDLE.value:
-            t0 = time.monotonic()
-            defuddle_body, used = parse_with_defuddle(url, settings)
-            dur = round((time.monotonic() - t0) * 1000, 2)
-            if used and defuddle_body:
-                attempts.append(
-                    {
-                        "method": method,
-                        "status": "success",
-                        "duration_ms": dur,
-                        "error_message": None,
-                        "output_chars": len(defuddle_body),
-                    }
-                )
-                return EnrichResult(
-                    body=defuddle_body,
-                    method=ExtractionMethod.DEFUDDLE.value,
-                    attempts=tuple(attempts),
-                )
-            attempts.append(
-                {
-                    "method": method,
-                    "status": "failed",
-                    "duration_ms": dur,
-                    "error_message": None,
-                    "output_chars": None,
-                }
-            )
-            continue
-
-    return EnrichResult(
+    ctx = ExtractionContext(
+        url=url,
+        source_id=source_id,
+        title=title,
         body=current_body,
-        method=ExtractionMethod.RSS.value,
-        rate_limit_remaining=rate_limit_remaining,
-        attempts=tuple(attempts),
+        markdown_new_budget_remaining=markdown_new_budget_remaining,
+        stop_on_markdown_rate_limit=stop_on_markdown_rate_limit,
     )
+    for method in _extraction_methods(source_id, url, only_method):
+        logger.info(
+            "Enrichment attempt source=%s method=%s url=%s",
+            source_id,
+            method,
+            url,
+        )
+        attempt = EXTRACTORS[method](ctx)
+        if attempt is None:
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
+            continue
+        return (
+            attempt.body,
+            attempt.method,
+            attempt.rate_limit_remaining,
+            attempt.rate_limited,
+        )
+    logger.info(
+        "Enrichment fallback source=%s method=%s url=%s",
+        source_id,
+        ExtractionMethod.RSS.value,
+        url,
+    )
+    return current_body, ExtractionMethod.RSS.value, -1, False
 
 
-def enrich_article_content(
+def enrich_with_rate_limit(
     url: str,
     source_id: str,
     title: str,
     body: str,
-    settings: EnrichmentSettings,
-) -> tuple[str, str, list[dict]]:
-    result = enrich_with_policy(url, source_id, title, body, settings)
-    return result.body, result.method, list(result.attempts)
+    max_markdown_new: int,
+    markdown_new_used: int,
+    only_method: str | None = None,
+) -> tuple[str, str, int]:
+    """Enrich with a per-run markdown.new budget; stop on rate limit."""
+    budget_remaining = max_markdown_new - markdown_new_used
+    enriched_body, method, rate_limit_remaining, _rate_limited = enrich_with_policy(
+        url,
+        source_id,
+        title,
+        body,
+        only_method=only_method,
+        markdown_new_budget_remaining=budget_remaining,
+        stop_on_markdown_rate_limit=True,
+    )
+    return enriched_body, method, rate_limit_remaining
+
+

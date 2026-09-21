@@ -1,12 +1,12 @@
 """Enrichment-chain integration for the next_flight method.
 
-Tests cross the enrichment seam (pipeline.enrich_with_policy) with parse
+Tests cross the enrichment seam (enrichment.enrich_with_policy) with parse
 adapters swapped out, asserting chain order rather than extraction behaviour.
 """
 
 from __future__ import annotations
 
-from app.jobs import pipeline
+from app.jobs import enrichment
 
 
 def _miss(name: str, calls: list[str]):
@@ -22,7 +22,7 @@ def _miss(name: str, calls: list[str]):
 def test_openai_source_prefers_next_flight_over_cloud_fetchers(monkeypatch) -> None:
     calls: list[str] = []
     monkeypatch.setattr(
-        pipeline, "parse_with_next_flight", lambda url: ("flight body " * 30, True)
+        enrichment, "parse_with_next_flight", lambda url: ("flight body " * 30, True)
     )
     for name in (
         "parse_with_markdown_new",
@@ -31,9 +31,9 @@ def test_openai_source_prefers_next_flight_over_cloud_fetchers(monkeypatch) -> N
         "parse_with_defuddle",
         "parse_with_trafilatura",
     ):
-        monkeypatch.setattr(pipeline, name, _miss(name, calls))
+        monkeypatch.setattr(enrichment, name, _miss(name, calls))
 
-    body, method, remaining, rate_limited = pipeline.enrich_with_policy(
+    body, method, remaining, rate_limited = enrichment.enrich_with_policy(
         "https://openai.com/news/some-post",
         "openai-blog",
         "Some post",
@@ -59,16 +59,16 @@ def test_non_openai_source_tries_trafilatura_before_next_flight(monkeypatch) -> 
         order.append("next_flight")
         return "extracted body " * 20, True
 
-    monkeypatch.setattr(pipeline, "parse_with_trafilatura", trafilatura_miss)
-    monkeypatch.setattr(pipeline, "parse_with_next_flight", flight_hit)
+    monkeypatch.setattr(enrichment, "parse_with_trafilatura", trafilatura_miss)
+    monkeypatch.setattr(enrichment, "parse_with_next_flight", flight_hit)
     monkeypatch.setattr(
-        pipeline, "parse_with_jina_ai", _miss("parse_with_jina_ai", [])
+        enrichment, "parse_with_jina_ai", _miss("parse_with_jina_ai", [])
     )
     monkeypatch.setattr(
-        pipeline, "parse_with_defuddle", _miss("parse_with_defuddle", [])
+        enrichment, "parse_with_defuddle", _miss("parse_with_defuddle", [])
     )
 
-    body, method, _remaining, _rate_limited = pipeline.enrich_with_policy(
+    body, method, _remaining, _rate_limited = enrichment.enrich_with_policy(
         "https://example.com/article",
         "example-source",
         "Example article",
@@ -90,13 +90,13 @@ def test_next_flight_miss_falls_through_to_cloud_fetchers(monkeypatch) -> None:
         calls.append("jina")
         return "jina body " * 20, True
 
-    monkeypatch.setattr(pipeline, "parse_with_next_flight", flight_miss)
-    monkeypatch.setattr(pipeline, "parse_with_jina_ai", jina_hit)
+    monkeypatch.setattr(enrichment, "parse_with_next_flight", flight_miss)
+    monkeypatch.setattr(enrichment, "parse_with_jina_ai", jina_hit)
     monkeypatch.setattr(
-        pipeline, "parse_with_defuddle", _miss("parse_with_defuddle", calls)
+        enrichment, "parse_with_defuddle", _miss("parse_with_defuddle", calls)
     )
 
-    body, method, _remaining, _rate_limited = pipeline.enrich_with_policy(
+    body, method, _remaining, _rate_limited = enrichment.enrich_with_policy(
         "https://openai.com/news/some-post",
         "openai-blog",
         "Some post",

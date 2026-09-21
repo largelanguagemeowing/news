@@ -12,7 +12,7 @@ on:
       - "data/status/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_run:
-    workflows: ["news-pipeline", "pipeline-all", "pipeline-classify", "pipeline-fetch", "pipeline-enrich"]
+    workflows: ["pipeline-all", "pipeline-classify", "pipeline-fetch", "pipeline-enrich"]
     types:
       - completed
 

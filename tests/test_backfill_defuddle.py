@@ -7,7 +7,7 @@ import pytest
 import app.db as db_module
 from app.db import get_connection, init_db, transaction
 from app.jobs.backfill_defuddle import backfill_articles
-from app.jobs import pipeline
+from app.jobs import enrichment
 from app.utils import normalize_text, sha1_hexdigest, simhash64
 
 
@@ -72,24 +72,24 @@ def _seed_article() -> int:
 
 def test_backfill_updates_existing_article(monkeypatch) -> None:
     article_id = _seed_article()
-    monkeypatch.setattr(pipeline, "DEFUDDLE_ENABLED", True)
+    monkeypatch.setattr(enrichment, "DEFUDDLE_ENABLED", True)
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_trafilatura",
         lambda _url: (None, False),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_markdown_new",
         lambda _url: (None, False, -1),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_jina_ai",
         lambda _url: (None, False),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_defuddle",
         lambda _url: ("This is enriched body content from defuddle.", True),
     )
@@ -107,24 +107,24 @@ def test_backfill_updates_existing_article(monkeypatch) -> None:
 
 def test_backfill_dry_run_does_not_write(monkeypatch) -> None:
     article_id = _seed_article()
-    monkeypatch.setattr(pipeline, "DEFUDDLE_ENABLED", True)
+    monkeypatch.setattr(enrichment, "DEFUDDLE_ENABLED", True)
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_trafilatura",
         lambda _url: (None, False),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_markdown_new",
         lambda _url: (None, False, -1),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_jina_ai",
         lambda _url: (None, False),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_defuddle",
         lambda _url: ("Dry run content that should not persist.", True),
     )
@@ -143,24 +143,24 @@ def test_backfill_dry_run_does_not_write(monkeypatch) -> None:
 def test_backfill_all_items_ignores_limit(monkeypatch) -> None:
     _seed_article()
     _seed_article()
-    monkeypatch.setattr(pipeline, "DEFUDDLE_ENABLED", True)
+    monkeypatch.setattr(enrichment, "DEFUDDLE_ENABLED", True)
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_trafilatura",
         lambda _url: (None, False),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_markdown_new",
         lambda _url: (None, False, -1),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_jina_ai",
         lambda _url: (None, False),
     )
     monkeypatch.setattr(
-        pipeline,
+        enrichment,
         "parse_with_defuddle",
         lambda _url: ("Bulk backfill content.", True),
     )

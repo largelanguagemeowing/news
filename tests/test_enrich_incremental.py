@@ -46,7 +46,7 @@ def _seed(conn, n: int, body_template: str = "rss body %d") -> None:
 
 
 def _fake_enrich(results):
-    """Build a _enrich_with_rate_limit replacement from a result list; the last
+    """Build an enrich_with_rate_limit replacement from a result list; the last
     result repeats, or a callable can end with an exception instance."""
     calls = {"n": 0}
 
@@ -70,7 +70,7 @@ def test_failed_run_keeps_previously_flushed_articles(conn, monkeypatch) -> None
             RuntimeError("extraction chain exploded"),
         ]
     )
-    monkeypatch.setattr(enrich_pipeline, "_enrich_with_rate_limit", fake)
+    monkeypatch.setattr(enrich_pipeline, "enrich_with_rate_limit", fake)
 
     with pytest.raises(RuntimeError):
         enrich_pipeline._enrich_articles(
@@ -99,7 +99,7 @@ def test_failed_run_keeps_previously_flushed_articles(conn, monkeypatch) -> None
 def test_full_run_updates_all_articles_and_reports_metrics(conn, monkeypatch) -> None:
     _seed(conn, 3)
     fake, _calls = _fake_enrich([("enriched body %d" % i, "next_flight", -1) for i in range(3)])
-    monkeypatch.setattr(enrich_pipeline, "_enrich_with_rate_limit", fake)
+    monkeypatch.setattr(enrich_pipeline, "enrich_with_rate_limit", fake)
 
     metrics = enrich_pipeline._enrich_articles(
         conn,
@@ -123,7 +123,7 @@ def test_full_run_updates_all_articles_and_reports_metrics(conn, monkeypatch) ->
 def test_default_interval_flushes_once_at_end(conn, monkeypatch) -> None:
     _seed(conn, 2)
     fake, _calls = _fake_enrich([("enriched body", "jina", -1)])
-    monkeypatch.setattr(enrich_pipeline, "_enrich_with_rate_limit", fake)
+    monkeypatch.setattr(enrich_pipeline, "enrich_with_rate_limit", fake)
 
     metrics = enrich_pipeline._enrich_articles(
         conn,
@@ -144,7 +144,7 @@ def test_unchanged_bodies_are_not_counted_or_written(conn, monkeypatch) -> None:
     def fake(url, _sid, _title, body, *_args, **_kwargs):
         return (body, "jina", -1)
 
-    monkeypatch.setattr(enrich_pipeline, "_enrich_with_rate_limit", fake)
+    monkeypatch.setattr(enrich_pipeline, "enrich_with_rate_limit", fake)
 
     metrics = enrich_pipeline._enrich_articles(
         conn,
@@ -166,7 +166,7 @@ def test_unchanged_bodies_are_not_counted_or_written(conn, monkeypatch) -> None:
 def test_enrichment_attempts_persist_with_flush(conn, monkeypatch) -> None:
     _seed(conn, 2)
     fake, _calls = _fake_enrich([("enriched body", "next_flight", -1)])
-    monkeypatch.setattr(enrich_pipeline, "_enrich_with_rate_limit", fake)
+    monkeypatch.setattr(enrich_pipeline, "enrich_with_rate_limit", fake)
 
     enrich_pipeline._enrich_articles(
         conn,

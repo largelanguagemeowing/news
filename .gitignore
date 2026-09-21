@@ -5,3 +5,12 @@ __pycache__/
 .trash/
 .opencode/
 .playwright-mcp/
+.serena/
+
+# Local credentials (never commit)
+cookies.txt
+
+# Classifier campaign throwaway artifacts
+data/classifier/llm_labels_2proc_test.json
+data/classifier/llm_labels_2proc_test.shard-*.json
+data/classifier/llm_labels_test_deepseek.json
