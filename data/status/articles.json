@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 616133,
+    "title": "Cloudflare Python Workers are now generally available",
+    "url": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker/",
+    "published_at": "2026-09-21T22:25:44+00:00",
+    "fetched_at": "2026-09-21T22:43:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://blog.cloudflare.com/python-workers-ga/\">Cloudflare Python Workers are now generally available</a></strong></p>\nAfter a two year preview, Cloudflare's support for running Python code in their server-side Workers platform is now stable: \"Python is now a first-class, fully supported language on the Cloudflare Developer Platform\".</p>\n<p>A neat thing about this is how it works. Cloudflare are running Python compiled to WebAssembly via Pyodide in their V8-based <a href=\"https://github.com/cloudflare/workerd\">workerd</a> runtime.</p>\n<p>This comes with some limitations, <a href=\"https://developers.cloudflare.com/workers/languages/python/stdlib/\">documented here</a> - most notably both <code>multiprocessing</code> and <code>threading</code> are non-functional in the WebAssembly VM.</p>\n<p>One particularly interesting detail of this is the local development environment story - their <a href=\"https://developers.cloudflare.com/workers/languages/python/#the-pywrangler-cli-tool\">pywrangler</a> development tool (confusingly packaged as <a href=\"https://pypi.org/project/workers-py/\">workers-py</a> on PyPI) runs a full local simulation of their stack, including executing code with Pyodide in WebAssembly in V8 in a 123MB <code>workerd</code> binary, which for me ended up in <code>node_modules/@cloudflare/workerd-darwin-arm64/bin/workerd</code>.</p>\n<p>Python Workers represent a significant investment in the wider Python ecosystem by Cloudflare. The release announcement is credited to Gyeongjae Choi, Dominik Picheta, and Hood Chatham - Gyeongjae and Hood are both Pyodide core maintainers.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=49787142\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/cloudflare\">cloudflare</a>, <a href=\"https://simonwillison.net/tags/webassembly\">webassembly</a>, <a href=\"https://simonwillison.net/tags/pyodide\">pyodide</a></p>",
+    "topic": "development",
+    "tags": [
+      "release",
+      "open-source",
+      "coding",
+      "funding",
+      "development",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 616405,
+    "title": "The Dark Arts of Skill Engineering \u2014 Paul Bakaus, Renaissance Geek (Impeccable)",
+    "url": "https://www.youtube.com/watch?v=SQMCtZX3trg",
+    "published_at": "2026-09-21T19:00:10+00:00",
+    "fetched_at": "2026-09-21T22:44:00+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Paul Bakaus once turned the entire web orange. He wrote jQuery UI, shipped an orange default theme, assumed people would change it, and watched them not. So when he points out that the purple gradients everyone learned to mock came from a CSS framework's default sample page, and that AI generated design now has its own house shade of beige, he speaks as the cause rather than the critic. That history is what makes his central claim land. A ban does not produce originality, it relocates the model one cluster over: forbid one overused font and it reaches for the next nearest thing in latent space. Slop is a moving target. The median is the model's gravity, and a few hundred lines of carefully written prose cannot pull against it.\n\nSo he stopped treating a skill as a packaged prompt and started treating it as an extension of the harness, which is what this workshop is really about. Nine techniques, each aimed at something prose cannot do. Two sub agents kept blind to each other, one playing design director and one running a deterministic linter, because a single thread grading its own work always says it did well. Naming your top three fonts and then throwing all three away to shave off the safe prediction. A script whose only job is to hand the model a random seed it could not have guessed. Instructions emitted on standard output rather than buried in prose, which models follow far more reliably, at the cost of prompt caching. Hooks that block a write instead of complaining afterward. And the discipline underneath all of it: if a gate can be skipped, it will be.\n\nSpeaker info:\n- https://x.com/pbakaus\n- https://linkedin.com/in/paulbakaus\n- https://www.paulbakaus.com/\n\nTimestamps:\n0:00 - Impeccable, and why it started\n4:57 - Why banning a font does not work\n6:25 - Prompting is the floor, harness engineering is the ceiling\n7:55 - One: make it argue\n10:11 - Two blind sub agents, one synthesis\n16:59 - Two: forcing divergence\n20:38 - Three: routing like a mixture of experts\n22:47 - Four: giving a skill memory\n25:22 - Five: scripts that talk back\n29:36 - Six: hooks that fight back\n34:37 - Seven: live wiring the browser\n40:04 - Eight: it worked on my machine\n44:04 - Every model is overfitted differently\n47:20 - Nine: design for the weakest model\n48:26 - If a gate can be skipped, it will be\n51:59 - Inside the eval harness\n56:18 - Can taste be evaluated?\n58:27 - The future of skills\n1:02:20 - Packaging and distribution",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 613896,
     "title": "An ex-OpenAI researcher just deleted language from the LLM...",
     "url": "https://www.youtube.com/watch?v=TbkUKCm3CHQ",
@@ -57,6 +101,28 @@
     "tags": [
       "coding",
       "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 614919,
+    "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+    "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+    "published_at": "2026-09-21T12:00:00+00:00",
+    "fetched_at": "2026-09-21T22:43:56+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "video",
+      "coding",
+      "enterprise",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -134,6 +200,27 @@
       "open-source",
       "coding",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 616135,
+    "title": "MCP was always a bad idea?",
+    "url": "https://simonwillison.net/2026/Sep/20/hn-49779718/",
+    "published_at": "2026-09-20T20:24:41+00:00",
+    "fetched_at": "2026-09-21T22:43:57+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><a href=\"https://news.ycombinator.com/item?id=49779329#49779718\">My comment</a> on <a href=\"https://news.ycombinator.com/item?id=49779329\">MCP was always a bad idea?</a> &mdash; Hacker News.</p><p>This article entirely misses the value that MCP brings today.</p>\n<p>Sure, there's almost no reason to use MCPs if you are running a full-blown terminal agent (Claude Code, Codex, Meta Muse, OpenClaw etc) with unfettered internet access - just let it call APIs directly.</p>\n<p>If you want to operate something that's less YOLO than that, you'll find yourself wanting:</p>\n<ol>\n<li>Control over exactly which external services it can access</li>\n<li>A way to handle authentication that doesn't allow the agent to directly access API keys</li>\n<li>A sensible UI to allow users to connect and authenticate further services</li>\n<li>Strong audit logging for what's going on</li>\n</ol>\n<p>MCP makes all of that so much easier to provide.</p>\n<p>Thinking MCP is obsolete because full coding agents don't need it misses out on all of the other things we might want to build.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/hacker-news\">hacker-news</a>, <a href=\"https://simonwillison.net/tags/model-context-protocol\">model-context-protocol</a></p>",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "coding",
+      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10060,84 +10147,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551804,
-    "title": "Sales workflows with ChatGPT Work",
-    "url": "https://openai.com/academy/chatgpt-work/how-sales-teams-use-codex",
-    "published_at": "2026-07-14T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "jina",
-    "body": "OpenAI\n\nJuly 14, 2026\n\nOpenAI Academy\n\nExplore how sales teams can use ChatGPT Work to turn account context, customer conversations, and deal signals into pipeline briefs, meeting packs, forecast reviews, and account plans.\n\nSales work often lives across CRM fields, call notes, email threads, Slack discussions, decks, customer docs, and account signals. ChatGPT Work helps pull that context together and produce the first usable version of the artifact, whether that is a prioritized account brief, meeting prep packet, forecast risk review, account strategy pack, or stalled-deal diagnosis. Sellers and managers still own the relationship strategy and judgment; ChatGPT Work helps get the working draft in front of the team faster.\n\n## Watch the on-demand webinar\n\n![Image 1: Cover image for How sales teams use Codex webinar](https://images.ctfassets.net/kftzwdyauwt9/4uAF2eygEqdddeqvA8dpx9/cd35d0ea2fc231128bd48f3a87ca2792/How_sales_teams_use_Codex.jpg?w=3840&q=90&fm=webp)\n\nWatch **_How sales teams use Codex_** on-demand [**here**\u2060(opens in a new window)](https://academy.openai.com/home/clubs/work-users-ynjqu/videos/how-sales-teams-use-codex-recording-2026-06-10).\n\n**Note:** This webinar was recorded when these workflows lived in the former Codex app. You can now follow along using ChatGPT Work at chatgpt.com or in the ChatGPT desktop app.\n\n## Install the sales plugin for ChatGPT Work\n\nThe ChatGPT Work**sales plugin**helps sales teams bring customer context into the work that moves deals forward. Sales teams can find high-priority accounts and signals, prepare for customer meetings, complete follow-ups, update customer records, build close plans, and review deals at risk using tools like Salesforce, HubSpot, Slack, Outreach, Clay, Rox, and Actively. Already have ChatGPT Work installed? Click [**here**\u2060(opens in a new window)](https://chatgpt.com/plugins/share/22ec24462a4a410bba1c56c099f6101c) to install the Sales plugin.\n\n## Top ChatGPT Work use cases for sales teams\n\nReady to try ChatGPT Work on real sales work? Check out our use cases [here.\u2060(opens in a new window)](https://learn.chatgpt.com/use-cases/collections/sales)",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "safety",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551601,
-    "title": "Empowering India\u2019s next generation of innovators with ATL Saathi",
-    "url": "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/",
-    "published_at": "2026-07-13T12:37:28+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "rss",
-    "body": "Google and AIM launched ATL Saathi, a Gemini-powered AI tool empowering Indian educators in robotics labs.",
-    "topic": "robotics",
-    "tags": [
-      "release",
-      "models",
-      "robotics",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553803,
-    "title": "Control the ideas, not the code - <antirez>",
-    "url": "https://antirez.com/news/169",
-    "published_at": "2026-07-13T12:01:14+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. don't despair. learn and adapt.",
-    "topic": "education",
-    "tags": [
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553804,
-    "title": "recommended viewing. listen to me sound stupid on the internet again.\n\nalso starring: my knees.",
-    "url": "https://video.twimg.com/amplify_video/2076595754844516352/vid/avc1/1920x1080/jv3V86zYl6C7_W-p.mp4",
-    "published_at": "2026-07-13T11:17:21+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. listen to me sound stupid on the internet again.\n\nalso starring: my knees.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
