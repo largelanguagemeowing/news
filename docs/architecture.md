@@ -24,6 +24,18 @@ Separating them keeps each run short, limits the blast radius of a failure, and
 lets each pass retry independently. Runs are allowed to overlap rather than
 cancel each other, so a long classify run does not interrupt the feed schedule.
 
+## The runs share one orchestration envelope
+
+Separate runs must not mean separate run bookkeeping. The three entrypoints
+share a single run envelope (`app.jobs.runner`) that owns the run record, the
+stage records, and incident escalation, because those policies have to be
+identical across runs to stay trustworthy. They were copy-pasted once and
+drifted — enrich silently stopped escalating failures while fetch and classify
+kept opening incidents — so the envelope exists to make the policy single
+source of truth rather than a thing each run re-implements. A pipeline is just
+a named list of stages; the envelope records, times, and escalates them the
+same way everywhere.
+
 ## Enrichment is a separate pass because bodies are the expensive part
 
 Ingest only needs titles, URLs, and metadata to deduplicate. The body is fetched

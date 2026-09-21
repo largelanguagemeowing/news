@@ -20,7 +20,6 @@ from app.jobs import enrichment, next_flight
 from app.jobs.classifier import classify_article, extract_article_tags
 from app.jobs.ml_classifier import classify_with_model
 from app.models import ExtractionMethod
-from app.repos import run_repo
 from app.settings import get_settings
 from app.utils import utc_now_iso
 
@@ -781,31 +780,6 @@ def enrich_with_rate_limit(
         stop_on_markdown_rate_limit=True,
     )
     return enriched_body, method, rate_limit_remaining
-
-
-def create_stage_run(conn: sqlite3.Connection, run_id: str, stage_name: str) -> int:
-    stage_run_id = run_repo.create_stage_run(conn, run_id, stage_name, utc_now_iso())
-    conn.commit()
-    return stage_run_id
-
-
-def complete_stage_run(
-    conn: sqlite3.Connection, stage_run_id: int, status: str, metrics: dict
-) -> None:
-    run_repo.complete_stage_run(conn, stage_run_id, utc_now_iso(), status, metrics)
-    conn.commit()
-
-
-def github_run_metrics() -> dict[str, str]:
-    """CI workflow attribution (GITHUB_RUN_ID/GITHUB_REPOSITORY) for run metrics."""
-    github_run_id = os.getenv("GITHUB_RUN_ID")
-    github_repo = os.getenv("GITHUB_REPOSITORY")
-    if not (github_run_id and github_repo):
-        return {}
-    return {
-        "github_run_id": github_run_id,
-        "github_run_url": f"https://github.com/{github_repo}/actions/runs/{github_run_id}",
-    }
 
 
 def migrate_source_ids(conn: sqlite3.Connection) -> None:

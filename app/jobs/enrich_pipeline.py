@@ -9,6 +9,9 @@ Triggered separately from fetch and classify pipelines so that:
 - Enrichment can be tuned independently (timeouts, rate limits, budgets).
 - Enrichment failures do not block feed ingestion.
 - The pipeline can be re-run selectively on articles that need it.
+
+Run orchestration (run records, stage records, incident escalation) lives in
+app.jobs.runner — this module supplies the enrich stage and its set-up.
 """
 
 from __future__ import annotations
@@ -16,13 +19,10 @@ from __future__ import annotations
 import argparse
 import logging
 import os
-import time
-import uuid
 from typing import Any
 
 from app.config import load_sources
-from app.db import get_connection, init_db
-from app.jobs import pipeline, stages_export
+from app.jobs import runner
 from app.jobs.pipeline import (
     DEFUDDLE_ENABLED,
     STATUS_DIR,
@@ -32,16 +32,14 @@ from app.jobs.pipeline import (
     build_runs,
     build_sources,
     build_summary,
-    complete_stage_run,
-    create_stage_run,
     enrich_with_rate_limit,
-    github_run_metrics,
+    is_probably_dirty_body,
     reset_markdown_new_circuit_breaker,
+    truncate_for_storage,
     utc_now_iso,
 )
-from app.logging_helpers import log_stage_summary
 from app.models import ExtractionMethod
-from app.repos import article_repo, run_repo
+from app.repos import article_repo
 from app.utils import normalize_text, sha1_hexdigest, simhash64
 
 logger = logging.getLogger("news.pipeline")
@@ -62,6 +60,20 @@ def _fail(message: str) -> int:
     logger.error("Enrich pipeline aborted: %s", message)
     _write_job_summary(message)
     return 1
+
+
+def _export_status(conn) -> dict:
+    """Export stage for the feed dashboard (matches fetch/classify wiring)."""
+    return runner.export_stage(
+        conn,
+        status_dir=STATUS_DIR,
+        summary=lambda c: build_summary(c),
+        sources=lambda c: build_sources(c),
+        runs=lambda c: build_runs(c),
+        incidents=lambda c: build_incidents(c),
+        events=lambda c: build_events(c),
+        articles=lambda c: build_articles(c),
+    )
 
 
 # Incremental persistence: flush accumulated article updates every N writes so
@@ -114,22 +126,11 @@ def run_enrich_pipeline(
         source_id = source_ids
 
     reset_markdown_new_circuit_breaker()
-    conn = get_connection()
-    init_db(conn)
 
-    run_id = uuid.uuid4().hex[:12]
-    run_repo.create_pipeline_run(conn, run_id, utc_now_iso(), run_type="enrich")
-    conn.commit()
-
-    pipeline_metrics: dict[str, Any] = {"run_id": run_id}
-    pipeline_metrics.update(github_run_metrics())
-
-    stage_run_id = create_stage_run(conn, run_id, "enrich")
-    started = time.time()
-    try:
-        metrics = _enrich_articles(
-            conn,
-            run_id,
+    def enrich(ctx) -> dict:
+        return _enrich_articles(
+            ctx.conn,
+            ctx.run_id,
             limit=limit,
             only_missing=only_missing,
             only_dirty=only_dirty,
@@ -140,39 +141,12 @@ def run_enrich_pipeline(
             exclude_source=exclude_source,
             flush_interval=flush_interval,
         )
-        metrics["duration_ms"] = round((time.time() - started) * 1000, 2)
-        complete_stage_run(conn, stage_run_id, "success", metrics)
 
-        pipeline_metrics["enrich"] = metrics
-        run_repo.complete_pipeline_run(conn, run_id, utc_now_iso(), pipeline_metrics)
-        conn.commit()
+    stages = [("enrich", enrich)]
+    if export:
+        stages.append(("export", _export_status))
 
-        log_stage_summary(logger, stage_name="enrich", status="success", metrics=metrics, run_id=run_id)
-        logger.info("Enrich pipeline succeeded run_id=%s enriched=%d", run_id, metrics.get("updated", 0))
-
-        if export:
-            logger.info("Running lightweight export for feed dashboard")
-            export_metrics = stages_export.export_status(
-                conn,
-                status_dir=STATUS_DIR,
-                build_summary_fn=lambda c: build_summary(c),
-                build_sources_fn=lambda c: build_sources(c),
-                build_runs_fn=lambda c: build_runs(c),
-                build_incidents_fn=lambda c: build_incidents(c),
-                build_events_fn=lambda c: build_events(c),
-                build_articles_fn=lambda c: build_articles(c),
-            )
-            logger.info("Export completed: %s", export_metrics)
-            pipeline_metrics["export"] = export_metrics
-            run_repo.complete_pipeline_run(conn, run_id, utc_now_iso(), pipeline_metrics)
-            conn.commit()
-
-        return 0
-
-    except Exception as exc:
-        logger.exception("Enrich pipeline failed run_id=%s error=%s", run_id, exc)
-        conn.rollback()
-        return 1
+    return runner.run_pipeline(run_type="enrich", stages=stages)
 
 
 def _enrich_articles(
@@ -222,7 +196,7 @@ def _enrich_articles(
     rows = conn.execute(query, params).fetchall()
 
     if only_dirty:
-        rows = [r for r in rows if pipeline.is_probably_dirty_body(str(r["body"] or ""))]
+        rows = [r for r in rows if is_probably_dirty_body(str(r["body"] or ""))]
 
     total_rows = len(rows)
     logger.info(
@@ -283,7 +257,7 @@ def _enrich_articles(
         elif not new_body:
             misses += 1
 
-        new_body = pipeline.truncate_for_storage(str(new_body or "").strip())
+        new_body = truncate_for_storage(str(new_body or "").strip())
         old_body = str(row["body"] or "").strip()
         if not new_body or new_body == old_body:
             unchanged += 1
