@@ -31,6 +31,11 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
+def _empty_extra_state() -> dict[str, Any]:
+    """Default extra-state factory: no flavour-specific fields."""
+    return {}
+
+
 @dataclass
 class DailyQuota:
     """Daily-limit bookkeeping persisted as a JSON state file.
@@ -44,7 +49,9 @@ class DailyQuota:
     name: str
     path: Path
     daily_limit: int
-    extra_state: Callable[[], dict[str, Any]] = field(default_factory=dict)
+    extra_state: Callable[[], dict[str, Any]] = field(
+        default_factory=lambda: _empty_extra_state
+    )
 
     def new_state(self, day: str | None = None) -> dict[str, Any]:
         state = {

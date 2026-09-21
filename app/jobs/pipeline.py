@@ -7,9 +7,10 @@ import shutil
 import sqlite3
 import subprocess
 import time
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import trafilatura
 from dateutil import parser as dtparser
@@ -443,6 +444,323 @@ def is_probably_dirty_body(body: str) -> bool:
     return enrichment.is_probably_dirty_body(body)
 
 
+@dataclass(frozen=True)
+class ExtractionAttempt:
+    """Outcome of one extraction attempt; None means the method missed."""
+
+    body: str
+    method: str
+    rate_limit_remaining: int = -1
+    rate_limited: bool = False
+
+
+@dataclass
+class ExtractionContext:
+    """Everything an extractor may consult for one URL."""
+
+    url: str
+    source_id: str
+    title: str
+    body: str
+    markdown_new_budget_remaining: int | None = None
+    stop_on_markdown_rate_limit: bool = False
+
+
+Extractor = Callable[[ExtractionContext], ExtractionAttempt | None]
+
+
+def _try_youtube(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    if not (is_youtube_url(ctx.url) or ctx.source_id in YOUTUBE_SOURCE_IDS):
+        return None
+    youtube_meta = extract_youtube_metadata(ctx.url, ctx.title, ctx.body)
+    transcript = fetch_youtube_transcript(youtube_meta.get("video_id", ""))
+    if transcript:
+        transcript_body = truncate_for_storage(
+            build_youtube_transcript_body(youtube_meta, transcript)
+        )
+        logger.info(
+            "Enrichment success source=%s method=%s url=%s",
+            ctx.source_id,
+            ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
+            ctx.url,
+        )
+        return ExtractionAttempt(
+            transcript_body, ExtractionMethod.YOUTUBE_TRANSCRIPT.value
+        )
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.YOUTUBE.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(
+        build_youtube_body(youtube_meta, ctx.body), ExtractionMethod.YOUTUBE.value
+    )
+
+
+def _try_trafilatura(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    trafilatura_body, used = parse_with_trafilatura(ctx.url)
+    if not (used and trafilatura_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.TRAFILATURA.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(trafilatura_body, ExtractionMethod.TRAFILATURA.value)
+
+
+def _try_next_flight(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    next_flight_body, used = parse_with_next_flight(ctx.url)
+    if not (used and next_flight_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.NEXT_FLIGHT.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(next_flight_body, ExtractionMethod.NEXT_FLIGHT.value)
+
+
+def _try_jina(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    jina_body, used = parse_with_jina_ai(ctx.url)
+    if not (used and jina_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.JINA.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(jina_body, ExtractionMethod.JINA.value)
+
+
+def _try_defuddle(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    defuddle_body, used = parse_with_defuddle(ctx.url)
+    if not (used and defuddle_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.DEFUDDLE.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(defuddle_body, ExtractionMethod.DEFUDDLE.value)
+
+
+def _try_compress_new(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    if not enrichment.supports_markdown_family(ctx.source_id):
+        logger.info(
+            "Enrichment skip source=%s method=%s url=%s reason=unsupported_source",
+            ctx.source_id,
+            ExtractionMethod.COMPRESS_NEW.value,
+            ctx.url,
+        )
+        return None
+    compress_body, used = parse_with_compress_new(ctx.url)
+    if not (used and compress_body):
+        return None
+    logger.info(
+        "Enrichment success source=%s method=%s url=%s",
+        ctx.source_id,
+        ExtractionMethod.COMPRESS_NEW.value,
+        ctx.url,
+    )
+    return ExtractionAttempt(compress_body, ExtractionMethod.COMPRESS_NEW.value)
+
+
+def _try_markdown_new(ctx: ExtractionContext) -> ExtractionAttempt | None:
+    source_id, url = ctx.source_id, ctx.url
+    if not enrichment.supports_markdown_family(source_id):
+        logger.info(
+            "Enrichment skip source=%s method=%s url=%s reason=unsupported_source",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        return None
+    if _MARKDOWN_NEW_BREAKER.is_blocked():
+        logger.warning(
+            "Enrichment skip source=%s method=%s url=%s reason=rate_limited_circuit_open retry_after_seconds=%d",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+            _MARKDOWN_NEW_BREAKER.seconds_remaining(),
+        )
+        compress_body, compress_used = parse_with_compress_new(url)
+        if compress_used and compress_body:
+            logger.info(
+                "Enrichment fallback success source=%s method=%s url=%s reason=markdown_circuit_open",
+                source_id,
+                ExtractionMethod.COMPRESS_NEW.value,
+                url,
+            )
+            return ExtractionAttempt(
+                compress_body,
+                ExtractionMethod.COMPRESS_NEW.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+        return None
+    quota_exhausted, quota_state = enrichment.markdown_new_quota.exhausted()
+    if quota_exhausted:
+        logger.warning(
+            "Enrichment skip source=%s method=%s url=%s reason=daily_quota_exhausted date=%s requests_made=%s limit=%s",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+            quota_state.get("date"),
+            quota_state.get("requests_made"),
+            quota_state.get("limit"),
+        )
+        return None
+    if (
+        ctx.markdown_new_budget_remaining is not None
+        and ctx.markdown_new_budget_remaining <= 0
+    ):
+        logger.info(
+            "Enrichment skip source=%s method=%s url=%s reason=budget_exhausted",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        return None
+    if not enrichment.markdown_new_quota.reserve():
+        logger.warning(
+            "Enrichment skip source=%s method=%s url=%s reason=daily_quota_reserve_failed",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        return None
+    markdown_result = parse_with_markdown_new(url)
+    if len(markdown_result) == 3:
+        markdown_body, used, rate_limit_remaining = markdown_result
+        response_meta = {}
+    else:
+        markdown_body, used, rate_limit_remaining, response_meta = markdown_result
+    enrichment.record_markdown_new_response(
+        rate_limit_remaining,
+        status_code=response_meta.get("status_code"),
+        raw_remaining_header=response_meta.get("x_rate_limit_remaining"),
+        url=response_meta.get("url") or url,
+    )
+    if used and markdown_body:
+        logger.info(
+            "Enrichment success source=%s method=%s url=%s rate_limit_remaining=%d",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+            rate_limit_remaining,
+        )
+        return ExtractionAttempt(
+            markdown_body,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            rate_limit_remaining=rate_limit_remaining,
+        )
+    if rate_limit_remaining == -2:
+        _MARKDOWN_NEW_BREAKER.block(24 * 3600, "retry_after_gt_24h")
+        compress_body, compress_used = parse_with_compress_new(url)
+        if compress_used and compress_body:
+            logger.info(
+                "Enrichment fallback success source=%s method=%s url=%s reason=markdown_long_rate_limit",
+                source_id,
+                ExtractionMethod.COMPRESS_NEW.value,
+                url,
+            )
+            return ExtractionAttempt(
+                compress_body,
+                ExtractionMethod.COMPRESS_NEW.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+        return None
+    if rate_limit_remaining == 0:
+        _MARKDOWN_NEW_BREAKER.block(MARKDOWN_NEW_BLOCK_SECONDS_ON_429, "http_429")
+        logger.warning(
+            "Enrichment rate_limited source=%s method=%s url=%s",
+            source_id,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            url,
+        )
+        compress_body, compress_used = parse_with_compress_new(url)
+        if compress_used and compress_body:
+            logger.info(
+                "Enrichment fallback success source=%s method=%s url=%s",
+                source_id,
+                ExtractionMethod.COMPRESS_NEW.value,
+                url,
+            )
+            return ExtractionAttempt(
+                compress_body,
+                ExtractionMethod.COMPRESS_NEW.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+        if ctx.stop_on_markdown_rate_limit:
+            logger.warning(
+                "Enrichment stopping source=%s method=%s url=%s reason=markdown_rate_limit",
+                source_id,
+                ExtractionMethod.RSS.value,
+                url,
+            )
+            return ExtractionAttempt(
+                ctx.body,
+                ExtractionMethod.RSS.value,
+                rate_limit_remaining=0,
+                rate_limited=True,
+            )
+    return None
+
+
+# The preference chain is a registry keyed by ExtractionMethod value: adding an
+# extractor is one attempt function plus one registration line here. The chain
+# loop (enrich_with_policy) has no per-method branches left.
+EXTRACTORS: dict[str, Extractor] = {
+    ExtractionMethod.YOUTUBE.value: _try_youtube,
+    ExtractionMethod.TRAFILATURA.value: _try_trafilatura,
+    ExtractionMethod.NEXT_FLIGHT.value: _try_next_flight,
+    ExtractionMethod.MARKDOWN_NEW.value: _try_markdown_new,
+    ExtractionMethod.COMPRESS_NEW.value: _try_compress_new,
+    ExtractionMethod.JINA.value: _try_jina,
+    ExtractionMethod.DEFUDDLE.value: _try_defuddle,
+}
+
+
+def _extraction_methods(source_id: str, url: str, only_method: str | None) -> list[str]:
+    """Ordered preference chain for a source (a chain, not a fallback stack)."""
+    if only_method:
+        return [only_method]
+    # Source-aware extraction priority:
+    # - OpenAI sources: next_flight -> markdown.new -> compress.new -> jina -> defuddle -> trafilatura
+    # - Other sources: trafilatura -> next_flight -> jina -> defuddle
+    # - YouTube is only included for YouTube URLs/sources.
+    # next_flight is the local tier for client-rendered Next.js pages: it only
+    # succeeds on flight payloads, and when it does it avoids the cloud
+    # fetchers (and their rate limits) entirely.
+    if enrichment.supports_markdown_family(source_id):
+        methods = [
+            ExtractionMethod.NEXT_FLIGHT.value,
+            ExtractionMethod.MARKDOWN_NEW.value,
+            ExtractionMethod.COMPRESS_NEW.value,
+            ExtractionMethod.JINA.value,
+            ExtractionMethod.DEFUDDLE.value,
+            ExtractionMethod.TRAFILATURA.value,
+        ]
+    else:
+        methods = [
+            ExtractionMethod.TRAFILATURA.value,
+            ExtractionMethod.NEXT_FLIGHT.value,
+            ExtractionMethod.JINA.value,
+            ExtractionMethod.DEFUDDLE.value,
+        ]
+    if is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS:
+        methods.insert(0, ExtractionMethod.YOUTUBE.value)
+    return methods
+
+
 def enrich_with_policy(
     url: str,
     source_id: str,
@@ -453,306 +771,46 @@ def enrich_with_policy(
     markdown_new_budget_remaining: int | None = None,
     stop_on_markdown_rate_limit: bool = False,
 ) -> tuple[str, str, int, bool]:
+    """Run the preference chain; first successful extractor wins.
+
+    Returns (body, method, rate_limit_remaining, rate_limited). When no
+    extractor succeeds the untouched rss body is returned with method "rss".
+    """
     current_body = str(body or "").strip()
-    rate_limit_remaining = -1
-
-    # Source-aware extraction priority:
-    # - OpenAI sources: next_flight -> markdown.new -> compress.new -> jina -> defuddle -> trafilatura
-    # - Other sources: trafilatura -> next_flight -> jina -> defuddle
-    # - YouTube is only included for YouTube URLs/sources.
-    # next_flight is the local tier for client-rendered Next.js pages: it only
-    # succeeds on flight payloads, and when it does it avoids the cloud
-    # fetchers (and their rate limits) entirely.
-    is_youtube_candidate = is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS
-    if enrichment.supports_markdown_family(source_id):
-        methods_order = [
-            ExtractionMethod.NEXT_FLIGHT.value,
-            ExtractionMethod.MARKDOWN_NEW.value,
-            ExtractionMethod.COMPRESS_NEW.value,
-            ExtractionMethod.JINA.value,
-            ExtractionMethod.DEFUDDLE.value,
-            ExtractionMethod.TRAFILATURA.value,
-        ]
-    else:
-        methods_order = [
-            ExtractionMethod.TRAFILATURA.value,
-            ExtractionMethod.NEXT_FLIGHT.value,
-            ExtractionMethod.JINA.value,
-            ExtractionMethod.DEFUDDLE.value,
-        ]
-    if is_youtube_candidate:
-        methods_order = [ExtractionMethod.YOUTUBE.value, *methods_order]
-    methods_to_try = [only_method] if only_method else methods_order
-
-    for method in methods_to_try:
+    ctx = ExtractionContext(
+        url=url,
+        source_id=source_id,
+        title=title,
+        body=current_body,
+        markdown_new_budget_remaining=markdown_new_budget_remaining,
+        stop_on_markdown_rate_limit=stop_on_markdown_rate_limit,
+    )
+    for method in _extraction_methods(source_id, url, only_method):
         logger.info(
             "Enrichment attempt source=%s method=%s url=%s",
             source_id,
             method,
             url,
         )
-        if method == ExtractionMethod.YOUTUBE.value:
-            if is_youtube_url(url) or source_id in YOUTUBE_SOURCE_IDS:
-                youtube_meta = extract_youtube_metadata(url, title, current_body)
-                transcript = fetch_youtube_transcript(youtube_meta.get("video_id", ""))
-                if transcript:
-                    transcript_body = truncate_for_storage(
-                        build_youtube_transcript_body(youtube_meta, transcript)
-                    )
-                    logger.info(
-                        "Enrichment success source=%s method=%s url=%s",
-                        source_id,
-                        ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
-                        url,
-                    )
-                    return (
-                        transcript_body,
-                        ExtractionMethod.YOUTUBE_TRANSCRIPT.value,
-                        -1,
-                        False,
-                    )
-                logger.info(
-                    "Enrichment success source=%s method=%s url=%s",
-                    source_id,
-                    ExtractionMethod.YOUTUBE.value,
-                    url,
-                )
-                return (
-                    build_youtube_body(youtube_meta, current_body),
-                    ExtractionMethod.YOUTUBE.value,
-                    -1,
-                    False,
-                )
+        attempt = EXTRACTORS[method](ctx)
+        if attempt is None:
             logger.info(
                 "Enrichment miss source=%s method=%s url=%s", source_id, method, url
             )
             continue
-
-        if method == ExtractionMethod.TRAFILATURA.value:
-            trafilatura_body, used = parse_with_trafilatura(url)
-            if used and trafilatura_body:
-                logger.info(
-                    "Enrichment success source=%s method=%s url=%s",
-                    source_id,
-                    ExtractionMethod.TRAFILATURA.value,
-                    url,
-                )
-                return trafilatura_body, ExtractionMethod.TRAFILATURA.value, -1, False
-            logger.info(
-                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
-            )
-            continue
-
-        if method == ExtractionMethod.MARKDOWN_NEW.value:
-            if not enrichment.supports_markdown_family(source_id):
-                logger.info(
-                    "Enrichment skip source=%s method=%s url=%s reason=unsupported_source",
-                    source_id,
-                    method,
-                    url,
-                )
-                continue
-            if _MARKDOWN_NEW_BREAKER.is_blocked():
-                logger.warning(
-                    "Enrichment skip source=%s method=%s url=%s reason=rate_limited_circuit_open retry_after_seconds=%d",
-                    source_id,
-                    method,
-                    url,
-                    _MARKDOWN_NEW_BREAKER.seconds_remaining(),
-                )
-                compress_body, compress_used = parse_with_compress_new(url)
-                if compress_used and compress_body:
-                    logger.info(
-                        "Enrichment fallback success source=%s method=%s url=%s reason=markdown_circuit_open",
-                        source_id,
-                        ExtractionMethod.COMPRESS_NEW.value,
-                        url,
-                    )
-                    return compress_body, ExtractionMethod.COMPRESS_NEW.value, 0, True
-                logger.info(
-                    "Enrichment fallback miss source=%s method=%s url=%s reason=markdown_circuit_open",
-                    source_id,
-                    ExtractionMethod.COMPRESS_NEW.value,
-                    url,
-                )
-                continue
-            quota_exhausted, quota_state = enrichment.markdown_new_quota.exhausted()
-            if quota_exhausted:
-                logger.warning(
-                    "Enrichment skip source=%s method=%s url=%s reason=daily_quota_exhausted date=%s requests_made=%s limit=%s",
-                    source_id,
-                    method,
-                    url,
-                    quota_state.get("date"),
-                    quota_state.get("requests_made"),
-                    quota_state.get("limit"),
-                )
-                continue
-            if (
-                markdown_new_budget_remaining is not None
-                and markdown_new_budget_remaining <= 0
-            ):
-                logger.info(
-                    "Enrichment skip source=%s method=%s url=%s reason=budget_exhausted",
-                    source_id,
-                    method,
-                    url,
-                )
-                continue
-            if not enrichment.markdown_new_quota.reserve():
-                logger.warning(
-                    "Enrichment skip source=%s method=%s url=%s reason=daily_quota_reserve_failed",
-                    source_id,
-                    method,
-                    url,
-                )
-                continue
-            markdown_result = parse_with_markdown_new(url)
-            if len(markdown_result) == 3:
-                markdown_body, used, rate_limit_remaining = markdown_result
-                response_meta = {}
-            else:
-                markdown_body, used, rate_limit_remaining, response_meta = markdown_result
-            enrichment.record_markdown_new_response(
-                rate_limit_remaining,
-                status_code=response_meta.get("status_code"),
-                raw_remaining_header=response_meta.get("x_rate_limit_remaining"),
-                url=response_meta.get("url") or url,
-            )
-            if used and markdown_body:
-                logger.info(
-                    "Enrichment success source=%s method=%s url=%s rate_limit_remaining=%d",
-                    source_id,
-                    ExtractionMethod.MARKDOWN_NEW.value,
-                    url,
-                    rate_limit_remaining,
-                )
-                return (
-                    markdown_body,
-                    ExtractionMethod.MARKDOWN_NEW.value,
-                    rate_limit_remaining,
-                    False,
-                )
-            if rate_limit_remaining == -2:
-                _MARKDOWN_NEW_BREAKER.block(24 * 3600, "retry_after_gt_24h")
-                compress_body, compress_used = parse_with_compress_new(url)
-                if compress_used and compress_body:
-                    logger.info(
-                        "Enrichment fallback success source=%s method=%s url=%s reason=markdown_long_rate_limit",
-                        source_id,
-                        ExtractionMethod.COMPRESS_NEW.value,
-                        url,
-                    )
-                    return compress_body, ExtractionMethod.COMPRESS_NEW.value, 0, True
-                logger.info(
-                    "Enrichment miss source=%s method=%s url=%s", source_id, method, url
-                )
-                continue
-            if rate_limit_remaining == 0:
-                _MARKDOWN_NEW_BREAKER.block(MARKDOWN_NEW_BLOCK_SECONDS_ON_429, "http_429")
-                logger.warning(
-                    "Enrichment rate_limited source=%s method=%s url=%s",
-                    source_id,
-                    ExtractionMethod.MARKDOWN_NEW.value,
-                    url,
-                )
-                compress_body, compress_used = parse_with_compress_new(url)
-                if compress_used and compress_body:
-                    logger.info(
-                        "Enrichment fallback success source=%s method=%s url=%s",
-                        source_id,
-                        ExtractionMethod.COMPRESS_NEW.value,
-                        url,
-                    )
-                    return compress_body, ExtractionMethod.COMPRESS_NEW.value, 0, True
-                if stop_on_markdown_rate_limit:
-                    logger.warning(
-                        "Enrichment stopping source=%s method=%s url=%s reason=markdown_rate_limit",
-                        source_id,
-                        ExtractionMethod.RSS.value,
-                        url,
-                    )
-                    return current_body, ExtractionMethod.RSS.value, 0, True
-            logger.info(
-                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
-            )
-            continue
-
-        if method == ExtractionMethod.COMPRESS_NEW.value:
-            if not enrichment.supports_markdown_family(source_id):
-                logger.info(
-                    "Enrichment skip source=%s method=%s url=%s reason=unsupported_source",
-                    source_id,
-                    method,
-                    url,
-                )
-                continue
-            compress_body, used = parse_with_compress_new(url)
-            if used and compress_body:
-                logger.info(
-                    "Enrichment success source=%s method=%s url=%s",
-                    source_id,
-                    ExtractionMethod.COMPRESS_NEW.value,
-                    url,
-                )
-                return compress_body, ExtractionMethod.COMPRESS_NEW.value, -1, False
-            logger.info(
-                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
-            )
-            continue
-
-        if method == ExtractionMethod.NEXT_FLIGHT.value:
-            next_flight_body, used = parse_with_next_flight(url)
-            if used and next_flight_body:
-                logger.info(
-                    "Enrichment success source=%s method=%s url=%s",
-                    source_id,
-                    ExtractionMethod.NEXT_FLIGHT.value,
-                    url,
-                )
-                return next_flight_body, ExtractionMethod.NEXT_FLIGHT.value, -1, False
-            logger.info(
-                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
-            )
-            continue
-
-        if method == ExtractionMethod.JINA.value:
-            jina_body, used = parse_with_jina_ai(url)
-            if used and jina_body:
-                logger.info(
-                    "Enrichment success source=%s method=%s url=%s",
-                    source_id,
-                    ExtractionMethod.JINA.value,
-                    url,
-                )
-                return jina_body, ExtractionMethod.JINA.value, -1, False
-            logger.info(
-                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
-            )
-            continue
-
-        if method == ExtractionMethod.DEFUDDLE.value:
-            defuddle_body, used = parse_with_defuddle(url)
-            if used and defuddle_body:
-                logger.info(
-                    "Enrichment success source=%s method=%s url=%s",
-                    source_id,
-                    ExtractionMethod.DEFUDDLE.value,
-                    url,
-                )
-                return defuddle_body, ExtractionMethod.DEFUDDLE.value, -1, False
-            logger.info(
-                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
-            )
-            continue
-
+        return (
+            attempt.body,
+            attempt.method,
+            attempt.rate_limit_remaining,
+            attempt.rate_limited,
+        )
     logger.info(
         "Enrichment fallback source=%s method=%s url=%s",
         source_id,
         ExtractionMethod.RSS.value,
         url,
     )
-    return current_body, ExtractionMethod.RSS.value, rate_limit_remaining, False
+    return current_body, ExtractionMethod.RSS.value, -1, False
 
 
 def enrich_with_rate_limit(

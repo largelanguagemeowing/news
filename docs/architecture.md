@@ -53,6 +53,12 @@ A dependable general extractor is the guarantee that every article still gets a
 body when the quality extractors are exhausted or unavailable. `defuddle` is an
 experimental extractor and participates only when explicitly enabled.
 
+The chain is implemented as a registry keyed by method name (`EXTRACTORS`):
+each extractor is one attempt function plus one registration line, and the
+ordering policy (`_extraction_methods`) is separate from each method's own
+behaviour. Adding an extractor no longer means editing a nested method dispatch;
+an extractor's quota, breaker, and fallback logic live with that extractor.
+
 ## Daily quotas are one machine, not two copies
 
 The two cloud extractors that run on a paid daily budget (markdown.new,
