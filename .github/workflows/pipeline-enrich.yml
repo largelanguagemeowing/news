@@ -42,8 +42,13 @@ on:
           - youtube
           - trafilatura
           - markdown_new
+          - compress_new
           - jina
           - defuddle
+  schedule:
+    # Daily churn through pending enrichments (inputs are empty on schedule;
+    # the run step branches on event_name to use --all --no-only-missing)
+    - cron: "0 5 * * *"
 
 concurrency:
   group: news-pipeline
@@ -107,32 +112,37 @@ jobs:
           
           CMD="uv run python -m app.jobs.enrich_pipeline"
           
-          if [ -n "${{ inputs.source_id }}" ]; then
-            CMD="$CMD --source-id ${{ inputs.source_id }}"
-          fi
-          
-          if [ -n "${{ inputs.exclude_source }}" ]; then
-            CMD="$CMD --exclude-source ${{ inputs.exclude_source }}"
-          fi
-          
-          if [ "${{ inputs.all }}" = "true" ]; then
-            CMD="$CMD --all"
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # Daily churn: every pending article regardless of body length
+            CMD="$CMD --all --no-only-missing"
           else
-            CMD="$CMD --limit ${{ inputs.limit }}"
-          fi
-          
-          if [ "${{ inputs.only_dirty }}" = "true" ]; then
-            CMD="$CMD --only-dirty"
-          fi
-          
-          if [ "${{ inputs.only_missing }}" = "true" ]; then
-            CMD="$CMD --only-missing"
-          else
-            CMD="$CMD --no-only-missing"
-          fi
-          
-          if [ "${{ inputs.method }}" != "default" ]; then
-            CMD="$CMD --only-method ${{ inputs.method }}"
+            if [ -n "${{ inputs.source_id }}" ]; then
+              CMD="$CMD --source-id ${{ inputs.source_id }}"
+            fi
+            
+            if [ -n "${{ inputs.exclude_source }}" ]; then
+              CMD="$CMD --exclude-source ${{ inputs.exclude_source }}"
+            fi
+            
+            if [ "${{ inputs.all }}" = "true" ]; then
+              CMD="$CMD --all"
+            else
+              CMD="$CMD --limit ${{ inputs.limit }}"
+            fi
+            
+            if [ "${{ inputs.only_dirty }}" = "true" ]; then
+              CMD="$CMD --only-dirty"
+            fi
+            
+            if [ "${{ inputs.only_missing }}" = "true" ]; then
+              CMD="$CMD --only-missing"
+            else
+              CMD="$CMD --no-only-missing"
+            fi
+            
+            if [ "${{ inputs.method }}" != "default" ]; then
+              CMD="$CMD --only-method ${{ inputs.method }}"
+            fi
           fi
 
           CMD="$CMD --export"

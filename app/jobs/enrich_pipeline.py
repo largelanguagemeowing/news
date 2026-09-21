@@ -85,6 +85,33 @@ def _fail(message: str) -> int:
     return 1
 
 
+# Incremental persistence: flush accumulated article updates every N writes so
+# a killed/timed-out run keeps at most N-1 articles of work instead of
+# discarding the whole batch in the final rollback.
+ENRICH_FLUSH_INTERVAL = max(1, int(os.getenv("ENRICH_FLUSH_INTERVAL", "25")))
+
+_FLUSH_UPDATES_SQL = """
+    UPDATE articles
+    SET body = ?, body_norm = ?, body_hash = ?, simhash = ?, extraction_method = ?
+    WHERE article_id = ?
+"""
+
+
+def _flush_updates(conn, updates: list[tuple[str, str, str, str, str, int]]) -> int:
+    """Write accumulated updates in one transaction and clear the batch.
+
+    Enrichment attempts recorded since the last flush ride along in the same
+    transaction, so bodies and their attempt trail land atomically.
+    """
+    if not updates:
+        return 0
+    conn.executemany(_FLUSH_UPDATES_SQL, updates)
+    conn.commit()
+    flushed = len(updates)
+    updates.clear()
+    return flushed
+
+
 def run_enrich_pipeline(
     limit: int | None = None,
     only_missing: bool = True,
@@ -94,6 +121,7 @@ def run_enrich_pipeline(
     only_method: str | None = None,
     source_id: str | None = None,
     exclude_source: str | None = None,
+    flush_interval: int | None = None,
     export: bool = False,
 ) -> int:
     if source_id:
@@ -137,6 +165,7 @@ def run_enrich_pipeline(
             only_method=only_method,
             source_id=source_id,
             exclude_source=exclude_source,
+            flush_interval=flush_interval,
         )
         metrics["duration_ms"] = round((time.time() - started) * 1000, 2)
         _complete_stage_run(conn, stage_run_id, "success", metrics)
@@ -184,7 +213,9 @@ def _enrich_articles(
     only_method: str | None = None,
     source_id: str | None = None,
     exclude_source: str | None = None,
+    flush_interval: int | None = None,
 ) -> dict[str, Any]:
+    flush_interval = flush_interval or ENRICH_FLUSH_INTERVAL
     where_missing = "AND (a.body IS NULL OR TRIM(a.body) = '' OR LENGTH(a.body) < 120)" if only_missing else ""
     where_skip_enriched = "AND (a.extraction_method IS NULL OR a.extraction_method = 'rss')" if skip_enriched else ""
     source_ids = list(source_id) if source_id else []
@@ -237,6 +268,8 @@ def _enrich_articles(
     method_counts: dict[str, int] = {}
     per_source: dict[str, dict[str, int]] = {}
     updates: list[tuple[str, str, str, str, str, int]] = []
+    flushed_total = 0
+    flushed_batches = 0
 
     progress_interval = max(1, total_rows // 10) if total_rows else 1
     for row in rows:
@@ -287,6 +320,9 @@ def _enrich_articles(
             title_norm = normalize_text(str(row["title"] or ""))
             sh = str(simhash64(body_norm or title_norm))
             updates.append((new_body, body_norm, body_hash, sh, method, int(row["article_id"])))
+            if len(updates) >= flush_interval:
+                flushed_total += _flush_updates(conn, updates)
+                flushed_batches += 1
 
         # Per-source tracking
         ps = per_source.setdefault(sid, {"attempted": 0, "enriched": 0, "failed": 0})
@@ -318,18 +354,12 @@ def _enrich_articles(
                 attempted, total_rows, enriched, len(updates), unchanged, misses, method_summary,
             )
 
-    if updates:
-        conn.executemany(
-            """
-            UPDATE articles
-            SET body = ?, body_norm = ?, body_hash = ?, simhash = ?, extraction_method = ?
-            WHERE article_id = ?
-            """,
-            updates,
-        )
-    conn.commit()
+    final_flushed = _flush_updates(conn, updates)
+    if final_flushed:
+        flushed_total += final_flushed
+        flushed_batches += 1
 
-    updated = len(updates)
+    updated = flushed_total
     method_summary = ", ".join(f"{k}={v}" for k, v in sorted(method_counts.items()))
     logger.info(
         "Enrich finished attempted=%d enriched=%d updated=%d unchanged=%d misses=%d methods=%s",
@@ -347,6 +377,7 @@ def _enrich_articles(
         "stopped_early": stopped_early,
         "method_counts": dict(method_counts),
         "per_source": per_source,
+        "flush_batches": flushed_batches,
         "defuddle_enabled": DEFUDDLE_ENABLED,
     }
 
@@ -376,6 +407,7 @@ def main() -> int:
     parser.add_argument("--only-method", type=str, choices=["youtube", "trafilatura", "markdown_new", "compress_new", "jina", "defuddle"], default=None, help="Force specific extraction method only")
     parser.add_argument("--source-id", type=str, default=None, help="Filter to specific source(s), comma-separated")
     parser.add_argument("--exclude-source", type=str, default=None, help="Exclude source(s), comma-separated")
+    parser.add_argument("--flush-interval", type=int, default=None, help="Flush enriched articles to the DB every N writes (default: 25)")
     parser.add_argument(
         "--export",
         action="store_true",
@@ -393,6 +425,7 @@ def main() -> int:
         only_method=args.only_method,
         source_id=args.source_id,
         exclude_source=args.exclude_source,
+        flush_interval=args.flush_interval,
         export=args.export,
     )
 
