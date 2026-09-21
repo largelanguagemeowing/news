@@ -26,6 +26,25 @@ COMPRESS_NEW_QUOTA_PATH = Path("data/status/compress_new_quota.json")
 COMPRESS_NEW_DAILY_LIMIT = int(os.getenv("COMPRESS_NEW_DAILY_LIMIT", "500"))
 
 
+def _request_retry(retry_error_callback, log_message: str, url: str):
+    """Decorator factory: retry a request on transient errors with backoff.
+
+    Shared retry policy (two attempts, exponential backoff capped at 10s) used
+    by every requests-based fetcher in this module.
+    """
+    return tenacity.retry(
+        stop=tenacity.stop_after_attempt(2),
+        wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
+        retry=tenacity.retry_if_exception_type(
+            (requests.RequestException, requests.HTTPError)
+        ),
+        retry_error_callback=retry_error_callback,
+        before_sleep=lambda retry_state: logger.debug(
+            log_message, retry_state.attempt_number, url
+        ),
+    )
+
+
 MethodName = Literal[
     "youtube",
     "youtube_transcript",
@@ -310,18 +329,10 @@ def fetch_text_url(url: str, request_timeout_seconds: int) -> str:
     """Fetch page text with retry logic for transient failures."""
     try:
 
-        @tenacity.retry(
-            stop=tenacity.stop_after_attempt(2),
-            wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-            retry=tenacity.retry_if_exception_type(
-                (requests.RequestException, requests.HTTPError)
-            ),
-            retry_error_callback=lambda retry_state: "",
-            before_sleep=lambda retry_state: logger.debug(
-                "Page fetch failed, retrying (attempt %d/2) for url=%s",
-                retry_state.attempt_number,
-                url,
-            ),
+        @_request_retry(
+            lambda retry_state: "",
+            "Page fetch failed, retrying (attempt %d/2) for url=%s",
+            url,
         )
         def _fetch(u: str) -> str:
             response = requests.get(
@@ -428,18 +439,10 @@ def fetch_youtube_oembed(
     """Fetch YouTube oembed data with retry logic for transient failures."""
     try:
 
-        @tenacity.retry(
-            stop=tenacity.stop_after_attempt(2),
-            wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-            retry=tenacity.retry_if_exception_type(
-                (requests.RequestException, requests.HTTPError)
-            ),
-            retry_error_callback=lambda retry_state: None,
-            before_sleep=lambda retry_state: logger.debug(
-                "YouTube oembed fetch failed, retrying (attempt %d/2) for url=%s",
-                retry_state.attempt_number,
-                url,
-            ),
+        @_request_retry(
+            lambda retry_state: None,
+            "YouTube oembed fetch failed, retrying (attempt %d/2) for url=%s",
+            url,
         )
         def _fetch_oembed(u: str) -> dict[str, str]:
             endpoint = "https://www.youtube.com/oembed"
@@ -670,18 +673,10 @@ def parse_with_jina_ai(
     if not url or is_youtube_url(url):
         return None, False
 
-    @tenacity.retry(
-        stop=tenacity.stop_after_attempt(2),
-        wait=tenacity.wait_exponential(multiplier=1, min=2, max=10),
-        retry=tenacity.retry_if_exception_type(
-            (requests.RequestException, requests.HTTPError)
-        ),
-        retry_error_callback=lambda retry_state: None,
-        before_sleep=lambda retry_state: logger.debug(
-            "jina.ai fetch failed, retrying (attempt %d/2) for url=%s",
-            retry_state.attempt_number,
-            url,
-        ),
+    @_request_retry(
+        lambda retry_state: None,
+        "jina.ai fetch failed, retrying (attempt %d/2) for url=%s",
+        url,
     )
     def _fetch_jina(u: str) -> str:
         jina_url = f"https://r.jina.ai/http://{u.replace('https://', '').replace('http://', '')}"

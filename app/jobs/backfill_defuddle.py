@@ -23,29 +23,6 @@ logger = logging.getLogger("news.backfill")
 SETTINGS = get_settings()
 
 
-def _enrich_with_rate_limit(
-    url: str,
-    source_id: str,
-    title: str,
-    body: str,
-    max_markdown_new: int,
-    markdown_new_used: int,
-    only_method: str | None = None,
-) -> tuple[str, str, int]:
-    """Enrich article using shared pipeline enrichment policy."""
-    budget_remaining = max_markdown_new - markdown_new_used
-    enriched_body, method, rate_limit_remaining, _rate_limited = pipeline.enrich_with_policy(
-        url,
-        source_id,
-        title,
-        body,
-        only_method=only_method,
-        markdown_new_budget_remaining=budget_remaining,
-        stop_on_markdown_rate_limit=True,
-    )
-    return enriched_body, method, rate_limit_remaining
-
-
 def backfill_articles(
     limit: int,
     only_missing: bool = False,
@@ -151,7 +128,7 @@ def backfill_articles(
             break
         
         # Try enrichment with rate limit awareness
-        new_body, method, rate_limit_remaining = _enrich_with_rate_limit(
+        new_body, method, rate_limit_remaining = pipeline.enrich_with_rate_limit(
             url, source_id, title, body, max_markdown_new, markdown_new_used, only_method
         )
         

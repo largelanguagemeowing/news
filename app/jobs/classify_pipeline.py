@@ -14,7 +14,6 @@ Triggered separately from fetch and enrich pipelines so that:
 from __future__ import annotations
 
 import logging
-import os
 import time
 import traceback
 import uuid
@@ -35,6 +34,9 @@ from app.jobs.pipeline import (
     build_sources,
     build_summary,
     classify_event,
+    complete_stage_run,
+    create_stage_run,
+    github_run_metrics,
     iso,
     parse_date,
     utc_now_iso,
@@ -56,13 +58,7 @@ def run_classify_pipeline() -> int:
 
     issue_client = GitHubIssueClient()
     pipeline_metrics: dict[str, Any] = {"run_id": run_id}
-    github_run_id = os.getenv("GITHUB_RUN_ID")
-    github_repo = os.getenv("GITHUB_REPOSITORY")
-    if github_run_id and github_repo:
-        pipeline_metrics["github_run_id"] = github_run_id
-        pipeline_metrics["github_run_url"] = (
-            f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
-        )
+    pipeline_metrics.update(github_run_metrics())
 
     stages = [
         ("cluster", lambda: _run_cluster_stage(conn, run_id)),
@@ -116,19 +112,15 @@ def run_classify_pipeline() -> int:
 
 
 def _run_stage(conn, run_id: str, stage_name: str, stage_fn) -> dict[str, Any]:
-    started_at = utc_now_iso()
-    stage_run_id = run_repo.create_stage_run(conn, run_id, stage_name, started_at)
-    conn.commit()
+    stage_run_id = create_stage_run(conn, run_id, stage_name)
     started = time.time()
     try:
         result = stage_fn()
         result["duration_ms"] = round((time.time() - started) * 1000, 2)
-        run_repo.complete_stage_run(conn, stage_run_id, utc_now_iso(), "success", result)
-        conn.commit()
+        complete_stage_run(conn, stage_run_id, "success", result)
         return result
     except Exception:
-        run_repo.complete_stage_run(conn, stage_run_id, utc_now_iso(), "failed", {})
-        conn.commit()
+        complete_stage_run(conn, stage_run_id, "failed", {})
         raise
 
 

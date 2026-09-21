@@ -36,7 +36,10 @@ from app.jobs.pipeline import (
     build_runs,
     build_sources,
     build_summary,
+    complete_stage_run,
+    create_stage_run,
     get_source_timeout_seconds,
+    github_run_metrics,
     iso,
     migrate_source_ids,
     parse_date,
@@ -113,15 +116,9 @@ def run_fetch_pipeline(export: bool = False) -> int:
 
     issue_client = GitHubIssueClient()
     pipeline_metrics: dict[str, Any] = {"run_id": run_id}
-    github_run_id = os.getenv("GITHUB_RUN_ID")
-    github_repo = os.getenv("GITHUB_REPOSITORY")
-    if github_run_id and github_repo:
-        pipeline_metrics["github_run_id"] = github_run_id
-        pipeline_metrics["github_run_url"] = (
-            f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
-        )
+    pipeline_metrics.update(github_run_metrics())
 
-    stage_run_id = _create_stage_run(conn, run_id, "fetch")
+    stage_run_id = create_stage_run(conn, run_id, "fetch")
     started = time.time()
     try:
         metrics = stages_ingest.ingest_stage(
@@ -147,7 +144,7 @@ def run_fetch_pipeline(export: bool = False) -> int:
             slow_source_latency_ms=SLOW_SOURCE_LATENCY_MS,
         )
         metrics["duration_ms"] = round((time.time() - started) * 1000, 2)
-        _complete_stage_run(conn, stage_run_id, "success", metrics)
+        complete_stage_run(conn, stage_run_id, "success", metrics)
 
         pipeline_metrics["fetch"] = metrics
         run_repo.complete_pipeline_run(conn, run_id, utc_now_iso(), pipeline_metrics)
@@ -192,18 +189,6 @@ def run_fetch_pipeline(export: bool = False) -> int:
         )
         conn.commit()
         return 1
-
-
-def _create_stage_run(conn, run_id: str, stage_name: str) -> int:
-    started_at = utc_now_iso()
-    stage_run_id = run_repo.create_stage_run(conn, run_id, stage_name, started_at)
-    conn.commit()
-    return stage_run_id
-
-
-def _complete_stage_run(conn, stage_run_id: int, status: str, metrics: dict) -> None:
-    run_repo.complete_stage_run(conn, stage_run_id, utc_now_iso(), status, metrics)
-    conn.commit()
 
 
 def main() -> int:

@@ -32,6 +32,10 @@ from app.jobs.pipeline import (
     build_runs,
     build_sources,
     build_summary,
+    complete_stage_run,
+    create_stage_run,
+    enrich_with_rate_limit,
+    github_run_metrics,
     reset_markdown_new_circuit_breaker,
     utc_now_iso,
 )
@@ -41,28 +45,6 @@ from app.repos import article_repo, run_repo
 from app.utils import normalize_text, sha1_hexdigest, simhash64
 
 logger = logging.getLogger("news.pipeline")
-
-
-def _enrich_with_rate_limit(
-    url: str,
-    source_id: str,
-    title: str,
-    body: str,
-    max_markdown_new: int,
-    markdown_new_used: int,
-    only_method: str | None = None,
-) -> tuple[str, str, int]:
-    budget_remaining = max_markdown_new - markdown_new_used
-    enriched_body, method, rate_limit_remaining, _rate_limited = pipeline.enrich_with_policy(
-        url,
-        source_id,
-        title,
-        body,
-        only_method=only_method,
-        markdown_new_budget_remaining=budget_remaining,
-        stop_on_markdown_rate_limit=True,
-    )
-    return enriched_body, method, rate_limit_remaining
 
 
 def _write_job_summary(message: str) -> None:
@@ -140,15 +122,9 @@ def run_enrich_pipeline(
     conn.commit()
 
     pipeline_metrics: dict[str, Any] = {"run_id": run_id}
-    github_run_id = os.getenv("GITHUB_RUN_ID")
-    github_repo = os.getenv("GITHUB_REPOSITORY")
-    if github_run_id and github_repo:
-        pipeline_metrics["github_run_id"] = github_run_id
-        pipeline_metrics["github_run_url"] = (
-            f"https://github.com/{github_repo}/actions/runs/{github_run_id}"
-        )
+    pipeline_metrics.update(github_run_metrics())
 
-    stage_run_id = _create_stage_run(conn, run_id, "enrich")
+    stage_run_id = create_stage_run(conn, run_id, "enrich")
     started = time.time()
     try:
         metrics = _enrich_articles(
@@ -165,7 +141,7 @@ def run_enrich_pipeline(
             flush_interval=flush_interval,
         )
         metrics["duration_ms"] = round((time.time() - started) * 1000, 2)
-        _complete_stage_run(conn, stage_run_id, "success", metrics)
+        complete_stage_run(conn, stage_run_id, "success", metrics)
 
         pipeline_metrics["enrich"] = metrics
         run_repo.complete_pipeline_run(conn, run_id, utc_now_iso(), pipeline_metrics)
@@ -289,7 +265,7 @@ def _enrich_articles(
             )
             break
 
-        new_body, method, rate_limit_remaining = _enrich_with_rate_limit(
+        new_body, method, rate_limit_remaining = enrich_with_rate_limit(
             url, sid, title, body, max_markdown_new, markdown_new_used, only_method,
         )
 
@@ -377,18 +353,6 @@ def _enrich_articles(
         "flush_batches": flushed_batches,
         "defuddle_enabled": DEFUDDLE_ENABLED,
     }
-
-
-def _create_stage_run(conn, run_id: str, stage_name: str) -> int:
-    started_at = utc_now_iso()
-    stage_run_id = run_repo.create_stage_run(conn, run_id, stage_name, started_at)
-    conn.commit()
-    return stage_run_id
-
-
-def _complete_stage_run(conn, stage_run_id: int, status: str, metrics: dict) -> None:
-    run_repo.complete_stage_run(conn, stage_run_id, utc_now_iso(), status, metrics)
-    conn.commit()
 
 
 def main() -> int:
