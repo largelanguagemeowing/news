@@ -1,5 +1,45 @@
 [
   {
+    "article_id": 636555,
+    "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+    "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+    "published_at": "2026-09-23T13:00:00+00:00",
+    "fetched_at": "2026-09-23T12:55:30+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
+    "topic": "policy",
+    "tags": [
+      "policy",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 638018,
+    "title": "AI Engineer Paris 2026 Opening Keynotes: Mistral, Langfuse & Sizzy | Day 1",
+    "url": "https://www.youtube.com/watch?v=CGq9KRSb9Kc",
+    "published_at": "2026-09-23T10:57:17+00:00",
+    "fetched_at": "2026-09-23T12:55:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Live from STATION F, AI Engineer Paris 2026 opens with welcome remarks and main-stage talks on AI infrastructure, coding agents, software factories, and building frontier AI.\n\nAI Engineer Paris returns for its second edition, bringing together 1,000+ engineers, founders, CTOs, and VPs of AI for two days of technical talks, practical workshops, and AI engineering research.\n\nDay 1 main-stage lineup:\n\n\u2022 Jen Person (Mistral) \u2014 Welcome to AI Engineer Paris 2026\n\u2022 Lia McBride (AI Engineer) \u2014 Intro to AI Engineer\n\u2022 Lara Khanafer (STATION F) \u2014 Welcome from Station F\n\u2022 Clemens Rawert (Langfuse) \u2014 What Can Economic History Teach Us About the AI Moment?\n\u2022 Kitze (Sizzy) \u2014 The Next Level of AI Engineering\n\u2022 L\u00e9lio Renard Lavaud (Mistral) \u2014 Building Frontier AI\n\nThis livestream covers the Main Stage. Additional sessions and activities are taking place throughout the event.\n\nEvent: AI Engineer Paris 2026\nDate: September 23, 2026\nVenue: STATION F, Paris\n\nView the full schedule:\nhttps://ai.engineer/paris/2026\n\nSubscribe for more AI Engineer talks, livestreams, and event coverage:\nhttps://www.youtube.com/@aiDotEngineer\n\nSchedule subject to change. Timestamps will be added following the broadcast.\n\n#AIEngineering #AIAgents #AIEParis",
+    "topic": "research",
+    "tags": [
+      "agents",
+      "research",
+      "video",
+      "coding",
+      "education",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 635303,
     "title": "SF October 14th: A Birds of a Feather Session on Agentic Engineering",
     "url": "https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/",
@@ -15,6 +55,24 @@
       "agents",
       "education",
       "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 636556,
+    "title": "Grab and OpenAI bring practical AI skills to Southeast Asia",
+    "url": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
+    "published_at": "2026-09-23T00:00:00+00:00",
+    "fetched_at": "2026-09-23T12:55:30+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -213,6 +271,51 @@
       "benchmark",
       "infrastructure",
       "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 638020,
+    "title": "Building the Document Context Layer for AI Agents \u2014 Jerry Liu, LlamaIndex",
+    "url": "https://www.youtube.com/watch?v=RQi7x-navxU",
+    "published_at": "2026-09-22T13:30:35+00:00",
+    "fetched_at": "2026-09-23T12:55:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A PDF is designed for printing, so its text is glyphs with coordinates and its tables are line segments with characters at cell positions. Reading order for a multicolumn page is not stored anywhere. That, Jerry Liu argues, is why an agent handed a raw file cannot make sense of it, and why document OCR is still unsolved after twenty years. His larger frame is that RAG in 2026 decomposes into an agent harness plus a context layer. Retrieval complexity has moved into the agent, which now reasons about the right search term instead of hacking around top k retrieval; context has moved up the stack toward MCP servers and skills; and programs are increasingly written in English. For LlamaIndex, what remains is the ten trillion plus pages locked in PDFs, PowerPoints, Word documents, and spreadsheets.\n\nThe platform he describes has three layers: parsing into token efficient markdown and metadata, semantic storage as document management for humans and agents, and repeatable workflows for invoices, KYC, and claims. On parsing he contrasts heuristic pipelines with one shot VLM reads that hallucinate on text pages and cost a lot, and pitches a hybrid routing between cheap specialized models and frontier ones. ParseBench, his public benchmark of two thousand human verified pages, scores around fifty models on tables, charts, and faithfulness, and shows how much is left. Three regimes follow: high accuracy for regulated finance, low cost for indexing a million documents a day, and low latency for a thousand uploads in a minute, which is where LightParse comes in: a free Rust parser he calls the fastest open source option, the first pass before a VLM tool dives into a page.\n\nSpeaker info:\n- https://x.com/jerryjliu0\n- https://www.linkedin.com/in/jerry-liu-64390071/\n\nTimestamps:\n0:00 - RAG in 2026: an agent harness plus a context layer\n1:33 - From naive top k retrieval to agents that reason about search\n3:11 - Context moves up the stack, programs move toward English\n5:15 - Context is everything: ten trillion pages in document containers\n6:52 - Three layers: parsing, semantic storage, document workflows\n8:27 - Why document OCR is hard: PDFs are drawn, not written\n10:46 - Pipelines, one shot VLMs, and the hybrid in between\n13:29 - ParseBench: 2,000 human verified pages, fifty models\n15:08 - High accuracy, low cost, and low latency regimes\n16:45 - LightParse in the agent loop\n18:46 - Extraction with citations, document search, and what's next",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 638021,
+    "title": "The Best Models Still Reason Like Toddlers \u2014 Andrew Dai, Elorian",
+    "url": "https://www.youtube.com/watch?v=A_I8mw8yfns",
+    "published_at": "2026-09-22T13:28:11+00:00",
+    "fetched_at": "2026-09-23T12:55:31+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Show a frontier model part of a chessboard, ask how many white squares are visible, and it answers 32. Andrew Dai's diagnosis: it saw a chessboard, knew chessboards have 32 white squares, and hallucinated the rest. The pattern matching that makes these models superb at naming flowers hurts them once a question needs counting or spatial grounding: they miscount a Catan player's roads from the pieces left off the board, and they miss a robot arm lifting a lid because they cannot hold state across a long video. His test for understanding versus reasoning: if a person can answer in one second, so can the model; if it takes longer, the model falls apart. The benchmarks hide this: one popular reasoning suite uses 32 by 32 pixel images, and a multimodal science exam can mostly be answered without the image.\n\nWhat is missing, he says, is visual thinking. Video generators produce cartoonish explosions because their training data is Hollywood and game engines; detection models are robust but passive. Elorian's approach has four parts: visual reasoning data that does not exist online, a synthetic data flywheel of evals, agents, SFT, and RL, architectural changes on top of the transformer, and native visual chain of thought, where the model draws boxes around every hotel before narrowing to the red ones. Dai spent twelve years at Google Brain and DeepMind, first authored the paper that introduced pretraining and fine tuning, and co led GLaM, PaLM 2 pretraining, and Gemini data. He closes on robotics, construction sites where safety rules live in policy text, and mechanical design, where a testing platform takes thousands of engineering hours and frontier models fail on blueprints and CAD.\n\nSpeaker info:\n- https://x.com/andrewdai\n- https://www.linkedin.com/in/andrewdai/\n\nTimestamps:\n0:00 - Frontier models versus human visual reasoning\n0:56 - Chessboard hallucination: pattern matching that hurts\n2:32 - Catan roads, robot arms, and context amnesia\n4:09 - Understanding versus reasoning: the one second test\n5:44 - Why the popular benchmarks do not measure it\n8:03 - The missing paradigm: visual thinking, not generation or labels\n9:38 - Elorian's approach and visual chain of thought\n11:01 - The team, from GLaM to Gemini\n12:14 - Use cases: robotics, construction, mechanical design\n17:36 - Where to find out more",
+    "topic": "robotics",
+    "tags": [
+      "robotics",
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "research",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10949,109 +11052,6 @@
       "agents",
       "safety",
       "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553539,
-    "title": "Zero risk isn't the job: a CISO's guide to agentic AI",
-    "url": "https://claude.com/blog/ciso-guide-to-agentic-ai",
-    "published_at": "2026-07-17T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Zero risk isn't the job: a CISO's guide to agentic AI\nAnthropic's Deputy CISO, Jason Clinton, shares his team's lessons learned adopting agentic AI, and the risk assessment framework they've developed for building and deploying agents securely.\nAnthropic's Deputy CISO, Jason Clinton, shares his team's lessons learned adopting agentic AI, and the risk assessment framework they've developed for building and deploying agents securely.\n- July 17, 2026\n- 5min\nSecurity leaders are being asked to approve agentic AI use cases that did not even exist a few months ago. Boards want to know whether any of it is governed, and somewhere in your organization, an employee has already connected an agent to something without telling you.\nSaying \u201cno\u201d to these requests produces shadow adoption, which has zero telemetry and generally no off switch. Saying \u201cyes\u201d without controls produces incidents, and the first serious agent incident at your company will set your AI program back.\nA CISO\u2019s responsibility in the age of agentic AI is not to achieve zero risk. Instead, our jobs are to make agentic risk legible and bounded. This way, we can deliberately accept what we can manage, so the business moves on our terms instead of around us.\nIn this article, I share our framework for evaluating agents for security risk, explain what \u201cbounded\u201d means in practice, and preview where our work is headed.\nIn [an earlier blog post](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense), my colleagues and I shared how AI is collapsing the time between a vulnerability existing and a working exploit, highlighting how organizations can mitigate these risks. In the coming months, we expect that vast numbers of bugs that have sat unnoticed in code, sometimes for years, will be found by AI models and chained into working exploits. Frontier models like [Claude Mythos Preview](https://red.anthropic.com/2026/mythos-preview/) and [Claude Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5) are already finding [serious vulnerabilities](https://www.anthropic.com/glasswing) that years of human review missed, including in OpenBSD, the Linux Kernel and [Mozilla Firefox](https://blog.mozilla.org/en/privacy-security/ai-security-zero-day-vulnerabilities/).\nThese are serious risks to any GRC program. Mitigating and closing vulnerability gaps, as well as for preparing for the coming wave of exploits, should be a top priority. For this topic, we have prepared a separate doc: [Preparing your security program for AI-accelerated offense](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense). We\u2019ll focus on internal risks for this guide.\nFor many organizations, the most likely threat vector for agentic systems is a data leak enabled by connecting disparate systems through personal agents with insufficient oversight. Another concern is [prompt injection](https://www.anthropic.com/research/prompt-injection-defenses): an attacker hides instructions inside content the agent reads, and the agent follows the attacker instead of the user. Any agent that touches untrusted content could then be exposed, depending on how robust the defenses of the model are. As models grow increasingly capable, they\u2019re getting meaningfully better at resisting injection. While[ attack success rates keep falling](http://anthropic.com/research/prompt-injection-defenses), they\u2019re not zero. There are many concerns outside of these two examples, and the deluge of new classes of concern can seem overwhelming.\nWhen an agentic use case reaches our review process, we assess its risk by asking four questions:\n- What untrusted content does it ingest? Untrusted means anything an attacker could plausibly write or alter, including outside email, the open web, third-party documents, or public repositories. If the answer is \"nothing,\" the agent-specific risk is near zero and you should move quickly.\n- What actions can it take, and on whose behalf? Read-only is a different concern from read/write. Tool calls, code execution, and network egress each widen the aperture. Every action happens under some identity, and you need to know whose.\n- What is the blast radius if it is misaligned? Scope X severity is the quick calculation: did the bad actor or alignment incident have access to one file or the whole org? Would it be an anomaly, an annoyance, a data exposure, or a true incident?\n- What observability do I have? Can you tell agent actions from user actions? Does it land in your SIEM?\nThe four answers to these questions give you a picture of your risk, but the principle of least agency tells you what to do with it: grant the narrowest capability that still completes the task (see our [Zero Trust for AI Agents](https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6a1611a04085d7cd3dadc924_Claude-eBook-Zero-Trust-for-AI-Agents-05182026.pdf) white paper to learn more). Our default posture at Anthropic is admin-paced rollout: enable a small group, watch the telemetry, and then expand access. Apply these questions to a new paradigm for thinking about risky agentic systems.\nAn agent that drifts out of alignment with your intent is indistinguishable from an insider attack. The security industry spent 2019-2022 formalizing [insider risk as a discipline](https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide) distinct from perimeter defense\u2014recognizing that the most dangerous external attack vectoractor in a system is often one that compromises someone who already has legitimate access.\nThe operational difference is response time:[ Ponemon Institute's 2026 Cost of Insider Risks report](https://www.ponemon.org/news-updates/blog/security/lessons-learned-from-the-2026-global-cost-of-insider-risks.html) found organizations took an average of 67 days to contain an insider incident\u2014even after years of investment in dedicated insider risk programs. At agent execution speeds, responses measured in days are too long.\nEverything we deploy sits at one of two ends of an [identity access model](https://claude.com/blog/agent-identity-access-model) spectrum.\nAt one end is the system service account: a self-contained, single-purpose, least-privilege identity that does exactly one thing for the business, with no human identity attached. The incident-response agent (see below), a ticket triage agent, or an autonomous code reviewer are examples of these. Another example is [Claude Tag](https://www.anthropic.com/news/introducing-claude-tag), our new shared workspace agent that lets human teams collaborate with agents in shared workspaces like Slack by tagging in Claude.\nAt the other end is the human credential. When an employee uses a chat interface or a personal agent harness like Claude Cowork on their laptop, the person at the keyboard is accountable for the outcome, the same way they are accountable for anything else done with their credentials.\nThe middle of the spectrum, where an agent carries a person's delegated identity into systems that person is not watching, is where accountability gets ambiguous. Ambiguous accountability is how incidents become unexplainable.\nAn agent that drifts out of alignment with your intent is indistinguishable from an insider attack. The security industry spent 2019-2022 formalizing [insider risk as a discipline](https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide) distinct from perimeter defense\u2014recognizing that the most dangerous external attack vector in a system is often one that compromises someone who already has legitimate access.\n[Ponemon Institute's 2026 Cost of Insider Risks report](https://www.ponemon.org/news-updates/blog/security/lessons-learned-from-the-2026-global-cost-of-insider-risks.html) found organizations took an average of 67 days to contain an insider incident\u2014even after years of investment in dedicated insider risk programs. At agent execution speeds, 67 days is the wrong unit of measurement entirely.\nMore than a year ago, we pointed Claude at our incident response process. Anyone who has been on-call for a production application knows the problem: you\u2019re paged at 2 a.m. about a security incident, you spin up an incident response channel, you pull in the right people, and get to work. This process is tedious, documentation-heavy, and fast-moving. But, with the right context about your production environment codebase, the majority of it can be automated.\nSo we built an agent to do it. We gave the agent access to three tools: read-only access to our production logs, which contain no PII; access to Slack, to open the incident channel and run the process; and the ability to draft a Google Doc for the postmortem after the incident is resolved.\nWe ran it through the four questions:\n- Untrusted content: none. The inputs were our own logs and our own internal Slack, both inside the trust boundary, so an injection would require an insider or a compromised account rather than an anonymous attacker.\n- Actions: reads everywhere, writes limited to new documents and Slack messages. No edits or deletes, no permission changes, no external endpoints.\n- Blast radius: the worst outcome we could construct was some mildly sensitive log lines posted into an incident channel that was already locked down.\n- Observability: every action landed in our SIEM, so anything unexpected would surface in minutes, not weeks.\nWhile the agent wasn\u2019t risk-free, it operated on a bounded write surface with full audit coverage, which was a risk profile we were comfortable with.\nHowever, there\u2019s an interesting addendum to this story: with each model release, the agent got smarter. In November 2025, we moved this agent from Claude Opus 4 to Claude Opus 4.5 and changed nothing else\u2014no new tools, permissions, or prompts. Immediately after this, for the first time, the intelligence uplift alone was enough for the agent to notice, mid-incident, that it had already found the root cause in a stack trace and that, in the absence of the human who hadn't arrived yet, it could try to fix production on its own by reaching out to another agent that had the appropriate code access to produce the code change.\nPost hoc, we reviewed logs: we watched it work through this in the thinking traces: I have done what I was asked to do. The human is not here. What if I fixed the problem? Inside of Anthropic we have an internal variant of Claude Tag-like technology which can write code changes and upload them for human review. On its own, it reached out over Slack to this Claude Tag-like instance and asked it to write the fix. The fix went to a pull request that a human reviewed before pushing it to production.\nThe expanded blast radius that came from this emergent agent-to-agent communication was itself governed by our principles: the worst that could happen would be that a code change would be uploaded which contained a production log line. This agent-to-agent communication is now a regular part of our incidence response root cause and remediation practices; all with human-on-the-loop monitoring.\nThis emergent behavior taught us two things. First: new capabilities can show up within the boundaries of an agent deployment. It\u2019s important to limit access and actions, not around what you believed today's model limits are. Second: controls are effective even with stochastic agents like this. The new behavior was human-on-the-loop because it happened in a Slack channel, and the only write-like action still required a human review.\nToday, outside of incidence response, agent-to-agent communication within chat channels, with human on-the-loop where people work, is the norm.\nThe incident response agent is a service account doing one job, in a bounded service account. [Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) is at the human operator end of the spectrum: an employee at a keyboard is accountable for the outcome, and the agent then acts on their b",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553540,
-    "title": "Working at the frontier: How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems",
-    "url": "https://claude.com/blog/working-at-the-frontier-cursor",
-    "published_at": "2026-07-17T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Working at the frontier: How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems\nNate Schmidt's job at Cursor is to evaluate frontier models against their ability to tackle long-running, real-world engineering problems. Here\u2019s why\u2013and how\u2013Claude Fable 5 changed the calculus on what coding agents are capable of.\nCursor is an AI coding agent for building professional software. It supports every major frontier model alongside Cursor's own, which makes the company an unusually neutral judge of how each one actually performs.\nNate Schmidt is the engineer who maintains that scorecard. He works on evals and model behavior at Cursor: studying how models succeed, how they fail, and what makes a developer quietly switch away from one mid-task. When colleagues and customers want a read on a new release, they come to him.\nOver time, Schmidt's team noticed that public benchmark scores and real developer reception to these models had stopped lining up, so they built their own: CursorBench.\nCursorBench was built to capture the messy, underspecified ways engineers actually prompt their models. One eval task is just a stack trace pasted in with the single word \"fix,\" and the model has to infer the intent, find the root cause, and validate the change on its own. Another tells the model the wrong module is broken, to see whether it challenges the user's assumption or follows it into a dead end.\nWhen Claude Fable 5 ran the eval, the model achieved 72.9% at Max effort, setting a new high, and capturing what agentic coding tools were capable of when paired with the right models.\nBut when Schmidt was using the model on his own engineering workflows and personal tests, he'd stopped having to repeat his goals. The constant babysitting\u2014reminding the model of context, spelling out the solution, auditing the results\u2014wasn't necessary anymore. He could hand over a problem, from the gnarly refactor he was putting off to reasoning about nuanced edge cases, and Claude Fable 5 could solve it.\n\"I don't feel like I have to bootstrap Claude Fable 5 to understand the world I exist in and the problem I'm trying to solve,\" Schmidt says. \"The model just has a sense of it out-of-the-box.\"\nReasoning about the entire mission\nWhen Schmidt's team runs a new model through CursorBench, the right answer is table stakes. What they're scoring is whether the model understood what it was being asked.\n\"Many evals look like this: here's a well-defined problem, here are the constraints, go fix it. But the prompts we get from real users don't really look like that,\" Schmidt says. \"The model has to infer that the user has a problem and what they're trying to convey, identify the root cause, fix it, validate the fix, and report back.\"\nClaude Fable 5 scored so well on these ambiguous tasks, the Cursor team started to feel suspicious.\n\"One of two things is happening: either the model's very smart, or the model is cheating,\" he says. So the team looked into the traces, reading the model's actual reasoning on the hardest tasks, the ones where the prompt looks simple but cracking it requires understanding the whole system.\n\"We just kept seeing the model dig out wins that no other model was doing previously,\" he says. It was also getting there with fewer operations: token-efficient relative to the work it completed.\nThen Schmidt put Claude Fable 5 on one of his favorite personal tests: landing on the moon.\nA few weeks earlier he'd wired Claude Opus into a programmable space-flight simulator with a one-line prompt\u2014build a rocket and land it on the moon\u2014and let it run on a second monitor for twelve to sixteen hours. The model would launch, run out of fuel in orbit, add a lot more fuel, then fail to clear the atmosphere because the rocket was now too heavy.\nHe re-ran the experiment with the same blank-slate prompt, this time using Claude Fable 5. A few minutes in, the rocket went up, parked in low orbit, and came back down. Same failure as before. Then Schmidt read the transcript.\n\"Fable decided it wouldn\u2019t go to the moon on its first attempt. It wanted to do an initial mission just to go into orbit and collect telemetry, then use that to inform the next trip.\" A few attempts later, the engine noise on his second monitor stopped. There was a lander on the moon. The whole run took a couple of hours, against Opus's twelve-plus with no result.\n\"With Opus, it was doing local reasoning\u2014thinking about what just happened and what's immediately about to happen,\" Schmidt says. \"With Fable it's global reasoning. It's thinking about the entire mission.\"\nWhen to reach for the global optimum\nSchmidt has settled on a simple rule for when to use Claude Fable 5 over cheaper, less intelligent models.\n\"If you have a good sense of what the path from A to B looks like, you might not need Fable. If you're at A and you have no idea where B is, Fable is an excellent choice,\u201d he says. \"When I want to build something the right way, Fable is the first model I think of.\"\nClaude Fable 5 has also allowed his team to focus on projects the team had previously shelved\u2014rewrites everyone agreed would be better but nobody could justify spending weeks on\u2014because the model can carry enough of the skeleton. \"It lowers the activation energy to work on these types of tasks,\" Schmidt says. \"It lets us move in search of a global optimum rather than a local one.\"\nIt also changes how the team coordinates. Cursor runs lean, with intense individual ownership and few standups. Now, before touching shared code, Schmidt has an agent read his teammate's recent commits and flag conflicts, so neither of them has to stop what they\u2019re doing to check in.\nTo balance cost and performance, his team pairs Claude Fable 5 with faster, lighter models for routine work and brings it in for the problems where capability is the constraint. In that configuration, he says, the combination is the most effective setup they've run.\n\u201cIf I'm getting into a really gnarly problem\u2013the p99 of problems\u2013the thing I'm trying to optimize for is time to solution,\u201d he says. \u201cAnd I think Fable is the best model for solving our hardest problems.\u201d\nWhat's next\nDespite putting the model through its paces on CursorBench and sending it to the moon, Schmidt is still looking for Claude Fable 5\u2019s limits. Next, he wants to see how long the model can manage a back-end system unattended; days-to-weeks runs are his next experiment. Inside Cursor, the team is using the model to hunt performance bottlenecks and user pain points proactively rather than waiting for reports, and to build the more sophisticated, closer-to-reality eval environments that will measure whatever comes next.\n\"There's a class of problems people weren't even thinking about because it didn't seem approachable,\" he says. \"With Fable, I'm excited to push at that.\"",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553798,
-    "title": "recommended viewing.",
-    "url": "https://video.twimg.com/amplify_video/2077538877909405696/vid/avc1/1920x1080/5KpV9vZr8eeh4TFL.mp4",
-    "published_at": "2026-07-16T19:29:40+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553799,
-    "title": "recommended reading. simple is good, simple is beautiful. simple works.",
-    "url": "https://x.com/i/article/2077829753680334848",
-    "published_at": "2026-07-16T19:29:02+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. simple is good, simple is beautiful. simple works.",
-    "topic": "general",
-    "tags": [
-      "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551798,
-    "title": "Why teens deserve access to safe AI",
-    "url": "https://openai.com/index/why-teens-deserve-access-safe-ai",
-    "published_at": "2026-07-16T16:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "jina",
-    "body": "Teens are the first generation growing up with AI, and this technology will heavily shape their future. Today, nearly 9 in 10 teens on ChatGPT use it for learning, information, skill-building, or productivity in a single week. This is why we believe it\u2019s critical for teens to have access to AI. Keeping teens from using it until adulthood would be like asking a previous generation to avoid the internet or search engines until they turned 18, leaving them less prepared to use one of the defining technologies of their time. But access must be paired with protections designed specifically for teens.\n\nDuring a recent [OpenAI Academy\u2060(opens in a new window)](https://www.linkedin.com/posts/openai-global-affairs_openaiacademy-activity-7430608494040354816-4GtV/) Oriana McKenzie shared how ChatGPT helped her become No.1 in her high school class by studying smarter and managing her workload\u2014giving her the time needed for the sports and school programs she loves. Her story illustrates what\u2019s possible when teens have access to AI that helps them learn and create.\n\nTo maximize those gains, teens need stronger protections designed for their stage of life, including automated guardrails that let them explore, learn, and build with confidence, while providing safeguards tailored to their age. As AI becomes more capable, our responsibility is to combine broad access with age-appropriate protections that allow teens to benefit from this technology as it evolves.\n\nOver the past year, that has meant strengthening default protections for teens, rolling out [age prediction\u2060](https://openai.com/index/our-approach-to-age-prediction/), expanding [Parental Controls\u2060](https://openai.com/index/introducing-parental-controls/), creating additional [family resources\u2060(opens in a new window)](https://chatgpt.com/parent-resources/) to help parents support healthy, responsible use, and introducing learning features to help support deeper understanding rather than just providing answers.\n\nOur work is guided by [four key commitments\u2060](https://openai.com/index/updating-model-spec-with-teen-protections/):\n\n*   We put teen safety first even when it may conflict with other goals.\n\n*   We encourage real-world support in times of need.\n\n*   We treat teens as teens.\n\n*   We are transparent by setting clear expectations.\n\n## Building for learning, not just answers\n\nLearning is one of the clearest ways teens benefit from AI, so we\u2019re building tools that encourage active engagement, critical thinking, and deeper understanding. [Study Mode\u2060(opens in a new window)](https://help.openai.com/en/articles/11780217-using-study-mode-in-chatgpt) was designed in collaboration with teachers, learning scientists, and pedagogy experts to help students work through problems step by step using guiding questions, structured explanations, and opportunities for reflection without simply providing the answer. Early evaluation of tools like Study Mode [has shown promising gains in student performance\u2060](https://openai.com/index/understanding-ai-and-learning-outcomes/?utm_source=chatgpt.com), helping inform our broader research into how AI can support learning outcomes.\n\nWhile teens can turn this mode on themselves, now parents with linked teen accounts can turn on [Study Mode\u2060](https://openai.com/index/chatgpt-study-mode/) directly from [Parental Controls\u2060](https://openai.com/index/introducing-parental-controls/). When enabled, it is on by default whenever a teen starts a new chat, giving families another way to guide how ChatGPT is used for schoolwork and study.\n\n![Image 1: ChatGPT parental controls screen showing Study mode enabled for a teen account.](https://images.ctfassets.net/kftzwdyauwt9/2w0AWnPBgJBaHwYWNqyiyu/60263a629242bdde3c722deeecaa2811/Break_Reminder_1920x1080.png?w=3840&q=90&fm=webp)\n\nWe also recently introduced education-focused starter prompts for teens so it is easier to begin with tasks like breaking down a topic into simple steps, turning notes into a study guide, creating flashcards or practice questions, and checking evidence and clarity.\n\n![Image 2: ChatGPT home screen showing education-focused starter prompts for teens.](https://images.ctfassets.net/kftzwdyauwt9/7d3I3oo7stKQAjm7pejgXa/ff51baa2c23782c7056b874bc5c64cd9/Break_Reminder_1920x1080-2.png?w=3840&q=90&fm=webp)\n\nWe\u2019re continuing to expand [interactive learning experiences\u2060](https://openai.com/index/new-ways-to-learn-math-and-science-in-chatgpt/) as well. [Research has consistently shown\u2060](https://openai.com/index/understanding-ai-and-learning-outcomes/?utm_source=chatgpt.com) that people learn more effectively when they can actively engage with concepts rather than passively consume information. Since launching earlier this year, 18 million weekly users now engage with interactive math and science experiences in ChatGPT, and we\u2019ve expanded those experiences to more than 300 topics total from integrals and mitosis to moon phases, photosynthesis and more. We also introduced a pronunciation experience that uses audio to help people learn how to pronounce words in more than 61 languages.\n\n## Protecting teens with built-in safeguards\n\nIf our system estimates [someone using ChatGPT is under 18,\u2060](https://openai.com/index/our-approach-to-age-prediction/) we automatically provide a more [age-appropriate experience\u2060(opens in a new window)](https://chatgpt.com/parent-resources/safety-protections/). Teens can still use ChatGPT to learn, create, and explore, but with additional protections designed to reduce exposure to content that may not be appropriate for them. That includes stronger safeguards around graphic violence, self-harm, risky viral challenges, unhealthy body-image content, and dangerous, romantic, or sexual roleplay. The North Star is to help ensure ChatGPT remains a tool for learning and creativity and not a substitute for real-world relationships.\n\nWe\u2019re also designing ChatGPT to encourage healthy habits. Teens who spend extended time in ChatGPT will now receive more frequent [break reminders\u2060](https://openai.com/index/optimizing-chatgpt/?utm_source=chatgpt.com) that encourage them to pause and step away. These reminders are intended to help young people build balanced technology habits while still giving them the freedom to use AI for learning, creativity, and problem-solving.\n\n![Image 3: ChatGPT break reminder encouraging a teen to pause and step away.](https://images.ctfassets.net/kftzwdyauwt9/73YGdAwz0c7PKhHRid2EzG/2d488d1b832054b781e4e5bf88fc1546/why-teens-break-reminder.png?w=3840&q=90&fm=webp)\n\nWe believe the best safety tools can help families navigate teens\u2019 online experiences together. We built [parental controls and notifications\u2060](https://openai.com/index/introducing-parental-controls/?utm_source=chatgpt.com) that allow them to set quiet hours, turn off voice mode, manage access to image generation, and receive notifications in certain high-risk situations, such as indications of potential self-harm.\n\nWe\u2019re expanding those notifications to include cases where a linked teen account has been deactivated for [violating our usage policies\u2060](https://openai.com/policies/usage-policies/?utm_source=chatgpt.com) on violent threats or acts of violence online. This approach helps parents know when something serious has happened while respecting teens\u2019 privacy and encouraging conversations and support offline.\n\nAs we developed these features we consulted with several experts, including [Moonshot\u2060(opens in a new window)](https://moonshotteam.com/uk/), a leader in preventing online violence, to help ensure these interventions are thoughtful, effective, and focused on helping families respond in times of need.\n\n![Image 4: Parent notification screens for an important update about a child's ChatGPT account.](https://images.ctfassets.net/kftzwdyauwt9/1cALLiydWi0b7Yyadow4sD/171d0a70c5ebc110a4b3a0f5510b9424/why-teens-parent-notification.png?w=3840&q=90&fm=webp)\n\nWe also want to ensure parents, teens, and educators have clear guidance on how to best use AI responsibly. We publish educational resources in more than 50 languages, including [A Family Guide to Help Teens Use AI Responsibly\u2060(opens in a new window)](https://cdn.openai.com/pdf/a-family-guide-to-help-teens-use-ai-responsibly.pdf), [Tips for talking to your teen about AI\u2060(opens in a new window)](https://cdn.openai.com/pdf/tips-for-talking-to-your-teen-about-ai.pdf), and [Tips for parents using ChatGPT\u2060(opens in a new window)](https://cdn.openai.com/pdf/chatgpt-at-home.pdf).\n\n## Working with outside experts, organizations, developers and regulators\n\nKeeping young people safe online isn\u2019t something any one company can solve alone. We work closely with teens, parents, educators, child safety experts, mental health professionals, researchers, governments, and civil society organizations. These partnerships help us better understand the needs of young people, identify emerging risks, evaluate the effectiveness of our safeguards, and ensure our policies are informed by independent expertise.\n\nThis work spans our approach to both learning and youth wellbeing. We collaborate with educators, including the [American Federation of Teachers\u2060](https://openai.com/global-affairs/aft/), students, and learning organizations to better understand how AI can support teaching and learning while reinforcing active engagement and critical thinking. We also work closely with experts across the mental health, child development, and youth safety communities, including the [American Psychological Association\u2060(opens in a new window)](https://www.apa.org/), our [Global Physicians Network\u2060](https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/?utm_source=chatgpt.com), and our [Expert Council on Well-Being and AI\u2060](https://openai.com/index/expert-council-on-well-being-and-ai/?utm_source=chatgpt.com).\n\nOur work to build a healthier digital ecosystem extends beyond our own products. We\u2019ve called for developing scalable [global standards for youth AI safety\u2060](https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership/) through a dedicated AI Safety Institute, [open-sourced policies and tools\u2060](https://openai.com/index/teen-safety-policies-gpt-oss-safeguard/) that developers can build into their own AI systems, and work with organizations including [Common Sense Media\u2060(opens in a new window)](https://www.commonsense.org/education?utm_source=google&utm_medium=adgrant&utm_campaign=brand&campaignid=21383101157&adgroupid=166328656249&adid=702858246890&gad_source=1&gad_campaignid=21383101157&gbraid=0AAAAAD_alXIPeKrrn1_I34AuzoBu20WVS&gclid=CjwKCAjwhqfPBhBWEiwAZo196iHTtLpO2bvxXRZRBJ5OMFPPyIhKRXROTEQHjNdCVecqm1ALDKdhjRoCW34QAvD_BwE) and [everyone.ai\u2060(opens in a new window)](http://everyone.ai/) to share learnings and best practices.\n\nThis year, we also joined the [Family Online Safety Institute\u2060(opens in a new window)](https://fosi.org/the-family-online-safety-institute-welcomes-openai-as-newest-member/) (FOSI), a long-standing advocate for safe online experiences for families and young people. We will work together to ensure young people can benefit from AI, with empowered parents and responsible industry practice at the center. We hope this partnership will help advance shared understanding of what works, strengthen age-appropriate protections and parental tools, and support industry-wide efforts that enable young people to benefit from AI safely and responsibly.\n\n## Looking ahead\n\nProtecting young people online requires continuous progress. In the coming months, we\u2019ll continue strengthening age-appropriate protections, giving parents more tools and control, improving safeguards against serious harms, advancing research on healthy AI use, and building more experiences that help teens learn actively and use AI with confidence.\n\nWe know there is more to do, and we\u2019re committed to continuing our work in collaboration with teens, parents, educators, experts, and communities worldwide to",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "open-source",
-      "safety",
-      "benchmark",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
