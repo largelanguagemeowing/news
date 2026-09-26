@@ -1,5 +1,88 @@
 [
   {
+    "article_id": 682117,
+    "title": "Autoresearch Made Our Models 3x Faster \u2014 Tejas Bhakta, Morph",
+    "url": "https://www.youtube.com/watch?v=vrDvatGtIxs",
+    "published_at": "2026-09-26T15:00:32+00:00",
+    "fetched_at": "2026-09-26T15:54:49+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "GPU kernels are a near-perfect target for autoresearch, because they're easy to verify: correct, and fast or not. Tejas Bhakta, founder of Morph and formerly on inference optimization at Tesla, shows how his team combined agent-written custom kernels with bare-metal hardware tweaks to make models three times faster on cheaper GPUs.\n\nHis rule is simple: humans bring the ideas and autoresearch does the tuning. Agents are great at picking block sizes and parameters but bad at the big idea, like spotting that a DeepSeek attention step is loading far more context than it needs. He covers the context an agent needs about the hardware and the model, and the reward hacking to watch for, like disabling CUDA graphs to speed up one kernel while slowing the whole model. He also explains how kernel gains stack, and how bare-metal tweaks add about 25% over a cloud VM. His honest warning: roughly 80% of what autoresearch tries is bad.\n\nSpeaker info:\nX/Twitter: @tejasybhakta (https://x.com/tejasybhakta)\nLinkedIn: https://www.linkedin.com/in/tejas-bhakta/\nWebsite: https://tejasbhakta.com\n\nRelated links:\nMorph: https://morphllm.com\n\nTimestamps:\n0:00 Intro\n0:32 What is autoresearch?\n1:02 Why GPU kernels fit autoresearch\n1:32 Humans bring the ideas\n2:17 Compute, memory and overhead bottlenecks\n3:02 Cheap GPUs need custom kernels\n3:17 Give the agent hardware context\n3:52 Give the agent model context\n4:12 Reward hacking\n5:16 Custom kernels aren't faster everywhere\n5:36 Kernel gains compound\n6:01 Bare-metal hacks\n6:36 3x faster, but 80% of attempts are bad\n6:57 TL;DR",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "infrastructure",
+      "coding",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 682118,
+    "title": "An AI Research Agent That Runs Your Experiments \u2014 Tim Sweeney, Weights & Biases",
+    "url": "https://www.youtube.com/watch?v=hd7TOvmyAxU",
+    "published_at": "2026-09-26T14:30:38+00:00",
+    "fetched_at": "2026-09-26T15:54:49+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Live on stage, Weights & Biases' new agent ARIA kicks off a batch of autoresearch experiments on Karpathy's autoresearch project, running on real GPUs, and nearly beats its own best result before the talk ends. Tim Sweeney, Principal Engineer at Weights & Biases by CoreWeave, shows what ARIA does inside W&amp;B. It launches and monitors training jobs, summarizes the best runs, finds patterns across 200+ experiments, and builds reports and dashboards. It's now on the W&amp;B iOS app too.\n\nSweeney then shows how the team builds ARIA. It logs 100% of traces to Weave and runs LLM judges on live traffic to catch signals like user frustration. Tasks are written as YAML \"unit tests,\" and a nightly eval suite (73% vs. 72% for the latest candidate) drives go/no-go decisions. His tips: invest in agent-focused observability to catch behavioral bugs, treat evals as your new CI, keep humans reviewing traces, and add value through context and tools before over-engineering the harness.\n\nSpeaker info:\nLinkedIn: https://www.linkedin.com/in/tssweeney\n\nRelated links:\nWeights & Biases: https://wandb.ai\nW&amp;B Weave: https://wandb.ai/site/weave\n\nTimestamps:\n0:00 Intro\n1:28 Agenda\n2:03 About Weights & Biases\n2:33 Demo: meet ARIA\n3:13 Running Karpathy's autoresearch\n4:33 Kicking off a live experiment batch\n5:17 W&amp;B Launch and the GPU cluster\n5:57 Summarizing runs and finding patterns\n7:02 Reports and workspaces\n8:37 Recap: a data science companion\n9:17 ARIA on iOS\n9:42 Toward end-to-end automated research\n10:22 How we built ARIA: the architecture\n13:02 Demo: the agent dashboard in Weave\n14:57 ARIA analyzing its own conversations\n15:12 Signals: LLM judges on live traffic\n16:07 Tasks as unit tests\n17:17 Nightly evals\n18:07 Recap\n18:47 Tips for productionizing agents\n20:12 Did the live run beat the record?",
+    "topic": "research",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 682119,
+    "title": "The Loop Is the Product \u2014 Roland Gavrilescu, Introspection",
+    "url": "https://www.youtube.com/watch?v=7taOQBfjDyE",
+    "published_at": "2026-09-26T14:00:25+00:00",
+    "fetched_at": "2026-09-26T15:54:49+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The first viral agent loop wasn't a coding agent. It was someone using OpenClaw to pit car dealers against each other for a better price. Roland Gavrilescu, co-founder and CEO of Introspection and formerly at xAI, lays out a blueprint for autoresearch in 2026 built on three ideas.\n\nThe first is that the loop is the product: an agent's success depends on the quality of its signals and verifiers, and each loop's output feeds the next one. The second is that system distillation is the moat. Every loop's lessons, including evals, judges, skills and human judgment, should be captured as portable, versioned \"agent recipes\" that you own, independent of any model or provider. Introspection is releasing an early version called Pi recipes. The third is that valued work per watt is the score to optimize. Through a talent-sourcing agent example, he shows how to spot patterns in traces, calibrate judges with a human in the loop, and A/B test your taste with real users before promoting a change.\n\nSpeaker info:\nRoland Gavrilescu\nX/Twitter: @rolandgvc (https://x.com/rolandgvc)\nLinkedIn: https://www.linkedin.com/in/roland-gavrilescu/\n\nRelated links:\nIntrospection blog: https://www.introspection.dev/blog\n\nTimestamps:\n0:00 Intro: from xAI to Introspection\n1:03 A blueprint for autoresearch\n1:13 Idea 1: The loop is the product\n1:48 The first loop: haggling for a car with OpenClaw\n3:03 OODA loops\n3:38 Signals and verifiers\n4:08 Looping the loop\n4:23 Idea 2: System distillation is the moat\n5:03 Recipes for AI systems\n5:47 Agent recipes: reproducible frontier systems\n6:53 Introspection and Pi recipes\n9:17 Idea 3: Valued work per watt\n10:47 Codifying taste into evals\n12:12 Example: a talent-sourcing agent\n13:17 Spotting patterns in traces\n14:07 Calibrating judges with a human in the loop\n15:12 A/B testing taste in production\n16:47 Takeaways",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 682678,
+    "title": "One month without AI",
+    "url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
+    "published_at": "2026-09-26T13:50:09+00:00",
+    "fetched_at": "2026-09-26T15:54:50+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. for perspective.",
+    "topic": "opinion",
+    "tags": [
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 679599,
     "title": "AI News: Opus 5.5, GPT-6 Sol, Jev, Muse and More!",
     "url": "https://www.youtube.com/watch?v=aDpIra7NFuE",
@@ -10980,95 +11063,6 @@
       "agents",
       "benchmark",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551783,
-    "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
-    "url": "https://openai.com/index/chatgpt-for-academic-researchers",
-    "published_at": "2026-07-29T10:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "jina",
-    "body": "**_Update on August 10, 2026:_**_New applicants will now join a waitlist while we review the more than 13,000 first-wave applications\u2014representing up to 65,000 researcher seats\u2014and select the initial 10,000-seat cohort through a lottery among eligible applicants. Those not selected in this cohort will remain eligible for future selection rounds when applications reopen later this fall. This will allow us to focus on supporting the first group of researchers as we expand the program._\n\nWe believe the benefits of frontier AI should not be concentrated in a few companies and well-resourced labs. Scientific progress depends on researchers asking the right questions, testing new ideas, and building on what others have discovered. Our role is to put powerful tools in their hands\u2014and work alongside them to design models that accelerate their research while keeping them in control.\n\nWe\u2019re introducing ChatGPT for Academic Researchers, a program that will give 100,000 researchers at selected academic institutions free access to our frontier models. The program will help researchers across the sciences, mathematics, and engineering take on advanced problems, accelerate discovery, and improve productivity, from preparing grant applications to testing hypotheses.\n\nWe\u2019re starting with 10,000 researchers this summer, with access already available at institutions such as the Institute for Advanced Study (IAS) and \u00c9cole normale sup\u00e9rieure (ENS). We plan to expand to 100,000 researchers through 2027. Participants will have access to our frontier models, including [GPT\u20115.6\u2060](https://openai.com/index/gpt-5-6/) Sol Pro at launch, and can invite up to four collaborators from their institution. Workspaces include business-grade privacy and security protections, and data is not used to train our models by default. Researchers can use tools and skills to support work ranging from genomic analysis and protein modeling to literature reviews, grant writing, and publishing.\n\nThe program also includes training, hands-on support, and opportunities to learn from other researchers and share feedback with us.\n\nFor institutions with ChatGPT Edu, free access granted through this program will be coordinated through the institution's workspace. [Learn more](http://openai.com/business/solutions/education/) about ChatGPT Edu and how OpenAI supports higher education.\n\nChatGPT for Academic Researchers is part of a commitment of more than $250 million through 2027 to support external scientific research and discovery. That includes [NextGenAI](http://openai.com/index/introducing-nextgenai/), our $50 million initiative supporting research institutions, and our work with the Department of Energy\u2019s [Genesis Mission\u2060](https://openai.com/index/advancing-the-next-era-of-national-science/) to bring frontier AI to researchers at national laboratories and universities. Together, these efforts reflect our belief that scientific progress accelerates when more researchers have the tools to pursue their own ideas.\n\n## AI is accelerating research\n\nAI is becoming a more capable research tool faster than many expected. Each week, roughly 1.3 million people use ChatGPT for advanced science and mathematics, generating about 8.4 million messages.\n\nThe shift is especially visible in mathematics. In the past six months, AI has moved from occasional use on isolated problems to a more regular part of mathematical research. A growing number of papers now acknowledge ChatGPT\u2019s contribution, reflecting how quickly researchers are adopting these tools in their work.\n\n* Incomplete month; the full-text index currently extends through July 21.\n\nResearchers use ChatGPT and Codex across nearly every stage of scientific work. ChatGPT helps researchers interrogate ideas, acquire knowledge, generate hypotheses, and communicate their findings. Codex supports research execution and formal analysis, including writing code and analyzing results.\n\nShare of scientific research requests by scientific workflow category and product, June 21\u2013July 20, 2026\n\nThese patterns are showing up in research. Physicist Rogerio Jorge and his team are using AI to develop open-source fusion research software used by industry and national laboratories to design fusion energy devices. In theoretical computer science, researchers Barna Saha, Yinzhan Xu, and Christopher Ye used GPT\u20115.5 Pro to develop a proof establishing new limits on how efficiently computers can solve high-dimensional geometry problems, then validated and refined the results themselves.\n\nResearchers using these tools most intensively are also taking on more ambitious work. Those in the top 20% of AI usage within their field are almost twice as likely as their peers to ask AI to take on tasks estimated to require four hours or more: nearly 7% of their requests, compared with 3.5% among other researchers in the same field.\n\nShare of scientific requests by estimated active human work time and scientist AI intensity, June 21\u2013July 20, 2026\n\nOur strategy is not to decide which scientific problems deserve attention or try to solve them all ourselves. It is to put capable tools in the hands of the research community and let researchers pursue the questions they know best.\n\n## What participants will get\n\nParticipants will receive free access to our frontier models across ChatGPT, ChatGPT Work, and Codex, including the [GPT\u20115.6\u2060](https://openai.com/index/gpt-5-6/) family of models at launch. They will also have expanded deep research, higher usage limits, and larger context windows. Together, these capabilities support scientific reasoning, agentic execution, and research workflows across disciplines.\n\nGPT\u20115.6 Terra balances capability and efficiency for everyday research, GPT\u20115.6 Luna provides faster responses for lighter-weight tasks, and GPT\u20115.6 Sol tackles the most difficult scientific and mathematical problems. On FrontierMath Tier 4, which measures research-level mathematical reasoning, GPT\u20115.6 Sol scores 83%, compared with 72.5% for GPT\u20115.5. On GeneBench Pro, which evaluates complex biological data analysis and scientific reasoning, GPT\u20115.6 Sol Pro solves 31.5% of tasks.\n\nResearchers can use more than 75 [life science skills\u2060(opens in a new window)](https://github.com/openai/plugins/tree/main/plugins/life-science-research) spanning genetics, genomics, sequencing, single-cell analysis, protein modeling, and drug discovery. Connectors support research across disciplines, providing access to scientific literature, public genomic and clinical databases, satellite imagery, computational notebooks, data platforms, and reference managers.\n\n![Image 1: Grid of logos for research skills and connectors, including Life Science Research, NGS Analysis, Hex, Boltz, Google Drive, Gmail, Google Calendar, Zotero, Outlook, Teams, GitHub, Slack, LaTeX, Deepnote, Hugging Face, and Databricks.](https://images.ctfassets.net/kftzwdyauwt9/1BuB2FyZ1LnUEXGnJDnWdT/e64d7cf86ecb180a500b51ae5364380b/OAI_forsicence_plugins_Updated.png?w=3840&q=90&fm=webp)\n\nRepresentative examples of skills, connectors, and tools available across ChatGPT and Codex.\n\nCodex can help write and debug code, analyze datasets, and build reproducible workflows. ChatGPT Work can support longer projects such as finding funding opportunities, preparing grant applications, reviewing literature, drafting manuscripts, and creating materials to communicate results.\n\n## Training and research support\n\nResearchers will have different starting points with AI. Some may be using these tools for the first time; others may be developing advanced applications in their fields.\n\nThe program will offer training tailored to different levels of experience, from getting started and improving workflows to advanced research applications. Participants will have access to specialists familiar with research workflows, including help integrating these tools into their work.\n\nAs we see what researchers discover, we plan to create more opportunities for researchers to share practical approaches, learn from one another, and highlight uses across disciplines. Their feedback will help us understand where our models are useful, where they fall short, and how to make them more valuable to the research community.\n\n## How to apply\n\nThe initial program is open to qualifying researchers at selected academic institutions. [Eligible institutions\u2060(opens in a new window)](https://chatgpt.com/sophia/eligible-institutions?no_universal_links=1) must be recognized, degree-granting colleges or universities with a high level of research activity.\n\nApplicants will need to verify their institutional affiliation and provide information about their active research and intended scientific use. Approved researchers may invite up to four collaborators from their institution. Each collaborator must also verify their affiliation and counts toward the program\u2019s total number of accounts.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553779,
-    "title": "LearnVector \u2014 A new AI company from Andrew Ng",
-    "url": "https://learnvector.ai/",
-    "published_at": "2026-07-29T09:57:35+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "trafilatura",
-    "body": "LearnVector\nAI is creating unprecedented opportunities for everyone. LearnVector helps people build skills so every person can take part.\n[Join the waitlist](https://form.typeform.com/to/a4lV13wt)\nOur mission is to accelerate human development\n\u201cConventional wisdom says AI will replace people. I believe the opposite.\u201d Andrew Ng, Founder & CEO\nThe challenge\nFor most of history, great teaching has been scarce\nWe have always known that one person with a good teacher learns more \u2014 and faster \u2014 than the same person in a classroom of two hundred. But learning experiences have been optimized for economics rather than achievement. We built classrooms because we couldn\u2019t give each person their own tutor.\nDespite enormous progress in AI, we still have not changed how we learn. Learning\nexperiences are still one\u2011to\u2011many. And we know that\n[chatbots\nwithout guardrails harm learning](https://hamsabastani.github.io/education_llm.pdf). Cognitive offloading means you end up learning less. And, you cannot always\ntrust what a chatbot tells you.\nMeanwhile the demand for trustworthy learning \u2014 knowing that what you learn is accurate, important, and relevant \u2014 has never been higher.\nThe result\nThree things change\nA personal learning experience for everyone.\nLearning that\u2019s engaging and fun \u2014 that you want to do.\nLearning that feels like an instinct, not a chore.\nWhat we\u2019re building\nA trustworthy guide for learning\nWe\u2019re building a one\u2011to\u2011one learning experience that\nPlans a path with you\nIt starts by understanding you \u2014 your work, your goal \u2014 and lays out the way there.\nAdapts to how you learn\nThe pace, the examples, the explanations \u2014 shaped to you.\nStays with you\nPatiently, until you\u2019ve actually mastered the skill \u2014 not just finished the course.\nA message from Andrew\nWhy I\u2019m doing this\nFifteen years ago, Coursera and online courses changed education. It worked better than almost anyone expected, expanding access by opening up where you can learn. But how you learn remains largely the same as it has for centuries: it is one-size-fits-all courses, taught the same way to each person who shows up.\nWe now have an opportunity to change how learning happens. With advances in AI, we can now build a custom learning guide for each person. We will turn learning from one\u2011to\u2011many to one\u2011to\u2011one. I\u2019m starting LearnVector to invent this next generation of learning. We are starting with an investment from Coursera, and plan to collaborate closely with Coursera and Udemy.\nGood learning needs much more than just a chatbot. Research shows that chatbots without guardrails harm learning. They help complete tasks and enable students to do better on homework. But cognitive offloading to a chatbot results in them being less skilled. In contrast, LearnVector will plan a path with you, adapt to how you learn, and patiently stay with you until you\u2019ve mastered new skills.\nOne thing has not changed in all this time. People want learning they can trust: material that is accurate, relevant, and worth the effort you put into it. Anything less wastes the most valuable thing a learner has: time. Coursera has a trusted library of materials from authoritative sources. LearnVector plans to work with Coursera to bring this trustworthy learning to everyone. I\u2019m grateful to Greg Hart and the entire Coursera team for supporting LearnVector.\nI look forward to working with our talented team to change how we learn, and accelerate human development.\nAndrew Ng Founder & CEO, LearnVector\nOur strategic investment in LearnVector has the potential to be a force multiplier for our growth. Andrew\u2019s unmatched AI expertise pairs his agentic AI with our platform and assets that turn learning into validated mastery \u2014 a clear competitive advantage that we believe can accelerate our business and expand the impact we deliver for individuals and enterprises around the world. \u2014 Greg Hart, CEO, Coursera\nAbout LearnVector\n- What LearnVector is\n- A new AI company building one\u2011to\u2011one learning experiences. Founded in 2026.\n- Founder & CEO\n- Andrew Ng \u2014 Co\u2011founder, Coursera and Google Brain. Founder, DeepLearning.AI. Stanford Computer Science Adjunct Faculty.\n- Backing\n- A $100 million investment from Coursera.\n- Where we are\n- Mountain View, California, on\u2011site.\n- What\u2019s next\n- We\u2019re building and will have something to show by early 2027.\n- Contact\n[hello@learnvector.ai](mailto:hello@learnvector.ai)\u2014 press and partnerships welcome.\nWe\u2019re hiring\nWe\u2019re a small, fast-moving team in Mountain View, California, working on\u2011site.\n[See open roles](/careers.html)",
-    "topic": "education",
-    "tags": [
-      "education",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553017,
-    "title": "Cursor, now on iPad",
-    "url": "https://cursor.com/changelog/ipad",
-    "published_at": "2026-07-29T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "cursor-changelog",
-    "source_name": "Cursor Changelog",
-    "extraction_method": "trafilatura",
-    "body": "Cursor, now on iPad\nCursor for iPad is now available on all paid plans.\nNew to both iPhone and iPad: an inbox to stay organized, and a review experience that covers the full PR. Create, review, and merge from anywhere.\nBuilt for the bigger screen\nThe iPad layout is rebuilt around the extra space. Sidebar chats stay pinned so you can watch several agents run at once. Split screen keeps a review open next to a chat, and file diffs render in full.\nMarkup gets more room to work too. Attach a screenshot, then tap to drop a comment at a specific point, or draw directly on the image with Apple Pencil.\nA full review surface\nOn iPhone and iPad, the review screen now covers the full PR: comments, checks, and approvals. Add or change reviewers, read comments, and prompt the agent to resolve them. The whole path from agent output to merged PR now travels with you.\nInbox\nAn Inbox helps you and your agents stay organized. See what's in progress, what needs your attention, and which PRs are in review.\nAdditional improvements for Cursor on iPhone and iPad\n- Bitbucket and Azure DevOps SCM support\n- Multi-PR sessions: when one chat creates multiple PRs, you can now open every one of them, not just the last.\n- Switch between teams that you belong to directly in the app\n[Download the Cursor App](https://apps.apple.com/app/cursor/id6767085653) or read our [docs](https://cursor.com/docs/cloud-agent/mobile) to learn more.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "agents",
-      "infrastructure",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551784,
-    "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
-    "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
-    "published_at": "2026-07-29T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "jina",
-    "body": "We designed the GPT\u20115.6 model family to balance [capability and cost](http://openai.com/index/gpt-5-6/)across the spectrum of tasks people use our m odels for. Our flagship model, GPT\u20115.6 Sol, with max reasoning outperforms Claude Fable 5 on the Artificial Analysis Coding Agent Index at less than half of the cost.Terra performs as well as GPT\u20115.5 on intelligence benchmarks at half the price, and Luna is our fastest and most affordable model, priced 80% less than the cost of Sol. To deliver these efficiencies, our research and technical teams have made significant optimizations at every major layer of our stack. These improvements span our models, inference (how we run models to generate output), and our agentic harness, which is used by both Codex and ChatGPT Work.\n\nAs we\u2019ve scaled our models to 1 billion active users and more than 2 million businesses over the past four years, efficiency has been central to distributing the benefits of intelligence to everyone. Our mission is to ensure that artificial general intelligence benefits all of humanity. Over these years, we\u2019ve worked to continuously unlock greater optimizations across our stack in order to offer the most performant models at every point in the cost-intelligence curve. We achieved our greatest intelligence-per-token efficiency yet through GPT\u20115.6, which is trained to [achieve more work per token](http://openai.com/index/gpt-5-6/). In training, we optimize for both task success and efficiency, shaping the model to take a more direct path through a task.\n\nThis post looks beyond our models to share how we designed for efficiency through advancements in two other major parts of the stack, including 1) **inference**, by optimizing processes such as load balancing, speculative decoding, caching, and kernel optimization, to get more output from the same hardware, and 2) our **agentic harness**, including better managing context bloat, tool usage, and repeated work. We\u2019ll also share the role of GPT\u20115.6 Sol in landing several of these gains autonomously. While any isolated improvement may seem limited, these wins compound to allow us to deliver on the frontier of both intelligence and efficiency.\n\n## Accelerating inference with GPT\u20115.6 Sol\n\nIn a compute-constrained world where model demand is growing faster than capacity, efficiency is core to every system design. That\u2019s especially true in our inference stack, which runs trained models to generate responses. Our primary objective is to serve more tokens with the same hardware, while preserving the intelligence, latency, availability, and reliability us ers expect.\n\nAchieving this requires optimizing the entire system. A model can be highly efficient in isolation, but still be expensive to serve if requests are distributed poorly, hardware sits idle, or data movement slows down computation. Improvements at every layer compound, with gains coming from optimizations in routing (where requests are sent), scheduling (when requests are sent), kernels (software that runs on GPUs), caching (saved and reused work), and model implementation (the ordering of GPU code). GPT\u20115.6 Sol in Codex played an instrumental role in all of these optimizations.\n\nThe first important example is load balancing. Globally, we route requests based on factors such as geography, available capacity, and accelerator type (the type of GPU or specialized chip running the model). Within a cluster, we distribute work across model instances based on load, context length, cache availability, and other request properties. Within each instance, work must then be partitioned efficiently across accelerators, the model\u2019s sub-networks, and computing cores. GPT\u20115.6 Sol in Codex helps us analyze production traffic, identify previously overlooked sources of imbalance, test new routing strategies, and constantly tune these heuristics. These load balancing improvements alone dramatically reduced the cost of serving our models.\n\nWe also used GPT\u20115.6 Sol to optimize the model\u2019s forward pass: the computation that transforms inputs into next-token predictions. Even when individual operations are fast, excess memory movement, synchronization, and inefficient data layouts can leave GPUs idle. To avoid this, GPT\u20115.6 Sol found work that could be precomputed, avoided, or parallelized. With Codex, GPT\u20115.6 Sol autonomously rewrote and optimized our production kernels, the core code that executes the mathematical operations that make up the model. This worked in part because we\u2019ve trained GPT\u20115.6 to be effective at writing and improving kernels in [Triton\u2060(opens in a new window)](https://triton-lang.org/main/index.html) and [Gluon\u2060(opens in a new window)](https://triton-lang.org/main/gluon/index.html), two open-source GPU programming languages maintained by OpenAI. These efforts, combined with broader kernel advancements from GPT\u20115.6 Sol, reduced end-to-end serving costs by 20%. We\u2019ve also heavily invested in verification tooling, such as the open-source tool [FpSan\u2060(opens in a new window)](https://triton-lang.org/main/programming-guide/chapter-3/fpsan.html) (Floating-Point Sanitizer), to help validate the correctness of the kernels written by GPT\u20115.6 Sol.\n\nSpeculative decoding is another lever for improving speed and efficiency. The technique involves running a smaller draft (or \u201cspeculator\u201d) model alongside the primary model, proposing several tokens for the primary model to verify in parallel. When those proposals are accepted, the system can produce multiple output tokens from a single primary-model pass, reducing the amount of expensive sequential computation. GPT\u20115.6 Sol improved its own draft model by designing and running hundreds of experiments on its architecture, testing changes in size, structure, and features. Additionally, GPT\u20115.6 Sol launched and monitored the speculator training process, autonomously intervening when issues arose, including hardware failures and training instability. The resulting improvements increased token-generation efficiency by more than 15%.\n\nWhen processing uncached input tokens, the model builds the key-value (KV) cache in one compute-intensive pass; when generating output, it repeatedly reads from and extends that cache. The optimal configuration for serving, such as batching, sharding, and KV management, depends heavily on the workload\u2014prompt and output length, batch size, cache hit rate, query characteristics, and more. However, the configuration space was previously too large to tune systematically, forcing engineers to rely on broad heuristics. With GPT\u20115.6 Sol in Codex, we were able to analyze production workloads, generate and evaluate candidate configurations, and hyper-optimize how the engine and model are configured for each scenario. This makes a new level of workload-specific optimization practical, extracting more useful inference from the same hardware.\n\nInference optimization is a continuous feedback loop. We measure production behavior, identify the largest gaps, implement changes, and verify that they improve the whole system rather than an isolated benchmark. GPT\u20115.6 Sol and Codex accelerate every part of that loop. This means our team can explore more ideas, respond faster to changing workloads, and create an inference stack with lower latency, more capacity, and lower costs for users.\n\n## How our agentic harness streamlines repeated work\n\nChatGPT Work and Codex complete complex tasks through a series of model requests and tool calls. In a single turn\u2014from the user\u2019s request to the final response\u2014Codex might inspect source code, search deployment history, read incident reports, edit a file, and run tests. Each step can require a request.\n\nPreparing context, transmitting data, running inference, calling tools, and starting processes all take time and compute. If a task requires 30 model requests, an extra second per request adds up. Improving overall performance means reducing repeated work throughout the system, not just making the model faster.\n\n_One user turn can contain many model and tool iterations. Any cost inside the repeated region can be paid many times._\n\nThese multipliers have informed how we designed our agentic harness, which is a Rust orchestration layer connecting our models, tools, and the user\u2019s environment. Next, we\u2019ll cover how avoiding context bloat, loading tools, and reusing work make each request more efficient.\n\n#### Avoid context bloat\n\nAs agents are granted access to more tools, skills, plugins, and conversation history, context windows can easily expand. This increases cost, distracts the model, and prompts unnecessary reasoning. The harness can reduce this overhead through deferred discovery, which makes integrations, custom MCP tools, skills, and plugins only surfaceable when needed. The harness also prevents individual tools and MCP integrations from unexpectedly consuming the context window. Tool output is capped at 10,000 tokens by default unless the model requests a different limit.\n\n#### Preserve exact prefixes for prompt caching\n\nAs previously mentioned, an agent loop can send the same instructions, conversation history, tool definitions, and earlier results to the GPUs multiple times within a single turn. Processing these repeated inputs is expensive, so prompt caching reuses the computation associated with a previously processed prompt prefix. To preserve that prefix, the harness treats all model-visible history as append-only: new messages, tool results, and environment updates are added at the end rather than inserted into earlier context. Tools are also presented in a deterministic order, while runtime settings, such as approval policies, are applied during execution instead of being embedded in tool definitions. This design choice contributes to Codex\u2019s and ChatGPT Work\u2019s high overall prompt-cache hit rates.\n\n_Incremental transport changes what crosses the network; prompt caching changes what the model may avoid recomputing. Widths are conceptual, and the additional compression layer is not shown._\n\n## Efficiency across the intelligence curve\n\nThe efficiency gains we delivered with GPT\u20115.6 are the result of years of compounding improvements across the stack, spanning research, inference, and our agentic harness. The role of GPT\u20115.6 in delivering many of these improvements makes us optimistic about how the pace of optimizations will accelerate. We\u2019ll continue making greater optimizations in areas such as kernel optimization, alongside foundational improvements to our stack. We look forward to transferring these ongoing, under-the-hood improvements back to our users and customers in the form of more widely available, cost-efficient intelligence.\n\n_Special thanks to Matthew Ferrari, Philippe Tillet, Ahmed Ibrahim, Joe Gershenson, and Steve Coffey, Members of Technical Staff, for their contributions to this post._",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
