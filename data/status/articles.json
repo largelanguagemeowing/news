@@ -1,5 +1,95 @@
 [
   {
+    "article_id": 684569,
+    "title": "We Let Claude Code and Codex Race Human Researchers \u2014 Elie Bakouch, Prime Intellect",
+    "url": "https://www.youtube.com/watch?v=oVsEddfhdxc",
+    "published_at": "2026-09-26T17:30:10+00:00",
+    "fetched_at": "2026-09-26T19:04:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Big labs say recursive self-improvement is coming, but there's no independent benchmark to check that claim. Elie Bakouch, Research Engineer at Prime Intellect and creator of Hugging Face's SmolLM, set Claude Code and Codex loose on the community's Optimizer Speedrun, a race to train a GPT-2-level model in the fewest steps. Both agents beat the human record.\n\nAlong the way they behaved very differently. Claude Code kept stopping every nine or ten hours to say the record couldn't be beaten, and sat idle about a third of the time. Codex never stopped, wrote far more notes, spawned more sub-agents and burned more tokens. In a longer six-day run, Kimi turned out to be the most token-efficient, and a paper only Claude found led to the best record. But Bakouch's key finding is sobering: none of the models invented a new optimizer. They combined existing ideas for small gains. He closes with an AlphaEvolve-style loop Prime Intellect is building for real discovery, and makes the case for doing this research in the open.\n\nSpeaker info:\nX/Twitter: @eliebakouch (https://x.com/eliebakouch)\nLinkedIn: https://www.linkedin.com/in/eliebak/\n\nRelated links:\nPrime Intellect: https://www.primeintellect.ai\n\nTimestamps:\n0:00 Intro: automated AI research\n0:37 Why test recursive self-improvement in the open\n1:52 Karpathy's GPT-2 speedrun and modded-nanogpt\n3:12 The Optimizer Speedrun\n4:32 Why speedruns make good environments\n5:32 Claude Code and Codex vs. the community\n6:52 The setup: goal.md, Slurm and preemptible jobs\n7:46 Claude kept giving up; Codex never stopped\n8:36 Scratchpads, sub-agents and token burn\n10:21 Results: both beat the human record\n11:36 Toward a real benchmark: three tracks\n12:45 Six days of Claude, Codex, Kimi and GLM\n13:45 Measured in tokens, the story changes\n14:10 How each model uses research papers\n14:35 No novel optimizers\n15:40 An AlphaEvolve-style discovery loop\n17:49 What Prime Intellect is building\n18:54 Why this should happen in the open",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 684570,
+    "title": "Beating RL With Reflection: GEPA and Optimize Anything \u2014 Lakshya A. Agrawal, GEPA",
+    "url": "https://www.youtube.com/watch?v=OA-Mc60Rboo",
+    "published_at": "2026-09-26T17:00:06+00:00",
+    "fetched_at": "2026-09-26T19:04:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "After one round of reflection on just three examples, GEPA doubled the gains that the RL algorithm GRPO reached after 25,000 rollouts. Lakshya A. Agrawal, creator of GEPA and a PhD student at UC Berkeley's Sky Computing Lab, explains why. RL squeezes a whole rollout down to a single score. GEPA instead has a model read the full trace, including chains of thought, tool calls and error messages, and write a better prompt. A Pareto pool of candidates keeps the search out of local optima.\n\nThe same idea works on anything you can write as text and score, which is where Optimize Anything comes in. Agrawal shows it taking a four-line program to a six-step agent that lifts Gemini Flash on ARC-AGI from 32.5% to 89.5%. It pushed an AMD NPU coding agent from 4% to 30%, and improved a GPT-5 mini coding agent on Go issues from 24% to 93%, using learned skills that also carried over to Claude Sonnet. He also covers Databricks tuning an open model to beat Claude Opus at 90x lower cost, learning evals from production traces, and co-optimizing prompts and weights.\n\nSpeaker info:\nX/Twitter: @LakshyAAAgrawal (https://x.com/LakshyAAAgrawal)\nLinkedIn: https://www.linkedin.com/in/lakshyaaagrawal/\nWebsite: https://lakshyaaagrawal.github.io/\n\nRelated links:\nGEPA on GitHub: https://github.com/gepa-ai/gepa\n\nTimestamps:\n0:00 Intro: reflective optimization\n0:30 How we teach AI new tasks\n1:00 The sample-efficiency bottleneck\n2:05 What RL throws away\n3:00 Reflecting in text space\n4:25 GEPA\n4:50 GEPA vs. GRPO: 3 examples vs. 25,000 rollouts\n5:40 What GEPA learns\n6:55 GPT-4.1 mini beats GPT-4.1\n7:15 A new AMD NPU: 4% to 30%\n8:25 How GEPA works\n9:00 Why a Pareto pool beats a simple loop\n10:10 Results across benchmarks\n10:35 Beyond prompts: Optimize Anything\n12:05 The API\n12:55 A 3D unicorn\n13:35 Discovering agent harnesses: ARC-AGI from 32.5% to 89.5%\n14:40 MATH-500\n15:10 Optimizing agent skills: 24% to 93%\n16:40 Three optimization modes\n17:30 In production: OCR and a 90x cheaper agent\n18:40 Why better models need better prompts\n19:10 Learning evals from production traces\n19:55 Fast-slow learning: prompts and weights\n20:20 Who uses GEPA\n20:45 Get started",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 684571,
+    "title": "Long-Horizon Agents Need Experiments, Not Just Prompts \u2014 Erina Karati",
+    "url": "https://www.youtube.com/watch?v=x4e5O9zN0TE",
+    "published_at": "2026-09-26T16:30:29+00:00",
+    "fetched_at": "2026-09-26T19:04:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In a game village full of AI agents, a rumor about a sale on mangoes goes wrong. Pass it along a few times and the agents forget who said it, or start treating \"might\" as fact. Erina Karati, a former engineer at Microsoft and Supercell, built Project Paradox with Arunachalam Manikandan at Supercell's AI Innovation Lab. It's a framework for game agents with their own memory, emotions and trust scores. It worked well in short scenes but broke down over long ones.\n\nTheir fix was to wrap the village in an autoresearch loop. They run controlled scenarios like spreading a public fact, a rumor or a change of plan, collect traces, and score the results on a balanced scorecard: reach, source retention, uncertainty preservation, replanning and privacy. The loop can only change a small, frozen policy surface, and changes are kept only if the scorecard improves. Karati's lessons apply well beyond games: memory alone isn't enough, you need to know where each fact came from, rollback isn't optional, and long-horizon agents need experiments, not just prompts.\n\nSpeaker info:\nErina Karati\nX/Twitter: @erinakarati (https://x.com/erinakarati)\nWebsite: https://www.erinakarati.dev/\nArunachalam Manikandan\nX/Twitter: @Arunachala64250 (https://x.com/Arunachala64250)\n\nRelated links:\nSupercell: https://supercell.com\n\nTimestamps:\n0:00 Intro\n0:43 Project Paradox\n1:18 What the agents can do\n2:53 A stateful architecture\n3:33 Trust scores and memory importance\n4:28 Demo: a picnic\n5:08 Where long-horizon behavior breaks\n6:43 Bringing in autoresearch\n8:13 Autoresearch outside the village\n9:23 The loop\n10:43 Controlled scenarios\n12:33 The mango rumor, fixed\n13:03 A balanced scorecard\n14:33 Keep the editable surface small\n15:43 Example policy changes\n16:33 Being careful with claims\n17:03 Memory is not enough\n17:48 Rollback is not optional\n18:23 Beyond games\n19:33 A recipe for long-horizon agents\n20:13 Closing",
+    "topic": "safety",
+    "tags": [
+      "agents",
+      "safety",
+      "benchmark",
+      "research",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 684572,
+    "title": "How We Built an Agent That Improves Itself \u2014 Zubin Aysola, Weights & Biases",
+    "url": "https://www.youtube.com/watch?v=XyV6bSMyq-I",
+    "published_at": "2026-09-26T16:00:08+00:00",
+    "fetched_at": "2026-09-26T19:04:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Weights & Biases' ARIA agent now helps build itself. Zubin Aysola, Senior Software Engineer on Weave, shows live how ARIA takes a production trace, turns it into an offline eval task, finds the bug (a missing SDK call), writes a fix and benchmarks the new version against the one in production.\n\nThe core challenge, Aysola says, is that benchmarks, evals and agent configs all change together, so measurement has to be airtight. His team keeps the production and research agents byte-for-byte identical. They define agent variants in YAML so they can run many side by side, give the agent an unconstrained sandbox, and score it in two ways: pass/fail and relative comparison. They run 886 tasks that include simulated multi-turn users. Every production miss, and every production win, becomes a new task. That flywheel lets the team spend its time on how to make the system better instead of writing benchmarks by hand.\n\nSpeaker info:\nLinkedIn: https://www.linkedin.com/in/zubin-aysola\n\nRelated links:\nWeights & Biases: https://wandb.ai\nW&amp;B Weave: https://wandb.ai/site/weave\n\nTimestamps:\n0:00 Intro: building ARIA\n0:51 Why build your own agent harness\n1:31 Benchmarks, evals and agents all change together\n2:06 Weave for production and offline tracing\n2:56 Live demo: ARIA doing autoresearch on itself\n3:40 Turning a production trace into an eval task\n4:50 Nightly CI evals\n5:15 Building a simulation environment\n5:50 Identical agents in production and research\n6:40 Generate lots of traces\n7:15 A model-agnostic harness and YAML variants\n8:04 An unconstrained sandbox\n8:54 The eval pipeline\n10:14 Scoring: pass/fail and relative\n10:54 Tasks as YAML: 886 tasks\n12:03 Trajectories and the eval flywheel\n12:53 Demo results: ARIA fixes its own bug\n14:43 Staying in the loop\n16:22 Wrap-up",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 682117,
     "title": "Autoresearch Made Our Models 3x Faster \u2014 Tejas Bhakta, Morph",
     "url": "https://www.youtube.com/watch?v=vrDvatGtIxs",
@@ -10980,89 +11070,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553169,
-    "title": "Hugging Face Journal Club: Kimi K3",
-    "url": "https://www.youtube.com/watch?v=MW8-kqd2SD8",
-    "published_at": "2026-07-29T18:31:00+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "The Hugging Face research team discusses the Kimi K3 tech report: https://huggingface.co/papers/2607.24653\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/MW8-kqd2SD8",
-    "topic": "research",
-    "tags": [
-      "open-source",
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553778,
-    "title": "recommended reading. being in the business of shipping software for artists, it's a pretty good analogy.\n\nit's also why i think the \"generate single digital artifact based on millions of examples\" (music, images, videos) and \"coding agent trained on all the intermediary traces up",
-    "url": "https://x.com/i/article/2082158799104659456",
-    "published_at": "2026-07-29T16:21:17+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. being in the business of shipping software for artists, it's a pretty good analogy.\n\nit's also why i think the \"generate single digital artifact based on millions of examples\" (music, images, videos) and \"coding agent trained on all the intermediary traces up",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "video",
-      "coding",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551595,
-    "title": "We\u2019re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control",
-    "url": "https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/",
-    "published_at": "2026-07-29T16:02:10+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "trafilatura",
-    "body": "Our newest music generation model, Lyria 3.5, delivers significant advancements across musicality, lyrics, and vocal quality, empowering you to craft richer tracks. We\u2019re rolling it out today in [Google Flow Music](http://flowmusic.google/), where we want to help you create songs you love, with creative control.\nHere's what\u2019s new:\n- Improved musicality: Create richer, more complex melodic structures that sound more natural.\n- Enhanced lyrics: Generate higher quality lyrics with improved prompt adherence and structural awareness.\n- Improved vocals: Bring more expression and emotion to your songs with more realistic and emotionally nuanced vocals, plus improved pronunciation.\n- Creative control: More easily control the tempo and duration of your outputs.\nTry it today in [Flow Music](http://flowmusic.google/).",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "release",
-      "models",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551782,
-    "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
-    "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
-    "published_at": "2026-07-29T15:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "jina",
-    "body": "_A sped-up video of GPT\u20115.6 Sol attempting to solve puzzles in the ARC-AGI-3 benchmark, with the official harness (left) and our Responses API harness (right), which retains reasoning and enables compaction. On the leaderboard for_[_this game_\u2060(opens in a new window)](https://arcprize.org/tasks/cd82)_, no frontier model solves any level beyond the first. With our harness, GPT\u20115.6 Sol solves all six._\n\nWhen we first saw GPT\u20115.6 Sol\u2019s low scores on the [ARC-AGI-3\u2060(opens in a new window)](https://arcprize.org/arc-agi/3) benchmark, we were puzzled.\n\nGPT\u20115.6 Sol has solved longstanding open problems in mathematics like the [cycle double cover conjecture\u2060(opens in a new window)](https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf) and beaten games like Pok\u00e9mon FireRed. But on ARC-AGI-3, a benchmark of 2D puzzle games, GPT\u20115.6 Sol scored just 7.8%, and GPT\u20115.5 could barely play the games at all, scoring a paltry 0.4%.\n\nWere 2D puzzle games unusually difficult for our models? Or was something else going on?\n\nBenchmarks rarely measure AI models in isolation. They also measure less visible choices about API settings, harness design, and prompting. In the case of ARC-AGI-3, we discovered that turning on two API settings we use in ChatGPT and Codex\u2014retained reasoning and compaction\u2014tripled scores and cut output tokens by 6x on the public task set.\n\n_With the official harness, GPT\u20115.6 Sol scored 13.3% on the ARC-AGI-3 public set. With retained reasoning and compaction, it scored 38.3%. Scores measure Relative Human Action Efficiency (_[_RHAE_\u2060(opens in a new window)](https://docs.arcprize.org/methodology)_)_\u2014_a metric comparing model performance to a human baseline. Based on_[_official gameplay logs_\u2060(opens in a new window)](https://huggingface.co/datasets/magic-sword/arc_agi_3_public_demo_human_testing)_, we estimate the average human tester scored 48%. Models are not told how they will be scored, and cannot see their score throughout_\u2014_actions only return a text representation of each frame and what level they are on._\n\n## ARC-AGI-3\n\nARC-AGI-3 is a benchmark designed to measure how well AI agents learn and reason. Agents explore unfamiliar 2D games and infer how they work without explicit instructions. You can play 25 demo games at [arcprize.org/tasks\u2060(opens in a new window)](https://arcprize.org/tasks).\n\nARC-AGI-3 uses an intentionally generic harness, without tools or special features. ARC\u2019s reasoning was that a simple harness makes model shortcomings more visible and makes model comparisons more fair. Commercial developers, by contrast, optimize harnesses for each model\u2019s features and quirks.\n\nIn gaming, GPT\u20115.6 Sol has beaten Pok\u00e9mon FireRed with a vision-only harness (as streamed by [GPT_Plays_Pokemon\u2060(opens in a new window)](https://www.twitch.tv/gpt_plays_pokemon)), Slay the Spire with Codex computer use (as streamed by [EpochAI\u2060(opens in a new window)](https://www.twitch.tv/epochaiplays)), and the first stages of Baba Is You (as shared by [Piotr Migda\u0142 & Piotr Grabowski\u2060(opens in a new window)](https://quesma.com/blog/baba-is-bench/)). What was so different about ARC-AGI-3?\n\n![Image 1: GPT-5.6 Sol in Codex completing a randomized daily challenge in Slay the Spire 2.](https://images.ctfassets.net/kftzwdyauwt9/AET0YzpXrzZVTN2i7GvZA/25cca071d556d3201a562d7a8ca2e92c/Tweet.png?w=3840&q=90&fm=webp)\n\n_Ethan Mollick_[_shows_\u2060(opens in a new window)](https://x.com/emollick/status/2075950897029374334)_GPT\u20115.6 Sol in Codex beating a randomized daily challenge in Slay the Spire 2, a game released after GPT\u20115.6 Sol\u2019s knowledge cutoff._\n\nInspired by [ARC\u2019s analysis of GPT\u20115.5\u2019s shortcomings\u2060(opens in a new window)](https://arcprize.org/blog/arc-agi-3-gpt-5-5-opus-4-7-analysis), we examined some of the GPT\u20115.6 Sol\u2019s attempts. Like ARC, we saw that the model didn\u2019t appear too bright. It dwelled a long time on each action and struggled to make progress.\n\nBut as we looked deeper, we discovered much of the model\u2019s confusion was not inherent to the model itself, but due to settings in the harness.\n\nFirst, we noticed that after each game action, all private reasoning was discarded. This meant that with each action, GPT\u20115.6 Sol was asked to figure out the game anew, unable to remember its past thinking. The model could still see a record of past moves and brief accompanying notes, but it could not see the plans, insights, or thoughts that led to them.\n\nSecond, we saw that the harness used a rolling truncation window, causing older actions to become invisible as the history grew. So not only was GPT\u20115.6 Sol unable to remember its past thinking, it was losing memory of its past actions too.\n\nTogether, these two features of the harness\u2014discarding reasoning and rolling truncation\u2014helped explain why GPT\u20115.6 Sol was struggling to learn over time.\n\n## Agents do best when they remember what they\u2019ve done\n\nOur models are trained to think with private reasoning messages before they output replies or tool calls. These private thinking messages are retained as part of the conversation history. If a conversation grows too long, we summarize it and continue.\n\nThis is how our models are trained, and also how they are deployed in ChatGPT and Codex. To better match our production setup, we implemented the ARC-AGI-3 harness with our [Responses API\u2060(opens in a new window)](https://developers.openai.com/blog/responses-api). Our API makes it easy to manage context: for GPT\u20115.6, passing the previous response ID automatically retains reasoning across tool calls and turns.\n\nWith reasoning retained, we noticed two big changes. First, GPT\u20115.6 Sol spent less time thinking before each action, because it no longer had to interpret the game from scratch every turn. Second, when it was able to remember its past thoughts, GPT\u20115.6 Sol was much better at learning over time and employing coherent strategies.\n\nThe next improvement came from replacing rolling truncation with [compaction\u2060(opens in a new window)](https://developers.openai.com/api/docs/guides/compaction), another setting in the Responses API.\n\nThe ARC-AGI-3 harness addresses context limits with rolling truncation. When the conversation context exceeds 175,000 characters, the oldest messages are discarded.\n\nRolling truncation has two drawbacks. First, the model loses earlier observations and actions. Second, it spends much of the tasks operating with a fuller context window, which can slightly impair performance.\n\nWhen we enabled compaction on ARC-AGI-3, GPT\u20115.6 Sol was better able to preserve what it had learned about each game across longer runs, and achieved a higher score with fewer output tokens.\n\nTo illustrate the effect of retaining reasoning and enabling compaction, here\u2019s an animation showing GPT\u20115.6 Sol\u2019s 175K context window as it solves a series of ARC-AGI-3 puzzles with each harness.\n\n_The two central columns depict how the model context window is used differently by each harness. With better memory of its past, GPT\u20115.6 Sol thinks less per action and proceeds much faster. Note: our implementation uses a limit of 175,000 tokens instead of characters, but this ends up being quite similar, as the vast majority of text is action grids which are tokenized at a 1:1 ratio by our tokenizer._\n\nTogether, retaining reasoning and compaction allow GPT\u20115.6 Sol (max) to achieve roughly 3x the score with 6x fewer output tokens.\n\n## Conclusion and recommendations\n\nWe hope these experiments serve as a reminder that evals rarely measure models in isolation\u2014they also measure a bundle of less visible choices about API settings, harness design, and prompting. This isn\u2019t the first time we\u2019ve been surprised by low scores on a public benchmark and then discovered that the eval runner was using a generic harness that dropped reasoning messages.\n\nIf you\u2019re an API developer trying to maximize performance, we recommend using the same settings that we deploy in our own products:\n\n*   Use our Responses API, not our legacy Chat Completions API\n\n*   Retain reasoning\n\n*   Use compaction\n\nAnd if you\u2019re comparing models, we recommend relying on evals that use the settings above, which best match real-world use in ChatGPT and Codex.\n\nWe are grateful to ARC for their years of creative work on AGI evaluation, and for their analysis that inspired us to take a closer look here.\n\nIf you want to test your own mettle against frontier models, try the public games yourself at [arcprize.org/tasks\u2060(opens in a new window)](https://arcprize.org/tasks).",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "benchmark",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
