@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 674825,
+    "title": "Fixing the PR Bottleneck \u2014 Matt Pocock, AIHero",
+    "url": "https://www.youtube.com/watch?v=LlgiOCmFG_w",
+    "published_at": "2026-09-26T00:07:54+00:00",
+    "fetched_at": "2026-09-26T01:13:46+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The pull request has always been the bottleneck, and now it's slowing down every organization. Agents make it trivial to open a PR. They make it only slightly easier to open one worth reviewing.\n\nIn this talk from AI Engineer Paris 2026, Matt Pocock asks why that is and what to do about it. Code is the environment your agent works in, so agent experience (AX) deserves the same rigor that developer experience (DX) got. Fixing the bottleneck means fixing what happens around the PR, not how fast it gets written.\n\nRecorded at AI Engineer Paris 2026 in the Coding Agents & Software Factories track.\n\nAbout the speaker\nMatt Pocock is a developer educator and one of the best-known voices in the TypeScript and AI engineering communities, known for making complex topics clear and practical. He created AI Hero, a platform that teaches developers to build production-grade AI applications, and AI Coding for Real Engineers, a course that helps working engineers bring AI coding tools into their workflows. His hands-on, no-nonsense teaching has helped hundreds of thousands of developers level up.\n\nX: https://x.com/mattpocockuk\nLinkedIn: https://www.linkedin.com/in/mapocock/\nAI Hero: https://aihero.dev",
+    "topic": "education",
+    "tags": [
+      "agents",
+      "coding",
+      "education",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 672329,
     "title": "Meta is pivoting again... everything you missed from Connect 2026",
     "url": "https://www.youtube.com/watch?v=c1rPlzxSZ8E",
@@ -11031,28 +11052,6 @@
     "topic": "general",
     "tags": [
       "general"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551785,
-    "title": "Scientific computing in the age of agentic AI",
-    "url": "https://openai.com/index/scientific-computing-agentic-ai",
-    "published_at": "2026-07-28T17:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "jina",
-    "body": "Scientific computing is a core pillar of modern research across academia and industry. Yet the software needed to analyze scientific information has struggled to keep pace with the rapid rate of data generation. Many widely used research tools began as code accompanying a research paper, built by small academic teams with limited engineering experience and minimal time for packaging, testing, optimization, or long-term support. The result is scientific infrastructure that often depends on slow, fragile workflows requiring constant maintenance. These constraints impede the pace of discovery.\n\nAI agents are beginning to change that equation. By lowering the costs of engineering work and taking on tedious implementation tasks, they can help researchers prototype ideas more quickly, pursue projects that were previously impractical, and more easily maintain software over the long term. As a result, scientific software becomes more efficient and better maintained, freeing researchers to spend more time on discovery.\n\nWe\u2019re sharing an exploratory field report of eight agent-assisted scientific computing projects primarily in the life sciences; five using Codex alone, and three using a combination of Codex and Claude Code. The report brings together case studies written by the teams behind each project and identifies recurring themes. The projects range from routine maintenance and targeted optimization to large-scale language migrations and GPU-native redesigns. Contributors report that agents significantly accelerated software development and maintenance, in some cases helping small teams take on work that would otherwise have required far more time or specialized engineering support. But they also highlight the persistent challenge of establishing clear, long-term responsibility and stewardship of the resulting tools.\n\nContributors consistently describe a shift in the researchers\u2019 role from implementation to verification and orchestration: specifying what to build, defining how to measure correctness, and deciding when a project is ready to ship. In this emerging model, the researchers remain in control of the scientific direction and quality bar, but with velocity uplift provided by agentic assistance\n\n## Case studies\n\n#### **Modernized a widely used library for parsing genomic data**\n\ncyvcf2 is a Python library for reading and writing genomic variant files. GPT\u20115.5 replaced the library\u2019s legacy build and packaging system with a modern, unified process designed to make the library easier to install, test, and release.\n\n> _With coding agents, it\u2019s quite easy to go fast; for now, to go far in science, there\u2019s still a need for expert guidance, understanding, taste, and care._\n\n\u2014Brent Pedersen\n\n## Recurring themes\n\nThough the projects varied widely in scope, they demonstrated that coding agents are making engineering labor and expertise less of a constraint in scientific computing. Now, the bottleneck is validating an AI agent\u2019s output, which still depends on human judgement.\n\nAcross case studies, agents handled specific, well-scoped requests effectively but could not reliably judge whether their work was scientifically valid or met expectations. Indeed, agents often expressed confidence even when their work contained clear errors. Human reviewers therefore needed to find reliable ways to validate the results. The strongest approaches used an external reference or measurable acceptance target such as exact output agreement, parity with an existing tool, appropriate statistical behavior, or answers established in advance using simulated data.\n\nAnother recurring theme was that the projects generally proceeded in stages using feedback-driven iterations rather than as one-shot approaches. Contributors broke down broad goals into smaller changes, then used intermediate benchmarks and test systems to evaluate and refine the agents\u2019 work. Agents often produced initial implementations quickly, but resolving edge cases and subtle numerical differences took much longer. Completing the \u201clast mile\u201d of an implementation often took the most work.\n\nOverall, these case studies suggest that agents are enabling researchers to spend less time on implementation and more time directing the scientific work. People define the goal, break down complex projects into manageable chunks, and judge whether results are scientifically valid. By easing longstanding engineering constraints, agents expand what researchers can build while freeing them to focus on the scientific questions and decisions that matter most.\n\n## Long-term stewardship remains essential\n\nThe maintenance gap in research software has long slowed iteration and limited reproducibility and reliability. Published studies of \u201c[research code\u2060(opens in a new window)](https://doi.org/10.1038/s41597-022-01143-6)\u201d and [omics tools\u2060(opens in a new window)](https://doi.org/10.1371/journal.pbio.3000333) have found that published software often fails to properly install in a fresh computing setup or run as documented, forcing researchers to spend substantial time on configuration and debugging. Even routine improvements can save researchers time and reduce computing demands, while performance-based refactoring and rewrites can deliver larger gains.\n\nBut lower implementation costs also make it easier to produce many similar rewrites, fragmenting users and spreading the expert attention required to keep any one tool reliable. That makes long-term stewardship and attribution essential. Mature scientific software carries undocumented conventions, compatibility requirements, and user trust that translating the source code alone cannot reproduce.\n\nThe case studies illustrate several possible paths forward. Changes to MHCflurry and cyvcf2 were incorporated into their original upstream projects, while rustar-aligner moved under new community stewardship because the original project had been abandoned. Where coordination with existing maintainers is available, it should begin as early as possible. When a separate implementation is necessary, it needs a clear owner and a credible maintenance plan. Without that, today\u2019s modern rewrite can become tomorrow\u2019s abandoned code rather than reliable scientific infrastructure.\n\n## Toward more durable scientific software\n\nThis field report is retrospective and exploratory, but the case studies point to a practical shift in how scientific software is developed. Coding agents such as Codex can significantly lower the cost of maintenance, migration, optimization, and new implementations. Their long-term scientific value still depends on human decisions around what to build, how to verify it, and who will maintain it. The deeper change is not simply that researchers can produce more software, but that they can focus more of their effort on defining, validating, and stewarding the tools.\n\nThese case studies show that agents can already accelerate the pace of iteration in scientific computing. As coding agents improve, researchers will be able to spend less time keeping analysis pipelines running and more time advancing their fields.",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
