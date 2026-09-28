@@ -96,9 +96,8 @@ def ingest_stage(
     defuddle_enriched = 0
     skipped_entries = 0
 
-    _repair_relative_urls(conn, enabled_sources)
-
     enabled_sources = [s for s in sources if s.enabled]
+    _repair_relative_urls(conn, enabled_sources)
     logger.info(
         "Ingest stage started: sources=%d defuddle_enabled=%s",
         len(enabled_sources),
