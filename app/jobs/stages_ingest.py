@@ -4,7 +4,6 @@ import json
 import logging
 import sqlite3
 import time
-from urllib.parse import urljoin
 from datetime import datetime, timedelta, timezone
 from typing import Any, Callable
 
@@ -20,7 +19,7 @@ from app.incidents import IncidentSignal, sync_incident_open_or_update, sync_inc
 from app.logging_helpers import log_source_complete
 from app.models import CheckStatus, ExtractionMethod
 from app.repos import article_repo, source_repo
-from app.utils import clean_title
+from app.utils import clean_title, resolve_feed_link
 
 
 logger = logging.getLogger("news.pipeline")
@@ -29,7 +28,7 @@ logger = logging.getLogger("news.pipeline")
 def _repair_relative_urls(conn, sources: list[SourceConfig]) -> None:
     """One-time self-heal: articles ingested before relative <link> URLs were
     resolved (e.g. sakana.ai) store paths like '/sail/' in url/canonical_url,
-    which enrichment can never fetch. Re-point them at the feed's origin."""
+    which enrichment can never fetch. Re-point them via resolve_feed_link."""
     rows = conn.execute(
         """
         SELECT a.article_id, a.url, a.canonical_url, s.feed_url
@@ -39,19 +38,19 @@ def _repair_relative_urls(conn, sources: list[SourceConfig]) -> None:
     ).fetchall()
     if not rows:
         return
-    from urllib.parse import urlparse
     repaired = 0
     for row in rows:
-        parsed = urlparse(row["feed_url"])
-        origin = f"{parsed.scheme}://{parsed.netloc}"
-        new_url = urljoin(origin, row["url"]) if not row["url"].startswith("http") else row["url"]
-        new_canon = urljoin(origin, row["canonical_url"]) if not row["canonical_url"].startswith("http") else row["canonical_url"]
+        new_url = resolve_feed_link(row["url"], row["feed_url"])
+        new_canon = resolve_feed_link(row["canonical_url"], row["feed_url"])
+        if new_url == row["url"] and new_canon == row["canonical_url"]:
+            continue
         conn.execute(
             "UPDATE articles SET url = ?, canonical_url = ? WHERE article_id = ?",
             (new_url, new_canon, row["article_id"]),
         )
         repaired += 1
-    logger.info("Repaired %d article(s) with relative URLs", repaired)
+    if repaired:
+        logger.info("Repaired %d article(s) with relative URLs", repaired)
 
 
 def _should_skip_entry(entry_title: str, skip_patterns: list[str] | None) -> bool:
@@ -221,13 +220,9 @@ def ingest_stage(
             with transaction(conn):
                 for entry in feed.entries:
                     try:
-                        link = str(entry.get("link", "")).strip()
-                        if link and not link.lower().startswith(("http://", "https://")):
-                            # Some feeds emit relative <link> hrefs (spec
-                            # violation; e.g. sakana.ai). Resolve against the
-                            # feed's own URL so enrichment can fetch them.
-                            base = feed.feed.get("link") or source.feed_url
-                            link = urljoin(base, link)
+                        link = resolve_feed_link(
+                            entry.get("link", ""), source.feed_url, feed.feed.get("link")
+                        )
                         title = clean_title(str(entry.get("title", "")).strip() or "(untitled)")
                         if _should_skip_entry(title, source.skip_patterns):
                             source_skipped_entries += 1

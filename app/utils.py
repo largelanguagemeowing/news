@@ -92,3 +92,17 @@ def clean_title(title: str) -> str:
         return title
     return DATE_PREFIX_RE.sub("", title)
 
+
+def resolve_feed_link(link: str, feed_url: str, feed_link: str | None = None) -> str:
+    """Resolve a feed entry's link to an absolute URL.
+
+    Some feeds emit spec-violating relative <link> hrefs (e.g. sakana.ai's
+    '/sail/'). Base is the feed's own page link when present, else the feed
+    URL itself; root-relative and file-relative paths both resolve correctly
+    against either. Absolute links and empty links pass through untouched.
+    """
+    link = str(link or "").strip()
+    if not link or link.lower().startswith(("http://", "https://")):
+        return link
+    return urljoin(feed_link or feed_url, link)
+

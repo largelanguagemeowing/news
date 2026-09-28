@@ -1,4 +1,4 @@
-from app.utils import canonicalize_url, normalize_text, pair_similarity, simhash64
+from app.utils import canonicalize_url, normalize_text, pair_similarity, resolve_feed_link, simhash64
 
 
 def test_canonicalize_url_removes_tracking_params() -> None:
@@ -19,3 +19,27 @@ def test_pair_similarity_prefers_near_duplicates() -> None:
     assert score_near > 0.8
     assert score_far < 0.8
 
+
+
+def test_resolve_feed_link_relative_against_feed_url() -> None:
+    # sakana.ai-style root-relative href with a feed-file URL as base
+    assert (
+        resolve_feed_link("/sail/", "https://sakana.ai/feed.xml")
+        == "https://sakana.ai/sail/"
+    )
+
+
+def test_resolve_feed_link_prefers_feed_page_link() -> None:
+    assert (
+        resolve_feed_link("/a/b", "https://x.com/feed.xml", "https://x.com/blog/")
+        == "https://x.com/a/b"
+    )
+
+
+def test_resolve_feed_link_passthrough_absolute_and_empty() -> None:
+    assert (
+        resolve_feed_link("https://example.com/p", "https://sakana.ai/feed.xml")
+        == "https://example.com/p"
+    )
+    assert resolve_feed_link("", "https://sakana.ai/feed.xml") == ""
+    assert resolve_feed_link(None, "https://sakana.ai/feed.xml") == ""
