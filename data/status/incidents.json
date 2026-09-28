@@ -25,12 +25,12 @@
     "incident_key": "pipeline:fetch",
     "kind": "pipeline-stage",
     "target_id": "fetch",
-    "status": "open",
+    "status": "resolved",
     "opened_at": "2026-05-17T01:09:58+00:00",
-    "updated_at": "2026-09-28T22:39:53+00:00",
-    "resolved_at": null,
+    "updated_at": "2026-09-28T22:46:32+00:00",
+    "resolved_at": "2026-09-28T22:46:32+00:00",
     "issue_number": 11,
-    "last_message": "Fetch pipeline failed in run d033940c3754: cannot access local variable 'enabled_sources' where it is not associated with a value\n\nTraceback (most recent call last):\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 140, in run_fetch_pipeline\n    metrics = stages_ingest.ingest_stage(\n        conn,\n    ...<18 lines>...\n        slow_source_latency_ms=SLOW_SOURCE_LATENCY_MS,\n    )\n  File \"/home/runner/work/news/news/app/jobs/stages_ingest.py\", line 99, in ingest_stage\n    _repair_relative_urls(conn, enabled_sources)\n                                ^^^^^^^^^^^^^^^\nUnboundLocalError: cannot access local variable 'enabled_sources' where it is not associated with a value\n"
+    "last_message": "Fetch pipeline completed successfully."
   },
   {
     "incident_key": "source:apple-machine-learning",
