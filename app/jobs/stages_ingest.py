@@ -4,6 +4,7 @@ import json
 import logging
 import sqlite3
 import time
+from urllib.parse import urljoin
 from datetime import datetime, timedelta, timezone
 from typing import Any, Callable
 
@@ -23,6 +24,34 @@ from app.utils import clean_title
 
 
 logger = logging.getLogger("news.pipeline")
+
+
+def _repair_relative_urls(conn, sources: list[SourceConfig]) -> None:
+    """One-time self-heal: articles ingested before relative <link> URLs were
+    resolved (e.g. sakana.ai) store paths like '/sail/' in url/canonical_url,
+    which enrichment can never fetch. Re-point them at the feed's origin."""
+    rows = conn.execute(
+        """
+        SELECT a.article_id, a.url, a.canonical_url, s.feed_url
+        FROM articles a JOIN sources s ON s.source_id = a.source_id
+        WHERE (a.url NOT LIKE 'http%' OR a.canonical_url NOT LIKE 'http%')
+        """
+    ).fetchall()
+    if not rows:
+        return
+    from urllib.parse import urlparse
+    repaired = 0
+    for row in rows:
+        parsed = urlparse(row["feed_url"])
+        origin = f"{parsed.scheme}://{parsed.netloc}"
+        new_url = urljoin(origin, row["url"]) if not row["url"].startswith("http") else row["url"]
+        new_canon = urljoin(origin, row["canonical_url"]) if not row["canonical_url"].startswith("http") else row["canonical_url"]
+        conn.execute(
+            "UPDATE articles SET url = ?, canonical_url = ? WHERE article_id = ?",
+            (new_url, new_canon, row["article_id"]),
+        )
+        repaired += 1
+    logger.info("Repaired %d article(s) with relative URLs", repaired)
 
 
 def _should_skip_entry(entry_title: str, skip_patterns: list[str] | None) -> bool:
@@ -67,6 +96,8 @@ def ingest_stage(
     not_modified_sources = 0
     defuddle_enriched = 0
     skipped_entries = 0
+
+    _repair_relative_urls(conn, enabled_sources)
 
     enabled_sources = [s for s in sources if s.enabled]
     logger.info(
@@ -191,6 +222,12 @@ def ingest_stage(
                 for entry in feed.entries:
                     try:
                         link = str(entry.get("link", "")).strip()
+                        if link and not link.lower().startswith(("http://", "https://")):
+                            # Some feeds emit relative <link> hrefs (spec
+                            # violation; e.g. sakana.ai). Resolve against the
+                            # feed's own URL so enrichment can fetch them.
+                            base = feed.feed.get("link") or source.feed_url
+                            link = urljoin(base, link)
                         title = clean_title(str(entry.get("title", "")).strip() or "(untitled)")
                         if _should_skip_entry(title, source.skip_patterns):
                             source_skipped_entries += 1
