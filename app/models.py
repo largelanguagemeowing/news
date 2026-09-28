@@ -13,6 +13,7 @@ class ExtractionMethod(str, Enum):
     COMPRESS_NEW = "compress_new"
     JINA = "jina"
     DEFUDDLE = "defuddle"
+    FXTWITTER = "fxtwitter"
 
 
 class SourceStatus(str, Enum):

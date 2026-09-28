@@ -7,7 +7,7 @@ import time
 import uuid
 
 from app.db import get_connection, init_db, transaction
-from app.jobs import pipeline
+from app.jobs import pipeline, x_articles
 from app.models import ExtractionMethod
 from app.repos import run_repo
 from app.settings import get_settings
@@ -31,6 +31,7 @@ def _enrich_with_rate_limit(
     max_markdown_new: int,
     markdown_new_used: int,
     only_method: str | None = None,
+    feed_guid: str | None = None,
 ) -> tuple[str, str, int]:
     """Enrich article using shared pipeline enrichment policy."""
     budget_remaining = max_markdown_new - markdown_new_used
@@ -40,6 +41,7 @@ def _enrich_with_rate_limit(
         title,
         body,
         only_method=only_method,
+        feed_guid=feed_guid,
         markdown_new_budget_remaining=budget_remaining,
         stop_on_markdown_rate_limit=True,
     )
@@ -76,14 +78,16 @@ def backfill_articles(
         placeholders = ",".join("?" for _ in exclude_ids)
         where_exclude = f"AND a.source_id NOT IN ({placeholders})"
     limit_clause = "" if all_items else "LIMIT ?"
+    media_exclusion = x_articles.media_url_exclusion_sql()
     query = f"""
-        SELECT a.article_id, a.url, a.title, a.body, a.source_id, a.extraction_method
+        SELECT a.article_id, a.url, a.title, a.body, a.source_id, a.extraction_method, a.feed_guid
         FROM articles a
         WHERE TRIM(a.url) != ''
         {where_missing}
         {where_skip_enriched}
         {where_source}
         {where_exclude}
+        {media_exclusion}
         ORDER BY a.published_at DESC
         {limit_clause}
     """
@@ -152,7 +156,8 @@ def backfill_articles(
         
         # Try enrichment with rate limit awareness
         new_body, method, rate_limit_remaining = _enrich_with_rate_limit(
-            url, source_id, title, body, max_markdown_new, markdown_new_used, only_method
+            url, source_id, title, body, max_markdown_new, markdown_new_used, only_method,
+            feed_guid=str(row["feed_guid"] or "") or None,
         )
         
         # Check if rate limited

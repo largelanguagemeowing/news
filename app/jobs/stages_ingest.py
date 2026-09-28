@@ -218,6 +218,10 @@ def ingest_stage(
                             )
 
                         fetched_at = utc_now_iso()
+                        # Feed entry guid (feedparser exposes it as `id`); for
+                        # feeds that link X Articles it carries the parent
+                        # tweet permalink used by the FxTwitter extractor.
+                        feed_guid = str(entry.get("id", "") or "").strip()
                         raw_published = entry.get("published") or entry.get("updated")
                         published, published_inferred = parse_date_inferred(raw_published)
                         if published_inferred:
@@ -245,6 +249,7 @@ def ingest_stage(
                             sh,
                             method,
                             published_inferred,
+                            feed_guid,
                         )
                         if was_inserted:
                             source_inserted += 1

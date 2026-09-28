@@ -19,6 +19,7 @@ def insert_article_if_new(
     simhash: str,
     extraction_method: str,
     published_at_inferred: bool = False,
+    feed_guid: str | None = None,
 ) -> bool:
     before = conn.total_changes
     conn.execute(
@@ -26,8 +27,8 @@ def insert_article_if_new(
         INSERT OR IGNORE INTO articles (
           source_id, url, canonical_url, title, title_norm, body, body_norm,
           published_at, fetched_at, title_hash, body_hash, simhash, extraction_method,
-          published_at_inferred
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          published_at_inferred, feed_guid
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             source_id,
@@ -44,6 +45,7 @@ def insert_article_if_new(
             simhash,
             extraction_method,
             1 if published_at_inferred else 0,
+            feed_guid,
         ),
     )
     return conn.total_changes > before

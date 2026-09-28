@@ -19,7 +19,7 @@ import trafilatura
 from dateutil import parser as dtparser
 
 from app.config import SourceConfig, load_sources
-from app.jobs import enrichment, next_flight
+from app.jobs import enrichment, next_flight, x_articles
 from app.db import get_connection, init_db, transaction
 from app.logging_helpers import log_stage_summary
 from app.models import ExtractionMethod
@@ -620,6 +620,7 @@ def enrich_with_policy(
     body: str,
     *,
     only_method: str | None = None,
+    feed_guid: str | None = None,
     markdown_new_budget_remaining: int | None = None,
     stop_on_markdown_rate_limit: bool = False,
 ) -> tuple[str, str, int, bool]:
@@ -652,6 +653,10 @@ def enrich_with_policy(
         ]
     if is_youtube_candidate:
         methods_order = [ExtractionMethod.YOUTUBE.value, *methods_order]
+    if x_articles.is_x_article_url(url):
+        # X Articles are login-walled: every other method misses; FxTwitter
+        # via the parent tweet is the only unauthenticated content source.
+        methods_order = [ExtractionMethod.FXTWITTER.value, *methods_order]
     methods_to_try = [only_method] if only_method else methods_order
 
     for method in methods_to_try:
@@ -693,6 +698,23 @@ def enrich_with_policy(
                     -1,
                     False,
                 )
+            logger.info(
+                "Enrichment miss source=%s method=%s url=%s", source_id, method, url
+            )
+            continue
+
+        if method == ExtractionMethod.FXTWITTER.value:
+            article_body = x_articles.fetch_x_article(
+                url, feed_guid, request_timeout_seconds=REQUEST_TIMEOUT_SECONDS
+            )
+            if article_body:
+                logger.info(
+                    "Enrichment success source=%s method=%s url=%s",
+                    source_id,
+                    method,
+                    url,
+                )
+                return truncate_for_storage(article_body), method, -1, False
             logger.info(
                 "Enrichment miss source=%s method=%s url=%s", source_id, method, url
             )

@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS articles (
   simhash TEXT NOT NULL,
   extraction_method TEXT NOT NULL DEFAULT 'rss',
   published_at_inferred INTEGER NOT NULL DEFAULT 0,
+  feed_guid TEXT,
   UNIQUE(source_id, canonical_url, published_at)
 );
 
@@ -210,9 +211,17 @@ def _migration_0002(conn: sqlite3.Connection) -> None:
     _add_column_if_missing(conn, "source_health", "last_http_status", "INTEGER", sh_cols)
 
 
+def _migration_0003(conn: sqlite3.Connection) -> None:
+    """Store the feed entry guid on articles (carries the parent tweet id for
+    X Article links; needed by the FxTwitter extractor)."""
+    art_cols = _get_columns(conn, "articles")
+    _add_column_if_missing(conn, "articles", "feed_guid", "TEXT", art_cols)
+
+
 MIGRATIONS: list[tuple[int, Callable[[sqlite3.Connection], None]]] = [
     (1, _migration_0001),
     (2, _migration_0002),
+    (3, _migration_0003),
 ]
 
 

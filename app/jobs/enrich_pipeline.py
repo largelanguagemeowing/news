@@ -23,7 +23,7 @@ from typing import Any
 from app.config import load_sources
 from app.db import get_connection, init_db
 from app.incidents import GitHubIssueClient, IncidentSignal, sync_incident_open_or_update
-from app.jobs import pipeline, stages_export
+from app.jobs import pipeline, stages_export, x_articles
 from app.jobs.pipeline import (
     DEFUDDLE_ENABLED,
     SETTINGS,
@@ -54,6 +54,7 @@ def _enrich_with_rate_limit(
     max_markdown_new: int,
     markdown_new_used: int,
     only_method: str | None = None,
+    feed_guid: str | None = None,
 ) -> tuple[str, str, int]:
     budget_remaining = max_markdown_new - markdown_new_used
     enriched_body, method, rate_limit_remaining, _rate_limited = pipeline.enrich_with_policy(
@@ -62,6 +63,7 @@ def _enrich_with_rate_limit(
         title,
         body,
         only_method=only_method,
+        feed_guid=feed_guid,
         markdown_new_budget_remaining=budget_remaining,
         stop_on_markdown_rate_limit=True,
     )
@@ -229,14 +231,16 @@ def _enrich_articles(
         placeholders = ",".join("?" for _ in exclude_ids)
         where_exclude = f"AND a.source_id NOT IN ({placeholders})"
     limit_clause = "" if limit is None else "LIMIT ?"
+    where_media = x_articles.media_url_exclusion_sql()
     query = f"""
-        SELECT a.article_id, a.url, a.title, a.body, a.source_id, a.extraction_method
+        SELECT a.article_id, a.url, a.title, a.body, a.source_id, a.extraction_method, a.feed_guid
         FROM articles a
         WHERE TRIM(a.url) != ''
         {where_missing}
         {where_skip_enriched}
         {where_source}
         {where_exclude}
+        {where_media}
         ORDER BY a.published_at DESC
         {limit_clause}
     """
@@ -294,6 +298,7 @@ def _enrich_articles(
 
         new_body, method, rate_limit_remaining = _enrich_with_rate_limit(
             url, sid, title, body, max_markdown_new, markdown_new_used, only_method,
+            feed_guid=str(row["feed_guid"] or "") or None,
         )
 
         if rate_limit_remaining == 0:
