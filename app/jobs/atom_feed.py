@@ -40,6 +40,7 @@ def build_atom_feed(summary: dict, articles: list[dict], site_url: str) -> str:
         )
     return (
         f"""<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="feed.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>news-aggregator:items</id>
   <title>News Aggregator Items</title>
