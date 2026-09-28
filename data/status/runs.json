@@ -1,8 +1,59 @@
 [
   {
+    "run_id": "eccfa9717da2",
+    "started_at": "2026-09-28T22:21:53+00:00",
+    "ended_at": "2026-09-28T22:23:29+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "36491830036",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/36491830036",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-09-28T22:21:53+00:00",
+        "ended_at": "2026-09-28T22:23:29+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 135,
+          "enriched": 124,
+          "updated": 124,
+          "unchanged": 11,
+          "misses": 11,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "rss": 11,
+            "trafilatura": 124
+          },
+          "per_source": {
+            "sakana-ai": {
+              "attempted": 10,
+              "enriched": 0,
+              "failed": 10
+            },
+            "huggingface-blog": {
+              "attempted": 123,
+              "enriched": 122,
+              "failed": 1
+            },
+            "smol-ai-news": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            }
+          },
+          "flush_batches": 5,
+          "defuddle_enabled": true,
+          "duration_ms": 95503.4
+        }
+      }
+    ]
+  },
+  {
     "run_id": "88b2ce8d4e2e",
     "started_at": "2026-09-28T22:19:58+00:00",
-    "ended_at": "2026-09-28T22:20:08+00:00",
+    "ended_at": "2026-09-28T22:20:20+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "36491645560",
@@ -709,36 +760,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 3931.78
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "7b3ec06c0f1c",
-    "started_at": "2026-09-26T11:42:45+00:00",
-    "ended_at": "2026-09-26T11:43:08+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "36239624844",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/36239624844",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-26T11:42:45+00:00",
-        "ended_at": "2026-09-26T11:42:55+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 6,
-          "duplicate_articles": 2452,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 3,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 10047.34
         }
       }
     ]
