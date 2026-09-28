@@ -98,6 +98,9 @@ jobs:
           DEFUDDLE_TIMEOUT_SECONDS: "20"
           DEFUDDLE_MAX_CHARS: "12000"
 
+      - name: Backfill feed_guid from source feeds
+        run: uv run python -m app.jobs.backfill_feed_guid
+
       - name: Run enrich pipeline
         id: enrich
         env:
