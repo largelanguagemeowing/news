@@ -162,3 +162,10 @@ sources:
     feed_url: https://www.dailydoseofds.com/newsletter/rss/
     default_category: ai-models
     enabled: true
+  - id: smol-ai-news
+    name: smol.ai AI News
+    feed_url: https://news.smol.ai/rss.xml
+    default_category: ai-models
+    skip_patterns:
+      - "^not much happened today"
+    enabled: true
