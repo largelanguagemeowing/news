@@ -43,3 +43,12 @@ def test_resolve_feed_link_passthrough_absolute_and_empty() -> None:
     )
     assert resolve_feed_link("", "https://sakana.ai/feed.xml") == ""
     assert resolve_feed_link(None, "https://sakana.ai/feed.xml") == ""
+
+
+def test_resolve_feed_link_ignores_relative_channel_link() -> None:
+    # sakana.ai: even the channel <link> is relative ("/") — must fall back
+    # to the feed URL, not urljoin against a schemeless base (no-op).
+    assert (
+        resolve_feed_link("/sail/", "https://sakana.ai/feed.xml", "/")
+        == "https://sakana.ai/sail/"
+    )
