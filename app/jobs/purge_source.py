@@ -1,6 +1,6 @@
-"""One-off: purge all articles (and their enrichment attempt history) for a
-single source from the database. Used when retiring a source whose articles
-should not remain in the corpus.
+"""Retire a source: remove its articles, attempt/dead-letter history, health
+rows, and the ``sources`` row itself. Used when a source should no longer
+exist in the corpus or in exported status JSON.
 
 Run with:
     uv run python -m app.jobs.purge_source --source-id sakana-ai [--dry-run]
@@ -21,19 +21,30 @@ def purge_source(source_id: str, dry_run: bool = False) -> int:
     conn = get_connection()
     init_db(conn)
 
-    row = conn.execute(
+    count = conn.execute(
         "SELECT COUNT(*) FROM articles WHERE source_id = ?", (source_id,)
-    ).fetchone()
-    count = row[0]
-    if not count:
-        logger.info("No articles for source=%s; nothing to purge", source_id)
+    ).fetchone()[0]
+    source_exists = (
+        conn.execute(
+            "SELECT 1 FROM sources WHERE source_id = ?", (source_id,)
+        ).fetchone()
+        is not None
+    )
+    if not count and not source_exists:
+        logger.info("No source or articles for source=%s; nothing to purge", source_id)
         return 0
 
     if dry_run:
-        logger.info("Dry run: would delete %d article(s) for source=%s", count, source_id)
+        logger.info(
+            "Dry run: would delete source=%s articles=%d (source row: %s)",
+            source_id,
+            count,
+            "yes" if source_exists else "no",
+        )
         return count
 
     with transaction(conn):
+        # Content and history keyed by the source's articles.
         conn.execute(
             """
             DELETE FROM article_enrichment_attempts
@@ -41,18 +52,46 @@ def purge_source(source_id: str, dry_run: bool = False) -> int:
             """,
             (source_id,),
         )
+        conn.execute(
+            """
+            DELETE FROM event_members
+            WHERE article_id IN (SELECT article_id FROM articles WHERE source_id = ?)
+            """,
+            (source_id,),
+        )
+        conn.execute(
+            """
+            UPDATE events SET representative_article_id = NULL
+            WHERE representative_article_id IN (
+              SELECT article_id FROM articles WHERE source_id = ?
+            )
+            """,
+            (source_id,),
+        )
         deleted = conn.execute(
             "DELETE FROM articles WHERE source_id = ?", (source_id,)
         ).rowcount
+        # Source-scoped history and the source row itself.
+        conn.execute(
+            "DELETE FROM article_ingest_attempts WHERE source_id = ?", (source_id,)
+        )
+        conn.execute("DELETE FROM dead_letters WHERE source_id = ?", (source_id,))
+        conn.execute("DELETE FROM source_checks WHERE source_id = ?", (source_id,))
+        conn.execute("DELETE FROM source_health WHERE source_id = ?", (source_id,))
+        conn.execute("DELETE FROM sources WHERE source_id = ?", (source_id,))
 
     logger.info(
-        "Purged source=%s articles=%d at %s", source_id, deleted, utc_now_iso()
+        "Purged source=%s articles=%d source_row=%s at %s",
+        source_id,
+        deleted,
+        "removed" if source_exists else "absent",
+        utc_now_iso(),
     )
     return deleted
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Purge a source's articles from the DB")
+    parser = argparse.ArgumentParser(description="Retire a source from the DB")
     parser.add_argument("--source-id", required=True)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
