@@ -1,5 +1,23 @@
 [
   {
+    "article_id": 723389,
+    "title": "How we will do better for Australia",
+    "url": "https://openai.com/index/how-we-will-do-better-for-australia",
+    "published_at": "2026-09-29T01:00:00+00:00",
+    "fetched_at": "2026-09-29T02:11:22+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI apologizes for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia\u2019s cyber defences.",
+    "topic": "policy",
+    "tags": [
+      "policy",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 717406,
     "title": "Claude Sonnet 5.5",
     "url": "https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/",
@@ -10860,7 +10878,7 @@
     "published_at": "2026-08-19T16:21:41+00:00",
     "fetched_at": "2026-09-28T22:20:08+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
+    "source_name": "Matt Pocock YouTube",
     "extraction_method": "rss",
     "body": "Matt Pocock talks with Robert C. Martin (Uncle Bob) about why software fundamentals still matter when working with coding agents, where they agree, and where they disagree.",
     "topic": "ai-models",
@@ -10913,29 +10931,6 @@
       "agents",
       "safety",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553013,
-    "title": "Cloud Agents and Cursor Harness Improvements",
-    "url": "https://cursor.com/changelog/08-19-26",
-    "published_at": "2026-08-19T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "cursor-changelog",
-    "source_name": "Cursor Changelog",
-    "extraction_method": "trafilatura",
-    "body": "Cloud Agents and Cursor Harness Improvements\nWe're continuing to improve cloud agents and the Cursor harness so always-on agents can operate as a system, building and shipping software on their own without the need for intervention at each loop.\nWith this release, cloud agents can automatically pick up work in response to events, hold a goal until it's met, and stay on course through long-running sessions.\nSubscriptions\nCursor can now monitor your PRs, watch a Slack thread, or run scheduled tasks. Cursor Agent subscribes to an event source (a thread or conversation) and wakes when something happens. Subscriptions are available for cloud agents only, for now.\nCloud agents automatically subscribe to PRs they create and drive them to completion, fixing CI and addressing bot comments. In Slack, ask @cursor check back in an hour and keep going until that feedback is in\n.\nCustom modes\nUse any skill as a Custom Mode: a skill that stays pinned in the chat. Custom modes keep agents focused on a skill - you can think about it like \"always on\" skills.\nFrom /\n, pick a skill and press \u2325\u23ce (Mac) or Alt+Enter (Windows), or choose Use as Mode.\nSubagents on their own machines\nSubagents can now run on their own virtual machines. Each gets an isolated copy of the project with clean context in its own cloud environment.\nHave subagents test the parent agent's changes in fresh environments or swarm independent fixes without collisions. Try run a swarm of subagents to test my app for bugs, each in its own environment\n.\n/goal\nUse /goal\nto give the agent a long-lived objective to work towards until it's fully complete.\nTry /goal fix all flaky tests and make CI green\nin a new chat. Pair it with a custom mode to follow a playbook, or /loop\nfor recurring check-ins.\nSteering improvements\nYou can now send a message to steer the agent while it's working without interruption. Follow-ups wait for the next tool call instead of cutting the agent off mid-action.\nType a follow-up and hit Send now, or press \u23ce twice.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "agents",
-      "coding",
-      "education",
-      "events",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
