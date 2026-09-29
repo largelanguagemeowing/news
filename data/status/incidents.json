@@ -25,12 +25,12 @@
     "incident_key": "pipeline:fetch",
     "kind": "pipeline-stage",
     "target_id": "fetch",
-    "status": "resolved",
+    "status": "open",
     "opened_at": "2026-05-17T01:09:58+00:00",
-    "updated_at": "2026-09-28T22:46:32+00:00",
-    "resolved_at": "2026-09-28T22:46:32+00:00",
+    "updated_at": "2026-09-29T08:53:25+00:00",
+    "resolved_at": null,
     "issue_number": 11,
-    "last_message": "Fetch pipeline completed successfully."
+    "last_message": "Fetch pipeline failed in run 809ea2449d86: UNIQUE constraint failed: articles.source_id, articles.canonical_url, articles.published_at\n\nTraceback (most recent call last):\n  File \"/home/runner/work/news/news/app/jobs/fetch_pipeline.py\", line 140, in run_fetch_pipeline\n    metrics = stages_ingest.ingest_stage(\n        conn,\n    ...<18 lines>...\n        slow_source_latency_ms=SLOW_SOURCE_LATENCY_MS,\n    )\n  File \"/home/runner/work/news/news/app/jobs/stages_ingest.py\", line 100, in ingest_stage\n    _repair_relative_urls(conn, enabled_sources)\n    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/news/news/app/jobs/stages_ingest.py\", line 47, in _repair_relative_urls\n    conn.execute(\n    ~~~~~~~~~~~~^\n        \"UPDATE articles SET url = ?, canonical_url = ? WHERE article_id = ?\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        (new_url, new_canon, row[\"article_id\"]),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\nsqlite3.IntegrityError: UNIQUE constraint failed: articles.source_id, articles.canonical_url, articles.published_at\n"
   },
   {
     "incident_key": "source:apple-machine-learning",
