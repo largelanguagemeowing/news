@@ -1,6 +1,9 @@
 import json
+from pathlib import Path
+
 import requests
-import sys
+
+ROOT = Path(__file__).resolve().parent
 
 
 def classify_with_ministral(title, body):
@@ -64,12 +67,10 @@ def classify_with_ministral(title, body):
 
 def main():
     # Load articles and existing labels
-    with open("/home/udit/Dev/personal/news-aggregator/data/status/articles.json") as f:
+    with open(ROOT / "data/status/articles.json") as f:
         articles = {a["article_id"]: a for a in json.load(f)}
 
-    with open(
-        "/home/udit/Dev/personal/news-aggregator/data/classifier/weak_labels.json"
-    ) as f:
+    with open(ROOT / "data/classifier/weak_labels.json") as f:
         weak_labels = {l["article_id"]: l for l in json.load(f)}
 
     # Test on first 10 articles
