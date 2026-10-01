@@ -1,8 +1,106 @@
 [
   {
+    "run_id": "152e052de9cf",
+    "started_at": "2026-10-01T11:17:40+00:00",
+    "ended_at": "2026-10-01T11:18:04+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "36854366746",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/36854366746",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-10-01T11:17:40+00:00",
+        "ended_at": "2026-10-01T11:18:04+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 38,
+          "enriched": 38,
+          "updated": 38,
+          "unchanged": 0,
+          "misses": 0,
+          "markdown_new_used": 2,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 29,
+            "youtube": 6,
+            "markdown_new": 2,
+            "next_flight": 1
+          },
+          "per_source": {
+            "simon-willison": {
+              "attempted": 4,
+              "enriched": 4,
+              "failed": 0
+            },
+            "google-deepmind-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "fireship": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "nvidia-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 4,
+              "enriched": 4,
+              "failed": 0
+            },
+            "matt-wolfe": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "openai-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "apple-machine-learning": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "claude-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "huggingface-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "anthropic-research": {
+              "attempted": 16,
+              "enriched": 16,
+              "failed": 0
+            },
+            "daily-dose-of-ds": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            }
+          },
+          "flush_batches": 2,
+          "defuddle_enabled": true,
+          "duration_ms": 24280.59
+        }
+      }
+    ]
+  },
+  {
     "run_id": "afa9ae1817f4",
     "started_at": "2026-10-01T06:54:37+00:00",
-    "ended_at": "2026-10-01T06:55:05+00:00",
+    "ended_at": "2026-10-01T06:55:19+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "36827229550",
@@ -715,36 +813,6 @@
         "ended_at": null,
         "status": "running",
         "metrics": {}
-      }
-    ]
-  },
-  {
-    "run_id": "3028cb85d105",
-    "started_at": "2026-09-28T22:25:34+00:00",
-    "ended_at": "2026-09-28T22:25:56+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "36492217181",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/36492217181",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-28T22:25:34+00:00",
-        "ended_at": "2026-09-28T22:25:42+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 0,
-          "duplicate_articles": 1932,
-          "dead_letters": 0,
-          "failed_sources": 1,
-          "skipped_sources": 0,
-          "not_modified_sources": 19,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 8497.59
-        }
       }
     ]
   }
