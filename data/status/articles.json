@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 778711,
+    "title": "Stop Rationing Tokens: Let the Harness Pick the Model \u2014 Kimchi by Cast AI",
+    "url": "https://www.youtube.com/watch?v=48YUYDjwfYY",
+    "published_at": "2026-10-02T20:00:14+00:00",
+    "fetched_at": "2026-10-02T21:11:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Token budgets are out of control, and limiting tokens cripples your developers. Cast AI took a different route.\n\nLaurent Gil, co-founder and president of Cast AI, and \u017dilvinas Urbonas, who leads engineering for Kimchi, show how Cast AI built its own open-source coding harness after its coding-agent bill took off. The key idea is to measure cost per task instead of cost per token, and to let the harness choose the right proprietary or open model for each task based on the outcome. They share three months of internal results with 300 employees, then demo Ferment for multi-hour autonomous tasks, Teleport for agent sessions that keep running after you close your laptop, and Studio for team collaboration.\n\nIn this talk:\n\u2022 Why cost per task matters more than cost per token\n\u2022 How an outcome-aware harness switches models automatically as new ones ship\n\u2022 Ferment: milestone-based, self-scoring autonomous coding runs that deploy to staging\n\u2022 Teleport and Studio: remote sandboxes and a shared Kanban board for agent sessions\n\nSPEAKERS\nLaurent Gil, Co-founder & President, Cast AI\nLinkedIn: https://www.linkedin.com/in/laurentgil/\nX: https://x.com/laurentgil\n\n\u017dilvinas Urbonas, Engineering lead, Kimchi (Cast AI)\nLinkedIn: https://www.linkedin.com/in/zilvinasurbonas/\n\nLINKS\nKimchi: https://kimchi.dev/\nKimchi on X: https://x.com/getkimchi\nKimchi (GitHub): https://github.com/getkimchi/kimchi\nCast AI: https://cast.ai\n\nCHAPTERS\n0:00 Intro\n0:13 Meet Kimchi\n0:52 Token costs out of control\n1:31 Why rationing tokens is the wrong answer\n2:26 Make tokens unlimited and cheap\n3:05 Cost per token vs cost per task\n4:30 A harness that picks the model\n4:49 Results: 2.5x savings in 3 months\n5:54 Watching the harness switch models\n7:23 How the harness works\n8:15 Ferment: multi-hour autonomous tasks\n9:05 Build, verify, deploy to staging\n11:03 Reading diffs isn't enough anymore\n11:48 Kimchi Teleport\n14:02 Why 62% of engineers code this way\n14:23 Kimchi Studio for teams\n17:04 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#CodingAgents #OpenSourceAI #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 773654,
     "title": "A model guide for the GPT-6 family",
     "url": "https://openai.com/index/practical-guide-building-gpt-6",
@@ -237,6 +258,23 @@
     "available": true
   },
   {
+    "article_id": 778726,
+    "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+    "url": "https://www.anthropic.com/news/claude-frontier-academy",
+    "published_at": "2026-10-02T00:00:00+00:00",
+    "fetched_at": "2026-10-02T21:11:04+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 774898,
     "title": "Language Discrimination Improves Linguistic Learning in Multilingual Speech Models",
     "url": "https://machinelearning.apple.com/research/language-discrimination-multilingual-learning",
@@ -250,6 +288,45 @@
     "tags": [
       "models",
       "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 778460,
+    "title": "Limits of Confidence in Diffusion",
+    "url": "https://machinelearning.apple.com/research/limits-confidence-diffusion",
+    "published_at": "2026-10-02T00:00:00+00:00",
+    "fetched_at": "2026-10-02T21:11:02+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Discrete diffusion, including remasking and uniform-state samplers, generate a sequence by writing multiple token positions per step, drawing each from a per-position distribution and choosing which positions to write from those same distributions. For domains of general interest (pixels, phonemes, or words) there are inherent dependencies between tokens. We show that a step matches the training distribution only when the positions it writes are conditionally independent given the tokens already fixed, that no product of per-position distributions can match a dependent group, and that\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 777215,
+    "title": "Chatham scales its capital markets expertise with OpenAI",
+    "url": "https://openai.com/index/chatham-financial",
+    "published_at": "2026-10-02T00:00:00+00:00",
+    "fetched_at": "2026-10-02T21:11:02+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "api",
+      "agents",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10984,93 +11061,6 @@
       "open-source",
       "api",
       "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551588,
-    "title": "Piloting the world's first double-blind AI evaluations",
-    "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
-    "published_at": "2026-08-27T12:59:16+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "trafilatura",
-    "body": "Piloting the world's first double-blind AI evaluations\nBuilding trust in proprietary model benchmarks using cryptographically secure environments\nImagine a student is set to take a high-stakes exam. If they accidentally peek at the test questions in advance, achieving a perfect score is influenced by this knowledge, making it a meaningless accomplishment. To truly measure what they know, they must have no visibility of the test questions until it's time to take the exam. That is the exact challenge the industry faces when evaluating advanced AI models. If a model has already seen the test questions - a problem known as benchmark contamination - the results can only be trusted to an extent.\nToday, we\u00e2re introducing the world\u00e2s first double-blind evaluation of a proprietary, frontier class AI model, which keeps external evaluations confined to a cryptographic \u00e2box\u00e2 where they can\u00e2t be used by models later to optimize performance ahead of testing. We're partnering with the Singapore AI Safety Institute, OpenMined, AVERI, and [MLCommons](https://mlcommons.org/2026/08/double-blind-reliability-evaluation/), to test a Gemini Flash Lite model against confidential benchmarks in a [privacy-preserving environment](https://cloud.google.com/blog/products/identity-security/verifiable-trust-in-the-ai-era-whats-new-in-confidential-computing), increasing evaluation integrity.\nAt Google, we assess our AI systems using a broad spectrum of evaluations throughout model development and deployment, but we don\u00e2t rely on internal testing alone. To identify potential blindspots, we work with a diverse group of external partners, including specialized research labs, civil society and national AI Safety and Security Institutes (AISIs), using their unique expertise to stress-test our models.\nAs AI models become more capable, ensuring the model has not seen the test questions or prompts in advance is critical, as this can skew the results. Policymakers, researchers, and enterprises need to trust that AI benchmarks accurately reflect a model's true capabilities and safety, but if models are able to \u00e2peek\u00e2 at the evaluation questions in advance, it can artificially inflate scores and undermine this trust.\nAlthough zero-logging protocols and rigorous contractual safeguards have long kept external test prompts confidential, incorporating technical and cryptographic safeguards marks a major step forward in secure model evaluation.\nHow double-blind evaluations work\nHistorically, high-stakes external evaluations required a tradeoff. Either evaluators handed over their testing prompts (risking the model provider seeing the test questions in advance), or the model provider handed over their model weights (risking their intellectual property).\nDouble-blind evaluations eliminate this compromise. By using Confidential Space within Google Cloud\u00e2s [Confidential Computing](https://cloud.google.com/security/products/confidential-computing) portfolio, we can cryptographically verify that both the external evaluation data and the proprietary model remain private to their respective owners. The evaluator cannot see the Gemini model weights, and Google cannot see the evaluator\u00e2s test prompts.\nA novel approach to building trust in model evaluations\nThis cryptographic evidence helps prevent benchmark contamination and protects sensitive data. As models become more capable this becomes particularly important for highly sensitive evaluations, such as those used for cybersecurity or by government bodies. Double-blind evaluations unlock the ability for independent organizations to rigorously test advanced models without compromising data sovereignty or security.\nWe hope this pilot establishes a new frontier for model oversight, helping the broader industry build safer, more reliable, and widely trusted AI systems. To learn more about our methodology and findings, read our [technical report](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/piloting-the-worlds-first-double-blind-ai-evaluations/double-blind-evaluations-technical-report.pdf).",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551725,
-    "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
-    "url": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
-    "published_at": "2026-08-27T09:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nAugust 27, 2026\n\n[Company](https://openai.com/news/company-announcements/)\n\n# Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training\n\nIn a randomized experiment with more than 1,000 students, access to ChatGPT and training in causal reasoning improved student work in complementary ways.\n\n[Read the paper(opens in a new window)](https://cdn.openai.com/pdf/novices-and-llm-august-2026.pdf)\n\nLoading\u2026\n\nShare\n\nAI helped students close an expertise gap\n\n- [AI helped students close an expertise gap](#ai-helped-students-close-an-expertise-gap)\n- [Critical-thinking training helped in a different way](#critical-thinking-training-helped-in-a-different-way)\n- [AI access can complement thinking skills](#ai-access-can-complement-thinking-skills)\n- [The challenge for schools](#the-challenge-for-schools)\n\n- [AI helped students close an expertise gap](#ai-helped-students-close-an-expertise-gap)\n- [Critical-thinking training helped in a different way](#critical-thinking-training-helped-in-a-different-way)\n- [AI access can complement thinking skills](#ai-access-can-complement-thinking-skills)\n- [The challenge for schools](#the-challenge-for-schools)\n\nWhat happens when students use ChatGPT on a real-world assignment? Do quality improvements come at the expense of originality?\n\nA new experiment from researchers at Bocconi University, in collaboration with OpenAI Economic Research, found distinct and complementary effects from ChatGPT access and critical-thinking training. Access to ChatGPT improved the quality and coherence of students\u2019 work, while an exercise in causal reasoning\u2014a form of critical thinking\u2014led students to generate more unique ideas. Students who received both ChatGPT access and the training showed both effects.\n\nThe results also highlight the importance of a holistic approach in assessing student progress. As AI makes it easier for students to produce polished answers, assignments may need to adapt to measure other desired qualities such as originality.\u00a0\n\n## AI helped students close an expertise gap\n\nDuring the experiment, more than 1,000 first-year undergraduate students at Bocconi University worked on a real-world business case developing marketing recommendations for the university\u2019s merchandise store.\n\nStudents were randomly assigned by class period into one of four groups that received: access to ChatGPT (GPT\u20114o), training in causal reasoning, both, or neither. Causal reasoning is a specific form of critical thinking related to linking cause and effect and explaining why a given solution may or may not work. The training students received was unrelated to AI, instead teaching students causal reasoning concepts through an exercise that involved a game, examples, questions, and feedback.\u00a0\n\nStudent submissions were evaluated by trained human graders using a five-point rubric. Separately, researchers used automated text analysis to measure each submission\u2019s number and variety of ideas, signs of causal reasoning, and similarity to submissions from three experts.\u00a0\n\n\n\n**\n\nThe students who had access to ChatGPT scored almost a full point higher on the five-point scale. Their answers included more ideas, followed clearer logic, and were more similar to recommendations written by experts. In other words, AI helped novices produce work that looked more professional. Importantly, students weren\u2019t simply handing over their assignments to ChatGPT. They still had to decide what to ask, evaluate the responses, and choose what went into their final submission.\u00a0\n\n## Critical-thinking training helped in a different way\n\nThe critical-thinking exercise produced a more unexpected result. Students who completed the exercise explained more clearly why their ideas might work and when they might fail, but did not score higher on the grading rubric, which only measured how well the recommendations addressed two standard marketing goals: increasing awareness and use of the university store.\n\nText analysis revealed another benefit that the rubric did not capture. Across the group, students who completed the exercise produced a wider range of ideas that were more distinct when compared to what their peers produced. This matters because a traditional rubric, like the one used to grade the students in this experiment, can reward a clear, well-structured answer while overlooking whether a student came up with an idea that no one else did.\n\n## AI access can complement thinking skills\n\nIt can be tempting to frame the education debate as a choice of whether students should learn to think for themselves or learn to use AI.\n\nThis experiment highlights that both are valuable in different ways. AI access helped students produce answers that were more polished, idea-rich, and more logically coherent. Critical-thinking training encouraged them to develop a wider range of original ideas, question assumptions, and explain why their ideas should work.\n\nTogether, they are complementary.\u00a0\n\nStudents who received both ChatGPT access and the critical-thinking exercise showed the benefits of each. Their idea variety matched that of students who completed only the exercise. Their rubric scores and number of ideas were similar to those of students with ChatGPT access alone. Their work also showed stronger logical coherence and more evidence of looking for explanations and questioning assumptions. Overall, this group showed gains across the widest range of measures.\u00a0\n\nThe experiment\u2019s randomized design allowed researchers to dig into these different factors, separating the effects of ChatGPT access and the critical-thinking exercise from the effect of combining them. That makes the experiment a particularly useful contribution to a rapidly growing body of research on the impact of AI on students and how to best structure and support their learning.\u00a0\n\n## The challenge for schools\n\nThe difference between the impact of the exercise on students and what was captured by the traditional-style rubric points to a broader challenge facing schools.\u00a0\n\nIf AI can help students produce polished, expert-like work, then looking only at the final answer tells us less about what a student actually understands.\u00a0\n\nMany educators are already grappling with the implication that assignments and evaluations may need to change. This follows a multi-decade pattern of technology and education evolving together in service of supporting the skills students need in modern society.\n\nThese results highlight the importance of rewarding students for producing work that reflects originality, reasoning, and consideration of multiple approaches, not just the most conventional or polished answers.\u00a0\n\n**The takeaway:** AI helped students make their answers better. Critical-thinking training helped make their ideas broader. The two play complementary roles in preparing students for the future.\n\n- [2026](https://openai.com/news/?tags=2026)\n- [Economic Research](https://openai.com/news/?tags=economic-research)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Introducing the Australian Youth Safety BlueprintCompanySep 18, 2026 Introducing the Australian Youth Safety Blueprint - Company - Sep 18, 2026](https://openai.com/index/australian-youth-safety-blueprint/)\n\n\n\n[Introducing Astra for LawCompanySep 17, 2026 Introducing Astra for Law - Company - Sep 17, 2026](https://openai.com/index/astra-for-law/)\n\n\n\n[Paul Christiano joins OpenAI Foundation BoardCompanySep 9, 2026 Paul Christiano joins OpenAI Foundation Board - Company - Sep 9, 2026](https://openai.com/index/paul-christiano-joins-openai-foundation-board/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553746,
-    "title": "Intelligence is collective, not artificial \u2014 Prof. Michael I. Jordan (UC Berkeley / Inria)",
-    "url": "https://www.youtube.com/watch?is=BWVtrjeJVxxI1dEw&v=AREWYbVtX64&feature=youtu.be",
-    "published_at": "2026-08-27T06:41:08+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "youtube",
-    "body": "recommended viewing\n\nauthor: Machine Learning Street Talk\n\nvideo: https://www.youtube.com/embed/AREWYbVtX64",
-    "topic": "education",
-    "tags": [
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551726,
-    "title": "Expanding OpenAI\u2019s presence in Brazil",
-    "url": "https://openai.com/index/expanding-our-presence-in-brazil",
-    "published_at": "2026-08-27T03:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nAugust 27, 2026\n\n[Company](https://openai.com/news/company-announcements/)\n\n# Expanding OpenAI\u2019s presence in Brazil\n\nWith the launch of commercial operations in Brazil, we\u2019re deepening our long-term commitment to the country and helping turn rapid AI adoption into broad economic and social benefits.\n\nLoading\u2026\n\nShare\n\nFrom AI adoption to economic impact\n\n- [From AI adoption to economic impact](#from-ai-adoption-to-economic-impact)\n- [Working with Brazilian organizations](#working-with-brazilian-organizations)\n- [Building alongside Brazil\u2019s developer community](#building-alongside-brazils-developer-community)\n- [How Brazil creates with AI](#how-brazil-creates-with-ai)\n- [A long-term commitment](#a-long-term-commitment)\n\n- [From AI adoption to economic impact](#from-ai-adoption-to-economic-impact)\n- [Working with Brazilian organizations](#working-with-brazilian-organizations)\n- [Building alongside Brazil\u2019s developer community](#building-alongside-brazils-developer-community)\n- [How Brazil creates with AI](#how-brazil-creates-with-ai)\n- [A long-term commitment](#a-long-term-commitment)\n\nWe\u2019re excited to expand our work in Brazil with the launch of our commercial operations. Based in S\u00e3o Paulo, our local team will work with Brazilian businesses, developers, researchers, and public institutions to help translate the country\u2019s rapid adoption of AI into economic growth and meaningful progress.\n\nBrazil is one of ChatGPT\u2019s three largest markets by weekly active users. The number of users in the country has nearly doubled over the past year, and people in Brazil now send approximately 215 million messages to ChatGPT each day.\n\n> \u201cThe most exciting part isn\u2019t just the scale of adoption. It\u2019s the creativity and the energy behind it. Brazil has an extraordinary community of entrepreneurs, businesses and developers that are finding distinct ways to put AI to work and building in Brazil for Brazil. That\u2019s why we\u2019re deepening our presence here. This is a long-term commitment to working alongside the Brazilian ecosystem to ensure that AI creates meaningful economic and social value across the country. I\u2019m very excited about what we can build together in Brazil.\u201d\n\nSam Altman, CEO of OpenAI\n\n\n\n## From AI adoption to economic impact\n\nAn [independent study by RegLab\u2060(opens in a new window)](https://reglab.com.br/pesquisa-impacto-ia-economia-brasileira-pib-2/), funded by OpenAI, estimates that AI could add nearly R$1 trillion to Brazil\u2019s economy by 2030. Realizing this opportunity will require more than access to technology. It will also require skills, research, responsible deployment, and close collaboration with Brazilian institutions.\n\nNew country-level data shows how Brazilians are moving from experimenting with AI to using it in their daily work. In June 2026, 35% of classified messages from individual ChatGPT accounts in Brazil were work-related, compared with 30% globally. Of those work-related messages, 53% asked ChatGPT to complete a task or produce an output\u2014from drafting proposals and analyzing information to writing code and creating marketing materials.\n\nThat shift is already visible among Brazilian entrepreneurs. Jewelry designer Lina Prades first used ChatGPT to create social media content before expanding its use to advertising, pricing, inventory, and production. With no technical background, she built two management apps: one now supports her daily operations, while the other could eventually become a product for other jewelers.\n\nAt Tapioca da Ari, Ariane Santos uses ChatGPT to develop recipes, refine menus, and communicate more consistently with customers, helping make her food business more organized, visible, and ready to grow.\n\nBrazil\u2019s developer ecosystem is growing just as quickly. By **number of developers using the OpenAI API, Brazil ranks second globally**. It is also Codex\u2019s largest market in Latin America. Since the beginning of 2026, the number of weekly Codex users in Brazil has grown more than elevenfold, while daily interactions have increased nearly thirtyfold.\n\nAdoption is also accelerating inside organizations. The number of ChatGPT Enterprise seats in Brazil has increased fivefold year over year, and Brazil ranks among OpenAI\u2019s ten largest markets by number of business customers.\n\n\n\n## Working with Brazilian organizations\n\nOur local team will help Brazilian organizations identify valuable use cases, prepare their people, establish responsible governance, and scale what works. Many Brazilian companies are using OpenAI technology across financial services, commerce, mobility, customer service, software development, and internal operations. Their work points to the range of products and experiences Brazilian organizations can build next.\n\nThrough these new collaborations, we are deepening our commitment to Brazil, actively supporting professionals, companies, researchers, academia, and the government as they shape a vibrant, AI-powered future for the country. Here are a few examples of this work in action:\n\n- **Expanding access at ITA:** We are partnering with the Instituto Tecnol\u00f3gico de Aeron\u00e1utica to provide ChatGPT Edu accounts for students, faculty, and staff, together with credits for advanced capabilities including reasoning models and Codex.\n- **Supporting Brazilian research:** Through our [global grants program\u2060](https://openai.com/index/new-policy-ideas-for-the-intelligence-age/), the Instituto de Matem\u00e1tica Pura e Aplicada (IMPA) will study what research institutions need to translate AI access into scientific progress. The Hospital das Cl\u00ednicas da Faculdade de Medicina da Universidade de S\u00e3o Paulo (HCFMUSP) will evaluate a people-first clinical information infrastructure prototype for Brazil\u2019s public health system, preserving physician judgment and human oversight.\n- **Building responsible AI literacy:** OpenAI and ENTER, a Brazilian AI unicorn in the legal sector, are developing a national AI literacy program for legal professionals across Brazil. The training will combine the use of ChatGPT with training to help participants use AI critically, safely and effectively.\n- **Supporting small businesses:** Together with Est\u00edmulo, we are developing free, mobile-first AI training for micro and small-business owners across Brazil. The program will cover practical applications in marketing, sales, customer service, finance, productivity, and management.\n- **Exploring better public services:** OpenAI and the city of S\u00e3o Paulo, through Prodam, signed a memorandum of understanding to make AI available to S\u00e3o Paulo and more public administrations across Brazil.\n\n## Building alongside Brazil\u2019s developer community\n\nIn the week leading up to this launch, we held our first **OpenAI para Devs** roadshow. The program brought together 285 developers, startup engineers, founders, technical creators, and other builders in Recife, Rio de Janeiro, Florian\u00f3polis, and S\u00e3o Paulo.\n\n\n\nDelivered entirely in Portuguese, the roadshow included technical presentations, live Codex demonstrations, hands-on workshops, and sessions featuring local partners Adapta and Brendi. It also gave our team an opportunity to hear directly from developers across Brazil about the tools, technical resources, and local support they need.\n\nThe roadshow culminated in the [**OpenAI Hackathon Brasil**\u2060(opens in a new window)](https://cerebralvalley.ai/e/openai-hackathon-brasil), a full-day gathering in S\u00e3o Paulo where developers used Codex to turn ideas into projects designed around Brazilian needs. Through hands-on building, technical support, and community exchange, participants experimented, collaborated, and showed what Brazilian developers can build for their communities.\n\nThe winning team built integrally with Codex a prototype to help micro and small businesses navigate public procurement opportunities. Their project use public data, the tool lets entrepreneurs describe their businesses by voice, matches their profiles with relevant opportunities and eligibility requirements, and maps nearby public-sector demand\u2014turning a familiar challenge into a practical product in just a few hours.\n\n## How Brazil creates with AI\n\nBrazil is not only adopting AI at scale; it is also developing distinctive and creative ways to use it. The country has the world\u2019s highest rate of ChatGPT Images use and ranks among the five largest markets for voice and dictation. The number of weekly voice users in Brazil has doubled over the past year.\n\nThat creativity came to life in our collaboration with Alcione, one of Brazil\u2019s most iconic artists, who explored ChatGPT Voice in a playful conversation about love and relationships.\u00a0\n\nOur work in Brazil is a two-way exchange. We want to make our technology more accessible while listening to and learning from a community whose ideas and cultural context can help shape how people use ChatGPT around the world. In that spirit, we held OpenAI\u2019s first-ever Creators Day in S\u00e3o Paulo.\n\nThat same spirit is visible across Brazil\u2019s creator community. Visual artist Dell Nunes uses AI to portray Brazil\u2019s diversity and communities on the country\u2019s urban peripheries, incorporating local cultural references into AI-generated art and expanding how Brazil is represented.\n\nPaulo Aguiar works across text, images, video, and music, using AI while keeping human creative direction at the center. Tha\u00eds Martan plans to use ChatGPT Work during a journey by catamaran, incorporating AI into how she works and explores while at sea.\n\nTogether, their work shows how Brazilian creators are not simply adopting AI, but helping shape what it can become.\n\n\n\nCreators Day is part of a broader, long-term effort to work with Brazil\u2019s creator community: listening to their needs, sharing tools and knowledge, and supporting creators as they explore new forms of expression, connect with their audiences, and build more sustainable creative businesses.\n\n## A long-term commitment\n\nLaunching our commercial operations marks a new chapter for **OpenAI in Brazil**. We want to learn from the distinctive ways Brazilians use and build with AI while helping more people and organizations turn adoption into better products, stronger businesses, improved services, and broader opportunity.\n\nWe\u2019re proud to be building alongside Brazil\u2014and we\u2019re just getting started.\n\nIf you are interested in joining us, please check out the open positions in S\u00e3o Paulo on our [careers page\u2060\u2060](https://openai.com/careers/search/).\n\n- [2026](https://openai.com/news/?tags=2026)\n- [Global Affairs](https://openai.com/news/?tags=global-affairs)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Introducing the Australian Youth Safety BlueprintCompanySep 18, 2026 Introducing the Australian Youth Safety Blueprint - Company - Sep 18, 2026](https://openai.com/index/australian-youth-safety-blueprint/)\n\n\n\n[Introducing Astra for LawCompanySep 17, 2026 Introducing Astra for Law - Company - Sep 17, 2026](https://openai.com/index/astra-for-law/)\n\n\n\n[Paul Christiano joins OpenAI Foundation BoardCompanySep 9, 2026 Paul Christiano joins OpenAI Foundation Board - Company - Sep 9, 2026](https://openai.com/index/paul-christiano-joins-openai-foundation-board/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "safety",
       "benchmark"
     ],
     "dearrow_thumbnail_url": "",

@@ -1,8 +1,38 @@
 [
   {
+    "run_id": "561432b31ba5",
+    "started_at": "2026-10-02T21:11:01+00:00",
+    "ended_at": "2026-10-02T21:11:07+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "37065213411",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/37065213411",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-10-02T21:11:01+00:00",
+        "ended_at": "2026-10-02T21:11:07+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 8,
+          "duplicate_articles": 2771,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 8,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 6080.63
+        }
+      }
+    ]
+  },
+  {
     "run_id": "762e47fc2533",
     "started_at": "2026-10-02T16:31:03+00:00",
-    "ended_at": "2026-10-02T16:31:09+00:00",
+    "ended_at": "2026-10-02T16:31:22+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "37034358408",
@@ -849,36 +879,6 @@
           "flush_batches": 30,
           "defuddle_enabled": true,
           "duration_ms": 1295419.08
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "6140b258f464",
-    "started_at": "2026-09-29T09:23:31+00:00",
-    "ended_at": "2026-09-29T09:23:48+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "36548792109",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/36548792109",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-09-29T09:23:31+00:00",
-        "ended_at": "2026-09-29T09:23:41+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 4,
-          "duplicate_articles": 2715,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 11,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 9352.08
         }
       }
     ]
