@@ -1,5 +1,93 @@
 [
   {
+    "article_id": 781470,
+    "title": "The 5 Levels of Self-Driving Production \u2014 Eric Schwartz, Traversal",
+    "url": "https://www.youtube.com/watch?v=y-OVWZD4j6U",
+    "published_at": "2026-10-02T23:30:30+00:00",
+    "fetched_at": "2026-10-03T00:37:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Coding agents made development faster. They also made production a lot harder to debug.\n\nEric Schwartz, product manager at Traversal, explains why more AI-written code means more time spent troubleshooting, why observability dashboards tell you what broke but not why, and why root cause analysis is a causal problem rather than an observability problem. He lays out five levels of 'self-driving production' and shares case studies on alert intelligence for a PepsiCo supply chain team and incident root cause analysis at American Express. He closes with five questions to ask any AI SRE.\n\nIn this talk:\n\u2022 How coding agents shift engineering time from building to troubleshooting\n\u2022 Why multi-hop root cause analysis is so hard for humans and LLMs\n\u2022 The five levels of self-driving production, from war rooms to closed-loop fixes\n\u2022 Five questions for evaluating an AI SRE\n\nSPEAKER\nEric Schwartz, Product Manager, Traversal\nLinkedIn: https://www.linkedin.com/in/ericschwartz30/\n\nLINKS\nTraversal: https://www.traversal.com\nSelf-Driving Production (blog): https://www.traversal.com/blog/self-driving-production\n\nCHAPTERS\n0:00 Intro\n0:12 Agenda\n1:02 How coding agents changed the SDLC\n2:02 More code, more troubleshooting\n2:32 The cost of troubleshooting\n3:12 Why observability tools stop short\n4:01 Even LLMs struggle with root cause\n4:31 Why root cause is hard: multi-hop failures\n5:46 Root cause is a causal problem\n6:26 Self-driving production, defined\n7:06 The five levels of autonomy\n8:50 Traversal at enterprise scale\n9:35 Use cases\n11:05 Case study: alert intelligence at PepsiCo\n12:55 Case study: incident RCA at American Express\n14:44 Five questions to ask an AI SRE\n16:39 Traversal's stack\n17:39 Production world model and causal search\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#SRE #AIOps #AIEngineer",
+    "topic": "robotics",
+    "tags": [
+      "robotics",
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 781471,
+    "title": "Lessons from Generating 12 Trillion Synthetic Tokens \u2014 Bogdan Gaza, DatologyAI",
+    "url": "https://www.youtube.com/watch?v=FQwTqUmcbRg",
+    "published_at": "2026-10-02T23:30:27+00:00",
+    "fetched_at": "2026-10-03T00:37:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The web has roughly 30 trillion tokens of usable text. Frontier pre-training needs more. Here's how DatologyAI generates the rest.\n\nBogdan Gaza, co-founder and CTO of DatologyAI, shares the engineering lessons from running synthetic data jobs at trillion-token scale, including a recent run of about 12 trillion tokens across web, math and code. He covers BeyondWeb, DatologyAI's rephrasing-based synthetic data recipe, and the move from a split Slurm/Kubernetes setup to a single Ray, KubeRay and vLLM pipeline on EKS on HyperPod. He then walks through four bottlenecks: S3 metadata, GPU failures, cross-cluster scheduling and inference tuning.\n\nIn this talk:\n\u2022 Why seeded rephrasing beats asking a model for synthetic data from scratch\n\u2022 Batching S3 metadata fetches to cut 9\u201311 days down to about 2 hours\n\u2022 Right-sized partitions plus checkpointing for recoverable GPU failures\n\u2022 Scheduling CPU and GPU together across clusters, and vLLM flag sweeps for about 40% more throughput\n\nSPEAKER\nBogdan Gaza, Co-founder & CTO, DatologyAI\nLinkedIn: https://www.linkedin.com/in/bogdangaza/\nX: https://x.com/hurrycane\n\nLINKS\nDatologyAI: https://www.datologyai.com\nBeyondWeb (blog): https://www.datologyai.com/blog/beyondweb\nBeyondWeb (paper): https://arxiv.org/pdf/2508.10975\n\nCHAPTERS\n0:00 Intro\n0:12 Synthetic data at trillion-token scale\n0:27 Why synthetic data: the data wall\n1:47 What DatologyAI does\n2:22 BeyondWeb results\n4:11 How rephrasing works\n5:51 Where we started: Slurm vs Kubernetes\n6:31 The stack: Ray, KubeRay, vLLM\n7:41 Today's setup on HyperPod\n8:40 One workflow: curate, synthesize, train, eval\n9:30 Engineering lessons at scale\n9:40 Bottleneck 1: S3 metadata (11 days \u2192 2 hours)\n12:29 Bottleneck 2: GPU instability and checkpointing\n14:59 Bottleneck 3: Cross-infrastructure orchestration\n17:53 Bottleneck 4: Inference tuning (+40% throughput)\n18:53 Recap\n19:13 From 30B to 12T synthetic tokens\n20:02 We're hiring\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#SyntheticData #MLInfra #AIEngineer",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 781472,
+    "title": "Why AI Didn't Actually Make You Ship Faster \u2014 Gabriel Spencer-Harper, Meticulous",
+    "url": "https://www.youtube.com/watch?v=HLTa7Vcs4X0",
+    "published_at": "2026-10-02T21:30:22+00:00",
+    "fetched_at": "2026-10-03T00:37:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "AI writes code faster than humans can review it. Verification is now your bottleneck.\n\nGabriel Spencer-Harper, co-founder and CEO of Meticulous, explains why assertion-based tests can't keep up with AI-generated code, and what near-exhaustive frontend verification with zero developer effort looks like. He demos how Meticulous records real user flows, replays them on every pull request and shows visual before/after diffs. He also explains the three technologies that make it work: fully mocked network traffic, a deterministic browser and coverage-guided flow selection.\n\nIn this talk:\n\u2022 Why the space of possible regressions is too big for hand-written assertions\n\u2022 How record-and-replay visual diffing works on every PR\n\u2022 Making the browser deterministic to eliminate flaky tests\n\u2022 Why code coverage finally means 'code tested' when you screenshot every step\n\nSPEAKER\nGabriel Spencer-Harper, Co-founder & CEO, Meticulous\nLinkedIn: https://www.linkedin.com/in/gabrielsharper/\n\nLINKS\nMeticulous: https://www.meticulous.ai\n\nCHAPTERS\n0:00 Intro\n0:12 Meet Gabe\n0:27 Verification is the new bottleneck\n1:12 What Meticulous does\n1:47 AI writes code faster than we can review it\n2:07 Why assertion tests aren't enough\n2:27 Would you hit merge on this PR?\n3:01 The cost: bugs, flaky tests, lost time\n3:46 What exhaustive verification unlocks\n4:16 Demo: record and replay\n5:51 Reviewing visual diffs on a PR\n7:11 How it works: mocked network\n8:01 A deterministic browser\n8:41 Coverage-guided flow selection\n9:25 Why code coverage finally means something\n10:45 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AICoding #Testing #AIEngineer",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "video",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 781473,
+    "title": "Why 99% Accurate Browser Agents Still Fail \u2014 Derek Meegan, Browserbase",
+    "url": "https://www.youtube.com/watch?v=5xi_S1f9sDU",
+    "published_at": "2026-10-02T21:30:15+00:00",
+    "fetched_at": "2026-10-03T00:37:39+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A browser agent that's 99% accurate per step succeeds only about 36% of the time over 100 steps. Here's how to beat that math.\n\nDerek Meegan, software engineer at Browserbase, explains what separates a browser-agent demo from thousands of unattended production runs. He covers how agents see the web (text, screenshots and code), why cost builds up with every step while value only comes at the end, and why you should measure success per transaction, not per run. Then he walks through a real architecture for automating a health insurance portal: deterministic tools, OCR verification, pulled-out authentication and skills that keep the agent on the critical path.\n\nIn this talk:\n\u2022 The three ways agents interact with the browser\n\u2022 Why compounding step risk kills long trajectories, and how retries change the picture\n\u2022 Performance first, then cost and maintainability as engineering problems\n\u2022 A production architecture that takes everything deterministic out of the model's hands\n\nSPEAKER\nDerek Meegan, Software Engineer, Browserbase\nLinkedIn: https://www.linkedin.com/in/derekmeegan/\nX: https://x.com/derekmeegan\nWebsite: https://www.derekmeegan.com/\n\nLINKS\nBrowserbase: https://www.browserbase.com\nStagehand: https://www.browserbase.com/stagehand\nStagehand (GitHub): https://github.com/browserbase/stagehand\n\nCHAPTERS\n0:00 Intro\n0:12 Demo vs production\n0:47 Agenda\n1:27 How agents interact with the web\n2:32 Text, screenshots or code\n3:17 Types of browser trajectories\n4:32 No partial credit\n5:22 The 99% \u2192 36% problem\n6:12 Profit = revenue \u2212 cost\n7:37 Performance, cost, maintainability\n8:12 What success looks like\n8:42 Per-run vs per-transaction success\n9:32 Breaking down cost\n10:11 Maintenance over time\n10:46 Risks: the web fights back\n12:06 Architecture: automating an insurance portal\n13:01 A deterministic download tool\n13:31 Verifying with OCR\n13:56 Pulling out authentication\n14:36 Skills as standard operating procedures\n15:26 The final system\n16:21 Welcome to production\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#BrowserAgents #AIAgents #AIEngineer",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 778711,
     "title": "Stop Rationing Tokens: Let the Harness Pick the Model \u2014 Kimchi by Cast AI",
     "url": "https://www.youtube.com/watch?v=48YUYDjwfYY",
@@ -10978,92 +11066,6 @@
       "media"
     ],
     "dearrow_thumbnail_url": "https://dearrow-thumb.ajay.app/api/v1/getThumbnail?videoID=UuqSy1jPSUw&time=255.0634690699659",
-    "available": true
-  },
-  {
-    "article_id": 553745,
-    "title": "He Co-Invented the Transformer. Now: Continuous Thought Machines [Llion Jones / Luke Darlow]",
-    "url": "https://www.youtube.com/watch?is=804JOcf4ah24rhEO&v=DtePicx_kFY&feature=youtu.be",
-    "published_at": "2026-08-27T16:16:46+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "youtube",
-    "body": "recommended viewing\n\nauthor: Machine Learning Street Talk\n\nvideo: https://www.youtube.com/embed/DtePicx_kFY",
-    "topic": "education",
-    "tags": [
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551587,
-    "title": "Gemini Omni 1.1 Flash lets you build with more control",
-    "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
-    "published_at": "2026-08-27T16:11:32+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "trafilatura",
-    "body": "Gemini Omni 1.1 Flash lets you build with more control\nToday, we\u2019re introducing Gemini Omni 1.1 Flash, a new suite of creative controls and generative video capabilities to support developers. [Gemini Omni](https://deepmind.google/models/gemini-omni/) brought real-world reasoning to generative creation, and today\u2019s updates make Omni 1.1 production-ready for professional use via the Gemini API in Google AI Studio.\nWhether you\u2019re building generative video workflows, creative tools, or media editing software, these updates make generative video more controllable, faster to iterate on, and polished for real-world deployment. Here\u2019s a look at what\u2019s new:\nExtend scenes for longer storytelling\nScene extension allows you to take an existing video and continue generating footage seamlessly from where it left off.\nWith Omni 1.1, the model can now analyze up to 10 seconds of prior context \u2014 a leap from previous models that only referenced the final second. The result is improved visual consistency and narrative adherence, letting you build longer stories or branch into new creative directions. You can extend videos in 10-second increments up to a total cumulative length of 40 seconds.\nHere\u2019s how you can extend your scene with the Gemini API:\nfrom google import genai\nclient = genai.Client()\ninteraction = client.interactions.create(\nmodel=\"gemini-omni-1.1-flash\",\nprevious_interaction_id=previous_video_interaction.id,\ninput=[\n{\"type\": \"text\", \"text\": \"Continue the scene.\"}\n],\nresponse_format={\n\"resolution\": \"360p\",\n},\n)\nSpecify first and last frames\nAchieve smooth transitions and camera movements by specifying the starting and ending frames of a shot. Omni 1.1 generates continuous video between two keyframes, making it ideal for complex camera orbits, zoom transitions, or seamless looping clips.\nPrompt 1: A close-up low-angle shot of a stylish drummer in a beige suit playing a red drum kit in a grand hall transitions as the camera whip-pans to the side, revealing an older saxophonist playing alongside a ballet dancer spinning in a white outfit under soft purple stage lights. One continuous shot, no jump cuts.\nPrompt 2: The camera zooms into the TV screen, where we see the same woman and the same scene from the beginning. Seamless video. One continuous shot, no jump cuts.\nDraft videos more efficiently in 360p\nGenerate lightweight previews in 360p resolution up to 60% faster* and at a third of the cost compared to Omni 1.1\u2019s standard 720p resolution. This is helpful for rapid prototyping, storyboard iteration, and quick rendering in developer platforms.\n*Up to 60% faster generation based on system throughput of 360p vs. 720p resolution\nPrompt: A microscopic view of iridescent marine diatoms, displaying intricate, glass-like silica shells with breathtaking natural symmetry. The colors range from deep volcanic amber and warm copper to vibrant turquoise and violet, mimicking the rich palette of earth and ocean. Tiny, delicate structures glow softly against a clean dark field background. High-fidelity scientific imaging, sharp details, organic textures, micro-photography. Maintain the microscope lens effect throughout the entire video.\nUpscale up to 4K resolution\nGenerate polished, high-resolution 1080p or 4K outputs that are ready for professional production with Omni 1.1.\nPrompt 1: Fish swimming, tracking shot\nPrompt 2: A little chipmunk darting out of the woods from the left side of the screen and sniffing the air inquisitively before darting out of frame on the right side\nPrompt 3: Cinematic macro close-up of vibrant golden-orange Japanese maple leaves on a delicate branch, gently rustling and swaying in a soft, rhythmic autumn breeze. Sunlight filters through the translucent foliage, creating a warm, glowing effect. Shallow depth of field, dreamy bokeh background, hyper-detailed textures, photorealistic, 4k.\nAdd video references in your multimodal input\nReference up to three seconds of video when crafting your scene, allowing you to maintain visual context and character consistency based on video references.\nPrompt: Use the three uploaded videos of dancers and replace them with the provided characters. Have them perform their individual dances from the reference videos, all together in the large, open space from the provided image.\nThe dog character dog.png should do the classical dance from dance3.mp4. The octopus octo.png should do the hip hop dance from dance1.mp4, and the bear bear.png should do the breakdance from dance2.mp4. The final result should be one continuous shot with no scene cuts.\nInspiring concepts for what you can build\nHere are a few ideas showing how developers can put these new capabilities into action across custom tools and creative workflows.\nSee how customers are putting Omni Flash in production\nOur customers are already driving real-world production with Gemini Omni Flash via the Agent Platform API. Explore the videos they've created and hear about how they are using the model below.\nBuild with Gemini Omni 1.1 Flash Today\nPricing table for Gemini Omni 1.1 Flash.\nOmni 1.1 is rolling out across the Google developer ecosystem:\n- Start building in Google AI Studio: Try out Omni 1.1 directly in\n[Google AI Studio](https://aistudio.google.com/prompts/new_chat?model=gemini-omni-1.1-flash). - Build on Gemini Enterprise Agent Platform: Enterprises can build with Omni 1.1 directly via\n[Agent Platform API](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-1-1-flash). - Explore the developer documentation: Check out the\n[official documentation](https://ai.google.dev/gemini-api/docs/omni), the[cookbook](http://colab.research.google.com/github/google-gemini/cookbook/blob/main/quickstarts/Get_started_Omni.ipynb)and[prompting guides](https://ai.google.dev/gemini-api/docs/omni#prompt-guide)to learn how to integrate scene extensions, video references, and upscaling into your applications.\nOmni 1.1 is also available to all Google AI Plus, Pro and Ultra subscribers globally in [Google Flow](https://blog.google/innovation-and-ai/models-and-research/google-labs/new-creative-controls-google-flow/), starting today. Scene extension is available to all Google AI Plus, Pro and Ultra subscribers globally in the [Gemini app](https://gemini.google.com/).",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551574,
-    "title": "3 new ways to plan and book travel in Search",
-    "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
-    "published_at": "2026-08-27T16:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "trafilatura",
-    "body": "3 new ways to plan and book travel in Search\nPlanning a trip comes with lots of moving parts and countless options to consider. With [AI Mode in Search](http://google.com/ai), you can already get real-time data to compare flights and hotels, find the best recommendations across the web, and [craft the perfect itinerary](https://blog.google/products-and-platforms/products/search/agentic-plans-booking-travel-canvas-ai-mode/). Now, we\u2019re upgrading that experience with new ways to track flight prices, view points or miles rates, and book your dream hotel, right in AI Mode.\nAsk AI Mode to track flight prices for you.\nToday, we\u2019re bringing Google Flights\u2019 popular price tracking feature directly into AI Mode, letting you set up price alerts as you chat, without breaking your flow. Describe where and when you want to fly and AI Mode will show you the best options available with the latest prices from more than 300 partner airlines and travel sites. If you\u2019re ready to book, you can build your full itinerary in AI Mode and buy your tickets through the airline\u2019s website or your preferred booking platform.\nWant to wait and see if prices drop? Just ask something like \u201ctrack these flight prices for me.\u201d Once you confirm, you\u2019ll get an email if prices change for the destination and dates you have in mind, so you can jump on deals the moment they hit your inbox. Flight price tracking in AI Mode is now available in more than 180 countries and territories around the world.\n[1](#footnote-1)\nSee the cost in points or miles.\nRedeeming your hard-earned rewards is another great way to save on travel. Now, AI Mode in Search can show you the cost in points or miles for flights and hotels. Try asking something like \u201cI want to travel from Atlanta to Miami using my AA miles. Help me find some options for nonstop flights departing Oct 9 and returning on Oct 12\u201d.\nRight away, you\u2019ll see how many miles you need to book matching flights, based on the latest data directly from our partners. It works the same way for hotels: just tell AI Mode where and when you\u2019re traveling and ask to see the cost in points for the rewards program you have in mind. When you\u2019re ready to book, you can follow the link to the partner site and complete your rewards redemption.\nViewing points and miles rates in AI Mode is now globally available.\n[2](#footnote-2)\nWe\u2019re launching this capability with initial support for Alaska Airlines / Hawaiian Airlines, American Airlines, Choice Hotels International, Hilton, and Wyndham Hotels & Resorts. In the coming weeks, we\u2019ll also add support for Accor, Flying Blue, Hyatt, LATAM Airlines, and Lufthansa Group.\nBook your dream hotel right in AI Mode.\nWhen you find a hotel you love, making the reservation should feel quick and effortless. Today, we\u2019re introducing hotel booking through AI Mode in Search, so you can discover and book your next hotel in one seamless conversation. Simply tell AI Mode about your upcoming trip and your hotel preferences to get a visual list of options, complete with guest reviews and key factors to compare.\nOnce you\u2019ve found the right hotel, just ask AI Mode to help you complete the booking. Then, select \u201cContinue on Google\u201d in the list of booking options \u2014 it\u2019ll appear next to any of our integrated partners, which include hotel chains and online travel sites. From there, it\u2019s just a few taps to pick your room type, review details like the cancellation policy, and complete the booking securely via Google Pay. When you book hotels through AI Mode, the hotel or booking platform will act as the merchant of record and handle any customer service.\nHotel booking in AI Mode has started rolling out in the U.S. in English and will be available over the coming weeks with the following partners: Booking.com, Choice Hotels International, Expedia, Hilton, Hotels.com, IHG Hotels & Resorts, Marriott International, Priceline, Trip.com, and Wyndham Hotels & Resorts.\nHead over to [AI Mode](http://g.ai/) in Search today to start tracking prices, exploring rewards, and booking your next getaway.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "agents",
-      "coding",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712475,
-    "title": "Who let the agents in",
-    "url": "https://www.bensbites.com/p/who-let-the-agents-in",
-    "published_at": "2026-08-27T13:03:42+00:00",
-    "fetched_at": "2026-09-28T21:34:07+00:00",
-    "source_id": "bens-bites",
-    "source_name": "Ben's Bites",
-    "extraction_method": "trafilatura",
-    "body": "Hey folks,\nMost agents now use a browser to complete tasks for you. But a lot of the websites you want them to visit are behind a login page.\nThere are a couple of ways around this. You could type in your details in the browser yourself. Fine, but annoying, and not always possible. Or you could paste the password or an API token into the chat. We\u2019ve all done that, but that\u2019s not secure now, is it?\n[ChatGPT Work has a new sign-in flow](https://x.com/ChatGPT/status/2092366554965107164) that sits between the two. I think they picked it up from Grok Bot.\nWhen Work reaches a login page, it pauses and shows you a widget/form. You enter your username, password and 2FA code there. They don\u2019t go into the chat. Work passes them along directly to the cloud browser on your behalf.\nOnce the website signs that browser in, the agent carries on.\nThe session can stay signed in for later tasks, and you can clear it in settings.\nMuch easier. Still maybe don\u2019t start with your bank (though Elon will [make you whole](https://x.com/elonmusk/status/2092692116610957814) if you do it with Grok Bot).\nBen\u2019s Bites is brought to you by [Gravitee](https://www.gravitee.io/platform/ai-agent-management?utm_source=bensbites&utm_medium=newsletter&utm_campaign=agent-accountability&utm_content=082726)\n\ud83d\udd75\ufe0f We know what your AI agents did last night.\n[Gravitee]is the platform built to make AI agents accountable. We give every agent a verified identity, enforce exactly what they can access, and record exactly what they did, so enterprises never have to ask their agents, \u201cWhere were you last night?\u201d\nHeadlines\n[Claude Chat and Cowork now share their memory](https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it). I\u2019m not sure that\u2019s a good thing. You don\u2019t want your frustration with a colleague (that you mentioned to Claude in a random chat) to change the tone of your emails with them (written via Cowork).\nIt\u2019s still separate from Claude Code\u2019s memory, but that's not great either. Theo made a video about it: [Turn off Claude Code\u2019s memory.](https://www.youtube.com/watch?v=Jf54k7tFeEc)\nDespite everyone\u2019s attempts to get Memory right, it keeps saving irrelevant stuff to memory or referring to it unnecessarily. I touched a bit on my current memory setup in [last Friday\u2019s post](https://www.bensbites.com/p/how-i-built-this).\nThree new-ish models to look at:\n[GLM-5.3-Flash](https://z.ai/blog/glm-5.3-flash)- The reveal of the Ox Alpha secret. It\u2019s a great open-source alternative for GPT-5.6-Luna.[Muse Image](https://developer.meta.com/ai/models/muse-image/)is now in Meta\u2019s API. Generate or edit images at $0.01 per image.[Gemini 3.5 Transcribe](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/)- New model from Google for audio transcription. It\u2019s quite pricey, but makes way fewer errors than other models.\n[OpenAI\u2019s new chip Jalape\u00f1o beats Nvidia\u2019s Blackwell chips](https://openai.com/index/jalapeno-first-results/) on both speed and efficiency. Across three open models, its first inference chip delivered 1.5-1.9x more work per watt and 1.7-3.6x lower latency. It starts deploying by year-end.\nAlso, remember when an OpenAI model hacked Hugging Face? They completed the investigation into it and [released a report](https://openai.com/index/hugging-face-incident-and-the-road-ahead/). Btw, [Nvidia is buying Hugging Face](https://www.theinformation.com/articles/nvidia-agrees-buy-open-source-model-repository-hugging-face-12-9-billion) for $12.9B (via The Information).\nLooks like a toxic love triangle between these three.\nMy feed\n[fuck cancer](https://x.com/petergyang/status/2092249012913258946)- skill for agents to help patients and caregivers.A $50k\n[hackathon](https://x.com/cgeorgiaw/status/2092265875982156025)to help one kid fight a rare disease.Claude now has its own\n[built-in browser in Cowork](https://claude.com/blog/cowork-built-in-browser/).[Scheduled tasks in ChatGPT](https://x.com/ChatGPT/status/2092335329110004140)can now also run from a trigger like a Slack message, new email, etc.[Search and spot trends](https://radar.particle.pro/)in over 130,000 actively transcribed podcasts. ([examples](https://x.com/pandemona/status/2092662887571726578))Patterns in\n[how people use Claude](https://www.anthropic.com/research/enabling-independent-research)from 250k anonymised chats.[screendrop](https://github.com/fayazara/Screendrop)- Open source alternative to Loom and Screen Studio, downloadable as a Mac app.Edit a song\n[section by section](https://x.com/ElevenLabs/status/2092253206709420404)with ElevenLabs Composer.[Cosy listening room](https://x.com/BornsteinMatt/status/2092329558183903517)so you can flip through & play your Spotify albums.Using Codex to automate\n[repetitive eval work](https://learn.chatgpt.com/blog/automating-repetitive-work-at-openai-with-codex). ([Hamel\u2019s notes](https://x.com/HamelHusain/status/2092628886572200169))The latest\n[personal agent](https://x.com/noahrshinn/status/2092691344456351744)making investors go crazy (already valued at $2.5B).[opencomputer.dev](https://opencomputer.dev/)- Deploy your agents as functions, with a Linux computer for each one.Fully\n[local version](https://www.perplexity.ai/hub/products/portable-computer)of Perplexity Computer, built to run on Nvidia DGX Spark.[Teach a robot new tasks](https://www.skild.ai/blogs/s1)from just one video.[Robot-training dataset](https://www.figure.ai/news/introducing-index)with 16M videos from 100+ countries.\nAfters\nRead\n[about me](https://bensbites.substack.com/about)and Ben\u2019s Bites\ud83d\udcf7 thumbnail via\n[@keshavatearth](https://x.com/Keshavatearth)\n* sponsors who make this newsletter possible :)\nWanna partner with us for the next quarter?\nEmail us at\n[shanice@bensbites.com]or[k@bensbites.com]\nKeeping the password out of the chat is a real improvement, and it moves the problem rather than closing it. Once that cloud browser holds a live session that sticks around for later tasks, everything it does shows up in the site's log as you, and nobody reading that log later can tell which turns you were actually present for. The clear-it toggle in settings is the only kill switch, and it's buried where nobody looks. Does Work show you anywhere what a signed-in session did after the fact?",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
     "available": true
   }
 ]
