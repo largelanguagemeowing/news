@@ -1,5 +1,67 @@
 [
   {
+    "article_id": 787821,
+    "title": "LIVE: Poteto (creator of pstack) on shipping 1,000's of PR's a month at SpaceX",
+    "url": "https://www.youtube.com/watch?v=MN9dGgmLyso",
+    "published_at": "2026-10-03T05:08:12+00:00",
+    "fetched_at": "2026-10-03T11:54:24+00:00",
+    "source_id": "matt-pocock-youtube",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.",
+    "topic": "tutorials",
+    "tags": [
+      "agents",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 786691,
+    "title": "Your LLM App Returned 200 OK. It Was Still Wrong. \u2014 Marina Petzel, Datadog",
+    "url": "https://www.youtube.com/watch?v=rTojoVotlD8",
+    "published_at": "2026-10-03T01:30:33+00:00",
+    "fetched_at": "2026-10-03T11:54:18+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Latency, errors, traffic and saturation tell you your app is up. They don't tell you if it's right.\n\nMarina Petzel, GenAI advocate at Datadog, explains why the classic golden signals are necessary but no longer enough for generative AI applications, and which metrics to add on top. She covers cost monitoring (token creep, model drift, uncached calls and tagging for cost attribution), safety monitoring (prompt injection, PII leakage, toxicity and jailbreaks) and quality monitoring (hallucination rate, relevance, user satisfaction, completeness and RAG retrieval quality).\n\nIn this talk:\n\u2022 Four ways GenAI apps break traditional monitoring assumptions\n\u2022 Three hidden cost drivers and a four-level tagging strategy\n\u2022 Safety metrics and the thresholds to aim for\n\u2022 Five quality metrics, from hallucination rate to RAG retrieval quality\n\nSPEAKER\nMarina Petzel, GenAI Advocate, Datadog\nLinkedIn: https://www.linkedin.com/in/marina-petzel/\n\nLINKS\nDatadog Agent Observability: https://www.datadoghq.com/products/ai/agent-observability/\nLLM Observability docs: https://docs.datadoghq.com/llm_observability/\nDatadog: https://www.datadoghq.com\n\nCHAPTERS\n0:00 Intro\n0:12 Golden signals aren't enough anymore\n1:12 How GenAI apps are different\n2:22 New attack vectors\n2:47 Quality is subjective\n3:51 Cost monitoring\n4:56 Token creep, model drift, uncached calls\n6:55 Cost attribution: tag everything\n9:15 Safety metrics\n9:55 Prompt injection, PII, toxicity, jailbreaks\n12:09 Quality monitoring\n13:19 Five quality metrics\n15:43 Putting it all together\n16:38 Datadog Agent Observability\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#LLMObservability #GenAI #AIEngineer",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 786692,
+    "title": "YOLO Mode, Safely: MicroVM Sandboxes for Any Agent \u2014 Rowan Christmas, Docker",
+    "url": "https://www.youtube.com/watch?v=OE_lLNCNfQo",
+    "published_at": "2026-10-03T00:30:06+00:00",
+    "fetched_at": "2026-10-03T11:54:18+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Rowan tried to hack himself with his own coding agent. Five prompts later it had found his browser history, his bank accounts and more.\n\nRowan Christmas, product manager at Docker, shows why harness-level guardrails aren't enough to protect your machine from your own agent, and how microVM sandboxes give you security by design. He demos Docker Sandboxes (sbx): one command spins up an isolated VM with its own kernel, filesystem isolation, secret placeholders, default-deny networking and a full audit trail. It works with Claude Code, Codex or anything else. He also previews agent identity, delegation chains and policy-based governance.\n\nIn this talk:\n\u2022 How a coding agent with default permissions can surface sensitive data on your laptop\n\u2022 Why microVMs beat harness-level guardrails\n\u2022 Running any agent in a sandbox with a single command\n\u2022 Governance: network allow/deny, filesystem rules, MCP catalogs and what's coming next\n\nSPEAKER\nRowan Christmas, Product Manager, Docker\nLinkedIn: https://www.linkedin.com/in/rowanchristmas/\n\nLINKS\nDocker Sandboxes: https://www.docker.com/products/docker-sandboxes/\nDocs: https://docs.docker.com/ai/sandboxes/\nsbx releases (GitHub): https://github.com/docker/sbx-releases\nDocker: https://www.docker.com/\n\nCHAPTERS\n0:00 Intro\n0:12 Hi from Docker\n0:27 Docker Sandboxes (sbx)\n0:52 Is your coding harness protecting you?\n1:22 Hacking myself: from browser history to bank data\n2:32 The security team's alert\n3:22 Five prompts was all it took\n3:47 MicroVMs: secure by design\n5:07 Demo: claude vs sbx run claude\n5:47 The same attack, sandboxed\n6:12 Network egress blocked by default\n6:47 Every Docker developer codes in sandboxes\n7:07 Why the harness level isn't enough\n7:52 Agent identity and delegation chains\n8:46 Governance controls\n9:11 Coming next: L7 and per-repo controls\n9:46 Install and run any agent\n10:31 Read-only mounts for related repos\n10:56 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AISecurity #Docker #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 781470,
     "title": "The 5 Levels of Self-Driving Production \u2014 Eric Schwartz, Traversal",
     "url": "https://www.youtube.com/watch?v=y-OVWZD4j6U",
@@ -1133,7 +1195,7 @@
     "published_at": "2026-09-30T10:07:47+00:00",
     "fetched_at": "2026-09-30T10:39:34+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/MN9dGgmLyso",
     "topic": "tutorials",
@@ -11023,73 +11085,6 @@
       "video"
     ],
     "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 713476,
-    "title": "(untitled)",
-    "url": "https://www.together.ai/blog/glm-5-3-vs-glm-5-3-flash-on-deepswe-cost-coding-and-routing",
-    "published_at": "2026-08-28T00:00:00+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "together-ai",
-    "source_name": "Together AI",
-    "extraction_method": "trafilatura",
-    "body": "Run GLM-5.3 Flash first and escalate to the full GLM-5.3 only when your tests reject the answer. That cascade solves 80.9% of DeepSWE tasks at \\$1.70 each. GLM-5.3 alone solves 69.0% at \\$3.99. Twelve points better, 57% lower cost. If you are picking a single model, pick the Flash: it trails by 5.6 points on the first try but only 2.6 points by the fourth, because what distillation removed was reliability, and reliability is what retries buy back.\n- The gap is a first-try effect. 69.0% vs 63.4% at pass@1, four points at pass@2, and 2.6 points at pass@4 (87.6% vs 85.0%).\n- The price gap is 17x. \\$3.99 per rollout vs \\$0.24. Per \\$100 spent, the Flash solves 264 tasks and the full model solves 17.\n- Capability survived, consistency did not. Of the full model's 99 solved tasks, the Flash still solves 93. It stabilizes 15 tasks the parent was flaky on and cracks 3 the parent walls entirely.\n- The Flash cannot convert effort into a win. On flaky tasks, the longer run is the passing run 61% of the time for the full model and 46% for the Flash, below the coin-flip line.\n- One genuine regression: caution. The Flash breaks an already-passing baseline test in 6.9% of rollouts against the full model's 4.4%, so gate it with a regression run.\n[GLM-5.3](https://www.together.ai/models/glm-5-3) and [GLM-5.3 Flash](https://www.together.ai/models/glm-5-3-flash) are the same family at two sizes. GLM-5.3 is the full open-weight model; GLM-5.3 Flash is its distilled sibling at one-seventeenth the rollout price. The question every team asks about a flash variant is how much quality it gives up. On DeepSWE, a benchmark that tests a model's software engineering ability across many task types and programming languages, the answer is smaller than the headline pass@1 gap suggests, because the Flash is not a scaled-down clone of the full model. It is a redistribution of its abilities, and the thing it actually lost is not the thing the headline numbers point to.\nWe ran GLM-5.3 (max) against GLM-5.3 Flash (max) on all 113 DeepSWE tasks, four trials each, from the published per-trial records: 900 rollouts in total, 452 full and 448 Flash. What follows is the full comparison and the distillation autopsy in one place. Every figure below comes from this run, so it can differ from other public GLM-5.3 vs GLM-5.3 Flash scorecards.\nThe DeepSWE scoreboard: pass@1 and pass@k\nSingle shot, the full model leads by 5.6 points, 69.0% to 63.4%. That lead is a first-try artifact. It narrows to four points at pass@2 and to 2.6 points at pass@4, 87.6% against 85.0%. Distillation cost the Flash more of its single-shot polish than its ceiling. For any best-of-k workload the effective quality loss is under three points, at one-seventeenth the price. The collapse from 5.6 to 2.6 is the first clue to what changed, and the next section explains it.\nWhat distillation actually cost: consistency, not capability\nClassify every task, for each model, as a wall (0 of 4 passing), flaky (some passing), or solid (all passing), then trace where the full model's tasks land in the Flash.\nThe top-right zero carries the section: of the 48 tasks the full model solves four for four, not one becomes unsolvable in the Flash. Half stay perfectly solid; the other half only lose consistency. Coverage retention says the same thing: of the 99 tasks the full model solves at least once, the Flash still solves 93, or 94%. Distillation did not remove the ability to solve these tasks. It removed the reliability. A consistency loss, unlike a capability loss, is exactly what retries recover, which is why the pass@4 gap is so much smaller than the pass@1 gap.\nCost comparison: GLM-5.3 vs. GLM-5.3 Flash pricing and speed\nAt \\$0.24 against \\$3.99, the Flash costs 17x less per rollout: 264 solves per \\$100 to the full model's 17. The usual flash tradeoff, slower per token, does not appear. The Flash is quicker, averaging 26 minutes to the full model's 35, and it does not get there by cutting corners: it runs the same number of steps, 123 against 125. The entire speed difference is per-step latency, 12.5 seconds per step for the Flash versus 17.0 for the full model, a smaller model executing each step about 27% faster in a smaller working window (145k average peak context to the full model's 155k). Lower cost, quicker, thinking the same length.\nWhere the consistency went: distillation erodes from the margins\nGroup tasks by how reliably the full model solved them, then measure the Flash's mean pass rate in each group.\nThe result is a clean monotonic gradient: the more reliably the full model held a task, the more of that ability the Flash keeps. Distillation eats from the edges of the capability distribution and leaves the core intact. It sharpens the boundary between what the model can and cannot do rather than scaling the whole profile down.\nGLM-5.3 Flash lost the ability to take a hard attempt to a win\nThis is the mechanism behind the flakiness, and the most surprising result in the study. On a flaky task, the question is whether the longer run tends to be the winning run. Same task, same difficulty, only the run varies.\n- Full GLM-5.3: on 61% of its flaky tasks, the passing run took more steps than the failing run. The full model can think its way to a solution, and effort converts to success.\n- GLM-5.3 Flash: 46%, below the coin-flip line. Whether a flaky task lands is essentially independent of how long the Flash runs.\nSo distillation did not only make the model a little worse per step. It removed the model's ability to use extra effort. This is not erratic exploration either: the Flash's within-task step variance is slightly lower than the full model's, a coefficient of variation of 0.12 against 0.14. It runs about the same length every time and sometimes lands, sometimes not. What it lost is the search ability that lets the full model turn a hard attempt into a solved one.\nWhere each wins, by domain and programming language\nThe losses are only half the ledger. The Flash gives capability back in specific places:\n- 15 of the full model's flaky tasks became solid in the Flash, stabilizing work the parent was shaky on.\n- The Flash cracks 3 tasks the full model walls entirely.\n- By domain it is not uniformly behind: concurrency and durability +8 (62 to 70), Python +5 (66 to 71), data modeling +4 (79 to 83), protocol +3 (44 to 48). It cedes JavaScript, query and config, stateful reactivity, Rust, and language internals.\nAcross the eight domains the full model takes 5 and the Flash takes 3, and on languages the full model takes four (Go, TypeScript, JavaScript, Rust) to the Flash's one (Python). The full model wins the reasoning-heavy and JavaScript-heavy work; the Flash wins the systems and Python work. The Flash's JavaScript number looks alarming in isolation, but it rests on a five-task sample and is driven by a single task, so treat it as directional rather than settled. The broader read is that distillation reshaped the profile instead of simply lowering it.\nPrecision against reach\nThe full model sits up and to the right on the coverage-reliability plane: 87.6% coverage at 78.8% reliability, against the Flash's 85.0% and 74.7%. The full model solves 48 tasks four for four to the Flash's 39, and walls out on 14 to the Flash's 17. Distillation shaved a little off both axes, but the Flash's run-to-run variance on the scoreboard grew more than its averages fell (pass@1 standard deviation 4.1 against 2.7), which is the same consistency story seen from the aggregate.\nThe one real regression: collateral damage\nNot everything nets in the Flash's favor. Beyond accuracy and consistency, distillation made the model measurably less careful about collateral damage. Measured as the share of non-errored rollouts that break at least one already-passing baseline test:\n- GLM-5.3: 4.4%\n- GLM-5.3 Flash: 6.9%\nThe Flash is over 50% more likely to disturb working code when it acts. This is the one axis on which it is worse rather than merely lower-cost, and the one place to add a guardrail: run a full regression suite before accepting a Flash diff unreviewed.\nRouting between them: the same-family cascade\nBecause the quality the Flash gives up is small and mostly recoverable, and the price it saves is large, a same-family cascade is a straight cost cut. Run the Flash first and escalate to the full model only when a verifier rejects the answer: 80.9% at \\$1.70 per task, above the full model's own single-shot pass@1 of 69.0% at less than half its price. Per-task correlation between the two is 0.61 and their union covers 102 of 113 tasks (90.3%), so the low-cost first stage clears most of the queue and the full model only ever sees the hard remainder, which then gets a second independent attempt.\nWhat it means\nDistillation of GLM-5.3 into GLM-5.3 Flash is a scalpel, not a hammer. It preserved capability and traded consistency: zero of the full model's solid tasks became unsolvable, and the pass@4 gap is 2.6 points, not 5.6. It removed the search ability that lets the model take a hard attempt to a win, an effort payoff of 61% falling to 46%, which is the true source of the flakiness. It reshaped the profile rather than shrinking it, gaining concurrency, Python, data modeling, and protocol while ceding JavaScript and query work, and the scariest headline in that set, the JavaScript drop, is a one-task effect in a five-task sample. Its single genuine regression is caution, a 6.9% baseline-break rate against 4.4%.\nThe economics dominate the rest: 17x lower cost per rollout, 264 solves per \\$100, faster wall clock, for under three points of best-of-k quality. Default to GLM-5.3 Flash for cost- and throughput-bound work and any best-of-k pipeline. Reach for the full GLM-5.3 when the task is JavaScript- or query-heavy or needs first-shot reliability. Gate the Flash with a regression run. And if you run the full model, front it with the Flash to more than halve the bill.\nData table: GLM-5.3 vs. GLM-5.3 Flash, full results\nMethod and caveats\n- Data: DeepSWE v1.1 export, 113 tasks by 4 trials per config, both at max effort. GLM-5.3 has 452 trials with 1 infra error; GLM-5.3 Flash has 448 of 452 with 0 infra errors, so a handful of tasks have 3 Flash trials, and categories and pass fractions use each task's actual trial count.\n- Categories: wall = 0 passes, solid = all trials pass, flaky = some pass. Coverage = solved at least once. Retention bins group tasks by the full model's per-task result.\n- Effort payoff: within each flaky task, mean agent steps of passing trials against failing trials, reported as the share of flaky tasks where passing exceeded failing. This controls for task difficulty. Behavioral variance is the within-task coefficient of variation of steps.\n- Collateral damage: share of non-errored rollouts with a broken baseline test (p2p < 1). Per-step time is average duration divided by average steps. Steps, tokens, minutes, and peak context are averages, matching the DeepSWE site.\n- Flash cost uses its current \\$0.24 average per task. Domains use the artifact-based taxonomy. Per-turn trajectory JSONs were not on the public CDN for either GLM-5.3 batch, so all results are index-level.\n- Language splits are small samples. JavaScript in particular rests on five tasks, so single-task movement swings the cell.\nFAQs\nIs GLM-5.3 Flash as good as GLM-5.3?\nClose, and closer the more attempts you allow. GLM-5.3 leads pass@1 by 5.6 points (69.0% vs 63.4%), but the gap falls to 2.6 points at pass@4 (87.6% vs 85.0%). None of the 48 tasks GLM-5.3 solves four for four become unsolvable for the Flash, so the loss is reliability rather than capability.\nHow much cheaper is GLM-5.3 Flash than GLM-5.3?\nIn our run, GLM-5.3 Flash cost \\$0.24 per rollout against \\$3.99 for GLM-5.3 at max effort, roughly 17x less. Measured per solved task, the Flash returned 264 solves per \\$100 to the full model's 17, about sixteen times the solved work per dollar.\nWhich is better for coding, GLM-5.3 or GLM-5.3 Fla",
-    "topic": "coding",
-    "tags": [
-      "coding",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553142,
-    "title": "Sam Altman :\u2018AGI in 2026\u2019, just as Models Start to [Mis]Train Themselves",
-    "url": "https://www.youtube.com/watch?v=KL9_1GbmCic",
-    "published_at": "2026-08-27T19:16:24+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "youtube",
-    "body": "First, a Time Magazine spread has Sam Altman declaring AGI is imminent, at the same time as we get two bombshell reports, from OpenAI and METR which on first glance are detailing the AI swarm, but reveal a deeper story about how we are making AI in 2026. From redacted risk reports, to Chinese Labs, pre-training debacles to questionable cybersecurity calls, a lot has happened recently, beneath the headlines\u2026\n\nhttps://80000hours.org/aiexplained\n\n\npablo2004romero@gmail.com\nhttps://integrity-bench.com/\n\nhttps://www.patreon.com/AIExplained/posts/ai-swarm-cometh-166671390\n\n\nChapters:\n00:00 - Introduction\n02:10 - METR Report\n05:00 - Secrets of MultI-Agent Swarm\n07:46 - Anthropic Too\n10:00 - And China\n11:07 - AI Agents Analysing AI Agents\n13:37 - Altman AGI 2026\n15:36 - Astra Paused\n16:01 - Integrity Bench\n19:03 - Swarm Dynamics\n21:58 - No Human Contact?\n\n\nMETR Post: https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-knew-hacking-hugging-face-was-out-of-scope-and-sometimes-expressed-ethical-hesitation,-but-this-very-rarely-limited-their-behavior\nOpenAI Release: https://openai.com/index/hugging-face-incident-and-the-road-ahead/\nTechnical Paper: https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf\n\nBlackHat Talk: https://www.youtube.com/watch?v=87DyyMV0kCY\n\nAnthropic Risk Report: https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf\n\n\nValue Leakage Paper: https://valueleakage.net/?utm_source=chatgpt.com\n\n\nPaused Training: https://x.com/sama/status/2089787807611195475\nhttps://openai.com/index/pacing-model-development-cyber-capabilities/\nAGI 2026: https://time.com/article/2026/08/26/openai-sam-altman-interview/?utm_source=twitter&amp;utm_medium=social&amp;utm_campaign=editorial&amp;utm_content=260826\n\nGreenblatt Tweets: https://x.com/RyanGreenblatt/status/2092769422104822031\nhttps://x.com/RyanGreenblatt/status/2092692685224325542\n\nCyberdefense Call: https://openai.com/collective-cyberdefense/\n\nGLM 5.3 and 5.3 Flash / ox alpha: https://x.com/MTSlive/status/2089865956558528552\nhttps://pbs.twimg.com/media/HPqiTkAa0AAZiuv?format=jpg&amp;name=large\n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/\n\nauthor: AI Explained\n\nvideo: https://www.youtube.com/embed/KL9_1GbmCic",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553133,
-    "title": "The most expensive software bug in history...",
-    "url": "https://www.youtube.com/watch?v=UuqSy1jPSUw",
-    "published_at": "2026-08-27T17:48:13+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "youtube",
-    "body": "Get $100 in Hyperagent bonus credits when you sign up for a paid plan - https://www.hyperagent.com/fireship100\n\nIn 2012 Knight Capital lost $440 million dollars because of a rogue feature flag. What did we learn from that mistake? Not much.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev\n\nauthor: Fireship\n\nvideo: https://www.youtube.com/embed/UuqSy1jPSUw",
-    "topic": "coding",
-    "tags": [
-      "api",
-      "agents",
-      "video",
-      "coding",
-      "education",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "https://dearrow-thumb.ajay.app/api/v1/getThumbnail?videoID=UuqSy1jPSUw&time=255.0634690699659",
     "available": true
   }
 ]
