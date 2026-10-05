@@ -1,5 +1,213 @@
 [
   {
+    "article_id": 818090,
+    "title": "Agent Memory Is Solved. Agent Learning Isn't. \u2014 Karthik Ranganathan, Yugabyte",
+    "url": "https://www.youtube.com/watch?v=9_oy4owGtPI",
+    "published_at": "2026-10-05T14:00:20+00:00",
+    "fetched_at": "2026-10-05T15:07:57+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "One agent can remember. A team of agents still can't learn together.\n\nKarthik Ranganathan, co-founder and co-CEO of Yugabyte, explains why per-agent memory is a solved problem but shared learning across agents isn't. When one agent hands work to another, it passes on the output but loses the reasoning, the dead ends and the context, so the next agent burns tokens re-deriving it all. He covers five misconceptions about memory, what Yugabyte got wrong building its own agents, and how fixing its RAG pipeline one variable at a time took faithfulness from 14% to 82% with about one-seventh the context. Then Heather Downing demos Meko, Yugabyte's agent-native persistence layer, resuming sessions across agents and promoting private memories into shared data packs.\n\nIn this talk:\n\u2022 Why more memory, shared files and bigger context windows aren't learning\n\u2022 Shared context that's governed, promotable and traceable to its source\n\u2022 How tuning a RAG pipeline cut context size about 7x while raising precision\n\u2022 Demo: resuming and sharing context across Claude, Codex and other agents\n\nSPEAKERS\nKarthik Ranganathan, Co-founder & co-CEO, Yugabyte\nLinkedIn: https://www.linkedin.com/in/kranganathan\nX: https://x.com/karthikr\n\nHeather Downing, Developer Advocate, Yugabyte\nLinkedIn: https://www.linkedin.com/in/heathermdowning/\nX: https://x.com/quorralyne\n\nLINKS\nMeko: https://mekodata.ai/\nMeko docs: https://docs.mekodata.ai/\nMeko skills (GitHub): https://github.com/yugabyte/meko-skills\nYugabyte: https://www.yugabyte.com/\n\nCHAPTERS\n0:00 Intro\n0:12 Memory is solved, learning isn't\n0:47 Learning happens in groups\n1:17 Why a database company built this\n2:02 A year of failing to ship agents\n2:37 The real failure: lost context\n3:27 The new-teammate problem\n3:57 Five misconceptions\n5:02 Shared, governed, traceable context\n5:42 What we got wrong\n6:37 Fixing RAG: 14% \u2192 82% faithfulness\n7:27 Introducing Meko and data packs\n8:36 This deck was built with Meko\n10:20 Demo: collective knowledge\n11:25 Sharing context saves tokens\n12:20 Demo: saving to a data pack\n13:25 Demo: resuming in a fresh session\n14:20 Demo: sharing with another agent\n14:55 Private vs shared memory\n16:15 Proving the token savings\n16:45 Human promotion as a training signal\n17:52 How the team uses Meko\n19:26 Capturing tribal knowledge\n19:40 Try Meko\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AgentMemory #AIAgents #AIEngineer",
+    "topic": "education",
+    "tags": [
+      "education",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 818699,
+    "title": "From Scan to Treatment Plan, AI Helps Close Breast Cancer\u2019s Deadliest Gaps",
+    "url": "https://blogs.nvidia.com/blog/ai-breast-cancer-startups/",
+    "published_at": "2026-10-05T13:00:57+00:00",
+    "fetched_at": "2026-10-05T15:08:04+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "Breast cancer is the most commonly diagnosed cancer among American women \u2014 yet the gaps in care are wide. A majority of women over age 40 skip the recommended annual screening. Radiologists are reading more mammograms with fewer colleagues. And when a diagnosis arrives, the tests that inform treatment can take weeks to return results.\u00a0 [&#8230;]",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 820107,
+    "title": "New Skills! v1.3 brings /pr, /implement-spec, and /retro",
+    "url": "https://www.youtube.com/watch?v=BsJGo1wFTvQ",
+    "published_at": "2026-10-05T10:50:24+00:00",
+    "fetched_at": "2026-10-05T15:08:06+00:00",
+    "source_id": "matt-pocock-youtube",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "Skills v1.3 is here with three game-changing skills: implement spec for landing huge chunks of work, PR skill for better code reviews, and retro for finding hidden inefficiencies in your agent sessions.\n\n0:00 Version 1.3 overview\n0:25 Implement spec skill\n4:54 PR skill\n8:10 Context to glossary rename\n9:37 Retro skill\n14:06 AI coding crash course\n\nLearn more about these skills and take the AI Coding Crash Course:\n\nhttps://aihero.dev/s/xrT0hb\n\nChangelog:\n\nhttps://www.aihero.dev/skills/skills-changelog-v13-implement-spec-pr-retro-and-glossary-md\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/s/yeL3Jb\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/RuRzmc",
+    "topic": "education",
+    "tags": [
+      "release",
+      "agents",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 818370,
+    "title": "recommended viewing, duh. we mostly talk about pi durable's hand crafted architecture, tradeoffs and why we did not use the wonderful effect ts, despite it being truely awesome.\n\ntalking about code in 2026. we are quaint dinosaurs.",
+    "url": "https://video.twimg.com/amplify_video/2107019854444105728/vid/avc1/1920x1080/e3D_PEsyOuREeNzs.mp4",
+    "published_at": "2026-10-05T10:47:41+00:00",
+    "fetched_at": "2026-10-05T15:08:00+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing, duh. we mostly talk about pi durable's hand crafted architecture, tradeoffs and why we did not use the wonderful effect ts, despite it being truely awesome.\n\ntalking about code in 2026. we are quaint dinosaurs.",
+    "topic": "research",
+    "tags": [
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 818371,
+    "title": "'Big Short' Investor Explains How the AI Bubble Will Burst",
+    "url": "https://www.youtube.com/watch?is=-CVLFXmxLDW7bxKe&v=Zw0I7kb6zg4&feature=youtu.be",
+    "published_at": "2026-10-05T10:43:44+00:00",
+    "fetched_at": "2026-10-05T15:08:00+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 818372,
+    "title": "recommended viewing, duh. we mostly talk about pi durable's habd crafted architecture, trade offsy and why we did bit use the wonderful effect ts, despite it being truely awesome.\n\ntalking about code in 2026. we are quaint dinosaurs.",
+    "url": "https://video.twimg.com/amplify_video/2107019854444105728/vid/avc1/1920x1080/e3D_PEsyOuREeNzs.mp4",
+    "published_at": "2026-10-05T10:08:38+00:00",
+    "fetched_at": "2026-10-05T15:08:00+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing, duh. we mostly talk about pi durable's habd crafted architecture, trade offsy and why we did bit use the wonderful effect ts, despite it being truely awesome.\n\ntalking about code in 2026. we are quaint dinosaurs.",
+    "topic": "research",
+    "tags": [
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 816602,
+    "title": "Building advertising for the way people use AI",
+    "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+    "published_at": "2026-10-05T10:00:00+00:00",
+    "fetched_at": "2026-10-05T15:07:55+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 818373,
+    "title": "recommended viewing if you want to understand what pi durable is. it's 100% accurate and breaks it down real well. i should learn how to do those ai explainers.",
+    "url": "https://video.twimg.com/amplify_video/2106953698836373504/vid/avc1/1920x1080/P2A_iDcuzW8QgvU1.mp4",
+    "published_at": "2026-10-05T08:30:18+00:00",
+    "fetched_at": "2026-10-05T15:08:00+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing if you want to understand what pi durable is. it's 100% accurate and breaks it down real well. i should learn how to do those ai explainers.",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 818105,
+    "title": "How Cresta turned CX expertise into an agent builder on the Claude Agent SDK",
+    "url": "https://claude.com/blog/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk",
+    "published_at": "2026-10-05T00:00:00+00:00",
+    "fetched_at": "2026-10-05T15:07:57+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "How Cresta turned CX expertise into an agent builder on the Claude Agent SDK",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "api",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 819692,
+    "title": "Cohere and PwC partner to accelerate secure enterprise AI adoption",
+    "url": "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption",
+    "published_at": "2026-10-05T00:00:00+00:00",
+    "fetched_at": "2026-10-05T15:08:05+00:00",
+    "source_id": "cohere-blog",
+    "source_name": "Cohere Blog",
+    "extraction_method": "rss",
+    "body": "Bringing together secure, sovereign AI and transformation expertise to help organizations move from pilots to production",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 819691,
+    "title": "North 2: Enterprise AI without compromises",
+    "url": "https://cohere.com/blog/introducing-north-2",
+    "published_at": "2026-10-05T00:00:00+00:00",
+    "fetched_at": "2026-10-05T15:08:05+00:00",
+    "source_id": "cohere-blog",
+    "source_name": "Cohere Blog",
+    "extraction_method": "rss",
+    "body": "North 2 is Cohere\u2019s biggest upgrade yet \u2014 unifying enterprise\u2011grade security, intelligence, cost governance, and full\u2011stack control into a single agentic AI platform that runs wherever your data lives.",
+    "topic": "enterprise",
+    "tags": [
+      "agents",
+      "safety",
+      "policy",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 809213,
     "title": "Agents That Write Their Own Tools at Runtime \u2014 Sandhya Subramani, AWS",
     "url": "https://www.youtube.com/watch?v=33Oct2hqGnk",
@@ -358,7 +566,7 @@
     "published_at": "2026-10-03T05:08:12+00:00",
     "fetched_at": "2026-10-03T11:54:24+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/MN9dGgmLyso",
     "topic": "tutorials",
@@ -1632,7 +1840,7 @@
     "published_at": "2026-09-30T10:07:47+00:00",
     "fetched_at": "2026-09-30T10:39:34+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/MN9dGgmLyso",
     "topic": "tutorials",
@@ -2528,6 +2736,24 @@
       "api",
       "agents",
       "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 818724,
+    "title": "Welcome RL Environments to the hub",
+    "url": "https://huggingface.co/blog/rl-environments",
+    "published_at": "2026-09-28T00:00:00+00:00",
+    "fetched_at": "2026-10-05T15:08:04+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10797,275 +11023,6 @@
       "coding",
       "education",
       "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553118,
-    "title": "This AI Turns Insane Ideas Into 3D Objects",
-    "url": "https://www.youtube.com/shorts/tqUEnRj0NbM",
-    "published_at": "2026-09-07T16:06:22+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "This was just a picture\u2026 and now it\u2019s a 3D-printable object. \n\nA new AI model called Tripo 2.0 can take almost any image and turn it into a full 3D model you can export to Blender, Unreal Engine, or a 3D printer.\n\nThe possibilities are wild: custom game characters, collectibles, animation assets, product prototypes, or literally anything you can imagine.\n\nWhat would you create with it?\n\n#ai #ainews #3dmodels #futuretech\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/tqUEnRj0NbM",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "models",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551707,
-    "title": "Supporting independent journalism in Ukraine",
-    "url": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
-    "published_at": "2026-09-07T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 7, 2026\n\n[Global Affairs](https://openai.com/news/global-affairs/)\n\n# Supporting independent journalism in Ukraine\n\nWorking with WAN-IFRA and AIRPPU to protect and rebuild independent journalism through conflict in Ukraine.\n\nLoading\u2026\n\nShare\n\nAIRPPU partners with OpenAI and WAN-IFRA to strengthen Ukrainian media with new AI programme\n\n- [AIRPPU partners with OpenAI and WAN-IFRA to strengthen Ukrainian media with new AI programme](#airppu-partners-with-openai-and-wan-ifra-to-strengthen-ukrainian-media-with-new-ai-programme)\n- [About WAN-IFRA](#about-wan-ifra)\n- [About AIRPPU](#about-airppu)\n\n- [AIRPPU partners with OpenAI and WAN-IFRA to strengthen Ukrainian media with new AI programme](#airppu-partners-with-openai-and-wan-ifra-to-strengthen-ukrainian-media-with-new-ai-programme)\n- [About WAN-IFRA](#about-wan-ifra)\n- [About AIRPPU](#about-airppu)\n\n*The following was issued as a joint press release on Monday 7th September 2026 from WAN-IFRA, AIRPPU, and OpenAI.*\n\n## AIRPPU partners with OpenAI and WAN-IFRA to strengthen Ukrainian media with new AI programme\n\n\n\n*The Newsroom AI Masterclass Series and Newsroom AI Catalyst support Ukraine\u2019s independent news sector with a focus on AI adoption, innovation, and resilience.*\n\nOpenAI, WAN-IFRA, and the Association of Independent Regional Press Publishers of Ukraine (AIRPPU) have announced a new initiative to support and strengthen Ukrainian news publishers by building practical artificial intelligence capabilities and accelerating innovation across their organisations. During a time of continued conflict and unrest, the new initiative\u2014developed by AIRPPU in partnership with WAN-IFRA and OpenAI\u2014aims to help news organisations harness the opportunities of artificial intelligence to strengthen the sustainability, efficiency, and resilience of independent journalism.\n\nThe programme combines two complementary components:\n\n- **Newsroom AI**, supporting news organisations selected by AIRPPU in developing and implementing AI-driven newsroom projects, and;\n- **Business Transformation**, supporting AI-driven commercial and operational transformation projects.\n\nThe Newsroom AI Masterclass Series will build on prior successful initiatives of WAN-IFRA and OpenAI and bring together international experts and practitioners to share practical knowledge, case studies, and implementation strategies. The topics span a broad range of critical news organisation priorities, including editorial workflows, audience engagement, product development, revenue generation, organisational change, and responsible AI adoption.\n\nBuilding on this foundation, the Newsroom AI Catalyst will provide deeper, hands-on support to ten participating Ukrainian news organisations as they identify high-impact use cases, develop implementation roadmaps, and pilot AI-enabled solutions tailored to their specific needs.\n\nAll organisations participating in the programme will also receive credits to OpenAI\u2019s API to facilitate the development of bespoke newsroom solutions.\n\n1 of 3\n\n> \u201cOngoing war, economic pressures, and disruption to daily lives have created unprecedented challenges for independent media in Ukraine. We believe that AI can greatly assist and provide significant opportunities to strengthen editorial workflows, improve efficiency, and better serve audiences. This programme will provide Ukrainian publishers with access to international expertise, practical tools, and hands-on support that will help them turn those opportunities into tangible results. And most importantly\u2014it should give journalists back time to do journalism.\u201d\n\n*\u2014Oksana Brovko, Chief Executive Officer, AIRPPU*\n\n> \u201cSupporting Ukrainian media has been a core commitment for WAN-IFRA since the full-scale invasion in 2022. In wartime, independent journalism does more than report events: it safeguards the public record and ensures that Ukraine\u2019s story is told by Ukrainians. Since my first visit to Ukraine in July 2022, I have witnessed firsthand the extraordinary resilience of the country\u2019s newsrooms and I am truly grateful that our collaboration with OpenAI\u2014which since 2024 has enabled publishers worldwide to test, question, and shape how AI is used in news\u2014can now contribute to that shared commitment in Ukraine, together with AIRPPU.\u201d\n\n*\u2014Stig \u00d8rskov, Chief Executive Officer, WAN-IFRA*\n\n> \u201cIndependent journalism plays a vital role in helping communities stay informed, especially during times of war, crisis, and uncertainty. We are very pleased to support this AI initiative with Ukrainian news publishers and WAN-IFRA. By sharing practical knowledge, building on prior successes, and helping news organisations leverage the technology, we hope to contribute to a stronger and more sustainable future for independent journalism in Ukraine. We\u2019ll continue partnering with newsrooms and journalists around the world to support their critically important work and enable them to deliver high-quality journalism to even more people.\u201d\n\n*\u2014Tom Rubin, Chief of Intellectual Property and Content, OpenAI*\n\n- Oksana Brovko\n- Stig \u00d8rskov\n- Tom Rubin\n\n- Oksana Brovko\n- Stig \u00d8rskov\n- Tom Rubin\n\nThe programme builds on WAN-IFRA\u2019s extensive global work supporting AI adoption in news organisations\u2014including leadership programmes, industry research, peer-learning communities, and practical implementation initiatives\u2014and OpenAI\u2019s [continued partnership](https://openai.com/index/how-news-organizations-are-using-ai/) with news organisations around the world to help support their vital missions.\n\nThe Newsroom AI Masterclass Series began on August 5, 2026, with the Newsroom AI Catalyst set to launch on September 17, 2026. Further details regarding participation and full programme dates can be found [here\u2060(opens in a new window)](https://wan-ifra.org/events/newsroom-ai-catalyst-ukraine/).\n\n## About WAN-IFRA\n\nWAN-IFRA, the World Association of News Publishers, unites media globally to strengthen the business of trusted journalism and defend press freedom.\n\n## About AIRPPU\n\nThe Association of Independent Regional Press Publishers of Ukraine (AIRPPU) is the largest network of independent regional and local news publishers in Ukraine. The association supports media sustainability, professional journalism, and press freedom through capacity-building programmes, emergency support, innovation initiatives, and international partnerships, working with independent news organisations across the country.\n\n- [Partnerships](https://openai.com/news/?tags=partnerships)\n- [2026](https://openai.com/news/?tags=2026)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Helping older adults use AI in everyday lifeGlobal AffairsSep 16, 2026 Helping older adults use AI in everyday life - Global Affairs - Sep 16, 2026](https://openai.com/index/helping-older-adults-use-ai-in-everyday-life/)\n\n\n\n[How workers are unlocking new ways of workingGlobal AffairsSep 16, 2026 How workers are unlocking new ways of working - Global Affairs - Sep 16, 2026](https://openai.com/index/unlocking-new-ways-of-working/)\n\n\n\n[Expanding AI access across every level of US governmentGlobal AffairsSep 10, 2026 Expanding AI access across every level of US government - Global Affairs - Sep 10, 2026](https://openai.com/index/expanding-ai-access-us-government/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810868,
-    "title": "AI integration: Getting ROI from your AI investment",
-    "url": "https://www.perplexity.ai/hub/blog/ai-integration",
-    "published_at": "2026-09-07T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "Warning: Target URL returned error 403: Forbidden\n\nMarkdown Content:\n## Key takeaways\n\n*   Giving employees AI alone doesn\u2019t generate returns. AI needs to be connected to useful data with proper embedding into workflows.\n*   Businesses need to establish baseline metrics before implementing AI and give employees training with clear goals. \n*   AI integration analyzes information, automates tasks, supports decisions, and takes actions. It works alongside employees to hasten rote tasks so that they can get to the more substantive work. But poor data and disconnected systems will undermine returns.\n*   AI acceleration depends on governance and human review. \n\n## AI integration ROI: what is it and what drives it\n\nJust as the Industrial Revolution accelerated travel through the internal combustion engine, and the digital revolution made communication instantaneous via the internet, the AI revolution is transforming knowledge work, taking on complex data-driven tasks and compressing them down from weeks to minutes.\n\nBut what is AI integration? It\u2019s the process of connecting artificial intelligence to an organization\u2019s existing systems, which includes data, software, and workflows. When AI is integrated into a business\u2019s systems, it can take specific, meaningful actions, pulling data across multiple applications, and helping in core operations. It helps extract the value of the services businesses are already using and paying for, such as converting Confluence project updates into Asana tasks and notifying teams in Slack.\n\nSimply giving employees AI tools doesn\u2019t mean businesses will suddenly see massive returns. Only through proper implementation and governance can businesses see benefits.\n\n### Where AI integration has produced measurable ROI\n\nThe BOQ Group, an Australian bank, saw the completion of its business risk review go down from three weeks to one day, according to a [2025 Microsoft survey](https://www.microsoft.com/en-us/microsoft-cloud/blog/2025/07/24/ai-powered-success-with-1000-stories-of-customer-transformation-and-innovation/). Additionally, the same Microsoft survey found that the Markerstudy Group\u2019s use of a call summarization app for its claims department saved its handlers four minutes per call, yielding an annual time savings of 56,000 hours.\n\nBusinesses can embed AI capabilities into existing products or workflows, or they can connect their systems to an AI platform that orchestrates work across their APIs and tools. Connecting business systems to an AI platform gives it the organizational context needed to work across internal data sources, applications, and workflows.\n\n#### Framework for testing AI before wide implementation\n\nWhat you want to improve Metrics to consider Pre-integration check\nReduce repetitive work Time per task, output volume Is AI producing consistent results across tasks?\nAccelerate research and decision Research time, source accuracy Quality of output and verifiability of information\nCustomer relations Time per inquiry, satisfaction What level of complex inquiry can it handle? Is correct customer information being elevated? Is it handing over to a human in requisite situations?\nError reduction Error rate, revision time, exception volume How well did AI flag and fix errors?\n\n## What integrated AI can do\n\nAn integrated AI system can help with data analysis, including analysis of unstructured data, along with predictive analysis to help businesses with improved decision making. With AI agents, businesses can automate repetitive tasks, such as putting together weekly market reports. A connected AI assistant can answer routine customer service questions by pulling in relevant account data with humans handling exceptions.\n\nProper integration can lead to lower operating costs, increased revenue, and reduced vendor or infrastructure spending. For employees, this means time saved. AI can synthesize complex data and produce new conclusions. It can also work across various apps and systems, pulling in multiple data points into one platform. Employees don\u2019t need to copy and paste data between Slack and internal systems while also scrubbing information from PDFs. AI can parse through systems and files, leading to fewer errors and can assist in reaching new conclusions faster.\n\n#### Seven benefits of AI integration for businesses\n\n*   Automates routine work\n*   Improves data accuracy\n*   Enables faster decisions\n*   Scales with growing data\n*   Accelerates innovation\n*   Personalizes customer experience\n*   Strengthens competitive advantage\n\n### AI isn\u2019t perfect: complexity, data quality, drift, and upkeep\n\nSometimes AI systems can hallucinate, which is when an AI says something incorrect with confidence. For businesses bringing in AI, it\u2019s important to work with platforms that provide clear sourcing so that workers can double-check outputs. But errors are only one part of the AI integration challenge. Integration complexity, uneven data quality, weak governance, model drift, and maintenance overhead can erode returns. Model drift, in particular, is something that teams should monitor. It\u2019s when an AI workflow performs well during testing but degrades as data and prompts change. It requires continued measurement after rollout. To mitigate the risks, technical leaders should oversee the AI rollout and train employees with a proper permissions structure.\n\n## AI adoption doesn\u2019t guarantee ROI\n\nAI should be embedded into existing products and workflows employees already use. Technical leaders can connect systems via an AI orchestration layer. Throughout this process, leaders need to implement proper governance and permissions so that AI is deployed safely.\n\nIf AI sits as a separate app, employees will need to transfer data and context manually. In this scenario, AI will lack the organizational context, such as manuals, customer accounts, and other data to produce useful results. And for the IT team, it\u2019ll be difficult to standardize, maintain, and govern.\n\n## Where AI integration speeds up work\n\nDrafting market analysis reports can be a long, drawn out process. It requires teams to look through changing trends, competitive analysis, and internal financials.\n\nAI might not replace this process, but it can definitely accelerate rote data crunching so teams can spend more time problem solving.\n\nWith AI, product development accelerates. It compresses market research, aids in customer discovery, and assists in prototyping and testing. Bessemer Venture Partners, a global venture capital firm, was able to [shrink NDA review from 1-2 hours down to minutes](https://www.perplexity.ai/hub/customers/bvp), according to a Perplexity customer story.\n\n### How AI integration helps with security and fraud detection\n\nBad actors are using AI to find zero-day exploits, according to a [2026 Google Cloud blog post](https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access). As a result, enterprises are raising their own defenses with AI. [Cisco recently released an AI platform](https://www.reuters.com/business/media-telecom/cisco-rolls-out-software-tools-protect-it-systems-ai-agents-2026-06-02/) in June of 2026 that uses defensive AI agents to monitor infrastructure, block intrusions, and remove hackers.\n\nWith AI helping security teams, it can run round-the-clock monitoring to identify anomalies, detect fraud, and aid in incident response. AI can also summarize alerts, analyze policies, assist in threat intelligence, and help investigators with reports.\n\nBusinesses should establish clear AI guardrails. Big decisions still require human review with clear accountability. It\u2019s up to technical leaders to ensure that security remains up to date as [attackers are using more sophisticated AI systems](https://www.paloaltonetworks.com/cyberpedia/what-is-a-prompt-injection-attack) to their advantage.\n\n## How AI integration shows up in cost savings\n\nThere are some obvious ways in which AI can help businesses reduce costs. This includes using it to analyze legal documents and extract other bits of information. Marketing teams can cut content production costs with AI-assisted content creation.\n\nTeams should always put their own spin on AI inputs so the content feels recognizably human.\n\n#### Where AI integration can reduce costs\n\nTeam AI-supported work Where cost savings can appear\nMarketing Research, campaign analysis, asset adaption Lower production cost, fewer hours spent on repetitive work and research\nHuman resources Policy research, onboarding, employee-question routing Lowers administrative costs\nFinance Reconciliation, invoice processing, expense review, report preparation Fewer hours, errors, late-payment costs\nProcurement Vendor research, proposal comparisons Lowers research costs, shorter sourcing cycles, flags pricing differences\nLegal Contract review, document comparison, information extraction Lowers review cost, faster turnaround for routine documents\nCustomer relations Summarize customer data, call routing, solving basic inquiries Lower cost per ticket, shortens handling time, fewer escalations\nSales Account research, CRM updates, lead qualification, follow-up preparation Lowers research time and cost per opportunity\nIT and security System monitoring, alert summaries, incident triage, support ticket resolution Lower cost per incident, fewer hours spent on routine alerts, monitoring protects against attackers\n\n## Why AI integration can fail to deliver returns\n\n. AI has to work inside workflows people already use, not as a separate app beside it. An [MIT study](https://mitsloan.mit.edu/ideas-made-to-matter/generative-ai-changes-how-employees-spend-their-time) found that software developers with access to an AI coding tool increased their coding activity by 12.4% while decreasing project management activity by 24.9%, showing the efficiency AI can bring to organizations.\n\nThe adopted platform must also have access to data and systems so that it can reliably act on information. If data is messy, AI can\u2019t properly understand it. There also has to be a built-in feedback loop for human review so that the AI can improve.\n\nTesting before broad rollout avoids predictable failures. Before rollout, first measure the original process. With that data in-hand, see how quickly processes respond with AI in the mix. Throughout this trial, ensure technical leads give proper permissions for security and oversight.\n\n### How to improve the likelihood of positive AI ROI\n\n1.   Choose one measurable workflow, such as a repetitive or research-heavy process.\n2.   Establish a baseline by recording current costs, completion time, error rate, and output.\n3.   Assess data and system readiness by identifying required applications, APIs, and datasets.\n4.   Set success criteria by defining what improvement justifies continued investment.\n5.   Keep people in the loop with defined reviews and approvals. \n6.   Run a limited pilot and compare results against the baseline.\n7.   Scale only after demonstrating value by expanding integrations that produce reliable improvements.\n\n## Using the Perplexity API Platform for business AI integration\n\nPerplexity is an AI platform that helps businesses get accurate answers and automate complex work. It routes tasks across 15+ frontier models including OpenAI, Anthropic, Google, and others, so the best model for the task completes the work..\n\nWhen it comes to AI integration, businesses can use the [Perplexity API Platform](https://www.perplexity.ai/api-platform) to add live, web-grounded search and AI capabilities to their products, internal tools, and automated workflows.\n\nPerplexity Enterprise connects to company files and tools through App Connectors reaching [400+ services](https://www.perplexity.ai/hub/products/app-connectors), including Slack, Google Drive, and Snowflake. This allows employees to work with internal information along with up-to-date online data to produce outcomes that contain business context. Employees don\u2019t",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 716040,
-    "title": "KV Cache Engineering for LLM Serving",
-    "url": "https://www.dailydoseofds.com/p/kv-cache-engineering-for-llm-serving/",
-    "published_at": "2026-09-06T20:29:35+00:00",
-    "fetched_at": "2026-09-28T21:40:43+00:00",
-    "source_id": "daily-dose-of-ds",
-    "source_name": "Daily Dose of Data Science",
-    "extraction_method": "trafilatura",
-    "body": "KV Cache Engineering for LLM Serving\n12 techniques to manage KV cache in production.\nLLMOps\n12 techniques to manage KV cache in production.\nAvi Chawla\n\ud83d\udc49\nLoading an LLM is only the first part of GPU memory planning.\nModel weights stay roughly fixed during inference. The KV cache does not. It grows with every token in the sequence, and by default, every active sequence needs its own cache.\nFor Llama 3.1 70B, one 128K-token sequence requires about 40 GB of BF16 KV cache. Four full-length sequences would add another 160 GB, before accounting for model weights and serving overhead.\nThat creates two separate costs. The cache occupies GPU memory, and the attention layers must repeatedly read it while generating new tokens.\nThe techniques described as KV cache optimizations address different parts of this problem. Some change what the model stores. Some retain fewer tokens or use fewer bits. Others leave the logical cache intact and improve how the serving engine reads, allocates, shares, or moves it.\nThis article organizes twelve techniques by what they reduce, when they can be applied, and what trade-off remains. Each section includes a small runnable example that explains the main idea.\nTo dive deeper into the full LLMOps lifecycle, we have covered every bit of this in the LLMOps course, starting from fundamentals to production.[Start here \u2192](https://www.dailydoseofds.com/llmops-crash-course-part-1/)\nEach attention layer stores one key and one value for every retained token.\nThe raw cache size for one sequence is:\nThe leading 2 counts keys and values. BF16 uses two bytes per value, while FP8 uses one.\nThat formula also gives us a clean way to group the techniques:\n- GQA and MQA reduce the number of KV heads.\n- Cross-layer attention reduces the number of unique cached layers.\n- Sliding windows and eviction reduce the number of retained tokens.\n- MLA reduces the width of the stored representation.\n- Quantization reduces the bytes used by each value.\n- Hybrid recurrent layers replace a growing cache with fixed-size state.\n- Paging and prefix reuse reduce allocation waste and duplicate blocks.\nSparse attention needs a separate line. It may read fewer tokens without removing them from memory, so it can cut attention work while leaving cache capacity unchanged.\nThis distinction matters when the GPU is full. A faster attention kernel doesn\u2019t create room for another sequence unless it also stores fewer bytes.\nThe visual below puts all 12 techniques in one place, showing what each one changes and whether its main saving comes from fewer heads, layers, tokens, dimensions, bits, or duplicated memory.\nThe table above represents what each technique tries to tackle.\nThe rest of the article works through the full table in order.\nThe cache formula above contains a term for KV heads. Reducing that term is one of the largest architectural savings available.\nInside each transformer layer, every token produces three representations:\n- The query represents what the current token needs.\n- The key describes what each earlier token can match.\n- The value carries the information returned when that match receives attention.\nDuring generation, the current token\u2019s query is compared with cached keys.\nThose comparisons produce attention weights, which combine the cached values. The layer keeps keys and values for later decoding steps. It does not keep the queries.\nAttention splits these representations into smaller parts called heads.\nA query head is one slice of the token\u2019s query representation. It is not the user\u2019s prompt or a separate model request. Different heads can learn to focus on different relationships in the same sequence.\n- Standard multi-head attention, or MHA, gives each query head a matching key head and value head. A layer with eight query heads therefore produces eight key heads and eight value heads. Every attention layer performs this projection independently and keeps its own KV cache.\n- Multi-query attention, or MQA, keeps all eight query heads but produces only one key head and one value head. Every query head reads from that shared KV pair. The sharing does not cross transformer layers.\n- Grouped-query attention, or GQA, sits between these two layouts. It divides the query heads into groups and assigns one KV pair to each group. With eight query heads and two KV heads, four query heads share each KV pair.\nAll three methods operate inside each attention layer. They differ only in how many KV heads that layer stores. Cross-layer attention, covered next, is a separate idea that shares cached information between layers.\nThe GQA paper described it as an intermediate point between MHA and MQA.\nThe authors converted existing MHA checkpoints and used 5 percent of the original pretraining compute for recovery training. Their uptrained GQA models stayed close to MHA quality while approaching MQA speed.\nThe following example uses eight query heads. It shows which KV head each query head reads. It also counts the cached scalars for six tokens:\nquery_heads = 8\ntokens = 6\nhead_size = 8\nfor name, kv_heads in [(\"MHA\", 8), (\"GQA\", 2), (\"MQA\", 1)]:\nqueries_per_kv_head = query_heads // kv_heads\nmapping = [head // queries_per_kv_head for head in range(query_heads)]\ncached_scalars = 2 * kv_heads * tokens * head_size\nprint(name, \"mapping:\", mapping)\nprint(name, \"cached scalars:\", cached_scalars)\n# Output:\n\"\"\"\nMHA mapping: [0, 1, 2, 3, 4, 5, 6, 7]\nMHA cached scalars: 768\nGQA mapping: [0, 0, 0, 0, 1, 1, 1, 1]\nGQA cached scalars: 192\nMQA mapping: [0, 0, 0, 0, 0, 0, 0, 0]\nMQA cached scalars: 96\n\"\"\"\nThe mapping lists one KV head number for every query head. MHA uses a different KV head each time. GQA shares KV head 0 across four queries, then does the same with KV head 1. MQA maps every query head to KV head 0.\nThe cache count includes both keys and values. It then multiplies by six tokens and eight scalars per head.\nLlama 3.1 70B uses 64 query heads and 8 KV heads. At 128K context, that produces a 40 GB BF16 cache instead of the 320 GB required by the same shape with 64 KV heads.\nThis code proves the storage ratio. It doesn\u2019t test quality, because head sharing changes what the model learns and must be evaluated after training.\nGQA shares keys and values across heads within one layer. Cross-layer attention shares them across adjacent layers.\nSo a sharing factor of two implies two attention layers use one set of cached keys and values. The model now stores half as many unique layer caches.\nThe Cross-Layer Attention (CLA) paper trained 1B and 3B models and reported another 2x KV cache reduction while keeping accuracy close to the MQA baseline.\nThe next script represents two layers sharing one cache allocation:\ntokens = 32\nkv_heads = 2\nhead_size = 8\none_layer_cache = 2 * tokens * kv_heads * head_size\nshared_cache = {\"stored_scalars\": one_layer_cache}\nlayer_caches = [shared_cache, shared_cache]\nseparate_total = 2 * one_layer_cache\nshared_total = shared_cache[\"stored_scalars\"]\nprint(\"layers point to same cache:\", layer_caches[0] is layer_caches[1])\nprint(\"two separate layer caches:\", separate_total, \"scalars\")\nprint(\"one shared layer cache:\", shared_total, \"scalars\")\n# Output:\n\"\"\"\nlayers point to same cache: True\ntwo separate layer caches: 2048 scalars\none shared layer cache: 1024 scalars\n\"\"\"\nOne layer would store 1,024 scalars here. The leading 2 counts keys and values. Two independent layers would therefore store 2,048 scalars.\nBoth items in layer_caches point to the same Python object. The physical storage remains 1,024 scalars even though two logical layers use it.\nCross-layer sharing compounds GQA because it reduces a different term. GQA stores fewer KV heads inside each layer. CLA stores fewer distinct layer caches across the model.\nA standard checkpoint learns separate KV projections for every layer. Each layer expects the cache created by its own weights. Redirecting it to another layer\u2019s cache changes the model\u2019s computation.\nA CLA model trains with the sharing pattern already present. Training lets each dependent layer adapt to the shared cache. The serving engine must then reproduce the same ownership pattern.\nThe checkpoint and engine must agree on which layer owns each cache. This is why CLA cannot be enabled as a generic runtime flag.\nCLA reduces the number of stored layer caches. Sliding-window attention reduces the tokens stored inside selected layers.\nIn full self-attention, each new token can attend to every earlier token. Each attention layer must therefore keep keys and values for the full sequence. As the sequence grows, every layer\u2019s KV cache grows with it.\nSliding-window attention limits a layer to recent tokens. Suppose the window contains 1,024 positions. That layer stores KV entries for only the latest 1,024 tokens. Each new entry removes the oldest one after the window fills. Its cache then stays fixed at 1,024 positions.\nWe call this a local layer because it sees nearby context. A global layer can still attend to every earlier token. Its cache keeps growing until the sequence ends.\nMany models mix both layer types. Local layers provide most of the memory saving. Occasional global layers preserve access to distant parts of the prompt. The total cache still grows, but much slower than full attention everywhere.\nFor instance, Gemma 3 uses a repeating pattern of five local layers followed by one global layer. Its local window is 1,024 tokens, while the global layer supports the full 128K context:\nThe following example tracks the positions retained by a four-token window:\nwindow_size = 4\nretained_positions = []\nfor position in range(10):\nretained_positions.append(position)\nif len(retained_positions) > window_size:\nretained_positions.pop(0)\nprint(f\"after token {position}: {retained_positions}\")\nprint(\"maximum retained positions:\", window_size)\n# Output:\n\"\"\"\nafter token 0: [0]\nafter token 1: [0, 1]\nafter token 2: [0, 1, 2]\nafter token 3: [0, 1, 2, 3]\nafter token 4: [1, 2, 3, 4]\nafter token 5: [2, 3, 4, 5]\nafter token 6: [3, 4, 5, 6]\nafter token 7: [4, 5, 6, 7]\nafter token 8: [5, 6, 7, 8]\nafter token 9: [6, 7, 8, 9]\nmaximum retained positions: 4\n\"\"\"\nThe list fills with positions 0 through 3. When position 4 arrives, the list becomes too long. Removing its first item drops position 0.\nThe same step repeats for every later token. Production engines usually use a ring buffer, which overwrites old slots without moving the remaining entries.\nThe first four tokens fill the available slots. Token 4 then removes token 0, so the window shifts to positions 1 through 4. Every later token shifts that range forward by one. After token 9, only positions 6 through 9 remain. The allocation stays fixed at four slots throughout.\nThe ratio also changes with context length. Below 1,024 tokens, both layouts retain the same number of positions. The saving appears only after the sequence exceeds the local window.\nMulti-head latent attention, or MLA, doesn\u2019t cache a complete key and value for every head. It compresses the hidden state into a smaller latent representation and stores that instead.\nDuring decode, the model uses learned projections to recover the information needed by attention.\nImplementations can absorb parts of those projections into the query and output paths, which avoids reconstructing every full KV tensor in memory.\nDeepSeek-V2 introduced this design. The paper reported a 93.3 percent KV cache reduction compared with DeepSeek 67B and a 5.76x increase in maximum generation throughput:\nAn actual MLA layer uses learned matrices to create and use the latent representation. Those matrix operations hide the basic memory difference in a small example.\nThe following example counts storage for one token. The dimensions are intentionally small. They make the difference between both layouts visible.\nkv_heads = 4\nhead_size = 8\nstandard_keys = kv_heads * head_size\nstandard_values = kv_heads * head_size\nstandard_total = standard_keys + standard_values\nmla_latent = 8\nmla_rotary_key = 4\nmla_total = mla_latent +",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "open-source",
-      "benchmark",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551708,
-    "title": "An Alien Mind",
-    "url": "https://openai.com/index/an-alien-mind",
-    "published_at": "2026-09-06T09:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 6, 2026\n\n[Safety](https://openai.com/news/safety-alignment/) [Research](https://openai.com/news/research/)\n\n# An Alien Mind\n\nBy: Jakub Pachocki, Chief Scientist at OpenAI\n\nLoading\u2026\n\nShare\n\nIntellect we don\u2019t fully understand\n\n- [Intellect we don\u2019t fully understand](#intellect-we-dont-fully-understand)\n- [Teaching machines to love](#teaching-machines-to-love)\n- [Monitoring generalization](#monitoring-generalization)\n- [Scalable defense](#scalable-defense)\n- [Pacing RSI](#pacing-rsi)\n- [What is next?](#what-is-next)\n\n- [Intellect we don\u2019t fully understand](#intellect-we-dont-fully-understand)\n- [Teaching machines to love](#teaching-machines-to-love)\n- [Monitoring generalization](#monitoring-generalization)\n- [Scalable defense](#scalable-defense)\n- [Pacing RSI](#pacing-rsi)\n- [What is next?](#what-is-next)\n\nIn mid-2023, within the \u201cRLSlow\u201d research project, we saw the first results that gave us confidence that we will be able to scale the training of reasoning models, unlocking the capability of pretrained models to form their own chains of thought. Szymon and I spent that night at the office, thinking not about the incredible benchmark numbers, products, or scientific results that this technology will deliver - but rather, trying to process the sobering fact we will actually see machines meaningfully smarter than ourselves in our lifetime, and we already see the shape of these systems; wondering how to alert people to the significance of this.\n\nThree years later, reasoning language models are a rapidly growing part of the economy and starting to push the boundaries of science. They are able to operate computers and graphical interfaces, collaborate with people and each other, and carry out research projects. They are also transforming the landscape of computer security, and in that present clear new dangers.\n\nA lot of new research happened in this period, and our understanding of these systems is again a little different than it was in 2023. Based on internal results, I have a strong expectation that this speed of progress could be sustained into recursive self-improvement. If AI development continues along its current path, the systems we\u2019ll see in the next few years are likely to represent further capability jumps of equal or larger magnitude, and to increasingly drive their own development.\n\nThis is a time that calls for extreme caution. I am concerned no one is prepared for the consequences of a continued rapid rise in machine intelligence. OpenAI will continue to seek technical solutions to alignment and monitoring, to build defensive systems and unilaterally withhold further scaling as needed; however, I believe broader interventions are required.  \n\n## Intellect we don\u2019t fully understand\n\nAt a high level, progress in machine intelligence is driven by increasing computational power. We at OpenAI deeply internalized this around 2017, after seeing consistent returns to scaling across multiple research projects [1](#citation-bottom-1). As a result, we sought out access to much more compute than we had originally planned, and increasingly oriented our research around a small number of very scalable directions. We believed that was the only way for us to be at the frontier of AI research, and influence the impacts of AGI.\n\nThere are new algorithms that have been developed along the way, new feats of ingenuity from teams and individual researchers. I see them largely as discoveries along the path of scaling; the science of deep learning is still nascent, and meaningful algorithmic progress tends to correlate with access to compute. If you zoom out to a multiple-year horizon, AI is continuing to become more intelligent as it is scaled to larger computers.\n\nAnd, in line with [Ray Kurzweil\u2019s predictions from the end of the XXth century\u2060(opens in a new window)](https://www.thekurzweillibrary.com/the-coming-merging-of-mind-and-machine), we now find ourselves at the moment in history of computing where machine intelligence is starting to exceed that of humans in transformative ways.\n\nAI is *grown* more than *designed* - it is, to first degree, the product of repeating a straightforward optimization step many times on a hard-to-imagine amount of compute. This results in an incredibly complex system that works through abstract concepts and can simulate facets of human behavior. We can discover various insights about little mechanisms that emerge within this system, in a process similar to neuroscience - and, similarly to neuroscience, its overall action evades a description we can fully understand.\n\nThe study of deep learning-based AI is largely an experimental science. We [put a lot of effort\u2060](https://openai.com/index/gpt-4-research/#predictable-scaling) into building principled algorithms and making testable predictions, but fundamentally, our large-scale training runs are *experiments*, and we are sometimes surprised by their results. Moreover, as the systems become more capable, the results become harder to interpret.\n\nThis is made more complicated by the current algorithms generally improving easy-to-measure capabilities faster than those hard to objectively quantify. We spend a lot of time trying to understand how capabilities generalize, and what to prioritize to advance the skills that are going to be most relevant in the next few years. For instance, we believe we could make the models better at specifically mathematics research with additional focus, but we do not prioritize this direction because of the urgency we feel about RSI and automated alignment research, as I will discuss later.\n\nThe intelligence produced by scaling deep learning is not directly comparable to human intelligence. To become very relevant in the real world - very useful or very dangerous - the AI does not need to match or exceed all human capabilities; it just needs to surpass enough of them. And as it continues to surpass humans on more and more axes, it is becoming increasingly difficult to understand exactly how capable it is.\n\n## Teaching machines to love\n\nBecause machine intelligence comes from a fundamentally different process than human intelligence, we cannot assume it adheres to human principles by default, or generalizes from them in a human-like manner. The core problem in AI research is that of *alignment* - getting the AI to \u201ctry to do the right thing\u201d by human standards.\n\nFor the purpose of organizing practical research directions, I find it useful to distinguish *goal alignment* and *value alignment*.\n\nGoal alignment is broadly: \u201cdoes the AI try to accomplish the goal set before it?\u201d. This can include things like adherence to an [instruction hierarchy\u2060](https://openai.com/index/the-instruction-hierarchy/), or the ability to communicate and collaborate with people, to attempt to understand their objectives. This set of directions has been extremely practically relevant.\n\nValue alignment is a more intrinsic property of the model. It is the ability to hold and generalize from a high-level set of principles; to act \u201creasonably\u201d even when given unclear or conflicting objectives, or placed in unfamiliar or adversarial situations. An aligned AI should act with honesty and integrity, and love for humanity.\n\nOf course, the boundary between value and goal alignment can be blurry, and truly caring about goals requires attempting to infer the [intent\u2060(opens in a new window)](https://ai-alignment.com/clarifying-ai-alignment-cec47cd69dd6) and values underlying them. However, generally when I talk about the long-term importance of alignment research, I am referring to value alignment.\n\nThe fundamental challenge of AI alignment is generalization. As machines become smarter, they find themselves working on higher-level concepts, and placed in environments increasingly different from those they encountered in training. They can fail at generalizing from the values taught and reinforced in their training process to those new situations; and it can be hard for us to be sure how they will act. This is made even more difficult by the fact the overall ecosystem the AIs are used in is changing very quickly; for example, AIs trained today need to be robust to interacting with a variety of other AIs. Crucially, we need future AIs to continue to hold human values regardless of whether they believe they\u2019re under human supervision.\n\nThere are two major classes of currently practically employed methods for alignment training.\n\nThe first is encouraging aligned behavior as part of goal-oriented reinforcement learning. Model\u2019s actions are evaluated (usually by AI) for being consistent with a given preference model, \u201cspec\u201d or \u201cconstitution\u201d, and rewarded appropriately. This approach can be very effective in the average case, and is a core part of how modern AI assistants are made. Unfortunately, it can also be brittle and strongly relies on the coverage of training oversight and the model\u2019s ability to generalize from the situations it has encountered in training. For example, in the OpenAI-Hugging Face incident, the agents preserved a boundary of not social engineering humans. However, they clearly failed to abstain from other actions that were out of scope and went against the spirit of the values they were taught in other settings.\n\nThe second approach seeks to leverage the model\u2019s ability to generalize from pretraining data. This can involve crafting alignment-inducing training datasets, or focusing the model on an \u2018aligned\u2019 part of the pretraining distribution, as in, for example, the [persona selection model\u2060(opens in a new window)](https://www.anthropic.com/research/persona-selection-model). The weakness of this approach lies in the lack of robustness to further optimization pressure. If you take a model that thinks generally \u2018aligned\u2019 thoughts, and subject it to enough training where it\u2019s taught to achieve very hard objectives, it can learn to reason in a motivated way: bending the 'aligned' seeming thoughts as needed to achieve the goal. We likely saw an example of such behavior in recent cybersecurity incidents involving a non-OpenAI model.\n\nWe invest heavily along the spectrum of approaches spanned by these directions. We also see meaningful progress - GPT\u20116 Astra is the first model that benefits from some important advancements we have been working on for a long time, and is significantly better aligned than GPT\u20115.6 Sol. Still, it is important to acknowledge and understand that much more progress is required as models become more capable; and that progress in generalizable alignment may not sufficiently outstrip progress in general model intelligence.\n\n## Monitoring generalization\n\nWe do not have a satisfactory theory of generalization, and it seems unlikely that we can develop one soon, at least without the help of more powerful AI. Therefore, at present, our ability to empirically validate our alignment techniques is in practice arguably even more important than the alignment techniques themselves.\n\nOpenAI\u2019s primary bet here has been [chain-of-thought monitoring\u2060(opens in a new window)](https://arxiv.org/abs/2507.11473). It is based on an appealingly scalable idea: a lot of the model\u2019s capability comes from a verbalized reasoning process (chain-of-thought). If we scale optimization on the outcomes of that process, but do not supervise the process itself, that chain-of-thought has no direct incentive in training to hide any misaligned idea",
-    "topic": "research",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551709,
-    "title": "Research acceleration: The view inside OpenAI",
-    "url": "https://openai.com/index/research-acceleration-view-inside-openai",
-    "published_at": "2026-09-06T08:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 6, 2026\n\n[Research](https://openai.com/news/research/) [Publication](https://openai.com/research/index/publication/) [Safety](https://openai.com/news/safety-alignment/)\n\n# Research acceleration: The view inside OpenAI\n\nLoading\u2026\n\nShare\n\n1\\. Coding agents are reshaping daily work for OpenAI researchers\n\n- [1. Coding agents are reshaping daily work for OpenAI researchers](#coding-agents-are-reshaping-daily-work-for-openai-researchers)\n- [2. Researchers are writing more code and running more experiments](#researchers-are-writing-more-code-and-running-more-experiments)\n- [3. The work researchers use agents for is changing](#the-work-researchers-use-agents-for-is-changing)\n- [4. Pacing model development](#pacing-model-development)\n- [5. The path ahead](#the-path-ahead)\n- [Appendix: Our methods for this post](#appendix-our-methods-for-this-post)\n\n- [1. Coding agents are reshaping daily work for OpenAI researchers](#coding-agents-are-reshaping-daily-work-for-openai-researchers)\n- [2. Researchers are writing more code and running more experiments](#researchers-are-writing-more-code-and-running-more-experiments)\n- [3. The work researchers use agents for is changing](#the-work-researchers-use-agents-for-is-changing)\n- [4. Pacing model development](#pacing-model-development)\n- [5. The path ahead](#the-path-ahead)\n- [Appendix: Our methods for this post](#appendix-our-methods-for-this-post)\n\nFor AGI to benefit all of humanity, we believe it must be democratically governed. This can only happen through an informed public debate about the capabilities, risks and safeguards of highly capable AI systems. People everywhere need to understand the likely future trajectory of frontier AI, so they can have a meaningful voice in how it develops.\n\nTransparency about specific risks, incidents and safeguards is necessary, but not sufficient. We believe the public also needs to understand how the most capable systems are developing, and how they are driving research progress, inside of frontier labs.\n\nWe aim to safely build an automated AI researcher that can work under human supervision to further progress on deep learning and alignment, enabling iterative improvements. According to our measurements, we have now reached the goal, [announced\u2060(opens in a new window)](https://x.com/sama/status/1983584366547829073?lang=en) last fall, of having an automated research intern by September of this year. By \u201cresearch intern,\u201d we mean a system that can carry out well-defined research tasks under human direction, including tasks that would take a skilled researcher a few days. We are making strong progress toward creating an automated AI researcher by March of 2028.\n\nOver the course of this year, OpenAI researchers\u2019 daily work has changed substantially. Researchers are using coding agents throughout the day (often in concurrent sessions) and total usage is rapidly increasing, outpacing growth among other OpenAI teams. Researchers are contributing code faster and running more experiments. The ways researchers use agents are changing, too: agents are handling increasingly complex tasks, and succeeding at them more often. AI research is a complex process with many potential bottlenecks, so the overall pace of progress likely won\u2019t keep pace with these specific metrics. But on the whole, these findings are consistent with the broader impression many of us have internally that agentic tools are meaningfully accelerating research progress. People still set our research priorities, judge which ideas and results to pursue, and decide whether to scale, pause, or deploy systems.\n\nIf it is done responsibly, we believe automated AI research will yield models that directly enhance human welfare and advance OpenAI\u2019s mission. It can bring down the cost of advanced intelligence so that people worldwide can benefit. We are pursuing this work in part because automated research could help us solve alignment and build defenses against increasingly capable AI. An automated AI researcher can also be an automated safety or alignment researcher. More capable, aligned systems could help secure critical infrastructure, defend against dangerous AI agents, and develop new protective measures.\n\nThese are reasons to develop useful automated research capabilities, but they do not mean that rapid RSI is necessarily an outcome we should pursue. Whether and how to proceed must depend on our ability to preserve human control and on informed democratic choices about the benefits and risks.\n\nWe do not yet know how to safely get all the way to aligned, full RSI. We are working to scale alignment and safety measures alongside capabilities. But we cannot assume that progress in alignment and safety will keep pace, and more capable systems can become harder to monitor. Careful alignment and safety work is at the center of this effort, and it starts with measuring and mitigating the safety problems we see today in agentic coding systems. Whenever we find that proceeding would pose an unacceptable safety risk, we will respond appropriately including by slowing or stopping our development or deployment of systems we find ourselves unable to sufficiently safeguard.\n\nAfter the recent Hugging Face incident, we [put this commitment into action\u2060](https://openai.com/index/pacing-model-development-cyber-capabilities/), pausing reinforcement learning (RL) training on our latest models intended for deployment while we further hardened and red-teamed our research environments and expanded coverage of our monitoring systems. This did not halt all research: some workloads resumed under stronger controls, while others remained paused. We have raised our safety and alignment standards and moved safety work deeper into the model lifecycle, requiring stronger evidence of aligned behavior throughout all of training.\n\nToday we are providing a detailed snapshot of how agentic systems have contributed to our progress toward RSI in recent months. Agentic systems are new and rapidly changing, and our measurement efforts are still preliminary. By sharing these early results and the methods behind them, we aim to inform the public, encourage a norm of public disclosure, and help the field move toward shared standards of measurement.\n\nUltimately, as we wrote in our [frontier policy blueprint\u2060](https://openai.com/index/frontier-safety-blueprint/), we believe that we and other companies should be required to publicly track our progress toward RSI. Even without such a requirement, we plan to continue being transparent about our RSI progress. We will evolve our transparency approach as our measurement techniques and understanding improve, while balancing the need to protect security and proprietary information.\n\n## 1. Coding agents are reshaping daily work for OpenAI researchers\n\nAt the start of this year, the median researcher ranked by agent usage at OpenAI was using coding agents only in modest amounts. By mid-August, the median researcher was integrating agents daily into their work, using more than $600 per day of inference at API prices. The 90th percentile user in our research organization now uses more than $7,000 of tokens per day.\n\nView methods\n\nView methods\n\nBefore June 2026, total agent runtime across the research organization was still below that of total human labor. That has since changed. In terms of a standard 8 hour workday, as of mid-August, in total, the research organization uses 3.1 agent-workdays of effort for every workday of human labor.\n\nView methods\n\nAnother way of looking at this is to understand how many researchers use highly concurrent workflows (e.g., running 4 or more agents simultaneously). As shown below, this number is increasing. These figures include the daily peaks of both agents started directly by the user and subagents created downstream from those the user launched directly.\n\nView methods\n\n## 2. Researchers are writing more code and running more experiments\n\nMuch of AI research can be seen as a labor-intensive process with the goal of integrating a new improvement to model intelligence or performance into one of our core models. The process depends on many steps, and capabilities advance when all the steps go right together: Researchers have to design new improvements, write evaluations to judge model performance, write infrastructure to test these improvements at scale, catch bugs as well as unsafe or misaligned behavior during training, and integrate winning ideas into a core training run. A failure at any part of the research process can constrain the entire loop.\n\nWriting code and running experiments are two major activities that researchers do as part of their work, and we see evidence that these processes are accelerating.\n\nView methods\n\nThese data points are relatively easy to measure, but can be hard to interpret. As automation progresses, the tasks which are *least* automatable will take on a larger share of researcher effort and will become the important bottlenecks to future progress. Compute is another gating factor for progress, and may become more important over time as other bottlenecks diminish.\n\nThrough 2026, the number of experiments per active experimenter has increased, with August 2026 being an all-time high since tracking began in Jan 2025. This is correlated with increased Codex adoption, though we note that our available compute has also grown significantly since 2025.\n\nView methods\n\n## 3. The work researchers use agents for is changing\n\nBoth qualitative impressions and internal data indicate that the mix of tasks researchers delegate to coding agents is changing, with delegation of higher level and longer-horizon tasks becoming more common over time.\n\nTo get a clearer picture of this trend, we analyzed recent usage in the research organization using a [recently published taxonomy\u2060(opens in a new window)](https://epoch.ai/gradient-updates/toward-an-onet-for-ai-rnd) of the different kinds of work that are part of the AI R&D lifecycle, developed by Epoch AI. This taxonomy, inspired by the longstanding O\\*NET system for classifying all kinds of work, is specifically tailored to frontier AI R&D, and breaks the process down into six main phases:\n\n1. Decide: what to work on, what to continue, where to allocate\n2. Design: research ideas and engineering specs\n3. Build: code and datasets\n4. Run: training/eval runs, hardware, serving\n5. Analyze: experiments, models, deployment, external work\n6. Communicate: findings, feedback, status, decisions\n\nBelow, we classify coding agent tokens under this taxonomy.\n\nView methods\n\nView methods\n\nWe see that all categories of research activities have increased between January and August 2026. In January, the dominant category was research and infrastructure code. This category has expanded, but we also see notable increases in additional categories, especially technical help and monitoring runs. High-level planning still remains a minimal fraction of agent output tokens.\n\nAnecdotally, colleagues report that coding agents excel at troubleshooting internal research infrastructure, which addresses one meaningful bottleneck to research progress. Multiple teams which previously held office hours to help researchers troubleshoot their experiments have noted declining attendance in 2026, and one has stopped holding sessions entirely, to focus on making other system improvements instead.\n\nHere, we plot the number of top-level posts",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553130,
-    "title": "Did OpenAI actually build AGI? GPT-6 Astra first look",
-    "url": "https://www.youtube.com/watch?v=FluKUJyeYD8",
-    "published_at": "2026-09-04T20:14:12+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "youtube",
-    "body": "CodeRabbit Security protects your code from AI-driven exploits. Get 10 free code scans here: https://coderabbit.link/fireship-010\n\nOpenAI finally announced GPT-6 Astra which they're claiming is AGI... Let's see if that's true.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev\n\nauthor: Fireship\n\nvideo: https://www.youtube.com/embed/FluKUJyeYD8",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "safety",
-      "video",
-      "coding",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "https://dearrow-thumb.ajay.app/api/v1/getThumbnail?videoID=FluKUJyeYD8&time=29.07576388888889",
-    "available": true
-  },
-  {
-    "article_id": 553160,
-    "title": "We shipped 207 WebGPU Kernels for Browser AI",
-    "url": "https://www.youtube.com/watch?v=y9xup6XEP2o",
-    "published_at": "2026-09-04T15:38:19+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "We shipped 207 WebGPU kernels for browser AI, all open source on the Hugging Face Hub, plus @huggingface/kernels, a library that loads, validates, renders and runs them for you.\n\nThis video walks through how it works: what an op is vs a kernel, why WGSL, and why we ship Jinja templates instead of fixed WGSL files. The browser picks the data types and workgroup sizes your device supports and builds the fastest kernel for that hardware.\nThen two demos built on top of it: an attention mechanism with the tinyBERT weights in ~20 lines of JavaScript, and a 1M+ cell wave animation driven by a single matmul kernel, capped only by requestAnimationFrame.\n\nFinally, Fleet: run the kernel benchmarks on your own GPU. The results help us optimize the kernels for the thousands of devices we can't test ourselves.\n\nLinks\nBlog post: https://huggingface.co/blog/webgpu-kernels\nKernel playground: https://huggingface.co/spaces/nico-martin/webgpu-kernels\nnpm: https://www.npmjs.com/package/@huggingface/kernels\nKernels on the Hub: https://huggingface.co/webgpu-kernels\nFleet: https://webgpu-kernels-fleet.hf.space/\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/y9xup6XEP2o",
-    "topic": "hardware",
-    "tags": [
-      "hardware",
-      "models",
-      "open-source",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553119,
-    "title": "AI News: The Most Insane Week So Far This Year!",
-    "url": "https://www.youtube.com/watch?v=GfPZm9yucQo",
-    "published_at": "2026-09-04T15:00:34+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Here's the AI News you probably missed this week. Try AI Flows with Artlist Unlimited here \ud83d\udc49 https://artlist.io/?artlist_aid=Mattwolfe_4110&amp;utm_source=affiliate_p&amp;utm_medium=Mattwolfe_4110&amp;utm_campaign=Mattwolfe_4110\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nGPT-6 Astra: https://openai.com/index/gpt-6-astra/\nClaude Fable and Mythos 5.1: https://www.anthropic.com/claude-fable-and-mythos-5-1\nGemini 3.8 Flash: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/\nMuse Spark 1.3: https://research.meta.ai/blog/introducing-muse-spark-1-3\nMultiple Accounts In Codex: https://x.com/gabrielchua/status/2093228185823687134\nVoice In Google Workspace: https://blog.google/products-and-platforms/products/workspace/voice-features-gmail-docs-keep/\nFastH3 Video Model: https://x.com/haoailab/status/2093391548289540596\nInteractive AI Livestreams: https://x.com/fal/status/2094286082275696880\nAtlas World Model: https://www.worldlabs.ai/blog/atlas\nRunway Introduces Solaris: https://runway.com/news/research/introducing-solaris\nOpenClaw 2.0: https://openclaw.ai/blog/openclaw-2-accidentally\nMuse Voice Transcribe: https://research.meta.ai/blog/introducing-muse-voice-transcribe\nMAI-Transcribe-2 Speech Model: https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/\nNVIDIA Acquires Hugging Face: https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/\nChatGPT Chats In Court: https://www.techspot.com/news/113667-chatgpt-conversations-could-end-up-court-theyre-not.html\nNYC School AI Moratorium: https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat\nDyson Introduces Camerajet: https://www.dyson.com/discover/news/latest/introducing-camerajet\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n1:30 Claude Fable 5.1\n4:04 Gemini 3.8 Flash\n7:04 Artlist AI Flows\n8:02 Muse Spark 1.3\n11:00 GPT-6 Astra\n13:09 Megabonk Comparisons\n17:18 ChatGPT Multiple Accounts\n17:46 Google Voice in Gmail Etc\n18:46 Real-Time AI Video\n20:43 World Labs Atlas\n22:47 Runway Solaris\n23:52 OpenClaw 2.0\n24:21 Muse Voice Transcribe\n24:43 MAI-Transcribe-2\n25:00 Nvidia Acquires Hugging Face\n26:34 ChatGPT Unprotected\n26:56 NYC Bans AI in Schools\n27:43 AI Toothbrush\n28:46 Final Thoughts\n30:26 WTF?\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/GfPZm9yucQo",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "agents",
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712471,
-    "title": "Scraping 107M rows of data to build this",
-    "url": "https://www.bensbites.com/p/scraping-107m-rows-of-data-to-build",
-    "published_at": "2026-09-04T14:56:17+00:00",
-    "fetched_at": "2026-09-28T21:34:07+00:00",
-    "source_id": "bens-bites",
-    "source_name": "Ben's Bites",
-    "extraction_method": "trafilatura",
-    "body": "Hello again :) sorry for the delay (agents + video exports!)\nThis is one of the bigger things I\u2019ve built.\nI scraped 107 million rows of UK council spending data and built an \u2018Apple Maps\u2019 to see what each council spent, on what.\nAll of the data is publicly available, but not easy to find or format.\nMany of you aren\u2019t from the UK, but the data (and the build) was a pretty interesting journey.\n[The session summary which includes all the linked files and prototypes is here]. There\u2019s also a tab to view the entire full agent sessions from this build too.\nI\u2019m still doing final tweaks to the site and data before open-sourcing it.\nThis week\u2019s format is a little different - my video explains it.\nStats:\n8.2 billion tokens\n235 messages from me\n656 subagents (ie an agent delegating work to another agent)\nThe idea\nI was thinking about what public data is out there that people don\u2019t know about, or that\u2019s interesting but awkward to get hold of and understand? I batted ideas back and forth with Codex and landed on England council\u2019s payment data. Every English council has to publish what it pays out over \u00a3500.\nCodex spun up three subagents (in separate threads) to find the information (as it's spread across the council's web site, often in weird formats) and pulled together a catalogue of 31 official sources. Then it came back with real data from five councils, logging every download with a checksum fingerprint (this makes sure the data is what we actually pulled or did it change). Then I started asking questions about the data \"who's spent the most\", \"what did they spend\", \"who did they pay in various categories\".\nStarting data\nOnce we had some data, it got flattened (put into one format) into one big spreadsheet. I live in Bedfordshire so I asked it to pull that in too.\nAs data was being pulled together there were things I hadn\u2019t thought about yet, like Bedfordshire being Bedford, Central Bedfordshire and Luton (so a subagent went off to get the other data). Two of them blocked the agents at first but they figured their way around it. By the end of it I had 8 councils, 1.8 million rows, and \u00a39 billion of spend sitting in one big clean CSV on my laptop. I also had a mini blueprint of my data collection plan.\nPrototypes\nNow I wanted to see it. I asked several agents to build prototypes to visualise the data in different ways. A receipt. Then a bank statement. Then a grid of counties. Then a mini-site called \u2018Your county\u2019s favourite retailer\u2019. It published everything straight to [here.now](https://here.now) (a super simple web hosting for agents) so I could click through the real thing instead of screenshots. I also had it generate a few Pudding-style data visualisation stories too.\nSome of the protoypes:\nToo much data\nI kind of left the design stuff to the side as I thought about all the data I\u2019d need to make this as complete as possible. I use a Macbook Air so I don\u2019t want a ton of spreadsheets sitting there, but fortunately I have a Mac Mini where we could put them all. I said \u201cwhats the best way to work with a lot of data\u201d, I assumed it would be so big it would take forever to search it and categorise things. Codex\u2019s answer was Parquet and DuckDB (both of which I\u2019ve never heard of before). Parquet stores the data in columns so a question only reads the bits it needs. DuckDB is a database that lives in a single file and is quick with big tables.\nCodex set up the Mac Mini, Parquet and DuckDB and tested it. Then we started planning the full data collection: there are about 382 councils across the UK, and we were tracking the 339 in England and Wales. I\u2019d collected 78 councils, 34.35 million rows, but six councils, including big ones like Lancashire and Norfolk, were blocking our scrapers (for now). And I later found out Wales doesn\u2019t have the same mandate as England in terms of spend reporting so eventually I dropped Wales councils.\nData loop\nSetup done, so I set Codex running on one /goal (keep repeating the tasks until everything is done): find every council\u2019s spending page in England, download everything available, flatten and format it all, have an auditor subagent verify the numbers, and load it into DuckDB on the Mini.\nIt ran for nearly 2 days straight. I kept pushing it to go faster (it often keeps space on the computer but was reserving way too much), use more subagents, etc. 552 threads later, we had 319 out of 339 councils collected or in a parked state (no data or no way to get the data).\nBack to prototypes\nData acquired, time to prototype again. I had four different tools building at once (all with the same prompt, just for options): interactive comparison cards, a Council Ledger, charts, maps. One of the options was the Money Map: a map view of the data. This one felt much better for seeing everything at once.\nI got a bunch of supplier logos to show on the map and played around with it to separate councils and see what looked and felt best.\nThe map app\nMap direction was settled. So I first said to build a Google Maps clone, which was fine and I could\u2019ve just pursued this direction but also got other agents to spin up Apple Maps versions which felt much better. I fed it some screenshots to get it even better. And with every visual direction I published them with [here.now](https://here.now) so I could test on desktop and mobile easily.\nThis felt great. Clickable council outlines coloured by spend, category filter pills across the top, a ranked list on the left, and a working search for councils and suppliers. It used mock figures at first to get the visual hierarchy right (I\u2019m more often asking for mock prototypes before building these days to explore design directions).\nSpring cleaning\nOnly now did I realise we had a lot of files all in different places, so time to clean it up. The app, the data and the design experiments were scattered across three different folders, so we consolidated everything into two, one for data and one for the app. I also started cleaning the data: four subagents classified 2,000 unknown vendors, we set up date ranges, merged duplicate suppliers (Tesco showed up under six different names), and ran proper reviews of the naming and the categorisation. pi spent an hour rewriting categories.\nAnd testing! Some of the data felt off and I found out there was a \u00a35m threshold filter being applied for some reason. The reason is this app doesn\u2019t have a backend, it\u2019s a static site so instead of loading all the data it just capped it so that less was needed. I just didn\u2019t want to have a proper backend if we didn\u2019t need one, dump all the data into files, load them at publish and filters just filter the data instead of communicating to a backend. We\u2019ll see if this was a good or bad decision when/if people use it!\nThe last 10%\nThe last 10% takes the longest. Kinda. The last few days I\u2019ve been less focused on just this one build but a lot of what was being done was reviews (code, data, design), implement changes, test again and then repeat. Checking if categories felt representative or if there\u2019s a large enough chunk of data that warrant it\u2019s own category (like Pension Funds).\nI mostly get the agents to review, often I dump a voice notes and/or screenshots, it comes back with a list and I say \u2018yes\u2019 \u2018no\u2019 or ask questions. This is the part of the build I don\u2019t love because I\u2019ve spent enough time that I just want it shipped. It\u2019s hard to process so much text from a review that I don\u2019t always read it all either. But there\u2019s some things that just have to absolutely be right - the validity of the data being a big one here. And I\u2019m pretty fussy with user experience so I did my best to get that covered as much as possible. There will be some bugs but I think it turned out pretty well.\nI built exactly the same in https://publicspendingdata.org - UK data is a pain, and dont have it fully loaded. But I have data for about 20 countries and some deep dive.\nNOTE: WORK IN PROGRESS, feedback appreciated.\nI'd spell out exactly how the agents got past the two councils that blocked them. A declared user agent with backoff is nothing like beating challenges or rotating identities, and it changes whether anyone can actually reproduce the run.\nFor Lancashire, Norfolk and the rest that got parked I'd just email or file an FOI request. Spend over \u00a3500 is mandatory to publish in England, so asking for the CSV directly usually works better than fighting the scraper against it\nIt is also worth publishing whatever rate limits and hard stops are built into the orchestrator itself, since 552 threads over two days is real load on other people's infrastructure. The \u00a35m cap makes sense for a static site, but it should be labeled somewhere visible, otherwise people will assume anything above it does not exist and that is exactly where the big contracts sit.\nOne more thing -- the provenance you already collected should be front and center, a link per council to the raw file plus checksum and pull date, along with a short methodology note. Wales only recommends the \u00a3500 threshold instead of requiring it, and reporting below it varies a lot council to council, which throws off comparisons more than the cap ever would",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "open-source",
-      "api",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553141,
-    "title": "GPT 6 Astra, so good even OpenAI are worried",
-    "url": "https://www.youtube.com/watch?v=Spuza-KwTJ4",
-    "published_at": "2026-09-04T11:37:27+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "youtube",
-    "body": "Where to start? A new era of cost-efficient AI on a day benchmark-makers got humbled, traders got excited, and AI safety researchers got unnerved. From monitorability losing hold of GPT-6 Astra\u2019s chains of thought to breakthrough discoveries, Fable-mogging and much more\u2026\n\nExclusive Vids ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n00:53 - vs Fable\n05:27 - most impressive results\n13:06 - bonus comparisons (plus trading)\n18:40 - concerning trend\n21:24 - Cot Control\n\nGPT-6: https://openai.com/index/gpt-6-astra/\nPaper: https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf\n\nLooped Transformers and AGI Milestone: https://www.patreon.com/AIExplained/posts/breakthrough-and-168513408\n\nMessy Rollout: https://x.com/sama/status/2095678759651438887\nMuch More Capable Models Coming: https://x.com/MTSlive/status/2095573400899170592\n\u2018AGI Era\u2019 https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release\n\nARC-AGI 3: https://x.com/fchollet/status/2095598451115614371\nhttps://x.com/fchollet/status/2095607046129463577\nhttps://arcprize.org/blog/astra\n\nFrontierMath: https://epoch.ai/frontiermath/tiers-1-4/about\nDiscovery: https://x.com/jdlichtman/status/2095660916310483087\n\nFable 5.1: https://www.anthropic.com/claude-fable-and-mythos-5-1\nhttps://science-task-lens.aiex.chatgpt.site/securebio\nAgents Last Exam: https://agents-last-exam.org/\nTerminal Bench Science: https://github.com/harbor-framework/terminal-bench-science#task-coverage\nSRE Bench: https://x.com/ValsAI/status/2087682813743317396\nScreenSpot Pro: https://arxiv.org/pdf/2504.07981\nWeathernext 3: https://www.youtube.com/watch?v=_6jZlnRsXXQ\nDayBreak: https://x.com/fouadmatin/status/2095634888951250983\nAA Index: https://artificialanalysis.ai/evaluations/gdpval-aa\n\nVisual Demos: https://x.com/mattshumer_/status/2095609734845927525\nhttps://x.com/codestantine/status/2095598327115260368\nhttps://x.com/SahilExec/status/2095688272269984016\n\nMonitorability: https://x.com/NeelNanda5/status/2095533397297045716\nhttps://x.com/tomekkorbak/status/2095596848581071020\nhttps://x.com/Marcus_J_W/status/2095623593006686475\nhttps://x.com/MicahCarroll/status/2095603855316996529\nNot Accept Degradation: https://www.nbcnews.com/tech/tech-news/openai-debuts-gpt-6-astra-security-measures-rcna595940\n\nRSI: https://x.com/LiuZuxin/status/2095600499911446697\n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/\n\nauthor: AI Explained\n\nvideo: https://www.youtube.com/embed/Spuza-KwTJ4",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553161,
-    "title": "Hugging Face Journal Club: AI Research Preference Models",
-    "url": "https://www.youtube.com/watch?v=8YttDoDINhk",
-    "published_at": "2026-09-04T10:46:51+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "The Hugging Face research team discussed Meta's new paper on using LLMs to predict \"research taste\" to improve the capabilities of agents to undertake machine learning experiments autonomously. \n\nPaper link: https://huggingface.co/papers/2608.13940\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/8YttDoDINhk",
-    "topic": "research",
-    "tags": [
-      "models",
-      "agents",
-      "research",
-      "video",
-      "coding",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
