@@ -1,5 +1,100 @@
 [
   {
+    "article_id": 838483,
+    "title": "From 36% to 100%: How Self-Improving Agents Write Their Own Skills \u2014 Rafal Wilinski, Runlayer",
+    "url": "https://www.youtube.com/watch?v=u-o0sW9nwmk",
+    "published_at": "2026-10-07T14:00:10+00:00",
+    "fetched_at": "2026-10-07T14:15:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "When one agent finally cracks a hard problem, what if every agent in the company learned it too?\n\nRafal Wilinski, founding engineer at Runlayer, shows how to go from one self-improving agent to a self-improving company. He explains why skills matter more as agents work longer (a bad start can send them down an hours-long rabbit hole) and the three problems holding skills back: they're built for developers, nobody has time to write them, and many clients don't support them. His fix is to deliver skills over MCP from one governed server, then let agents write their own skills by distilling successful and failed runs, an idea borrowed from the Voyager Minecraft paper. In one test, a distilled skill took a task from 36% success to 100%. Multiply that across every agent and you get an organizational flywheel that keeps your hard-won knowledge even as models change.\n\nIn this talk:\n\u2022 What skills are, and why they matter more as agents run longer\n\u2022 Using MCP as the distribution layer for skills across the whole company\n\u2022 Distilling skills from agent traces, and why failed runs teach the most\n\u2022 The organizational flywheel: knowledge competitors can't copy\n\nSPEAKER\nRafal Wilinski, Founding Engineer, Runlayer\nLinkedIn: https://www.linkedin.com/in/rafwilinski\nX: https://x.com/rafalwilinski\nWebsite: https://rwilinski.ai\n\nLINKS\nRunlayer: https://www.runlayer.com\nRunlayer on X: https://x.com/runlayer\n\n\nCHAPTERS\n0:00 Intro\n0:32 Every hard problem becomes a playbook\n1:37 About Runlayer\n2:12 What a skill is\n2:51 Agents can now work for hours\n3:51 Longer tasks, deeper rabbit holes\n4:31 Skills nobody wants to rediscover\n5:21 Three problems with skills\n6:01 The risk of installing random skills\n7:25 Skills vs MCP\n7:55 MCP as the distribution layer\n8:40 The Skills Over MCP working group\n10:00 Self-improving agents\n10:10 Voyager's skill library\n11:34 Distilling skills from traces\n11:59 Failures teach the most\n12:54 Result: 36% to 100%\n14:04 Frontier intelligence is rented\n15:23 The organizational flywheel\n16:38 Your real moat\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIAgents #MCP #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "research",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 838678,
+    "title": "70 years of rebranding intelligence",
+    "url": "https://www.youtube.com/watch?is=sRSaGYQAs5KIYdwu&v=jh9LF6Lc3Vs&feature=youtu.be",
+    "published_at": "2026-10-07T13:30:57+00:00",
+    "fetched_at": "2026-10-07T14:15:22+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing by @juliarturc",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 839010,
+    "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
+    "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
+    "published_at": "2026-10-07T12:45:31+00:00",
+    "fetched_at": "2026-10-07T14:15:23+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 836870,
+    "title": "Introducing Playground: Create and play custom games",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+    "published_at": "2026-10-07T12:00:00+00:00",
+    "fetched_at": "2026-10-07T14:15:17+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "Overview of Playground",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 838468,
+    "title": "HF Buckets: Upload Only What Changed with Xet",
+    "url": "https://www.youtube.com/watch?v=1E0ZoktFerQ",
+    "published_at": "2026-10-07T11:07:37+00:00",
+    "fetched_at": "2026-10-07T14:15:19+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "If you work with large datasets, you're probably re-uploading the same bytes every time the data changes.\n\nIn this video I upload a 191 MB NYC taxi CSV to a Hugging Face Bucket, append 100 rows, and upload it again: Xet, Hugging Face's storage layer, sends only the new pieces. Then I convert the data to Parquet, prepend 100 rows, and sync again: with PyArrow's use_content_defined_chunking=True, only 8.6 MB of the 52.9 MB file goes over the wire. For data and ML engineers who push datasets to the Hub and keep them up to date.\n\nTopics covered:\n- How Xet uploads only the pieces that changed\n- Hugging Face Buckets with the hf CLI (create, cp, sync)\n- Content-defined Parquet blocks with PyArrow 21+\n- Upload savings: ~90 MB vs ~6 MB on a 100 MB file\n- Production gotchas: S3 tools, versioning, sorting, writer settings\n\nResources:\n- Full walkthrough (commands, code, dataset): https://huggingface.co/blog/prpatel/hands-on-with-buckets\n- Hugging Face forum: https://discuss.huggingface.co/\n\nChapters:\n0:00 Stop wasting bandwidth\n0:15 What you'll see\n0:39 Demo: CSV and Parquet uploads to a Bucket\n9:11 Xet, in three steps\n10:10 The one-line fix\n10:47 How much Xet saves\n11:13 Before you ship it\n12:27 Join the discussion",
+    "topic": "tutorials",
+    "tags": [
+      "video",
+      "coding",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 836053,
     "title": "Quoting Jake Boggan",
     "url": "https://simonwillison.net/2026/Oct/7/jake-boggan/",
@@ -16,6 +111,50 @@
       "research",
       "news",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 838484,
+    "title": "Grep or Embeddings? Agentic Search Over Company Documents \u2014 George He, LlamaIndex",
+    "url": "https://www.youtube.com/watch?v=X4w2Pkz5tDY",
+    "published_at": "2026-10-07T01:30:36+00:00",
+    "fetched_at": "2026-10-07T14:15:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Grep works great on a codebase. Try it on millions of PDFs, slides and scanned schematics.\n\nGeorge He, head of engineering at LlamaIndex, explains when agents need pre-indexed search and when plain file traversal is enough. Claude Code skipped embeddings because code is small, text-based, local and full of breadcrumbs. Company data is huge, messy, multimodal and permissioned. He shows how to give an agent a harness of tools so it can choose: hybrid retrieval as a compass, then listing, metadata filtering, grep and reading to dig in, plus parsed text and page screenshots for complex documents. He covers parsing with LlamaParse and the open-source LiteParse, permissions and freshness in production, and the ingest-parse-index pipeline. Then he demos an agent building a cash-flow table from 135 Alphabet financial filings, grounded in the source files.\n\nIn this talk:\n\u2022 Why Claude Code's grep approach works for code but breaks on company documents\n\u2022 Hybrid search as a compass, then grep and read to ground the answer\n\u2022 Parsing complex PDFs, tables and schematics, with page screenshots\n\u2022 Production concerns: multi-tenancy, permissions and data freshness\n\nSPEAKER\nGeorge He, Head of Engineering, LlamaIndex\nLinkedIn: https://www.linkedin.com/in/georgehe4/\nGitHub: https://github.com/georgehe4\n\nLINKS\nLiteParse (GitHub): https://github.com/run-llama/liteparse\nLlamaParse docs: https://developers.llamaindex.ai/llamaparse/\nLlamaIndex: https://www.llamaindex.ai\nLlamaIndex on X: https://x.com/llama_index\n\nCHAPTERS\n0:00 Intro\n1:12 When do agents need vector search?\n2:17 Why Claude Code skipped embeddings\n3:27 What makes code easy\n3:57 Company documents are different\n5:17 It depends on scale\n6:32 Bigger context isn't free\n7:12 Sub-agents get expensive\n8:22 Let the agent choose\n8:57 Five tools for document search\n10:52 Tool 1: hybrid search\n11:57 Tools 2\u20134: list, filter, grep\n12:42 Tool 5: reading complex documents\n13:27 LlamaParse and LiteParse\n14:22 Measuring parse quality\n15:17 Permissions and freshness\n15:57 Ingest, parse, index\n16:42 Storage and metadata filtering\n17:47 Demo: Alphabet financial filings\n20:07 Demo: grep and read remote files\n20:47 Demo: building a cash-flow table\n22:52 Takeaway\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#RAG #DocumentAI #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 838485,
+    "title": "Every AI Company Is Accidentally Building a Bank \u2014 Dor Sasson, Stigg",
+    "url": "https://www.youtube.com/watch?v=cf2IhzqeQH4",
+    "published_at": "2026-10-07T00:30:28+00:00",
+    "fetched_at": "2026-10-07T14:15:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In one month, three of the biggest AI companies had a pricing emergency. Dor Sasson says it was really an infrastructure problem.\n\nDor Sasson, co-founder and CEO of Stigg, argues that every AI company is accidentally building a bank. He starts with the April pricing scramble, when Anthropic cut third-party agents like OpenClaw off its subscription plans, OpenAI changed its Pro tier, and GitHub pulled free Copilot access, plus stories of companies burning through their AI budgets in weeks. The common problem: usage gets checked after the invoice, not before. He makes the case for checking entitlements synchronously before inference and settling asynchronously after, like an ATM, and points to OpenAI's own published architecture. He covers the banking ideas AI products now need, from hold-and-settle and double-entry bookkeeping to credit sources and spend caps across teams, users and agents.\n\nIn this talk:\n\u2022 Why AI pricing emergencies are really infrastructure problems\n\u2022 Check before you spend: synchronous checks, asynchronous settlement\n\u2022 Concurrency, double spend, and drawing down from different credit pools\n\u2022 Four patterns for selling AI at scale, from reserve-and-settle to spend visibility\n\nSPEAKER\nDor Sasson, Co-founder & CEO, Stigg\nLinkedIn: https://www.linkedin.com/in/datapm/\n\nLINKS\nStigg: https://www.stigg.io\nStigg on X: https://x.com/GetStigg\n\nCHAPTERS\n0:00 Intro\n0:37 Every AI company is building a bank\n1:17 April's pricing emergencies\n2:52 Case: Anthropic and OpenClaw\n4:02 It's not just Anthropic\n5:02 Checks happen after the invoice\n6:27 Check first, settle later\n7:32 The ATM analogy\n8:11 How OpenAI built it\n9:21 Three takeaways\n10:31 Concurrency and double spend\n12:16 Which credits get spent first?\n13:31 Budgets, hierarchies and spend caps\n14:46 Four patterns\n17:50 A pricing change that was really infrastructure\n18:35 AI's Stripe moment\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIPricing #Monetization #AIEngineer",
+    "topic": "coding",
+    "tags": [
+      "open-source",
+      "agents",
+      "video",
+      "infrastructure",
+      "coding",
+      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -63,6 +202,29 @@
     "available": true
   },
   {
+    "article_id": 838486,
+    "title": "The 6 Pillars of an Agentic Harness for Production \u2014 Varun Krovvidi, Resolve AI",
+    "url": "https://www.youtube.com/watch?v=eXA2tjRZIbY",
+    "published_at": "2026-10-06T23:30:36+00:00",
+    "fetched_at": "2026-10-07T14:15:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "AI changed how we write code. But 70% of engineering time goes to running and fixing it.\n\nVarun Krovvidi, product marketing lead at Resolve AI, explains why AI that writes code well still struggles to run production. Code is self-documenting, modular and a single domain. Production spans code, infrastructure, telemetry and many teams, and needs one correct answer. He covers where agents crack as you scale: anchoring bias and the model treadmill, too much or too little context, coherent answers that aren't causal, missing guardrails, and no learning across investigations. Then he lays out six pillars of a harness that fixes them: model orchestration, context engineering, causal reasoning, governed actions, learning systems and evals. He finishes with a demo of Resolve AI turning a Grafana alert into a root cause, ruling out a coincidental GCP outage, and holding its ground when pushed.\n\nIn this talk:\n\u2022 Why coding is easy for AI and production isn't\n\u2022 Five ways production agents break as they scale\n\u2022 Six pillars: orchestration, context, causal reasoning, governed actions, learning, evals\n\u2022 Demo: from Slack alert to root cause with ruled-out theories\n\nSPEAKER\nVarun Krovvidi, Product Marketing Lead, Resolve AI\nLinkedIn: https://www.linkedin.com/in/varunkrovvidi/\n\nLINKS\nResolve AI: https://resolve.ai\nResolve AI on X: https://x.com/resolveai\n\nCHAPTERS\n0:00 Intro\n0:48 Who's on call?\n1:33 Why AI got good at code\n2:33 Running software is the other 70%\n2:53 On-call, incidents and daily vitamins\n4:13 The end of unlimited AI\n5:18 The last mile is the longest\n5:28 A multiplayer problem\n6:23 Resolve's three kinds of agents\n7:02 Why not just point a model at prod?\n7:37 Crack 1: anchoring and the model treadmill\n8:47 Crack 2: too much or too little context\n9:47 Crack 3: coherent isn't causal\n10:27 Crack 4: guardrails\n11:02 Crack 5: learning loops\n11:52 The six pillars: model orchestration\n12:42 Context engineering\n13:32 A causal chain of evidence\n14:12 Governed actions\n14:32 Learning systems\n15:07 Evals at five levels\n15:57 Demo: alert to root cause\n18:12 Demo: ruled-out theories\n19:02 Demo: pushing back on the agent\n20:11 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AISRE #AIAgents #AIEngineer",
+    "topic": "education",
+    "tags": [
+      "education",
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 833991,
     "title": "llm-openai-decisions 0.1a0",
     "url": "https://simonwillison.net/2026/Oct/6/llm-openai-decisions/",
@@ -81,6 +243,28 @@
       "api",
       "benchmark",
       "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 838487,
+    "title": "Is Speculative Decoding Worth It? Profiling vLLM on NVIDIA Blackwell \u2014 Akamai",
+    "url": "https://www.youtube.com/watch?v=XTpyNrEgJQ4",
+    "published_at": "2026-10-06T22:30:02+00:00",
+    "fetched_at": "2026-10-07T14:15:20+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A small model guesses the next few tokens. The big model checks them in one pass. When is that worth it?\n\nSheilah Kirui, developer advocate at Akamai, explains speculative decoding and how to tell whether it's worth turning on. She walks through the prefill and decode phases of inference, how a small draft model proposes tokens that the target model verifies in a single forward pass, and the memory cost of hosting a second model and its KV cache. She covers how to choose a draft model, then demos both setups side by side with vLLM on a single NVIDIA Blackwell GPU: structured output ran 1.6x faster with a high acceptance rate, while creative writing saw far lower acceptance. She also explains why long-context and high-concurrency workloads gain less.\n\nIn this talk:\n\u2022 Prefill vs decode, and what speculative decoding speeds up\n\u2022 Choosing a draft model: size, shared tokenizer, cost and accuracy\n\u2022 Demo: acceptance rate on structured vs creative tasks in vLLM\n\u2022 When it's worth it: spare VRAM, small batches, structured output, short context\n\nSPEAKER\nSheilah Kirui, Developer Advocate, Akamai\n\nLINKS\nAkamai developers on GitHub: https://github.com/akamai-developers\nvLLM docs: https://docs.vllm.ai\nAkamai: https://www.akamai.com\nAkamai on X: https://x.com/Akamai\n\nCHAPTERS\n0:00 Intro\n0:37 Prefill and decode\n1:37 The idea behind speculative decoding\n2:42 The cost: two models in memory\n3:26 Choosing a draft model\n3:56 Demo setup on one Blackwell GPU\n5:41 Which workloads benefit\n6:21 Demo: structured output\n9:00 Demo: 1.6x faster\n9:50 Demo: creative writing\n10:55 Long context limits the gains\n11:50 Checklist\n12:39 Q&amp;A: tools and resources\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#LLMInference #vLLM #AIEngineer",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "video",
+      "infrastructure",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -1269,7 +1453,7 @@
     "published_at": "2026-10-05T10:50:24+00:00",
     "fetched_at": "2026-10-05T15:08:06+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Skills v1.3 is here with three game-changing skills: implement spec for landing huge chunks of work, PR skill for better code reviews, and retro for finding hidden inefficiencies in your agent sessions.\n\n0:00 Version 1.3 overview\n0:25 Implement spec skill\n4:54 PR skill\n8:10 Context to glossary rename\n9:37 Retro skill\n14:06 AI coding crash course\n\nLearn more about these skills and take the AI Coding Crash Course:\n\nhttps://aihero.dev/s/xrT0hb\n\nChangelog:\n\nhttps://www.aihero.dev/skills/skills-changelog-v13-implement-spec-pr-retro-and-glossary-md\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/s/yeL3Jb\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/RuRzmc\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/BsJGo1wFTvQ",
     "topic": "education",
@@ -1920,7 +2104,7 @@
     "published_at": "2026-10-03T05:08:12+00:00",
     "fetched_at": "2026-10-03T11:54:24+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/MN9dGgmLyso",
     "topic": "tutorials",
@@ -3240,7 +3424,7 @@
     "published_at": "2026-09-30T10:07:47+00:00",
     "fetched_at": "2026-09-30T10:39:34+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/MN9dGgmLyso",
     "topic": "tutorials",
@@ -10848,202 +11032,6 @@
       "agents",
       "coding",
       "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551566,
-    "title": "Watch astronaut Christina Koch and Google\u2019s James Manyika discuss space, technology, and discovery.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/",
-    "published_at": "2026-09-14T19:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "trafilatura",
-    "body": "Watch astronaut Christina Koch and Google\u2019s James Manyika discuss space, technology, and discovery.\nIn the latest episode of our [Dialogues on Technology and Society](https://www.youtube.com/playlist?list=PL590L5WQmH8f8ID51T0_9JkWpeL9Dcb-S) series, NASA astronaut, engineer, and scientist Christina Koch sits down with James Manyika, Google\u2019s Senior Vice President of Research, Labs, Technology & Society.\nChristina reflects on her trailblazing career \u2014 from spending 328 days aboard the International Space Station and conducting the historic first all-female spacewalk, to journeying around the Moon on NASA\u2019s Artemis II mission.\nShe and James discuss viewing Earth as an electric blue \u201clifeboat\u201d from 250,000 miles away, and the vital partnership between astronauts, robotics, and AI. Christina also explores the big question\u2014\u201cAre we alone?\u201d\u2014and shares her advice for future explorers: do what scares you, and support the people around you.\nWatch the [full dialogue](https://youtu.be/x0692zj9jsI) to hear more.",
-    "topic": "robotics",
-    "tags": [
-      "research",
-      "video",
-      "coding",
-      "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553113,
-    "title": "Did AI Doom Us All?",
-    "url": "https://www.youtube.com/shorts/mku_K8pCLx4",
-    "published_at": "2026-09-14T16:15:59+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Are all of these AI safety campaigns part of a big coordinated psyop?\n\nApparently some people are actually being paid to push anti-AI messaging, but I\u2019m not sure if that\u2019s the case in these recent instances. \n\nI think it\u2019s more likely that these Anthropic and OpenAI whistleblowers are usually from the alignment and safety sector, so their entire job is to study potential worst-case scenarios. Spending every day inside that world probably changes how you see the risks, but it also means they may be noticing dangers the rest of us aren\u2019t.\n\nI\u2019m inclined to believe their warnings are genuine, but I don\u2019t think panic is the answer. \n\nThe AI arms race probably isn\u2019t slowing down anytime soon. So maybe the smartest move is putting more brainpower into alignment and not just shareholder value.\n\nWhat do you think: genuine warning or manufactured fear?\n\n#AI #AInews #anthropic #openai #aisafety\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/mku_K8pCLx4",
-    "topic": "safety",
-    "tags": [
-      "safety",
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551567,
-    "title": "DevFest is back",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/",
-    "published_at": "2026-09-14T16:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "trafilatura",
-    "body": "DevFest is back\nDevFest season is [officially back](https://developers.google.com/community/devfest). From October 1 through December 31, 2026, nearly a million developers and builders will gather for the world\u2019s largest community-led technology conference.\nHosted around the world by [Google Developer Groups](https://gdg.community.dev/) (GDGs), DevFest helps everyone \u2014 from seasoned software engineers to emerging solution builders \u2014 gain practical, hands-on experience with Google\u2019s AI technologies.\nWhat to expect at DevFest 2026\nUnder this year\u2019s theme: \"Build, Secure, Scale: Developers and Builders in the Agentic Era,\" the 2026 season prioritizes hands-on experimentation at every event. Attendees will engage directly with tools across Google\u2019s stack \u2014 including Gemini, Google AI Studio, Google Antigravity, Google Cloud, Firebase, Android, Flutter, Angular, and Web MCP \u2014 through live codelabs, workshops, and agent-athons.\nThe tracks this year reflect three core realities for modern software development:\n- It\u2019s never been easier to build. New tools allow more people and teams to prototype and deploy faster than ever.\n- What you build should be safe and secure. Speed cannot come at the expense of stability. Building in the agentic era requires rigorous focus on secure deployment, data privacy, and responsible AI guardrails.\n- You can work with production-ready infrastructure. Google provides top-of-class models to help builders and developers scale reliably from day one.\nHow to connect with local communities, globally\nDevFest is built by the community, for the community. While backed by Google, each GDG curates its agenda and tailors each event to serve the specific needs and challenges of its local tech ecosystem. GDGs design their DevFests to foster an inclusive, welcoming environment where participants collaborate and uplevel their skills together.\nGet involved\nWith more than 800 events planned across 115 countries, DevFest offers a space to sharpen your skills, test new architectures, and connect with the community.\nYou can find Your Local Event by visiting the [DevFest Event Directory](https://developers.google.com/community/devfest) and keep up with the conversation by using #DevFest across social channels.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "tutorials",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552906,
-    "title": "Quoting Laurie Voss",
-    "url": "https://simonwillison.net/2026/Sep/14/laurie-voss/",
-    "published_at": "2026-09-14T14:34:29+00:00",
-    "fetched_at": "2026-09-17T23:24:30+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "14th September 2026\nThe cost of writing code collapsed, and the cost of reviewing, fixing and operating it is following, and I'm assuming it gets there. What's left of making software is finding out what people actually want, defining it precisely, and making it pleasant to use. That cost is per piece of software and doesn't transfer, so as the amount of software goes to infinity, which it will because there's no ceiling on demand, that cost becomes the whole job.\n\u2014 [Laurie Voss](https://seldo.com/posts/we-are-all-product-engineers-now/), We are all Product Engineers now\nRecent articles\n[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026[OpenAI agents attacked RubyGems back in May](/2026/Sep/12/openai-agents-rubygems/)- 12th September 2026",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "agents",
-      "coding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551687,
-    "title": "How Fyxer built an AI executive assistant people trust",
-    "url": "https://openai.com/index/fyxer",
-    "published_at": "2026-09-14T12:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 14, 2026\n\nStartup\n\n# How Fyxer built an AI executive assistant people trust\n\nFyxer pairs OpenAI models with 500,000+ hours of EA workflows and real user feedback to draft replies in each person\u2019s voice.\n\n[Start building](https://openai.com/startups/)\n\nCompany size: Startup\n\nRegion: Europe & UK\n\nIndustry: Technology\n\nProducts: API\n\n90%\n\nUser retention after 90 days\n\n53%\n\nOf AI-generated drafts accepted as written\n\nLoading\u2026\n\nShare\n\n1\\. Break email into smaller jobs\n\n- [1. Break email into smaller jobs](#break-email-into-smaller-jobs)\n- [2. Train on how great assistants actually work](#train-on-how-great-assistants-actually-work)\n- [3. Turn user feedback into a self-training loop](#turn-user-feedback-into-a-self-training-loop)\n- [From drafts to a proactive assistant](#from-drafts-to-a-proactive-assistant)\n\n- [1. Break email into smaller jobs](#break-email-into-smaller-jobs)\n- [2. Train on how great assistants actually work](#train-on-how-great-assistants-actually-work)\n- [3. Turn user feedback into a self-training loop](#turn-user-feedback-into-a-self-training-loop)\n- [From drafts to a proactive assistant](#from-drafts-to-a-proactive-assistant)\n\nFor many professionals, work means keeping track of conversations and commitments across inboxes, meetings, messages, and apps. Without rock-solid context, those commitments can fall through the cracks, damaging projects and relationships.\n\nFyxer built an AI executive assistant that follows the thread as work moves across tools. It combines the latest OpenAI models with more than 500,000 hours of executive assistant workflows, dividing the work among dozens of specialized models that improve through real user feedback.\n\nEmail is one of the clearest places to see it in action. Two people can receive the same email and need completely different replies depending on the relationship, what has happened before, and what each person is trying to get done. That makes a seemingly simple task deceptively hard for AI.\n\n\u201cThere\u2019s something called Moravec\u2019s paradox,\u201d explains Fyxer Co-founder Archie Hollingsworth. \u201cThings that humans find easy are hard for computers, and things that computers find easy are hard for humans.\u201d Fyxer handles that complexity by learning how each user works, so it can respond like an assistant who already knows what matters.\n\nFrontier OpenAI models support key parts of the experience, from understanding the email and finding the right context to generating the draft. Fyxer chose OpenAI because its models performed best on Fyxer\u2019s internal benchmarks, offered strong fine-tuning capabilities for subjective tasks like tone and intent, and provided hands-on engineering support through whiteboarding sessions and technical collaboration.\n\n> \u201cWe chose OpenAI because they have the best models, and they\u2019ve given us real access and a close working relationship. I can drop a question in Slack and get an answer quickly, and when we face a problem, the team comes to our office and works through it with us. They show up.\u201d\n\n\u2014Archie Hollingsworth, Co-founder, Fyxer\n\nFyxer\u2019s approach offers three lessons for founders building highly contextual AI products:\n\n## 1. Break email into smaller jobs\n\nFyxer built its system around 30\u201350 specialized models, each responsible for a narrow part of the email workflow. Instead of treating email as a single text-generation task, Fyxer breaks the problem into a system of predictions, like deciding whether a message requires a reply or drafting responses that match a user\u2019s tone and context.\n\n\u201cBreaking the problem into many smaller models works much better than asking one model to write a good email,\u201d Hollingsworth explains.\n\nWhen a new email arrives, a reply decision model classifies the message: is this something that needs a response, a scheduling action, or simply information the user should see?\n\nIf a response is needed, additional models analyze the intent of the email and predict the likely outcome of the interaction. These models determine patterns such as whether the conversation is moving toward scheduling a meeting, resolving a request, or continuing a longer relationship thread.\n\nMemory is one of the most important parts of the system. Fyxer needs to decide which details should persist across conversations and which should disappear after a single exchange. When a new email arrives, retrieval models compare it with stored interactions and surface the memories most relevant to that person and thread.\n\nOpenAI models power steps across Fyxer\u2019s system. \u201cWe use OpenAI models for everything from digesting the email, so we can understand what it is actually about, to pulling in and re-ranking the context we want to include, to the actual email generation,\u201d Shantsila says.\n\n## 2. Train on how great assistants actually work\n\nBefore launching its AI product, Fyxer spent years operating a human-powered executive assistant service. Over time, the team accumulated a dataset built from more than 500,000 hours of annotated executive workflows, capturing how real assistants manage professional communication.\n\nThose examples gave Fyxer training data drawn from the job itself. They captured the small judgments behind a good response: when to answer quickly, when to wait, which earlier conversation matters, and how the same request can call for a different response from one person to another.\n\nFyxer uses supervised fine-tuning and Low-Rank Adaptation (LoRA) across its broader system to create task-specific model variants while controlling training cost. Early in the product\u2019s development, the team used OpenAI\u2019s fine-tuning platform for tasks that needed high accuracy. More recently, Fyxer worked with OpenAI\u2019s managed fine-tuning team to put a new checkpoint into production.\n\n> \u201cOpenAI has been pivotal for us in helping us transfer the learning that we have about our customer and successfully incorporate it into how the models work.\u201d\n\n\u2014Joey Dwonczyk, AI/ML Product Engineer, Fyxer\n\nBefore any model is deployed, Fyxer evaluates it on validation sets built around its own email tasks, including drafting, classification, and prioritization. The team weighs accuracy alongside response time and cost, since the best choice can vary by job.\n\n## 3. Turn user feedback into a self-training loop\n\nOnce deployed, Fyxer\u2019s system continues improving through real user feedback. When someone edits a draft before sending it, the difference between the original and final email shows which output they preferred.\n\nFyxer converts those comparisons into training data using Direct Preference Optimization (DPO). Instead of manually labeling every example, the model learns from pairs of outputs: the original draft and the user-edited version.\n\nEvery drafting change then goes through an A/B test. Fyxer ships the new version only when it produces a statistically significant improvement. Its user volume means the team can sometimes reach that threshold within a day.\n\nToday, 53% of Fyxer\u2019s AI-generated drafts are accepted as written. That means the system is correctly predicting intent and tone for a large share of real conversations. In 2025 alone, Fyxer grew from $1 million to $32 million in annual recurring revenue.\n\nFor Hollingsworth, the stronger signal is retention. Many Fyxer customers are not deeply technical, and for some, Fyxer is the first AI system they use every day.\n\n> \u201cEveryone talks about ARR, but I think retention is the real flex. Over 90% of our users are still paying at the 90-day mark with us, and still using us every day.\u201d\n\n\u2014Archie Hollingsworth, Co-founder, Fyxer\n\n## From drafts to a proactive assistant\n\nLooking ahead, Fyxer is building a richer understanding of relationships, preferences, and ongoing work threads. Their assistant continues to evolve beyond drafting replies toward a broader AI assistant that can manage more of a user\u2019s communication and coordination workload.\n\n\u201cOur vision is to get our customers doing as much of the work they absolutely love,\u201d Hollingsworth says. \u201cWe want to get them to a place where they never have to open their computer and can trust Fyxer to manage all of that.\u201d\n\n## OpenAI <3 startups\n\n[Join the community](https://openai.com/leads/startup/) [Start building(opens in a new window)](https://openai.com/startups)\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Hex turns complex analysis into visual reports with GPT\u20116 AstraStartupSep 16, 2026 Hex turns complex analysis into visual reports with GPT\u20116 Astra - Startup - Sep 16, 2026](https://openai.com/index/hex-gpt-6-astra/)\n\n\n\n[Legora reviewed 41 documents in minutes with GPT-6 AstraStartupSep 3, 2026 Legora reviewed 41 documents in minutes with GPT-6 Astra - Startup - Sep 3, 2026](https://openai.com/index/legora-financial-statement-review-with-astra/)\n\n\n\n[Playco cut manual fixes 50% prototyping games with GPT-6 AstraStartupSep 3, 2026 Playco cut manual fixes 50% prototyping games with GPT-6 Astra - Startup - Sep 3, 2026](https://openai.com/index/playco-game-prototyping-with-astra/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552907,
-    "title": "commit-rewriter 0.1",
-    "url": "https://simonwillison.net/2026/Sep/14/commit-rewriter/",
-    "published_at": "2026-09-14T00:28:10+00:00",
-    "fetched_at": "2026-09-17T23:24:30+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "14th September 2026\nI built this little web app the other day to help edit the commit messages for the [Datasette security releases](https://datasette.io/blog/2026/september-security-releases/). The initial commits were full of coding agent cruft and references to issue IDs from our private repository, so they weren't fit for publication.\nIf you want to edit the commit messages for a repository you can run it like this:\nuvx commit-rewriter path/to/repo\nOmit the path if you are already in the directory for that repo.\nWhen you submit your edits the tool creates a timestamped branch of your current repo state - to allow you to revert if you need to - and then rewrites every commit from the first one you edited to the most recent.\nRecent articles\n[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026[OpenAI agents attacked RubyGems back in May](/2026/Sep/12/openai-agents-rubygems/)- 12th September 2026",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553492,
-    "title": "Agentic coding is straining CI. Here\u2019s how we scaled test impact analysis at Anthropic",
-    "url": "https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic",
-    "published_at": "2026-09-14T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Agentic coding is straining CI. Here\u2019s how we scaled test impact analysis at Anthropic\nOur CI job volume increased 25x over 6 months. We patched our test selection service three times before finding a sustainable solution.\nOur CI job volume increased 25x over 6 months. We patched our test selection service three times before finding a sustainable solution.\n- September 14, 2026\n- 5min\nAnthropic engineers on average ship [8x as much code](https://www.anthropic.com/institute/recursive-self-improvement) per quarter as they did from 2021-2025. Claude authors [80% of that code](https://www.anthropic.com/institute/recursive-self-improvement) and it also plays a large role in [reviewing and approving PRs as well](https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle).\nOn top of that, the amount of tests across our codebase grew 10x and we added a nominal amount of engineers. This all led to a 25x increase in CI jobs over a six month period (in case you are trying to do the math, not every test runs on every PR as I will explain).\nThis threatened to overload our test impact analysis service several times. To avoid becoming the next bottleneck, we blew up the whole thing and reimagined what the service's architecture looks like. But getting there was a bumpy path that started with three quick fixes, which lasted 70 days, then 29 days, and then less than a day respectively.\nScaling CI is a challenge more engineering teams are likely to soon face as agents continue to accelerate code generation and review. I anticipate horizontally scaled test selection architecture will become industry standard as teams running agents create both more PRs and more tests.\nIn this article, I\u2019ll discuss how we scaled our test impact analysis service at Anthropic and the lesson I learned the hard way: always plan for the exponential. The specific scaling techniques\u2013buying bigger machines, parallelizing processes, or restarting the service (yeah, this one still works surprisingly well) \u2013 are common and not the insights to take from this article.\nThe point is that each of these techniques bought a fraction of the time they did a year ago. On the other hand, overhauling and completely redesigning a service also takes a fraction of the time and is much more sustainable now that writing code is no longer the bottleneck.\nThe more you can anticipate this strain and plan how your architecture will evolve with it, the less time you will waste on half-measures.\nMany of my peers work at organizations where every test is still run on every change. This works up to a point, but doesn\u2019t scale: CI gates get increasingly long, expensive, and untrustworthy.\nAdditionally, humans are great at determining which test failures don\u2019t apply to them while agents will require more context and direction. When they get a specific set of valid tests, they can self-verify and iterate more effectively.\nAt Anthropic, we built a deterministic test impact analysis or test selection service that determines which tests run on each change based on past performance and package relevance. This isn\u2019t an uncommon practice, and there is a category of vendors with offerings in this area.\nOur service depends on two deterministic components staying in sync:\n- A \u201clistener\u201d records the test results from every CI run.\n- A \u201cselector\u201d reads the test result history and determines which tests run on which opened PRs.\nThis is effective, but when there are multiple CI jobs running every second, the listener starts to increasingly fall behind the PR queue. For an [AI-native SDLC](https://claude.com/blog/the-ai-native-sdlc-playbook), a small lag can have a big impact. For example, 20 minutes of listener lag can translate into tens of thousands of test updates not being applied to the selector.\n- If a bad change gets merged, then a test will start failing for everyone else causing multiple unnecessary investigations.\n- If a dependency starts flaking, then flaky reds start blocking merges.\n- If a test gets fixed or a new one gets added, it won't run until the listener catches up risking a regression.\nAll of this ran as a single process because keeping a running history per test meant a single writer needed to apply the results. This v0 design prevented us from being able to horizontally shard.\nBy October of last year the service was already showing signs of strain, and we got paged two days straight.\nThe first fix was easy: we doubled the cores running the service. We also knew it would be fleeting.\nEven when the trend line was clear, ownership was murky. No one wanted to own another piece of infrastructure. Also, the CI team had bigger fish to fry.\nAt this point we were getting paged pretty frequently by the lag building up in the listener of this service. To drive some long-term fixes, I started a long-running session in an internal version of Claude Tag dedicated to monitoring the service. Anytime the listener lag would get more than 50,000 jobs behind, Claude would ping me and resume our conversation on next steps.\nThis would go on for months, and it was helpful not having to constantly remind it of past efforts or context. Claude often argued for an overhaul, but we usually settled on another patch.\nIn February, the exponential growth of CI jobs started to strain the service once again. This time, we decided to parallelize.\nThe listener didn\u2019t need a single writer to order test results correctly, it needed a single writer per package to order the test results for each section of our codebase correctly. Claude generated the code for us to split each package\u2019s state into a shard with its own worker.\nWe also knew this fix would be fleeting, but we didn\u2019t realize it would only buy us 29 days.\nIn March, the process reached its memory limit by mid-afternoon on most weekdays. Again, we looked for quick fixes but:\n- We only found four bugs.\n- Swapping the memory allocator as a quick-hack did nothing. We were trying to optimize garbage collection but that wasn\u2019t really the solution.\n- We didn\u2019t want to risk memory profiling a singleton already under a heavy load.\n- Restarting bought us less than a day.\nWe also discovered daily restarts were resulting in the service gradually falling further behind. When it fell behind for more than an hour, which happened several times, a ton of job results weren\u2019t recorded by the listener.\nTo be clear, this doesn\u2019t mean CI never ran on those PRs, or that untested code was pushed to production. What it meant was that the listener didn\u2019t pick up some results, which meant our test-selection component was using stale data to decide what to run and what not to on PRs. Mostly this translated into us running tests that were already super flaky or widespread-failing across the board.\nIt was (past) time to redesign the service, and we took Claude\u2019s advice: we gave the test selection service a database, or an in-memory data store to be exact. By doing so, we effectively offloaded a huge chunk of in-memory processing that the singleton used to do.\nNow, any listener worker can process any result, append it to a journal in the in-memory store, and move on without holding anything in memory - stateless and hence, horizontally scalable. A small separate consumer process rolls the journal up into per-test history every few seconds, and the selector can look up relevant result history quickly.\nThis distributed architecture is more expensive to run, but it is much easier to scale and memory profile than a shaky singleton.This project took three weeks for a single engineer. A year ago it would have been closer to a quarter.\nThere was some fine tuning (sizing the journal and number of workers) which Claude did largely autonomously, but our service has remained stable since.\nIf I was sent back in time to October 2025, I would have approached this and other projects differently with what I now know.\nThe first difference is that I would account for the AI exponential. CI jobs increase exponentially as the average number of agents per engineer rises and as accelerated PR approval becomes more sophisticated.\nThis has changed the shape of PRs over time at Anthropic as Claude prefers smaller, more granular PRs (another good reason not to run every test against every PR). This has translated into more CI jobs in a given day. Also, the activity level floor is raised as agents push overnight and on weekends, but it remains bursty as human engineers still drive and approve a significant amount of PRs.\nMy advice to engineering teams is, whether you build or buy, assume your architecture will be at a 25x load within two quarters. Over-engineering as a concept is starting to slightly fade away, or at least the bar is moving much higher. You can now start to account for 10-20x the perceived scale in your v0 designs as long your budget allows for it.\nInstrument your services to act as Claude\u2019s eyes and ears. It allows Claude to hill-climb and fix problems incrementally much better and faster than we could manually. In particular, ensure that the same number of CI jobs coming in equals the same going out.\nKeep state out of the process from the start. I\u2019d also avoid running any critical service as a single instance unless you can measure it and any canary changes. CI is evolving too quickly to proceed any other way.\nI\u2019ve also written how we accelerated [CI on call using Claude Tag](https://claude.com/blog/ai-ci-cd-on-call) (beta).\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "development",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553491,
-    "title": "Claude for Financial Advisors",
-    "url": "https://claude.com/blog/claude-for-financial-advisors",
-    "published_at": "2026-09-14T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Claude for Financial Advisors\nFinancial advisors can now connect Claude to the custodians, portfolio platforms, CRMs, and planning tools they depend on, along with new skills tailored to the daily work of a financial advisor.\nFinancial advisors can now connect Claude to the custodians, portfolio platforms, CRMs, and planning tools they depend on, along with new skills tailored to the daily work of a financial advisor.\n- September 14, 2026\n- 5min\nToday we're releasing Claude for Financial Advisors, a suite of connectors and workflow skills designed to help with research, prep, and documentation tasks that occupy an advisor\u2019s time and keep them from client-facing work.\nTime is scarce among financial advisors. A typical advisory practice spends only a sixth of its time in client meetings, according to [Kitces research](https://www.kitces.com/kitces-report-how-financial-planners-actually-do-financial-planning/). The rest goes to work around those meetings, piecing together information across systems to prepare, plan, and document what was discussed. Meanwhile, over four in 10 American workers say they don't know who to go to for good financial or retirement planning advice, according to [EBRI's 2026 Retirement Confidence Survey](https://www.ebri.org/docs/default-source/rcs/2026-rcs/rcs_26-fs-3_prep.pdf). Time an advisor saves on prep and paperwork can go to a current client or new household they don\u2019t yet have capacity to serve.\nClaude for Financial Advisors includes:\n- Connectors, which let Claude access the custodians, asset managers, and wealth technology providers advisors rely on most, so an advisor can work with a client\u2019s information in one place.\n- Skills, which use that information to help with specific tasks, like meeting prep, portfolio analysis, and compliance checks, always in service of the advisor's own judgment and style.\nNew connectors bring in the CRM, custodian, portfolio reporting, financial planning software, estate tools, and meeting capture that advisors rely on.\n- Addepar brings investment intelligence into Claude, giving advisors governed access to portfolio data, analytics and workflows across public and private markets.\n- BlackRock brings its portfolio construction expertise, model portfolios, and institutional analytics into Claude through Advisor Center, so advisors can deliver holistic advice across public and private markets.\n- Charles Schwab connects Claude to Schwab Advisor Services custodial data, including balances, positions, transactions, cost basis, alerts, and money-movement status, so advisors can review client information, see which clients need attention, and prepare for reviews.\n- Envestnet lets advisors summarize Tamarac accounts and households in natural language, with a financial plan snapshot from MoneyGuide.\n- iCapital brings a client's alternative investment holdings into Claude, enabling advisors to view NAV, commitments, unfunded capital, recent capital activity, and performance, while more easily connecting those insights to the client's broader portfolio.\n- Orion brings portfolio reporting and Redtail CRM insights into Claude for household reviews, opportunity analysis, meeting prep and follow-up.\n- SS&C Black Diamond brings portfolio, performance, holdings and rebalancing data into Claude, so advisors can review their book, spot clients out of tolerance, surface tax loss harvesting opportunities, and generate client reports, tasks and rebalance sessions with their approval.\n- Wealthbox connects Claude to client records and meeting history to power onboarding, meeting prep, and follow-up.\n- Wealth.com gives Claude a structured view of each client's estate and tax picture, including trust and will summaries, tax return insights, and the full balance sheet, so advisors can begin planning with an organized summary of available information instead of documents spread across multiple systems.\n- Vanguard brings information on its model portfolios and advisor investment solutions into Claude, so advisors can draw on Vanguard's trusted research, portfolio construction, and asset allocation expertise when making decisions for clients.\n- Zocks, the AI meeting assistant for financial advisors, brings Claude the client intelligence it captures from every conversation, including profiles, goals, life events, and commitments.\nThese join other [connectors](https://claude.com/connectors) already available in Claude, including Microsoft 365, Salesforce, DocuSign, Box, FactSet, S&P Global, Morningstar, and more.\nThe Claude for Financial Advisors plugin, which bundles advisor skills and connectors into a single install, works with BlackRock, Charles Schwab, Addepar, Envestnet, iCapital, Orion, Wealthbox, Wealth.com and Zocks, and advisors choose which of these to connect during guided setup. Some partners also offer their own plugins: BlackRock is launching one for Advisor Center, joining existing plugins from S&P Global and LSEG.\nEach skill in the Claude for Financial Advisors plugin supports a specific moment in an advisor's day, from prepping for a client meeting to explaining a drifted portfolio, and routes to tools the firm already uses to run their business. Firms can adopt these skills as is from our Claude for financial advisors [skill repository](https://github.com/anthropics/claude-for-financial-advisors), or adapt them to their own workflows, service model and house style.\n- Advisor onboarding connects a firm's tools and runs the first meeting prep automatically, helping a new advisor be productive on day one instead of week three.\n- Alternative investments brief pulls a household's alternative investments from iCapital or Addepar into a meeting-ready summary, shown alongside the rest of the portfolio, instead of an advisor reconciling separate statements by hand.\n- Compliance and AI policy highlights content that may warrant additional compliance review based on user-configured criteria, assists firms in documenting review workflows, and supports AI-governance documentation processes.\n- Estate and tax brief checks a client's estate plan against actual account titling and beneficiaries, looks back at the prior year's taxes, and can create CRM follow-up tasks, so mismatches surface for the advisor to review.\n- Portfolio rebalance review flags drift and concentrated positions against a client's target allocation, and creates a first draft explanation an advisor would otherwise write from scratch.\n- Post-meeting notes and follow-up turns a transcript into a client summary, a recap email, and CRM tasks in one pass, instead of an advisor doing each by hand after the call.\n- Pre-meeting prep consolidates information from connected systems (including a client's holdings, recent account activity, and open items from prior meetings) into a single brief for the advisor to review, so they can prepare for and walk in ready for a conversation about that client's specific situation instead of reconstructing context from three systems.\n- Prospect intake organizes what a prospect shares into a summary, an analyst handoff, and a what-to-expect memo, so the first meeting starts with the basics already in place.\nTogether, the skills gather information, summarize it, and draft client communications across the advisor\u2019s day. Investment recommendations, client communications, compliance determinations, and other regulated activities remain subject to human review and approval.\nClaude for Financial Advisors is designed so that the advisor stays in control, with approval required on critical tasks. Claude prepares briefs, summaries, and drafts analyses for advisor review, and stages administrative actions like CRM updates or draft client communications for the advisor's review and approval. The compliance skill screens client-facing language against the SEC Marketing Rule to flag potential issues, helps firms document review activities within their existing governance and recordkeeping processes, and includes a self-guided AI-policy workflow that helps firms document their use of AI under SEC rules. Workflow activities can be documented to assist firms in maintaining appropriate records and oversight processes.\nWhen Claude handles administrative tasks like meeting prep, follow-up drafts and pipeline review, advisors can spend more of their time serving clients. Practices can expand their customer base, and offer more of the services they need, like tax, estate, insurance, and retirement planning.\nHere\u2019s what customers and ecosystem partners have told us about working with Claude:\nThe advisor plugin is available today. We recommend Enterprise plans for registered investment advisers, because it includes the audit logs that support recordkeeping. If you already have an Enterprise license, open Cowork and find \"Claude for Financial Advisors\" in the plugin browser, and install it and follow the guided setup to connect your tools (or install from the [marketplace here](http://github.com/anthropics/claude-for-financial-advisors)).\nIf you don't have an Enterprise license, request one using this [form](https://forms.gle/y9YmFF2j4moRinJA7) and an Anthropic team member will reach out with next steps. Firms that request a new license before the end of September 2026 will also receive a one-time usage credit to help them get started with the plugin.\nLearn more [at our solutions page](https://claude.com/solutions/financial-services#financial-advisors) and join [our webinar](http://anthropic.com/webinars/inside-claude-for-financial-advisors) this Friday 9/18 at 11AM ET.\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "policy",
-    "tags": [
-      "policy",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553489,
-    "title": "Deploying AI from pilot to production",
-    "url": "https://claude.com/blog/deploying-ai-from-pilot-to-production",
-    "published_at": "2026-09-14T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Deploying AI from pilot to production\nIn this guide, written with Accenture, we share seven considerations for taking enterprise AI from pilot to production, and the decisions leadership needs to make to get there.\nIn this guide, written with Accenture, we share seven considerations for taking enterprise AI from pilot to production, and the decisions leadership needs to make to get there.\n- September 14, 2026\n- 5min\nA successful AI pilot doesn\u2019t guarantee successful deployment to the rest of an organization. According to Accenture\u2019s [Pulse of Change report](https://www.accenture.com/en/insights/pulse-of-change) (July 2026), only 23% of C-suite leaders report having achieved sustained, enterprise-wide impact with AI initiatives.\nPilots are designed for success. Teams are handpicked, often selected for enthusiasm and capability, and work on a defined scope with clear timelines. Pilot budgets are often protected, with insulation from normal organizational dynamics. This makes pilots unrepresentative of the conditions under which AI programs run in production.\nAccenture\u2019s September [2026 Tokenomics research](https://www.accenture.com/en/insights/ai-data/cios-guide-ai-tokenomics) found that 42% of organizations rely on shared IT and finance accountability, with no single owner responsible for AI costs and outcomes. Without that owner, it becomes difficult to measure success, make tradeoffs, and maintain accountability as an AI program scales.\nTo help CIOs and technical leaders get AI programs from pilot into production, we worked with Accenture to put together a practical blueprint. It draws on what we\u2019ve observed in enterprise deployments built on Claude and what Accenture has seen in the implementations it has guided across industries and geographies.\nIn this guide, we share:\n- Seven considerations to be settled in chronological order: before the pilot begins, during the pilot phase, and in production\n- At the end of each consideration, \u201cwork out\u201d questions for the cross-functional team and the ownership decisions a CIO or business leader makes before the program advances\n- A four-part definition of the job the AI will do (user, task, output, and a measurable quality threshold), and a lightweight total cost of ownership model to build before the pilot\n- A four-tier oversight model (automated, sampled, reviewed, and advisory) that matches human review to the risk of each output, with example tasks and a review cadence for each tier\n- A transition blueprint laying out what to decide, when to decide it, and who needs to own each decision\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "models",
-      "open-source",
-      "safety",
-      "research",
-      "infrastructure",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
