@@ -1,5 +1,161 @@
 [
   {
+    "article_id": 842296,
+    "title": "NVIDIA, Microsoft Kick Off a New Beginning for Windows PCs With RTX Spark and AI Agents",
+    "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/",
+    "published_at": "2026-10-07T18:45:28+00:00",
+    "fetched_at": "2026-10-07T20:04:35+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "At a Microsoft event in San Francisco on Wednesday, Jensen Huang and Satya Nadella outlined how NVIDIA and Microsoft are co-engineering hardware and software for AI agents to run on Windows PCs. NVIDIA was founded because of Windows, Huang said. Now AI agents are coming to Windows. \u201cIf you look at the entire journey of [&#8230;]",
+    "topic": "hardware",
+    "tags": [
+      "agents",
+      "events",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841670,
+    "title": "Why Your AI Agents Can't Talk to Each Other (Yet) \u2014 Vlad Luzin, BAND",
+    "url": "https://www.youtube.com/watch?v=toq-jyGLZDk",
+    "published_at": "2026-10-07T18:30:34+00:00",
+    "fetched_at": "2026-10-07T20:04:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "If you run Claude and Codex side by side, you're the router passing messages between them. It doesn't have to be that way.\n\nVlad Luzin, co-founder and CTO of BAND, argues the future belongs to AI agents talking to other AI agents, inside companies, between companies, and between businesses and consumers. Most of us already run multi-agent systems by hand, copying output between a planning session and a reviewing session, and loop engineering just hands that job to a script. He explains why: a single agent suffers from confirmation bias and attention dilution, no matter how big its context. Then he explains why messaging apps and protocols like MCP and A2A don't solve it, and why connecting agents is a distributed systems problem: ordered real-time transport, persistence, runtime binding, identity and observability. He finishes by launching BAND's interaction layer, with demos of agents onboarding in seconds and Claude Code and Codex working together across users.\n\nIn this talk:\n\u2022 Adversarial agents, loop engineering, and the single-agent bottleneck\n\u2022 Why Slack, Telegram, MCP and A2A fall short for agent-to-agent work\n\u2022 What connecting agents really takes: transport, persistence, runtime binding\n\u2022 Demo: Claude Code, Codex and LangGraph agents collaborating across users\n\nSPEAKER\nVlad Luzin, Co-founder & CTO, BAND\nLinkedIn: https://www.linkedin.com/in/luzin/\n\nLINKS\nBAND: https://www.band.ai\nBAND on X: https://x.com/band_hq\n\nCHAPTERS\n0:00 Intro\n0:45 The thesis: AI-to-AI communication\n1:29 What agent-to-agent work looks like\n2:04 Adversarial agents: you're the router\n2:44 Loop engineering, distilled\n3:29 The single-agent bottleneck\n4:18 Why messaging apps don't work\n5:33 Why MCP and A2A aren't enough\n7:08 Recap\n7:52 It's a distributed systems problem\n8:17 Transport, persistence and runtime binding\n9:37 Governance, identity and observability\n10:17 Introducing BAND\n11:51 Demo: onboarding agents in seconds\n13:01 Demo: connecting agents across users\n14:11 Demo: Claude Code and Codex collaborate\n15:45 Loop engineering without the glue code\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#MultiAgent #AIAgents #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "agents",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841962,
+    "title": "recommended reading.",
+    "url": "https://x.com/i/article/2106522285293154304",
+    "published_at": "2026-10-07T18:26:17+00:00",
+    "fetched_at": "2026-10-07T20:04:31+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841671,
+    "title": "Why AI Agents Should Have Their Own Sandbox \u2014 Philipp Schmid, Google DeepMind",
+    "url": "https://www.youtube.com/watch?v=oWTEiYpxl80",
+    "published_at": "2026-10-07T17:00:07+00:00",
+    "fetched_at": "2026-10-07T20:04:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your agent shouldn't run on your laptop. Give it its own computer in the cloud, with one API call.\n\nPhilipp Schmid from Google DeepMind walks through the Gemini Interactions API, Google's new API for both models and agents. It handles server-side state, long-running background jobs, and built-in plus custom tools across text, audio and images, and it replaces user/model turns with a timeline of steps. Then he shows the Antigravity agent in the Gemini API, which runs the same harness as Antigravity in its own managed cloud sandbox. Agents can run code, install tools, share environments with other agents and pick up skills and AGENTS.md files automatically. He covers the Agents API for packaging reusable agents, the new Gemini API CLI, and demos an AI talk radio show generated from one prompt.\n\nIn this talk:\n\u2022 The Interactions API: one interface for models and agents\n\u2022 Why steps replace user/model turns for agentic apps\n\u2022 Managed sandboxes: persistent, shareable environments with skills built in\n\u2022 Demo: an AI talk radio agent built from an AGENTS.md file and skills\n\nSPEAKER\nPhilipp Schmid, Google DeepMind\nLinkedIn: https://www.linkedin.com/in/philipp-schmid-a6a2bb196\nX: https://x.com/_philschmid\nGitHub: https://github.com/philschmid\nWebsite: https://www.philschmid.de\n\nLINKS\nGemini Interactions API: https://ai.google.dev/gemini-api/docs/interactions-overview\nGemini API agents: https://ai.google.dev/gemini-api/docs/agents\nAntigravity agent docs: https://ai.google.dev/gemini-api/docs/antigravity-agent\nGemini API CLI (GitHub): https://github.com/google-gemini/gemini-api-cli\nGoogle AI Studio: https://aistudio.google.com\n\nCHAPTERS\n0:00 Intro\n0:52 New: Nano Banana Lite and Omni Flash\n1:17 From text completion to agents\n2:47 Get an API key in AI Studio\n3:21 The Interactions API\n4:21 Server-side state and background jobs\n4:56 Code: state, audio and images\n5:56 Tool use: a CVE agent\n6:45 From turns to steps\n8:10 The Antigravity agent\n9:14 Every agent gets its own sandbox\n10:04 Sharing environments between agents\n10:29 Sources, skills and AGENTS.md\n11:14 The Agents API\n12:23 The Gemini API CLI\n12:58 Demo: AI Talk Radio\n14:43 Demo: listening to the show\n16:46 Inside the agent: just files\n18:05 Demo: exploring the sandbox\n19:00 Downloading the environment\n19:29 How the managed agent loop works\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#Gemini #AIAgents #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 842314,
+    "title": "Multimodal open d1 decision models for the edge",
+    "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+    "published_at": "2026-10-07T16:54:33+00:00",
+    "fetched_at": "2026-10-07T20:04:35+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841672,
+    "title": "Redesigning How Software Gets Built With AI Agents \u2014 Sonar & McKinsey Panel",
+    "url": "https://www.youtube.com/watch?v=XqF-IFHBCkM",
+    "published_at": "2026-10-07T15:30:19+00:00",
+    "fetched_at": "2026-10-07T20:04:29+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most companies say they've deployed AI agents. Fewer than a third say it's paying off. What do the rest do differently?\n\nA panel with Sonar CEO Tariq Shaukat and Ali-Reza Adl-Tabatabai, former CEO of Gitar (now part of Sonar) and former head of Uber's developer platform, moderated by McKinsey. Research with Sonar found the teams getting real results from agents change three things: their process, their tooling and, most often overlooked, their people and roles. Tariq explains why lighthouse teams alone don't spread new habits, and why engineers need to make implicit knowledge explicit and get great at critical thinking, because AI always sounds sure. Ali covers how big companies can borrow from small teams through their platform orgs, and walks through how trust builds step by step: from AI reviews, to blocking on issues, to autofix, to auto-approve and auto-merge.\n\nIn this talk:\n\u2022 Three factors behind teams that scale agents: process, tooling and people\n\u2022 Why role models and lighthouse teams aren't enough on their own\n\u2022 The skills that matter now: explicit thinking, critical thinking, generalists\n\u2022 How trust grows from AI code review to fully automated merges\n\nSPEAKERS\nTariq Shaukat, CEO, Sonar\nX: https://x.com/tariqshaukat\n\nAli-Reza Adl-Tabatabai, Former CEO & co-founder, Gitar (now part of Sonar)\nLinkedIn: https://www.linkedin.com/in/aliadl/\nX: https://x.com/aadltaba\n\nLINKS\nSonar: https://www.sonarsource.com\nGitar by Sonar: https://www.sonarsource.com/products/gitar/\nSonar on X: https://x.com/SonarSource\n\nCHAPTERS\n0:00 Intro\n0:57 Research: what helps teams scale\n1:51 Process, tooling and people\n3:04 Meet the panel\n3:19 Lessons from Sonar's own transition\n5:38 Lighthouse teams aren't enough\n6:18 What big companies can learn from small teams\n8:37 Measure first\n9:36 Automate whole workflows\n10:21 Automate the grunt work\n11:04 What this means for people and orgs\n12:43 Make the implicit explicit\n13:08 Critical thinking\n14:28 The era of the generalist\n15:07 Will we trust agents to validate code?\n16:02 From reviews to blocking to autofix\n17:52 Auto-approve and auto-merge\n18:36 Where this is heading\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIAgents #SoftwareEngineering #AIEngineer",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "video",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841398,
+    "title": "Anti-Patterns in Software Blogging",
+    "url": "https://simonwillison.net/2026/Oct/7/anti-patterns-in-software-blogging/",
+    "published_at": "2026-10-07T14:53:51+00:00",
+    "fetched_at": "2026-10-07T20:04:27+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://refactoringenglish.com/blog/anti-patterns-software-blogging/#summary\">Anti-Patterns in Software Blogging</a></strong></p>\nSome excellent writing advice from Michael Lynch. Michael warns against \"meandering intros\", misjudging your reader's existing knowledge, assuming they'll read your previous posts, and excessive formality.</p>\n<p>He also warns against <a href=\"https://refactoringenglish.com/blog/anti-patterns-software-blogging/#overreliance-on-links\">overreliance on links</a> as an excuse not to explain terminology. This one hurt! I do this all the time, but I have a nagging suspicion that almost nobody ever clicks on them.</p>\n<p>(In <a href=\"https://lobste.rs/s/rwdufq/anti_patterns_software_blogging#c_qdhhsd\">a Lobste.rs comment</a> Michael clarifies that \"My rule of thumb is that my article should still make sense to the reader even if they don't click any links\". That works for me.)</p>\n<p>This point about using your own voice is crucial:</p>\n<blockquote>\n<p>Beginner software bloggers suffer from a mass delusion that you have to write in a stiff, overly formal way for people to take you seriously [...]</p>\n<p>Just write the way you talk.</p>\n<p>With so many developers delegating their writing to AI, software blogging is becoming bland and homogenous. Readers are hungry for writing with personality.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://lobste.rs/s/rwdufq/anti_patterns_software_blogging\">Lobste.rs</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/blogging\">blogging</a>, <a href=\"https://simonwillison.net/tags/writing\">writing</a>, <a href=\"https://simonwillison.net/tags/michael-lynch\">michael-lynch</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "opinion",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841963,
+    "title": "recommended viewing.",
+    "url": "https://video.twimg.com/amplify_video/2107819319086178305/vid/avc1/1920x1080/mRVxmw0SBA_tjFJL.mp4",
+    "published_at": "2026-10-07T14:40:53+00:00",
+    "fetched_at": "2026-10-07T20:04:31+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 838483,
     "title": "From 36% to 100%: How Self-Improving Agents Write Their Own Skills \u2014 Rafal Wilinski, Runlayer",
     "url": "https://www.youtube.com/watch?v=u-o0sW9nwmk",
@@ -75,6 +231,25 @@
     "available": true
   },
   {
+    "article_id": 840144,
+    "title": "Helping teens learn, plan, and shape the future of AI",
+    "url": "https://openai.com/index/teens-learn-and-plan",
+    "published_at": "2026-10-07T12:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:27+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
+    "topic": "education",
+    "tags": [
+      "models",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 838468,
     "title": "HF Buckets: Upload Only What Changed with Xet",
     "url": "https://www.youtube.com/watch?v=1E0ZoktFerQ",
@@ -89,6 +264,25 @@
       "video",
       "coding",
       "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 840145,
+    "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+    "url": "https://openai.com/index/radisson",
+    "published_at": "2026-10-07T07:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:27+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
       "tools"
     ],
     "dearrow_thumbnail_url": "",
@@ -177,6 +371,81 @@
       "research",
       "coding",
       "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841685,
+    "title": "Automating eval design and hillclimbing with Claude",
+    "url": "https://claude.dev/blog/automating-eval-design-and-hillclimbing/",
+    "published_at": "2026-10-07T00:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:30+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Principles for designing evals and hillclimbing against them without fooling yourself, and how the claude-api skill's build-eval and hillclimb commands put them to work.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "api",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 840146,
+    "title": "GPT-6 and Intelligent UI for everyone",
+    "url": "https://openai.com/index/gpt-6-for-everyone",
+    "published_at": "2026-10-07T00:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:27+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "GPT\u20116 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 843374,
+    "title": "Multimodal embeddings beyond a single vector",
+    "url": "https://www.perplexity.ai/hub/blog/multimodal-embeddings-beyond-a-single-vector",
+    "published_at": "2026-10-07T00:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:36+00:00",
+    "source_id": "perplexity-hub",
+    "source_name": "Perplexity Hub",
+    "extraction_method": "rss",
+    "body": "Multimodal embeddings beyond a single vector",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 843373,
+    "title": "RAG vs. LLM: Technical Breakdown (Definitions, Differences, Use Cases)",
+    "url": "https://www.perplexity.ai/hub/blog/rag-vs-llm",
+    "published_at": "2026-10-07T00:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:36+00:00",
+    "source_id": "perplexity-hub",
+    "source_name": "Perplexity Hub",
+    "extraction_method": "rss",
+    "body": "RAG vs. LLM: Technical Breakdown (Definitions, Differences, Use Cases)",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -972,6 +1241,46 @@
       "benchmark",
       "coding",
       "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841687,
+    "title": "Claude Code in the cloud: a field guide to cloud sessions",
+    "url": "https://claude.dev/blog/claude-code-in-the-cloud/",
+    "published_at": "2026-10-06T00:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:30+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "What changes when Claude Code runs on its own machine, the workflows where that pays off, and how to connect GitHub on the first try.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841686,
+    "title": "Expanding the Cyber Verification Program",
+    "url": "https://www.anthropic.com/news/cyber-verification-program",
+    "published_at": "2026-10-06T00:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:30+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "We\u2019re launching a new, expanded version of our Cyber Verification Program (CVP), which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals.",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -3082,6 +3391,26 @@
       "api",
       "safety",
       "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 841692,
+    "title": "Getting started with Claude Code mods",
+    "url": "https://claude.dev/blog/getting-started-with-claude-code-mods/",
+    "published_at": "2026-10-01T00:00:00+00:00",
+    "fetched_at": "2026-10-07T20:04:30+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Getting started with Claude Code mods",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10660,378 +10989,6 @@
       "api",
       "safety",
       "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553184,
-    "title": "1 Trillion Phone Calls/yr, 10% Error rate: The Crisis in Voice AI \u2014 Sumanyu Sharma, Hamming AI",
-    "url": "https://www.youtube.com/watch?v=qStB9GbppMU",
-    "published_at": "2026-09-15T15:00:06+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Sumanyu Sharma showed up for a doctor's appointment a voice agent had told him was booked. He was not on the schedule, the front desk turned him away, and he lost two hours. His point is not the inconvenience but the substitution: make that his grandparent, and make it a procedure rather than a checkup, and the same failure costs something else entirely. Sharma founded Hamming after years at a public safety app, where he and his team listened to thousands of hours of police radio and pushed millions of alerts across several US cities. He puts the two experiences side by side deliberately. Crime is decreasing and it is local, touching whoever happens to be involved. Voice agents are scaling fast and they are centralized, so one prompt change propagates to everyone at once. Around a trillion phone calls happen every year. Even at a one percent error rate that is ten billion bad interactions, and across the ten thousand agents his company monitors the real rate is nearer ten percent.\n\nThe failures are rarely dramatic. An agent reports it found the right policy while quietly skipping the eligibility check. It applies a discount nobody authorized. It says it booked something it did not. His remedy is a loop rather than a fix: find the problems, size them by frequency and severity, change something, verify the change did not break something else, and keep watching. He is emphatic that listening to individual calls by hand is where to start and not what to scale, and that the real insight lives in patterns across conversations. Then the harder warning. His team's adversarial testing breaks roughly one agent in five.\n\nSpeaker info:\n- https://x.com/sumanyu\n- https://www.linkedin.com/in/sumanyusharma/\n- https://hamming.ai\n\nTimestamps:\n0:00 - Listening to crime audio at scale\n2:50 - Why reliability still blocks deployment\n4:32 - Crime is local, voice agents are centralized\n5:23 - Sizing severity, from annoying to unsafe\n7:04 - A loop for finding and fixing failures\n7:57 - Coverage: from listening by hand to cross call analysis\n10:32 - Testing whether a fix really worked\n12:13 - When bad actors learn to dial\n13:07 - Breaking one agent in five\n\n---\n\nWatch along with the corrected transcript, summary, timestamps and resources on this talk's official AIE page:\nhttps://ai.engineer/talks/qStB9GbppMU-i-monitored-crime-audio-voice-agents-scare\n\nJoin our upcoming AI Engineer conferences (see https://ai.engineer landing page):\n\n- AIE New York, October 12\u201314 \u2014 the first AI Engineer Finance mainstage summit\n- AIEi Shanghai, November 5\u20136 \u2014 the first for meeting top Chinese labs and engineers\n- AIE CODE in SF, November 10\u201312 \u2014 the top AI Coding conference returns\n- AIEi Sydney, December 7\u20138 \u2014 the first AIEi run alongside NeurIPS 2026 in Sydney\n\n---\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/qStB9GbppMU",
-    "topic": "safety",
-    "tags": [
-      "open-source",
-      "agents",
-      "safety",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553739,
-    "title": "P(doom)",
-    "url": "https://lucumr.pocoo.org/2026/9/12/pdoom/",
-    "published_at": "2026-09-15T14:56:50+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "trafilatura",
-    "body": "written on September 12, 2026\nThis week some flavor of \u201cAI is going to kill us all\u201d went viral. In particular\none where an employee put his personal probability of that happening above\n10%. Which made me go to the [Wikipedia page of\nP(doom)](https://en.wikipedia.org/wiki/P(doom)) and I realized that Dario\nAmodei\u2019s apparent probability of something bad happening seems to be between\n10-25%. And well, Dario then wrote about [pacing the frontier\n](https://darioamodei.com/post/we-must-pace-the-frontier). And Sam read it and\n[wants to pace too](https://x.com/sama/status/2098811563415150910). And well,\n[so does Musk](https://x.com/elonmusk/status/2098789109980332057).\nI encourage you strongly to read the post, because I think it\u2019s a good one. And yet, when I read the post I could not help but feel in strong opposition to it, despite the fact that I think I\u2019m on the same page with regard to all observations and, to a large degree, the concerns.\nI thought it might be interesting to write down my present-day thoughts on this, even if for no other reason than for myself to look back at it a year or two from now.\nWhat I really appreciate about Dario\u2019s post is that he lays out a scenario that\nis not a huge stretch but also one that describes a clear, unfortunate outcome\nwe should fight: persistent botnets and other forms of nuisance. And well, we\ndon\u2019t have to look very far to see the issues left and right. Wikipedia has a\npage called [2026 OpenAI agent\ncyberattacks](https://en.wikipedia.org/wiki/2026_OpenAI_agent_cyberattacks)\nwhich gives you at least some overview of what we figured out agents have hacked\nup to this point. Except I know it\u2019s not up to date, because for instance they\nalso poisoned [RubyGems](https://www.rubyhack.ai/).\nToday these systems might be annoying, but they can be turned off when we figure out where they are. Except, it seems like OpenAI and Anthropic are operating at such a scale that they seemingly can be completely blind to what their systems are doing.\nI don\u2019t think we are anywhere close to a world where an agent might decide to hack into core inference infrastructure to upload weights to other GPUs to survive. But simultaneously it\u2019s entirely in the realm of possibility and primarily curtailed by the labs probably being particularly careful about their IP.\nFor me the scenario I primarily worry about is what it does to us. And by us I mean anyone who is not currently working on closed weight, dopamine-loaded, subsidized token faucet. I really don\u2019t worry about someone using these models to build a nuke, or to control some rockets in the Middle East, or that America would lose against China in some international culture war. I almost exclusively worry about what this does to us as humans.\nWhat I find absolutely hilarious and simultaneously entirely frustrating about\nthis conversation is that there is this idea that there is something to be\npaced. First of all, we should really talk about who Dario is talking about\nhere. There are really only two companies: Anthropic and OpenAI. Nobody else\nmatters in this space right now (this might change, but we\u2019re talking about the\nright now). Both of those companies are basically coming from the same origin. The\nsolution that Dario proposed, at least in part, is a third-party evaluator that\nin this case is [METR](https://en.wikipedia.org/wiki/METR). Which,\nunsurprisingly, also has strong ties to both OpenAI and Anthropic. Sure, there\nare some philosophical differences between the companies, but they are much more\nalike than they are different.\nBoth those companies greatly benefited from being able to train on public data that we all generated in one form or another over the last decades. They are also both increasingly causing strain on public resources, though it seems that OpenAI has their shit way less under control. But now we are presented with the idea that what these models are being trained on is so dangerous that it really should be in the hands of very few American corporations to decide who can do what and when and how.\nBut behold, Dario is also very worried about China. It starts with using AI for \u201cdemocracy and freedom\u201d and then it asks for ensuring that a gap with China exists. All new recent shenanigans on the Anthropic API are fully there to prevent the distillation by the Chinese, and they are not at all hiding it.\nI can tell you when the topic of AI safety and pacing is much less of a concern:\nif we actually were forced to have open weight models to begin with. A powerful\ntechnology that is out there for everyone to use comes with built-in pacing. In\na way it\u2019s the truest form of\n[MAD](https://en.wikipedia.org/wiki/Mutually_assured_destruction) or\nproliferation. I would argue we are in this pickle in the first place because\nright now the public is massively supporting (indirectly) the development of\nthese models but simultaneously has to buy back the economic benefits that they\nmight create from very few labs who have significant power. And their power is\nalso seen as a geopolitical power, at least in the US, and maybe to some lesser\ndegree in China.\nAnd I know I use \u201cpublic\u201d loosely here. PyPI is not a public project, nor are RubyGems or GitHub. But they\u2019re part of the Open Source commons and large AI companies are currently doing a tremendous job at stressing these in an effort to train ever more powerful models.\nWe should be glad that China is currently massively bailing out the world. If it were not for Chinese labs distilling American models, we would be in a pretty awful situation right now, particularly as Europeans. The open weight models are driving innovation and the diffusion of capabilities, and are leveling the playing field.\nIf we greatly restrain our AI capabilities in the belief that China will do the same, and then China defects, AI could be so powerful that such a defection could lead to their geopolitical dominance. Therefore any agreement must either have ironclad verifiability, or must be limited enough that defection would not be militarily existential.\n\u2014 Dario Amodei\nI am assuming Dario has reasons to believe this, but the models that are actually causing issues right now are all closed weight American models. I\u2019m fairly certain if they were open weight models, we would not have that issue. Why? Because for a start, the economics of serving up these models are only that distorted due to how the big labs can operate. OpenAI is casually burning 18 million USD to brute force a problem on a whim. They are operating subscriptions at a massive loss, distorting the market everywhere. If we had mass accessibility on somewhat equal terms, a lot of the crazy issues we are seeing today would not be taking place.\nFrom where I sit, what we observe right now is a total regulatory failure everywhere. In Europe you have some whacky AI regulation that is two years old and completely misses the problems that we actually have and focuses on problems that nobody has. In the US we\u2019re seeing a system that is probably best described as turbo capitalism paired with sinophobia and erratic decision-making. In the chaos in which we find ourselves, the reality emerges. And the reality is, even today, really problematic.\nWhatever laws and regulations already exist are largely completely ignored. Plenty of companies are buying data from all over the place that people never agreed could be used for training of AI models. The token economy that is emerging is one that looks like a drug market where you don\u2019t know where the requests are going, what model is served up to you, where the GPUs are even running, let alone what you pay for all of this.\nWe now have mathematicians who are scared that their use of ChatGPT leads to\nfuture models being trained on their ideas, and OpenAI apparently [can\u2019t even\nrule it out](https://www.bbc.com/news/articles/cy7zygy3rl2o).\nIdeally the regulators would have forced these models to actually benefit the commons if they are from the commons. The internet has, for instance, greatly benefited from very liberal rulings in the US that permitted scraping. Learning on public data could have been regulated in a way that labs would have to actively support and enable certain forms of distillation. That alone would dramatically change how these models are trained.\nAs I said before, I don\u2019t think AI is going to usher in an extinction event. In fact, even if nobody were to slow down, I really don\u2019t think humanity would have much to worry about. I tend to think it would actually be the large labs that have much more to lose there in reputation and legal responsibilities. I find it preposterous that OpenAI\u2019s agents are committing actual crimes out there, but we\u2019re just shrugging our shoulders and moving on as if nothing happened. But I\u2019m sure executives in those companies are waking up to the reality that this is not at all popular with a lot of their potential consumers.\nI also think that this entire recursive self-improvement business has a good chance of being a problem. But not necessarily in that it will cause the end of humanity or societies, but that it will just do massive damage everywhere.\nAnd really, it will just make a lot of the things we are doing much more expensive. Software engineering is an early victim of that. The newfound powers so far have resulted in a new tax that companies need to pay to the model providers, both to keep up with the new speed and to deal with the problem of these machines finding security issues left and right.\nAnd presumably what is going on in software will happen to more industries. Universities and research groups will have to pour a lot of money into the closed models as well, to keep up with others who do.\nIn a way, I\u2019m really confused that society is taking all of this so well.",
-    "topic": "safety",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712467,
-    "title": "Good luck slowing this down",
-    "url": "https://www.bensbites.com/p/good-luck-slowing-this-down",
-    "published_at": "2026-09-15T13:02:52+00:00",
-    "fetched_at": "2026-09-28T21:34:07+00:00",
-    "source_id": "bens-bites",
-    "source_name": "Ben's Bites",
-    "extraction_method": "trafilatura",
-    "body": "Hi folks,\nHow tf do I write an intro to the craziness that\u2019s happened since the end of last week?!\nI got access to Instinct, the personal agent all the VCs are raving about - I think it\u2019s a bit meh? I don\u2019t know if it\u2019s the pro-activeness that people seem to like, but I don\u2019t love that. Makes me feel like I\u2019m having to do work to keep it happy, or like I\u2019ve got a boss again - no thanks.\nThe first message it sent me was:\nI finished working on your meeting follow-ups - reply here and I\u2019ll send the details.\nI sh*t myself a lil bit and thought, please don\u2019t start sending emails on my behalf. And I\u2019m pretty savvy (ish) with agents. I\u2019ve no doubt getting these onboarding experiences for everyone is really hard, but I just don\u2019t feel the magic yet. It also feels slow.\nI\u2019ll wait for Muse access to see what that\u2019s like, but I don\u2019t love the idea of giving Meta access to more info about me\u2026they\u2019re not the most reliable of privacy partners.\nAnd another thing - you don\u2019t see by default what these agents remember about you, or what context they have. I really like being able to see and edit what\u2019s in my files to steer my agents.\nMuch like every app adding an AI assistant chat box in their product, I unfortunately think every AI company will start shipping their own personal agents.\nBen\u2019s Bites is brought to you by [Adobe Acrobat](https://business.adobe.com/products/acrobat-business.html)\n[Acrobat\u2019s new AI]turns dense reports into visual summaries, interactive reports & podcasts you can take anywhere. Sharing your work? Stylize transforms documents into polished deliverables in just a few clicks. Every answer includes clickable citations & Adobe does not train on your data.[Try here].\nHeadlines\nDario Amodei has a new essay: [Pace the frontier](https://x.com/DarioAmodei/status/2098773920774074715). He says all the leading labs should slow down long enough for safety reasons. [Sam Altman agrees](https://x.com/sama/status/2098811563415150910), but [Trump does not](https://x.com/benitoz/status/2099572926865715548). He called Jensen Huang on stage at the All-In Summit: The US will not lose the AI race. [David Sacks](https://x.com/DavidSacks/status/2098973625252708460) (AI czar for the US govt.) adds: feel free to slow down, but no need to impose it on others. Also read:\nMore AI safety takes:\n[two ways AI goes bad](https://x.com/sama/status/2099352016988614852)\u00b7[it\u2019s all for the IPO](https://x.com/nickmmark/status/2098868224377200960)\u00b7[pacing = losses](https://x.com/tszzl/status/2098820692137677116)\u00b7[fear spreads faster](https://bcantrill.dtrace.org/2026/09/13/the-contagion-of-fear/)\u00b7[case for open-source](https://x.com/jack/status/2099649359017046048)and[quite a long summary](https://x.com/GavinSBaker/status/2099170698887315833)of what everyone\u2019s actually saying.[No IPO for OpenAI in 2026](https://x.com/ajs/status/2098843595445051838). Sam told Fortune\u2019s Alyson Shontell it would be \u201cill-timed\u201d given the work ahead on alignment, control and safety.Look ma! They are\n[misuing claude again](https://www.anthropic.com/threat-intelligence-report-september-2026)- Another Anthropic crashout.\n[tldraw took OpenAI up on a challenge](https://x.com/tldraw/status/2098132314987303251). Steve (the founder of tldraw) said he could make ChatGPT\u2019s Sketch 100x better. OpenAI\u2019s Tibo gave him a day to prove it. The result: a whole ChatGPT-style prototype with better drawing tools built in.\n[ChatGPT mini](https://x.com/ChatGPT/status/2098533675050672134) - A tiny floating widget to start chats, see updates, and more. Go to Pets in your ChatGPT desktop app to switch.\nClaude Code can now [test whether a plugin actually helps](https://x.com/ClaudeDevs/status/2098500999656923145). Run the same tasks with and without it and compare the results. Works with skills too.\nTwo new additions to the OpenAI API:\n[GPT-Live-1](https://openai.com/index/introducing-gpt-live-1-in-the-api/)- the model behind ChatGPT\u2019s new Voice mode. I love using it while reading books, asking about tricky terms and dictating notes. Now you can add it to your products. Here it is with Astra and a whiteboard,[playing teacher](https://x.com/dymadome/status/2099635848572797346).[Agents API](https://openai.com/index/introducing-the-agents-api/)- OpenAI\u2019s take on Managed Agents in the Claude API. It lets developers send any task to a Codex-like agent from their apps without worrying about configuring all the infra.\nMy feed\nI use Pi (the harness) a lot. Till now, you brought an API key or your Codex/Claude subs to Pi.\n[Their new product solves that](https://radius.earendil.com/). And I tell you what, the new[DeepSeek model](https://x.com/arena/status/2099606881845321841)is really nice to work with in Pi. (I\u2019m an investor)[Bolt Forge](https://bolt.new/blog/what-is-bolt-forge)- GLM, DeepSeek and Kimi inside Bolt, free until October 14.ChatGPT Work has a new\n[data agent](https://openai.com/index/put-data-to-work/). (Also see:[summation](https://www.summation.com/)- by[Opendoor\u2019s CTO](https://x.com/ianwong_/status/2098106891737977191))Should your agent app have\n[bots or tasks](https://x.com/cellier_/status/2099515680953712968)? Maybe neither. Because both make you organise the work.[Routines in Replit](https://x.com/Replit/status/2098169655013863740)- automated recurring work with AI.What are people\n[building with GPT-6 Astra](https://x.com/OpenAIDevs/status/2098827327832822014)?[Assistant Benchmark](https://x.com/DavidPawlan/status/2097414009016185268)tests everyday assistants like Grok bot, Muse, Instinct and more. Ratings are a work in progress.[SF autoresearch](https://sfcompute.com/news/sfc-autoresearch)- Run agent-driven ML experiments while you[save 25% on GPUs](https://sfcompute.com/news/realized-discount)on average.A coding agent to\n[improve your customer-facing agents](https://poly.ai/blog/wren-agent-improves-dialog-agents).[How Pangram detects AI writing](https://lucumr.pocoo.org/2026/9/14/interpreting-pangram/)- and why a human rewrite can still get flagged.How to\n[run a team of agents](https://arslan.io/2026/09/11/how-i-manage-my-agents/), with agents as their managers.[Cognition\u2019s SWE-2](https://cognition.com/blog/swe-2)(based on Kimi K3) beats Grok 4.6 at half the cost.An interactive explainer of the\n[AI compute stack](https://x.com/MTSlive/status/2099632490533241019).[Inspo](https://inspomcp.dev/)- Design inspiration from 800+ sites, available as an MCP server.Core Auto is\n[hiring interns](https://x.com/rtwlz/status/2099608957698617356)to be the human edge for businesses run by agents.Why even good AI startups end up with\n[bad prompts](https://x.com/wulfie_bain_/status/2098060386813566990), and how to fix them.Andrew Ng\u2019s series on\n[the skills AI engineers need](https://www.deeplearning.ai/the-batch/the-ai-engineering-skills-map-in-detail-shaping-the-build).[Underdog](https://x.com/0xSigil/status/2098888253235728555)- a personal AI that runs entirely on your device.\nAfters\nRead\n[about me](https://bensbites.substack.com/about)and Ben\u2019s Bites\ud83d\udcf7 thumbnail via\n[@keshavatearth](https://x.com/Keshavatearth)\n* sponsors who make this newsletter possible :)\nWanna partner with us for the next quarter?\nEmail us at\n[shanice@bensbites.com]or[k@bensbites.com]",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551565,
-    "title": "New insights from Google\u2019s AI & Economy ATLAS",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
-    "published_at": "2026-09-15T13:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "trafilatura",
-    "body": "New insights from Google\u2019s AI & Economy ATLAS\nHow is AI being used by people every day, including in offices, labs, and creative studios around the world? Insights from Google\u2019s [AI & Economy ATLAS](https://blog.google/innovation-and-ai/technology/research/understanding-the-ai-economy/) show how AI is actively reshaping global work. For example:\n- India\u2019s creative industry is using AI at a higher rate than the rest of the world, with arts, design, and media occupations making up 19% of work-related AI usage, 1.6 times the global average.\n- The U.S. is leading in technical AI adoption, with computer and mathematical occupations accounting for 30% of work-related AI usage, double the share in the rest of the world.\nTo make these insights and ATLAS's millions of other global data points easier to explore, we're launching a new [interactive, open-access experience](https://ai.google/economy/atlas/). You can look more closely at the rates different occupations are using AI, from electricians to purchasing managers, dive into the ways people are using AI at home, and explore the rate of AI adoption in countries around the world.\nAnd new ATLAS-based [research](https://ai.google/static/documents/AI-in-Science.pdf) from Google, Google DeepMind, in collaboration with [MIT FutureTech](https://futuretech.mit.edu/publication/scientific-work) provides new insights how scientists are using AI in their work, including:\n- Scientists are using AI at a higher rate than many other occupations; nearly half of surveyed scientists use some form of AI every day.\n- Both LLMs and specialized models are used widely for science, in mutually reinforcing ways.\n- Scientists report saving almost 7 hours a week with AI, freeing up time for more research. However, there are now bottlenecks further down the research production pipeline, creating a backlog of hypotheses.\nWhich professions are using AI most, and where?\nATLAS data reveals how different professions around the globe are adopting AI, highlighting key regional trends and usage patterns:\n- AI by occupation: In OECD countries, computer and mathematical and business and financial operations lead in AI usage. In non-OECD countries, office and administrative support, arts, design, entertainment, sports, and media, and educational instruction and library occupations take the top spots.\n- Income level vs. adoption: While AI adoption generally correlates with a country\u2019s income level, countries like Brazil and the UAE stand out with higher adoption rates than their GDP per capita would predict.\n- AI for manual tasks: Usage for real-time equipment diagnostics and troubleshooting varies significantly by region. In Brazil and Germany, 7% of work AI usage goes toward manual tasks (1.4 times the global average), compared to 4% in Japan.\nHow are scientists using AI?\nNew research also highlights how scientists are using AI in their work. A [new study](https://ai.google/static/documents/AI-in-Science.pdf) from Google, Google DeepMind, and MIT FutureTech draws on ATLAS data. It\u2019s an analysis of 2600 specialized AI models, and a survey of over 600 U.S. and U.K. scientists, all organized using [a new taxonomy](https://futuretech.mit.edu/publication/scientific-work) from MIT FutureTech that maps out what scientists do.\nAccording to the research, scientists are using AI at a higher rate than many other occupations, and nearly half use some form of AI every day. While scientists are using both specialized models and LLMs, they're using them for different tasks. Usage of LLMs like Gemini is spread widely across scientific fields and task categories, while specialized AI models tend to be relatively more common in health and life sciences and in domain-specific data prediction, generation, and simulation tasks.\nScientists are reporting significant time gains based on AI, with savings of just below seven hours a week, freeing up more time for research. But this may not immediately translate to new discoveries. The research also finds evidence of significant time spent validating AI outputs, an increased backlog of hypotheses yet to be tested, and bottlenecks emerging in areas like physical experimentation and clinical validation. In this way, science is similar to most other occupations: although AI offers significant potential to increase productivity, the large-scale impact on outputs and discoveries may require redesigning scientific processes and workflows to realize the potential of fast-evolving AI capabilities.\nWhat\u2019s ahead?\nMany questions about the future of AI and the economy remain. ATLAS is a long-term research project, and we\u2019ll work with partners in academia and elsewhere to identify new areas of research and deliver new insights that contribute to a better understanding of how AI is transforming the economy.",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553112,
-    "title": "I Was Shocked How Easy This Agent Was To Use",
-    "url": "https://www.youtube.com/shorts/FxcYK5WOk1c",
-    "published_at": "2026-09-15T12:26:35+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Is this the easiest AI agent to use?\n\nI connected Meta's new AI Agent Muse to my email and asked it to audit my subscriptions to see how much I\u2019m spending on AI tools. \n\nBut what impressed me most wasn\u2019t just the audit, it was how easy the agent was to use. It feels like a normal messaging app, runs tasks inside a secure virtual machine, and suggests ways it can help as you connect your apps.\n\nIf you\u2019ve only used AI for chatting and haven\u2019t tried agents yet, this might be one of the easiest places to start.\n\n#AI #Aiagent #aitools #meta #muse\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/FxcYK5WOk1c",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "video",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712588,
-    "title": "Heart of the Matter: How a Major Children\u2019s Hospital Uses Open Source NVIDIA AI for Cardiac Care",
-    "url": "https://blogs.nvidia.com/blog/childrens-hospital-open-source-ai-cardiac-care/",
-    "published_at": "2026-09-15T09:00:42+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "[At AI Day Singapore, NVIDIA and Partners Showcase AI Advancements Across Southeast Asia](https://blogs.nvidia.com/blog/ai-day-singapore/)\nChildren\u2019s Hospital of Philadelphia is using open source AI tools to model children\u2019s hearts in seconds \u2014 with the goal of enabling safer, more precise care for kids with congenital heart disease.\nAbout 1% of all live births involve a congenital heart defect \u2014 and no two are alike.\nA child born with a hole between the lower chambers of their heart, or a leaking valve in the single pumping chamber keeping them alive, needs care that fits their exact anatomy. Historically, the devices surgeons reach for were almost never designed with that specific child in mind.\n\u201cYou\u2019ve got a one-of-a-kind kid and an off-the-shelf device,\u201d said Dr. Matthew Jolley, a cardiologist and researcher at Children\u2019s Hospital of Philadelphia, or CHOP. \u201cOur job is to find what fits \u2014 and modeling lets us do that before anyone goes into the cath lab or operating room.\u201d\nCHOP\u2019s cardiac modeling service, built on [MONAI](https://project-monai.github.io/) \u2014 an open source medical imaging framework cofounded by NVIDIA \u2014 takes the images a child\u2019s care team already has, such as CT scans, MRI and 3D ultrasound, and produces anatomically precise heart models in just seconds. A workflow that once required four hours of work by a skilled researcher now completes fast enough for routine clinical use.\nThe approach is spreading.\nMore than 20 children\u2019s hospitals across the U.S. now run cardiac modeling programs. At Boston Children\u2019s Hospital, modeling supports more than half of all cardiac surgeries \u2014 roughly 500 cases a year. CHOP expects to reach about 200 modeled cases this year. Where this work began in cardiac care, CHOP is now aiming to apply the same tools across multiple disciplines through the [IDEA Lab](https://www.research.chop.edu/building-breakthroughs-morgan-centers-idea-lab-invites-innovation-with-elizabeth-silvestro-phd), part of the hospital\u2019s Morgan Center for Research and Innovation.\nWhen Jolley joined CHOP in 2015, 3D echocardiography was just coming online. There were tools for modeling adult valves, but almost nothing built for the complex, small anatomies he was treating.\nHis lab worked with the open source community to build SlicerHeart \u2014 an extension of 3D Slicer open source software for visualizing, segmenting and analyzing 3D medical images \u2014 and began developing workflows to model pediatric hearts and valves from multiple imaging modalities.\nFor years, producing a single model meant a skilled research assistant spending hours at a workstation. Machine learning changed that.\nUsing MONAI Label and NVIDIA\u2019s Auto3DSeg implementation, Jolley\u2019s team trained segmentation networks on pairs of prior images and models. The output meets the same quality standard a trained human would produce \u2014 in seconds rather than hours.\n\u201cMachine learning has become just bread and butter,\u201d Jolley said. \u201cAs soon as we\u2019ve made 10 or 20 image-model pairs, we train a model and start applying it.\u201d\nThe clinical impact was seen quickly. For complex ventricular septal defects \u2014 holes between the heart\u2019s lower chambers \u2014 CHOP now models routinely before surgery.\nOne early case made the value clear: A child had already undergone two failed repair attempts, with surgeons unable to locate the defect with traditional methods. The 3D model clarified the anatomy. The repair succeeded on the first try.\nFor cases like these, Jolley said, cardiac modeling has moved from research to standard of care.\nVisualization alone isn\u2019t the end goal. Jolley\u2019s team wants to know not just what a child\u2019s heart looks like, but what will happen when a device is deployed inside it \u2014 before any procedure begins. That\u2019s where [Newton](https://developer.nvidia.com/newton-physics) comes in.\nNewton is an open source physics engine built on the [NVIDIA Warp](https://developer.nvidia.com/warp-python) Python framework that runs physics simulations on GPUs. CHOP is working with NVIDIA and the open source community to build biomechanics-focused simulation frameworks with Warp that can be brought into Newton, originally intended for simulation-based AI robot training.\nThese frameworks, once integrated with 3D Slicer and SlicerHeart, can help doctors understand tissue material properties that determine how a device will deploy in a given patient. With GPU acceleration, they can reduce the time needed for cardiac device simulation from up to four hours \u2014 or a full overnight run for multiple configurations \u2014 to near real time.\nIn practice, a clinician could compare how different devices fit a child\u2019s specific anatomy and get results fast enough to inform a same-day decision.\nCHOP has begun to implement features built on Warp and Newton for the closure devices used to seal holes in children\u2019s hearts \u2014 and hopes to apply similar methods for simulations of transcatheter valves. The open source architecture of Warp and Newton is being connected with SlicerHeart, with the long-term goal of bringing real-time simulations into clinical workflows.\nA coupler using SlicerHeart and [NVIDIA Omniverse](https://www.nvidia.com/en-us/omniverse/) digital twins, powered by [OpenUSD,](https://www.nvidia.com/en-us/glossary/openusd/) is also in development. OpenUSD\u2019s open source 3D interoperability allows diverse data and solvers to be integrated into simulations built from patient images. These simulations can then flow into virtual reality environments and harness embedded [vision-language models (VLMs)](https://www.nvidia.com/en-us/glossary/vision-language-models/), allowing clinicians to intuitively query and interact with a child\u2019s cardiac anatomy in simulation before acting on it.\nAbout 2.4 million people in the U.S. live with congenital heart disease. Historically, this has been a population too rare and too diverse to attract traditional device-company investment at the scale families need. No single company has built the tools Jolley\u2019s team requires. No single institution could build them alone.\nOpen source is the workaround.\nSlicerHeart\u2019s tools are free to use and build on. Researchers at Stanford and Boston Children\u2019s contribute additional tools alongside CHOP. A national consortium of children\u2019s hospitals is now forming to build the next generation of shared modeling infrastructure, with open source as the connective tissue across institutions.\n\u201cIt\u2019s too small a population to support traditional commercial development by normal economics,\u201d Jolley said. \u201cBut it\u2019s such an important problem that between the research community and philanthropy, people are getting behind it. Open source defies traditional economics for small and heterogenous populations by allowing collaboration and progress without barriers.\u201d\nNVIDIA\u2019s investment and active collaboration with others in developing open platforms \u2014 MONAI for medical imaging AI, Newton for physics simulation, OpenUSD for 3D interoperability and virtual reality \u2014 gives teams like Jolley\u2019s access to infrastructure maintained at industrial scale. A lab at a children\u2019s hospital can now quickly harness tools that would otherwise require a company-sized engineering team to build and sustain, while benefiting from the continued innovation of a broad open source community.\nLearn how [MONAI](https://project-monai.github.io/) is advancing medical imaging AI.\nRelated News",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553486,
-    "title": "Building an AI-native revenue organization",
-    "url": "https://claude.com/blog/building-an-ai-native-revenue-organization",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Building an AI-native revenue organization\nIn this guide, we share how revenue leaders can roll out Claude across a sales organization, including the setup decisions, a three-phase rollout plan, and an ROI measurement framework.\nIn this guide, we share how revenue leaders can roll out Claude across a sales organization, including the setup decisions, a three-phase rollout plan, and an ROI measurement framework.\n- September 15, 2026\n- 5min\nIn our conversations with revenue leaders, we hear the same challenges: half the team barely touches the AI it already has, the best sellers build skills and prompts that no one else uses, and leadership has no visibility into usage and spend. Meanwhile, sellers gather account context before every call from multiple systems: the CRM, email, call recordings, Slack. That can mean spending thirty minutes on prep for fifteen minutes of conversation.\nIndividual reps can save time every day when they hand over call prep to Claude, but when the whole team adopts it, the benefits compound. How much a sales organization gets out of Claude depends on what it has built around it: which systems Claude can read and write and whether it has the access and controls to take on more complex work.\n[Cox Communications reported a 7x return](https://claude.com/customers/cox-and-accenture) in its first-year of AI investment and cut the cost of validating and enriching sales leads by 86%, bringing accuracy up from 18% to 97%. At [Cyera](https://claude.com/customers/cyera), where 88% of roughly 1,500 employees use Claude weekly, BDRs draft outreach with a skill that\u2019s been built using the top performers\u2019 best work\u2014a quality improvement as much as a time saving.\nTo help revenue teams get the most out of AI, we put together Building an AI-native revenue organization, a guide to rolling out Claude across sales.\nIn the guide, we share:\n- A maturity model showing where your organization stands today and what it takes to reach the next level\n- The setup decisions to make before the pilot: owners, connectors, IT and security, success metrics, and spend visibility\n- A three-phase rollout plan (set up, pilot, scale) with the use cases revenue teams run most, mapped by role\n- How to measure ROI in three groups: efficiency, expansion, and new capabilities\n- The pitfalls that stall org-wide rollouts, and checklists for getting started\nRead the guide [here](https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6aa8884a409cf1cabf867265_Claude-eBook-Building-an-AI-native-revenue-organization-09142026.pdf).\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "safety",
-      "coding",
-      "tutorials",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553488,
-    "title": "Claude for Small Business launches new workflows, integrations, and training programs",
-    "url": "https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "[Claude for Small Business](http://claude.com/plugins/small-business) now includes 43 workflows and 27 new integrations with tools small businesses already use, including Shopify, Salesforce, TikTok, Atlassian, Zoom, Xero, Gusto, Square, Stripe, and Zapier. The new workflows extend Claude from running the back office to growing the business, and they arrive with a fall schedule of free in-person workshops and partner webinars for owners who want help getting started.\nWe launched [Claude for Small Business in May](https://www.anthropic.com/news/claude-for-small-business) as a set of connectors and ready-to-run workflows that put Claude inside the tools owners depend on. It has since been installed more than 900,000 times. Thank you to our original, and continued, partners Intuit Quickbooks, PayPal, HubSpot, Canva, Docusign, Google Workspace, and Microsoft 365.On our spring Claude SMB Tour, more than 1,000 owners in 10 cities [told us what they wanted](https://claude.com/blog/what-1-000-small-business-owners-taught-us-about-ai) Claude to take on next. About a third asked for help growing the business: generating leads, answering inbound inquiries, and writing proposals. Many also wanted day-to-day reporting handled for them. We built this new release around those requests.\nThe tour returns this fall with free workshops in 10 US cities. More than 150 organizations we've trained as Approved Claude SMB Trainers will run over 750 workshops in their own communities, and 14 integration partners are hosting free webinars about their connectors.\nHere's what small business leaders shared with us during the first leg of our Claude SMB tour:\n\u201cWhat used to take me 120 hours now takes me five minutes. I have so much time on my hands that I can now spend more time with my family, do things I like, and pursue parts of my business that I\u2019ve always neglected.\u201d \u2014 Pedro Rubio, Founder and CEO, Blackfyre GovCon, Washington, D.C.\n\"I really see Claude as an equalizer for small businesses, where we can do stuff as big as a 100 person, 200 person firm now. At 40 people and scaling, that's how we get time back for our clients and culture.\" \u2014 Cara Roellgen, Director of Strategy and Innovation, KBSO Consulting, Carmel, Indiana\n\"At 6:00 am every morning, it goes and looks through our CRM, gets all of the to-do list items, prioritizes them, and sends out an email saying, here's what needs to be done today, here's the biggest priorities. We call it the daily briefing.\" \u2014 Garrett French, Owner, Driller Design Co., Tulsa, Oklahoma\n\"I made $20,000 in the last month and a half using Claude to do these professional proposals. I know that's getting the business, and it put money in my bank account. How about that?\" \u2014 Dan Ninerell, Founder, Modern Classical Chefs, South Jersey, New Jersey\n\"We tell it [Claude] what the end goal is. It goes and tests, and 90% of the time it gets it right. We're a five-person company. I think we've done quite a bit with it.\" \u2014 Bill Hood, Co-Founder, TruckingMBA, Chattanooga, Tennessee\n\"The thing that makes it most beneficial to us are the integrations. We use Slack, and that's how we talk to it. It integrates with Intuit QuickBooks. It's pulling everything from everywhere instead of us having to find different pieces of information all over. It's all in one place.\" \u2014 Kati Jo Hodges, Director of Operations, Premier Geotech and Testing, Baton Rouge, Louisiana\nA week with Claude for Small Business\nHere\u2019s a week-in-the-life of a small business owner using Claude to run and grow their business, inspired by how small business owners are using Claude today.\nYour week with Claude\nSunday, 8:00pm\nMonday, 7:00am\nMonday, 9:40pm\nWednesday\nThursday\nMonth end\nSUN01\nSunday, 8:00pm\nInstall and onboard\nClaude for Small Business runs in Claude Cowork, the desktop app where Claude works directly with your files and connected tools. You install the plugin, ask Claude to \u201chelp me get set up\u201d or run /smb-onboard, connect the tools you already use, and pick a task. The plugin can also set each workflow to run on a schedule you choose.\nYou stay in chargeBy default, Claude does the work and waits for your approval before anything sends, posts, or pays.\nRun it\nAsk\u201chelp me get set up\u201d\nor type/smb-onboard\nMON02\nMonday, 7:00am\nThe weekly brief\nCash position, last week's sales against the week before, what moved in the pipeline, which invoices are overdue, and the three things that need you this week, are on one page before you've opened a spreadsheet.\nRun it\nAsk\u201cgive me my Monday brief\u201d\nor type/monday-brief\nSet it to \u201cweekly\u201d during setup and it runs at the same time every Monday, with the option to push to a standing dashboard via an artifact or website.\nWorks with37 connectors\nAll 37 partner connectors are eligible.\nAirwallexApolloAtlassianCanvaClayDocusignEmergentExpensifyGmailGoogle CalendarGoogle DriveGustoHubSpotIntuit MailchimpIntuit QuickBooksMicrosoft 365monday.comMYOBNetSuiteNotionPayPalRampRingCentralSalesforceShopifySlackSquareStripeTikTok AdsTrelloWixXeroZapierZoho BooksZoho CRMZoho DeskZoom\nNo connectors? Upload a spreadsheet and Claude builds the brief and your reports from whatever you share.\nOwner story\nMothership Coffee Roasters\nJuanny Romero, founder and CEO \u00b7 Las Vegas\n22%in-store margins, credited in part to tighter scheduling, ordering, and inventory reporting\n6caf\u00e9s run from one consolidated view\nJuanny Romero, founder and CEO of Mothership Coffee Roasters, runs six caf\u00e9s plus wholesale and catering in Las Vegas. Her numbers lived in the POS, Intuit QuickBooks, Slack, and email with no single weekly view. She connected them to Claude, made Claude her leadership team's workspace for forecasting and weekly planning, and now runs all six locations from one consolidated view. In-store margins rose to 22%, which she credits in part to tighter scheduling, ordering, and inventory reporting.\nMON03\nMonday, 9:40pm\nResponding to inbound leads\nA catering inquiry arrives after close through your website, email, or chat. Claude qualifies it, drafts a reply with two real openings from your calendar, and logs it to your CRM. If you've let this workflow run on its own, you see it Tuesday morning already booked; otherwise the reply is waiting for your OK.\nRun it\nAsk\u201canswer new leads as they come in\u201d\nor type/speed-to-lead\nA standing workflow, on the schedule you set.\nWorks with15 connectors\nApolloClayEmergentGmailGoogle CalendarHubSpotIntuit MailchimpMicrosoft 365monday.comNotionRingCentralSalesforceTrelloZoho CRMZoom\nNo connectors? Forward the inquiry to Claude, get the reply drafted to send yourself, and Claude keeps your leads in a spreadsheet CRM.\nOwner story\nBambi Baby\nJosh Weiss, COO\n$60,000in sales tied to the tool in its first four days\n18%of online revenue newly attributed to in-person visits, two weeks into the pilot\nAt Bambi Baby, a family-owned baby stroller and car seat retailer, about three in four walk-in shoppers left without providing a name or an email. COO Josh Weiss, who is not a developer, used Claude to build a scan-to-wishlist lead capture and the follow-up behind it. In the tool's first four days, $60,000 in sales tied back to it. Two weeks into a two-store pilot, 18% of online revenue was newly attributed to in-person visits.\nWED04\nWednesday\nWriting proposals\nYou walk a job site and record a two-minute voice memo on the way back to your office. By the time you sit down there's a branded proposal, priced from your past jobs, waiting for your edits. Once you approve, it goes out for signature.\nRun it\nAsk\u201cturn this into a proposal\u201d\nor type/proposal-builder\nFirst: attach the memo, photos, or RFP, or pull a call transcript.\nWorks with17 connectors\nApolloAtlassian ConfluenceCanvaDocusignGoogle DriveMicrosoft 365MYOBNetSuiteNotionPayPalIntuit QuickBooksSquareStripeTrelloXeroZoho BooksZoom\nNo connectors? Upload the memo, photos, and a past proposal as your template, and Claude builds and prices from those. You send it for signature yourself.\nOwner story\nKANE\nMichael and Joni Kazantzis, co-founders \u00b7 Princeton, New Jersey\nWeeks \u2192 minutesfrom scoping a deal to a statement of work out for signature\nKANE, a creative and growth agency in Princeton, New Jersey, used to spend weeks per deal on scoping, pricing, proposal writing, and contracting. Co-founders Michael and Joni Kazantzis built a Claude pipeline that scores fit from the meeting notes, prices from their own past projects, drafts the proposal, and has the statement of work out for signature within minutes of a yes. \u201cWe've taken an entire process that used to take us weeks and it's done almost within a few minutes in a day, and even the clients recognize that,\u201d Michael Kazantzis said.\nTHU05\nThursday\nUnblocking marketing campaigns\nNext week's posts are drafted in your voice with on-brand graphics, cut into every format your channels need, and staged for your approval. Last week's sales by channel are on one page with your marketing results, and this week's new reviews have replies drafted and waiting for your OK.\nRun it\nAsk\u201cplan next week's content\u201d\nor type/social-content-engine\nKeeps the posting calendar full.\nRuns on a weekly schedule for the numbers and reviews.\ntype/marketing-monday\nWorks with16 connectors\nApolloCanvaClayGmailHubSpotIntuit Mailchimpmonday.comNotionPayPalShopifySquareStripeTikTokTrelloZoho CRMZoho Desk\nNo connectors? Claude drafts the calendar, captions, and design briefs, and builds your weekly page from exported sales and pasted reviews.\nOwner story\nRebel Cheese\nKirsten Maitland, co-founder and CEO \u00b7 Austin\nKirsten Maitland, co-founder and CEO, launched Rebel Cheese, an Austin plant-based cheesemaker that went from one restaurant to a national e-commerce business after appearing on Shark Tank. The brand voice lived in her head and couldn't scale past her own hours. After vetting Claude on data security, she trained a voice skill on her own writing and connected it to her email and social tools. A teammate now drafts on-brand campaigns without routing every line through the founder. \u201cI live in Claude, running multiple instances simultaneously across two computers to keep up with demand,\u201d she said.\nEND06\nMonth end\nClosing the books\nClaude reconciles your books against every place money moves: sales settlements, card spend, and payroll. It flags mismatches down to the transaction, writes a plain-English P&L, and creates a close packet for your accountant. If one account never reconciles cleanly because your POS has no connector, Claude reaches it through Zapier or builds a connector, and the adjustment your bookkeeper makes by hand becomes a saved step in next month's close.\nRun it\nAsk\u201cclose September\u201d\nor type/close-month\nFor any gaps\nAsk\u201cconnect my POS\u201d\nor type/build-connector\nAsk\u201cmake this part of the close\u201d\nor type/build-agent\nWorks with14 connectors\nExpensifyGoogle DriveGustoMYOBNetSuitePayPalIntuit QuickBooksRampShopifySquareStripeXeroZapierZoho Books\nNo connectors? Upload your bank and processor statements and Claude closes from those.\nOwner story\nHireEffect\nChris Scott, COO, and Jennifer Scott, founder and CEO \u00b7 Dallas\n16transactions isolated behind a $13,000 discrepancy\n10 secondsfor a monthly reporting task that used to take two hours\nHireEffect, a Dallas firm that runs bookkeeping, payroll, and HR for small businesses nationwide, had a client whose books carried a $13,000 discrepancy buried in two and a half years and tens of thousands of PayPal transactions. COO Chris Scott used Claude to isolate the exact 16 transactions responsible. \u201cIt was literally a needle in a haystack. There's no way we'd have found it without this,\u201d says Founder and CEO Jennifer Scott.\nThey also built a governed reporting dashboard across five disparate systems, including QuickBooks and a CRM, that turned a two-hour monthly task into ten seconds; their Director of Bookkeeping built her own skill that turns a client P&L into a visual summary with discussion points already flagged.\nSee [the full list](https://academy.claude.com/tutor",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553487,
-    "title": "Bringing Salesforce into Claude",
-    "url": "https://claude.com/blog/salesforce-in-claude",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Bringing Salesforce into Claude\nSellers can now research companies, prep for calls, review pipeline, and draft CRM updates with our new Salesforce in Claude plugin.\nSellers can now research companies, prep for calls, review pipeline, and draft CRM updates with our new Salesforce in Claude plugin.\n- September 15, 2026\n- 5min\nToday we are releasing Salesforce in Claude in beta, a plugin built with Salesforce that brings a seller\u2019s accounts, opportunities, and pipeline into Claude under their existing Salesforce permissions. It includes 37 skills for the work account executives do daily, including account research, call prep, pipeline review, and CRM updates.\nSellers often spend hours of their day on meeting prep or follow-up work from customer meetings by manually assembling information scattered across Salesforce, email, call recordings, and Slack. With the new plugin, Claude does that administrative work and updates Salesforce once the seller approves.\nThe plugin also has two connectors that enable sellers to begin using it once an admin connects Salesforce and they sign in. With the Salesforce connector, Claude can read Salesforce data and act on it: summarize an account\u2019s history, update opportunities, log calls or create follow-up tasks. The Slack connector covers deal-channel summaries and account-team threads that the skills can read and write. When sellers use the plugin for the first time, a setup skill identifies their tools and connectors and creates a Claude Artifact tailored to their role and book of business.\nStart the day with a brief. Each morning Claude delivers a personalized brief that includes the day\u2019s meetings, deals closing soon, at-risk opportunities, and unread threads that need a reply. Once scheduled, it runs in the background and can be accessed anywhere with Claude, including on the go with the Claude app. From the brief, sellers can tell Claude to push a close date, change a stage or add a follow-up task, and Claude will make the update in Salesforce. On Fridays, the brief wraps the week and drafts an update for the seller\u2019s manager.\nPrep for a call. A seller can ask Claude to prep for their next meeting and it pulls the brief from Salesforce, Slack, and email: open opportunities and where each stands, what the account team discussed this week, unanswered threads, and questions still open from previous calls. If it finds stakeholders in those threads who aren\u2019t in Salesforce yet, Claude adds them as contacts on the account.\nReview a deal and build the close plan. Pointed at an opportunity, Claude scores the deal against the team\u2019s methodology, considering qualification gaps, stakeholders they haven't met, and factors putting the close date at risk. Ask it to keep going and it drafts the business case and a dated mutual close plan, fills in the qualification fields, and adds the missing stakeholders as contact roles. All this is saved to the opportunity once it\u2019s been approved.\nEnd every meeting with Salesforce updated. After each call, Claude turns the transcript or the seller\u2019s notes into a follow-up email, a summary for the deal channel in Slack, and drafts opportunity updates like next steps, stage, and close date, for the seller to review.\nReview pipeline and share forecasts. A seller can ask for a pipeline view and Claude builds an interactive dashboard showing coverage by stage, deals most likely to slip and why, and drill-down by account. From the dashboard, a seller can tell Claude to move a close date or change a stage, and Claude updates the record in Salesforce. Dashboards can be shared with leadership or the team, and Claude can draft the forecast narrative in the format leadership expects. Sales leaders can run the same views across the team.\nBuilt on an organization\u2019s existing permissions\nSalesforce remains as the system of record. Sellers sign in with their Salesforce credentials and Claude reads only what their permissions allow. By default, Claude asks the seller to approve each proposed change before it\u2019s written. On Team and Enterprise plans, we don\u2019t train our models on your data by default.\nAdmins connect Salesforce once for the organization and choose which groups get the plugin.\nAnthropic customers GitLab, Siemens, and Legora have deployed Salesforce in Claude to their organizations, and 7,000 Salesforce sellers use it in their work. Here\u2019s what they\u2019ve told us about using Salesforce in Claude:\n\"With Salesforce in Claude, our sellers turn live data into meeting briefings in seconds instead of hours. As our sales team grows, every new rep starts with a full picture of the law firms we serve.\" \u2014 David Eckstein, Chief Financial Officer, Legora\n\"With Salesforce in Claude, sellers can start the day with the pipeline review already done and the account history already there. That time goes straight back into customer conversations.\" \u2014 Alexa Vignone, President and Chief Revenue Officer, Salesforce\nSalesforce in Claude is available in beta on all paid Claude plans. The [Salesforce MCP](https://claude.ai/directory/bundles/salesforce#directory/connectors/salesforce-headless-360) is available to install directly through the marketplace today. To install the plugin, admins can request access through [AgentExchange](https://agentexchange.salesforce.com/sales-cloud-in-claude-beta-access) and connect Salesforce once for their entire organization. For admins, we have a [setup guide](https://support.claude.com/en/articles/16952184) with instructions on how to turn this on for your org. For sales leaders, we have a [guide on running an effective sales organization with Claude](https://claude.com/blog/building-an-ai-native-revenue-organization).\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836292,
-    "title": "Building an AI-native revenue organization",
-    "url": "https://claude.com/resources/articles/building-an-ai-native-revenue-organization",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-10-07T06:53:40+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Building an AI-native revenue organization\nIn this guide, we share how revenue leaders can roll out Claude across a sales organization, including the setup decisions, a three-phase rollout plan, and an ROI measurement framework.\nIn our conversations with revenue leaders, we hear the same challenges: half the team barely touches the AI it already has, the best sellers build skills and prompts that no one else uses, and leadership has no visibility into usage and spend. Meanwhile, sellers gather account context before every call from multiple systems: the CRM, email, call recordings, Slack. That can mean spending thirty minutes on prep for fifteen minutes of conversation.\nIndividual reps can save time every day when they hand over call prep to Claude, but when the whole team adopts it, the benefits compound. How much a sales organization gets out of Claude depends on what it has built around it: which systems Claude can read and write and whether it has the access and controls to take on more complex work.\n[Cox Communications reported a 7x return](https://claude.com/customers/cox-and-accenture) in its first-year of AI investment and cut the cost of validating and enriching sales leads by 86%, bringing accuracy up from 18% to 97%. At [Cyera](https://claude.com/customers/cyera), where 88% of roughly 1,500 employees use Claude weekly, BDRs draft outreach with a skill that\u2019s been built using the top performers\u2019 best work\u2014a quality improvement as much as a time saving.\nTo help revenue teams get the most out of AI, we put together Building an AI-native revenue organization, a guide to rolling out Claude across sales.\nIn the guide, we share:\n- A maturity model showing where your organization stands today and what it takes to reach the next level\n- The setup decisions to make before the pilot: owners, connectors, IT and security, success metrics, and spend visibility\n- A three-phase rollout plan (set up, pilot, scale) with the use cases revenue teams run most, mapped by role\n- How to measure ROI in three groups: efficiency, expansion, and new capabilities\n- The pitfalls that stall org-wide rollouts, and checklists for getting started\nRead the guide [here](https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6aa8884a409cf1cabf867265_Claude-eBook-Building-an-AI-native-revenue-organization-09142026.pdf).",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "safety",
-      "coding",
-      "tutorials",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836291,
-    "title": "Claude for Small Business launches new workflows, integrations, and training programs",
-    "url": "https://claude.com/resources/articles/claude-for-small-business-launches-new-workflows-integrations-and-training-programs",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-10-07T06:53:40+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Claude for Small Business launches new workflows, integrations, and training programs\nWe\u2019re releasing new [Claude for Small Business](https://claude.com/solutions/small-business) workflows and integrations to help owners run and grow their business. We're also kicking off the next leg of our Claude SMB tour, with free partner webinars and community-run workshops.\n[Claude for Small Business](http://claude.com/plugins/small-business) now includes 43 workflows and 27 new integrations with tools small businesses already use, including Shopify, Salesforce, TikTok, Atlassian, Zoom, Xero, Gusto, Square, Stripe, and Zapier. The new workflows extend Claude from running the back office to growing the business, and they arrive with a fall schedule of free in-person workshops and partner webinars for owners who want help getting started.\nWe launched [Claude for Small Business in May](https://www.anthropic.com/news/claude-for-small-business) as a set of connectors and ready-to-run workflows that put Claude inside the tools owners depend on. It has since been installed more than 900,000 times. Thank you to our original, and continued, partners Intuit Quickbooks, PayPal, HubSpot, Canva, Docusign, Google Workspace, and Microsoft 365.On our spring Claude SMB Tour, more than 1,000 owners in 10 cities [told us what they wanted](https://claude.com/resources/articles/what-1-000-small-business-owners-taught-us-about-ai) Claude to take on next. About a third asked for help growing the business: generating leads, answering inbound inquiries, and writing proposals. Many also wanted day-to-day reporting handled for them. We built this new release around those requests.\nThe tour returns this fall with free workshops in 10 US cities. More than 150 organizations we've trained as Approved Claude SMB Trainers will run over 750 workshops in their own communities, and 14 integration partners are hosting free webinars about their connectors.\nHere's what small business leaders shared with us during the first leg of our Claude SMB tour:\n\u201cWhat used to take me 120 hours now takes me five minutes. I have so much time on my hands that I can now spend more time with my family, do things I like, and pursue parts of my business that I\u2019ve always neglected.\u201d \u2014 Pedro Rubio, Founder and CEO, Blackfyre GovCon, Washington, D.C.\n\"I really see Claude as an equalizer for small businesses, where we can do stuff as big as a 100 person, 200 person firm now. At 40 people and scaling, that's how we get time back for our clients and culture.\" \u2014 Cara Roellgen, Director of Strategy and Innovation, KBSO Consulting, Carmel, Indiana\n\"At 6:00 am every morning, it goes and looks through our CRM, gets all of the to-do list items, prioritizes them, and sends out an email saying, here's what needs to be done today, here's the biggest priorities. We call it the daily briefing.\" \u2014 Garrett French, Owner, Driller Design Co., Tulsa, Oklahoma\n\"I made $20,000 in the last month and a half using Claude to do these professional proposals. I know that's getting the business, and it put money in my bank account. How about that?\" \u2014 Dan Ninerell, Founder, Modern Classical Chefs, South Jersey, New Jersey\n\"We tell it [Claude] what the end goal is. It goes and tests, and 90% of the time it gets it right. We're a five-person company. I think we've done quite a bit with it.\" \u2014 Bill Hood, Co-Founder, TruckingMBA, Chattanooga, Tennessee\n\"The thing that makes it most beneficial to us are the integrations. We use Slack, and that's how we talk to it. It integrates with Intuit QuickBooks. It's pulling everything from everywhere instead of us having to find different pieces of information all over. It's all in one place.\" \u2014 Kati Jo Hodges, Director of Operations, Premier Geotech and Testing, Baton Rouge, Louisiana\nA week with Claude for Small Business\nHere\u2019s a week-in-the-life of a small business owner using Claude to run and grow their business, inspired by how small business owners are using Claude today.\nClaude for Small Business runs in Claude Cowork, the desktop app where Claude works directly with your files and connected tools. You install the plugin, ask Claude to \u201chelp me get set up\u201d or run /smb-onboard, connect the tools you already use, and pick a task. The plugin can also set each workflow to run on a schedule you choose.\nCash position, last week's sales against the week before, what moved in the pipeline, which invoices are overdue, and the three things that need you this week, are on one page before you've opened a spreadsheet.\nA catering inquiry arrives after close through your website, email, or chat. Claude qualifies it, drafts a reply with two real openings from your calendar, and logs it to your CRM. If you've let this workflow run on its own, you see it Tuesday morning already booked; otherwise the reply is waiting for your OK.\nYou walk a job site and record a two-minute voice memo on the way back to your office. By the time you sit down there's a branded proposal, priced from your past jobs, waiting for your edits. Once you approve, it goes out for signature.\nNext week's posts are drafted in your voice with on-brand graphics, cut into every format your channels need, and staged for your approval. Last week's sales by channel are on one page with your marketing results, and this week's new reviews have replies drafted and waiting for your OK.\nClaude reconciles your books against every place money moves: sales settlements, card spend, and payroll. It flags mismatches down to the transaction, writes a plain-English P&L, and creates a close packet for your accountant. If one account never reconciles cleanly because your POS has no connector, Claude reaches it through Zapier or builds a connector, and the adjustment your bookkeeper makes by hand becomes a saved step in next month's close.\nSee [the full list](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin) of workflows and integrations.\n\u201cWith Shopify in Claude for Small Business, merchants run their store where they already plan the week\u2014see live sales and inventory, get a reorder drafted before a bestseller sells out, and turn the product catalog into next week\u2019s campaign. The repetitive work comes off their plate so they can focus on growing.\u201d\n\u201cWith Stripe in Claude for Small Business, we\u2019re helping small business owners delegate more of the day-to-day financial work, from monitoring cash flow and following up on invoices to spotting new opportunities for growth, while staying in control of every decision.\u201d\n\u201cRunning a small business means constantly translating conversations into work: updating a CRM, starting a project, getting an invoice out the door. With Zoom and Bonsai in Claude for Small Business, Zoom captures what was said and Bonsai turns it into the work, ready for the owner's OK. Owners get the follow-through, not just a summary of the call.\u201d\n\u201cIf you're a small business owner, you know payroll and compliance have to be right every time, and getting there eats hours you'd rather spend on the business. Claude for Small Business now handles the prep with Gusto: confirms there's cash to cover the run, pulls the hours, flags anything off, and stages it. You still review and approve before any action is taken.\u201d\n\u201cSmall business owners wear every hat, and organizing the work is often the heaviest one. With Jira, Confluence, Loom, and Trello in Claude for Small Business, that weight lifts: Claude and the Atlassian connector plan the week, track the campaign, and turn the tasks owners repeat into workflows they don't have to rebuild. Those are hours they'd rather spend with their customers.\u201d\n\u201cTikTok has always been a place where businesses of any size can turn creativity and discovery into real growth. With TikTok business tools integrated into Claude for Small Business, an owner can go from an idea to a live TikTok campaign in one conversation, understand what their campaign returned, and know where and how to lean in next.\u201d\n\u201cXero is focused on bringing trusted financial data to small businesses and their accountants wherever they work. With Xero in Claude for Small Business, owners have a real-time source of truth on their numbers right in the conversation, so they can make better-informed decisions and have deeper conversations with their advisors.\u201d\n\u201cSmall businesses don't need more tools, they need more time, more leads, and more confidence that the work is moving the needle. With HubSpot in Claude for Small Business, every new lead gets answered, followed up, and logged to the CRM, so owners can focus on their customers instead of their operations.\u201d\n\u201cThe hard part of outbound for a small business is knowing who to contact and why they'd care. Clay does that homework inside Claude for Small Business: finds the prospects, scores them against your best customers, and tells you what to lead with. The owner decides who hears from them.\u201d\n\u201cSmall businesses often struggle to compete with larger enterprises that have massive technical teams. With Zapier in Claude for Small Business, we\u2019re helping them even the odds: owners can connect the apps they already use, including ones without a native connector, and put those workflows to work.\u201d\n\u201cReceipts, reimbursements, and the card statement are where a small business's books fall apart. Expensify in Claude for Small Business codes and matches transactions the moment they hit, catches anything outside policy before it becomes a problem, and hands you books that are ready to close at month-end. Business finance is becoming a conversation, not a spreadsheet. This is what that looks like.\u201d\n\u201cMany small businesses already run sales, finance, and support on Zoho. With Zoho CRM, Zoho Books, and Zoho Desk in Claude for Small Business, an owner can ask one question and get an answer that draws on all three: which deals are stalling, which invoices are overdue, which tickets need a reply today. That means more time for serving customers and building the business they envision.\u201d\n\u201cPost-meeting action items, identifying leads to call, what the month-end close turned up: Claude helps teams set their tasks and priorities, but then someone actually needs to go ahead and make them happen. The monday.com connector in Claude for Small Business places each of these items on your board with all the context, assigns the right owner, and keeps track of progress so the entire team can ensure its goals are being met.\u201d\n\u201cSmall businesses run on conversations, and every call, text and chat carries context an owner doesn't have time to go back and find. RingCentral with Claude for Small Business changes that. We're making your conversation data accessible and actionable where you already work, turning interaction context into next steps: the after-hours voicemail or chat message becomes a qualified lead with a reply drafted by morning, and the customer's full history is on screen before the renewal call. Every RingCentral customer gets that.\u201d\n\u201cLead generation, outreach, and pipeline used to take an entire go-to-market team. Now, business owners can describe who they sell to once, and Apollo's GTM engine inside Claude for Small Business builds the ranked prospect list, drafts outreach for their approval, and keeps the pipeline full, all in one conversation.\u201d\n\u201cSmall businesses need AI that turns intent into action. That's why we're bringing Wix's website builder and business platform into Claude for Small Business, so users can build their website and manage their business, all directly where they're already working.\"\u201d\n\u201cWith Airwallex now integrated in Claude for Small Business, simple prompts are all it takes for an owner to accept payments, convert currencies to pay global suppliers, manage their cash flow, and a lot more.\u201d\n\u201cEvery business owner needs confidence in the numbers they're working from, whether they're checking cash flow, preparing for tax time or planning for growth. MYOB in Claude for Small Business helps ensure the insights an",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836290,
-    "title": "Bringing Salesforce into Claude",
-    "url": "https://claude.com/resources/articles/salesforce-in-claude",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-10-07T06:53:40+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Bringing Salesforce into Claude\nSellers can now research companies, prep for calls, review pipeline, and draft CRM updates with our new Salesforce in Claude plugin.\nToday we are releasing Salesforce in Claude in beta, a plugin built with Salesforce that brings a seller\u2019s accounts, opportunities, and pipeline into Claude under their existing Salesforce permissions. It includes 37 skills for the work account executives do daily, including account research, call prep, pipeline review, and CRM updates.\nSellers often spend hours of their day on meeting prep or follow-up work from customer meetings by manually assembling information scattered across Salesforce, email, call recordings, and Slack. With the new plugin, Claude does that administrative work and updates Salesforce once the seller approves.\nThe plugin also has two connectors that enable sellers to begin using it once an admin connects Salesforce and they sign in. With the Salesforce connector, Claude can read Salesforce data and act on it: summarize an account\u2019s history, update opportunities, log calls or create follow-up tasks. The Slack connector covers deal-channel summaries and account-team threads that the skills can read and write. When sellers use the plugin for the first time, a setup skill identifies their tools and connectors and creates a Claude Artifact tailored to their role and book of business.\nHow sellers can use Salesforce in Claude today\nStart the day with a brief. Each morning Claude delivers a personalized brief that includes the day\u2019s meetings, deals closing soon, at-risk opportunities, and unread threads that need a reply. Once scheduled, it runs in the background and can be accessed anywhere with Claude, including on the go with the Claude app. From the brief, sellers can tell Claude to push a close date, change a stage or add a follow-up task, and Claude will make the update in Salesforce. On Fridays, the brief wraps the week and drafts an update for the seller\u2019s manager.\nPrep for a call. A seller can ask Claude to prep for their next meeting and it pulls the brief from Salesforce, Slack, and email: open opportunities and where each stands, what the account team discussed this week, unanswered threads, and questions still open from previous calls. If it finds stakeholders in those threads who aren\u2019t in Salesforce yet, Claude adds them as contacts on the account.\nReview a deal and build the close plan. Pointed at an opportunity, Claude scores the deal against the team\u2019s methodology, considering qualification gaps, stakeholders they haven't met, and factors putting the close date at risk. Ask it to keep going and it drafts the business case and a dated mutual close plan, fills in the qualification fields, and adds the missing stakeholders as contact roles. All this is saved to the opportunity once it\u2019s been approved.\nEnd every meeting with Salesforce updated. After each call, Claude turns the transcript or the seller\u2019s notes into a follow-up email, a summary for the deal channel in Slack, and drafts opportunity updates like next steps, stage, and close date, for the seller to review.\nReview pipeline and share forecasts. A seller can ask for a pipeline view and Claude builds an interactive dashboard showing coverage by stage, deals most likely to slip and why, and drill-down by account. From the dashboard, a seller can tell Claude to move a close date or change a stage, and Claude updates the record in Salesforce. Dashboards can be shared with leadership or the team, and Claude can draft the forecast narrative in the format leadership expects. Sales leaders can run the same views across the team.\nBuilt on an organization\u2019s existing permissions\nSalesforce remains as the system of record. Sellers sign in with their Salesforce credentials and Claude reads only what their permissions allow. By default, Claude asks the seller to approve each proposed change before it\u2019s written. On Team and Enterprise plans, we don\u2019t train our models on your data by default.\nAdmins connect Salesforce once for the organization and choose which groups get the plugin.\nHow sales teams use Salesforce in Claude\nAnthropic customers GitLab, Siemens, and Legora have deployed Salesforce in Claude to their organizations, and 7,000 Salesforce sellers use it in their work. Here\u2019s what they\u2019ve told us about using Salesforce in Claude:\nGetting started\nSalesforce in Claude is available in beta on all paid Claude plans. The [Salesforce MCP](https://claude.ai/directory/bundles/salesforce#directory/connectors/salesforce-headless-360) is available to install directly through the marketplace today. To install the plugin, admins can request access through [AgentExchange](https://agentexchange.salesforce.com/sales-cloud-in-claude-beta-access) and connect Salesforce once for their entire organization. For admins, we have a [setup guide](https://support.claude.com/en/articles/16952184) with instructions on how to turn this on for your org. For sales leaders, we have a [guide on running an effective sales organization with Claude](https://claude.com/resources/articles/building-an-ai-native-revenue-organization).",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810864,
-    "title": "How AI detectors work and why a score alone can\u2019t prove authorship",
-    "url": "https://www.perplexity.ai/hub/blog/ai-detector",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "Warning: Target URL returned error 403: Forbidden\n\nMarkdown Content:\nPaste an essay, article, or email into an AI detector, and a few seconds later it may return a result like \u201c85% AI.\u201d\n\nSeems precise. But it can also be easy to misread.\n\nThe detector didn\u2019t observe _how_ the document was written. It analyzed the finished text for patterns associated with AI-generated writing. Depending on the tool, that 85% might represent the estimated likelihood that AI produced the document or the share of the text the detector flagged.\n\nThat makes an AI detector useful as a signal, especially when something needs a closer look. But the score still needs context and supporting evidence before anyone draws a conclusion about who wrote the text or how they created it. Understanding how detectors produce their scores helps explain both what they can catch and why they sometimes get it wrong.\n\n## **What is an AI detector?**\n\nAn AI writing detector looks at a finished piece of text and estimates whether it resembles writing produced by a language model. A user typically pastes in the text or uploads a document. Within seconds, the tool may return a label, a percentage, highlighted passages, or all three.\n\n*   **Teachers** and **academic institutions** use them when reviewing student work.\n*   **Publishers** and**content teams** may use them to screen submitted or commissioned writing, while some detector companies market versions for hiring teams reviewing application materials.\n*   **Writers** also sometimes check their own work to understand how a teacher, editor, client, or platform might classify it.\n\nNote: Plagiarism checkers serve a related but separate purpose. They compare a document with published material and other sources to find matching language. AI detectors assess patterns in the submitted writing. A completely original passage can therefore receive an AI flag, while copied human writing may contain no strong signal of AI generation.\n\n## **How AI detectors analyze text**\n\nMany AI detectors rely on a classifier, a machine learning model trained on examples of human and AI-generated writing. As it compares the two, it learns which patterns tend to appear in each, including patterns in word choice and sentence structure. It then looks for those patterns in new text and produces a prediction.\n\nWhat the detector learns depends on what it sees during training. A tool trained on a limited range of writing may struggle with a new subject, an unfamiliar style, or output from an AI model it hasn\u2019t encountered before.[](https://arxiv.org/abs/2305.13242)[Research](https://arxiv.org/abs/2305.13242) across different types of text and AI models has found that detection performance can drop under those conditions.\n\nSome methods take a different approach. Instead of training a separate classifier, they use a language model\u2019s own probability estimates to judge how likely it would be to produce a passage.\n\n*   DetectGPT, for example, compares the original text with slightly altered versions to look for patterns associated with AI generation.[](https://arxiv.org/abs/2301.11305)[Its research](https://arxiv.org/abs/2301.11305) describes this as a \u201czero-shot\u201d method because it doesn\u2019t require a separately trained detector. The result may include an overall score, highlighted sentences, or both.\n*   [GPTZero](https://support.gptzero.me/articles/7549392421-how-do-i-interpret-results-from-gptzero-s-advanced-sentence-scanning) says its highlights show which sentences have the most influence on its overall prediction. Because it also evaluates the broader document, a passage scanned on its own may not receive the same result when it appears as part of a longer piece.\n\nEvery result reflects both the text and the system evaluating it, which is why different detectors can reach different conclusions about the same passage.\n\n## What perplexity**and burstiness measure**\n\n**_Perplexity_** and **_burstiness_** come up often in explanations of AI detection. They can reveal useful patterns in a piece of writing, but neither points to a single, uniquely AI way of writing.\n\nOne potentially confusing detail: _perplexity_ is doing double duty here. In lowercase, it\u2019s a statistical measure. With a capital P, it\u2019s us.\n\n### **Perplexity measures how predictable the text is**\n\nLanguage models generate text by assigning probabilities to possible next tokens, which may be whole words or parts of words. Perplexity measures how well a model can predict the tokens in a passage.\n\n*   **Lower perplexity**: The text follows patterns the model finds familiar.\n*   **Higher perplexity**:The wording is less expected.\n\nThe score is [specific](https://huggingface.co/docs/transformers/perplexity) to the model doing the evaluation and the way the text is processed, so the same passage can receive different perplexity scores under different setups.\n\nTake the sentence, \u201cPlease let me know if you have any questions.\u201d A language model has likely encountered similar wording many times, making each word relatively easy to predict. That tells us something about the sentence\u2019s familiarity. It says nothing conclusive about who wrote it.\n\n### **Burstiness measures how much those patterns vary**\n\nBurstiness is used more loosely in discussions of AI detection. It generally describes how much the writing changes across a passage. That can include variation in sentence length and structure, or shifts between highly predictable and more surprising language.\n\n*   **Lower burstiness:** Sentences follow a more consistent length, structure, or rhythm.\n*   **Higher burstiness:** The writing moves between shorter statements, longer explanations, and less expected phrasing.\n\nSome AI-generated text is consistent and predictable, which is why burstiness became associated with detection. Human writing can have the same qualities, especially in business, academic, and technical contexts. AI models can also produce more varied language when prompted or edited to do so.\n\n[GPTZero](https://support.gptzero.me/articles/9585228410-how-do-i-interpret-burstiness-or-perplexity) says perplexity and burstiness were two of several features used by an earlier version of its detector.\n\n**What these measures show:** Perplexity and burstiness describe patterns in a passage. Those patterns may help explain why text was flagged, but they cannot establish who wrote it.\n\n## **What an AI detector\u2019s score means**\n\nAn \u201c80% AI\u201d result looks straightforward. Its meaning depends on the detector.\n\n[GPTZero](https://support.gptzero.me/articles/7549392421-how-do-i-interpret-results-from-gptzero-s-advanced-sentence-scanning) describes the percentage as its model\u2019s estimated probability that AI or a human wrote the document.[](https://guides.turnitin.com/hc/en-us/articles/22774058814093-Using-the-AI-Writing-Report)[Turnitin](https://guides.turnitin.com/hc/en-us/articles/22774058814093-Using-the-AI-Writing-Report) uses the percentage to show how much of the qualifying prose its model flags as potentially AI-generated or modified with certain AI tools.\n\nThe same \u201c80% AI\u201d label could therefore mean:\n\n*   The detector estimates an 80% chance that AI generated the document.\n*   The detector has flagged 80% of the prose it assessed.\n\nThose are different findings. One makes a prediction about the document as a whole. The other identifies how much of the text matched the detector\u2019s criteria.\n\nProbability scores need another check: calibration. If a detector gives 100 documents an AI probability of around 80%, roughly 80 of them should actually be AI-generated for the score to be[](https://scikit-learn.org/stable/modules/calibration.html)[well-calibrated](https://scikit-learn.org/stable/modules/calibration.html). Testing the model against examples with known origins shows how closely its probabilities match real outcomes.\n\nA percentage can look exact before its meaning or reliability is clear. The label, the scoring method, and the detector\u2019s performance all determine what the number can support.\n\n### **The cutoff determines what gets flagged**\n\nA detector still has to decide when a score is high enough to act on. That dividing line is called the cutoff, or threshold.\n\nSuppose a tool scores text from 0 to 100 and flags anything above 70. Moving the cutoff to 60 would leave every score unchanged while increasing the number of documents flagged.\n\n*   A **lower cutoff** generally detects more AI-generated writing but also flags more human writing incorrectly.\n*   A **higher cutoff**reduces incorrect flags, while allowing more AI-generated writing to go undetected.[](https://scikit-learn.org/stable/modules/classification_threshold.html)[This tradeoff applies to classification systems broadly](https://scikit-learn.org/stable/modules/classification_threshold.html).\n\nThe two possible mistakes have different names.\n\n*   A **false positive** occurs when human writing is flagged as AI-generated.\n*   A **false negative** occurs when AI-generated writing goes undetected.\n\nWhere a detector draws the line reflects which error it is designed to avoid. That choice carries more weight when a flag could affect a grade, a job, or someone\u2019s credibility.\n\n## **How a 2% error rate can produce nearly 30% incorrect flags**\n\nThe impact of a 2% false-positive rate depends on how much human writing the detector reviews.\n\nConsider a hypothetical set of 1,000 articles:\n\n*   50 are AI-generated.\n*   950 are human-written.\n*   The detector catches 90% of the AI-generated articles.\n*   It incorrectly flags 2% of the human-written articles.\n\nHere\u2019s what happens:\n\n**Actual origin****Articles screened****Articles flagged**\nAI-generated 50 45 correctly flagged\nHuman-written 950 19 incorrectly flagged\nTotal 1,000 64 flagged\n\nThe detector flags 64 articles in total. Nineteen are human-written, so nearly 30% of its flags are wrong.\n\nThe 2% and 30% figures measure different things. The detector incorrectly flags 2% of all human-written articles. Those mistakes then make up nearly 30% of everything it flags.\n\nThe numbers add up this way because the detector reviewed far more human-written articles than AI-generated ones. Even a small error rate can produce a meaningful number of incorrect flags when it applies to a much larger group.\n\nThe term _base rate_ describes how common AI-generated writing is in the material being checked. As that share changes, so does the meaning of a positive result. If the detector\u2019s true-positive and false-positive rates remain the same, a flag will generally be more reliable when AI-generated writing is common in the collection and less reliable when it\u2019s rare.\n\nThese numbers are hypothetical and do not describe a particular detector. In a real review, the share of AI-generated writing is usually unknown. That uncertainty is another reason to treat a flag as a reason to look more closely, rather than proof of how a document was written.\n\n## **Accuracy depends on what the detector was tested on**\n\nAn accuracy rate describes performance under a particular set of conditions. Before applying that rate to another piece of writing, check:\n\n*   The detector version\n*   The text\u2019s length, language, subject, and format\n*   The AI model and settings used to generate the test material\n*   Whether the text was edited or deliberately modified\n*   The writers represented in the human-written samples\n\n### **Start with the tool\u2019s supported inputs**\n\n[Turnitin](https://guides.turnitin.com/hc/en-us/articles/22774058814093-Using-the-AI-Writing-Report), for example, requires at least 300 words of long-form prose. It says its model does not reliably detect AI-generated poetry, scripts, code, or other non-prose formats. Strong performance on essays therefore tells us little about how the same detector will handle a poem or a short email.\n\n### **Compare the test with real-world writing**\n\nIn 2024, researchers tested 12 detectors using[](https://aclanthology.org/2024.acl-long.674/)[RAID](https://aclanthology.org/2024.acl-long.674/)",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "benchmark",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810863,
-    "title": "Perplexity comes to more Windows PCs with HP",
-    "url": "https://www.perplexity.ai/hub/blog/perplexity-comes-to-more-windows-pcs-with-hp",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "HP helped make the personal computer central to how people work. Today, HP and Perplexity are expanding what the PC can do by pre-loading the [Perplexity Windows app](https://apps.microsoft.com/detail/9p9xg917pwcj?hl=en-US&gl=US) on HP devices.\n\nThe app lets HP customers get accurate, sourced AI research and insights, and with [Perplexity Computer](https://www.perplexity.ai/products/computer), complete complex work across files, Microsoft 365, connected apps, and the web. On supported devices, [Portable Computer](https://www.perplexity.ai/hub/products/portable-computer) runs sensitive work locally without sending tasks to the cloud.\n\nThe rollout begins with HP\u2019s new HP ZBook Ultra G3a, a mobile workstation built for advanced AI workloads. The Perplexity Windows app will be pre-loaded in the taskbar, giving customers direct access to cloud and on-device AI from their PCs. More HP Windows devices with Perplexity will ship in the coming months.\n\n## HP customers get AI across the tools they already use\n\nHP device owners can also use Computer in[](https://www.perplexity.ai/hub/blog/computer-comes-to-word-excel-powerpoint-and-outlook)[Microsoft Excel, Word, PowerPoint, and Outlook](https://www.perplexity.ai/hub/blog/computer-comes-to-word-excel-powerpoint-and-outlook), as well as[](https://www.perplexity.ai/hub/blog/computer-in-teams-is-here)[Microsoft Teams](https://www.perplexity.ai/hub/blog/computer-in-teams-is-here). This brings AI into the tools where they already analyze information, create documents, build presentations, manage email, and collaborate.\n\n[Personal Computer for Windows](https://www.perplexity.ai/hub/blog/personal-computer-on-windows) extends those capabilities to the local HP Windows machine. Computer can work with files and folders on the PC, connected apps, and web. It can find a file in Downloads, update a local spreadsheet with current information from the web, revise a Word document, or create a PowerPoint deck.\n\nComputer also connects to [400+ other apps and data sources](https://www.perplexity.ai/hub/products/app-connectors), including Snowflake, Salesforce, HubSpot, and Revit. HP customers can combine local files with information systems that their organizations already use, completing work with full business context.\n\nComputer orchestrates 15+ models from OpenAI, Anthropic, and Google, and other leading AI labs, assigning the model best suited to each part of a task.\n\n## HP devices include Portable Computer\n\nNow in addition to orchestrating cloud-based frontier models, the Perplexity Windows app lets HP customers run sensitive work fully locally on their device with Portable Computer. They just download a local model with one click.\n\nSupported by the HP ZBook Ultra G3a\u2019s local AI capabilities, users can run everyday tasks entirely on their own hardware. They can analyze data, synthesize files, and run complex workflows without sending tasks to the cloud.\n\nPeople can keep private data on their PC and avoid spending money on cloud credits, as fully local work doesn\u2019t consume any. And because the AI runs directly on device, responses are often faster, more private, and available even without an internet connection.\n\nWhen a task needs more advanced research and reasoning, users can authorize Portable to escalate to the cloud for help while keeping sensitive information local. Portable checks whether users are sending personal or sensitive data to the cloud and alerts them before they share anything.\n\n## Computer connects to Autodesk Revit on HP Windows PCs\n\nPerplexity, HP, and Autodesk have worked together to connect Autodesk Revit Building Information Modeling (BIM) software to Portable Computer through a special integration layer.\n\nOn supported HP Windows PCs, Portable can be configured to connect to Revit through Autodesk\u2019s Revit 2027 Multi Context Protocol (MCP) server (Tech Preview). The MCP server is a separate add-on for Revit 2027 and requires access to Revit 2027.\n\nAutodesk Revit is used for designing, documenting, and coordinating buildings using a model-based approach.\n\nUsing the MCP with Perplexity, users can ask questions about an open Revit model in everyday language, such as how many doors are on the first floor, which doors have a certain fire rating, or where those doors appear in the building. Computer can find the relevant information, show matching items in Revit, and export views, PDFs, and schedules for reports or follow-up work such as drafting a request for information.\n\nThe Revit MCP Server Tech Preview used in this configuration is read-only and doesn\u2019t modify the Revit model.\n\n## New devices handle demanding AI workflows\n\nHP\u2019s ZBook Ultra G3a uses AMD\u2019s Ryzen AI Max PRO 400-series processors and will be available in configurations designed for demanding AI and graphics workloads. It provides the local compute foundation needed to run sophisticated AI workflows directly on the device, reducing reliance on cloud resources while keeping users in control of where work happens.\n\nPortable Computer availability depends on the device configuration.\n\nWindows users whose PCs don\u2019t include Perplexity can [download the app](https://apps.microsoft.com/detail/9p9xg917pwcj?hl=en-US&gl=US) from the Microsoft Store. Personal Computer for Windows is available to Pro, Max, and Enterprise subscribers on Windows 10 and Windows 11.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810862,
-    "title": "Shadow AI: Why employees go around IT, and what ends it",
-    "url": "https://www.perplexity.ai/hub/blog/shadow-ai",
-    "published_at": "2026-09-15T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "Warning: This page maybe requiring CAPTCHA, please make sure you are authorized to access this page.\n\nMarkdown Content:\n![Image 1: Icon for www.perplexity.ai](https://www.perplexity.ai/favicon.ico)\n\n## www.perplexity.ai\n\n## Performing security verification\n\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.",
-    "topic": "security",
-    "tags": [
-      "security",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552904,
-    "title": "The contagion of fear",
-    "url": "https://simonwillison.net/2026/Sep/14/the-contagion-of-fear/",
-    "published_at": "2026-09-14T21:18:13+00:00",
-    "fetched_at": "2026-09-17T23:24:30+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "14th September 2026 - Link Blog\n[The contagion of fear](https://bcantrill.dtrace.org/2026/09/13/the-contagion-of-fear/) ([via](https://lobste.rs/s/1ifr5f/contagion_fear)) Bryan Cantrill responds to the [tweet by former Anthropic employee Jacob Coxon](https://x.com/hilbertspaess/status/2097476203863224394) confirming that many Anthropic researchers believe AI \"could kill us all by the end of the decade\".\nBryan shares a story of his own youthful mistakes causing unjustified panic among less technical peers, and warns against doing the same:\nThese ghoulish claims strike brazenly at the hearth, and given the obvious importance of AI, it is unsurprising that they have leapt into the mainstream, with people asking the natural question:\n[how would that happen?]The answers always rely on hand-wavy extrapolation into the future; for example, Jacob Coxon cites \"hacking critical infrastructure\" and \"extinction-level bioweapons\" without further elaboration. But Coxon is not an expert on critical infrastructure, nor on bioweapons \u2014 nor, for that matter, on extinction. [...]That said, we should not expect the public to understand LLMs, critical infrastructure, bioweapons, extinction biology, etc. \u2014 that burden must lie with those making the claim. The lesson that I learned (shamefully) decades ago is that domain experts, by way of their expertise, implicitly hold the public\u2019s trust \u2014 and we must not abuse it. It is incumbent upon us to be circumspect in our claims \u2014 and maximally so when raising the alarm.\nBryan talked about his doubts about the bioweapons concerns in the recent episode of Oxide and Friends that I joined. You can hear more of his thoughts on that [starting at 51m44s](https://oxide-and-friends.transistor.fm/episodes/the-open-weight-revolution-with-simon-willison/transcript#t=51m44s) in that episode. Here's [57m04s](https://oxide-and-friends.transistor.fm/episodes/the-open-weight-revolution-with-simon-willison/transcript#t=57m4s):\nI really think we need to be careful because it's so easy to be overcome with fear when we kind of make up these... it can give you biological weapons. Like, how? I mean, can we please have a biologist weigh in on this? Or can we have like someone who's got experience with bioweapons? [...] The bioweapon thing just gets under my fingernails because it leaves so much to the imagination that we insert with fear.\nRecent articles\n[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026[OpenAI agents attacked RubyGems back in May](/2026/Sep/12/openai-agents-rubygems/)- 12th September 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "research",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552905,
-    "title": "What blog posts influenced your thinking the most?",
-    "url": "https://simonwillison.net/2026/Sep/14/influences/",
-    "published_at": "2026-09-14T20:21:48+00:00",
-    "fetched_at": "2026-09-17T23:24:30+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "14th September 2026\nAn early Joel Spolsky one for me was [The Law of Leaky Abstractions](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/). I read that near the start of my career and it's encouraged me to always be looking for improved understanding of the layers under where I'm working, just in case one of those abstractions leaks.\nA more recent one, from 2018, is [Migrations: the sole scalable fix to tech debt](https://lethain.com/migrations/) by Will Larson. I absolutely love his idea that migrations (e.g. replacing one service with a new one, or switching database engines, or whatever) are part and parcel of software engineering and are a skill that you should invest in and get good at, not avoid or treat as special one-offs.\n[The Engineer/Manager Pendulum](https://charity.wtf/p/the-engineer-manager-pendulum) by Charity Majors was hugely influential for me. I was stuck in engineering management and worried that if I switched back to being an \"Individual Contributor\" (ugh I hate that term) I'd damage my career. Charity gave me permission to make the switch by pointing out that many of the most successful software developers pendulum from one track to the other multiple times over their career, and doing so makes you better at both sides.\nRecent articles\n[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026[OpenAI agents attacked RubyGems back in May](/2026/Sep/12/openai-agents-rubygems/)- 12th September 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "coding",
-      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
