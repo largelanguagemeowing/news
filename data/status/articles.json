@@ -1,5 +1,172 @@
 [
   {
+    "article_id": 852081,
+    "title": "Your AI Agent Has No Nervous System \u2014 Matt Gibiec, Dynatrace",
+    "url": "https://www.youtube.com/watch?v=YNT7Plf9KIg",
+    "published_at": "2026-10-08T18:30:21+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your coding agent is fast. But it can't see how your services actually run, so it guesses.\n\nMatt Gibiec, who leads AI-native solutions engineering at Dynatrace, explains why AI agents need something like a nervous system: real context from the environment they're changing. Agents get stuck in loops, cause operational and security issues, and are hard to measure, because they work fast but blind, only as good as the data they can see. He introduces Bluebox by Dynatrace, an observability agent for your coding agent, and walks through scenarios: bringing production dependencies into local testing so a change that works on your laptop doesn't break three other services, spotting issues before users feel them, suggesting fixes that account for the rest of the system, and briefing agents with real usage data before they build, with a human keeping final control.\n\nIn this talk:\n\u2022 Why agents loop, hallucinate and break things without environment context\n\u2022 Bringing production dependencies into local testing\n\u2022 Catching problems early and tying them to the change that caused them\n\u2022 Planning before you prompt, with a human approving the final fix\n\nSPEAKER\nMatt Gibiec, Solutions Engineering, AI Native, Dynatrace\n\nLINKS\nBluebox by Dynatrace: https://bluebox.ai\nDynatrace: https://www.dynatrace.com\nBluebox on X: https://x.com/Blueboxhq\n\nCHAPTERS\n0:00 Intro\n0:35 About Dynatrace\n1:00 What the title means\n2:10 Stuck in a loop\n2:50 Operations and security\n3:30 How do you measure value?\n4:34 Fast, but blind\n6:34 Context is king\n7:04 Introducing Bluebox\n7:29 Works locally, breaks in production\n9:09 Catch issues before users do\n10:59 Fix without breaking other things\n12:09 Plan before you prompt\n13:29 A human stays in control\n14:44 Try the preview\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#Observability #CodingAgents #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "agents",
+      "safety",
+      "video",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852082,
+    "title": "Why We Deleted Our MCP Server and Rebuilt It \u2014 Abhi Arya, Reducto",
+    "url": "https://www.youtube.com/watch?v=jJQoVkd5yLg",
+    "published_at": "2026-10-08T17:00:23+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Reducto gave its whole team an MCP server with a tool for every endpoint. It broke the same day.\n\nAbhi Arya, who works on product at Reducto, argues that building agent-first software comes down to one question: who pays when the agent is wrong? He describes three approaches, auto mode, user-first, and agent experience in service of the user, and how Reducto learned the difference. A first MCP server with one tool per API endpoint demoed well but fell apart when the whole team used it: the agent built entire workflows confidently, and nobody could explain them. He deleted it in one commit and rebuilt with fewer tools that carry the structure of real work, plus a snapshot tool for live state. Then he made uncertainty visible, with confidence scores and an agent that asks instead of guessing, and added instrumentation that made the system improve on its own, until the sales team adopted it without being asked.\n\nIn this talk:\n\u2022 Auto mode vs user-first vs agent experience in service of the user\n\u2022 Why one tool per API endpoint fails, and what to build instead\n\u2022 Making uncertainty visible: confidence scores and asking instead of guessing\n\u2022 Instrumentation that turns usage into a self-improving loop\n\nSPEAKER\nAbhi Arya, Product, Reducto\nLinkedIn: https://www.linkedin.com/in/abhiaarya/\nX: https://x.com/abhiarya\nGitHub: https://github.com/abhi-arya1\nWebsite: https://abhi-arya1.github.io\n\nLINKS\nReducto: https://reducto.ai\nReducto MCP server docs: https://docs.reducto.ai/mcp-server\nReducto on X: https://x.com/reductoai\n\nCHAPTERS\n0:00 Intro\n0:38 3 billion documents\n1:48 What is agent-first software?\n2:38 Who pays when the agent is wrong?\n2:48 Auto mode, user-first, or in service of the user\n3:57 Stuck in configuration\n4:47 Version 1: a tool for every endpoint\n5:27 It broke immediately\n6:27 Fewer tools that carry real structure\n7:32 A snapshot of live state\n8:17 Don't just hand agents an API\n9:07 Failures that happen quietly\n9:42 Make uncertainty visible\n10:22 Ask, don't guess\n11:42 One root cause\n13:07 Instrumentation and a self-improving loop\n14:12 Sales adopted it on their own\n15:12 What agent-first really means\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AgentExperience #MCP #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852083,
+    "title": "AI Engineer NYC Livestream | Bridgewater, Anthropic, Two Sigma, Arize, Coatue, Nous, Gen. Intuition",
+    "url": "https://www.youtube.com/watch?v=akEqiXFo3GM",
+    "published_at": "2026-10-08T16:17:19+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Schedule: https://ai.engineer/schedule\n\nLive from the Sheraton New York Times Square Hotel in New York City, AI Engineer New York 2026 is an AI conference for engineers and technical leaders building production AI across banking, hedge funds, fintech, insurance, and asset management. \n\nEvent: AI Engineer NYC\nDates: October 12\u201314, 2026\nVenue: Sheraton New York Times Square Hotel \n\nLearn more about the event:\nhttps://ai.engineer/nyc/2026#\n\n\n\nSubscribe for more AI Engineer talks, livestreams, and event coverage:\n   / @aidotengineer",
+    "topic": "education",
+    "tags": [
+      "education",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 850572,
+    "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+    "url": "https://openai.com/index/oracle",
+    "published_at": "2026-10-08T16:00:00+00:00",
+    "fetched_at": "2026-10-08T19:41:23+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852084,
+    "title": "Let Anyone at Your Company Ship Internal Apps with AI \u2014 Garrett Galow, WorkOS",
+    "url": "https://www.youtube.com/watch?v=HTzgC3FoYsI",
+    "published_at": "2026-10-08T15:30:31+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Building an app with AI got cheap. Getting it in front of your coworkers didn't.\n\nGarrett Galow from the WorkOS product team shows how WorkOS lets anyone at the company build and ship internal apps. It started when an account executive built a helpful sales chatbot before her leave, and the CEO couldn't even open it. Building got cheap with AI, but deploying, securing and sharing apps still needed engineers. So WorkOS built two things: WOW, a CLI pushed to every laptop that sets up the repo, tools and template in one command, and Atlas, the platform underneath, which keeps infrastructure invisible, makes every app secure by default behind company SSO, and makes every app discoverable. He demos it live and shares results: 278 apps, more than 3 million requests a week, and 37% of regularly used apps built with no engineer in a single commit.\n\nIn this talk:\n\u2022 Why shipping, not building, is now the bottleneck for internal tools\n\u2022 Claude days: pairing non-engineers at the keyboard with engineers as coaches\n\u2022 A one-command CLI and a platform that's invisible, secure and discoverable\n\u2022 Results: hundreds of apps, millions of requests, many built without engineers\n\nSPEAKER\nGarrett Galow, Product Manager, WorkOS\nLinkedIn: https://linkedin.com/in/garrett-galow\nX: https://x.com/g2theg\nGitHub: https://github.com/garrettgalow\nWebsite: https://garrettgalow.com\n\nLINKS\nWorkOS: https://workos.com\nThe person with the problem builds the tool (WorkOS blog): https://workos.com/blog/person-with-the-problem-builds-the-tool\nWorkOS on X: https://x.com/workos\n\nCHAPTERS\n0:00 Intro\n0:32 Letting everyone ship\n1:02 Story: Perona GPT\n1:42 The CEO couldn't open it\n2:27 Building got cheap. Shipping didn't.\n3:46 What we needed: build and share\n4:46 Claude days: non-engineers at the keyboard\n5:31 The WOW CLI\n6:26 A shared skills repository\n6:41 Demo: one command to a running app\n8:30 278 apps in the registry\n9:05 Example apps\n9:25 Every app behind company login\n11:10 Atlas: the platform underneath\n11:25 Three principles\n12:04 Running on Cloudflare\n12:44 Secure by default: SSO, logs, secrets\n14:59 Results: 37% built without engineers\n15:24 What's next\n16:19 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#InternalTools #AIEnablement #AIEngineer",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "video",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852021,
+    "title": "This AI Design Hack Saved Me HOURS",
+    "url": "https://www.youtube.com/shorts/grOilk8aCS0",
+    "published_at": "2026-10-08T15:13:52+00:00",
+    "fetched_at": "2026-10-08T19:41:24+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "#ad I used @GensparkProduct Design to generate the UI for a FutureTools app... and it only took me about 30 minutes.\n\nIt created the home feed, individual tool pages, and a layered, fully editable design. I could even generate a launch video in the same visual style, share the project with my team, and bring it into Genspark Code to start turning it into a working product.\n\nIf you want to check out all their design templates, or start one from scratch, sign up and get free credits at the link in the pinned comment. \n\n#Genspark #GensparkDesign #WorkwithGenspark #AI #AITools",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "video",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 853952,
+    "title": "Don't underestimate the communication barrier",
+    "url": "https://www.youtube.com/shorts/LGj1oUidC7Q",
+    "published_at": "2026-10-08T14:22:26+00:00",
+    "fetched_at": "2026-10-08T19:41:27+00:00",
+    "source_id": "matt-pocock-youtube",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "Closing the Communication Gap With AI Agents\n\nLearn why the biggest obstacle to getting better outputs from AI agents isn't the model itself\u2014it's the communication barrier between you and the agent. Discover how to think about what your agent doesn't know about you and what you actually want.\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/s/xdown9\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/qYu37p",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "infrastructure",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852085,
+    "title": "Giving AI Agents Memory That Learns \u2014 Jake Broekhuizen, LangChain",
+    "url": "https://www.youtube.com/watch?v=KGFyOtl5ktI",
+    "published_at": "2026-10-08T14:00:37+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most teams are great at watching what their agents did. Far fewer turn that into lessons for the next run.\n\nJake Broekhuizen from LangChain's Labs team explains how to give agents memory that actually changes their behavior. Using a real financial services agent whose tone kept slipping from advisory to pushy, he shows why traces and logs are only evidence: they become memory only when a lesson turns into durable context the agent reads next time. He breaks memory into semantic, episodic and procedural types, separates working memory from long-term memory, and walks through the read-write cycle: read context, run, filter the evidence for signal, and write it back. He shows how LangSmith and Context Hub capture, analyze and update that context, and shares three hard-won lessons about what to keep, caching, and when a human should review changes.\n\nIn this talk:\n\u2022 Why observability alone doesn't make an agent improve\n\u2022 Semantic, episodic and procedural memory, and which one moves behavior most\n\u2022 The read-write cycle: run, filter evidence for signal, update context\n\u2022 Lessons: most traces stay history, watch caching, review procedural changes\n\nSPEAKER\nJake Broekhuizen, LangChain Labs\nLinkedIn: https://www.linkedin.com/in/jake-broekhuizen/\n\nLINKS\nLangChain Labs: https://www.langchain.com/blog/introducing-langchain-labs\nLangChain on X: https://x.com/LangChain\n\nCHAPTERS\n0:00 Intro\n0:37 Agents that improve every run\n1:02 Example: a finance agent's tone slips\n2:42 Observing isn't learning\n3:07 Traces are everywhere\n4:02 From logs to signal\n4:22 What memory really is\n4:47 Semantic, episodic and procedural memory\n5:42 Procedural memory drives behavior\n6:22 Working vs long-term memory\n8:12 The read-write cycle\n9:27 Deciding what's worth keeping\n10:22 Capture, analyze, update\n10:52 LangSmith and Context Hub\n12:02 The finance agent, fixed\n13:17 Lesson 1: most traces stay history\n13:42 Lesson 2: caching and the hot path\n14:47 Lesson 3: human review for key rules\n15:27 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AgentMemory #LangChain #AIEngineer",
+    "topic": "education",
+    "tags": [
+      "release",
+      "agents",
+      "video",
+      "coding",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 849871,
     "title": "Text is so 2023",
     "url": "https://www.bensbites.com/p/text-is-so-2023",
@@ -31,6 +198,26 @@
     "tags": [
       "media",
       "release"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 850573,
+    "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+    "url": "https://openai.com/index/pollo-ai",
+    "published_at": "2026-10-08T12:00:00+00:00",
+    "fetched_at": "2026-10-08T19:41:23+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "With GPT-5.6, GPT-6 Astra, and GPT\u2011Image\u20112.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -79,6 +266,79 @@
     "available": true
   },
   {
+    "article_id": 852097,
+    "title": "2026 Usage Policy update",
+    "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "2026 Usage Policy update",
+    "topic": "news",
+    "tags": [
+      "news",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852096,
+    "title": "Building on our commitment to American scientific discovery",
+    "url": "https://www.anthropic.com/news/genesis-mission-commitment",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Building on our commitment to American scientific discovery",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 851829,
+    "title": "Normalizing Trajectory Models",
+    "url": "https://machinelearning.apple.com/research/normalizing-trajectory-models",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-08T19:41:23+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Diffusion-based models decompose sampling into many small Gaussian denoising steps, an assumption that breaks down when generation is compressed to a few coarse transitions. Existing few-step methods address this through distillation, consistency training, or adversarial objectives, but sacrifice the likelihood framework in the process. We introduce Normalizing Trajectory Models (NTM), which models each reverse step as an expressive conditional normalizing flow with exact likelihood training. Architecturally, NTM combines shallow invertible blocks within each step with a deep parallel\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852364,
+    "title": "Build live dashboards and animate explainers with Claude",
+    "url": "https://claude.com/resources/articles/dashboards-and-motion",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-08T19:41:25+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 850009,
     "title": "Cohere Expands Canadian Footprint with New Ottawa Office",
     "url": "https://cohere.com/blog/cohere-expands-canadian-footprint-with-new-ottawa-office",
@@ -88,6 +348,24 @@
     "source_name": "Cohere Blog",
     "extraction_method": "rss",
     "body": "Cohere Expands Canadian Footprint with New Ottawa Office",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 850574,
+    "title": "Disrupting AI-enabled \u201cfalse front\u201d operations",
+    "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-08T19:41:23+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging.",
     "topic": "ai-models",
     "tags": [
       "ai-models",
@@ -413,6 +691,24 @@
       "general",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 852978,
+    "title": "Introducing Falcon ASR",
+    "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+    "published_at": "2026-10-07T13:21:03+00:00",
+    "fetched_at": "2026-10-08T19:41:27+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10695,333 +10991,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552891,
-    "title": "DACA-GRPO: Denoising-Aware Credit Assignment for Reinforcement Learning in Diffusion Language Models",
-    "url": "https://machinelearning.apple.com/research/denoising-aware-credit-assignment",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:29+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "Diffusion large language models are a compelling alternative to autoregressive models, yet existing RL methods for diffusion treat all denoising steps as equally important and rely on biased, high-variance likelihood estimates. We identify two fundamental weaknesses: the absence of temporal credit assignment across the denoising trajectory, and the systematic bias of mean-field likelihood estimates used for policy optimization. To address these, we propose Denoising-Aware Credit Assignment for GRPO (DACA-GRPO), a lightweight, plug-and-play enhancement for any GRPO-style trainer. DACA-GRPO introduces two complementary mechanisms: Denoising Progress Scores, which extract per-token importance weights from intermediate predictions at no additional forward cost, and Stratified Masking Likelihood, which partitions token positions into strata so that each token is predicted with most of the sequence as context, reducing the mean-field bias. Applied on top of three GRPO base methods, DACA-GRPO achieves consistent improvements across seven benchmarks spanning mathematical reasoning, code generation, constraint satisfaction, and constrained generation, with gains of up to 5.6pp on math reasoning, 7.4pp on code generation, 36.3pp on constraint satisfaction, and 5.9pp on JSON schema adherence.\n- \u00e2\u00a1 Equal contribution\n- \u00e2 The Ohio State University\n- ** Work done while at Apple",
-    "topic": "coding",
-    "tags": [
-      "models",
-      "open-source",
-      "benchmark",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552890,
-    "title": "Glyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs",
-    "url": "https://machinelearning.apple.com/research/glyph-column-description-tagging",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:29+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "[content type paper](/research/)published September 2026\nGlyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs\nAuthorsKostia Kudriavtsev, Parvez Rafi, Sha Sundaram\nGlyph: A Multi-Strategy Agentic System for Column Description and Sensitivity-Ontology Tagging of Enterprise Data Catalogs\nAuthorsKostia Kudriavtsev, Parvez Rafi, Sha Sundaram\nEnterprise data lakes accumulate tables faster than human stewards can document or classify them, leaving columns with missing descriptions and unassigned governance labels. This documentation debt undermines data discovery, access control, and regulatory compliance. We present Glyph, a production system that frames two coupled problems, column description generation and column type annotation for data classification, as cooperating LLM agents orchestrated as stateful graphs. The Descriptor grounds generation in the pipeline source code that produces each column, retrieved on demand from an enterprise GitHub via a reasoning\u00e2acting tool loop (active Retrieval-Augmented Generation). The Tagger assigns labels from a governed 275-leaf Data Classification Ontology by running three complementary strategies in parallel (a description tagger, a line-of-business regex tagger, and a metadata tagger backed by a fine-tuned contrastive encoder over a vector database), then fuses their ranked outputs with Reciprocal Rank Fusion (RRF). We fine-tune a 6-layer MiniLM metadata encoder with an in-batch contrastive objective, lifting same-tag retrieval on an in-distribution held-out split from NDCG@10 0.55 to 0.92 (MAP@100 0.19\u00e2 0.90) relative to the stock base encoder. We report end-to-end multi-label tagging quality under a recall-weighted F2 objective across three evaluation groups, an ablation isolating each strategy and the RRF fusion, and the engineering decisions that distinguish Glyph from prior column-type-annotation work and from commercial value/regex sensitivity scanners: value-free and code-grounded design, per-tag provenance, and graceful degradation. Together these make multi-agent LLM cataloging auditable and operable as a production service.\nSemantic Regexes: Auto-Interpreting LLM Features with a Structured Language\nDecember 3, 2025[research area Human-Computer Interaction](/research/?domain=Human-Computer%20Interaction), [research area Methods and Algorithms](/research/?domain=Methods%20and%20Algorithms)[conference ICLR](/research/?event=ICLR)\nAutomated interpretability aims to translate large language model (LLM) features into human understandable descriptions. However, these natural language feature descriptions are often vague, inconsistent, and require manual relabeling. In response, we introduce semantic regexes, structured language descriptions of LLM features. By combining primitives that capture linguistic and semantic feature patterns with modifiers for contextualization,\u00e2\u00a6\nLyric Document Embeddings for Music Tagging\nFebruary 2, 2022[research area Data Science and Annotation](/research/?domain=Data%20Science%20and%20Annotation), [research area Methods and Algorithms](/research/?domain=Methods%20and%20Algorithms)\nWe present an empirical study on embedding the lyrics of a song into a fixed-dimensional feature for the purpose of music tagging. Five methods of computing token-level and four methods of computing document-level representations are trained on an industrial-scale dataset of tens of millions of songs. We compare simple averaging of pretrained embeddings to modern recurrent and attention-based neural architectures. Evaluating on a wide range of\u00e2\u00a6",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552889,
-    "title": "Shared Selective Persistent Memory for Agentic LLM Systems",
-    "url": "https://machinelearning.apple.com/research/shared-selective-persistent-memory",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:29+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "[content type paper](/research/)published September 2026\nShared Selective Persistent Memory for Agentic LLM Systems\nAuthorsSanjana Pedada, Aditya Dhavala, Neelraj Patil\nShared Selective Persistent Memory for Agentic LLM Systems\nAuthorsSanjana Pedada, Aditya Dhavala, Neelraj Patil\nAgentic LLM systems that generate code through multi-turn tool use face a fundamental context problem: each session starts from zero, discarding the configuration choices, domain constraints, data schemas, and tool-use patterns that made previous sessions productive. Naively persisting entire conversation histories is both token-inefficient and counterproductive\u00e2irrelevant context degrades generation quality. We introduce shared selective persistent memory, a memory architecture for agentic systems that identifies and retains four categories of reusable context\u00e2task specifications, data schemas, tool configurations, and output constraints\u00e2while discarding session-specific reasoning traces. Crucially, this memory is shared: workspaces encapsulating selective memory can be transferred across users with role-based access control, enabling collaborative reuse of accumulated context without redundant specification. We implement this architecture in a deployed collaborative workspace platform where LLM agents produce, edit, and maintain git-versioned artifacts\u00e2including interactive dashboards, structured reports, and data-driven documents\u00e2from heterogeneous data sources accessed via multiple connector types (CSV upload, SQL, REST APIs, and MCP servers). Git-backed versioning with draft isolation enables users to explore modifications risk-free and restore to any prior state without re-invoking the model. A complementary zero-token data refresh mechanism decouples generated programs from runtime data, enabling artifact reuse without re-invocation. Across three enterprise deployment scenarios, shared selective persistent memory achieves 96% task completion (vs. 79% without memory and 71% with full history). A complementary zero-token data refresh mechanism eliminates LLM re-invocation entirely for recurring data updates (14\u00c3task time reduction), while summary-driven generation reduces per-invocation token cost by 97\u00c3versus raw data injection. A replication on four public datasets confirms generalizability, with zero-token refresh succeeding in 12/12 trials. Notably, naive full-history persistence actively degrades task completion by biasing the agent with stale reasoning traces, while selective memory outperforms both extremes.\nAgent Seer: Synthesizing Scenarios from Specification Understanding\nAugust 28, 2026[research area Data Science and Annotation](/research/?domain=Data%20Science%20and%20Annotation), [research area Tools, Platforms, Frameworks](/research/?domain=Tools%2C%20Platforms%2C%20Frameworks)\nEvaluating AI agents that use external tools requires realistic test scenarios that capture how practitioners compose tools and iterate across conversation turns. Constructing such scenarios by hand demands deep domain expertise, does not scale across tool ecosystems, and produces static benchmarks that cannot track evolving APIs. We observe that tool specifications\u00e2function names, natural-language descriptions, and typed parameter\u00e2\u00a6\nLess Is More: A Unified Architecture for Device-Directed Speech Detection with Multiple Invocation Types\nJune 8, 2023[research area Methods and Algorithms](/research/?domain=Methods%20and%20Algorithms), [research area Speech and Natural Language Processing](/research/?domain=Speech%20and%20Natural%20Language%20Processing)[conference ICASSP](/research/?event=ICASSP)\nSuppressing unintended invocation of the device because of the speech that sounds like wake-word, or accidental button presses, is critical for a good user experience, and is referred to as False-Trigger-Mitigation (FTM). In case of multiple invocation options, the traditional approach to FTM is to use invocation-specific models, or a single model for all invocations. Both approaches are sub-optimal: the memory cost for the former approach grows\u00e2\u00a6",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552892,
-    "title": "Trajectory as the Teacher: Few-Step Discrete Flow Matching via Energy-Navigated Distillation",
-    "url": "https://machinelearning.apple.com/research/trajectory-teacher-flow-matching",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:29+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "Discrete flow matching generates text by iteratively transforming noise tokens into coherent language, but may require hundreds of forward passes. Distillation uses the multi-step trajectory to train a student to reproduce the process in a few steps. When the student underperforms, the usual explanation is insufficient capacity. We argue the opposite: the trajectory is the bottleneck, not the student. Each training trajectory is built through a chain of blind stochastic jumps with no evaluation of sequence quality; a single bad decision at an early midpoint propagates through subsequent steps, yet the student must imitate the result. Trajectory-Shaped Discrete Flow Matching (TS-DFM) replaces these blind jumps with guided navigation: a lightweight energy compass evaluates candidate continuations at each midpoint, selecting the most coherent. All shaping is training-only; inference cost is unchanged. On 170M-parameter language modeling, the shaped student at 8 steps achieves 32% lower perplexity than the 1,024-step teacher while being 128\u00c3 faster, with gains consistent across source distributions and three evaluators of increasing scale. TS-DFM achieves the best perplexity of any discrete-generation baseline we compare against, including methods trained on 6\u00c3 more data or using 5\u00c3 larger models.\n- \u00e2 The Ohio State University\n- ** Work done while at Apple",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "api",
-      "benchmark",
-      "infrastructure",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552893,
-    "title": "How Value Induction Reshapes LLM Behaviour",
-    "url": "https://machinelearning.apple.com/research/value-induction-llm-behaviour",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:29+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "[content type paper](/research/)published September 2026\nHow Value Induction Reshapes LLM Behaviour\nAuthorsArnav Arora\u00e2 **, Natalie Schluter, Katherine Metcalf\u00e2\u00a1, Maartje ter Hoeve\u00e2\u00a1\nHow Value Induction Reshapes LLM Behaviour\nAuthorsArnav Arora\u00e2 **, Natalie Schluter, Katherine Metcalf\u00e2\u00a1, Maartje ter Hoeve\u00e2\u00a1\nConversational Large Language Models are post-trained on language that expresses specific behavioural traits, such as curiosity, open-mindedness, and empathy, and values, such as helpfulness, harmlessness, and honesty. This is done to increase utility, ensure safety, and improve the experience of the people interacting with the model. However, values are complex and inter-related \u00e2 inducing one could modify behaviour on another. Further, inducing certain values can make models more addictive or sycophantic through language used in the generations, with a potential detrimental effect on the user. We investigate these and other unintended effects of value induction into models. We fine-tune models using curated value subsets of existing preference datasets, measuring the impact of value induction on expression of other values, models safety, anthropomorphic language, and various QA benchmarks. We find that (i) inducing values leads to expression of other related, and sometimes contrastive values, (ii) inducing positive values increases safety, and (iii) all values increase anthropomorphic language use, making models more validating and sycophantic.\n- \u00e2 University of Copenhagen\n- \u00e2\u00a1 Equal contribution\n- ** Work done while at Apple\nEncQA: Benchmarking Vision-Language Models on Visual Encodings for Charts\nOctober 13, 2025[research area Computer Vision](/research/?domain=Computer%20Vision), [research area Human-Computer Interaction](/research/?domain=Human-Computer%20Interaction)[conference IEEE Visualization](/research/?event=IEEE%20Visualization)\nMultimodal vision-language models (VLMs) continue to achieve ever-improving scores on chart understanding benchmarks. Yet, we find that this progress does not fully capture the breadth of visual reasoning capabilities essential for interpreting charts. We introduce EncQA, a novel benchmark informed by the visualization literature, designed to provide systematic coverage of visual encodings and analytic tasks that are crucial for chart\u00e2\u00a6\nOn Device Llama 3.1 with Core ML\nNovember 1, 2024\nMany app developers are interested in building on device experiences that integrate increasingly capable large language models (LLMs). Running these models locally on Apple silicon enables developers to leverage the capabilities of the user\u00e2s device for cost-effective inference, without sending data to and from third party servers, which also helps protect user privacy. In order to do this, the models must be carefully optimized to effectively\u00e2\u00a6",
-    "topic": "research",
-    "tags": [
-      "models",
-      "safety",
-      "benchmark",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553485,
-    "title": "Claude Cowork and chat are now one Claude",
-    "url": "https://claude.com/blog/cowork-is-now-claude",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Claude Cowork and chat are now one Claude\nYou don\u2019t have to choose where a task goes. Claude does more of the work.\nYou don\u2019t have to choose where a task goes. Claude does more of the work.\n- September 16, 2026\n- 5min\nStarting today, Claude Cowork and chat are merging into one Claude. Bring a quick question, or hand over a report due at noon, and Claude takes it from there, even after you\u2019ve closed your laptop. It\u2019s rolling out on Pro and Max plans over the next few weeks, with more plans to follow.\nWhat Claude makes doesn\u2019t need its own place either. Claude Docs and Claude Slides are new today, and [Claude Design](https://claude.com/product/design) now works inside your conversations too. Ask for a document, and you and Claude write it together. Ask for a presentation, and Claude drafts the slides. You can edit directly, present straight from Claude, or download as PowerPoint or PDF. All three are in beta on paid plans, and Enterprise admins choose when to turn them on. If you use Claude Design on its own, it keeps working as before.\nWe built Cowork as a separate place for bigger work, and Design for visual work. People used both, and told us the frustrating part was deciding where a task belonged. What they\u2019d started in one also didn\u2019t carry into the other. So we stopped making you choose. Claude can now figure out what a task needs, so what Cowork and Design can do is available from any conversation, with the context, skills, and connectors you already have.\n\u201cI could have Claude pull up [my legal research database], and it would pull all the cases, read them, figure out which other cases I might need, download them, and store them in a folder for my personal review.\u201d - Andrew Keller, Senior Economist\nA weekly report is due at noon. Before you head out, you ask Claude what moved in the pipeline last week, then add: \u201cWrite it the way we always do, flag anything that slipped, and put the highlights in five slides for the leadership meeting.\u201d If something\u2019s unclear, Claude asks. You can check progress from your phone on the way to the office. By the time you\u2019re at your desk, the report is waiting as a doc with notes from your teammate, and the slides are ready to open, adjust, and download as PowerPoint. Both came out of the same conversation, so the slides already match the report. You fix a line yourself, leave a comment for Claude on a slide, and share it. Schedule it for every Monday, and Claude starts on the report without being asked.\nAnything you make with Claude Design, Slides, or Docs lives at one shareable link you can open on your phone. You can select an element and move it, or tell Claude what you want changed.\nYou can choose how Claude checks in with you. By default, Claude asks before taking an action. If you\u2019d rather let it keep working and check in only when something needs a closer look, you can turn that on. You keep the final say.\nIf you mostly use chat, you don\u2019t have to do anything different. When you want to hand over something bigger, try the next report or deck you\u2019d normally build yourself. If you\u2019ve been working in Cowork, everything is where you left it: your chats, projects, artifacts, connectors, and skills. When you open the app, pick up where you left off.\nThis is rolling out to Pro and Max plans first, in the Claude app on web, desktop, and mobile over the coming weeks to existing and new users on these plans. There\u2019s nothing to turn on. Team and Free plans will follow soon, and Enterprise admins will hear from us at least 30 days before anything changes for their organizations.\nThe full list of capabilities is in the [Help Center](https://support.claude.com/en/articles/16761823). If you\u2019ve been saving up a big messy project, now\u2019s the time.\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "open-source",
-      "research",
-      "coding",
-      "enterprise",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836289,
-    "title": "Claude Cowork and chat are now one Claude",
-    "url": "https://claude.com/resources/articles/cowork-is-now-claude",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-10-07T06:53:40+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Claude Cowork and chat are now one Claude\nYou don\u2019t have to choose where a task goes. Claude does more of the work.\nStarting today, Claude Cowork and chat are merging into one Claude. Bring a quick question, or hand over a report due at noon, and Claude takes it from there, even after you\u2019ve closed your laptop. It\u2019s rolling out on Pro and Max plans over the next few weeks, with more plans to follow.\nWhat Claude makes doesn\u2019t need its own place either. Claude Docs and Claude Slides are new today, and [Claude Design](https://claude.com/product/design) now works inside your conversations too. Ask for a document, and you and Claude write it together. Ask for a presentation, and Claude drafts the slides. You can edit directly, present straight from Claude, or download as PowerPoint or PDF. All three are in beta on paid plans, and Enterprise admins choose when to turn them on. If you use Claude Design on its own, it keeps working as before.\nWe built Cowork as a separate place for bigger work, and Design for visual work. People used both, and told us the frustrating part was deciding where a task belonged. What they\u2019d started in one also didn\u2019t carry into the other. So we stopped making you choose. Claude can now figure out what a task needs, so what Cowork and Design can do is available from any conversation, with the context, skills, and connectors you already have.\nWhat it looks like\nA weekly report is due at noon. Before you head out, you ask Claude what moved in the pipeline last week, then add: \u201cWrite it the way we always do, flag anything that slipped, and put the highlights in five slides for the leadership meeting.\u201d If something\u2019s unclear, Claude asks. You can check progress from your phone on the way to the office. By the time you\u2019re at your desk, the report is waiting as a doc with notes from your teammate, and the slides are ready to open, adjust, and download as PowerPoint. Both came out of the same conversation, so the slides already match the report. You fix a line yourself, leave a comment for Claude on a slide, and share it. Schedule it for every Monday, and Claude starts on the report without being asked.\nAnything you make with Claude Design, Slides, or Docs lives at one shareable link you can open on your phone. You can select an element and move it, or tell Claude what you want changed.\nYou can choose how Claude checks in with you. By default, Claude asks before taking an action. If you\u2019d rather let it keep working and check in only when something needs a closer look, you can turn that on. You keep the final say.\nGetting started\nIf you mostly use chat, you don\u2019t have to do anything different. When you want to hand over something bigger, try the next report or deck you\u2019d normally build yourself. If you\u2019ve been working in Cowork, everything is where you left it: your chats, projects, artifacts, connectors, and skills. When you open the app, pick up where you left off.\nThis is rolling out to Pro and Max plans first, in the Claude app on web, desktop, and mobile over the coming weeks to existing and new users on these plans. There\u2019s nothing to turn on. Team and Free plans will follow soon, and Enterprise admins will hear from us at least 30 days before anything changes for their organizations.\nThe full list of capabilities is in the [Help Center](https://support.claude.com/en/articles/16761823). If you\u2019ve been saving up a big messy project, now\u2019s the time.",
-    "topic": "enterprise",
-    "tags": [
-      "models",
-      "open-source",
-      "coding",
-      "tutorials",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810278,
-    "title": "Cohere and Aleph Alpha sign agreement to become the first  transatlantic sovereign AI solution",
-    "url": "https://cohere.com/blog/cohere-and-aleph-alpha-sign-agreement",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:48+00:00",
-    "source_id": "cohere-blog",
-    "source_name": "Cohere Blog",
-    "extraction_method": "trafilatura",
-    "body": "We are announcing the signing of a definitive business combination agreement with Aleph Alpha, following the [release](https://cohere.com/blog/cohere-alephalpha-join-forces) of our planned partnership in April of this year. Operating globally as Cohere, the unified company will effectively create the first transatlantic sovereign AI solution. The transaction remains subject to final regulatory approvals.\nCommitment to Canada and Germany\nThe company will remain deeply rooted in both countries with headquarters, R&D centers, and leadership roles in Canada and Germany.\nOperating globally as Cohere, we will bring together deep research expertise, enterprise-grade solutions, and long-standing public sector partnerships across Canada and Europe. The transaction will increase Cohere's employee headcount to more than 1,000 across both continents, with plans for the company to be dual-headquartered in Berlin and in Toronto and to keep Aleph Alpha\u2019s Heidelberg office as a research center.\nAgreement brings new Cohere leadership\nAs part of the combined company's next phase of growth, Cohere will expand its leadership team with two senior appointments effective upon deal close. Ilhan Scheer, currently Co-CEO of Aleph Alpha, will become Chief Operating Officer of Cohere, leading the company's global operating model and organizational scaling. He previously founded fable+, a data analytics and transformation company acquired by Accenture, where he went on to serve as Managing Director overseeing a global portfolio of enterprise transformation products, and is co-author of Decision Intelligence (Wiley).\nIlhan Scheer, Co-CEO, Aleph Alpha said: \u201cOver the past twelve months, we have sharpened our focus on specialized language models for governments and regulated industries. Cohere is a strong strategic fit for this work, bringing global reach and deployment capabilities that complement our research expertise. Together, we can bring what our team has built to more organizations worldwide. This strengthens our ability to deliver on our mission: giving organizations control over the AI they rely on.\u201d\nSamuel Weinbach, co-founder and Co-Chief Research Officer of Aleph Alpha, will become Chief Research Officer of Cohere, advancing the company's research and technological development. His scientific work spans tokenization, language model training, explainability, and image generation. Both appointments are contingent on completion of the transaction, which remains subject to regulatory approvals and is expected to close later this year, with further integration and product details to follow.\nContinued commitment to sovereignty\nCohere will become the first foundational model developer anchored on both sides of the Atlantic to deliver AI solutions aligned with the sovereignty requirements of both Canada and Germany.\nThe combined company will operate within the applicable legal and regulatory frameworks of both jurisdictions, including requirements governing the protection and handling of sensitive data and technology. Its structure incorporates safeguards and oversight mechanisms that reinforce operational control, accountability, and compliance across both markets.\n\u201cNo government or enterprise should have to choose between capable AI and control over their technology,\u201d said Aidan Gomez, Co-founder and CEO, Cohere. \u201cThat belief is exactly why we\u2019re joining forces with Aleph Alpha to enhance the talent, infrastructure and institutional trust behind our mission. Together, we\u2019ll move faster to meet the rising global demand for frontier AI that\u2019s powerful enough to compete, but secure and governable enough to trust.\u201d\nThe company will also advance its partnership with the companies of Schwarz Group to deliver sovereign AI on STACKIT, Schwarz Digits sovereign cloud service and a cornerstone of Europe\u2019s digital sovereignty strategy.\nChristian M\u00fcller, CEO, Schwarz Digits, said, \u201cDigital sovereignty is not about going it alone, but about strategically joining forces. This transatlantic alliance represents a massive leap forward accelerating the development of an independent AI infrastructure. With the goal of establishing STACKIT as the technical backbone for sovereign AI solutions, we ensure organizations do not have to choose between high performance and digital independence. By partnering with those who uncompromisingly share our strict values and data security standards, we are sustainably strengthening the sovereign digital future of Europe and Canada.\u201d\nLearn more [here](https://www.prnewswire.com/news-releases/cohere-and-aleph-alpha-sign-agreement-to-become-the-first-transatlantic-sovereign-ai-solution-302880732.html).",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "safety",
-      "research",
-      "coding",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810277,
-    "title": "Cohere and OpenText partner to bring trusted agentic AI to governments and regulated industries",
-    "url": "https://cohere.com/blog/cohere-and-open-text-partner-to-bring-trusted-ai",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:48+00:00",
-    "source_id": "cohere-blog",
-    "source_name": "Cohere Blog",
-    "extraction_method": "trafilatura",
-    "body": "Cohere and OpenText announced a strategic partnership to help governments and regulated industries move agentic AI from pilot to production.\nThe partnership brings together OpenText\u2019s trusted enterprise data and context with North, Cohere\u2019s secure agentic AI platform, and Cohere\u2019s enterprise AI models. Together, the companies aim to give AI agents the context, orchestration, and intelligence needed to reason over enterprise data and act across systems while maintaining control over security, deployment, and data location.\nAs part of the collaboration, Cohere\u2019s North platform and models will be integrated with OpenText Aviator AI agents. Organizations will be able to deploy the combined capabilities on-premises or in private, public, or sovereign cloud environments depending on their requirements.\nLearn more in OpenText\u2019s [press release](https://www.opentext.com/ca/about/press-releases/opentext-cohere-partner-to-combine-trusted-data-with-agentic-ai).",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "safety",
-      "education",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 713471,
-    "title": "Migrating from closed to open source models, Together",
-    "url": "https://www.together.ai/blog/migrating-from-closed-to-open-source-models",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "together-ai",
-    "source_name": "Together AI",
-    "extraction_method": "trafilatura",
-    "body": "Migrations are the bane of any mature company. Systems are deeply integrated, you have key stakeholders across domains, and a small improvement can take months or years to integrate in traditional cases. Recently, the latest candidate for migration has been closed source to open source models (OSM). The promise of cost savings and distributed ownership of technology has always been compelling. Is it worth it though?\nLuckily, closed to open source breaks the tradition of slow and painful migration, especially if you adopt a managed service. These services keep up with the pace of AI innovation while offloading much of the complexity from your business.\nNow the blast radius is much smaller, and the technical stack you need to migrate is less complex. Harnesses, gateways, and tooling are all built to adopt a variety of models. You can take full advantage of this for a quick and holistic migration from closed to open source.\nWe'll walk you through a successful migration strategy we've seen with our customers. This can take weeks to months rather than months to years. In future, we'll also provide assets to help you track your progress along the way.\nThis is an overview. We will provide deep dives for each section we feel could use more color, with workbooks, examples, and walkthroughs.\nDiscover\nAs you start to discover candidate models, the most important thing is to know what you're evaluating for. No single model is the best across the board. Different models have different strengths across domains, and the better you define the problems you want solved, the easier it becomes to shortlist models that will actually work for you. Start by defining your use-case and workload in plain terms: what tasks the model handles, what a good response looks like, and what your traffic actually consists of.\nWith your use-case defined, pre-existing benchmarks become useful as a filtering tool. Identify the benchmarks most relevant to your work so that leaderboard numbers correlate with performance on your tasks. Good sources of benchmarks include [The Open Frontier](https://www.theopenfrontier.com/), [Artificial Analysis](https://artificialanalysis.ai/), [Epoch AI](https://epoch.ai/benchmarks?view=graph&tab=eci), [Vals AI](https://www.vals.ai/home), [Scale's leaderboards](https://labs.scale.com/leaderboard), [Intelligence](https://www.intelligence.ai/leaderboards) and [Arena](https://arena.ai/leaderboard/agent). Within these you might find the following benchmarks useful:\n- Coding agents:\n[FrontierCode](https://cognition.com/frontiercode),[DeepSWE](https://deepswe.datacurve.ai/),[Terminal Bench 4](https://hub.harborframework.com/datasets/terminal-bench/terminal-bench/latest?tab=leaderboard&leaderboard=4-0-0) - Chat and general assistant work:\n[LMArena](https://arena.ai/leaderboard/text),[AA-Intelligence Index](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index) - Agents and tool-use:\n[\u03c4-bench](https://sierra-research.github.io/hyper-tau-bench/),[Agent Arena](https://arena.ai/leaderboard/agent) - Vision:\n[Vision Arena](https://arena.ai/leaderboard/vision)\nRemember, your job is to identify which of these are relevant for you to narrow down candidate models, we'll talk more about custom evals later. Typically you'll find that there are three tiers of models available to pick from, as shown above.\nFor your top candidates, go beyond raw performance. Look at cost per task, how many tokens a model burns per attempt, how many steps it needs, end-to-end runtime, and how quickly you can verify a correct answer. Lots of new benchmarks are now reporting these per-task numbers, and we believe these better correlate with actual model cost and performance. A model that scores a few points lower but completes tasks in half the tokens and half the time may be the better fit.\nFinally, kick the tires. Take a handful of representative tasks into a playground and see if your shortlisted models perform as expected. Watch for failure modes and ask whether it's the model failing or the harness and context around it. It's also worth seeing what other companies running these models are saying about their experience. You should leave this step with two to three models that you are ready to put through serious evals.\nEvaluate\nEvaluating models will be the most involved part of this process and certainly needs a blog of its own, but at a high level you will be evaluating two things: accuracy and performance.\nAccuracy defines the capabilities of the model. This can include instruction following, summarization, function calling, vision performance etc. This is everything the model can do regardless of where it runs or how fast it is. You want to evaluate if it can solve your workload needs.\nPerformance covers how well the model runs. This changes based on things like model size and architecture. For these tests we don't care how well the model is responding to requests. We're evaluating whether this model meets the cost and user-feel, or latency, expectations needed to adopt an OSM.\nFor both accuracy and performance you'll need to have a consistent mindset: benchmarks are directionally useful, true tests are done with real data. The best way to evaluate a workload is not to look up or run generic benchmarks. Workloads have different traffic shapes, niche response requirements, and request structures. No benchmark can represent that except your own. Luckily, if you're already using closed source models, a simple replay of existing traffic is all the data you need to benchmark. No custom suites, no large data set. This is, and always has been, the best way to bench even before we were benchmarking modern frontier models (HPC, databases, load balancing, etc). Ensure you're still testing against the targets defined earlier though.\nIf you don't have data to replay you're not blocked! We can still size according to general usage patterns like input and output size and expected cache hit rate. If closed source providers don't provide these metrics, gateways like [LiteLLM](https://www.litellm.ai/) can help gather this information. We'll discuss this technique further in a deep dive blog.\nAfter you've found your data: determine what your goals are. Do you want to save on cost? Speed? Improved or similar quality? When you rerun your data against the new models you've chosen, this is your goal line. You're aiming to meet or surpass this. When OSMs pass this goal line you have technical validation and you can move on to a full scale migration.\nInvesting in robust evaluation techniques will enable your team to rapidly adopt new OSMs with ease moving forward. In a follow-up blog we'll do a much deeper dive on how to size your workload, rerun traffic, and evaluate results. For now, this is the foundational concept for how to evaluate an OSM.\nAdapt\nFrontier open models are getting good enough that they typically work out of the box for most applications, but if a model doesn't pass your evals you'll need to adapt. That doesn't necessarily mean the model is a dead end. It usually means the way you're using it was tuned for a different model: the prompt, the sampling parameters, the harness around it. Your closed-source setup carries a lot of accumulated tuning that the open source model has never seen, and most likely you'll need to adapt it.\nYou have a few levers here, roughly in order of effort:\n- System prompt engineering: try asking the model differently. Models are trained differently and might need different prompting to work at the same level as your current closed model.\n- Model inference settings: sampling parameters like temperature and top_k, preserved thinking, and reasoning effort can all meaningfully change behavior.\n- Context engineering and the harness itself: the skills, tools, and MCP servers that make up the software environment the model operates in.\n- Model weights through fine-tuning or distillation: the hardest to pull off, since it requires well-defined evals, curated data, and real experimentation, but it can unlock a niche domain and make a small model punch well above its weight.\nWhichever levers you pull, treat this process as an iterative loop. Set up experiments that isolate a single modification, evaluate its impact, and iterate until you find the things that actually improve evals. Keep your evals modular and your experiments simple. If you're testing too many things and changing too many variables at once, you'll never isolate what's working amongst the confounding noise. A suite of well-defined evals, discussed above, is the most important thing when it comes to fruitfully iterating on the above adaptations.\nDecide\nTechnical validation is half the battle, as with any migration. Once you've proven OSMs can match or surpass the functionality of your current closed source offering, you need to package these results and communicate the \"why\" to stakeholders.\nOutline the effort needed to migrate to OSMs, what the risks are, and what the return on investment (ROI) is.\nSome high level guidance from our experience:\nEffort will define the actual workload needed to transition to OSMs. There are occasionally compatibility concerns for harnesses and tooling, but the gap here gets smaller every day. For instance [togetherlink](https://togetherlink.dev/), a tool we provide makes it a simple install to start utilizing OSMs within any harness. Document any integrations or changes that would need to be made to fully utilize an OSM at scale.\nRisks reflect traditional risks associated with adopting a new technology: compliance, scale, continued migration, familiarity with tooling, impacting downstream services. Document these and address them for your company's specific needs. A majority of these are addressed by managed providers if you choose to use one.\nIf you reach this stage with proper evals in place, this part can be greatly simplified, though you can still treat it as a loop that feeds back into evaluation.\nROI can be calculated as a quantifiable value from your evaluation stage. How many tokens can you generate per dollar? How does that compare to closed source? We see in some cases up to 70% cost reduction when customers transition to open source. You can do this for quality as well: how does quality compare to closed source? This will help define your ROI to stakeholders.\nIdeally with risks, effort and ROI defined, the decision should be easy to make from there. Adoption at this point is more about education than technical boundaries.\nProduction\nAt the point of approval, the migration begins. As mentioned, traditionally moving to production following a migration is a long, drawn-out process. However, with transitioning from closed to OSM, we find this is actually one of the lightest steps.\nWe can learn from traditional migration practices to take inventory of your migration's impact and create a roadmap. We can base most of this on the effort and risks sections from earlier. Will we impact downstream services? How do we get a model approved via security and compliance teams? Are there any changes needed to tooling or services built on top of previous models? This shift doesn't need to be immediate either. Canary deployments have seen great success with our customers to validate against production use cases, starting with 10% of traffic to open source.\nA roadmap consists of all the steps needed for your OSM adoption. This should include any security/compliance, technology changes or downstream service changes that need to be made. Don't be intimidated here, the technical implementation can be as simple as switching out an endpoint!\nWe understand that this is a very simplistic overview, but at its core we've seen this transition dozens of times with our largest customers and feel strongly that it's far less cumbersome than a traditional technical migration.\nIf you're going through a similar migration we encourage you to follow future blogs, or reach out to [sales@together.ai](mailt",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810764,
-    "title": "Memory in Grok Build",
-    "url": "https://x.ai/news/grok-build-memory",
-    "published_at": "2026-09-16T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:48+00:00",
-    "source_id": "xai-news",
-    "source_name": "xAI News",
-    "extraction_method": "trafilatura",
-    "body": "Grok Build now carries conventions, decisions, and project facts from one session to the next. Notes are written in the background as you work and read back when you return to the project.\nGrok Build now has memory. As you work, it keeps notes on the conventions, decisions, and project facts that come up, and later sessions read those notes before touching related code. Grok Build gets better the more you use it.\n\u276fuse just test, not cargo test. it starts the test database first.\n\u25c6Runjust test\nStarting postgres on :5433 ... readytest result: ok. 148 passed; 0 failed; 0 ignored\nAll 148 tests pass with just test.\nworkspaces\u203aorbit-3f9c2a1d\u203atopics\u203atesting.md\nTestingHow tests are run and organized in orbit.Commands\n\u2022Run the suite with just test. It starts the test database and then runs cargo test; plain cargo test fails the integration tests.\n\u2022just test <crate> runs a single crate.\nFixtures\n\u2022Integration tests seed from tests/fixtures/seed.sql.\n~/dev/orbit\n|\n1.08%|\n\u276fadd a retry with backoff to the webhook sender\n\u25c6Editsrc/webhooks.rs\n43\nfor attempt in 0..MAX_ATTEMPTS {\n44\nif self.post(event).await.is_ok() {\n45\nreturn Ok(());\n46\n}\n47\nsleep(backoff(attempt)).await;\n48\n}\n\u25c6Thought for 1.9s\nThe testing topic says the suite runs through just test.\n\u25c6Runjust test\nStarting postgres on :5433 ... readytest result: ok. 151 passed; 0 failed; 0 ignored\nAdded the retry in src/webhooks.rs. 151 tests pass with just test.\nCaptured after the turn\nAfter a turn completes, Grok reviews it in the background and records anything durable: conventions, decisions, and project facts. Capture runs on every completed turn and does not interrupt the session.\nStored as markdown\nNotes are markdown files, one topic per subject. Each project has its own workspace scope, and a global scope holds preferences that apply everywhere. /dream merges new observations into the topic they belong to, and /memory shows the files as they are on disk.\nRead back in later sessions\nBefore starting related work, Grok reads the topics that cover the area and applies them, including in sessions where the subject never comes up. Instructions in the current conversation take precedence over anything in a note.\nCaptured after the turn\nAfter a turn completes, Grok reviews it in the background and records anything durable: conventions, decisions, and project facts. Capture runs on every completed turn and does not interrupt the session.\nMemory holds the details most likely to matter in a later session: how the team writes and reviews code, decisions and the reasoning behind them, and durable facts about the project, from where a subsystem lives to which command runs the suite. Task state, tentative conclusions, secrets, and anything the repository or its docs already cover are left out.\nNotes are kept per project, plus a global set for preferences that apply everywhere.\nCapture runs after a turn completes and never blocks the session. Grok reviews the finished turn, writes anything worth keeping as a markdown note, and continues. Over time, /dream folds those notes into topic files, one per subject, so each project ends up with a small set of organized references.\nWhen you return to a project, Grok reads the topics that cover the area it is about to work in. Instructions in the current conversation take precedence over anything in a note.\n/memory opens a read-only browser of every memory file, grouped by scope, with a preview of the selected file. It is the fastest way to see what a session produced, and to find the file to edit when a note is wrong.\n~/dev/orbit\n|\n4.36%|\n\u276fadd a retry with backoff to the webhook sender\n\u25c6Editsrc/webhooks.rs\n\u25c6Thought for 1.9s\nThe testing topic says the suite runs through just test.\n\u25c6Runjust test\nStarting postgres on :5433 ... readytest result: ok. 151 passed; 0 failed; 0 ignored\nAdded the retry in src/webhooks.rs. 151 tests pass with just test.\nEnter:run\u2502Tab:complete\u2502Esc:clear\n\u2500Memory\u2500\n[\u2717]\n/ to filter...Global\nMEMORY.md1.2 KB \u00b7 2h ago\npreferences.md640 B \u00b7 2h ago\nWorkspace\nMEMORY.md2.4 KB \u00b7 3m ago\ntesting.md1.3 KB \u00b7 3m ago\ncode-style.md1.1 KB \u00b7 2d ago\ngateway.md3.8 KB \u00b7 2d ago\n9f2c4e1a-71b6-4d0e-8a3f-5c2d7b9e0f14__t000006-000006__n000.md812 B \u00b7 just now\nGlobal memory indexGenerated by Grok. Do not edit this file directly.Topics\n\u2022Reply preferences \u2014 How the user wants answers and PR descriptions written. (topics/preferences.md)\n\u2191/\u2193 nav\u2502/ search\u2502y copy path\u2502x delete\u2502t toggle (on)\u2502^F fullscreen\u2502Esc close",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "open-source",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552903,
-    "title": "Gemini Live audio",
-    "url": "https://simonwillison.net/2026/Sep/15/gemini-live/",
-    "published_at": "2026-09-15T22:47:07+00:00",
-    "fetched_at": "2026-09-17T23:24:30+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "15th September 2026\nGoogle released [Gemini 3.8 Live and 3.8 Live Extended Thinking](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/) today - two new speech-to-speech models that are a similar shape to OpenAI's [GPT-Live](https://openai.com/index/introducing-gpt-live/) family.\nI pointed GPT-6 Astra Extra High at the documentation and [had it build me this web UI](https://gist.github.com/simonw/067b7430c5b1f743af9419b0184c38ef) for trying out the new models. You can select a model and voice preset, enter an optional system prompt and then start a voice conversation through your browser, including the ability to interrupt the model while it is talking.\nThe [implementation](https://github.com/simonw/tools/blob/main/gemini-live.html) uses no libraries. It connects to the wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent?key=...\nWebSocket endpoint and uses a Web Audio API AudioContext\nfor both capture and playback.\nHere's [the Gemini Live tutorial](https://ai.google.dev/gemini-api/docs/live-api/get-started-websocket) for getting started with that WebSockets API.\nRecent articles\n[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026[OpenAI agents attacked RubyGems back in May](/2026/Sep/12/openai-agents-rubygems/)- 12th September 2026",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712585,
-    "title": "\u2018Now We Can Know Everything and Do Anything,\u2019 Jensen Huang Says at Dreamforce",
-    "url": "https://blogs.nvidia.com/blog/jensen-huang-dreamforce/",
-    "published_at": "2026-09-15T22:24:34+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "Know everything. Do anything.\nThat was the message NVIDIA founder and CEO Jensen Huang brought to Salesforce Dreamforce Tuesday, joining CEO Marc Benioff onstage in an appearance that coincided with the announcement of Koa \u2014 Salesforce\u2019s first CRM reasoning model, built on NVIDIA Nemotron 3 Super.\nHuang didn\u2019t just take the stage. He walked into the crowd \u2014 threading through the audience at Moscone Center, mic in hand, with Benioff alongside. \u201cWe\u2019re all following you, bro,\u201d Benioff told Huang at one point, drawing applause.\n\u201cWith electricity, we could power everything,\u201d Huang said, tracing the arc of industrial revolutions. \u201cWith the internet, you can find anything. And now, with artificial intelligence as an infrastructure layer across the planet, we can know everything and do anything.\u201d\nThat arc led directly to the announcement. Salesforce\u2019s first reasoning model was built by post-training NVIDIA Nemotron 3 Super on a proprietary synthetic dataset drawn from nearly three decades of enterprise CRM deployments.\nAI Safety\nWhen Benioff asked Huang about AI safety, Huang was direct.\n\u201cSafety is paramount in a lot of ways. It\u2019s job one,\u201d Huang said. \u201cHowever, safety is an engineering problem. We\u2019re developing computing systems after all \u2026 If you build a product or a service and you\u2019re not confident in its functionality, capability or safety, then don\u2019t release it.\u201d\nHe reiterated that innovation and leadership should coincide with safety and security. \u201cInnovation, speed and safe products \u2014 it\u2019s a false choice,\u201d Huang said. \u201cYou could definitely have both at the same time. So run as fast as you can. But if you feel at any given point in time the company\u2019s out of control, or the product\u2019s not going to be safe, take a pause and make sure you get it right.\u201d\nThroughout his talk, Huang offered a positive vision for the future of AI. He noted he was among the first to push back on the notion that AI would end the software industry. He also pushed back on the idea that AI is a threat to jobs.\n\u201cAs a result of our ambition, and with the productivity boost we get from AI, the sky\u2019s the limit,\u201d he added. \u201cEngage AI. Don\u2019t get left behind.\u201d\n\u201cEvery company, every enterprise, every country would become an AI company,\u201d Huang said. \u201cIt\u2019s going to be an agentic enterprise.\u201d\n\u201cThe sky is especially the limit for our Trailblazers,\u201d Benioff said, referring to the company\u2019s customer and developer community. \u201cI think this technology, the way it empowers people \u2026 the technology can partner with them to do this in incredible new ways.\u201d\nBecause NVIDIA Nemotron is open, Salesforce was able to fine-tune and run the model entirely within its own infrastructure. Salesforce controls the weights, the model runs on Salesforce\u2019s systems and no customer data is used during training or inference.\n\u201cNot a single byte of customer data was used,\u201d said Rohan Kumar, Salesforce\u2019s president of platform and engineering, who introduced Koa before Huang took the stage.\nOpen models went from 30% at the beginning of last year to now some 70%, Huang explained.\n\u201cPeople are both adopting closed models at exponential rates, but also building their own custom AIs \u2014 because every single software company is an AI company, and every single enterprise is going to be an agentic and AI enterprise.\u201d\nNVIDIA is one of them \u2014 running on Salesforce across sales, service, marketing and operations, and currently piloting Agentforce for customer-support workflows.\nKoa was built using supervised fine-tuning and reinforcement learning with NVIDIA NeMo RL, NeMo Gym and NeMo AutoModel.\nThe training corpus covers synthetic enterprise scenarios across 14+ industries \u2014 manufacturing, financial services, healthcare and travel.\nIn Salesforce\u2019s CRM Bench, a model benchmark that includes a suite of real-world tasks like updating an opportunity, routing a case, or scheduling a follow-up, Koa already matches or exceeds leading model performance on CRM actions with 3x fewer errors.\nIn Use Now\nKoa is already running inside Salesforce, powering an employee agent in Slack, and is moving into customer pilots in October as a customer-selectable model in Agentforce, starting with Formula 1, UChicago Medicine, Baxter Credit Union, 1-800Accountant, Engine and Xero. General availability is expected winter 2026 in U.S. regions.",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553157,
-    "title": "Flow matching for Beginners | @ariG23498",
-    "url": "https://www.youtube.com/watch?v=hXQZ6lyRCsI",
-    "published_at": "2026-09-15T20:37:58+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "Understand flow matching from ground up with more visualization and less math.\n\nBlog: https://huggingface.co/spaces/ariG23498/flow-matching\n\nTimestamps:\n00:00 - Introduction\n00:50 - Noise to Image\n06:23 - What to train\n13:23 - Train velocities\n19:54 - Training and Conclusion\n\nAcknowledgements:\nhttps://www.youtube.com/playlist?list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg\nhttps://www.youtube.com/playlist?list=PL57nT7tSGAAXwjhDYcxEycx5W7YoSrZyt\nhttps://www.youtube.com/playlist?list=PLoROMvodv4rNdy8rt2rZ4T2xM0OjADnfu\nhttps://www.youtube.com/playlist?list=PL4bm2lr9UVG3SN79Y6WBe4OOlEiO88vie\n\nX: https://x.com/ariG23498\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/hXQZ6lyRCsI",
-    "topic": "research",
-    "tags": [
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553126,
-    "title": "Anthropic researchers are quitting... and now we know why",
-    "url": "https://www.youtube.com/watch?v=7r4ikZHm9AI",
-    "published_at": "2026-09-15T17:45:39+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "youtube",
-    "body": "Macroscope can auto-approve your team\u2019s PRs safely. Try it here:\nhttps://macroscope.com/?utm_source=fireship\n\nAnthropic just dropped a 154-page report on how hackers, scientists, and rival AI labs have been abusing Claude. Let's dive in.\n\n#coding #programming\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev\n\nauthor: Fireship\n\nvideo: https://www.youtube.com/embed/7r4ikZHm9AI",
-    "topic": "coding",
-    "tags": [
-      "models",
-      "open-source",
-      "research",
-      "video",
-      "coding",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
