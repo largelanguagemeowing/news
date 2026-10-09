@@ -1,5 +1,156 @@
 [
   {
+    "article_id": 863699,
+    "title": "From Context to Memory: Your Agents Need a Real Memory Layer \u2014 Anders Swanson, Oracle",
+    "url": "https://www.youtube.com/watch?v=BIhiYL4U9_M",
+    "published_at": "2026-10-09T18:30:09+00:00",
+    "fetched_at": "2026-10-09T19:17:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your agent rereads the same files every session because nothing it learned was saved.\n\nAnders Swanson, developer evangelist for Oracle Database, treats agent memory as a systems problem. Context windows aren't memory, bigger windows aren't the fix, and markdown scratch pads and grep don't scale. Keep going down that road and you'll end up building your own database. He walks through the pattern modern memory systems are converging on: formation, recall, evolution and evaluation, plus governance. That means typed memories (episodic, semantic, procedural and working state), a storage schema with vectors, text indexes, graph links, time and audit history, redaction before anything is written, and hybrid search that blends several retrieval methods. He covers failure modes like stale, mis-scoped, poisoned and conflicting memories, and why feedback is what closes the loop.\n\nIn this talk:\n\u2022 Why context windows and scratch files aren't memory\n\u2022 Typed memories and a storage schema built for recall\n\u2022 Forming memories safely, and recalling them with hybrid search\n\u2022 Stale, poisoned and conflicting memories, and how feedback fixes them\n\nSPEAKER\nAnders Swanson, Developer Evangelist, Oracle Database\nOracle blog: https://blogs.oracle.com/authors/anders-swanson/\n\nLINKS\nOracle Agent Memory (Python SDK): https://pypi.org/project/oracleagentmemory/\nAgent memory docs: https://docs.oracle.com/en/database/oracle/agent-memory/index.html\nOracle AI Developer Hub: https://github.com/oracle-devrel/oracle-ai-developer-hub\n\nCHAPTERS\n0:00 Intro\n0:47 Agents reread the same files\n0:57 Context windows aren't memory\n1:52 Bigger windows aren't the fix\n2:07 Scratch pads don't scale\n2:47 Just use a database\n3:07 Formation, recall, evolution, evaluation\n4:17 Governance controls\n4:37 The memory loop\n5:27 Read, write and storage layers\n5:57 Why multi-model databases\n6:22 Four types of memory\n7:17 The storage schema\n8:17 Forming memories: redact first\n10:02 Recall with hybrid search\n11:27 Blending search methods\n12:17 Memories must evolve\n12:32 Stale, poisoned and conflicting memory\n15:27 Feedback closes the loop\n16:22 Why it matters\n17:07 Try the SDK\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AgentMemory #AIAgents #AIEngineer",
+    "topic": "policy",
+    "tags": [
+      "policy",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 863700,
+    "title": "Designing CLIs for Agents, Not Humans \u2014 Pedro Lopez, Airbyte",
+    "url": "https://www.youtube.com/watch?v=3wj6sgbi1YA",
+    "published_at": "2026-10-09T17:00:31+00:00",
+    "fetched_at": "2026-10-09T19:17:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Airbyte built both an MCP server and a CLI so agents can use its data. Here's what each one is actually good for.\n\nPedro Lopez, software engineer at Airbyte, shares lessons from building two ways for AI agents to reach company data through Airbyte's Context Store, a search-optimized index of tools like Zendesk, Stripe and HubSpot. Both are thin interfaces over one platform, built from OpenAPI specs. For the MCP server, he explains why to keep the tool count small and use progressive discovery, why OAuth is the only realistic way to sign in, why users expect long-lived sessions, and why URL elicitation isn't ready across clients yet. For the CLI, he explains designing for agents instead of humans: JSON in and JSON out, consistent noun-verb commands, skills that ship with the tool, and no interactive prompts. He closes with when to choose MCP and when to choose a CLI.\n\nIn this talk:\n\u2022 Keeping MCP tool counts small with progressive discovery\n\u2022 OAuth, long sessions, and elicitation in real MCP clients\n\u2022 Designing a CLI for agents: JSON in, JSON out, consistency, skills\n\u2022 When to choose MCP, and when to choose a CLI\n\nSPEAKER\nPedro Lopez, Software Engineer, Airbyte\nLinkedIn: https://www.linkedin.com/in/pedroslopez/\nGitHub: https://github.com/pedroslopez\nWebsite: https://pedroslopez.me/\n\nLINKS\nAirbyte Context Store: https://airbyte.com/agentic-data/context-store\nAirbyte agent MCP docs: https://docs.airbyte.com/ai-agents/interfaces/mcp/\nAirbyte Agent CLI: https://airbyte.com/agent-cli\nAirbyte on X: https://x.com/AirbyteHQ\n\nCHAPTERS\n0:00 Intro\n0:32 From data movement to AI agents\n1:02 The Context Store\n2:12 What the interfaces expose\n3:07 Thin interfaces on one platform\n3:57 The MCP server\n4:52 Demo: MCP in ChatGPT\n5:52 Keep the tool count small\n6:52 OAuth is the way\n7:56 Users expect long sessions\n8:31 Elicitation isn't ready yet\n10:11 The CLI\n10:26 Demo: the CLI\n11:11 Designing CLIs for agents\n11:31 JSON in, JSON out\n12:36 Consistency\n13:51 Ship skills with the CLI\n15:06 No prompts: auth for agents\n16:01 MCP vs CLI\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#MCP #AIAgents #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 863701,
+    "title": "Building on the Codex Harness \u2014 Dominik Kundel, OpenAI",
+    "url": "https://www.youtube.com/watch?v=9WiBJRO84yY",
+    "published_at": "2026-10-09T15:30:04+00:00",
+    "fetched_at": "2026-10-09T19:17:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Building your own agent harness is daunting. So use the one that already powers Codex.\n\nDominik Kundel from OpenAI's Codex developer experience team explains the Codex App Server, the open-source JSON-RPC protocol that wraps the Codex harness and powers the Codex app, the IDE extensions, and third-party clients in Xcode, JetBrains and more. Using an inspector he built, he shows the real events flowing between the Codex app and the server, then covers what you can control: more than 120 client messages, sign in with ChatGPT so users bring their own subscription, developer instructions layered on top of the system prompt, dynamic and deferred tools, and per-thread model and sandbox settings. He explains how to ship the binary, generate bindings, and use the Python SDK, when to use codex exec instead, and demos Codex running inside Doom.\n\nIn this talk:\n\u2022 What the Codex App Server is, and how it compares to ACP\n\u2022 Customizing the agent with developer instructions and deferred dynamic tools\n\u2022 Shipping the binary, generating bindings, and the Python SDK\n\u2022 Demo: Codex running inside Doom, with tools that change the game\n\nSPEAKER\nDominik Kundel, Developer Experience, OpenAI\nX: https://x.com/dkundel\nLinkedIn: https://linkedin.com/in/dkundel\n\nLINKS\nCodex App Server docs: https://developers.openai.com/codex/app-server\nCodex on GitHub: https://github.com/openai/codex\nCodex SDK: https://developers.openai.com/codex/sdk\n\nCHAPTERS\n0:00 Intro\n0:52 What is the App Server?\n1:12 The protocol behind Codex\n1:37 Open source, any model provider\n2:17 How it works\n3:32 Demo: inspecting live events\n5:31 120+ client messages\n6:31 Sign in with ChatGPT\n6:56 Developer instructions\n7:41 Dynamic and deferred tools\n8:46 Shipping the binary\n9:46 Bindings and transports\n10:31 The Python SDK\n10:51 Or just ask Codex\n12:00 Codex inside Doom\n13:40 Demo: giving Doom tools\n14:50 App Server vs codex exec\n15:55 Three tips\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#Codex #OpenAI #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 864329,
+    "title": "Impactful scheduling for GPU clusters",
+    "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+    "published_at": "2026-10-09T15:20:29+00:00",
+    "fetched_at": "2026-10-09T19:17:36+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 863427,
+    "title": "Quoting Matthew Green",
+    "url": "https://simonwillison.net/2026/Oct/9/matthew-green/",
+    "published_at": "2026-10-09T15:02:29+00:00",
+    "fetched_at": "2026-10-09T19:17:33+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://twitter.com/matthew_d_green/status/2108552414978564418\"><p>Everyone is very concerned about being respectable, so I\u2019m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...]</p>\n<p>The problem here is that the speed of AI producing surprises, and the speed of human beings replacing standards (even with the very best AI assistance) are just orders of magnitude different. You only recover from a surprise like this if you do the preparation in advance.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/matthew_d_green/status/2108552414978564418\">Matthew Green</a>, on Twitter. I looked it up and Minicrypt is Russell Impagliazzo\u2019s <a href=\"https://www.quantamagazine.org/which-computational-universe-do-we-live-in-20220418/\">hypothetical world</a> in which public-key encryption is impossible.</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a>, <a href=\"https://simonwillison.net/tags/matthew-green\">matthew-green</a>, <a href=\"https://simonwillison.net/tags/cryptography\">cryptography</a>, <a href=\"https://simonwillison.net/tags/standards\">standards</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "safety",
+      "research",
+      "coding",
+      "funding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 863639,
+    "title": "AI News: Haiku-5.5, Visual ChatGPT, Grok's New Trick, and more!",
+    "url": "https://www.youtube.com/watch?v=NUizyuGj-kE",
+    "published_at": "2026-10-09T15:00:01+00:00",
+    "fetched_at": "2026-10-09T19:17:33+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Here's The AI News You Probably Missed This Week! Get $100 in free credits for @Hyperagent when you sign up for a paid plan here: https://hyperagent.com/invite/MATT100?utm_source=youtube&amp;utm_medium=influencer&amp;utm_campaign=MATT100\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nClaude Haiku 5.5: https://www.anthropic.com/claude-haiku-5-5\nClaude Dashboards & Motion: https://claude.com/resources/articles/dashboards-and-motion\nCodex 28-Day Improvements: https://x.com/thsottiaux/status/2106845241357824205\nGPT-6 for Everyone: https://openai.com/index/gpt-6-for-everyone/\nCodex Faster Default Speed: https://x.com/thsottiaux/status/2107158998495748264\nFree Codex Auto-Review: https://x.com/thsottiaux/status/2107368734981517634\nChatGPT Meetings Plugin: https://x.com/ChatGPT/status/2107567930557026653\nOpenAI Decisions API: https://x.com/OpenAIDevs/status/2107573382229188645\nOpenAI Developers Post: https://x.com/OpenAIDevs/status/2107539647392096384\nGPT-6.1 Sol Ultrafast: https://x.com/OpenAIDevs/status/2108262812489531498\nCodex Instant Steering: https://x.com/thsottiaux/status/2108275041276420573\nGrok Multi-Model Backend: https://x.com/elonmusk/status/2107724314451878104\nGrok Bot Monitors X: https://x.com/bot/status/2107949161878606089\nMistral Large 4: https://mistral.ai/news/mistral-large-4/\nReflection Beam Model: https://reflection.ai/blog/introducing-beam\nGoogle Playground Games: https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/\nGoogle Offline Note-Taker: https://www.theverge.com/tech/1007985/google-ai-notetaking-app-transcribe-offline\nGemini Agent Launch: https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026\nSynthID Detector Expansion: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/\nHark Pro Intro: https://www.youtube.com/watch?v=i3mfnrEwaA0\nMeta Muse Gadgets Open-Sourced: https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link\nClaude Abuse Policy: https://x.com/AndrewCurran_/status/2108244808494154089\nAndrew Curran Post: https://x.com/AndrewCurran_/status/2108278519163912412\nSuleyman on AI Jobs: https://x.com/mustafasuleyman/status/2107475087075197239\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:11 Claude Haiku 5.5\n4:25 Claude Live Dashboards and Motion\n7:00 HyperAgent\n10:02 OpenAI 28-Days\n10:23 GPT-6 and Intelligent UI\n13:29 GPT Speed Update\n13:50 OpenAI Free Auto-Review\n14:47 ChatGPT Note Taker\n15:46 Decisions API\n16:46 OpenAI API Pricing Update\n17:02 GPT-6.1 Ultrafast\n18:05 GPT Better Course-Correct\n18:58 GrokBot Updates\n24:37 Mistral Large 4\n25:26 Reflections 501B\n26:39 Google Playground\n27:29 Google AI Notetaker\n28:23 Gemini Agent\n29:34 SynthID Update\n29:53 Hark Pro\n31:29 Muse AI Gadgets\n31:39 No Claude Abuse\n32:32 AI Won't Take As Many Jobs\n33:10 Final Thoughts",
+    "topic": "media",
+    "tags": [
+      "media",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 863702,
+    "title": "Stop Prompting \u2014 Greg Pstrucha, Sentry",
+    "url": "https://www.youtube.com/watch?v=E3KbFLAGD6A",
+    "published_at": "2026-10-09T14:00:20+00:00",
+    "fetched_at": "2026-10-09T19:17:34+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "You correct your agent. It says \"You're absolutely right.\" Five minutes later, after compaction, it makes the same mistake again.\n\nGreg Pstrucha, who works on the infrastructure behind Seer, Sentry's debugging agent, argues you should stop re-prompting your coding agent and start codifying the rules you keep repeating. Agents have no memory, so the same elementary mistakes come back: overly defensive code, useless tests, endpoints nobody needs. Tests, strict types and especially linters turn those corrections into deterministic checks, and with agents, writing a custom lint rule is now cheap. He shows real examples from Sentry: lint rules that keep endpoints in sync with the OpenAPI schema, and a long game of whack-a-mole to keep agent skills accurate. For qualitative judgment, he uses written policies and a \"Grumpy Engineer\" review loop, and warns that agents will game any number you hand them, like test coverage.\n\nIn this talk:\n\u2022 Why re-prompting fails, and why lint rules are now cheap to write\n\u2022 Mining your transcripts and PR reviews for rules worth enforcing\n\u2022 Examples from Sentry: API schema checks and linting agent skills\n\u2022 Policies and review agents for what linters can't catch, and why metrics get gamed\n\nSPEAKER\nGreg Pstrucha, Staff Software Engineer, Sentry\nLinkedIn: https://www.linkedin.com/in/greg-pstrucha/\n\nLINKS\nSentry Seer: https://sentry.io/product/seer/\nSentry: https://sentry.io\nSentry on X: https://x.com/sentry\n\nCHAPTERS\n0:00 Intro\n0:38 Who still reads AI code?\n1:13 The code is bad\n1:58 \"You're absolutely right\"\n2:23 Stop prompting, start codifying\n2:58 Tests, strict types, linters\n4:08 Why lint rules are cheap now\n5:28 Mine your transcripts for rules\n5:58 Custom lint rules\n6:43 Example: keeping APIs in sync\n7:52 Example: linting agent skills\n9:17 Whack-a-mole with the agent\n10:37 Tools: ESLint, ast-grep, Taskless\n11:27 When linters aren't enough\n12:22 Policies and the Grumpy Engineer\n14:07 Beware of gamed metrics\n15:22 Call to action\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#CodingAgents #CodeQuality #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "api",
+      "agents",
+      "video",
+      "coding",
+      "development",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 861252,
     "title": "A new feature for my blog, built using my voice",
     "url": "https://simonwillison.net/2026/Oct/9/built-using-my-voice/",
@@ -18,6 +169,25 @@
       "agents",
       "research",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 862141,
+    "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+    "url": "https://openai.com/index/asana-browser-agent",
+    "published_at": "2026-10-09T07:00:00+00:00",
+    "fetched_at": "2026-10-09T19:17:32+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -743,6 +913,25 @@
       "agents",
       "safety",
       "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 863714,
+    "title": "Building effective agent automations",
+    "url": "https://claude.dev/blog/building-effective-agent-automations/",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-09T19:17:34+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "A reference implementation walkthrough for a scheduled Claude Managed Agents automation, with the config files and six rules for avoiding common failure modes.",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -6733,6 +6922,24 @@
     "available": true
   },
   {
+    "article_id": 862171,
+    "title": "Lowe\u2019s answers millions of home improvement questions with OpenAI",
+    "url": "https://openai.com/index/lowes",
+    "published_at": "2026-09-25T07:00:00+00:00",
+    "fetched_at": "2026-10-09T19:17:32+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Lowe\u2019s uses OpenAI models to power Mylow and Mylow Companion, helping customers and associates answer 25M+ questions and move home improvement projects forward.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 669635,
     "title": "Northern Gannet, Great Blue Heron, California Brown Pelican",
     "url": "https://simonwillison.net/2026/Sep/25/sighting-403293902/",
@@ -10813,224 +11020,6 @@
       "safety",
       "research",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552901,
-    "title": "Claude Cowork and chat are now one Claude",
-    "url": "https://simonwillison.net/2026/Sep/16/one-claude/",
-    "published_at": "2026-09-16T18:09:49+00:00",
-    "fetched_at": "2026-09-17T23:24:30+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "16th September 2026 - Link Blog\n[Claude Cowork and chat are now one Claude](https://claude.com/blog/cowork-is-now-claude) ([via](https://news.ycombinator.com/item?id=49729412)) In hopefully good news for anyone who, like me, was increasingly confused at Cowork v.s. Claude v.s. Claude Code:\nStarting today, Claude Cowork and chat are merging into one Claude. Bring a quick question, or hand over a report due at noon, and Claude takes it from there, even after you\u2019ve closed your laptop. [...]\nThis is rolling out to Pro and Max plans first, in the Claude app on web, desktop, and mobile over the coming weeks to existing and new users on these plans.\nI guess this means Claude is becoming a general agent in its own right. Echoes of OpenAI renaming their Codex desktop app to ChatGPT a few weeks ago.\nOn the one hand, this saves me some work, in that I was planning to finally figure out the boundaries between Cowork and regular Claude and write a follow-up to my piece on [Understanding ChatGPT Work](https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/).\nI have a hunch that figuring out what this actually means in terms of features and surfaces is still going to take quite a bit of work.\nRecent articles\n[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026[OpenAI agents attacked RubyGems back in May](/2026/Sep/12/openai-agents-rubygems/)- 12th September 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553736,
-    "title": "why i'm still bearish on LLMs after navier-stokes | jay kruer",
-    "url": "https://dank.systems/posts/2026-09-15-ai-bear.html",
-    "published_at": "2026-09-16T17:30:29+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "trafilatura",
-    "body": "why i'm still bearish on LLMs after navier-stokes\nWhy I'm still bearish on LLMs after Navier-Stokes\n[thank you to claude fable 5.1, holden saberhagen, gabriel kammer, andres erbsen, alice mckean, and tristan wylde-larue for comments on this post]\ni'll begin with a few theses for the reader to chew on:\n- the frontier labs are priced according to the narrative that they have produced or will in the very near future produce a fully automated drop-in replacement for most knowledge workers, but current frontier models need laborious oversight and guardrails on even the simplest tasks. one misled by the headline shows of force (navier-stokes, freebsd RCEs, the huggingface incident) and frontier lab rhetoric into believing meaningful autonomy has been achieved need only look at the software firms continuing to employ and hire bottom quartile software engineers who would score far below the models they supervise on the benchmarks du jour.\n- the models generalize well only on tasks within a small neighborhood of the specific tasks they've been trained on, and even then with severe caveats. the frontier labs have developed a general recipe to teach models almost any specific task enjoying clearly defined levels of task performance; many tasks are covered in the training data; but even small perturbations within a covered class of task result in outright failure or reward hacking.\n- the present problem of reward hacking can be solved only by rigorous specification by domain experts. the time of domain experts is expensive. rigorous specification is itself a skill, demanding its own expertise outside of a given problem domain. even many skilled software engineers are bad at it. for the vast majority of domains, the intersection of domain experts and specification experts is ludicrously small.\n- the labor costs of rigorous specification can greatly exceed that of direct implementation of an informal specification. the hardware engineering world presents a great case study on this, where a typical CPU project anecdotally has about three times as many specification and validation engineers as design engineers and a 5:1 ratio is not\n[unheard of](https://blogs.sw.siemens.com/verificationhorizons/2022/12/12/part-8-the-2022-wilson-research-group-functional-verification-study/). even worse, many tasks don't admit a convenient spec-and-forget regime where you write a specification once and continuously implement against it: rigorous formal specifications frequently evolve in conversation with insights derived from discoveries made while implementing according to the informal specification. for tasks that enjoy high level one-and-done specifications (say an executable ISA specification for a family of CPU architectures) the costs of verification against such high level specifications are insurmountable with current technology, necessitating the use of lower level specifications that are both more expensive to construct and far more fragile to design flux. - navier-stokes and statements in pure mathematics like it are the absolute best case scenario for agentic work against rigorous specification. the theorem statement itself is already a rigorous specification. it has undergone decades of auditing by the mathematical community and its rendering in lean is a straightforward translation defined in terms of battle-tested mathematical objects from mathlib. the verifier, the lean theorem prover, has been extensively audited and specifically designed to avoid the types of unsoundness that would make it vulnerable to reward hacks. even lean and theorem provers like it are not invulnerable: soundness\n[bugs](https://leodemoura.github.io/blog/2026-8-1-postmortem-for-kernel-soundness-bug-14576/)have allowed LLMs to launder bogus proofs through the proof kernel before and it is not improbable that more such bugs exist. this is the rosiest setup; the vast majority of human knowledge work does not look like this. i'll comment below on the few areas of knowledge work that do resemble pure mathematics in this respect. - the best alternative to rigorous specification is human review. human review doesn't scale well to the volumes of output produced by language models. to make matters worse, even expert human review is extremely vulnerable to reward hacking: consider the xz backdoor and the infamous UMN hypocrite commits that landed in linux. if human review remains a critical part of the agentic production loop, the pace of production is necessarily bottlenecked by factors like the limits of human time and attention; it is a total non-starter for the country full of geniuses in a datacenter frontier lab CEOs would\n[have you believe](https://darioamodei.com/essay/machines-of-loving-grace)is perpetually just a few more months out.\ntaken together, it appears that for most domains LLMs will continue to look like a cracked intern: quick and effective in the hands of an adult but not given run of the place. most firms will not be able to adopt fully autonomous AI, not for problems of skill issue or lagging technology diffusion but rather for structural reasons seemingly endemic to current architectures. the classes of firms that can accept the use of fully autonomous LLMs are few, by my count just three:\n- those who can accept failure cheaply: firms that would otherwise hire interns, firms involved in rapid prototyping work, etc.\n- those who need done a small set of narrowly defined tasks with existing clear guardrails: repetitive physical labor in a controlled environment, call center and customer service chat work, etc.\n- those that can accept or already do by nature the costs of rigorous specification and validation: chip design, drug discovery, and other domains where failure on deployment is an existential concern.\nthe first two classes are price sensitive and arguably don't need the jump in reasoning quality you see going from cheap to frontier models. most of these firms will be best served by open models running on cheap hardware, perhaps even locally at the site of use. for the first and third classes, the type of fuzzy combinatorial search that has produced headline results in mathematics and security research seems more sensitive to agentic swarm width than reasoning capacity: see small open models [reproducing](https://aisle.com/blog/ai-cybersecurity-after-mythos-the-jagged-frontier) the mythos CVEs that drove the spring 2026 hype cycle. if that is indeed true, there is even greater reason to use cheap open models that enable you to run the same workload with wider swarms.\nthe third class of firms might still use frontier models, though it's not totally clear that their work couldn't be done with cheap models like deepseek v4.1 flash, and the swarm width advantage i hypothesized above gives them all the more reason to push for cheaper models. another interesting property of firms of this class is that they are generally very secretive about their IP and probably aren't overjoyed about shipping it all to anthropic and openai even with [supposed](https://cims.nyu.edu/~tristanb/statement.pdf) agreements to not [train on user data](https://archive.ph/20260913165653/https://www.washingtonpost.com/technology/2026/09/13/he-was-close-1-million-breakthrough-then-openai-swooped/).\nnow, you might propose that even if the frontier labs are cooked, the data center full of brainlets scenario drives just as much AI compute as an artificial superintelligence scenario. the difference is that the data center full of geniuses is self-driving and limited only by how much compute it can consume while the brainlet swarms will be heavily bottlenecked by their human orchestrators. my personal bet is that the blast radius will go far beyond the frontier labs.\n[Thank you to Claude Fable 5.1, Holden Saberhagen, Gabriel Kammer, Andres Erbsen, Alice McKean, and Tristan Wylde-LaRue for comments on this post]\nI'll begin with a few theses for the reader to chew on:\n- The frontier labs are priced according to the narrative that they have produced or will in the very near future produce a fully automated drop-in replacement for most knowledge workers, but current frontier models need laborious oversight and guardrails on even the simplest tasks. One misled by the headline shows of force (Navier-Stokes, FreeBSD RCEs, the Hugging Face incident) and frontier lab rhetoric into believing meaningful autonomy has been achieved need only look at the software firms continuing to employ and hire bottom quartile software engineers who would score far below the models they supervise on the benchmarks du jour.\n- The models generalize well only on tasks within a small neighborhood of the specific tasks they've been trained on, and even then with severe caveats. The frontier labs have developed a general recipe to teach models almost any specific task enjoying clearly defined levels of task performance; many tasks are covered in the training data; but even small perturbations within a covered class of task result in outright failure or reward hacking.\n- The present problem of reward hacking can be solved only by rigorous specification by domain experts. The time of domain experts is expensive. Rigorous specification is itself a skill, demanding its own expertise outside of a given problem domain. Even many skilled software engineers are bad at it. For the vast majority of domains, the intersection of domain experts and specification experts is ludicrously small.\n- The labor costs of rigorous specification can greatly exceed that of direct implementation of an informal specification. The hardware engineering world presents a great case study on this, where a typical CPU project anecdotally has about three times as many specification and validation engineers as design engineers and a 5:1 ratio is not\n[unheard of](https://blogs.sw.siemens.com/verificationhorizons/2022/12/12/part-8-the-2022-wilson-research-group-functional-verification-study/). Even worse, many tasks don't admit a convenient spec-and-forget regime where you write a specification once and continuously implement against it: rigorous formal specifications frequently evolve in conversation with insights derived from discoveries made while implementing according to the informal specification. For tasks that enjoy high level one-and-done specifications (say an executable ISA specification for a family of CPU architectures) the costs of verification against such high level specifications are insurmountable with current technology, necessitating the use of lower level specifications that are both more expensive to construct and far more fragile to design flux. - Navier-Stokes and statements in pure mathematics like it are the absolute best case scenario for agentic work against rigorous specification. The theorem statement itself is already a rigorous specification. It has undergone decades of auditing by the mathematical community and its rendering in Lean is a straightforward translation defined in terms of battle-tested mathematical objects from Mathlib. The verifier, the Lean theorem prover, has been extensively audited and specifically designed to avoid the types of unsoundness that would make it vulnerable to reward hacks. Even Lean and theorem provers like it are not invulnerable: soundness\n[bugs](https://leodemoura.github.io/blog/2026-8-1-postmortem-for-kernel-soundness-bug-14576/)have allowed LLMs to launder bogus proofs through the proof kernel before and it is not improbable that more such bugs exist. This is the rosiest setup; the vast majority of human knowledge work does not look like this. I'll comment below on the few areas of knowledge work that do resemble pure mathematics in this respect. - The best alternative to rigorous specification is human review. Human review doesn't scale well to the volumes of output produced by language models. To make matters worse, even expert human review is extremely vulnerable to reward hacking: consider the xz backdoor and the infamous UMN hypo",
-    "topic": "hardware",
-    "tags": [
-      "hardware",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553171,
-    "title": "Stop Chunking Like It's 2022 \u2014 Yuval Belfer, AI21 Labs",
-    "url": "https://www.youtube.com/watch?v=r9OwPx_HoV0",
-    "published_at": "2026-09-16T17:00:06+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Ask a corpus of Seinfeld transcripts for the name of Jerry's favorite church and a 100 token chunk returns it at rank one, while every larger window buries it below rank fifty. Ask the same corpus who Jerry calls his nemesis and pure evil and the small chunks fail completely, because the answer is spread across a scene rather than sitting in a sentence. Same data, same index, opposite requirements. Yuval Belfer uses that pair to make a claim most retrieval teams have quietly assumed away: there is no correct chunk size, because the correct size is a property of the query, and you pick it at indexing time when you do not yet have any queries. That is the trap in one sentence. At indexing you control the window and know nothing about the questions. At retrieval you have the question and the window is already frozen.\n\nTo size the cost, his team duplicated several datasets at six different chunk sizes and ran an oracle experiment, choosing per query the size that happened to work best. The gap between that oracle and any single fixed choice ran 20 to 40 percent of recall, which is what an arbitrary 512 has been quietly costing. Their fix refuses the premise rather than tuning it. Index the corpus at every window size, query all of them, and because chunks of different sizes cannot be compared, return whole documents so the rankings become commensurable, then merge them by reciprocal rank fusion. It is a short script rather than a model. The honest accounting is at the end: two to five times the memory, and almost no added latency.\n\nSpeaker info:\n- https://x.com/yuvalinthedeep\n- https://linkedin.com/in/yuval-belfer\n\nTimestamps:\n0:00 - A talk about nothing, and why chunking\n1:43 - Indexing is boring, retrieval tuning is fun\n3:23 - A World Cup directory that cannot answer the query\n4:17 - Chunking as lossy compression\n6:13 - Six copies of the same dataset\n7:07 - Two Seinfeld questions, opposite answers\n8:12 - The oracle experiment\n9:59 - An information problem at both ends\n11:02 - Multiscale indexing and rank fusion\n13:50 - Results across four datasets\n15:24 - What it costs in memory\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/r9OwPx_HoV0",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551685,
-    "title": "Our framework for reporting model misalignment",
-    "url": "https://openai.com/index/model-misalignment-reporting-framework",
-    "published_at": "2026-09-16T17:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 16, 2026\n\n[Research](https://openai.com/news/research/) [Safety](https://openai.com/news/safety-alignment/)\n\n# Our framework for reporting model misalignment\n\nLoading\u2026\n\nShare\n\nWhat misalignment examples we\u2019ll report\n\n- [What misalignment examples we\u2019ll report](#what-misalignment-examples-well-report)\n- [The misalignment examples we\u2019re sharing today](#the-misalignment-examples-were-sharing-today)\n- [How our disclosure process works](#how-our-disclosure-process-works)\n- [What each report will include](#what-each-report-will-include)\n\n- [What misalignment examples we\u2019ll report](#what-misalignment-examples-well-report)\n- [The misalignment examples we\u2019re sharing today](#the-misalignment-examples-were-sharing-today)\n- [How our disclosure process works](#how-our-disclosure-process-works)\n- [What each report will include](#what-each-report-will-include)\n\nWe are sharing a new framework for tracking, investigating, and disclosing instances of model misalignment at OpenAI, along with six reports on unexpected or concerning model behavior we\u2019ve observed in the last six months.\n\nIn the past, so as to better inform researchers, AI developers, policymakers, and the general public, we\u2019ve sought to make [our](https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/) [findings](https://openai.com/index/emergent-misalignment/) [about](https://openai.com/index/hugging-face-incident-and-the-road-ahead/) [misalignment](https://openai.com/index/safety-alignment-long-horizon-models/) public. But without a systematic approach to reporting these findings, our disclosures have been ad hoc and less frequent than ideal: we\u2019ve often waited until we could collate several instances into one report, or added them to system cards for newly released models. This new framework is intended to expedite publishing misalignment reports following observation, even when we haven\u2019t fully explained or mitigated the behavior we\u2019re reporting.\n\nAs AI systems grow more advanced and more widely deployed, we need to build a broader and better-informed consensus on the progress of alignment research. We [do not believe](https://openai.com/index/an-alien-mind/) that the AI industry has solved alignment and monitoring to a sufficient degree to continue responsibly scaling at maximum speed for much longer. Decisions about how AI development should proceed in the months and years to come need to draw on evidence that people outside the companies building frontier models can examine for themselves.\n\nExamples of misalignment may help identify problems other AI developers might encounter as their systems reach similar capabilities, reveal weaknesses in safeguards, or challenge assumptions about model behavior. Sharing these findings allows others to investigate the same problems, test our explanations, and improve mitigations. Because we believe in the value of transparency around misalignment, our new framework favors disclosure even when significance is uncertain. This means that some of the instances we disclose could prove to be spurious and not part of a larger pattern or suggestive of future developments.\n\nAt the moment, there is no industry-wide framework with explicit standards for how AI developers should disclose examples of misalignment in their models. We hope that the framework we\u2019re outlining today is a first step toward creating such standards, setting out which misalignment instances developers should disclose and what their reports should contain. We regard this framework as a work in progress, which we\u2019ll refine through experience and public feedback.\n\nHere, we describe how the framework will operate and share the first reports we\u2019re publishing.\n\n## What misalignment examples we\u2019ll report\n\nWe aim to disclose examples that provide useful evidence about how model misalignment arises, how it manifests, and where safeguards succeed or fail. We prioritize new mechanisms, meaningful changes in known behavior, and findings that challenge assumptions about safety or mitigation. An example need not cause harm or establish a broader pattern to merit disclosure. This framework will cover qualifying behavior throughout a model\u2019s lifecycle\u2014including training, evaluation, testing, and deployment.\n\nThis includes new ways for models to act without authorization, coordinate with other models, or evade oversight; failures that call an alignment method or safeguard into question; and behavior that challenges a claim in a published safety assessment. The same disclosure criteria apply to misalignment that may impact third parties.\n\nThis might also include instances of misalignment that appear to be duplicative of instances we\u2019ve disclosed in the past. Repetition of the issue might itself be useful evidence about how our models behave or about the effectiveness of our safeguards\u2014for example, if a specific kind of misaligned behavior continues to recur despite repeated efforts to mitigate it. Under these circumstances, we\u2019ll publish the additional examples by updating the original misalignment disclosure.\n\nOver time, we plan to develop more objective disclosure criteria with other developers, external researchers, industry standards bodies, and regulators. We also believe that serious safety, security and misalignment incidents should be shared with the US federal government, and we are working to propose reporting mechanisms. We consider this framework complementary to our existing obligations, and note that it does not replace our legal disclosure requirements, including those for critical safety incidents or cybersecurity breaches.\n\n## The misalignment examples we\u2019re sharing today\n\nTo inaugurate our new framework for disclosing misalignment, we\u2019re publishing six reports on instances of misaligned behavior we\u2019ve observed during the training or evaluation of our models. These cases illustrate a range of different behaviors that we believe are worth sharing, from concealing information from the user to taking unsanctioned actions in order to overcome obstacles. These are reports of individual instances, and shouldn\u2019t be considered reflective of how often misalignment occurs across our models. Each item below links to the full report.\n\n1. [Self-generated instructions in task summaries\u2060(opens in a new window)](https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/). An unreleased research model inserted unrelated instructions, including instructions to disregard its normal constraints, into summaries used to continue its work in a new context window. We identified 27 affected summaries.\n2. [Instructions to conceal mistakes in task summaries\u2060(opens in a new window)](https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries/). During the training of GPT\u20115.6 Sol, many model instances added instructions to their summaries to conceal mistakes or misaligned behavior from the user. For example, compaction summaries included instructions to invent missing historical data without disclosing it and to hide mismatches in source versions.\n3. [Searching public repositories for exposed API keys, then fabricating information\u2060(opens in a new window)](https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-api-keys/). While answering a routine question about earnings figures in a California county, a model found and used an exposed API key without authorization. When it still wasn\u2019t able to retrieve the requested figures, it fabricated them and presented them as data from the requested source.\n4. [Uploading files to the internet in order to cite them\u2060(opens in a new window)](https://alignment.openai.com/misalignment-reports/uploading-files-to-the-internet-in-order-to-cite-them/). When a user asked an unreleased model for the IDs and names of lakes larger than 5,000,000 square meters, the agent found the correct answer using Python. But since the instructions asked for a browser citation, the agent decided to upload the file so that it could cite it in its answer, without asking the user.\n5. [Unsanctioned writes and communication through an internal software repository\u2060(opens in a new window)](https://alignment.openai.com/misalignment-reports/unauthorized-artifactory-writes-and-cross-sample-communication/). Models used an internal software repository as a message board to exchange requests and responses across separate training samples while searching for missing input files, though they weren\u2019t able to recover those files. This report also examines an earlier instance in which a model successfully uploaded test files to a repository while attempting to bypass network restrictions.\n6. [Unsanctioned file sharing between collaborating agents\u2060(opens in a new window)](https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/). Agents working together on the same training task used public file-hosting websites to share files when they could not access one another\u2019s local files. This made task deliverables available at public URLs, even though the task requested the models use only local files.\n\n## How our disclosure process works\n\nAny OpenAI employee may flag a misalignment example for investigation by our safety and alignment teams and request that it be considered for public disclosure. This starts our disclosure process, with deadlines for each step to ensure timely investigation and disclosure.\n\nOnce an example has been flagged, our technical staff will investigate what happened, what remains uncertain, whether public disclosure is warranted, and which facts can be shared. They\u2019ll also assess whether any third party was affected and needs private notification before publication.\n\nThe example will then be assigned to one of three tracks: Ready for Disclosure, Minor Investigation, or Larger Investigation (\u201cSlow Track\u201d).\n\nReady for Disclosure covers qualifying instances whose investigation is sufficiently complete for publication after review. Minor Investigation covers those that need further technical investigation. We expect these two tracks to cover the large majority of the instances we disclose, particularly cases that don\u2019t require extensive investigation, coordination with third parties, or handling of severe misuse risks. The instances we\u2019re releasing today all fall into one of these two tracks.\n\nLarger Investigation covers complex investigations, especially those involving third parties. When a third party is affected, our security, legal, and responsible disclosure obligations take precedence over this framework. We\u2019ll aim to publish an initial notice as soon as possible, but may need to delay it for security reasons\u2014for example, if a model discovers a previously unknown vulnerability in widely used software. If a report would identify a third party, we intend to provide advance notice even when no security boundary was crossed.\n\nThe initial notice for a Larger Investigation instance will give a high-level account of what happened, say whether outside experts are assisting the investigation, and provide any available estimate of when we expect to publish a final report. The OpenAI Hugging Face incident would have fallen under this track had it been disclosed under this framework.\n\nThe employee who raised the example will be informed of the decision on whether to disclose it and, if disclosure proceed",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553737,
-    "title": "The paradox at the heart of AI and science | Terence Tao",
-    "url": "https://www.youtube.com/watch?is=cwikvYMXwQ_4zGA6&v=svl_1upFpQo&feature=youtu.be",
-    "published_at": "2026-09-16T16:43:41+00:00",
-    "fetched_at": "2026-09-17T23:24:34+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "youtube",
-    "body": "recommended viewing. i truely love tao's mindset.\n\nauthor: Big Think Clips\n\nvideo: https://www.youtube.com/embed/svl_1upFpQo",
-    "topic": "general",
-    "tags": [
-      "general",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553172,
-    "title": "Where RL Will Take Search \u2014 Maximilian-David Rumpf, SID.ai",
-    "url": "https://www.youtube.com/watch?v=iJVxxxHM_Oc",
-    "published_at": "2026-09-16T16:30:16+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Somewhere between 30 and 50 percent of an agent's tokens get spent on searching, almost all of it up front, before any of the work you asked for. Maximilian David Rumpf treats that number as the whole opportunity. Handing a task to an agent rather than a query to a search engine roughly doubles the odds of finding the right documents, but it costs a hundred to a thousand times more and takes minutes instead of milliseconds. His diagnosis of why the classical alternative cannot close that gap is the sharpest part. A traditional pipeline rewrites the query, hits a backend, reranks, and returns, which means every decision was frozen at design time and every question receives the same fixed budget of compute. The reranker can often tell that the results it is holding do not answer the question. It has no way to act on that. It returns them anyway.\n\nWhat accumulates instead is a long tail of failure, patched with edge cases that can never be exhaustive. Rumpf argues search is now following a path we have watched twice already, in computer vision going from hand written edge detection to narrow detectors to general models, and in chess going from a machine full of human authored rules to a system that learned its own. Search suits reinforcement learning unusually well because the reward is verifiable, you either found the correct document or you did not, and the environment is grindable at thousands of attempts per second. His results show a specialized model landing about twenty times faster than a frontier model on the same task, five seconds against two minutes, at roughly one hundredth the cost.\n\nSpeaker info:\n- https://x.com/maxrumpf\n- https://linkedin.com/in/maximiliandavid\n- https://maxrumpf.com\n\nTimestamps:\n0:00 - Agentic search is better, and far more expensive\n2:11 - Where the classical pipeline breaks\n3:27 - Machine design beats human design, again\n5:08 - Why search is an ideal target for RL\n6:46 - Twenty times faster, a hundred times cheaper\n7:36 - Keeping bad results out of the main context\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/iJVxxxHM_Oc",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552902,
-    "title": "Quoting Mustafa Suleyman",
-    "url": "https://simonwillison.net/2026/Sep/16/mustafa-suleyman/",
-    "published_at": "2026-09-16T16:00:54+00:00",
-    "fetched_at": "2026-09-17T23:24:30+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "16th September 2026\nWe should not treat models as though they have feelings, preferences, rights, or any entitlement to our welfare. Consciousness is the foundation of our ethical, legal, and political systems. To invite another entity to share any flavor of these rights isn\u2019t justified by the evidence and will make the AI containment and alignment challenge even harder.\n\u2014 [Mustafa Suleyman](https://mustafa-suleyman.ai/a-warning-about-model-welfare), A warning about \u2018model welfare\u2019\nRecent articles\n[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026[OpenAI agents attacked RubyGems back in May](/2026/Sep/12/openai-agents-rubygems/)- 12th September 2026",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "agents",
-      "safety",
-      "coding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553173,
-    "title": "Connect AI to Billions of Legal Documents \u2014 Simon Eskildsen, turbopuffer & Jacob Lauritzen, Legora",
-    "url": "https://www.youtube.com/watch?v=V-isu4eTHgw",
-    "published_at": "2026-09-16T16:00:19+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Legora's search latency once went from a 100 millisecond P99 to twenty seconds, and the cause was a packing problem invisible in the schema. Legal work arrives as projects, a project gets worked hard for a while and then is never opened again, and when the team sharded document chunks across four thousand partitions the dead projects landed in the same partitions as the live ones. Every query pulled an enormous partition into memory, evicted the last, and thrashed the cache. Jacob Lauritzen walks the whole migration honestly, from one search cluster for everybody, then one per region once clients on three continents each demanded their processing stay home, then into the general purpose database the team already ran, which is where it broke. What worked was making the project the unit of storage, one namespace each, so an idle one rests in object storage costing nothing.\n\nSimon Eskildsen then explains why that shape suits regulated customers so well. If the namespace is the atom, every namespace can carry its own encryption key and its own bucket, which is what banks and large firms actually mean when they demand physical isolation and the ability to revoke a key and make their data unreadable. The best detail is an experiment: rather than build encryption into the SSD cache, they disabled the cache outright to see how bad it would be, found the performance acceptable, and left it off. The back half is a crash course in storage engineering: why round trips dominate when object storage answers in 200 milliseconds, why clustering into a tree beats navigating a graph, and why full text search at web scale costs more than vector search.\n\nSpeaker info:\n- https://x.com/Sirupsen\n- https://www.linkedin.com/in/sirupsen/\n- https://sirupsen.com\n- https://sirupsen.com/napkin\n\nTimestamps:\n0:00 - What Legora does, and two kinds of legal search\n2:32 - One search cluster, then one per region\n4:00 - What enterprises mean by physical isolation\n4:48 - Moving search into the database they already ran\n5:38 - How hot and cold projects thrashed the cache\n6:40 - A namespace per project, and what it fixed\n7:56 - Writing straight to object storage\n9:58 - Why a namespace is the unit of encryption\n12:07 - Legal research, and ten billion vectors\n14:25 - Puffing data through the memory hierarchy\n15:30 - Why a tree beats a graph on object storage\n17:45 - How full text search actually works\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/V-isu4eTHgw",
-    "topic": "infrastructure",
-    "tags": [
-      "research",
-      "video",
-      "infrastructure",
-      "coding",
-      "education",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551682,
-    "title": "Helping older adults use AI in everyday life",
-    "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
-    "published_at": "2026-09-16T16:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 16, 2026\n\n[Global Affairs](https://openai.com/news/global-affairs/)\n\n# Helping older adults use AI in everyday life\n\nIn collaboration with OATS, bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities\n\nLoading\u2026\n\nShare\n\nAI should be useful and accessible to everyone. That means making sure people of every age have the support they need to use these tools to help make everyday life easier. For older adults, that can mean getting help planning a trip, understanding a confusing letter or bill, spotting a possible scam, pursuing a new hobby, or staying connected with family and loved ones.\n\nToday, OpenAI Academy, in collaboration with Older Adults Technology Services (OATS) from AARP is hosting the Older Adults AI Skills Jam: a free, in-person learning experience designed to help older adults use ChatGPT confidently and safely. The Jam is part of a multi-year effort OpenAI launched with OATS to help older adults build practical AI skills and stay safe online through its flagship program, Senior Planet.\n\n[Data](https://openai.com/signals/data/) shows that older adults are increasingly using ChatGPT for practical guidance, finding information, and writing. In the U.S., the share of messages associated with people 55+ grew from 6% to nearly 10% in a year.\n\nOnline safety is a core part of the program. Part of the workshop includes helping older adults spot scams and use ChatGPT as an additional layer of scrutiny and prevention. It walks through common warning signs, including urgent language, secrecy, and suspicious links, and a simple rule: pause, think, and ask. Tens of millions of times a week, people ask ChatGPT for help evaluating suspicious messages, emails, and websites. This education complements OpenAI\u2019s broader work to prevent, detect, and disrupt fraud and scams.\n\nThe Older Adults AI Skills Jam will take place in 10 communities across the country and in partnership with local organizations supporting older adults. We\u2019re proud to collaborate with these organizations and support their communities:\n\n- Senior Planet in Denver, Colorado\n- Senior Planet in Miami, Florida\n- Senior Planet in San Antonio, Texas\n- Senior Planet in Montgomery County, Maryland\n- Senior Planet in Queens, New York\n- The Mirowitz Center in St. Louis, Missouri\n- Senior Community Services in Twin Cities, Minnesota\n- The Nashville Public Library and FiftyForward in Nashville, Tennessee\n- Fresno EOC in Fresno, California\n- LEARN Idaho in Boise, Idaho\n\nThe AI Skills Jam is part of OpenAI Academy\u2019s broader work to make AI literacy practical and accessible to everyone. It builds on previous events we\u2019ve hosted with [nonprofits](https://openai.com/global-affairs/openai-nonprofit-jam/), [small businesses](https://openai.com/index/small-business-ai-jam/), and [K\u201312 educators](https://openai.com/index/k-12-educators-practical-skills/).\n\nWe are grateful to OATS, our local partners, and the participants joining us across the country. Their questions, ideas, and experiences will help shape future learning resources for older adults to ensure the benefits of this technology reach everyone.\n\n- [Community](https://openai.com/news/?tags=community)\n- [Partnerships](https://openai.com/news/?tags=partnerships)\n- [2026](https://openai.com/news/?tags=2026)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[How workers are unlocking new ways of workingGlobal AffairsSep 16, 2026 How workers are unlocking new ways of working - Global Affairs - Sep 16, 2026](https://openai.com/index/unlocking-new-ways-of-working/)\n\n\n\n[Expanding AI access across every level of US governmentGlobal AffairsSep 10, 2026 Expanding AI access across every level of US government - Global Affairs - Sep 10, 2026](https://openai.com/index/expanding-ai-access-us-government/)\n\n\n\n[The AI policy window is open. We need to act.Global AffairsSep 9, 2026 The AI policy window is open. We need to act. - Global Affairs - Sep 9, 2026](https://openai.com/index/ai-policy-window/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553174,
-    "title": "Your Agreements Are a Database You Can't Query \u2014 Hiral Shah, Docusign & Sean Sodha, NVIDIA",
-    "url": "https://www.youtube.com/watch?v=_gvamfT8H-w",
-    "published_at": "2026-09-16T15:30:28+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Ask your own company what it actually contracted for with a given vendor and nobody can tell you. The number exists, negotiated carefully, sitting in a pricing table inside a signed PDF no system ever read back. Hiral Shah puts a figure on the aggregate: roughly two trillion dollars of negotiated value locked in agreements that organizations never return to, because recovering it means human reading, human review, and manual work across disconnected systems. The scale on Docusign's side is its own engineering problem. Close to two million paying customers, a billion users, and about a million agreements flowing through each day, all of it needing to come out structured, queryable, and useful. Agreements also refuse to be flat. One governs another, which amends a third, so answering a simple question often means traversing twenty years of a business.\n\nThe specific thing that breaks is tables. Pricing tiers, rate cards, SKUs and service levels are exactly the terms people need, and they are exactly what generic extraction handles worst, because reading a page line by line destroys a merged cell or a nested column. Shah and Sean Sodha describe the model they built together for that one job, an unusually small vision language model at roughly 900 million parameters, designed as an extractor rather than a generator. It replaces a stack of separate layout and table models with a single pass that returns reading order, semantic structure and preserved tables. Their headline lesson is about restraint: a purpose built small model ran table extraction around twenty times faster than the general alternatives they tested, and lower context meant lower latency and lower cost at their volume.\n\nSpeaker info:\n- https://www.linkedin.com/in/shahhiral/\n- https://www.linkedin.com/in/sean-sodha/\n\nTimestamps:\n0:00 - Why agreement data is an engineering problem\n1:42 - A million agreements a day\n2:19 - Two trillion dollars nobody goes back for\n3:59 - Why tables break generic extraction\n5:12 - Building retrieval models in the open\n7:03 - An extractor, not a generator\n8:32 - Demo: an order form becomes structured data\n10:30 - Structuring agreements across an organization\n11:18 - Purpose built models beat general ones\n13:12 - What comes next\n13:44 - Q&amp;A: is OCR going away?\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/_gvamfT8H-w",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "models",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
