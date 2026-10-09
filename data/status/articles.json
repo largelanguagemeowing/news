@@ -1,5 +1,136 @@
 [
   {
+    "article_id": 855617,
+    "title": "How a Remote Company Builds AI Fluency \u2014 Em Shreve, Automattic",
+    "url": "https://www.youtube.com/watch?v=3XI90A3ENSg",
+    "published_at": "2026-10-08T23:30:33+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Handing people AI tools doesn't change how they work. Giving them real time to learn does.\n\nEm Shreve, head of AI enablement at Automattic, the company behind WordPress.com and Tumblr with over 1,400 people in 82 countries, explains how a fully remote company builds AI fluency. Their bet: people need real time to learn, not just tools. So they run two-week, in-person programs that are half workshops and half real project work, for engineers, cross-functional teams and non-technical groups like finance and leadership. She covers the curriculum (skills, MCPs, hooks, autonomous agents) and why it has to change constantly, their internal MCP server, and how every graduate becomes a multiplier through guides, local meetups, AI ride-alongs and an always-on help channel. She shares what they measure, and projects people built in two weeks, including a tool built by a support teammate rather than an engineer.\n\nIn this talk:\n\u2022 Why AI enablement needs dedicated time, not just tool access\n\u2022 A two-week program: half workshops, half real project work\n\u2022 Turning every graduate into a multiplier across a remote company\n\u2022 What to measure, and what people built in two weeks\n\nSPEAKER\nEm Shreve, Head of AI Enablement, Automattic\nWebsite: https://emdash.codes\nGitHub: https://github.com/emdashcodes\n\nLINKS\nAutomattic: https://automattic.com\nAutomattic on X: https://x.com/automattic\n\nCHAPTERS\n0:00 Intro\n0:55 Our bet: real time to learn\n1:15 Two-week in-person programs\n1:30 Half workshops, half real projects\n2:40 Engineers, cross-functional and non-technical\n3:25 The engineering curriculum\n4:49 Keeping the curriculum current\n5:24 An internal MCP server\n6:19 Every graduate is a multiplier\n6:29 7 cohorts and counting\n7:09 Guides and local meetups\n8:09 AI ride-alongs\n8:44 Shared skills and MCPs\n9:04 An always-on help channel\n9:29 What we measure\n11:09 Surveys at 72 hours, 30 and 90 days\n11:44 What people built in two weeks\n12:29 A Zendesk connector\n12:49 A shared skills directory\n13:24 Built by a support teammate\n14:09 The takeaway\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIEnablement #AIAdoption #AIEngineer",
+    "topic": "education",
+    "tags": [
+      "open-source",
+      "agents",
+      "video",
+      "coding",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 855618,
+    "title": "Brains vs Hands: How to Run AI Agents Safely in Production \u2014 Viren Baraiya",
+    "url": "https://www.youtube.com/watch?v=NaOkR3VSfR4",
+    "published_at": "2026-10-08T22:30:09+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Let the model decide what should happen next. Never let it improvise how a production cluster gets restarted.\n\nViren Baraiya, co-founder and CTO of Orkes and the original creator of Netflix Conductor, explains how to run agents in production. Real agents aren't just chatbots: they run on schedules, react to events, coordinate other agents and can run for months, so the harness around them starts to look like an application, much like a set of microservices. His key idea is a clean split between the brain and the hands. The LLM plans what should happen next; a deterministic, durable harness does the actual work, with approval gates, idempotent steps and recorded side effects. He frames agent harnesses as late-bound sagas, workflows the agent assembles at runtime, and demos an SRE agent whose plan is compiled into a Conductor workflow, executed, checked and re-planned over two loops.\n\nIn this talk:\n\u2022 Background, scheduled, event-driven and long-running agents\n\u2022 Why the harness is the application, mixing deterministic and non-deterministic parts\n\u2022 The brain and the hands: the LLM plans, the harness executes\n\u2022 Demo: an SRE agent's plan compiled into a durable workflow\n\nSPEAKER\nViren Baraiya, Co-founder & CTO, Orkes\nX: https://x.com/virenbaraiya\n\nLINKS\nOrkes: https://orkes.io\nOrkes on X: https://x.com/orkesio\n\nCHAPTERS\n0:00 Intro\n0:47 Who runs agents in production?\n1:12 Beyond the hello-world agent\n1:52 Background, scheduled and event-driven agents\n2:27 Coordinators and multi-agent systems\n3:02 Agents are applications, not components\n3:12 Lessons from microservices\n4:22 The harness is the application\n5:02 Deterministic and non-deterministic parts\n6:02 Harnesses run for seconds or months\n6:41 Durability is table stakes\n7:26 How the loop works\n8:21 The agent plans, the harness executes\n9:21 Human approval gates\n9:41 Idempotency and side effects\n9:56 The brain and the hands\n10:21 Agent harnesses as late-bound sagas\n11:21 Every possible branch\n11:51 Demo: an SRE agent\n13:31 Compiling the plan into a workflow\n14:16 Demo: the second loop\n15:56 Conductor, open source\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIAgents #WorkflowOrchestration #AIEngineer",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 855619,
+    "title": "We Mapped 115 Microservices for Our Coding Agents \u2014 Kamalakannan Nandagopal, Postman",
+    "url": "https://www.youtube.com/watch?v=k2ClBT4aqAg",
+    "published_at": "2026-10-08T21:30:19+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Coding agents are great inside one repo. Postman has 115 microservices and thousands of endpoints.\n\nKamalakannan Nandagopal, staff engineer at Postman, shares how Postman made coding agents work across a real distributed system. Docs go stale, skills and MCPs are only as good as their context, and agent memory stays stuck with one person. Borrowing from Postman's go-to-market team, they realized APIs are the context layer, and built an API context graph that maps every service, endpoint, implementation and call, all the way down to databases, with every data point grounded in code or production telemetry. He shares evals built from real PRs and design decisions: big wins on API discovery, redesign and impact assessment, an honest failure when the graph went stale, the finding that 75% of PRs touched APIs, and a 21-page architecture review the agent produced on its own.\n\nIn this talk:\n\u2022 Why coding agents struggle with distributed systems and microservices\n\u2022 Building an API context graph grounded in code and telemetry\n\u2022 Eval results on API discovery, redesign and impact assessment\n\u2022 Why keeping the graph fresh matters as much as building it\n\nSPEAKER\nKamalakannan Nandagopal, Staff Engineer, Postman\nLinkedIn: https://www.linkedin.com/in/kamalakannan-nandagopal-3650818a/\n\nLINKS\nPostman Context Graph API: https://blog.postman.com/introducing-the-context-graph-api-one-map-of-your-api-ecosystem/\nContext Graph docs: https://learning.postman.com/docs/use/context-graph/get-started\nPostman: https://www.postman.com\nPostman on X: https://x.com/getpostman\n\nCHAPTERS\n0:00 Intro\n0:32 115 microservices\n1:02 From autocomplete to autonomous agents\n1:42 Real systems are distributed\n2:12 Docs go stale\n2:36 Skills, MCPs and agent memory\n3:21 What the go-to-market team learned\n4:01 APIs are the context layer\n4:36 Building the API context graph\n5:36 Grounded in code and telemetry\n5:56 What the graph revealed\n6:25 Evals from real PRs\n7:35 Reading the results\n8:20 Use case: API discovery\n9:05 Use case: API redesign\n11:54 Use case: impact assessment\n12:29 A failure: stale data\n13:38 75% of PRs touch APIs\n14:28 A 21-page architecture review\n15:03 What's next\n15:38 Takeaways\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#CodingAgents #APIs #AIEngineer",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 856697,
+    "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+    "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+    "published_at": "2026-10-08T21:06:35+00:00",
+    "fetched_at": "2026-10-09T00:10:09+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended. Developers are combining frontier AI models with NVIDIA Omniverse libraries to help carry out that work \u2014 building applications for exploring scenarios, investigating failures and improving designs. Developers direct AI agents through [&#8230;]",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 855345,
+    "title": "Quoting Carson Gross",
+    "url": "https://simonwillison.net/2026/Oct/8/carson-gross/",
+    "published_at": "2026-10-08T21:05:44+00:00",
+    "fetched_at": "2026-10-09T00:10:02+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://htmx.org/essays/yes-and/\"><p>Computer programming is, fundamentally, about two things:</p>\n<ul>\n<li>Problem-solving using computers</li>\n<li>Learning to control complexity while solving these problems</li>\n</ul>\n<p>I have a hard time imagining a future where knowing how to solve problems with computers and how to control the complexity of those solutions is <em>less</em> valuable than it is today, so I think it will continue to be a viable career even with the advent of AI tools.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://htmx.org/essays/yes-and/\">Carson Gross</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/computer-science\">computer-science</a>, <a href=\"https://simonwillison.net/tags/carson-gross\">carson-gross</a>, <a href=\"https://simonwillison.net/tags/careers\">careers</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "infrastructure",
+      "coding",
+      "tutorials",
+      "education",
+      "opinion",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 855620,
+    "title": "Turning Agent Memory Into Skills That Work \u2014 Will Lyon, Neo4j",
+    "url": "https://www.youtube.com/watch?v=XPj3mIKEtI4",
+    "published_at": "2026-10-08T20:00:21+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Agents finish a task, then forget what they learned. Retrieval alone won't fix that.\n\nWill Lyon, senior product manager at Neo4j, explains why agent memory built on embeddings and retrieval isn't enough: recall isn't actionable knowledge. Agents need knowledge that is connected, typed and traceable. He shows Neo4j's model of agent memory as a context graph with short-term, long-term and reasoning memory, covering entity extraction and resolution, shared ontologies, and decision traces that let many agents learn from each other. Then he turns memory into action: distilling grounded, governed skills from the graph, based on Neo4j research that treats skills as typed execution graphs, with checks for grounding, coverage and coherence, and alerts when a skill goes stale. He demos the Neo4j Agent Memory Service distilling a patient-intake skill from a healthcare conversation.\n\nIn this talk:\n\u2022 Why retrieval isn't actionable knowledge\n\u2022 Short-term, long-term and reasoning memory in one context graph\n\u2022 Distilling grounded, governed skills from memory\n\u2022 Demo: the Neo4j Agent Memory Service building a skill from a conversation\n\nSPEAKER\nWilliam Lyon, Senior Product Manager, Neo4j\nLinkedIn: https://www.linkedin.com/in/lyonwj\nX: https://x.com/lyonwj\nWebsite: https://lyonwj.com\n\nLINKS\nNeo4j Agent Memory Service (NAMS): https://memory.neo4jlabs.com\nNeo4j on X: https://x.com/neo4j\n\nCHAPTERS\n0:00 Intro\n0:42 The amnesiac loop\n1:27 Recall isn't actionable knowledge\n2:06 Short-term, long-term and reasoning memory\n2:36 From messages to a knowledge graph\n3:06 Entity resolution and ontology\n4:01 The reasoning graph\n4:41 Decision traces\n5:26 Shared memory across agents\n6:01 From memory to skills\n6:55 Agent skills, explained\n7:50 The problem with prose skills\n8:30 Research: skills as graphs\n9:35 Benchmark results\n10:05 Distilling skills from memory\n10:50 Grounding, coverage and coherence\n11:39 Skill governance\n12:14 The Neo4j Agent Memory Service\n13:04 The distillation pipeline\n14:14 Composing skills\n14:39 Demo: the NAMS dashboard\n15:58 Demo: distilling a skill\n16:53 Demo: a patient-intake skill\n17:53 Resources\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#KnowledgeGraph #AgentMemory #AIEngineer",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "research",
+      "video",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 852081,
     "title": "Your AI Agent Has No Nervous System \u2014 Matt Gibiec, Dynatrace",
     "url": "https://www.youtube.com/watch?v=YNT7Plf9KIg",
@@ -203,6 +334,25 @@
     "available": true
   },
   {
+    "article_id": 854089,
+    "title": "LegalOn halves Codex costs while maintaining development speed",
+    "url": "https://openai.com/index/legalon-halves-codex-costs",
+    "published_at": "2026-10-08T12:00:00+00:00",
+    "fetched_at": "2026-10-09T00:10:01+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "LegalOn cut estimated daily Codex costs by 65% while maintaining development speed. It matched Astra, Sol, and Luna to tasks and managed budgets strategically.",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 850573,
     "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
     "url": "https://openai.com/index/pollo-ai",
@@ -284,6 +434,24 @@
     "available": true
   },
   {
+    "article_id": 855633,
+    "title": "Introducing the Anthropic Cyber Mission",
+    "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Introducing the Anthropic Cyber Mission",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 852096,
     "title": "Building on our commitment to American scientific discovery",
     "url": "https://www.anthropic.com/news/genesis-mission-commitment",
@@ -293,6 +461,43 @@
     "source_name": "Anthropic News",
     "extraction_method": "rss",
     "body": "Building on our commitment to American scientific discovery",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 855902,
+    "title": "Launching an opt-in vulnerability-finding service for open-source software",
+    "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Launching an opt-in vulnerability-finding service for open-source software",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "release",
+      "open-source"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 855901,
+    "title": "The missing map of the sky",
+    "url": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "The missing map of the sky",
     "topic": "ai-models",
     "tags": [
       "ai-models",
@@ -339,6 +544,26 @@
     "available": true
   },
   {
+    "article_id": 856076,
+    "title": "How Block orchestrates Claude Fable across thousands of pull requests",
+    "url": "https://claude.com/resources/articles/how-block-orchestrates-claude-fable-across-thousands-of-pull-requests",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-09T00:10:03+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Bradley Axen, Head of AI Capabilities at Block, on how his team evaluates new large language models, how Claude Fable 5 orchestrates company-wide code migrations, and why safeguards are a critical part of deploying frontier intelligence responsibly, at scale.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 850009,
     "title": "Cohere Expands Canadian Footprint with New Ottawa Office",
     "url": "https://cohere.com/blog/cohere-expands-canadian-footprint-with-new-ottawa-office",
@@ -352,6 +577,24 @@
     "tags": [
       "ai-models",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 856715,
+    "title": "The model that didn't exist, so you made it yourself",
+    "url": "https://huggingface.co/blog/building-with-ml-intern",
+    "published_at": "2026-10-08T00:00:00+00:00",
+    "fetched_at": "2026-10-09T00:10:10+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10720,277 +10963,6 @@
       "research",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712583,
-    "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
-    "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
-    "published_at": "2026-09-16T13:00:33+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "AI factories are the infrastructure of the intelligence era. Scaling them responsibly will depend as much on innovation across the grid as inside the data center.\nToday, Emerald AI, Google and NVIDIA announced the launch of the AI Energy Management Alliance (AEMA), a first-of-its-kind coalition advancing data centers that can dynamically manage their electricity use in response to grid conditions.\nThis power flexibility can help unlock faster, larger connections for AI infrastructure while supporting the energy systems and communities that make its growth possible. Getting more watts out of existing infrastructure reduces environmental impacts per watt and supports energy affordability.\nThe objective is clear: build AI infrastructure that doesn\u2019t just connect to the grid but works with it.\nFlexibility Is an Energy Imperative\nPower has become a defining constraint on the expansion of U.S. AI infrastructure.\nTraditional interconnection processes were designed around facilities with flat, static electricity demand. They weren\u2019t built for computing infrastructure capable of responding intelligently when the power system is constrained.\nA flexible data center can adjust its electricity drawn from the grid in several ways \u2014 shifting computing workloads, discharging storage, using paired generation or responding to system contingencies. These capabilities allow a large electricity customer to serve as a controllable resource rather than an inflexible load.\nUsed effectively, flexibility can make more efficient use of existing grid capacity, reduce demand during periods of system stress, and avoid or defer costly infrastructure upgrades. It can also give utilities and grid operators greater confidence to connect AI facilities on shorter timelines.\nTechnology-Neutral, Performance-Based Requirements\nAEMA is technology-neutral and performance-based. Its focus is on the measurable service a facility can deliver \u2014 including response speed, duration, predictability and behavior during an emergency \u2014 rather than the specific hardware or software used.\nReliability remains paramount. The alliance\u2019s principles call for:\n- Defining ride-through, curtailment and contingency-response obligations before a facility connects \u2014 meaning the alliance is setting clear rules for facilities regarding staying connected during brief grid disturbances, reducing power use when needed and responding to emergencies.\n- Standardizing technical requirements, performance metrics and operational data sharing.\n- Creating faster, risk-adjusted pathways for customers that make credible and verifiable flexibility commitments.\n- Allocating interconnection costs in a way that reflects actual system impacts and benefits, such as avoided upgrades and improved ramping capability.\nThese measures can reduce uncertainty for developers while giving system operators the information and control needed to preserve reliability.\nConvening the Full AI and Power Value Chain\nAEMA convenes the full value chain across computing and power \u2014 including AI platforms, infrastructure providers, data center operators, technology companies, power producers, utilities and regional grid operators.\nThe founding members will be joined by launch partners from across the ecosystem. Together, AEMA will develop technical and operational approaches, collaborate with utilities on interconnection solutions and advocate for policies that recognize grid-responsive demand.\nAccelerating US AI Infrastructure\nAI factories transform energy and data into intelligence. Power-flexible design gives them the potential to support the grid as they do it.\n[NVIDIA and Emerald AI are already working with energy and infrastructure leaders](https://nvidianews.nvidia.com/news/nvidia-and-emerald-ai-join-leading-energy-companies-to-pioneer-flexible-ai-factories-as-grid-assets) on AI factories that can respond to grid conditions in real time. AEMA will broaden that work by bringing the technology, energy and policy communities together around models that can be deployed across the U.S.\nThe rules governing power for AI are being written now. By creating a common framework for performance, reliability and collaboration, AEMA aims to help the U.S. build the infrastructure of intelligence at the speed and sustainability the moment demands.\nLearn more about [AEMA](https://www.aema.ai/) and membership opportunities.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "safety",
-      "infrastructure",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553179,
-    "title": "Pinecone 2.0 \u2014 Edo Liberty, Pinecone",
-    "url": "https://www.youtube.com/watch?v=IN-rb-9WmiY",
-    "published_at": "2026-09-16T13:00:06+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "People used to type \"am I fat?\" into Yahoo Answers. Edo Liberty worked there at the time, and the question stuck with him, because a Q and A forum has no possible way to know. It is a failure of theory of mind, our capacity to model what someone else actually knows, and he argues we are making a subtler version of the same mistake with agents right now. He splits knowledge three ways. General knowledge is what a model absorbed in training and can be relied on for. Specific knowledge is the contract or the codebase, which retrieval and vector search have handled for years. The third kind is tribal knowledge: how things get done here, who owns what, which principles actually govern decisions. It is not public, and unlike a contract it cannot be plucked from any single document, because it is the sum of a great many.\n\nThe right mental model for an enterprise agent, then, is a brilliant new hire who is clueless about your company and starts every session on their first day. Liberty's proposal is a persistent, specialized knowledge layer that all agents query, and the requirement he calls hardest is staying current. Replace a CEO and the whole company knows the next morning, while nine thousand documents keep naming the old one, and the new fact has to override all of them. The implementation detail worth the watch is what he calls a runtime coding agent. Rather than answering by query, the system writes and runs code at question time, iterating in something like a notebook until the answer holds, which cut their tooling prompt from roughly 150,000 tokens to under a thousand.\n\nSpeaker info:\n- https://x.com/edoliberty\n- https://www.linkedin.com/in/edoliberty/\n- https://edoliberty.github.io/\n\nTimestamps:\n0:00 - Theory of mind, and why it matters here\n1:06 - The question nobody could answer\n1:57 - Three kinds of knowledge\n3:17 - Tribal knowledge, and why search cannot reach it\n3:56 - A brilliant new hire, every single session\n4:49 - What a knowledge layer has to do\n6:19 - Why staying current is the hard part\n9:07 - The manifest replaces hand written skills\n11:42 - Import, curate, and search\n13:35 - Giving a query a budget\n14:42 - A runtime coding agent\n17:00 - From 150,000 tokens of tooling to under a thousand\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/IN-rb-9WmiY",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551683,
-    "title": "Reimagining advertising with AI",
-    "url": "https://openai.com/index/reimagining-advertising-with-ai",
-    "published_at": "2026-09-16T13:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 16, 2026\n\n[Product](https://openai.com/news/product-releases/)\n\n# Reimagining advertising with AI\n\nIntroducing new AI-powered experiences for ChatGPT Ads.\n\nGet started\n\nLoading\u2026\n\nShare\n\nBeing part of the AI conversation\n\n- [Being part of the AI conversation](#being-part-of-the-ai-conversation)\n- [Putting AI to work for marketers](#putting-ai-to-work-for-marketers)\n- [Bringing new AI possibilities to existing marketing tools](#bringing-new-ai-possibilities-to-existing-marketing-tools)\n- [Building an AI-powered advertising platform](#building-an-ai-powered-advertising-platform)\n\n- [Being part of the AI conversation](#being-part-of-the-ai-conversation)\n- [Putting AI to work for marketers](#putting-ai-to-work-for-marketers)\n- [Bringing new AI possibilities to existing marketing tools](#bringing-new-ai-possibilities-to-existing-marketing-tools)\n- [Building an AI-powered advertising platform](#building-an-ai-powered-advertising-platform)\n\nToday, we\u2019re introducing new AI-powered experiences to make ads more useful for people and advertising easier for businesses.\n\nWe\u2019re testing Sponsored Agents, which let people start a conversation with a business-sponsored agent after clicking an ad in ChatGPT. We are making it easier to create ads by simply writing a few prompts in ChatGPT Work. At the same time, we are making Ads Manager more powerful with new AI creative tools. Finally, new integrations with HubSpot, our first CRM partner, and Shopify, our first ecommerce partner, are bringing ChatGPT Ads into the tools businesses already use.\n\nThroughout this work, our [ads principles](https://openai.com/index/our-approach-to-advertising-and-expanding-access/) remain unchanged, and protecting the trust people place in ChatGPT remains our North Star.\n\nTogether, these updates represent the next step in building our AI-based advertising platform.\n\n## Being part of the AI conversation\n\nAds in ChatGPT help people find what they\u2019re looking for or discover something they hadn\u2019t considered. But seeing an interesting product or service is often just the beginning. A shopper might be curious about a dining table they see in an ad but have questions about whether it fits their space, how many people it seats, or how to care for its finish.\n\nSponsored Agents give users the option to go deeper. After seeing a relevant ad, a user can choose to start a clearly labeled conversation with a business-sponsored agent in ChatGPT. The user can explain what matters to them, ask follow-up questions, and follow a link to the business\u2019s website when they\u2019re ready to take the next step.\n\nFor users, this can make it easier to understand whether a product or service is the right fit. For businesses, it\u2019s an opportunity to help interested customers explore their offerings through a personalized conversation. The conversation with a Sponsored Agent is distinct from ChatGPT\u2019s independent answers and separate from the original conversation that the user started in ChatGPT.\n\nSponsored Agents are now being tested with select advertisers in the United States.\n\n## Putting AI to work for marketers\n\nAI also opens new possibilities for how the work of advertising gets done. Many of the tasks involved in building and managing campaigns, from translating a brief into an ad to analyzing performance, can take significant time. Today, we\u2019re rolling out new tools that make it easier for advertisers to use AI for ads management. Advertisers can now use simple, natural-language prompts to create, update, and analyze campaigns directly in ChatGPT with the Ads Manager plugin. They can turn a website or brief into a campaign, understand performance, and get recommendations on what to do next.\n\nWe\u2019re also rolling out AI assistance directly into Ads Manager to help advertisers create ads. When drafting an ad, advertisers can now receive suggested copy and imagery based on their landing page and campaign objective. Advertisers remain in control: they can review and edit suggestions before choosing whether to add them to a campaign.\n\nWe\u2019re also launching the ability to opt into AI-powered text customization. If enabled, it adapts an advertiser\u2019s existing headlines and descriptions to better fit the context of a conversation and automatically translates ad copy to a user\u2019s preferred language.\n\n## Bringing new AI possibilities to existing marketing tools\n\nAdopting a new advertising channel shouldn\u2019t require businesses to rebuild the way they work. That\u2019s why we\u2019re integrating ChatGPT Ads into HubSpot and Shopify as our first CRM and ecommerce partners.\n\nStarting today, businesses managing their customers in HubSpot can connect a [ChatGPT Ads account\u2060(opens in a new window)](https://hubs.la/Q04tW3sT0), create ads, track performance, and follow up on leads directly in HubSpot powered by their HubSpot context.  \n  \nAlso available today, US-based Shopify merchants can use the new [ChatGPT Ads app\u2060(opens in a new window)](https://apps.shopify.com/chatgptads) in the Shopify App Store to create and manage ChatGPT ad campaigns. Products are already integrated through Shopify Catalog, so merchants can start running these ads and tracking performance right away. The app will be available internationally in markets where ChatGPT Ads are available starting September 23.\n\n## Building an AI-powered advertising platform\n\nAs people increasingly turn to AI to discover products, compare options, and make decisions, we\u2019re creating new ways for people and businesses to connect. That means reimagining both sides of advertising: how people engage with businesses in an AI-native environment and how businesses use AI to create and manage their ads.\n\nTogether, these launches reflect how we\u2019re building an advertising platform with AI at its center: new ad experiences that make advertising more helpful for people and AI tools that let businesses spend less time on process and more time growing their business.\n\nBusinesses can sign up at [ ads.openai.com\u2060(opens in a new window)](https://ads.openai.com). Eligible businesses can also get started through the [ChatGPT Ads for Shopify app\u2060(opens in a new window)](https://apps.shopify.com/chatgptads) or the [ChatGPT Ads in HubSpot app\u2060(opens in a new window)](https://hubs.la/Q04tW3sT0).\n\n- [2026](https://openai.com/news/?tags=2026)\n- [ChatGPT](https://openai.com/news/?tags=chatgpt)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[How to connect AI usage to business valueProductSep 16, 2026 How to connect AI usage to business value - Product - Sep 16, 2026](https://openai.com/index/how-to-connect-ai-usage-to-business-value/)\n\n\n\n[Now everyone can put data to workProductSep 10, 2026 Now everyone can put data to work - Product - Sep 10, 2026](https://openai.com/index/put-data-to-work/)\n\n\n\n[Introducing ChatGPT for Financial ServicesProductSep 10, 2026 Introducing ChatGPT for Financial Services - Product - Sep 10, 2026](https://openai.com/index/introducing-chatgpt-financial-services/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Manage Cookies\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712484,
-    "title": "Mistral and Mozilla are bringing open, private and multilingual AI to your web browser",
-    "url": "https://mistral.ai/news/mistral-x-mozilla/",
-    "published_at": "2026-09-16T12:00:00+00:00",
-    "fetched_at": "2026-09-28T21:34:07+00:00",
-    "source_id": "mistral-ai",
-    "source_name": "Mistral AI",
-    "extraction_method": "trafilatura",
-    "body": "Today, we are announcing a partnership with Mozilla to bring privacy, control and choice to people using AI to browse online.\n[Firefox Smart Window](https://blog.mozilla.org/en/firefox/firefox-smart-window/) (beta), Mozilla\u2019s AI browsing assistant, is now powered by Mistral models. Smart Window helps you make sense of complex searches, remember something important you clicked away from and source information important to you based on your browser tabs. Mistral will help power Smart Window for users in France and North America, with the United Kingdom and Germany expected to follow later this year.\nThis partnership represents two open source advocates working together to bring Mistal\u2019s scientific innovations to consumers around the world. We are building AI systems that are trained and fine-tuned on regional languages, dialects and cultural context, so anyone can get responses that understand their local nuance.\nThis announcement is important to the global AI ecosystem for four reasons:\nOpen technology needs open distribution: Mozilla has spent more than two decades fighting for an open web and Mistral has been releasing open weight, frontier models since our first release. This partnership is about demonstrating the potential of open source to serve people around the world.\nAI optimized for local countries and cultures, not exported to them: We\u2019re fine-tuning our models on regional languages and dialects so that everyone, no matter where they are or how they communicate, can benefit from AI that understands their local nuances. This partnership extends this capability to people who use Firefox worldwide so that their AI experience feels native to them.\nGiving people control of their interactions with AI: Firefox has a long history of control and privacy in its DNA, and these are values we share at Mistral. Our partnership is rooted in a shared commitment to user choice, control and openness. Together, we\u2019re blending Firefox\u2019s privacy-first legacy with Mistral\u2019s cutting-edge open models to give people autonomy over their browsing experience. Privacy protections are built into how Firefox Smart Window works: conversations aren\u2019t saved on Mozilla\u2019s servers by default, and partners like Mistral agree to zero data retention.\nPutting sovereign AI in everyone\u2019s hands: At Mistral, we\u2019re committed to putting sovereign AI in everyone's hands. While we traditionally focus on serving the enterprise, by partnering with ecosystem leaders like Firefox, we extend beyond businesses and reach their consumers worldwide. This way, end users can benefit from our technology that\u2019s rooted in user control, transparency and open innovation.\nYou can learn more about Smart Window [here](https://www.firefox.com/en-US/smart-window/?view=download).\nAI is becoming part of how people experience the web every day. We want to make sure that doesn\u2019t mean people are chained to one company\u2019s self-serving pipeline. With the browser sitting at the heart of the web and online experience, it should be a place where different AI providers can compete and open source has a seat at the table. This isn't just a product partnership. A browser shouldn\u2019t be a one-way funnel. It should preserve what made the internet powerful to begin with: the freedom to explore, discover different ideas and tech, and decide for ourselves where to go next.\nAnthony Enzor-DeMeo, CEO, Mozilla Corporation\nThis partnership represents two open source advocates working together to bring Mistral\u2019s scientific innovations to Mozilla\u2019s consumers around the world. Together, we are bringing privacy, control and choice to AI-powered web browsing.\nArthur Mensch, co-founder and CEO of Mistral",
-    "topic": "safety",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "safety",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 568750,
-    "title": "Hex turns complex analysis into visual reports with GPT\u20116 Astra",
-    "url": "https://openai.com/index/hex-gpt-6-astra",
-    "published_at": "2026-09-16T12:00:00+00:00",
-    "fetched_at": "2026-09-18T23:30:07+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 16, 2026\n\nStartup\n\n# Hex turns complex analysis into visual reports with GPT\u20116 Astra\n\nGPT\u20116 Astra helps Hex\u2019s data agents turn answers into interactive visualizations that employees are proud to share.\n\n[Start building](https://openai.com/startups/)\n\nCompany size: Startup\n\nRegion: North America\n\nIndustry: Technology\n\nProducts: API\n\nLoading\u2026\n\nShare\n\nHandling the complexity behind a clear visualization\n\n- [Handling the complexity behind a clear visualization](#handling-the-complexity-behind-a-clear-visualization)\n- [Ensuring every answer makes sense](#ensuring-every-answer-makes-sense)\n- [Making findings useful across the business](#making-findings-useful-across-the-business)\n\n- [Handling the complexity behind a clear visualization](#handling-the-complexity-behind-a-clear-visualization)\n- [Ensuring every answer makes sense](#ensuring-every-answer-makes-sense)\n- [Making findings useful across the business](#making-findings-useful-across-the-business)\n\n\u201cA really important part of data work is not just doing the analysis, but also communicating it,\u201d says Caitlin Colgrove, co-founder and CTO of Hex, an agentic data platform. But according to Caitlin, \u201cModels have struggled with data visualization for a really long time.\u201d GPT\u20116 Astra changes that.\n\n> \u201cWith GPT\u20116 Astra, you are able to build much more complex, interactive, compelling, and beautiful data artifacts that not only communicate your analysis clearly, but that you are actually proud to share with the rest of the organization.\u201d\n\n\u2014Caitlin Colgrove, Co-founder and CTO, Hex\n\n## Handling the complexity behind a clear visualization\n\nProducing a useful data visualization requires both technical work and choices about how to present the result. Caitlin remarks on how well GPT\u20116 Astra works with the underlying libraries and performs the data transformations required, helping analysts create functional, visually appealing outputs.\n\n> \u201cAstra is able to go into the underlying libraries, do all of the crazy transformations that geospatial visualizations require, and build out something that\u2019s not just functional but aesthetically pleasing inside of the data artifact as well.\u201d\n\n\u2014Caitlin Colgrove, Co-founder and CTO, Hex\n\nFor example, a Hex user can ask how sales channels are performing over time, which are doing best, and which should be discontinued. Hex presents written findings alongside trend lines and comparisons, as well as interactive dashboards that let users explore key measures, rankings, and geographic breakdowns.\n\n## Ensuring every answer makes sense\n\nEven technically correct code can produce an answer that misses the point, so Hex uses GPT\u20116 Astra to interrogate the answer: Does the number make sense? Does the analysis answer the user\u2019s question? Does it reflect the business objective?\n\nCaitlin says GPT\u20116 Astra investigates more thoroughly, uncovers more of the data\u2019s pitfalls and nuances, and delivers a more comprehensive analysis than earlier models.\n\n> \u201cGPT\u20116 Astra is much better at exercising what we call analytical judgment, which is not just getting to an answer, but understanding whether or not that answer is actually what the user is asking for and what the business needs.\u201d\n\n\u2014Caitlin Colgrove, Co-founder and CTO, Hex\n\n## Making findings useful across the business\n\nA clear visualization gives colleagues a way to engage with the analysis: comparing results, following changes over time, and exploring the details that relate to their work.\n\nWith GPT\u20116 Astra, Hex users can access, understand, and communicate data more easily, bringing Hex closer to its mission of making everyone a data person.\n\n## OpenAI <3 startups\n\n[Join the community](https://openai.com/leads/startup/) [Start building(opens in a new window)](https://openai.com/startups)\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[How Fyxer built an AI executive assistant people trustStartupSep 14, 2026 How Fyxer built an AI executive assistant people trust - Startup - Sep 14, 2026](https://openai.com/index/fyxer/)\n\n\n\n[Legora reviewed 41 documents in minutes with GPT-6 AstraStartupSep 3, 2026 Legora reviewed 41 documents in minutes with GPT-6 Astra - Startup - Sep 3, 2026](https://openai.com/index/legora-financial-statement-review-with-astra/)\n\n\n\n[Playco cut manual fixes 50% prototyping games with GPT-6 AstraStartupSep 3, 2026 Playco cut manual fixes 50% prototyping games with GPT-6 Astra - Startup - Sep 3, 2026](https://openai.com/index/playco-game-prototyping-with-astra/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Manage Cookies\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551684,
-    "title": "How to connect AI usage to business value",
-    "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
-    "published_at": "2026-09-16T12:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 16, 2026\n\n[Product](https://openai.com/news/product-releases/)\n\n# How to connect AI usage to business value\n\nUnderstand how teams use ChatGPT Work and Codex, see the work behind the spend, and connect it to measurable outcomes.\n\nLoading\u2026\n\nShare\n\nUnderstand AI usage and spend\n\n- [Understand AI usage and spend](#understand-ai-usage-and-spend)\n- [See what work teams are doing with AI](#see-what-work-teams-are-doing-with-ai)\n- [Identify where teams need training and support](#identify-where-teams-need-training-and-support)\n- [Track Codex contributions to engineering outcomes](#track-codex-contributions-to-engineering-outcomes)\n- [Use the Admin plugin and API to analyze trends and share findings](#use-the-admin-plugin-and-api-to-analyze-trends-and-share-findings)\n- [Connect analytics to business outcomes](#connect-analytics-to-business-outcomes)\n- [The business impact customers are seeing with AI](#the-business-impact-customers-are-seeing-with-ai)\n- [How to get started](#how-to-get-started)\n\n- [Understand AI usage and spend](#understand-ai-usage-and-spend)\n- [See what work teams are doing with AI](#see-what-work-teams-are-doing-with-ai)\n- [Identify where teams need training and support](#identify-where-teams-need-training-and-support)\n- [Track Codex contributions to engineering outcomes](#track-codex-contributions-to-engineering-outcomes)\n- [Use the Admin plugin and API to analyze trends and share findings](#use-the-admin-plugin-and-api-to-analyze-trends-and-share-findings)\n- [Connect analytics to business outcomes](#connect-analytics-to-business-outcomes)\n- [The business impact customers are seeing with AI](#the-business-impact-customers-are-seeing-with-ai)\n- [How to get started](#how-to-get-started)\n\nAs more teams use AI, admins and business leaders need to understand where it creates value and where to invest next. Usage and spend tell part of the story, but admins also need to see what people use AI for and what it helps them accomplish.\n\nAnalytics in the ChatGPT Admin Console bring together usage and cost data, task insights, and outcome metrics across ChatGPT Work and Codex.\n\nHere\u2019s how admins can use these tools to understand adoption, support teams, and assess business value.\n\n## Understand AI usage and spend\n\nUsage analytics show where adoption is growing and spend is concentrated, helping admins focus support, review costs, and assess capacity requests. The **Usage** view brings together active users, credits, and token usage across ChatGPT Work and Codex. For example, filtering by group or user can reveal where adoption is low, giving admins a reason to review starting workflows and training needs with the team owner.\n\n\n\n**The* ***Usage**** overview shows active users and credit trends across ChatGPT Work and Codex. All screenshots use illustrative demo data.**\n\n## See what work teams are doing with AI\n\nThe task classifier in **Insights** helps admins understand what work AI supports by grouping a sample of messages into use cases and tasks. Software engineering, for example, includes feature development and code maintenance, while sales & revenue include account research and planning. The **Overview** tab shows the mix of work at a glance; the **Use cases** tab provides a detailed table with task breakdowns. Admins can filter by group to see how teams use AI, then work with business owners to decide which workflows and outcomes to evaluate.\n\n\n\n**The* ***Insights**** overview shows how credits are distributed across tasks, from implementing features to account research.**\n\nFor the sales team shown below, account research and planning is the largest use of credits\u2014a starting point for discussing how AI changes account preparation.\n\n\n\n**The* ***Use cases**** table breaks down a team\u2019s work by task, with credits, messages, and active users.**\n\n## Identify where teams need training and support\n\nIn task details, the **Models**, **Reasoning**, and **Speed** breakdowns show each setting\u2019s share of credits for a task. This helps admins assess whether the setup fits the work and target training on model selection. A routine brief, for example, may be worth testing with a faster or lower-cost setup, comparing quality and the time spent reviewing and correcting it.\n\nThe **Plugin leaderboard** and **Skills** view show which tools support a task, helping admins focus training and decide which workflows to maintain or share. Low use of a relevant plugin may point to an access or training need; a frequently used skill may need a clear owner and regular updates.\n\n\n\n> \u201cOpenAI\u2019s analytics help us understand how teams use AI, giving us a foundation for future guidance and policies. We\u2019re already using OpenAI\u2019s task categories in Agent Console, our product for monitoring AI agents, to show customers the kinds of work their agents are doing. Getting that data directly from OpenAI gives us a more reliable way to deliver those insights as our customers\u2019 use of AI grows.\u201d\n\n*Bharadwaj Tanikella, AI Product Manager at Datadog*\n\n## Track Codex contributions to engineering outcomes\n\nThe **Outcomes** view shows Codex contributions to merged commits and lines of code, alongside code-review activity. Trends and available group, user, or repository filters help admins and engineering leaders understand adoption and decide where to expand access or support teams.\n\nIf Codex contributes to a growing share of merged code, engineering leaders can compare that trend with review time, defects, and rework to assess whether it is helping the team ship software more effectively.\n\n\n\n**The* ***Outcomes**** view tracks the share of merged commits and lines of code with Codex contributions over time.**\n\n## Use the Admin plugin and API to analyze trends and share findings\n\nThe Admin plugin in ChatGPT Work lets admins compare adoption, spend, and tasks, then turn findings into reports for budget and rollout decisions. It can also create finished work, such as a leadership deck with charts, key findings, and recommended next steps, ready to share with cross-functional stakeholders.\n\nWith the Admin API, teams can automate reports in their own dashboards and combine analytics with business-system data. For example, a support dashboard could show credit use alongside ticket resolution time.\n\n\n\n**The Admin plugin compares team credit trends and summarizes changes for a monthly rollout review.**\n\n## Connect analytics to business outcomes\n\nUsage and task data are a starting point for admins to investigate value with business owners. Business owners add the context needed to assess it: what changed in the workflow, whether results improved, and what that improvement is worth. Together, they can connect product activity to measures such as delivery time, quality, or profitability.\n\nSuppose the task classifier in the Admin Console shows that account research is common in a sales group. The admin checks whether model choices fit the task, provides training where a CRM plugin is underused, and shares a skill for consistent account plans. The sales owner then compares preparation time and plan quality with the team\u2019s baseline. If time is saved, they track how much goes into customer conversations, which conversations become qualified opportunities, and which opportunities become sales. Revenue and contribution margin on that business help show whether the extra capacity produces a financial benefit.\n\nTo explore the value of a workflow, start with a few questions:\n\n1. **What would you like to improve?** Choose an outcome that matters to the team, such as faster preparation, better-quality work, lower costs, or more sales.\n2. **How does the process look today?** Establish a starting point: how often the team does the task, how long it takes, and what a good result looks like.\n3. **What changes with AI?** Compare results over a defined period. Include the time spent reviewing and correcting the work so that faster completion still meets the team\u2019s quality standards.\n4. **What does this make possible for the team?** Time saved might mean more conversations with customers. Better-quality work might mean fewer corrections. Talk with the team to understand where those improvements matter most.\n5. **Is the benefit worth the investment?** Compare what the team gains with what you\u2019re spending on AI, setup, and ongoing support. That can help you decide what to expand and where the team could use more help.\n\n### Illustrative annual ROI: sales account research\n\nImagine a team of sellers, each preparing two account briefs per week. Every brief brings together account history, industry research, and a point of view for the next conversation.\n\n#### What changes with AI?\n\n\n\n#### What does that add up to?\n\n**Annual time saved**\n\n20 sellers \u00d7 2 briefs per week \u00d7 3 hours saved \u00d7 46 weeks = 5,520 hours\n\n**Estimated annual capacity value**\n\nAssume the team puts 50% of that time into productive work, valued at a fully loaded employee cost of $75 per hour. Sellers could use that time to connect with new prospects, follow up on opportunities, and spend more time with customers.\n\n5,520 hours \u00d7 50% \u00d7 $75 = $207,000\n\n**Total first-year costs**\n\nAssume **$60,000** for AI, setup, training, and ongoing support.\n\n**($207,000 \u2212 $60,000) \u00f7 $60,000 = 245% illustrative ROI.**\n\nThe value of a workflow can extend beyond productivity. In sales, better account research and a shared understanding of the customer can support deeper conversations, stronger relationships, and new opportunities. Teams can then measure whether those improvements lead to additional business outcomes, like accelerated deal cycles or increased win rate.\n\n*All figures are hypothetical. ROI reflects estimated capacity value and excludes potential benefits from higher win rates, larger deal sizes, or other sales outcomes.*\n\n## The business impact customers are seeing with AI\n\nFrom shipping software to running live events, customers are putting AI to work on tasks that matter to their businesses:\n\n[**1Password**\u2060](https://openai.com/index/1password/)uses Codex to build, review, and test software so engineers can ship features faster. It estimates 553% ROI and $0.8M in annual engineering capacity value, using Codex to build production-ready features and internal tools faster while maintaining rigorous security policies.\n\n[**ATV Big Air Tour**\u2060](https://openai.com/index/atv-big-air-tour/)uses ChatGPT Work to check event listings, plan inventory, and improve its website\u2019s visibility. Listing reviews fell from eight hours to one hour a week, and inventory work from two to three days to two to three hours, giving the team more time to focus on the tour and its customers.\n\n[**Playco**\u2060](https://openai.com/index/playco-game-prototyping-with-astra/)uses GPT\u20116 Astra through OpenAI\u2019s API to build and test playable game prototypes. The team created three themed prototypes from one foundation and reported 50% fewer manual fixes than with the previous model, helping developers test and compare more ideas.\n\n## How to get started\n\nOpen **Insights** in the Admin Console and choose a common task that supports a business priority. Review it with a business owner, agree on a baseline and the outcome to measure, and set a date to review progress. Use the results to decide whether to expand the workflow, improve how teams use it, or test a different approach. [Learn more\u2060(opens in a new window)](http://learn.chatgpt.com/docs/enterprise/work-codex-an",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 577456,
-    "title": "Operating Distributed Inference Systems at Scale \u2014 Nishant Gupta & Naman Ahuja, Meta",
-    "url": "https://www.youtube.com/watch?v=7c9FSUVcXR0",
-    "published_at": "2026-09-16T11:12:47+00:00",
-    "fetched_at": "2026-09-19T11:49:00+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Inference traffic at Meta already outpaces the largest microservices in the world, the fastest growing workload it has ever run. Nishant Gupta's frame for what comes next is 2008. The cloud began as virtual machines, then value climbed to schedulers, service meshes and autoscalers, until orchestration held the complexity and the value. AI is on the same path, compressed into a few years, with orchestration emerging around routing, KV cache management and prefill decode disaggregation. His sharpest point is coupling. None of the layers is new. What is new: a routing decision changes the cache hit rate, which changes batch composition, which changes GPU utilization, which changes the autoscaler's next move. A request is now a distributed transaction where every hop can retry, time out or fail; preempt a GPU after 200 tokens have streamed and you cannot simply retry. Reliability has to live in the control plane, the only layer that sees the whole workflow.\n\nA scheduler for inference has to see seven axes: GPU generation, memory headroom, KV cache state, whether weights are warm, tenant priority, latency budget, and workflow context, since failing step three of five wastes what steps one and two already spent. Every optimization fits one of four quadrants: avoid the work through caching, share it through batching, move it through routing to a cheaper model or region, or delay it through admission control. The metric to optimize is cost per successful task, not per token. Naman Ahuja takes over: observability as a control loop's input, the latency, cost and throughput triangle where every serving decision moves you somewhere, and the conclusion that inference needs its own control plane, the way virtual machines needed Kubernetes.\n\nSpeaker info:\n- https://www.linkedin.com/in/nishantgupta-ai/\n- https://buzzingtech.ai/\n- https://www.linkedin.com/in/namanahuja/\n\nTimestamps:\n0:00 - Inference is the fastest growing workload Meta has seen\n0:54 - 2008 again: value moves to the orchestration layer\n3:13 - Microservices versus inference, dimension by dimension\n6:09 - Old layers, new coupling\n7:36 - A request is a distributed transaction\n8:31 - Seven axes a scheduler has to see\n10:19 - Avoid, share, move, or delay the work\n12:36 - Cascading failure, with a KV cache twist\n16:19 - The latency, cost, throughput triangle\n17:00 - Inference needs its own control plane\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/7c9FSUVcXR0",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 577457,
-    "title": "Two Bugs That Hid in Plain Sight: A vLLM Debugging Detective Story \u2014 Asaf Gardin & Yuval Belfer",
-    "url": "https://www.youtube.com/watch?v=btxG75rNJC4",
-    "published_at": "2026-09-16T11:05:02+00:00",
-    "fetched_at": "2026-09-19T11:49:00+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Once in roughly a thousand prompts, the model returned gibberish. No crash, no warning, and high confidence, which made it an engineering problem, not a quality one. It happened only in vLLM, only under load, and only with Jamba, AI21's hybrid of attention and Mamba layers. Asaf Gardin and Yuval Belfer could not reproduce it with prompts, so they starved it: dropping vLLM's GPU memory utilization from ninety percent to twenty, at temperature zero, made request 8,854 return nonsense every time. From there they built a logprob comparison against a plain reference implementation, cleared the prefill kernel and a memory sanitizer, and saw the gibberish vanish when everything went through prefill. A false lead. The kernels were fine. They were being called at the wrong time for the wrong request.\n\nNothing inside a forward pass has an identity, so they threaded the request ID down into a forward context, set a breakpoint on the guilty one, and watched the scheduler run decode before prefill. Attention survives that because it writes KV before it reads. Mamba reads its state first, so a fresh request computed over whatever came before. The second case looked like RL training instability: logprob spikes every twelfth step, before any weight update. Scaling rollouts per prompt from eight to 128 moved the spike to step one, and shrinking memory made it disappear, the wrong lever pulled. The cause was a 32 bit index that wrapped past four billion. The fix was one type, size_t. Two scenes, one criminal: both in the Mamba state cache, both surfaced by memory pressure, both found by logprob forensics. Stateful inference does not fail loudly. It lies with confidence.\n\nSpeaker info:\n- https://www.linkedin.com/in/joseph-asaf-gardin/\n- https://x.com/yuvalinthedeep\n- https://linkedin.com/in/yuval-belfer\n\nTimestamps:\n0:00 - No crash, no warning, high confidence\n2:48 - The one in a thousand gibberish\n3:43 - Reproducing it fast by starving the GPU\n5:18 - A logprob comparison against a plain baseline\n8:48 - Threading a request ID through the forward pass\n9:30 - Decode before prefill, and why only Mamba noticed\n11:47 - Case two: logprob spikes every twelve steps\n12:29 - A lever that changes the shape of failure\n14:33 - A 32 bit index that wrapped around\n15:42 - Two scenes, one criminal\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/btxG75rNJC4",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "video",
-      "infrastructure",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 551686,
-    "title": "How workers are unlocking new ways of working",
-    "url": "https://openai.com/index/unlocking-new-ways-of-working",
-    "published_at": "2026-09-16T09:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 16, 2026\n\n[Global Affairs](https://openai.com/news/global-affairs/)\n\n# How workers are unlocking new ways of working\n\nNew OpenAI Economic Research shows how workers use AI to do tasks outside their typical occupation and which new tasks they build into their workflow.\n\n[Read the report(opens in a new window)](https://cdn.openai.com/pdf/work-at-the-frontier-report-202609.pdf)\n\nLoading\u2026\n\nShare\n\nWorkers use AI differently when they move beyond their roles\n\n- [Workers use AI differently when they move beyond their roles](#workers-use-ai-differently-when-they-move-beyond-their-roles)\n- [Cross-occupation tasks can become recurring parts of new AI workflows](#cross-occupation-tasks-can-become-recurring-parts-of-new-ai-workflows)\n  - [Some new activities stick more than others](#some-new-activities-stick-more-than-others)\n- [From task crossover to job expansion](#from-task-crossover-to-job-expansion)\n\n- [Workers use AI differently when they move beyond their roles](#workers-use-ai-differently-when-they-move-beyond-their-roles)\n- [Cross-occupation tasks can become recurring parts of new AI workflows](#cross-occupation-tasks-can-become-recurring-parts-of-new-ai-workflows)\n  - [Some new activities stick more than others](#some-new-activities-stick-more-than-others)\n- [From task crossover to job expansion](#from-task-crossover-to-job-expansion)\n\nOur latest research suggests the importance of how tasks are divided and carried out alongside access to AI tools. These new tasks outside their typical job descriptions become a regular part of how workers use AI. If those activities become regular responsibilities, jobs could broaden even while their titles stay the same.\n\nOur [first *Work at the Frontier* report\u2060](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/) documented \u2018task crossover\u2019: workers using AI for activities historically associated with another occupation. Our latest research asks what happens next.\n\nAnalyzing more than 1.5 million work-related ChatGPT messages from April through July 2026, we find evidence that some cross-occupation AI use is recurring. Workers return to tasks outside their occupational boundaries, and these activities become a larger part of their observed AI use over time.\n\nThe findings offer an early look at how access to AI may translate from trying new tasks to incorporating those tasks into workers\u2019 regular routines. For companies that are endeavoring to determine how best to adopt and make use of AI in their organizations, the trends identified in our four-month study of professional worker AI use and prompts represent an important window into how these companies might reduce the friction between identifying a problem and moving their overall work forward aided by AI. Our findings suggest that work design deserves a place alongside access to AI tools in how organizations implement their AI strategies.\n\n## Workers use AI differently when they move beyond their roles\n\nWorkers use AI differently depending on whether the task fits into their role in a particular domain. Workers prompt AI differently for tasks inside and outside their usual roles. When asking about tasks outside their occupation, they write shorter prompts on average than they do for tasks within it. They are also less likely to ask for explanations, how-to guidance, a specific response format, or advice.\n\nAt the same time, workers are more likely to provide examples or background when asking AI for help outside their occupations. They are also more likely to ask AI to check or verify something.\n\nOne interpretation is that workers are using AI to borrow expertise. Rather than asking AI to teach them an entirely new field, workers may bring a problem and relevant context\u2014such as a document, example, or information from a colleague\u2014and ask AI to help apply knowledge associated with another field.\u00a0\n\n## Cross-occupation tasks can become recurring parts of new AI workflows\n\nThe next question is whether workers return to these activities. Among roughly 6,200 workers observed consistently from April through July, previously used cross-occupation tasks increased from 13.1% of occupation-specific AI activity in April to 25.9% in July [1](#citation-bottom-1). That pattern is consistent with workers incorporating some cross-occupation assistance into ongoing workflows rather than simply experimenting once.\u00a0\n\nA separate analysis puts recurrence in context. Among sampled matched one-month follow-up observations, workers returned to a cross-occupation task used in the previous month 23.6% of the time, compared with 8.4% use of the same task among comparable workers who had no observed use of it in the previous month. Similar gaps appear for within-occupation and general tasks.\n\n### Some new activities stick more than others\n\nRecurrence varies considerably depending on the type of work. Workers returned the following month to some cross-occupation tasks at relatively high rates:\n\n- Discussing goods or services with customers: 54%\n- Advertising or promotional writing: 44%\n- Creating marketing materials: 37%\n\nBy comparison, workers returned to the task of explaining financial information about 15% of the time. The average next-month return rate across cross-occupation tasks was 18.5%. These differences may reflect where AI fits naturally into recurring workflows. They could also reflect differences in workplace norms, caution, or the perceived consequences of getting something wrong.\u00a0\n\n## From task crossover to job expansion\n\nThe first two *Work at the Frontier* reports offer a picture of how work can change before job titles do. The first report showed that workers use AI to cross traditional occupational boundaries. This report finds that some of those activities become part of regular workflows. These patterns suggest a potential path for AI-driven job transformation: a worker experiments with an activity outside their traditional role, finds AI useful for it, and begins returning to that activity as part of their work.\n\nAI may reshape jobs well before their titles change: workers use AI for activities associated with another occupation and return to some of them over time. If those activities become regular responsibilities, the mix of activities within a job could broaden even while its title stays the same. We will continue to study these shifts to build a clearer picture of how AI is changing the division of labor and what that means for workers, businesses, and the broader economy.\n\n- Read our [research on task crossover\u2060](https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/) to learn how workers are using ChatGPT to take on tasks beyond their traditional roles.\n- Read our [AI Jobs Transition Framework\u2060](https://openai.com/index/modeling-ai-jobs-transition/) to learn how AI capabilities, human roles, and demand could shape employment.\n\n- [2026](https://openai.com/news/?tags=2026)\n- [Economic Research](https://openai.com/news/?tags=economic-research)\n\n## Author\n\nOpenAI\n\n## Footnotes\n\n1. 1\n\n   We identify their occupations from role or department information provided during ChatGPT Business onboarding. The messages come from a sample of these users\u2019 conversations. We exclude training-disabled data and messages without usable classifications. We carefully preserve user privacy, aggregating and anonymizing messages for analysis. In doing this work, researchers on our team never read individual user messages. All messages are aggregated and anonymized for analysis; we never read individual messages throughout this process. As workers try new tasks in any given month, the number of tasks that can be considered recurring increases. [Scroll to citation 1 reference](#citation-top-1)\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Helping older adults use AI in everyday lifeGlobal AffairsSep 16, 2026 Helping older adults use AI in everyday life - Global Affairs - Sep 16, 2026](https://openai.com/index/helping-older-adults-use-ai-in-everyday-life/)\n\n\n\n[Expanding AI access across every level of US governmentGlobal AffairsSep 10, 2026 Expanding AI access across every level of US government - Global Affairs - Sep 10, 2026](https://openai.com/index/expanding-ai-access-us-government/)\n\n\n\n[The AI policy window is open. We need to act.Global AffairsSep 9, 2026 The AI policy window is open. We need to act. - Global Affairs - Sep 9, 2026](https://openai.com/index/ai-policy-window/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 560397,
-    "title": "Total Recall: Agent Memory and Harness Engineering \u2014 Ignacio Martinez, Oracle",
-    "url": "https://www.youtube.com/watch?v=xs-ob87TTzg",
-    "published_at": "2026-09-16T07:54:36+00:00",
-    "fetched_at": "2026-09-18T11:38:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Ignacio Martinez registered the domain for this workshop on the Saturday before he gave it, and then asked the room not to request the biggest machines on offer, because he was paying for everyone's GitHub Codespace out of his own pocket. That improvisation sits oddly beside the argument underneath it, which is one of the more carefully built cases for harness engineering here. A language model, he says, is the frozen part of the reasoning. The weights do not change, you rent them, and you have no say in what you are offered. Everything you control lives in the layer around it. So an agent is a model plus a harness, and harness engineering is the work of turning a nondeterministic core into repeatable output.\n\nHe builds that harness in seven layers, and the sharpest arguments are about where memory physically lives. Files match a model's instincts and cost nothing to append to, but they have no transactional consistency, which is why, when he asks the room how parallel agents avoid trampling each other, the answer comes back immediately: work trees. Databases solved that a long time ago, he notes, and everyone forgot. His semantic layer borrows Umwelt from the biologist Jakob von Uexk\u00fcll, whose claim was that every organism perceives reality only through the lens it happens to have. An agent's lens is whatever institutional knowledge you remembered to write down. Two ideas stay with you. A hysteresis variable encoding how much patience the harness extends to the model before it gives up on a task. And skill promotion, where a workflow that cost you four hours is distilled into a better version and the original retired.\n\nSpeaker info:\n- https://x.com/nacho_martinez\n\nTimestamps:\n0:00 - Getting into the workshop repo\n3:22 - What you should leave with\n4:02 - The frozen part of the reasoning\n6:09 - Five layers of the agent stack\n10:50 - Reasoning you rent, memory you control\n13:43 - The seven layers of a harness\n16:26 - Files versus databases\n18:30 - The room answers: work trees\n23:26 - The data sprawl a RAG pipeline creates\n25:46 - What agent memory means\n28:48 - Context rot and quadratic attention\n34:23 - Umwelt, and an agent's perceptual lens\n37:24 - Context engineering and the toolbox pattern\n39:31 - Skill promotion and workflow promotion\n41:50 - Workshop setup and the app book\n48:13 - Nineteen to dos, starting with a bare model call\n51:58 - Question: what if you have thousands of tools?\n56:41 - A hysteresis variable for patience\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/xs-ob87TTzg",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553156,
-    "title": "Transformers.js v4.3: Structured Output in the browser",
-    "url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
-    "published_at": "2026-09-16T07:49:24+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "Transformers.js v4.3 is out, and the big one is structured output.\n\nWith the new @huggingface/transformers-structured-output package you can force a model to follow an exact JSON Schema or regex, directly in the browser. No more parsing markdown fences and hoping the model picked the right property names.\n\nIn this video I walk through how constrained decoding works, how the new package hooks into the logits processor in Transformers.js, and the technical story behind it: from a WASM wrapper around llguidance to a pure JavaScript implementation with almost no overhead.\n\nAlso in 4.3: a complete overhaul of the documentation pipeline and a bunch of community-contributed fixes and features. Thank you!\n\nChapters\n0:00 Transformers.js 4.3 is out\n0:26 New documentation pipeline\n1:00 Community contributions\n1:19 The problem: unreliable JSON from LLMs\n2:18 How constrained decoding works\n3:25 Adding the structured output processor\n3:37 The new packages folder and plugin approach\n6:03 Using regex instead of JSON Schema\n6:45 Demo: recipe generator\n7:33 Behind the feature: llguidance\n9:02 Rewriting it in pure JavaScript\n9:22 Performance across Gemma 4, Granite and LFM 2.5\n10:26 Try it out\n\nLinks\nRelease notes: https://github.com/huggingface/transformers.js/releases/tag/4.3.0\nNPM: https://www.npmjs.com/package/@huggingface/transformers/v/4.3.0\nStructured output package: https://www.npmjs.com/package/@huggingface/transformers-structured-output\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/InnVG6pOPpM",
-    "topic": "hardware",
-    "tags": [
-      "hardware",
-      "release",
-      "models",
-      "open-source",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712584,
-    "title": "University of Manchester Uses NVIDIA Earth-2 to Forecast Air Pollution Across the UK",
-    "url": "https://blogs.nvidia.com/blog/uk-air-pollution-research-earth-2/",
-    "published_at": "2026-09-16T05:00:42+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "Air pollution is a serious public health risk, contributing to an [estimated 30,000 deaths](https://www.rcp.ac.uk/news-and-media/news-and-opinion/air-pollution-linked-to-30-000-uk-deaths-in-2025-and-costs-the-economy-and-nhs-billions-warns-royal-college-of-physicians/) in the U.K. alone last year. Data-driven insights can help \u2014 but computing air quality with traditional chemistry-based models is expensive, which limits how detailed they can be and how regularly they can be run.\nDavid Topping, a professor in the University of Manchester\u2019s department of Earth and environmental science, saw that the [NVIDIA Earth-2](https://www.nvidia.com/en-us/high-performance-computing/earth-2/) family of open AI models and tools had cracked a related problem for weather forecasting \u2014 and asked whether the same generative frameworks could work for pollution fields.\n\u201cThe biggest challenge is the compute required to forecast air quality,\u201d said Topping. \u201cOnce you put chemistry into weather models, they get really, really slow. So I said, why don\u2019t we try using the generative frameworks that NVIDIA develops for climate and weather for pollution fields?\u201d\nWorking with the NVIDIA Earth-2 team, Topping and colleagues generated training data from existing chemistry-climate simulations, then trained [Earth-2 CorrDiff](https://docs.nvidia.com/nim/earth-2/corrdiff/latest/overview.html) \u2014 a generative downscaling model \u2014 on Isambard-AI, the U.K.\u2019s national AI supercomputer in Bristol.\nThe model worked on the first attempt.\nThe team has since added Earth-2 StormCast, a model that enables time-dependent forecasts that directly use air quality observations, and showed the test-training and inference workflows running on the [NVIDIA DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) personal AI supercomputer.\n\u201cTo improve human health, it\u2019s essential that we understand the impact of environmental stressors in the air we breathe,\u201d said Topping. \u201cOur U.K.-wide pollution model allows us to model potential future scenarios, such as predicting what would happen if different pollution-related government policy changes went into effect.\nVideo credit: Bristol Centre for Supercomputing (BriCS) @ University of Bristol\nAnother potential application is proactive air quality insights for healthcare organizations. Topping envisions a scenario where regional and national healthcare services could reach out to patients with conditions like asthma to let them know that air pollution is going to be high in their area tomorrow, or next week.\nThe team is also exploring how the air pollution model could pair with data from edge AI devices to ingest real-time air quality data and drive real-time decision making, such as in the event of a wildfire.\n\u201cThe fact that this model trained in two days on Isambard-AI \u2014 and can now run on a DGX Spark sitting on a desk \u2014 changes who can do this science and how quickly,\u201d said Niall Robinson, developer relations manager for weather and climate at NVIDIA. \u201cWe\u2019re just at the beginning of what these open workflows can do globally.\u201d\n\u201cThe ability to switch from one NVIDIA framework to another was really impressive,\u201d said Hao Zhang, a doctoral student at the University of Manchester who trained StormCast on Isambard-AI. \u201cWe\u2019re only just starting to explore how to use these frameworks in different ways to model complex pollution fields.\u201d\nFrom National Supercomputer to the Desktop\nTo retrain the Earth-2 model for air pollution, Topping and the team used a year\u2019s worth of U.K. pollution data simulated at hourly intervals to generate a detailed, U.K.-wide pollution model at a resolution of 2-3 square kilometers.\nRunning on a single, eight-GPU node on [Isambard-AI](https://blogs.nvidia.com/blog/isambard-ai/) \u2014 the U.K.\u2019s most powerful AI supercomputer, packed with 5,448 NVIDIA GH200 Grace Hopper Superchips delivering 21 exaflops of AI performance \u2014 the process took just two days.\n\u201cEarth-2 CorrDiff has shown an incredibly efficient use of the world-class NVIDIA hardware inside Isambard-AI,\u201d said Simon McIntosh-Smith, director of the [Bristol Centre for Supercomputing](https://www.youtube.com/@brics-uob) at University of Bristol and cofounder of Isambard-AI. \u201cIt\u2019s fitting that, for a climate-based project, the GPU hours used were relatively low, requiring less power from the supercomputer to run the workloads.\u201d\nIn addition to providing a look back at air pollution over the past year, the model can help predict future air pollution scenarios for the U.K. The team plans to further increase the resolution of its model by incorporating additional open data, enabling researchers to understand air pollution at street scale.\nThe same generative pollution workflow also runs on the NVIDIA GB10 Grace Blackwell superchip-powered DGX Spark desktop AI system for inference and smaller training runs. Topping now has an DGX Spark system in his office retraining models.\n\u201cYou can now invest a few thousand dollars to get started developing powerful AI models,\u201d Topping said.\nOpen Science, Agentic Future\nThe team plans to release open source training data and workflows for the pollution models will be released so that similar models can be trained for other countries and regions.\n\u201cOur aim is to offer this workflow to the entire world,\u201d he said. \u201cWe hope that every global country and every major city with a small burst of supercomputer AI time will be able to produce their own detailed pollution models with their own local data.\u201d\nLooking five years out, Topping sees the endpoint as something simpler still: an agentic interface where a clinician or government agency asks the question and the chain of models handles everything else.\n\u201cWith better open access to air quality observations, someone could ask our pollution model running on DGX Spark: what\u2019s the pollution going to be like in this neighborhood tomorrow?\u201d he said. \u201cAnd a whole chain of interactions will deliver an answer, grounded on the science these frameworks represent.\u201d\nHear more from Topping in the webinar, [AI for Science: From the Lab to the Frontier](https://www.nvidia.com/en-us/events/webinars/ai-for-science-lab-to-frontier/?linkId=100000439362832), taking place September 30.\nLearn more about [NVIDIA Earth-2](https://www.nvidia.com/en-us/high-performance-computing/earth-2/) climate and weather AI.",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
