@@ -1,8 +1,91 @@
 [
   {
+    "run_id": "87f448498fca",
+    "started_at": "2026-10-10T10:54:41+00:00",
+    "ended_at": "2026-10-10T10:56:55+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "38046499790",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/38046499790",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-10-10T10:54:42+00:00",
+        "ended_at": "2026-10-10T10:56:55+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 44,
+          "enriched": 43,
+          "updated": 43,
+          "unchanged": 1,
+          "misses": 0,
+          "markdown_new_used": 24,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 8,
+            "youtube": 11,
+            "markdown_new": 24,
+            "rss": 1
+          },
+          "per_source": {
+            "simon-willison": {
+              "attempted": 4,
+              "enriched": 4,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 10,
+              "enriched": 10,
+              "failed": 0
+            },
+            "huggingface-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "matt-wolfe": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "openai-blog": {
+              "attempted": 24,
+              "enriched": 24,
+              "failed": 0
+            },
+            "anthropic-research": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "cohere-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "claude-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "marios-rec-reading": {
+              "attempted": 1,
+              "enriched": 0,
+              "failed": 1
+            }
+          },
+          "flush_batches": 2,
+          "defuddle_enabled": true,
+          "duration_ms": 133213.88
+        }
+      }
+    ]
+  },
+  {
     "run_id": "f0cd4ee7a8ff",
     "started_at": "2026-10-10T09:29:56+00:00",
-    "ended_at": "2026-10-10T09:30:02+00:00",
+    "ended_at": "2026-10-10T09:30:15+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "38041534413",
@@ -792,36 +875,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 8175.7
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "d731b3c5682f",
-    "started_at": "2026-10-06T16:08:08+00:00",
-    "ended_at": "2026-10-06T16:08:34+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "37493149319",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/37493149319",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-10-06T16:08:08+00:00",
-        "ended_at": "2026-10-06T16:08:21+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 8,
-          "duplicate_articles": 2523,
-          "dead_letters": 0,
-          "failed_sources": 1,
-          "skipped_sources": 0,
-          "not_modified_sources": 12,
-          "auto_disabled_sources": 1,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 13149.32
         }
       }
     ]
