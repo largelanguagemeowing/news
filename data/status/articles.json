@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 873862,
+    "title": "The Lethal Trifecta Is Already on Your Laptops \u2014 Michael Patterson, Coder",
+    "url": "https://www.youtube.com/watch?v=abw_m-DRi1k",
+    "published_at": "2026-10-10T15:00:03+00:00",
+    "fetched_at": "2026-10-10T15:33:10+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your coding agent can read private data, take in untrusted content and talk to the internet. That's the lethal trifecta, and it's already running on your developers' laptops.\n\nMichael Patterson, staff solutions engineer at Coder, explains Simon Willison's lethal trifecta (access to private data, exposure to untrusted content, and the ability to communicate externally) and why agents like Claude Code, Codex and OpenClaw running on a laptop hit all three. He covers prompt injection, what blocks big companies from rolling out agents (CISO concerns, shadow AI on personal subscriptions, alert fatigue, skeptical senior engineers), and three architectural guardrails: cloud development environments that isolate the agent, a model proxy that logs traffic and strips sensitive data before it reaches the LLM provider, and an agent firewall that denies commands and domains you didn't allow.\n\nIn this talk:\n\u2022 What the lethal trifecta is, and why laptop agents hit all three parts\n\u2022 How prompt injection turns trusted sources into attacks\n\u2022 What security teams worry about when agents roll out at scale\n\u2022 Three guardrails: cloud dev environments, a model proxy and an agent firewall\n\nSPEAKER\nMichael Patterson, Staff Solutions Engineer, Coder\n\nLINKS\nCoder: https://coder.com\nThe lethal trifecta (Simon Willison): https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/\n\nCHAPTERS\n0:00 Intro\n0:40 What is the lethal trifecta?\n1:20 The agent boom\n2:04 When agents delete production\n4:04 What Coder does\n5:24 The three ingredients\n6:44 Prompt injection\n8:09 Three pillars of agent security\n10:08 Rolling out agents at big companies\n12:48 What the CISO worries about\n14:08 Alert fatigue\n14:48 Skeptical engineers\n15:33 Guardrail 1: Cloud dev environments\n18:13 Guardrail 2: Model proxy\n18:57 Guardrail 3: Agent firewall\n20:12 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AISecurity #CodingAgents #AIEngineer",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "agents",
+      "safety",
+      "video",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 869372,
     "title": "Quoting The New York Times",
     "url": "https://simonwillison.net/2026/Oct/10/the-new-york-times/",
@@ -11015,28 +11038,6 @@
       "safety",
       "benchmark",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836288,
-    "title": "Projects redesigned: from folder to conversation",
-    "url": "https://claude.com/resources/articles/projects-redesigned",
-    "published_at": "2026-09-17T00:00:00+00:00",
-    "fetched_at": "2026-10-07T06:53:40+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Projects redesigned: from folder to conversation\nA new experience for Claude projects, now available in beta in Claude Code\nManaging multiple sessions across a build used to require you to divide the work, juggle handoffs, and stitch the results back together. Now in a Claude Code project, you describe what needs to get done and Claude manages the work.\nClaude scopes the request, delegates the work, coordinates parallel threads, reviews the outputs, and assembles the finished result. You can steer progress throughout, even from your phone, and it keeps working after you step away from your computer.\nFor example, configure a project and set a goal to reduce your app's checkout p75 latency. Then ask Claude to profile each endpoint, test optimizations, and open PRs in parallel threads. Or connect your API, web, and mobile repos and set a goal to retire a deprecated v1 endpoint. Claude creates a thread per repo to migrate the callers, run the tests, open PRs, and then tells you which ones need to merge first.\nStarting today, updated projects are available in beta to select Claude Pro and Max subscribers who use cloud sessions in Claude Code and don\u2019t have any existing projects on the web or desktop.\nOver the coming week, we'll expand access to more Claude Code users on those plans. Updated projects across all of Claude and Team and Enterprise plans come after that. If you're on Pro or Max and don't have access yet, you can join the [waitlist](https://claude.com/form/projects).\nExisting projects on Pro and Max plans keep working as they do today. We'll upgrade them as the rollout expands to chat and Cowork.\nThreads do the work, Claude directs it\nProjects have threads that do the work and a coordinator that directs them.\nWhen you start a project, you select a goal as well as the repo or context. Claude starts by suggesting work it can pick up right away. You can configure the project\u2019s cloud environment, connectors, plugins, instructions, and model.\nYou can monitor and guide progress in the main project chat, or dive into each individual thread to examine and steer the details. Brief Claude in the project the way you'd brief a chief of staff and it routes work to new or pre-existing threads.\nClaude also checks in and follows through on work. With repositories connected, a thread opens pull requests and runs your tests; with documents, it reads them and drafts.\nUnder the hood, each thread is a Claude Code cloud session working on its own branch and copy of the repo. The coordinator keeps work organized, but if any threads work on the same code, the overlap is resolved as a merge conflict just like any other PR.\nEach thread can further split its delegated work into pieces using subagents, loops, and workflows when needed so large assignments finish faster.\nContext builds over time\nProjects are designed for long-running or agentic workflows: work that takes longer than one reply and has more than one part.\nOver time, Claude learns more about the project details and applies them to its work. Every thread now adds to and draws from a shared memory, reducing the need for complex prompt engineering.\nFor example, Claude can remember the release moved to Friday, why the export was dropped, or who to check in with before touching the billing service.\nClaude also remembers your working and communication style. You can ask it to adjust how often it checks in, how frequently it starts new threads, or how detailed to make each update.\nAlongside memory, projects now include a library that collects the files you add and the artifacts produced by Claude. This makes it easier to find relevant materials and for new work to build on past efforts.\nWhat's next\nProjects can run several threads at once, and each one is a full Claude Code session. Because of this, projects can reach usage limits faster. You can check project specific usage and select the model and effort levels used by the coordinator chat as well as the worker threads.\nThreads run in the cloud today; running on your machine alongside your local tools and code and behind your network is coming very soon.\nStart using[ projects](https://claude.com/projects).",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
