@@ -1,5 +1,71 @@
 [
   {
+    "article_id": 875875,
+    "title": "Beyond RAG: A Relational Context Engine That Cuts Token Burn \u2014 Unblocked",
+    "url": "https://www.youtube.com/watch?v=ORVh4GivEU0",
+    "published_at": "2026-10-10T19:30:39+00:00",
+    "fetched_at": "2026-10-10T19:49:49+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Vector search can't answer \"which PRs did I merge last week?\" A relational context engine can, and it cuts token burn along the way.\n\nPeter Werry, founding engineer at Unblocked, explains what a context engine is and why coding agents need more than code search: the PRs, Slack threads and incident history that explain why the code is the way it is. He shows Claude sessions with and without that context, including one with about a 50% drop in cost and one that traced a regression to a model switch. Then he builds Unblocked's open-source document query engine step by step: automatic schema discovery, identity resolution across systems, query validation that blocks dangerous operators, retries that feed errors back to the model, and full-text search. He closes with the open-source context engine simulator for testing whether pre-gathered context helps your agents.\n\nIn this talk:\n\u2022 What a context engine is, and how it lowers cost on real agent sessions\n\u2022 Why vector stores can't answer structural questions about your work\n\u2022 Turning plain-English questions into safe, validated database queries\n\u2022 Schema discovery, identity resolution, retries and full-text search\n\nSPEAKER\nPeter Werry, Founding Engineer, Unblocked\n\nLINKS\nUnblocked: https://getunblocked.com\nDocument query engine (GitHub): https://github.com/unblocked/document-query-engine\nUnblocked on X: https://x.com/get_unblocked\n\nCHAPTERS\n0:00 Intro\n0:52 Agenda\n2:22 Demo: agents with and without context\n4:17 Half the cost\n4:57 Tracing a model regression\n6:17 Let's build\n7:11 Questions vector search can't answer\n8:21 The hard part: scaffolding\n9:46 The document query engine\n10:31 Automatic schema discovery\n12:26 Identity resolution\n13:45 Validating queries\n15:50 Retries\n16:35 Full-text search\n18:30 Context engine simulator\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#ContextEngineering #RAG #AIEngineer",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 875876,
+    "title": "Zero Cold Starts: Serverless AI Agents on Akamai Functions \u2014 Thorsten Hans",
+    "url": "https://www.youtube.com/watch?v=Zf_e45GiNCE",
+    "published_at": "2026-10-10T18:00:38+00:00",
+    "fetched_at": "2026-10-10T19:49:49+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Cold starts, proprietary SDKs and one-region deployments slow AI apps down. WebAssembly at the edge removes all three.\n\nThorsten Hans, senior developer advocate at Akamai, shows how to build and ship MCP servers and AI agents with Spin, the open-source WebAssembly framework, and run them on Akamai Functions, a globally distributed serverless platform with no cold starts. He explains why WebAssembly on the server is fast, portable and sandboxed by default, then live-codes MCP servers with wasmcp: scaffolding tools in TypeScript and Rust, composing them into a full server, testing with MCP Inspector, deploying it worldwide in about 60 seconds with one command, and calling its tools from the Zed editor. He finishes with an agent built on the Vercel AI SDK, backed by a model on a Linode GPU, and explains how memory snapshots keep apps warm.\n\nIn this talk:\n\u2022 Why edge-native beats single-region for AI apps, and how WebAssembly kills cold starts\n\u2022 What Spin and Akamai Functions are\n\u2022 Building and composing MCP servers with wasmcp in TypeScript and Rust\n\u2022 Deploying an MCP server and an AI agent globally with one command\n\nSPEAKER\nThorsten Hans, Senior Developer Advocate, Akamai\nLinkedIn: https://www.linkedin.com/in/ThorstenHans/\nX: https://twitter.com/ThorstenHans\nGitHub: https://github.com/ThorstenHans\nWebsite: https://thorsten-hans.com\n\nLINKS\nSpin: https://spinframework.dev\nSpin (GitHub): https://github.com/spinframework/spin\nAkamai Functions: https://www.akamai.com/products/akamai-functions\nwasmcp (GitHub): https://github.com/wasmcp/wasmcp\n\nCHAPTERS\n0:00 Intro\n0:57 Why edge-native?\n1:32 The cold start problem\n2:52 WebAssembly on the server\n3:37 What is Spin?\n4:52 Akamai Functions\n5:32 Sandboxed by default\n7:32 Demo: scaffolding with wasmcp\n9:41 Composing an MCP server\n10:16 Testing with MCP Inspector\n12:56 Deploying to Akamai Functions\n14:16 Using it from an MCP client\n16:16 An agent with the Vercel AI SDK\n18:21 Memory snapshots\n20:56 Key takeaways\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#WebAssembly #MCP #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 875877,
+    "title": "From Your Laptop to the Pipeline: Scaling Custom Agents with GitHub Copilot",
+    "url": "https://www.youtube.com/watch?v=b9UhZkKjX_A",
+    "published_at": "2026-10-10T16:30:31+00:00",
+    "fetched_at": "2026-10-10T19:49:49+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most teams build an agent once, on one laptop, and never share it. Here's how to take it from local to the whole org to the CI pipeline.\n\nJose Palafox, who has spent six and a half years at GitHub and now works with companies on Copilot adoption, walks through the path from a local custom agent to agents that run unattended in your pipeline. He explains how Copilot works under the hood, the built-in agents in the Copilot CLI, and how to generate and edit a custom agent with the agent builder. Then he shows how to share agents across an organization with a marketplace, run agents across repositories with Orchestrate, and move them into CI with GitHub Agentic Workflows: headless Copilot CLI runs in GitHub Actions, triggered by slash commands in issues, plus a repo with about 200 agents running different parts of the pipeline and agents that investigate their own cost overruns.\n\nIn this talk:\n\u2022 Local vs autonomous agents, and how Copilot works under the hood\n\u2022 Building custom agents and choosing models for them\n\u2022 Sharing agents across a company with a marketplace\n\u2022 Running agents in CI with GitHub Agentic Workflows\n\nSPEAKER\nJose Palafox, Field Copilot Specialist, GitHub\nGitHub: https://github.com/josepalafox\n\nLINKS\nGitHub Agentic Workflows: https://github.github.com/gh-aw/\nCopilot coding agent docs: https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent\nGitHub Copilot: https://github.com/features/copilot\n\nCHAPTERS\n0:00 Intro\n0:52 Local vs autonomous agents\n1:32 How Copilot works under the hood\n3:32 Built-in agents in the CLI\n5:32 Building a custom agent\n7:37 Sharing agents with a marketplace\n10:52 Agents across repositories\n12:41 Agentic Workflows: agents in CI\n14:21 Triggering agents from issues\n14:56 Why pipeline agents scale\n15:36 200 agents in one repo\n18:16 Agents that watch their own cost\n18:56 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#GitHubCopilot #AIAgents #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 873862,
     "title": "The Lethal Trifecta Is Already on Your Laptops \u2014 Michael Patterson, Coder",
     "url": "https://www.youtube.com/watch?v=abw_m-DRi1k",
@@ -10970,72 +11036,6 @@
       "models",
       "open-source",
       "agents",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 552888,
-    "title": "REVERSAL-BENCH: A Reversibility Axis and Reset Oracle for Measuring the Reset-Free RL Cliff",
-    "url": "https://machinelearning.apple.com/research/reversal-bench-rl-cliff",
-    "published_at": "2026-09-17T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:29+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "[content type paper](/research/)published September 2026\nREVERSAL-BENCH: A Reversibility Axis and Reset Oracle for Measuring the Reset-Free RL Cliff\nAuthorsRiyaaz Shaik, Chandru Venkataraman\nREVERSAL-BENCH: A Reversibility Axis and Reset Oracle for Measuring the Reset-Free RL Cliff\nAuthorsRiyaaz Shaik, Chandru Venkataraman\nA central goal of autonomous reinforcement learning is continuous policy training without external resets. However, existing paradigms largely depend on underlying environmental reversibility, a property absent in real world manipulation, where events such as pushing objects off tables or spilling granular substances cannot be undone. We introduce REVERSAL-BENCH, a benchmark that controls reversibility via a continuous parameter \u00cf\u00e2 [0, 1] and provides a reset oracle, a ground-truth verification mechanism to test state recoverability across eight manipulation settings in five physics engines. Evaluating a broad spectrum of policy architectures\u00e2including standard actor-critic algorithms, safe RL, and specialized reset-free frameworks reveals a sharp reversibility cliff: reset-free agents are consistently absorbed into irrecoverable states as \u00cf increases, whereas episodic agents maintain steady learning. We see this failure mode across autonomous reset-free baselines and constrained RL. Because reset-free agents lack external resets, any transition into an irrecoverable state results in permanent absorption, leaving the agent trapped where further learning halts. We show that this absorption phenomenon persists in full physics simulations under learned manipulation policies. By evaluating against geometrically identical reversible counterparts, we confirm that this breakdown is causally driven by irreversibility rather than obstacle complexity. We release the benchmark suite, a large multi-simulator dataset labeled with recoverability and a reset oracle. We also evaluate a safety shield that intervenes before irreversible failures occur, showing that while recoverability can be predicted accurately, active recovery primarily succeeds only when the agent can physically steer clear of the trap.\nAgentBuilder: Exploring Scaffolds for Prototyping User Experiences of Interface Agents\nJanuary 9, 2026[research area Human-Computer Interaction](/research/?domain=Human-Computer%20Interaction)\nInterface agents powered by generative AI models (referred to as \u00e2agents\u00e2) can automate actions based on user commands. An important aspect of developing agents is their user experience (i.e., agent experience). There is a growing need to provide scaffolds for a broader set of individuals beyond AI engineers to prototype agent experiences, since they can contribute valuable perspectives to designing agent experiences. In this work, we explore the\u00e2\u00a6\nTowards Learning Multi-Agent Negotiations via Self-Play\nJanuary 28, 2019[research area Computer Vision](/research/?domain=Computer%20Vision)[Workshop at ICCV](/research/?event=ICCV%20Workshop)\nMaking sophisticated, robust, and safe sequential decisions is at the heart of intelligent systems. This is especially critical for planning in complex multi-agent environments, where agents need to anticipate other agents\u00e2 intentions and possible future actions. Traditional methods formulate the problem as a Markov Decision Process, but the solutions often rely on various assumptions and become brittle when presented with corner cases. In\u00e2\u00a6",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553483,
-    "title": "Projects redesigned: from folder to conversation",
-    "url": "https://claude.com/blog/projects-redesigned",
-    "published_at": "2026-09-17T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Projects redesigned: from folder to conversation\nA new experience for Claude projects, now available in beta in Claude Code\nA new experience for Claude projects, now available in beta in Claude Code\n- September 17, 2026\n- 5min\nManaging multiple sessions across a build used to require you to divide the work, juggle handoffs, and stitch the results back together. Now in a Claude Code project, you describe what needs to get done and Claude manages the work.\nClaude scopes the request, delegates the work, coordinates parallel threads, reviews the outputs, and assembles the finished result. You can steer progress throughout, even from your phone, and it keeps working after you step away from your computer.\nFor example, configure a project and set a goal to reduce your app's checkout p75 latency. Then ask Claude to profile each endpoint, test optimizations, and open PRs in parallel threads. Or connect your API, web, and mobile repos and set a goal to retire a deprecated v1 endpoint. Claude creates a thread per repo to migrate the callers, run the tests, open PRs, and then tells you which ones need to merge first.\nStarting today, updated projects are available in beta to select Claude Pro and Max subscribers who use cloud sessions in Claude Code and don\u2019t have any existing projects on the web or desktop.\nOver the coming week, we'll expand access to more Claude Code users on those plans. Updated projects across all of Claude and Team and Enterprise plans come after that. If you're on Pro or Max and don't have access yet, you can join the [waitlist](https://claude.com/form/projects).\nExisting projects on Pro and Max plans keep working as they do today. We'll upgrade them as the rollout expands to chat and Cowork.\nProjects have threads that do the work and a coordinator that directs them.\nWhen you start a project, you select a goal as well as the repo or context. Claude starts by suggesting work it can pick up right away. You can configure the project\u2019s cloud environment, connectors, plugins, instructions, and model.\nYou can monitor and guide progress in the main project chat, or dive into each individual thread to examine and steer the details. Brief Claude in the project the way you'd brief a chief of staff and it routes work to new or pre-existing threads.\nClaude also checks in and follows through on work. With repositories connected, a thread opens pull requests and runs your tests; with documents, it reads them and drafts.\nUnder the hood, each thread is a Claude Code cloud session working on its own branch and copy of the repo. The coordinator keeps work organized, but if any threads work on the same code, the overlap is resolved as a merge conflict just like any other PR.\nEach thread can further split its delegated work into pieces using subagents, loops, and workflows when needed so large assignments finish faster.\nProjects are designed for long-running or agentic workflows: work that takes longer than one reply and has more than one part.\nOver time, Claude learns more about the project details and applies them to its work. Every thread now adds to and draws from a shared memory, reducing the need for complex prompt engineering.\nFor example, Claude can remember the release moved to Friday, why the export was dropped, or who to check in with before touching the billing service.\nClaude also remembers your working and communication style. You can ask it to adjust how often it checks in, how frequently it starts new threads, or how detailed to make each update.\nAlongside memory, projects now include a library that collects the files you add and the artifacts produced by Claude. This makes it easier to find relevant materials and for new work to build on past efforts.\nProjects can run several threads at once, and each one is a full Claude Code session. Because of this, projects can reach usage limits faster. You can check project specific usage and select the model and effort levels used by the coordinator chat as well as the worker threads.\nThreads run in the cloud today; running on your machine alongside your local tools and code and behind your network is coming very soon.\nStart using[ projects](https://claude.com/projects).\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553484,
-    "title": "Working at the frontier: How Balyasny Asset Management evaluates and governs Claude Fable 5",
-    "url": "https://claude.com/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5",
-    "published_at": "2026-09-17T00:00:00+00:00",
-    "fetched_at": "2026-09-17T23:24:32+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Balyasny Asset Management (BAM) is a global, multi-strategy investment firm that manages roughly $38 billion in assets and supports a team of roughly 2,000 investment professionals and staff. Charlie Flanagan, Chief AI Officer, spoke with Anthropic about how the firm evaluates new models on thousands of real financial tasks, why it built its own platform for running agents, and what changed with the launch of Claude Fable 5.\nHow has frontier AI changed for BAM in 2026?\n2026 is the year we moved from AI systems that do search to AI systems that do work.\nThe key change has been not just the models, but the harnesses around them, such as Claude Code. They allow the AI solutions we build to take on vastly more complex and longer-running tasks. The ability to give an AI an outcome rather than a prompt, and have it keep working until complete, has been a gamechanger.\nA practical example is merger-arbitrage analysis. When a deal is announced, agents now build the initial deal-analysis package. They estimate how likely the deal is to close and how long it will take, extract the key economic and legal terms, identify conditions and milestones, and flag the areas that need investor judgment.\nA year ago, those steps were fragmented across manual research and separate tools; we did not have an agent that could reliably sustain the full multi-step workflow to a usable conclusion. That work used to take three to five days. Now it takes less than one. The agent runs for approximately 30 minutes, with human review before any material output is relied on.\nWe use Anthropic's frontier models, but most of the infrastructure is built in-house at BAM, including the execution harness, data access, and review controls.\nHow did you evaluate Claude Fable 5 before turning it on?\nOne thing we did years ago which has served us extremely well was invest in robust evaluation systems. We test new models on thousands of real-world financial tasks with verifiable outcomes, across equities, macro, and commodities, rather than relying on general benchmarks or isolated demonstrations. It has allowed us to make data-driven decisions around model choice and routing, and is something I think all enterprises should invest in.\nWe test both the model on its own and how it performs inside our agentic environment, with the same tools, files, and requirements our users have. Can it plan the work, choose and use the right tools, find and analyze evidence, recover from errors, check its intermediate results, and produce a grounded deliverable? We also look for specific failure modes, like numerical errors, missed coverage, unsupported conclusions, and retrieval problems.\nOn the relevant subset, Fable achieved 89.4% versus 86.1% for the prior production model, across thousands of tasks. Where it stood out most was complex planning, analysis, and agentic execution.\nThe surprising result was a set of economics problems we have tested that we have never had a model complete successfully, until Fable. We initially treated the result as a potential evaluation issue because it represented a material step change versus every model we had tested. We reran the evaluation, independently checked the task and scoring logic, and reviewed the result with Anthropic before concluding that the improvement was real. It was a wow moment.\nToday, our investment teams use Fable as their go-to frontier model for systematic and coding work. We give them guidance on when to use Fable versus other models, based on efficiency and cost.\nHow are you thinking about safety with today's frontier models?\nWe treat safety as a product and operating-model question, not as a one-time model-selection exercise. The relevant questions are not only what the model can do, but what data it can access, what tools it can use, what actions it can take, what must remain human-approved, and how we will know when something has gone wrong.\nThat means putting controls around the model rather than assuming the model itself is the control. We use approved data boundaries, least-privilege access, tool-level permissions, logging and traceability, human review for material outputs, and clear escalation paths for edge cases. We also test adversarial and failure scenarios before broadening access.\nThose controls were a day-one priority, and security did not fundamentally change with Fable. A more capable model does not receive broader authority simply because it can reason or plan more effectively. Models can use only the tools and data sources approved for that user and task, and they cannot grant themselves more access. Investment judgment and accountability remain with people.\nWhere does BAMAgent fit in?\nLooking ahead, the direction of travel is toward more capable agents that can take longer-running, multi-step actions. That makes governance more important, not less. For us, that has meant building BAMAgent, our internal platform for securely deploying agents into approved enterprise workflows. It gives agents the tools and systems they need, but only those tools and systems. We have been building it for six months now and it supports thousands of autonomous agents working 24/7.\nBAMAgent is the next step beyond our chat platform. Chat helps people take in and synthesize information. BAMAgent does the work: multi-step research and analysis that can run for hours or days, with agents working in parallel, and it ends in something a person can review. It can build and maintain a company research package, prepare for an earnings or macro event, or turn new evidence into financial scenarios. The agent plans the work, uses approved internal systems, runs the analysis, checks its intermediate outputs, and returns a research artifact, model, or decision-support package.\nFable is our preferred model for the planning and analysis stages. A mistake there flows through every deliverable that follows, so we want the strongest available model deciding how to break down a problem, which evidence matters, and how to reconcile conflicting signals. That is what lets the agent work like a capable coworker.\nEvery enterprise should be developing a strategy to move toward a hosted-agent model that allows enterprise management and enforcement while maximizing the utility of agents for users.\nWhat has Claude Fable 5 made possible for BAM?\nThe reaction has been incredibly positive. Ultimately, people care about what this technology can unlock in their day-to-day work.\nIn one example, a BAMAgent ran a tax-loss harvesting analysis. It explored 90,000 database tables, found the relevant mutual fund holdings data, and built its own weighting system. After a review by our team, the result was more comprehensive than what a traditional approach would have produced.\nSeparately, our Chief Economist has configured an agent workflow that reduces a recurring central-bank analysis from roughly two days to approximately 30 minutes, with the economist retaining review and judgment.\nFable contributes the reasoning, synthesis, and multi-step problem-solving. BAM's harness provides the workflow design, approved data and tool access, retrieval context, permissions, monitoring, and human-review controls. Both are necessary for a production-quality result.\nAs models become increasingly powerful, what's next on your AI roadmap?\nThis is the year we go from people having tools to having teammates. Much like a teammate, agents will become more useful over time as you work with them, complete more complex tasks, and start to do work proactively to help.\nWe already have some teams running over 300 agents doing analysis over new data and information constantly. It helps the teams both be faster to insights and not miss anything.\nIt also changes the question we ask. We used to build expert systems and teach people to automate the processes they already had. Now we ask whether there is a better way to reach the outcome.\nThe limits are really just our own imagination. The tools, data, and models are now at a point where they can do real work for hours on end; it's up to us to continue to reimagine what is possible. It is going to be an incredibly exciting next 12 months.\nGet started with[ Claude Fable](https://www.anthropic.com/claude/fable).",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "safety",
       "benchmark",
       "research"
     ],
