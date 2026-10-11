@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 882180,
+    "title": "Latency Is a Budget. Humanlike Is the Goal. \u2014 Jesse Hall, LiveKit",
+    "url": "https://www.youtube.com/watch?v=j4AmIK6OvHc",
+    "published_at": "2026-10-11T01:30:13+00:00",
+    "fetched_at": "2026-10-11T09:10:58+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your voice agent's dashboard says it's fast. Your callers say it feels robotic. They're both right.\n\nJesse Hall, staff developer advocate at LiveKit, explains how to build voice agents that feel human. He shows why leaderboards can't pick your models (scores measure one model, but you ship a pipeline, and errors compound from speech-to-text to the LLM to text-to-speech) and why measured latency isn't what your callers hear. He covers buying time like a person does while tools run, plays a hotel-receptionist demo that handles interruptions and a caller changing his mind, explains LiveKit's audio-based turn detection (4.5% of users cut off vs 9.9% for the best alternative), and lays out the window that matters: a second and a half end to end still works, and around 600 milliseconds starts to feel human. He ends with LiveKit's open-source benchmark you can run against your own agent, a sneak peek of a voice-tuned Gemma model on LiveKit Inference, and a checklist.\n\nIn this talk:\n\u2022 The leaderboard trap, and why pipelines fail differently than models\n\u2022 Measured vs perceived latency\n\u2022 Turn detection from audio, and buying time during tool calls\n\u2022 A latency budget, an open-source benchmark for your agent, and a checklist\n\nSPEAKER\nJesse Hall, Staff Developer Advocate, LiveKit\nX: https://twitter.com/codeSTACKr\nLinkedIn: https://linkedin.com/in/codestackr\n\nLINKS\nLiveKit: https://livekit.io\nLiveKit Agents docs: https://docs.livekit.io/agents/\n\nCHAPTERS\n0:00 Intro\n0:42 You've talked to one of these\n1:22 Latency is a budget\n2:02 Picking models\n2:42 What LiveKit is\n3:26 Realtime models vs pipelines\n4:16 How pipeline errors compound\n4:51 The leaderboard trap\n6:06 Measured vs perceived latency\n7:35 Buying time like a human\n8:21 Demo: hotel receptionist\n10:26 Audio-based turn detection\n11:41 The 600 ms target\n13:54 Benchmark your own agent\n15:09 A faster voice LLM\n15:53 The checklist\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#VoiceAI #LiveKit #AIEngineer",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 879877,
     "title": "Dwarf Fortress uses version control now",
     "url": "https://simonwillison.net/2026/Oct/11/dwarf-fortress/",
@@ -15,6 +37,28 @@
       "open-source",
       "coding",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 882181,
+    "title": "An AI Future Without the Lock-In \u2014 Remy Guercio, Tailscale",
+    "url": "https://www.youtube.com/watch?v=s-glGHAa1a4",
+    "published_at": "2026-10-11T00:00:35+00:00",
+    "fetched_at": "2026-10-11T09:10:58+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The era of unlimited AI budgets is over, and most teams are locked into whichever tools they picked first.\n\nRemy Guercio, who works on Tailscale's AI gateway Aperture, looks back at a year of AI lock-in and asks how teams get out of it while proving real ROI. He breaks an internal AI deployment into four layers (the models, the data connectors like MCP, CLIs and APIs, the interface, and the sandbox) and argues an AI gateway is what keeps them swappable. He shows how Aperture uses your Tailscale network for identity instead of shared API keys, sets budgets per model (unlimited for cheap models, tight for frontier ones), works as both an LLM and MCP gateway, handles authentication for Cursor, Claude Code and Codex in one place, and keeps logs you can use to diagnose what an agent did.\n\nIn this talk:\n\u2022 Why unlimited AI budgets are ending, and what ROI maxing means\n\u2022 The four layers of an AI stack and where lock-in hides\n\u2022 How an AI gateway ties identity, budgets and logs together\n\u2022 Aperture as both an LLM and MCP gateway\n\nSPEAKER\nRemy Guercio, Strategic Projects, Tailscale\nX: https://twitter.com/remyguercio\nGitHub: https://github.com/remyguercio\n\nLINKS\nAperture docs: https://tailscale.com/docs/aperture\nAperture: https://aperture.tailscale.com\nTailscale: https://tailscale.com\n\nCHAPTERS\n0:00 Intro\n0:45 A year of AI lock-in\n2:05 The end of unlimited budgets\n2:45 Wasted tokens\n3:20 How do we get out?\n4:44 Finance wants answers\n5:14 ROI maxing\n6:09 The four layers\n8:09 Meet Aperture\n9:24 How most AI gateways work\n10:09 Identity from the tailnet\n10:44 Built with tsnet\n12:04 Budgets per model\n12:44 LLM and MCP gateway\n14:04 Auth in one place\n16:49 Sandboxes\n18:04 Why you need a gateway\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIGateway #Tailscale #AIEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -950,7 +994,7 @@
     "published_at": "2026-10-08T14:22:26+00:00",
     "fetched_at": "2026-10-08T19:41:27+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Closing the Communication Gap With AI Agents\n\nLearn why the biggest obstacle to getting better outputs from AI agents isn't the model itself\u2014it's the communication barrier between you and the agent. Discover how to think about what your agent doesn't know about you and what you actually want.\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/s/xdown9\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/qYu37p\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/LGj1oUidC7Q",
     "topic": "tutorials",
@@ -3351,7 +3395,7 @@
     "published_at": "2026-10-05T10:50:24+00:00",
     "fetched_at": "2026-10-05T15:08:06+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Skills v1.3 is here with three game-changing skills: implement spec for landing huge chunks of work, PR skill for better code reviews, and retro for finding hidden inefficiencies in your agent sessions.\n\n0:00 Version 1.3 overview\n0:25 Implement spec skill\n4:54 PR skill\n8:10 Context to glossary rename\n9:37 Retro skill\n14:06 AI coding crash course\n\nLearn more about these skills and take the AI Coding Crash Course:\n\nhttps://aihero.dev/s/xrT0hb\n\nChangelog:\n\nhttps://www.aihero.dev/skills/skills-changelog-v13-implement-spec-pr-retro-and-glossary-md\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/s/yeL3Jb\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/RuRzmc\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/BsJGo1wFTvQ",
     "topic": "education",
@@ -4002,7 +4046,7 @@
     "published_at": "2026-10-03T05:08:12+00:00",
     "fetched_at": "2026-10-03T11:54:24+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/MN9dGgmLyso",
     "topic": "tutorials",
@@ -5345,7 +5389,7 @@
     "published_at": "2026-09-30T10:07:47+00:00",
     "fetched_at": "2026-09-30T10:39:34+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock YouTube",
+    "source_name": "Matt Pocock",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Lauren Tan (poteto) about how to ship extraordinary amounts of high-quality work using agents.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/MN9dGgmLyso",
     "topic": "tutorials",
@@ -10983,51 +11027,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712581,
-    "title": "Cute Critters Come to the Cloud: \u2018Aniimo\u2019 Launches on GeForce NOW",
-    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-aniimo/",
-    "published_at": "2026-09-17T13:00:55+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "A new creature-catching adventure is ready to stream from the cloud this week. Pawprint Studio\u2019s Aniimo arrives on [GeForce NOW](https://www.nvidia.com/en-us/geforce-now/?ncid=pa-srch-goog-673352&gad_source=1&gad_campaignid=24109411186&gbraid=0AAAAAD4XAoFU8ggWk_ctIMbhcvIsRyJpn&gclid=Cj0KCQjwh4TVBhCWARIsAG0czmpnuXeOukbuTNygy2VzBtR3O7EIei492KMT7sDRCIKviJ0yAbJtl_saAl6AEALw_wcB) at launch, inviting gamers to explore the vibrant continent of Idyll across supported devices.\nAlso this week, 007 First Light receives a path-tracing update on GeForce NOW, alongside a smashing limited-time Deluxe Edition sale on [Steam](https://store.steampowered.com/app/3768760/007_First_Light/) and [Epic Games Store](https://store.epicgames.com/p/007-first-light-182cea?lang=en-US).\nGaijin Network\u2019s fractured-multiverse action game Active Matter and Annapurna Interactive\u2019s acclaimed space mystery Outer Wilds are also among 11 new titles [joining the cloud](https://www.nvidia.com/en-us/geforce-now/games/) this week.\nExplore Idyll With the Cutest Companions\nThe path to Idyll begins now. Aniimo is a free-to-play, open-world creature-catching role-playing game where every creature encountered can become a companion. Catch Aniimo with Aniipods, then Twine with them to take on their form and use unique skills to solve puzzles, win battles and overcome challenges.\nGlide, dive and burrow across Idyll, then return to a personal RV to build a warm, interactive Homeland alongside Aniimo companions. Stream Aniimo on a [Steam Deck](https://blogs.nvidia.com/blog/geforce-now-thursday-steam-deck-geforce-now/), in the newly supported [Firefox browser ](https://blogs.nvidia.com/blog/geforce-now-thursday-firefox/)and across any other supported devices \u2014 without waiting through its 45GB download or making room in local storage. There\u2019s always room in the Homeland for one more Aniimo.\nChoose Your Path\nIn the critically acclaimed, multimillion-selling [007 First Light](https://ioi.dk/007firstlightgame), follow James Bond as a young, resourceful and sometimes reckless recruit in MI6\u2019s training program, and discover a reimagined origin story of the world\u2019s most famous spy. Incorporating IO Interactive\u2019s signature stealth gameplay with world-class Bond action, players can embark on missions in breathtaking locations around the globe, drive iconic vehicles and dive into a cinematic adventure in pursuit of a rogue agent who\u2019s always one step ahead.\nPath tracing has now [been added](https://www.nvidia.com/en-us/geforce/news/007-first-light-path-tracing-dlss-4-5-ray-reconstruction-update-out-now/) to 007 First Light, introducing extra-detailed lighting, shadows and reflections, making its levels and set pieces even more cinematic, immersive and realistic. And NVIDIA DLSS 4.5 Ray Reconstruction ensures the fidelity, clarity and accuracy of these additions are at their absolute best.\n[Ultimate members](https://www.nvidia.com/en-us/geforce-now/premium-memberships/) can stream with GeForce RTX 5080-class performance, with up to 5K high dynamic range and cinematic-quality streaming. DLSS 4.5 Super Resolution and Dynamic Frame Generation accelerate frame rates and enhance image quality.\nA limited-time opportunity awaits: the 007 First Light Deluxe Edition is on sale on [Steam](https://store.steampowered.com/app/3768760/007_First_Light/) from Sept. 15-29 and on [Epic Games Store](https://store.epicgames.com/p/007-first-light-182cea?lang=en-US) from Sept. 3-18. The mission is on sale. The getaway car is in the cloud.\nMatter of Time\nGaijin\u2019s Active Matter, a realistic military shooter set in a fractured multiverse, has launched on GeForce NOW. As an operative stuck in a time loop, join dangerous raids for loot or intense player vs. player battles.\nFight against rivals from other timelines, survive physics-breaking anomalies and try to stay alive. Harvest active matter, gather loot and extract to a safe place before the whole zone ceases to exist.\nUltimate members can take on each raid with GeForce RTX 5080-class performance in the cloud, delivering high frame rates, advanced graphics features and low latency across supported devices. The zone won\u2019t wait \u2014 and neither does the next loop.\nLet\u2019s Get Loopy\nOuter Wilds joins the GeForce NOW library this week. As the newest recruit of Outer Wilds Ventures, search for answers across a strange, ever-changing solar system trapped in an endless time loop. Gamers can trace mysterious signals, decipher alien writing and discover hidden locations before an underground city is swallowed by sand or a planet crumbles beneath their feet.\nThere\u2019s even more to stream this week:\n- Active Matter (New release on\n[Steam](https://store.steampowered.com/app/2887580/Active_Matter/)and[Gaijin](https://activematter.game/?utm_source=nvidia&utm_campaign=geforce_now), Sept. 15) - Aniimo (New release on\n[Steam](https://store.steampowered.com/app/4126040/Aniimo/), Sept. 15) - RuneScape: Dragonwilds (New release on\n[Xbox](https://www.xbox.com/games/store/runescape-dragonwilds/9p402rwr63h4?utm_source=nvidia&utm_campaign=geforce_now), Sept. 15, available on Game Pass) - Train Sim World 7 (New release on\n[Steam](https://store.steampowered.com/app/4678800/Train_Sim_World_7/), Sept. 15) - The Guild 1 Remake: Europa 1410 (New release on\n[Steam](https://store.steampowered.com/app/2977260/The_Guild_1_Remake_Europa_1410/), Sept. 17) - The Blood of Dawnwalker (\n[GOG.com](https://www.gog.com/game/the_blood_of_dawnwalker?utm_source=nvidia&utm_campaign=geforce_now)) - Mixtape (\n[Steam](https://store.steampowered.com/app/2582320?utm_source=nvidia&utm_campaign=geforce_now)) - Neon White (\n[Steam](https://store.steampowered.com/app/1533420?utm_source=nvidia&utm_campaign=geforce_now)) - Outer Wilds (\n[Steam](https://store.steampowered.com/app/753640/Outer_Wilds/)) - Stray (\n[Steam](https://store.steampowered.com/app/1332010?utm_source=nvidia&utm_campaign=geforce_now)) - What Remains of Edith Finch (\n[Steam](https://store.steampowered.com/app/501300?utm_source=nvidia&utm_campaign=geforce_now))\nDates listed above reflect when games are released on their respective stores. GeForce NOW availability may vary, as games are onboarded after they\u2019re released and added throughout the week. Keep an eye on GeForce NOW channels and GFN Thursdays for availability updates to announced titles.\nReady to take this week\u2019s new games for a spin? Start with a [day pass](https://www.nvidia.com/en-us/geforce-now/?ncid=pa-srch-goog-673352&gad_source=1&gad_campaignid=24109411186&gbraid=0AAAAAD4XAoGPVGKakiCteqkRtoF1Q-KSI&gclid=CjwKCAjws_DTBhB_EiwAXZknGUBjXpM5vNQvnwLXUGilFsIHBSkbKPfllg7RGpFFuQZv2GFityJC6BoCq8MQAvD_BwE) to try premium cloud gaming before committing to a membership. Even better, the cost of the day pass can be applied toward a first monthly membership \u2014 making it easy to level up with GeForce RTX-powered cloud gaming.\nWhat\u2019s on the playlist this weekend? Let us know on [X](https://x.com/NVIDIAGFN?lang=en) or in the comments below.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "agents",
-      "infrastructure",
-      "coding",
-      "hardware",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 553170,
-    "title": "Homa: The End of TCP for AI Clusters \u2014 John Ousterhout, Stanford",
-    "url": "https://www.youtube.com/watch?v=eZ8WWZzoaR0",
-    "published_at": "2026-09-17T13:00:08+00:00",
-    "fetched_at": "2026-09-17T23:24:31+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "John Ousterhout, Stanford Professor and author of A Philosophy of Software Design, turns our attention to the evolving nature of AI networking workloads and why traditional protocols like TCP and RDMA are becoming bottlenecks in modern data center environments!\n\nThe Shift in Workloads\n\nHistorical context: AI traffic was dominated by massive, long-running transfers (gigabytes of gradients), where throughput was the primary metric (2:19-2:42).\nModern AI: Workloads, especially inference and agentic applications, now rely on frequent, small coordination messages (e.g., KV cache lookups, barrier synchronization). These small messages are highly sensitive to latency (3:09-4:02).\nThe Bottleneck: When small synchronization messages are mixed with large traffic, they get trapped in queues (caused by incast), significantly increasing 99th percentile (tail) latency. This causes GPUs to sit idle, wasting expensive compute resources (4:24-5:34).\nWhy Legacy Protocols Struggle\nSender-Driven Congestion Control: TCP and RDMA rely on the sender to detect congestion, often via packet drops or delayed signals from switches. This process is inherently reactive and oscillates, leading to unstable performance (7:10-9:58).\nByte Stream Model: These protocols view data as an opaque stream of bytes rather than discrete messages, making it difficult to prioritize short, critical tasks (10:05-11:05).\n\nThe Homa Solution\n\nJohn introduces Homa, a clean-slate transport protocol designed for data centers (11:15-12:15):\nMessage-Based: Unlike byte streams, Homa understands message boundaries, allowing it to predict traffic and prioritize short messages using Shortest Remaining Processing Time (SRPT) (12:22-13:28).\nReceiver-Driven: The receiver controls the flow by issuing grants to senders, effectively managing congestion before it occurs at the switch (13:30-14:58).\nPriority Queues: Homa leverages the multiple hardware queues already present in modern switches to bypass long, queued traffic with low-latency short messages (14:59-15:51).\nPerformance Results: Benchmarks show Homa can reduce tail latency for short messages by over 10x compared to TCP, while simultaneously improving performance for large messages (15:52-17:27).\n\nSpeaker info:\n- https://x.com/johnousterhout\n- https://web.stanford.edu/~ouster/cgi-bin/home.php\n\nTimestamps:\n0:00 - Why latency is becoming the metric that matters\n2:19 - The old workload: gigabytes and throughput\n3:09 - The new workload: metadata and coordination\n4:24 - How one slow exchange stalls every GPU\n6:07 - Incast, and where the queue actually builds\n7:10 - Why congestion control lives on the wrong end\n10:05 - A byte stream has no message boundaries\n11:08 - Homa, and a clean slate redesign\n12:12 - Messages, not streams\n13:30 - Controlling congestion from the receiver\n14:59 - Using the priority queues already in the switch\n15:52 - The benchmark against TCP\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/eZ8WWZzoaR0",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
