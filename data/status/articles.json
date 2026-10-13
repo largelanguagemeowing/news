@@ -1,5 +1,48 @@
 [
   {
+    "article_id": 899435,
+    "title": "From Earth to Orbit, France\u2019s Ecosystem Delivers Agentic Computing at Scale With NVIDIA",
+    "url": "https://blogs.nvidia.com/blog/france-ecosystem-agentic-computing/",
+    "published_at": "2026-10-13T05:00:31+00:00",
+    "fetched_at": "2026-10-13T09:01:45+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "Companies in France are deploying agentic computing across industries spanning space, financial services, the public sector and scientific research, demonstrating how the country\u2019s ecosystem has moved from ambition to application.\u00a0 France\u2019s progress sits on deliberate groundwork.\u00a0 The AI Action Summit in February 2025 and Choose France Summits in 2025 and 2026 anchored major compute commitments [&#8230;]",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "research",
+      "infrastructure",
+      "policy",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 899069,
+    "title": "How to Build Your Own AI Agent (Like PewDiePie)",
+    "url": "https://www.youtube.com/watch?v=EuN8WCWQf7g",
+    "published_at": "2026-10-13T03:37:35+00:00",
+    "fetched_at": "2026-10-13T09:01:43+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "PewDiePie is building his own AI assistant, Odysseus, and training a local model, Ajax, to power it. In this video I break down what Odysseus is, how an agent harness works from scratch, what it actually means to run a model locally with llama.cpp and Hugging Face, and how you can fine-tune a small model like Qwen 3.5 9B on agent traces so it calls tools reliably in your own harness.\n\n---\n\ud83d\udd17 *Links*\n- Odysseus (GitHub): https://github.com/odysseus-dev/odysseus\n- Claude system prompts: https://platform.claude.com/docs/en/release-notes/system-prompts\n- Hugging Face models: https://huggingface.co/models\n- Hugging Face hardware settings: https://huggingface.co/settings/hardware\n- Llama macOS app (llama.cpp): https://github.com/ggml-org/Llama-macOS\n- llama.cpp: https://github.com/ggml-org/llama.cpp\n- Qwen3.5-9B (Unsloth GGUF): https://huggingface.co/unsloth/Qwen3.5-9B-GGUF\n- Kolibri 1: https://huggingface.co/Aleph-Alpha/Kolibri-1\n- Qwen3.8-27B: https://huggingface.co/Qwen/Qwen3.8-27B\n- Agent trace datasets: https://huggingface.co/datasets\n- Post-training agents playlist: https://www.youtube.com/playlist?list=PLo2EIpI_JMQvQZm-kVlz4wY1vWF0LBcf5\n\n---\n\ud83e\udd13 *Topics Covered*\n- What PewDiePie's Odysseus is and how it works\n- How AI agent harnesses and tool calling work\n- Running and fine-tuning small local models\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Intro\n1:18 What Is Odysseus\n4:27 What Is an Agent Harness\n10:30 Running Local Models\n16:51 Training Small Models\n\n\ud83d\udc4b *Connect with me*\nMy website: https://alejandro-ao.com/\nX (Twitter): https://x.com/_alejandroao\nLinkedIn: https://www.linkedin.com/in/alejandro-ao/\nCourses: https://aibootcamp.dev/",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 896769,
     "title": "AI Labs Warn Race Makes Breach \u2018Inevitable\u2019",
     "url": "https://www.youtube.com/watch?v=C4Sq3Rot8FU",
@@ -10986,51 +11029,6 @@
       "safety",
       "benchmark",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712594,
-    "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
-    "url": "https://huggingface.co/blog/omlx",
-    "published_at": "2026-09-22T00:00:00+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "[\n](#jun-kim-omlx-creator-and-maintainer-joins-hugging-face-to-support-the-mlx-community)\nJun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community\n[Update on GitHub](https://github.com/huggingface/blog/blob/main/omlx.md)\nMLX is Apple's framework for local AI, especially optimized for Apple Silicon. We are big MLX supporters since it was the Christmas present from [Awni](https://x.com/awnihannun/status/1732184443451019431?s=20) and [Angelos](https://x.com/angeloskath/status/1732304844403429477?s=20) in 2023, and proud that Hugging Face is the Hub where people find MLX models and contribute their own. Usage of open, local AI is accelerating, and we believe in a healthy ecosystem where people can find the tools that work for them.\n[\n](#what-is-the-impact-for-omlx)\nWhat is the impact for oMLX?\nStability, and hopefully faster development! Graduating from a side job to a fully maintained and funded project will allow Jun to better guide the contributors and build for the long-term. [oMLX](https://github.com/jundot/omlx) stays Apache 2.0, and Jun keeps leading it as before.\n[\n](#what-is-the-impact-for-mlx-at-large)\nWhat is the impact for MLX at large?\nOur end goal is to unblock the community to run local AI in any shape or form, and provide the tools and building blocks to make that happen. We expect oMLX to serve as a testbed for new ideas, while leveraging the foundational work of the dependencies it already relies upon, such as [mlx-lm](https://github.com/ml-explore/mlx-lm) or [mlx-vlm](https://github.com/Blaizzy/mlx-vlm). We believe that strong modeling and inference libraries help the community, so we'd love to upstream work to wherever it makes sense. We have been collaborating with many projects mlx-lm, mlx-vlm, LMStudio, and we hope we can strengthen the relationship with [Cheng](https://x.com/zcbenz), [Prince](https://x.com/Prince_Canuma), [Yagil](https://x.com/yagilb), and their teams to better serve the community together.\nConcretely, one focus area is the quick transition from a transformers model definition to a reference MLX implementation that can be consumed by different engines, so each one can focus on the unique features they provide. The transformers library has become the reference for ML model definitions, we want to streamline the process to make new transformers models run on MLX.\nWe are incredibly excited about the future.\nWelcome, Jun! \ud83d\ude4c",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "infrastructure",
-      "coding",
-      "tutorials",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712593,
-    "title": "Transformers now runs llama.cpp quants",
-    "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
-    "published_at": "2026-09-22T00:00:00+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "Image-Text-to-Text \u2022 4B \u2022 Updated \u2022 986k \u2022 443\n[\n](#transformers-now-runs-llamacpp-quants)\nTransformers now runs llama.cpp quants\n[Update on GitHub](https://github.com/huggingface/blog/blob/main/transformers-llama-cpp-quants.md)\nfrom_pretrained\n, and start generating on your own machine.\nRunning AI models on your laptop has become much easier, and [llama.cpp](https://github.com/ggml-org/llama.cpp) has been a big part of that. Its inference engine powers local AI tools such as Ollama, LM Studio, and Jan. Alongside projects like [MLX](https://github.com/ml-explore/mlx), it has helped make local inference a practical option for everyday use.\nA recent example of what local AI can feel like:\nThis is where we are right now. And i\u2019m not gonna lie it feels pretty magical \ud83e\uddd9\u2640\ufe0f\n\u2014 Julien Chaumond (@julien_c)\nQwen3.6 27B running inside of Pi coding agent via Llama.cpp on the MacBook Pro\nFor non-trivial tasks on the[@huggingface]codebases, this feels very, very close to hitting the latest Opus in Claude\u2026[pic.twitter.com/lsIxLoUneU][April 24, 2026]\nGGUF, developed by the llama.cpp team, is a widely used format for local inference. The team also shares quantized checkpoints under [ggml-org on the Hub](https://huggingface.co/ggml-org). Publishers such as [Unsloth](https://huggingface.co/unsloth), [LM Studio Community](https://huggingface.co/lmstudio-community), and [bartowski](https://huggingface.co/bartowski) also provide ready-to-use GGUF checkpoints in a range of quantizations, so users can pick the version that fits their machine. GGUF models have been downloaded millions of times.\nWe want to make it easier to run these models locally with transformers, too. Compatibility is only useful if the model is pleasant to run. To bring performance close to llama.cpp, we're reusing its underlying ggml kernels through the [ kernels](https://huggingface.co/docs/kernels/index) library, and reducing overhead in\ngenerate\n. Our initial focus is local inference on Apple Silicon, starting with the Qwen3.5 architecture.\n[\n](#what-is-the-gguf-file-format)\nWhat is the GGUF file format?\n[GGUF](https://github.com/ggml-org/ggml/blob/master/docs/gguf.md) packages model weights and metadata, including tokenizer information and an optional chat template, in one file. It supports different quantization levels, letting you trade some precision for a smaller memory footprint. Variants such as Q4_K_M\nmix tensor precisions, using mostly 4-bit weights while keeping sensitive tensors at higher precision.\nHere's how quantization changes the file size of [Unsloth's Qwen3.5-4B](https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/tree/main):\n| GGUF variant | File size | Tradeoff |\n|---|---|---|\nBF16 |\n8.42 GB | Unquantized reference |\nQ6_K |\n3.53 GB | More precision than the smaller variants |\nQ5_K_M |\n3.14 GB | A middle ground between size and precision |\nQ4_K_M |\n2.74 GB | A practical starting point for local inference |\nWe suggest starting with Q4_K_M\n, then trying Q5_K_M\nor Q6_K\nif you have more memory available. More aggressive quantization can help larger models fit, but the quality tradeoff depends on the model and the task. Evaluate it on the work you actually want the model to do. The [Hub's GGUF documentation](https://huggingface.co/docs/hub/gguf#quantization-types) describes the available quantization types.\n[\n](#load-gguf-with-transformers)\nLoad GGUF with transformers\nTo get started, you need:\n- An Apple Silicon Mac.\n- A PyTorch version supported by the published\n[ggml-quantization kernel builds](https://huggingface.co/kernels/ggml-org/ggml-quantization), usually the two latest PyTorch releases. - The latest version of transformers (main for now, until the next release) and a compatible version of\nkernels\n.\npip install -U \"git+https://github.com/huggingface/transformers.git\" kernels\nTo load a GGUF model, pass its Hub model_id\nand filename as gguf_file\nto from_pretrained\n.\nNo extra configuration is needed: when the weights stay packed on Metal, transformers automatically loads the compatible ggml/Metal layer kernels and uses ggml-org/ggml-attn\nas the attention implementation. If that kernel cannot be fetched, the model falls back to \"sdpa\"\nwith a warning, and you can always force \"sdpa\"\nby passing attn_implementation=\"sdpa\"\nexplicitly. See the [GGUF documentation](https://huggingface.co/docs/transformers/main/en/quantization/gguf) for more loading options.\nimport torch\nfrom transformers import AutoModelForCausalLM, AutoTokenizer\nmodel_id = \"unsloth/Qwen3.5-4B-GGUF\"\nfilename = \"Qwen3.5-4B-Q4_K_M.gguf\"\ntokenizer = AutoTokenizer.from_pretrained(model_id, gguf_file=filename)\nmodel = AutoModelForCausalLM.from_pretrained(\nmodel_id,\ngguf_file=filename\n)\nThat is the only GGUF-specific step. Everything after it is the standard transformers API:\nmessages = [{\"role\": \"user\", \"content\": \"Explain why the sky is blue in a few sentences.\"}]\ninputs = tokenizer.apply_chat_template(\nmessages,\ntokenize=True,\nadd_generation_prompt=True,\nreturn_dict=True,\nreturn_tensors=\"pt\",\n).to(model.device)\nwith torch.inference_mode():\noutputs = model.generate(**inputs, max_new_tokens=256)\nprint(tokenizer.decode(outputs[0], skip_special_tokens=True))\nWithout a compatible quantization kernel, the loader falls back to dequantizing the model and uses more memory.\n[\n](#serve-gguf-with-your-preferred-interface)\nServe GGUF with your preferred interface\nYou can also use the same checkpoint with [ transformers serve](https://huggingface.co/docs/transformers/main/en/serve-cli/serving), which exposes an OpenAI-compatible API:\npip install -U \"transformers[serving] @ git+https://github.com/huggingface/transformers.git\" kernels\ntransformers serve \"unsloth/Qwen3.5-4B-GGUF:Qwen3.5-4B-Q4_K_M.gguf\"\nThe model argument uses <model_id>:<filename>.gguf\n: before the colon is the Hub repository (unsloth/Qwen3.5-4B-GGUF\n), and after it is the file to load (Qwen3.5-4B-Q4_K_M.gguf\n). This selects a specific quantization from a repository that may contain several.\nFor models whose chat template supports thinking, add --reasoning off\nto skip it or --reasoning on\nto enable it. The default, --reasoning auto\n, follows the chat template\u2019s default. See the [reasoning options](https://huggingface.co/docs/transformers/main/en/serve-cli/serving#enable-reasoning-on-the-server) for details.\nYou can connect a client such as [Jan](https://www.jan.ai/docs/desktop/remote-models/custom-endpoint) or [Pi](https://pi.dev) by adding a custom OpenAI-compatible provider with these settings:\n| Setting | Value |\n|---|---|\n| Base URL | http://localhost:8000/v1 |\n| Model ID | unsloth/Qwen3.5-4B-GGUF:Qwen3.5-4B-Q4_K_M.gguf |\ntransformers runs the model on your Mac, while the client provides the conversation interface. The same endpoint can be used by other clients that support this API.\n[\n](#benchmarking-against-llamacpp)\nBenchmarking against llama.cpp\nOur reference for local inference performance is llama.cpp. The comparison below focuses on three GGUF checkpoints: a small dense model, a larger dense model, and a mixture-of-experts model.\nThe llama.cpp column comes from the [ llama-bench](https://github.com/ggml-org/llama.cpp/tree/master/tools/llama-bench) tool (build\n5f55650a7\n, release b10200, Metal backend from ggml 0.18.0), run as llama-bench -m <file> -p 0 -n 128 -r 3\n, which reports tg128\n: the token-generation rate over 128 decoded tokens, averaged across three repetitions, with prompt processing excluded. The transformers column is generate\nproducing the same 128 tokens from a 12-token prompt, best of three warmed runs, and it includes prefill.Measured on a MacBook Pro M2 Max, 32 GB unified memory, macOS 26.6, PyTorch 2.12.1, kernels 0.17.0, plugged in.\nThe benchmark script\nimport time\nimport torch\nfrom transformers import AutoModelForCausalLM, AutoTokenizer\nmodel_id, filename = \"unsloth/Qwen3.5-4B-GGUF\", \"Qwen3.5-4B-Q4_K_M.gguf\"\nmodel = AutoModelForCausalLM.from_pretrained(model_id, gguf_file=filename)\ntokenizer = AutoTokenizer.from_pretrained(model_id, gguf_file=filename)\ninputs = tokenizer(\"The capital of France is Paris. The capital of Germany is\", return_tensors=\"pt\")\ninputs = inputs.to(model.device)\nwith torch.inference_mode():\nmodel.generate(**inputs, max_new_tokens=8, min_new_tokens=8, do_sample=False) # warm up\ntorch.mps.synchronize()\nfor _ in range(3):\ntime.sleep(90) # let the machine cool: back-to-back runs decay by 10% or more\nstart = time.perf_counter()\nmodel.generate(**inputs, max_new_tokens=128, min_new_tokens=128, do_sample=False)\ntorch.mps.synchronize()\nprint(f\"{128 / (time.perf_counter() - start):.1f} tok/s\")\nFor the other column:\nllama-bench -hf unsloth/Qwen3.5-4B-GGUF:Q4_K_M -p 0 -n 128 -r 3\nTransformers is close to llama.cpp across all three checkpoints. The chart uses the same measurements described above; it does not imply identical benchmark conditions, since the Transformers measurement includes prefill while llama-bench\nreports decode-only throughput.\n[\n](#transformers-and-llamacpp)\ntransformers and llama.cpp\nWhen [GGML and llama.cpp joined Hugging Face](https://huggingface.co/blog/ggml-joins-hf), we described their complementary roles: llama.cpp provides a foundation for local inference, while transformers provides a foundation for model definition. GGUF support brings those two closer together.\nllama.cpp remains our recommended engine when your priority is efficient local inference. Its dedicated runtime, memory management, and broad hardware support are built around that goal. This integration gives developers a convenient way to work with the same GGUF checkpoints inside transformers:\n- Experiment with GGUF in Python and PyTorch. Inspect intermediate activations with hooks, modify a model's forward pass, or prototype custom layers using familiar PyTorch tools.\n- Evaluate GGUF models. Use your existing transformers evaluation workflows to measure the quality of quantized checkpoints.\n- Validate GGUF conversions. For us as developers, loading the original checkpoint and its GGUF conversion in transformers makes it easier to check that the weights were converted correctly, accounting for quantization error.\n- Try new decoding ideas. Use custom logits processors and stopping criteria with\ngenerate\n, or write your own generation loop in Python. - Fine-tune from a GGUF checkpoint. Dequantize the weights and continue with a standard transformers training workflow.\nFor that last case, use GgufConfig(dequantize=True)\n:\nimport torch\nfrom transformers import AutoModelForCausalLM, GgufConfig\nmodel = AutoModelForCausalLM.from_pretrained(\n\"unsloth/Qwen3.5-4B-GGUF\",\ngguf_file=\"Qwen3.5-4B-Q4_K_M.gguf\",\nquantization_config=GgufConfig(dequantize=True),\ndtype=torch.bfloat16,\n)\n[\n](#beyond-gguf-ggml-kernels-for-more-models)\nBeyond GGUF: ggml kernels for more models\nThe bigger opportunity is bringing ggml's performance to models that llama.cpp does not support.\ntransformers already provides the PyTorch implementations of these architectures. With ggml kernels and quantization schemes available in PyTorch, we can work toward accelerating their supported operations without first implementing the entire model in llama.cpp. This is especially useful for new architectures, research models, and custom variants that may never receive a dedicated llama.cpp implementation.\nThat opportunity extends beyond the GGUF format itself. A kernel operates on tensors; it does not require the whole model to come from a GGUF file. The same building blocks can be integrated into other transformers models and loading workflows. This also opens a path to other modalities: computer vision models, audio models, and multimodal models could reuse compatible attention, normalization, and matrix multiplication kernels without first having a full implementation in llama.cpp. Each architecture still needs integration and validation; the initial GGUF examples here cover text generation.\n[\n](#fast-local-inference-with-python-and-pytorch)\nFast local inference with Python and PyTorch\nWe also wanted to show how far we",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
