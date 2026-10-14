@@ -1,8 +1,127 @@
 [
   {
+    "run_id": "df7ef953e643",
+    "started_at": "2026-10-14T09:52:27+00:00",
+    "ended_at": "2026-10-14T09:54:36+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "38545432117",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/38545432117",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-10-14T09:52:27+00:00",
+        "ended_at": "2026-10-14T09:54:36+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 45,
+          "enriched": 44,
+          "updated": 44,
+          "unchanged": 1,
+          "misses": 0,
+          "markdown_new_used": 1,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 19,
+            "youtube": 14,
+            "jina": 10,
+            "markdown_new": 1,
+            "rss": 1
+          },
+          "per_source": {
+            "google-deepmind-blog": {
+              "attempted": 4,
+              "enriched": 4,
+              "failed": 0
+            },
+            "simon-willison": {
+              "attempted": 7,
+              "enriched": 7,
+              "failed": 0
+            },
+            "huggingface-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 6,
+              "enriched": 6,
+              "failed": 0
+            },
+            "matt-wolfe": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "microsoft-commandline": {
+              "attempted": 10,
+              "enriched": 10,
+              "failed": 0
+            },
+            "google-ai-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "matt-pocock-youtube": {
+              "attempted": 5,
+              "enriched": 5,
+              "failed": 0
+            },
+            "hugging-face": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "bens-bites": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "nvidia-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "openai-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "marios-rec-reading": {
+              "attempted": 2,
+              "enriched": 1,
+              "failed": 1
+            },
+            "apple-machine-learning": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "anthropic-engineering": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "claude-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            }
+          },
+          "flush_batches": 2,
+          "defuddle_enabled": true,
+          "duration_ms": 128494.2
+        }
+      }
+    ]
+  },
+  {
     "run_id": "f75369b6e12f",
     "started_at": "2026-10-14T06:04:37+00:00",
-    "ended_at": "2026-10-14T06:04:57+00:00",
+    "ended_at": "2026-10-14T06:05:10+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "38520028863",
@@ -666,36 +785,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 7589.59
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "57356f28663b",
-    "started_at": "2026-10-10T19:49:46+00:00",
-    "ended_at": "2026-10-10T19:50:07+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "38081283227",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/38081283227",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-10-10T19:49:46+00:00",
-        "ended_at": "2026-10-10T19:49:53+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 3,
-          "duplicate_articles": 2117,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 16,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 7457.25
         }
       }
     ]
