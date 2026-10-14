@@ -1,5 +1,175 @@
 [
   {
+    "article_id": 914885,
+    "title": "65 seconds inside AI Engineer New York",
+    "url": "https://www.youtube.com/shorts/N58CCnPqNoo",
+    "published_at": "2026-10-14T15:15:34+00:00",
+    "fetched_at": "2026-10-14T15:55:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A look at the talks, demos and conversations at AI Engineer New York.\n\nFollow AI Engineer for more talks, demos and conference highlights.\n\n#AIEngineerNY #AIEngineering #Shorts",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "coding",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914886,
+    "title": "How to Actually Tokenmaxx and Save Millions \u2014 Alvin Pane, OutRival",
+    "url": "https://www.youtube.com/watch?v=8g1N_a3h9H0",
+    "published_at": "2026-10-14T15:00:14+00:00",
+    "fetched_at": "2026-10-14T15:55:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A cheaper candidate model disagrees with the production model on 18% of examples. Reject it immediately, or first ask how often production disagrees with itself? Alvin Pane uses that question to frame a token optimization workflow at OutRival. Repeated runs of the existing model reveal a reported 7% disagreement rate, making simple model to model agreement an incomplete quality measure. His HarborBite example is a synthetic proxy for a large instruction prompt, used to show the mechanics of reducing cost while preserving the application's required behavior. It is not evidence of realized million dollar savings.\n\nPane starts with observability: record prompt versions, model choices, tokens, latency and costs before changing them. Prefix caching removes avoidable repeated work. DSPy and GEPA can then search for shorter instructions, preserving the interface and scoring contract rather than simply deleting text. The illustrated prompt shrinks by 51%, but that reduction still needs a quality test. A smaller model may fit a narrow benchmark and fail on unfamiliar inputs. Shadow evaluation therefore compares production with itself, the candidate with itself and both systems on the same requests. Human review of disagreements separates regressions from improvements and ambiguous cases. A paired confidence interval around the net gain supplies a release criterion, with critical customer categories checked separately so an overall average cannot hide damage to an important task. The closing rule is to keep measuring after release: cheaper instructions and tokens matter only when the system continues to perform the work users need.\n\n\nSpeaker info:\n- https://www.linkedin.com/in/alvin-pane/\n\nTimestamps:\n00:00 - A synthetic prompt and the cost of redundant work\n1:34 - Observe tokens, latency and prompt versions\n2:26 - Candidate disagreement and production variance\n4:00 - Prefix caching and optimizing instructions with DSPy and GEPA\n6:00 - Smaller models and benchmark overfitting\n7:30 - Three comparisons in a shadow evaluation\n8:46 - Human review and paired release criteria",
+    "topic": "research",
+    "tags": [
+      "research",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914825,
+    "title": "This Robot Is Unlike Any Other On The Market",
+    "url": "https://www.youtube.com/shorts/XEl4ZQKKxig",
+    "published_at": "2026-10-14T14:41:38+00:00",
+    "fetched_at": "2026-10-14T15:55:22+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "This week I discovered the Flourish 1, a $3,500 robot that uses a Raspberry Pi instead of expensive hardware and can learn household chores just by watching you move your phone.\n\nIt focuses on practical tasks instead of flashy features, and the price reflects that.\n\nOnly 50 are being made in the first batch with shipping planned for December.\n\nWould you rather get this instead of an ultra advanced $20,000 robot? \n\n#Robotics #FutureTech #AI #AInews",
+    "topic": "robotics",
+    "tags": [
+      "robotics",
+      "education",
+      "hardware",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914887,
+    "title": "Rebuilding CI for AI-Scale Commit Volume \u2014 Gautam Korlam, SonarSource",
+    "url": "https://www.youtube.com/watch?v=7b9tov5Uc5s",
+    "published_at": "2026-10-14T14:00:18+00:00",
+    "fetched_at": "2026-10-14T15:55:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A coding agent can produce changes faster than the queues that test, review and merge them. Gautam Korlam examines that mismatch through his work on Uber's SubmitQueue and Gitar, now part of Sonar. A merge queue keeps the main branch healthy by testing combinations of changes before they land, but a process designed for human arrival rates can become a bottleneck when agents create many pull requests at once. Faster code generation shifts the constraint to failed builds, repeated repairs, review and approvals. Korlam argues that the engineering system around the agent must change alongside the agent itself.\n\nThe talk follows those constraints through CI and the merge path. Incremental builds, caching, sharding and parallel work reduce the cost of repeated feedback; a Rust example illustrates the difference between rebuilding everything and testing the affected work. Agents also need durable context from logs and failures so a repair loop does not repeatedly rediscover the same problem. At the approval boundary, policies should match the risk of the change, separate authorship from approval and tie the decision to the exact tested commit. Exceptions and overrides need reasons and a record that survives the agent's session. Product demonstrations show how this coordination can be automated, while the reported volume and latency figures remain examples from the speaker's systems rather than general productivity guarantees. The transferable lesson is to measure the whole path from proposed change to accepted change, including recovery and accountability, before treating more generated code as more delivered value.\n\n\nSpeaker info:\n- https://www.linkedin.com/in/gautamkorlam/\n- https://github.com/kageiit\n\nTimestamps:\n00:00 - Coding agents move the bottleneck into CI\n1:13 - SubmitQueue and testing combinations before merge\n2:53 - Queues built for human speed\n5:24 - The software factory and repeated repair loops\n7:08 - CI failures and the feedback cost\n8:11 - Incremental builds, caching and parallel work\n10:16 - Enforcing policy beyond passing CI\n13:28 - Risk based merge and approval policies\n15:21 - Tested commits, overrides and audit evidence",
+    "topic": "safety",
+    "tags": [
+      "open-source",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 915768,
+    "title": "Mutation testing is AWESOME",
+    "url": "https://www.youtube.com/shorts/djSbndoByr8",
+    "published_at": "2026-10-14T13:34:26+00:00",
+    "fetched_at": "2026-10-14T15:55:29+00:00",
+    "source_id": "matt-pocock-youtube",
+    "source_name": "Matt Pocock",
+    "extraction_method": "rss",
+    "body": "Learn how mutation testing can improve your AI agent's test suite. Discover how to identify weak tests by introducing controlled bugs and watching if your tests catch them.\n\nStryker.js for TypeScript: https://stryker-mutator.io/\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/s/Zr97oK\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/nYBV6R",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "agents",
+      "coding",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914888,
+    "title": "The Cost of Accessibility in AI \u2014 Jemima Abu, CAIS",
+    "url": "https://www.youtube.com/watch?v=ZccJsdOE54M",
+    "published_at": "2026-10-14T13:00:33+00:00",
+    "fetched_at": "2026-10-14T15:55:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "The same Figma implementation prompt runs twice: once without accessibility guidance and once with an accessibility skill. In Jemima Abu's small experiment, the second run costs 58% less and finishes in about a third of the time. She immediately explains why that uncontrolled comparison cannot prove that accessible development is always cheaper. What it does expose is a familiar failure mode: an agent invents a verbose custom component when a native HTML element could supply much of the required behavior. Recreating semantics, keyboard interaction and expected browser behavior adds code and testing that a better starting point can avoid.\n\nAbu connects that example to the context agents inherit. An inaccessible codebase teaches the wrong conventions, and a vague design prompt leaves too many product requirements unstated. Accessibility therefore begins with business requirements, design decisions and reusable components, then continues through implementation and QA. Her guidance includes auditing existing interfaces, packaging explicit accessibility instructions into agent skills, preferring semantic HTML and checking keyboard interaction. ARIA can help where necessary, but it does not replace correct native behavior. Waiting until the product is complete creates avoidable refactoring and regression work. Automated checks also leave gaps that require human review. The talk gives teams a concrete way to improve the instructions and patterns that shape generated interfaces while retaining responsibility for the finished experience. Its cost figures remain an illustration from one experiment; the broader argument is to make accessibility a normal requirement throughout the work rather than a repair at the end.\n\n\nSpeaker info:\n- https://github.com/jemimaabu\n- https://www.linkedin.com/in/jemimaabu/\n- https://www.jemimaabu.com/\n\nTimestamps:\n00:00 - The question of accessible AI generated interfaces\n1:14 - An uncontrolled accessibility skill experiment\n3:42 - Agents inherit the codebase's conventions\n4:31 - Native HTML instead of verbose custom components\n5:45 - Accessibility from business requirements through QA\n7:27 - Audits, reusable patterns and agent skills",
+    "topic": "development",
+    "tags": [
+      "open-source",
+      "agents",
+      "coding",
+      "development",
+      "education",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914870,
+    "title": "Local AI 202: Get Massive Speed-ups with Speculative Decoding",
+    "url": "https://www.youtube.com/watch?v=H4azmWcqO5g",
+    "published_at": "2026-10-14T12:37:42+00:00",
+    "fetched_at": "2026-10-14T15:55:23+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Learn about speculative decoding techniques like EAGLE, DFlash, MTP with llama.cpp, transformers and speculators library in this livestream. \nSchedule:\n18.10: Introduction to Speculative Decoding (Merve Noyan, Hugging Face)\n18.30: Getting Started with Speculators (Eldar Kurti\u0107, RedHat)\n19.00: Speed-up Gemma-4 with MTP Drafters (Maarten Grootendorst, Google DeepMind)",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "tutorials",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914890,
+    "title": "Your Fridge Is a Valid Payment Device \u2014 Eleonora Drykina & Nina \u017di\u017eaki\u0107, In The Pocket",
+    "url": "https://www.youtube.com/watch?v=gonAewBZxfU",
+    "published_at": "2026-10-14T12:00:07+00:00",
+    "fetched_at": "2026-10-14T15:55:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A question about payment rules can require one table row, an entire section or several rulebooks. Eleonora Drykina and Nina \u017di\u017eaki\u0107 describe a RAG assistant built for an anonymous Belgian payments client whose source material spans about 270 PDFs and 6,000 pages. Much of the answer bearing information sits in tables. Their indexing pipeline preserves section paths and chunk order so a larger passage can be reconstructed, and converts tables into CSV while retaining the relationship between headings and values. Combining dense retrieval with BM25 raises the reported retrieval hit rate from 92% to 97% on 63 questions; that measures retrieval, rather than complete answer correctness.\n\nThe serving agent can widen its search through four tools, moving from search results to sections, full documents and multiple rulebooks. Limits prevent an oversized rulebook from flooding the context, and the prompt asks the agent to reconsider whether another tool call adds evidence. A median answer takes 38 seconds, which makes the interface part of the engineering problem. Streaming Markdown separately from a completed source card avoids waiting for one large structured object before showing anything. The speakers also explain traces, citation checks and Promptfoo evaluations, including cases where an automated judge's apparent regression did not survive inspection of the source. Their early internal rollout reached 34 users and roughly 900 questions; external release remained planned. The practical lessons concern reconstructable evidence, bounded retrieval, visible progress and evaluation that can be challenged against the documents.\n\n\nSpeaker info:\nEleonora Drykina:\n- https://www.linkedin.com/in/eleonora-drykina-3a1212233/\n- https://www.elu.sh/\n\nNina \u017di\u017eaki\u0107:\n- https://www.linkedin.com/in/ninazizakic/\n\nTimestamps:\n00:00 - A payment rulebook assistant in production\n2:42 - PDFs, tables and the source corpus\n5:47 - Indexing and the system architecture\n7:05 - Reconstructable sections without overlapping chunks\n9:52 - Turning complex tables into usable evidence\n11:42 - Dense retrieval, BM25 and reciprocal rank fusion\n13:26 - Four tools that widen the search\n14:22 - Context limits and tool call discipline\n15:32 - Latency and streaming the answer\n17:38 - Traces, citations and evaluation\n20:37 - Early internal use and planned external release\n22:46 - Lessons from the build",
+    "topic": "research",
+    "tags": [
+      "research",
+      "release",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 912837,
     "title": "What agents mean for Rust (and vice versa) \u00b7 baby steps",
     "url": "https://smallcultfollowing.com/babysteps/blog/2026/10/14/agentic-dev-and-rust/",
@@ -13,6 +183,27 @@
     "tags": [
       "agents",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 913343,
+    "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+    "url": "https://openai.com/index/third-moment-research",
+    "published_at": "2026-10-14T07:00:00+00:00",
+    "fetched_at": "2026-10-14T15:55:21+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use.",
+    "topic": "research",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "research",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -92,6 +283,46 @@
     "tags": [
       "policy",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914633,
+    "title": "The Design Space of Tri-Modal Masked Diffusion Models",
+    "url": "https://machinelearning.apple.com/research/tri-modal-masked-diffusion",
+    "published_at": "2026-10-14T00:00:00+00:00",
+    "fetched_at": "2026-10-14T15:55:21+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Discrete diffusion models have emerged as strong alternatives to autoregressive language models, with recent work initializing and finetuning a base unimodal model for bi-modal generation. Diverging from previous approaches, we introduce the first tri-modal Masked Diffusion Models (MDM) pretrained from scratch on text, image-text, and audio-text data. We systematically analyze multimodal scaling laws, modality mixing ratios, noise schedules, batch-size effects and provide optimized inference sampling defaults. Our batch-size analysis yields a novel stochastic differential equation (SDE) based\u2026",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "infrastructure",
+      "coding",
+      "policy",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 915363,
+    "title": "Lessons from scaling teams of coding agents: reach the frontier at 30% of the cost",
+    "url": "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents",
+    "published_at": "2026-10-14T00:00:00+00:00",
+    "fetched_at": "2026-10-14T15:55:28+00:00",
+    "source_id": "cohere-blog",
+    "source_name": "Cohere Blog",
+    "extraction_method": "rss",
+    "body": "Teams of coding agents are already building large-scale software, but how should they be organized to work most effectively and efficiently?",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -3196,6 +3427,26 @@
       "benchmark",
       "video",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 914889,
+    "title": "AI Engineer NYC: OpenAI, Blackstone, Ramp, Coinbase, Apollo, Citadel, Basis, Runway, Compute Trading",
+    "url": "https://www.youtube.com/watch?v=jiUC6IUMdvc",
+    "published_at": "2026-10-08T16:19:38+00:00",
+    "fetched_at": "2026-10-14T15:55:23+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Live from the Sheraton New York Times Square Hotel in New York City, AI Engineer New York 2026 is an AI conference for engineers and technical leaders building production AI across banking, hedge funds, fintech, insurance, and asset management. \n\nEvent: AI Engineer NYC\nDates: October 12\u201314, 2026\nVenue: Sheraton New York Times Square Hotel \n\nLearn more about the event:\nhttps://ai.engineer/nyc/2026#\n\nSubscribe for more AI Engineer talks, livestreams, and event coverage:\n   / @aidotengineer",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure",
+      "education",
+      "events",
+      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10746,271 +10997,6 @@
       "education",
       "media",
       "news"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 642685,
-    "title": "Gemini 3.8 TTS Playground",
-    "url": "https://simonwillison.net/2026/Sep/23/gemini-tts-playground/",
-    "published_at": "2026-09-23T17:12:27+00:00",
-    "fetched_at": "2026-09-23T21:10:23+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "23rd September 2026\n[Tool](/elsewhere/tool/)\n[Gemini 3.8 TTS Playground](https://tools.simonwillison.net/gemini-tts-playground)\u2014 Test and experiment with Google's Gemini 3.8 text-to-speech API through an interactive playground where you can compose single-voice narration or multi-speaker conversations, preview the generated audio, and explore request and response details. Save your compose settings to bookmarkable URLs for easy sharing, and generate high-quality speech synthesis powered by your Gemini API key.\nGoogle [released two new Gemini text-to-speech models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/) today - gemini-3.8-flash-tts\nand gemini-3.8-flash-lite-tts\n.\nThey come with a library of over 2,000 voices, plus the ability to create a custom voice with \"just a 30-second audio sample of your voice or a voice you have the rights to use\".\nI [vibe coded](https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Fa82f3aef2677c623d1776092d6b21224) this bring-your-own-key playground interface with GPT-6 Astra, taking advantage of the open CORS policy of the underlying Gemini API.\nA notable feature of the API is that it makes it easy to define a full conversation between multiple characters, each with different voices and voice style instructions.\nHere's a short demo clip of a conversation between two pelicans debating if they should move to [the Pacifica Pier](https://simonwillison.net/2026/Sep/12/sighting-399708714/). I had Claude 4.5 Opus [write the script](https://claude.ai/share/3597fc77-9323-4583-aeb9-b0e4c3f654a3) and generate [a URL to render it using the tool](https://simonwillison.net/u/vj).\nIt took ~20 seconds to generate 1m 18s of audio using Gemini 3.8 Flash TTS (not the cheaper Flash-Lite), at a cost of 2.74 cents.\nRecent articles\n[Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war](/2026/Sep/22/opus-and-sol-and-luna/)- 22nd September 2026[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "research",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 640406,
-    "title": "AI Companies Need to Stop Doing This",
-    "url": "https://www.youtube.com/shorts/nsA_HeY3idE",
-    "published_at": "2026-09-23T16:41:20+00:00",
-    "fetched_at": "2026-09-23T17:44:27+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "PSA to all the AI companies:\n\nPlease stop announcing features like they\u2019re live when they\u2019re still rolling out \u201cover the coming weeks.\u201d \n\nThis happened for like 4 different demos in my recent AI news roundup video...\n\nIs it so hard to just make an announcement when I can actually use the new feature \ud83d\ude05\n\n#ai #ainews #claude\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/nsA_HeY3idE",
-    "topic": "media",
-    "tags": [
-      "release",
-      "models",
-      "video",
-      "coding",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 642686,
-    "title": "Shadow roots, explained with live examples",
-    "url": "https://simonwillison.net/2026/Sep/23/shadow-roots/",
-    "published_at": "2026-09-23T16:37:18+00:00",
-    "fetched_at": "2026-09-23T21:10:23+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "23rd September 2026\n[Tool](/elsewhere/tool/)\n[Shadow roots, explained with live examples](https://tools.simonwillison.net/shadow-roots)\u2014 Learn about shadow DOM through interactive examples that demonstrate style encapsulation, inheritance, slots, parts, and JavaScript access. Explore how shadow roots create isolated DOM trees with private stylesheets and elements that interact with the page DOM in specific, controlled ways.\nPrompt to Fable 5.1 Medium:\nBuild an artifact to explain shadow roots in CSS with interactive examples\nRecent articles\n[Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war](/2026/Sep/22/opus-and-sol-and-luna/)- 22nd September 2026[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026",
-    "topic": "education",
-    "tags": [
-      "models",
-      "education",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 640468,
-    "title": "From Scratch to SOTA: Training a 3B State-Space Vision Model \u2014 Krishna Prasad Srinivasan, Sarvam",
-    "url": "https://www.youtube.com/watch?v=T72nqdC92PM",
-    "published_at": "2026-09-23T16:30:19+00:00",
-    "fetched_at": "2026-09-23T17:44:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Well under one percent of the Common Crawl corpus that frontier models train on is in an Indian language, even as frontier labs call India a fast growing market. Krishna Prasad Srinivasan says the knowledge exists but was never digitized, and Sarvam's answer is a three billion parameter vision language model, small enough for one GPU, that he says beats document AI models a hundred times larger. The model is unusual twice over. Its backbone is a state space model rather than a transformer, because a page can run to ten thousand visual tokens and quadratic attention gets expensive, while an SSM keeps constant memory. And in late 2025, when most OCR models were monolithic page level VLMs, the team bet on block level OCR wrapped in a layout harness and a reading order harness, which many 2026 releases have since converged on.\n\nTraining runs as a four stage curriculum: thirteen trillion text tokens across English, 22 Indian languages, math, and code before the model sees a pixel, so a language prior can resolve a smudged word; continual pretraining on three hundred million image text pairs; supervised fine tuning on a hundred million OCR samples; then reinforcement learning. OCR correctness is machine checkable, so rewards are unit tests on character error rate, table structure, or grammar, which makes verifiable reward RL scalable here. The moat is underneath: a data engine for languages with no labeled data, and evals built for real usefulness. Four months after launch the model is digitizing 35 million pages for insurers, banks, and governments, with a public Indic benchmark from the 1800s to today promised soon. Questions cover low resource transfer, synthetic data, and sovereignty.\n\nSpeaker info:\n- https://x.com/fewshotlearner\n- https://www.linkedin.com/in/krishnapsrinivasan/\n\nTimestamps:\n0:00 - A 3B model that beats models 100 times larger on document AI\n1:14 - Sarvam, and why India is missing from the machine readable world\n2:37 - Why Indic document intelligence is hard\n3:18 - The contrarian bet: block level OCR with a harness\n4:31 - Why a state space model instead of a transformer\n6:08 - Four stage curriculum: 13 trillion text tokens first\n8:05 - The moat underneath: data engine and evals\n9:13 - RL with verifiable rewards for OCR\n9:54 - Results on English benchmarks and 22 Indian languages\n10:50 - The agentic workbench and 35 million pages in production\n12:39 - Q&amp;A: low resource transfer, synthetic data, the Indic benchmark, sovereignty\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/T72nqdC92PM",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 638901,
-    "title": "Advancing Private AI Compute with secure, server-side memory",
-    "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
-    "published_at": "2026-09-23T16:00:57+00:00",
-    "fetched_at": "2026-09-23T17:44:26+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "trafilatura",
-    "body": "Advancing Private AI Compute with secure, server-side memory\nA technical update on our Private AI Compute architecture, which will enable persistent, cross-device AI memory with on-device privacy standards.\nAI is becoming more capable and intuitive \u00e2 remembering what matters, understanding the world around you, and acting at your direction. Privacy and trust are core to making that possible, ensuring your data stays private and protected as AI systems evolve to provide more continuous assistance across your devices.\nToday, we are sharing how we will bring private, server-side memory to our [Private AI Compute](https://blog.google/innovation-and-ai/products/google-private-ai-compute/) platform. This breakthrough resolves a longstanding dilemma in modern AI: how to give an assistant long-term continuity across devices while upholding the strict privacy standards typically limited to on-device processing.\nBringing on-device privacy to cloud-scale memory\nWith this new technical capability, a new persistent memory layer will be able to function like a secure digital vault in the cloud. Under this model, the information needed to assist you is sealed within dedicated, encrypted storage, while the cryptographic keys required to unlock it are held exclusively on your personal devices \u00e2 ensuring your data is inaccessible to anyone else, even Google.\nThe diagram below shows how this update to Private AI Compute will work. When an AI model needs to access information to assist you, an authenticated, end-to-end encrypted channel connects your device to a protected, isolated environment in the cloud. That space, or \u00e2secure enclave,\u00e2 temporarily decrypts your data in isolated memory to handle the request, saves any new context, and immediately encrypts it, keeping your information private as if it never left your device.\nThis evolution is necessary to meet the computing needs of the AI era. Local, on-device processing has historically been the gold standard for privacy \u00e2 but frontier AI models often require far more computing power than any one device can provide. Bringing advanced AI to personal assistants means solving how to tap into the power of the cloud while ensuring personal data can remain as protected as if it never left your device.\nTo that end, we previously introduced our [Private AI Compute](https://blog.google/innovation-and-ai/products/google-private-ai-compute/) platform, allowing users to process complex tasks in hardware-isolated cloud enclaves. Until now, that technology \u00e2 along with similar solutions across the industry \u00e2 was strictly \u00e2stateless,\u00e2 meaning it wiped all context the moment a task ended. Workarounds, like having AI save a list of personal facts and preferences, aren\u00e2t enough to support the rich, continuous experiences people expect from personal AI. Making that level of assistance possible means engineering a way for cloud-scale AI to securely retain context over time and across devices.\nBuilding trust, looking ahead\nImagine pulling up assembly instructions on your laptop that you previously viewed through smart glasses, or resuming complex conversations between mobile and web. Private AI Compute is designed to make that kind of seamless assistance possible \u00e2 keeping the pieces it needs to remember safely locked away. But the user\u00e2s trust in that system\u00e2s privacy is also important.\nBuilding that trust starts with transparency. That\u00e2s why, alongside our updated technical whitepaper, we\u00e2re publishing a tamper-proof public record of our server software. Devices running Private AI Compute will be able to verify that our software is authentic and unaltered before sending any personal data. In addition, we\u00e2re providing an update on our technical methods, including the results of an independent audit by a leading cybersecurity firm. By sharing these resources, we invite the broader privacy community to verify Private AI Compute\u00e2s protections.\nAdding private, persistent memory to Private AI Compute shows how deeply personal assistance can be private by design. We invite the community to review the updated [Private AI Compute Technical Brief](https://services.google.com/fh/files/misc/private_ai_compute_technical_brief.pdf) and our system architecture, security proofs, and verification protocols.\nAcknowledgements\nThis research was co-developed by Google DeepMind, Platforms & Devices, Core and Cloud teams. We would also like to thank Four Flynn, Jay Yagnik, and David Kleidermacher for their executive sponsorship of this work.",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "safety",
-      "research",
-      "infrastructure",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 640469,
-    "title": "From VLM/VLA's to Embodied Agents \u2014 Armen Aghajanyan, Perceptron AI",
-    "url": "https://www.youtube.com/watch?v=ZZcE0HeO-Hc",
-    "published_at": "2026-09-23T16:00:30+00:00",
-    "fetched_at": "2026-09-23T17:44:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Feed a model one hour of video and roughly a million visual tokens go in, yet the loss lands on about two percent of them, since the only ground truth is a transcript or a few labeled frames. Armen Aghajanyan calls that a humongous waste, and predicting every pixel treats a background pixel with the same weight as a gripper tip or a contact point. Perceptron's answer is a perceptive objective that learns which percepts will matter, rather than hardcoding the gripper. The second problem is context bloat from cameras that never switch off. Patch averaging buys ten times compression, but his fix is data sparse mixture of experts, a router that decides per layer which tokens to read and which to skip. Left alone, the model zooms into the graph in a figure and spends more tokens on fruit when asked to segment fruit.\n\nPut together, that produced the model his team released a few weeks earlier, trained on a petabyte spanning text, images, video, and trajectories from desktop use to video games, which he says beats a frontier lab's embodied reasoning model at a fraction of the cost. Detection turns into an agentic task, with the model tiling the image, raising the contrast, and proposing boxes until it finds the bird. The biggest result is a new scaling law: training jointly on perception, reasoning, and control lets ten times more video pretraining substitute for ten times less teleop data, which costs about a hundred dollars an hour. He closes with one model emitting control tokens to sort books by reading their titles, an open release promised for July, and questions on temporal context, background robustness, and structured extraction.\n\nSpeaker info:\n- https://x.com/ArmenAgha\n- https://www.linkedin.com/in/armenag\n- https://perceptron.inc\n\nTimestamps:\n0:00 - Perceptron's north star: one model that perceives, reasons, and acts\n1:23 - Early fusion, and the VLM to VLA to world model ladder\n3:40 - Challenge one: an hour of video has almost no ground truth\n5:41 - Challenge two: context bloat from cameras that never switch off\n7:04 - Data sparse mixture of experts lets the model pick its tokens\n8:54 - The first embodied foundation model and the petabyte behind it\n9:50 - Detection as an agentic task: tile, zoom, raise the contrast\n10:45 - Orchestrators, tactile policies, and self verifying annotation\n12:35 - New scaling laws: trade teleop hours for video pretraining\n14:11 - One model emitting control tokens, and open weights in July\n16:17 - Q&amp;A: temporal context, background robustness, structured extraction\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ZZcE0HeO-Hc",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 639002,
-    "title": "Two years of OpenAI Academy",
-    "url": "https://openai.com/index/two-years-of-openai-academy",
-    "published_at": "2026-09-23T16:00:00+00:00",
-    "fetched_at": "2026-09-23T17:44:26+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 23, 2026\n\n[Company](https://openai.com/news/company-announcements/)\n\n# Two years of OpenAI Academy\n\nBuilding on our work to help people develop practical AI skills, with plans to bring training to more communities.\n\nLoading\u2026\n\nShare\n\nFrom access to practical skills\n\n- [From access to practical skills](#from-access-to-practical-skills)\n- [Built with community partners](#built-with-community-partners)\n- [Helping communities build training capacity](#helping-communities-build-training-capacity)\n- [The next phase of OpenAI Academy](#the-next-phase-of-openai-academy)\n\n- [From access to practical skills](#from-access-to-practical-skills)\n- [Built with community partners](#built-with-community-partners)\n- [Helping communities build training capacity](#helping-communities-build-training-capacity)\n- [The next phase of OpenAI Academy](#the-next-phase-of-openai-academy)\n\nTo ensure the benefits of AI are broadly shared, people need the skills and confidence to use it in their everyday lives. Since launching in September 2024, OpenAI Academy has helped people build those skills through practical training for tasks ranging from teaching and running a small business to developing software.\n\nOver the past two years, OpenAI Academy has hosted more than **250 events**, and more than **4 million people have engaged with Academy content**. That work has brought together educators, small business owners, developers, nonprofit leaders and community members to learn, practice, and share what works.\n\nFor this next chapter, we\u2019re expanding OpenAI Academy through a new trainer program that prepares people and organizations to teach Academy material in their communities. This program builds on our work with partners and will make training and ongoing support available closer to where people live and work.\n\n\n\n\n\n\n\n\n\n\n\n## From access to practical skills\n\nWe launched the Academy to expand access to AI training, technical guidance, and community, initially focusing on developers and mission-driven organizations working on local problems. Since then, the Academy has grown to include self-paced courses, practical guides, in-person workshops, and large multi-site events known as AI Skills Jams.\n\nThis month, we also [ introduced new Academy learning paths](https://openai.com/index/expanding-openai-academy-with-new-learning-paths/) for knowledge workers, developers, leaders, educators, and college students. Learners can take courses relevant to their roles and earn Academy course badges by passing assessments.\n\nThese programs focus on helping participants use AI to solve problems they face day-to-day. An educator might use ChatGPT to adapt a lesson. A small business owner might build a repeatable process for customer research. A developer might use Codex to plan and implement a change while retaining control over review.\n\nAcross hundreds of events, we\u2019ve found that the most valuable part of our training is giving people dedicated time and space to try AI tools on work that matters to them, learn from their peers, and get coaching and support from OpenAI mentors. We\u2019re building on our work with partners to bring this approach to more communities around the country.\n\n## Built with community partners\n\nPartners have been central to OpenAI Academy\u2019s programming. We work with national and local organizations to bring AI learning to the communities they serve. These partners bring trusted relationships, help bring participants together, and shape programs around the work people do and the problems they face.\n\nTogether, we\u2019ve offered recurring workshops for communities including small business owners, educators, veterans, and nonprofit leaders, as well as larger, multi-city events. Our [AI Skills Jam for K\u201312 Educators](https://openai.com/index/k-12-educators-practical-skills/), for example, brought together more than 1,600 teachers, administrators, and district leaders across eight U.S. cities.\n\n## Helping communities build training capacity\n\nTo help more partners lead these programs, we\u2019re piloting the OpenAI Academy Community Trainer Program. Participating organizations nominate staff members to learn the Academy curriculum and how to guide a practical workshop: demonstrating useful workflows, helping people apply AI to their own tasks, encouraging peer learning, and supporting participants as they evaluate results. They complete training and a facilitation assessment before leading Academy sessions.\n\nThe pilot will help us offer more workshops and help partner organizations \u2013 including schools, workforce organizations, small-business networks, and community groups \u2013 build their own capacity to teach AI skills. Over time, our goal is for more people to have someone in their community they can turn to as their needs and the tools evolve.\n\n## The next phase of OpenAI Academy\n\nWe\u2019ll continue developing online courses, workshops, and Academy Jams, informed by what we learn from participants and partners. Through the Community Trainer Program, we\u2019ll also help more people lead practical AI learning in their communities.\n\nOur goal is for more people to have opportunities to practice, learn from one another, and build knowledge and confidence as they put AI to work in their everyday lives.\n\n- [2026](https://openai.com/news/?tags=2026)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Airbnb expands access to GPT-6 AstraCompanySep 23, 2026 Airbnb expands access to GPT-6 Astra - Company - Sep 23, 2026](https://openai.com/index/airbnb-gpt-6-astra/)\n\n\n\n[Advisory group on mathematics and artificial intelligenceCompanySep 21, 2026 Advisory group on mathematics and artificial intelligence - Company - Sep 21, 2026](https://openai.com/index/advisory-group-on-mathematics-and-ai/)\n\n\n\n[Expanding OpenAI Academy with new learning pathsCompanySep 21, 2026 Expanding OpenAI Academy with new learning paths - Company - Sep 21, 2026](https://openai.com/index/expanding-openai-academy-with-new-learning-paths/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Manage Cookies\n\nEnglishUnited States",
-    "topic": "education",
-    "tags": [
-      "education",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 640470,
-    "title": "You\u2019re Not Thinking Big Enough: Rebuilding Food Systems with AI Agents \u2014 Cody Menefee, Firecrawl",
-    "url": "https://www.youtube.com/watch?v=ztlXKfPCT3Q",
-    "published_at": "2026-09-23T15:30:27+00:00",
-    "fetched_at": "2026-09-23T17:44:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Cody Menefee once drove three hours to a processor with ten turkeys strapped to the roof of his Tesla, and reports that a windbreak of birds up top does real damage to your range. He raised them in a Nashville backyard where that is not allowed, nearly quit engineering to farm, and learned how hard it is to make money at it. Instead he asks why only three percent of cattle finish on pasture when it is better for animal, consumer, and land. The answer is labor. Grazing done right means splitting pasture into paddocks with one day of feed and moving the herd, fences, and water every day so the grass rests. GPS collars with virtual fences handle the moving but not the deciding: grass grows differently after drought, rain, or trampling, and today a farmer walks out to look.\n\nHis proposal is to replace those eyes and drop a language model in the loop. Drones give the best imagery but no jurisdiction allows autonomous flights; satellites are too far away; a trail cam pointed at a measuring stick is the cheap version. Feed the model animal locations, drought conditions, and grass height, and let it suggest the next paddock for a human to confirm. Three blockers remain: a knowledge base he is scraping out of farmer YouTube channels and research papers with Firecrawl into his Open Pasture project, a vision layer that reads biomass and biodiversity, and collar makers who lock out outside software. His ask to the room is an open collar, and his closing argument is that this industry builds too much software for people who build software while problems like this wait.\n\nSpeaker info:\n- https://x.com/cbmenefee\n- https://linkedin.com/in/codybmenefee\n- https://openpasture.dev\n\nTimestamps:\n0:00 - The jacket, the stolen title, and a talk about farming\n1:20 - No credentials, ten backyard turkeys, and a Tesla roof\n3:34 - Why not just become a farmer\n4:41 - Livestock belongs on pasture, and labor is why it isn't\n5:49 - Rotational grazing and the daily move\n6:28 - GPS collars solve the fence, not the decision\n7:50 - Reading the grass: drones, satellites, trail cams\n10:04 - An LLM in the grazing loop\n11:12 - Three blockers: knowledge base, biomass vision, open collars\n14:20 - Stacking species: chickens behind the cows\n15:57 - Takeaways and a hiring pitch\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ztlXKfPCT3Q",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 638902,
-    "title": "Gemini 3.8 text-to-speech says hello",
-    "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
-    "published_at": "2026-09-23T15:25:14+00:00",
-    "fetched_at": "2026-09-23T17:44:26+00:00",
-    "source_id": "google-deepmind-blog",
-    "source_name": "Google DeepMind Blog",
-    "extraction_method": "trafilatura",
-    "body": "Gemini 3.8 text-to-speech says hello\nToday, we\u2019re introducing two new text-to-speech models to the Gemini family, transforming voice generation from static presets into a dynamic creative studio. These models enable creators, developers, and enterprises to create richer, more expressive audio experiences, while enabling improved user experiences in products like [Gemini Notebook](https://notebook.google.com/) and[ Google Vids](http://vids.new/).\n- Gemini 3.8 Flash TTS: Built for deep creative direction and character design. Create entirely new voices from scratch using natural language prompts to bring characters to life across gaming, immersive audiobooks, podcasts, and interactive media. Direct every performance line by line with granular control over acting cues, pacing, dialect shifts, and backchanneling.\n- Gemini 3.8 Flash-Lite TTS: Built for high-volume, cost-efficient scale. Optimized for high-volume dubbing, audio content creation, and expressive voice agents with fine-grained control over tone, pacing, and expressive nuance.\nThese models complement our fast-growing Gemini Audio family, following [3.5 Live Translate](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/), [3.5 Transcribe](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/), [3.8 Live, and 3.8 Live Extended Thinking](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/).\nCreate and customize your own voices\nScale up from 30 original voices to an infinite library. Whether you need an entirely original character voice or a consistent brand ambassador, our 3.8 Flash TTS model powers a full vocal studio. This enables you to create and use expressive, natural-sounding voices for every moment, while empowering developers and enterprises to easily build custom audio experiences.\n- Generative voice design: With Gemini 3.8 Flash TTS, create bespoke voices from scratch by customizing role, accent and voice characteristics across more than 100 languages and dialects using natural language prompting \u2014 whether you're bringing a dramatic, fire-breathing dragon to life or crafting a charismatic narrator with a distinct regional cadence.\n- Expansive voice library: Access 2,000+ production-ready voices with broad language coverage \u2014 including regional varieties like Mexican Spanish, Quebec French, and Scots English.\n- Voice replication: Recreate consistent vocal profiles from just a 30-second audio sample of your voice or a voice you have the rights to use, backed by built-in consent verification, SynthID watermarking, and C2PA credentials to protect both developers and their vocal talent.\n- Save and scale: Save and manage the custom voices you designed to ensure consistent performance and minimal drift across ongoing projects.\n- Voice remixing: Coming soon, pick a voice from our voice library and fine-tune timbre, pitch, pace, and accent. Use prompts to dial in characteristics (e.g. \u201cadd subtle Southern US accent\u201d or \u201csoften the delivery\u201d).\nDirect the performance, line by line\nOnce you've selected your voices, both TTS models give you precise control over how each line is delivered.\n- Direct performance line by line: Write your own stage directions or let Gemini steer delivery with natural script cues \u2014 from a calm customer service agent to a whispered suspense scene.\n- Long-form generation: Maintain high voice quality, natural pacing, and character timbre across hours of continuous audio with minimal speaker drift \u2014 ideal for podcasts and audiobooks.\n- Native two-speaker scene staging: Direct multi-turn conversations seamlessly from a single script \u2014whether for a podcast or dramatic storytelling\u2014while keeping both voices distinctly separated with natural conversational turn-taking.\n- Scripted vocal bursts & backchanneling: Add realistic conversational texture using non verbal cues (like <laughs>, <sigh>, <gasp> and active-listening interjections (like |mhm| or|yeah|) for precise comedic timing and reaction beats.\nGet expressive high-quality speech generation built for global scale\nGemini 3.8 Flash TTS delivers leading voice customization capabilities, securing the #1 overall spot on [Hume AI\u2019s](https://www.hume.ai/rw-voice-eq) Voice Design Benchmark (71.4) and also leading in accent modeling (60.8).\nGemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS enable truly expressive performances without sacrificing reliability, also securing the #1 and #2 spots respectively on Hume AI\u2019s Overall Quality Index. The model shows major improvements on a wide range of use cases such as long-form content and dual-speaker screenplay control compared to Gemini 3.1 Flash TTS.\nIn blind human preference evaluations on [Voice Arena](https://voicearena.com/tts-leaderboard/us-english)), Gemini 3.8 Flash and Flash-Lite TTS secure top positions amongst competitors in key global languages, including Japanese, Brazilian Portuguese, Vietnamese, Modern Standard Arabic (MSA), Mexican Spanish and Hindi. With support for over 100 languages, these models empower creators, developers, and enterprises to build high-quality, multilingual voice experiences worldwide.\nBuild with trust, consent, and transparency\nWe built our voice creation and replication capabilities with strict safeguards to help protect voice talent, respect identity, and ensure content transparency. For voice replication our system leverages consent verification: users must provide a verbal consent recording from the voice owner that matches the reference speaker before a voice can be created.\nMore broadly, every audio clip generated by our Gemini Audio models is watermarked with[ SynthID](https://deepmind.google/models/synthid/). This imperceptible watermark is woven directly into the audio output, ensuring AI-generated speech remains detectable to help prevent misinformation. For more details on our approach to safety and responsibility, review the [model card](https://deepmind.google/models/model-cards/gemini-3-8-audio/).\nTry our new Google AI Studio audio playground\nStarting today, developers can experience these new[ speech generation](https://aistudio.google.com/docs/speech-generation) capabilities in[ Google AI Studio](https://aistudio.google.com/generate-speech?model=gemini-3.8-flash-tts). Built like a voice design workspace, you can prompt entirely new vocal identities from scratch or replicate your own voice\n[1](#footnote-1)\n, then bring them directly into a dual-speaker screenplay editor to direct line-by-line delivery.\nTry voice replication in Google AI Studio.\nDeploy high-performance voice interfaces with ease\nBy using the Gemini API, developer platforms such as [Agora](http://docs.agora.io/en/ai/models/tts/gemini), [LiveKit](https://docs.livekit.io/agents/models/tts/gemini/), [Pipecat](https://docs.pipecat.ai/api-reference/server/services/tts/google#geminittsservice), [Vercel](https://vercel.com/docs/ai-gateway/modalities/text-to-speech) enable developers to build and deploy high-performance speech generation experiences with ease.\nWe\u2019re partnering with companies like Figma, HeyGen, Linguana, Wondercraft, 99.co, and Ollang, who are integrating our latest TTS models to help accelerate global dubbing, localize media with nuanced regional accents, and power conversational voice agents at scale.\nStart using our latest Gemini Audio models:\nGemini 3.8 Flash TTS is rolling out starting today:\n- For developers: In the\n[Gemini API](https://aistudio.google.com/docs/speech-generation)and[Google AI Studio](https://aistudio.google.com/generate-speech?model=gemini-3.8-flash-tts) - For enterprises: Coming soon via API in\n[Gemini Enterprise](https://docs.cloud.google.com/gemini-enterprise-agent-platform) - For everyone: In\n[Gemini Notebook](https://notebook.google.com/).\nGemini 3.8 Flash-Lite TTS is rolling out starting today:\n- For developers: In the\n[Gemini API](https://aistudio.google.com/docs/speech-generation)and[Google AI Studio](https://aistudio.google.com/generate-speech?model=gemini-3.8-flash-lite-tts) - For enterprises: Coming soon via API in\n[Gemini Enterprise](https://docs.cloud.google.com/gemini-enterprise-agent-platform) - For everyone: In\n[Google Vids](http://vids.new/)",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 750104,
-    "title": "Jev, Clearly Explained",
-    "url": "https://www.dailydoseofds.com/p/jev-clearly-explained/",
-    "published_at": "2026-09-23T15:23:00+00:00",
-    "fetched_at": "2026-09-30T16:41:26+00:00",
-    "source_id": "daily-dose-of-ds",
-    "source_name": "Daily Dose of Data Science",
-    "extraction_method": "trafilatura",
-    "body": "Jev, Clearly Explained\nWe have been using LLMs like a hammer for every AI problem, even simple decisions. Jev handles those decisions in milliseconds at a fraction of the cost. Let's understand how it works and where it fits.\nJev\nWe have been using LLMs like a hammer for every AI problem, even simple decisions. Jev handles those decisions in milliseconds at a fraction of the cost. Let's understand how it works and where it fits.\nAvi Chawla\n\ud83d\udc49\nTypeSafe AI released Jev on September 15, 2026. It cannot hold a conversation, write code, or generate a useful paragraph. The narrow interface is the product.\nSoftware makes thousands of small judgments: Is this ticket urgent? Which model should handle this request? Is this shell command dangerous? Teams often send each one to a general-purpose LLM, then parse and validate the generated answer.\nJev takes a different interface. Unstructured state goes in. Typed answers and probabilities come out. The relevant question is whether some LLM calls should have been bounded decisions in the first place.\nLet\u2019s dive in to learn more!\nTool calling and structured outputs removed a lot of brittle parsing, but the model underneath is still generative.\nEven when the answer is one word, such as \u201cbilling\u201d, it produces tokens sequentially.\nNow put that inside an agent loop.\nwhile not done:\naction = llm(context)\nresult = run_tool(action)\ncontext += result\nOne agent run may call the model repeatedly to select tools, detect risk, judge results, and decide when to stop. These calls require judgment, not prose. Jev targets them directly.\nJev is a semantic decision engine. You send it two things:\n- State, which is the text or JSON that describes the current situation.\n- Questions, which are the decisions you want it to make about that state.\nEvery question declares its answer shape in advance. Jev supports three primitives:\n- Choice picks one option from a list and returns a probability for every option.\n- Score places the input on an ordered scale such as low, medium, and high.\n- Noul answers a yes-or-no question by returning the probability that it is true.\nNoul is TypeSafe\u2019s name for its Boolean decision type. It returns a number between 0 and 1.\n{\n\"model\": \"jev-latest\",\n\"state\": \"The deploy failed twice and customers are seeing 500s.\",\n\"questions\": {\n\"urgent\": {\n\"type\": \"noul\",\n\"instructions\": \"Does this need attention right now?\"\n},\n\"owner\": {\n\"type\": \"choice\",\n\"instructions\": \"Which team should handle this?\",\n\"criteria\": {\n\"engineering\": \"Product failures and outages\",\n\"billing\": \"Charges, invoices, and refunds\",\n\"sales\": \"Pricing and new accounts\"\n}\n}\n}\n}\nThe response contains an urgency probability and a distribution over the three teams. The schema prevents undeclared answers, but it cannot repair a bad taxonomy. If billing and engineering overlap in the rubric, Jev must choose between ambiguous categories.\nYour program keeps control:\nif urgent > 0.9 and owner == \"engineering\":\npage_on_call()\nelif confidence < 0.6:\nsend_to_human_review()\nelse:\nadd_to_queue(owner)\nCode owns the branches. Jev estimates which branch matches language that cannot be reduced to exact conditions.\nTypeSafe says Jev evaluates questions in parallel. That helps when the questions are independent. If one answer determines the next question, keep that dependency in code rather than evaluating unused branches.\nThe company reports latency of 70 to 500 milliseconds and a price of $0.042 per million input tokens, with no charge for output. Its claims of up to 200 times lower latency and 400 times lower cost come from favorable internal comparisons, not production capacity data.\nScoring fixed outcomes avoids token generation, output parsing, and some retries.\nSuppose Jev routes a ticket to billing. The label tells you what won. The distribution tells you how close the race was.\n{\n\"choice\": \"billing\",\n\"probabilities\": {\n\"billing\": 0.52,\n\"technical\": 0.46,\n\"sales\": 0.02\n},\n\"confidence\": 0.18\n}\nBilling won by six points. Automatic routing would be reckless.\nThe application needs an abstention policy in addition to a winning label:\n- Act automatically when confidence is high and the consequence is small.\n- Ask for confirmation or call a stronger model when confidence is middling.\n- Send the case to a person or gather more information when confidence is low.\nThresholds belong in code and should reflect consequence. A dashboard label can tolerate weaker evidence than a command that deletes data.\nTypeSafe trains Jev using Reinforcement Learning for Calibrated Decisions, or RLCD, so predicted confidence should track observed accuracy. That relationship must hold on your traffic. Measure it separately for each decision type and recheck it after changes to the model, questions, or input distribution.\nTypeSafe also says Jev cannot hallucinate. More precisely, it cannot break the declared output schema. It can still choose the wrong valid option with high confidence. Type safety prevents malformed output, not bad judgment.\nJev belongs beside an LLM. The LLM plans, writes, explains, and uses tools. Jev handles repeated decisions around that work.\nA simple lookup does not need the same model as an architecture review. Jev can score a request and choose the least expensive model likely to complete it.\nroute = jev.choice(\nstate=user_request,\noptions={\n\"fast\": \"Lookups, extraction, and small local edits\",\n\"powerful\": \"Architecture, ambiguity, and high-stakes work\",\n},\n)\nmodel = fast_model if route == \"fast\" else powerful_model\nThe router chooses a model. It does not answer the request.\nBefore an agent runs a shell command, Jev can classify it as read-only, reversible, or destructive. Separate questions can check whether it deletes files, changes Git history, touches production, or leaves the repository.\nHigh-confidence read-only actions can continue. Destructive or uncertain actions pause for approval. LangChain\u2019s Jev integration implements this check in middleware.\nJev can check whether an agent is repeating itself, whether an output follows policy, or whether a result needs review. It should never replace a hard test. Use it only where the rule depends on meaning.\nA workload is ideal when its output set is closed, a reviewer can label examples quickly, and the decision occurs often enough to justify another model dependency.\nJev can classify intent, urgency, department, spam, and customer frustration. One request can score several properties of the same ticket, while code combines the results into the routing policy.\nEmbeddings retrieve related text. They do not establish that a passage answers the query or supports a claim. Jev can score those conditions before generation and remove irrelevant context.\nEmbeddings are excellent at finding semantically related text. Jev can make the narrower decision of whether a particular passage is useful for this question.\nJev can screen for prompt injection, policy violations, and risky tool calls. Its scores can inform an enforcement boundary, but they should not become one. Permissions, sandboxes, allowlists, and tests must enforce exact rules.\nJev can label documents, products, and customer messages or turn free text into features for another model. Low per-call cost can make semantic scoring practical across every row of a dataset.\nJev can choose among known browser actions or actions from structured game state. It is text-only, so the environment must first be represented as text or JSON.\nReject Jev when the task cannot be expressed as a stable set of outcomes.\n- It cannot write, summarize, generate code, or explain its reasoning.\n- Do arithmetic, counting, date comparison, and exact string manipulation in code.\n- If a decision needs several hidden reasoning steps, split it into smaller questions or use a reasoning model.\n- It cannot extract an unknown value directly. Find candidates first, then let Jev choose among them.\n- Irrelevant context can reduce accuracy. Send only the state needed for the decision.\n- Closed weights, early access, and limited independent calibration data make blind trust premature.\nIf deterministic code already solves the problem, keep it. An if statement is faster, cheaper, and easier to test than any model.\nA cheap model becomes expensive when mistakes cause retries, reviews, or incidents. Measure expected cost per decision, including model calls, escalations, false approvals, false blocks, and recovery work.\nA production rollout needs evidence at each boundary:\n- Choose one bounded, low-risk decision with clear possible answers.\n- Write the rubric before calling the model. Define what belongs in every option.\n- Collect representative examples with expected answers, including ambiguous and adversarial cases.\n- Run Jev in shadow mode beside the current workflow without letting it change behavior.\n- Plot accuracy against confidence and set thresholds from your data.\n- Automate the safest branch first. Keep a person or stronger model for uncertain cases.\n- Pin or log the model version, questions, criteria, and thresholds so you can replay changes against the same evaluation set.\nQuestions and criteria are program logic. Version, review, and test them.\nJev gives up generation in exchange for fixed answer types, explicit uncertainty, and code-owned branching. The LLM produces a plan, explanation, or code. Jev routes the request, gates risky actions, checks the result, and escalates uncertain cases.\nGeneration and judgment are different workloads. Forcing both through a text-generation API adds latency and turns control flow into prompt parsing. Jev exposes semantic judgment as a separate component.\nStart with one bounded decision currently handled by a slow LLM call or a brittle regex. Send the minimum state, define the answers, and log Jev\u2019s probabilities beside the current result. Automate one low-risk branch only after the evaluation supports it.\nAn if statement handles explicit values. Jev estimates the meaning needed to choose among them. The application decides whether that estimate is safe to act on.\nGood day!\nPublished on Sep 23, 2026",
-    "topic": "education",
-    "tags": [
-      "education",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712573,
-    "title": "Sakeena Fiza Helps NVIDIA Hardware Succeed at Scale",
-    "url": "https://blogs.nvidia.com/blog/nvidia-life-sakeena-fiza/",
-    "published_at": "2026-09-23T15:00:32+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "When Sakeena Fiza describes her work as a validation engineer at NVIDIA, she does so in terms more befitting a detective story than a world-class engineering lab.\n\u201cValidation engineers look in the shadows and shine a light into every corner,\u201d Fiza said. \u201cEvery time we get a system, our first thought is: how can it break?\u201d\nAnd when it does?\n\u201cI always like to think of it as a mystery to solve,\u201d she said.\nAt NVIDIA, the systems Fiza and her colleagues in the data center systems engineering lab investigate are the engines of the AI era. Her work begins before the rest of the world knows a product exists \u2014 in the lab \u2014 when a new system first receives power.\nComponents are brought up one by one, boards are integrated, firmware and software teams swarm, and engineers watch for the first signs of life.\nOne of Fiza\u2019s earliest and most enduring memories of working at NVIDIA is the collective joy she experienced when she saw the [NVIDIA Rubin GPU](https://www.nvidia.com/en-us/data-center/technologies/rubin/) working for the first time at a system level.\n\u201cIt literally just said, \u2018NVIDIA Corporation Device,\u2019\u201d she recalls. \u201cAnd everyone\u2019s cheering and celebrating because it\u2019s the first time in the world that a Rubin GPU enumerated at a system level.\u201d\nThose moments, electric as they are, are only the beginning. From there, the system must be made resilient: from tray to rack to cluster to production line to customer AI factory.\nFiza describes validation \u2014 the process of ensuring a physical device works correctly before mass production begins \u2014 as becoming \u201cthe first customers for the product,\u201d exercising hardware to its limits in a range of real-world conditions before anyone else has to depend on it.\n\u201cThe goal is to always catch issues before customers catch it,\u201d she said.\nFiza arrived at NVIDIA after earning her bachelor\u2019s degree at the University of California, Irvine, where she studied computer science and engineering. Her path into hardware was the result of an accumulating fascination with systems.\nGrowing up in Dubai, she was introduced to coding via the Logo programming language, prompting future forays into systems design that included building Mars rovers at a high school robotics camp and working on unmanned aerial vehicles in college.\nWhat drew her to work with data center systems was the chance to work with the whole machine. At NVIDIA, she said, validation sits at exactly that intersection: firmware, hardware, software, mechanical design, thermal behavior, manufacturing and customer experience.\n\u201cI get to be a mechanical engineer when I want to be,\u201d she said. \u201cI get to be an electrical engineer when I want to be. I get to be a firmware engineer when I want to be.\u201d\nThe failures she chases can be immense or microscopic. A rack-scale issue might involve high-speed signaling, thermal margins or power integrity. Another might come down to a screw tightened too far or the level of dust in a customer facility.\n\u201cThe solution can be elusive,\u201d Fiza said. \u201cWe have to follow the clues, ignore the red herrings and know where to look.\u201d\nWhen a log shows how something failed, Fiza\u2019s job is to discover why. Validation engineers reproduce the issue, vary the conditions, investigate firmware, remove mechanical variables, probe signals, study scope shots and narrow the possible causes.\nA single board may contain tens of thousands of components; a rack may approach half a million. Those parts must not merely coexist. They must behave as one system under stress, at scale, in the complex realities of production and deployment across diverse AI factory configurations.\n\u201cI wish people understood how complex the hardware is that AI needs to run on,\u201d Fiza said.\nFor Fiza, the pressure of the work is inseparable from the pleasure of it. Bring-up, she said, is \u201clike the Avengers assembling\u201d: architects, designers, software engineers, firmware engineers, validation engineers, all in the room, racing toward a working system.\n\u201cOne thing I know when I come to work is I\u2019m never alone,\u201d she said.\nTo be a validation engineer is to practice a disciplined kind of suspicion: believe a system can work, then try to conceive of every way it might not. The job requires the doggedness of a great detective, as well as the diagnostic abilities of a general practitioner and the temperament of someone who meets catastrophic failure in the way others might a crossword.\nEach project brings a new puzzle, a new failure mode and, in turn, a chance to make the next system better.\n\u201cWith the products we have in the pipeline, I\u2019m so excited,\u201d Fiza said. \u201cThey\u2019re going to change the world.\u201d",
-    "topic": "hardware",
-    "tags": [
-      "research",
-      "infrastructure",
-      "coding",
-      "robotics",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 640471,
-    "title": "The Best Models Still Reason Like Toddlers \u2014 Andrew Dai, Elorian",
-    "url": "https://www.youtube.com/watch?v=A_I8mw8yfns",
-    "published_at": "2026-09-23T15:00:10+00:00",
-    "fetched_at": "2026-09-23T17:44:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Show a frontier model part of a chessboard, ask how many white squares are visible, and it answers 32. Andrew Dai's diagnosis: it saw a chessboard, knew chessboards have 32 white squares, and hallucinated the rest. The pattern matching that makes these models superb at naming flowers hurts them once a question needs counting or spatial grounding: they miscount a Catan player's roads from the pieces left off the board, and they miss a robot arm lifting a lid because they cannot hold state across a long video. His test for understanding versus reasoning: if a person can answer in one second, so can the model; if it takes longer, the model falls apart. The benchmarks hide this: one popular reasoning suite uses 32 by 32 pixel images, and a multimodal science exam can mostly be answered without the image.\n\nWhat is missing, he says, is visual thinking. Video generators produce cartoonish explosions because their training data is Hollywood and game engines; detection models are robust but passive. Elorian's approach has four parts: visual reasoning data that does not exist online, a synthetic data flywheel of evals, agents, SFT, and RL, architectural changes on top of the transformer, and native visual chain of thought, where the model draws boxes around every hotel before narrowing to the red ones. Dai spent twelve years at Google Brain and DeepMind, first authored the paper that introduced pretraining and fine tuning, and co led GLaM, PaLM 2 pretraining, and Gemini data. He closes on robotics, construction sites where safety rules live in policy text, and mechanical design, where a testing platform takes thousands of engineering hours and frontier models fail on blueprints and CAD.\n\nSpeaker info:\n- https://x.com/andrewdai\n- https://www.linkedin.com/in/andrewdai/\n\nTimestamps:\n0:00 - Frontier models versus human visual reasoning\n0:56 - Chessboard hallucination: pattern matching that hurts\n2:32 - Catan roads, robot arms, and context amnesia\n4:09 - Understanding versus reasoning: the one second test\n5:44 - Why the popular benchmarks do not measure it\n8:03 - The missing paradigm: visual thinking, not generation or labels\n9:38 - Elorian's approach and visual chain of thought\n11:01 - The team, from GLaM to Gemini\n12:14 - Use cases: robotics, construction, mechanical design\n17:36 - Where to find out more\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/A_I8mw8yfns",
-    "topic": "robotics",
-    "tags": [
-      "robotics",
-      "models",
-      "agents",
-      "safety",
-      "benchmark",
-      "research",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
