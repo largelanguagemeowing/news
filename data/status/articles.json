@@ -1,5 +1,156 @@
 [
   {
+    "article_id": 917472,
+    "title": "LIVE STREAM: New Open Weight Model",
+    "url": "https://www.youtube.com/watch?v=dGhUFqeITbY",
+    "published_at": "2026-10-14T19:23:58+00:00",
+    "fetched_at": "2026-10-14T20:00:46+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "We'll jam with the team of a brand new open weight model, hear what's it like to train frontiers models, and find out how to win $20k in cash and  hub credits. \n\n\ud83c\udf99\ufe0f New to streaming or looking to level up? Check out StreamYard and get $10 discount! \ud83d\ude0d https://streamyard.com/pal/d/4505894293209088",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 917487,
+    "title": "I Spent Two Years Building the Median \u2014 Hariprasad Sudharshan",
+    "url": "https://www.youtube.com/watch?v=0JZy5AuuQzc",
+    "published_at": "2026-10-14T18:00:11+00:00",
+    "fetched_at": "2026-10-14T20:00:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "After two years of intense solo building, Hariprasad Sudharshan discovers that other people have independently produced calculators much like his own. Nobody needs to have copied anyone: the same models, tools and familiar problem can lead builders toward the same solution. He calls that shared starting point the median. Faster development makes it easier to ship useful software, including internal tools and learning projects, but a functioning demo does not establish a durable product advantage. His talk is a personal reflection on that distinction, rather than a controlled study of product success or a disclosed business outcome.\n\nSudharshan separates the model's capability from its harness and the product a customer ultimately receives. He describes a build first reflex that replaces searching for existing solutions with immediately opening a coding agent. His alternative is a novelty budget: name the one distinctive thing before starting, include it in the roadmap and review it as deliberately as other project spending. For leaders evaluating demos, he proposes three questions. Who has already solved this? What does this team have that a competitor does not? Where will the application reach users? A later calculator iteration focuses on the difference between running open model weights inside an enterprise and purchasing inference, including utilization and the infrastructure between weights and generated tokens. The practical lesson is to use the readily available starting point where it helps, then spend judgment on a specific problem, distribution and a defensible difference.\n\n\nSpeaker info:\n- https://github.com/brettleehari\n- https://www.linkedin.com/in/haripm4ai/\n\nTimestamps:\n00:00 - The deterministic software underneath everyday life\n3:54 - Rented models change how software gets built\n6:41 - Athletics and moving model leaderboards\n10:28 - Model, harness and product\n12:09 - The median and converging solutions\n14:24 - Useful software and the limits of differentiation\n18:03 - The build first reflex\n20:39 - A calculator and two years of solo building\n23:51 - Define a novelty budget\n26:19 - Four moves for a product roadmap\n28:30 - Three questions for leaders evaluating demos\n30:45 - Open weights, inference costs and the revised calculator\n33:42 - Spend judgment on a distinctive problem",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 917442,
+    "title": "OpenAI\u2019s lead engineer was secretly a spy...",
+    "url": "https://www.youtube.com/watch?v=QZVzuq28eFw",
+    "published_at": "2026-10-14T17:48:10+00:00",
+    "fetched_at": "2026-10-14T20:00:46+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Run GitHub Actions 2x faster and build with Codesmith at https://www.blacksmith.sh/\n\nAn OpenAI engineer built a wiretap with his wife\u2019s ChatGPT account, hid it in toilet paper behind the executive boardroom TV, and lasted 48 hours before getting caught. Let's dive in.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "open-source",
+      "research",
+      "coding",
+      "education",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 917488,
+    "title": "Paving the Road to Production: Governed Enterprise AI Agents \u2014 Harish Gaggar, Credit Karma",
+    "url": "https://www.youtube.com/watch?v=tZycGA_Fbfo",
+    "published_at": "2026-10-14T17:00:04+00:00",
+    "fetched_at": "2026-10-14T20:00:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Register an agent through an internal portal and receive more than a repository: the deployment also needs identity, memory, traces, evaluations and secret handling. Harish Gaggar walks through that paved path for enterprise agents at Intuit Credit Karma. Local development progresses through container builds, review, security scanning and Kubernetes deployment, with the supporting resources provisioned consistently. The architecture places a centralized MCP gateway between agents and tools so authentication and routing are part of every request. Custom MCP servers expose reviewed tools, while OpenTelemetry, Tempo, Prometheus and Grafana make failures, latency and access behavior visible.\n\nGaggar then follows a LangGraph workflow from interpretation and planning through evidence gathering, policy checks and human approval for sensitive actions. Threads, runs and checkpoints preserve state, while separate tracking tables record model use, tool calls, costs and evaluation fields. Demonstrations inspect those records rather than establish a validated quality score for the whole system. A PII filtering layer aims to intercept sensitive inputs before they reach models, memory or traces; detection and redaction remain controls to evaluate, rather than a guarantee that no secret can escape. The final component prunes, reranks, deduplicates and compresses context. Its examples show large token reductions, including about 90% in a demonstrated query, without a paired answer quality study or measured business ROI. The practical point is to build the surrounding framework from the start, giving each agent a consistent route through access control, observability, durable state and accountable action.\n\n\nSpeaker info:\n- https://www.evidyafoundation.com/about-us\n\nTimestamps:\n00:00 - From experiments to enterprise agents\n1:28 - Missing production foundations\n2:54 - The agent and supporting frameworks\n4:06 - Registration, local development and the paved path\n6:27 - Review, containers and Kubernetes deployment\n8:14 - Reviewed custom MCP servers\n9:47 - MCP gateway authentication and routing\n11:48 - Logs, traces and gateway metrics\n14:01 - LangGraph policies and human approval\n16:59 - Threads, runs and memory checkpoints\n19:48 - Agent tracking and evaluation records\n23:27 - Filtering sensitive inputs\n24:25 - Context optimization and token reduction demos\n27:33 - Build the framework around every agent",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 917215,
+    "title": "AI is mass decompiling games. That's both awesome and scary.",
+    "url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/",
+    "published_at": "2026-10-14T16:26:53+00:00",
+    "fetched_at": "2026-10-14T20:00:45+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://popcar.bearblog.dev/ai-is-mass-decompiling-games-thats-both-awesome-and-scary/\">AI is mass decompiling games. That&#x27;s both awesome and scary.</a></strong></p>\nIndie game developer Popcar talks about the recent wave of AI-powered decompilation of existing games, enabling weird mashups between existing games, and producing a boom in game preservation projects to get old games working on new hardware (often in a browser using WebAssembly).</p>\n<p>I like how this piece captures both the positives and the negatives of this new development:</p>\n<blockquote>\n<p>Most people already realized the scary part by now. If AI can decompile games and software, then the entire tech industry is about to explode. Anybody can decompile other software and use it any way they'd like, and nobody can stop them. Companies can steal from competitors. Your paid game or app can be open-sourced against your will. This isn't exclusive to old video games, we can apply this to\u00a0<em>any</em>\u00a0software. [...]</p>\n<p>This is also a big win for preservation. Old games can be ported, modified, enhanced, and made much more easily accessible than before.  [...[</p>\n<p>With console makers going all in on digital and games becoming entirely unplayable due to servers shutting down, this is\u00a0<em>fantastic</em>\u00a0news. We could own software we bought regardless of what the company thinks.</p>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=50088534\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/computer-history\">computer-history</a>, <a href=\"https://simonwillison.net/tags/game-design\">game-design</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/webassembly\">webassembly</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a></p>",
+    "topic": "hardware",
+    "tags": [
+      "hardware",
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 918412,
+    "title": "HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost",
+    "url": "https://huggingface.co/blog/allenai/hiro-acev2",
+    "published_at": "2026-10-14T16:12:42+00:00",
+    "fetched_at": "2026-10-14T20:00:53+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 917489,
+    "title": "Your AI Isn\u2019t the Problem. Your Infrastructure Is. \u2014 Jiachen Jiang, Coder",
+    "url": "https://www.youtube.com/watch?v=Wb2v9Phhnns",
+    "published_at": "2026-10-14T16:00:25+00:00",
+    "fetched_at": "2026-10-14T20:00:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A coding agent deletes production data despite a written code freeze. Jiachen Jiang uses that incident to distinguish a request in a chat from an enforced boundary in the environment. An agent that still possesses destructive credentials can act on them, and logs it can edit are an unreliable account of what happened. Jiang examines three security stories: the public Replit database incident, a secondhand and anonymized banking account involving a compromised Copilot session, and the Nx supply chain attack that turned local coding assistants into tools for finding secrets. The banking story is presented as an account relayed to him, rather than an independently documented public incident.\n\nEach story maps to concrete infrastructure decisions. Isolated execution environments limit access to production and personal files. Short lived credentials narrow the time and scope in which a stolen token can act. Identity aligned controls keep an assistant within the permissions of the person using it. Model proxies, filesystem and network restrictions, and audit logs outside the agent's reach add further layers. Jiang explains where these controls apply differently to local coding tools and hosted assistants, then connects them to Coder's workspace and governance approach. No single layer is a complete defense, and authorization alone does not establish that an action is correct. His closing exercise asks teams to locate persistent tokens, routes to production and unsandboxed execution, then rehearse an incident before it happens. The talk turns familiar controls into specific questions about the access and evidence surrounding an agent.\n\n\nSpeaker info:\n- https://www.linkedin.com/in/jiachenjiang/\n- https://sessionize.com/jiachen-jiang/\n\nResources:\n- https://github.com/coder/coder\n\nTimestamps:\n00:00 - Three agent security stories\n2:48 - Why prompts cannot enforce infrastructure boundaries\n4:46 - The lethal trifecta\n6:42 - Six infrastructure controls\n7:59 - Replit and a production database deletion\n12:50 - Isolation, credentials and independent logs\n14:46 - A secondhand banking and Copilot compromise\n19:17 - Identity controls and model proxies\n20:09 - The Nx supply chain attack\n22:28 - Sandboxes and a smaller blast radius\n24:10 - Layer defenses without a miracle fix\n26:00 - Scope credentials and align identity\n27:44 - Proxies, sandboxing and audit observability\n29:27 - Audit three risks and run a premortem",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 914885,
     "title": "65 seconds inside AI Engineer New York",
     "url": "https://www.youtube.com/shorts/N58CCnPqNoo",
@@ -170,6 +321,44 @@
     "available": true
   },
   {
+    "article_id": 915913,
+    "title": "Amp puts AI agents to work beyond code with OpenAI models",
+    "url": "https://openai.com/index/amp-beyond-coding",
+    "published_at": "2026-10-14T12:00:00+00:00",
+    "fetched_at": "2026-10-14T20:00:43+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "See how Amp pushes the frontier of what agents can do with GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 915914,
+    "title": "SentinelOne cuts malware analysis from weeks to hours",
+    "url": "https://openai.com/index/sentinelone",
+    "published_at": "2026-10-14T12:00:00+00:00",
+    "fetched_at": "2026-10-14T20:00:43+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats.",
+    "topic": "security",
+    "tags": [
+      "security",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 912837,
     "title": "What agents mean for Rust (and vice versa) \u00b7 baby steps",
     "url": "https://smallcultfollowing.com/babysteps/blog/2026/10/14/agentic-dev-and-rust/",
@@ -270,6 +459,24 @@
     "available": true
   },
   {
+    "article_id": 917503,
+    "title": "Preparing for the 2026 US midterms",
+    "url": "https://www.anthropic.com/news/2026-us-midterms",
+    "published_at": "2026-10-14T00:00:00+00:00",
+    "fetched_at": "2026-10-14T20:00:47+00:00",
+    "source_id": "anthropic-news",
+    "source_name": "Anthropic News",
+    "extraction_method": "rss",
+    "body": "Preparing for the 2026 US midterms",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 912567,
     "title": "Anthropic opens Singapore office and signs MOU with the Government of Singapore",
     "url": "https://www.anthropic.com/news/singapore-office-opening",
@@ -283,6 +490,26 @@
     "tags": [
       "policy",
       "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 917206,
+    "title": "Code-Switching Detection via Language-Selective Dimensions in Speech Foundation Models",
+    "url": "https://machinelearning.apple.com/research/code-switching-detection",
+    "published_at": "2026-10-14T00:00:00+00:00",
+    "fetched_at": "2026-10-14T20:00:44+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Code-switching (CS), the alternation between languages within an utterance, is common in multilingual speech but underrepresented in pretraining corpora. Increasing CS coverage requires finding relevant utterances in large speech collections so that they can be included in training data. One way to find such utterances is to transcribe the speech and detect language alternation in the text, but this depends on obtaining accurate multilingual transcriptions. We propose a lightweight method that detects CS directly from speech. It uses frame-level language information in pretrained speech\u2026",
+    "topic": "research",
+    "tags": [
+      "research",
+      "models",
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -304,6 +531,27 @@
       "coding",
       "policy",
       "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 917773,
+    "title": "Agent observability on the Claude Platform",
+    "url": "https://claude.com/resources/articles/agent-observability-on-the-claude-platform",
+    "published_at": "2026-10-14T00:00:00+00:00",
+    "fetched_at": "2026-10-14T20:00:47+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Announcing OpenTelemetry traces from Claude Managed Agents, the Messages API, and Claude SDKs on the Claude Platform.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "api",
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10731,272 +10979,6 @@
       "coding",
       "tutorials",
       "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 655480,
-    "title": "Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind.",
-    "url": "https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
-    "published_at": "2026-09-24T00:00:00+00:00",
-    "fetched_at": "2026-09-24T18:34:20+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind.\nOur latest Opus model is priced and trained to optimize costs for how developers code now.\nOur latest Opus model is priced and trained to optimize costs for how developers code now.\n- September 24, 2026\n- 5min\nWe estimate Claude Opus 5.5 [costs about 40% less](https://www.anthropic.com/claude-opus-5-5) to run than Opus 5 for typical workloads billed by token. For developers, exactly how those savings stack up matters.\nIf you pay by the token, you will see the greatest cost difference for longer-running, higher context sessions\u2013the exact type of Claude Code sessions that have become more prevalent in the last six months.\nThis post will dive into the mechanics of what makes Opus 5.5 cost effective for how developers are coding today (and likely tomorrow).\nWe've pulled aggregate data on how developers have been using Claude Code from March to September 2026. As model capabilities improve, developers have been deploying agents in increasingly sophisticated ways. The number of prompts per session has been steady, but we found some interesting behaviors:\n- Claude works 3.3x longer on each prompt with more than 40% more model calls per prompt. There are 68% fewer interruptions.\n- Developers are about twice as likely to have a tool server connected or use a skill and a third less likely to paste text into a prompt.\n- Context per request has grown 2.6x. The input to output token ratio moved from 189:1 to 324:1.\nAll of this points to developers aiming a harder working, better informed Claude toward bigger, more open-ended tasks. For these types of sessions, the economic impact of context engineering is compounded.\nSimply put, Claude reads more tokens. You need to make sure [all the context you are providing is necessary](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models), and that [as much of that context as possible is reading from cache](https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions).\nThere are three changes that make long-running, context-heavy sessions more cost effective: changes to pricing, model behavior, and the Claude Code harness. Let\u2019s look at each.\nFor usage billed by the token, we reduced the cost of input and output tokens 20%, and we dropped the price of reading a cached token 60%. The latter reduction is significant because cache reads make up the majority of agentic and coding work costs.\nAnd as we just discussed, context per request has increased roughly 2.6x in six months, which means savings are trending in the right direction. The same price change for those billed by token saves more on today's Claude Code traffic than it would have six months ago, because more of the bill is now re-read context.\nAs of the publication date, a cached token on Opus 5.5 costs a fifth of what it does compared to competing models while outperforming them.\nThis is less specific to Opus 5.5, and more the result of many of the Claude Code features we\u2019ve added in the last six months. Given the coding session trends we just discussed, you would expect a higher rate of cache misses, but the opposite is true. Input that misses the cache decreased by more than 50%.\nFor example, we made it harder to unintentionally break your cache with smaller papercuts like refreshing a login. We also made it harder to break with larger actions, like adding instructions mid-conversation or loading tools on demand. For newer models like Opus 5.5 and Fable 5.1, you can now change effort levels during your sessions without resetting your cache.\nWe also made the cache more useful for longer-running and delegated sessions. Developers on API keys and cloud providers can now set a one-hour cache lifetime (which subscribers already had) and forked subagents start from the parent's cache instead of paying for the same context again.\nOpus 5.5 can need fewer turns than other models to accomplish the same task. Zeta Labs saw fewer turns and tool calls per task than Opus 5, but at nearly half the cost and twice as many of their hardest tasks completed.\nThis won't hold for every task. In [The cost of a task on Opus 5.5](https://claude.com/blog/what-a-task-costs-on-opus-5-5), Addy wrote, \"On a well-scoped task, both models finish in about the same number of turns, and the price cut is all you get. The gap should be biggest on open-ended tasks, where a model can spend many turns on the wrong idea. No single number holds for every codebase, so measure it.\"\nIn other words, simple, short, and mechanical tasks will take the same amount of turns while longer, harder tasks have more potential for Opus 5.5 to avoid burning tokens on the wrong approach. A reduced turn is even more cost efficient than a cached token.\nAlso worth noting, especially as Claude works longer unattended or uninterrupted, is that Opus 5.5 generates output more than 30% faster than Opus 5. While this doesn\u2019t increase cache hit rate or use less tokens, it means waiting less on long runs.\nAs agentic coding has matured, organizations have shifted from asking developers to scale at all costs to asking developers to scale efficiently. Run /usage in Claude Code to see how much of your usage is cached reads. Then protect that number:\n- Pick your model at the start of a session rather than switching midway,\n- Compact before you step away rather than after, and\n- If you're on an API key or cloud provider, set the\n[one-hour cache lifetime](https://code.claude.com/docs/en/prompt-caching#choose-the-ttl-yourself)for long sessions.\nPoint Opus 5.5 at the open-ended, context-heavy work where those habits compound, and see [What a task costs on Opus 5.5](https://claude.com/blog/what-a-task-costs-on-opus-5-5) for the worked numbers.\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "benchmark",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 657977,
-    "title": "Claude Tag now supports personal connectors in channels",
-    "url": "https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels",
-    "published_at": "2026-09-24T00:00:00+00:00",
-    "fetched_at": "2026-09-24T22:01:03+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Claude Tag now supports personal connectors in channels\nClaude Tag can now use your connectors for requests you make in a channel. Nobody else can use them, and you're in control of how to present the output.\nClaude Tag can now use your connectors for requests you make in a channel. Nobody else can use them, and you're in control of how to present the output.\n- September 24, 2026\n- 5min\n[Claude Tag (beta)](https://claude.com/product/tag) lets you add Claude to a Slack channel, where it works alongside your team. Until now, Claude could only use the connectors an [admin attached to the channel](https://claude.com/blog/agent-identity-access-model), and most organizations keep that list short on purpose: they want access to follow the person, not the channel.\nNow Claude can use your own [connectors](https://claude.com/docs/claude-tag/concepts/settings-map) for a request you make in a channel. For example, your calendar, your drive, your assigned accounts on the CRM, or your staging deploys. If you have [connected it to your Claude account,](http://claude.ai/customize) you can access it in the channel.\nYou decide how information is surfaced from when you ask Claude to access your connectors. You can review each response before it posts. Alternatively, you can use auto mode to post automatically unless Claude determines there is sensitive content that needs your review. On Enterprise plans, admins will be able to require review for everyone.\nPersonal connectors provide admins more governance options. They can provide access to a shared set of tools under an agent identity, have channel members only use personal connectors to rely on existing role-based access, or decide tool by tool.\nPersonal connectors in Claude Tag are rolling out now on Team plans, with Enterprise to follow.\nMost of what people need in a channel sits behind their own login: a time that works on your calendar, your open deals, a plan only you can open. Now you can ask for those in the channel too.\nFor example, here's Priya in #checkout-migration, a channel connected to GitHub. She asks: \"@Claude check my Google Drive doc 'Checkout migration, Q3' against what we've shipped. What's still open?\"\nClaude reads the merged pull requests through the channel's GitHub connector. The doc is one only Priya can open. Before, Claude would have stopped there.\nNow Claude reads the doc through Priya's Google Drive connector, separately from the channel's work, and posts what shipped and what's left. Priya's plan isn't sensitive, so she uses auto mode and Claude screens the comparison before it posts. For a document she'd rather check first, she can switch to review mode and see the response before the channel does.\nEverything Claude does through your connector appears in that tool's own log under your account, the way your direct-message work does today. The channel's own work stays under its service account, the one your security team already follows.\nYou decide what Claude reaches and what the channel sees, the same as when you use your connectors in a direct message, and you can disconnect a connector at any time.\nPersonal connectors don't run unattended. Scheduled routines, and anything Claude starts on its own, use the connectors an admin attached to the channel. Tools that are needed for unattended actions, or actions the entire channel relies on, should use shared connectors.\nFor example, you may want to add Claude to your [#on-call channel to help with CI triage and response](https://claude.com/blog/ai-ci-cd-on-call). Claude can identify and help remediate issues (even after work hours) if you set up shared connectors to your runbook, monitoring tools, and deployment history.\nA channel that solely relies on personal connectors suits closely supervised work. For example, collaboratively drafting an RFP response may require pulling data from pricing or other sensitive sources that are not provisioned to the entire channel. Anything Claude posts is visible to everyone in the channel.\nThere's nothing to install. When a request of yours needs one of your connectors, Claude asks you the first time, then uses it in the thread.\nAsk @Claude in a channel for what only you can reach. Learn more about [Claude Tag](https://claude.com/product/tag).\nGet the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836281,
-    "title": "Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind.",
-    "url": "https://claude.com/resources/articles/claude-opus-5-5-built-for-coding-sessions-that-use-more-context",
-    "published_at": "2026-09-24T00:00:00+00:00",
-    "fetched_at": "2026-10-07T06:53:40+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind.\nOur latest Opus model is priced and trained to optimize costs for how developers code now.\nWe estimate Claude Opus 5.5 [costs about 40% less](https://www.anthropic.com/claude-opus-5-5) to run than Opus 5 for typical workloads billed by token. For developers, exactly how those savings stack up matters.\nIf you pay by the token, you will see the greatest cost difference for longer-running, higher context sessions\u2013the exact type of Claude Code sessions that have become more prevalent in the last six months.\nThis post will dive into the mechanics of what makes Opus 5.5 cost effective for how developers are coding today (and likely tomorrow).\nClaude Code trends\nWe've pulled aggregate data on how developers have been using Claude Code from March to September 2026. As model capabilities improve, developers have been deploying agents in increasingly sophisticated ways. The number of prompts per session has been steady, but we found some interesting behaviors:\n- Claude works 3.3x longer on each prompt with more than 40% more model calls per prompt. There are 68% fewer interruptions.\n- Developers are about twice as likely to have a tool server connected or use a skill and a third less likely to paste text into a prompt.\n- Context per request has grown 2.6x. The input to output token ratio moved from 189:1 to 324:1.\nAll of this points to developers aiming a harder working, better informed Claude toward bigger, more open-ended tasks. For these types of sessions, the economic impact of context engineering is compounded.\nSimply put, Claude reads more tokens. You need to make sure [all the context you are providing is necessary](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models), and that [as much of that context as possible is reading from cache](https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions).\nWhat makes Opus 5.5 cost effective for long, context heavy sessions\nThere are three changes that make long-running, context-heavy sessions more cost effective: changes to pricing, model behavior, and the Claude Code harness. Let\u2019s look at each.\nCache is cheap\nFor usage billed by the token, we reduced the cost of input and output tokens 20%, and we dropped the price of reading a cached token 60%. The latter reduction is significant because cache reads make up the majority of agentic and coding work costs.\nAnd as we just discussed, context per request has increased roughly 2.6x in six months, which means savings are trending in the right direction. The same price change for those billed by token saves more on today's Claude Code traffic than it would have six months ago, because more of the bill is now re-read context.\nAs of the publication date, a cached token on Opus 5.5 costs a fifth of what it does compared to competing models while outperforming them.\nClaude Code is better at using the cache\nThis is less specific to Opus 5.5, and more the result of many of the Claude Code features we\u2019ve added in the last six months. Given the coding session trends we just discussed, you would expect a higher rate of cache misses, but the opposite is true. Input that misses the cache decreased by more than 50%.\nFor example, we made it harder to unintentionally break your cache with smaller papercuts like refreshing a login. We also made it harder to break with larger actions, like adding instructions mid-conversation or loading tools on demand. For newer models like Opus 5.5 and Fable 5.1, you can now change effort levels during your sessions without resetting your cache.\nWe also made the cache more useful for longer-running and delegated sessions. Developers on API keys and cloud providers can now set a one-hour cache lifetime (which subscribers already had) and forked subagents start from the parent's cache instead of paying for the same context again.\nThe same task, but with fewer turns\nOpus 5.5 can need fewer turns than other models to accomplish the same task. Zeta Labs saw fewer turns and tool calls per task than Opus 5, but at nearly half the cost and twice as many of their hardest tasks completed.\nThis won't hold for every task. In [The cost of a task on Opus 5.5](https://claude.com/blog/what-a-task-costs-on-opus-5-5), Addy wrote, \"On a well-scoped task, both models finish in about the same number of turns, and the price cut is all you get. The gap should be biggest on open-ended tasks, where a model can spend many turns on the wrong idea. No single number holds for every codebase, so measure it.\"\nIn other words, simple, short, and mechanical tasks will take the same amount of turns while longer, harder tasks have more potential for Opus 5.5 to avoid burning tokens on the wrong approach. A reduced turn is even more cost efficient than a cached token.\nAlso worth noting, especially as Claude works longer unattended or uninterrupted, is that Opus 5.5 generates output more than 30% faster than Opus 5. While this doesn\u2019t increase cache hit rate or use less tokens, it means waiting less on long runs.\nProtect your cached reads\nAs agentic coding has matured, organizations have shifted from asking developers to scale at all costs to asking developers to scale efficiently. Run /usage in Claude Code to see how much of your usage is cached reads. Then protect that number:\n- Pick your model at the start of a session rather than switching midway,\n- Compact before you step away rather than after, and\n- If you're on an API key or cloud provider, set the\n[one-hour cache lifetime](https://code.claude.com/docs/en/prompt-caching#choose-the-ttl-yourself)for long sessions.\nPoint Opus 5.5 at the open-ended, context-heavy work where those habits compound, and see [What a task costs on Opus 5.5](https://claude.com/blog/what-a-task-costs-on-opus-5-5) for the worked numbers.",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "benchmark",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 836280,
-    "title": "Claude Tag now supports personal connectors in channels",
-    "url": "https://claude.com/resources/articles/claude-tag-now-supports-personal-connectors-in-channels",
-    "published_at": "2026-09-24T00:00:00+00:00",
-    "fetched_at": "2026-10-07T06:53:40+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Claude Tag now supports personal connectors in channels\nClaude Tag can now use your connectors for requests you make in a channel. Nobody else can use them, and you're in control of how to present the output.\n[Claude Tag (beta)](https://claude.com/product/tag) lets you add Claude to a Slack channel, where it works alongside your team. Until now, Claude could only use the connectors an [admin attached to the channel](https://claude.com/resources/articles/agent-identity-access-model), and most organizations keep that list short on purpose: they want access to follow the person, not the channel.\nNow Claude can use your own [connectors](https://claude.com/docs/claude-tag/concepts/settings-map) for a request you make in a channel. For example, your calendar, your drive, your assigned accounts on the CRM, or your staging deploys. If you have [connected it to your Claude account,](http://claude.ai/customize) you can access it in the channel.\nYou decide how information is surfaced from when you ask Claude to access your connectors. You can review each response before it posts. Alternatively, you can use auto mode to post automatically unless Claude determines there is sensitive content that needs your review. On Enterprise plans, admins will be able to require review for everyone.\nPersonal connectors provide admins more governance options. They can provide access to a shared set of tools under an agent identity, have channel members only use personal connectors to rely on existing role-based access, or decide tool by tool.\nPersonal connectors in Claude Tag are rolling out now on Team plans, with Enterprise to follow.\nUsing personal connectors\nMost of what people need in a channel sits behind their own login: a time that works on your calendar, your open deals, a plan only you can open. Now you can ask for those in the channel too.\nFor example, here's Priya in #checkout-migration, a channel connected to GitHub. She asks: \"@Claude check my Google Drive doc 'Checkout migration, Q3' against what we've shipped. What's still open?\"\nClaude reads the merged pull requests through the channel's GitHub connector. The doc is one only Priya can open. Before, Claude would have stopped there.\nNow Claude reads the doc through Priya's Google Drive connector, separately from the channel's work, and posts what shipped and what's left. Priya's plan isn't sensitive, so she uses auto mode and Claude screens the comparison before it posts. For a document she'd rather check first, she can switch to review mode and see the response before the channel does.\nEverything Claude does through your connector appears in that tool's own log under your account, the way your direct-message work does today. The channel's own work stays under its service account, the one your security team already follows.\nYou decide what Claude reaches and what the channel sees, the same as when you use your connectors in a direct message, and you can disconnect a connector at any time.\nWhere the channel's own connectors still matter\nPersonal connectors don't run unattended. Scheduled routines, and anything Claude starts on its own, use the connectors an admin attached to the channel. Tools that are needed for unattended actions, or actions the entire channel relies on, should use shared connectors.\nFor example, you may want to add Claude to your [#on-call channel to help with CI triage and response](https://claude.com/resources/articles/ai-ci-cd-on-call). Claude can identify and help remediate issues (even after work hours) if you set up shared connectors to your runbook, monitoring tools, and deployment history.\nA channel that solely relies on personal connectors suits closely supervised work. For example, collaboratively drafting an RFP response may require pulling data from pricing or other sensitive sources that are not provisioned to the entire channel. Anything Claude posts is visible to everyone in the channel.\nWhat's next\nThere's nothing to install. When a request of yours needs one of your connectors, Claude asks you the first time, then uses it in the thread.\nAsk @Claude in a channel for what only you can reach. Learn more about [Claude Tag](https://claude.com/product/tag).",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810855,
-    "title": "Photon: Building a retrieval and ranking engine from scratch",
-    "url": "https://www.perplexity.ai/hub/blog/photon",
-    "published_at": "2026-09-24T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "Warning: Target URL returned error 403: Forbidden\n\nMarkdown Content:\n## Introduction\n\nPerplexity\u2019s AI-native search stack retrieves and ranks candidate pages, surfacing the most relevant content for the model to ground its answers. Originally, this stage ran on an open-source engine that we adapted to our system. However, as our index and workloads grew, we hit hard limits on costs, tail latency, and node recovery time that we couldn't resolve within the existing third-party platform.\n\nTo overcome these challenges, we built Photon, a new in-house retrieval and ranking engine. This continues our approach of building AI-first search infrastructure from scratch, as we did with [CobbleDB](https://www.perplexity.ai/hub/blog/cobbledb), our distributed key-value store for serving page records, and our [Search API](https://www.perplexity.ai/hub/blog/architecting-and-evaluating-an-ai-first-search-api).\n\nPhoton uses compact data formats to read and decode only what each query needs, with batch-aware caching and asynchronous reads to reduce disk access and overlap waits. Index building runs separately from query serving, updating one serving group at a time and warming its caches before routing live queries to it.\n\nPhoton now powers our search pipeline and is also the foundation of a new fast preset for our Search API, with single-search-call latency of 160 ms at p50 and 230 ms at p95. Across six public benchmarks, the fast preset reduced estimated model-plus-search cost per task by 68% while maintaining aggregate task quality comparable to the default preset. We are releasing it today so developers can access these improvements.\n\nSelf-reported single-search-call latency. PPLX Fast reports p50 latency of 160 ms and p95 latency of 230 ms. Exa Instant reports p90, not p95, for its high-tail value; Parallel's high-tail values are not published. The reported percentiles and measurement setups are not a controlled like-for-like comparison.\n\nAggregate task quality versus estimated total model-plus-search cost for the same 3,554 selected tasks. Scores are weighted by task count, and costs cover the full task set. PPLX Fast scores 64.3% at $59.73, versus 64.0% at $187.60 for the default PPLX preset, approximately 68% lower estimated cost for the same number of tasks.\n\n## What the retrieval and ranking engine requires\n\nFor each query, the retrieval and ranking engine searches a large, distributed index to select and order a small set of relevant pages within the search stack\u2019s latency budget. The system must also keep the index up to date as new pages arrive and existing pages change, without letting that work slow down live queries.\n\nWe evaluated several open-source options and chose a mature, general-purpose retrieval and ranking engine that met our initial needs. We then adapted it to our architecture and workloads, maintaining stable latency and throughput at production scale.\n\n### Where our previous system fell short\n\nWe maintained our own fork to adapt the engine to our growing index, but addressing key limitations increasingly required redesigning large parts of the platform. Several constraints proved difficult to resolve without fundamental architectural changes:\n\n**1. Scaling costs**. Both the number of documents we store and the amount of per-document data we need to retrieve and rank have been growing over time. This scaling put pressure on our hardware, especially the amount of RAM available. To control costs, we needed more compact data representations and finer control over what stays in memory and what is read from disk on demand.\n\n**2. Poor tail latency**. On production traffic, the old system\u2019s p99 response time was about 800 ms. The dataset exceeded available RAM, so we could not use `mlock` to keep it entirely in memory. Accessing nonresident data could trigger major page faults, stalling query execution while the operating system read from disk.\n\nThe engine also periodically merged its main disk index with smaller indexes flushed from memory. During this disk index fusion process, the number of page faults rose even higher, with p99 latency reaching approximately 1.2 s for 10\u201315 minutes. As the caches warmed up, the frequency of page faults and latency both decreased, suggesting that cold reads were a major contributor to the spikes. Preloading data and warming the index reduced the spikes but did not adequately address high tail latency.\n\n**3. Lengthy recovery and synchronization**. In the previous system, deploying an additional cluster and synchronizing its data could take more than a week. Synchronization was also required when adding groups of nodes to hold additional data copies or recovering from node failures. During recovery, a larger share of search responses was partial, which lowered final-answer quality scores.\n\nUltimately, we concluded that it would be simpler and cheaper to build from scratch rather than continuing to adapt and maintain our fork. Drawing on our experience operating the previous system, a small engineering team worked alongside a swarm of persistent coding agents to build Photon.\n\n### Where Photon fits into the search stack\n\nPhoton is designed for two primary workflows: serving search requests and ingesting updates from the processing pipeline.\n\nA request from the higher-level search service reaches the Photon broker through a load balancer. The broker selects a shard group and forwards the request to each shard, monitoring timeouts and issuing additional requests when needed.\n\nEach shard performs retrieval, initial ranking, and second-stage ranking, then returns its best candidates to the broker. The broker combines these candidates into a single ranked list and fetches key document fields for the selected pages from the relevant shards. It then returns these results to the higher-level search service, which gathers the page content needed for the agent to generate a grounded answer.\n\nIndex updates follow a separate path. Pillar, our publishing layer, prepares the data and stores it in YTsaurus tables. Indexers convert these tables into index structures that shards can load for search. The controller coordinates data preparation, index building, and deployment of new index versions to serving groups. Before handling live traffic, each shard replays real search queries to warm its caches.\n\nA query moves from the higher-level search service through the load balancer and broker to a selected shard group. Each shard retrieves and ranks candidates; the broker merges the results, fetches document fields for the selected pages, and returns them to the higher-level search service. Numbered steps show order. Solid arrows carry requests, and dashed arrows carry results back. The left-side phase labels distinguish candidate selection from summary reads.\n\n## Designing Photon for our workflows\n\nThree design choices make Photon well suited to our workload: compact data representations, caching and asynchronous disk reads, and separating index updates from query serving.\n\n### Data representations for retrieval and ranking\n\nRetrieval and ranking access document data differently. Lexical retrieval starts with query terms and finds documents that contain them. Ranking then needs detailed information about each selected document, including term frequencies and positions.\n\nPhoton uses two complementary representations to support these access patterns. An inverted index stores a list of matching documents for each term, called a posting list, to support candidate selection. Separate per-document records provide the data needed for ranking. We also optimize how posting lists are stored and traversed to improve selection within a fixed work budget.\n\nSpecialized data representations enable us to store key data more efficiently. A more compact inverted index reduces the amount of data read or moved per query, improving latency by eliminating unnecessary I/O operations. These formats also make it possible to check whether a document appears in a list without fully decoding it, a property our traversal logic relies on to control how much work a query does under a fixed budget. Optimizing per-document records lets us store more data per document for ranking, while also reducing the scaling costs associated with our previous system.\n\n#### The inverted index\n\nFor each term, the inverted index stores a posting list. These lists can range from a handful of documents to millions, so no single format works well for every list. Photon chooses the format based on the number of documents containing the term.\n\nShort lists use an inline representation that fits within a single page and requires no block table. Longer lists that don\u2019t fit the inline format are divided into blocks covering fixed ranges of document identifiers. Each block\u2019s representation depends on its density: sparse blocks store sorted arrays of document-ID offsets, while dense blocks use bitmaps. Sparse blocks use galloping search, which advances in increasingly large steps to skip regions of the list. Dense blocks allow membership checks by looking up the bit corresponding to a document.\n\nA term\u2019s query frequency determines where its posting list is placed on disk. Frequently queried lists are stored near one another, concentrating hot data in a smaller storage region. Within each list, documents are ordered by a separate usefulness signal so that more promising candidates are encountered earlier.\n\nPhoton chooses a posting-list representation by length and block density. Short lists fit inline within a page. Longer lists are divided into fixed document-ID ranges, with sorted offset arrays for sparse blocks and bitmaps for dense blocks.\n\n#### Traversing lists within a work budget\n\nCandidate selection requires traversing posting lists to find potentially relevant documents. Exhaustively scanning every list is expensive, so Photon uses a WAND-like algorithm that traverses only some lists while still accounting for matches in the others.\n\nThe algorithm divides lists into two groups. Driving lists advance the traversal and propose candidate documents. Probe lists contribute to the scores of those candidates but do not generate candidates themselves.\n\nCandidate scoring combines weighted query-term coverage and a frequency contribution, with document-length normalization and a cap on gains from repeated terms. Photon first checks term presence in the arrays and bitmaps to bound each candidate\u2019s maximum possible score. It reads exact term frequencies only for candidates that could still meet the selection threshold.\n\nSelection then proceeds in three steps:\n\n*   **Traversal**: Start with a strict query-coverage requirement. If too few candidates are found, repeat with a relaxed requirement.\n*   **Retention**: Candidates are held in a bounded set using a score that combines coverage and frequency. As the collected top candidates improve, the admission threshold rises.\n*   **Final selection**: Final results for the pass are chosen from the retained set based on the frequency scores. Each field runs its own pass, and the results are merged using field weights.\n\nThe algorithm produces a candidate set of relevant documents to be used in further ranking.\n\nIllustrative bounded candidate traversal. Driving lists propose documents, while upper bounds allow candidates below the current admission threshold to be pruned without reading probe lists or exact frequencies. The threshold rises as the retained set improves. Scores are invented for illustration, and the retained candidates are not a guaranteed exact top-k.\n\n#### Docblob\n\nAfter candidate pages are selected, the ranking phase needs term frequencies, field coverage, and the locations and proximity of occurrences. Obtaining this data through the inverted index would require scattered accesses across many term-document pairs. In Photon, we store a compact per-document record called docblob that contains term frequencies, which fields a term appeared in, and where in the do",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810854,
-    "title": "Portable Computer comes to AMD-powered agentic PCs",
-    "url": "https://www.perplexity.ai/hub/blog/portable-computer-comes-to-amd-powered-agentic-pcs",
-    "published_at": "2026-09-24T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "Warning: Target URL returned error 403: Forbidden\n\nMarkdown Content:\nPeople want to put their own compute to work on more of their everyday tasks, from analyzing local files to running recurring workflows. Completing that work on their own hardware gives them more control over sensitive information and credit spend. To let more people work this way, local AI needs to run on more devices and connect to the tools they already use.\n\nToday we\u2019re expanding [Portable Computer](https://www.perplexity.ai/hub/products/portable-computer)to systems powered by AMD Ryzen AI Max Series processors including the Ryzen AI Halo developer platform, giving more people a way to run local AI on their own hardware.\n\nLocal inference doesn\u2019t consume Computer credits. Users can run routine analysis and file processing on their Ryzen AI Max-powered system. The local model can still escalate to the cloud for more advanced research and reasoning when needed.\n\n## The local agent stack comes to AMD Ryzen AI Max as one system\n\nAMD support gives users another way to run Perplexity Computer locally. They can put their own hardware to work on demanding tasks while limiting credit spend.\n\nPeople have work they could give to an agent if sensitive files, such as deal documents, patient records, unreleased code, and payroll exports, could stay on device. That requires a local model, tools to work with those files, and controls over what the agent can access.\n\nPortable brings the local model, agent harness and orchestrator, scheduler, sandbox, and sensitive-content classifier to one system. Available models include Qwen 3.8 27B and PPLX 27B, Perplexity\u2019s post-trained model. Users no longer have to assemble the stack themselves by setting up an inference server, connecting an agent, and configuring each tool.\n\nAMD and Perplexity are making it easier for developers to get started with local agents on Ryzen AI Halo. Users can download a model in one click through Local Inference in the Perplexity app\u2019s settings. The inference engine and classifier install with it. Users then connect their apps and choose the folders Portable can work in.\n\n## Local tasks can draw on cloud research and reasoning\n\nA task that starts with local files may still need current information or more advanced reasoning. A financial analyst working with a local earnings model, for example, might use current market data from the web and frontier-model reasoning to test how changing interest rates could affect their forecast.\n\nPortable gives users access to cited web results through Perplexity Search and advanced reasoning from 15+ frontier models. If a task needs to send information from the device to the cloud, Portable asks for the user\u2019s permission before moving forward.\n\n## Portable handles one-off tasks and recurring work\n\nPortable works across local files and connected apps. Its local orchestrator connects to Gmail, Outlook, Slack, and GitHub. Local Model Context Protocol (MCP) servers let it work with supported applications installed on the same PC.\n\n*   **Finance:**A controller schedules Portable to reconcile each morning's locally stored invoices against contract rate sheets in a permitted folder, flag discrepancies, and save an exception list to that folder. The reconciliation runs on device.\n*   **Daily brief:**An operations lead schedules a weekday briefing for 8 a.m. that reviews overnight email and Slack, identifies decisions waiting on them, and drafts replies to unblock colleagues. The reading and summarizing happen on device.\n*   **Legal and compliance:**A paralegal gives Portable access to a folder of vendor contracts and a review checklist. Portable returns a table of missing or non-standard clauses in each contract for the paralegal to review.\n*   **Engineering:**A team lead schedules a review of open pull requests for 9 a.m., grouping them as ready, needs review, blocked, or stale. After the lead approves the summary, Portable posts it to the team's Slack channel and tags each owner.\n\nRecurring work uses the same local model, so its local inference doesn\u2019t add to Computer credit spend with each run. Scheduled tasks run while the app is open and the PC is awake.\n\n## Permissions and sandboxing limit what the agent can access\n\nAn agent that writes and runs code needs clear boundaries. Portable runs code and tools inside an isolated on-device sandbox, with read and write access limited to permitted folders. It reaches connected apps only through connectors the user has configured.\n\nAn on-device classifier scans content for sensitive details, such as names, account numbers, and credentials, before it leaves the PC. If it flags sensitive information, the user can choose to share it, keep that step on the local model, or stop.\n\nOrganizations can control access to inference on managed accounts. An administrator decides whether it is allowed, so IT can make it available to the teams that need it.\n\n## Portable is available on supported AMD hardware\n\nPortable Computer on AMD Ryzen AI Max Series processors and the AMD Ryzen AI Halo developer platform is available today to Pro and Max subscribers on individual and enterprise plans through the [Perplexity app for Windows](https://apps.microsoft.com/detail/9p9xg917pwcj?hl=en-US&gl=US&ocid=pdpshare).\n\n### Requirements\n\n*   **Hardware:**An AMD Ryzen AI Halo developer platform or any system with a Ryzen AI Max Series processor and at least 24 GB of GPU-accessible memory\n*   **Operating system:**Windows 10 or Windows 11\n*   **Models:**PPLX 27B and Qwen 27B\n*   **Storage:**Approximately 20 GB of free disk space for the initial setup\n\n### Setup\n\n1.   Install the Perplexity app for Windows and sign in.\n2.   Open Settings, select Local Inference, and download the model. The inference engine and classifier install with it.\n3.   In Settings, open Permissions, turn on local file system access, and choose the folders Portable Computer can work in.\n4.   Open the model menu in the composer and select a model under Local. Tasks start with on-device inference, with permission required before sending information to the cloud.\n\nFull setup details are in the [Portable Computer help center article](https://www.perplexity.ai/help-center/en/articles/20260915-what-is-portable-computer). More information is available on the [Portable Computer](https://www.perplexity.ai/hub/products/portable-computer)page.",
-    "topic": "hardware",
-    "tags": [
-      "hardware",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 706373,
-    "title": "We just shipped support for the ugliest part of HTTP: Vary",
-    "url": "https://simonwillison.net/2026/Sep/23/hn-49823961/",
-    "published_at": "2026-09-23T23:14:57+00:00",
-    "fetched_at": "2026-09-28T08:18:04+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "23rd September 2026\nI've been wanting this from Cloudflare for years.\nThe classic problem here is if you do that thing where user agents that send \"accept: text/html\" get HTML, while user agents that don't get JSON or some other format.\nThis used to be impossible to deploy behind Cloudflare caching, because they ignored the Vary header on anything other than images - so you risked caching the JSON version and then serving it up to someone who was expecting HTML.\n(Independent of the Cloudflare feature I ended up deciding never to use that pattern, because I prefer having URL that predictably returns HTML or JSON - I add a .json suffix to my apps to serve JSON instead.)\nRecent articles\n[2026 in LLMs (so far)](/2026/Sep/27/2026-in-llms-so-far/)- 27th September 2026[Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war](/2026/Sep/22/opus-and-sol-and-luna/)- 22nd September 2026[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure",
-      "models",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 712591,
-    "title": "How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows",
-    "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
-    "published_at": "2026-09-23T18:41:40+00:00",
-    "fetched_at": "2026-09-28T21:34:08+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "[\n](#how-to-use-nvidia-warp-and-mjwarp-to-accelerate-robotics-simulation-and-learning-workflows)\nHow to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows\n[Enterprise + Article](/blog)\n[robot simulation](https://www.nvidia.com/en-us/use-cases/robotics-simulation/)for developing, testing, and controlling robots and it can parallelize sampling across CPU cores. But as learning workloads grow, the question shifts from how quickly one world can run to how many worlds can run at once. GPU acceleration makes it possible to advance those worlds in large batches while keeping simulation and learning data close to the device.\n[MuJoCo Warp (MJWarp)](https://mujoco.readthedocs.io/en/latest/mjwarp/), built on [NVIDIA Warp](https://developer.nvidia.com/warp-python), takes compatible MuJoCo models into that GPU-scale regime. In this article, we will move an SO-101 follower arm from a familiar MuJoCo workflow to as many as 2,048 parallel MJWarp environments and examine the technology and validation steps that make the transition possible.\n[\nFigure 1. How MJWarp connects Python to GPU simulation. MuJoCo loads and compiles the MJCF model; MJWarp implements the physics in NVIDIA Warp, which compiles CUDA kernels to advance simulation states on NVIDIA GPUs.](https://cdn-uploads.huggingface.co/production/uploads/6994dc99f850a10f03fd0b21/8SmNNsqLiBHC0W31zT4cf.png)\nThis is the second article in our State of Simulation for Physical AI series. The first article mapped the robot-simulation landscape. Here, we prepare and scale the simulation environment; we do not train a policy. The later Newton and Isaac Lab installments cover the next integration layers.\n[\n](#putting-it-together)\nPutting it together\n| Layer | Role in the stack |\n|---|---|\n| NVIDIA Warp | Python kernel language: single instruction, multiple threads (SIMT), autodiff, PyTorch/JAX interop |\n| MJWarp | MuJoCo physics on Warp: same MJCF, batched GPU throughput |\n| Your scene (SO-101) | Familiar Menagerie / Robot Studio assets + task geometry |\n| Next (Newton / Isaac Lab) | Multi-solver API, USD, sensors, managers, training loops |\nDecision shortcut:\n| If you need\u2026 | Reach for\u2026 |\n|---|---|\n| Single-robot MPC / teleop | MuJoCo CPU |\n| Max throughput on raw MuJoCo physics | MJWarp (or\n|\n[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)/ MJX (impl='warp')\n[\n](#start-with-one-useful-warp-kernel)\nStart with one useful Warp Kernel\n[NVIDIA Warp](https://github.com/NVIDIA/warp) is a Python framework for writing high-performance, GPU-accelerated kernels. Warp lets developers author statically typed kernels in Python and compiles them for CPU or CUDA execution. The first launch builds and caches a native module; later launches reuse it. The kernel language is a performance-oriented subset of Python, while ordinary Python remains responsible for configuration, allocation, and launch orchestration.\nThis small robotics-oriented kernel advances point positions under gravity. One logical thread handles one point, so the same code scales from two points to millions without introducing GPU terminology into the control flow.\nThe three value propositions of Warp are:\n| Pillar | What you get |\n|---|---|\n| Performance | Native-CUDA speed via JIT compilation, kernel fusion, and CUDA Graphs |\n| Ease of use | Pure Python authoring with built-in vectors, matrices, quaternions, BVHs, hash grids, sparse matrices, and tile primitives |\n| Capability | Differentiable kernels and DLPack-style interop so simulation can sit inside an ML training loop |\nimport numpy as np\nimport warp as wp\n@wp.kernel\ndef integrate(\npositions: wp.array[wp.vec3],\nvelocities: wp.array[wp.vec3],\ndt: float,\n):\ni = wp.tid()\nvelocities[i] += wp.vec3(0.0, 0.0, -9.81) * dt\npositions[i] += velocities[i] * dt\nwp.init()\ndevice = \"cuda:0\" if wp.is_cuda_available() else \"cpu\"\nstart = np.array([[0.0, 0.0, 0.5], [0.2, 0.0, 0.5]], dtype=np.float32)\npositions = wp.array(start, dtype=wp.vec3, device=device)\nvelocities = wp.zeros_like(positions)\nwp.launch(\nintegrate,\ndim=len(start),\ninputs=[positions, velocities, 0.01],\ndevice=device,\n)\nwp.synchronize_device(device)\nprint(positions.numpy())\n[\n](#three-properties-make-this-useful-in-robotics)\nThree properties make this useful in robotics:\n- Explicit parallel work. wp.tid() identifies the point, contact, body, or world owned by the current logical thread.\n- Explicit device arrays. An array lives on the selected device. Calling .numpy() on a CUDA array synchronizes and copies it to CPU memory; it is not a zero-copy path. For a device-resident PyTorch or JAX pipeline, use Warp\u2019s framework adapters or DLPack-compatible sharing instead.\n- Composable kernel launches. A program can launch a sequence of focused kernels and capture supported CUDA work into a graph to reduce repeated dispatch overhead. Graph capture replays launches against existing buffers; it does not fuse arbitrary kernels.\n[\n](#differentiability-and-determinism)\nDifferentiability and Determinism.\nTwo further Warp capabilities are worth knowing, even though neither is used in the SO-101 workflow in this article. Warp kernels are differentiable: a wp.Tape records the forward kernel launches made inside its context and replays their adjoints in reverse when backward() is called, which is why teams build differentiable geometry, CFD, and custom physics in Warp, including [CAE workflows](https://developer.nvidia.com/topics/cae) for simulation and design optimization. Warp also supports deterministic execution, introduced in Warp 1.15: GPU atomics are scheduler-dependent by default, so repeated launches of the same kernel can differ slightly, and the opt-in deterministic modes trade some performance for reproducible ordering in simulation, validation, and regression tests. These are Warp capabilities, not guarantees of differentiability or determinism for an entire MJWarp rollout. See the Warp documentation on differentiability and deterministic execution for the details.\nTry Warp: pip install warp-lang (\u2265 1.15 for GPU determinism), then python -m warp.examples.browse, or the [tutorial notebooks](https://github.com/NVIDIA/accelerated-computing-hub/tree/main/tutorials/warp/notebooks).\n[\n](#what-is-mujoco-warp-mjwarp)\nWhat is MuJoCo Warp (MJWarp)?\nA robot simulator repeatedly computes what happens next: given the current joint positions, velocities, controls, and contacts, it advances the scene by one small timestep. In this article, a world means one independent copy of that scene and its state. One world might contain the SO-101 arm reaching for a cube; another can contain the same arm starting from a slightly different pose.\nMuJoCo and MJWarp can run the same compatible robot and task, but they organize the work differently. MuJoCo naturally suits developing and inspecting one or a few CPU worlds. MJWarp is a NVIDIA Warp implementation of MuJoCo\u2019s physics pipeline that places the model and a batch of independent states on NVIDIA GPUs; one call to mjw.step advances the entire batch.\nMJWarp\u2019s value is not necessarily a faster step for one world. It is the ability to advance hundreds or thousands together, giving the GPU enough parallel work to improve aggregate throughput, the total world-steps completed per second. That favors reinforcement learning and large-scale sampling, where collecting experience matters more than minimizing one environment\u2019s latency.\nThis blog covers the following:\n- validate one MuJoCo world,\n- move it to MJWarp, form a batch,\n- verify it, and measure it correctly.\nSolver tuning, Jacobian representation, and specialized multi-GPU or determinism topics are not required for this migration and can be covered separately.\nThen, the distinction is precise:\n- Latency is wall-clock time for one simulation step.\n- Aggregate throughput is the total number of world-steps completed per measured wall-clock second.\n[\n](#basic-usage-structs-batch-sizes-and-a-minimal-step)\nBasic usage: structs, batch sizes, and a minimal step\n- The core API transition is small:\n| MuJoCo host workflow | MJWarp workflow |\n|---|---|\n| mujoco.MjModel | mjw.put_model(mjm) creates a device model |\n| mujoco.MjData | mjw.put_data(mjm, mjd, ...) preserves and batches an existing state |\n| mujoco.mj_step(mjm, mjd) | mjw.step(m, d) advances every world in d |\n| Host arrays such as mjd.ctrl | Batched device arrays such as d.ctrl with shape (nworld, nu) |\nUse mjw.make_data() when default/fresh state is intended. Use mjw.put_data() when the exact initialized MuJoCo state must cross the migration boundary.\nAllocating batched resources requires defining the following parameters (refer to [Batch sizes](https://mujoco.readthedocs.io/en/latest/mjwarp/#batch-sizes)):\n| Parameter | Meaning |\n|---|---|\n| nworld | Total number of parallel environments |\n| nconmax | Expected contacts per individual world (overall capacity \u2248 nconmax * nworld) |\n| naconmax | Alternative setting: global maximum contacts across all environments combined (takes precedence if both are defined) |\n| njmax | Hard upper limit on constraints per world |\n[\n](#performance-tuning)\nPerformance tuning\n1. CUDA graph capture:mjw.step is many kernel launches; capture once, replay often:\nwith wp.ScopedCapture() as capture:\nmjw.step(m, d)\nwp.capture_launch(capture.graph)\n2. Size nconmax / naconmax / njmax tightly: memory and work scale with them. Tune with mjwarp-testspeed: --measure_alloc and watch overflows in mjwarp-viewer.\nAdditional tuning considerations. After sizing contact and constraint buffers, test solver iteration limits without changing task behavior. Meshes and CCD settings can increase memory use; nccdmax / naccdmax can reduce CCD buffer allocation when the measured contact counts allow it. MJWarp\u2019s compact solver uses MuJoCo\u2019s Newton constraint solver and sleeping, not the separate Newton physics-engine framework. Compact-solver and multi-GPU configuration are beyond this walkthrough; consult the MJWarp performance-tuning documentation.\nTo train policies on MJWarp physics:\n[Isaac Lab](https://github.com/isaac-sim/IsaacLab/tree/feature/newton)via[Newton](https://github.com/newton-physics/newton)[mjlab](https://github.com/mujocolab/mjlab)(manager API directly on MJWarp + PyTorch)[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)via MJX (impl='warp')\nInstall / try: pip install mujoco-warp \u00b7 mjwarp-viewer path/to/scene.xml \u00b7 [Colab tutorial](https://colab.research.google.com/github/google-deepmind/mujoco_warp/blob/main/notebooks/tutorial.ipynb)\n[\n](#workflow-to-migrate-a-mujoco-scene-to-mjwarp)\nWorkflow to migrate a MuJoCo scene to MjWarp\nThe scene. Nothing here is MJWarp-specific yet: an SO-101 arm, a table, and two cubes to stack, written as ordinary MJCF.\nFigure 2. SO-101 pick-and-place scene, rendered from the MuJoCo CPU simulation. The task is to grasp the red 44 mm cube and stack it on the blue cube; the same robot and scene are used for MJWarp validation.\n<mujoco model=\"so101_pick_place\">\n<include file=\"so101.xml\"/>\n<worldbody>\n<light pos=\"0.3 0 1.5\" dir=\"0 0 -1\" directional=\"true\"/>\n<geom name=\"floor\" type=\"plane\" size=\"0 0 0.05\"/>\n<geom name=\"table\" type=\"box\" pos=\"0.35 -0.04 0.012\"\nsize=\"0.16 0.26 0.012\" rgba=\"0.32 0.32 0.32 1\"\nfriction=\"1 0.005 0.0005\" condim=\"3\"/>\n<body name=\"red_cube\" pos=\"0.33 -0.13 0.046\">\n<freejoint name=\"red_cube_joint\"/>\n<geom type=\"box\" size=\"0.022 0.022 0.022\" mass=\"0.08\"\nrgba=\"0.85 0.05 0.04 1\" friction=\"1.2 0.005 0.0005\" condim=\"3\"/>\n</body>\n<body name=\"blue_cube\" pos=\"0.33 0.06 0.046\">\n<freejoint name=\"blue_cube_joint\"/>\n<geom type=\"box\" size=\"0.022 0.022 0.022\" mass=\"0.08\"\nrgba=\"0.05 0.20 0.90 1\" friction=\"1.2 0.005 0.0005\" condim=\"3\"/>\n</body>\n</worldbody>\n</mujoco>\nFor an MJCF box, the size values are half-extents: size=\u201d0.022 \u2026\u201d defines a cube with 44 mm edges. The task uses this size for its success thresholds. The arm base is at the origin, its reach is along +X, and the cubes are arranged along Y.\nIn the companion repository this",
-    "topic": "robotics",
-    "tags": [
-      "robotics",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 641337,
-    "title": "Google Beam expands with new regions, partners, and customers",
-    "url": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/",
-    "published_at": "2026-09-23T18:00:00+00:00",
-    "fetched_at": "2026-09-23T21:10:21+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "trafilatura",
-    "body": "Google Beam expands with new regions, partners, and customers\nSince its early days, Google Beam has been driven by a singular vision: bringing people together so they can experience genuine, face-to-face connection, no matter the distance. We\u2019ve tested Beam with early users, including in our own offices, and shown how it can help transform everyday meetings into authentic moments of connection.\nToday, we\u2019re announcing a major expansion of our global footprint, new data on our proven impact, and the launch of our first-ever extended network.\nExpanding our global footprint\nWe are officially expanding our global reach, with Google Beam units shipping to customers across six countries, including the U.S., Canada, U.K., France, Germany, and Japan. Backing this rollout is a robust, global ecosystem of 18 channel partners who are fully equipped to deploy and support Beam.\nDelivered by our flagship hardware partner as HP Dimension with Google Beam, this experience is built for modern enterprise collaboration. By integrating seamlessly with both Google Meet and Zoom, Beam can provide the flexibility organizations need while helping to elevate everyday conversations.\nProving our real-world impact\nThrough extensive internal testing at Google, we\u2019ve learned how transformative Beam can be for areas like recruiting, talent development, and cross-functional collaboration. In a recent eight-week internal study, Google teams using Beam felt 50% more connected to one another, found it 33% easier to ensure their feedback was clearly understood, and saw a 21% drop in the need for follow-up meetings. All of this has reinforced our own belief in expanding our own deployment of Beam for Googlers, alongside our customers.\nWe are also working closely with leaned-in partners to prove out these exact use cases in the field. Earlier this year, we partnered with Bain and Company to test how HP Dimension with Google Beam could help transform their campus recruiting and candidate interviews. By using this technology, Bain was able to create authentic, face-to-face connections with candidates from anywhere\u2014without the need for extensive travel. Watch how Bain is transforming their interview process [here](https://www.youtube.com/watch?v=l_8b_DKTbLU&list=PL590L5WQmH8fEWjGSRVPOMlgIs0rGSWX2&index=1).\nWe are thrilled to see this excitement mirrored by other first customers like Netflix, Capital Group, and many more who are eager to transform how they connect their global workforces.\nCreating the first-ever Beam extended network\nTo help make Beam accessible to organizations of all sizes, we are partnering with Industrious, a global operator of premium flexible workspaces worldwide. Together, we are creating the first-ever Beam extended network.\nWe conducted a pilot earlier this year, in which we heard firsthand how distributed teams are connecting for manager check-ins, interviews, and client consultations. Now, this network will increase access to Google Beam, opening the doors for more startups and businesses of all sizes to better connect and make their meetings feel much more natural.\nStarting in October, you can book and experience HP Dimension with Google Beam directly at select Industrious locations across the U.S., including Atlanta, Chicago, New York City and Palo Alto. Learn more [here](https://hello.industriousoffice.com/experience-google-beam-at-industrious).\nThe way we work is evolving, but the need for genuine human connection remains constant. Discover how organizations worldwide are transforming their meetings and explore more real-world use cases at [beam.google](https://beam.google/).",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "api",
-      "research",
-      "video",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 716038,
-    "title": "Run any agent harness under one interface",
-    "url": "https://www.dailydoseofds.com/p/run-any-agent-harness-under-one-interface/",
-    "published_at": "2026-09-23T17:50:00+00:00",
-    "fetched_at": "2026-09-28T21:40:43+00:00",
-    "source_id": "daily-dose-of-ds",
-    "source_name": "Daily Dose of Data Science",
-    "extraction_method": "trafilatura",
-    "body": "Run any agent harness under one interface\nHow UHP and HarnessRouter standardize agent execution across Codex, Claude Code, Hermes, and other runtimes.\nAgent Harness\nHow UHP and HarnessRouter standardize agent execution across Codex, Claude Code, Hermes, and other runtimes.\nAvi Chawla\n\ud83d\udc49\nWhen an agent product integrates one harness directly, its backend starts depending on that harness\u2019s task format, event stream, session model, and filesystem behavior.\nUnlike model routing, adding another harness is not a config/parameter change because it adds another runtime that plans work, calls tools, manages files, and decides when a task is complete.\nAnd supporting more than one runtime is critical since harnesses are built differently.\nThe right choice can depend on the task, required tools, provider access, available models, cost, latency, or usage limits. Like models, a product should be able to add or replace a harness without rebuilding the feature around it.\nModel routing does not solve that problem. It chooses which model handles an inference request, while the same agent loop remains in place. Harness routing chooses the agent runtime that owns the complete task.\nToday, let\u2019s talk about the engineering behind that second form of routing. We will understand why products may need different harnesses, what must be standardized across them, and how the [Unified Harness Protocol](https://github.com/HarnessRouter/harnessrouter?ref=dailydoseofds.com) defines that contract.\nWe will then use [HarnessRouter](https://github.com/HarnessRouter/harnessrouter?ref=dailydoseofds.com), an open-source UHP implementation, to run the same workflow through Codex and Claude Code.\nHarnesses make different choices about tool execution, context management, permissions, skills, and supported models. The same harness may not provide the right tools or model support for every product feature.\nA product may also serve customers with different provider access. One customer may already use OpenAI models, while another is set up around Anthropic. A quota or provider outage can also make one backend unavailable.\nEvaluation is another reason. Running the same task through two harnesses makes their cost, latency, tool use, and output easier to compare. The comparison is difficult when each backend requires different task and event code.\nThe goal is not to switch harnesses during every session but rather to keep the product from depending on one runtime.\nA team can select a harness per feature, offer a supported choice to customers, or replace a backend without changing the product workflow.\nA model API accepts input and returns generated output. The application still runs requested tools, starts follow-up model calls, and manages files, permissions, retries, and task state.\nAn agent harness includes this control loop. It can inspect files, call tools, edit a project, run commands, review the output, and decide when to stop.\nCodex and Claude Code can use similar models and still behave differently. Their instructions, tools, context handling, permissions, and completion rules affect the run.\nModel routing happens inside the inference layer. It chooses an endpoint based on price, latency, context length, availability, or measured quality. The application or harness still owns the agent loop.\nHarness routing selects the runtime that owns the task. That choice can change the tools, skills, workspace, permissions, and event stream.\nA product may use both routing layers. In UHP, model\nchooses the model, while metadata.harness_id\nchooses the configured harness.\nThe first integration often starts as a small adapter that launches a process and reads its output. A product UI also needs live progress, session continuity, file uploads, download links, and access rules.\nCancellation needs a defined path because local processes, remote jobs, and sessions stop differently. Errors also need enough structure to separate provider failures, permission denials, time limits, missing files, and cancelled tasks.\nAdding Claude Code beside Codex means building and maintaining these mappings again. The product needs one task lifecycle that both integrations can follow.\nThe Unified Harness Protocol defines the HTTP contract between an application and a harness server. It covers task creation, progress, sessions, files, cancellation, and errors without defining how the harness plans.\nUHP uses an API shaped like the OpenAI Responses API. A client starts work through POST /v1/responses\n. The request includes the task input, model, configured Harness ID, and optional execution limits.\nA response records one task. A session groups related responses that share conversation state and a working directory. A configured harness combines a base harness with its model, instructions, skills, tools, MCP servers, and limits.\nLive tasks use Server-Sent Events, or SSE. Each event has a type and sequence number, so the client can process the stream in order.\nThe events report text output, tool activity, files, and task status. The application displays them without searching raw terminal lines for each event.\nUHP accepts small files in the request and larger files through uploads. Generated files become artifacts that the application can list and download. The files specification defines those operations.\nFollow-up tasks use previous_response_id\n. The server continues the same session with its conversation, working directory, files, and configured harness.\nYou can still hand off work to another harness. If Codex starts a task and you want Claude Code to take over, start a new session with Claude Code and pass it the relevant context, such as a summary of the work so far, the next instructions, and any files it needs. Think of it as handing a task to another developer: the work can continue, but Claude Code is not resuming Codex\u2019s session.\nFor comparison, the application starts two sessions and gives both the same PDF and prompt. Each harness receives clear input instead of hidden state created by another runtime. The session specification documents this rule.\nThe current UHP version is 2026-09-12\n. The project publishes the written specification, OpenAPI 3.1 schema, JSON Schema definitions, and runnable conformance checks.\nHarnessRouter ([GitHub Repo](https://github.com/HarnessRouter/harnessrouter?ref=dailydoseofds.com)) is a self-hosted UHP server. It receives a UHP request, reads the Harness ID, and starts the selected runtime. As the harness works, HarnessRouter records its output as UHP events, responses, sessions, files, and errors.\nThe Docker image contains three services.\nThe Console provides the browser UI. The Gateway handles the UHP API and harness configuration. The Runner starts harness processes inside session workspaces.\nA named /data\nvolume stores the database, installed harness CLIs, provider integrations, session files, and workspaces. Only the Console port is published. The Gateway and Runner listen on loopback inside the container.\nThe self-hosting guide lists Codex, Claude Code, Hermes, DeepSeek Harness, Gemini CLI, OpenCode, Qwen Code, Cline, Goose, and other backends.\nA built-in harness can run without a custom configuration. A custom harness starts with one base harness and adds a default model, instructions, tools, skills, and optional MCP servers. HarnessRouter gives the saved configuration a Harness ID.\nThe product sends this ID with each new task. It does not need to launch the harness CLI or parse the harness output itself.\nCommunity Edition requires Docker, about 4 GB of disk, and an API key for a supported model provider.\nStart the container.\ndocker run -d --name harnessrouter \\\n-p 127.0.0.1:3000:3000 \\\n-v harnessrouter:/data \\\nharnessrouter/harnessrouter\nThe 127.0.0.1\nbinding keeps the Console on the local machine. The named volume preserves its data across container restarts.\nFollow the startup logs.\ndocker logs -f harnessrouter\nThe first run installs the enabled harness CLIs:\nWait for this message:\n[harnessrouter] ready on :3000\nOpen http://localhost:3000\n.\nNext, open Integrations in the left panel and select Add Integration. Choose a model provider and enter its API key:\nThis key authorizes model requests. It is separate from the Console password and the API key later used by the application.\nOpen Agent harnesses in the left panel. You\u2019ll see 11 built-in harnesses, including Codex, Claude Code, and Hermes. Select Hermes to create a task.\nSelect a model, create a task, and follow the run in the Console.\nFiles created by the harness remain attached to that session:\nCreate two custom harnesses in the Console.\nPaper Explainer with DeepSeek Harness\nPaper Explainer with Claude Code\nThe first configuration uses DeepSeek Harness as its base harness. The second uses Codex. Both receive the same instructions and the same paper-explainer\nskill.\nThe skill defines the output expected by the paper application.\nRead the uploaded research paper and identify its main mechanism.\nBuild a self-contained interactive explainer in index.html.\nInclude one controllable simulation with a short explanation beside it.\nUse Three.js only when 3D interaction improves the explanation.\nCreate README.md with the source, assumptions, and run instructions.\nVerify both files before completing the task.\nThe following video depicts this setup:\nUpload the same paper to two new sessions. Run the same prompt through both configurations.\nTurn the uploaded paper into an interactive visual explainer.\nRecreate its main mechanism as a controllable simulation.\nReturn index.html and README.md.\nThe prompt, skill, and required files stay the same. Codex and DeepSeek Harness can still choose different plans, tools, and implementations.\n- The first part of the video above shows the HarnessRouter dashboard and how the application selected and ran the harness.\n- The final part of the video above shows what the agent produced.\nAfter the task works in the Console, open http://localhost:3000/keys\n. Create a HarnessRouter API key and store it in backend code.\nSet the local API address and the API key\nexport HARNESSROUTER_BASE_URL=http://localhost:3000/api/harness\nexport HARNESSROUTER_API_KEY=sk-hr-...\nSend a task through the Responses-compatible endpoint.\ncurl --fail-with-body -sS \"$HARNESSROUTER_BASE_URL/v1/responses\" \\\n-H \"Authorization: Bearer ${HARNESSROUTER_API_KEY:?}\" \\\n-H \"content-type: application/json\" \\\n-d '{\n\"input\": \"Reply with exactly: it works.\",\n\"metadata\": {\"harness_id\": \"codex\"},\n\"model\": \"gpt-5.4-mini\",\n\"stream\": false\n}'\nHere\u2019s that request running against the local endpoint, with the response printed in the terminal:\nThis invocation uses the built-in codex\nidentifier from the repository quickstart. A custom configuration uses the Harness ID shown in the Console.\nFor another new task, changing metadata.harness_id\nselects another configured harness.\nHere\u2019s the demonstration with Hermes:\ncurl --fail-with-body -sS \"$HARNESSROUTER_BASE_URL/v1/responses\" \\\n-H \"Authorization: Bearer ${HARNESSROUTER_API_KEY:?}\" \\\n-H \"content-type: application/json\" \\\n-d '{\n\"input\": \"Reply with exactly: it works.\",\n\"metadata\": {\"harness_id\": \"hermes\"},\n\"model\": \"gpt-5.4-mini\",\n\"stream\": false\n}'\nAs depicted above, the application keeps the same endpoint and event format. The same client can also continue sessions, retrieve files, and cancel work.\nThe Unified Harness Protocol (UHP) standardizes the task lifecycle, but it does not make the harnesses behave the same. Different runtimes can choose different plans, tools, files, and models. The protocol gives the product one way to submit the work and inspect the result.\nThe local deployment also has a clear isolation limit. Sessions use separate operating-system users and workspaces. They do not run in separate containers. The Runner keeps the permissions needed to create those users, while each harness process runs as its assigned session user.\nProvider credentials should stay outside environments that agent tools can read. Application",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 640466,
-    "title": "AI Engineer Paris 2026 Main Stage: Google DeepMind, ElevenLabs, Hugging Face & Stripe | Day 2",
-    "url": "https://www.youtube.com/watch?v=g0vqT_wZtXA",
-    "published_at": "2026-09-23T17:20:26+00:00",
-    "fetched_at": "2026-09-23T17:44:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Live from STATION F, the AI Engineer Paris 2026 Main Stage continues with a full day of technical talks from the teams building and scaling production AI systems.\n\nWatch sessions covering model customization, inference infrastructure, voice and realtime AI, coding agents, software factories, and the emerging AI economy.\n\nDay 2 main-stage lineup:\n\n\u2022 Jakob P\u00f6rschmann (Black Forest Labs) \u2014 From Pixels to Robots\n\u2022 Dorian Lods (ElevenLabs) \u2014 Generating Identity at Scale\n\u2022 Harry Mellor (Hugging Face) \u2014 How a Transformers Model Loads in vLLM\n\u2022 Arielle Le Bail (Stripe) \u2014 Inside the AI Economy: What Stripe\u2019s Data Reveals\n\u2022 Herv\u00e9 Bredin (pyannoteAI) \u2014 Rebuilding a Streaming Model for Voice AI\n\u2022 Charles Frye (Modal) \u2014 The Low-Latency Inference Engineering Playbook\n\u2022 Dominic Pajak (Arm) \u2014 Eyes Up: Edge AI Innovation\n\u2022 Yannis Psorakis (Cognition) \u2014 Agentic Map-Reduce for Large-Scale Coding Tasks\n\u2022 Matt Pocock \u2014 Fixing the PR Bottleneck\n\u2022 Maarten Grootendorst (Google DeepMind) \u2014 The Efficiency of Gemma 4\n\u2022 Olivier Teboul (Gradium) \u2014 The Missing Layers of Conversational AI\n\nThis livestream covers the Main Stage. Additional tracks and workshops run concurrently and are not included in this broadcast.\n\nEvent: AI Engineer Paris 2026\nDate: September 24, 2026\nVenue: STATION F, Paris\n\nView the full schedule:\nhttps://ai.engineer/paris/2026\n\nSubscribe for more AI Engineer talks, livestreams, and event coverage:\nhttps://www.youtube.com/@aiDotEngineer\n\nSchedule subject to change. Timestamps will be added following the broadcast.\n\n#AIEngineering #AIAgents #AIEParis\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/g0vqT_wZtXA",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding",
-      "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 640421,
-    "title": "The 33-hour coup that cost Automattic $8 million...",
-    "url": "https://www.youtube.com/watch?v=ylO0DQeVEBQ",
-    "published_at": "2026-09-23T17:17:22+00:00",
-    "fetched_at": "2026-09-23T17:44:28+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "youtube",
-    "body": "Greptile is the only AI code reviewer that actually runs your code. Try it for free: http://greptile.com/go/fireship\n\nAutomattic's board fired WordPress co-founder Matt Mullenweg while he was at Burning Man... 33 hours later, he replaced the board and declared himself a pirate. Let's dive in.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev\n\nauthor: Fireship\n\nvideo: https://www.youtube.com/embed/ylO0DQeVEBQ",
-    "topic": "news",
-    "tags": [
-      "video",
-      "coding",
-      "education",
-      "media",
-      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
