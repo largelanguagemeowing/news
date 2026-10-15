@@ -1,5 +1,26 @@
 [
   {
+    "article_id": 923229,
+    "title": "Tree Appreciator",
+    "url": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
+    "published_at": "2026-10-14T21:23:01+00:00",
+    "fetched_at": "2026-10-15T01:40:51+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/tree-appreciator\">Tree Appreciator</a></p>\n        <p>Another game experiment with Claude. This one used the default Claude iPhone app (chat mode, not Claude Code mode) where I prompted Claude Opus 5.5 Max with:</p>\n<blockquote>\n<p><code>Build a three js game called \"Tree appreciator\" - it shows you two algorithmically generated trees and the game mechanics is about appreciating the differences between them. Think hard about how to make sure it is both fun and beautiful.</code></p>\n</blockquote>\n<p>Somewhat embarrassingly given <a href=\"https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/#simon-willison-2026-in-llms.059.webp\">my recent talk</a>, I've found that telling Opus 5.5 \"make sure it is fun\" works uncomfortably well. In this case Claude <a href=\"https://claude.ai/share/ee7de555-f85c-4ff0-96cb-d51ed5e479e9\">crunched for 3 hours and 7 minutes</a> before retuning a cosy little spot-the-difference game with music and animation and achievements that's quite compelling to play.</p>\n<p><img alt=\"Screenshot of a mobile spot-the-difference puzzle game with a dark interface. Header reads &quot;No. 003 Acer autumnalis \u2018Hid\u2026&quot; with subtitle &quot;Autumn maple \u00b7 A country lane in late a\u2026&quot; and icons for sound, a book, and help. Two nearly identical 3D-rendered scenes are stacked vertically, labeled &quot;Fig. i&quot; and &quot;Fig. ii&quot;, each showing a dark-trunked maple tree with red, orange and pale peach leaves, leaves falling through the air, a golden grassy field with a few small rocks, and hazy hills with pine silhouettes under a pale sky. Two differences are circled in blue in both images: circle &quot;a&quot; at the base of the trunk, where Fig. i has a small red mushroom that is missing in Fig. ii, and circle &quot;b&quot; in the right side of the canopy, where Fig. i has a patch of green leaves that are red in Fig. ii. The bottom bar shows &quot;2 of 4&quot;, a reset button, a &quot;Hint&quot; button with three filled and two empty dots, and a score of &quot;1,803&quot;.\" src=\"https://static.simonwillison.net/static/2026-10-14/image_crop_1320x2195_w1320_q0.7.webp\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/game-design\">game-design</a>, <a href=\"https://simonwillison.net/tags/javascript\">javascript</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/vibe-coding\">vibe-coding</a>, <a href=\"https://simonwillison.net/tags/three-js\">three-js</a></p>",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 917472,
     "title": "LIVE STREAM: New Open Weight Model",
     "url": "https://www.youtube.com/watch?v=dGhUFqeITbY",
@@ -10952,29 +10973,6 @@
       "benchmark",
       "research",
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 654913,
-    "title": "Compressing Streaming Neural Audio Encoders via Latent-Space Distillation",
-    "url": "https://machinelearning.apple.com/research/latent-space-distillation",
-    "published_at": "2026-09-24T00:00:00+00:00",
-    "fetched_at": "2026-09-24T18:34:17+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "System-wide Dictation on Apple devices runs entirely on-device, and the speech it transcribes reaches the foundation model through a tokenizer: an encoder that maps short windows of waveform onto the representation the language model reads. Because that model is sparsely activated under Instruction-Following Pruning, only a small subset of its experts occupies DRAM at any time, so the always-on tokenizer competes for the same memory, and its parameter count bears directly on power and latency. In this work we study how to compress such a tokenizer by distillation, taking as the supervision target neither the discrete token nor the output distribution but the pre-quantizer latent the model actually consumes\u00e2the last representation the two token interfaces share. We train only the student encoder to regress the teacher\u00e2s per-frame latent under a squared-error objective, with a single affine layer absorbing the teacher\u00e2student width mismatch. Because the target precedes both the quantizer and the language-model bridge, one recipe covers both token interfaces we support, and applies both to a tokenizer pretrained alone and to one jointly trained with a language model. At 2.8\u00c3 compression the distilled student stays within 1.9% relative WER of its teacher on five of six teacher\u00e2student pairs without any fine-tuning, and improves on an independently trained tokenizer of identical capacity by 3.9% relative.\n- \u00e2\u00a1 Equal contribution\n- \u00e2 NVIDIA\n- \u00c2\u00a7 Anthropic\n- ** Work done while at Apple",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "research",
-      "infrastructure",
-      "coding",
-      "tutorials",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
