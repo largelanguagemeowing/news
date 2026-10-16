@@ -1,8 +1,143 @@
 [
   {
+    "run_id": "f81d631145a7",
+    "started_at": "2026-10-16T09:25:44+00:00",
+    "ended_at": "2026-10-16T09:26:44+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "38880302334",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/38880302334",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-10-16T09:25:44+00:00",
+        "ended_at": "2026-10-16T09:26:44+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 37,
+          "enriched": 36,
+          "updated": 36,
+          "unchanged": 1,
+          "misses": 0,
+          "markdown_new_used": 3,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "jina": 2,
+            "youtube": 5,
+            "trafilatura": 25,
+            "markdown_new": 3,
+            "defuddle": 1,
+            "rss": 1
+          },
+          "per_source": {
+            "marios-rec-reading": {
+              "attempted": 2,
+              "enriched": 1,
+              "failed": 1
+            },
+            "matt-wolfe": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "huggingface-blog": {
+              "attempted": 5,
+              "enriched": 5,
+              "failed": 0
+            },
+            "simon-willison": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "openai-blog": {
+              "attempted": 3,
+              "enriched": 3,
+              "failed": 0
+            },
+            "matt-pocock-youtube": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "fireship": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "nvidia-blog": {
+              "attempted": 5,
+              "enriched": 5,
+              "failed": 0
+            },
+            "google-deepmind-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "microsoft-ai-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "microsoft-commandline": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "bens-bites": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "mistral-ai": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "cohere-blog": {
+              "attempted": 4,
+              "enriched": 4,
+              "failed": 0
+            },
+            "apple-machine-learning": {
+              "attempted": 3,
+              "enriched": 3,
+              "failed": 0
+            },
+            "anthropic-news": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "together-ai": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "claude-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            }
+          },
+          "flush_batches": 2,
+          "defuddle_enabled": true,
+          "duration_ms": 60595.9
+        }
+      }
+    ]
+  },
+  {
     "run_id": "b6b2d4c4bc64",
     "started_at": "2026-10-16T08:25:46+00:00",
-    "ended_at": "2026-10-16T08:25:54+00:00",
+    "ended_at": "2026-10-16T08:26:06+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "38873499207",
@@ -732,94 +867,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 12519.71
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "344546849fc6",
-    "started_at": "2026-10-13T12:24:16+00:00",
-    "ended_at": "2026-10-13T12:25:02+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "38396921144",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/38396921144",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-10-13T12:24:16+00:00",
-        "ended_at": "2026-10-13T12:24:49+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 21,
-          "enriched": 20,
-          "updated": 20,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 0,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "trafilatura": 9,
-            "youtube": 10,
-            "jina": 1,
-            "rss": 1
-          },
-          "per_source": {
-            "nvidia-blog": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "hugging-face": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "ai-explained": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "fireship": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "simon-willison": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "ai-engineer": {
-              "attempted": 7,
-              "enriched": 7,
-              "failed": 0
-            },
-            "microsoft-ai-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "anthropic-research": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "apple-machine-learning": {
-              "attempted": 3,
-              "enriched": 3,
-              "failed": 0
-            },
-            "marios-rec-reading": {
-              "attempted": 1,
-              "enriched": 0,
-              "failed": 1
-            }
-          },
-          "flush_batches": 1,
-          "defuddle_enabled": true,
-          "duration_ms": 33173.17
         }
       }
     ]
