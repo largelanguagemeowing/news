@@ -1,5 +1,28 @@
 [
   {
+    "article_id": 951189,
+    "title": "Why One AI Agent Isn\u2019t Enough (And How to Run 1,000) - CJ Avilla & Harrison Stall, Anthropic",
+    "url": "https://www.youtube.com/watch?v=kiClTcJUnhc",
+    "published_at": "2026-10-16T19:00:10+00:00",
+    "fetched_at": "2026-10-16T20:34:52+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Ken Thompson built Unix in a month. IBM put 1,000 engineers on OS/360. And in 1998, Linus Torvalds hit his limit. Now we're hitting that same wall managing AI agents.\n\nAnthropic's CJ Avilla and Harrison Stall introduce Flows in Claude Managed Agents. You hand Claude a goal, and it plans and runs its own multi-agent topology of up to 1,000 agents through the API. In this hands-on workshop they demo a stock watchlist scanner, show how to spend more compute on the phases that matter, walk through the Bug Hunter and Explainer Studio templates, and explain why single agents fail through laziness, self-preference bias and goal drift. They finish with a deep dive on running agents safely at scale: budgets, interrupts, auto mode, credential vaults and network lockdown.\n\nSpeakers:\nCJ Avilla, Member of Technical Staff, Anthropic\nX: https://x.com/cjav_dev\n\nHarrison Stall, Member of Technical Staff, Anthropic\nX: https://x.com/HarrisonStall\n\nhttps://www.anthropic.com\n\n0:00 Unix vs. OS/360: the scaling problem\n6:00 Meet CJ & Harrison\n7:00 Introducing Flows in Claude Managed Agents\n9:05 Why single agents hit a wall\n14:00 How dynamic workflows work\n17:25 Demo: stock watchlist scanner\n23:20 From console to production: tuning each phase\n32:15 Q&amp;A, round 1\n1:04:45 Bug Hunter: multi-agent PR review\n1:07:15 Explainer Studio: flows that make videos\n1:12:15 Laziness, self-bias & goal drift\n1:15:20 Agent safety at scale\n1:20:05 Declare, contain, detect\n1:21:15 Separating the brain from the hands\n1:27:50 Credential vaults & locking down tools\n1:31:45 Wrap-up + Q&amp;A, round 2\n\nLive from the Sheraton New York Times Square Hotel in New York City, AI Engineer New York 2026 is an AI conference for engineers and technical leaders building production AI across banking, hedge funds, fintech, insurance, and asset management.\n\nEvent: AI Engineer NYC\nDates: October 12\u201314, 2026\nVenue: Sheraton New York Times Square Hotel\n\nLearn more about the event:\nhttps://ai.engineer/nyc/2026#\n\nSubscribe for more AI Engineer talks, livestreams, and event coverage:\nhttps://www.youtube.com/@aiDotEngineer",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "release",
+      "models",
+      "api",
+      "agents",
+      "safety",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 948677,
     "title": "AI News: 6 New Models & A Nano Banana Killer",
     "url": "https://www.youtube.com/watch?v=KGcuuhqmPhI",
@@ -196,6 +219,42 @@
     "available": true
   },
   {
+    "article_id": 951205,
+    "title": "Designing more efficient quantum circuits with Claude",
+    "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "fetched_at": "2026-10-16T20:34:52+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Designing more efficient quantum circuits with Claude",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 951204,
+    "title": "Claude reveals ECDSA curve origins",
+    "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "fetched_at": "2026-10-16T20:34:52+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "Claude reveals ECDSA curve origins",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 948753,
     "title": "How an Anthropic Japan BDR runs his day with a fleet of Claude agents",
     "url": "https://claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day",
@@ -249,6 +308,27 @@
     "tags": [
       "ai-models",
       "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 949650,
+    "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+    "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+    "published_at": "2026-10-16T00:00:00+00:00",
+    "fetched_at": "2026-10-16T20:34:49+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10\u00d7 growth in agent creation.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents",
+      "coding",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10920,92 +11000,6 @@
       "video",
       "coding",
       "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 696813,
-    "title": "I Turned Coding Agents Into a Strategy Game \u2014 Ido Salomon, AgentCraft",
-    "url": "https://www.youtube.com/watch?v=YIVkERhy8xo",
-    "published_at": "2026-09-27T14:30:07+00:00",
-    "fetched_at": "2026-09-27T17:09:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "If agents are so capable, why doesn't everyone have an army of them? Ido Salomon, creator of AgentCraft and MCP-UI and co-creator of MCP Apps, argues the bottleneck is us: steering, directing and reviewing agents at scale is exhausting. The skills we need already exist, though. We learned them from games like Warcraft and StarCraft.\n\nSalomon demos AgentCraft, an orchestrator styled like a strategy game. Agents appear as units on a map, your file system becomes the terrain, heat maps show where work is happening, and the space bar jumps you to whatever needs attention. He shows how it adds visibility, autonomy (with orchestrators, loops and a review kit with visual evidence) and collaboration, through shared rooms where people and agents work side by side. Then he turns to lowering the floor: an early, simpler mobile-game-style mode aimed at the 90% of people who aren't power users yet.\n\nSpeaker info:\nX/Twitter: @idosal1 (https://x.com/idosal1)\nLinkedIn: https://www.linkedin.com/in/ido-salomon/\n\nRelated links:\nMCP-UI: https://mcp-ui.dev\n\nTimestamps:\n0:00 Intro\n0:35 If agents are amazing, why aren't we unstoppable?\n1:10 We are the bottleneck\n1:50 Lessons from video games\n2:20 Meet AgentCraft\n2:50 Agents on the map\n3:40 Buildings: plugins, skills, terminal and git\n3:55 Raising the ceiling: visibility\n4:25 Your file system as a map\n5:00 Jump to what needs attention\n5:40 Too much to hold in your head\n6:15 Quests\n6:40 Autonomy: orchestrators and loops\n7:35 The review kit\n8:25 Collaboration: shared rooms\n10:45 Lowering the floor\n11:50 Loopers: a simpler mode\n13:28 Wrap-up\n13:50 Try AgentCraft\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/YIVkERhy8xo",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "video",
-      "coding",
-      "education",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 696814,
-    "title": "How Software Factories Improve Themselves \u2014 Suraj Gupta, Warp",
-    "url": "https://www.youtube.com/watch?v=TN3mj92oZ8I",
-    "published_at": "2026-09-27T14:00:40+00:00",
-    "fetched_at": "2026-09-27T17:09:43+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "There's a lot of talk about self-improving agents and about software factories, but much less about how a factory itself gets better over time. Suraj Gupta, who leads harness development at Warp, shows three practical ways to do it, with demos from Warp's own open-source factory.\n\nThe first is skills that improve themselves. An outer-loop agent watches the triage agent's runs and feedback, then opens a PR to update its skill, so every change is tracked in Git and reviewed by a human. The second is persistent memory: a versioned, traceable store of facts, so a Sentry agent doesn't have to rediscover a root cause it already found. It works with any harness, including Claude Code and Codex. The third is model routing, so you're not paying Opus prices for triage or simple CI fixes. You can use Warp's auto models or set your own rules, and Warp's internal evals found that UI tasks run well on GLM.\n\nRelated links:\nWarp: https://www.warp.dev\n\nTimestamps:\n0:00 Intro\n0:50 Self-improving software factories\n1:50 Three ways factories improve\n2:05 Skills and outer-loop agents\n3:15 Demo: Warp's triage skill\n4:15 The outer-loop agent\n5:00 Skill updates go through pull requests\n5:35 Persistent memory\n6:35 Demo: a Sentry agent's memories\n8:15 Memory across harnesses\n8:45 Model routing\n9:40 Auto models\n9:50 Demo: custom routing rules\n10:50 Next: routing evals\n11:40 How routing works inside Warp\n12:25 Wrap-up\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/TN3mj92oZ8I",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 689239,
-    "title": "K\u0101k\u0101p\u014d Party",
-    "url": "https://simonwillison.net/2026/Sep/26/kakapo-party/",
-    "published_at": "2026-09-26T23:39:06+00:00",
-    "fetched_at": "2026-09-27T00:47:26+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "26th September 2026\nI presented a closing keynote for the [WeAreDevelopers World Congress North America](https://www.wearedevelopers.com/world-congress-north-america) yesterday. As [a STAR moment](https://simonwillison.net/2019/Dec/10/better-presentations/) I decided to weave in references to the record breaking [k\u0101k\u0101p\u014d breeding season](https://www.doc.govt.nz/news/media-releases/2026-media-releases/kakapo-population-reaches-new-milestone/) we had in 2026.\nFor my closing slide I wanted to celebrate, and I had seen some buzz around how good Claude Opus 5.5 was at creating pixel art animations. So I rounded up three Kakapo photos from Google image search and dropped them into Claude with this prompt:\nHere are some photos of kakapo parrots just to remind you what they look like\nI need you to make an animation in animated pixel art on HTML 5 canvas of obviously pixel art kakapo jumping up and down having a party with confetti and suchlike - there should be at least 20 of them\nHere's [the transcript](https://claude.ai/share/43bec0be-a0a3-4737-bfac-34894af34ddc), and this is the [resulting page](https://tools.simonwillison.net/kakapo-party). It's pretty great!\nI wanted to embed it in a Keynote presentation file, so I downloaded the HTML and told a local Claude Code session:\nMake me a video of file:///Users/simon/Downloads/kakapo-party.html - you need to load it in a browser and click on it a few times to get the confetti effect, the video should be 15s long\ndon't start clicking until 3s in\nmake sure several clicks are spread around the clickable area\nClaude Code used Playwright ([transcript here](https://gisthost.github.io/?368b481fba654c4fb84d90188da77581/page-001.html)) and produced this video, which was exactly what I needed for my final slide:\nHere's the full Playwright script it used, which was pleasingly short:\n# /// script # dependencies = [\"playwright\"] # /// import time from playwright.sync_api import sync_playwright W, H = 1280, 720 # Canvas fills the viewport; spread clicks across corners, edges and centre clicks = [ (3.0, 640, 360), # centre (4.2, 160, 120), # top-left (5.4, 1120, 120), # top-right (6.6, 180, 600), # bottom-left (7.8, 1100, 600), # bottom-right (9.0, 640, 100), # top-centre (10.0, 380, 380), # mid-left (11.0, 900, 380), # mid-right (12.2, 640, 620), # bottom-centre (13.2, 640, 300), # finale centre ] with sync_playwright() as p: b = p.chromium.launch() ctx = b.new_context(viewport={\"width\":W,\"height\":H}, record_video_dir=\"vids\", record_video_size={\"width\":W,\"height\":H}) page = ctx.new_page() t0 = time.time() page.goto(\"file:///Users/simon/Downloads/kakapo-party.html\") for t,x,y in clicks: time.sleep(max(0, t-(time.time()-t0))) page.mouse.click(x,y) time.sleep(max(0, 16.0-(time.time()-t0))) ctx.close(); b.close()\nRecent articles\n[Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war](/2026/Sep/22/opus-and-sol-and-luna/)- 22nd September 2026[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026[Generating running routes with GPT-6 Astra and ChatGPT Work](/2026/Sep/12/astra-running-routes/)- 12th September 2026",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 687589,
-    "title": "Can Rewriting an AI Agent Bend the Intelligence Curve? - Zhengyao Jiang",
-    "url": "https://www.youtube.com/watch?is=W3YDFSdWICAJLEPx&v=yB6_iFGTq9k&feature=youtu.be",
-    "published_at": "2026-09-26T20:52:04+00:00",
-    "fetched_at": "2026-09-26T22:06:02+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "youtube",
-    "body": "recommended viewing.\n\nauthor: Machine Learning Street Talk\n\nvideo: https://www.youtube.com/embed/yB6_iFGTq9k",
-    "topic": "agents",
-    "tags": [
-      "agents",
-      "video",
-      "coding",
-      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
