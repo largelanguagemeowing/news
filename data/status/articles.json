@@ -1,5 +1,44 @@
 [
   {
+    "article_id": 968513,
+    "title": "RTX Spark Ignites Global Celebration as New Windows PCs Arrive",
+    "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-windows-laptops-celebration/",
+    "published_at": "2026-10-17T21:00:13+00:00",
+    "fetched_at": "2026-10-17T21:36:52+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "NVIDIA RTX Spark laptops are now available, bringing NVIDIA Blackwell RTX graphics, up to 128GB of unified memory and the full NVIDIA AI platform to slim, premium Windows PCs.\u00a0 Starting at $2,399, laptops from ASUS, Dell, HP, Lenovo, Microsoft and MSI bring powerful local AI, content creation and gaming capabilities to a portable device, with [&#8230;]",
+    "topic": "hardware",
+    "tags": [
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 968155,
+    "title": "How to Know If Your AI Agent Is Any Good: Evals With Phoenix & Claude \u2014 Laurie Voss, Arize AI",
+    "url": "https://www.youtube.com/watch?v=SHMCGrNJJGc",
+    "published_at": "2026-10-17T19:00:23+00:00",
+    "fetched_at": "2026-10-17T21:36:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Your AI agent wrote a confident stock report saying 116% of analysts agree. Nothing in your checks caught it. This is the workshop for fixing that.\n\nLaurie Voss (Head of Developer Relations at Arize AI, co-founder of npm) builds a full evals loop on a Claude-powered financial analyst agent: trace it with Arize Phoenix, read the traces, write code evals and LLM-as-a-judge evals, test whether the judge can be trusted, prove a prompt fix with experiments, upgrade from Claude Haiku 4.5 to 5.5 with evidence, and gate it all in CI with npm test.\n\nSpeaker:\nLaurie Voss, Head of Developer Relations, Arize AI\nX: https://x.com/seldo\nhttps://arize.com\nPhoenix: https://phoenix.arize.com\n\n0:00 Intro & setup\n2:47 \"Looks good to me\" isn't a test suite\n4:57 Traces vs. evals: the mental model\n8:30 Code evals, LLM judges & human review\n11:57 Why agents are confidently wrong\n16:32 Step 1: Tracing with Phoenix\n36:36 Step 2: Reading your traces\n43:21 The 116% analyst consensus bug\n50:36 Step 3: Code evals\n56:11 Step 4: LLM-as-a-judge\n1:00:30 Why the correctness eval failed every report\n1:10:41 Step 5: Writing your own judge\n1:24:45 Step 6: Testing your judge\n1:38:55 Step 7: Experiments\n1:48:30 Upgrading to Claude Haiku 5.5\n1:50:55 Evals in CI\n1:55:25 Where to start on Monday\n\nLive from the Sheraton New York Times Square Hotel in New York City, AI Engineer New York 2026 is an AI conference for engineers and technical leaders building production AI across banking, hedge funds, fintech, insurance, and asset management.\n\nEvent: AI Engineer NYC\nDates: October 12\u201314, 2026\nVenue: Sheraton New York Times Square Hotel\n\nLearn more about the event:\nhttps://ai.engineer/nyc/2026#\n\nSubscribe for more AI Engineer talks, livestreams, and event coverage:\nhttps://www.youtube.com/@aiDotEngineer",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 963944,
     "title": "Stop Chatting With Spreadsheets \u2014 Francesco Galletta & Felippe Felisola Caso, Monzo",
     "url": "https://www.youtube.com/watch?v=e9-br9hveRI",
@@ -10978,52 +11017,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 710098,
-    "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
-    "url": "https://openai.com/index/basis-tax-workbook-with-astra",
-    "published_at": "2026-09-28T00:00:00+00:00",
-    "fetched_at": "2026-09-28T21:34:02+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nSeptember 28, 2026\n\n# Basis completes a tax workbook 2x faster with GPT\u20116 Astra\n\nGPT\u20116 Astra took 50% less time to finish complex tasks vs. GPT\u20115.6 Sol and showed a deeper understanding of user intent.\n\n[Start building with OpenAI](https://openai.com/startups/)\n\nCompany size: Startup\n\nRegion: North America\n\nIndustry: Technology\n\nProducts: API\n\nWorkbook test\n\n50%\n\nLess time to complete a 50-tab tax workbook vs. Sol in Basis\u2019s test.\n\nInternal evaluations\n\n20%\n\nApproximate improvement in Basis\u2019s internal evaluation scores.\n\nLoading\u2026\n\nShare\n\nCompleting a 50-tab tax workbook in half the time\n\n- [Completing a 50-tab tax workbook in half the time](#completing-a-50-tab-tax-workbook-in-half-the-time)\n- [Matching reasoning effort to the task](#matching-reasoning-effort-to-the-task)\n- [Building confidence in real-world use](#building-confidence-in-real-world-use)\n\n- [Completing a 50-tab tax workbook in half the time](#completing-a-50-tab-tax-workbook-in-half-the-time)\n- [Matching reasoning effort to the task](#matching-reasoning-effort-to-the-task)\n- [Building confidence in real-world use](#building-confidence-in-real-world-use)\n\n[Basis\u2060(opens in a new window)](https://www.getbasis.ai/) builds AI agents to automate much of the manual work that accountants do each day, helping them shift their time from repetitive tasks to strategic work. The company\u2019s research focuses on agents that can reliably complete long tasks, and with GPT\u20116 Astra, it\u2019s seeing a stronger understanding of what accountants want to accomplish.\n\n> \u201cGPT-6 Astra does a better job of really understanding the intent of the user and the problem.\u201d\n\n\u2014Mitch Troyanovsky, Co-founder, Basis\n\n## Completing a 50-tab tax workbook in half the time\n\nBasis compared GPT\u20116 Astra and GPT\u20115.6 Sol on a complicated tax workbook with 50 tabs. The task was to complete the workbook accurately and reliably, and GPT\u20116 Astra was markedly faster.\n\n> \u201cGPT-6 Astra is able to complete that workbook in half the time that GPT-5.6 Sol is able to.\u201d\n\n\u2014Mitch Troyanovsky, Co-founder, Basis\n\nBasis also noted that GPT\u20116 Astra makes better decisions at the start of a task, helping Basis\u2019s agents take a more direct path through the work with less time spent correcting mistakes. Troyanovsky says that also makes the model more efficient in its use of tokens.\n\n## Matching reasoning effort to the task\n\nBasis also has GPT\u20116 Astra adjust how much reasoning it uses as a task progresses, dialing up computation when a step is difficult, and using less when a step is easier. The model can make these adjustments while keeping its cache intact. Troyanovsky says this helps reduce cost and response time, making long-running tasks more economical for Basis and its customers.\n\n## Building confidence in real-world use\n\nBasis saw about a 20% improvement in its internal evaluation scores with GPT\u20116 Astra, driven by better understanding of user intent, including when to ask questions, flag assumptions, and follow instructions.\n\nBasis evaluates how its agents work and their final answers, including whether they follow templates, consult primary sources for tax questions, and check their own work. GPT\u20116 Astra can infer these expectations from a broader context, with fewer explicit instructions.\n\nThat reduces the need for Basis to write rules for individual situations and gives the team more confidence that its agents can handle situations beyond those covered in internal tests.\n\n## OpenAI <3 startups\n\n[Join the community](https://openai.com/leads/startup/) [Start building(opens in a new window)](https://openai.com/startups)\n\n## Keep reading\n\n\n\n[Towards safety cases for frontier AI trainingSafetySep 28, 2026 Towards safety cases for frontier AI training - Safety - Sep 28, 2026](https://openai.com/index/towards-safety-cases-for-frontier-ai-training/)\n\n\n\n[How we will do better for AustraliaCompanySep 28, 2026 How we will do better for Australia - Company - Sep 28, 2026](https://openai.com/index/how-we-will-do-better-for-australia/)\n\n\n\n[Lenfest grows landmark program with OpenAI supportCompanySep 28, 2026 Lenfest grows landmark program with OpenAI support - Company - Sep 28, 2026](https://openai.com/index/lenfest-ai-collaborative-expansion/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n- [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://openai.com/codex/)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810852,
-    "title": "Agent API now supports reusable agents",
-    "url": "https://www.perplexity.ai/hub/blog/agent-api-now-supports-reusable-agents",
-    "published_at": "2026-09-28T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "Warning: Target URL returned error 403: Forbidden\n\nMarkdown Content:\nTeams get more from AI when their agents reuse the same tools, instructions, and authentication across applications. Finance teams, for example, want every monthly close and variance analysis to follow a consistent process. That happens when AI agents follow the same reconciliation instructions and reporting format across applications, with each application supplying the relevant financial data.\n\nToday we\u2019re making these agent workflows easier with updates to [Perplexity Agent API](https://docs.perplexity.ai/docs/agent-api/quickstart) that give teams a reusable, versioned configuration layer for agents. We\u2019re adding custom [Skills](https://docs.perplexity.ai/docs/agent-api/skills), managed [connectors](https://docs.perplexity.ai/docs/agent-api/tools/connectors), and [Profiles](https://docs.perplexity.ai/docs/agent-api/profiles) to the Agent API. Profiles assemble an agent by saving its model, instructions, tools, Skills, connectors, and run settings under one versioned ID.\n\nThe updated Agent API gives project administrators shared resources that members can reuse, while Profiles and Skills keep configuration versioned and repeatable. Project administrators can configure an agent once, save it as a versioned Profile, and make that setup available to authorized developers across the project.\n\n## Updates create shared project resources for agent workflows\n\nThe updates create a project-level place to manage approved external integrations. The Agent API lets project administrators share managed connectors, reusable Profiles, and versioned Skills with their teams.\n\nProject members can reuse the same tools and instructions without rebuilding the configuration in every application.\n\nWith the Agent API updates, teams get:\n\n*   **Reusable Profiles:** A Profile stores a versioned configuration for the model, tools, and run settings used by an agent workflow.\n*   **Versioned Skills:** Teams can package instructions, procedures, and supporting files as versioned Skills that members invoke from the same project.\n*   **Managed connectors:** Project administrators can configure approved integrations for Agent API requests without asking every developer to wire the service separately.\n\nUsers can also [create their own customer connectors](https://docs.perplexity.ai/docs/agent-api/tools/connectors#add-a-custom-connector) to give agents access to internal systems and services not covered by the managed connector catalog\n\n## Agent API creates consistent workflows across applications\n\nTogether, Profiles, Skills, and managed connectors let teams configure an agent once and reuse it across applications and workflows. Here are some example use cases:\n\n*   An incident-response team can combine Datadog telemetry, a GitHub repository, a read-only investigation Skill, and a Slack update in one saved agent. The application supplies the incident details. The Profile supplies the model, instructions, tools, service connections, and run settings.\n*   A platform team can package its deployment checks, rollback criteria, and reporting format into a versioned Skill. Project members can invoke the same procedure from an internal tool, continuous integration workflow, or service automation. The team can publish a new version of the Skill instead of changing the instructions in every application.\n*   A project administrator can configure an approved GitHub or Slack Connector once and make it available to project members. Applications reference the shared Connector instead of storing separate credentials and tool definitions. When access changes, the administrator updates the connection in one place.\n\n## It\u2019s easy to update shared resources\n\nWe [introduced the Agent API](https://www.perplexity.ai/hub/blog/agent-api-a-managed-runtime-for-agentic-workflows) as a managed runtime for agentic workflows in March, bringing search, tool execution, and multi-model orchestration into a single integration. Last month, [we expanded it into one programmable surface](https://www.perplexity.ai/hub/blog/agent-api-one-place-to-build-with-llms-the-web-and-agents) for web search, URL fetching, code execution, MCP, and specialized search tools.\n\nThis update adds a reusable team layer to that foundation. Teams move from one-off workflows to agents that run across multiple applications. A shared Profile keeps the model, instructions, tools, and service connections together. Skills and connectors provide the procedures and access the agent needs.\n\nTeams can update these shared resources as their workflows change instead of rebuilding each implementation. Developers get a consistent foundation for extending the same agent into new applications, services, and automations.\n\n## Resources can be configured from the API Console\n\nProfiles and custom Skills are available now for Agent API projects. Managed Connectors are available in preview, with GitHub, Slack, Google Drive, Datadog, Linear, and Notion currently supported.\n\nProject administrators can configure these resources in the [API Console](https://console.perplexity.ai/project/826da477-febc-40ba-9666-cde6c2c2b75c). Project members can then reference them in Agent API requests using an API key from the same project.\n\n[Get started](https://docs.perplexity.ai/docs/agent-api/quickstart) with the Agent API today.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "coding",
-      "opinion"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
