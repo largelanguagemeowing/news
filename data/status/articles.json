@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 983282,
+    "title": "Stop Telling Agents How \u2014 Dan Barrett, Raymond Weitekamp & Jose Montes de Oca, OpenProse",
+    "url": "https://www.youtube.com/watch?v=7T-gldvgfpo",
+    "published_at": "2026-10-18T19:00:05+00:00",
+    "fetched_at": "2026-10-18T21:17:46+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Say what you want, not how to get it. The OpenProse team shows how to write multi-agent workflows as declarative contracts in plain markdown, which any harness (Claude Code, Codex and others) can compile and run. Demos include event-driven jobs triggered by webhooks and pull requests, a \"grumpy senior\" PR reviewer, and an end-to-end bank model-documentation workflow. They also discuss composing contracts, pinning a winning run into a reusable workflow, and how this compares to DSPy.\n\nChapters:\n- 00:00 From prompt engineering to declaring intent\n- 05:40 What OpenProse is\n- 09:58 Agents, skills and contracts\n- 12:13 Event-driven jobs: contract + trigger\n- 18:52 Demo: run.prose.md\n- 24:43 Benchmarking every run against a contract\n- 27:01 OpenProse vs DSPy\n- 33:33 Demo: bank model documentation\n- 41:49 Composing contracts\n- 48:23 Q&amp;A\n\nDan Barrett \u2014 X: https://x.com/irl_danb | https://prose.md\nRaymond Weitekamp \u2014 https://prose.md\nJose Montes de Oca \u2014 https://prose.md\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 976800,
     "title": "Insurance Claims Are AI's Messiest Data Problem \u2014 Denys Linkov, Wisedocs",
     "url": "https://www.youtube.com/watch?v=W4pnzOURwHQ",
@@ -10994,28 +11016,6 @@
     "tags": [
       "models",
       "agents",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 708856,
-    "title": "Faster Rates for Federated Variational Inequalities",
-    "url": "https://machinelearning.apple.com/research/federated-variational-inequalities",
-    "published_at": "2026-09-28T00:00:00+00:00",
-    "fetched_at": "2026-09-28T16:54:32+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "[content type paper](/research/)published September 2026\nFaster Rates for Federated Variational Inequalities\nAuthorsGuanghui Wang\u00e2 **, Satyen Kale\nFaster Rates for Federated Variational Inequalities\nAuthorsGuanghui Wang\u00e2 **, Satyen Kale\nIn this paper, we study federated optimization for solving stochastic variational inequalities (VIs), a problem that has attracted growing attention in recent years. Despite substantial progress, a significant gap remains between existing convergence rates and the state-of-the-art bounds known for federated convex optimization. In this work, we address this limitation by establishing a series of improved convergence rates. First, we show that, for general smooth and monotone variational inequalities, the classical Local Extra SGD algorithm admits tighter guarantees under a refined analysis. Next, we identify an inherent limitation of Local Extra SGD, which can lead to excessive client drift. Motivated by this observation, we propose a new algorithm, the Local Inexact Proximal Point Algorithm with Extra Step (LIPPAX), and show that it mitigates client drift and achieves improved guarantees in several regimes, including bounded Hessian, bounded operator, and low-variance settings. Finally, we extend our results to federated composite variational inequalities and establish improved convergence guarantees.\n- \u00e2 Georgia Institute of Technology\n- ** Work done while at Apple\nFaster Rates For Federated Variational Inequalities\nFebruary 13, 2026[research area Methods and Algorithms](/research/?domain=Methods%20and%20Algorithms)\nIn this paper, we study federated optimization for solving stochastic variational inequalities (VIs), a problem that has attracted growing attention in recent years. Despite substantial progress, a significant gap remains between existing convergence rates and the state-of-the-art bounds known for federated convex optimization. In this work, we address this limitation by establishing a series of improved convergence rates. First, we show that,\u00e2\u00a6\nImproved Modelling of Federated Datasets using Mixtures-of-Dirichlet-Multinomials\nJune 12, 2024[research area Data Science and Annotation](/research/?domain=Data%20Science%20and%20Annotation), [research area Methods and Algorithms](/research/?domain=Methods%20and%20Algorithms)[conference ICML](/research/?event=ICML)\nIn practice, training using federated learning can be orders of magnitude slower than standard centralized training. This severely limits the amount of experimentation and tuning that can be done, making it challenging to obtain good performance on a given task. Server-side proxy data can be used to run training simulations, for instance for hyperparameter tuning. This can greatly speed up the training pipeline by reducing the number of tuning\u00e2\u00a6",
-    "topic": "research",
-    "tags": [
-      "models",
-      "research",
-      "coding",
-      "education",
-      "events",
       "opinion"
     ],
     "dearrow_thumbnail_url": "",
