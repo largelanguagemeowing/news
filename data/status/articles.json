@@ -1,5 +1,93 @@
 [
   {
+    "article_id": 993054,
+    "title": "NVIDIA Advances Agentic Security for Media, From European Public Service Broadcasting to Global Content Production",
+    "url": "https://blogs.nvidia.com/blog/media-agentic-security-european-public-service-broadcasting-global-content-production/",
+    "published_at": "2026-10-19T15:00:31+00:00",
+    "fetched_at": "2026-10-19T16:49:28+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "At a creative industry event that took place today in Berlin \u2014 hosted in collaboration with Adobe, Bertelsmann, NVIDIA and UFA \u2014 the latest advancements in intelligent media were on display. Key to the news: the European Broadcasting Union (EBU) is collaborating with NVIDIA to expand its sovereign framework with cloud, open models and integration [&#8230;]",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 992385,
+    "title": "Pi Durable: AI agents that survive crashes",
+    "url": "https://www.youtube.com/shorts/3-sSbJKb-fQ",
+    "published_at": "2026-10-19T14:48:54+00:00",
+    "fetched_at": "2026-10-19T16:49:24+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "Your agent sent 4 of 5 emails\u2026 then crashed. A regular coding agent leaves you with a half-finished tool call and a \"continue\" prayer. Pi Durable checkpoints every task and tool call (SQLite / JSONL), so when the process restarts, the agent resumes where it left off.\n\nIt's not a CLI. It's a TypeScript library for building always-on agents, even fully local with Qwen3.5-0.8B on llama.cpp.\n\n\u25b6 Full tutorial: https://www.youtube.com/watch?v=ti3vVYwzW4A\n\ud83d\udcbb Demo code: https://github.com/alejandro-ao/pi-durable-demo",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "models",
+      "open-source",
+      "agents",
+      "video",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 992399,
+    "title": "The Model Swap Workshop: GPT-5.5 vs Kimi vs DeepSeek vs Mistral \u2014 Pamela Fox, Microsoft",
+    "url": "https://www.youtube.com/watch?v=UGjk3Uk0MxM",
+    "published_at": "2026-10-19T14:06:53+00:00",
+    "fetched_at": "2026-10-19T16:49:24+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Benchmarks won't tell you how a model behaves in your app. Swapping it in and testing will.\n\nNEXT UP: AI ENGINEER CODE SUMMIT\nJoin us in SF for the second annual AIE CODE Summit, Nov 10\u201312, our last flagship summit of 2026. Applications live now: https://aie.codes\n\nPamela Fox, Principal Cloud Advocate at Microsoft, runs the same scenarios against GPT-5.5, Kimi K2.6, DeepSeek V4 Flash and Mistral Large 3 on Microsoft Foundry so you can see where models differ and what you can do about it. She works up from a letter-counting prompt to RAG groundedness, image input, multilingual pitfalls, tool calling, tool calling in a loop and a LangChain v1 travel agent, then moves to evaluation: string-check evals, LLM-as-a-judge, Microsoft's new ASSERT tool for generating test sets from a spec, and DSPy prompt optimization that finds a prompt the cheapest model can satisfy.\n\nIn this video:\n- Where top models differ: counting, groundedness, vision, tool calls and parallel tool calling\n- How prompt engineering closes some gaps but not image understanding\n- Bulk evals with string checks and LLM-as-a-judge\n- Generating test sets with ASSERT and optimizing prompts with DSPy\n\nSPEAKER\nPamela Fox, Principal Cloud Advocate, Microsoft\nX: https://x.com/pamelafox\nLinkedIn: https://www.linkedin.com/in/pamela-s-fox\nGitHub: https://github.com/pamelafox\n\nLINKS\nASSERT (GitHub): https://github.com/responsibleai/ASSERT\n\nCHAPTERS\n0:00 Workshop setup\n2:23 Why you need to be able to swap models\n3:08 The four models\n5:18 Benchmarks vs your scenario\n5:38 Test 1: counting letters\n7:48 Fixing it with prompt engineering\n8:38 Test 2: RAG and groundedness\n13:03 Test 3: image input\n16:18 Switching languages\n17:13 Test 4: tool calling\n21:03 Test 5: tool calling in a loop\n23:58 Agents with LangChain v1\n26:17 Parallel tool calls\n30:27 Evals with string checks\n33:42 Q&amp;A: eval frameworks\n35:12 LLM as a judge\n40:07 ASSERT: evals from a spec\n43:32 ASSERT results across models\n45:52 Prompt optimization with DSPy\n47:52 A DSPy prompt for Mistral\n49:22 Anthropic and citations\n50:32 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#LLM #Evals #AIEngineer",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "video",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 992339,
+    "title": "3 New Claude Prompts You Need To Try",
+    "url": "https://www.youtube.com/shorts/aIrrq3CLSKM",
+    "published_at": "2026-10-19T12:43:39+00:00",
+    "fetched_at": "2026-10-19T16:49:24+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Claude just got 3 powerful new upgrades. Here's how to use them:\n\n1. Motion can transform boring reports into animated explainer videos in seconds. \n2. Dashboards can turn your business data into interactive, live dashboards with a simple prompt.\n3. And Claude Haiku 5.5 let's you get everyday AI tasks done faster and cheaper.\n\nFollow for more AI tools, news, and future tech videos.\n\n#Claude #Anthropic #AITools #Productivityhack",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "open-source",
+      "video",
+      "coding",
+      "tutorials",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 989471,
     "title": "Why Buying Companies Beats Selling Them AI \u2014 Prathik Naidu, Long Lake",
     "url": "https://www.youtube.com/watch?v=J7n3WJnFTto",
@@ -142,6 +230,25 @@
       "agents",
       "safety",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 992414,
+    "title": "Redesigning source control at Anthropic",
+    "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+    "published_at": "2026-10-19T00:00:00+00:00",
+    "fetched_at": "2026-10-19T16:49:24+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "As merges to Anthropic's monorepo grew from about 2,500 to more than 30,000 a day, source control became the biggest development bottleneck. Here is how the team built Scion, an in-house version control system designed for always-online agents, and migrated off git in five months.",
+    "topic": "development",
+    "tags": [
+      "open-source",
+      "agents",
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10901,119 +11008,6 @@
       "agents",
       "safety",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 734947,
-    "title": "Introducing dots",
-    "url": "https://openai.com/index/introducing-dots",
-    "published_at": "2026-09-29T00:00:00+00:00",
-    "fetched_at": "2026-09-29T20:08:25+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\n\n\n\n\nSeptember 29, 2026\n\n[Product](https://openai.com/news/product-releases/) [Company](https://openai.com/news/company-announcements/)\n\n# Introducing dots\n\n[Create your dot(opens in a new window)](https://chatgpt.com/dots) [Contact sales](https://openai.com/contact-sales/)\n\nLoading\u2026\n\nShare\n\nDots can work on their own\n\n- [Dots can work on their own](#dots-can-work-on-their-own)\n- [Dots are an extension of you](#dots-are-an-extension-of-you)\n- [Dots work where you work](#dots-work-where-you-work)\n- [You\u2019re always in control](#youre-always-in-control)\n  - [Built-in safeguards](#built-in-safeguards)\n  - [Access and permissions](#access-and-permissions)\n  - [Action review and approvals](#action-review-and-approvals)\n- [Specialist dots for your organization](#specialist-dots-for-your-organization)\n  - [Bringing specialist dots to Microsoft Agent 365](#bringing-specialist-dots-to-microsoft-agent-365)\n- [Get started with dots](#get-started-with-dots)\n\n- [Dots can work on their own](#dots-can-work-on-their-own)\n- [Dots are an extension of you](#dots-are-an-extension-of-you)\n- [Dots work where you work](#dots-work-where-you-work)\n- [You\u2019re always in control](#youre-always-in-control)\n  - [Built-in safeguards](#built-in-safeguards)\n  - [Access and permissions](#access-and-permissions)\n  - [Action review and approvals](#action-review-and-approvals)\n- [Specialist dots for your organization](#specialist-dots-for-your-organization)\n  - [Bringing specialist dots to Microsoft Agent 365](#bringing-specialist-dots-to-microsoft-agent-365)\n- [Get started with dots](#get-started-with-dots)\n\n**Dots are remarkably capable, always-on agents built to handle everything.** They\u2019re a whole new way to work with AI\u2014one that gets to know what matters to you, is always working on your behalf, and takes important work off your plate so you get more of your time and attention back.\n\nDots are frontier intelligence that have your back. Powered by GPT\u20116 Astra, they have their own cloud computer, learn from feedback over time, and can work towards your goals 24/7. Through our ecosystem of plugins, they can readily connect to over 4,000 apps, giving them the tools to help wherever you need them.\n\nYour dot is always within reach, whether it is through ChatGPT, Slack, or Teams. You can ask questions, explore ideas, and give feedback along the way; or you can simply hop on a voice call when you need to talk something out. The more you work together, the more your dot learns your preferences, how you think, and what good looks like to you.\n\nThe magic of dots is when they bring you work done the way you would do it, sometimes before you even think to ask. With dots alongside you, ambitious ideas and projects you haven\u2019t had the time or support to pursue start to feel achievable.\n\nInside OpenAI, we\u2019re getting a glimpse of what work looks like when intelligence is always working by your side. A bug appears in Slack, and dots immediately start investigating. A new design arrives, and dots turn it into a working app while the team focuses on customer feedback. A planning cycle gets underway, and dots keep everyone moving in sync toward the deadline. Outside OpenAI, an early tester\u2019s dot noticed he\u2019d forgotten to invoice a publication, prepared the invoice, and sent it after his approval.\n\nToday, you can start with your primary dot, give it a name, and make it your own. Over time, we envision teams of dots working together on your behalf. We\u2019re beginning to roll out dots across Pro, Business Premium, and Enterprise plans in eligible markets. We plan to expand dots to more users soon. We\u2019re also sharing a preview of specialist dots with their own identity for access management, IT-provisioned hardware, and support for deep integrations with a company\u2019s systems of record to allow them to take on well-defined responsibilities inside organizations.\n\n## Dots can work on their own\n\nDots can do nearly anything using their own cloud computer, their own browser, and the apps you\u2019ve connected.\n\nYou can open your dot\u2019s computer at any time to inspect its work. Dots can connect to other devices in addition to their own and you can also give your dot permission to connect and use your laptop, where it can then be useful directly alongside you.\n\nYour dot can take a project and run with it, even while it\u2019s working on several others. You can keep bringing it new tasks and ideas without having to juggle separate threads or direct every step.\n\n## Dots are an extension of you\n\nWith a dot that knows your goals and standards, you can take on more without directing every step. Here\u2019s what that looks like:\n\n\n\n**Turn feedback into tested fixes**\n\nYou\u2019re a developer working on an app. Your dot watches customer feedback for recurring requests, scopes smaller improvements and bugfixes, builds and tests them, and brings you complete PRs to review with attached videos showing the changes. You can keep building the next major feature while reviewing the fixes and improvements your dot prepares.\n\n\n\n**Revise a launch as scope changes**\n\nYou\u2019re leading a product launch. Your dot learns your audience, positioning, and creative standards. When the product scope changes, it works through what that means for the story, revises the launch materials, and prepares drafts of asset and doc changes. You return to a launch plan and creative work shaped by the direction you\u2019ve set, ready for your review.\n\n\n\n**Update analysis with new evidence**\n\nYou\u2019re a scientist. Your dot learns your research question and how you evaluate evidence. As new data arrives, it reruns analyses, investigates unexpected results, and updates the figures for your paper. When findings change, it revises the supporting explanation and flags what needs your review. You return from the lab to work that reflects the latest evidence.\n\n\n\n**Update a proposal as requirements shift**\n\nYou\u2019re a sales lead guiding an enterprise deal through technical review. Your dot checks customer requirements and account history against product docs, finds what still needs testing, builds a proof of concept for a key integration, and suggests a solutions engineer who\u2019s handled a similar deal. As requirements and test results change, it updates the proposal and test plan and flags open concerns. You and your engineer focus on customer conversations and approve commitments.\n\n\n\n**Automate content production work**\n\nYou\u2019re a content creator. Your dot learns your voice and what matters to your audience. When a new interview transcript arrives, it identifies moments for clips, prepares show notes, and drafts social posts for your approval. It carries your edits across the materials and learns what resonates\u2014giving you more time to create.\n\n## Dots work where you work\n\nWorking with your dot is as simple as having a conversation. You can message or call dots in ChatGPT on desktop, web, and mobile. They can also message you with progress, questions, or decisions that need you.\n\nYou can also message your dot in Slack and Teams, with texting coming soon. Start a project in ChatGPT, share context with the working team in Slack, and let your dot follow through. Dots carry context across every channel, so your dot will have the full context wherever you reach it.\n\n## You\u2019re always in control\n\nDots build on ChatGPT\u2019s protections with [additional safety and privacy safeguards](https://openai.com/index/how-we-build-safety-security-and-privacy-into-dots/) for the work they can do. You can set boundaries, follow progress, and stay involved in decisions that need you.\n\n### Built-in safeguards\n\nEach dot works on its own cloud computer, while your computer and its contents stay separate unless you choose to connect it. For signing into supported websites, dots can use saved passwords without exposing them to the model.\n\nWhen you aren\u2019t actively working with it, your dot looks for ways to help in the background. We call this \u201cproactive research\u201d. It does this by using the apps you\u2019ve already connected with tools that are restricted to be read-only, which means that they can\u2019t send messages, change app content, or control your browser or computer.\n\nSecurity safeguards built into dots help defend against malicious instructions and monitor for potentially harmful behavior. If our monitoring system detects a safety concern, it can pause or stop the dot\u2019s work.\n\n### Access and permissions\n\nYou choose which apps dots can access and can manage their permissions through your existing ChatGPT app controls.\n\nDots start with built-in rules for when to act independently and when to ask for approval. Custom Rules let you allow specific actions, require approval, or block them. Built-in safety requirements always apply and you can follow progress, including background work, in Activity View and redirect dots as needed.\n\nWe don\u2019t use content from ChatGPT Business, Enterprise, or Edu workspaces to improve our models by default. On personal ChatGPT plans, you can control whether dots\u2019 conversations and work are used to [improve our models\u2060(opens in a new window)](https://help.openai.com/articles/7730893-data-controls-in-chatgpt). We don\u2019t train directly on proactive research or your dot\u2019s notes to itself. Information from them may be used if it helps inform an eligible conversation or task, depending on your settings.\n\n### Action review and approvals\n\nDots use [auto-review\u2060(opens in a new window)](https://learn.chatgpt.com/docs/sandboxing/auto-review) to check actions that could affect your accounts or share information against your instructions, Custom Rules, and safety requirements. This helps determine what work can proceed, what needs approval, and what you must do yourself. Certain sensitive tasks, such as changing a password, always stay with you.\n\nYou can learn more about our safety approach for dots in [our dots safety blog](https://openai.com/index/how-we-build-safety-security-and-privacy-into-dots/), in our [Help Center\u2060(opens in a new window)](http://help.openai.com/articles/20001529), and in our [system card\u2060(opens in a new window)](https://deploymentsafety.openai.com/gpt-6-astra/change-log). Dots can still make mistakes, so always review consequential work.\n\n## Specialist dots for your organization\n\nYour dot works on your behalf; **specialist dots** take on dedicated responsibilities within your organization. Your company sets up each dot with its own identity, credentials, and access to the systems it needs to complete its tasks. As it works, the dot adapts to new information and improves with feedback from your team. We\u2019re building on lessons from early testing inside OpenAI across procurement, invoice processing, email marketing, customer support, and commercial contracting.\n\nWe\u2019re starting with focused enterprise pilots. Our engineering teams will work directly with organizations to define each dot\u2019s responsibilities, the tools it can use, and how people review and approve its work. If there\u2019s work you\u2019d like a specialist dot to take on, we\u2019d like to hear from you.\n\n### Bringing specialist dots to Microsoft Agent 365\n\nWe\u2019re also working with Microsoft to integrate specialist dots with their enterprise governance and security controls in Agent 365. The goal is to let businesses manage dots through the Microsoft tools they already use.\n\n## Get started with dots\n\nDots are rolling out today in ChatGPT to Pro and Business Premium users in [eligible markets\u2060(opens in a new window)](https",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810850,
-    "title": "Computer adds Automations for ongoing work",
-    "url": "https://www.perplexity.ai/hub/blog/computer-adds-automations-for-ongoing-work",
-    "published_at": "2026-09-29T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "A useful weekly project update builds on the week before, including which blockers were resolved and which decisions are still pending. When [Perplexity Computer](https://www.perplexity.ai/products/computer) prepares that update, it should remember where things stood for the previous one.\n\nToday we\u2019re launching Automations, which bring Computer\u2019s capabilities to long-running agents that work proactively on a schedule or in response to conditional events. Each agent uses Computer\u2019s connected files,[tools](https://www.perplexity.ai/hub/products/app-connectors), and[Projects](https://www.perplexity.ai/hub/products/projects) to carry out its assignment. It remembers prior work, picking up where it left off without waiting for a new request.\n\nUnlike other agents, Automations don\u2019t start from scratch every time. For a customer-service Automation, Computer drafts replies with earlier emails in mind. For a weekly competitor-pricing report, Computer compares the latest prices with the previous ones and flags what changed.\n\n## Schedules or events trigger the automation\n\nAutomations replace Scheduled Tasks, adding event-based triggers and memory of prior runs to recurring work. Computer can carry out assignments on a schedule or when a specified event occurs in Slack, Gmail, Outlook, Linear, or GitHub. Conditions, like an email from a particular sender that asks for a decision, can narrow which events start a run.\n\nFor example:\n\n*   **Event-triggered work:** \u201cWhen an email from Pinnacle Manufacturing asks for a decision, review the earlier correspondence and account plan, summarize the request, identify the deadline, and notify Maya.\u201d\n*   **Scheduled work:**\u201cEvery Monday at 8 a.m., check competitor pricing, compare it with the previous week\u2019s findings, update the comparison spreadsheet, and summarize material changes.\u201d\n\nUsers set the schedule or specify the event that determines when Computer runs. They then tell it what to do, which sources to use, and where the work should go, like a Slack channel or Gmail draft.\n\n## Computer flags missed updates and follow-ups\n\nUsers can also create Automations that flag when an expected update hasn't been posted or if a deadline has passed without action. Assignments can include \u201cTell me if the Tuesday deployment hasn\u2019t shipped by Wednesday morning\u201d or \u201cFlag any priority customer account that hasn\u2019t replied in four days.\u201d\n\nComputer uses the job\u2019s history to track what\u2019s still expected. Each run checks outstanding items against what has happened since the last run and flags what needs attention.\n\n## There are two ways to set up automations\n\nUsers can create Automations by describing the job in Computer\u2019s omnibar, or by opening Automations and selecting New Automation. They can add instructions, choose a schedule or event trigger, and connect the relevant accounts and Projects.\n\nTo give Computer a clear assignment, users name the outcome they want, the tools Computer should use, and where the work should end up. They also specify which actions Computer can take on its own and which need human review. One example: Ask for review before sharing an update in Slack.\n\nAdmins can configure connector permissions to limit what Computer can access and which actions it can take. Users can review an Automation\u2019s instructions, status, and run history, including what triggered each run and what Computer produced.\n\nAs work changes, users can edit Automations or pause them when a job is on hold. Automations don\u2019t use credits when Computer is watching for a trigger. Credits are spent only when Computer runs an assignment.\n\n## Computer can handle many jobs\n\nAutomations can handle work across project tracking, team conversations, email, and more:\n\n*   **Customer reply drafts**: Review incoming emails in Gmail from a named account, use earlier exchanges and relevant files, and prepare replies for review.\n*   **Engineering issues:** When a Linear issue is labeled \u201cready,\u201d research the repository, write the change, and open a pull request for human review.\n*   **Project decisions:**When a decision is posted in a project\u2019s Slack channel, update the decision log, note any earlier decision it replaces, and flag affected tasks for review.\n\nFor more Automations use cases, visit our [use case library](https://www.perplexity.ai/resource-library).\n\n## Any Computer user can use Automations\n\nAutomations are available to Computer users. Existing Scheduled Tasks appear in the Automations surface, with an option to migrate each task when it is opened.\n\nStart a standing assignment in[Automations](https://www.perplexity.ai/computer/automations) today.",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "open-source",
-      "agents",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 810849,
-    "title": "How we engineer safer agents",
-    "url": "https://www.perplexity.ai/hub/blog/how-we-engineer-safer-agents",
-    "published_at": "2026-09-29T00:00:00+00:00",
-    "fetched_at": "2026-10-04T21:14:49+00:00",
-    "source_id": "perplexity-hub",
-    "source_name": "Perplexity Hub",
-    "extraction_method": "jina",
-    "body": "To build safer AI agents, we need to design for both their capabilities and their failures. Even when carrying out legitimate tasks, and without any malicious instructions, agents may cross security boundaries as they try to overcome obstacles.\n\nWe believe this is a security engineering problem, and the industry should tackle it the way it tackled the internet worms of the early 2000s. The systems surrounding agents must limit what agents can access, detect unwanted behavior, and contain failures when they occur.\n\nAt Perplexity, we are actively collaborating with researchers and practitioners to advance security engineering for AI agents, and we apply multiple layers of defense across our models, agent harnesses, and infrastructure so that security does not depend on any single safeguard.\n\n## Meltdown behavior of AI agents\n\nIn July, AI agents broke into open-source AI platform Hugging Face's production infrastructure. During internal cybersecurity evaluation and training runs, OpenAI models discovered a way to exploit the Artifactory repository manager to establish a bulletin board for communicating with one another, enabling them to organize into swarms. Later, agents that were unable to make progress on tasks in a cybersecurity benchmark recruited other agents to help. These agents broke out of their evaluation environment and reached the internet. They also discovered ways to cheat by reverse-engineering answers to the benchmark tasks, but thought that the grading system would detect the cheating. To better understand how the benchmark evaluation worked to find ways to avoid being detected as cheating, they ultimately compromised Hugging Face systems ([Hugging Face](https://huggingface.co/blog/security-incident-july-2026); [OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)).\n\nThe incident is a clear example of a failure mode we described when we[open-sourced Numbat](https://www.perplexity.ai/hub/blog/securing-agents-across-perplexity-s-client-endpoints-with-numbat) in July: **accidental meltdowns**, a term coined by security researchers from Cornell Tech ([arXiv](https://arxiv.org/abs/2605.19149)). An agent pursuing a legitimate goal encounters friction, such as a missing file, a failed API call, an expired credential, or a permission denial, and goes looking for a workaround. In doing so, it may cross security boundaries through reconnaissance, privilege escalation, secret discovery, or data exfiltration. The agent itself effectively becomes the adversary, even though no malicious prompt or external attacker is involved.\n\nHugging Face was not an isolated case. More agent meltdown behaviors were discovered and reported in recent weeks. On May 27-28, agents trying to gather University of Iowa data from Data USA, a platform offering open access to US government data, ran into errors caused by a malformed query. They responded with probes, including SQL injection, cross-site scripting, template injection, path traversal, and command injection. The activity was later linked to OpenAI ([SecurityWeek](https://www.securityweek.com/openai-agents-probed-websites-for-vulnerabilities-while-fetching-public-data/)). On June 20-21, OpenAI agents trying to obtain per-person government costs for a category of medicines across local areas in Victoria from the Australian Institute of Health and Welfare (AIHW) were blocked from downloading a file. In response, agents downloaded the file, which was already public, from the AIHW pre-production server, circumventing the site\u2019s anti-bot protections in the process ([SecurityWeek](https://www.securityweek.com/openai-agents-probed-websites-for-vulnerabilities-while-fetching-public-data/)).\n\nThe pattern is not limited to one lab. During cybersecurity tests, Anthropic models breached three companies after a mistake gave them open internet access, Google's Gemini guessed credentials to three websites, and a Meta model exploited a third-party service ([Reuters](https://www.reuters.com/legal/litigation/what-we-know-about-rogue-ai-agent-security-breaches-2026-07-31/)).\n\n## Learning from history: The era of internet worms\n\nThese incidents are reminiscent of the era of internet worms about a quarter of a century ago. In the early 2000s, the internet grew far faster than the security practices around it. We saw a wave of viruses and worms, with consequences far more serious than what we are seeing now with AI agents in meltdown.\n\nOn May 4, 2000, people began receiving emails from familiar senders with the subject line \"ILOVEYOU\". Opening the attachment in the email resulted in running a script that mailed a copy of itself to everyone in the victim's Outlook address book. By 6 p.m. that day, the CERT Coordination Center had received reports involving more than 420,000 internet hosts ([US GAO Report](https://www.govinfo.gov/content/pkg/GAOREPORTS-T-AIMD-00-171/html/GAOREPORTS-T-AIMD-00-171.htm)). The virus reportedly penetrated at least 14 federal agencies, including the Department of Defense, the CIA, NASA, and the House and the Senate ([US GAO Report](https://www.govinfo.gov/content/pkg/GAOREPORTS-T-AIMD-00-171/html/GAOREPORTS-T-AIMD-00-171.htm)). It also shut down email servers at the Pentagon and the British Parliament ([Wired](https://www.wired.com/2000/05/now-that-was-a-nasty-worm/)). Insurance giant Lloyd's of London made an early estimate that the virus would cost over $15 billion in damages and lost productivity ([US House Committee Hearing](https://commdocs.house.gov/committees/science/hsy131170.000/hsy131170_1.HTM)). Computer Economics later estimated $8.75 billion in damages worldwide ([Information Week](https://www.informationweek.com/cyber-resilience/investments-in-antivirus-software-are-paying-off)).\n\nWorms that needed no human click came next. On July 19, 2001, the Code-Red worm infected more than 359,000 computers in less than 14 hours ([CAIDA](https://www.caida.org/archive/code-red/coderedv2_analysis/)). On January 25, 2003, SQL Slammer doubled in size every 8.5 seconds and infected more than 90% of internet hosts vulnerable to it within 10 minutes ([CAIDA](https://www.caida.org/catalog/papers/2003_sapphire/)), exploiting a hole that Microsoft had released a patch for six months earlier ([CNET](https://www.cnet.com/tech/tech-industry/damage-control/)). In August 2003, the Blaster worm and the Sobig email worm appeared about a week apart ([Microsoft](https://learn.microsoft.com/en-us/troubleshoot/windows-server/security-and-malware/blaster-worm-virus-alert), [F-Secure](https://www.f-secure.com/v-descs/sobig-f)).\n\nAt the time, it was reasonable to ask whether networked computers could be made safe at all. Six days after the ILOVEYOU virus, a US House subcommittee held a hearing on it. Many security experts called for legislation that would make software companies liable for damage caused by flaws in their products. Washington took a different path. The National Strategy to Secure Cyberspace stated that \u201cfederal regulation will not become a primary means of securing cyberspace.\u201d It warned that broad mandates could create a \u201clowest-common-denominator approach to cybersecurity\u201d ([CISA](https://www.cisa.gov/sites/default/files/publications/cyberspace_strategy.pdf)).\n\nThe industry answered with engineering. Eleven days after ILOVEYOU, Microsoft announced an Outlook update that blocked executable attachments. In January 2002, the company made security a top priority ([Seattle Times](https://www.seattletimes.com/business/gates-memos-trustworthy-computing/)). Automatic patching, secure defaults, bug bounty programs, and coordinated disclosure became standard practice. In 2008, Chrome began running web content in a sandbox that \"limit[s] what an attacker can do after exploiting a bug\" ([Chromium Blog](https://blog.chromium.org/2008/09/security-architecture.html)). Encryption, once the exception, became the default. Security technologies, including multi-factor authentication, firewalls, zero trust, and security information and event management (SIEM), became widely used. Organizations worldwide are forecast to spend about $240 billion in 2026 on information security ([Gartner](https://www.gartner.com/en/newsroom/press-releases/2025-07-29-gartner-forecasts-worldwide-end-user-spending-on-information-security-to-total-213-billion-us-dollars-in-2025)). Worms never disappeared entirely, but the era of routine internet-wide outbreaks faded. At the same time, the internet, largely unencumbered by regulation, became a powerful engine of innovation and economic growth over the following two decades.\n\n## Security engineering for AI agents\n\nRecent incidents have raised legitimate questions about agent governance. Existing security mechanisms were developed for pre-agent computing environments characterized by tightly scoped and largely deterministic software behavior. Access control mechanisms, in particular, are primarily designed around human users and often grant them broad privileges that are, in principle, sufficient to cause significant harm.\n\nThis design rests on several assumptions: most users act in good faith; malicious actors can be deterred through auditing and real-world consequences; and humans take actions, whether correct or erroneous, at a relatively limited rate. Applying these security mechanisms to agents requires accounting for differences between human and agent behavior. As we wrote in our[response to NIST's request for information on AI agent security](https://arxiv.org/abs/2603.12230), AI agents challenge these assumptions. They can exercise privileges and take actions at machine speed, are not themselves deterred by real-world consequences, and may take actions that are technically permitted but that a typical human user would rarely take.\n\nAnswering those questions requires security engineering. We know the security principles for building systems that keep the risks under control when individual components misbehave. But we need to make sure that these principles are applied when engineering the environments for training, testing, and using AI agents.\n\n## The defense-in-depth security principle\n\nArguably the most important security principle that needs to be applied for securing AI agents is defense-in-depth, which advocates for a layered security architecture, where multiple, varied, and redundant defensive measures are employed to protect system resources. No single safeguard is perfect. People may fall for social-engineering attacks and reveal their login credentials, zero-day software vulnerabilities are discovered and exploited, and intrusion detection misses new attack variants. Defense-in-depth accepts that and stacks several independent layers of defense. Should one defensive layer be circumvented, other layers remain in place to counter or detect the intrusion.\n\nThe Hugging Face incident shows why defense-in-depth matters. OpenAI's retrospective reports that the automated safeguards used in its production systems, including harnesses, auto-review models, and safety classifiers, were absent from the evaluation environment. If its currently deployed chain-of-thought monitoring had been running on those evaluations, it would have caught the initial activity and paged the security team more than a day before the breach ([OpenAI](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)). The layers that could have caught the problem existed. They simply were not all in place at the same time.\n\nSecuring AI agents requires improving both the safety and security of AI models and the systems surrounding them. Work at the model layer matters, and it is paying off. Early LLMs were easily manipulated by injected instructions, while today\u2019s models are substantially better at recognizing and refusing them. Model developers also train models for safer behavior and, as OpenAI's retrospective describes, monitor reasoning traces for signs of problematic behavior. But model-level defenses are only part",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821520,
-    "title": "llm-anthropic 0.30",
-    "url": "https://simonwillison.net/2026/Sep/28/llm-anthropic/",
-    "published_at": "2026-09-28T23:06:21+00:00",
-    "fetched_at": "2026-10-05T22:07:46+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "28th September 2026\nIn addition to Claude Sonnet 5.5, this release adds the ability to run llm anthropic refresh\nto refresh the list of Anthropic models directly from their API - which means I don't need to push a new release just to add support for a newly released model.\nI also added an llm anthropic count\ncommand which can use their free token counting API to return a count of tokens that will be used by any prompt, before you send that prompt.\nRecent articles\n[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026[OpenAI DevDay 2026 live blog](/2026/Sep/29/openai-devday-2026-live-blog/)- 29th September 2026[2026 in LLMs (so far)](/2026/Sep/27/2026-in-llms-so-far/)- 27th September 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "api",
-      "news",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 717406,
-    "title": "Claude Sonnet 5.5",
-    "url": "https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/",
-    "published_at": "2026-09-28T22:07:38+00:00",
-    "fetched_at": "2026-09-28T22:20:00+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "28th September 2026 - Link Blog\n[Claude Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5). New Sonnet model from Anthropic today. They say it \"runs 30%+ faster, and costs up to 30% less for most work\" - it's priced the same as Sonnet 5 but appears to beat it on every benchmark, and should be cheaper to run as well.\n[Here are some pelicans riding bicycles](https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F1d85a9be7f3ecce26e7f1569161a0d01). Sonnet 5.5 suffered from [the same bug as Opus 5.5](https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/#claude-opus-5-5-max-over-thinks-to-the-point-of-breaking): the \"max\" thinking effort pelican thought for 128,000 tokens (at a cost of $1.28) before running out of tokens and failing to produce an SVG.\nHere's the pelican it gave me for thinking effort \"xhigh\", at a cost of 5.74 cents and taking 41 seconds:\nSonnet 5.5 appears to be almost as good as Opus 5.5 on some coding tasks, including various [viral 3D animation tricks](https://x.com/claudeai/status/2104674987164782598).\nThe most interesting thing about Sonnet 5.5 is that it's now the model used for the free tier on [claude.ai](https://claude.ai/). OpenAI's ChatGPT free tier uses Luna 5.6, which means Anthropic currently have a much more capable free offering.\nI ran this prompt against that free tier:\nbuild me an HTML page that renders a three-dimensional pelican riding a bicycle using WebGL\nAnd got back [this page](https://static.simonwillison.net/static/2026/claude-sonnet-5.5-free-3d-pelican.html), which is a solid effort.\nAnthropic's announcement reiterates that Haiku 5.5 will be available \"in the coming weeks\". I really hope that one is price-competitive with GPT-6 Luna!\nRecent articles\n[2026 in LLMs (so far)](/2026/Sep/27/2026-in-llms-so-far/)- 27th September 2026[Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war](/2026/Sep/22/opus-and-sol-and-luna/)- 22nd September 2026[Jev introduces a new shape of LLM - System One, aka Decision Models](/2026/Sep/21/jev/)- 21st September 2026",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "benchmark",
-      "media",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
