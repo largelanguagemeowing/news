@@ -1,5 +1,124 @@
 [
   {
+    "article_id": 1025061,
+    "title": "Does Code Quality Still Matter? It Depends on This \u2014 Max Kanat-Alexander, Capital One",
+    "url": "https://www.youtube.com/watch?v=bU5gDVyu_28",
+    "published_at": "2026-10-21T19:01:02+00:00",
+    "fetched_at": "2026-10-21T21:19:04+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Every senior engineer's answer is \"it depends.\" Max Kanat-Alexander says what it actually depends on. Code quality always existed for two things: understanding a system and safely changing it. AI is making a new kind of software common: disposable software, with low consequences, few dependents and near-zero cost to replace or maintain. For that software, quality doesn't matter. For durable software it matters more than ever. He also shows how to make systems more disposable and how to make rigor cheap through standards, in-workflow tooling, easy testing and maximum strictness.\n\nChapters:\n- 00:00 \"It depends\" \u2014 on what?\n- 01:14 Understanding and execution\n- 02:42 Why structure matters\n- 04:47 The two risks of every change\n- 06:56 Disposable software\n- 07:59 Durable software\n- 09:54 Making software more disposable\n- 12:05 Lowering the cost of rigor\n- 15:50 The answer\n\nMax Kanat-Alexander, Capital One: https://www.capitalone.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "tutorials",
+    "tags": [
+      "api",
+      "agents",
+      "safety",
+      "coding",
+      "tutorials",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1024789,
+    "title": "Today's PHP Security Release, and How We're Strengthening PHP Security",
+    "url": "https://simonwillison.net/2026/Oct/21/php-security-release/",
+    "published_at": "2026-10-21T18:41:53+00:00",
+    "fetched_at": "2026-10-21T21:19:02+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/\">Today&#x27;s PHP Security Release, and How We&#x27;re Strengthening PHP Security</a></strong></p>\nIf you're running anything on PHP it's vital you upgrade - today's updates (across the entire PHP 8.x line) address two remote code execution holes, and there have been exploits circulating since last night, thanks to a leak in the coordinated disclosure process.</p>\n<p>This post from the PHP Foundation explain what went so wrong:</p>\n<blockquote>\n<p>On Tuesday, October 20th, at around 15:00 UTC, the two CVE IDs began circulating on online forums and social media. They came with a wrong release time and a wrong CVSS score of 10.0 (the actual score is 9.2). No technical details leaked. In response, the PHP project brought its pre-announcement forward and <a href=\"https://www.php.net/archive/2026.php#2026-10-20-1\">published it at 19:30 UTC</a>. It also moved the release from October 22nd, 14:00 UTC, to October 21st, 14:00 UTC [...]</p>\n<p>As a result of the leak and pre-announcement around 20:00 UTC, Calif, one of the security firms that had reported the issues mistakenly published a video. It showed their proof of concept working against a number of targets and revealed a few additional, though limited, details about the vulnerabilities. Copies of the deleted video started circulating on social media soon after. The video contributed to accelerated development of various PoCs (exploitation proof of concepts), which then increased circulation on October 21st.</p>\n</blockquote>\n<p><a href=\"https://www.wiz.io/blog/php2shell-php-rce\">This article</a> from the team that discovered the original vulnerability includes a more detailed timeline of the original intended responsible disclosure:</p>\n<blockquote>\n<ul>\n<li><strong>August 19, 2026:</strong> Wiz Research discovers the first PHP vulnerability using Wiz Atlas, Gemini 4 Argon, and GPT-5.6 Sol.</li>\n<li><strong>August 20, 2026:</strong> Unauthenticated RCE is confirmed against Drupal.</li>\n<li><strong>August 21, 2026:</strong> Unauthenticated RCE is confirmed against WordPress.</li>\n<li><strong>August 24, 2026:</strong> Wiz Research reports the vulnerabilities to the PHP security team.</li>\n<li><strong>September 21, 2026:</strong> PHP acknowledges the reports and begins developing a coordinated fix.</li>\n<li><strong>October 21, 2026:</strong> Patched PHP releases become available.</li>\n<li><strong>October 21, 2026:</strong> Public disclosure.</li>\n</ul>\n</blockquote>\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=50182987\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/open-source\">open-source</a>, <a href=\"https://simonwillison.net/tags/php\">php</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/ai-security-research\">ai-security-research</a></p>",
+    "topic": "security",
+    "tags": [
+      "security",
+      "release",
+      "models",
+      "open-source",
+      "safety",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1026205,
+    "title": "NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required",
+    "url": "https://huggingface.co/blog/nvidia/kumo-relational",
+    "published_at": "2026-10-21T18:26:30+00:00",
+    "fetched_at": "2026-10-21T21:19:08+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "education",
+    "tags": [
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1025001,
+    "title": "AI Breakthroughs Everyone Missed",
+    "url": "https://www.youtube.com/watch?v=umGZrkyTRtw",
+    "published_at": "2026-10-21T17:45:26+00:00",
+    "fetched_at": "2026-10-21T21:19:03+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Try @OpenAI Dots here: https://chatgpt.com/features/dots/\n\nSome of the coolest AI advancements are flying under the radar. From AI-generated worlds and games to new voice models and 3D tools, here's a look at some of the lesser-known AI research and technology that you probably missed.\n\nSharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nFish Audio Drama 3: https://fish.audio/drama-3/\nBytePlus OmniHuman: https://www.byteplus.com/en/product/OmniHuman\nWorldCrafter: https://drexubery.github.io/WorldCrafter/?validation-demo=cat-vac-new\nTheoMediaAI Post: https://x.com/TheoMediaAI/status/2109643192920404199\nMatrix Game 4.0: https://matrix-game-v4-0.github.io/page/\nNVIDIA StreamRender-H3: https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/\nOdyssey Update: https://x.com/odysseyml/status/2111589148146749616\nT3lescope: https://pfnet-research.github.io/t3lescope/\nGaussianimate: https://cookmaker.cn/gaussianimate/\nWorldGacha: https://tools.oyasumi-gamedev.com/worldgacha/\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n00:00 Under-the-Radar AI Discoveries\n00:46 Fish Audio Drama 3: AI Voice Acting\n04:23 OmniHuman 2.0: Talking Photos\n06:48 WorldCrafter: AI Worlds That Remember\n08:56 ByteDance\u2019s New World Model\n09:56 OpenAI Dots (Sponsor)\n11:01 Matrix Game 4.0: Game Engines Meet AI\n14:17 NVIDIA StreamRender-H3\n16:43 Odyssey: A Fruit Fly Brain in an AI World\n18:25 3D Reconstruction, Animation & World Building",
+    "topic": "news",
+    "tags": [
+      "news",
+      "models",
+      "open-source",
+      "research",
+      "video",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1026206,
+    "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
+    "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+    "published_at": "2026-10-21T17:35:36+00:00",
+    "fetched_at": "2026-10-21T21:19:08+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1023479,
+    "title": "How AT&T is rethinking in-house legal work with OpenAI",
+    "url": "https://openai.com/index/att-legal",
+    "published_at": "2026-10-21T17:00:00+00:00",
+    "fetched_at": "2026-10-21T21:19:01+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "AT&amp;T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment.",
+    "topic": "education",
+    "tags": [
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1021004,
     "title": "Panache \u2014 RTS Belle \u00c9poque pour mobile",
     "url": "https://simonwillison.net/2026/Oct/21/panache/",
@@ -577,6 +696,68 @@
     "available": true
   },
   {
+    "article_id": 1025545,
+    "title": "Introducing Claude Duet",
+    "url": "https://claude.com/resources/articles/claude-duet",
+    "published_at": "2026-10-21T00:00:00+00:00",
+    "fetched_at": "2026-10-21T21:19:05+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "A research preview is available by waitlist today, starting with US Pro and Max subscribers.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1025544,
+    "title": "Claude Security now scans continuously and tracks fixes",
+    "url": "https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes",
+    "published_at": "2026-10-21T00:00:00+00:00",
+    "fetched_at": "2026-10-21T21:19:05+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Claude Security now keeps up with your repositories as code changes, tracks findings until they\u2019re fixed, learns from the context your team adds, and connects to your tools through an API and MCP. Available in public beta for Claude Enterprise customers.",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1025543,
+    "title": "HCLTech joins the Claude Partner Network as a Global Premier partner",
+    "url": "https://claude.com/resources/articles/hcltech-joins-claude-partner-network",
+    "published_at": "2026-10-21T00:00:00+00:00",
+    "fetched_at": "2026-10-21T21:19:05+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "HCLTech will bring Claude into the solutions it provides for banks, hospitals, telecom companies, and manufacturers.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1022923,
     "title": "Introducing Rerank 5: precise, efficient enterprise document retrieval",
     "url": "https://cohere.com/blog/rerank-5",
@@ -592,6 +773,24 @@
       "release",
       "benchmark",
       "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1023485,
+    "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
+    "url": "https://openai.com/index/empowering-cyber-defenders",
+    "published_at": "2026-10-21T00:00:00+00:00",
+    "fetched_at": "2026-10-21T21:19:01+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.",
+    "topic": "policy",
+    "tags": [
+      "safety",
+      "policy"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10725,229 +10924,6 @@
       "benchmark",
       "infrastructure",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 775150,
-    "title": "Your Coding Agent Is 6 Months Out of Date \u2014 Jakub Hojsan, Exa",
-    "url": "https://www.youtube.com/watch?v=cKhpeEBnT1o",
-    "published_at": "2026-10-02T15:30:31+00:00",
-    "fetched_at": "2026-10-02T16:31:06+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Every model ships about six months behind its knowledge cutoff. Your code review agent is reviewing changes it has never seen.\n\nJakub Hojsan, forward deployed engineer at Exa, explains how Exa built search for coding and code-review agents. He walks through a real PR that falls in a model's blind spot, shows why just adding a web search tool doesn't fix it, and explains how to give your agent rules for when to search. He also covers query-dependent highlights that cut a 100,000-character page down to about 500 characters with no added latency, and previews Exa Agent.\n\nIn this talk:\n\u2022 The knowledge-cutoff gap and why it breaks code review\n\u2022 Why agents need explicit rules for when to search, not just a search tool\n\u2022 Token-efficient highlights: giving the model only what it needs\n\u2022 Transparency, cost and model-provider independence versus built-in web search\n\nSPEAKER\nJakub Hojsan, Forward Deployed Engineer, Exa\nLinkedIn: https://www.linkedin.com/in/jakubhojsan/\nX: https://x.com/JakubHojsan\nWebsite: https://www.jakubhojsan.com/\n\nLINKS\nExa: https://exa.ai\nExa MCP docs: https://docs.exa.ai/reference/exa-mcp\nExa MCP server (GitHub): https://github.com/exa-labs/exa-mcp-server\n\nCHAPTERS\n0:00 Intro\n0:12 Search built for agents, not 10 blue links\n0:47 The knowledge-cutoff gap\n1:12 A PR in the model's blind spot\n1:47 How a human would review it\n2:12 Why the LLM gets it wrong\n2:47 500 characters instead of 100,000\n3:17 Adding a search tool isn't enough\n3:56 Give your agent rules for when to search\n4:31 What Exa gives you\n6:06 Demo: query-dependent highlights\n7:36 Beyond coding: Exa Agent\n8:40 Demo: finding conference speakers\n9:25 Getting started with Exa MCP\n10:20 Q&amp;A: ranking billions of documents\n11:25 Q&amp;A: structured output schemas\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#CodingAgents #AISearch #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/cKhpeEBnT1o",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 776059,
-    "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
-    "url": "https://huggingface.co/blog/allenai/astabrief",
-    "published_at": "2026-10-02T15:19:50+00:00",
-    "fetched_at": "2026-10-02T16:31:08+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "Text Generation \u2022 Updated \u2022 880 \u2022 36\n[\n](#open-sourcing-astabrief-the-fast-report-generation-model-in-asta)\nOpen-sourcing AstaBrief, the fast report-generation model in Asta\n[Enterprise Article](/blog)\n[Model](https://huggingface.co/allenai/AstaBrief_8B)| \ud83d\udcca\n[Data](https://huggingface.co/collections/allenai/astabrief)\nLanguage models can already help researchers search the literature, synthesize evidence, and work through complex questions. But scientific work places particular demands on these models\u2014answers need to stay grounded in evidence, the models need to preserve what the evidence actually supports rather than quietly broadening a study\u2019s conclusions, and researchers need to be able to verify the final outputs.\nWe see that in how scientists use [Asta](https://asta.allen.ai/), our agentic platform for scientific work. Instead of simple keyword searches, users often bring substantial context and many constraints\u2014for example, asking Asta to compare approaches across a body of literature while accounting for a particular method, population, or setting. Many also return to generated reports later, treating them as working research artifacts rather than one-off answers.\nWe wanted to help scientists generate cited reports faster, with a model they could download and run themselves. To do that, we tested whether a small, open model trained specifically for scientific report generation could match the report quality of the proprietary models we were using, while reducing generation time and serving costs.\nWe built [AstaBrief 8B](https://huggingface.co/allenai/AstaBrief_8B), a model that turns a research question and retrieved literature excerpts into a cited report. AstaBrief is available in Asta\u2019s Generate a report feature today as [Fast mode](https://asta.allen.ai/) alongside Claude-powered Thinking mode, and we\u2019re also open-sourcing it and the training data so others can study, reproduce, and build on our approach.\nDeveloping AstaBrief required tens of thousands of real research queries, citation-focused filtering, preference data, and a redesigned report-generation pipeline that writes the full report in one pass rather than section by section. The result is nearly an order-of-magnitude reduction in report generation time compared to the proprietary models we tracked\u2014across the full Asta pipeline, Fast mode averages 51.1 seconds per report compared with 178.5 seconds for Thinking mode, about 3.5\u00d7 faster.\nTogether, those efficiency gains made AstaBrief a useful test case for a broader goal: building open language models that can be adapted to the specific demands of scientific work.\nOpen weights will also let institutions run AstaBrief on their own infrastructure, which is necessary when research questions reveal sensitive or unpublished work. Alongside the model weights, we\u2019re releasing [an example workflow that researchers can adapt to create reports from their own PDFs](https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite), providing a starting point for local report generation\nThis post covers how we trained AstaBrief, what we learned about grounding it in scientific evidence, and which parts of our approach we think can carry forward to future models for science. Most of the training and evaluation described was completed in 2025, so the proprietary models used to generate training data and as comparison points reflect the frontier at the time. We haven\u2019t rerun the full evaluation against today\u2019s frontier models; the results below are best read as evidence about the particular training and system design choices we tested.\n[\n](#training-the-model)\nTraining the model\nOur goal with AstaBrief was to build an open-weights model with all the qualities that matter most for long-form scientific synthesis: answer quality, relevance, structure, and citation grounding. We started from Qwen3-8B and focused most of our effort on the post-training data, evaluation, and surrounding report-generation scaffolding.\nAdapting general-purpose models for scientific work \u2013 and training new scientific models from scratch \u2013 is something we're exploring broadly across Ai2. Through [NSF OMAI](https://allenai.org/omai), a U.S. national initiative led by Ai2 to build fully open AI infrastructure and models for scientific discovery, our researchers are working directly with scientific communities to understand what they need from future open models and where today's general-purpose models fall short. That includes studying how needs differ across scientific fields and workflows, with more findings from that research to share in the future.\nRecent work, including our [DR Tulu](https://allenai.org/blog/dr-tulu), has shown that reinforcement-learning-based (RL) methods can improve long-form report generation for open-weights models, especially when judge models are involved in the training loop. We considered that path for AstaBrief, but ultimately focused on a simpler recipe built around supervised fine-tuning (SFT) and direct preference optimization (DPO).\nRL-based training can be unstable and expensive. We wanted to see how far we could push report generation quality with a cheaper, more operationally manageable setup\u2014one that's also easier to debug and iterate on.\nThat made the quality of the training data especially important. Rather than relying on a more complex optimization method to compensate for noisy examples, we spent much of the project figuring out how to generate, select, and filter examples that actually demonstrated the report-writing behavior we wanted.\nWe also wanted AstaBrief to be faster so that users could get preliminary reports quickly that they could then iterate over in subsequent turns. For speed improvements, we decided to train AstaBrief to directly generate the final report in one pass given a user query and relevant retrieved snippets, bypassing the expensive snippet summarization and clustering stages our Claude-based Thinking mode uses and not writing out the answer section-by-section. Interestingly, we found it was possible to do so without sacrificing performance.\n[\n](#collecting-sft-training-data)\nCollecting SFT training data\nThe training pipeline began with real user queries submitted through the system described in our paper \u201c[Synthesizing scientific literature with retrieval-augmented LMs](https://allenai.org/blog/nature-openscilm)\u201d and [ScholarQA](https://aclanthology.org/2025.acl-demo.49.pdf), the framework that now underpins Asta\u2019s Generate a report feature. Rather than training only on synthetic prompts or benchmark-style tasks, we wanted AstaBrief to learn from real queries from real scientists.\nOur research suggests that scientists often ask different things of language models than users do of general-purpose chatbots or traditional search tools. In our [analysis of hundreds of thousands of Asta queries](https://allenai.org/blog/asta-interaction-dataset), expert researchers frequently supplied substantial context, multiple constraints, and relationships between concepts rather than relying on short, keyword-style prompts.\nMore recent Asta user studies have also surfaced differences in how researchers want AI involved in their work\u2014some are comfortable using models for ideation or experimentation, while others prefer a narrower role in synthesis, literature surveillance, or pattern-finding. Across those differences, participants want clearer source traceability, more visibility into what a model is doing, and greater control over the context it uses.\nWe filtered the user logs we collected for quality, relevance, and privacy, stripping out beta-tester and bot traffic, dropping queries that were too short to be meaningful, and using an LLM-based filtering pass to catch non-English queries, non-scientific requests, and prompts containing personal information. That left a pool of 90K research-focused queries.\nFor SFT, we generated full-report target outputs from the filtered queries using the multi-step ScholarQA pipeline behind Asta's report generation. The pipeline retrieved relevant literature, organized the material into sections, and used a backing report-generating model to synthesize the evidence into a cited report. We drew on a mix of proprietary systems: Claude 3.5 Sonnet, Claude 3.7 Sonnet, o3, o4-mini, and GPT-4.1. After quality filtering, this yielded 47K usable training examples.\n[\n](#creating-dpo-pairs)\nCreating DPO pairs\nDPO required a different kind of training data. Instead of a single target report per query, we needed pairs of reports with one preferred over the other.\nWe built those pairs from a separate subset of queries not used during SFT data generation. One report per query came from the existing ScholarQA pipeline, typically backed by Claude 3.5 Sonnet or 3.7 Sonnet. The competing report was generated by feeding ScholarQA's retrieved literature excerpts to a different model: o3, o4-mini, DeepSeek-V3, or DeepSeek-R1, depending on the example.\nTwo judge models \u2013 GPT-4.1 and DeepSeek-R1 \u2013 compared each pair and picked a winner. We ensured that LLM judges were aligned with human preferences (95% agreement) and only kept pairs where both judges agreed, which gave us a cleaner preference set and cut much of the noise that typically shows up in preference data generated at scale.\nAfter quality filtering, the final DPO dataset came to about 6K examples.\nUsing multiple generators and requiring agreement between two judges gave us a relatively simple way to construct preference data without treating any single model\u2019s output or judgment as ground truth.\n[\n](#filtering-data-for-better-attribution)\nFiltering data for better attribution\nOur main evaluation target was [SQABench-CS2](https://github.com/allenai/ai2-scholarqa-eval), a set of 200 user-written computer science research questions. We tracked four metrics throughout the development of AstaBrief:\n- Rubric score, which measures how much necessary content is covered by the report.\n- Answer precision, which measures whether each paragraph is relevant to the question.\n- Citation precision, which measures whether each citation supports the claim it's attached to.\n- Citation recall, which measures whether the report's claims are fully supported by the citations provided.\nFor our final model, we also ran secondary evaluations: [DeepScholarBench](https://arxiv.org/abs/2508.20033), a 63-query benchmark for long-form research synthesis built from recent ArXiv papers, and two separate pairwise evaluations against reports generated by the Claude-powered pipeline\u2014an LLM-judged comparison on SQABench-CS2 and a small human study.\nA report can sound polished and complete while meandering from the question or attaching citations to claims from which the underlying evidence doesn't follow. For scientific synthesis, we needed to measure those behaviors separately. But citation support is only part of scientific faithfulness\u2014a model can cite the right study and still make a stronger claim than the study itself supports. [This can happen in subtle ways](https://royalsocietypublishing.org/rsos/article/12/4/241776/235656/Generalization-bias-in-large-language-model), for example, turning a finding about a particular sample into a generic claim about an entire population, shifting a result reported in the past tense into a present-tense statement that sounds more universally true, or turning a descriptive finding into a recommendation for what clinicians, policymakers, or researchers should do.\nThose kinds of generalizations are especially important for scientific report generation because each step can broaden the apparent scope of the evidence without introducing an obviously false statement. A cited sentence may therefore be technically related to its source while still overstating what researchers actually established. Our development metrics focused primarily on relevance, coverage, and citation grounding; a richer evaluation of scientific report writers should also test whether they",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 775090,
-    "title": "AI News: Dots, GPT-6.1 Sol, Sonnet 5.5, Gemini 4, and everything you need to know",
-    "url": "https://www.youtube.com/watch?v=dDgncbBAA0c",
-    "published_at": "2026-10-02T15:00:16+00:00",
-    "fetched_at": "2026-10-02T16:31:05+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Here's the AI News you probably missed this week. See what Optimizely\u2019s Virtual Teammates can automate for you at https://optimizely.com/mattwolfe \n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nDevDay 2026 Recap: https://openai.com/index/devday-2026-recap/\nOpenAI Introduces Dots: https://openai.com/index/introducing-dots/\nxAI Trolls Dots Launch: https://techcrunch.com/2026/09/29/the-internet-is-convinced-elon-musks-xai-trolled-openais-dots-launch/\nGPT-6.1 Sol: https://openai.com/index/introducing-gpt-6-1-sol/\nClaude Sonnet 5.5: https://www.anthropic.com/claude-sonnet-5-5\nClaude Code Mods: https://claude.com/blog/claude-code-mods\nClaudeDevs Mods Announcement: https://x.com/ClaudeDevs/status/2105721434807083061\nGemini 4 Argon: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\nIdeogram 4.5: https://ideogram.ai/models/4.5/\nStrands Decider 2B: https://strandsagents.com/blog/introducing-strands-decider/\nxAI Team Bots: https://x.ai/news/team-bots\nElevenLabs Eleven v4: https://elevenlabs.io/blog/eleven-v4\nMicrosoft MAI-Voice-2.1: https://microsoft.ai/models/mai-voice-2-1/\nMicrosoft Streaming Transcription Model: https://microsoft.ai/news/our-first-streaming-transcription-model/\nTrump Superintelligence Executive Order: https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: mattwolfe@smoothmedia.co\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:27 Dots\n7:31 GPT-6.1 Sol\n9:24 Other Dev Day Announcements\n10:35 Decisions API\n11:39 ChatGPT Space and Pages\n12:40 Meeting Plugin\n12:57 Sign in with ChatGPT\n13:55 Optimizely Update\n15:07 Claude Sonnet 5.5\n19:12 Mod Claude Code\n19:39 Gemini 4 Argon\n22:03 Ideogram 4.5\n23:17 Strands Decider 2B\n24:04 Grok Team Bots\n24:34 Eleven V4\n25:24 MAI-Voice-2.1\n25:52 MAI-Transcribe\n26:06 Super Intelligence Agreement\n27:15 Final Thoughts\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/dDgncbBAA0c",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 773534,
-    "title": "The latest AI news we announced in September 2026",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
-    "published_at": "2026-10-02T15:00:00+00:00",
-    "fetched_at": "2026-10-02T16:31:03+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "trafilatura",
-    "body": "The latest AI news we announced in September 2026\nFor more than 20 years, we\u2019ve invested in machine learning and AI research, tools, and infrastructure to build products that make everyday life better for more people. Teams across Google are working on ways to unlock AI\u2019s benefits in fields as wide-ranging as healthcare, crisis response, and education. To keep you posted on our progress, we're doing a regular roundup of Google's most recent AI news.\nHere\u2019s a look back at some of our AI announcements from September.\nSeptember's headline belongs to Gemini 4 Argon, our newest frontier model. Built with advanced reasoning and a 1-million-token output limit, it\u2019s designed to tackle complex challenges \u2014 especially in cybersecurity defense. The release capped an active month for Google AI launches that included Gemini 3.8 Flash and 3.8 Flash Cyber. We also introduced expressive voice models with Gemini 3.8 Live, made Googlebook available for pre-order, and brought the Gemini app to Windows. Beyond daily tools, we marked major scientific milestones by mapping human DNA in AlphaGenome Atlas, tracking global methane from space, and launching Project Suncatcher to test machine learning hardware in orbit. And as a nice bonus, we were grateful to see our teams\u2019 work on [designing better AI interfaces](https://www.fastcompany.com/91589966/google-innovation-by-design-2026) recognized by Fast Company as the 2026 Design Company of the Year.\n[Learn about Gemini 4 Argon: our next era of frontier intelligence](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/). Gemini 4 Argon is engineered to bring advanced reasoning to the most difficult of problems. Built with an industry-leading 1-million-token output limit, Argon excels at heavy-duty workloads like coding, cybersecurity defense, and knowledge work like financial research and legal drafting, and autonomous cybersecurity patching. Safely releasing frontier capabilities at this level requires a phased approach, and Argon is currently rolling out to trusted cyber defenders through the Fairwind Program. We\u2019re actively gathering feedback from early testers to iterate on guardrails before expanding availability to developers, enterprises, and consumers.\n[Get next-gen intelligence for agents and cybersecurity with Gemini 3.8 Flash and 3.8 Flash Cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/). Gemini 3.8 delivers our best reasoning and coding performance yet at the same speed and low cost as 3.7 Flash. Gemini 3.8 Flash provides substantial gains in long-horizon software engineering, multi-step problem solving, and agentic workflows. Alongside it, Gemini 3.8 Flash Cyber equips defenders with frontier-grade autonomous vulnerability discovery and automated code patching \u2014 available to [trusted organizations through our new Fairwind Program](https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/).\n[Converse naturally with Gemini 3.8 Live and 3.8 Live Extended Thinking](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/). We've launched two fast, natural language audio models: Gemini 3.8 Live for everyday conversation, and Gemini 3.8 Live Extended Thinking, the top-rated speech-to-speech model for multi-step reasoning without all the lag. Both have rolled for developers in [Google AI Studio and Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/), and for everyone across Search Live, Gemini Live, and Google Workspace, where you can [get things done using your voice in Gmail, Docs, and Keep](https://blog.google/products-and-platforms/products/workspace/voice-features-gmail-docs-keep/).\n[Say hello to Gemini 3.8 Flash-Lite TTS and Gemini 3.8 Flash TTS](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/). Our most expressive text-to-speech models yet let you generate custom voices, direct scene dialogue, and more from simple text prompts. Instead of choosing from a fixed list of static presets, you now get a dynamic creative studio to build voice-first applications and elevate audio experiences, rolling out across products including Gemini Notebook and Google Vids.\n[Tackle tasks with new Connected Apps in Gemini](https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/). We brought more of your favorite apps directly into Gemini, including productivity tools like Airtable, Linear, monday.com, and PandaDoc; creative platforms including Adobe, Picsart, Squarespace, and Webflow; and lifestyle services such as Peloton, SeatGeek, and Experian. Instead of switching between tabs, you can now tackle your tasks all in one place. To get started, head to your Gemini settings and select the apps you want to link.\n[Create your best tracks yet with Lyria 3.5 in Gemini](https://blog.google/innovation-and-ai/products/gemini-app/better-tracks-lyria-gemini/). From simple text prompts or images, you can now use our most expressive music generation model yet to produce richer arrangements, coherent songs, and personalized audio right in the Gemini app. Lyria 3.5 is available globally in Gemini and across Google AI Studio, Google Flow Music, and Google Vids.\n[Sharpen your study routine with new Gemini Notebook tools](https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/). Now you can transform your study routine in Gemini Notebook with interactive coursework tools and animated video summaries. Master complex topics using custom flashcards, versatile quiz formats, and 60-second Short Video Overviews in over 80 languages. For back-to-school season, eligible college students can also claim a free 12-month Google AI student plan with higher usage limits.\n[Coordinate family life effortlessly with CC in Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/). Google Labs is expanding CC from a personal agent into a collaborative group agent designed to handle household logistics and shared schedules. CC even gets its own email address to coordinate family calendars, track group to-dos, and streamline daily logistics in one spot with built-in privacy controls. CC for groups is now rolling out as an experimental preview in Google Labs.\n[Learn how AI breakthroughs accelerate science and improve lives](https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/). AI is transforming theoretical science into practical, [everyday impact](https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/). By accelerating life-saving therapies, forecasting natural disasters, and personalizing education, our technology delivers tangible benefits worldwide. Today, Google tools support [more than 300 languages](https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/) spoken by 7 billion people \u2014 reaching 86% of the global population. By open-sourcing models like MedGemma and partnering with leading research institutions, we're helping scientists make discoveries faster to improve lives everywhere. Plus, new visualizations of [our AI & Economy ATLAS](https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/) data make it easier to see how AI is reshaping global work, including scientific research.\n[See how the future of AI computing could be in space](https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/). Project Suncatcher will launch its first test satellite with Planet to evaluate how Google TPUs perform under real space conditions. Satellites in low-Earth orbit can access up to eight times more solar power than on Earth, opening up new possibilities for long-term AI infrastructure. Learn questions we\u2019re still exploring in our new four-part video series.\n[Pre-order Googlebook, the laptop of choice for Android users](https://blog.google/products-and-platforms/devices/googlebook/pre-order-googlebook/). Built on Android and paired with desktop foundations from ChromeOS, Googlebook is [designed for Gemini Intelligence](https://blog.google/products-and-platforms/devices/googlebook/googlebook-built-in-intelligence/) and engineered to work with your Android phone right out of the box. New on-device AI features like Magic Pointer let you point and ask Gemini about anything on your screen with a quick cursor wiggle, while Rambler smart voice dictation instantly structures verbal brain dumps into organized, shareable notes. With no-code custom widgets and background task processing, Googlebook simplifies your daily workflow so you can get more done effortlessly.\n[Check out WeatherNext 3, our most advanced and accurate global weather AI model](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/). Our flagship AI weather forecasting model now includes real-time satellite data, hourly refreshes, higher resolution, precise precipitation forecasting, and clean energy variables. Plus, it\u2019s now integrated across Search, Gemini, Maps, Google Maps Platform, and Cloud.\n[Explore AlphaGenome Atlas: a high-resolution map of human DNA](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-atlas/). There are billions of possible mutations in the human genome \u2014 far too many to ever test in a lab. So we introduced AlphaGenome Atlas, a database that predicts the effects of every possible single nucleotide variant in the human genome, all 9 billion of them. Designed to require zero coding skills, it\u2019s already accelerating real-world breakthroughs in rare disease research and complex genetics.\n[Track methane emissions globally from space](https://blog.google/innovation-and-ai/models-and-research/google-research/mapping-global-methane-emissions-from-space/). We partnered with NASA's Jet Propulsion Laboratory to develop MAPL-EMIT, a deep learning AI model that tracks global methane leaks from space. The model detects 50% more emissions than human experts and has already uncovered over 23,000 previously unmapped plumes, including 24 of the world's 25 largest-emitting landfills. All data is openly available on Google Earth Engine to help climate researchers and operators take faster action\n[See five amazing visuals of the male fruit fly\u2019s brain map](https://blog.google/innovation-and-ai/technology/research/male-fruit-fly-brain-map/). Scientists at Google, HHMI Janelia, and Cambridge University have built the first complete brain map of an adult male fruit fly, charting over 166,000 neurons and nearly 12,000 distinct cell types with the help of Google AI. By stitching together millions of microscopic images into a navigable 3D model, this research uncovers how sensory cues transform into movement. It\u2019s a breakthrough for neuroscience that brings us closer to understanding how complex brains function.\n[Learn about the new DeepMind Institute](https://institute.deepmind.com/essays/introducing-the-deepmind-institute/). The DeepMind Institute is a platform for researchers and thinkers from across Google DeepMind, Google, and the wider global research community to work on and publish creative, deeply informed ideas about a world with AGI. With AGI on the horizon, it\u2019s incumbent on the creators of AI technology to sincerely and thoughtfully address its risks \u2014 but its transformative impact cannot be steered by technologists alone. DMI serves as a dedicated forum to spur debate, bring together diverse global voices, and build a consensus that ensures AGI benefits everyone.\n[Access fast help on your PC with the Gemini app for Windows](https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/). Now, using the Alt + Space shortcut, you can open Gemini any time",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 775151,
-    "title": "MCP Doesn't Suck. Your Agent Does. \u2014 Jan \u010curn, Apify",
-    "url": "https://www.youtube.com/watch?v=pAnLpiAG6Es",
-    "published_at": "2026-10-02T14:00:05+00:00",
-    "fetched_at": "2026-10-02T16:31:06+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Everyone's dunking on MCP. The protocol isn't the problem. Your agent harness is.\n\nJan \u010curn, founder and CEO of Apify, goes through the 'MCP is dead' backlash and shows that most of the complaints, like context bloat and token burn, come from naive client implementations, not the protocol. He covers the three fixes the industry has landed on (sub-agents, progressive tool discovery, Code Mode), explains why CLIs feel better to agents, and makes the case for using MCP for remote access and a CLI for local access. Then he demos mcpc, Apify's open-source universal CLI client for MCP, and shares early results from Connector Evals comparing raw MCP, CLIs and mcpc.\n\nIn this talk:\n\u2022 Why loading every MCP tool into context up front is a harness bug, not a protocol flaw\n\u2022 Progressive tool discovery and Code Mode, and why models are better at writing code than calling tools\n\u2022 Why CLIs win locally and MCP wins for remote, authenticated access\n\u2022 A live demo of mcpc: stdio and remote servers, OAuth, persistent sessions, grep-based tool discovery, async tasks and x402\n\nSPEAKER\nJan \u010curn, Founder & CEO, Apify\nLinkedIn: https://www.linkedin.com/in/jancurn\nX: https://x.com/jancurn\nGitHub: https://github.com/jancurn\n\nLINKS\nApify: https://apify.com\nmcpc (GitHub): https://github.com/apify/mcpc\nIntroducing mcpc: https://blog.apify.com/introducing-mcpc-universal-mcp-cli-client/\nApify MCP server: https://github.com/apify/apify-mcp-server\n\nCHAPTERS\n0:00 Intro\n0:12 MCP doesn't suck, your agent does\n0:42 How MCP took over the AI world\n1:32 The MCP hate wave\n2:32 The real complaint: context bloat\n3:27 It's the harness, not the protocol\n3:46 Fix #1: Sub-agents\n4:41 Fix #2: Progressive tool discovery\n5:41 Fix #3: Code Mode\n7:16 Why agents love CLIs\n9:35 Where CLIs fall short\n10:15 MCP for remote, CLI for local\n10:45 Introducing mcpc\n12:14 Demo: local and remote MCP servers\n14:49 Demo: progressive discovery with grep\n15:24 Demo: async tasks\n16:28 x402 support\n16:58 Connector Evals: MCP vs CLI vs mcpc\n18:18 MCP + CLI is the answer\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#MCP #AIAgents #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/pAnLpiAG6Es",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 776041,
-    "title": "NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI",
-    "url": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/",
-    "published_at": "2026-10-02T13:00:39+00:00",
-    "fetched_at": "2026-10-02T16:31:07+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "Local AI is becoming more useful by the token.\nAs AI agents move from experiments into everyday development, increasingly capable open models are shrinking to fit on more devices, giving builders more to run locally.\nComing this month, [NVIDIA DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) will be available with 64GB of unified memory from top manufacturer partners \u2014 Acer, ASUS, Dell, Gigabyte, HP and MSI \u2014 giving developers, researchers and AI enthusiasts a new configuration with DGX OS and the NVIDIA AI software stack ready to use from day one.\nThe new SKU runs capable local agents on device \u2014 privately, without cloud dependency. And when workloads grow, two units can cluster together via NVIDIA Sync Cluster Assistant without any additional setup.\nA New Starting Point for Personal AI Supercomputing\nDGX Spark combines NVIDIA Grace Blackwell compute, unified memory, [NVIDIA ConnectX-7 networking](https://www.nvidia.com/en-us/networking/ethernet-adapters/) and an [NVIDIA CUDA](https://developer.nvidia.com/cuda)-accelerated AI software stack in one system. It\u2019s a complete local AI platform for agents, inference, fine-tuning, data science and edge development.\nThe compact, personal AI supercomputer provides a place to experiment with models and developers\u2019 own data without turning to a cloud instance for every task.\nThe new 64GB configuration, available exclusively from manufacturer partners, keeps the platform at an accessible price point while retaining the GB10 Grace Blackwell Superchip, DGX OS and full NVIDIA AI software stack \u2014 same as the 128GB model. It supports up to 100-billion-parameter models and the agentic applications built on them, fully on device.\nTwo 64GB units clustered together don\u2019t just double the memory. In NVIDIA\u2019s Qwen 3.8 27B test, two clustered 64 GB systems delivered up to 1.7x performance compared with a single system, with room to keep scaling as workloads demand.\nDGX Spark ships ready for agent development from day one \u2014 NVIDIA Agent Toolkit, CUDA-X AI libraries, Nemotron open models, and popular runtimes like Ollama, vLLM, and PyTorch with CUDA are all supported out of the box. Developers can go from power-on to running models in minutes.\nBlender is among the first major creator application providers to support the platform, with a [prebuilt, downloadable installer coming soon](http://blender.org/download.).\nScale Up With NVIDIA Sync Cluster Assistant\nDevelopers can start with the memory their projects need today and build on a platform designed to seamlessly scale multi-node clusters for larger workloads as their pipelines grow.\nEvery DGX Spark ships with a built-in NVIDIA ConnectX-7 NIC right out of the box. Plus, two units can connect directly with a QSFP cable, pooling their memory to 128GB and expanding model support to up to 200 billion parameters while delivering twice the memory bandwidth and up to 1.7x the performance.\nThe [NVIDIA Sync](https://docs.nvidia.com/sync/latest/index.html) app configures this multi-node cluster seamlessly. The cluster assistant feature detects connected units, validates device configuration and configures the ConnectX-7 network, so developers can focus on their work rather than the infrastructure. Every node runs the same NVIDIA software stack, so nothing needs to be reconfigured when scaling from one unit to two.\nAnd coming at the end of the month, NVIDIA Sync Model Launcher makes running local AI as simple as clicking a few buttons. Developers can download and launch Qwen3.8 27B on a single DGX Spark system or a cluster, with NVIDIA Sync configuring the model to run across connected devices and making it accessible from users\u2019 laptops. The launcher will also set up OpenCode to use the model, so developers can start coding in their browser.\nDeveloper Use Cases on DGX Spark\nThe new DGX Spark 64GB configuration supports practical work from day one. With up to 100-billion-parameter models running entirely on device, developers and enthusiasts can start with a single system for models that fit within its memory, or connect multiple DGX Spark systems with NVIDIA Sync Cluster Assistant for workloads that need more memory and compute.\nHere are three workflow examples:\n- Run an AI agent around the clock: Keep a coding or research agent running on DGX Spark, ready to review code, analyze documents or carry out multistep tasks. A cluster provides additional capacity for larger models, longer context windows or multiple agents working at once.\n- Power AI apps on your everyday PC: Run a language- or image-generation model on DGX Spark while using an agent or creative application on laptops or desktops. DGX Spark handles the model inference, freeing PCs for other work.\n- Scale when the work grows: When a single task outgrows one unit \u2014 running a larger model, a longer context window or concurrent agent requests \u2014 two DGX Spark 64GB systems connected over the 200 GbE fabric via NVIDIA Sync Cluster Assistant pool their memory to 128GB. The same workflow that ran on one unit scales to two without reconfiguring the software environment.\nGet Started With DGX Spark\nDGX Spark 64GB is available from [Acer](https://www.acer.com/us-en/desktops-and-all-in-ones/veriton-workstations/veriton-gn100-ai-mini-workstation), [ASUS](https://www.asus.com/networking-iot-servers/desktop-ai-supercomputer/ultra-small-ai-supercomputers/asus-ascent-gx10/), Dell, [Gigabyte](https://www.gigabyte.com/AI-TOP-PC/GIGABYTE-AI-TOP-ATOM), HP and [MSI ](https://ipc.msi.com/product_detail/Industrial-Computer-Box-PC/AI-Supercomputer/EdgeXpert-MS-C931)on Friday, Oct. 23, starting at $4,999.\nTo get started:\n- Download a supported inference framework \u2014 llama.cpp, Ollama, vLLM or LM Studio.\n- Download the recommended local model for the workflow.\n- To scale to two units, connect them via their NVIDIA ConnectX-7 ports and launch NVIDIA Sync Cluster Assistant \u2014 it configures the network and routes workloads automatically.\nFor agentic AI playbooks on DGX Spark, visit[ the NemoClaw](http://build.nvidia.com/spark/nemoclaw),[ OpenClaw](http://build.nvidia.com/spark/openclaw),[ Hermes Agent](http://build.nvidia.com/spark/hermes-agent) and[ OpenShell](http://build.nvidia.com/spark/openshell) pages on build.nvidia.com.\n#ICYMI: More Updates From NVIDIA Local AI\nExplore playbooks on[ build.nvidia.com/spark](http://build.nvidia.com/spark) for DGX Spark. The following playbooks are coming soon to 64GB devices:\n- Serve LLMs With vLLM\n- Run OpenClaw With a Local LLM\n- Connect Multiple DGX Sparks for Distributed Workloads\nNew Windows PCs powered by [NVIDIA RTX Spark](https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/) are coming this month from Acer, ASUS, Dell, HP, Lenovo, Microsoft and MSI. Sign up for the [RTX Spark newsletter](https://www.nvidia.com/en-us/products/rtx-spark/) to receive future updates.\nAlibaba\u2019s [Qwen-Image-2.1](https://qwen.ai/blog?id=qwen-image-2.1) brings image generation and editing together in a lightweight, open-weight model. It runs locally on NVIDIA RTX GPUs, DGX Spark and DGX Station, giving creators more ways to create and refine images on their own hardware.\nFollow NVIDIA RTX Spark on [X](https://x.com/NVIDIARTXSpark), [Instagram](https://www.instagram.com/nvidiartxspark/), [TikTok](https://www.tiktok.com/@nvidiartxspark) and [Facebook](https://www.facebook.com/NVIDIARTXSpark) \u2014 and stay informed by subscribing to the [NVIDIA Local AI newsletter](https://www.nvidia.com/en-us/ai-on-rtx/?modal=subscribe-ai). Follow NVIDIA Workstation on [LinkedIn](https://www.linkedin.com/showcase/3761136/) and[ X](https://x.com/NVIDIAworkstatn).\nSee[ notice](https://www.nvidia.com/en-eu/about-nvidia/terms-of-service/) regarding software product information.",
-    "topic": "infrastructure",
-    "tags": [
-      "release",
-      "models",
-      "agents",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 772957,
-    "title": "recommended reading. caveat: not all models, weights models, excel at using code mode.\n\ngpt family of models is now trained on it. others will likely follow suite. the saving comes from needing less turns , just like parallel tool calls did before.",
-    "url": "https://specifically.open",
-    "published_at": "2026-10-02T09:45:56+00:00",
-    "fetched_at": "2026-10-02T10:40:23+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. caveat: not all models, weights models, excel at using code mode.\n\ngpt family of models is now trained on it. others will likely follow suite. the saving comes from needing less turns , just like parallel tool calls did before.",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "open-source",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 772383,
-    "title": "Stop Renting Your AI's Memory \u2014 Dylan Couzon, Qdrant",
-    "url": "https://www.youtube.com/watch?v=apyrzaWj0Z4",
-    "published_at": "2026-10-02T07:00:14+00:00",
-    "fetched_at": "2026-10-02T10:40:20+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Superintelligence is coming. The real question is who it belongs to.\n\nDylan Couzon, developer relations engineer at Qdrant, argues that frontier-class models now run on hardware you can own, but the most valuable part of the stack, the memory that makes an assistant yours, still lives in someone else's cloud. He breaks memory down into write, retrieve and forget, explains why retrieval beats a big folder of markdown, and runs a live, fully offline demo: a drone that builds its own searchable memory with sub-millisecond queries in a 15 MB footprint, using Qdrant Edge.\n\nIn this talk:\n\u2022 Why owning inference gives you autonomy, and owning memory gives you continuity\n\u2022 The CPU / RAM / disk model for LLMs, context and memory\n\u2022 Why retrieval beats dumping everything into the prompt\n\u2022 A live offline demo of embedded vector memory with Qdrant Edge, plus opt-in shared 'hive mind' memory\n\nSPEAKER\nDylan Couzon, Developer Relations Engineer, Qdrant\nLinkedIn: https://www.linkedin.com/in/dcouzon/\nX: https://x.com/dylancouzon\nGitHub: https://github.com/Dylancouzon\n\nLINKS\nQdrant: https://qdrant.tech\nQdrant Edge docs: https://qdrant.tech/documentation/edge/\nQdrant Edge launch post: https://qdrant.tech/blog/qdrant-edge/\nOn-device memory course (GitHub): https://github.com/Dylancouzon/on-device-memory-course\n\nCHAPTERS\n0:00 Intro\n0:12 Who will superintelligence belong to?\n1:12 Geniuses with no long-term memory\n1:52 Frontier-class models on your own hardware\n2:47 The rented AI stack\n3:21 What renting really costs\n4:36 Autonomy vs continuity\n5:21 What memory actually is\n6:01 The infrastructure was ready years ago\n6:26 Where your memory lives today\n6:41 Model = CPU, context = RAM, memory = disk\n7:30 Embedded vector search with Qdrant Edge\n8:10 Live demo: a drone that remembers\n9:40 Semantic search over memories in under 1 ms\n10:25 Hive mind: syncing memory to the cloud\n10:50 From drones to agents and code assistants\n11:44 Memory for your whole day\n13:04 Shared memory, with consent\n14:09 Who should own your AI?\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIMemory #LocalAI #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/apyrzaWj0Z4",
-    "topic": "hardware",
-    "tags": [
-      "hardware",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 772368,
-    "title": "Build Your Own Open-Source Dots with Pi and Telegram",
-    "url": "https://www.youtube.com/watch?v=HU03WDFB_tQ",
-    "published_at": "2026-10-02T05:47:34+00:00",
-    "fetched_at": "2026-10-02T10:40:20+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "Build your own dots-style, always-on AI assistants with Pi and pi-gateway, using your choice of models on a VPS or another always-on machine. This tutorial walks through agent workspaces, skills, Google Workspace access, and a Telegram message gateway with local SQLite session routing. See a personal assistant and a research agent in action, then learn where to extend the gateway with more platforms and automations; those extensions are future work, not built-in features demonstrated here.\n\n---\n\ud83d\udd17 *Links*\n- pi-gateway: https://github.com/alejandro-ao/pi-gateway/\n- Tau: https://github.com/huggingface/tau\n- Pi: https://pi.dev/\n- OpenAI dots: https://openai.com/index/introducing-dots/\n- Hugging Face: https://huggingface.co/\n- Hermes Agent: https://github.com/NousResearch/hermes-agent\n- OpenClaw: https://github.com/openclaw/openclaw\n- Google Workspace CLI: https://github.com/googleworkspace/cli\n- Firecrawl: https://www.firecrawl.dev/\n- Herdr: https://github.com/alejandro-ao/herdr\n- Telegram bot tutorial: https://core.telegram.org/bots/tutorial\n- BotFather: https://t.me/BotFather\n- Telegram user ID helper (third-party): https://t.me/userinfobot\n- OpenRouter: https://openrouter.ai/\n- Space Bunny Alpha: https://openrouter.ai/stealth/space-bunny-alpha\n- Kimi K3: https://openrouter.ai/moonshotai/kimi-k3\n- NVIDIA DGX Spark: https://www.nvidia.com/en-us/products/workstations/dgx-spark/\n- uv: https://docs.astral.sh/uv/\n- SQLite: https://www.sqlite.org/\n- Model Context Protocol: https://modelcontextprotocol.io/\n\n---\n\ud83e\udd13 *Topics Covered*\n- Always-on agents with custom workspaces and skills\n- Telegram gateways and persistent session routing\n- Personal assistant and research agent demos\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Build your own open-source dots\n1:55 Setting up always-on agents and workspaces\n3:49 Adding skills and Google Workspace access\n5:20 Testing your personal assistant with Pi and Tau\n7:12 Message gateway architecture and session routing\n11:42 Installing pi-gateway\n12:43 Connecting Telegram and configuring your assistant\n15:03 Starting the gateway and chatting with your agent\n16:56 Adding a research agent with Kimi K3\n19:09 Recap and ideas for extending the gateway\n\n\ud83d\udc4b *Connect with me*\nMy website: https://alejandro-ao.com/\nX (Twitter): https://x.com/_alejandroao\nLinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/HU03WDFB_tQ",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 769768,
-    "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
-    "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
-    "published_at": "2026-10-02T04:01:31+00:00",
-    "fetched_at": "2026-10-02T04:21:27+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "Image-Text-to-Text \u2022 28B \u2022 Updated \u2022 6.93M \u2022 16.7k\n[\n](#autosynthdata-generating-training-data-for-enterprise-agents)\nAutoSynthData: Generating Training Data for Enterprise Agents\n[Enterprise Article](/blog)\nEnterprises need agents that work well in their own environments. The work they ask these agents to do is shaped by the systems they use, the rules they follow, and the state of their data. A model may be broadly capable and still struggle with a particular environment: a workflow it handles poorly, a combination of tools it misuses, or a constraint it fails to respect. Those are the weaknesses an enterprise needs to improve.\nThe difficulty is turning those weaknesses into training data. An individual failure tells us something, but training a model requires many new tasks that exercise the same capability in different situations. Those tasks must also be possible to complete in the environment, resemble work someone would actually request, and have a reliable way to check whether the agent succeeded.\nAt ServiceNow CoreAI, we built AutoSynthData to turn those capability gaps into training data. It uses a target model\u2019s failures and a stronger teacher\u2019s successes to decide what the model should learn next, then generates and validates new tasks that exercise those capabilities. As the model improves, the curriculum shifts toward what it still finds difficult. We illustrate the pipeline with EnterpriseOps Gym ([Malay et al., 2026](https://arxiv.org/abs/2603.13594)), using the [released dataset](https://huggingface.co/datasets/ServiceNow-AI/EnterpriseOps-Gym). We begin by describing the environment an agent operates in and what makes a task useful for training.\n[\n](#what-makes-a-useful-agentic-task)\nWhat makes a useful agentic task?\nAn agentic environment defines the world in which an agent operates: the state it can observe and modify, the tools and APIs it can invoke, and the state transitions produced by its actions.\nA task is instantiated within this environment. We use the following abstraction:\ntask = (system specification, user prompt, verifier)\n[\n](#system-specification)\nSystem specification\nThe system specification defines the constraints under which the agent operates, including system instructions, environment policies, and, when applicable, task-specific initialization such as a seeded database state or a set of knowledge articles.\nThe specification must be compatible with the environment\u2019s tools, state, and supported actions. Its instructions should be clear and avoid arbitrary constraints introduced solely to manufacture difficulty.\n[\n](#agent-facing-task)\nAgent-facing task\nThe user prompt specifies what the user wants the agent to accomplish, together with any user-level constraints. A generated task should satisfy three properties.\nFeasibility. There should exist at least one trajectory in the current environment that satisfies the user prompt while respecting the system specification. This rules out tasks that depend on unavailable tools, inaccessible knowledge, impossible state transitions, or actions prohibited by policy.\nRealism. The user prompt should resemble something a user would plausibly ask in the target environment. The space of executable behaviors is usually much larger than the space of realistic workflows.\nDifficulty. For training, the task should expose a weakness of the current agent. Tasks that are already solved reliably provide little new training signal. The useful region is therefore tasks that are feasible and realistic, but not yet consistently solved.\n[\n](#verifier)\nVerifier\nThe verifier determines whether the resulting trajectory successfully completes the task. It should satisfy three properties.\nConsistency. It should agree with the user prompt, the system specification, and the task-specific environment state.\nSoundness. It should reject trajectories that fail to satisfy the task or violate relevant constraints.\nCompleteness. It should accept valid solutions rather than encode one particular reference trajectory.\nThese properties matter directly during training. A lax verifier can reward incorrect behavior, while an overly restrictive verifier can penalize valid solutions.\n[\n](#overview)\nOverview\nGiven an environment and a target model, AutoSynthData generates training tasks consisting of a system specification, user prompt, and verifier. The generated tasks are grounded in the environment and selected to provide useful training signal for the current model.\nAutoSynthData first evaluates the target model in the environment using diagnostic tasks and identifies patterns in the tasks it struggles to complete. A stronger teacher helps characterize which of those tasks are solvable and what successful behavior looks like. AutoSynthData turns the resulting capability gaps into new executable tasks, checks each task in the environment, and uses accepted samples for post-training. Evaluating the updated model reveals which gaps remain and can guide the next round of generation.\n[\n](#from-model-failures-to-a-curriculum)\nFrom model failures to a curriculum\nAutoSynthData uses evaluation runs in the target environment to identify what the model needs to learn next. In our EnterpriseOps Gym experiment, we run both the target model and a stronger teacher on the evaluation tasks. We examine those runs to identify:\n- the capability being tested;\n- the tools and workflow structure involved;\n- where the target model fails and how the teacher succeeds;\n- the properties that a correct final state must satisfy;\n- the dimensions that can vary while preserving the capability being tested.\nWe distill these findings into sanitized capability specification cards. The evaluation tasks guide what the model should learn, but the generator does not receive their original prompts, entities, trajectories, or verifier details. It receives the cards and uses them to create new tasks with different prompts, states, and solution paths.\n[\n](#generating-and-scaling-tasks)\nGenerating and scaling tasks\nIdentifying a capability gap tells us what to teach, but training requires many varied tasks that exercise it. AutoSynthData uses the specification card to generate those tasks.\nSuppose the target model struggles with tasks that require the following workflow:\nThe generator creates new tasks that exercise this workflow, varying the entities, initial environment state, workflow composition, tool combinations, wording, and difficulty. The stronger teacher then demonstrates a successful trajectory for each task. For supervised fine-tuning (SFT), these demonstrations teach the target model how to apply the capability in new situations.\nAutoSynthData builds the dataset in two phases: first generating and validating core samples, then expanding them into novel variants.\n[\n](#target)\nTarget\nThe target phase creates the core set of training samples from the capability specifications. Workers generate independent tasks in parallel, picking up a new target when they finish. Each candidate goes through validation, execution, solver evaluation, and repair before acceptance. The result is a batch of vetted examples built around what the target model needs to learn.\n[\n](#multiply)\nMultiply\nThe multiply phase expands the dataset by creating novel variants of accepted target samples. Each variant has its own user request, environment state, entity configuration, reference trajectory, and verifier, and must pass the same validation and execution checks. A multiplied sample cannot seed another multiplied sample. This anchors expansion to the vetted target set and limits drift across generations.\n[\n](#implementation-details)\nImplementation details\nTo support both phases, AutoSynthData separates generation control from environment-specific execution. A shared controller coordinates generation, quality control, coverage, and dataset construction, while an adapter handles environment execution, task and state management, reference replay, deterministic verification, solver execution, and task profiling.\nTogether, parallel target generation and multiplication provide a path to training-scale datasets. Their usefulness depends on the checks applied to every candidate: the task must be executable, the solution must work, and the verifier must distinguish success from failure.\n[\n](#high-quality-synthetic-data-needs-more-than-generation)\nHigh-quality synthetic data needs more than generation\nGenerating a plausible request is not enough to produce useful training data. A task may be impossible in the target environment, its reference solution may fail when executed, or its verifier may reward the wrong final state. AutoSynthData checks these properties before accepting a task for training.\nAutoSynthData reviews quality at two levels: individual candidates must pass verification, and batches must provide useful coverage and diversity.\n[\n](#sample-level-verification-and-repair)\nSample-level verification and repair\nEach candidate must clear a quality-control loop before entering the training dataset. We begin with solver evaluation to measure difficulty. In the configuration used here, we favor tasks the target model solves on no more than one of three trials and the stronger solver solves on at least two of three trials. Candidates also undergo positive and negative verification and a bounded repair process.\n[\n](#positive-verification)\nPositive verification\nThe positive gate asks: Does the intended solution solve the generated task?\nThe pipeline executes the reference trajectory in the target environment and checks the resulting state against the candidate\u2019s verifier. This reveals mismatches among the prompt, initial state, solution, and success criteria.\n[\n](#negative-verification)\nNegative verification\nThe negative gate asks: Do relevant incorrect outcomes fail?\nFor example, it can mutate parts of the expected outcome and confirm that those states no longer pass verification. This catches weak verifiers that award success without requiring the intended behavior.\n[\n](#critique-and-repair)\nCritique and repair\nFailed candidates go to a critic before being discarded. The critic examines the sample and its failure, looking for inconsistent state, impossible workflows, incorrect task construction, bad reference trajectories, weak verifier logic, or a mismatch with the intended capability. The critic\u2019s findings guide repairs, with a fixed limit on retries:\ncandidate\n\u2193\nfailure\n\u2193\ncritique / diagnosis\n\u2193\ntargeted repair\n\u2193\nrun the gates again\n\u2193\naccept or retry\nA repaired task must pass the relevant checks again. The diagnosis guides repairs to the existing candidate rather than requiring generation to start over.\nPassing these checks makes a sample eligible for training, but individually valid samples can still form a repetitive or unbalanced dataset. AutoSynthData therefore also reviews generation at the batch level.\n[\n](#batch-level-review)\nBatch-level review\nA batch may overrepresent a few easy task families, miss a capability, or reflect too much generation effort spent on a low-yield pattern.\nA meta-review examines accepted samples, rejected samples, and generation behavior across each batch. It asks:\n- Which task families are overrepresented, and which capability dimensions are missing?\n- Are the same kinds of examples appearing repeatedly?\n- Do particular targets keep failing generation?\n- Are systematic problems appearing in critiques?\n- What guidance should change for the next batch?\nThe controller tracks coverage in the accepted dataset, reduces generation in overrepresented regions, and directs more work toward gaps. When a region repeatedly produces poor candidates, critiques and meta-review guide changes to the generation strategy. These adjustments balance useful learning signal, task quality, coverage, diversity, and low redundancy within the available generation budget and dataset size requirements.\nTogether, these feedback loops improve both individual tasks and the dataset they form: s",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "api",
-      "agents",
-      "benchmark",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
