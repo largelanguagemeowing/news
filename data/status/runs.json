@@ -1,8 +1,38 @@
 [
   {
+    "run_id": "6c950e06db04",
+    "started_at": "2026-10-22T15:29:49+00:00",
+    "ended_at": "2026-10-22T15:30:00+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "39805221999",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/39805221999",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-10-22T15:29:49+00:00",
+        "ended_at": "2026-10-22T15:30:00+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 8,
+          "duplicate_articles": 2190,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 14,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 10164.07
+        }
+      }
+    ]
+  },
+  {
     "run_id": "e3bcb7109056",
     "started_at": "2026-10-22T10:26:40+00:00",
-    "ended_at": "2026-10-22T10:26:50+00:00",
+    "ended_at": "2026-10-22T10:27:01+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "39763017522",
@@ -791,69 +821,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 11480.66
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "392fda5edc9e",
-    "started_at": "2026-10-19T10:26:50+00:00",
-    "ended_at": "2026-10-19T10:27:41+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "39237403776",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/39237403776",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-10-19T10:26:50+00:00",
-        "ended_at": "2026-10-19T10:27:28+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 14,
-          "enriched": 13,
-          "updated": 13,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 0,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "youtube": 9,
-            "jina": 1,
-            "trafilatura": 3,
-            "rss": 1
-          },
-          "per_source": {
-            "ai-engineer": {
-              "attempted": 6,
-              "enriched": 6,
-              "failed": 0
-            },
-            "marios-rec-reading": {
-              "attempted": 4,
-              "enriched": 3,
-              "failed": 1
-            },
-            "hugging-face": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "simon-willison": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "anthropic-news": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            }
-          },
-          "flush_batches": 1,
-          "defuddle_enabled": true,
-          "duration_ms": 38195.46
         }
       }
     ]
