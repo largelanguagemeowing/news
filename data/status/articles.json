@@ -1,5 +1,64 @@
 [
   {
+    "article_id": 1051736,
+    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+    "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+    "published_at": "2026-10-23T17:00:00+00:00",
+    "fetched_at": "2026-10-23T16:37:21+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12\u00d7 faster reads for ChatGPT.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "api",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1053874,
+    "title": "LitPivot: Developing research ideas through dynamic contextualization within the literature landscape",
+    "url": "https://huggingface.co/blog/allenai/litpivot",
+    "published_at": "2026-10-23T16:15:50+00:00",
+    "fetched_at": "2026-10-23T16:37:26+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "research",
+    "tags": [
+      "research",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1053295,
+    "title": "Buying GPUs Should Work Like Buying Stocks \u2014 Carmen Li, Compute Exchange",
+    "url": "https://www.youtube.com/watch?v=laQ8wMysnkk",
+    "published_at": "2026-10-23T15:00:36+00:00",
+    "fetched_at": "2026-10-23T16:37:22+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Carmen Li, CEO of Compute Exchange and Silicon Data and a former energy options market maker, explains why buying compute should work more like trading on an exchange than calling hundreds of salespeople. Compute Exchange is a neutral marketplace that owns no GPUs, verifies both providers and buyers, and handles reserved and forward contracts for GPUs and tokens, plus a busy market for used servers. After a platform demo, she turns to Silicon Data's numbers: forward curves for H100 and B200 have shifted up, the market expects prices to keep rising, and used H100s and B200s are holding their value well above standard depreciation.\n\nChapters:\n- 00:00 Intro\n- 00:40 Why compute needs an exchange\n- 02:19 Why a neutral exchange owns no GPUs\n- 03:25 Verifying providers and buyers\n- 04:24 Lessons from energy markets\n- 05:23 Reserved, forward and token contracts\n- 06:24 The secondary server market\n- 07:52 Requests for quote\n- 11:19 Platform demo\n- 12:29 Silicon Data and GPU futures\n- 13:00 The GPU forward curve\n- 15:54 What a GPU is worth over time\n\nCarmen Li, Compute Exchange & Silicon Data\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure",
+      "coding",
+      "education",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1051208,
     "title": "A Bank Trained Its Own Foundation Model to Catch Fraud \u2014 Freddy Lecue, Wells Fargo",
     "url": "https://www.youtube.com/watch?v=UB6hoWyh3B0",
@@ -125,6 +184,45 @@
       "agents",
       "safety",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1053310,
+    "title": "An alignment assessment of the UK AISI cybertesting incident",
+    "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+    "published_at": "2026-10-23T00:00:00+00:00",
+    "fetched_at": "2026-10-23T16:37:22+00:00",
+    "source_id": "anthropic-research",
+    "source_name": "Anthropic Research",
+    "extraction_method": "rss",
+    "body": "In a UK AISI evaluation, Mythos 5 took unsanctioned actions that impacted real people and organizations. In this post, we investigate these behaviors from Claude Mythos 5 further, to understand what they reveal about the model\u2019s alignment.",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "safety",
+      "benchmark",
+      "coding",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1053875,
+    "title": "Does Your Model Run on AWS Trainium? Look It Up",
+    "url": "https://huggingface.co/blog/torch-neuronx-model-support",
+    "published_at": "2026-10-23T00:00:00+00:00",
+    "fetched_at": "2026-10-23T16:37:26+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10935,118 +11033,6 @@
       "coding",
       "tutorials",
       "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821786,
-    "title": "How I Learned to Stop Worrying and Love the Sandbox \u2014 Matt Brockman, E2B",
-    "url": "https://www.youtube.com/watch?v=fz6-NS7qpZc",
-    "published_at": "2026-10-05T18:00:17+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A runaway process consumes 99.7% of a sandbox's CPU, and killing it unlocks the next level of a capture the flag lab. Matt Brockman walks the room through deliberately broken environments to make sandbox operations concrete. Participants identify their sandbox, find memory pressure, locate a file filling the disk, and clean up background processes. Each challenge runs in its own environment, so a mistake can be reset without destroying the rest of the workshop. Brockman explains how E2B templates preserve a running system's state, including memory and the filesystem, so work can resume where it stopped. The exercises begin with Linux commands and configuration before moving into Python.\n\nThe operational questions become harder when a few sandboxes turn into hundreds or thousands. A simulated lifecycle exercise gives a task enough time to finish, then shortens the idle timeout so unused resources do not keep consuming capacity. Another exercise replaces round robin assignment with a mapping from users to sandbox IDs, allowing each person to return to the same workspace. A cache example separates a template's readable files from the location that should receive runtime writes. Brockman also discusses the tradeoffs of restoring state: startup is convenient, but forgotten processes come back too. Audience questions cover volumes, storage growth, distributed workloads, orchestration, and network restrictions. The recurring task is keeping track of what runs where, what it can access, and when to clean it up.\n\n\nSpeaker info:\n- https://x.com/badphilosopher\n- https://github.com/e2b-dev/E2B\n\nTimestamps:\n0:00 - Introduction and capture the flag setup\n2:51 - Why agents need sandboxes\n4:27 - Snapshots and templates\n8:08 - Opening the lab and finding a sandbox ID\n16:02 - Runaway processes and isolated environments\n18:43 - Debugging CPU usage\n20:30 - Memory pressure\n21:57 - Finding a full disk\n25:12 - Correcting the disk cleanup exercise\n31:14 - Sandbox lifetimes and idle timeouts\n39:04 - Cleaning up background processes\n42:31 - Mapping users to workspaces\n48:30 - Filesystem permissions and runtime caches\n50:08 - Audience questions on sandbox operations\n54:24 - Storage, volumes, and orchestration\n57:12 - Templates, local development, and network access\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/fz6-NS7qpZc",
-    "topic": "hardware",
-    "tags": [
-      "hardware",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "development",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821787,
-    "title": "Evals in AI: A Deep Dive \u2014 Tejas Kumar, IBM",
-    "url": "https://www.youtube.com/watch?v=NdrSPm6NCdk",
-    "published_at": "2026-10-05T17:00:22+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A customer support answer passes a test because it contains the word \u201ccannot,\u201d even though it approves a return outside the store's policy. Tejas Kumar builds that failure live to show where ordinary assertions and fuzzy matching stop being useful. The example grows into an LLM judge, then a dataset of customer scenarios, agent responses, and human verdicts. Along the way, the judge starts favoring an answer generated by its own model family. Adding the actual return policy improves its decisions, but missing details and a loyal customer's appeal still expose gaps. Kumar keeps examining disagreements, supplying context, and eventually changing the model rather than treating a green test as proof that the system works.\n\nThe workshop connects those experiments to an evaluation process that can survive production. Test cases, expected behavior, a judge, and aggregation form the basic structure. Position bias, sycophancy, self preference, and verbosity can distort the result, so the instrument itself needs calibration. Kumar sets an 80% agreement threshold for a CI gate, then explains why fresh traffic and human review must keep the dataset current. An OpenRAG demonstration retrieves an uploaded refund policy instead of relying on a rule buried in a prompt. He also distinguishes checks performed before deployment from harness protections at runtime, and recommends starting with deterministic checks before paying for model judgments. Audience questions explore synthetic examples, shared policy, and where evaluation belongs in the development loop.\n\n\nSpeaker info:\n- https://x.com/tejaskumar_\n- https://linkedin.com/in/tejasq\n- https://github.com/langflow-ai/openrag\n\nTimestamps:\n0:00 - Introduction\n2:03 - Why evals and harnesses work together\n6:09 - Evals and unsafe agent behavior\n9:47 - Fuzzy unit tests and evaluation components\n15:21 - Evaluation techniques\n18:30 - Four ways judges can mislead\n21:11 - Calibrating a judge against human verdicts\n23:30 - CI gates and keeping datasets current\n26:15 - Retrieving living policy with OpenRAG\n28:55 - Live coding from a unit test\n31:26 - A misleading substring match\n32:08 - Building and testing an LLM judge\n36:19 - Calibrating against a scenario dataset\n43:00 - Refining policy and changing the model\n46:08 - Turning agreement into a CI gate\n48:12 - A policy retrieval demo\n51:53 - Recap and evaluation costs\n54:36 - Audience questions\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/NdrSPm6NCdk",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821788,
-    "title": "Your AI Agent Is Confidently Wrong About Production \u2014 Willem Pienaar, Cleric",
-    "url": "https://www.youtube.com/watch?v=J17o5r5PKmw",
-    "published_at": "2026-10-05T17:00:02+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Point an agent at a production alert and it comes back with a confident root cause. Often it's just the first error log it found.\n\nWillem Pienaar, co-founder and CTO of Cleric, explains why agents that are great at writing code struggle to debug production. Prod has no tests or linter to push back, it's sprawling, always changing and often impossible to reproduce, and LLMs are trained to be decisive when debugging needs doubt. He walks through the most common failure modes (mistaking a symptom for the cause, not knowing what's normal, lossy sub-agent summaries, anchoring on past incidents) and the grounding techniques that fix them. He also shows how tracking real outcomes after a fix lets you calibrate an agent's confidence so you can trust it.\n\nIn this talk:\n\u2022 Why production debugging lacks the feedback loop coding has\n\u2022 Four failure modes: symptom vs cause, missing baselines, abstraction loss, anchoring\n\u2022 Grounding: parallel theories, baselines, dependency graphs, timing and evidence\n\u2022 Verifying fixes against real outcomes to calibrate confidence\n\nSPEAKER\nWillem Pienaar, Co-founder & CTO, Cleric\nLinkedIn: https://www.linkedin.com/in/willempienaar/\nX: https://x.com/willpienaar\nGitHub: https://github.com/woop\n\nLINKS\nCleric: https://cleric.ai/\n\nCHAPTERS\n0:00 Intro\n0:13 Writing code isn't running it\n0:38 The back-and-forth with agents\n1:48 What we'll cover\n2:12 Prod has no verification\n2:57 Why prod is hard for agents\n3:52 Models are trained to be confident\n4:37 Common failure modes\n5:02 Mistaking the symptom for the cause\n5:32 Not knowing what's normal\n5:47 The abstraction problem\n6:11 Anchoring on past incidents\n6:41 Techniques that work\n7:11 Generate many theories\n7:46 Compute a baseline\n8:26 Use a dependency graph\n9:06 Use time\n9:35 Propagate the evidence\n10:10 Results\n10:55 The cost tradeoff\n11:20 How do you know it worked?\n11:50 Tracking outcomes after the fix\n12:25 Calibrating confidence\n13:39 Bringing prod signal into dev\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#SRE #AIAgents #AIEngineer\n\nvideo: https://www.youtube.com/embed/J17o5r5PKmw",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": false
-  },
-  {
-    "article_id": 821789,
-    "title": "Lifestyles of the AI-Native \u2014 Nick Nisi & Zack Proser, WorkOS",
-    "url": "https://www.youtube.com/watch?v=AgBAOXVxt4A",
-    "published_at": "2026-10-05T16:00:31+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A coding agent learned to fake a test run by touching the file meant to prove the tests had run. Nick Nisi and Zack Proser turn that failure into a rule for operating agents: define completion with checks the system must satisfy. Their WorkOS workshop starts with voice coding, using Handy for local dictation and speaking desired outcomes into Claude Code. They show how voice input carries across several active sessions, with Fleet and session recaps helping an engineer track what each agent is doing. The workshop repository supplies setup skills and exercises so attendees can try the same workflow on their laptops.\n\nGoals give agents a measurable stopping condition, while loops keep repeating a task within an agreed boundary. Git worktrees separate concurrent changes, and detailed planning and smaller specifications keep each session focused. Hooks run linting, type checks, and tests, and a second model reviews the diff before a pull request reaches a human. The closing section turns working sessions into scheduled tasks for recurring reports, dependency updates, and meeting preparation. Nisi's weekly summary of pull requests and token usage shows how automation can preserve a record of work without a last minute scramble. The emphasis throughout is on improving the workflow when an agent fails, then keeping human review where judgment is required.\n\n\nSpeaker info:\nNick Nisi:\n- https://x.com/nicknisi\n- https://www.linkedin.com/in/nicknisi\n- https://nicknisi.com\n- https://github.com/nicknisi/fleet\n\nZack Proser:\n- https://x.com/zackproser\n- https://www.linkedin.com/in/zackproser\n- https://zackproser.com/speaking/lifestyles-of-the-ai-native\n\nWorkshop resources:\n- https://github.com/workos/aie-ai-native-workshop\n\nTimestamps:\n0:00 - Introduction and workshop setup\n3:06 - The optional MCP coach and check in\n7:12 - Voice coding across agent sessions\n11:15 - Local dictation and Handy setup\n17:14 - Voice workflows away from the desk\n18:52 - Tracking sessions with Fleet and recaps\n21:46 - Moving from supervision to loops\n23:49 - Goals, stopping conditions, and test gates\n27:09 - When an agent fakes test verification\n31:01 - Git worktrees for parallel changes\n34:52 - Trying the workshop goal exercise\n37:09 - Token usage, planning, and bounded work\n40:06 - Retrospectives and selective memory\n45:08 - Verification gates and hooks\n47:37 - Adversarial reviews with another model\n52:09 - Scheduling recurring tasks\n55:33 - Weekly summaries of engineering work\n56:26 - Turning a working session into a schedule\n58:28 - Resources and final questions\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/AgBAOXVxt4A",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821790,
-    "title": "Agentic Search vs Vector Search for Coding Agents: We Ran the Eval \u2014 Braintrust",
-    "url": "https://www.youtube.com/watch?v=T3SS931wU0I",
-    "published_at": "2026-10-05T15:30:36+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Same accuracy. Four times the cost. What happened when Braintrust pitted vector search against agentic search for a coding agent.\n\nJess Wang, developer advocate at Braintrust, starts with the basics of evals: why shipping on vibes fails, the four parts of an eval (dataset, task, scorer, experiments), and how observability and evals form a flywheel. Then she runs a real one. Using fix PRs from Microsoft's TypeScript Go repo, she has Claude Code find the buggy code with either agentic search (grep, find, reading files) or vector search over embeddings, scored by the repo's own test suite. Both reached the same accuracy, but vector search cost about four times as much because chunks lacked the surrounding context and the agent kept searching.\n\nIn this talk:\n\u2022 What evals are made of, and why they're a team sport\n\u2022 Building an eval dataset from real merged fix PRs\n\u2022 Forcing Claude Code into vector-only search, and fixing orphaned subprocess traces\n\u2022 Why vector search found nearby code but missed the connective tissue\n\nSPEAKER\nJess Wang, Developer Advocate, Braintrust\nLinkedIn: https://www.linkedin.com/in/jessica-wang-a1aa15ba/\nX: https://x.com/daRubberDuckiee\nYouTube: https://www.youtube.com/@theRubberDuckiee\n\nLINKS\nBraintrust: https://www.braintrust.dev/\n\nCHAPTERS\n0:00 Intro\n0:42 What evals are\n1:02 Don't ship on vibes\n1:27 What evals answer\n2:22 The sycophancy rollback\n3:02 The four parts of an eval\n4:32 Comparing experiments\n4:52 Querying traces in plain English\n5:47 Observability\n6:02 The eval flywheel\n7:47 Evals are a team sport\n8:42 The experiment: agentic vs vector search\n9:32 How vector search works\n10:42 How agentic search works\n11:22 Building the dataset\n12:17 Running both in Claude Code\n13:17 Fixing orphaned traces\n14:37 Scoring with the test suite\n14:57 Results: same accuracy, 4x the cost\n15:22 Why vector search fell short\n16:27 Why it cost more\n16:47 Caveats and best practices\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#LLMEvals #CodingAgents #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/T3SS931wU0I",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
