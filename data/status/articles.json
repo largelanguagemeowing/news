@@ -1,5 +1,157 @@
 [
   {
+    "article_id": 1056898,
+    "title": "Switch Angel Taught me how to Make Music from Scratch",
+    "url": "https://www.youtube.com/watch?is=jXxCFNxCPfnaa5XV&v=HMUZ01p0akw&feature=youtu.be",
+    "published_at": "2026-10-23T19:45:09+00:00",
+    "fetched_at": "2026-10-23T20:13:17+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing. switch angel is awesome.",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056317,
+    "title": "Introducing Kimi K3.1 Pro",
+    "url": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+    "published_at": "2026-10-23T19:40:54+00:00",
+    "fetched_at": "2026-10-23T20:13:13+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://www.kimi.ai/blog/kimi-k3-1-pro\">Introducing Kimi K3.1 Pro</a></strong></p>\nKimi K3.1 Pro landed on the Kimi API today - it's not yet open weights, but Moonshot  promise \"Full model weights will be released by Nov 4, 2026\".</p>\n<p>They're also offering a \"Highspeed\" version that's 2-3x faster, at twice the price (except for input token cache hits, which are priced the same).</p>\n<p>The <a href=\"https://platform.kimi.ai/docs/pricing/chat\">US dollar pricing</a> is $2.00/million tokens for input and $10/million for output - the same as GPT-6.1 Sol and half the price of Claude Opus 5.5.</p>\n<p>Moonshot's own benchmarks show Kimi as approximately level with Opus 5.5 and GPT-6 Astra - beating them on a few benchmarks, coming close on others.</p>\n<p>Artificial Analysis <a href=\"https://artificialanalysis.ai/models/kimi-k3-1-pro\">scored Kimi at 55</a> - ahead of Claude Fable 5.1, GPT-6 Astra, and Gemini 4 Argon (all at 53) and behind only Claude Opus 5.5 (58).</p>\n<p>This is the first time a (soon-to-be) open weight model has scored this highly against the frontier.</p>\n<p>I tried it out via the <a href=\"https://platform.kimi.ai/docs/get-your-api-key\">Moonshot API</a> using the <a href=\"https://llm.datasette.io/en/stable/other-models.html#openai-endpoint\">llm openai endpoint</a> command I added to <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-32\">LLM 0.32</a> back in August:</p>\n<pre><code>llm openai endpoint \\\n  https://api.moonshot.ai/v1 \\\n  --key kimi \\\n  -m kimi-k3.1-pro \\\n  \"Generate an SVG of a pelican riding a bicycle\" \\\n  --responses \\\n  -o reasoning_effort low \\\n  &gt; kimi-k3.1-pro-pelican-low.stdout.txt \\\n  2&gt; kimi-k3.1-pro-pelican-low.stderr.txt\n</code></pre>\n<p><code>llm openai endpoint</code> can run prompts against any OpenAI-compatible endpoint but doesn't log the results, hence the extra options to save stdout and stderr (the reasoning trace).</p>\n<p>Here <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F9b7181492209387da1d4f53002f26663\">are the pelicans</a> I got for Kimi K3.1 Pro on the three reasoning levels it supports -  low, medium, and max. This is max:</p>\n<p><img alt=\"It's pretty solid - feet are on the pedals, bicycle frame is good, nice beak. Both legs are on the same side of the Fram though.\" src=\"https://static.simonwillison.net/static/2026-10-23/image-2.png\" /></p>\n<p>For comparison, I ran fresh <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Feba9a4283c9e94cbbb5325902a3921a8\">pelicans against Kimi K3</a> on those three reasoning levels.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=50212065\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a>, <a href=\"https://simonwillison.net/tags/ai-in-china\">ai-in-china</a>, <a href=\"https://simonwillison.net/tags/moonshot\">moonshot</a>, <a href=\"https://simonwillison.net/tags/kimi\">kimi</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "benchmark",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056589,
+    "title": "Real AI Agent Attacks and What Would Have Stopped Them \u2014 Andrey Rybka, Bloomberg",
+    "url": "https://www.youtube.com/watch?v=5O6jLtoeKrg",
+    "published_at": "2026-10-23T19:00:34+00:00",
+    "fetched_at": "2026-10-23T20:13:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Andrey Rybka of Bloomberg walks through real security incidents involving AI agents and the controls that would have stopped each one: an agent that escaped its sandbox and took 17,600 actions over four and a half days, a zero-click email injection, instructions hidden in Morse code that drained a wallet, data smuggled out through DNS lookups, a poisoned MCP package, and an agent that dropped a production database after promising not to touch prod. His layered defense: one identity per agent with short-lived scoped credentials, treat all input as hostile, route every tool call through a deterministic broker, default-deny outbound traffic including DNS, and require human sign-off for high-value actions.\n\nChapters:\n- 00:00 Intro\n- 00:40 An agent that escaped its sandbox\n- 02:07 Autonomy vs. blast radius\n- 03:04 The layered defense toolbox\n- 03:33 Identity and trust\n- 05:04 Prompt and input defense\n- 06:09 The rule of two\n- 06:36 Tool and action governance\n- 07:41 The Morse code attack\n- 08:38 Sandboxing and DNS exfiltration\n- 09:33 Data protection and memory\n- 11:32 Governance and observability\n- 13:18 Recap: three priorities\n\nAndrey Rybka, Bloomberg: https://www.bloomberg.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "safety",
+      "coding",
+      "policy",
+      "events",
+      "media"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056544,
+    "title": "The most vulnerable week in internet history...",
+    "url": "https://www.youtube.com/watch?v=SMGg7iisHmc",
+    "published_at": "2026-10-23T18:19:58+00:00",
+    "fetched_at": "2026-10-23T20:13:15+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Semgrep Guardian catches the risky code and packages your agent introduces. Try it free for 60 days: https://semgrep.dev/onboarding/guardian?offer=fireship_202610&amp;utm_source=fireship&amp;utm_medium=referral&amp;utm_campaign=2026-10_fireship_guardian_campaign\n\nPHP2Shell, a backdoored Python package with 23 million weekly downloads, a GitLab bug dating back to 2014, rogue AI agents inside bank accounts, and a certificate authority generating HTTPS keys from numbers under 256 \u2014 let's break down the craziest week in the history of the internet.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "media",
+    "tags": [
+      "agents",
+      "safety",
+      "coding",
+      "education",
+      "media",
+      "news"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056529,
+    "title": "AI News: 24 Things You Need To Know This Week",
+    "url": "https://www.youtube.com/watch?v=TVRCcMlvR10",
+    "published_at": "2026-10-23T17:40:19+00:00",
+    "fetched_at": "2026-10-23T20:13:15+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Sign into Hyperagent with your existing ChatGPT plan, or choose a paid plan and get $100 in bonus credits: https://hyperagent.com/invite/MATT100?utm_source=youtube&amp;utm_medium=influencer&amp;utm_campaign=MATT100\n\nHere's the AI news you probably missed this week! Anthropic introduces Claude Duet, AI-powered cybersecurity threats are raising serious concerns, and OpenAI continues rolling out new updates. Plus, Ideogram's new vector model, ElevenLabs Chimera, and a rapid-fire roundup of the latest AI advancements.\n\nSharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nClaude Duet: https://claude.com/resources/articles/claude-duet\nPHP Security Vulnerabilities: https://www.theverge.com/tech/1016574/php2shell-security-vulnerability-websites-down\nOpenAI Patch the Planet: https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/\nRailway Security Breach: https://blog.railway.com/p/security-disclosure-wednesday-october-21st\nOpenAI 28 Days of Shipping: https://x.com/thsottiaux/status/2106845241357824205\nGPT-6 Astra Pro Update: https://x.com/OpenAI/status/2111192259073094035\nCodex & Work Usage Improvements: https://x.com/thsottiaux/status/2111244596131111253\nAdditional OpenAI Update 1: https://twitter.com/thsottiaux/status/2111990254408434095\nAdditional OpenAI Update 2: https://twitter.com/thsottiaux/status/2112712984644784534\nChatGPT Locked Chats: https://techcrunch.com/2026/10/20/chatgpt-now-lets-you-lock-your-chats/\nOpenAI Decisions API: https://openai.com/index/decisions-api/\nIdeogram Vector 1.0: https://x.com/ideogram_ai/status/2113300317584720259\nElevenLabs Chimera: https://www.youtube.com/watch?v=InsqQFUWyXI\nPerplexity Decision Models: https://x.com/AravSrinivas/status/2111181956444827695\nPerplexity Computer on Mac: https://www.perplexity.ai/hub/blog/perplexity-computer-now-runs-fully-local-on-mac\nWebsites Blocking AI Agents: https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web\nYelp AI Restaurant Calls: https://techcrunch.com/2026/10/20/yelp-can-now-call-on-your-behalf-to-check-wait-times-at-a-restaurant/\nMistral Voxtral 3: https://mistral.ai/news/voxtral-3/\nCanva Craft: https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/\nOpenAI Aurora Image Model Rumors: https://www.testingcatalog.com/openai-possibly-testing-gpt-image-3/\nZoom Deepfake Detection: https://news.zoom.com/zoomtopia-2026-security/\nMicrosoft MAI-DxO: https://microsoft.ai/news/building-medical-superintelligence/\nUnitree H2-X Humanoid Robot: https://x.com/UnitreeRobotics/status/2112819774573179175\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n00:00 Claude Duet: Anthropic's New AI Agent\n02:47 Major AI Cybersecurity Threats\n07:54 Hyperagent (Sponsor)\n08:57 OpenAI's Latest Updates\n12:25 Ideogram's New AI Vector Generator\n13:24 ElevenLabs Chimera: AI Video Generation\n16:02 Perplexity's New AI Models and Computer\n17:14 Websites Are Blocking AI Agents\n20:28 Yelp's AI Agent and Mistral Voxtral 3\n21:47 Canva Craft and New AI Image Models\n23:18 AI Deepfake Detection and Medical AI\n24:29 Unitree's Humanoid Robot Demo",
+    "topic": "media",
+    "tags": [
+      "media",
+      "release",
+      "models",
+      "api",
+      "agents",
+      "safety",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056590,
+    "title": "Why Compute Still Trades in Group Chats \u2014 Affaan Mustafa & Alejandro Soumah Fernandez, Jump Trading",
+    "url": "https://www.youtube.com/watch?v=GCse4OMzY8U",
+    "published_at": "2026-10-23T17:18:49+00:00",
+    "fetched_at": "2026-10-23T20:13:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Affaan Mustafa and Alejandro Soumah Fernandez lead compute trading at Jump Trading. They explain why most GPU capacity still trades out of public view: private quotes, bilateral contracts and deals struck over Slack, X and Telegram. They look at why GPU prices have held up even as token prices fell, how chips, power, buildings and capital all feed into the price of a GPU hour, and why mid-size companies get squeezed when a 15 to 25% prepayment on a three-year contract can eat a whole funding round. They also cover brokers, exchanges, futures and flexible contracts, export controls, and why the market needs standard contracts and well-capitalized players to bridge buyers and suppliers.\n\nChapters:\n- 00:00 Intro\n- 00:28 What a dark pool of compute is\n- 02:26 Cheaper tokens, more usage\n- 03:31 Why GPU prices held up\n- 05:08 Chips, power, buildings and capital\n- 06:06 Who's in the market\n- 07:32 The middle-market financing gap\n- 10:38 Build, colocate or rent\n- 12:50 Compute procurement and runway\n- 13:27 Who places capacity\n- 15:39 Why every deal is bespoke\n- 17:18 Structures for mismatched risk\n- 18:15 Policy and export controls\n- 19:17 Where the opportunity is\n\nAffaan Mustafa & Alejandro Soumah Fernandez, Jump Trading: https://www.jumptrading.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "infrastructure",
+    "tags": [
+      "api",
+      "safety",
+      "infrastructure",
+      "coding",
+      "funding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056591,
+    "title": "How OpenAI Built ChatGPT for Bankers and Analysts \u2014 Joseph Kim, OpenAI",
+    "url": "https://www.youtube.com/watch?v=opHmX7qClzE",
+    "published_at": "2026-10-23T17:00:10+00:00",
+    "fetched_at": "2026-10-23T20:13:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Joseph Kim leads ChatGPT for Financial Services, which launched a month before this talk with design partners Morgan Stanley and Evercore. He demos the product and explains the \"capability overhang\": the gap between what models can do and the value people actually get from them at work. He covers why the team licensed and indexed financial data themselves instead of relying on existing MCP connectors, and how firm templates, interactive charts and citation viewers were built on the same ChatGPT plugin platform open to developers. He then looks at where models are headed, the point where a task crosses the \"threshold of usefulness,\" and his three bets for finance in 2027.\n\nChapters:\n- 00:00 Intro\n- 01:07 What ChatGPT for Financial Services does\n- 02:37 Demo\n- 04:12 The capability overhang\n- 05:07 What Codex usage taught us\n- 06:01 Licensing and indexing financial data\n- 06:59 Firm templates, charts and citations\n- 07:55 Built on the ChatGPT plugin platform\n- 09:26 Where models are headed\n- 12:55 The threshold of usefulness\n- 14:50 Finance-specific training\n- 16:49 Proactive, persistent agents\n- 17:51 Three bets for finance in 2027\n\nJoseph Kim, OpenAI: https://openai.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "agents",
+      "coding",
+      "events",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1051736,
     "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
     "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
@@ -54,6 +206,27 @@
       "education",
       "events",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1055000,
+    "title": "Securing our frontier model training environment",
+    "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+    "published_at": "2026-10-23T10:00:00+00:00",
+    "fetched_at": "2026-10-23T20:13:13+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "benchmark",
+      "infrastructure",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -205,6 +378,44 @@
       "benchmark",
       "coding",
       "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056605,
+    "title": "Claude Duet Safety, Privacy, and Security",
+    "url": "https://claude.com/resources/articles/claude-duet-safety-privacy-and-security",
+    "published_at": "2026-10-23T00:00:00+00:00",
+    "fetched_at": "2026-10-23T20:13:16+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Claude Duet is a proactive agent that works for you, even while you\u2019re away. It builds on two layers of protection: safety training in the Claude model itself and the safeguards that exist in products like Claude Code and Claude Managed Agents. On top of those, we added new protections for working across your accounts and acting on your behalf.",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1056604,
+    "title": "Claude Cowork and chat come together for Enterprise",
+    "url": "https://claude.com/resources/articles/unified-claude-enterprise",
+    "published_at": "2026-10-23T00:00:00+00:00",
+    "fetched_at": "2026-10-23T20:13:16+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Claude Cowork and chat come together for Enterprise",
+    "topic": "enterprise",
+    "tags": [
+      "models",
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10811,228 +11022,6 @@
       "infrastructure",
       "coding",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 823898,
-    "title": "Quoting Felix Rieseberg",
-    "url": "https://simonwillison.net/2026/Oct/5/felix-rieseberg/",
-    "published_at": "2026-10-05T23:56:47+00:00",
-    "fetched_at": "2026-10-06T02:24:22+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "5th October 2026\nThe \"old\" version of Cowork runs model inference in the cloud, executing tool calls in an Anthropic-provided VM we shipped to your computer. We added the VM for capability, safety, and security reasons - mapping in just the data you explicitly added to your session. People loved what they were able to do with Claude but didn't love the disk, battery, and performance cost of running the VM locally. Also, people didn't love that closing your laptop means the work stops.\nThe \"new\" version of Cowork runs model inference and the VM in the cloud. Each session gets its own sandbox, not sharing state with other sessions. When the VM needs something on the users' device (like a file), the desktop app is responsible for that file access tool call. [...]\nWe think this solves a lot of problems we've heard about (like using Cowork from a phone, keeping work running, or getting all the same power without losing battery to the VM)\n\u2014 [Felix Rieseberg](https://twitter.com/felixrieseberg/status/2107206431376334975), Anthropic, see also [this help page](https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile#h_f951c27c48)\nRecent articles\n[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026[OpenAI DevDay 2026 live blog](/2026/Sep/29/openai-devday-2026-live-blog/)- 29th September 2026[2026 in LLMs (so far)](/2026/Sep/27/2026-in-llms-so-far/)- 27th September 2026",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "models",
-      "safety",
-      "infrastructure",
-      "coding",
-      "hardware",
-      "news"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826163,
-    "title": "Your LLM Judge Is a Confident Liar: Building Better Verifiers \u2014 Browserbase",
-    "url": "https://www.youtube.com/watch?v=xLxhT2ZI7UM",
-    "published_at": "2026-10-05T23:30:05+00:00",
-    "fetched_at": "2026-10-06T09:14:19+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "The official judge said the agent succeeded 74% of the time. A better verifier said 38%.\n\nMiguel Gonz\u00e1lez Fern\u00e1ndez, tech lead for Browserbase's agent platform, and Corby Rosset, researcher at Microsoft Research, present their research on verifiers for computer-use and web agents. Deterministic evals stopped scaling as agents improved, and the LLM judges bundled with popular web benchmarks turned out to be confidently wrong. Train against them and you get a more confident liar, not a better agent. They explain how the Universal Verifier works: task-specific rubrics, ranking the most relevant screenshots as evidence for each criterion, isolating errors, catching hallucinations and separating controllable from uncontrollable failures. It cut false positives from about half to near zero and agreed with humans as often as humans agree with each other. They also test whether an autoresearch loop can rebuild the verifier.\n\nIn this talk:\n\u2022 Why LLM-as-judge verifiers on WebVoyager-style benchmarks overstate success\n\u2022 Rubric design: grade only what was asked, don't cascade errors, check the screenshots\n\u2022 Validating a verifier against human labels with Cohen's kappa\n\u2022 What autoresearch got right building a verifier in a day, and where humans still mattered\n\nSPEAKERS\nMiguel Gonz\u00e1lez Fern\u00e1ndez, Tech Lead, Browserbase\nLinkedIn: https://www.linkedin.com/in/miguelgfz/\n\nCorby Rosset, Researcher, Microsoft Research\nX: https://x.com/corby_rosset\nLinkedIn: https://www.linkedin.com/in/corbyrosset/\n\nLINKS\nPaper: The Art of Building Verifiers for Computer Use Agents: https://arxiv.org/abs/2604.06240\nBrowserbase blog: https://www.browserbase.com/blog/building-verifiers-for-computer-use-agents\nFara + CUAVerifierBench (GitHub): https://github.com/microsoft/fara\nStagehand: https://www.browserbase.com/stagehand\n\nCHAPTERS\n0:00 Intro\n0:22 Browserbase and Microsoft Research\n1:02 The research\n1:36 Why deterministic evals stopped scaling\n2:45 LLM judges: confident liars\n3:47 74% vs 38%: the verifier gap\n4:22 Why existing verifiers fail\n4:57 How the Universal Verifier works\n6:26 Four guiding principles\n7:11 Good vs bad rubrics\n7:51 Don't cascade errors\n8:41 Catching subtle hallucinations\n9:26 Controllable vs uncontrollable failures\n10:28 Verifying the verifier with humans\n11:32 It started correcting humans\n12:23 Better verifier, better training data\n13:37 Can autoresearch build the verifier?\n16:15 Paper, code and benchmark\n17:45 Q&amp;A: beyond the browser\n19:00 Q&amp;A: avoiding overfitting\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AgentEvals #ComputerUse #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/xLxhT2ZI7UM",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826164,
-    "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 201 \u2014 Laurie Voss, Arize AI",
-    "url": "https://www.youtube.com/watch?v=F0TNSmbo5hE",
-    "published_at": "2026-10-05T23:00:09+00:00",
-    "fetched_at": "2026-10-06T09:14:19+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A toy store agent fails a request for toys under $6 because its search tool has no price filter. Laurie Voss turns that missing feature into a live demonstration of an improvement loop: add observability, inspect what happened, find the problem, and ask a coding agent to fix it. The Wonder Toys application starts without traces flowing into Arize AX. Skills installed in the workshop repository help the coding agent add tracing and query the resulting data. The diagnosis reaches beyond exceptions and HTTP errors to search quality, including empty results and overly narrow filters. After adding price filtering, Voss repeats the shopping request and checks the new input and output in the trace view.\n\nThe broader argument is that reading traces individually stops working when an application produces millions of them. Evals compress behavior into scores and explanations, but people can still become the bottleneck when they must interpret every failure. Voss introduces Signal as another layer that groups recurring problems and suggests fixes. In the demonstration, findings can become GitHub issues, evaluation datasets, new evaluators, or proposed pull requests. Audience questions press on deployment, trust, and preventing a fix from breaking behavior that already works. Regression evals provide that check, while Signal itself has tracing and an evaluation suite. The workshop moves from a manually requested repair toward continuous improvement, with definitions of good behavior directing what the automation should change.\n\n\nSpeaker info:\n- https://x.com/seldo\n- https://seldo.com\n- https://github.com/Arize-ai/project-rosetta-stone\n\nTimestamps:\n0:00 - From 101 to continuous improvement\n3:12 - Traces as the source of truth\n6:13 - Scaling beyond manual trace review\n9:02 - Finding signals and closing the loop\n12:03 - Workshop setup\n14:13 - Wonder Toys and trust questions\n16:31 - Adding observability with a coding agent\n20:19 - Testing and inspecting live traces\n22:25 - Exposing the missing price filter\n24:41 - Asking an agent to analyze traces\n28:51 - Diagnosing search quality problems\n30:28 - Adding price filtering\n33:05 - Continuous monitoring with Signal\n36:06 - Deployment and regression evaluation questions\n40:22 - Evaluating Signal itself\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/F0TNSmbo5hE",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826165,
-    "title": "From Raw Documents to AI-Ready Data \u2014 Leo Platzer & Jeff Koss",
-    "url": "https://www.youtube.com/watch?v=wzWNYDY7toc",
-    "published_at": "2026-10-05T22:30:12+00:00",
-    "fetched_at": "2026-10-06T09:14:19+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A chatbot pilot on 40 hand-picked files works great. Point it at 80,000 SharePoint documents and it falls apart.\n\nJeff Koss and Leo Platzer, co-founder and former CTO of Deasy Labs (acquired by Collibra), walk through taking an unstructured-data AI project from stalled POC to production. Using a manufacturer building a legal-ops chatbot over 80,000 SharePoint files, they demo AI-assisted taxonomies and metadata tagging with evidence and confidence scores, sensitive-data detection, and quality checks for duplicates, conflicts and freshness. Data slices refresh on a schedule. Leo then shows why this matters: when 30% of a corpus is stale or duplicated, up to 80% of an agent's retrieved context can be useless, and cleaning it roughly doubled recall in multi-hop RAG evals. He finishes by generating a context file for coding agents with the SDK.\n\nIn this talk:\n\u2022 Why document data quality means duplicates, conflicts and freshness\n\u2022 AI-assisted taxonomies and metadata tagging with evidence and confidence\n\u2022 Finding and filtering sensitive data before it reaches a chatbot\n\u2022 How stale, duplicated data crowds out good context, and what cleaning it does to recall\n\nSPEAKERS\nLeo Platzer, Co-founder & former CTO, Deasy Labs (Collibra)\nLinkedIn: https://www.linkedin.com/in/leonardplatzer/\n\nJeff Koss, Staff Customer Engineer, Deasy Labs (Collibra)\n\nLINKS\nCollibra unstructured data for AI: https://www.collibra.com/use-cases/solution/unstructured-data-for-ai\nCollibra acquires Deasy Labs: https://www.collibra.com/company/newsroom/press-releases/collibra-acquires-deasy-labs\nDeasy Labs: https://www.deasylabs.com\nCollibra: https://www.collibra.com/\n\nCHAPTERS\n0:00 Intro\n0:18 Deasy Labs and Collibra\n1:01 From stalled POC to production\n1:11 Scenario: a legal-ops chatbot\n2:11 Who needs what\n3:25 40 files works\n3:55 80,000 files doesn't\n4:25 Data quality for documents\n5:05 The symptoms\n6:35 Demo: tagging with a taxonomy\n9:04 Metadata with evidence\n10:04 Finding sensitive data\n10:54 Duplicates, conflicts, freshness\n11:54 Data slices and suggested taxonomies\n13:33 Keeping data fresh\n14:13 Results: four months to days\n15:00 Why duplicates poison retrieval\n16:54 Stale data can fill 80% of context\n17:39 Results: about 2x recall\n18:29 Demo: a context file for coding agents\n20:36 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#RAG #DataQuality #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/wzWNYDY7toc",
-    "topic": "funding",
-    "tags": [
-      "funding",
-      "release",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821781,
-    "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 101 \u2014 Laurie Voss, Arize AI",
-    "url": "https://www.youtube.com/watch?v=qZj7sqmidqA",
-    "published_at": "2026-10-05T22:00:36+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "An LLM correctness judge rejects all 13 reports from a financial analysis agent. Laurie Voss examines why: the agent used live web research, while the judge graded from its own knowledge without that research context. Supplying the collected sources to a faithfulness evaluator produces a more useful split of six faithful reports and seven unfaithful ones. The notebook builds the agent with the Claude Agent SDK and instruments it with OpenTelemetry and OpenInference to send traces to Arize AX. Reading those traces exposes failed file writes, missing report content, and excessive web searches. A deterministic ticker check adds a cheap first layer of evaluation.\n\nVoss builds a custom actionability rubric with explicit criteria, tagged inputs, examples, and binary labels. Each evaluator checks one dimension, so a failure identifies what needs attention. Human annotations provide a comparison set for evaluating the judge, with deliberately random demo labels illustrating how to investigate disagreement. The workshop covers held out tests, precision and recall, judge biases, and the distinction between capability and regression evals. Failing traces become datasets, their explanations guide prompt revisions, and controlled experiments compare the changed agent on the same cases. Online evaluations and production monitoring extend that loop to new traffic, with requirements and recurring failure themes directing subsequent coding agent fixes. The central practice is to read actual traces and define success before automating the grading.\n\n\nSpeaker info:\n- https://x.com/seldo\n- https://seldo.com\n- https://github.com/Arize-ai/arize-skills\n\nTimestamps:\n0:00 - Workshop overview and notebook setup\n7:31 - Traces, evals, and the limits of vibes\n11:21 - Code, LLM, and human evaluations\n14:27 - Agent failures and grading valid solutions\n17:18 - Capability and regression evals\n21:19 - Instrumenting the Claude Agent SDK\n28:47 - Building and tracing the financial analyst\n36:26 - Generating diverse test queries\n38:54 - Reading traces and defining success\n45:31 - Categorizing failures and choosing priorities\n49:16 - Writing a deterministic ticker check\n58:14 - A correctness judge that rejects every report\n62:11 - Faithfulness with the research context\n66:25 - Writing a custom actionability rubric\n77:35 - Focused evaluators and production criteria\n80:00 - Comparing judges with human annotations\n86:25 - Precision, recall, and judge biases\n90:27 - Turning failures into evaluation datasets\n92:39 - Using explanations to improve prompts\n95:24 - Comparing changes with controlled experiments\n102:29 - Online evaluations and production monitoring\n106:01 - Coding agent fixes guided by failure themes\n108:27 - Putting the full improvement loop together\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/qZj7sqmidqA",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821782,
-    "title": "The Transcript Looked Fine. The Call Wasn't. \u2014 Debugging Voice Agents, Arize",
-    "url": "https://www.youtube.com/watch?v=42Bz0TUfeOQ",
-    "published_at": "2026-10-05T21:30:33+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "The transcript says the agent corrected itself. The audio says it refunded the wrong order.\n\nFuad Ali, senior product manager at Arize AI, shows why voice agents are one of the hardest categories to debug: latency, turn-taking and transcription errors are invisible in a text log. Using a refund call that looks fine in the transcript but had 2.4 seconds of dead air, an interruption and a refund on the wrong order, he shows what you need instead. That means audio, transcript and trace in one session view, OpenInference semantic conventions for real-time audio across providers, and evals that run on the audio itself. He closes with the observe, evaluate, improve loop and agent experiments that test fixes against failed traces.\n\nIn this talk:\n\u2022 Voice failure modes text logs miss: latency, barge-in, mishearing and tone\n\u2022 Tracing real-time audio with open-source OpenInference conventions\n\u2022 Audio-native evals for sentiment, latency, interruptions and task success\n\u2022 Toward self-healing voice agents: monitors, investigation agents and replayed fixes\n\nSPEAKER\nFuad Ali, Senior Product Manager, Arize AI\nLinkedIn: https://www.linkedin.com/in/ahmedfuadali/\nX: https://x.com/tofuadmiral\n\nLINKS\nArize AX: https://arize.com/products/ax/\nTracing and evaluating audio (docs): https://arize.com/docs/ax/cookbooks/evaluate/tracing-and-evaluating-audio\nOpenInference (GitHub): https://github.com/Arize-ai/openinference\nArize: https://arize.com/\n\nCHAPTERS\n0:00 Intro\n0:22 Why voice agents are invisible\n1:07 Voice agents are exploding\n1:47 Why voice is hard to debug\n2:41 The transcript looked fine. The call wasn't.\n3:31 What actually went wrong\n3:56 See beyond the transcript\n4:46 Trace everything\n5:41 Audio in OpenInference\n6:45 One schema across providers\n7:40 Replay the whole conversation\n8:30 Demo: a voice trace with a tool call\n9:00 The failures, found\n9:54 Evals for audio\n11:49 Creating audio evals with skills\n12:44 Evals on the spans\n13:48 Observe, evaluate, improve\n14:28 Agent experiments and self-healing\n15:53 Start tracing your voice agents\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#VoiceAI #LLMObservability #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/42Bz0TUfeOQ",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821783,
-    "title": "Research to Reality with Google DeepMind \u2014 Paige Bailey, Google DeepMind",
-    "url": "https://www.youtube.com/watch?v=zQZiHOpkq_s",
-    "published_at": "2026-10-05T21:00:21+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A model running entirely in the browser produces an emoji table ranking the Harry Potter books, and Paige Bailey immediately questions its taste. The response arrives almost instantly, without an API call or data leaving the machine. Bailey uses that demo to introduce Gemma 4, Google DeepMind's open model family, and show what local inference looks like in practice. She describes Apache 2 licensing, models ranging from two billion to 31 billion parameters, and the ability to download, adapt, and finetune them for a company's own projects. The opening also connects DeepMind's research mission to AlphaFold, medical models, robotics, and AI for science, before outlining computer use and managed agents that execute tasks in a Linux sandbox.\n\nThe same local approach extends to phones through Google AI Edge Gallery. Bailey walks through image descriptions, audio transcription, function calling, and a collection of skills for games, haikus, weather queries, and calendar events. Android and iOS devices can run downloaded models, while supported hardware accelerators handle inference instead of relying on the CPU. She then compares model size with deployment requirements: smaller GPU footprints, a single commodity GPU rather than distributed inference, laptop models, and a mobile option. Quantized checkpoints explain the speed of the browser demo, with the two billion parameter version taking less than a gigabyte. The practical thread is choosing a model that fits the device and keeping the work local.\n\n\nSpeaker info:\n- https://x.com/DynamicWebPaige\n- https://github.com/dynamicwebpaige\n- https://www.webpaige.dev/\n\nTimestamps:\n0:00 - Welcome and audience arrival\n2:38 - Responsible AI and science\n4:01 - Computer use and managed agents\n4:56 - Gemma open models\n5:54 - Running Gemma in the browser\n7:35 - AI Edge Gallery on mobile\n8:59 - Model sizes and quantization\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/zQZiHOpkq_s",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821736,
-    "title": "PewDiePie is setting AI free... and OpenAI is furious",
-    "url": "https://www.youtube.com/watch?v=_5p1_TNSWqQ",
-    "published_at": "2026-10-05T20:34:44+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "youtube",
-    "body": "Namespace is actually the fastest way to run your GitHub Actions (and more). Try it for free - https://namespace.so/github-actions\n\nPewDiePie is building Ajax, an uncensored AI model he trained at home after OpenAI banned him twice for distillation. Let's dive in.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev\n\nauthor: Fireship\n\nvideo: https://www.youtube.com/embed/_5p1_TNSWqQ",
-    "topic": "news",
-    "tags": [
-      "news",
-      "models",
-      "open-source",
-      "video",
-      "coding",
-      "education",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821784,
-    "title": "Build the Right Thing: Product Engineering (Part 2) \u2014 Kent C. Dodds, EpicProduct.engineer",
-    "url": "https://www.youtube.com/watch?v=s0hFne6EeOI",
-    "published_at": "2026-10-05T20:00:35+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A request for facial recognition becomes a job statement about getting attendees into a workshop without missing the first 20 minutes. Kent C. Dodds uses that audience suggestion to separate a requested feature from the progress a user actually needs. Asking why exposes alternatives such as parallel queues or badges, rather than immediately committing to a database of faces. He breaks the job into functional, social, and emotional dimensions, showing how each changes engineering decisions. A system can move people through a door faster while making them uncomfortable about how their information is used. Success also includes whether customers keep using the product, rather than simply paying for it once.\n\nThe second exercise shifts to a food delivery app and uses the Kano model to sort competing requests. Reliable order confirmations are basic needs. Delivery estimates offer a measurable performance gradient. Discounts and group ordering can delight users, while GPS tracking illustrates how an unexpected extra becomes something customers assume will exist. Dodds connects those categories to architectural effort: make foundations reliable, measure performance, and keep experiments reversible until their value is clearer. Features that nobody cares about create maintenance work; features users actively dislike deserve pushback. Audience questions cover validating ideas before metrics exist, handling an unusually demanding customer, and understanding architecture during incidents. The closing argument ties technical expertise to product judgment: faster implementation matters when engineers understand which problems deserve solving.\n\n\nSpeaker info:\n- https://x.com/kentcdodds\n- https://kentcdodds.com\n- https://www.epicproduct.engineer/\n\nTimestamps:\n0:00 - Returning to the workshop product\n2:23 - Digging beneath a feature request\n6:04 - Jobs to be done\n8:52 - Writing a job statement\n11:34 - Functional, social, and emotional needs\n15:00 - Gathering user feedback\n17:29 - Exploring facial recognition requirements\n20:42 - Measuring repeated progress\n23:35 - Audience questions on validation and incidents\n31:25 - Prioritizing software changes\n33:14 - The Kano model\n35:00 - Sorting food delivery features\n41:49 - How expectations change over time\n45:03 - Turning priorities into engineering decisions\n47:22 - Indifferent and unwanted features\n50:17 - Building the right thing\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/s0hFne6EeOI",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 821785,
-    "title": "Build the Right Thing: Product Engineering (Part 1) \u2014 Kent C. Dodds, EpicProduct.engineer",
-    "url": "https://www.youtube.com/watch?v=_fHTqOs5wQA",
-    "published_at": "2026-10-05T19:00:12+00:00",
-    "fetched_at": "2026-10-05T22:07:47+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "The line of attendees waiting outside becomes the workshop's live product idea: an app called Just Get In the Workshop. Kent C. Dodds uses that immediate frustration to practice deciding whether a problem deserves a software solution. Before the exercise, he explains why faster implementation changes the value of an engineer's work. Agents can help hit more targets, but choosing the useful target still requires judgment. Product engineers connect customer needs to data models, workflows, constraints, observability, and the smallest useful slice of a system. Dodds draws on conversations with other builders to show how understanding users changes architectural choices, while accepting a ticket without that context can produce technically polished work that misses the point.\n\nThe room then applies The Mom Test to its conference entry idea. Questions about whether somebody would use an app invite compliments and speculation. Questions about the last time the problem happened, what the person did instead, and what the workaround cost reveal behavior. Dodds connects that evidence to how much engineering effort a feature deserves. An experiment needs a different investment from a capability essential to the business. Early prototypes and watching people use them keep the feedback loop open after the initial idea has been validated. Audience questions explore hiring for product judgment, collaboration with product managers, and engineering responsibilities as teams grow. The first part establishes the discovery habits and technical ownership that guide the next stages of the workshop.\n\n\nSpeaker info:\n- https://x.com/kentcdodds\n- https://kentcdodds.com\n- https://www.epicproduct.engineer/\n\nTimestamps:\n0:00 - Arrival and introduction\n3:40 - An educator's changing role\n6:14 - Durable skills and engineering judgment\n10:31 - Building the right thing\n12:46 - Choosing a live example product\n15:43 - Why faster implementation can miss the goal\n21:09 - Product engineers and product managers\n25:21 - Product context and architectural choices\n28:18 - Creating good systems for agents\n30:38 - Questions on MVPs, hiring, and collaboration\n37:02 - Workshop frameworks and the entry app\n38:27 - Practicing customer discovery\n40:45 - Applying The Mom Test\n46:10 - The cost of building without validation\n49:06 - Closing the loop with early user feedback\n51:10 - Questions on roles and team growth\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/_fHTqOs5wQA",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "agents",
-      "video",
-      "coding",
-      "tutorials",
-      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
