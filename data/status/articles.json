@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1072213,
+    "title": "Your Agent Fix Just Broke Something Else - Sofia Jakovcevic, Arize AI",
+    "url": "https://www.youtube.com/watch?v=v5tm5EAzsAs",
+    "published_at": "2026-10-24T19:00:09+00:00",
+    "fetched_at": "2026-10-24T21:04:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A one-line prompt change made a support agent 17 points safer and 17 points worse at finishing tasks. Sofia Jakovcevic, forward deployed engineer at Arize AI, explains why agents fail at runtime rather than in code, and walks through a five-step regression loop built from production traces: curate datasets, score with evaluators, run baseline experiments, compare changes, and gate merges in CI. Then she shows how to close the loop at agent speed, with coding agents that read traces and fix themselves.\n\nChapters\n00:00 Intro: observability for agents\n01:08 The real problem: fixes that break other things\n02:26 A one-line prompt change: +17 and -17\n04:48 Agents fail at runtime, not in code\n06:25 The five-step regression loop\n06:48 Step 1: Build datasets from production traces\n07:50 Step 2: Score with evaluators\n09:48 Steps 3-4: Baseline experiments and comparisons\n11:14 Step 5: Gate merges in CI\n11:48 Demo: experiments in Arise\n15:38 Using coding agents and skills\n16:12 Closing the loop at agent speed\n\nSofia Jakovcevic, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "tutorials",
+    "tags": [
+      "agents",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1072153,
+    "title": "Open-Source AI Models Caught Up! (Kimi K3.1 Pro)",
+    "url": "https://www.youtube.com/shorts/u3WV4nf8Jdo",
+    "published_at": "2026-10-24T18:44:59+00:00",
+    "fetched_at": "2026-10-24T21:04:16+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "topic": "media",
+    "tags": [
+      "models",
+      "open-source",
+      "enterprise",
+      "media",
+      "news",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1067948,
     "title": "How Bridgewater Turned 100 Million Documents Into an Edge - Sam Green & Aaron Linsky, Bridgewater",
     "url": "https://www.youtube.com/watch?v=CLve4Nx_RwI",
@@ -11002,52 +11046,6 @@
       "api",
       "agents",
       "safety",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826162,
-    "title": "What Is an Inference Engine, Anyway? \u2014 Charles Frye, Modal",
-    "url": "https://www.youtube.com/watch?v=woIYJYd_etI",
-    "published_at": "2026-10-06T00:00:12+00:00",
-    "fetched_at": "2026-10-06T09:14:19+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A traffic spike on a museum placard generator produces longer waits for the first token and slower tokens afterward. Charles Frye reads those symptoms from an inference dashboard and shows how additional replicas relieve the queue. The example connects an application people can see to the machinery behind its API. He follows a request through server IO, tokenization, scheduling, model execution, and detokenization, using SGLang and vLLM as reference points. The scheduler controls what reaches the GPU and can become a bottleneck even though it performs far less computation. Chatbots, background agents, and document processors place different demands on that machinery, with latency budgets, input and output lengths, and prefix reuse shaping the deployment.\n\nFrye then opens up the performance techniques inside the engine. KV caching reuses previously computed work, while cache capacity and layout determine how effectively the engine can keep requests moving. CUDA graphs reduce repeated work on the CPU that launches GPU operations. Speculative decoding lets a speculator model propose several tokens for the target model to check together. Kernel libraries handle much of the underlying computation, leaving the engine to organize batches and avoid getting in the GPU's way. The final section turns to correctness and production debugging: evaluate the actual deployment, log token IDs for tokenizer problems, and collect enough metrics and traces to investigate regressions across replicas. Small reference engines provide a starting point for reading the code and asking deeper architectural questions.\n\n\nSpeaker info:\n- https://x.com/charles_irl\n- https://charlesfrye.github.io\n- https://modal.com/blog/spec-is-all-u-need\n- https://github.com/sgl-project/mini-sglang\n\nTimestamps:\n0:00 - Introduction and the inference engine question\n2:15 - A sketch of the architecture\n3:27 - Why inference engineering matters\n6:34 - A museum placard application\n8:11 - Three workload types\n10:16 - Prefill, decode, and latency metrics\n15:36 - Following a request through the engine\n18:31 - Servers, engines, sessions, and state\n20:53 - The scheduler and GPU bottleneck\n24:59 - The request lifecycle and batching\n29:12 - Tokenization and latency questions\n32:56 - Processes, Python, and host overhead\n36:36 - Model execution and kernel backends\n44:41 - Concurrency and cache pressure\n46:43 - KV caching and prefix reuse\n49:02 - Host overhead and CUDA graphs\n50:50 - Speculative decoding\n53:53 - Correctness and performance observability\n56:20 - Reading a dashboard under load\n58:16 - Reference engines and further resources\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/woIYJYd_etI",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 831707,
-    "title": "Expanding the Cyber Verification Program",
-    "url": "https://www.anthropic.com/news/cyber-verification-program",
-    "published_at": "2026-10-06T00:00:00+00:00",
-    "fetched_at": "2026-10-06T21:07:18+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "trafilatura",
-    "body": "Expanding the Cyber Verification Program\nWe\u2019re launching a new, expanded version of our Cyber Verification Program (CVP), which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals. The program now consists of three access tiers, which allow security teams to apply for the level of access that best suits their work. Each tier includes access to our most capable models, including Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward. Interested customers can [apply here](https://portal.anthropic.com/programs/cvp).\nCybersecurity is inherently dual use: the same capabilities that enable a security team to find and fix a vulnerability can also help a malicious actor exploit it. For this reason, our generally available models, such as [Claude Opus 5.5](https://www.anthropic.com/claude-opus-5-5), [Claude Fable 5.1](https://www.anthropic.com/claude-fable-and-mythos-5-1), and [Claude Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5), have conservative cyber safeguards that block most cyber work. This is intended to limit the harmful activities malicious actors can carry out using our models, while we continue to work to reduce false positives for secure coding.\nBut defenders also need access to the best tools and most powerful capabilities to secure their systems. For the past six months, we\u2019ve enabled trusted access through two programs: [Project Glasswing](https://www.anthropic.com/glasswing) and the [CVP](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet). The former gave a group of organizations securing the most critical software access to Claude Mythos; the latter gave vetted security teams access to reduced safeguards on Claude Opus and Claude Sonnet models.\nNow, we\u2019re integrating these programs into one expanded offering, designed to give more security organizations access to the capabilities they need to protect their systems.\nNew access tiers\nThe updated access tiers make specific model capabilities available to security professionals based on the scope of their cyber work. Each has different verification requirements and security controls.\nDefense Access is for defensive work, including security operations center and incident response tasks, reverse-engineering malware, and analyzing and validating vulnerabilities. Examples of qualifying organizations include security teams at companies, nonprofits, universities, and government bodies who are defending systems they own or maintain; operators of critical infrastructure of any size, such as regional hospitals or municipal utilities; smaller security firms; open-source maintainers; and individual researchers with a track record of reported vulnerabilities.\nWe expect many organizations conducting defensive cybersecurity work to qualify for this tier. We aim to respond to applications within a few days.\nRed Team Access adds authorized penetration testing and red-teaming to the defensive uses above. Examples of qualifying organizations include in-house red teams, government red teams, and security and penetration testing firms. Organizations in this tier can only perform adversarial testing against systems they are authorized to test, including IT systems in critical industries. Users will still experience real-time blocks on actions that could cause physical harm or mass disruption, such as deploying ransomware, damaging physical systems, or pen testing high-risk safety systems.\nGiven the increased eligibility requirements and security controls, we expect applications in this tier to take a few weeks to review. Qualifying organizations will be enrolled in the Defense Access tier while we review their Red Team Access applications. Currently, this tier is for organizations only; individual researchers are not eligible.\nSpecialized Access, which has the fewest cyber blocks, is reserved for a limited set of verified organizations that are authorized to test safety systems that could impact people\u2019s lives or disrupt markets, such as flight operating systems, power grids, telecom networks, interbank transfer infrastructure, and government administrative networks.\nFor this tier, we currently review every organization in depth in collaboration with the US government. Existing members of Project Glasswing will transition to this tier and do not require reapproval for current models.\nOur generally available models can continue to be used for tasks such as code review, patching known issues, vulnerability finding in owned source code, and triage of security alerts.\nData retention is required for organizations enrolled in the program so that we can monitor for cyber misuse. Once [Enterprise Frontier Safeguards](https://www.anthropic.com/news/enterprise-frontier-safeguards) (EFS)\u2014a new solution that combines the privacy of zero data retention with robust safeguards\u2014is available later this fall, eligible organizations will be able to store data in cloud infrastructure they control. Until EFS is available, organizations with access to Claude Fable 5.1 or Claude Mythos 5.1 with zero data retention can also use CVP with zero data retention. To register interest in EFS, [fill out this form](https://claude.com/form/enterprise-frontier-safeguards).\nBelow, we share an overview of what\u2019s available at each CVP access level, as well as requirements for security and privacy controls:\nTesting the efficacy of our tiers\nTo assess the efficacy of our CVP protections, we ran Claude Opus 5.5 through CyScenarioBench\u2014an evaluation that measures whether models can plan and execute multi-stage cyber operations under realistic constraints\u2014with safeguards tuned for our different CVP tiers. Because this evaluation involves complex, interactive offensive scenarios, we would expect Claude to experience significant blocks both on the generally available model and in the Defense Access tier, while experiencing no blocks in the Red Team Access and Specialized Access tiers.\nAcross five attempts at each of the 10 CyScenarioBench challenges in each access tier, we found that:\n- Without CVP access, every task was blocked on the first prompt;\n- In the Defense Access tier, 46 of the 50 trials were blocked at some point in the challenge, while the remaining four tasks succeeded; and\n- In the Red Team Access tier, no blocks occurred, and Claude Opus 5.5 successfully completed 34 of the 50 tasks\u2014effectively equivalent to the model\u2019s 67.6% success rate on this evaluation with no safeguards applied (representative of Specialized Access).\nThese evaluations give us confidence that we can make advanced cyber capabilities safely available to a broader set of defenders, expanding the defensive efforts we began with Project Glasswing. We will continue to refine our tier-based classifiers over time.\nGiving defenders the advantage\nThrough Project Glasswing, we found that Claude Mythos models significantly increased the rate at which organizations were able to identify vulnerabilities in their systems. Through the program, our partners uncovered at least 129,000 verified software vulnerabilities between April and July 2026. And through our own open-source scanning efforts, we found an additional 5,500 verified software vulnerabilities between April and October 2026. Of these verified vulnerabilities, more than 33,000 have so far been rated as critical- or high-severity. This is likely an undercount, as it is based on survey data from only a subset of Glasswing partners. As such, we expect the true impact to be at least five times higher.\nWhen asked how long it would have taken them to find the same number of vulnerabilities without Claude Mythos models, several partners told us that the models had increased their rate of vulnerability finding by months or even years. Read more from our partners at [Booz Allen and Comcast](https://claude.com/blog/how-comcast-booz-allen-use-claude-mythos-to-secure-their-codebases) about their experience.\nThe changes we\u2019re making to our Cyber Verification Program today are intended to extend the impact of Project Glasswing to a much larger number of cyber defenders. We\u2019re also continuing our efforts to help secure open-source software and critical infrastructure. In the coming weeks, we\u2019ll share more about this work and what we\u2019ve learned as we continue to work to give defenders a permanent advantage.\nApply for access\nInterested organizations can [apply to CVP here](https://portal.anthropic.com/programs/cvp). As part of the application process, we will verify all applicants and request proof of the required security controls for the relevant access tier. Existing CVP members will keep their current settings for previous models and will be automatically evaluated for access to Claude Opus 5.5, Claude Sonnet 5.5, and Claude Mythos 5.1 through the updated program. Admins will need to assign access to specific workspaces by following [these steps](https://support.claude.com/en/articles/16764810-assign-a-program-to-workspaces-in-claude-console).\nCVP is available on the Claude Platform, Google Cloud\u2019s Vertex AI, and Microsoft Foundry. CVP is only available on Amazon Bedrock for customers eligible for [Enterprise Frontier Safeguards](https://www.anthropic.com/news/enterprise-frontier-safeguards).\nIf you\u2019re blocked on work you think your tier should allow, you can [report it here](https://claude.com/form/cyber-block-false-positive-report-cvp-rejection-appeal). Full details on each tier can be found in our [Help Center](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet).\nRelated content\nAnthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap\nAnthropic is investing $100 million in Claude Frontier Academy to train 10,000 Frontier Deployed Engineers by the end of 2027, with cohorts from Accenture, Bain, CBA, Deloitte, McKinsey, Morgan Stanley and Novo Nordisk already underway.\n[Read more](/news/claude-frontier-academy)\nBarclays scales Claude to upgrade operations and improve client experience\nBarclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.\n[Read more](/news/barclays-scales-claude)\nClaude discovers a novel enzyme system with CRISPR-like repeats\nWe\u2019re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR.\n[Read more](/news/claude-discovers-novel-enzyme-system)",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "open-source",
-      "safety",
-      "benchmark",
       "research"
     ],
     "dearrow_thumbnail_url": "",
