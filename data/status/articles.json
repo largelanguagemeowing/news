@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1074281,
+    "title": "AI Writes the Code. So What's Left for Engineers? - Laurie Voss, Arize AI",
+    "url": "https://www.youtube.com/watch?v=kspZP5BgkEU",
+    "published_at": "2026-10-24T23:00:29+00:00",
+    "fetched_at": "2026-10-24T23:32:47+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Laurie Voss, head of developer relations at Arize AI and co-founder of npm, argues that coding agents made writing code nearly free, so the bottleneck keeps moving: first to code review, then to operations and security. What agents can't take over is finding out what people actually need and defining what \"good\" means. He calls the job that remains the product engineer, looks at the data on collapsing junior hiring, and lays out what engineering leaders should do now.\n\nChapters\n00:00 Intro: beyond the AI engineer\n01:19 Code got free, so the bottleneck moved\n03:04 8x more code, only 30% faster shipping\n04:39 Can machines do code review?\n08:02 The theory of constraints\n09:00 The next bottlenecks: ops and security\n11:21 What agents won't eat: deciding what good means\n13:45 Essential complexity and the spec\n16:34 The product engineer\n19:45 The junior developer problem\n22:57 For people who love the craft\n25:11 What to do now\n\nLaurie Voss, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "security",
+    "tags": [
+      "security",
+      "agents",
+      "safety",
+      "coding",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1072213,
     "title": "Your Agent Fix Just Broke Something Else - Sofia Jakovcevic, Arize AI",
     "url": "https://www.youtube.com/watch?v=v5tm5EAzsAs",
@@ -11025,28 +11047,6 @@
       "agents",
       "benchmark",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826161,
-    "title": "How Many Credentials Should Your AI Agent Have? Zero. \u2014 Jim Clark, Docker",
-    "url": "https://www.youtube.com/watch?v=ZUZVNKFSmTM",
-    "published_at": "2026-10-06T00:30:15+00:00",
-    "fetched_at": "2026-10-06T09:14:19+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Agents now run long enough that you stop watching them. So what are they allowed to touch?\n\nJim Clark, principal software engineer at Docker, uses MCP gateways as a way into agent safety. Harnesses are simple loops. Safety comes from what context and tools flow into them, so the boundary to manage is the sandbox. Through two examples, a newsroom split into researcher, fact-checker and publisher sandboxes, and a coding agent that only gets signing keys when it's committing, he shows how to model each sandbox on the task's intent. He explains how a single MCP gateway endpoint per sandbox gives you a control point and makes harnesses interchangeable, why the right number of credentials in a sandbox is zero, and how Cross App Access (XAA) with Okta lets agents use your existing SSO.\n\nIn this talk:\n\u2022 Why safety comes from limiting tools and context, not from the harness\n\u2022 Splitting one workflow into sandboxes that never mix untrusted input with dangerous tools\n\u2022 An MCP gateway as the single control point for tools, resources and prompts\n\u2022 Agent identity and authorization grants with Cross App Access (XAA)\n\nSPEAKER\nJim Clark, Principal Software Engineer, Docker\nLinkedIn: https://www.linkedin.com/in/james-clark-b78649/\nGitHub: https://github.com/slimslenderslacks\n\nLINKS\nDocker MCP Gateway (GitHub): https://github.com/docker/mcp-gateway\nDocker Sandboxes docs: https://docs.docker.com/ai/sandboxes/\nsbx CLI reference: https://docs.docker.com/reference/cli/sbx/\nOkta Cross App Access: https://www.okta.com/solutions/cross-app-access/\n\nCHAPTERS\n0:00 Intro\n0:18 Hi from Docker\n0:52 This is really about AI safety\n1:17 Agents run longer, unsupervised\n2:02 Harnesses, sandboxes and MCP\n2:32 What a harness is\n3:37 What MCPs add\n4:37 What a sandbox is\n5:56 Example: the newsroom\n8:41 Example: a coding agent's signing keys\n10:06 One gateway endpoint per sandbox\n10:56 A control point, and swappable harnesses\n12:05 Zero credentials in the sandbox\n12:30 Cross App Access (XAA) with Okta\n14:25 Progressive disclosure for tools\n15:05 Orchestrators that build the sandbox\n16:14 Recap: role separation and intent\n17:04 Try it: brew install sbx\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#MCP #AISecurity #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ZUZVNKFSmTM",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
