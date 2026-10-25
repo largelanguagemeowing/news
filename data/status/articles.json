@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1080499,
+    "title": "How to Build Financial Agents That Work Across the Web - Jay Sahnan & Arik Bird, Browserbase",
+    "url": "https://www.youtube.com/watch?v=DZ24Xbm9Joc",
+    "published_at": "2026-10-25T09:00:10+00:00",
+    "fetched_at": "2026-10-25T13:35:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Some of the most important financial data sits behind logins and anti-bot walls, with no API. Jay Sahnan and Arik Bird of Browserbase show how browser agents solve this through three case studies: Ramp fetching receipts at scale (over 30,000 manual hours saved), Bill paying across thousands of different vendor portals with one agent, and Stripe automating KYC checks. They also cover how Browserbase forked Chromium to run reliably in the cloud, and how Stagehand's act, extract and observe primitives keep automations from breaking when sites change.\n\nChapters\n00:00 Intro\n00:27 What is a browser agent?\n01:37 Ramp, Bill and Stripe: data on the hardest-to-reach web\n02:13 Ramp: fetching receipts at scale\n03:34 Why browsers get blocked in the data center\n06:03 Forking Chromium for the cloud\n07:49 Demo: 100 browsers at once\n10:11 Bill: one agent, thousands of portals\n11:08 Stagehand vs Playwright\n14:52 Stripe: automating KYC\n15:52 Act, extract and observe\n16:35 Demo: researching 20 companies in parallel\n\nJay Sahnan, Browserbase\nArik Bird, Browserbase\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "tutorials",
+    "tags": [
+      "api",
+      "agents",
+      "research",
+      "infrastructure",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1078438,
     "title": "Do Not Let Models Invent Numbers - Vinoo Ganesh, Kepler",
     "url": "https://www.youtube.com/watch?v=dZgA6btnb_s",
@@ -11024,28 +11046,6 @@
       "open-source",
       "safety",
       "benchmark",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 826158,
-    "title": "Cooking with Codex \u2014 Charlie Guo & Gabriel Chua, OpenAI",
-    "url": "https://www.youtube.com/watch?v=FwiS44-xyYw",
-    "published_at": "2026-10-06T02:00:02+00:00",
-    "fetched_at": "2026-10-06T09:14:19+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Four minutes and two seconds after receiving a capture of a Slack conversation, Codex produces a macOS live translation app. Charlie Guo and Gabriel Chua use that build to show how context, plugins, and supervision fit together. The conversation supplies the idea, plugins supply development practices, and a live German translation tests the result. Other demonstrations turn repository history into a shareable site about the Agents SDK, request an IKEA style repository visualization from a phone, download dashboard data through computer use, and build a Google feedback form through the Chrome extension. The presenters distinguish browser control for local testing from access to applications and sessions where a person is already signed in.\n\nThe longer projects include a live Q&amp;A site, an internal form builder adapted from an existing repository, and a Python package with a Rust backend reconstructed from research papers. Goals give those tasks verifiable completion criteria, while subagents, visible threads, audits, and progress dashboards divide the work and expose blockers. Remote threads hand browser testing to a local machine, and hooks add deterministic checks at specific points in the workflow. Automations then connect the pieces: wait for a server to finish provisioning, review Slack feedback, or start a separate worktree to address a bug. A custom interface called Retrodex demonstrates the App Server integration. The recurring question is how to turn a successful individual request into a repeatable process with useful checks and human input where it is needed.\n\n\nSpeaker info:\nCharlie Guo:\n- https://x.com/charlierguo\n- https://www.linkedin.com/in/charlierguo\n- https://www.ignorance.ai/\n\nGabriel Chua:\n- https://x.com/gabrielchua\n- https://github.com/gabrielchua\n- https://gabrielchua.me/\n\nRelated resource:\n- https://github.com/openai/codex\n\nTimestamps:\n0:00 - Cooking with Codex and recent creations\n5:19 - Six steps for working with Codex\n6:36 - Building a translation app from Slack context\n9:17 - Codex Remote and a repository visualization\n11:05 - Plugins, skills, and reusable context\n13:04 - Testing the live translation app\n15:32 - Memory and personalization\n19:28 - Sites, code review, and image generation\n21:27 - Computer use for dashboard exports\n24:06 - Building a feedback form through Chrome\n26:19 - Choosing the right browser control\n28:45 - Three long running project examples\n32:16 - Goals, audits, and thread handoffs\n37:18 - Subagents and progress dashboards\n42:23 - Compaction and verifiable success criteria\n45:01 - Subagents versus visible threads\n47:57 - Hooks and deterministic checks\n50:24 - Heartbeat automation and server provisioning\n52:37 - Turning Slack feedback into development work\n58:37 - App Server and the Retrodex interface\n62:13 - From individual requests to a software factory\n66:12 - Starting the hands on build session\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/FwiS44-xyYw",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "api",
-      "agents",
-      "research",
-      "video",
       "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
