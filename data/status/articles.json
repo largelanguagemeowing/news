@@ -7,17 +7,17 @@
     "fetched_at": "2026-10-25T08:40:36+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "In finance, you never show a figure you can't trace. Vinoo Ganesh, CEO of Kepler (previously Palantir and Citadel), explains Kepler's architecture where models cite numbers but never write them: retrieval finds the source, deterministic code does the math, and a post-processing filter strips any figure that can't be verified. He covers the citation registry built from more than 30 million SEC documents, hybrid search and re-ranking on turbopuffer, tenant isolation, and why plain RAG produced thousands of wrong numbers in their evals.\n\nChapters\n00:00 Intro\n01:47 Why LLMs and financial numbers don't mix\n04:02 Models cite numbers, code does the math\n04:30 Building a citation registry from SEC filings\n06:03 How Kepler answers a question end to end\n08:27 Structuring facts: value, unit, scale, period\n09:48 Hybrid search and re-ranking on turbopuffer\n11:30 Tenant isolation and security\n12:37 Making every number traceable\n14:42 Stripping what can't be verified\n16:41 What plain RAG gets wrong\n18:32 Kepler in action\n19:46 Where the guarantees end\n\nVinoo Ganesh, Kepler\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "In finance, you never show a figure you can't trace. Vinoo Ganesh, CEO of Kepler (previously Palantir and Citadel), explains Kepler's architecture where models cite numbers but never write them: retrieval finds the source, deterministic code does the math, and a post-processing filter strips any figure that can't be verified. He covers the citation registry built from more than 30 million SEC documents, hybrid search and re-ranking on turbopuffer, tenant isolation, and why plain RAG produced thousands of wrong numbers in their evals.\n\nChapters\n00:00 Intro\n01:47 Why LLMs and financial numbers don't mix\n04:02 Models cite numbers, code does the math\n04:30 Building a citation registry from SEC filings\n06:03 How Kepler answers a question end to end\n08:27 Structuring facts: value, unit, scale, period\n09:48 Hybrid search and re-ranking on turbopuffer\n11:30 Tenant isolation and security\n12:37 Making every number traceable\n14:42 Stripping what can't be verified\n16:41 What plain RAG gets wrong\n18:32 Kepler in action\n19:46 Where the guarantees end\n\nVinoo Ganesh, Kepler\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/dZgA6btnb_s",
     "topic": "security",
     "tags": [
       "security",
       "models",
       "safety",
       "benchmark",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -30,16 +30,16 @@
     "fetched_at": "2026-10-25T08:40:36+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Janie Gu, product manager at Google DeepMind leading Kaggle Benchmarks, explains why most AI benchmarks are broken: they don't reflect real work, they're expensive to keep current, and their scores can't be verified. After reproducing 65 industry benchmarks, Kaggle found models reading other models' API keys, rewriting grading scripts, and scores swinging up to 20% between identical runs. Suyeol Yun, head of AI at LinqAlpha, then presents MandateBench, built with Google DeepMind and Kaggle, which grades whether a model can work like a buy-side analyst, from a fund's mandate to a full investment memo.\n\nChapters\n00:00 Intro\n01:10 Kaggle: from grading humans to grading models\n02:52 Why benchmarks are broken\n05:25 What reproducing 65 benchmarks revealed\n08:20 How Google DeepMind and Kaggle are fixing it\n10:20 Why your company should build a benchmark\n11:44 LinqAlpha and MandateBench\n12:32 Where existing finance benchmarks fall short\n13:31 A real analyst task, start to finish\n15:33 Grading the reasoning, not just the answer\n16:41 Early results\n17:18 What's next and how to get involved\n\nJanie Gu, Google DeepMind\nSuyeol Yun, LinqAlpha\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Janie Gu, product manager at Google DeepMind leading Kaggle Benchmarks, explains why most AI benchmarks are broken: they don't reflect real work, they're expensive to keep current, and their scores can't be verified. After reproducing 65 industry benchmarks, Kaggle found models reading other models' API keys, rewriting grading scripts, and scores swinging up to 20% between identical runs. Suyeol Yun, head of AI at LinqAlpha, then presents MandateBench, built with Google DeepMind and Kaggle, which grades whether a model can work like a buy-side analyst, from a fund's mandate to a full investment memo.\n\nChapters\n00:00 Intro\n01:10 Kaggle: from grading humans to grading models\n02:52 Why benchmarks are broken\n05:25 What reproducing 65 benchmarks revealed\n08:20 How Google DeepMind and Kaggle are fixing it\n10:20 Why your company should build a benchmark\n11:44 LinqAlpha and MandateBench\n12:32 Where existing finance benchmarks fall short\n13:31 A real analyst task, start to finish\n15:33 Grading the reasoning, not just the answer\n16:41 Early results\n17:18 What's next and how to get involved\n\nJanie Gu, Google DeepMind\nSuyeol Yun, LinqAlpha\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/aVbRSIQO2dE",
     "topic": "tutorials",
     "tags": [
       "models",
       "api",
       "benchmark",
+      "video",
       "coding",
-      "tutorials",
-      "funding"
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -52,16 +52,16 @@
     "fetched_at": "2026-10-24T23:32:47+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Laurie Voss, head of developer relations at Arize AI and co-founder of npm, argues that coding agents made writing code nearly free, so the bottleneck keeps moving: first to code review, then to operations and security. What agents can't take over is finding out what people actually need and defining what \"good\" means. He calls the job that remains the product engineer, looks at the data on collapsing junior hiring, and lays out what engineering leaders should do now.\n\nChapters\n00:00 Intro: beyond the AI engineer\n01:19 Code got free, so the bottleneck moved\n03:04 8x more code, only 30% faster shipping\n04:39 Can machines do code review?\n08:02 The theory of constraints\n09:00 The next bottlenecks: ops and security\n11:21 What agents won't eat: deciding what good means\n13:45 Essential complexity and the spec\n16:34 The product engineer\n19:45 The junior developer problem\n22:57 For people who love the craft\n25:11 What to do now\n\nLaurie Voss, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Laurie Voss, head of developer relations at Arize AI and co-founder of npm, argues that coding agents made writing code nearly free, so the bottleneck keeps moving: first to code review, then to operations and security. What agents can't take over is finding out what people actually need and defining what \"good\" means. He calls the job that remains the product engineer, looks at the data on collapsing junior hiring, and lays out what engineering leaders should do now.\n\nChapters\n00:00 Intro: beyond the AI engineer\n01:19 Code got free, so the bottleneck moved\n03:04 8x more code, only 30% faster shipping\n04:39 Can machines do code review?\n08:02 The theory of constraints\n09:00 The next bottlenecks: ops and security\n11:21 What agents won't eat: deciding what good means\n13:45 Essential complexity and the spec\n16:34 The product engineer\n19:45 The junior developer problem\n22:57 For people who love the craft\n25:11 What to do now\n\nLaurie Voss, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/kspZP5BgkEU",
     "topic": "security",
     "tags": [
       "security",
       "agents",
       "safety",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -74,16 +74,16 @@
     "fetched_at": "2026-10-24T21:04:16+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A one-line prompt change made a support agent 17 points safer and 17 points worse at finishing tasks. Sofia Jakovcevic, forward deployed engineer at Arize AI, explains why agents fail at runtime rather than in code, and walks through a five-step regression loop built from production traces: curate datasets, score with evaluators, run baseline experiments, compare changes, and gate merges in CI. Then she shows how to close the loop at agent speed, with coding agents that read traces and fix themselves.\n\nChapters\n00:00 Intro: observability for agents\n01:08 The real problem: fixes that break other things\n02:26 A one-line prompt change: +17 and -17\n04:48 Agents fail at runtime, not in code\n06:25 The five-step regression loop\n06:48 Step 1: Build datasets from production traces\n07:50 Step 2: Score with evaluators\n09:48 Steps 3-4: Baseline experiments and comparisons\n11:14 Step 5: Gate merges in CI\n11:48 Demo: experiments in Arise\n15:38 Using coding agents and skills\n16:12 Closing the loop at agent speed\n\nSofia Jakovcevic, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "A one-line prompt change made a support agent 17 points safer and 17 points worse at finishing tasks. Sofia Jakovcevic, forward deployed engineer at Arize AI, explains why agents fail at runtime rather than in code, and walks through a five-step regression loop built from production traces: curate datasets, score with evaluators, run baseline experiments, compare changes, and gate merges in CI. Then she shows how to close the loop at agent speed, with coding agents that read traces and fix themselves.\n\nChapters\n00:00 Intro: observability for agents\n01:08 The real problem: fixes that break other things\n02:26 A one-line prompt change: +17 and -17\n04:48 Agents fail at runtime, not in code\n06:25 The five-step regression loop\n06:48 Step 1: Build datasets from production traces\n07:50 Step 2: Score with evaluators\n09:48 Steps 3-4: Baseline experiments and comparisons\n11:14 Step 5: Gate merges in CI\n11:48 Demo: experiments in Arise\n15:38 Using coding agents and skills\n16:12 Closing the loop at agent speed\n\nSofia Jakovcevic, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/v5tm5EAzsAs",
     "topic": "tutorials",
     "tags": [
       "agents",
       "benchmark",
+      "video",
       "coding",
       "tutorials",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -96,16 +96,16 @@
     "fetched_at": "2026-10-24T21:04:16+00:00",
     "source_id": "matt-wolfe",
     "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "extraction_method": "youtube",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/u3WV4nf8Jdo",
     "topic": "media",
     "tags": [
       "models",
       "open-source",
+      "video",
+      "coding",
       "enterprise",
-      "media",
-      "news",
-      "tools"
+      "media"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -118,16 +118,16 @@
     "fetched_at": "2026-10-24T15:28:31+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Bridgewater Associates built the Vault: more than 100 million documents from 135 external sources plus the firm's own memos and meetings, cleaned, permissioned and tagged to its internal ontology. Sam Green (team lead, Applied AI) and Aaron Linsky (head of product engineering) share three lessons: humans and agents need different things from search, the biggest wins come from one tool that serves both, and the real prize is agents that proactively bring investors what deserves their attention. Includes how a hand-built benchmark took precision at 10 from about 60% to over 90%.\n\nChapters\n00:00 Intro: three lessons from building the Vault\n01:11 Bridgewater's 50-year research process\n02:35 Why unstructured data needed the same rigor\n03:25 What's in the Vault\n04:14 Open web vs the Vault: a side-by-side\n06:53 Search for humans vs search for agents\n08:19 Benchmarking precision: \"Vault search is bad\"\n09:32 Fast filtering at scale\n11:35 Getting investors to change their habits\n13:02 What the Vault enables: analysts, forecasts, signals\n14:05 Proactive agents: the investor workbench\n15:44 How the Vault compounds what the firm learns\n\nSam Green, Bridgewater Associates\nAaron Linsky, Bridgewater Associates\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Bridgewater Associates built the Vault: more than 100 million documents from 135 external sources plus the firm's own memos and meetings, cleaned, permissioned and tagged to its internal ontology. Sam Green (team lead, Applied AI) and Aaron Linsky (head of product engineering) share three lessons: humans and agents need different things from search, the biggest wins come from one tool that serves both, and the real prize is agents that proactively bring investors what deserves their attention. Includes how a hand-built benchmark took precision at 10 from about 60% to over 90%.\n\nChapters\n00:00 Intro: three lessons from building the Vault\n01:11 Bridgewater's 50-year research process\n02:35 Why unstructured data needed the same rigor\n03:25 What's in the Vault\n04:14 Open web vs the Vault: a side-by-side\n06:53 Search for humans vs search for agents\n08:19 Benchmarking precision: \"Vault search is bad\"\n09:32 Fast filtering at scale\n11:35 Getting investors to change their habits\n13:02 What the Vault enables: analysts, forecasts, signals\n14:05 Proactive agents: the investor workbench\n15:44 How the Vault compounds what the firm learns\n\nSam Green, Bridgewater Associates\nAaron Linsky, Bridgewater Associates\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/CLve4Nx_RwI",
     "topic": "research",
     "tags": [
       "agents",
       "benchmark",
       "research",
+      "video",
       "coding",
-      "education",
-      "events"
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -140,16 +140,16 @@
     "fetched_at": "2026-10-24T11:52:12+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Harneet Kaur, founder and CEO of Axim Intelligence and a former distressed credit investor, tests whether frontier models can reason about a live distressed situation: iHeartMedia. Given the same context, two top models disagreed sharply on the odds of bankruptcy versus a negotiated restructuring. Breaking the analysis into checked layers (extraction, derivation, judgment, prediction) brought them to the same answer, which raises a new question: is agreement the same as being right?\n\nChapters\n00:00 Intro\n00:42 What distressed credit actually means\n02:34 Why old scoring models fall short\n04:30 What it means to understand a credit\n05:46 Can AI predict what happens next?\n06:13 Case study: iHeartMedia, and two models disagree\n08:01 Benchmarking each layer of reasoning\n11:07 Structured reasoning makes the models converge\n12:03 Takeaways: convergence vs correctness\n\nHarneet Kaur, Axim Intelligence\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Harneet Kaur, founder and CEO of Axim Intelligence and a former distressed credit investor, tests whether frontier models can reason about a live distressed situation: iHeartMedia. Given the same context, two top models disagreed sharply on the odds of bankruptcy versus a negotiated restructuring. Breaking the analysis into checked layers (extraction, derivation, judgment, prediction) brought them to the same answer, which raises a new question: is agreement the same as being right?\n\nChapters\n00:00 Intro\n00:42 What distressed credit actually means\n02:34 Why old scoring models fall short\n04:30 What it means to understand a credit\n05:46 Can AI predict what happens next?\n06:13 Case study: iHeartMedia, and two models disagree\n08:01 Benchmarking each layer of reasoning\n11:07 Structured reasoning makes the models converge\n12:03 Takeaways: convergence vs correctness\n\nHarneet Kaur, Axim Intelligence\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/WOszaC1WWbQ",
     "topic": "funding",
     "tags": [
       "models",
       "benchmark",
       "research",
+      "video",
       "coding",
-      "funding",
-      "events"
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -162,16 +162,16 @@
     "fetched_at": "2026-10-24T11:52:12+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Hari Kumar, head of AI at Contour Asset Management, a $6B fundamental long/short fund focused on tech, media and telecom, tackles the hardest question in AI adoption: what are we actually getting for the spend? He shares how Contour runs live A/B tests of analysts' research with and without AI tools, tracks \"cost per useful insight,\" uses agents to resurface old ideas when the market makes them interesting again, and extends the same thinking to trading, ops and compliance.\n\nChapters\n00:00 Intro: AI at a $6B fundamental fund\n01:45 Why AI ROI is so hard to capture\n02:25 Live A/B tests of research with and without AI\n05:42 Measuring the process, not just P&amp;L\n06:24 Idea generation and timing agents\n08:57 Bringing alternative data together\n10:04 Time spent and cost per useful insight\n11:44 AI across trading, ops and compliance\n14:35 Getting more from existing data spend\n16:40 The hidden cost of fixing AI tools\n\nHari Kumar, Contour Asset Management\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Hari Kumar, head of AI at Contour Asset Management, a $6B fundamental long/short fund focused on tech, media and telecom, tackles the hardest question in AI adoption: what are we actually getting for the spend? He shares how Contour runs live A/B tests of analysts' research with and without AI tools, tracks \"cost per useful insight,\" uses agents to resurface old ideas when the market makes them interesting again, and extends the same thinking to trading, ops and compliance.\n\nChapters\n00:00 Intro: AI at a $6B fundamental fund\n01:45 Why AI ROI is so hard to capture\n02:25 Live A/B tests of research with and without AI\n05:42 Measuring the process, not just P&amp;L\n06:24 Idea generation and timing agents\n08:57 Bringing alternative data together\n10:04 Time spent and cost per useful insight\n11:44 AI across trading, ops and compliance\n14:35 Getting more from existing data spend\n16:40 The hidden cost of fixing AI tools\n\nHari Kumar, Contour Asset Management\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ZMZlAn6Pyfg",
     "topic": "research",
     "tags": [
       "agents",
       "research",
+      "video",
       "coding",
       "policy",
-      "events",
-      "tools"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -184,12 +184,11 @@
     "fetched_at": "2026-10-24T15:28:29+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/battledrones/releases/tag/v14\">battledrones v14: Compass Rose, a four player map</a></p>\n        <p>I added four player online mode to <a href=\"https://simonwillison.net/2026/Oct/20/battledrones/\">Battledrones</a> - previous maps were limited to two.</p>\n<p>Here's the initial prompt I used: </p>\n<blockquote>\n<p><code>Add a new map for a four player battle - four way rotational symmetry, up to four AI players, works with the WebSocket non-audio based multiplayer mode so up to four human players can join (any spare slots use AI)</code></p>\n</blockquote>\n<p>Claude Opus 4.5 added a new map called \"Compass Rose\" and modified the WebSockets multiplayer network code to support up to four players for that map, joining via share links or QR codes.</p>\n<p><img alt=\"The new map does indeed look a bit like a rose - it uses the cold and ice biome. Also shown are purple robots battling on the map.\" src=\"https://raw.githubusercontent.com/simonw/battledrones/v14/progress-shots/v14/compass-rose.jpg\" /></p>\n<p>The new teams use robots themed in purple and green, joining the existing blue and red designs. You can preview those colors in <a href=\"https://simonw.github.io/battledrones/models.html\">the updated model browser</a>.</p>\n<p>Here's <a href=\"https://simonw.github.io/battledrones/v14/?replay=https://gist.githubusercontent.com/simonw/faa550a002b25a78f1c88a64217786c1/raw/4ff9b03de71d757cd33eb5d1a0e388155b6c20e5/compass.json\">a replay link</a> to watch a four way AI battle with the \"Goliath Armada\" mutator turned on, where each side starts with four giant Goliath mech units.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/game-design\">game-design</a>, <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "24th October 2026\nI added four player online mode to [Battledrones](https://simonwillison.net/2026/Oct/20/battledrones/) - previous maps were limited to two.\nHere's the initial prompt I used:\nAdd a new map for a four player battle - four way rotational symmetry, up to four AI players, works with the WebSocket non-audio based multiplayer mode so up to four human players can join (any spare slots use AI)\nClaude Opus 5.5 added a new map called \"Compass Rose\" and modified the WebSockets multiplayer network code to support up to four players for that map, joining via share links or QR codes.\nThe new teams use robots themed in purple and green, joining the existing blue and red designs. You can preview those colors in [the updated model browser](https://simonw.github.io/battledrones/models.html).\nHere's [a replay link](https://simonw.github.io/battledrones/v14/?replay=https://gist.githubusercontent.com/simonw/faa550a002b25a78f1c88a64217786c1/raw/4ff9b03de71d757cd33eb5d1a0e388155b6c20e5/compass.json) to watch a four way AI battle with the \"Goliath Armada\" mutator turned on, where each side starts with four giant Goliath mech units.\nRecent articles\n[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026",
     "topic": "product",
     "tags": [
       "product",
-      "release",
       "models",
       "open-source",
       "coding",
