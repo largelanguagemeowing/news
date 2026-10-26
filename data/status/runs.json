@@ -1,8 +1,38 @@
 [
   {
+    "run_id": "3bc863eb0074",
+    "started_at": "2026-10-26T00:34:18+00:00",
+    "ended_at": "2026-10-26T00:34:37+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "40249927850",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/40249927850",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-10-26T00:34:18+00:00",
+        "ended_at": "2026-10-26T00:34:37+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 0,
+          "duplicate_articles": 1979,
+          "dead_letters": 0,
+          "failed_sources": 6,
+          "skipped_sources": 1,
+          "not_modified_sources": 18,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 19276.61
+        }
+      }
+    ]
+  },
+  {
     "run_id": "b3c9e2605ccd",
     "started_at": "2026-10-25T22:19:56+00:00",
-    "ended_at": "2026-10-25T22:20:04+00:00",
+    "ended_at": "2026-10-25T22:20:15+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "40239615851",
@@ -661,119 +691,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 7818.96
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "683947362a3e",
-    "started_at": "2026-10-23T09:42:26+00:00",
-    "ended_at": "2026-10-23T09:43:25+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "39933707882",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/39933707882",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-10-23T09:42:26+00:00",
-        "ended_at": "2026-10-23T09:43:17+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 38,
-          "enriched": 37,
-          "updated": 37,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 4,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "trafilatura": 24,
-            "markdown_new": 4,
-            "youtube": 9,
-            "rss": 1
-          },
-          "per_source": {
-            "nvidia-blog": {
-              "attempted": 8,
-              "enriched": 8,
-              "failed": 0
-            },
-            "openai-blog": {
-              "attempted": 4,
-              "enriched": 4,
-              "failed": 0
-            },
-            "marios-rec-reading": {
-              "attempted": 2,
-              "enriched": 1,
-              "failed": 1
-            },
-            "ai-engineer": {
-              "attempted": 6,
-              "enriched": 6,
-              "failed": 0
-            },
-            "huggingface-blog": {
-              "attempted": 3,
-              "enriched": 3,
-              "failed": 0
-            },
-            "simon-willison": {
-              "attempted": 3,
-              "enriched": 3,
-              "failed": 0
-            },
-            "fireship": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "google-deepmind-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "bens-bites": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "hugging-face": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "matt-wolfe": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "anthropic-news": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "claude-blog": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "cohere-blog": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "anthropic-research": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            }
-          },
-          "flush_batches": 2,
-          "defuddle_enabled": true,
-          "duration_ms": 50854.23
         }
       }
     ]
