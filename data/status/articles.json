@@ -7,17 +7,17 @@
     "fetched_at": "2026-10-25T19:52:50+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Aparna Dhinakaran of Arize AI revisits what an AI engineer actually does as the field moves from writing features to running factories of agents. The job now is building the loop: evals that review non-deterministic work, telemetry that agents consume, and agents that act on it. She walks through how Arize built Signal, an always-on agent that reads traces, remembers past issues and opens PRs, covering triggers, sandboxes, durable state, and evaluating the evaluators.\n\nChapters\n00:00 Intro: what does an AI engineer do?\n00:38 Karpathy's funnel: who's running thousands of agents\n01:45 Rising abstraction, from code to agent factories\n02:23 Then vs now: build the loop, not the feature\n03:31 Signal: an always-on agent for your traces\n04:45 Agents are now the main consumers of telemetry\n05:19 What triggers an always-on agent\n06:01 Inside a run: context, sandbox, proxy\n07:11 What persists and what gets torn down\n08:13 Designing durable agents\n09:14 Model and harness agnostic\n10:21 Writing evals, and evaluating the evaluators\n12:48 Trace everything, including your coding agents\n14:17 Closing the gap between labs and businesses\n\nAparna Dhinakaran, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Aparna Dhinakaran of Arize AI revisits what an AI engineer actually does as the field moves from writing features to running factories of agents. The job now is building the loop: evals that review non-deterministic work, telemetry that agents consume, and agents that act on it. She walks through how Arize built Signal, an always-on agent that reads traces, remembers past issues and opens PRs, covering triggers, sandboxes, durable state, and evaluating the evaluators.\n\nChapters\n00:00 Intro: what does an AI engineer do?\n00:38 Karpathy's funnel: who's running thousands of agents\n01:45 Rising abstraction, from code to agent factories\n02:23 Then vs now: build the loop, not the feature\n03:31 Signal: an always-on agent for your traces\n04:45 Agents are now the main consumers of telemetry\n05:19 What triggers an always-on agent\n06:01 Inside a run: context, sandbox, proxy\n07:11 What persists and what gets torn down\n08:13 Designing durable agents\n09:14 Model and harness agnostic\n10:21 Writing evals, and evaluating the evaluators\n12:48 Trace everything, including your coding agents\n14:17 Closing the gap between labs and businesses\n\nAparna Dhinakaran, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ImnZ7s68jw8",
     "topic": "tutorials",
     "tags": [
       "tutorials",
       "models",
       "agents",
       "benchmark",
+      "video",
       "coding",
-      "enterprise",
-      "events"
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -30,11 +30,13 @@
     "fetched_at": "2026-10-25T19:52:53+00:00",
     "source_id": "marios-rec-reading",
     "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. i don't agree with everything, but it's a good data point.",
+    "extraction_method": "fxtwitter",
+    "body": "How I work with Agents\n\n... as of October 2026.\nUse the latest and greatest models. Everything else is potentially a waste of time. If a model is wrong 10% of the time, you don't know which 10%, so you end up making multiple",
     "topic": "general",
     "tags": [
-      "general"
+      "general",
+      "models",
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -47,10 +49,12 @@
     "fetched_at": "2026-10-26T05:48:26+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/seam-cutter\">Seam Cutter</a></p>\n        <p>I built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image.</p>\n<p>I wanted this because I often use <a href=\"https://apps.apple.com/us/app/tailor-screenshot-stitching/id926653095\">Tailor</a> on my iPhone to stitch several screenshots together into lot long image, but sometimes I find myself wanting to crop out a section in the middle - to redact an irrelevant prompt from a transcript, for example.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/tools\">tools</a></p>",
-    "topic": "tools",
+    "extraction_method": "trafilatura",
+    "body": "25th October 2026\nI built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image.\nI wanted this because I often use [Tailor](https://apps.apple.com/us/app/tailor-screenshot-stitching/id926653095) on my iPhone to stitch several screenshots together into lot long image, but sometimes I find myself wanting to crop out a section in the middle - to redact an irrelevant prompt from a transcript, for example.\nRecent articles\n[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026",
+    "topic": "product",
     "tags": [
+      "product",
+      "models",
       "video",
       "coding",
       "tools"
@@ -66,15 +70,15 @@
     "fetched_at": "2026-10-25T17:26:09+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "An AI analyst at a firm like Bridgewater needs private documents, but every email, memo and research note carries its own permissions. Aaron Linsky (head of product engineering, Bridgewater Associates) explains why the Vault's 100 million permissioned documents broke their first search setup, and Nikhil Benesch (CTO, turbopuffer) breaks down the fix: post-filtering loses recall, pre-filtering is too slow, and \"native filtering\" over a clustered vector index gets both, delivering about 120ms P90 searches across 400 million vectors.\n\nChapters\n00:00 Intro: why permissions matter for AI analysts\n02:07 Bridgewater's research process\n03:43 The Vault: 100M documents, many permissions\n05:14 Modeling permissions, and where it broke\n06:25 What turbopuffer is\n08:01 Napkin math: why brute force fails at scale\n09:43 How vector indexes work\n11:50 Permissions break the index\n12:19 Post-filtering vs pre-filtering\n14:09 Native filtering: the best of both\n15:23 Results: 120ms across 100M documents\n15:47 Writing permission filters in practice\n17:00 Beyond permissions: isolation-native search\n\nAaron Linsky, Bridgewater Associates\nNikhil Benesch, turbopuffer\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "An AI analyst at a firm like Bridgewater needs private documents, but every email, memo and research note carries its own permissions. Aaron Linsky (head of product engineering, Bridgewater Associates) explains why the Vault's 100 million permissioned documents broke their first search setup, and Nikhil Benesch (CTO, turbopuffer) breaks down the fix: post-filtering loses recall, pre-filtering is too slow, and \"native filtering\" over a clustered vector index gets both, delivering about 120ms P90 searches across 400 million vectors.\n\nChapters\n00:00 Intro: why permissions matter for AI analysts\n02:07 Bridgewater's research process\n03:43 The Vault: 100M documents, many permissions\n05:14 Modeling permissions, and where it broke\n06:25 What turbopuffer is\n08:01 Napkin math: why brute force fails at scale\n09:43 How vector indexes work\n11:50 Permissions break the index\n12:19 Post-filtering vs pre-filtering\n14:09 Native filtering: the best of both\n15:23 Results: 120ms across 100M documents\n15:47 Writing permission filters in practice\n17:00 Beyond permissions: isolation-native search\n\nAaron Linsky, Bridgewater Associates\nNikhil Benesch, turbopuffer\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/u_jvuCjuvEk",
     "topic": "research",
     "tags": [
       "models",
       "research",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -87,16 +91,17 @@
     "fetched_at": "2026-10-25T13:35:41+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Some of the most important financial data sits behind logins and anti-bot walls, with no API. Jay Sahnan and Arik Bird of Browserbase show how browser agents solve this through three case studies: Ramp fetching receipts at scale (over 30,000 manual hours saved), Bill paying across thousands of different vendor portals with one agent, and Stripe automating KYC checks. They also cover how Browserbase forked Chromium to run reliably in the cloud, and how Stagehand's act, extract and observe primitives keep automations from breaking when sites change.\n\nChapters\n00:00 Intro\n00:27 What is a browser agent?\n01:37 Ramp, Bill and Stripe: data on the hardest-to-reach web\n02:13 Ramp: fetching receipts at scale\n03:34 Why browsers get blocked in the data center\n06:03 Forking Chromium for the cloud\n07:49 Demo: 100 browsers at once\n10:11 Bill: one agent, thousands of portals\n11:08 Stagehand vs Playwright\n14:52 Stripe: automating KYC\n15:52 Act, extract and observe\n16:35 Demo: researching 20 companies in parallel\n\nJay Sahnan, Browserbase\nArik Bird, Browserbase\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Some of the most important financial data sits behind logins and anti-bot walls, with no API. Jay Sahnan and Arik Bird of Browserbase show how browser agents solve this through three case studies: Ramp fetching receipts at scale (over 30,000 manual hours saved), Bill paying across thousands of different vendor portals with one agent, and Stripe automating KYC checks. They also cover how Browserbase forked Chromium to run reliably in the cloud, and how Stagehand's act, extract and observe primitives keep automations from breaking when sites change.\n\nChapters\n00:00 Intro\n00:27 What is a browser agent?\n01:37 Ramp, Bill and Stripe: data on the hardest-to-reach web\n02:13 Ramp: fetching receipts at scale\n03:34 Why browsers get blocked in the data center\n06:03 Forking Chromium for the cloud\n07:49 Demo: 100 browsers at once\n10:11 Bill: one agent, thousands of portals\n11:08 Stagehand vs Playwright\n14:52 Stripe: automating KYC\n15:52 Act, extract and observe\n16:35 Demo: researching 20 companies in parallel\n\nJay Sahnan, Browserbase\nArik Bird, Browserbase\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/DZ24Xbm9Joc",
     "topic": "tutorials",
     "tags": [
+      "tutorials",
       "api",
       "agents",
       "research",
+      "video",
       "infrastructure",
-      "coding",
-      "tutorials"
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
