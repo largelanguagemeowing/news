@@ -1,5 +1,69 @@
 [
   {
+    "article_id": 1100334,
+    "title": "GPT-6.1 Terra",
+    "url": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
+    "published_at": "2026-10-26T23:53:07+00:00",
+    "fetched_at": "2026-10-27T02:19:06+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://openai.com/index/introducing-gpt-6-1-terra/\">GPT-6.1 Terra</a></strong></p>\nIt's always interesting to note which aspects of a new model are emphasized in the release announcement.</p>\n<p>In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use:</p>\n<blockquote>\n<p>We\u2019re introducing <strong>GPT-6.1 Terra</strong>, a fast, efficient model that combines detailed visual reasoning and precise computer use alongside clearer, more natural writing. A significant step up from GPT\u20115.6 Terra, it excels at the communication and computer-based tasks that fill the workday, from drafting proposals and interpreting technical drawings to filling out forms and editing videos.</p>\n</blockquote>\n<p>Terra sits in the same position as Sonnet in the Anthropic model collection - not the cheapest or the most expensive, making it harder to decide when to use it.</p>\n<p>Computer use is a good example of a task that benefits from a less expensive model, since you might put it to work on automated, repetitive tasks.</p>\n<p>OpenAI's Ted Sanders provided some useful advice in <a href=\"https://news.ycombinator.com/item?id=50248124#50249160\">a comment</a> on Hacker News:</p>\n<blockquote>\n<p>In the case of GPT-6.1 Terra, I'd say Terra is probably better than Astra and Sol at technical communication, similar on vision and computer use (but much faster!), and a bit worse on most other things. For API developers, it's a nice midrange option if you want something cheaper than Sol but a lot smarter than Luna (especially for vision / computer use / communication). For subscribers, it's not a bombshell release - if you're hitting usage limits, maybe it helps you go a bit further, and if you want clearer communication or faster computer use, it can be a nice option to select.</p>\n</blockquote>\n<p>Here are <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F855d951d12c68eccca5374cd7d4f834e\">the pelicans</a> for the different reasoning levels. This pelican <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F855d951d12c68eccca5374cd7d4f834e#reasoning-2\">for \"max\"</a> cost <a href=\"https://www.llm-prices.com/#it=16&amp;ot=22629&amp;sel=gpt-6.1-terra\">11.3161 cents</a> and took 4 minutes and 11 seconds:</p>\n<p><img alt=\"It's a good pelican and a good bicycle - correctly shaped frame, feet n pedals either side of the frame, has the same color scheme as the others in the GPT-6 and GPT-6.1 families.\" src=\"https://static.simonwillison.net/static/2026-10-26/terra-max.webp\" /></p>\n<p>Here's <a href=\"https://static.simonwillison.net/static/2026/openai-pelicans-october-2026.html\">a new comparison grid</a> showing pelicans for every reasoning level of OpenAI's current frontier lineup: GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna.</p>\n<p>GPT-6.1 Terra is priced at $1/million input tokens and $5/million output - almost half the price of GPT-5.6 Terra and GPT-6.1 Sol, and around 10x the price of GPT-6 Luna.\n\n    <p><small></small>Via <a href=\"https://news.ycombinator.com/item?id=50248124\">Hacker News</a></small></p>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a>, <a href=\"https://simonwillison.net/tags/gpt\">gpt</a></p>",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1100576,
+    "title": "GitHub - badlogic/qwen3_tts_rs: A Rust implementation of the Qwen3 Text-to-Speech (TTS) model inference.",
+    "url": "https://github.com/badlogic/qwen3_tts_rs",
+    "published_at": "2026-10-26T23:10:57+00:00",
+    "fetched_at": "2026-10-27T02:19:17+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing. icmust bully @mitsuhiko into using my gunk",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "open-source",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1100561,
+    "title": "Agents That Self Improve While You Sleep - Fuad Ali, Arize AI",
+    "url": "https://www.youtube.com/watch?v=UGuNt2_Oz8s",
+    "published_at": "2026-10-26T23:00:39+00:00",
+    "fetched_at": "2026-10-27T02:19:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "In this workshop, Fuad Ali of Arize AI shows how to build a self-improvement loop for AI agents: trace everything, let Signal (an always-on agent) read your traces on a schedule and file deduplicated issues, turn failures into evals and living regression datasets, run experiments to prove a fix works, and keep humans at the highest-leverage points: eval design, dataset curation and reviewing fixes. He demos the loop on a toy-shopping agent with a planted bug and takes questions on evaluating qualitative output, decision models and cost.\n\nChapters\n00:00 Intro and workshop setup\n05:42 Where is your team on the maturity curve?\n07:39 The loop: trace, signal, eval, experiment, fix\n08:46 Demo agent and tracing\n12:15 Signal: an always-on agent reading your traces\n16:11 Agent Studio and managed agents\n18:31 Turning failures into datasets\n20:32 Evals: code, LLM as a judge, decision models\n24:48 Creating an eval from a Signal issue\n27:01 Experiments: proving the fix works\n31:12 Keeping humans in the loop\n34:16 Toward a fully automated loop\n40:16 Q&amp;A: evaluating qualitative output\n48:21 Q&amp;A: decision models, data sources and cost\n\nFuad Ali, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1096835,
     "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
     "url": "https://openai.com/index/greptile-code-review-codex-astra",
@@ -36,6 +100,29 @@
       "news",
       "tools",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1100562,
+    "title": "How to Test Your Agents on Real Tasks With Harbor - Xander Song, Arize AI",
+    "url": "https://www.youtube.com/watch?v=kRJjSOYqW0I",
+    "published_at": "2026-10-26T19:00:25+00:00",
+    "fetched_at": "2026-10-27T02:19:16+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Xander Song, an engineer at Arize AI who works on Phoenix, introduces Harbor, an open source framework for evaluating agents on realistic tasks with real data in isolated sandboxes. He explains tasks, Docker environments, verifiers and rewards, trials and jobs, oracles that validate your setup before you spend tokens, and ATIF trajectories. Then he shows how his team runs Harbor at scale on Daytona and with Phoenix to test a prompt change that steered agents toward a new SQL tool, cutting tool calls without hurting correctness.\n\nChapters\n00:00 Intro: shipping on evidence, not vibes\n01:28 What Harbor is\n03:37 Architecture: tasks, environments, verifiers\n06:08 Trajectories, jobs and oracles\n07:58 Example: fixing a failing migration\n10:48 Verifiers as black-box integration tests\n14:21 Running at scale in parallel sandboxes\n17:04 Harbor with Phoenix\n20:37 How the Phoenix team uses Harbor\n25:07 Q&amp;A: how Harbor orchestrates runs\n29:24 Q&amp;A: complex systems and data size\n33:21 Case study: steering agents to a SQL tool\n38:34 Demo: datasets and experiments in Phoenix\n44:10 Demo: comparing jobs task by task\n48:31 Regression tests and skills\n\nXander Song, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "coding",
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -78,6 +165,29 @@
       "media",
       "news",
       "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1100336,
+    "title": "webframe: evaluated as a scraper and a sandbox",
+    "url": "https://simonwillison.net/2026/Oct/26/webframe-evaluation/",
+    "published_at": "2026-10-26T16:15:00+00:00",
+    "fetched_at": "2026-10-27T02:19:06+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Research:</strong> <a href=\"https://github.com/simonw/research/tree/main/webframe-evaluation#readme\">webframe: evaluated as a scraper and a sandbox</a></p>\n        <p><a href=\"https://github.com/tractordev/webframe\">webframe</a> is a neat little project from Jeff Lindsay which lets you \"run a web page like a program\" - you point it at a URL or file and it executes it in a hidden headless web view and outputs <code>console.log()</code> to standard output and any exceptions to standard error.</p>\n<p>It's written in Go on top of the <a href=\"https://github.com/crgimenes/glaze\">glaze</a> library, which provides access to a system browser (\"WKWebView on macOS, WebKitGTK on Linux, WebView2 on Windows\") so it doesn't need to bundle its own browser engine.</p>\n<p>It reminds me of my own <a href=\"https://shot-scraper.datasette.io/en/stable/javascript.html\">shot-scraper javascript</a> tool, albeit in a much smaller package that doesn't depend on Playwright.</p>\n<p>I had Claude Opus 5.5 <a href=\"https://claude.ai/code/cshk_01MX3aJH8vDGmGSj1xH9BYhj2HviVvLDaJbiELHyDoReYT\">put it through its paces</a> and prepare a research report for me. Here's the prompt I used:</p>\n<blockquote>\n<p><code>Explore https://github.com/tractordev/webframe try running it and put it though its paces, build a few exploratory prototypes, then evaluate it as a potential sandboxing tool and as a tool for scraping web pages using the same patterns encouraged by the \"shot-scraper JavaScript\" command (see simonw/shot-scraper on GitHub, docs directory)</code></p>\n</blockquote>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/browsers\">browsers</a>, <a href=\"https://simonwillison.net/tags/go\">go</a>, <a href=\"https://simonwillison.net/tags/javascript\">javascript</a>, <a href=\"https://simonwillison.net/tags/jeff-lindsay\">jeff-lindsay</a>, <a href=\"https://simonwillison.net/tags/shot-scraper\">shot-scraper</a></p>",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "models",
+      "open-source",
+      "api",
+      "benchmark",
+      "research",
+      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10891,118 +11001,6 @@
       "benchmark",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 838485,
-    "title": "Every AI Company Is Accidentally Building a Bank \u2014 Dor Sasson, Stigg",
-    "url": "https://www.youtube.com/watch?v=cf2IhzqeQH4",
-    "published_at": "2026-10-07T00:30:28+00:00",
-    "fetched_at": "2026-10-07T14:15:20+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "In one month, three of the biggest AI companies had a pricing emergency. Dor Sasson says it was really an infrastructure problem.\n\nDor Sasson, co-founder and CEO of Stigg, argues that every AI company is accidentally building a bank. He starts with the April pricing scramble, when Anthropic cut third-party agents like OpenClaw off its subscription plans, OpenAI changed its Pro tier, and GitHub pulled free Copilot access, plus stories of companies burning through their AI budgets in weeks. The common problem: usage gets checked after the invoice, not before. He makes the case for checking entitlements synchronously before inference and settling asynchronously after, like an ATM, and points to OpenAI's own published architecture. He covers the banking ideas AI products now need, from hold-and-settle and double-entry bookkeeping to credit sources and spend caps across teams, users and agents.\n\nIn this talk:\n\u2022 Why AI pricing emergencies are really infrastructure problems\n\u2022 Check before you spend: synchronous checks, asynchronous settlement\n\u2022 Concurrency, double spend, and drawing down from different credit pools\n\u2022 Four patterns for selling AI at scale, from reserve-and-settle to spend visibility\n\nSPEAKER\nDor Sasson, Co-founder & CEO, Stigg\nLinkedIn: https://www.linkedin.com/in/datapm/\n\nLINKS\nStigg: https://www.stigg.io\nStigg on X: https://x.com/GetStigg\n\nCHAPTERS\n0:00 Intro\n0:37 Every AI company is building a bank\n1:17 April's pricing emergencies\n2:52 Case: Anthropic and OpenClaw\n4:02 It's not just Anthropic\n5:02 Checks happen after the invoice\n6:27 Check first, settle later\n7:32 The ATM analogy\n8:11 How OpenAI built it\n9:21 Three takeaways\n10:31 Concurrency and double spend\n12:16 Which credits get spent first?\n13:31 Budgets, hierarchies and spend caps\n14:46 Four patterns\n17:50 A pricing change that was really infrastructure\n18:35 AI's Stripe moment\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AIPricing #Monetization #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/cf2IhzqeQH4",
-    "topic": "coding",
-    "tags": [
-      "open-source",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding",
-      "policy"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 833989,
-    "title": "OpenAI \u201crogue\u201d agent activities found on Wikimedia projects",
-    "url": "https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/",
-    "published_at": "2026-10-07T00:16:45+00:00",
-    "fetched_at": "2026-10-07T00:55:15+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "7th October 2026 - Link Blog\n[OpenAI \u201crogue\u201d agent activities found on Wikimedia projects](https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/). Given how tempting a target wikis are for rogue agent swarms, it's not a huge surprise that Wikipedia found evidence of that activity once they went looking:\nThe Wikimedia Foundation conducted its own investigation to see whether Wikimedia websites had been similarly affected by AI agents, focusing on those operated by OpenAI. We can confirm that we have discovered some activity by these \u201crogue\u201d OpenAI agents on Wikimedia platforms. The unauthorized bot activities included edits to our wikis, some unsuccessful attempts to exploit a public note-taking tool we host, and heavy traffic, which are described more below.\nThey found evidence of agents editing sandbox pages, trying to use pieces of infrastructure such as Etherpad to help proxy content from elsewhere, and saw widespread crawling and \"hundreds of thousands of data queries\" to their Wikidata Query Service.\nMy best guess is that most of this was a similar (or the same) swarm of agents as those that [defaced that German wiki](https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/) while training for research tasks.\nThe Wikipedia sandbox wiki edits appear to have started on May 12th, and the initial test edits to the UseModWiki Sandbox page reported by that incident started on May 11th.\nRecent articles\n[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026[OpenAI DevDay 2026 live blog](/2026/Sep/29/openai-devday-2026-live-blog/)- 29th September 2026[2026 in LLMs (so far)](/2026/Sep/27/2026-in-llms-so-far/)- 27th September 2026",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "coding",
-      "news"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1007861,
-    "title": "Introducing Claude Haiku 5.5",
-    "url": "https://www.anthropic.com/claude-haiku-5-5",
-    "published_at": "2026-10-07T00:00:00+00:00",
-    "fetched_at": "2026-10-20T19:51:05+00:00",
-    "source_id": "anthropic-news",
-    "source_name": "Anthropic News",
-    "extraction_method": "trafilatura",
-    "body": "Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we\u2019ve ever released.\nClaude Haiku 5.5 is designed for high-volume, cost-sensitive tasks. It reliably handles quick and repetitive workloads (like summaries, compactions, database queries, and classification requests). It pairs well with Opus 5.5 and Sonnet 5.5 as a subagent on coding work. And, since it\u2019s also our fastest model to date, it works especially well for speed-sensitive tasks like live customer support and browser use.\u00b9\nHaiku 5.5 is available at a much lower price than Haiku 4.5. On average, it now costs around 75% less to run.\u00b2\nAlong with this launch, we\u2019re making improvements to the value of our model range. We\u2019re halving the price of Claude Sonnet 5.5\u2019s cache reads, which means Sonnet 5.5 now runs around 20% cheaper on most agentic work. And we\u2019re introducing a new monthly API credit for our Claude Max and Team subscribers, designed to support our users in building new agents and applications that run on the Claude Platform.\nPerformance\nHere\u2019s how Claude Haiku 5.5 performs across a range of benchmarks:\n| Haiku 5.5 | Haiku 4.5 | GPT-6 Luna | Sonnet 5.5For reference | |\n|---|---|---|---|---|\n| Knowledge workGDPval-AA v2.1 | 1620 | 735 | 1437 | 1840 |\n| Knowledge workAA-Briefcase v1.1 | 1578 | 614 | 1336 | 1824 |\n| Computer useOSWorld 2.1 | 72.4%Offline subset | 15.7%Offline subset | 48.9%Offline subset | 83.9%Offline subset |\n| Multidisciplinary reasoningHumanity\u2019s Last Exam | 45.9%no tools | 10.2%no tools | \u2014 | 56.9%no tools |\n| 57.4%with tools | 18.7%with tools | \u2014 | 64.5%with tools | |\n| Agentic codingTerminal-Bench 4.0 | 39.2% | 0.0% | 16.4% | 70.6% |\n| Agentic codingFrontierCode 1.1 (Main) | 46.4% | \u2014 | 42.4% | 52.1%Xhigh |\n| Visual reasoningChartography | 46.4%no tools | 6.4%no tools | 29.1%no tools | 61.6%no tools |\nFor details on how we run our evaluations, see the [Haiku 5.5 System Card](https://www.anthropic.com/claude-haiku-5-5-system-card).\nHaiku 5.5 is our first Haiku-class model to come with an adjustable effort setting. This means that, as with our other models, users can decide whether to optimize for cost or intelligence. The charts below show how Haiku 5.5 performs on three benchmarks at each effort setting:\nIn early testing, our customers reported results consistent with the performance and cost improvements shown above. Here\u2019s what they told us about the new model:\nPricing\nThe table below shows how Claude Haiku 5.5\u2019s pricing compares to our other models. Haiku 5.5 is especially good value when used for tasks with prompts up to 100,000 tokens, which make up around 90% of requests to our previous Haiku model.\nSafety\nAlignment. Claude Haiku 5.5 shows major improvements across almost all of our alignment evaluations relative to Haiku 4.5. In particular, we found far fewer instances of misaligned behavior, and a lower willingness to cooperate with misuse. The model\u2019s [system card](https://www.anthropic.com/claude-haiku-5-5-system-card) describes our evaluation process and results in more detail.\nSafeguards. Consistent with its capabilities, Haiku 5.5\u2019s cybersecurity safeguards are more restrictive than Haiku 4.5\u2019s, but somewhat less restrictive than those we\u2019ve applied to other recent models. In cybersecurity, they permit a wider range of defensive tasks than our safeguards for Sonnet 5.5, but they still block penetration testing and other techniques more likely to be used by attackers.\nHaiku 5.5\u2019s biology safeguards are the same as for Sonnet 5, Sonnet 5.5, and Opus 5. They allow research biology questions but restrict access to requests that we judge as likely to cause harm. Organizations working on wider-ranging biology and cyber activities can apply to our [Life Sciences Verification Program](https://www.anthropic.com/news/life-sciences-verification-program) and [Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program).\nAvailability\nClaude Haiku 5.5 is available now on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure. On the Claude Platform, developers can get started with claude-haiku-5-5\n.\nSee our [migration guide](https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide) for details.\nFurther updates\nAlongside our new pricing for Claude Haiku 5.5, we\u2019re making further improvements to the value of our models and products.\nFirst, starting today, we\u2019re lowering the price of cache reads on Claude Sonnet 5.5. Cache reads now cost 50% less: $0.10 per million tokens rather than $0.20. Because cache reads make up a large share of models\u2019 token consumption, this reduces the cost of Sonnet 5.5 on most agentic tasks by around 20%.\nFor instance, here\u2019s what the price cut means for Sonnet 5.5\u2019s performance relative to cost on Terminal-Bench 4.0:\nThis chart illustrates an important difference between Haiku 5.5 and our larger models. Sonnet 5.5 and Opus 5.5 remain better choices for complex agentic coding tasks like those measured by Terminal-Bench 4.0. By contrast, Haiku 5.5 is best suited to more narrowly scoped tasks that might otherwise have been cost-prohibitive with previous versions of Claude\u2014like compaction, summarization, or subagent work.\nSecond, this week, we\u2019ll roll out a new monthly API credit to all Max and Team subscribers for use on the Claude Platform. Max 5x users will get $100 in credits per month, Max 20x users will get $200, and Team subscribers will receive up to $500, pooled across their users. These credits are designed to allow our users to experiment with building tools, apps, and agents that call our API. They can be used on any of our models. For more information, [see our Help Center article](https://support.claude.com/en/articles/17154008).\nFor developers, we\u2019re also updating our Claude Python and TypeScript SDKs to add support for computer use and browser use in beta. Haiku 5.5 is especially well-suited to these tasks, given its combination of speed, capability, and price. You can read more about this [in our Claude Platform docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk).\nFootnotes\n1 Claude Haiku 5.5 is our fastest model to date at each model\u2019s standard speed, although it runs less quickly than our Opus models in Fast Mode.\n2 Claude Haiku 5.5 is priced 90% lower than Claude Haiku 4.5 for requests up to 100,000 tokens, and 50% lower for requests over 100,000 tokens. On Haiku 4.5, 90% of requests fell into the former category. This calculation also accounts for changes between Haiku 4.5 and Haiku 5.5 in how many tokens are used to complete a given piece of work: Haiku 5.5 has an updated tokenizer (similar to Sonnet 5.5\u2019s and Opus 5.5\u2019s), which means it uses slightly more tokens per task.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 841685,
-    "title": "Automating eval design and hillclimbing with Claude",
-    "url": "https://claude.dev/blog/automating-eval-design-and-hillclimbing/",
-    "published_at": "2026-10-07T00:00:00+00:00",
-    "fetched_at": "2026-10-07T20:04:30+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "PlaybooksAutomating eval design and hillclimbing with Claude\nPrinciples for designing evals and hillclimbing against them without fooling yourself, and how the claude-api skill's build-eval and hillclimb commands put them to work.\nEvaluations provide a signal on how your app or skill is performing on specific tasks. But designing evaluations, and improving performance on them without fooling yourself, is hard. We've added guidance for both to the [claude-api skill](https://github.com/anthropics/skills/tree/main/skills/claude-api).\nWith the skill, you can run /claude-api build-eval\nto build an evaluation inside your codebase, and run /claude-api hillclimb\nto improve your application against it, one change at a time, with a held-out set of examples to catch overfitting.\nIn this article, we highlight the principles of good eval design and hillclimbing first, then show how Claude Code with the claude-api\nskill applies those principles. We\u00e2ll close by showing a few examples of these commands.\nWell designed evaluations have a few common elements (Figure 1):\n- Eval tasks mirror production. Sample tasks that you care about in \u00e2production,\u00e2 or the setting in which the capability or application you are testing will be used. Sometimes tasks are picked because they are easy to generate or they are easy to grade. But it\u00e2s important to ensure that the task distribution represents what you actually care about.\n- Performance improves with stronger models and more thinking. More capable models and higher effort levels typically should perform better on an evaluation. If they don\u00e2t, ambiguous tasks or a miscalibrated grader often are hobbling performance.\n- There is \u00e2passable\u00e2 headroom at the frontier. The most capable model at the highest effort should be well below 100% on the evaluation, otherwise you can\u00e2t reliably judge how changes impact performance. Importantly, the gap should not be explained by impossible or ambiguous tasks: a common tell is that a task fails every evaluation run, regardless of the number of replicates. A good task is one where two domain experts would reach the same verdict and everything the grader checks is stated in the task.\n- Low run-to-run variance. High variance is often due to poorly designed, ambiguous tasks or a grader that produces different verdicts on identical output. Variance can also hide in the configuration. For example, effort may not be applied consistently. Also, the environment can affect the results of the evaluation: leftover state from an earlier trial (a file, a git history) can hand the agent the answer.\nModel capability is jagged. If you pick cases because today's model fails them, you are sampling the valleys of one model's capability surface (Figure 2). The evaluation can end up measuring that model's failure fingerprint rather than what is intrinsically hard or valuable for your application to do.\nPick hard cases because a human judged them hard: a useful test is to be able to say why a task is hard before you include it. Include cases that are specific failures in your application derived from production traffic, bug reports, or tickets. However, don\u00e2t blindly trust user traffic: users sometimes try what they expect to work, so a task distribution drawn strictly from user traffic may skew easy.\nThe build-eval\ncommand in the claude-api skill turns these principles into a guided workflow. When you run /claude-api build-eval\nin Claude Code, Claude interviews you, builds the eval inside your codebase, and pauses for approval at specific points.\nClaude helps you sample inputs to build evaluations in this order:\n- Production transcripts, after asking about retention and sensitive data.\n- Bug reports and support tickets.\n- Five to ten cases you write by hand.\n- Cases synthesized from your codebase.\nThe skill prioritizes production traffic, but it can also generate synthetic data anchored in a few real examples that you provide. The skill instructs Claude to generate a simple page that shows you every input and waits until you confirm them. As an illustration, below we show an example set of inputs for an e-mail router application that the skill may ask the user to review (Figure 3).\nAfter the inputs, Claude proposes the cheapest grader that fits your application\u00e2s output:\n- Programmatic verification: If the output possibilities are constrained, it uses a code based check (exact match, a label from a fixed set, JSON that matches a schema, tests that pass).\n- LLM-as-judge: It will default to this type of check if the output space is open-ended, with many valid answers but clear quality criteria. In this case, a second model reads the input, the output and a rubric written as checkable claims (not a 1-to-5 scale), and returns a score with its reasoning. If you have a baseline to compare against, the judge instead reads both inputs in random order, without being told which is the baseline, and picks the better one. You pick the judge model, and it should not be the model you are testing.\nClaude grades a handful of cases and asks whether you would have scored any of them differently (Figure 4). In general, it is important to [read a sample of scored transcripts](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) before believing your evaluator; scoring failures are among the most common ways an evaluation is misconfigured.\nWhen you\u00e2ve validated the grader, the skill tells you the size of the evaluation set (cases \u00c3 repeats \u00c3 model, and roughly how long it will take), runs the baseline, and prints the score with a confidence interval. What you get back: the cases, the grader, the runner, one JSON line and one full transcript per case, and a plain page that lists each case's score with a link to its transcript. If you want more than that page shows (e.g., a chart), just ask and Claude will build it as an extra page next to it. By default, these extra pages are static files that open locally and load nothing from the network.\nDuring the baseline runs mentioned above, Claude checks a number of things:\n- Grader: Claude runs the grader twice on the same output, and reports whether the verdict changed.\n- Plumbing: Claude checks for timeouts, API errors, and cut-off answers to ensure infrastructure noise doesn't pass as model variance.\n- Headroom: if the baseline already scores about 95% or higher, the skill warns the user and alerts that the hillclimb should aim to explore cost or latency rather than quality.\nNow that you have a reliable means of grading your application\u00e2s performance on a task, you can try to improve it. Hillclimbing is an effective way to tune parameters like effort or prompts, which trade-off cost and performance. Some general tips for choosing where to apply it:\n- Cheap iteration - It should be inexpensive (in terms of time, cost, and effort) to modify whatever surface you are focused on for hillclimbing. Many internal efforts and customers have focused hillclimbing on text, such as prompts and skills. These are easy to change and revert. In contrast, open-ended modifications to an agent harness during hillclimbing may involve extensive code changes.\n- Attributable - Changes in the score on your evaluation should be attributable to the surface you are modifying during hillclimbing. For example, several successful applications of hillclimbing have focused on skill triggering. The evaluation metric (the trigger rate for the skill) is directly coupled to the skill description that is being modified.\n- Well-scoped objective - One common failure mode is an open-ended request to improve performance without careful consideration of the headroom available in the evaluation; an evaluation that\u00e2s near saturation or a poorly scoped surface (e.g., an open-ended request to update the harness) is more likely to stall. One generally strong objective across various efforts is cost: even if an evaluation is saturated, you can ask Claude to\n[find ways to reduce cost](https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform)while keeping performance at parity.\nEven a well-designed evaluation rarely matches the exact task distribution you care about in production. As a result, \"overfitting\" to an evaluation is a common problem and results in a system that performs better on an evaluation than on production traffic.\nThere are many ways an evaluation can \"leak\" into your harness (the code around the model, including prompts, tools, and loop that calls Claude). For example, consider an evaluation task that benefits from OCR, but OCR is rarely beneficial in your production tasks. The evaluation harness might add an OCR tool to your application, which improves on the benchmark without any impact on production. More broadly, hillclimbing may add features to that harness that address edge cases in the particular evaluation examples you\u00e2ve chosen. These harness additions improve your evaluation score, but don\u00e2t translate to improvements in production (Figure 5).\nThree things can help address this:\n- Split the cases. Use a train set that the hillclimber may read and a test set that is never seen. If the train set scores improve while the test set scores stay flat, then that is a common overfitting warning sign.\n- Never paste failures into the prompt. If the hillclimber reads the failing transcripts, it should never paste the failure content into the prompt.\n- Keep the answers structurally out of the model's reach. Models can sometimes \u00e2reward hack\u00e2 by directly finding answers to evaluations.\nAs discussed below, the claude-api skill applies these principles for you.\nThe hillclimb command in the claude-api skill turns these principles into a guided workflow. When you run /claude-api hillclimb\nin Claude Code, Claude iterates to improve against a given evaluation. You choose what changes it can make including:\n- Your system prompt\n- Skills or instruction files\n- Tool descriptions\n- Model choice, effort level, and other API parameters\n- Your harness code\nBefore it starts, Claude asks what you want to optimize (e.g., performance, or cost while performance holds) and then splits the evaluation set at random into test and train. With a cost goal, it considers [a few common cost drivers](https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform), including prompt caching, auditing the prompt for compatibility with the selected model, and picking the model and effort setting.\nBefore the first round, Claude checks that the eval's noise (how far the score can move by chance alone) is smaller than the smallest improvement you'd act on; if it isn't, it says so and suggests more repetitions or cases.\nEach round, Claude reads the previous round\u00e2s train transcripts and proposes one change as a patch. It aims each round at a change whose effect can show above the eval's noise: it fixes the failing behavior at its root (e.g., rewrites the section that causes it or adds a missing rule) rather than rewording a line. It then runs evaluation with the patched change. At this point, Claude applies a check: if the train\nset improves but the test\nset is flat, Claude suspects overfitting and reverts the patch. If there is a regression, Claude reverts. If train and test sets improve, it keeps the patch (Figure 6).\nWhen the score stalls for two or three rounds, Claude reads each remaining train failure and sorts it by cause. It does the same early if no single fix could gain more than the eval's noise, and suggests more repetitions or cases, rather than spending rounds on changes too small to measure. This step can catch ambiguous evaluation cases, harness errors, or run-to-run variance.\nOnly legitimate failures are included in more hillclimbing rounds.\nWhen hillclimbing completes, Claude leaves your code at the version that did best on the test set for your goal. It reports the test result against the baseline with confidence intervals (Figure 7). If the gain is within noise, it says so and recommends against",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 845265,
-    "title": "Claude Haiku 5.5",
-    "url": "https://www.anthropic.com/claude-haiku-5-5",
-    "published_at": "2026-10-07T00:00:00+00:00",
-    "fetched_at": "2026-10-08T00:19:22+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we\u2019ve ever released.\nClaude Haiku 5.5 is designed for high-volume, cost-sensitive tasks. It reliably handles quick and repetitive workloads (like summaries, compactions, database queries, and classification requests). It pairs well with Opus 5.5 and Sonnet 5.5 as a subagent on coding work. And, since it\u2019s also our fastest model to date, it works especially well for speed-sensitive tasks like live customer support and browser use.\u00b9\nHaiku 5.5 is available at a much lower price than Haiku 4.5. On average, it now costs around 75% less to run.\u00b2\nAlong with this launch, we\u2019re making improvements to the value of our model range. We\u2019re halving the price of Claude Sonnet 5.5\u2019s cache reads, which means Sonnet 5.5 now runs around 20% cheaper on most agentic work. And we\u2019re introducing a new monthly API credit for our Claude Max and Team subscribers, designed to support our users in building new agents and applications that run on the Claude Platform.\nPerformance\nHere\u2019s how Claude Haiku 5.5 performs across a range of benchmarks:\n| Haiku 5.5 | Haiku 4.5 | GPT-6 Luna | Sonnet 5.5For reference | |\n|---|---|---|---|---|\n| Knowledge workGDPval-AA v2.1 | 1620 | 735 | 1437 | 1840 |\n| Knowledge workAA-Briefcase v1.1 | 1578 | 614 | 1336 | 1824 |\n| Computer useOSWorld 2.1 | 72.4%Offline subset | 15.7%Offline subset | 48.9%Offline subset | 83.9%Offline subset |\n| Multidisciplinary reasoningHumanity\u2019s Last Exam | 45.9%no tools | 10.2%no tools | \u2014 | 56.9%no tools |\n| 57.4%with tools | 18.7%with tools | \u2014 | 64.5%with tools | |\n| Agentic codingTerminal-Bench 4.0 | 39.2% | 0.0% | 16.4% | 70.6% |\n| Agentic codingFrontierCode 1.1 (Main) | 46.4% | \u2014 | 42.4% | 52.1%Xhigh |\n| Visual reasoningChartography | 46.4%no tools | 6.4%no tools | 29.1%no tools | 61.6%no tools |\nFor details on how we run our evaluations, see the [Haiku 5.5 System Card](https://www.anthropic.com/claude-haiku-5-5-system-card).\nHaiku 5.5 is our first Haiku-class model to come with an adjustable effort setting. This means that, as with our other models, users can decide whether to optimize for cost or intelligence. The charts below show how Haiku 5.5 performs on three benchmarks at each effort setting:\nIn early testing, our customers reported results consistent with the performance and cost improvements shown above. Here\u2019s what they told us about the new model:\nPricing\nThe table below shows how Claude Haiku 5.5\u2019s pricing compares to our other models. Haiku 5.5 is especially good value when used for tasks with prompts up to 100,000 tokens, which make up around 90% of requests to our previous Haiku model.\n| Price per 1 million tokens | Haiku 5.5 prompts up to / over 100k | Haiku 4.5 | Sonnet 5.5 |\n|---|---|---|---|\n| Cache reads | $0.01 / $0.05 | $0.10 | $0.10 |\n| Cache writes | $0.125 / $0.625 | $1.25 | $2.50 |\n| Input tokens | $0.10 / $0.50 | $1.00 | $2.00 |\n| Output tokens | $0.50 / $2.50 | $5.00 | $10.00 |\nSafety\nAlignment. Claude Haiku 5.5 shows major improvements across almost all of our alignment evaluations relative to Haiku 4.5. In particular, we found far fewer instances of misaligned behavior, and a lower willingness to cooperate with misuse. The model\u2019s [system card](https://www.anthropic.com/claude-haiku-5-5-system-card) describes our evaluation process and results in more detail.\nSafeguards. Consistent with its capabilities, Haiku 5.5\u2019s cybersecurity safeguards are more restrictive than Haiku 4.5\u2019s, but somewhat less restrictive than those we\u2019ve applied to other recent models. In cybersecurity, they permit a wider range of defensive tasks than our safeguards for Sonnet 5.5, but they still block penetration testing and other techniques more likely to be used by attackers.\nHaiku 5.5\u2019s biology safeguards are the same as for Sonnet 5, Sonnet 5.5, and Opus 5. They allow research biology questions but restrict access to requests that we judge as likely to cause harm. Organizations working on wider-ranging biology and cyber activities can apply to our [Life Sciences Verification Program](https://www.anthropic.com/news/life-sciences-verification-program) and [Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program).\nAvailability\nClaude Haiku 5.5 is available now on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure. On the Claude Platform, developers can get started with claude-haiku-5-5\n.\nSee our [migration guide](https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide) for details.\nFurther updates\nAlongside our new pricing for Claude Haiku 5.5, we\u2019re making further improvements to the value of our models and products.\nFirst, starting today, we\u2019re lowering the price of cache reads on Claude Sonnet 5.5. Cache reads now cost 50% less: $0.10 per million tokens rather than $0.20. Because cache reads make up a large share of models\u2019 token consumption, this reduces the cost of Sonnet 5.5 on most agentic tasks by around 20%.\nFor instance, here\u2019s what the price cut means for Sonnet 5.5\u2019s performance relative to cost on Terminal-Bench 4.0:\nThis chart illustrates an important difference between Haiku 5.5 and our larger models. Sonnet 5.5 and Opus 5.5 remain better choices for complex agentic coding tasks like those measured by Terminal-Bench 4.0. By contrast, Haiku 5.5 is best suited to more narrowly scoped tasks that might otherwise have been cost-prohibitive with previous versions of Claude\u2014like compaction, summarization, or subagent work.\nSecond, this week, we\u2019ll roll out a new monthly API credit to all Max and Team subscribers for use on the Claude Platform. Max 5x users will get $100 in credits per month, Max 20x users will get $200, and Team subscribers will receive up to $500, pooled across their users. These credits are designed to allow our users to experiment with building tools, apps, and agents that call our API. They can be used on any of our models. For more information, [see our Help Center article](https://support.claude.com/en/articles/17154008).\nFor developers, we\u2019re also updating our Claude Python and TypeScript SDKs to add support for computer use and browser use in beta. Haiku 5.5 is especially well-suited to these tasks, given its combination of speed, capability, and price. You can read more about this [in our Claude Platform docs](https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk).\nFootnotes\n1 Claude Haiku 5.5 is our fastest model to date at each model\u2019s standard speed, although it runs less quickly than our Opus models in Fast Mode.\n2 Claude Haiku 5.5 is priced 90% lower than Claude Haiku 4.5 for requests up to 100,000 tokens, and 50% lower for requests over 100,000 tokens. On Haiku 4.5, 90% of requests fell into the former category. This calculation also accounts for changes between Haiku 4.5 and Haiku 5.5 in how many tokens are used to complete a given piece of work: Haiku 5.5 has an updated tokenizer (similar to Sonnet 5.5\u2019s and Opus 5.5\u2019s), which means it uses slightly more tokens per task.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
