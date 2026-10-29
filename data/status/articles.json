@@ -1,5 +1,146 @@
 [
   {
+    "article_id": 1133443,
+    "title": "Custom Voices With Qwen3-TTS",
+    "url": "https://lucumr.pocoo.org/2026/10/29/qwen3-custom-voices/",
+    "published_at": "2026-10-29T19:18:20+00:00",
+    "fetched_at": "2026-10-29T20:27:19+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. pipi also uses qwen3-tts, with a heavily optimized single executable mlx-c inference engine. great quality, but compute heavy.",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1133428,
+    "title": "Why Humans Can't Keep Up With AI-Written Code - Tariq Shaukat, Sonar",
+    "url": "https://www.youtube.com/watch?v=LQW_Wvqhp04",
+    "published_at": "2026-10-29T19:00:16+00:00",
+    "fetched_at": "2026-10-29T20:27:17+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Agents have made code cheap: one study saw lines of code up 2,450% but releases up only 30%. Sonar CEO Tariq Shaukat draws on the factory revolution that Toyota and Lexus started to explain how to build agentic software factories you can trust. He breaks down five hard problems: human review that doesn't scale (people agree with AI that's wrong 4 out of 5 times), agents struggling with large codebases, errors compounding over long tasks, unreliable LLM judges, and near-zero time to exploit. Then he lays out Sonar's code confidence formula: intent, guide rails, verification and evidence.\n\nChapters:\n0:00 Intro\n0:26 The ball bearing that changed car factories\n2:23 Software already borrowed these ideas\n2:55 Agents break the factory\n5:19 Problem 1: Human in the loop doesn't scale\n6:45 Problem 2: Agents struggle with big codebases\n8:04 Problem 3: Errors compound\n9:06 Problem 4: LLM judges are unreliable\n10:03 Problem 5: Time to exploit is near zero\n10:25 The code confidence formula\n12:36 Results from customers\n15:49 Code is abundant, confidence is scarce\n\nTariq Shaukat\nhttps://www.sonarsource.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "tutorials",
+    "tags": [
+      "release",
+      "models",
+      "agents",
+      "research",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1134350,
+    "title": "GitHub Universe 2026: Highlights from the developer\u2019s developer conference",
+    "url": "https://commandline.microsoft.com/github-universe-2026-recap/",
+    "published_at": "2026-10-29T18:34:49+00:00",
+    "fetched_at": "2026-10-29T20:27:22+00:00",
+    "source_id": "microsoft-commandline",
+    "source_name": "Microsoft Commandline",
+    "extraction_method": "rss",
+    "body": "The hero at the heart of the two-day event was the developer community.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "open-source",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1133156,
+    "title": "Building a multiplayer game world with autonomous Fable-class models",
+    "url": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
+    "published_at": "2026-10-29T17:00:26+00:00",
+    "fetched_at": "2026-10-29T20:27:15+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://twitter.com/jsnnsa/status/2115623382721126826\">How I Built the Most AI-Pilled Company in the World</a></strong></p>\nDon't be put off by the clickbait headline, this piece by Jacob Sansbury describing how they are building <a href=\"https://spawn.co\">Spawn</a> is a fascinating exploration of the bleeding edge of what's possible with agentic engineering against frontier models.</p>\n<p>Spawn is a massively multiplayer gaming environment where players can use prompts (to the in-game agent, Savi) to modify the game world.</p>\n<p>I fired it up on my phone for a few minutes and was able to prompt a castle into existence, then a dragon, then ride the dragon to fly around that castle.</p>\n<p><img alt=\"Two mobile screenshots side by side from a 3D voxel-style game. Left: a first-person view from the saddle of a small teal dragon, its neck with pale diamond markings and two curved white horns in the foreground, flying toward a dark stone castle with tall teal-gray conical spires, glowing windows and teal pennants, on a rocky island in a lake with green and snowy hills behind. Top bar: profile icon, &quot;keep it&quot;, &quot;your den&quot; dropdown, &quot;+ new game&quot; button and a &quot;...&quot; menu. Right side: icon buttons and a portrait of a white-haired, freckled character labeled &quot;tap to talk&quot;. Bottom right buttons: &quot;JUMP&quot; and &quot;USE&quot;. Right: the same game with the chat panel open over the castle scene. Top bar: &quot;your den&quot; dropdown, &quot;+ new game&quot;. Button: &quot;earlier \u2191&quot;. User message: &quot;Make the dragon smaller and land it next to me again&quot;. Replies from the white-haired character: &quot;on it. shrinking it to a pony-sized dragon and landing it right beside you.&quot; Then: &quot;it's a little dragon now and you're already up on it over the lake. your view sits right in its saddle, horns ahead. fly back to the house and look down. saw your screen just now: flying over the water, the neck and horns ahead, the house on the far shore&quot; Then: &quot;oh, idea: USE while flying could breathe fire instead, with JUMP held to land. want it?&quot; Input box: &quot;what do you want to bring in?&quot; Buttons below: upload, a small pixel-art icon, &quot;lock in&quot; and a microphone.\" src=\"https://static.simonwillison.net/static/2026-10-29/IMG_9406.webp\" /></p>\n<p>By Jacob's telling, Spawn is now being developed autonomously by a swarm of Fable-powered agents costing over $3 million in tokens <em>per month</em> (\"we spend 30x payroll on AI tokens\").</p>\n<blockquote>\n<p>Our agents change the live code directly and ship to production hourly, so they read every error, bug report and metric themselves. About 60% of our work starts from a production error, a Savi bug report (Savi is the AI you build games with in Spawn), something odd in our logs, or a feature request.</p>\n<p>Savi files bugs herself. When a user hits one, or Savi hits one in the product, she files it. It goes straight to an agent that decides whether it's a real bug to fix, something we won't fix, or intentional design that needs a decision. Usually it becomes a change, delivered to that user within an hour, with a message in the same chat.</p>\n</blockquote>\n<p>This is <a href=\"https://en.wikipedia.org/wiki/Continuous_deployment\">continuous deployment</a> turned up to 11:</p>\n<blockquote>\n<p>A loop this tight only works if it never stops, so we treat an hour without a ship as a SEV-0, our most severe kind of incident. Unshipped changes pile up, and every problem already in production lasts longer. The feedback slows down too. An agent can only keep a few hours of work in its head, so shipping faster than that actually helps it stay coherent. [...]</p>\n<p>We can roll back a broken change in 30 seconds, exactly where it's broken and nowhere else. When a monitor or a log alert fires, it starts or wakes an agent that owns the incident, and we break things on purpose to test that those recovery paths work.</p>\n</blockquote>\n<p>My eyebrows raised at least a dozen times reading this. I have trouble imagining this style of development working on software with higher stakes for when something goes wrong, but for a game this appears to be working surprisingly well.</p>\n<p>Jacob says that Fable 5 (and then 5.1) was the model that made this level of autonomy possible. Opus 5.5 doesn't quite hack it for them, and when they tried GPT-6 Astra to apply fixes from a security review everything stopped working:</p>\n<blockquote>\n<p>Every feature had been disabled and marked to be turned on again once the security fixes were done. Astra had gone through our whole product and made the insecure things secure by turning them off.</p>\n</blockquote>\n<p>These kinds of extreme experiments are why I'm <a href=\"https://simonwillison.net/2026/Oct/28/vibe-game-development/\">excited about game development</a> as a substrate for exploring the edges of what today's coding agents can do.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/game-design\">game-design</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/agentic-engineering\">agentic-engineering</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1131819,
+    "title": "An updated Model Spec for more capable and beneficial AI",
+    "url": "https://openai.com/index/updated-model-spec",
+    "published_at": "2026-10-29T17:00:00+00:00",
+    "fetched_at": "2026-10-29T20:27:14+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI\u2019s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent.",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "coding",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1133799,
+    "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+    "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+    "published_at": "2026-10-29T16:00:35+00:00",
+    "fetched_at": "2026-10-29T20:27:20+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended. Developers are combining frontier AI models with NVIDIA Omniverse libraries to help carry out that work \u2014 building applications for exploring scenarios, investigating failures and improving designs. Developers direct AI agents through [&#8230;]",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1133368,
+    "title": "3 Critical Tasks AI Can Automate For You",
+    "url": "https://www.youtube.com/shorts/evXFML_Rnc0",
+    "published_at": "2026-10-29T15:28:47+00:00",
+    "fetched_at": "2026-10-29T20:27:17+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Here are 3 things EVERY business owner should automate with AI:\n\n1\ufe0f\u20e3 Checking failed email deliveries. \n2\ufe0f\u20e3 Sending appointment reminders\n3\ufe0f\u20e3 Getting new customers set up\n\nAll of these small tasks add up, so don't waste your time doing them manually.\n\nBird lets you build workflows where AI agents handle more of that repetitive work, while you decide what still needs your review.\n\nIf you\u2019re figuring out where to start with AI in your business, start with the stuff you\u2019re tired of doing yourself every day.\n\nAnd to check out Bird, head to bird.com or the link in the pinned comment.\n\n#BirdPartner #customerservice #aitools",
+    "topic": "enterprise",
+    "tags": [
+      "agents",
+      "coding",
+      "enterprise",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1130162,
     "title": "Science Behind the Open Cyber Frontier with Mistral Large 4",
     "url": "https://www.youtube.com/watch?v=FczbSauVvjw",
@@ -139,6 +280,27 @@
     "available": true
   },
   {
+    "article_id": 1131820,
+    "title": "How we detect frontier model misalignment",
+    "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+    "published_at": "2026-10-29T09:00:00+00:00",
+    "fetched_at": "2026-10-29T20:27:14+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "safety",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1130178,
     "title": "We Trust AI Agents That Break Every Day - Shy Ruparel, Temporal",
     "url": "https://www.youtube.com/watch?v=mJ7q8CuVmbw",
@@ -183,6 +345,26 @@
     "available": true
   },
   {
+    "article_id": 1131821,
+    "title": "How Ropes & Gray is developing AI for transactional diligence",
+    "url": "https://openai.com/index/ropes-gray-ai-diligence",
+    "published_at": "2026-10-29T07:00:00+00:00",
+    "fetched_at": "2026-10-29T20:27:14+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "open-source",
+      "coding",
+      "policy"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1125833,
     "title": "Build a Financial Research Assistant with Cohere AI on AWS",
     "url": "https://cohere.com/blog/financial-research-assistant-cohere-aws",
@@ -201,6 +383,24 @@
       "safety",
       "benchmark",
       "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1133917,
+    "title": "Who Gets to Build the Frontier for AI",
+    "url": "https://cohere.com/blog/who-gets-to-build-the-frontier-for-ai",
+    "published_at": "2026-10-29T00:00:00+00:00",
+    "fetched_at": "2026-10-29T20:27:20+00:00",
+    "source_id": "cohere-blog",
+    "source_name": "Cohere Blog",
+    "extraction_method": "rss",
+    "body": "Why the democratic world needs more frontier AI builders and how we intend to compete.",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10839,229 +11039,6 @@
       "coding",
       "tutorials",
       "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 866642,
-    "title": "Deno is joining Cloudflare",
-    "url": "https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare/",
-    "published_at": "2026-10-09T22:48:37+00:00",
-    "fetched_at": "2026-10-09T23:24:59+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "9th October 2026 - Link Blog\n[Deno is joining Cloudflare](https://deno.com/blog/cloudflare) ([via](https://news.ycombinator.com/item?id=50019911)) The Deno team released the first version of [celld](https://github.com/denoland/celld) back in August - their open source implementation of the Durable Objects pattern from Cloudflare Workers.\nToday, Cloudflare are acquiring Deno outright, with the goal of building on celld\nto \"make workerd self-hosting a first-class supported way to build and run apps using the Workers programming model\" (see [the Cloudflare blog](https://blog.cloudflare.com/deno-joins-cloudflare/).)\nThe bad news is that Deno itself will not be maintained by Cloudflare beyond the next year:\nWe will support the\n[Deno runtime]for another year with monthly releases containing bug fixes and security updates. After that year we will end our development of the Deno runtime. Deno will remain open source, and we welcome others who want to continue its development.\nDeno (and Node.js) creator Ryan Dahl explained that decision in [a comment](https://news.ycombinator.com/item?id=50019911#50023277) on Hacker News:\nIt's a joint decision and I agree with it. I'm most invested in its success and have put the most work into it - and I no longer think it's where I can do the most important work. There are some good ideas in Deno and it's well engineered - but it ultimately is not solving big problems. It has been sucked into the gravity well of node compatibility, which forces it to behave exactly as Node does. Why reimplement Node? It works. Marginal performance or UX or security benefits are not enough.\nI'm interested in building powerful new abstractions. celld has been working remarkably well, depending only on object storage for coordination and persistence. It is not just a slightly different API to interact with the file system or network - it's an entirely new model for server development.\nMy favorite feature of Deno has long been the permissions system, where you can run a Deno script and specify exactly which files and folders it can read and write to, and which network hosts it can access.\nNode.js [has a similar permissions model](https://nodejs.org/api/permissions.html) these days, added [in Node v20.0.0](https://nodejs.org/en/blog/release/v20.0.0) in April 2023 and declared stable [in Node v22.13.0](https://nodejs.org/en/blog/release/v22.13.0) in January 2025. They don't yet support allow-listing specific network hosts though - networking is either on or off.\nRecent articles\n[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026[OpenAI DevDay 2026 live blog](/2026/Sep/29/openai-devday-2026-live-blog/)- 29th September 2026",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "safety",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 866914,
-    "title": "Generation Is Cheap, Review Is Expensive: How to Stop Shipping AI Slop \u2014 Gabriel Martinez, G2i",
-    "url": "https://www.youtube.com/watch?v=6qkzlT962es",
-    "published_at": "2026-10-09T20:00:07+00:00",
-    "fetched_at": "2026-10-09T23:25:02+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Slop isn't AI-written code. It's work that looks finished before the thinking is.\n\nGabriel \"Gabo\" Martinez, engineering manager and self-described slop warden at G2i, explains what slop really is: what happens when generation outruns judgment, when ambiguity gets cleared with guesses and nobody notices there was a choice to make. He's not anti-AI, but argues we need to sober up. Code is still a liability, agents make a messy codebase messier faster, and quick prototypes convince stakeholders the hard part is done. He covers the pressure to merge faster than you can review, thousand-line PRs, 20-page AI docs that push the thinking onto reviewers, and why generation is cheap but evaluation is expensive. His fixes are conventions, diagrams as the review surface, small reviewable changes and clear ownership, inspired by Rails, plus why G2i built ORC.\n\nIn this talk:\n\u2022 What slop is, and why it's about missing judgment, not AI\n\u2022 Why code is a liability and AI makes the ball of mud bigger\n\u2022 Incentives that push teams to merge faster than they can review\n\u2022 Conventions, diagrams and small changes that keep humans in control\n\nSPEAKER\nGabriel Martinez, Engineering Manager, G2i\n\nLINKS\nORC by G2i: https://orc.ai\nG2i: https://www.g2i.ai\nG2i on X: https://x.com/g2i_ai\n\nCHAPTERS\n0:00 Intro\n0:37 What slop is\n1:12 The real danger: choices nobody saw\n1:52 Time to sober up\n2:27 What agents can't replace\n2:51 How we got here\n3:06 Code is a liability\n4:01 A bigger ball of mud\n4:11 Lines spent, not produced\n5:01 Accountability\n5:31 The prototype illusion\n6:50 \"It's not free\"\n7:25 Pressure to merge faster\n7:45 Performance anxiety\n8:45 Thousand-line PRs\n9:30 The 20-page doc problem\n10:14 Generation is cheap, review isn't\n10:29 Twitter hype and the Ralph loop\n11:39 Why code shape still matters\n12:34 Diagrams as the review surface\n13:18 Cognitive overhead\n14:13 Lessons from Rails\n15:43 Why we built ORC\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AISlop #SoftwareEngineering #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/6qkzlT962es",
-    "topic": "tutorials",
-    "tags": [
-      "agents",
-      "benchmark",
-      "video",
-      "coding",
-      "tutorials",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 863699,
-    "title": "From Context to Memory: Your Agents Need a Real Memory Layer \u2014 Anders Swanson, Oracle",
-    "url": "https://www.youtube.com/watch?v=BIhiYL4U9_M",
-    "published_at": "2026-10-09T18:30:09+00:00",
-    "fetched_at": "2026-10-09T19:17:34+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Your agent rereads the same files every session because nothing it learned was saved.\n\nAnders Swanson, developer evangelist for Oracle Database, treats agent memory as a systems problem. Context windows aren't memory, bigger windows aren't the fix, and markdown scratch pads and grep don't scale. Keep going down that road and you'll end up building your own database. He walks through the pattern modern memory systems are converging on: formation, recall, evolution and evaluation, plus governance. That means typed memories (episodic, semantic, procedural and working state), a storage schema with vectors, text indexes, graph links, time and audit history, redaction before anything is written, and hybrid search that blends several retrieval methods. He covers failure modes like stale, mis-scoped, poisoned and conflicting memories, and why feedback is what closes the loop.\n\nIn this talk:\n\u2022 Why context windows and scratch files aren't memory\n\u2022 Typed memories and a storage schema built for recall\n\u2022 Forming memories safely, and recalling them with hybrid search\n\u2022 Stale, poisoned and conflicting memories, and how feedback fixes them\n\nSPEAKER\nAnders Swanson, Developer Evangelist, Oracle Database\nOracle blog: https://blogs.oracle.com/authors/anders-swanson/\n\nLINKS\nOracle Agent Memory (Python SDK): https://pypi.org/project/oracleagentmemory/\nAgent memory docs: https://docs.oracle.com/en/database/oracle/agent-memory/index.html\nOracle AI Developer Hub: https://github.com/oracle-devrel/oracle-ai-developer-hub\n\nCHAPTERS\n0:00 Intro\n0:47 Agents reread the same files\n0:57 Context windows aren't memory\n1:52 Bigger windows aren't the fix\n2:07 Scratch pads don't scale\n2:47 Just use a database\n3:07 Formation, recall, evolution, evaluation\n4:17 Governance controls\n4:37 The memory loop\n5:27 Read, write and storage layers\n5:57 Why multi-model databases\n6:22 Four types of memory\n7:17 The storage schema\n8:17 Forming memories: redact first\n10:02 Recall with hybrid search\n11:27 Blending search methods\n12:17 Memories must evolve\n12:32 Stale, poisoned and conflicting memory\n15:27 Feedback closes the loop\n16:22 Why it matters\n17:07 Try the SDK\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#AgentMemory #AIAgents #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/BIhiYL4U9_M",
-    "topic": "policy",
-    "tags": [
-      "policy",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 863700,
-    "title": "Designing CLIs for Agents, Not Humans \u2014 Pedro Lopez, Airbyte",
-    "url": "https://www.youtube.com/watch?v=3wj6sgbi1YA",
-    "published_at": "2026-10-09T17:00:31+00:00",
-    "fetched_at": "2026-10-09T19:17:34+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Airbyte built both an MCP server and a CLI so agents can use its data. Here's what each one is actually good for.\n\nPedro Lopez, software engineer at Airbyte, shares lessons from building two ways for AI agents to reach company data through Airbyte's Context Store, a search-optimized index of tools like Zendesk, Stripe and HubSpot. Both are thin interfaces over one platform, built from OpenAPI specs. For the MCP server, he explains why to keep the tool count small and use progressive discovery, why OAuth is the only realistic way to sign in, why users expect long-lived sessions, and why URL elicitation isn't ready across clients yet. For the CLI, he explains designing for agents instead of humans: JSON in and JSON out, consistent noun-verb commands, skills that ship with the tool, and no interactive prompts. He closes with when to choose MCP and when to choose a CLI.\n\nIn this talk:\n\u2022 Keeping MCP tool counts small with progressive discovery\n\u2022 OAuth, long sessions, and elicitation in real MCP clients\n\u2022 Designing a CLI for agents: JSON in, JSON out, consistency, skills\n\u2022 When to choose MCP, and when to choose a CLI\n\nSPEAKER\nPedro Lopez, Software Engineer, Airbyte\nLinkedIn: https://www.linkedin.com/in/pedroslopez/\nGitHub: https://github.com/pedroslopez\nWebsite: https://pedroslopez.me/\n\nLINKS\nAirbyte Context Store: https://airbyte.com/agentic-data/context-store\nAirbyte agent MCP docs: https://docs.airbyte.com/ai-agents/interfaces/mcp/\nAirbyte Agent CLI: https://airbyte.com/agent-cli\nAirbyte on X: https://x.com/AirbyteHQ\n\nCHAPTERS\n0:00 Intro\n0:32 From data movement to AI agents\n1:02 The Context Store\n2:12 What the interfaces expose\n3:07 Thin interfaces on one platform\n3:57 The MCP server\n4:52 Demo: MCP in ChatGPT\n5:52 Keep the tool count small\n6:52 OAuth is the way\n7:56 Users expect long sessions\n8:31 Elicitation isn't ready yet\n10:11 The CLI\n10:26 Demo: the CLI\n11:11 Designing CLIs for agents\n11:31 JSON in, JSON out\n12:36 Consistency\n13:51 Ship skills with the CLI\n15:06 No prompts: auth for agents\n16:01 MCP vs CLI\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#MCP #AIAgents #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/3wj6sgbi1YA",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 930709,
-    "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
-    "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
-    "published_at": "2026-10-09T16:00:35+00:00",
-    "fetched_at": "2026-10-15T17:38:35+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended. Developers are combining frontier AI models with[ NVIDIA Omniverse libraries](https://developer.nvidia.com/omniverse) to help carry out that work \u2014 building applications for exploring scenarios, investigating failures and improving designs.\nDevelopers direct AI agents through natural-language instructions, review results and guide changes. Omniverse libraries provide GPU-accelerated physics, rendering and sensor simulation capabilities.\nExplore the projects below to see frontier AI models such as GPT-6 Astra at work, and check back for new examples from NVIDIA teams and developers across the ecosystem.\nStress-Test a Warehouse Simulation at Scale [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#warehouse)\nA warehouse simulation needs to keep running smoothly as more robot arms, conveyors and boxes fill the scene.\nWhen it slows down, developers need to identify what\u2019s holding it back. Bhavik Sanganee, principal engineer at NVIDIA, used Astra with [NVIDIA Omniverse libraries](https://developer.nvidia.com/omniverse?size=n_12_n&sort-field=featured&sort-direction=desc) to build a warehouse simulation, increase its complexity and investigate slowdowns.\nPerformance first fell below the target when the scene doubled in size. Running physics calculations, image rendering and video preparation concurrently restored performance and enabled further scaling.\nWith 80 conveyors, 40 arms and 800 boxes, the simulation sustained 30 frames per second at full HD resolution during a two-minute test. The arms completed 640 successful box placements.\nDoubling the scene again reduced performance. Testing traced the slowdown to the physics and robot-control pipeline, giving Sanganee a specific area to improve.\nStart building with [NVIDIA Omniverse libraries](https://developer.nvidia.com/omniverse?size=n_12_n&sort-field=featured&sort-direction=desc).\nTest Robot Control for Flexible Cable Routing [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#cable-routing)\nIn electronics assembly, a robot may need to position a flexible cable around components before plugging it into a port. The cable bends as the robot moves it, and the connector must line up precisely to fit.\nOyindamola Omotuyi, robotics technical marketing manager at NVIDIA, directed Astra to build a robot simulation using [NVIDIA Isaac Lab](https://developer.nvidia.com/isaac/lab), [Newton](https://developer.nvidia.com/newton-physics) physics and Omniverse rendering with a[ Robotiq gripper](https://www.youtube.com/watch?v=K2ui16FdLZw) handling the cable.\nAstra also developed a[ reinforcement learning](https://www.nvidia.com/en-us/glossary/reinforcement-learning/) system that combined learned cable-routing movements with position-and-orientation feedback and corrective adjustments for USB-C insertion. The simulation gave Omotuyi a way to test cable handling and connector alignment before moving to physical-robot experiments.\nThe controller used information supplied directly by the simulation. Next steps include testing a friction-held grasp and using information a physical robot could obtain from cameras and sensors.\nGet started with robot learning in [NVIDIA Isaac Lab](https://developer.nvidia.com/isaac/lab).\nTurn Robot Computer-Aided Design Into a SimReady Asset [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#cad)\nBefore testing whether a robot can pick up and move a box, developers need a simulation model with joints that move correctly and with grippers that can hold the object. A computer-aided design (CAD) model provides the robot\u2019s shape, but it still needs physics properties to perform the task.\nUsing an ABB Robotics YuMi robot, developers directed Astra with NVIDIA Omniverse content libraries to convert CAD files into OpenUSD, match the robot\u2019s appearance to reference images, and configure joints and collision geometry. They checked the asset against SimReady Foundation requirements before testing it in NVIDIA Isaac Sim.\nBoth arms and grippers completed four cube pick-and-place cycles, using simulated finger contact and friction. These tests demonstrated behavior under the simulated conditions \u2014 estimated physical properties were not calibrated against the real robot.\nFollow the five-step [SimReady tutorial](https://developer.nvidia.com/blog/5-steps-to-create-simready-assets-for-robotics-with-frontier-ai-models/).\nBuild a Humanoid Simulator for a Warehouse Environment [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#humanoid-simulator)\nExplore a gamified, physics-based control of a humanoid robot in first- and third-person view.\nBefore automating warehouse tasks, developers need an interactive simulation environment to explore task behavior and evaluate how the work gets done. Frank DeLise, Omniverse product manager at NVIDIA, used Astra to turn a [SimReady](https://www.nvidia.com/en-us/glossary/simready/) warehouse and humanoid robot into an interactive simulator with first- and third-person views.\nDeLise directed Astra to connect[ NVIDIA Omniverse libraries](https://developer.nvidia.com/omniverse) for physics ([ovphysx](https://github.com/NVIDIA-Omniverse/PhysX/blob/main/ovphysx/README.md)), scene updates ([ovstage](https://github.com/nvidia-omniverse/ovstage)), rendering ([ovrtx](https://github.com/NVIDIA-Omniverse/ovrtx)) and the user interface ([ovui](https://github.com/NVIDIA-omniverse/ovui)). He also used Astra with SimReady ([simready-foundation](https://github.com/nvidia/simready-foundation)) to create the physical scene in simulation. Astra then generated animation and application code to bring those capabilities together.\nLearn how to [prepare and validate SimReady robot assets](https://developer.nvidia.com/blog/5-steps-to-create-simready-assets-for-robotics-with-frontier-ai-models/) with frontier AI models and NVIDIA Omniverse libraries.\nConnect an Autonomous-Driving Testing Workflow [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#autonomous-driving-testing)\nChanging a scene, sensor or driving model can significantly affect autonomous-vehicle simulations. Doyub Kim, a manager on the simulation technology team at NVIDIA, asked Astra to build Zero to Alpamayo \u2014 a reusable simulation environment based on San Francisco\u2019s Market Street.\nKim directed Astra to map out the workflow, then connect asset creation, traffic, [Omniverse RTX sensor simulation](https://developer.nvidia.com/blog/integrate-nvidia-omniverse-rtx-sensor-simulation-into-existing-apps/) and [Alpamayo driving](https://www.nvidia.com/en-us/solutions/autonomous-vehicles/alpamayo/) in stages, checking each integration. The resulting prototype was a testing ground for comparing models and tracing how scene or sensor changes affect downstream driving behavior. A separate Cosmos3-Nano experiment varied weather and lighting in recorded simulation videos, allowing Kim to compare the driving model\u2019s responses to the same scenario under different conditions.\nUse Sensor Differences to Create and Improve Digital Twins [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#sensor-differences)\nComparing recorded and simulated camera and lidar outputs gives developers key performance indicator-based feedback for refining a scene.\nTo test robots and autonomous vehicles, developers need to know how closely simulated sensors match real ones. Ashley Reid, who works on RTX sensor validation at NVIDIA, directed Astra and Claude Fable 5 agents to compare [ovrtx](https://github.com/NVIDIA-Omniverse/ovrtx) camera and raw LiDAR outputs with recorded data. The agents created two digital twins from scratch and improved two existing ones.\nOver about three days, Reid guided an iterative workflow in which agents measured differences, created or modified OpenUSD scenes, and checked the results. Changes addressed missing objects, geometry and materials, with acceptance depending on camera and LiDAR metrics. This gives developers a way to use measured discrepancies to guide scene creation and improvement.\nStart by rendering an OpenUSD scene with the [ovrtx minimal Python example](https://github.com/NVIDIA-Omniverse/ovrtx/tree/main/examples/python/minimal), then define a sensor measure to compare with recorded data.\nRobo Olympics: Test Robot Skills With Simulation [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#robo-olympics)\nTeaching robots new movements means checking whether those actions work under physical constraints. Tae Kim, who leads NVIDIA Omniverse engineering and product, used sports videos and natural-language instructions to guide Astra in building Robo Olympics, an experimental project that tests simulated Unitree G1 humanoids performing sports movements.\nUnder Kim\u2019s direction, Astra built controllers and refined them through physics trials. [Newton Physics Engine](https://developer.nvidia.com/newton-physics) simulated behavior, the open source [NVIDIA Warp](https://developer.nvidia.com/warp-python) framework accelerated calculations and [ovrtx](https://github.com/NVIDIA-Omniverse/ovrtx) rendered scenes and virtual-camera images. In one experiment, the robot cleared a single hurdle in 64 of 100 simulation trials. The trials gave Kim feedback for improving the robot\u2019s timing and control.\nWatch Kim [explore building simulations](https://www.youtube.com/watch?v=pbwlRzjLwqc) with Astra and NVIDIA Omniverse libraries.\nTest Robotic Disassembly With Computer-Aided Design and Simulation [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#robot-disassembly)\nBefore a robot can disassemble a product, developers need to know whether its tools can reach and remove the parts. Jens Jebens, a senior product manager for OpenUSD at NVIDIA, directed Astra to model a car suspension in PTC Onshape and configure it in [NVIDIA](https://developer.nvidia.com/isaac/sim/)[ Isaac Sim](https://developer.nvidia.com/isaac/sim/).\nWith Astra, Jebens explored [computer-aided design](https://www.nvidia.com/en-us/glossary/computer-aided-engineering/) and tooling revisions for robots informed by simulation. The agent measured the available space and designed a wrench the robot could use to reach the suspension\u2019s bolts. Jebens reported successful removal of a suspension component in simulation. This connects design and tooling decisions to disassembly results, offering a starting point for robot policy training.\nExplore the [Onshape importer guide](https://docs.omniverse.nvidia.com/extensions/latest/ext_onshape.html).\nBring the International Space Station Into the Browser [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#international-space-station)\nTurning 3D models into an application requires connecting assets, live data and an interface. Nic Johns, an engineering director at NVIDIA, prompted Astra to assemble NASA assets into an [OpenUSD](https://www.nvidia.com/en-us/glossary/openusd/) International Space Station model with telemetry. Johns built the application with a single prompt, then used a follow-up prompt to shift the scene to Earth\u2019s daytime side so the planet was visible.\nThe workflow used Blender for asset preparation and [Omniverse libraries](https://developer.nvidia.com/omniverse) for rendering ([ovrtx](https://github.com/NVIDIA-Omniverse/ovrtx)), scene runtime (ovstage) and streaming (ovstream). The application brings 3D models and operational data into the browser, with Johns guiding its development through prompts and corrections.\nTry the [Omniverse Real-Time Viewer skill](https://github.com/NVIDIA/skills/tree/main/skills/omniverse-realtime-viewer).\nTurn Captured Rooms Into Testing Environments [\ud83d\udd17](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/#testing-environments)\nA digitally reconst",
-    "topic": "robotics",
-    "tags": [
-      "robotics",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 863701,
-    "title": "Building on the Codex Harness \u2014 Dominik Kundel, OpenAI",
-    "url": "https://www.youtube.com/watch?v=9WiBJRO84yY",
-    "published_at": "2026-10-09T15:30:04+00:00",
-    "fetched_at": "2026-10-09T19:17:34+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Building your own agent harness is daunting. So use the one that already powers Codex.\n\nDominik Kundel from OpenAI's Codex developer experience team explains the Codex App Server, the open-source JSON-RPC protocol that wraps the Codex harness and powers the Codex app, the IDE extensions, and third-party clients in Xcode, JetBrains and more. Using an inspector he built, he shows the real events flowing between the Codex app and the server, then covers what you can control: more than 120 client messages, sign in with ChatGPT so users bring their own subscription, developer instructions layered on top of the system prompt, dynamic and deferred tools, and per-thread model and sandbox settings. He explains how to ship the binary, generate bindings, and use the Python SDK, when to use codex exec instead, and demos Codex running inside Doom.\n\nIn this talk:\n\u2022 What the Codex App Server is, and how it compares to ACP\n\u2022 Customizing the agent with developer instructions and deferred dynamic tools\n\u2022 Shipping the binary, generating bindings, and the Python SDK\n\u2022 Demo: Codex running inside Doom, with tools that change the game\n\nSPEAKER\nDominik Kundel, Developer Experience, OpenAI\nX: https://x.com/dkundel\nLinkedIn: https://linkedin.com/in/dkundel\n\nLINKS\nCodex App Server docs: https://developers.openai.com/codex/app-server\nCodex on GitHub: https://github.com/openai/codex\nCodex SDK: https://developers.openai.com/codex/sdk\n\nCHAPTERS\n0:00 Intro\n0:52 What is the App Server?\n1:12 The protocol behind Codex\n1:37 Open source, any model provider\n2:17 How it works\n3:32 Demo: inspecting live events\n5:31 120+ client messages\n6:31 Sign in with ChatGPT\n6:56 Developer instructions\n7:41 Dynamic and deferred tools\n8:46 Shipping the binary\n9:46 Bindings and transports\n10:31 The Python SDK\n10:51 Or just ask Codex\n12:00 Codex inside Doom\n13:40 Demo: giving Doom tools\n14:50 App Server vs codex exec\n15:55 Three tips\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#Codex #OpenAI #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/9WiBJRO84yY",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 864329,
-    "title": "Impactful scheduling for GPU clusters",
-    "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
-    "published_at": "2026-10-09T15:20:29+00:00",
-    "fetched_at": "2026-10-09T19:17:36+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "[\n](#impactful-scheduling-for-gpu-clusters)\nImpactful scheduling for GPU clusters\n[Enterprise Article](/blog)\nOn the AI Infrastructure team at Ai2, we\u2019re responsible for providing the institute\u2019s GPU compute capacity, specifically targeting large, distributed training workloads. We think about this task as a pyramid of four metrics that build on each other.\nThe foundation is availability: how often the hardware is healthy and ready for work. Above this is occupancy: the fraction of available time assigned to a specific workload. Next is impact: how often the most valuable workloads are chosen to receive resources. The capstone of the pyramid is utilization: the fraction of GPU capacity used over the lifetime of a workload.\nThis post is about improving the impact of our scheduling decisions. We recently replaced a priority-based scheduler with a system including GPU time budgets, hierarchical fair-share allocation, and a time-slicing contract. As a result, we shifted the debate about how much GPU time each research project deserves from a case-by-case operational task to a transparent administrative budgeting process.\n[\n](#overcommitting)\nOvercommitting\nAt Ai2, we manage thousands of NVIDIA H100, B200, and B300 GPUs arranged in clusters ranging in size from 88 to 1024 GPUs. These clusters are built for large-scale distributed training of AI models, and they serve a group of about 150 internal researchers whose work covers a diverse set of AI domains, including the full model flow of LLM and VLM training, robotics reinforcement learning (RL) simulation, and post-training for scientific agentic use cases.\nLike many labs, we have demand for GPU time that far exceeds supply. Based on submitted workloads, at any moment in time we have outstanding requests for 2-3x more GPUs than are available. One way to think about this is that every available GPU hour on our cluster has 2-3 different research workloads competing for it.\nHistorically, we used a priority-based scheduler, and we allowed workloads to opt out of preemptability. Each team had a limit on concurrent GPUs that could be used by workloads which were protected from preemption. Preemptible workloads could exceed that limit on idle GPUs. This strategy produced predictable pathologies. For example, we observed instances of GPU \u201csquatting\u201d where users would park no-op workloads they could connect to when the need arose. This occurred because researchers found they could not launch debugging workloads with low enough latency to tackle problems in real time. We also observed priority inflation, where eventually 100% of scheduled workloads used HIGH priority. This meant that lower priority levels were starved of GPU time altogether. Since preemptability was optional, we also found that our on-call engineers spent a majority of their ticket response time negotiating the organized shutdown of non-preemptable workloads running on hosts with known maintenance problems.\n[\n](#tragedy-of-the-commons)\nTragedy of the commons\nWhen these problems emerged, we were slow to identify their root causes. Our initial attempts to ensure the most important work received GPU time were focused on tighter control of how priorities were set, and, ultimately, working around the priority-based scheduler by explicitly assigning GPU monopolies to important projects. While we didn\u2019t recognize it at first, we had built a perfect laboratory for observing the \u201ctragedy of the commons.\u201d Individuals were competing over a scarce, shared resource and, by seeking to maximize individual outcomes, achieving a non-optimal global result and abusing the underlying resource.\nWe were far from the first to observe this kind of interaction. Resource allocation is a fascinating research domain that mixes algorithm development, economics, and system management. A central problem is that users often know the value of their own jobs better than the organization does, but they may have incentives to hide that value or hold on to resources even when doing so hurts total performance. For example, in their 2011 paper introducing [Dominant Resource Fairness](https://www.semanticscholar.org/paper/Dominant-Resource-Fairness%3A-Fair-Allocation-of-Ghodsi-Zaharia/b1a47759dbcf87ed132838be39f8ab244e78e2d6), Ghodsi et al. recount an anecdote in which a search company provided dedicated machines to jobs only if their users could guarantee high utilization. They soon discovered \u201cusers would sprinkle their code with infinite loops to artificially inflate utilization levels.\u201d The hardware changes, but the fundamental problems that make resource allocation complex persist.\n[\n](#budgets-not-schedules)\nBudgets not schedules\nThe classic solution to a tragedy of the commons is to privatize the shared resource\u2014owners are incentivized to maximize the value of their property. When we assigned teams monopolies over sets of GPUs, we were already doing a version of this, but it was too coarse. It caused GPUs to sit idle due to the seasonality of research. Teams are ready to run experiments and training at different times, so assigning a monopoly would ensure that there would be times when no jobs were ready to execute, with another team left waiting for capacity.\nWe were manually solving a [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem), trying to fit dynamically changing research needs into a static schedule. We wanted the ownership incentive, but we also wanted to maintain full occupancy of the GPUs.\nWe decided to iterate on the ownership model. Instead of issuing teams GPUs, we chose to allocate a portion of GPU time. Predicting demand into the future would require knowing the result of novel science experiments, so it cannot be forecast with precision. Priority across research efforts, however, is a question of strategy, and it can be more easily debated and decided in advance. Instead of trying to solve the scheduling puzzle, we enabled leadership to think like investors. Before the workloads exist, decide how to fund each research effort with GPU time based on their judgment of its likely impact. The scheduler could then use that information when prioritizing arriving workloads.\nWith this in mind, we devised a hierarchical system where managers could proportionally allocate GPU time to the projects and researchers they were responsible for. As the diagram below illustrates, this translates program strategy directly into a guaranteed share of GPU time. Project A1 knows it has a 35% claim on total capacity, regardless of how many other projects are queuing up elsewhere.\nParenthetical values represent the total cluster capacity assigned to a leaf project.\nIn this system, every request for GPU time must be funded by a budget, or it is not protected from preemption. In the old system, HIGH priority carried no cost and non-preemptibility allowed a team to fill their concurrent GPU limit indefinitely, so everyone used them. Now, nothing is free, so any trick to get GPU time draws from the benefiting user\u2019s allocation. A squatting workload is spending team budget on nothing. Our strategy is to make gaming the scheduler more expensive than honestly engaging in the debate for a larger budget. We are constantly iterating on this budget review process, but the key requirements are that there are frequent opportunities for researchers to advocate for the time they need, and the decisions are made by managers with the most context on the tradeoffs in question. This means allocation decisions within a research project are made by a lead researcher, within a research program by a principal investigator, and across programs by a lead program manager, or by the CEO.\n[\n](#fair-share)\nFair-share\nPaired with this GPU time budgeting tool, we built a hierarchical fair-share scheduler to manage actual occupancy of allocations throughout the program tree. The algorithm here is not new\u2014hierarchical fair-share over a time window is part of a lineage that goes back to the [Hadoop Fair Scheduler in 2009](https://issues.apache.org/jira/browse/HADOOP-3746), and the same approach is in active use today in [SLURM\u2019s Fair Tree](https://slurm.schedmd.com/fair_tree.html) and [YARN\u2019s Fair Scheduler](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/FairScheduler.html). What\u2019s new for us are the inputs: the tree mirrors the research program structure, and the weights are budgets set by managers rather than static quotas.\nThe scheduler tracks occupancy over a sliding lookback window (we default to 7 days) and sorts workloads from under-utilized allocations above those from over-utilized allocations. This way, over a week-long time range, we can expect every group to receive their allocated GPU time as long as they are actively submitting workloads with sufficient demand.\n\u201cThe new scheduler makes it feel like we have an extra 30% compute. In the old scheduler, if we had moments when we didn't need our full slot limit, that compute was basically lost. Now with the new scheduler, if that happens, we can later burst beyond our allocation limit and still see our jobs scheduled quickly and without preemption, essentially letting us reclaim that compute. Our workloads are often bursty, so this gave us a significant amount of compute back.\u201d \u2014 Chris Clark\nThe scheduler distinguishes two kinds of occupancy. Allocated occupancy is time during which a workload is charged to a budget. This draws from the workload owner\u2019s allocations, which affects the fair-share budget calculation, and these workloads are protected from preemption during their minimum runtime window. Unallocated occupancy is not charged to any budget, is unprotected from the outset, and may be preempted by any allocated request. This allows us to keep the GPUs fully occupied even when allocations don\u2019t properly match demand and prevents teams from ever declining free GPU cycles.\n[\n](#the-scheduling-contract)\nThe scheduling contract\nAn additional feature of distributed training that makes fair resource allocation difficult is that workloads can run for a very long time. Training jobs regularly run for hours, days, and sometimes even weeks. Once scheduled, a workload could remain on its assigned GPUs for a week or more, providing no opportunity for others to receive their budgeted time. This is the system property that made GPU squatting possible. It\u2019s also what forced on-call engineers to negotiate with long-running job owners to address ongoing maintenance issues.\nTo address these problems, we introduced a \u201cscheduling contract.\u201d In exchange for access to the cluster, a workload must declare its minimum runtime, or the shortest amount of occupancy required to make meaningful progress. During this time, a workload is protected from preemption. This gives the researcher a guarantee of progress, while giving the scheduler the right to rebalance once that progress is banked, automatically re-queueing resumable workloads. Alternatively, a user can set minimum runtime to zero, which indicates that the GPU time should be unallocated. These workloads are always subject to preemption, but they\u2019re also free in the sense that they are not charged to any budget.\nThe workload lifecycle follows this pattern:\n- The workload is submitted with a minimum runtime and indicates whether or not it is resumable.\n- The workload is scheduled according to the fair-share algorithm, weighted by a ratio of actual occupancy to allocated time in the lookback window.\n- The workload runs for its minimum runtime, which is charged to its allocations.\n- The workload may continue running as long as the associated allocations continue to prioritize it over others. This time is also charged to its allocations.\n- It may be preempted and requeued, which returns to step 2.\n- The workload completes, releasing its claim on any resources.\nTogether, these agreements add time-slicing to our scheduler. Running workloads may be removed and requeued automatically, allowing fair-share to converge a",
-    "topic": "infrastructure",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 863427,
-    "title": "Quoting Matthew Green",
-    "url": "https://simonwillison.net/2026/Oct/9/matthew-green/",
-    "published_at": "2026-10-09T15:02:29+00:00",
-    "fetched_at": "2026-10-09T19:17:33+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "9th October 2026\nEveryone is very concerned about being respectable, so I\u2019m going to be the goofball who raises worst-case possibilities. I think there is a 1% chance we live in Minicrypt, and a 15% chance we functionally lose confidence in our existing public-key encryption algorithms. [...]\nThe problem here is that the speed of AI producing surprises, and the speed of human beings replacing standards (even with the very best AI assistance) are just orders of magnitude different. You only recover from a surprise like this if you do the preparation in advance.\n\u2014 [Matthew Green](https://twitter.com/matthew_d_green/status/2108552414978564418), on Twitter. I looked it up and Minicrypt is Russell Impagliazzo\u2019s [hypothetical world](https://www.quantamagazine.org/which-computational-universe-do-we-live-in-20220418/) in which public-key encryption is impossible.\nRecent articles\n[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026[OpenAI DevDay 2026 live blog](/2026/Sep/29/openai-devday-2026-live-blog/)- 29th September 2026",
-    "topic": "opinion",
-    "tags": [
-      "models",
-      "coding",
-      "funding",
-      "news",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 863639,
-    "title": "AI News: Haiku-5.5, Visual ChatGPT, Grok's New Trick, and more!",
-    "url": "https://www.youtube.com/watch?v=NUizyuGj-kE",
-    "published_at": "2026-10-09T15:00:01+00:00",
-    "fetched_at": "2026-10-09T19:17:33+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Here's The AI News You Probably Missed This Week! Get $100 in free credits for @Hyperagent when you sign up for a paid plan here: https://hyperagent.com/invite/MATT100?utm_source=youtube&amp;utm_medium=influencer&amp;utm_campaign=MATT100\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nClaude Haiku 5.5: https://www.anthropic.com/claude-haiku-5-5\nClaude Dashboards & Motion: https://claude.com/resources/articles/dashboards-and-motion\nCodex 28-Day Improvements: https://x.com/thsottiaux/status/2106845241357824205\nGPT-6 for Everyone: https://openai.com/index/gpt-6-for-everyone/\nCodex Faster Default Speed: https://x.com/thsottiaux/status/2107158998495748264\nFree Codex Auto-Review: https://x.com/thsottiaux/status/2107368734981517634\nChatGPT Meetings Plugin: https://x.com/ChatGPT/status/2107567930557026653\nOpenAI Decisions API: https://x.com/OpenAIDevs/status/2107573382229188645\nOpenAI Developers Post: https://x.com/OpenAIDevs/status/2107539647392096384\nGPT-6.1 Sol Ultrafast: https://x.com/OpenAIDevs/status/2108262812489531498\nCodex Instant Steering: https://x.com/thsottiaux/status/2108275041276420573\nGrok Multi-Model Backend: https://x.com/elonmusk/status/2107724314451878104\nGrok Bot Monitors X: https://x.com/bot/status/2107949161878606089\nMistral Large 4: https://mistral.ai/news/mistral-large-4/\nReflection Beam Model: https://reflection.ai/blog/introducing-beam\nGoogle Playground Games: https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/\nGoogle Offline Note-Taker: https://www.theverge.com/tech/1007985/google-ai-notetaking-app-transcribe-offline\nGemini Agent Launch: https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026\nSynthID Detector Expansion: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/\nHark Pro Intro: https://www.youtube.com/watch?v=i3mfnrEwaA0\nMeta Muse Gadgets Open-Sourced: https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link\nClaude Abuse Policy: https://x.com/AndrewCurran_/status/2108244808494154089\nAndrew Curran Post: https://x.com/AndrewCurran_/status/2108278519163912412\nSuleyman on AI Jobs: https://x.com/mustafasuleyman/status/2107475087075197239\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:11 Claude Haiku 5.5\n4:25 Claude Live Dashboards and Motion\n7:00 HyperAgent\n10:02 OpenAI 28-Days\n10:23 GPT-6 and Intelligent UI\n13:29 GPT Speed Update\n13:50 OpenAI Free Auto-Review\n14:47 ChatGPT Note Taker\n15:46 Decisions API\n16:46 OpenAI API Pricing Update\n17:02 GPT-6.1 Ultrafast\n18:05 GPT Better Course-Correct\n18:58 GrokBot Updates\n24:37 Mistral Large 4\n25:26 Reflections 501B\n26:39 Google Playground\n27:29 Google AI Notetaker\n28:23 Gemini Agent\n29:34 SynthID Update\n29:53 Hark Pro\n31:29 Muse AI Gadgets\n31:39 No Claude Abuse\n32:32 AI Won't Take As Many Jobs\n33:10 Final Thoughts\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/NUizyuGj-kE",
-    "topic": "media",
-    "tags": [
-      "media",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 863702,
-    "title": "Stop Prompting \u2014 Greg Pstrucha, Sentry",
-    "url": "https://www.youtube.com/watch?v=E3KbFLAGD6A",
-    "published_at": "2026-10-09T14:00:20+00:00",
-    "fetched_at": "2026-10-09T19:17:34+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "You correct your agent. It says \"You're absolutely right.\" Five minutes later, after compaction, it makes the same mistake again.\n\nGreg Pstrucha, who works on the infrastructure behind Seer, Sentry's debugging agent, argues you should stop re-prompting your coding agent and start codifying the rules you keep repeating. Agents have no memory, so the same elementary mistakes come back: overly defensive code, useless tests, endpoints nobody needs. Tests, strict types and especially linters turn those corrections into deterministic checks, and with agents, writing a custom lint rule is now cheap. He shows real examples from Sentry: lint rules that keep endpoints in sync with the OpenAPI schema, and a long game of whack-a-mole to keep agent skills accurate. For qualitative judgment, he uses written policies and a \"Grumpy Engineer\" review loop, and warns that agents will game any number you hand them, like test coverage.\n\nIn this talk:\n\u2022 Why re-prompting fails, and why lint rules are now cheap to write\n\u2022 Mining your transcripts and PR reviews for rules worth enforcing\n\u2022 Examples from Sentry: API schema checks and linting agent skills\n\u2022 Policies and review agents for what linters can't catch, and why metrics get gamed\n\nSPEAKER\nGreg Pstrucha, Staff Software Engineer, Sentry\nLinkedIn: https://www.linkedin.com/in/greg-pstrucha/\n\nLINKS\nSentry Seer: https://sentry.io/product/seer/\nSentry: https://sentry.io\nSentry on X: https://x.com/sentry\n\nCHAPTERS\n0:00 Intro\n0:38 Who still reads AI code?\n1:13 The code is bad\n1:58 \"You're absolutely right\"\n2:23 Stop prompting, start codifying\n2:58 Tests, strict types, linters\n4:08 Why lint rules are cheap now\n5:28 Mine your transcripts for rules\n5:58 Custom lint rules\n6:43 Example: keeping APIs in sync\n7:52 Example: linting agent skills\n9:17 Whack-a-mole with the agent\n10:37 Tools: ESLint, ast-grep, Taskless\n11:27 When linters aren't enough\n12:22 Policies and the Grumpy Engineer\n14:07 Beware of gamed metrics\n15:22 Call to action\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#CodingAgents #CodeQuality #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/E3KbFLAGD6A",
-    "topic": "agents",
-    "tags": [
-      "api",
-      "agents",
-      "video",
-      "coding",
-      "development",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
