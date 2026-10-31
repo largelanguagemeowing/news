@@ -1,5 +1,49 @@
 [
   {
+    "article_id": 1154706,
+    "title": "Everyone Has the Same AI Models. Here's What Sets Agents Apart - Richmond Alake, Oracle",
+    "url": "https://www.youtube.com/watch?v=1_lX0m64-aI",
+    "published_at": "2026-10-31T19:00:24+00:00",
+    "fetched_at": "2026-10-31T19:27:52+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Richmond Alake was talking about agent memory before most people had heard of it, and now he argues the next layer after the control plane is an intelligence plane: what an agent knows, what it remembers, what it's allowed to see, and how it gets better. Using the WWII codebreakers who worked out that \"AF\" meant Midway, he shows why having the same information as everyone else isn't the same as intelligence. He then demos an agent built with an ontology and semantic layer that gets answers right 99% of the time using 32K tokens, versus 200K for a naive agent, and covers Oracle's agent memory package, deep data security, private inference, and fine-tuning small decision models for memory routing.\n\nChapters:\n0:00 Intro\n0:20 Agent memory in one minute\n1:39 The control plane\n2:43 The software factory\n3:54 The intelligence plane\n4:38 AF is Midway\n7:37 Where it fits in the agent stack\n8:16 What the intelligence plane is\n11:33 Agent = model + harness\n13:13 Why now: decision models\n14:01 Demo: governed vs. naive agent\n17:07 What your team should do now\n18:07 Agent memory, security and private inference\n20:52 Demo: fine-tuning memory routing\n24:41 Wrap-up: own your memory\n\nRichmond Alake\nhttps://www.oracle.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "security",
+    "tags": [
+      "security",
+      "models",
+      "agents",
+      "safety",
+      "infrastructure",
+      "coding",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1154646,
+    "title": "Glasses That Make You Telepathic",
+    "url": "https://www.youtube.com/shorts/_9R7QOhJh-o",
+    "published_at": "2026-10-31T18:16:57+00:00",
+    "fetched_at": "2026-10-31T19:27:52+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "topic": "media",
+    "tags": [
+      "enterprise",
+      "media",
+      "news",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1152615,
     "title": "78% Wanted This AI Feature. Almost Nobody Used It - Supriya Subudhi, Bumble",
     "url": "https://www.youtube.com/watch?v=CvmZtAPmAW4",
@@ -11042,52 +11086,6 @@
     "source_name": "AI Engineer",
     "extraction_method": "youtube",
     "body": "Speculative decoding drops a demo model from roughly 58 tokens per second to 16 instead of speeding it up. Du'an Lightfoot and Khaja Omer use that failed optimization to make a practical point: a faster inference configuration has to be measured against the actual model, hardware and workload. Their workshop starts with the decision to use hosted APIs or run inference on dedicated GPUs, then gives participants a Kubernetes namespace containing a Jupyter notebook and a vLLM endpoint. Qwen provides the example model for exploring how an agent's prompts, responses and repeated tool calls consume latency and memory.\n\nLightfoot builds the foundation through streaming measurements, model configuration, memory budgets, prefill, decode and KV caching. The notebooks separate per request generation speed from aggregate throughput, examine cold and warm prefixes, and compare dense models with mixtures of experts. Omer then changes the serving deployment to an FP8 model, repeats the load tests and checks simple output quality cases before moving to speculative decoding. When the drafter makes performance worse, he examines acceptance rate, model compatibility and GPU contention, then returns to the baseline. The final tuning exercise finds the concurrency point where throughput flattens while latency rises, changes the sequence limit, and measures the result again. A notebook failure also changes the model used in the final comparison, which the presenters acknowledge. The reusable method is to establish a baseline, change a serving parameter, rerun realistic load tests and evaluate quality alongside speed.\n\n\nSpeaker info:\n- https://www.duanlightfoot.com/\n- https://x.com/labeveryday\n- https://www.linkedin.com/in/khaja-omer\n- https://github.com/akamai-developers/akamai-workshop-ai-inference\n\nTimestamps:\n0:00 - Meet Du'an Lightfoot and Khaja Omer\n1:51 - Agent loops and inference ownership\n3:30 - When to use hosted APIs or dedicated GPUs\n5:19 - Workshop agenda and Kubernetes environment\n9:03 - vLLM, batching, and serving metrics\n11:54 - Access the notebooks\n13:09 - Module one: connect to inference\n16:26 - Model precision and the first request\n17:36 - Measure streaming token latency\n20:51 - Start an agent and inspect metrics\n25:13 - Compare workload costs and runtimes\n28:22 - Module two: units and memory budgets\n30:38 - Model files and configuration\n33:26 - Weight size, bandwidth, and KV capacity\n36:45 - Module three: prefill, decode, and caching\n39:32 - Measure and inspect KV cache use\n40:44 - Cold versus warm prefix caching\n41:53 - Module four: dense models and experts\n45:38 - Reasoning tokens and performance limits\n48:19 - Omer's optimization workshop\n49:55 - Module five: quantization choices\n53:08 - Check quality for the actual workload\n54:03 - Baseline load tests and concurrency\n56:34 - Change the Kubernetes model deployment\n1:03:12 - Compare FP8 performance\n1:05:09 - Module six: speculative decoding\n1:11:05 - Configure the draft model\n1:15:14 - A slowdown instead of a speedup\n1:18:58 - Return to the baseline and discuss compatibility\n1:26:38 - Module seven: saturation and serving flags\n1:33:10 - Recover from a notebook failure\n1:35:48 - Module eight: tune and evaluate\n1:41:02 - Workshop resources and runtime questions\n1:44:13 - Raise the sequence limit\n1:47:13 - Compare throughput and latency again\n1:49:07 - Final caveats and wrap up\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/4n08JHb90hI",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 884299,
-    "title": "AI Security Engineer Foundations + Certificate \u2014 Micah Silverman, Snyk",
-    "url": "https://www.youtube.com/watch?v=p-2MT8KYZqU",
-    "published_at": "2026-10-11T13:30:04+00:00",
-    "fetched_at": "2026-10-11T15:53:12+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A student chatbot refuses to reveal grades, but its refusal exposes that it has access to them. Micah Silverman uses that capture the flag exercise to connect AI risks with familiar application security controls. A system prompt telling an assistant to keep data private leaves the data within reach; a restricted database view removes it from the model's available context. The six module course covers OWASP risks, shadow AI, threat modeling, MCP security, secure agentic development and red teaming. Direct and indirect prompt injection, poisoned tools and excessive agency all return to the same question: what can this system actually access and execute?\n\nA live EVO demonstration inventories models, datasets, MCP servers and skills, then adds a policy that immediately flags a prohibited model already in a project. Silverman extends that inventory into proposed build gates and reviews how threat modeling changes when prompts, retrieved content and generated outputs cross trust boundaries. The MCP sections distinguish malicious tool descriptions from ordinary code vulnerabilities, pairing agent scans with dependency and source analysis. The secure development playbook adds isolated environments, constrained credentials, human approval and verified packages. In the final chatbot exercise, several prompts fail to disclose the confidential grades, underscoring the variability of model behavior and the need to test repeatedly. The controls sit outside the conversation as well as inside it.\n\n\nSpeaker info:\n- https://www.linkedin.com/in/micahsilverman\n- https://afitnerd.com/\n- https://snyk.io/lp/ai-sec-eng-foundations/\n- https://github.com/snyk-workshops/vulnerable-student-assistant\n\n\nChapters:\n0:00 - Welcome and course overview\n1:33 - Meet Micah Silverman\n2:57 - A hacker's mindset and variable model behavior\n4:06 - OWASP risks for LLM applications\n6:11 - Direct and indirect prompt injection\n8:07 - Defend beyond the system prompt\n9:16 - Sensitive information and access controls\n14:58 - Sanitize actions and responses\n16:21 - Supply chain risks and provenance\n19:09 - Data and model poisoning\n23:06 - Shadow AI and unauthorized tools\n28:08 - Agents inherit browser session permissions\n31:21 - AI bills of materials and proposed CI gates\n35:04 - Governance pitfalls and approved alternatives\n37:33 - Inventory and policy demo in EVO\n42:25 - Threat modeling before development\n45:40 - Data flows, trust boundaries and STRIDE\n48:56 - AI assisted threat modeling\n53:29 - OpenClaw threat model case study\n57:14 - Build an AI aware threat modeling workflow\n1:00:32 - Limit the student assistant's data access\n1:06:00 - MCP connects models to external tools\n1:10:24 - Malicious MCP servers and tool poisoning\n1:14:02 - Scan tool definitions and server code\n1:17:17 - Command injection in a Figma MCP server\n1:21:15 - Combine agent and application security scans\n1:22:09 - Secure development beyond vibe coding\n1:27:16 - Complexity, default stacks and happy path demos\n1:31:01 - Human oversight in agentic engineering\n1:33:09 - Agent skills and supply chain trust\n1:35:54 - Excessive agency despite remembered rules\n1:37:44 - The secure by design playbook\n1:39:06 - Verify dependencies and hallucinated packages\n1:41:20 - Configuration hardening and monitoring\n1:43:11 - Red teaming and real attack surfaces\n1:49:21 - Capture the flag in a playground\n1:50:46 - Find clues in Grade Your Chatbot\n1:54:02 - A refusal reveals confidential data access\n1:55:10 - Audience prompts and unsuccessful attempts\n1:58:20 - Course wrap up and event certificates\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/p-2MT8KYZqU",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 884300,
-    "title": "Vector Isn't Enough: Hybrid Search & Retrieval \u2014 Jeff Vestal & James Williams, Elastic",
-    "url": "https://www.youtube.com/watch?v=ksjwtQop4os",
-    "published_at": "2026-10-11T13:00:18+00:00",
-    "fetched_at": "2026-10-11T15:53:12+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "An agent diagnoses exit code 137 by retrieving documentation, explaining an out of memory failure, and pointing to settings that can prevent it. Its answer depends on the search results it receives, and its citations lead back to the underlying documents. Jeff Vestal and James Williams work backward from that agent behavior to the retrieval layer in Elasticsearch. The hands on labs compare semantic search with BM25, showing why similar meaning can miss an exact identifier and why exact keywords can miss a paraphrase. Participants run queries in the Dev Tools console and Python notebooks, inspect rankings, and combine both methods rather than assuming one search strategy fits every question.\n\nThe workshop explains reciprocal rank fusion, which combines result positions, and linear combination, which normalizes scores and exposes weights for tuning. Filtering narrows the candidate pool, judgment sets help assess changes, and search templates offer a way to route different query types to different strategies. The Agent Builder demonstration connects retrieval to tools, skills, repeated searches, and answers with sources that viewers can inspect. A bonus section compares pointwise and listwise reranking and asks when improved precision justifies another inference step. Questions cover chunking, embedding consistency, quantization, latency, and the limits of automatic tuning. The through line is practical: improve and measure the evidence reaching an agent before expecting the model to rescue poor retrieval.\n\n\nSpeaker info:\n- https://www.linkedin.com/in/jeffvestal\n- https://www.linkedin.com/in/james-williams-b509341\n- https://github.com/jeffvestal/elastic-vectorsearch-workshop\n\nTimestamps:\n0:00 - Jeff, James, and the workshop environment\n2:04 - Retrieval still matters for agents\n3:14 - Vector, lexical, and hybrid labs\n6:35 - Inference inside Elasticsearch\n7:43 - Chunking and semantic text\n12:02 - The hybrid search thesis\n14:24 - Embeddings and semantic retrieval\n17:08 - Where exact identifiers break vector search\n18:06 - Pagination and document summaries\n19:56 - Quantization and vector efficiency\n21:23 - Graph retrieval questions\n26:07 - Reciprocal rank fusion controls\n27:38 - Relevance and latency tradeoffs\n29:17 - Lexical search strengths and limits\n30:39 - Inference and end to end latency\n33:52 - Weight tuning and future automation\n37:00 - Combine rankings with RRF\n39:40 - Filter the candidate pool\n40:37 - Normalize scores for linear combination\n41:05 - Judgment sets and experiments\n41:52 - Route queries with search templates\n44:13 - Retrieval quality and model answers\n45:32 - Agent Builder and workflows\n47:31 - Reuse agent APIs in an application\n50:16 - Answers with verifiable sources\n53:14 - Skills and search tools\n55:23 - ES|QL and index search\n57:57 - Diagnose exit code 137\n59:21 - ES|QL for agentic retrieval\n63:35 - Inspect results and citations\n65:28 - Reranking as a second stage\n68:18 - Decide when reranking is worth it\n69:59 - Pointwise and listwise rerankers\n72:08 - Run retrieval and reranking together\n73:06 - Workshop resources and wrap up\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ksjwtQop4os",
     "topic": "infrastructure",
     "tags": [
       "infrastructure",
