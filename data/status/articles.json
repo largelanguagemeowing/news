@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1152615,
+    "title": "78% Wanted This AI Feature. Almost Nobody Used It - Supriya Subudhi, Bumble",
+    "url": "https://www.youtube.com/watch?v=CvmZtAPmAW4",
+    "published_at": "2026-10-31T09:00:01+00:00",
+    "fetched_at": "2026-10-31T15:05:57+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Bumble product manager Supriya Subudhi shares five lessons from A/B testing an AI photo feedback feature in a dating app with over 20 million monthly users. 78% of surveyed users said they wanted feedback, but only 10-15% used it; the average win hid odd outputs like telling smiling people to smile more; the best model cost about 10x more; switching to a cheaper model also shrank the results; and regulation meant the feature couldn't ship outside the US. She closes with five questions to ask before you call any AI test a win.\n\nChapters:\n0:00 Intro\n1:31 Bumble's AI photo feedback feature\n2:38 1. Users ask for it, then ignore it\n5:19 2. The average win hides the tail\n7:54 3. Green dashboard, red bill\n10:37 4. The win came from the model\n11:49 5. There may be no global rollout\n13:54 Five questions to ask\n\nSupriya Subudhi\nhttps://bumble.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "policy",
+    "tags": [
+      "models",
+      "infrastructure",
+      "coding",
+      "policy",
+      "education",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1150417,
     "title": "When Running Your Own AI Models Beats Paying for APIs - Steven Latr\u00e9, imec",
     "url": "https://www.youtube.com/watch?v=9-Y_oS9OBLc",
@@ -11075,29 +11097,6 @@
       "agents",
       "benchmark",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 884301,
-    "title": "The Data Context Layer for Agents \u2014 Yoni Michael & Brandon Callender, Typedef",
-    "url": "https://www.youtube.com/watch?v=KhRjivBSwiw",
-    "published_at": "2026-10-11T12:30:23+00:00",
-    "fetched_at": "2026-10-11T15:53:12+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Two Rust types are both called PostingList, but changing them breaks different code. A text search finds both; a context graph preserves their identities and exposes their separate dependencies. Yoni Michael and Brandon Callender use that distinction to connect data engineering and coding agents. For a data system, valid SQL can still produce the wrong answer when a join multiplies rows or a refactor changes a metric's meaning. Michael describes a context layer that computes grain, lineage and relationships from transformation code, checks join assumptions against real data, and makes the resulting evidence queryable before an agent acts.\n\nCallender builds a smaller version over selected crates in Qdrant. Tree sitter extracts syntax, Rustdoc resolves symbols, and Neo4j stores the relationships. An agent can then ask which symbols depend on a particular type instead of repeatedly searching files and inferring connections. The workshop's central complication comes next: given better graph tools, the agent may still choose grep. Tool naming, familiar output formats and prompting become part of the interface, and evaluations must measure whether the tools are actually used. Cached comparisons separate getting an answer right once from getting it right across repeated runs, while trace inspection catches flaws hidden by a favorable score. The closing discussion explores incremental indexing, Python's harder resolution problem, small auditable semantic operations with Fenic, and the work required to extend a classroom example into a maintained context layer.\n\n\nSpeaker info:\n- https://www.linkedin.com/in/yonimichael\n- https://x.com/yoni_michael\n- https://www.linkedin.com/in/bcallender/\n- https://github.com/bcallender/agent-context-workshop\n\nTimestamps:\n0:00 - The missing context for data agents\n3:44 - Impact analysis, joins, and safe changes\n5:05 - Distributed context and table grain\n6:29 - Valid SQL can still explain the wrong cause\n9:02 - Four facts an agent needs\n10:13 - Join semantics and fan out\n12:42 - Deterministic extraction and data profiling\n14:16 - Persist a queryable context graph\n17:33 - Analyze downstream changes before acting\n19:07 - Safe joins and metric definitions\n20:55 - Evaluate data engineering tasks\n22:32 - Five context engineering patterns\n26:31 - Brandon's coding agent workshop\n29:06 - Two types with the same name\n31:35 - Extract, persist, and query code context\n34:08 - Syntax, symbol resolution, and meaning\n36:22 - Notebook one: build the code graph\n39:28 - Resolve canonical symbol identities\n41:15 - Load nodes and edges into Neo4j\n42:09 - Build a blast radius tool\n44:08 - Wire an agent to the graph\n46:01 - Write additional graph tools\n47:10 - Semantic summaries with Fenic\n48:56 - Maintenance and language limitations\n53:53 - Data engineering evaluations and scope\n57:33 - The agent still chooses grep\n1:00:20 - Design tools around the agent's habits\n1:02:07 - Notebook two: compare agents fairly\n1:04:24 - Deterministic scoring and evidence\n1:06:32 - One correct run versus repeated consistency\n1:08:40 - Measure graph tool adoption\n1:14:08 - Call graphs, catalogs, and data benchmarks\n1:21:08 - Read traces and challenge the scoreboard\n1:25:40 - Extend beyond Rust and ask small questions\n1:31:36 - Boundaries, indexing, and stable eval snapshots\n1:39:20 - Ontologies and the broader data context vision\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/KhRjivBSwiw",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
