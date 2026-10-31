@@ -1,5 +1,39 @@
 [
   {
+    "article_id": 1156819,
+    "title": "The Golden Age",
+    "url": "https://dark.ronacher.eu/2026/10/31/golden-age/",
+    "published_at": "2026-10-31T20:27:51+00:00",
+    "fetched_at": "2026-10-31T22:43:39+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading.",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1156820,
+    "title": "Xoranth's musings",
+    "url": "https://xoranth.net/gcc-switch/",
+    "published_at": "2026-10-31T19:51:02+00:00",
+    "fetched_at": "2026-10-31T22:43:39+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. \n\nhaving \"All those moments will be lost in time, like tears in rain.\" feels",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1154706,
     "title": "Everyone Has the Same AI Models. Here's What Sets Agents Apart - Richmond Alake, Oracle",
     "url": "https://www.youtube.com/watch?v=1_lX0m64-aI",
@@ -11050,51 +11084,6 @@
       "agents",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 884297,
-    "title": "The SDLC You Build Yourself \u2014 Andy Wong, Andrei Bocan & Shane Wolf, Atlassian",
-    "url": "https://www.youtube.com/watch?v=ojJXgXLUQFc",
-    "published_at": "2026-10-11T14:30:40+00:00",
-    "fetched_at": "2026-10-11T15:53:12+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "An engineering standard becomes a reusable code review rule, applied across selected repositories instead of enforced by hand on every pull request. Andy Wong demonstrates that workflow with a design token standard while Andrei Bocan and Shane Wolf explain the context and orchestration underneath it. The workshop moves beyond a coding assistant in an editor to work that begins with a Jira item, draws on organizational knowledge and produces a change for a human to review. Code, documents and past decisions all matter, but they do not carry the same authority or stay current in the same way.\n\nThe presenters introduce Jira's coding agent, AI review, planning and autonomous development, then explore how those pieces fit into a team's existing process. Questions about the context engine lead into code search, relationships between Jira and Confluence, conflicting information and ways to favor verified sources. A live standards demo shows how to choose the repositories where a rule applies. Bocan describes selecting suitable backlog work, limiting cost and review volume, and asking people to clarify underspecified tickets before an agent proceeds. Wolf connects current source code with the historical reasoning behind it. Network interruptions shift much of the session into discussion, including sandbox verification, model selection, deterministic checks and breaking epics into smaller tasks. The through line is an SDLC that teams can shape around their own standards, context and capacity.\n\n\nSpeaker info:\nAndy Wong:\n- https://www.linkedin.com/in/andehwong\nAndrei Bocan:\n- https://www.linkedin.com/in/andrei-bocan\nShane Wolf:\n- https://www.linkedin.com/in/shane-wolf\nRelevant resource:\n- https://www.atlassian.com/software/rovo-dev\n\nTimestamps:\n0:00 - Introduction to the AI driven SDLC\n1:38 - Work to the left and right of code\n2:31 - Jira coding agents and organizational context\n4:08 - AI review and repository standards\n5:42 - Filtering noise from code review\n6:49 - Autonomous development and usage insights\n8:42 - Incident response with AI SRE\n9:36 - The AI context engine\n11:13 - Workshop setup and network troubleshooting\n15:36 - Questions while the network is restored\n16:16 - Connected context and code search\n20:09 - Conflicts, fresh context and human authority\n25:01 - Requirements verification and the sandbox\n31:26 - Model routing, skills and harnesses\n35:07 - Stale documents and verified sources\n36:42 - Demo: creating and applying a standard\n39:08 - Andrei Bocan on AutoDev and backlog work\n43:22 - Cost limits, review capacity and human input\n46:24 - Planning a feasible implementation\n47:20 - Shane Wolf on code and historical decisions\n51:31 - Deterministic checks and epic orchestration\n54:34 - Session changes, environments and final questions\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ojJXgXLUQFc",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 884298,
-    "title": "Agents That Own Their Inference \u2014 Du'an Lightfoot & Khaja Omer, Akamai Technologies",
-    "url": "https://www.youtube.com/watch?v=4n08JHb90hI",
-    "published_at": "2026-10-11T14:00:20+00:00",
-    "fetched_at": "2026-10-11T15:53:12+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Speculative decoding drops a demo model from roughly 58 tokens per second to 16 instead of speeding it up. Du'an Lightfoot and Khaja Omer use that failed optimization to make a practical point: a faster inference configuration has to be measured against the actual model, hardware and workload. Their workshop starts with the decision to use hosted APIs or run inference on dedicated GPUs, then gives participants a Kubernetes namespace containing a Jupyter notebook and a vLLM endpoint. Qwen provides the example model for exploring how an agent's prompts, responses and repeated tool calls consume latency and memory.\n\nLightfoot builds the foundation through streaming measurements, model configuration, memory budgets, prefill, decode and KV caching. The notebooks separate per request generation speed from aggregate throughput, examine cold and warm prefixes, and compare dense models with mixtures of experts. Omer then changes the serving deployment to an FP8 model, repeats the load tests and checks simple output quality cases before moving to speculative decoding. When the drafter makes performance worse, he examines acceptance rate, model compatibility and GPU contention, then returns to the baseline. The final tuning exercise finds the concurrency point where throughput flattens while latency rises, changes the sequence limit, and measures the result again. A notebook failure also changes the model used in the final comparison, which the presenters acknowledge. The reusable method is to establish a baseline, change a serving parameter, rerun realistic load tests and evaluate quality alongside speed.\n\n\nSpeaker info:\n- https://www.duanlightfoot.com/\n- https://x.com/labeveryday\n- https://www.linkedin.com/in/khaja-omer\n- https://github.com/akamai-developers/akamai-workshop-ai-inference\n\nTimestamps:\n0:00 - Meet Du'an Lightfoot and Khaja Omer\n1:51 - Agent loops and inference ownership\n3:30 - When to use hosted APIs or dedicated GPUs\n5:19 - Workshop agenda and Kubernetes environment\n9:03 - vLLM, batching, and serving metrics\n11:54 - Access the notebooks\n13:09 - Module one: connect to inference\n16:26 - Model precision and the first request\n17:36 - Measure streaming token latency\n20:51 - Start an agent and inspect metrics\n25:13 - Compare workload costs and runtimes\n28:22 - Module two: units and memory budgets\n30:38 - Model files and configuration\n33:26 - Weight size, bandwidth, and KV capacity\n36:45 - Module three: prefill, decode, and caching\n39:32 - Measure and inspect KV cache use\n40:44 - Cold versus warm prefix caching\n41:53 - Module four: dense models and experts\n45:38 - Reasoning tokens and performance limits\n48:19 - Omer's optimization workshop\n49:55 - Module five: quantization choices\n53:08 - Check quality for the actual workload\n54:03 - Baseline load tests and concurrency\n56:34 - Change the Kubernetes model deployment\n1:03:12 - Compare FP8 performance\n1:05:09 - Module six: speculative decoding\n1:11:05 - Configure the draft model\n1:15:14 - A slowdown instead of a speedup\n1:18:58 - Return to the baseline and discuss compatibility\n1:26:38 - Module seven: saturation and serving flags\n1:33:10 - Recover from a notebook failure\n1:35:48 - Module eight: tune and evaluate\n1:41:02 - Workshop resources and runtime questions\n1:44:13 - Raise the sequence limit\n1:47:13 - Compare throughput and latency again\n1:49:07 - Final caveats and wrap up\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/4n08JHb90hI",
-    "topic": "infrastructure",
-    "tags": [
-      "infrastructure",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
