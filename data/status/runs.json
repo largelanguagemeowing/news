@@ -1,8 +1,38 @@
 [
   {
+    "run_id": "76dfb2ad63c6",
+    "started_at": "2026-11-01T01:54:22+00:00",
+    "ended_at": "2026-11-01T01:54:40+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "41262921914",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/41262921914",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-11-01T01:54:22+00:00",
+        "ended_at": "2026-11-01T01:54:40+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 41,
+          "duplicate_articles": 2017,
+          "dead_letters": 0,
+          "failed_sources": 6,
+          "skipped_sources": 1,
+          "not_modified_sources": 17,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 18678.65
+        }
+      }
+    ]
+  },
+  {
     "run_id": "d58d1589872f",
     "started_at": "2026-10-31T22:43:34+00:00",
-    "ended_at": "2026-10-31T22:43:41+00:00",
+    "ended_at": "2026-10-31T22:43:49+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "41249410536",
@@ -758,115 +788,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 8434.52
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "f1115c24b630",
-    "started_at": "2026-10-28T10:55:44+00:00",
-    "ended_at": "2026-10-28T10:57:02+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "40675835677",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/40675835677",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-10-28T10:55:44+00:00",
-        "ended_at": "2026-10-28T10:56:52+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 36,
-          "enriched": 35,
-          "updated": 35,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 7,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "trafilatura": 18,
-            "markdown_new": 7,
-            "youtube": 9,
-            "jina": 1,
-            "rss": 1
-          },
-          "per_source": {
-            "simon-willison": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "openai-blog": {
-              "attempted": 7,
-              "enriched": 7,
-              "failed": 0
-            },
-            "ai-engineer": {
-              "attempted": 8,
-              "enriched": 8,
-              "failed": 0
-            },
-            "huggingface-blog": {
-              "attempted": 4,
-              "enriched": 4,
-              "failed": 0
-            },
-            "matt-wolfe": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "google-deepmind-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "nvidia-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "microsoft-commandline": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "bens-bites": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "marios-rec-reading": {
-              "attempted": 3,
-              "enriched": 2,
-              "failed": 1
-            },
-            "anthropic-research": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "claude-blog": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "anthropic-news": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "together-ai": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            }
-          },
-          "flush_batches": 2,
-          "defuddle_enabled": true,
-          "duration_ms": 67463.77
         }
       }
     ]
