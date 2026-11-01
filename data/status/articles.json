@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1163284,
+    "title": "Why We Rebuilt Microsoft Office From Scratch for AI Agents - Yijia Liang, Compound AI",
+    "url": "https://www.youtube.com/watch?v=v0UkV5qS9E4",
+    "published_at": "2026-11-01T10:00:14+00:00",
+    "fetched_at": "2026-11-01T15:48:54+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Yijia Liang spent years as a finance analyst living in Excel and PowerPoint before founding Compound to build autonomous AI analysts for institutional investors. Personal agents took off because they run reliably in the background, act on their own and connect to your context, but finance needs more: multiplayer agents with their own inboxes that join deal-team email threads, a headless Office engine rebuilt from scratch with agents (1.5 trillion tokens and over 8 million lines of code) that runs work in parallel and checks its own formatting, and agent swarms that can work through data rooms of 15,000+ files.\n\nChapters:\n0:00 Intro\n0:52 Why personal agents took off\n1:34 Why that breaks in finance\n3:12 Multiplayer agents\n4:10 An inbox for every agent\n5:28 Why off-the-shelf Office tools fall short\n6:04 Rebuilding Office from scratch\n7:38 Why headless is faster\n8:21 Comments and collaboration\n9:08 Write, render, check, fix\n9:55 Huge data rooms and models\n13:10 From copilot to autopilot\n15:09 Wrap-up\n\nYijia Liang\nhttps://getcompound.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "coding",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "events",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1161073,
     "title": "Most of Your Docs Readers Are Now AI Agents - Hahnbee Lee, Mintlify & Lincoln Murr, Coinbase",
     "url": "https://www.youtube.com/watch?v=YX4Z4XqZ9Vo",
@@ -11068,28 +11090,6 @@
       "safety",
       "video",
       "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 886318,
-    "title": "Let Your Agent Cook: Using Skills to Evaluate and Improve Your App \u2014 Ankur Duggal, Arize AI",
-    "url": "https://www.youtube.com/watch?v=_zUp6y9bDU8",
-    "published_at": "2026-10-11T18:30:14+00:00",
-    "fetched_at": "2026-10-11T19:57:21+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A financial agent invents answers, repeats tool calls and produces summaries that its own evaluations flag as wrong. Ankur Duggal connects those failures to a coding agent through Arize's CLI and skills, then asks it to investigate traces, change the application and run experiments. The demo begins with an investment question that looks reasonable at the surface but lacks enough context to support its recommendation. Traces reveal the supervisor, specialist agents, model calls and tools underneath that answer. They turn a vague complaint about quality into evidence about the exact steps that failed.\n\nDuggal sets up the CLI profile and skills, then shows the coding agent pulling spans and evaluation results into its local workspace. The investigation uncovers numeric grounding problems, fabricated responses, redundant searches and failures that the agent silently works around. An earlier experiment targets stock queries outside the United States: changing the country context alone is insufficient until the underlying tool is also updated. Dataset, evaluator and experiment skills make those proposed fixes testable rather than a collection of unverified edits. Questions cover local experiment execution, judge models, evaluation costs, sampling and the risk that a coding agent spends its effort on linting instead of the actual defect. The live repair is still running at the close. Duggal recommends human review of proposed changes and evaluations tailored to the application's failures, so later regressions can be detected as traffic and models change.\n\n\nSpeaker info:\n- https://github.com/Arize-ai/arize-skills\n\nTimestamps:\n0:00 - From vibes to trusted evaluations\n1:58 - Traces reveal an agent's actual decisions\n3:19 - A refund question and the wrong tool\n4:15 - The improvement loop\n6:03 - Bring traces, evaluations, and code together\n7:27 - CLI and skills as the interface\n8:06 - A flawed financial agent\n11:05 - Set up a profile and install skills\n13:19 - Inspect supervisor and specialist traces\n16:03 - Grounding, fabrication, and silent failures\n18:24 - Build evaluations and run experiments\n20:05 - An earlier fix for international stock queries\n22:23 - Where experiments and judges run\n23:31 - Choose an evaluation model\n24:37 - More context than the code alone\n26:13 - What makes a summary good?\n28:35 - Avoid focusing only on linting\n30:21 - Evaluation costs and sampling\n31:28 - Review the proposed changes\n33:19 - Tailor evaluations to your application\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/_zUp6y9bDU8",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
