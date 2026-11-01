@@ -1,5 +1,46 @@
 [
   {
+    "article_id": 1165532,
+    "title": "I Made a Fruit Fly Review My Code - Nick Nisi, WorkOS",
+    "url": "https://www.youtube.com/watch?v=geMAe-PLJF4",
+    "published_at": "2026-11-01T20:00:08+00:00",
+    "fetched_at": "2026-11-01T20:15:40+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Code is being written faster than ever, and Nick Nisi, who leads developer and agent experience at WorkOS, argues that the human reviewer is now the bottleneck. To make the point, he hooked a simulated fruit fly brain, built from a full scan of its neurons, up to code review: AI turns each change into literal \"code smells,\" sugar and bitter rewards teach the fly what good and bad code taste like, and it was right about 88% of the time in testing. Then he plays a live round against the audience and lays out a practical plan where team review skills, classifiers and automated reviewers only send the risky pull requests to a human, backed by proof like screenshots and smoke tests.\n\nChapters:\n0:00 Intro\n0:37 Humans are the bottleneck\n2:35 Where the word \"bug\" came from\n3:04 Using a bug to find bugs\n4:00 Wiring a fruit fly brain into code review\n4:57 Turning code into smells\n6:43 Sugar, bitterness and memory\n7:32 Does the fly actually matter?\n8:15 Game: are you smarter than a fruit fly?\n10:22 Trying a real pull request\n11:55 What only humans know: why\n12:33 Escalate only the reviews that matter\n14:56 Proof instead of review\n\nNick Nisi\nhttps://workos.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "coding",
+    "tags": [
+      "agents",
+      "safety",
+      "coding",
+      "education",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1165242,
+    "title": "Quoting Kyle Kingsbury",
+    "url": "https://simonwillison.net/2026/Nov/1/kyle-kingsbury/",
+    "published_at": "2026-11-01T16:49:04+00:00",
+    "fetched_at": "2026-11-01T20:15:39+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://jepsen.io/analyses/particledb-1.1.4#llm-tradeoffs\"><p>More broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion\u2014the signals we used to rely on as markers of a mature system are now easier to counterfeit. [...]</p>\n<p>In the age of LLMs, what can maintainers do to ensure correct software and accurate documentation? Having done that work, how can they demonstrate its quality to users?</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://jepsen.io/analyses/particledb-1.1.4#llm-tradeoffs\">Kyle Kingsbury</a>, Jepsen results for ParticleDB 1.1.4</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/kyle-kingsbury\">kyle-kingsbury</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "opinion",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1163284,
     "title": "Why We Rebuilt Microsoft Office From Scratch for AI Agents - Yijia Liang, Compound AI",
     "url": "https://www.youtube.com/watch?v=v0UkV5qS9E4",
@@ -11046,50 +11087,6 @@
       "safety",
       "video",
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 886316,
-    "title": "Same Model, Different Speed: Why Your Inference Provider Matters \u2014 FriendliAI",
-    "url": "https://www.youtube.com/watch?v=_naLJOqVOEI",
-    "published_at": "2026-10-11T19:30:05+00:00",
-    "fetched_at": "2026-10-11T19:57:21+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Open-weight models are good enough now. The question is who can run them fast and reliably.\n\nYunmo Koo, founding engineer at FriendliAI, argues that open-weight models like GLM 5.2 and MiniMax M3 now compete with the best proprietary models. He shows GLM 5.2 and Claude Opus 4.8 building similar tower defense games from one prompt, with GLM 5.2 more than 5.6x cheaper. Then he runs the same model and the same coding agent on two providers: FriendliAI builds a Candy Crush-style game in about two minutes, the other takes more than three. He explains where the gap comes from: prefix caching with cache-aware routing and a GPU, CPU and NVMe cache hierarchy for long, repetitive agent inputs, plus hybrid speculative decoding that adapts to live traffic. He also covers why reliability matters for agents (one failed call can sink a whole run) and shares Kilo Code's results of up to 7x faster responses with fewer errors.\n\nIn this talk:\n\u2022 Why open-weight models are now good enough for many workloads\n\u2022 Why the same model feels different on different providers\n\u2022 Prefix caching, cache-aware routing and a tiered KV cache\n\u2022 Hybrid speculative decoding and why reliability is part of speed\n\nSPEAKER\nYunmo Koo, Founding Engineer, FriendliAI\nLinkedIn: https://www.linkedin.com/in/yunmokoo/\nGitHub: https://github.com/kooyunmo\n\nLINKS\nFriendliAI: https://friendli.ai\nKilo Code case study: https://friendli.ai/customers/kilo\n\nCHAPTERS\n0:00 Intro\n0:40 Open vs closed models\n1:09 Open weights crossed the threshold\n2:24 GLM 5.2 vs Opus: a tower defense game\n2:49 5.6x cheaper\n3:09 Provider quality\n3:53 Same model, different provider\n4:33 It's the whole stack\n5:28 Long, repetitive agent inputs\n6:27 Cache-aware routing\n6:47 A cache hierarchy\n7:37 Speculative decoding\n9:06 Hybrid, self-improving speculation\n9:41 Reliability is part of speed\n11:06 Test your own workload\n11:45 Kilo Code: up to 7x faster\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#LLMInference #OpenSourceAI #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/_naLJOqVOEI",
-    "topic": "infrastructure",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "research",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 886317,
-    "title": "SonarQube + OpenAI: Agentic Development \u2014 Killian Carlsen-Phelan, Sonar",
-    "url": "https://www.youtube.com/watch?v=bI8WyG9YB0I",
-    "published_at": "2026-10-11T19:00:11+00:00",
-    "fetched_at": "2026-10-11T19:57:21+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "A tiny Python project contains a hardcoded API key, a SQL injection path and other deliberately planted issues. Killian Carlsen-Phelan runs it through SonarQube, brings the findings into Codex and asks the agent to fix the vulnerable query. The scan follows user controlled input into database execution; the repair replaces string interpolation with a parameterized query. A verification hook checks the edited code again, putting the security feedback inside the coding loop rather than leaving it for a later failed build or review.\n\nThe workshop develops Sonar's guide, verify and solve workflow through a live setup of SonarQube Cloud, its CLI, plugin and MCP server. A secrets detection hook blocks a fake credential in a prompt, while an issue listing skill gives the agent evidence from the project dashboard. Context augmentation supplies coding guidance before generation, and agentic analysis checks edits as they happen. The opening OpenAI introduction separates execution containment from artifact correctness and defines completion through a reviewable change and independent evidence. Questions explore how the hooks can be bypassed, which steps run locally or in a container, and which features depend on organizational access. Killian finishes by adding a new database operation under the same verification loop, showing how the setup supports both fixing existing issues and checking new work.\n\n\nSpeaker info:\n- https://www.linkedin.com/in/kcarlsen2\n- https://github.com/SonarSource/sonarqube-cli\n\nTimestamps:\n0:00 - Completion requires evidence\n2:44 - Containment and correctness\n3:56 - Feedback inside the agent loop\n5:46 - Killian and the workshop setup\n8:17 - Guide, verify, and solve\n9:40 - Move verification into the IDE\n12:11 - Provision the sample project\n14:06 - Deliberately planted issues\n16:14 - Secrets and SQL injection\n18:05 - Follow the vulnerable data flow\n20:09 - Inspect the SonarQube dashboard\n21:52 - Install the Codex plugin\n23:19 - Authenticate and integrate the CLI\n25:21 - Hooks, skills, and configuration\n27:12 - Block a fake secret\n28:08 - Hook boundaries and bypass questions\n29:00 - MCP and issue listing\n32:10 - Local configuration and Docker\n34:12 - Access and feature entitlements\n35:09 - Fix the SQL injection finding\n37:04 - Verify the parameterized query\n38:28 - Add a new database operation\n40:34 - Community resources and wrap up\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/bI8WyG9YB0I",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "video",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
