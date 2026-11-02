@@ -7,15 +7,16 @@
     "fetched_at": "2026-11-02T04:43:34+00:00",
     "source_id": "matt-wolfe",
     "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "extraction_method": "youtube",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/h5SNFLIZl_U",
     "topic": "media",
     "tags": [
+      "video",
+      "coding",
       "enterprise",
       "media",
       "news",
-      "tools",
-      "video"
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -28,14 +29,14 @@
     "fetched_at": "2026-11-02T04:43:34+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Zack Proser, an engineer on the WorkOS applied AI team who has written and published obsessively for 15 years, is less worried about AI slop than about all the stories that never get told. He shares how he packed his writing know-how into Blogbot, a Slack tool that gets colleagues' drafts 85-90% of the way there while a human still reads, edits and puts their name on every post, and why craft can survive the assembly line. Then he applies the same idea to an audience of two, building a bedtime story app for his toddlers in four hours, and asks who you would build a factory for.\n\nChapters: \n0:00 Intro \n0:26 15 years of obsessive writing \n1:18 The bigger worry than AI slop \n3:47 Building Blogbot at WorkOS \n4:59 Asymmetric leverage \n7:19 Does speed kill craft? \n9:39 \"Every sentence makes me flinch\" \n10:09 Spark, bellows and quench \n12:03 Is it true, useful and beautiful? \n13:56 A factory for two: bedtime stories \n16:05 An antidote to AI anxiety \n17:39 Who will you build a factory for?\n\nZack Proser https://workos.com",
+    "extraction_method": "youtube",
+    "body": "Zack Proser, an engineer on the WorkOS applied AI team who has written and published obsessively for 15 years, is less worried about AI slop than about all the stories that never get told. He shares how he packed his writing know-how into Blogbot, a Slack tool that gets colleagues' drafts 85-90% of the way there while a human still reads, edits and puts their name on every post, and why craft can survive the assembly line. Then he applies the same idea to an audience of two, building a bedtime story app for his toddlers in four hours, and asks who you would build a factory for.\n\nChapters: \n0:00 Intro \n0:26 15 years of obsessive writing \n1:18 The bigger worry than AI slop \n3:47 Building Blogbot at WorkOS \n4:59 Asymmetric leverage \n7:19 Does speed kill craft? \n9:39 \"Every sentence makes me flinch\" \n10:09 Spark, bellows and quench \n12:03 Is it true, useful and beautiful? \n13:56 A factory for two: bedtime stories \n16:05 An antidote to AI anxiety \n17:39 Who will you build a factory for?\n\nZack Proser https://workos.com\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/1et3Lb_KLQo",
     "topic": "media",
     "tags": [
+      "video",
       "coding",
       "media",
-      "tools",
-      "video"
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -48,13 +49,14 @@
     "fetched_at": "2026-11-01T23:47:01+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>I've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is:</p>\n<p><strong>If in doubt, delete the uv.lock file</strong></p>\n<p>Most of my projects are libraries which don't include a <code>uv.lock</code> file, since it's rude for a library dependency to lock versions for anything else that uses it.</p>\n<p>Running <code>uv run pytest</code> etc tends to leave <code>uv.lock</code> files lying around, which are listed in <code>.gitignore</code> and so do not get committed to my repositories.</p>\n<p>But... sometimes that <code>uv.lock</code> pins a version of a dependency that doesn't yet have a Python 3.15 wheel. An example from earlier today:</p>\n<pre><code>error: Failed to build `watchfiles==1.1.1`\n  cause: Call to `maturin.build_wheel` failed\n\nerror: the configured Python interpreter version (3.15) is newer\nthan PyO3's maximum supported version (3.14)\n</code></pre>\n<p>Deleting that file and running <code>uv run pytest</code> again usually fixes the problem.</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/uv\">uv</a>, <a href=\"https://simonwillison.net/tags/til\">til</a>, <a href=\"https://simonwillison.net/tags/python\">python</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "1st November 2026\nI've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is:\nIf in doubt, delete the uv.lock file\nMost of my projects are libraries which don't include a uv.lock\nfile, since it's rude for a library dependency to lock versions for anything else that uses it.\nRunning uv run pytest\netc tends to leave uv.lock\nfiles lying around, which are listed in .gitignore\nand so do not get committed to my repositories.\nBut... sometimes that uv.lock\npins a version of a dependency that doesn't yet have a Python 3.15 wheel. An example from earlier today:\nerror: Failed to build `watchfiles==1.1.1`\ncause: Call to `maturin.build_wheel` failed\nerror: the configured Python interpreter version (3.15) is newer\nthan PyO3's maximum supported version (3.14)\nDeleting that file and running uv run pytest\nagain usually fixes the problem.\nRecent articles\n[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026",
     "topic": "tutorials",
     "tags": [
       "tutorials",
       "open-source",
-      "coding"
+      "coding",
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -67,11 +69,14 @@
     "fetched_at": "2026-11-01T23:47:11+00:00",
     "source_id": "marios-rec-reading",
     "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading. had the good fortune to talk with @tianyi a little while ago, and the DSH folks are one of the not so many teams doing innovative stuff in the harness space.\n\nthe below largely aligns with what we are gravitating towards at earendil as well. single, long",
-    "topic": "general",
+    "extraction_method": "fxtwitter",
+    "body": "Exploring Super-agent Design: Towards a More Autonomous Agent System\n\nThe original article is in Chinese. This is a machine translation.\nThis article discusses architectural ideas. It is not an introduction to existing features of DeepSeek Harness.\n1. Super-agent\nOver",
+    "topic": "ai-models",
     "tags": [
-      "general"
+      "ai-models",
+      "models",
+      "agents",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -84,16 +89,16 @@
     "fetched_at": "2026-11-01T20:15:40+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Code is being written faster than ever, and Nick Nisi, who leads developer and agent experience at WorkOS, argues that the human reviewer is now the bottleneck. To make the point, he hooked a simulated fruit fly brain, built from a full scan of its neurons, up to code review: AI turns each change into literal \"code smells,\" sugar and bitter rewards teach the fly what good and bad code taste like, and it was right about 88% of the time in testing. Then he plays a live round against the audience and lays out a practical plan where team review skills, classifiers and automated reviewers only send the risky pull requests to a human, backed by proof like screenshots and smoke tests.\n\nChapters:\n0:00 Intro\n0:37 Humans are the bottleneck\n2:35 Where the word \"bug\" came from\n3:04 Using a bug to find bugs\n4:00 Wiring a fruit fly brain into code review\n4:57 Turning code into smells\n6:43 Sugar, bitterness and memory\n7:32 Does the fly actually matter?\n8:15 Game: are you smarter than a fruit fly?\n10:22 Trying a real pull request\n11:55 What only humans know: why\n12:33 Escalate only the reviews that matter\n14:56 Proof instead of review\n\nNick Nisi\nhttps://workos.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Code is being written faster than ever, and Nick Nisi, who leads developer and agent experience at WorkOS, argues that the human reviewer is now the bottleneck. To make the point, he hooked a simulated fruit fly brain, built from a full scan of its neurons, up to code review: AI turns each change into literal \"code smells,\" sugar and bitter rewards teach the fly what good and bad code taste like, and it was right about 88% of the time in testing. Then he plays a live round against the audience and lays out a practical plan where team review skills, classifiers and automated reviewers only send the risky pull requests to a human, backed by proof like screenshots and smoke tests.\n\nChapters:\n0:00 Intro\n0:37 Humans are the bottleneck\n2:35 Where the word \"bug\" came from\n3:04 Using a bug to find bugs\n4:00 Wiring a fruit fly brain into code review\n4:57 Turning code into smells\n6:43 Sugar, bitterness and memory\n7:32 Does the fly actually matter?\n8:15 Game: are you smarter than a fruit fly?\n10:22 Trying a real pull request\n11:55 What only humans know: why\n12:33 Escalate only the reviews that matter\n14:56 Proof instead of review\n\nNick Nisi\nhttps://workos.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/geMAe-PLJF4",
     "topic": "coding",
     "tags": [
       "agents",
       "safety",
+      "video",
       "coding",
       "education",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -106,11 +111,13 @@
     "fetched_at": "2026-11-01T20:15:39+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<blockquote cite=\"https://jepsen.io/analyses/particledb-1.1.4#llm-tradeoffs\"><p>More broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion\u2014the signals we used to rely on as markers of a mature system are now easier to counterfeit. [...]</p>\n<p>In the age of LLMs, what can maintainers do to ensure correct software and accurate documentation? Having done that work, how can they demonstrate its quality to users?</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://jepsen.io/analyses/particledb-1.1.4#llm-tradeoffs\">Kyle Kingsbury</a>, Jepsen results for ParticleDB 1.1.4</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/kyle-kingsbury\">kyle-kingsbury</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai-misuse\">ai-misuse</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "1st November 2026\nMore broadly, the use of LLMs erodes trust in documentation, in software, and in the organizations which produce them. Perhaps engineers will begin to treat any new software project with suspicion\u2014the signals we used to rely on as markers of a mature system are now easier to counterfeit. [...]\nIn the age of LLMs, what can maintainers do to ensure correct software and accurate documentation? Having done that work, how can they demonstrate its quality to users?\n\u2014 [Kyle Kingsbury](https://jepsen.io/analyses/particledb-1.1.4#llm-tradeoffs), Jepsen results for ParticleDB 1.1.4\nRecent articles\n[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026",
     "topic": "opinion",
     "tags": [
       "models",
+      "coding",
+      "development",
       "opinion",
       "tools"
     ],
@@ -125,16 +132,16 @@
     "fetched_at": "2026-11-01T15:48:54+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Yijia Liang spent years as a finance analyst living in Excel and PowerPoint before founding Compound to build autonomous AI analysts for institutional investors. Personal agents took off because they run reliably in the background, act on their own and connect to your context, but finance needs more: multiplayer agents with their own inboxes that join deal-team email threads, a headless Office engine rebuilt from scratch with agents (1.5 trillion tokens and over 8 million lines of code) that runs work in parallel and checks its own formatting, and agent swarms that can work through data rooms of 15,000+ files.\n\nChapters:\n0:00 Intro\n0:52 Why personal agents took off\n1:34 Why that breaks in finance\n3:12 Multiplayer agents\n4:10 An inbox for every agent\n5:28 Why off-the-shelf Office tools fall short\n6:04 Rebuilding Office from scratch\n7:38 Why headless is faster\n8:21 Comments and collaboration\n9:08 Write, render, check, fix\n9:55 Huge data rooms and models\n13:10 From copilot to autopilot\n15:09 Wrap-up\n\nYijia Liang\nhttps://getcompound.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Yijia Liang spent years as a finance analyst living in Excel and PowerPoint before founding Compound to build autonomous AI analysts for institutional investors. Personal agents took off because they run reliably in the background, act on their own and connect to your context, but finance needs more: multiplayer agents with their own inboxes that join deal-team email threads, a headless Office engine rebuilt from scratch with agents (1.5 trillion tokens and over 8 million lines of code) that runs work in parallel and checks its own formatting, and agent swarms that can work through data rooms of 15,000+ files.\n\nChapters:\n0:00 Intro\n0:52 Why personal agents took off\n1:34 Why that breaks in finance\n3:12 Multiplayer agents\n4:10 An inbox for every agent\n5:28 Why off-the-shelf Office tools fall short\n6:04 Rebuilding Office from scratch\n7:38 Why headless is faster\n8:21 Comments and collaboration\n9:08 Write, render, check, fix\n9:55 Huge data rooms and models\n13:10 From copilot to autopilot\n15:09 Wrap-up\n\nYijia Liang\nhttps://getcompound.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/v0UkV5qS9E4",
     "topic": "coding",
     "tags": [
       "models",
       "agents",
+      "video",
       "coding",
       "events",
-      "tools",
-      "video"
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
