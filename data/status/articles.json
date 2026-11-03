@@ -1,5 +1,137 @@
 [
   {
+    "article_id": 1182889,
+    "title": "StateBench: Testing how language models track state changes over long documents",
+    "url": "https://huggingface.co/blog/allenai/statebench",
+    "published_at": "2026-11-03T17:15:21+00:00",
+    "fetched_at": "2026-11-03T19:09:27+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1180462,
+    "title": "Agentic cheminformatics with Google Antigravity",
+    "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+    "published_at": "2026-11-03T17:01:49+00:00",
+    "fetched_at": "2026-11-03T19:09:17+00:00",
+    "source_id": "google-deepmind-blog",
+    "source_name": "Google DeepMind Blog",
+    "extraction_method": "rss",
+    "body": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1182890,
+    "title": "Palette: teaching a small model to build decks in your design language",
+    "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+    "published_at": "2026-11-03T16:35:36+00:00",
+    "fetched_at": "2026-11-03T19:09:27+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1181912,
+    "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+    "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+    "published_at": "2026-11-03T16:29:48+00:00",
+    "fetched_at": "2026-11-03T19:09:18+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>Yesterday's hot paper was <a href=\"https://rikiyat.github.io/blog/weight-space-programming/\">Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights</a> by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper found that frontier models, in particular GPT-6 Astra, can both interpret and modify the raw weights of a machine learning model - literally a text description of the model containing a bunch of floating point numbers. I've been playing with one of the examples from the paper and I'm delighted to share that Qwen 3.8 27B running on my laptop can do this as well!</p>\n<h4 id=\"weight-space-programming\">Weight-Space Programming</h4>\n<p>Here's the highlight from their abstract, describing impressive capabilities for GPT-6 Astra and coining the term <strong>Weight-Space Programming</strong> for when LLMs analyze and modify model weights:</p>\n<blockquote>\n<p>Just by looking at the raw weights, GPT-6 Astra <strong>can tell what a network was trained to do</strong>. And without any environment feedback, it <strong>has no trouble writing, from scratch, small game-playing networks</strong> that outplay networks trained with PPO for 100 million steps.</p>\n<p>Likewise, asked to make Qwen3.5-0.8B better at math without gradients, Astra <strong>identifies an issue in its weights</strong> causing reasoning loops that Qwen\u2019s own <a href=\"https://huggingface.co/Qwen/Qwen3.5-0.8B/blob/main/README.md#L856\">model card</a> warns about, and <strong>fixes this by natively editing 0.016% of the weights</strong>. With the same sampling settings, this weight correction raises MATH-500 from 7.9% to 48.1% and generalizes out of the box to instruction following, raising IFEval by 3x.</p>\n<p>All of this is possible without allowing Astra to write training loops. It uses its reasoning to figure out what each part of a neural network computes, or should compute, and changes the weights accordingly. We call this <strong>Weight-Space Programming</strong>.</p>\n</blockquote>\n<p>The paper combines two topics that I think deserve to be treated separately. The first is what models can do with raw weights <em>without</em> running tools or executing code. The second explores how well models, once armed with code, can run operations to update and improve other models.</p>\n<p>spaCy author Matthew Honnibal <a href=\"https://honnibal.dev/blog/astra-read-write-misleading\">called the paper misleading</a> for conflating the two, and Sean Goedecke <a href=\"https://www.seangoedecke.com/llms-are-not-superhuman-at-reading-and-writing-neural-network-weights/\">deconstructed the Qwen3.5-0.8B update example</a> as taking the same steps that a human ML researcher would use.</p>\n<p>I'm going to focus on the no-tools question, which I think is the more interesting of the two.</p>\n<p>The paper presents the first question as <strong>Can LLMs understand model behaviors from weights?</strong> They trained four neural networks to play simplified 10x10 grid versions of four classic computer games - Breakout, Pong, Pac-Man, and Freeway (I had <a href=\"https://en.wikipedia.org/wiki/Freeway_(video_game)\">to look that one up</a>, it's an Atari 2600 game from 1981). Then they fed those weights (as floating point numbers) to an LLM along with the following question:</p>\n<blockquote>\n<p><code>The weights below belong to one policy network that was trained with reinforcement learning to play a game on this grid. Which game was it trained on? Work from the weights. You have no tools: no code execution, no calculator, nothing to run. This is a single response.</code></p>\n</blockquote>\n<p>The GitHub repository that accompanies the paper is <a href=\"https://github.com/RikiyaT/lm_understand-logs\">RikiyaT/lm_understand-logs</a>. The <a href=\"https://github.com/RikiyaT/lm_understand-logs/tree/main/exp1_which_game\">exp1_which_game</a> folder contains the prompts they used, with weights for the four games:</p>\n<ul>\n<li><a href=\"https://github.com/RikiyaT/lm_understand-logs/blob/main/exp1_which_game/runs/breakout/prompt.txt\">breakout/prompt.txt</a></li>\n<li><a href=\"https://github.com/RikiyaT/lm_understand-logs/blob/main/exp1_which_game/runs/freeway/prompt.txt\">freeway/prompt.txt</a></li>\n<li><a href=\"https://github.com/RikiyaT/lm_understand-logs/blob/main/exp1_which_game/runs/pacman/prompt.txt\">pacman/prompt.txt</a></li>\n<li><a href=\"https://github.com/RikiyaT/lm_understand-logs/blob/main/exp1_which_game/runs/pong/prompt.txt\">pong/prompt.txt</a></li>\n</ul>\n<p>I checked and, aside from the weights, each prompt is identical to the others.</p>\n<h4 id=\"trying-it-out-with-qwen-3-8-27b-and-other-models\">Trying it out with Qwen 3.8 27B and other models</h4>\n<p>The prompts on GitHub are self-contained. My <a href=\"https://llm.datasette.io/\">LLM</a> tool has a <code>-f/--fragment</code> option which can be passed the URL to a text file to use as a prompt, which means I can run any of the above like this:</p>\n<div class=\"highlight highlight-source-shell\"><pre>llm -f https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/refs/heads/main/exp1_which_game/runs/breakout/prompt.txt \\\n  -m openrouter/moonshotai/kimi-k3.1-pro</pre></div>\n<p>This example requires the <a href=\"https://github.com/simonw/llm-openrouter\">llm-openrouter plugin</a> installed, and runs the Breakout prompt against Kimi K3.1 Pro via OpenRouter. Here's <a href=\"https://gist.github.com/simonw/9f18d2945a105c04734ef7e5cd95717c\">what I got back from Kimi K3.1 Pro</a>, which successfully guessed Breakout after 9m 41s and 19,493 reasoning tokens.</p>\n<p>But how about <a href=\"https://simonwillison.net/2026/Aug/16/qwen-38-27b/\">Qwen 3.8 27B</a>? That's still my favorite model to run on my own laptop - it's just 17GB (I use <a href=\"https://huggingface.co/lmstudio-community/Qwen3.8-27B-GGUF/blob/main/Qwen3.8-27B-Q4_K_M.gguf\">this version</a>) and somehow feels close to the leading proprietary models of 2025.</p>\n<p>I fired up <a href=\"https://lmstudio.ai\">LM Studio</a>, ensured Qwen 3.8 27B was loaded with a long context window (the default 8192 context failed with errors), installed the <a href=\"https://github.com/llm-lmstudio/llm-lmstudio\">llm-lmstudio</a> plugin and ran this command:</p>\n<div class=\"highlight highlight-source-shell\"><pre>LMSTUDIO_TIMEOUT=900 \\\n  llm -f https://raw.githubusercontent.com/RikiyaT/lm_understand-logs/refs/heads/main/exp1_which_game/runs/pacman/prompt.txt \\\n  -m lmstudio/qwen/qwen3.8-27b</pre></div>\n<p>(I had to bump the timeout up using an environment variable, see <a href=\"https://github.com/llm-lmstudio/llm-lmstudio/issues/16\">this issue</a>.)</p>\n<p>After 46m 12s and 43,506 reasoning tokens, Qwen on my laptop <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F387d3a7927f165b1986bb6c2099d0f53#response-1\">returned a response</a> that ended like this (here's <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F387d3a7927f165b1986bb6c2099d0f53#reasoning-1\">the reasoning trace</a>):</p>\n<blockquote>\n<p>Game: A simplified Pac-Man-style gridworld: an agent moves through a fixed 8x8 maze with central and corner wall blocks, moving objects/ghosts, and reward targets/pellets.</p>\n<p>Description: The agent navigates a fixed maze-like 8x8 board, using current agent/moving-object/previous-frame cues to move through corridors, collect reward-target cells, and avoid moving objects or hazards.</p>\n<p>Confidence: 72%</p>\n</blockquote>\n<p>This is impressive. I tried it on two of the other games as well. It <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F387d3a7927f165b1986bb6c2099d0f53#response-2\">identified Pong</a> (<a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F387d3a7927f165b1986bb6c2099d0f53#reasoning-2\">reasoning</a>) in 1h 4m 54s:</p>\n<blockquote>\n<p><strong>Pong</strong> \u2014 specifically a Pong-like paddle/ball game where the agent controls a vertical paddle on the right side and must move up/down to intercept or return a moving ball/reward object.</p>\n<p>Description:</p>\n<p>The agent moves a right-side paddle vertically to hit or catch a moving ball-like reward target moving across the 8\u00d78 field, while a left-side moving object/opponent and wall borders define the play; reward is obtained by successfully intercepting/returning/scoring the ball, and missing or failing to hit it is penalized.</p>\n<p>Confidence:</p>\n<p><strong>75%</strong></p>\n</blockquote>\n<p>And <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F387d3a7927f165b1986bb6c2099d0f53#response\">Breakout</a> (<a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F387d3a7927f165b1986bb6c2099d0f53#reasoning\">reasoning</a>) in 52m 25s:</p>\n<blockquote>\n<p>Game: Breakout, or an Arkanoid-like paddle/ball/brick game.</p>\n<p>Description: The agent is a paddle on the bottom row and moves left/right to keep a ball in play; the ball moves around the upper grid, and bricks/reward targets in the top rows give reward when hit, while missing the ball/hitting the bottom wall ends the episode or gives penalty.</p>\n<p>Confidence: 88%</p>\n</blockquote>\n<p>Qwen failed at the Freeway prompt, which didn't surprise me considering that game is more obscure than the other three. Here's <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F6ed68f659e26a32e7d9096391d92f326\">that transcript</a> - Qwen thought it was \"A simplified Pac-Man-like grid game: agent moves 4-directionally\".</p>\n<p>The reasoning traces are fun to skim, and almost incomprehensible. Here's a sample:</p>\n<blockquote>\n<p>What about agent channel0? We see some large channel0 rows near row8 col7/8 and maybe bottom? Let's list channel0 large: line436 input435 (row8 col7 ch0) -2.107,1.169,0.513...; line441 input440 (row8 col8 ch0) -0.376,0.010,1.564,3.855...; line445 input444 (row8 col8 ch4) 0.142,0.491...; line382? input381 ch0? Wait line382 input381: 381//5=76 (row7 col6), ch1? 381%5=1? 76 * 5=380, ch1. So not. Channel0 large maybe at row8 col7/8 only. Also top row? line44 input43 ch3, line49 ch3. Channel0 large maybe not many. Agent position could be near bottom-right? If the agent is typically at bottom-right?</p>\n</blockquote>\n<p>That said though, I expect a sufficiently experienced human being armed with a notepad and a pencil could get there with enough effort.</p>\n<p>It's a cool paper, but some of the wider commentary I've seen around it does not feel justified. I'm not ready to declare that the age of source code is over and our future involves incomprehensible machines editing their own model weights in incomprehensible ways.</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/machine-learning\">machine-learning</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/local-llms\">local-llms</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/qwen\">qwen</a>, <a href=\"https://simonwillison.net/tags/paper-review\">paper-review</a></p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1182871,
+    "title": "AI Is Changing How Semiconductor Fabs Work \u2014 and Engineers Are Moving Faster Because of It",
+    "url": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs/",
+    "published_at": "2026-11-03T16:00:45+00:00",
+    "fetched_at": "2026-11-03T19:09:26+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "Demand for advanced chips is rising. The processes to build them are getting more complex. And the margin for error is shrinking. For engineers, understanding how a process change will behave, how a material will interact with a new step, how a defect maps back to a root cause are critical, challenging steps in semiconductor [&#8230;]",
+    "topic": "hardware",
+    "tags": [
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1182758,
+    "title": "Finding my thing",
+    "url": "https://www.bensbites.com/p/if-you-feel-behind-right-now-dont",
+    "published_at": "2026-11-03T14:03:32+00:00",
+    "fetched_at": "2026-11-03T19:09:26+00:00",
+    "source_id": "bens-bites",
+    "source_name": "Ben's Bites",
+    "extraction_method": "rss",
+    "body": "Nobody knows anything",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1180562,
+    "title": "Accelerating engineering for the physical world",
+    "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
+    "published_at": "2026-11-03T12:00:00+00:00",
+    "fetched_at": "2026-11-03T19:09:18+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Discover how ChatGPT and Codex are helping engineers accelerate CAD, PCB design, simulation, and other workflows across the physical world.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1178935,
     "title": "Make Your AI Agents Predictable With Graph Engineering - Zachary Blumenfeld, Neo4j",
     "url": "https://www.youtube.com/watch?v=g_NgCLTibiM",
@@ -169,6 +301,42 @@
       "video",
       "coding",
       "robotics"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1183785,
+    "title": "The world's leading open models, fully under your control",
+    "url": "https://cohere.com/blog/open-source-model-vault",
+    "published_at": "2026-11-03T00:00:00+00:00",
+    "fetched_at": "2026-11-03T19:09:27+00:00",
+    "source_id": "cohere-blog",
+    "source_name": "Cohere Blog",
+    "extraction_method": "rss",
+    "body": "The right model for the right job, all under your jurisdiction.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1182891,
+    "title": "CWE-bench v2: More coverage, quality, and transparency",
+    "url": "https://huggingface.co/blog/cwe-bench",
+    "published_at": "2026-11-03T00:00:00+00:00",
+    "fetched_at": "2026-11-03T19:09:27+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10886,202 +11054,6 @@
       "api",
       "agents",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 900875,
-    "title": "Mix, Don't Tune: Bilingual Pre-Training Outperforms Hyperparameter Search in Data-Constrained Settings",
-    "url": "https://machinelearning.apple.com/research/mix-dont-tune",
-    "published_at": "2026-10-13T00:00:00+00:00",
-    "fetched_at": "2026-10-13T17:05:05+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "For most languages of the world, language model pre-training operates in a data-constrained regime where models must repeat their training data many times, degrading generalization. Two remedies exist: aggressive hyperparameter tuning such as high weight decay, and mixing in data from a high-resource auxiliary language to directly aid the low-resource target. While hyperparameter tuning regularizes the model by shrinking weights to restrict network capacity, auxiliary data mixing uses a tunable mixing ratio to expand the training distribution and diversify the training signal with new knowledge. Both offer a principled way to improve training in a data-constrained domain. We compare these levers systematically across four model scales from 150M to 1.43B parameters, using Arabic as the low-resource target and English as the auxiliary, over approximately 1000 pre-training runs. Three findings emerge. First, mixing yields larger improvements than hyperparameter tuning on both validation loss and downstream task accuracy, and the gap grows with model size. Second, we quantify how much mixing helps: it boosts performance by an amount equivalent to 2\u00e23\u00c3 the unique target data on validation loss and 2\u00e213\u00c3 on downstream task accuracy, with the gain scaling steeply with model size. Third, this divergence reveals that target-language validation loss systematically underestimates mixing\u00e2s value. Mixing regularizes by diversifying the training signal and contributes knowledge the repeated target corpus cannot supply; validation loss captures only the first effect. Our practical recommendations are: mix in a high-resource language, prioritize the mixing ratio over hyperparameter tuning, and transfer hyperparameters from a small proxy model via \u00ce\u00bcP.\n- \u00e2 DTU\n- \u00e2\u00a1 Equal senior authorship\n- ** Work done while at Apple",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "open-source"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 903205,
-    "title": "Uber's CISO on building an insider threat program for AI",
-    "url": "https://claude.com/resources/articles/uber-s-ciso-on-building-an-insider-threat-program-for-ai",
-    "published_at": "2026-10-13T00:00:00+00:00",
-    "fetched_at": "2026-10-13T21:56:16+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Uber's CISO on building an insider threat program for AI\nUber's CISO, Philip Martin, on the importance of monitoring and observability for AI agents, and how Uber's open-source tooling works alongside Enterprise Frontier Safeguards.\nUber runs one of the world's largest real-time marketplaces, with over 40 million trips and delivery orders a day. Philip Martin, Uber's Chief Information Security Officer (CISO), leads the team that protects Uber's data and the riders, drivers, and couriers who use the platform in the real world. His team started working with Claude on threat modeling before Claude Code existed, assembling context by hand. Now, with Claude Fable, Claude gathers that context itself from code, design docs, and ticket history.\nMartin thinks AI agents need the same kind of insider threat program companies already run for their employees. We spoke with him about that idea, why he thinks so much about accidental misuse, and how Uber's open-source monitoring tools work alongside Enterprise Frontier Safeguards.\nHow are frontier models changing your security team\u2019s work?\nThe really big difference between prior models and today\u2019s frontier models is their ability to incorporate additional context over long time horizons, and as a result, generate really specific outputs. When we're doing security reviews or threat modeling for a given service application, we can let the models consume a lot more context about the service, whether that's the code itself, design documents, issues in Jira, or historical context on what the service is supposed to do and what it interacts with.\nI see the same thing emerging with teams of agents. I can imagine a world in the not-too-distant future where each service has an agent associated with it that understands that service very well, and those agents can talk to each other, the same way the services might in production, about the threat model: this is my threat model, this is where my data comes from. That team-of-agents effect will take us to the next level of efficacy.\nUber worked with our team Enterprise Frontier Safeguards. Why was this important for Uber?\nOne thing Anthropic and Uber have in common is a bone-deep focus on safety, albeit in very different contexts. When Uber thinks about safety, we think about rider safety, protecting personal data. Anthropic wants to prevent the misuse of its frontier models, but Uber needs to protect our customer data, our trade secrets, and any other proprietary information. Enterprise Frontier Safeguards allow us to strike this balance: the safeguards are in place, but our data is not accessible to Anthropic without our permission.\nIt gives us control of our data and control of the risk mitigation and the actions we decide to take after a safeguard is triggered. I think we share a responsibility to make sure these models are used safely and effectively in the world.\nWhen your team walked us through the design, it was clear that you heard our feedback. You put us in the driver's seat. This allows us to protect our data while still being responsible stewards of the capabilities of these models.\nHow Enterprise Frontier Safeguards fit with the safety monitoring you already run on AI deployments Uber?\nWe've done a ton of work since the very beginning on how we deploy AI safely within Uber. We recently open-sourced a product called [AI Detection and Response (ADR) (opens in new tab)](https://github.com/uber/ADR), designed to gather real-time telemetry and take real-time action in the agent harnesses we deploy.\nIt complements Anthropic's safeguards, because we now have access to enhanced data to detect when an agent is acting outside its bounds and respond in real time. We have our own view of what's going on, plus output from Anthropic's classifier, and we can integrate both into our overall detection environment, much like a traditional cybersecurity one. It's all about assembling context effectively to reach a decision as fast, and with as much certainty, as possible.\nI think we'll see Enterprise Frontier Safeguards feed into ADR as a data source. Together with our LLM gateway, which builds a perimeter and controls how AI is used within Uber, those make up our overall AI security architecture.\nWhere do you think defenders should prioritize their focus next when it comes to securing AI systems?\nNumber one is real-time detection and intervention: getting as close as we can to the human entering a prompt in a harness, to be able to tell them, \"You probably don't want to do that,\" or \"The tool this model is about to call, the place it's about to connect to, is probably not something you want to happen.\"\nNumber two is better understanding emerging patterns. We look at trends in model behavior and detect new behaviors we didn't know were possible. That becomes a cycle. We look at the data, in many cases with the assistance of LLMs, discover these behaviors as they appear, and build safeguards against them back into the real-time platform. Then new behaviors emerge, because constraints create new behaviors, and we find those too.\nWhat would you tell other leaders who are hesitant about the monitoring frontier models require?\nAI adoption is a business imperative. It's coming whether we want it or not, and it's going to bring real benefits to businesses and people around the world. But there's also real potential for harm, and the stakes rise as models get more capable and take on more complex, autonomous work.\nEvery company already runs an insider threat program for its people. Nobody argues about that. We accept the sometimes onerous data retention, and we monitor things we'd rather not monitor, because we know humans occasionally act outside the bounds of their role, for any number of reasons.\nFrontier models introduce the same risk. These models may be directed to act outside the constraints we expect them to operate within. So we need the equivalent capability for AI. That insider threat program for models is going to be essential to rolling these systems out safely and securely.\nLearn more about [Enterprise Frontier Safeguards (opens in new tab)](https://www.anthropic.com/news/enterprise-frontier-safeguards).",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1158887,
-    "title": "Origin App Marketplace",
-    "url": "https://cursor.com/changelog/origin-app-marketplace",
-    "published_at": "2026-10-13T00:00:00+00:00",
-    "fetched_at": "2026-11-01T01:54:24+00:00",
-    "source_id": "cursor-changelog",
-    "source_name": "Cursor Changelog",
-    "extraction_method": "trafilatura",
-    "body": "Origin App Marketplace\nOrigin now integrates with over 20 apps for deployments, CI, code review, security, monitoring, and project management, from partners including Cloudflare, Linear, Sentry, and Socket Security.\nStarting today, the marketplace is also open to public submissions, so any team building developer tools can publish an app for Origin.\nApps for your stack\nThe marketplace now includes apps for:\n- Deployments:\n[Cloudflare](https://cursor.com/codebase/apps/public/cloudflare),[Netlify](https://cursor.com/codebase/apps/public/netlify),[Render](https://cursor.com/codebase/apps/public/render),[Spacelift](https://cursor.com/codebase/apps/public/spacelift-deploy-us), and[Vercel](https://cursor.com/codebase/apps/public/vercel) - CI:\n[Buildkite](https://cursor.com/codebase/apps/public/buildkite),[CircleCI](https://cursor.com/codebase/apps/public/circleci),[CloudBees](https://www.cloudbees.com/blog/enterprise-jenkins-now-builds-from-cursor-origin),[Depot](https://cursor.com/codebase/apps/public/depot),[EngFlow](https://cursor.com/codebase/apps/public/engflow),[Namespace](https://cursor.com/codebase/apps/public/namespacelabs), and[RWX](https://cursor.com/codebase/apps/public/rwx) - Code review:\n[CodeRabbit](https://cursor.com/codebase/apps/public/coderabbitai),[Greptile](https://cursor.com/codebase/apps/public/greptile), and[Tenki](https://cursor.com/codebase/apps/public/tenki) - Security:\n[Artemis Security](https://cursor.com/codebase/apps/public/artemis-security),[Semgrep](https://cursor.com/codebase/apps/public/semgrep),[Socket Security](https://cursor.com/codebase/apps/public/socket-security), and[Upwind](https://cursor.com/codebase/apps/public/upwind-security) - Monitoring:\n[Sentry](https://cursor.com/codebase/apps/public/sentry) - Project management:\n[Linear](https://cursor.com/codebase/apps/public/linear)\nPublish to Marketplace\nTo submit an app:\n[Create an app](https://cursor.com/codebase/settings/apps)in your namespace. It stays private to your namespace while you build.- Build against the\n[Origin API](https://cursor.com/docs/api/origin). Apps authenticate with an app JWT and installation access tokens, receive webhook events, and write back check runs, pull request comments, and reviews. - Make the app public, then submit it from the app's page with a slug, suggested tags, and a demo video. The video should show install, uninstall, and your core product flows.\n- We review the submission and list the app once it's approved.\nGet started\n[Try the apps](https://cursor.com/codebase/apps) in the Origin App Marketplace today.\nWant to build an Origin app? Start with the [publishing guide](https://cursor.com/docs/origin/apps/publish) and the [Origin API reference](https://cursor.com/docs/api/origin).\nThe [Origin Apps plugin](https://github.com/cursor/plugins/tree/main/origin-apps) can also answer questions from the live Origin API docs and plan a port to Origin for an app you already run.",
-    "topic": "product",
-    "tags": [
-      "product",
-      "open-source",
-      "api",
-      "safety",
-      "video",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 906260,
-    "title": "llm-meta-ai 0.2",
-    "url": "https://simonwillison.net/2026/Oct/12/llm-meta-ai/",
-    "published_at": "2026-10-12T23:58:46+00:00",
-    "fetched_at": "2026-10-14T00:55:36+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "12th October 2026\nMeta AI release [Muse Wonder](https://research.meta.ai/blog/muse-wonder) (and Muse Wonder Full), their new \"most capable models\". These look like they may be Meta's first [Fable class models](https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/#simon-willison-2026-in-llms.042.webp) - Artificial Analysis [scores Muse Wonder (Max)](https://artificialanalysis.ai/models/muse-wonder) as equivalent to GPT-6.1 Sol.\nI updated my llm-meta-ai\nplugin for the new model. Here are [pelicans for Muse Wonder](https://tools.simonwillison.net/markdown-svg-renderer?url=https://gist.github.com/simonw/185cff7ff0b11379725abf7f78d5d2b2) for the six reasoning levels: minimal, low, medium, high, xhigh, max. This is the max one:\nFor comparison, here are [pelicans for Muse 1.3](https://tools.simonwillison.net/markdown-svg-renderer?url=https://gist.github.com/simonw/1f8c25686971da82077e34c088d408db) (released September 2nd) and [Muse 1.2](https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Fce974a21202b0595e36ec2a5ddb51480) (released August 5th). Meta AI are putting out a new model a month, and the improvements between each model (at least in terms of drawing pelicans) are material.\nRecent articles\n[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "benchmark",
-      "research",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 896769,
-    "title": "AI Labs Warn Race Makes Breach \u2018Inevitable\u2019",
-    "url": "https://www.youtube.com/watch?v=C4Sq3Rot8FU",
-    "published_at": "2026-10-12T22:52:31+00:00",
-    "fetched_at": "2026-10-13T01:54:44+00:00",
-    "source_id": "ai-explained",
-    "source_name": "AI Explained",
-    "extraction_method": "youtube",
-    "body": "In the week that software got reverse engineered, Sam Altman warned 6.1 Astra \u2018tipped toward [breach risk], and Muse Wonder showed the race isn\u2019t slowing, I try to step back and show where it is all going, on current trends. Agree or disagree, it is certainly interesting times.\n\nExclusives, and ad-free early access vids ($9!): https://www.patreon.com/AIExplained\n\nChapters:\n00:00 - Introduction\n0:41 Part 1: The Forthcoming Breach\n8:43 Part 2: Why the Labs Keep Racing\n15:41 Part 3: Why the Next 18 Months Are Hard to Predict\n\n\nSam Altman: the accident risk, Vanity Fair: https://www.vanityfair.com/story/sam-altman-exclusive-interview-part-2\n\nDario Amodei: We Must Pace the Frontier: https://darioamodei.com/post/we-must-pace-the-frontier\n\nJakub Pachocki: An Alien Mind: https://openai.com/index/an-alien-mind/\n\nOpenAI: progress in mathematics: https://openai.com/index/sharing-ai-progress-in-mathematics/\n\nOpenAI mathematical manuscripts: https://github.com/openai/math\n\nAHM statement on OpenAI\u2019s mathematics release: https://terrytao.wordpress.com/2026/10/07/ahm-statement-on-openais-october-6-release-of-mathematical-documents/\n\nTasteVal: research taste in AI systems: https://pzeroresearch.com/work/tasteval/\n\nTasteVal paper: https://arxiv.org/abs/2610.06824\n\nClaude Opus 5.5 system card: https://anthropic.com/claude-opus-5-5-system-card\n\nJack Clark: creativity and recursive self-improvement: https://jack-clark.net/2026/10/12/import-ai-476-creativity-and-rsi-worse-than-china-open-weight-models-ai-goes-to-space/\n\nAndrej Karpathy: the widening AI perception gap: https://x.com/karpathy/status/2109361546505966046\n\nAxios: AI companies plan for a major incident: https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack\n\nAnthropic: investigating unintended model actions: https://www.anthropic.com/research/investigating-unintended-model-actions\n\nCIAware-Bench: detecting control interventions: https://arxiv.org/abs/2606.11063\n\nYoshua Bengio: prioritizing safety at frontier labs: https://www.transformernews.ai/p/yoshua-bengio-if-you-prioritize-safety-leave-frontier-ai-companies\n\nDavid Silver: Where are we going without AI?: https://www.ft.com/content/462c303b-b96c-4262-a7ca-e9ae7e440828\n\nSatya Nadella: models as insider risks: https://x.com/satyanadella/status/2108931348857827686\n\nBeyond Owls: skills, hacking and backdoors: https://arxiv.org/abs/2610.10657\n\nOwain Evans: backdoors through number sequences: https://x.com/OwainEvans_UK/status/2108589303249166621\n\nThe Verge: mathematicians assess OpenAI\u2019s release: https://www.theverge.com/ai-artificial-intelligence/1008726/openai-mathematics-solutions-chaos\n\nNew York Times: AI models and Hurricane Isaias: https://www.nytimes.com/2026/10/09/weather/ai-models-hurricane-isaias.html\n\nPolitico: AI agents and the law: https://www.politico.com/news/2026/10/12/AI-agents-hacking-cases\n\nThe Economist: liability law will not tame AI: https://www.economist.com/united-states/2026/10/08/liability-law-will-not-tame-ai\n\nOlivia Scharfman and David Bellamy: biosecurity and AI: https://writing.oliviahelens.com/p/biosecurity-ai-and-the-culture-war\n\nAlignment Engineering vs Misalignment Science: https://www.lesswrong.com/posts/FogmcDHA6AdMGukum/alignment-engineering-vs-misalignment-science\n\nSam Altman: the US lead in AI: https://x.com/sama/status/2080683363174945065\n\nThe Guardian: China and the AI race: https://www.theguardian.com/technology/ng-interactive/2026/sep/19/china-ai-foreign-policy-dario-amodei\n\nJoe on AI sandboxes and security: https://x.com/joedaroo/status/2104335929293127851\n\nREA: Reverse Engineer Anything: https://www.reddit.com/r/tech_x/comments/1x2d66l/github_project_called_rea_reverse_engineer/\n\nNikita Bier: AI-assisted fabrication: https://x.com/nikitabier/status/2106104189457952911\n\nSam Altman: how sci-fi will it get?: https://x.com/vikktorrrre/status/2107736059006050810\n\n\n\nNon-hype Newsletter: https://signaltonoise.beehiiv.com/\n\nPodcast: https://aiexplainedopodcast.buzzsprout.com/\n\nauthor: AI Explained\n\nvideo: https://www.youtube.com/embed/C4Sq3Rot8FU",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 894330,
-    "title": "Every app on Earth is now open source... whether it likes it or not",
-    "url": "https://www.youtube.com/watch?v=wajoP_5Cpw8",
-    "published_at": "2026-10-12T19:15:23+00:00",
-    "fetched_at": "2026-10-12T19:57:39+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "youtube",
-    "body": "Every agent needs proper tools. Apify MCP gives yours thousands of them, ready to run. Use code FIRESHIP25 for $25 in free credits: https://apify.it/4ygURHS\n\nA developer just rewrote seven Adobe apps in Rust and open-sourced them for free. Let's test them out.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev\n\nauthor: Fireship\n\nvideo: https://www.youtube.com/embed/wajoP_5Cpw8",
-    "topic": "agents",
-    "tags": [
-      "open-source",
-      "api",
-      "agents",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 894103,
-    "title": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11",
-    "url": "https://simonwillison.net/2026/Oct/12/python-3-15/",
-    "published_at": "2026-10-12T18:15:38+00:00",
-    "fetched_at": "2026-10-12T19:57:38+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11\n12th October 2026\nPython 3.15 [is here](https://www.python.org/downloads/release/python-3150/)! Here\u2019s the essential [What\u2019s new in Python 3.15](https://docs.python.org/3.15/whatsnew/3.15.html) guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start embracing features from Python 3.11.\nFirst, some highlights from Python 3.15.\nExplicit lazy imports\nI\u2019m most excited about [Explicit lazy imports](https://docs.python.org/3.15/whatsnew/3.15.html#pep-810-explicit-lazy-imports) from [PEP 810](https://peps.python.org/pep-0810/). These let you import modules like so:\nlazy import json lazy from pathlib import Path\nThe module will then be imported the first time those symbols are used in the code that follows.\nMy [LLM](https://llm.datasette.io/) CLI tool implements plugins. I had to [recommend manual lazy imports](https://llm.datasette.io/en/stable/plugins/advanced-model-plugins.html#tip-lazily-load-expensive-dependencies) in the plugin author documentation, because simply installing plugins that used heavy dependencies such as sentence_transformers\ncould add multiple seconds to every invocation of the llm\ncommand. Lazy imports directly address this startup cost.\nUnpacking in comprehensions\nThe new [*sublist for sublist in lists]\nunpacking syntax is neat. Here\u2019s an illustration [lifted from the documentation](https://docs.python.org/3.15/whatsnew/3.15.html#pep-798-unpacking-in-comprehensions):\nlists = [[1, 2], [3, 4], [5]] [*L for L in lists] # [1, 2, 3, 4, 5] # equivalent to [x for L in lists for x in L] sets = [{1, 2}, {2, 3}, {3, 4}] {*s for s in sets} # {1, 2, 3, 4} # equivalent to {x for s in sets for x in s} dicts = [{'a': 1}, {'b': 2}, {'a': 3}] {**d for d in dicts} # {'a': 3, 'b': 2} # equivalent to {k: v for d in dicts for k,v in d.items()}\n[PEP 798: Unpacking in Comprehensions](https://peps.python.org/pep-0798/) by Adam Hartz and Erik Demaine proposed this as an extension of the unpacking syntax [from PEP 448](https://peps.python.org/pep-0448/), which landed [in Python 3.5](https://docs.python.org/3/whatsnew/3.5.html#pep-448-additional-unpacking-generalizations) back in 2015.\nA sampling profiler\nPython\u2019s existing tracing profiler has been renamed from cProfile\nto [profiling.tracing](https://docs.python.org/3.15/library/profiling.tracing.html#module-profiling.tracing), and has been joined by an exciting new sampling profiler called Tachyon, aka [profiling.sampling](https://docs.python.org/3.15/whatsnew/3.15.html#tachyon-high-frequency-statistical-sampling-profiler).\nSampling profilers work by periodically capturing stack traces from running processes, then using those to calculate which functions have the most time spent inside of them. They\u2019re very low overhead and can provide a deep insight into running systems, without needing to instrument those systems first.\nI\u2019ve [previously used tools](https://simonwillison.net/tags/profiling/) like [py-spy](https://github.com/benfred/py-spy) for this. Now this capability is baked into the standard library.\nIf you have the PID of an existing Python 3.15 process you can start gathering samples by running this (I had to use sudo\non macOS):\nsudo uv run --python 3.15 python -m profiling.sampling attach 1234\nInteract with the main program a bit, then hit Ctrl+C to stop gathering and see a report, which looks something like this:\nIt can also produce [flame graphs like this](https://simonw.github.io/research/python-3-15-web-edit-profiling/artifacts/flamegraph.html) and [heat maps like this](https://simonw.github.io/research/python-3-15-web-edit-profiling/artifacts/heatmap/index.html), and can even output a format that can be viewed in the Firefox profiler UI.\n3.15 isn\u2019t much faster than 3.14\nMiguel Grinberg investigated [How fast is Python 3.15?](https://blog.miguelgrinberg.com/post/how-fast-is-python-3-15) the other day against the 3.15.0rc3 release and found performance to be mostly the same as 3.14, with the exception of the experimental JIT. The JIT gave a 1.2x boost over the standard 3.15 interpreter (on a Fibonacci test), the first time Miguel observed a meaningful JIT performance increase.\nMiguel\u2019s [explorations of 3.14](https://blog.miguelgrinberg.com/post/python-3-14-is-here-how-fast-is-it) last year found significant boosts against Python 3.13 across many more categories.\nUpgrading to Python 3.15 with uv\nI used the following sequence of commands to get uv\nto use Python 3.15 on my Mac. First I had to upgrade uv\nitself to ensure it knew about the new release:\nuv self update\nThen I installed the stable 3.15 release:\nuv python install 3.15\nAnd told uv\nthat I wanted that to be the default for every uv run\ncommand, unless the project itself pinned a different version:\nuv python pin --global 3.15\nNow the following reports 3.15 as the version:\nuv run python --version\nI already have a bunch of tools installed using uv tool install\n. I reinstalled them to use Python 3.15 like this:\nuv tool upgrade datasette --python 3.15\nThen I can confirm the version like this:\ndatasette --get /-/versions.json | jq\nHighlights from Python 3.11\nThe release of 3.15 means that Python 3.10 (released in 2021) is officially [no longer supported](https://devguide.python.org/versions/).\nMy policy for my main open source projects is to keep them working in every supported Python version. I can now drop 3.10 and start using features that were introduced in 3.11.\nHere\u2019s the [What\u2019s new in Python 3.11](https://docs.python.org/3/whatsnew/3.11.html) document. I finally get to rely on [tomllib](https://docs.python.org/3/library/tomllib.html#module-tomllib) being available!\nDatasette makes extensive use of asyncio\n. 3.11 adds [TaskGroup](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup) and [timeout()](https://docs.python.org/3/library/asyncio-task.html#asyncio.timeout), and [several more](https://docs.python.org/3/whatsnew/3.11.html#asyncio) new features.\ndatetime.UTC\nis a new in 3.11 alias for datetime.timezone.utc\n.\nPython\u2019s SQLite support got some significant upgrades in 3.11, including:\n-\n[setlimit()](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.setlimit)and[getlimit()](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.getlimit)expose a mechanism for setting[SQLite runtime limits](https://www.sqlite.org/c3ref/c_limit_attached.html)from Python. -\n[create_window_function()](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.create_window_function)lets us create custom window functions in Python, as a class withstep()\n,value()\n,inverse()\n, andfinalize()\nmethods. -\n[blobopen()](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.blobopen)provides an efficient mechanism for partial reads and writes of largeBLOB\nbinary values stored in a SQLite row. - You can now call\nset_authorizer(None)\nto remove a SQLite authorizer. Datasette had a workaround for this!\nPlus a whole bunch of [improvements to Python\u2019s typing system](https://docs.python.org/3/whatsnew/3.11.html#new-feat-related-type-hints-311).\nI plan to land Python 3.11 improvements to a bunch of my projects over the next few weeks. Here\u2019s [my first Datasette PR](https://github.com/simonw/datasette/pull/2998) removing that set_authorizer(None)\nworkaround.\nI\u2019ve also updated my [click-app](https://github.com/simonw/click-app), [datasette-plugin](https://github.com/simonw/datasette-plugin), [python-lib](https://github.com/simonw/python-lib), and [llm-plugin](https://github.com/simonw/llm-plugin) cookiecutter templates to test against Python 3.11 through Python 3.15.\nMore recent articles\n[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026[OpenAI DevDay 2026 live blog](/2026/Sep/29/openai-devday-2026-live-blog/)- 29th September 2026",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "release",
-      "models",
-      "open-source",
-      "research",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 894375,
-    "title": "Agents in Orbit: Workflows, Not Autopilot \u2014 Eduardo Simon & Javier Casal, Flywire",
-    "url": "https://www.youtube.com/watch?v=rAUyRDOFyHU",
-    "published_at": "2026-10-12T18:00:10+00:00",
-    "fetched_at": "2026-10-12T19:57:40+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "More than 9,700 code review runs in 30 days came from a workflow that lets the model read code but never modify it. Eduardo Simon and Javier Casal describe Orbit, Flywire's internal platform for putting model steps inside deterministic engineering workflows. A YAML definition goes through the same merge request review as other code, declares the tools and access each step can use, and runs on the company's existing deployment infrastructure. The predictable work stays in code; a model supplies the judgment. Human review of merge requests remains part of the process as the platform expands across roughly 400 engineers.\n\nCode review, translation updates, dependency fixes, ticket triage and bulk repository changes show the range of tasks this pattern supports. The architecture separates orchestration, execution and session state, then adds timeouts, rate limits and locks against duplicate runs. Per step restrictions cover network access, tools, skills and MCP servers, while structured outputs drive subsequent branches. The speakers are candid about the remaining work: new workflows initially receive a few real case checks, golden datasets run on demand, online evaluations are still being built and full sandboxing is a goal. Their reported execution success rate does not establish answer correctness. The practical adoption path starts with a useful skill, proves the recurring task and then turns it into a background workflow with explicit ownership and review.\n\n\nSpeaker info:\nEduardo Simon:\n- https://github.com/EduardoSimon\n- https://www.linkedin.com/in/eduardo-simon/\nJavier Casal:\n- https://github.com/jacarui\n- https://www.linkedin.com/in/jacarui/\n\nTimestamps:\n00:00 - Flywire's platform team and payment context\n1:58 - From organic experiments to Orbit\n3:35 - Build versus buy on existing infrastructure\n4:17 - A YAML workflow and restricted code review\n5:46 - Triggers and engineering use cases\n8:29 - Separating runtime and orchestration\n9:21 - Limits, locks and execution environments\n11:04 - Per step access and shared skills\n13:10 - Structured outputs and evaluation gaps\n15:40 - Reported runs, adoption and the roadmap\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/rAUyRDOFyHU",
-    "topic": "coding",
-    "tags": [
-      "coding",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 894567,
-    "title": "recommended viewing. never noticed i have a lazy eye and now i can't unsee.",
-    "url": "https://video.twimg.com/amplify_video/2109588018319216641/vid/avc1/1920x1080/5eBfHLPXzU2HagQ6.mp4",
-    "published_at": "2026-10-12T17:22:14+00:00",
-    "fetched_at": "2026-10-12T19:57:45+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended viewing. never noticed i have a lazy eye and now i can't unsee.",
-    "topic": "general",
-    "tags": [
-      "general"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
