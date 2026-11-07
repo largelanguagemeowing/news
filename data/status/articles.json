@@ -1,5 +1,73 @@
 [
   {
+    "article_id": 1225594,
+    "title": "Don't Vibe Code Your Agent Infrastructure - Akshat Bubna, Modal",
+    "url": "https://www.youtube.com/watch?v=_0SQh8a1Osk",
+    "published_at": "2026-11-07T20:00:13+00:00",
+    "fetched_at": "2026-11-07T21:03:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Akshat Bubna, CTO of Modal, explains what AI agents actually need from the infrastructure underneath them, starting with a spreadsheet where every cell is backed by its own agent. He walks through the building blocks: a workspace for each agent, state that persists for days without paying for idle compute, resources that stretch and shrink as the agent works, GPUs on demand, shared file systems for agents that collaborate, network controls that keep credentials and data from leaking, and observability agents can read themselves. He makes the case against vibe coding your own sandbox platform, shares what scale looks like today, and describes where agent infrastructure is heading.\n\nChapters:\n0:00 Intro\n0:24 Every spreadsheet cell backed by an agent\n1:33 What that architecture needs\n3:15 What is Modal?\n4:03 Agents need a workspace\n5:03 Workspaces that persist\n6:21 Agents need elastic resources\n7:41 Agents need GPUs\n9:02 Agents collaborating through shared files\n9:57 Keeping agents from leaking data\n11:20 Observability for agents\n12:12 Why not to vibe code a sandbox platform\n13:31 What scale looks like\n14:54 Separating the brain from the hands\n15:37 From pets to cattle to microbes\n\nAkshat Bubna\nhttps://modal.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "development",
+    "tags": [
+      "agents",
+      "infrastructure",
+      "coding",
+      "development",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1225595,
+    "title": "Build Your Own Finance Agent Inside ChatGPT - Stefano Fabbri & Oliver Steffmann, OpenAI",
+    "url": "https://www.youtube.com/watch?v=ZJjRgvjhq3M",
+    "published_at": "2026-11-07T19:00:33+00:00",
+    "fetched_at": "2026-11-07T21:03:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Stefano Fabbri and Oliver Steffmann of OpenAI's applied AI team run a hands-on workshop on building financial workflows with ChatGPT Work and Codex. They show ChatGPT for financial services, with built-in market data, filings and earnings transcripts from partners like LSEG, PitchBook and Daloopa, plus finance plugins that bundle skills and MCP connections as a starting point. Using a wealth advisor's workflow as the example, from spotting a portfolio change to preparing the client deck, they then use Codex to build custom skills, plugins that connect internal data, and plugin extensions that customize the interface, and answer questions on skills, deployment and sandboxing.\n\nChapters:\n0:00 Intro\n0:47 What the workshop covers\n4:57 ChatGPT, ChatGPT Work and Codex\n5:40 ChatGPT for financial services\n7:51 Built-in financial data\n10:06 Finance plugins: skills plus MCPs\n14:25 Use case: a wealth advisor's workflow\n17:02 Extending it with Codex\n19:02 Skills, plugins and plugin extensions\n26:02 Plugin extensions explained\n36:43 Building a plugin on your own data\n39:31 Why the right skills matter\n48:20 Architecture: surfaces, plugins and MCPs\n57:40 Bringing workflows into one place\n1:08:09 When to stick with skills\n1:11:24 Building and deploying with Codex\n1:22:02 Q&amp;A: the Codex app vs the CLI\n1:28:57 Q&amp;A: sandboxing in Codex\n\nStefano Fabbri\nOliver Steffmann\nhttps://openai.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models",
+      "agents",
+      "video",
+      "coding",
+      "education",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1225596,
+    "title": "Your Financial Agent Needs to Show Its Work - Anirudh Veeraragavan, Fieldguide",
+    "url": "https://www.youtube.com/watch?v=gdzsJZJ6DDs",
+    "published_at": "2026-11-07T18:00:02+00:00",
+    "fetched_at": "2026-11-07T21:03:50+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Anirudh Veeraragavan, lead security engineer at Fieldguide, argues that in finance an agent getting the right answer isn't enough; you have to be able to show how it got there. Building an agent for a bank reconciliation audit, he walks through four controls that make its decisions defensible: authorization that stops an agent from overwriting work a human already reviewed, execution records that let you replay and compare individual steps, citations tied to an exact document version, and auditing your eval data so a 97% score doesn't hide real failures. He also covers when the agent should stop and hand the decision to a person, and how the same pattern applies to credit and anti-money-laundering.\n\nChapters:\n0:00 Intro\n0:40 Building a financial audit agent\n1:56 When someone asks why\n2:18 Why it matters: the Peregrine fraud\n3:05 Can an auditor follow the agent?\n4:00 Example: a bank reconciliation\n4:27 Control 1: Authorization\n5:37 Control 2: Execution control\n7:33 Control 3: Evidence provenance\n8:44 Control 4: Evaluation integrity\n10:09 When the agent should stop and ask\n11:23 You need all four\n12:16 Beyond audit: credit and AML\n\nAnirudh Veeraragavan\nhttps://www.fieldguide.io\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "topic": "security",
+    "tags": [
+      "security",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding",
+      "tutorials",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1223384,
     "title": "Claude Code Just Called My Phone",
     "url": "https://www.youtube.com/shorts/A5SfzBD6M3o",
@@ -11011,71 +11079,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 933553,
-    "title": "Chirp Pong",
-    "url": "https://simonwillison.net/2026/Oct/15/chirp-pong/",
-    "published_at": "2026-10-15T19:47:52+00:00",
-    "fetched_at": "2026-10-15T20:59:37+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "15th October 2026\nAnother game experiment - I wanted to see if it was feasible to have a two player game on two separate phones running in static HTML where the networking code uses chirps sent via the microphone. It seems to work!\nBuild a two player competitive pong like game where two players use their phones close to each other and the game state is sent via audio noises which the web microphone API can interpret - but add graphical and gameplay twists to make it a lot more fun and intertwine than pong\nClaude Opus 5.5 Extra [in Claude Code](https://claude.ai/code/session_019awUnNB7NoYd7noBNAsNdd).\nRecent articles\n[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "api",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 936008,
-    "title": "Bringing GPT-Rosalind to academic research labs",
-    "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
-    "published_at": "2026-10-15T19:00:00+00:00",
-    "fetched_at": "2026-10-15T23:39:03+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nOctober 15, 2026\n\n[Research](https://openai.com/news/research/) [Product](https://openai.com/news/product-releases/)\n\n# Bringing GPT\u2011Rosalind to academic research labs\n\nIntroducing the Rosalind Academic Plan, offering eligible labs sponsored access to GPT\u2011Rosalind and tools for life sciences discovery.\n\n[Apply for access(opens in a new window)](https://chatgpt.com/rosalind/lab/application)\n\nLoading\u2026\n\nShare\n\nSupporting the research behind future breakthroughs\n\n- [Supporting the research behind future breakthroughs](#supporting-the-research-behind-future-breakthroughs)\n- [How academic labs are using GPT-Rosalind](#how-academic-labs-are-using-gpt-rosalind)\n- [What the plan includes](#what-the-plan-includes)\n- [Build for life sciences research](#build-for-life-sciences-research)\n- [Apply on behalf of your lab](#apply-on-behalf-of-your-lab)\n  - [Get started with GPT-Rosalind](#get-started-with-gpt-rosalind)\n- [Responsible access for scientific research](#responsible-access-for-scientific-research)\n- [Get started](#get-started)\n\n- [Supporting the research behind future breakthroughs](#supporting-the-research-behind-future-breakthroughs)\n- [How academic labs are using GPT-Rosalind](#how-academic-labs-are-using-gpt-rosalind)\n- [What the plan includes](#what-the-plan-includes)\n- [Build for life sciences research](#build-for-life-sciences-research)\n- [Apply on behalf of your lab](#apply-on-behalf-of-your-lab)\n  - [Get started with GPT-Rosalind](#get-started-with-gpt-rosalind)\n- [Responsible access for scientific research](#responsible-access-for-scientific-research)\n- [Get started](#get-started)\n\nWe\u2019re introducing the Rosalind Academic Plan to help more academic scientists access [GPT\u2011Rosalind\u2060](https://openai.com/rosalind/), our dedicated life sciences model, which combines frontier reasoning with [Rosalind workbench\u2060(opens in a new window)](https://developers.openai.com/blog/rosalind-workbench) that enables specialized tool orchestration across medicinal chemistry, genomics, wet-lab assistance, and other scientific applications. Eligible labs can receive up to 30 Business Standard seats at no cost for up to 12 months, with access to GPT\u2011Rosalind subject to trusted-access approval.\n\nAcademic research creates knowledge that entire fields build on. Work that begins with a fundamental question about biology can eventually change how we diagnose disease, develop medicines, or grow food. But those advances depend on scientists having the resources to explore ideas, test them, and share what they learn.\n\nAccelerating scientific discovery is central to OpenAI\u2019s mission of ensuring that artificial general intelligence benefits all of humanity. With this plan, we\u2019re investing in the scientists doing that foundational work\u2014helping more labs combine their expertise and judgment with AI tools built for life sciences research.\n\n## Supporting the research behind future breakthroughs\n\nMany of the advances we rely on today grew out of years of basic research.\n\nThe Human Genome Project helped launch modern genomics, transforming medicine, diagnostics, and biotechnology.\n\nCuriosity-driven work on bacterial immune systems led to CRISPR-Cas9, which revolutionized genome editing and is now advancing research in cancer, inherited disease, agriculture, and biotechnology. Decades of university research on mRNA also laid the groundwork for COVID-19 vaccines and a new generation of vaccines and therapies.\n\nAcademic research has always laid the groundwork for advances in medicine and biotechnology. By helping more scientists combine their scientific expertise and judgment with the advanced specialized reasoning of GPT\u2011Rosalind, we hope to support discoveries whose benefits reach far beyond the lab.\n\n## How academic labs are using GPT\u2011Rosalind\n\nOpenAI is committed to enabling academic researchers to pursue their scientific ambitions. Distinguished academic labs are already exploring how GPT\u2011Rosalind can support work ranging from protein design to understanding neurodegeneration. These examples show where researchers are applying the model within their scientific workflows.\n\nZhao LabBourdenx labLaboratory for Evolutionary Design\n\n1 of 3\n\n> \u201cGPT\u2011Rosalind helped me gather drug physicochemical parameters faster. PubChem and NCBI tools helped me work across ten drugs while refining the distinction between predicted and experimentally measured values\u201d\n\n*Zhao Lab, UCSF*\n\n> \u201cI use GPT models throughout my research, from exploring the literature to refining experiments and computational approaches. They help me iterate on ideas much faster and explore more possibilities than ever before. I feel more efficient as a researcher, with more room to explore and think creatively.\u201d\n\n*Dr. Mathieu Bourdenx, Bourdenx Lab*\n\n> \u201cRosalind will not only help us improve our current discovery and design tasks, but also apply them at larger scales than previously possible while still providing useful insights to biological researchers.\u201d\n\n*Dr. Brian Hie, Stanford University and Arc Institute*\n\n- Zhao Lab, UCSF\n- Dr. Mathieu Bourdenx, Bourdenx Lab\n- Dr. Brian Hie, Stanford University and Arc Institute\n\n- Zhao Lab, UCSF\n- Dr. Mathieu Bourdenx, Bourdenx Lab\n- Dr. Brian Hie, Stanford University and Arc Institute\n\n## What the plan includes\n\nWith the new Rosalind Academic Plan, academic researchers can bring GPT\u2011Rosalind and Rosalind Workbench to their lab with greater flexibility and harness frontier model intelligence for scientific research.\n\nEligible labs receive:\n\n- Up to 30 Business Standard seats at $0 per user per month for up to 12 months.\n- Access to all commercially available frontier OpenAI models, subject to plan usage limits.\n- Access to GPT\u2011Rosalind following trusted-access approval.\n\nResearch data shared through the Rosalind Academic Plan is not used to train our models by default.\n\n\n\n## Build for life sciences research\n\nGPT\u2011Rosalind is a specialized life sciences model designed to support deeper reasoning on complex biological questions. Through trusted access, approved researchers can use it to investigate sensitive scientific questions within safeguards designed for legitimate research.\n\nAreas of research include:\n\n\n\n### Drug and protein design\n\nDesigning candidate drugs, therapeutic proteins, peptides, and enzymes, and optimizing their molecular interactions, selectivity, stability, and suitability for development.\n\n\n\n### Disease detection and monitoring\n\nIdentifying molecular signatures of disease and developing liquid biopsies and other minimally invasive diagnostics to detect disease earlier, monitor progression, and assess treatment response.\n\n\n\n### Vaccines and immune responses\n\nDesigning and evaluating antibodies and vaccines against emerging viral variants, investigating host\u2013pathogen interactions, and studying the strength and durability of protective immune responses.\n\n\n\n### Genetic and RNA therapies\n\nDeveloping approaches to correcting genetic defects and modulating gene expression, designing RNA therapeutics, and investigating how to deliver treatments safely and effectively to intended tissues.\n\n\n\n### Agriculture and animal health\n\nInvestigating crop resilience, plant disease, and animal health, and applying genetic, nutritional, and biological insights to improve food production and veterinary care.\n\n\n\n### Ecology and conservation\n\nStudying biodiversity, adaptation, species interactions, and environmental exposures to understand ecosystem change and inform conservation, bioremediation, and responses to climate change.\n\n\n\n### Antimicrobial resistance\n\nStudying how microorganisms resist antibiotics, antivirals, and antifungals, and developing new treatments for resistant infections, biofilms, and persistent disease.\n\n01 / 07\n\nCard 1 of 7: Drug and protein design\n\n## Apply on behalf of your lab\n\nThe Rosalind Academic Plan is currently available to academic labs at U.S. universities. PIs and lab leads at universities without an OpenAI Enterprise agreement can apply on behalf of their labs through our trusted access process. Labs at universities with an existing agreement must apply through their university\u2019s Enterprise access process.\n\nOnce approved, PIs and lab leads can activate free access to GPT\u2011Rosalind for up to 30 named members, alongside the other OpenAI frontier models included in the plan. API access is not included at this time. Verified PIs and lab leads manage member permissions and are responsible for their lab\u2019s approved use.\n\n### Get started with GPT\u2011Rosalind\n\nChoose the application path for your lab or organization.\n\n### Academic labs\n\nRosalind Academic Plan\n\nFor PIs and lab leads at eligible organizations without an existing Enterprise account.\n\nApply on behalf of your lab.\n\n[Apply for academic lab access(opens in a new window)](https://chatgpt.com/rosalind/lab/application)\n\n### Existing Enterprise accounts\n\nGPT-Rosalind access\n\nFor academic users at eligible institutions with an existing OpenAI Enterprise agreement.\n\nRequest access through your existing Enterprise account.\n\n[Request GPT-Rosalind access(opens in a new window)](https://chatgpt.com/rosalind/application)\n\nGPT\u2011Rosalind access is subject to approval.\n\nLearn more about eligibility, application requirements, and getting started in our [**help center guide**\u2060(opens in a new window)](https://help.openai.com/articles/20001602).\n\n## Responsible access for scientific research\n\nBefore activating access, we:\n\n- Verify the institution\u2019s legitimacy and the PI or lab lead\u2019s identity\n- Review the lead\u2019s professional background, institutional appointment, and authority to oversee lab access\n- Assess the lab\u2019s institutional affiliation, research activities, and intended use\n- Establish clear responsibilities for the lab lead and a designated institutional safety contact\n\nSafeguards continue after activation through monitoring and enforcement. For registered high-sensitivity use cases, our safety checks account for the approved research context. When questions arise, we may follow up with researchers to clarify the work and confirm authorization. This approach is designed to detect potential misuse while accounting for legitimate research context and reducing unnecessary interruptions to authorized work.\n\n## Specialized intelligence for complex scientific questions\n\nTherapeutic peptidesDiagnosticsVaccinesAnimal healthConservationResistant infections\n\n## Get started\n\nWe\u2019re starting with academic labs as part of a broader effort to put useful AI tools in the hands of more scientists. By lowering the cost of access, we hope to give more researchers room to pursue ideas whose benefits could reach far beyond their own labs\u2014from a clearer understanding of disease to better treatments and more resilient food systems.\n\nThose advances will come from scientists asking important questions and doing the work to answer them. We want to help more of them do that work.\n\nIf you\u2019re affiliated with an academic lab, learn more about the Rosalind Academic Plan and [check whether you\u2019re eligible\u2060(opens in a new window)](https://chatgpt.com/rosalind/lab/application).\n\n- [2026](https://openai.com/news/?tags=2026)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Helping teens learn, plan, and shape the future of AIProductOct 7, 2026 Helping teens learn, plan, and shape the future of AI - Product - Oct 7, 2026](https://openai.com/index/teens-learn-and-plan/)\n\n[GPT-6 and In",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 935873,
-    "title": "WHY ARE YOU TYPING",
-    "url": "https://www.youtube.com/shorts/GAUWSmFmT3w",
-    "published_at": "2026-10-15T18:08:26+00:00",
-    "fetched_at": "2026-10-15T20:59:47+00:00",
-    "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
-    "extraction_method": "youtube",
-    "body": "Learn why dictating to AI agents is a game-changer for productivity. In this video, discover how voice input lets you brain-dump your thoughts faster than typing, letting the agent handle messy transcripts and extract meaning. Find out which tools to use and how this simple shift can massively speed up your workflow.\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/s/LJwlvM\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/s/8fIvo1\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/GAUWSmFmT3w",
-    "topic": "education",
-    "tags": [
-      "agents",
-      "video",
-      "coding",
-      "education",
-      "opinion",
-      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
