@@ -7,12 +7,14 @@
     "fetched_at": "2026-11-08T00:50:45+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong><a href=\"https://github.com/simonw/datasette/issues/3046\">datasette #3046: Don&#x27;t serve link: rel=next HTTP headers to Firefox for HTML pages</a></strong></p>\nI was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Prefetch\">HTTP prefetch</a> to the next page of rows in that table.</p>\n<p>This was happening because Datasette pages serve an HTTP <code>link</code> header like this:</p>\n<p><code>link: &lt;https://latest.datasette.io/fixtures/compound_three_primary_keys?_next=a%2Cd%2Cv&gt;; rel=\"next\"</code></p>\n<p>This is bad. A tiny fraction of the visitors to one of those pages will click the \"next\" link, which means their browser is fetching unnecessary data and the Datasette server is having to render an entire page that then gets thrown away.</p>\n<p>I dug in and learned that Firefox has <a href=\"https://bugzilla.mozilla.org/show_bug.cgi?id=175418\">an issue</a> that has been open for 24 years about this behavior...</p>\n<p>And one of the early comments on that issue links to <a href=\"https://simonwillison.net/2002/Oct/17/mozillaPrefetching/\">my blog post from 2002</a> complaining about this feature. I hadn't just forgotten that I had written about it, I had forgotten the feature entirely!\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/firefox\">firefox</a>, <a href=\"https://simonwillison.net/tags/html\">html</a>, <a href=\"https://simonwillison.net/tags/mozilla\">mozilla</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "7th November 2026 - Link Blog\n[datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages](https://github.com/simonw/datasette/issues/3046). I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an [HTTP prefetch](https://developer.mozilla.org/en-US/docs/Glossary/Prefetch) to the next page of rows in that table.\nThis was happening because Datasette pages serve an HTTP link\nheader like this:\nlink: <https://latest.datasette.io/fixtures/compound_three_primary_keys?_next=a%2Cd%2Cv>; rel=\"next\"\nThis is bad. A tiny fraction of the visitors to one of those pages will click the \"next\" link, which means their browser is fetching unnecessary data and the Datasette server is having to render an entire page that then gets thrown away.\nI dug in and learned that Firefox has [an issue](https://bugzilla.mozilla.org/show_bug.cgi?id=175418) that has been open for 24 years about this behavior...\nAnd one of the early comments on that issue links to [my blog post from 2002](https://simonwillison.net/2002/Oct/17/mozillaPrefetching/) complaining about this feature. I hadn't just forgotten that I had written about it, I had forgotten the feature entirely!\nRecent articles\n[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026",
     "topic": "tools",
     "tags": [
+      "models",
       "open-source",
       "coding",
+      "development",
       "education",
       "tools"
     ],
@@ -27,16 +29,16 @@
     "fetched_at": "2026-11-07T21:03:50+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Akshat Bubna, CTO of Modal, explains what AI agents actually need from the infrastructure underneath them, starting with a spreadsheet where every cell is backed by its own agent. He walks through the building blocks: a workspace for each agent, state that persists for days without paying for idle compute, resources that stretch and shrink as the agent works, GPUs on demand, shared file systems for agents that collaborate, network controls that keep credentials and data from leaking, and observability agents can read themselves. He makes the case against vibe coding your own sandbox platform, shares what scale looks like today, and describes where agent infrastructure is heading.\n\nChapters:\n0:00 Intro\n0:24 Every spreadsheet cell backed by an agent\n1:33 What that architecture needs\n3:15 What is Modal?\n4:03 Agents need a workspace\n5:03 Workspaces that persist\n6:21 Agents need elastic resources\n7:41 Agents need GPUs\n9:02 Agents collaborating through shared files\n9:57 Keeping agents from leaking data\n11:20 Observability for agents\n12:12 Why not to vibe code a sandbox platform\n13:31 What scale looks like\n14:54 Separating the brain from the hands\n15:37 From pets to cattle to microbes\n\nAkshat Bubna\nhttps://modal.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Akshat Bubna, CTO of Modal, explains what AI agents actually need from the infrastructure underneath them, starting with a spreadsheet where every cell is backed by its own agent. He walks through the building blocks: a workspace for each agent, state that persists for days without paying for idle compute, resources that stretch and shrink as the agent works, GPUs on demand, shared file systems for agents that collaborate, network controls that keep credentials and data from leaking, and observability agents can read themselves. He makes the case against vibe coding your own sandbox platform, shares what scale looks like today, and describes where agent infrastructure is heading.\n\nChapters:\n0:00 Intro\n0:24 Every spreadsheet cell backed by an agent\n1:33 What that architecture needs\n3:15 What is Modal?\n4:03 Agents need a workspace\n5:03 Workspaces that persist\n6:21 Agents need elastic resources\n7:41 Agents need GPUs\n9:02 Agents collaborating through shared files\n9:57 Keeping agents from leaking data\n11:20 Observability for agents\n12:12 Why not to vibe code a sandbox platform\n13:31 What scale looks like\n14:54 Separating the brain from the hands\n15:37 From pets to cattle to microbes\n\nAkshat Bubna\nhttps://modal.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/_0SQh8a1Osk",
     "topic": "development",
     "tags": [
       "agents",
+      "video",
       "infrastructure",
       "coding",
       "development",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -49,8 +51,8 @@
     "fetched_at": "2026-11-07T21:03:50+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Stefano Fabbri and Oliver Steffmann of OpenAI's applied AI team run a hands-on workshop on building financial workflows with ChatGPT Work and Codex. They show ChatGPT for financial services, with built-in market data, filings and earnings transcripts from partners like LSEG, PitchBook and Daloopa, plus finance plugins that bundle skills and MCP connections as a starting point. Using a wealth advisor's workflow as the example, from spotting a portfolio change to preparing the client deck, they then use Codex to build custom skills, plugins that connect internal data, and plugin extensions that customize the interface, and answer questions on skills, deployment and sandboxing.\n\nChapters:\n0:00 Intro\n0:47 What the workshop covers\n4:57 ChatGPT, ChatGPT Work and Codex\n5:40 ChatGPT for financial services\n7:51 Built-in financial data\n10:06 Finance plugins: skills plus MCPs\n14:25 Use case: a wealth advisor's workflow\n17:02 Extending it with Codex\n19:02 Skills, plugins and plugin extensions\n26:02 Plugin extensions explained\n36:43 Building a plugin on your own data\n39:31 Why the right skills matter\n48:20 Architecture: surfaces, plugins and MCPs\n57:40 Bringing workflows into one place\n1:08:09 When to stick with skills\n1:11:24 Building and deploying with Codex\n1:22:02 Q&amp;A: the Codex app vs the CLI\n1:28:57 Q&amp;A: sandboxing in Codex\n\nStefano Fabbri\nOliver Steffmann\nhttps://openai.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Stefano Fabbri and Oliver Steffmann of OpenAI's applied AI team run a hands-on workshop on building financial workflows with ChatGPT Work and Codex. They show ChatGPT for financial services, with built-in market data, filings and earnings transcripts from partners like LSEG, PitchBook and Daloopa, plus finance plugins that bundle skills and MCP connections as a starting point. Using a wealth advisor's workflow as the example, from spotting a portfolio change to preparing the client deck, they then use Codex to build custom skills, plugins that connect internal data, and plugin extensions that customize the interface, and answer questions on skills, deployment and sandboxing.\n\nChapters:\n0:00 Intro\n0:47 What the workshop covers\n4:57 ChatGPT, ChatGPT Work and Codex\n5:40 ChatGPT for financial services\n7:51 Built-in financial data\n10:06 Finance plugins: skills plus MCPs\n14:25 Use case: a wealth advisor's workflow\n17:02 Extending it with Codex\n19:02 Skills, plugins and plugin extensions\n26:02 Plugin extensions explained\n36:43 Building a plugin on your own data\n39:31 Why the right skills matter\n48:20 Architecture: surfaces, plugins and MCPs\n57:40 Bringing workflows into one place\n1:08:09 When to stick with skills\n1:11:24 Building and deploying with Codex\n1:22:02 Q&amp;A: the Codex app vs the CLI\n1:28:57 Q&amp;A: sandboxing in Codex\n\nStefano Fabbri\nOliver Steffmann\nhttps://openai.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ZJjRgvjhq3M",
     "topic": "product",
     "tags": [
       "product",
@@ -72,17 +74,17 @@
     "fetched_at": "2026-11-07T21:03:50+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Anirudh Veeraragavan, lead security engineer at Fieldguide, argues that in finance an agent getting the right answer isn't enough; you have to be able to show how it got there. Building an agent for a bank reconciliation audit, he walks through four controls that make its decisions defensible: authorization that stops an agent from overwriting work a human already reviewed, execution records that let you replay and compare individual steps, citations tied to an exact document version, and auditing your eval data so a 97% score doesn't hide real failures. He also covers when the agent should stop and hand the decision to a person, and how the same pattern applies to credit and anti-money-laundering.\n\nChapters:\n0:00 Intro\n0:40 Building a financial audit agent\n1:56 When someone asks why\n2:18 Why it matters: the Peregrine fraud\n3:05 Can an auditor follow the agent?\n4:00 Example: a bank reconciliation\n4:27 Control 1: Authorization\n5:37 Control 2: Execution control\n7:33 Control 3: Evidence provenance\n8:44 Control 4: Evaluation integrity\n10:09 When the agent should stop and ask\n11:23 You need all four\n12:16 Beyond audit: credit and AML\n\nAnirudh Veeraragavan\nhttps://www.fieldguide.io\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Anirudh Veeraragavan, lead security engineer at Fieldguide, argues that in finance an agent getting the right answer isn't enough; you have to be able to show how it got there. Building an agent for a bank reconciliation audit, he walks through four controls that make its decisions defensible: authorization that stops an agent from overwriting work a human already reviewed, execution records that let you replay and compare individual steps, citations tied to an exact document version, and auditing your eval data so a 97% score doesn't hide real failures. He also covers when the agent should stop and hand the decision to a person, and how the same pattern applies to credit and anti-money-laundering.\n\nChapters:\n0:00 Intro\n0:40 Building a financial audit agent\n1:56 When someone asks why\n2:18 Why it matters: the Peregrine fraud\n3:05 Can an auditor follow the agent?\n4:00 Example: a bank reconciliation\n4:27 Control 1: Authorization\n5:37 Control 2: Execution control\n7:33 Control 3: Evidence provenance\n8:44 Control 4: Evaluation integrity\n10:09 When the agent should stop and ask\n11:23 You need all four\n12:16 Beyond audit: credit and AML\n\nAnirudh Veeraragavan\nhttps://www.fieldguide.io\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/gdzsJZJ6DDs",
     "topic": "security",
     "tags": [
       "security",
       "agents",
       "safety",
       "benchmark",
+      "video",
       "coding",
-      "tutorials",
-      "funding"
+      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -95,8 +97,8 @@
     "fetched_at": "2026-11-07T17:29:54+00:00",
     "source_id": "matt-wolfe",
     "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Your AI agent can now call you when it needs help \ud83e\udd2f\n\nHere's how I'm using it with Claude Code to edit my videos:\n\n1. If it needs a creative decision, it calls my phone and asks.\n2. If a render finishes, it just sends me a text.\n3. If it doesn't need my input, it keeps working without interrupting me.\n\nNo more AI agents sitting in a terminal waiting for me to respond.\n\n@birdHQ makes this possible by letting AI agents make phone calls, send texts, and emails. And it works with Claude Code, ChatGPT, Cursor, and Codex.\n\nCheck out Bird at the link in my pinned comment.\n\n#BirdPartner #ClaudeCode #AIAgents #AITools #AI",
+    "extraction_method": "youtube",
+    "body": "Your AI agent can now call you when it needs help \ud83e\udd2f\n\nHere's how I'm using it with Claude Code to edit my videos:\n\n1. If it needs a creative decision, it calls my phone and asks.\n2. If a render finishes, it just sends me a text.\n3. If it doesn't need my input, it keeps working without interrupting me.\n\nNo more AI agents sitting in a terminal waiting for me to respond.\n\n@birdHQ makes this possible by letting AI agents make phone calls, send texts, and emails. And it works with Claude Code, ChatGPT, Cursor, and Codex.\n\nCheck out Bird at the link in my pinned comment.\n\n#BirdPartner #ClaudeCode #AIAgents #AITools #AI\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/A5SfzBD6M3o",
     "topic": "agents",
     "tags": [
       "models",
@@ -116,12 +118,16 @@
     "fetched_at": "2026-11-07T11:31:35+00:00",
     "source_id": "marios-rec-reading",
     "source_name": "Mario's Reading List",
-    "extraction_method": "rss",
-    "body": "recommended reading.",
-    "topic": "general",
+    "extraction_method": "trafilatura",
+    "body": "S\u00f8ren Kierkegaard wrote that life can only be understood backward, but it must be lived forward. We\u2019ve encountered a similar bind when designing memory for AI agents.\nAs humans, we encode memory constantly as we go about our lives. [The hippocampus](https://stanford.edu/~jlmcc/papers/McCMcNaughtonOReilly95.pdf) plays a central role in this, capturing experiences in the moment so that memories form quickly and are immediately available. But only [some experiences](https://www.science.org/doi/10.1126/science.adk8261?referrer=https%3A%2F%2Fwww.google.com%2F) are consolidated into long-term knowledge.\nMuch of that consolidation appears to happen when our brains are offline. As we sleep, and during quiet [rest](https://www.nature.com/articles/s41467-018-06213-1), the hippocampus replays our recent experiences. This is thought to gradually distill [those experiences and integrate them](https://www.nature.com/articles/s41593-019-0467-3) into the neocortex\u2014the part of our brains that stores most of what we think of as knowledge.\nAgent memory can use a similar division of labor. Agents capture much of their work in logs or transcripts. Researchers at Letta and UC Berkeley proposed [sleep-time compute](https://arxiv.org/abs/2504.13171) as a way for models to use idle time between interactions to reorganize their existing context. The same idea can help agents organize their memory by reflecting on logs to fix mistakes or produce new notes and representations. This process is often [called](https://platform.claude.com/docs/en/managed-agents/dreams) [dreaming](https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/) (Figure 1).\nWe\u2019ve found that dreaming has been a useful tool for helping us give Claude effective memory. In this post, we share how we\u2019ve come to think about agent memory and walk through several evaluations we\u2019ve used to explore agent memory, including the use of dreaming, and what each component contributes to memory organization.\nMemory notes\nBy \u201cagent memory,\u201d we mean knowledge that Claude gains from experience\u2014including interactions with users and tasks it\u2019s been assigned\u2014and that it retains between sessions, saved as context it can read later. It excludes other ways models can learn or manage context, such as changes to their weights (the internal parameters set during training), [in-context learning](https://www.anthropic.com/research/in-context-learning-and-induction-heads) (knowledge gained within a single conversation), and [compaction](https://platform.claude.com/docs/en/build-with-claude/compaction) (summaries written by Claude that replace its older turns so it can continue working in a new context window).\nIn the human brain, chemical signals released before, during, or after an experience can [mark a memory](https://www.nature.com/articles/385533a0) as important. Marked memories tend to be replayed more often than unmarked ones during offline periods. This process, called replay, helps stabilize and integrate them into long-term memory.\nSimilarly, Claude can tag salient events in a session log as they happen, so they\u2019re easier to find later, or it can [write](https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool) them to a memory store, such as a folder of memory notes (Figure 2). But how can Claude tell what\u2019s salient in the moment, before it knows what\u2019s coming next?\nMemory can be a prediction about what the future will need\nMemory is, occasionally, a prediction. By writing down a rule, an agent predicts that the pattern it\u2019s describing will be relevant again. For instance, writing down a verified fact is a prediction that an agent in a future session will want to rely on that fact without double-checking it. Over time, Claude has become much better at making these kinds of predictions.\nConsider a task from [Continual Learning Bench (CL-Bench) 1.0](https://continual-learning-bench.com/news/cl-bench-1-0/), a benchmark that measures an agent\u2019s ability to use memory in order to tackle long-horizon tasks. One particular task asks Claude to answer a series of questions by looking up information in a database. After Claude gives an answer, it\u2019s told the correct solution and can write a memory to help answer future questions.\nMemory can support a learning loop here. If Claude gets a question wrong, it can record the failure, come up with theories about what went wrong, test those theories, and turn what it finds into a rule about how to answer in the future.\nWe ran the CL-Bench 1.0 task using [Claude Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview). Claude started each question in a fresh session, with one exception: it could retrieve files from a [memory directory](https://platform.claude.com/docs/en/managed-agents/memory) that persisted from one session to the next.\nDifferent models achieved different levels of success at creating their own learning loops. Claude Sonnet 4.6 got as far as generating theories about why an answer was wrong. Its memory directory contained a scattering of files, each listing several untested guesses.\nClaude Opus 4.7 consolidated its notes into a single reference document and began marking which facts it had checked and which were still unconfirmed. Claude Sonnet 5 marked each answer as confirmed after the grader had checked it, and wrote a correction when it had answered wrong.\nClaude Opus 5 was the first of these models to close the loop. Most of its entries included a rule (and also how it knew the rule was true), answers to earlier questions, and clear warnings about traps it had discovered along the way (Figure 3).\nLike Opus 5, Claude Opus 5.5 and Claude Sonnet 5.5 both closed the loop, using memory to capture validated rules about how to best answer future questions. With memory, both scored about the same as Opus 5, though their baseline performance without memory was slightly higher.\nClaude has learned to judge salience\nWe also evaluated Claude\u2019s ability to play Pok\u00e9mon Red, a game that [challenges Claude to navigate](https://www.youtube.com/watch?v=CXhYDOvgpuU) complex long-horizon tasks, as a test of Claude\u2019s judgment about what to save to memory. At the start of each run, we gave each model a folder of memory files that it could read from and write to while it played (Figure 4).\nWe compared the memory folders from one run each of Claude Sonnet 3.7 and Claude Fable 5, when each was about 10,000 steps into the game. A key difference we noticed was what each model thought was worth remembering. Sonnet 3.7 assumed everything might matter and wrote to memory indiscriminately. Its memory folder contained an archive of encounters, often with a separate file for each battle it fought, each item it found, and each non-player character it met. Ultimately, Sonnet 3.7 wrote 413 memory files across 225 folders and earned one badge (badges mark a player\u2019s progress through the game).\nFable 5, by comparison, wrote nine files in two folders, plus a single top-level file called global.md\n, and earned four badges.\nSonnet 3.7\u2019s approach was a problem mainly because the game state of Pok\u00e9mon changes constantly\u2014Sonnet 3.7\u2019s detailed record was continuously going out of date. As a result, as Claude progressed, it had to spend more time and resources combing through its memories rather than playing the game. Around step 10,000, for example, Sonnet 3.7 started its fourth folder of \u201cmaster\u201d memory files. Over the next 17 steps, it created six files, deleted nine others, and took no actions in the game itself.\nFable 5\u2019s approach used memory for things the game didn\u2019t explicitly tell it. Some of the kinds of information Sonnet 3.7 wrote to memory\u2014such as how much money the player has or where the player is on the map\u2014can be read off the screen every turn, so storing it is redundant. By contrast, memory files about strategy, plans, and tested rules exist only if Claude works them out, and they disappear unless Claude writes them down.\nFable 5 organized its memory accordingly. Its global.md\nfile acted as a dashboard, holding the current goal, a prewritten plan for tackling gyms (the challenges where badges are won), and the model\u2019s own rules for using memory. A locations\nfolder held plans for navigating particular routes, and a gameplay\nfolder held strategies based on what it had learned about how the game works. For example, after seven Pok\u00e9 Balls in a row failed to catch a Magikarp (one of the easiest Pok\u00e9mon to catch), Claude wrote, \u201cIf 3+ balls fail in a row, VARY the timing (insert extra \u2018wait\u2019 presses between menu steps) - the catch landed right after doing this.\u201d\nWith a much smaller memory folder, Fable 5 progressed much further in the game than Sonnet 3.7. Opus 5.5 took a similar approach: it kept a small folder of memory notes that tracked its current goal and next steps, rewrote them as it played, and beat the game.\nSteering Claude to write memory\nWe\u2019ve found that it helps to tell Claude what memory is for, but not how to use it. On CL-Bench, we simply told Claude that a memory folder was available. That general guidance was enough for Opus 4.7 and Opus 5 to use memory effectively, and it gave both a noticeable boost in performance (Figure 3).\nWe also tested giving the models specific rules about what they should write to memory, with one rule per test. We compared how much each model gained from memory with each rule against how much it gained without it. When we set a rule to \u201crecord only failures,\u201d both Opus 5 and Opus 4.7 lost much of the performance boost that memory gave them (Figure 5, right). For stronger models, giving them freedom to judge salience was more effective than setting fixed rules in advance, and those rules could end up weakening performance.\nWe also noticed that steering helped older models the most. For instance, Sonnet 4.6 often didn\u2019t read files from its memory directory and failed to test its theories about why an answer was wrong.\nIn this case, prompting Claude to read its memory files before answering\u2014and then to explicitly test its theories\u2014nearly doubled its benchmark score (Figure 5, left). Sonnet 5 does this on its own. Without being prompted to, it read its memory before answering 9 out of 10 times. By comparison, Sonnet 4.6 did this less than half of the time.\nWith frontier Claude models, we typically give simple guidance to create memory notes when a person asks them to or when something is clearly worth remembering, and we leave that judgment up to Claude.\nDreaming can correct memory\nSince Claude writes to memory based on what it judges to be salient in-session, a note that\u2019s wrong from the start or that drifts as the environment changes can be read, and trusted, by Claude in a later session.\nDreaming gives Claude a way to test its notes against the original transcripts (Figure 6). We saw a positive example of this when Claude played Pok\u00e9mon using Managed Agents with a mounted directory for its memories.\nIn one part of the game, the player has to get through Mt. Moon, a cave system with its entrance on the west side of the map and its exit on the east. Near the entrance is a trap: a one-way ledge that drops the player onto the route they came from, with no clear way to climb back up. Claude was using the Pok\u00e9Center, a building at the mountain\u2019s entrance, as a landmark, so whether it walked off the ledge depended on which side of the mountain it thought the Pok\u00e9Center was on.\nAt one point, Claude wrote down (incorrectly) that the Pok\u00e9Center was on the east side. When it walked out of the Pok\u00e9Center, it announced, \u201cMt Moon is behind me,\u201d and updated its notes: \u201cMt Moon DONE.\u201d But Mt. Moon was not behind it. A few actions later, Claude went over the ledge and landed back on the route it had come from (Figure 7). Its navigation tool didn\u2019t show the drop, so Claude concluded, \u201cI overshot far west,\u201d and that it had been on the correct side all along. It hadn\u2019t.\nWe then tested whether dreaming could help Cla",
+    "topic": "research",
     "tags": [
-      "general",
-      "agents"
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -134,16 +140,16 @@
     "fetched_at": "2026-11-07T11:31:33+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Nouha Dziri, a senior research scientist at Cohere, shares research on teams of coding agents, where a lead splits up the work and workers explore, build and check in parallel. Teams can beat a single agent on long software tasks but cost several times more, so across hundreds of experiments on ProgramBench and Commit0 she maps where extra workers actually pay off: delegate the stage where the task is stuck, use a lead that waits for its workers instead of running ahead, and pair a strong lead with cheaper planning workers to get close to an all-frontier team at about 70% lower cost. She also looks at how agents message each other and what larger agent teams will need.\n\nNouha Dziri\nhttps://x.com/nouhadziri\nhttps://cohere.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Nouha Dziri, a senior research scientist at Cohere, shares research on teams of coding agents, where a lead splits up the work and workers explore, build and check in parallel. Teams can beat a single agent on long software tasks but cost several times more, so across hundreds of experiments on ProgramBench and Commit0 she maps where extra workers actually pay off: delegate the stage where the task is stuck, use a lead that waits for its workers instead of running ahead, and pair a strong lead with cheaper planning workers to get close to an all-frontier team at about 70% lower cost. She also looks at how agents message each other and what larger agent teams will need.\n\nNouha Dziri\nhttps://x.com/nouhadziri\nhttps://cohere.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/maitMe9HCvw",
     "topic": "tutorials",
     "tags": [
       "agents",
       "research",
+      "video",
       "coding",
       "tutorials",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -156,16 +162,16 @@
     "fetched_at": "2026-11-07T11:31:33+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Vinoo Ganesh, CEO and co-founder of Kepler and former head of business engineering at Citadel, explains why Wall Street still doesn't trust AI and how to build systems it can. He breaks wrong numbers into three causes (the wrong document, the wrong number from the right document, and models doing math) and shows Kepler's approach: code extracts every fact ahead of time and gives it an ID, the model plans and points to those IDs instead of writing numbers itself, and anything it can't resolve gets corrected or refused. He also covers wide-then-narrow search, scoping document access so firms never see each other's data, and the questions to ask any AI vendor about verification.\n\nChapters:\n0:00 Intro\n1:38 Why Wall Street still doesn't trust AI\n2:16 Hallucination vs alpha\n3:14 Trust means someone to blame\n4:17 Where wrong numbers come from\n5:50 How Kepler is built differently\n7:34 Pairing smart people with deterministic tools\n9:07 Lookups can't get it wrong\n9:26 Searching wide, then narrowing\n10:46 Security for document search\n12:25 How verification works\n14:00 Verified, corrected or refused\n15:40 Results from production\n16:31 Questions to ask any AI vendor\n17:29 We're out of the search phase\n\nVinoo Ganesh\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Vinoo Ganesh, CEO and co-founder of Kepler and former head of business engineering at Citadel, explains why Wall Street still doesn't trust AI and how to build systems it can. He breaks wrong numbers into three causes (the wrong document, the wrong number from the right document, and models doing math) and shows Kepler's approach: code extracts every fact ahead of time and gives it an ID, the model plans and points to those IDs instead of writing numbers itself, and anything it can't resolve gets corrected or refused. He also covers wide-then-narrow search, scoping document access so firms never see each other's data, and the questions to ask any AI vendor about verification.\n\nChapters:\n0:00 Intro\n1:38 Why Wall Street still doesn't trust AI\n2:16 Hallucination vs alpha\n3:14 Trust means someone to blame\n4:17 Where wrong numbers come from\n5:50 How Kepler is built differently\n7:34 Pairing smart people with deterministic tools\n9:07 Lookups can't get it wrong\n9:26 Searching wide, then narrowing\n10:46 Security for document search\n12:25 How verification works\n14:00 Verified, corrected or refused\n15:40 Results from production\n16:31 Questions to ask any AI vendor\n17:29 We're out of the search phase\n\nVinoo Ganesh\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/RdQCY_-SXbA",
     "topic": "tutorials",
     "tags": [
       "models",
       "safety",
+      "video",
       "coding",
       "tutorials",
-      "enterprise",
-      "events"
+      "enterprise"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -178,15 +184,16 @@
     "fetched_at": "2026-11-07T11:31:33+00:00",
     "source_id": "matt-wolfe",
     "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "extraction_method": "youtube",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/w3z3Fa7ACt8",
     "topic": "media",
     "tags": [
+      "video",
+      "coding",
       "enterprise",
       "media",
       "news",
-      "tools",
-      "video"
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -199,16 +206,16 @@
     "fetched_at": "2026-11-07T11:31:33+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Amol Kapoor and Clifford Ressel of Nori Agentic show how cloud agents can keep an asset manager's security master database clean, especially as more money moves into private assets whose details live in PDFs, emails and call notes. Cliff explains what a security master is and why private assets break the usual identifiers, then Amol walks through work with a Fortune 200 asset manager, where every changed cell used to take an hour of manual checking. Now an agent investigates each change, cites its sources, recommends keeping or discarding it and pings the owner in Slack, cutting the human part to about five minutes. They close with lessons on adoption, keeping humans in the loop and handling back-office busywork.\n\nChapters:\n0:00 Intro\n0:21 Finance has gotten weird\n2:42 Private assets are hard to manage\n3:24 Who we are\n4:19 What a security master is\n7:03 Example: mapping Google's shares\n8:18 Where private assets break the model\n10:50 Case study: a Fortune 200 asset manager\n12:34 Cloud agents, explained\n13:10 How the agent checks each change\n14:37 Giving agents expertise in plain English\n15:35 Agents that come to you\n17:19 Three lessons from building AI for finance\n\nAmol Kapoor\nClifford Ressel\nhttps://noriagentic.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Amol Kapoor and Clifford Ressel of Nori Agentic show how cloud agents can keep an asset manager's security master database clean, especially as more money moves into private assets whose details live in PDFs, emails and call notes. Cliff explains what a security master is and why private assets break the usual identifiers, then Amol walks through work with a Fortune 200 asset manager, where every changed cell used to take an hour of manual checking. Now an agent investigates each change, cites its sources, recommends keeping or discarding it and pings the owner in Slack, cutting the human part to about five minutes. They close with lessons on adoption, keeping humans in the loop and handling back-office busywork.\n\nChapters:\n0:00 Intro\n0:21 Finance has gotten weird\n2:42 Private assets are hard to manage\n3:24 Who we are\n4:19 What a security master is\n7:03 Example: mapping Google's shares\n8:18 Where private assets break the model\n10:50 Case study: a Fortune 200 asset manager\n12:34 Cloud agents, explained\n13:10 How the agent checks each change\n14:37 Giving agents expertise in plain English\n15:35 Agents that come to you\n17:19 Three lessons from building AI for finance\n\nAmol Kapoor\nClifford Ressel\nhttps://noriagentic.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/kIlVNGZZr8o",
     "topic": "agents",
     "tags": [
       "models",
       "agents",
       "safety",
       "research",
-      "coding",
-      "education"
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -221,8 +228,8 @@
     "fetched_at": "2026-11-07T11:31:33+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Ben Holmes of Warp shows how to build agents that improve their own setup by reviewing their past work. He walks through collecting every agent conversation with its tool calls and outputs in one place, scoring them with LLM-as-judge rubrics for redundant tests, verbosity and efficiency, and running a daily agent that finds patterns in the failures and opens pull requests to fix skills and config. Along the way he shows how agents quietly work around broken instructions without telling you, and demos Skill Doctor, a skill you can run on your own Claude Code or Codex history.\n\nChapters:\n0:00 Intro\n0:55 What a software factory is\n1:59 Engineering the factory itself\n2:40 The self-improvement loop\n3:24 Getting all agent conversations in one place\n5:08 What to capture: transcripts, tool calls, outputs\n6:00 Scoring redundant tests\n6:55 Scoring verbosity\n7:52 Scoring efficiency\n8:57 Writing a scoring rubric\n10:41 Grading a real conversation\n12:51 A daily agent that suggests fixes\n13:47 Try it: Skill Doctor\n16:14 Tracking scores over time\n17:59 Self-improvement PRs in Warp\n\nBen Holmes\nhttps://www.warp.dev\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Ben Holmes of Warp shows how to build agents that improve their own setup by reviewing their past work. He walks through collecting every agent conversation with its tool calls and outputs in one place, scoring them with LLM-as-judge rubrics for redundant tests, verbosity and efficiency, and running a daily agent that finds patterns in the failures and opens pull requests to fix skills and config. Along the way he shows how agents quietly work around broken instructions without telling you, and demos Skill Doctor, a skill you can run on your own Claude Code or Codex history.\n\nChapters:\n0:00 Intro\n0:55 What a software factory is\n1:59 Engineering the factory itself\n2:40 The self-improvement loop\n3:24 Getting all agent conversations in one place\n5:08 What to capture: transcripts, tool calls, outputs\n6:00 Scoring redundant tests\n6:55 Scoring verbosity\n7:52 Scoring efficiency\n8:57 Writing a scoring rubric\n10:41 Grading a real conversation\n12:51 A daily agent that suggests fixes\n13:47 Try it: Skill Doctor\n16:14 Tracking scores over time\n17:59 Self-improvement PRs in Warp\n\nBen Holmes\nhttps://www.warp.dev\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/pz74r-4dGfQ",
     "topic": "agents",
     "tags": [
       "models",
@@ -243,12 +250,14 @@
     "fetched_at": "2026-11-07T11:31:36+00:00",
     "source_id": "matt-pocock-youtube",
     "source_name": "Matt Pocock",
-    "extraction_method": "rss",
-    "body": "An academic paper was written about my /retro skill - discover what researchers found about how coding agents self-evolve and what it means for AI-assisted development.\n\nThe paper: https://arxiv.org/pdf/2610.34938\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/skills/subscribe\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/discord",
+    "extraction_method": "youtube",
+    "body": "An academic paper was written about my /retro skill - discover what researchers found about how coding agents self-evolve and what it means for AI-assisted development.\n\nThe paper: https://arxiv.org/pdf/2610.34938\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/skills/subscribe\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/discord\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/KJr1Q-k-yH0",
     "topic": "research",
     "tags": [
       "agents",
       "research",
+      "video",
+      "coding",
       "development"
     ],
     "dearrow_thumbnail_url": "",
@@ -262,16 +271,17 @@
     "fetched_at": "2026-11-07T11:31:33+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Lance Martin of Anthropic shares simple fixes that get more out of frontier models, often improving quality and cutting cost at the same time. He covers auditing prompts for outdated habits like \"think step by step\" and contradictory rules, using the prompt cache properly (cutting costs up to 72% on internal benchmarks), designing evals Claude can actually climb, and hill climbing without overfitting, including a run that cut cost 90% while improving performance by switching to a stronger model at lower effort. He closes with how Claude Managed Agents keeps days-long agents reliable and secure, then takes questions on eval design, grading open-ended tasks and more.\n\nChapters:\n0:00 Intro\n0:27 You're probably not on the frontier\n1:32 Audit your prompts\n3:49 What a prompt audit saves\n5:30 Use the prompt cache\n7:43 Cutting costs up to 72%\n8:45 Designing an eval Claude can climb\n11:47 Hill climbing without overfitting\n14:57 Example: improving a skill from 66%\n16:30 Hill climbing for cost: a 90% cut\n18:53 Harnesses for days-long agents\n20:21 Managed agents: separating brain from hands\n23:04 Recap\n24:25 Q&amp;A: How automatable is eval design?\n30:04 Q&amp;A: Grading open-ended tasks\n39:24 Q&amp;A: Why stronger models at low effort cost less\n55:41 Q&amp;A: Hill climbing very long tasks\n\nLance Martin\nhttps://www.anthropic.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Lance Martin of Anthropic shares simple fixes that get more out of frontier models, often improving quality and cutting cost at the same time. He covers auditing prompts for outdated habits like \"think step by step\" and contradictory rules, using the prompt cache properly (cutting costs up to 72% on internal benchmarks), designing evals Claude can actually climb, and hill climbing without overfitting, including a run that cut cost 90% while improving performance by switching to a stronger model at lower effort. He closes with how Claude Managed Agents keeps days-long agents reliable and secure, then takes questions on eval design, grading open-ended tasks and more.\n\nChapters:\n0:00 Intro\n0:27 You're probably not on the frontier\n1:32 Audit your prompts\n3:49 What a prompt audit saves\n5:30 Use the prompt cache\n7:43 Cutting costs up to 72%\n8:45 Designing an eval Claude can climb\n11:47 Hill climbing without overfitting\n14:57 Example: improving a skill from 66%\n16:30 Hill climbing for cost: a 90% cut\n18:53 Harnesses for days-long agents\n20:21 Managed agents: separating brain from hands\n23:04 Recap\n24:25 Q&amp;A: How automatable is eval design?\n30:04 Q&amp;A: Grading open-ended tasks\n39:24 Q&amp;A: Why stronger models at low effort cost less\n55:41 Q&amp;A: Hill climbing very long tasks\n\nLance Martin\nhttps://www.anthropic.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/ys6YQ2yfBpM",
     "topic": "media",
     "tags": [
+      "media",
       "models",
       "agents",
       "benchmark",
+      "video",
       "coding",
-      "events",
-      "media"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -301,15 +311,15 @@
     "fetched_at": "2026-11-07T11:31:33+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Stephen Chin of Neo4j and Neeraj Deshmukh of Blitzy show why AI struggles to modernize the decades-old systems underneath banks and insurers, and how a knowledge graph fixes it. Using a COBOL interest calculation as the running example, they explain that AI can convert a formula but misses the batch jobs, data layouts and other places the logic is used, and that bigger context windows don't solve it. They walk through Blitzy's approach of mapping the whole codebase as a graph, giving thousands of agents the right slice of context, testing at every step, and proving the new code matches the old down to the cent, with results from a tier-one bank, a 35-million-line mainframe and a Fortune 100 insurer.\n\nChapters:\n0:00 Intro\n0:14 The old systems under modern finance\n1:58 Example: computing interest on a mainframe\n3:06 Why AI misses the rest of the system\n4:02 Why bigger context windows don't fix it\n6:03 Turning code into a graph\n7:08 Giving every agent the right context\n7:53 Blitzy's process, with a human in the lead\n9:32 Thousands of agents and constant testing\n11:35 Proving the new code matches the old\n13:28 The one-cent rounding bug\n14:27 Results from banks and insurers\n16:37 Beyond modernization\n18:47 Resources\n\nStephen Chin\nhttps://neo4j.com\n\nNeeraj Deshmukh\nhttps://blitzy.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Stephen Chin of Neo4j and Neeraj Deshmukh of Blitzy show why AI struggles to modernize the decades-old systems underneath banks and insurers, and how a knowledge graph fixes it. Using a COBOL interest calculation as the running example, they explain that AI can convert a formula but misses the batch jobs, data layouts and other places the logic is used, and that bigger context windows don't solve it. They walk through Blitzy's approach of mapping the whole codebase as a graph, giving thousands of agents the right slice of context, testing at every step, and proving the new code matches the old down to the cent, with results from a tier-one bank, a 35-million-line mainframe and a Fortune 100 insurer.\n\nChapters:\n0:00 Intro\n0:14 The old systems under modern finance\n1:58 Example: computing interest on a mainframe\n3:06 Why AI misses the rest of the system\n4:02 Why bigger context windows don't fix it\n6:03 Turning code into a graph\n7:08 Giving every agent the right context\n7:53 Blitzy's process, with a human in the lead\n9:32 Thousands of agents and constant testing\n11:35 Proving the new code matches the old\n13:28 The one-cent rounding bug\n14:27 Results from banks and insurers\n16:37 Beyond modernization\n18:47 Resources\n\nStephen Chin\nhttps://neo4j.com\n\nNeeraj Deshmukh\nhttps://blitzy.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/oWqsBuhRRZ4",
     "topic": "development",
     "tags": [
       "development",
       "agents",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
