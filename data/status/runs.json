@@ -1,8 +1,38 @@
 [
   {
+    "run_id": "cf89756cbf26",
+    "started_at": "2026-11-09T10:06:05+00:00",
+    "ended_at": "2026-11-09T10:06:13+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "42598274866",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/42598274866",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-11-09T10:06:05+00:00",
+        "ended_at": "2026-11-09T10:06:13+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 25,
+          "duplicate_articles": 2273,
+          "dead_letters": 0,
+          "failed_sources": 0,
+          "skipped_sources": 1,
+          "not_modified_sources": 15,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 8337.16
+        }
+      }
+    ]
+  },
+  {
     "run_id": "37b564d8330d",
     "started_at": "2026-11-09T02:24:31+00:00",
-    "ended_at": "2026-11-09T02:24:49+00:00",
+    "ended_at": "2026-11-09T02:25:03+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "42550673367",
@@ -760,104 +790,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 8665.97
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "25218e4a0d86",
-    "started_at": "2026-11-05T12:53:24+00:00",
-    "ended_at": "2026-11-05T12:54:39+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "42030788773",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/42030788773",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-11-05T12:53:24+00:00",
-        "ended_at": "2026-11-05T12:54:24+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 29,
-          "enriched": 28,
-          "updated": 28,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 5,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "youtube": 13,
-            "trafilatura": 10,
-            "markdown_new": 5,
-            "rss": 1
-          },
-          "per_source": {
-            "ai-engineer": {
-              "attempted": 9,
-              "enriched": 9,
-              "failed": 0
-            },
-            "matt-pocock-youtube": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "huggingface-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "matt-wolfe": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "simon-willison": {
-              "attempted": 4,
-              "enriched": 4,
-              "failed": 0
-            },
-            "openai-blog": {
-              "attempted": 5,
-              "enriched": 5,
-              "failed": 0
-            },
-            "together-ai": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "anthropic-research": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "claude-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "cohere-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "fireship": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "marios-rec-reading": {
-              "attempted": 1,
-              "enriched": 0,
-              "failed": 1
-            }
-          },
-          "flush_batches": 2,
-          "defuddle_enabled": true,
-          "duration_ms": 60703.95
         }
       }
     ]
