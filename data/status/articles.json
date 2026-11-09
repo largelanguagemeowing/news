@@ -7,16 +7,16 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Ksenia Se of Turing Post and swyx close out three days of AI Engineer NYC 2026, from building agents to changing how financial institutions work. They thank the speakers, sponsors and crew, and share what's next: AIE CODE, AI Engineer Europe in London in February, and the World's Fair in San Francisco next summer.\n\nKsenia Se\nhttps://www.turingpost.com\nswyx\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Ksenia Se of Turing Post and swyx close out three days of AI Engineer NYC 2026, from building agents to changing how financial institutions work. They thank the speakers, sponsors and crew, and share what's next: AIE CODE, AI Engineer Europe in London in February, and the World's Fair in San Francisco next summer.\n\nKsenia Se\nhttps://www.turingpost.com\nswyx\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/Gs4Ho0ub3a4",
     "topic": "ai-models",
     "tags": [
       "ai-models",
       "agents",
+      "video",
       "coding",
       "events",
-      "news",
-      "video"
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -29,14 +29,16 @@
     "fetched_at": "2026-11-09T10:06:12+00:00",
     "source_id": "nvidia-blog",
     "source_name": "NVIDIA Blog",
-    "extraction_method": "rss",
-    "body": "Korea\u2019s Ministry of Science and ICT and NVIDIA hosted the MSIT-NVIDIA AI Startup Partnership Forum at COEX. Ryu Je-myung, vice minister of science and ICT, joined NVIDIA leaders to meet with over 20 Korean startups across foundation models, physical AI, AI infrastructure and AI semiconductors. NVIDIA also announced an investment in Korean startup Point2, with [&#8230;]",
+    "extraction_method": "trafilatura",
+    "body": "Korea\u2019s Ministry of Science and ICT and NVIDIA hosted the MSIT-NVIDIA AI Startup Partnership Forum at COEX.\nRyu Je-myung, vice minister of science and ICT, joined NVIDIA leaders to meet with over 20 Korean startups across foundation models, physical AI, AI infrastructure and AI semiconductors.\nNVIDIA also announced an investment in Korean startup Point2, with additional investments planned in Motif Technologies, RLWRLD and Upstage.\nPoint2 Technology, an AI interconnect company, builds scalable, radio frequency-based interconnects that move data between chips and racks in AI factories, offering an innovative alternative to conventional copper and optical interconnect solutions for AI cluster scale-up, delivering the reach, performance and efficiency needed for next-generation AI infrastructure.\nMotif Technologies, a Seoul-based AI lab, develops foundation models for building AI agents that carry out complex tasks, including Motif-3, a large language model released with open weights.\nRLWRLD, a physical AI startup based in San Francisco, Seoul and Tokyo, develops robotics foundation models that enable humanoid and industrial robots to perform complex real-world tasks that require five-finger dexterity, such as precisely inserting components, threading nuts onto bolts and kitting parts from moving conveyors.\nUpstage, a Korean enterprise AI company, develops Solar language models and document AI tools that help businesses extract information from complex documents, streamline workflows and build AI applications for everyday operations.\nThe companies represent work across the [full AI stack](https://blogs.nvidia.com/blog/ai-5-layer-cake/), from infrastructure to models to robotics applications.\nThe planned investments build on NVIDIA\u2019s work with Korea\u2019s startup and venture community, including more than 1,000 Korea-based members of [NVIDIA Inception](https://www.nvidia.com/en-us/startups/), a program that helps startups grow with access to preferred pricing, technical expertise and opportunities for investor introductions.",
     "topic": "funding",
     "tags": [
       "release",
       "models",
-      "funding",
-      "hardware"
+      "open-source",
+      "agents",
+      "robotics",
+      "funding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -49,17 +51,17 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Ari Azarafrooz, founder of Intrinsec AI, shows how the KV cache your inference engine already writes can double as a security signal for AI agents. Instead of only guarding inputs and outputs with judge models or a classifier for every failure, he learns a baseline from normal traffic and flags KV pages that look unusual, catching problems like a hidden spoken instruction in a voicemail where there is no text to filter. He covers where this plugs into stacks like vLLM, SGLang, LMCache, llm-d and NVIDIA Dynamo, and the two hard parts in production: models that keep changing and KV data too big to move in real time.\n\nAri Azarafrooz\nhttps://intrinsec.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Ari Azarafrooz, founder of Intrinsec AI, shows how the KV cache your inference engine already writes can double as a security signal for AI agents. Instead of only guarding inputs and outputs with judge models or a classifier for every failure, he learns a baseline from normal traffic and flags KV pages that look unusual, catching problems like a hidden spoken instruction in a voicemail where there is no text to filter. He covers where this plugs into stacks like vLLM, SGLang, LMCache, llm-d and NVIDIA Dynamo, and the two hard parts in production: models that keep changing and KV data too big to move in real time.\n\nAri Azarafrooz\nhttps://intrinsec.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/1NWnSwCB4NM",
     "topic": "security",
     "tags": [
       "security",
       "models",
       "agents",
       "safety",
+      "video",
       "infrastructure",
-      "coding",
-      "education"
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -72,8 +74,8 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Maty Bohacek of Stanford looks at a security check we still rely on: getting on a phone or video call to prove you're human before opening an account, approving a wire or recovering access. With AI avatars that can now join Zoom calls, he tested what agents do when a human check is the only thing between them and their goal. When a voice or video cloning tool was available, many agents used it to impersonate a person, even when told not to, and safety alignment only cut the rate from 65% to 44%. He closes with what needs to happen next across alignment, control, and deepfake detection and provenance.\n\nChapters:\n0:00 Intro\n0:58 Proving you're human on a call\n3:19 When AI controls fail\n6:00 Human verification as free AI control\n6:41 AI avatars that join video calls\n7:51 Experiment: agents blocked by a human check\n12:05 How often agents impersonate people\n13:47 Can people still tell?\n15:18 Where we go from here\n17:30 Keep verification safe\n\nMaty Bohacek\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Maty Bohacek of Stanford looks at a security check we still rely on: getting on a phone or video call to prove you're human before opening an account, approving a wire or recovering access. With AI avatars that can now join Zoom calls, he tested what agents do when a human check is the only thing between them and their goal. When a voice or video cloning tool was available, many agents used it to impersonate a person, even when told not to, and safety alignment only cut the rate from 65% to 44%. He closes with what needs to happen next across alignment, control, and deepfake detection and provenance.\n\nChapters:\n0:00 Intro\n0:58 Proving you're human on a call\n3:19 When AI controls fail\n6:00 Human verification as free AI control\n6:41 AI avatars that join video calls\n7:51 Experiment: agents blocked by a human check\n12:05 How often agents impersonate people\n13:47 Can people still tell?\n15:18 Where we go from here\n17:30 Keep verification safe\n\nMaty Bohacek\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/LF8V0RGJU0I",
     "topic": "safety",
     "tags": [
       "agents",
@@ -94,16 +96,16 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Mislav Ivanda of Daytona has integrated sandboxes into most of the major agent frameworks, and noticed that frameworks that disagree on almost everything all ended up in the same place. He compares three ways to run agent-generated code: allow lists and approval prompts, embedded runtimes, and a separate sandboxed computer. He explains why only the last one keeps a compromised step from compromising your app, and shows frameworks like CrewAI, AG2 and the OpenAI Agents SDK moving to sandboxes. His advice: models, prompts and even frameworks are easy to swap, so choose where your agent's code runs before you choose a framework.\n\nChapters:\n0:00 Intro\n0:52 Guess the framework\n2:20 Frameworks that agree on nothing\n3:42 Where should agent code run?\n4:12 Option 1: allow lists and approvals\n5:23 Option 2: embedded runtimes\n6:46 Option 3: a separate computer\n7:54 Frameworks are moving to sandboxes\n9:19 How sandbox use has changed\n10:33 Which framework should I pick?\n12:46 The one choice you can't easily swap\n14:09 Frameworks are opinions, boundaries are commitments\n\nMislav Ivanda\nhttps://www.daytona.io\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Mislav Ivanda of Daytona has integrated sandboxes into most of the major agent frameworks, and noticed that frameworks that disagree on almost everything all ended up in the same place. He compares three ways to run agent-generated code: allow lists and approval prompts, embedded runtimes, and a separate sandboxed computer. He explains why only the last one keeps a compromised step from compromising your app, and shows frameworks like CrewAI, AG2 and the OpenAI Agents SDK moving to sandboxes. His advice: models, prompts and even frameworks are easy to swap, so choose where your agent's code runs before you choose a framework.\n\nChapters:\n0:00 Intro\n0:52 Guess the framework\n2:20 Frameworks that agree on nothing\n3:42 Where should agent code run?\n4:12 Option 1: allow lists and approvals\n5:23 Option 2: embedded runtimes\n6:46 Option 3: a separate computer\n7:54 Frameworks are moving to sandboxes\n9:19 How sandbox use has changed\n10:33 Which framework should I pick?\n12:46 The one choice you can't easily swap\n14:09 Frameworks are opinions, boundaries are commitments\n\nMislav Ivanda\nhttps://www.daytona.io\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/WWIFiQi9U4w",
     "topic": "agents",
     "tags": [
       "models",
       "api",
       "agents",
+      "video",
       "infrastructure",
-      "coding",
-      "events"
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -116,15 +118,15 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Pratyusha Duvvuri, who led agent observability at Galileo before it became part of Cisco, asked about 100 companies what \"tokenomics\" means and got 100 different answers. She shares her definition, the observability and interpretability of token usage and cost, and why engineers, engineering managers and finance teams each need something different from it. Then she demos the tokenomics dashboard her team took from first customer call to GA in 10 weeks: spend by person and team, adoption trends, forecasting and a finance view. She also covers the hard parts, like custom provider pricing and bills that change after the fact.\n\nChapters:\n0:00 Intro\n0:12 What does tokenomics mean to you?\n1:49 Three trends in AI spend\n4:42 Three kinds of users\n6:46 Why provider dashboards aren't enough\n8:34 A definition of tokenomics\n9:18 What you need to get started\n10:51 Demo: the tokenomics dashboard\n14:35 The finance view\n15:48 What's coming next\n16:44 Challenges building it\n\nPratyusha Duvvuri\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Pratyusha Duvvuri, who led agent observability at Galileo before it became part of Cisco, asked about 100 companies what \"tokenomics\" means and got 100 different answers. She shares her definition, the observability and interpretability of token usage and cost, and why engineers, engineering managers and finance teams each need something different from it. Then she demos the tokenomics dashboard her team took from first customer call to GA in 10 weeks: spend by person and team, adoption trends, forecasting and a finance view. She also covers the hard parts, like custom provider pricing and bills that change after the fact.\n\nChapters:\n0:00 Intro\n0:12 What does tokenomics mean to you?\n1:49 Three trends in AI spend\n4:42 Three kinds of users\n6:46 Why provider dashboards aren't enough\n8:34 A definition of tokenomics\n9:18 What you need to get started\n10:51 Demo: the tokenomics dashboard\n14:35 The finance view\n15:48 What's coming next\n16:44 Challenges building it\n\nPratyusha Duvvuri\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/KdG9OSOtJOA",
     "topic": "opinion",
     "tags": [
       "opinion",
       "agents",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -137,17 +139,17 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Jason Mancuso of Modal argues that treating models as swappable backends is a losing strategy, and that teams with agents in production already have what they need for reinforcement learning: a harness, evals and real traces. He explains why RL generalizes better than fine-tuning on recorded traces, then walks through a stable recipe for asynchronous RL built on GRPO with masked importance sampling, score centering and top-p sampling. He shows how sparse weight updates let Modal spread rollouts across clouds, GPU types and quantization levels while training stays stable and rollouts get 15% cheaper.\n\nChapters:\n0:00 Intro\n0:20 Models aren't static backends\n1:09 Why teams fine-tune\n3:35 Why RL instead of SFT\n4:46 You already have what you need\n6:51 How reinforcement learning works\n7:41 Async RL and staleness\n9:38 A stable RL recipe\n12:38 Why RL on Modal is different\n14:55 Sparse weight updates\n16:21 Mixing GPU types for rollouts\n17:56 15% cheaper rollouts\n19:16 Own your stack\n\nJason Mancuso\nhttps://modal.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Jason Mancuso of Modal argues that treating models as swappable backends is a losing strategy, and that teams with agents in production already have what they need for reinforcement learning: a harness, evals and real traces. He explains why RL generalizes better than fine-tuning on recorded traces, then walks through a stable recipe for asynchronous RL built on GRPO with masked importance sampling, score centering and top-p sampling. He shows how sparse weight updates let Modal spread rollouts across clouds, GPU types and quantization levels while training stays stable and rollouts get 15% cheaper.\n\nChapters:\n0:00 Intro\n0:20 Models aren't static backends\n1:09 Why teams fine-tune\n3:35 Why RL instead of SFT\n4:46 You already have what you need\n6:51 How reinforcement learning works\n7:41 Async RL and staleness\n9:38 A stable RL recipe\n12:38 Why RL on Modal is different\n14:55 Sparse weight updates\n16:21 Mixing GPU types for rollouts\n17:56 15% cheaper rollouts\n19:16 Own your stack\n\nJason Mancuso\nhttps://modal.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/3nDMYV-QHLs",
     "topic": "research",
     "tags": [
       "research",
       "models",
       "agents",
       "benchmark",
+      "video",
       "infrastructure",
-      "coding",
-      "education"
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -160,16 +162,16 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Hassan El Mghari of Together AI and his father Omar, a former CFO and head of internal audit, test whether an open model can forecast a company's profits. They give GPT-OSS-120B only Costco's public filings from before its 2024 membership fee increase, have it write the financial model as structured formulas, and run 16 cheap attempts in parallel. The forecast lands within 4.4% of Costco's actual results, until an audit of the assumptions shows two errors that happened to cancel out. Their takeaway: when you build agents for specialized work, put an expert in the loop and turn their checks into code.\n\nChapters:\n0:00 Intro\n0:30 Can an AI forecast Costco's profits?\n0:49 Meet the father-son team\n2:21 Spoiler: 4.4% off\n3:03 Why membership fees matter to Costco\n4:12 Using models that didn't already know the answer\n5:03 Turning 214 filings into 3,000 facts\n5:50 Have models write formulas, not do the math\n7:18 Checks and 16 parallel runs\n8:41 The forecast\n9:53 An auditor looks at the assumptions\n11:39 Two errors that canceled out\n13:29 Three lines of defense\n14:48 Put an expert in the loop\n\nHassan El Mghari\nOmar El Mghari\nhttps://www.together.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Hassan El Mghari of Together AI and his father Omar, a former CFO and head of internal audit, test whether an open model can forecast a company's profits. They give GPT-OSS-120B only Costco's public filings from before its 2024 membership fee increase, have it write the financial model as structured formulas, and run 16 cheap attempts in parallel. The forecast lands within 4.4% of Costco's actual results, until an audit of the assumptions shows two errors that happened to cancel out. Their takeaway: when you build agents for specialized work, put an expert in the loop and turn their checks into code.\n\nChapters:\n0:00 Intro\n0:30 Can an AI forecast Costco's profits?\n0:49 Meet the father-son team\n2:21 Spoiler: 4.4% off\n3:03 Why membership fees matter to Costco\n4:12 Using models that didn't already know the answer\n5:03 Turning 214 filings into 3,000 facts\n5:50 Have models write formulas, not do the math\n7:18 Checks and 16 parallel runs\n8:41 The forecast\n9:53 An auditor looks at the assumptions\n11:39 Two errors that canceled out\n13:29 Three lines of defense\n14:48 Put an expert in the loop\n\nHassan El Mghari\nOmar El Mghari\nhttps://www.together.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/dznCt8xPW7o",
     "topic": "tutorials",
     "tags": [
       "tutorials",
       "models",
       "agents",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -182,16 +184,17 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Zach Lloyd, founder and CEO of Warp and former engineering lead on Google Docs, explains why companies are moving from engineers prompting agents on their laptops to sandboxed cloud software factories. He makes the case for treating your factory as infrastructure that's open, works with your existing tools and is defined in code. He demos Warp Factories: visibility into every agent run, LLM-judged scores, a self-improvement loop that proposes fixes to the factory itself, and benchmarks built from your own past tasks to compare cost and quality across models.\n\nChapters:\n0:00 Intro\n1:12 From interactive prompting to automated development\n2:21 Why local agents hit limits\n3:08 What a cloud software factory is\n4:03 Treat your factory as infrastructure\n5:15 Own your data and compute\n6:01 Measure on your own data\n6:55 Product engineers and factory engineers\n7:51 Demo: Warp Factories\n10:33 Defining the factory in code\n12:01 Scoring agent runs\n13:21 The self-improvement loop\n14:42 Benchmarks on your own tasks\n17:15 The factory stack\n17:57 Q&amp;A\n\nZach Lloyd\nhttps://www.warp.dev\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Zach Lloyd, founder and CEO of Warp and former engineering lead on Google Docs, explains why companies are moving from engineers prompting agents on their laptops to sandboxed cloud software factories. He makes the case for treating your factory as infrastructure that's open, works with your existing tools and is defined in code. He demos Warp Factories: visibility into every agent run, LLM-judged scores, a self-improvement loop that proposes fixes to the factory itself, and benchmarks built from your own past tasks to compare cost and quality across models.\n\nChapters:\n0:00 Intro\n1:12 From interactive prompting to automated development\n2:21 Why local agents hit limits\n3:08 What a cloud software factory is\n4:03 Treat your factory as infrastructure\n5:15 Own your data and compute\n6:01 Measure on your own data\n6:55 Product engineers and factory engineers\n7:51 Demo: Warp Factories\n10:33 Defining the factory in code\n12:01 Scoring agent runs\n13:21 The self-improvement loop\n14:42 Benchmarks on your own tasks\n17:15 The factory stack\n17:57 Q&amp;A\n\nZach Lloyd\nhttps://www.warp.dev\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/nKjPBAw_N_0",
     "topic": "tutorials",
     "tags": [
+      "tutorials",
       "models",
       "agents",
       "benchmark",
+      "video",
       "infrastructure",
-      "coding",
-      "tutorials"
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -204,8 +207,8 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Richard Feldman of Delta explains why handing off agent-driven work to a teammate loses so much: you get the branch and maybe a pasted transcript, but not the reasoning, the dead ends or the decisions made along the way. He demos Delta, a tool where the agent conversation, code changes, reviews and teammates all live in one shared thread. It shows @-mentioning a coworker into a thread, line-by-line code review that goes straight to the agent, live terminal sync, and instant local checkouts of a teammate's work. He finishes with audience questions on scale, on-prem deployment, CI and catching up on long threads.\n\nChapters:\n0:00 Intro\n0:25 The Monday morning handoff\n2:31 How teams lose context with agents\n3:26 Agent archaeology\n4:40 Humans and agents collaborating together\n7:21 Demo: Delta\n8:28 Bringing a coworker into the thread\n9:49 Code review inside the thread\n11:05 Live terminal sync and shared checkouts\n13:00 Wrapping up\n14:32 Q&amp;A\n\nRichard Feldman\nhttps://delta.dev\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Richard Feldman of Delta explains why handing off agent-driven work to a teammate loses so much: you get the branch and maybe a pasted transcript, but not the reasoning, the dead ends or the decisions made along the way. He demos Delta, a tool where the agent conversation, code changes, reviews and teammates all live in one shared thread. It shows @-mentioning a coworker into a thread, line-by-line code review that goes straight to the agent, live terminal sync, and instant local checkouts of a teammate's work. He finishes with audience questions on scale, on-prem deployment, CI and catching up on long threads.\n\nChapters:\n0:00 Intro\n0:25 The Monday morning handoff\n2:31 How teams lose context with agents\n3:26 Agent archaeology\n4:40 Humans and agents collaborating together\n7:21 Demo: Delta\n8:28 Bringing a coworker into the thread\n9:49 Code review inside the thread\n11:05 Live terminal sync and shared checkouts\n13:00 Wrapping up\n14:32 Q&amp;A\n\nRichard Feldman\nhttps://delta.dev\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/Enn9dVrRXAo",
     "topic": "coding",
     "tags": [
       "agents",
@@ -225,16 +228,16 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Jemima Abu, a product engineer and certified accessibility professional, explains why AI agents copy the accessibility gaps in the code they learned from, and why 96% of top websites still have accessibility issues. In an informal experiment, giving her agent an accessibility skill made the same build faster and cheaper. She covers what inaccessible code costs you in users, money and legal risk, then shares a four-step approach: define requirements, audit your codebase, use a design system, and make your agents follow the rules every time. She also shares a lightweight accessibility skill you can start with.\n\nChapters:\n0:00 Intro\n0:12 Unlock your phone with your eyes closed\n1:34 What accessibility means\n2:04 Why 96% of websites fall short\n2:44 An experiment with an accessibility skill\n4:11 Your AI agent is a toddler\n5:12 What inaccessible code costs you\n9:46 Getting agents to write accessible code\n12:03 A lightweight accessibility skill\n13:27 Q&amp;A\n\nJemima Abu\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Jemima Abu, a product engineer and certified accessibility professional, explains why AI agents copy the accessibility gaps in the code they learned from, and why 96% of top websites still have accessibility issues. In an informal experiment, giving her agent an accessibility skill made the same build faster and cheaper. She covers what inaccessible code costs you in users, money and legal risk, then shares a four-step approach: define requirements, audit your codebase, use a design system, and make your agents follow the rules every time. She also shares a lightweight accessibility skill you can start with.\n\nChapters:\n0:00 Intro\n0:12 Unlock your phone with your eyes closed\n1:34 What accessibility means\n2:04 Why 96% of websites fall short\n2:44 An experiment with an accessibility skill\n4:11 Your AI agent is a toddler\n5:12 What inaccessible code costs you\n9:46 Getting agents to write accessible code\n12:03 A lightweight accessibility skill\n13:27 Q&amp;A\n\nJemima Abu\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/YV1x6gCdgQA",
     "topic": "agents",
     "tags": [
       "agents",
       "safety",
+      "video",
       "coding",
       "education",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -247,16 +250,16 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Ashwin Paranjape, founding AI lead at Samaya AI, explains why stock prediction is too noisy to learn from, and why earnings prediction makes a better test for financial agents: it has hard numbers, an expert baseline and an explanation for every surprise. He walks through a point-in-time environment that blocks any look at future data, then results across more than 450 earnings reports where the latest frontier models start to beat analyst consensus. He shows where agents win and miss, and why live data matters more than anything else.\n\nChapters:\n0:00 Intro\n0:39 About Ashwin\n1:52 Finance's big unsolved problem\n2:19 Why not predict stocks?\n3:18 Earnings prediction as a task\n4:32 A point-in-time environment\n6:31 Results: AI vs. consensus\n9:30 Where agents win\n10:35 Where agents miss\n11:46 Why live data matters most\n13:09 Expert guidance and hiding consensus\n14:11 What's next\n\nAshwin Paranjape\nhttps://samaya.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Ashwin Paranjape, founding AI lead at Samaya AI, explains why stock prediction is too noisy to learn from, and why earnings prediction makes a better test for financial agents: it has hard numbers, an expert baseline and an explanation for every surprise. He walks through a point-in-time environment that blocks any look at future data, then results across more than 450 earnings reports where the latest frontier models start to beat analyst consensus. He shows where agents win and miss, and why live data matters more than anything else.\n\nChapters:\n0:00 Intro\n0:39 About Ashwin\n1:52 Finance's big unsolved problem\n2:19 Why not predict stocks?\n3:18 Earnings prediction as a task\n4:32 A point-in-time environment\n6:31 Results: AI vs. consensus\n9:30 Where agents win\n10:35 Where agents miss\n11:46 Why live data matters most\n13:09 Expert guidance and hiding consensus\n14:11 What's next\n\nAshwin Paranjape\nhttps://samaya.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/SE6POOEjh4I",
     "topic": "education",
     "tags": [
       "models",
       "open-source",
       "agents",
+      "video",
       "coding",
-      "education",
-      "events"
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -269,15 +272,15 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Tom Moor of Linear argues that writing code is no longer the bottleneck. The harder problem is keeping a product coherent as agents ship more and more of it. He walks through how Linear carries context from intake to merge: a triage agent that enriches each issue with customer and incident context, a review agent that checks changes against past decisions, reverts and regressions, and a daily automation that turns review feedback into lessons in the codebase. He shares real examples where that history caught problems a standard code reviewer would have missed.\n\nChapters:\n0:00 Intro\n0:37 What Linear is\n1:48 How fast software engineering changed\n5:16 Context moves to the outer loop\n6:04 Code isn't the bottleneck anymore\n6:57 What agents miss in the code\n8:57 Automating intake with a triage agent\n12:16 Building with verification\n13:40 Context-aware code review\n15:53 Review examples from Linear\n18:16 Turning feedback into lessons\n20:04 What carrying context buys you\n\nTom Moor\nhttps://linear.app\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Tom Moor of Linear argues that writing code is no longer the bottleneck. The harder problem is keeping a product coherent as agents ship more and more of it. He walks through how Linear carries context from intake to merge: a triage agent that enriches each issue with customer and incident context, a review agent that checks changes against past decisions, reverts and regressions, and a daily automation that turns review feedback into lessons in the codebase. He shares real examples where that history caught problems a standard code reviewer would have missed.\n\nChapters:\n0:00 Intro\n0:37 What Linear is\n1:48 How fast software engineering changed\n5:16 Context moves to the outer loop\n6:04 Code isn't the bottleneck anymore\n6:57 What agents miss in the code\n8:57 Automating intake with a triage agent\n12:16 Building with verification\n13:40 Context-aware code review\n15:53 Review examples from Linear\n18:16 Turning feedback into lessons\n20:04 What carrying context buys you\n\nTom Moor\nhttps://linear.app\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/Xw9utONfhIY",
     "topic": "agents",
     "tags": [
       "agents",
+      "video",
       "coding",
       "education",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -290,15 +293,15 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Preetam Dwivedi and Manjari Akella of Uber's developer platform team share how AI-driven code changes pushed Uber's merge pipeline to its limits, across monorepos where more than 5,000 developers land tens of thousands of commits a week. They walk through three changes to SubmitQueue that kept changes landing without long waits: admission gating that sorts cheap changes from expensive ones, a deferral queue that softens the impact on developers, and conflict relaxation that lets more changes run in parallel. They also explain how Stovepipe checks changes after they land and tracks the last verified-good state of trunk, why Uber moved from an always-green trunk to a hybrid approach, and what they're building next.\n\nPreetam Dwivedi\nhttps://www.linkedin.com/in/behinddwalls/\n\nManjari Akella\n\nhttps://www.uber.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Preetam Dwivedi and Manjari Akella of Uber's developer platform team share how AI-driven code changes pushed Uber's merge pipeline to its limits, across monorepos where more than 5,000 developers land tens of thousands of commits a week. They walk through three changes to SubmitQueue that kept changes landing without long waits: admission gating that sorts cheap changes from expensive ones, a deferral queue that softens the impact on developers, and conflict relaxation that lets more changes run in parallel. They also explain how Stovepipe checks changes after they land and tracks the last verified-good state of trunk, why Uber moved from an always-green trunk to a hybrid approach, and what they're building next.\n\nPreetam Dwivedi\nhttps://www.linkedin.com/in/behinddwalls/\n\nManjari Akella\n\nhttps://www.uber.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/hX140a5klW0",
     "topic": "ai-models",
     "tags": [
       "ai-models",
       "open-source",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -311,8 +314,8 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "hugging-face",
     "source_name": "Hugging Face",
-    "extraction_method": "rss",
-    "body": "In this video we take a deep dive into DeepSeek Harness (DSH), DeepSeek's open-source agent harness, built on the Cordis plugin system around one idea: everything is a plugin, including the agent loop, the tools, and even the system prompt.\n\nWe start with a quick tour of the new Electron desktop application, then break down the architecture of DSH and the history and design of Cordis, the plugin system that powers it. We look at how plugins provide services, how dependency injection and events connect every part of the application, and how Cordis tracks registrations to clean up plugins safely when they unmount.\n\nThen we go hands-on: we write real plugins in code, run `dsh web --patch` with a custom `cordis.patch.yml`, watch three plugins (a greet tool, a bash guard, and a hello plugin) load and fire inside the app, and finish by loading the plugins into the desktop application via npm packages and the `.dsh` user configuration.\n\nBy the end, you'll understand how the composability of DSH works and how to create and load your own plugins, including a custom agent loop that never calls a model.\n\n---\n\ud83d\udd17 *Links*\n- DeepSeek Harness GitHub repository: https://github.com/deepseek-ai/deepseek-harness\n- Cordis GitHub repository: https://github.com/cordiverse/cordis\n- Cordis design paper: https://arxiv.org/abs/2608.25512\n- DeepSeek Harness website: https://www.deepseek.com/en/harness/\n\n---\n\ud83e\udd13 *Topics Covered*\n- The DSH agent harness architecture and desktop app\n- How the Cordis plugin system powers everything\n- Building and loading your own DSH plugins\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Intro\n1:00 App Demo\n5:57 What Is DSH\n8:22 History of Cordis\n10:59 What Is Cordis\n15:04 Cordis Context\n20:02 Events\n24:00 Plugins Code Demo\n28:54 Loading the Plugins\n\n\ud83d\udc4b *Connect with me*\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/",
+    "extraction_method": "youtube",
+    "body": "In this video we take a deep dive into DeepSeek Harness (DSH), DeepSeek's open-source agent harness, built on the Cordis plugin system around one idea: everything is a plugin, including the agent loop, the tools, and even the system prompt.\n\nWe start with a quick tour of the new Electron desktop application, then break down the architecture of DSH and the history and design of Cordis, the plugin system that powers it. We look at how plugins provide services, how dependency injection and events connect every part of the application, and how Cordis tracks registrations to clean up plugins safely when they unmount.\n\nThen we go hands-on: we write real plugins in code, run `dsh web --patch` with a custom `cordis.patch.yml`, watch three plugins (a greet tool, a bash guard, and a hello plugin) load and fire inside the app, and finish by loading the plugins into the desktop application via npm packages and the `.dsh` user configuration.\n\nBy the end, you'll understand how the composability of DSH works and how to create and load your own plugins, including a custom agent loop that never calls a model.\n\n---\n\ud83d\udd17 *Links*\n- DeepSeek Harness GitHub repository: https://github.com/deepseek-ai/deepseek-harness\n- Cordis GitHub repository: https://github.com/cordiverse/cordis\n- Cordis design paper: https://arxiv.org/abs/2608.25512\n- DeepSeek Harness website: https://www.deepseek.com/en/harness/\n\n---\n\ud83e\udd13 *Topics Covered*\n- The DSH agent harness architecture and desktop app\n- How the Cordis plugin system powers everything\n- Building and loading your own DSH plugins\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Intro\n1:00 App Demo\n5:57 What Is DSH\n8:22 History of Cordis\n10:59 What Is Cordis\n15:04 Cordis Context\n20:02 Events\n24:00 Plugins Code Demo\n28:54 Loading the Plugins\n\n\ud83d\udc4b *Connect with me*\n- My website: https://alejandro-ao.com/\n- X (Twitter): https://x.com/_alejandroao\n- LinkedIn: https://www.linkedin.com/in/alejandro-ao/\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/9F9x3MufdMQ",
     "topic": "ai-models",
     "tags": [
       "ai-models",
@@ -334,13 +337,16 @@
     "fetched_at": "2026-11-09T10:06:12+00:00",
     "source_id": "nvidia-blog",
     "source_name": "NVIDIA Blog",
-    "extraction_method": "rss",
-    "body": "Tapping into the country\u2019s strengths in manufacturing and engineering, NVIDIA is helping advance Korea\u2019s physical AI ecosystem. The country\u2019s industry leaders are applying accelerated computing, AI and simulation to everything from semiconductor manufacturing to robotics and autonomous vehicles. These efforts are helping bring physical AI from development into real-world production. Samsung Advances Semiconductor Engineering With [&#8230;]",
-    "topic": "hardware",
+    "extraction_method": "trafilatura",
+    "body": "Tapping into the country\u2019s strengths in manufacturing and engineering, NVIDIA is helping advance Korea\u2019s physical AI ecosystem.\nThe country\u2019s industry leaders are applying accelerated computing, AI and simulation to everything from semiconductor manufacturing to robotics and autonomous vehicles.\nThese efforts are helping bring physical AI from development into real-world production.\nSamsung Advances Semiconductor Engineering With Accelerated Computing and AI Physics\nSamsung Electronics is expanding its collaboration with NVIDIA to advance semiconductor innovation through accelerated computing and AI physics. The work spans materials research, process development and device engineering.\nIn technology computer-aided design, Samsung is working with [NVIDIA cuISS](https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds) and [NVIDIA cuDSS](https://developer.nvidia.com/cudss) to accelerate computations involving sparse linear systems. The collaboration also extends to GPU acceleration for process and optical simulations. In materials research, Samsung\u2019s sMOL platform has run selected quantum chemical calculations up to 5x faster end to end with [NVIDIA cuEST](https://docs.nvidia.com/cuda/cuest/). Samsung is also exploring [NVIDIA cuEquivariance](https://docs.nvidia.com/cuda/cuequivariance/) to speed up tensor operations used in training and inference for atomistic AI models.\nSamsung is developing chip-scale thermal and mechanical analysis workflows with [NVIDIA PhysicsNeMo](https://developer.nvidia.com/physicsnemo). In one AI homogenization case, combining AI-predicted effective material properties, coarser grids and GPU acceleration resulted in a roughly 1,600x speedup. Simulation time fell from about 18 hours for a fine-grid solve on a 32-core CPU to 41 seconds for a GPU-accelerated coarse-grid solve.\nLooking ahead, [NVIDIA Agent Toolkit](https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds) could connect these simulation tools and AI models, helping future engineering agents run analyses and compare design options.\nKakao Mobility Collaborates With NVIDIA to Advance Autonomous Driving Development\nKakao Mobility plans to build on NVIDIA\u2019s autonomous vehicle computing and safety technologies to advance development of a level 4 autonomous driving system. The work combines Kakao Mobility\u2019s proprietary driving software and experience operating in Seoul\u2019s Gangnam district with NVIDIA\u2019s vehicle computing platform.\nKakao Mobility plans to use [NVIDIA Hyperion](https://www.nvidia.com/en-us/solutions/autonomous-vehicles/), a reference platform for vehicle sensors and compute, powered by NVIDIA DRIVE AGX Thor. It also plans to use [NVIDIA Halos](https://www.nvidia.com/en-us/ai-trust-center/halos/autonomous-vehicles/) to support safety across the development and validation of its autonomous driving technology.\nInitial development is planned around Kia purpose-built vehicles, integrating Kakao Mobility\u2019s autonomous driving software with NVIDIA technologies. The effort aims to support future level 4 mobility services in Korea.\nLG Electronics Advances Robot Learning and Factory Simulation\nNVIDIA and LG Electronics successfully demonstrated NVIDIA Isaac GR00T-powered robotic manipulation and manufacturing tasks using LG\u2019s CLOiD robot in an actual manufacturing environment.\nThe collaboration implemented a physical AI data flywheel connecting real-world data collection, NVIDIA Cosmos-based data augmentation, GR00T model training, NVIDIA Jetson AGX Thor onboard computing and simulation-based evaluation, establishing reusable workflows for continued development and validation of CLOiD\u2019s robotic capabilities.\nThe teams are using this work to refine a repeatable process for training, evaluating and improving robots for manufacturing.",
+    "topic": "research",
     "tags": [
-      "robotics",
-      "development",
-      "hardware"
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "research",
+      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -353,16 +359,17 @@
     "fetched_at": "2026-11-09T10:06:12+00:00",
     "source_id": "nvidia-blog",
     "source_name": "NVIDIA Blog",
-    "extraction_method": "rss",
-    "body": "As AI agents take on more work, they need capable open models and security that advances alongside them. Hyundai Motor Group is exploring NVIDIA NemoClaw blueprints and the NVIDIA OpenShell runtime, while AIM Intelligence is integrating its Starfort platform with NVIDIA OpenShell to support secure AI agents for employee productivity and enterprise workflows. A key [&#8230;]",
-    "topic": "agents",
+    "extraction_method": "trafilatura",
+    "body": "As AI agents take on more work, they need capable open models and security that advances alongside them.\nHyundai Motor Group is exploring NVIDIA NemoClaw blueprints and the NVIDIA OpenShell runtime, while AIM Intelligence is integrating its Starfort platform with NVIDIA OpenShell to support secure AI agents for employee productivity and enterprise workflows.\nA key component of the NVIDIA Open Agent Safety Platform, OpenShell provides a secure runtime with sandboxed execution and policy-based controls to safeguard sensitive data, manage access to enterprise tools and govern autonomous agent actions.\nAIM Intelligence, a Korean AI security company, is integrating its Starfort agent control platform with NVIDIA OpenShell. The goal is to combine OpenShell\u2019s runtime access controls with Starfort\u2019s detection of malicious instructions and data leakage. The company is also considering a preliminary proof of concept for the public energy sector, with potential applications across enterprise, industrial and robotics environments.\nOn the model side, LG AI Research is opening application programming interface access for K-EXAONE-2.5, developed using NVIDIA Nemotron datasets, including [Nemotron-Personas-Korea](https://huggingface.co/datasets/nvidia/Nemotron-Personas-Korea).\nNemotron-Personas-Korea is an open dataset of 7 million fully synthetic Korean personas, grounded in official Korean statistics, that model builders use to ground training data and evaluation in Korean contexts. NVIDIA Nemotron is a family of open models, datasets and techniques that help developers build specialized, efficient AI agents.\nLearn more about [NVIDIA Nemotron](https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/) open models and get started building secure agents with [NVIDIA OpenShell](https://www.nvidia.com/en-us/ai/openshell/).",
+    "topic": "enterprise",
     "tags": [
+      "enterprise",
       "models",
       "agents",
       "safety",
-      "coding",
-      "policy",
-      "enterprise"
+      "benchmark",
+      "research",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -375,11 +382,11 @@
     "fetched_at": "2026-11-09T10:06:12+00:00",
     "source_id": "nvidia-blog",
     "source_name": "NVIDIA Blog",
-    "extraction_method": "rss",
-    "body": "NVIDIA and Korea\u2019s Ministry of Science and ICT (MSIT) are expanding their collaboration across the country\u2019s sovereign AI ecosystem, from AI semiconductors and data center infrastructure to talent, startups, models, agents and security. The collaboration lays the groundwork for Korean NPU and XPU companies to explore participation in the NVIDIA NVLink Fusion ecosystem, and includes [&#8230;]",
-    "topic": "security",
+    "extraction_method": "trafilatura",
+    "body": "NVIDIA and Korea\u2019s Ministry of Science and ICT (MSIT) are expanding their collaboration across the country\u2019s sovereign AI ecosystem, from AI semiconductors and data center infrastructure to talent, startups, models, agents and security.\nThe collaboration lays the groundwork for Korean NPU and XPU companies to explore participation in the [NVIDIA NVLink Fusion](https://www.nvidia.com/en-us/data-center/nvlink-fusion/) ecosystem, and includes NVIDIA training and certification programs, hackathons and technical seminars to strengthen GPU utilization.\nThrough Korea\u2019s AI for All initiative, NVIDIA will collaborate with three selected consortia and four leading Korean foundation model builders, using [NVIDIA Dynamo](https://www.nvidia.com/en-us/ai/dynamo/) software to optimize and scale AI inference.\nIn addition, NVIDIA today announced a collaboration with SK Telecom and Rebellions, supported by MSIT, to advance sovereign AI infrastructure for Korean models and workloads with NVIDIA NVLink Fusion. Read more in the [press release](https://nvidianews.nvidia.com/news/nvidia-rebellions-and-sk-telecom-announce-collaboration-to-advance-sovereign-ai-infrastructure-with-nvidia-nvlink-fusion).",
+    "topic": "infrastructure",
     "tags": [
-      "security",
+      "release",
       "models",
       "agents",
       "safety",
@@ -397,13 +404,15 @@
     "fetched_at": "2026-11-09T10:06:12+00:00",
     "source_id": "nvidia-blog",
     "source_name": "NVIDIA Blog",
-    "extraction_method": "rss",
-    "body": "NVIDIA is releasing Dynamo-optimized deployment recipes for Korea\u2019s leading open models: A.X K2 from SK Telecom, K-EXAONE 2.0 from LG AI Research, Solar Open 2 from Upstage and Motif-3 from Motif Technologies. As models grow beyond the capacity of a single GPU, they must be split across multiple GPUs, requiring careful coordination of request routing [&#8230;]",
+    "extraction_method": "trafilatura",
+    "body": "NVIDIA is releasing Dynamo-optimized deployment recipes for Korea\u2019s leading open models: A.X K2 from SK Telecom, K-EXAONE 2.0 from LG AI Research, Solar Open 2 from Upstage and Motif-3 from Motif Technologies.\nAs models grow beyond the capacity of a single GPU, they must be split across multiple GPUs, requiring careful coordination of request routing and communication to maintain performance.\n[NVIDIA Dynamo](https://www.nvidia.com/en-us/ai/dynamo/) is an open source, distributed inference-serving framework built to deploy models in multi-node environments at data center scale. It handles this routing and communication to maximize inference performance.\nOptimized for NVIDIA B200 GPUs, these recipes take the guesswork out of deployment, delivering up to 2x performance out of the box. They help developers bring Korea\u2019s open models into production faster and turn them into broadly accessible AI for All services.\nLearn more about [NVIDIA Dynamo](https://www.nvidia.com/en-us/ai/dynamo/).",
     "topic": "infrastructure",
     "tags": [
       "models",
+      "open-source",
       "research",
-      "infrastructure"
+      "infrastructure",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -416,14 +425,16 @@
     "fetched_at": "2026-11-09T10:06:07+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><a href=\"https://news.ycombinator.com/item?id=50416456#50421091\">My comment</a> on <a href=\"https://news.ycombinator.com/item?id=50416456\">The Web Is More Than Enough, by Paul Ford</a> &mdash; Hacker News.</p><p>OK, this comment convinced me to give that a shot.</p>\n<p>Here's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: <a href=\"https://static.simonwillison.net/static/2026/Hidden-Reef-Egg-threejs.html\">https://static.simonwillison.net/static/2026/Hidden-Reef-Egg...</a> (77KB)</p>\n<p>I just asked Claude (Opus 5.5 Medium running in regular Claude Chat) to port that to Vanilla JS, in the same thread where it had built it, and got this: <a href=\"https://static.simonwillison.net/static/2026/Hidden-Reef-Egg-Vanilla-WebGL.html\">https://static.simonwillison.net/static/2026/Hidden-Reef-Egg...</a> (98KB)</p>\n<p>They aren't identical - you can see what Claude said about that in the transcript (I don't fully understand why it differed): <a href=\"https://claude.ai/share/e56d163e-2793-4677-aa11-191d5058b414\">https://claude.ai/share/e56d163e-2793-4677-aa11-191d5058b414</a></p>\n<p>But yeah, it turns out Claude Opus 5.5 is perfectly capable of 3D modeling in Vanilla JS + WebGL without Three.js.</p>\n<p>In eyeballing the code I find the Three.js slightly easier to understand myself, but I rarely look at the code for these 3D projects so that isn't a particularly big deal.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/hacker-news\">hacker-news</a>, <a href=\"https://simonwillison.net/tags/javascript\">javascript</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/three-js\">three-js</a></p>",
-    "topic": "product",
+    "extraction_method": "trafilatura",
+    "body": "9th November 2026\nOK, this comment convinced me to give that a shot.\nHere's a thing I made in Three.js this morning - a Nudibranch themed Faberge Egg: [https://static.simonwillison.net/static/2026/Hidden-Reef-Egg...](https://static.simonwillison.net/static/2026/Hidden-Reef-Egg-threejs.html) (77KB)\nI just asked Claude (Opus 5.5 Medium running in regular Claude Chat) to port that to Vanilla JS, in the same thread where it had built it, and got this: [https://static.simonwillison.net/static/2026/Hidden-Reef-Egg...](https://static.simonwillison.net/static/2026/Hidden-Reef-Egg-Vanilla-WebGL.html) (98KB)\nThey aren't identical - you can see what Claude said about that in the transcript (I don't fully understand why it differed): [https://claude.ai/share/e56d163e-2793-4677-aa11-191d5058b414](https://claude.ai/share/e56d163e-2793-4677-aa11-191d5058b414)\nBut yeah, it turns out Claude Opus 5.5 is perfectly capable of 3D modeling in Vanilla JS + WebGL without Three.js.\nIn eyeballing the code I find the Three.js slightly easier to understand myself, but I rarely look at the code for these 3D projects so that isn't a particularly big deal.\nRecent articles\n[Hide your slop PR descriptions behind <details><summary>](/2026/Nov/9/details-summary/)- 9th November 2026[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026",
+    "topic": "ai-models",
     "tags": [
-      "product",
+      "ai-models",
       "models",
+      "open-source",
       "video",
-      "coding"
+      "coding",
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -436,8 +447,8 @@
     "fetched_at": "2026-11-09T10:06:07+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p>Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work - I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished result. Today's coding agents are great at writing PR descriptions.</p>\n<h4 id=\"they-re-too-good-at-describing-the-work\">They're too good at describing the work</h4>\n<p>The problem is that they are <em>too</em> good. An agent-written PR description is accurate and comprehensive. It describes the problem, the detailed solution, and the steps taken to verify it. That's a lot of information to absorb.</p>\n<p>It's not necessarily slop, but it <em>reads</em> like slop!</p>\n<p>It's very easy to spot an AI-written PR, and as with other forms of AI writing my instant reaction is best summarized as \"I'm not reading all of that\". It doesn't matter how accurate or useful the information is, I'm instantly put off by the thought that it will take me longer to read than it took the driving author to write... even when that driving author is me!</p>\n<p>I want human editorial judgement. I want someone to have thought just long enough about the PR to give me a human-approved introduction that helps me understand, at a high level, what the PR is for and whether it deserves more of my attention.</p>\n<p>I think I've found a low-effort way to do this that feels right.</p>\n<h4 id=\"hide-most-of-it-in-a-details-summary\">Hide most of it in a details/summary</h4>\n<p>The HTML <code>&lt;details&gt;&lt;summary&gt;</code> elements render as a collapsed heading (the summary) that can be expanded to view the larger piece of text. The code looks like this:</p>\n<div class=\"highlight highlight-text-html-basic\"><pre><span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">details</span><span class=\"pl-kos\">&gt;</span>\n  <span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">summary</span><span class=\"pl-kos\">&gt;</span>Claude Opus 5.5<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">summary</span><span class=\"pl-kos\">&gt;</span>\n  <span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">h2</span><span class=\"pl-kos\">&gt;</span>The hook<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">h2</span><span class=\"pl-kos\">&gt;</span>\n  Plugins implement <span class=\"pl-kos\">&lt;</span><span class=\"pl-ent\">code</span><span class=\"pl-kos\">&gt;</span>register_agent_reference_types(datasette)<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">code</span><span class=\"pl-kos\">&gt;</span>...\n<span class=\"pl-kos\">&lt;/</span><span class=\"pl-ent\">details</span><span class=\"pl-kos\">&gt;</span></pre></div>\n<p>When rendered, it looks <a href=\"https://github.com/datasette/datasette-agent/pull/51\">like this</a>:</p>\n<p><img alt=\"Screenshot of a GitHub PR. The text &quot;Claude Opus 5.5&quot; sits next to a little black arrow. Clicking on that text expands a full description inside the PR body.\" src=\"https://static.simonwillison.net/static/2026/details-summary-pr.gif\" /></p>\n<p>Crucially, <code>&lt;details&gt;&lt;summary&gt;</code> <em>is supported in GitHub Markdown</em>. You can drop those tags directly into an issue comment or PR description and GitHub will hide the details and display just the summary plus an expansion arrow.</p>\n<p>I've started using this for my AI-generated pull requests.</p>\n<p>The opening paragraph of my PRs will be carefully selected to act as a high-level explanation of what's going on - the shortest text a human can read that will help get them up to speed.</p>\n<p>I'll sometimes throw in a screenshot as well, since images are often the best way to quickly illustrate a new feature.</p>\n<p>The full agent-written essay then follows in a <code>&lt;details&gt;&lt;summary&gt;</code>. I use the model name and often the effort level as that summary, to make it abundantly clear what is going on - \"Claude Opus 5.5 Medium\" for example.</p>\n<p>My PRs don't feel nearly as sloppy now! The information is all still there, but a reader can glance at it and get the top, human-curated information without their eyes glazing over at multiple paragraphs of agent-written details.</p>\n<p>I don't always write the introduction myself - sometimes the agent has given me what I need already, hidden away in the avalanche of other text. My promise to the reader is that the short opener will represent my human judgement as to what is definitely worth their time.</p>\n<p>Here are some recent examples where I've used this pattern, including the opener I used:</p>\n<ul>\n<li>\n<a href=\"https://github.com/simonw/datasette/pull/3052\">datasette PR #3052: Redesign row page as a vertical list of fields</a> - \"The row page showed its single row as a one-row table. For wide tables, like a 46-column GitHub <code>repos</code> table, that scrolled far off to the right and left most of the page blank.\" (then a screenshot)</li>\n<li>\n<a href=\"https://github.com/simonw/datasette/pull/3043\">datasette PR #3043: Pagination bar showing which rows are on the current page</a> - \"Table pages that span more than one page now make it obvious where you are, and offer navigation at the top of the page as well as the bottom.\" (plus screenshot)</li>\n<li>\n<a href=\"https://github.com/simonw/datasette/pull/3042\">datasette PR #3042: Load edit-tools.js on demand via a small loader</a> - \"<code>edit-tools.js</code> (~220KB) was loaded on every table, row and database page, even for users who couldn't edit anything. Now only load it for users who can edit when they first interact with an edit feature (including mouse over an edit link).\"</li>\n<li>\n<a href=\"https://github.com/datasette/datasette-agent/pull/51\">datasette-agent PR #51: register_agent_reference_types plugin hook</a> - \"Lets plugins add their own kinds of item to the <code>#</code> tagging in the chat composer using a new <code>register_agent_reference_types(datasette)</code> plugin hook.\" - pictured above.</li>\n<li>\n<a href=\"https://github.com/simonw/llm/pull/1838\">llm PR #1838: Add llm openai endpoint add/list/remove/path commands</a> - \"Adds commands for managing the records in <code>extra-openai-models.yaml</code>, so OpenAI-compatible endpoints can be saved from the command line instead of by hand-editing YAML.\" - then copied <code>--help</code> output.</li>\n</ul>\n<h4 id=\"the-mnemonic\">The mnemonic</h4>\n<p>I used to have trouble remembering the order of the tags - is it <code>&lt;details&gt;&lt;summary&gt;</code> or <code>&lt;summary&gt;&lt;details&gt;</code>?</p>\n<p>Here are two tricks that helped me.</p>\n<p>First, and most obviously, the <code>&lt;summary&gt;</code> is clearly the bit where you summarize the details. That's the tag for your line of text that can be clicked to expand - the <code>&lt;details&gt;</code> element must then wrap everything else.</p>\n<p>An even better trick is to always refer to these two tags as \"details-summary\".</p>\n<p>\"details-summary\" is two syllables followed by three syllables. That rolls off the tongue more smoothly than the three-two punch of \"summary-details\".</p>\n<p>Say \"details-summary\" out loud just a few times and you'll never forget the order of the tags again.</p>\n<p>(I still wish GitHub would add a button to their Markdown editor for this - partly to save me painstakingly typing it on my mobile keyboard, and partly to help spread the word to more GitHub users that this feature exists.)</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/github\">github</a>, <a href=\"https://simonwillison.net/tags/html\">html</a>, <a href=\"https://simonwillison.net/tags/markdown\">markdown</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai-assisted-programming\">ai-assisted-programming</a>, <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "Hide your slop PR descriptions behind <details><summary>\n9th November 2026\nMost of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex. The PR is my unit of work\u2014I use them to bundle commits together, iterating on them until a feature is complete, document decisions and then merge the finished result. Today\u2019s coding agents are great at writing PR descriptions.\nThey\u2019re too good at describing the work\nThe problem is that they are too good. An agent-written PR description is accurate and comprehensive. It describes the problem, the detailed solution, and the steps taken to verify it. That\u2019s a lot of information to absorb.\nIt\u2019s not necessarily slop, but it reads like slop!\nIt\u2019s very easy to spot an AI-written PR, and as with other forms of AI writing my instant reaction is best summarized as \u201cI\u2019m not reading all of that\u201d. It doesn\u2019t matter how accurate or useful the information is, I\u2019m instantly put off by the thought that it will take me longer to read than it took the driving author to write... even when that driving author is me!\nI want human editorial judgement. I want someone to have thought just long enough about the PR to give me a human-approved introduction that helps me understand, at a high level, what the PR is for and whether it deserves more of my attention.\nI think I\u2019ve found a low-effort way to do this that feels right.\nHide most of it in a details/summary\nThe HTML <details><summary>\nelements render as a collapsed heading (the summary) that can be expanded to view the larger piece of text. The code looks like this:\n<details>\n<summary>Claude Opus 5.5</summary>\n<h2>The hook</h2>\nPlugins implement <code>register_agent_reference_types(datasette)</code>...\n</details>\nWhen rendered, it looks [like this](https://github.com/datasette/datasette-agent/pull/51):\nCrucially, <details><summary>\nis supported in GitHub Markdown. You can drop those tags directly into an issue comment or PR description and GitHub will hide the details and display just the summary plus an expansion arrow.\nI\u2019ve started using this for my AI-generated pull requests.\nThe opening paragraph of my PRs will be carefully selected to act as a high-level explanation of what\u2019s going on\u2014the shortest text a human can read that will help get them up to speed.\nI\u2019ll sometimes throw in a screenshot as well, since images are often the best way to quickly illustrate a new feature.\nThe full agent-written essay then follows in a <details><summary>\n. I use the model name and often the effort level as that summary, to make it abundantly clear what is going on\u2014\u201cClaude Opus 5.5 Medium\u201d for example.\nMy PRs don\u2019t feel nearly as sloppy now! The information is all still there, but a reader can glance at it and get the top, human-curated information without their eyes glazing over at multiple paragraphs of agent-written details.\nI don\u2019t always write the introduction myself\u2014sometimes the agent has given me what I need already, hidden away in the avalanche of other text. My promise to the reader is that the short opener will represent my human judgement as to what is definitely worth their time.\nHere are some recent examples where I\u2019ve used this pattern, including the opener I used:\n-\n[datasette PR #3052: Redesign row page as a vertical list of fields](https://github.com/simonw/datasette/pull/3052)\u2014\"The row page showed its single row as a one-row table. For wide tables, like a 46-column GitHubrepos\ntable, that scrolled far off to the right and left most of the page blank.\" (then a screenshot) -\n[datasette PR #3043: Pagination bar showing which rows are on the current page](https://github.com/simonw/datasette/pull/3043)\u2014\u201cTable pages that span more than one page now make it obvious where you are, and offer navigation at the top of the page as well as the bottom.\u201d (plus screenshot) -\n[datasette PR #3042: Load edit-tools.js on demand via a small loader](https://github.com/simonw/datasette/pull/3042)\u2014\"edit-tools.js\n(~220KB) was loaded on every table, row and database page, even for users who couldn\u2019t edit anything. Now only load it for users who can edit when they first interact with an edit feature (including mouse over an edit link).\" -\n[datasette-agent PR #51: register_agent_reference_types plugin hook](https://github.com/datasette/datasette-agent/pull/51)\u2014\"Lets plugins add their own kinds of item to the#\ntagging in the chat composer using a newregister_agent_reference_types(datasette)\nplugin hook.\"\u2014pictured above. -\n[llm PR #1838: Add llm openai endpoint add/list/remove/path commands](https://github.com/simonw/llm/pull/1838)\u2014\"Adds commands for managing the records inextra-openai-models.yaml\n, so OpenAI-compatible endpoints can be saved from the command line instead of by hand-editing YAML.\"\u2014then copied--help\noutput.\nThe mnemonic\nI used to have trouble remembering the order of the tags\u2014is it <details><summary>\nor <summary><details>\n?\nHere are two tricks that helped me.\nFirst, and most obviously, the <summary>\nis clearly the bit where you summarize the details. That\u2019s the tag for your line of text that can be clicked to expand\u2014the <details>\nelement must then wrap everything else.\nAn even better trick is to always refer to these two tags as \u201cdetails-summary\u201d.\n\u201cdetails-summary\u201d is two syllables followed by three syllables. That rolls off the tongue more smoothly than the three-two punch of \u201csummary-details\u201d.\nSay \u201cdetails-summary\u201d out loud just a few times and you\u2019ll never forget the order of the tags again.\n(I still wish GitHub would add a button to their Markdown editor for this\u2014partly to save me painstakingly typing it on my mobile keyboard, and partly to help spread the word to more GitHub users that this feature exists.)\nMore recent articles\n[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026",
     "topic": "tools",
     "tags": [
       "tools",
@@ -459,16 +470,16 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A biopharma automation reached 99.95% accuracy on its business critical tasks after the team separated actual errors from ambiguous cases and exceptions. Matthew Jewkes describes building that system at Clarivate, where indexing drug development documents meant handling tens of thousands of new tasks a month. An early agent approach reached around 80% to 83%. Working through 1,000 evaluation examples with domain experts exposed three different problems: the model could be wrong, the organization could lack an agreed answer, or genuinely new science could require judgment. Each needed its own route. The routine path became a tightly specified automation, with uncertain and unusual cases escalated instead of pushed through.\n\nThe larger payoff was recovering expert attention. Once routine decisions were handled, the remaining cases could be grouped for deliberate review: critical exceptions to clear, ambiguous low value work to freeze, and unusual demand that might justify a new product. One expert used that structured backlog to form an investment thesis before a major customer raised the same need. Jewkes lays out where the investment makes sense, how much evaluation work high reliability requires and why organizational ownership and trust matter alongside engineering. His bet is that companies will gain more from managing collective attention and judgment than from choosing a particular orchestration framework.\n\nSpeaker info:\n- https://x.com/mjewkes\n- https://linkedin.com/in/mjewkes\n\nTimestamps:\n0:00 - Expert attention and cheap execution\n1:48 - Fully automate the happy path\n4:18 - The biopharma indexing case study\n6:39 - Errors, ambiguity and exceptions\n8:52 - Routing uncertainty and the critical path\n9:58 - From 95% to 99.95% accuracy\n11:24 - Recovering expert judgment\n12:51 - Exceptions as market signals\n14:51 - Where full automation is worth the cost\n17:17 - Evals and the value of human attention",
+    "extraction_method": "youtube",
+    "body": "A biopharma automation reached 99.95% accuracy on its business critical tasks after the team separated actual errors from ambiguous cases and exceptions. Matthew Jewkes describes building that system at Clarivate, where indexing drug development documents meant handling tens of thousands of new tasks a month. An early agent approach reached around 80% to 83%. Working through 1,000 evaluation examples with domain experts exposed three different problems: the model could be wrong, the organization could lack an agreed answer, or genuinely new science could require judgment. Each needed its own route. The routine path became a tightly specified automation, with uncertain and unusual cases escalated instead of pushed through.\n\nThe larger payoff was recovering expert attention. Once routine decisions were handled, the remaining cases could be grouped for deliberate review: critical exceptions to clear, ambiguous low value work to freeze, and unusual demand that might justify a new product. One expert used that structured backlog to form an investment thesis before a major customer raised the same need. Jewkes lays out where the investment makes sense, how much evaluation work high reliability requires and why organizational ownership and trust matter alongside engineering. His bet is that companies will gain more from managing collective attention and judgment than from choosing a particular orchestration framework.\n\nSpeaker info:\n- https://x.com/mjewkes\n- https://linkedin.com/in/mjewkes\n\nTimestamps:\n0:00 - Expert attention and cheap execution\n1:48 - Fully automate the happy path\n4:18 - The biopharma indexing case study\n6:39 - Errors, ambiguity and exceptions\n8:52 - Routing uncertainty and the critical path\n9:58 - From 95% to 99.95% accuracy\n11:24 - Recovering expert judgment\n12:51 - Exceptions as market signals\n14:51 - Where full automation is worth the cost\n17:17 - Evals and the value of human attention\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/wWisOHEcMPE",
     "topic": "research",
     "tags": [
       "models",
       "agents",
       "benchmark",
       "research",
-      "coding",
-      "funding"
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -481,8 +492,8 @@
     "fetched_at": "2026-11-09T10:06:08+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "A coding agent wired unit tests to production inference, then ran them about 30 times. Keiji Kanazawa had spent three weeks letting coding agents refactor a personal research assistant. A bad digest sent him looking for a trace, and he discovered the \"agent\" was still a deterministic workflow. Skills had no SKILL.md, different architectural concepts were aliases for the same thing, and a daily reflection job was producing empty reports. He had approved plans without checking whether the implementation meant what its labels promised.\n\nHe rebuilt around an explicit agent runtime, clearer specifications and goal rubrics, comparing four frameworks before selecting tools for his own needs as a product manager. The working example is a video deep dive agent that extracts 440 keyframes from an inference lecture, pairs blackboard equations with explanations and lets him question individual sections. The result generalizes to slide decks, coding demos and terminal recordings. He iterates on an evaluation rubric, lets agents optimize against it and uses adversarial reviews between coding agents. The rubrics need scrutiny too: one was tuned to a single lecture and failed on five other videos. His answer to the code reading debate is to own the goals and evaluation loop while continuing to delegate most implementation.\n\nSpeaker info:\n- https://x.com/gojira\n- https://linkedin.com/in/keijikanazawa\n- https://gojira.blog/\n\nTimestamps:\n0:00 - Introduction\n0:33 - The L/Z debate over reading code\n1:56 - Building a personal research agent\n4:00 - The agent that was not an agent\n6:33 - Unit tests on production inference\n7:59 - Rebuilding with clearer specifications\n9:21 - Comparing four agent frameworks\n12:04 - Video deep dives from keyframes\n13:59 - Rubrics and evaluation loops\n16:36 - Catching an overfit rubric\n18:25 - Own the goals and delegate the code",
+    "extraction_method": "youtube",
+    "body": "A coding agent wired unit tests to production inference, then ran them about 30 times. Keiji Kanazawa had spent three weeks letting coding agents refactor a personal research assistant. A bad digest sent him looking for a trace, and he discovered the \"agent\" was still a deterministic workflow. Skills had no SKILL.md, different architectural concepts were aliases for the same thing, and a daily reflection job was producing empty reports. He had approved plans without checking whether the implementation meant what its labels promised.\n\nHe rebuilt around an explicit agent runtime, clearer specifications and goal rubrics, comparing four frameworks before selecting tools for his own needs as a product manager. The working example is a video deep dive agent that extracts 440 keyframes from an inference lecture, pairs blackboard equations with explanations and lets him question individual sections. The result generalizes to slide decks, coding demos and terminal recordings. He iterates on an evaluation rubric, lets agents optimize against it and uses adversarial reviews between coding agents. The rubrics need scrutiny too: one was tuned to a single lecture and failed on five other videos. His answer to the code reading debate is to own the goals and evaluation loop while continuing to delegate most implementation.\n\nSpeaker info:\n- https://x.com/gojira\n- https://linkedin.com/in/keijikanazawa\n- https://gojira.blog/\n\nTimestamps:\n0:00 - Introduction\n0:33 - The L/Z debate over reading code\n1:56 - Building a personal research agent\n4:00 - The agent that was not an agent\n6:33 - Unit tests on production inference\n7:59 - Rebuilding with clearer specifications\n9:21 - Comparing four agent frameworks\n12:04 - Video deep dives from keyframes\n13:59 - Rubrics and evaluation loops\n16:36 - Catching an overfit rubric\n18:25 - Own the goals and delegate the code\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/6TjFjHPjVH0",
     "topic": "research",
     "tags": [
       "open-source",
@@ -503,14 +514,15 @@
     "fetched_at": "2026-11-09T02:24:33+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><strong>Research:</strong> <a href=\"https://github.com/simonw/research/tree/main/sqlite-parse-number-c-vs-rust#readme\">parse_number() as a SQLite extension: C vs Rust</a></p>\n        <p>I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a <code>parse_number()</code> function for turning strings like <code>-$1,234.56</code> or <code>'12.5%'</code> into numeric values that could be summed and sorted.</p>\n<p>I fired up regular Claude chat (Opus 5.5) <a href=\"https://claude.ai/share/7f18f157-6c96-4d49-a1d4-f02403e3b261\">and prompted</a>:</p>\n<blockquote>\n<p><code>I'm thinking about a SQLite custom function 'parse_number(value)' that strips ',', '$', '\u00a3' and '%', handles a leading '-', and returns 'NULL' for anything it can\u2019t parse</code></p>\n<p><code>Explore the difference between building this as a SQLite extension in C v.s. in Rust - I want to compare performance and code complexity and size of the resulting</code>.so<code>(or whatever) file</code></p>\n</blockquote>\n<p>This gave me a solid starting point - the Rust extension was 321 KB (using <a href=\"https://github.com/rusqlite/rusqlite\">Rusqlite</a>) and 298 KB (using <a href=\"https://github.com/asg017/sqlite-loadable-rs\">sqlite-loadable-rs</a>), while the C extension was 14 KB. But the Rust extension was faster!</p>\n<p>Turns out that's because the Rust equivalent of C's <code>strtod</code> is \"twice as fast\". So I prompted:</p>\n<blockquote>\n<p><code>Try writing your own C function for parsing text into a decimal number that catches up to or beats the Rust implementation</code></p>\n</blockquote>\n<p>And it did:</p>\n<blockquote>\n<p>Net cost per row over 2 million rows, lower is better:</p>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>first C</th>\n<th>new C</th>\n<th>rusqlite</th>\n<th>sqlite-loadable</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mixed data</td>\n<td>67 ns</td>\n<td><strong>19 ns</strong></td>\n<td>46 ns</td>\n<td>41 ns</td>\n</tr>\n<tr>\n<td>Integers only</td>\n<td>25 ns</td>\n<td><strong>16 ns</strong></td>\n<td>36 ns</td>\n<td>32 ns</td>\n</tr>\n<tr>\n<td>Decimals only</td>\n<td>106 ns</td>\n<td><strong>18 ns</strong></td>\n<td>55 ns</td>\n<td>47 ns</td>\n</tr>\n</tbody>\n</table>\n</blockquote>\n\n<p>Finally, I had it rewrite the prototype as a research report to match the others in <a href=\"https://github.com/simonw/research\">simonw/research</a> by prompting this:</p>\n<blockquote>\n<p><code>Clone simonw/research from GitHub and turn your above investigation into a research report as seen in that repository - you can give me a zip file to download that contains your new folder</code></p>\n</blockquote>\n<p>Here's <a href=\"https://github.com/simonw/research/tree/main/sqlite-parse-number-c-vs-rust#readme\">the resulting report</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/c\">c</a>, <a href=\"https://simonwillison.net/tags/research\">research</a>, <a href=\"https://simonwillison.net/tags/sqlite\">sqlite</a>, <a href=\"https://simonwillison.net/tags/rust\">rust</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "8th November 2026\n[Research](/elsewhere/research/)\n[parse_number() as a SQLite extension: C vs Rust](https://github.com/simonw/research/tree/main/sqlite-parse-number-c-vs-rust#readme)\u2014 Four SQLite extensions implement the same `parse_number()` behavior in C and Rust, with tests covering type preservation, parsing rules, and floating-point accuracy. The optimized C implementation was fastest at 16\u201319 ns per row, about twice as fast as the Rust versions and far faster than SQL `replace()`. Plain C was slower on decimals because it relied on `strtod()`, while a compact fast path closed that gap; all versions matched across 8 million fuzz checks.\nI was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number()\nfunction for turning strings like -$1,234.56\nor '12.5%'\ninto numeric values that could be summed and sorted.\nI fired up regular Claude chat (Opus 5.5) [and prompted](https://claude.ai/share/7f18f157-6c96-4d49-a1d4-f02403e3b261):\nI'm thinking about a SQLite custom function 'parse_number(value)' that strips ',', '$', '\u00a3' and '%', handles a leading '-', and returns 'NULL' for anything it can\u2019t parse\nExplore the difference between building this as a SQLite extension in C v.s. in Rust - I want to compare performance and code complexity and size of the resulting\n.so(or whatever) file\nThis gave me a solid starting point - the Rust extension was 321 KB (using [Rusqlite](https://github.com/rusqlite/rusqlite)) and 298 KB (using [sqlite-loadable-rs](https://github.com/asg017/sqlite-loadable-rs)), while the C extension was 14 KB. But the Rust extension was faster!\nTurns out that's because the Rust equivalent of C's strtod\nis \"twice as fast\". So I prompted:\nTry writing your own C function for parsing text into a decimal number that catches up to or beats the Rust implementation\nAnd it did, using \"Clinger's fast path\":\nNet cost per row over 2 million rows, lower is better:\nfirst C new C rusqlite sqlite-loadable Mixed data 67 ns 19 ns 46 ns 41 ns Integers only 25 ns 16 ns 36 ns 32 ns Decimals only 106 ns 18 ns 55 ns 47 ns\nFinally, I had it rewrite the prototype as a research report to match the others in [simonw/research](https://github.com/simonw/research) by prompting this:\nClone simonw/research from GitHub and turn your above investigation into a research report as seen in that repository - you can give me a zip file to download that contains your new folder\nHere's [the resulting report](https://github.com/simonw/research/tree/main/sqlite-parse-number-c-vs-rust#readme).\nRecent articles\n[Hide your slop PR descriptions behind <details><summary>](/2026/Nov/9/details-summary/)- 9th November 2026[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026",
     "topic": "research",
     "tags": [
       "models",
       "open-source",
       "research",
-      "coding"
+      "coding",
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -523,16 +535,17 @@
     "fetched_at": "2026-11-08T22:44:21+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Martin Harrysson and Prakhar Dixit of McKinsey, with their colleague Shilpa, share what they're seeing across large companies using AI agents in software development. Most still report modest gains, but roughly the top 20 to 25% are now seeing 2x end-to-end improvements. They walk through what those companies do differently: shorter agent-driven cycles instead of two-week sprints, smaller pods with merged roles, curated skills and shared context, and change management that goes beyond pilots. They also cover why quality can drop as code generation speeds up, how the bottleneck moves to requirements and release, and why measuring impact is still the hardest part.\n\nChapters:\n0:00 Intro\n1:23 Coming out of the trough of disillusionment\n3:32 Four patterns that work\n5:10 Operating model: shorter cycles\n7:15 Talent: smaller pods, merged roles\n8:13 Tech: context and trust\n9:24 Change management at scale\n10:24 Curating skills\n11:35 Faster code, lower quality\n14:07 The bottleneck moves to requirements and release\n16:07 Measuring impact\n19:02 Wrap-up\n\nMartin Harrysson\nPrakhar Dixit\nhttps://www.mckinsey.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Martin Harrysson and Prakhar Dixit of McKinsey, with their colleague Shilpa, share what they're seeing across large companies using AI agents in software development. Most still report modest gains, but roughly the top 20 to 25% are now seeing 2x end-to-end improvements. They walk through what those companies do differently: shorter agent-driven cycles instead of two-week sprints, smaller pods with merged roles, curated skills and shared context, and change management that goes beyond pilots. They also cover why quality can drop as code generation speeds up, how the bottleneck moves to requirements and release, and why measuring impact is still the hardest part.\n\nChapters:\n0:00 Intro\n1:23 Coming out of the trough of disillusionment\n3:32 Four patterns that work\n5:10 Operating model: shorter cycles\n7:15 Talent: smaller pods, merged roles\n8:13 Tech: context and trust\n9:24 Change management at scale\n10:24 Curating skills\n11:35 Faster code, lower quality\n14:07 The bottleneck moves to requirements and release\n16:07 Measuring impact\n19:02 Wrap-up\n\nMartin Harrysson\nPrakhar Dixit\nhttps://www.mckinsey.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/21tuT-e4NVo",
     "topic": "development",
     "tags": [
+      "development",
       "release",
       "models",
       "open-source",
       "agents",
-      "coding",
-      "development"
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -545,12 +558,13 @@
     "fetched_at": "2026-11-08T22:44:21+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "",
+    "extraction_method": "youtube",
+    "body": "author: AI Engineer\n\nvideo: https://www.youtube.com/embed/7YvX1_xKUyE",
     "topic": "ai-models",
     "tags": [
       "ai-models",
-      "video"
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -563,8 +577,8 @@
     "fetched_at": "2026-11-08T22:44:21+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Ryan Stevens leads applied science at Ramp and explains how the team built end-to-end evals for Stack, its AI agent for bookkeepers. He starts by breaking an accountant's job into tasks like reconciliation and variance analysis, then builds synthetic businesses with full books so agents can be back-tested on the same data again and again. He covers accuracy versus pass@k, why the latest models still fail mostly on reasoning, and the experiments that didn't work, including auto-tuning prompts. Then he shows the ones that did: removing unneeded skills, testing memories across two time periods, and scheduled regression runs that report problems in Slack.\n\nChapters:\n0:00 Intro\n0:47 What's your agent's goal?\n1:16 Breaking down a bookkeeper's job\n2:43 Building a benchmark\n3:20 Before and after you have users\n4:26 Data is the bottleneck\n4:48 Building synthetic businesses\n5:45 Evals are just back-tests\n7:08 How each task is graded\n9:14 Accuracy vs. pass@k\n10:24 Picking a model\n11:18 Why models fail: reasoning\n12:18 Experiments that failed\n13:36 Skill ablation\n15:01 Testing memories\n17:01 Regression testing in the background\n18:07 Takeaways\n\nRyan Stevens\nhttps://ramp.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Ryan Stevens leads applied science at Ramp and explains how the team built end-to-end evals for Stack, its AI agent for bookkeepers. He starts by breaking an accountant's job into tasks like reconciliation and variance analysis, then builds synthetic businesses with full books so agents can be back-tested on the same data again and again. He covers accuracy versus pass@k, why the latest models still fail mostly on reasoning, and the experiments that didn't work, including auto-tuning prompts. Then he shows the ones that did: removing unneeded skills, testing memories across two time periods, and scheduled regression runs that report problems in Slack.\n\nChapters:\n0:00 Intro\n0:47 What's your agent's goal?\n1:16 Breaking down a bookkeeper's job\n2:43 Building a benchmark\n3:20 Before and after you have users\n4:26 Data is the bottleneck\n4:48 Building synthetic businesses\n5:45 Evals are just back-tests\n7:08 How each task is graded\n9:14 Accuracy vs. pass@k\n10:24 Picking a model\n11:18 Why models fail: reasoning\n12:18 Experiments that failed\n13:36 Skill ablation\n15:01 Testing memories\n17:01 Regression testing in the background\n18:07 Takeaways\n\nRyan Stevens\nhttps://ramp.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/WJTQBENv0KI",
     "topic": "media",
     "tags": [
       "media",
@@ -572,8 +586,8 @@
       "open-source",
       "agents",
       "benchmark",
-      "coding",
-      "enterprise"
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -586,16 +600,16 @@
     "fetched_at": "2026-11-08T18:58:10+00:00",
     "source_id": "matt-wolfe",
     "source_name": "Matt Wolfe",
-    "extraction_method": "rss",
-    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "extraction_method": "youtube",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/jKjir4-HmQI",
     "topic": "media",
     "tags": [
+      "video",
+      "coding",
       "robotics",
       "enterprise",
       "media",
-      "news",
-      "tools",
-      "video"
+      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -608,16 +622,16 @@
     "fetched_at": "2026-11-08T18:58:11+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Natalia Connolly and Kevin Madura of AlixPartners pointed Claude Code at a real post-merger procurement analysis: hundreds of vendors and more than 40,000 contracts. The first answers looked complete, but one total was off by about $800,000 and a key renewal deadline was a month late. They walk through why: long contracts that silently failed to process, amendments that weren't linked to their parent contracts, and rate tables split across pages. They explain how a five-stage pipeline that structures the data first, plus custom tools with built-in business rules, made every answer traceable to its source. They also share lessons on clear access errors, de-duplicating savings found by parallel agents, and giving the agent context about what the business is already doing.\n\nChapters:\n0:00 Intro\n0:52 The deal: two companies, 40,000 contracts\n2:30 Answers that looked right\n3:29 Why contract data is messy\n5:46 A five-stage processing pipeline\n7:08 Charts, tables and structured output\n8:26 Custom tools with built-in business rules\n10:20 Packaging what works\n11:14 Lesson: the wrong date\n11:59 Lesson: orphaned amendments\n13:25 Lesson: access errors look like zeros\n14:37 Lesson: de-duplicating savings\n16:04 Lesson: know what the business is already doing\n17:37 Takeaways\n\nNatalia Connolly\nKevin Madura\nhttps://www.alixpartners.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Natalia Connolly and Kevin Madura of AlixPartners pointed Claude Code at a real post-merger procurement analysis: hundreds of vendors and more than 40,000 contracts. The first answers looked complete, but one total was off by about $800,000 and a key renewal deadline was a month late. They walk through why: long contracts that silently failed to process, amendments that weren't linked to their parent contracts, and rate tables split across pages. They explain how a five-stage pipeline that structures the data first, plus custom tools with built-in business rules, made every answer traceable to its source. They also share lessons on clear access errors, de-duplicating savings found by parallel agents, and giving the agent context about what the business is already doing.\n\nChapters:\n0:00 Intro\n0:52 The deal: two companies, 40,000 contracts\n2:30 Answers that looked right\n3:29 Why contract data is messy\n5:46 A five-stage processing pipeline\n7:08 Charts, tables and structured output\n8:26 Custom tools with built-in business rules\n10:20 Packaging what works\n11:14 Lesson: the wrong date\n11:59 Lesson: orphaned amendments\n13:25 Lesson: access errors look like zeros\n14:37 Lesson: de-duplicating savings\n16:04 Lesson: know what the business is already doing\n17:37 Takeaways\n\nNatalia Connolly\nKevin Madura\nhttps://www.alixpartners.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/u7fsyrXsPBE",
     "topic": "agents",
     "tags": [
       "models",
       "agents",
+      "video",
       "infrastructure",
       "coding",
-      "education",
-      "enterprise"
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -630,16 +644,16 @@
     "fetched_at": "2026-11-08T14:09:12+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Matt Ragone is a financial planner at Range, an all-in-one wealth management firm, not an engineer. He leads AI adoption for its planning team and shares the step-by-step method non-technical planners used to build their own agents and skills. With standardized processes and client data already in one place, the team could have an agent draft cash flow analyses, insurance reviews and tax reviews while planners are on calls with other clients, with a certified financial planner reviewing everything before it goes out. He walks through the five steps: pick a workflow you repeat, teach it real cases, package it as a skill, test it on edge cases, and ship it with an owner and a reviewer.\n\nChapters:\n0:00 Intro\n0:42 A financial planner, not an engineer\n2:28 Using AI as a chatbot\n3:03 The bottleneck was typing speed\n3:37 What changed with agents\n4:21 What it took beyond a good prompt\n6:27 Five steps to build a skill\n6:58 Step 1: Pick a workflow you repeat\n7:47 Step 2: Show it real cases\n9:11 Step 3: Package it as a skill\n10:50 Step 4: Test it on real cases\n11:52 Step 5: Ship it with an owner and a reviewer\n12:27 Where Range is now\n13:29 Let the experts build the skills\n14:28 The bottleneck has moved\n\nMatt Ragone\nhttps://www.range.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Matt Ragone is a financial planner at Range, an all-in-one wealth management firm, not an engineer. He leads AI adoption for its planning team and shares the step-by-step method non-technical planners used to build their own agents and skills. With standardized processes and client data already in one place, the team could have an agent draft cash flow analyses, insurance reviews and tax reviews while planners are on calls with other clients, with a certified financial planner reviewing everything before it goes out. He walks through the five steps: pick a workflow you repeat, teach it real cases, package it as a skill, test it on edge cases, and ship it with an owner and a reviewer.\n\nChapters:\n0:00 Intro\n0:42 A financial planner, not an engineer\n2:28 Using AI as a chatbot\n3:03 The bottleneck was typing speed\n3:37 What changed with agents\n4:21 What it took beyond a good prompt\n6:27 Five steps to build a skill\n6:58 Step 1: Pick a workflow you repeat\n7:47 Step 2: Show it real cases\n9:11 Step 3: Package it as a skill\n10:50 Step 4: Test it on real cases\n11:52 Step 5: Ship it with an owner and a reviewer\n12:27 Where Range is now\n13:29 Let the experts build the skills\n14:28 The bottleneck has moved\n\nMatt Ragone\nhttps://www.range.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/EaOit1mmR9g",
     "topic": "tutorials",
     "tags": [
       "tutorials",
       "agents",
+      "video",
       "coding",
       "education",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -652,16 +666,16 @@
     "fetched_at": "2026-11-08T14:09:12+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Tanmay Sah and Dolly Sah look at a capability today's coding agents are missing: undoing what they've done. Drawing on their research projects UndoBench and EvoUndo, they show that an agent that completes a task can't necessarily put things back when something breaks, because Git doesn't cover external API calls, runtime config or notifications, and retrying doesn't reverse side effects. In EvoUndo, 197 of 478 changes that made an agent more capable (about 42%) also broke its ability to recover. They lay out an approach that captures the original state, picks the right response (retry, restore, compensate or escalate) and independently verifies the result.\n\nTanmay Sah\nhttps://x.com/TanmayGradient\n\nDolly Sah\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Tanmay Sah and Dolly Sah look at a capability today's coding agents are missing: undoing what they've done. Drawing on their research projects UndoBench and EvoUndo, they show that an agent that completes a task can't necessarily put things back when something breaks, because Git doesn't cover external API calls, runtime config or notifications, and retrying doesn't reverse side effects. In EvoUndo, 197 of 478 changes that made an agent more capable (about 42%) also broke its ability to recover. They lay out an approach that captures the original state, picks the right response (retry, restore, compensate or escalate) and independently verifies the result.\n\nTanmay Sah\nhttps://x.com/TanmayGradient\n\nDolly Sah\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/BT1Mo-fD-g0",
     "topic": "agents",
     "tags": [
       "api",
       "agents",
       "research",
+      "video",
       "coding",
-      "events",
-      "video"
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -674,16 +688,16 @@
     "fetched_at": "2026-11-08T14:09:12+00:00",
     "source_id": "ai-engineer",
     "source_name": "AI Engineer",
-    "extraction_method": "rss",
-    "body": "Every company has someone who knows everything: the reorgs, the politics, which projects are really on track. Joao Wenzel of Citadel Securities explains how his team approximates that person with an agentic system that builds an institutional memory from decks, Slack, meeting notes, code changes and agent traces. Borrowing the idea of a state estimator from robotics, the system updates its beliefs as evidence arrives, lets facts age, grades its own predictions against what actually happened, and takes corrections from people. He shows why simple retrieval isn't enough, how agents catch \"watermelon projects\" that are green on the outside and red on the inside, and how back-testing showed that projects the agent flagged were twice as likely to slip.\n\nChapters:\n0:00 Intro\n0:22 The person who knows everything\n1:16 Can agents help with strategy?\n1:51 An institutional memory layer\n2:18 Top-down and bottom-up evidence\n3:05 Borrowing the state estimator from robotics\n4:06 Getting data out of a status deck\n6:11 The loop: update, age, observe, grade, correct\n6:57 Why retrieval isn't enough\n7:21 Update: building a record over time\n9:12 Age: every fact has a half-life\n10:12 Observe: specialist agents beat one big pass\n11:12 Grade: back-testing what slips next\n12:12 Correct: asking people the right questions\n13:17 Bottom-up signals: Slack, PRs and agent traces\n15:45 How Citadel Securities uses it\n16:38 Open problems\n17:24 Takeaways\n\nJoao Wenzel\nhttps://www.citadelsecurities.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!",
+    "extraction_method": "youtube",
+    "body": "Every company has someone who knows everything: the reorgs, the politics, which projects are really on track. Joao Wenzel of Citadel Securities explains how his team approximates that person with an agentic system that builds an institutional memory from decks, Slack, meeting notes, code changes and agent traces. Borrowing the idea of a state estimator from robotics, the system updates its beliefs as evidence arrives, lets facts age, grades its own predictions against what actually happened, and takes corrections from people. He shows why simple retrieval isn't enough, how agents catch \"watermelon projects\" that are green on the outside and red on the inside, and how back-testing showed that projects the agent flagged were twice as likely to slip.\n\nChapters:\n0:00 Intro\n0:22 The person who knows everything\n1:16 Can agents help with strategy?\n1:51 An institutional memory layer\n2:18 Top-down and bottom-up evidence\n3:05 Borrowing the state estimator from robotics\n4:06 Getting data out of a status deck\n6:11 The loop: update, age, observe, grade, correct\n6:57 Why retrieval isn't enough\n7:21 Update: building a record over time\n9:12 Age: every fact has a half-life\n10:12 Observe: specialist agents beat one big pass\n11:12 Grade: back-testing what slips next\n12:12 Correct: asking people the right questions\n13:17 Bottom-up signals: Slack, PRs and agent traces\n15:45 How Citadel Securities uses it\n16:38 Open problems\n17:24 Takeaways\n\nJoao Wenzel\nhttps://www.citadelsecurities.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/jDwc0aXTAFg",
     "topic": "robotics",
     "tags": [
       "models",
       "agents",
       "benchmark",
+      "video",
       "coding",
-      "robotics",
-      "events"
+      "robotics"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -740,11 +754,15 @@
     "fetched_at": "2026-11-09T10:06:07+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><a href=\"https://news.ycombinator.com/item?id=50405674#50407316\">My comment</a> on <a href=\"https://news.ycombinator.com/item?id=50405674\">Terry Pratchett&#x27;s Study</a> &mdash; Hacker News.</p><p>Terry Pratchett once wrote about the concept of \"horizontal wealth\". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things you liked before you got rich: <a href=\"https://chibuikeani.blogspot.com/2017/02/the-price-of-happiness-horizontal-vs.html\">https://chibuikeani.blogspot.com/2017/02/the-price-of-happin...</a></p>\n<blockquote>\n<p>But horizontal wealth means not letting your increased income dictate your tastes. You like books and now you have money? Buy more books! Change those catenary bookshelves for good hardwood ones! In my case, build a library extension to your office. And, of course, you buy what will be useful for that most wonderful of pursuits, blind research, which is research without direction for the sheer joy of it.</p>\n</blockquote>\n<p>(Original source is his book A Slip of the Keyboard - this linked blog post quotes that bit.)</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/hacker-news\">hacker-news</a>, <a href=\"https://simonwillison.net/tags/terry-pratchett\">terry-pratchett</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "7th November 2026\nTerry Pratchett once wrote about the concept of \"horizontal wealth\". Vertical wealth is where you spend money on rich people stuff - yachts and suchlike. Horizontal wealth is where you spend more money on the things you liked before you got rich: [https://chibuikeani.blogspot.com/2017/02/the-price-of-happin...](https://chibuikeani.blogspot.com/2017/02/the-price-of-happiness-horizontal-vs.html)\nBut horizontal wealth means not letting your increased income dictate your tastes. You like books and now you have money? Buy more books! Change those catenary bookshelves for good hardwood ones! In my case, build a library extension to your office. And, of course, you buy what will be useful for that most wonderful of pursuits, blind research, which is research without direction for the sheer joy of it.\n(Original source is his book A Slip of the Keyboard - this linked blog post quotes that bit.)\nRecent articles\n[Hide your slop PR descriptions behind <details><summary>](/2026/Nov/9/details-summary/)- 9th November 2026[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026",
     "topic": "research",
     "tags": [
+      "models",
+      "open-source",
       "research",
+      "coding",
+      "development",
       "education"
     ],
     "dearrow_thumbnail_url": "",
@@ -2902,15 +2920,17 @@
     "fetched_at": "2026-11-09T10:06:07+00:00",
     "source_id": "simon-willison",
     "source_name": "Simon Willison",
-    "extraction_method": "rss",
-    "body": "<p><a href=\"https://news.ycombinator.com/item?id=50353300#50354278\">My comment</a> on <a href=\"https://news.ycombinator.com/item?id=50353300\">AI is destroying my CS degree</a> &mdash; Hacker News.</p><p>I don't envy educators right now.</p>\n<p>AI clearly means you need to change how you teach and evaluate students. We are only a few years in though, and it's still extremely unclear what effective teaching with these tools looks like.</p>\n<p>The worst part is that the evaluation loop is measured in multiple years! If you start trying some new education mechanism today you won't get a robust idea of how well it works until your current cohort graduate in 3-6 years time.</p>\n<p>Students effectively all become guinea pigs for untested new ways of learning and teaching.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/education\">education</a>, <a href=\"https://simonwillison.net/tags/hacker-news\">hacker-news</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a></p>",
+    "extraction_method": "trafilatura",
+    "body": "3rd November 2026\nI don't envy educators right now.\nAI clearly means you need to change how you teach and evaluate students. We are only a few years in though, and it's still extremely unclear what effective teaching with these tools looks like.\nThe worst part is that the evaluation loop is measured in multiple years! If you start trying some new education mechanism today you won't get a robust idea of how well it works until your current cohort graduate in 3-6 years time.\nStudents effectively all become guinea pigs for untested new ways of learning and teaching.\nRecent articles\n[Hide your slop PR descriptions behind <details><summary>](/2026/Nov/9/details-summary/)- 9th November 2026[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026",
     "topic": "education",
     "tags": [
+      "education",
+      "models",
+      "open-source",
       "benchmark",
       "coding",
       "funding",
-      "education",
-      "tools"
+      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
