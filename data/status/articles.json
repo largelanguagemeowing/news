@@ -1,5 +1,125 @@
 [
   {
+    "article_id": 1249744,
+    "title": "Amazon saves millions by replacing Sonnet 4.6 with Strands Decider",
+    "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/",
+    "published_at": "2026-11-10T09:39:53+00:00",
+    "fetched_at": "2026-11-10T11:32:24+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. classifiers are all you need. bonus points if you use an llm to generate labeled data to train idiot models and then replace the llm with it.",
+    "topic": "general",
+    "tags": [
+      "general",
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1248066,
+    "title": "Closing the AI guidance gap in education",
+    "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+    "published_at": "2026-11-10T09:00:00+00:00",
+    "fetched_at": "2026-11-10T11:32:22+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Lessons from OpenAI\u2019s EMEA education partnerships and new ThinkYoung research. Supporting teachers, AI literacy and independent learning.",
+    "topic": "research",
+    "tags": [
+      "research",
+      "education"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1249439,
+    "title": "Introducing Our Smallest, Most Efficient Model: Muse Ember",
+    "url": "https://simonwillison.net/2026/Nov/10/muse-ember/",
+    "published_at": "2026-11-10T07:28:21+00:00",
+    "fetched_at": "2026-11-10T11:32:23+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://research.meta.ai/blog/muse-ember\">Introducing Our Smallest, Most Efficient Model: Muse Ember</a></strong></p>\nMeta AI just launched their entry in the Claude Haiku/GPT Luna category: Muse Ember, which they describe as:</p>\n<blockquote>\n<p>[...] our smallest and most efficient model designed for complex reasoning execution and the work agents repeat all day: tool calls, coding subtasks, routing, extraction, and long document parsing.</p>\n</blockquote>\n<p>For shorter prompts it's priced the same as GPT-6 Luna and Claude Haiku 5.5 - both are $0.10/million input tokens and $0.50/million output. Today's other big model release, Claude Fable 5.2, is <em>80x that price</em> at $8/$40.</p>\n<p>The pricing is a little less straightforward as prompts get longer, though. Luna, Ember, and Haiku all support up to a million input tokens, but they also all have a threshold after which the price goes up. Taking <em>that</em> threshold into account Ember is priced between the two others:</p>\n<center><table>\n  <thead>\n    <tr>\n      <th>Model</th>\n      <th>Prompt size</th>\n      <th>Input ($/M)</th>\n      <th>Cached input</th>\n      <th>Output</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td rowspan=\"2\">GPT-6 Luna</td>\n      <td>\u2264272k</td>\n      <td>$0.10</td>\n      <td>$0.01</td>\n      <td>$0.50</td>\n    </tr>\n    <tr>\n      <td>&gt;272k</td>\n      <td>$0.20</td>\n      <td>$0.02</td>\n      <td>$0.75</td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\">Muse Ember 1.0</td>\n      <td>\u2264200k</td>\n      <td>$0.10</td>\n      <td>$0.004</td>\n      <td>$0.50</td>\n    </tr>\n    <tr>\n      <td>&gt;200k</td>\n      <td>$0.30</td>\n      <td>$0.012</td>\n      <td>$1.50</td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\">Claude Haiku 5.5</td>\n      <td>\u2264100k</td>\n      <td>$0.10</td>\n      <td>$0.01</td>\n      <td>$0.50</td>\n    </tr> \n    <tr>\n      <td>&gt;100k</td>\n      <td>$0.50</td>\n      <td>$0.05</td>\n      <td>$2.50</td>\n    </tr>\n  </tbody>\n</table></center>\n\n<p>But comparing price-per-token doesn't really make sense these days, when reasoning tokens mean that different models might use dramatically different numbers of tokens to solve the same problem.</p>\n<p>For that, one measure that's useful is the Artificial Analysis. </p>\n<p><img alt=\"Stacked bar chart from Artificial Analysis comparing a cost in dollars across six models, each bar split into four unlabeled stacked segments, sorted from lowest to highest total. Claude Haiku 5.5 (low): $0.04* total, bottom segment $0.02, three thin unlabeled segments above. GPT-6 Luna (non-reasoning): $0.07 total, bottom segment $0.06, thin unlabeled segments above. GPT-6 Luna (xhigh): $0.10 total, segments from bottom $0.07, $0.02, $0.02, plus a thin unlabeled top segment. Muse Ember (xhigh): $0.12 total, segments from bottom $0.06, $0.02, $0.02, plus a thin unlabeled top segment. Muse Ember (max): $0.14 total, segments from bottom $0.07, $0.03, $0.03, $0.02. Claude Haiku 5.5 (xhigh): $0.25* total, segments from bottom $0.14, $0.04, $0.05, $0.02. Anthropic bars are terracotta, OpenAI bars are dark gray, Meta bars are blue, each with the company logo beneath.\" src=\"https://static.simonwillison.net/static/2026/artificial-analysis-haiku-class.webp\" /></p>\n<p>And even more useful than that is their Intelligence Index vs. Cost per Task chart, which shows the following for those three models:</p>\n<p><img alt=\"Scatter plot from Artificial Analysis titled &quot;Intelligence Index vs. Cost per Task&quot;, plotting Artificial Analysis Intelligence Index (y-axis, 5 to 40) against cost per task in USD on a log scale (x-axis, $0.04 to $0.3), with a green &quot;most attractive quadrant&quot; in the upper left and a dotted Pareto line. Claude Haiku 5.5 (low)* scores about 19 at roughly $0.044. GPT-6 Luna (non-reasoning) scores about 9.5 at roughly $0.07. GPT-6 Luna (xhigh) scores about 23.5 at roughly $0.10. Muse Ember (xhigh) scores about 34 at roughly $0.12 and Muse Ember (max) about 36 at roughly $0.14, both on the Pareto line. Claude Haiku 5.5 (xhigh)* scores about 34.5 at roughly $0.25, well to the right of the Pareto line. Three unlabeled gray dots also sit on the Pareto line.\" src=\"https://static.simonwillison.net/static/2026/artificial-analysis-pareto.webp\" /></p>\n<p>The Muse Ember models sit right on that Pareto line - the line at which you can only improve one dimension by giving up another. Meta call this out in their announcement:</p>\n<blockquote>\n<p>It also sits on the efficiency frontier of the full Artificial Analysis leaderboard: no model scores higher for less per task.</p>\n</blockquote>\n<p>(That grey dot on the Pareto line in the middle of the green area is GPT-6.1 Terra (low) - clearly I should be paying more attention to the Terra family!)</p>\n<p>Muse Ember has six reasoning levels - minimal, low, medium, high, xhigh, and max - so I <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Fc7666e8a54d84f724ac8121f9fa6cc4d\">rendered six pelicans riding bicycles</a>. The \"high\" reasoning level failed to return a full SVG, and the other SVGs were surprising in that the reasoning level didn't cleanly map to the visual quality of the response.</p>\n<p>Here's the \"max\" one, but the others are worth a look too:</p>\n<p><img alt=\"Bicycle frame is OK, basket has fish, pelican has a weird blue hat on.\" src=\"https://static.simonwillison.net/static/2026/muse-ember.webp\" /></p>\n<p>The Ember pelicans are comparable in quality to those <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https://gist.github.com/simonw/185cff7ff0b11379725abf7f78d5d2b2\">I got from Muse Wonder</a>, which is <a href=\"https://www.llm-prices.com/#sel=muse-ember-1.0%2Cmuse-ember-1.0-200k%2Cmuse-wonder-1.0\">40x the price</a> of Muse Ember.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/meta\">meta</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a>, <a href=\"https://simonwillison.net/tags/artificial-analysis\">artificial-analysis</a>, <a href=\"https://simonwillison.net/tags/muse\">muse</a></p>",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1249440,
+    "title": "Quoting Prompting Claude Fable 5.2",
+    "url": "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/",
+    "published_at": "2026-11-10T05:34:14+00:00",
+    "fetched_at": "2026-11-10T11:32:23+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2#say-who-owns-the-code\"><p>Claude Fable 5.2 responds closely to what the prompt says about who owns the code it works on. In Anthropic\u2019s testing on small coding tasks, when a prompt said nothing about ownership or presented the code base as someone else\u2019s, the model tended to add to the existing structure, even when that repeated existing code. [...]</p>\n<p>If you want the model to improve the structure as it works, say that the code is its own:</p>\n<blockquote>\n<p><code>This codebase is yours: what it's for and how it's built are your call, and you'll keep building on it.</code></p>\n</blockquote>\n<p>In Anthropic\u2019s testing on small coding tasks, the model merged repeated code in about half of the tries with this sentence, and in under a tenth of the tries without it.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2#say-who-owns-the-code\">Prompting Claude Fable 5.2</a>, Anthropic documentation</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/prompt-engineering\">prompt-engineering</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1249669,
+    "title": "This Airtaxi is Ready For Primetime!",
+    "url": "https://www.youtube.com/shorts/GcFRheDNh5U",
+    "published_at": "2026-11-10T04:29:38+00:00",
+    "fetched_at": "2026-11-10T11:32:23+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "topic": "media",
+    "tags": [
+      "enterprise",
+      "media",
+      "news",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1249441,
+    "title": "Yonkers Rises",
+    "url": "https://simonwillison.net/2026/Nov/10/yonkers-rises/",
+    "published_at": "2026-11-10T03:53:04+00:00",
+    "fetched_at": "2026-11-10T11:32:23+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Tool:</strong> <a href=\"https://tools.simonwillison.net/yonkers-rises\">Yonkers Rises</a></p>\n        <p>I realized I didn't know where Yonkers was, so I looked it up on Google Maps and then, to help embed its location and shape in my head (and to try out Claude Fable 5.2's 3D modeling and animation skills), I <a href=\"https://claude.ai/share/97443910-2e0a-4e17-9b9e-11d14d8ff65c\">prompted Fable 5.2 Medium</a> to:</p>\n<blockquote>\n<p><code>Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and \u00e1tomos around manhattan and queens and Brooklyn, use openstreetmap mapping data</code></p>\n</blockquote>\n<p>It correctly deduced that \"\u00e1tomos\" was a mobile keyboard typo for \"stomps\":</p>\n<video controls=\"controls\" height=\"360\" poster=\"https://static.simonwillison.net/static/2026/yonkers.webp\" preload=\"none\" width=\"572\">\n  <source src=\"https://static.simonwillison.net/static/2026/yonkers-large.mp4\" type=\"video/mp4\" />\n</video>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/three-js\">three-js</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "tools",
+    "tags": [
+      "models",
+      "video",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1247205,
     "title": "The Agents Were Fine. Everything Around Them Broke. - Joey Wang, Harvey",
     "url": "https://www.youtube.com/watch?v=ktbAVYsAxpk",
@@ -10926,138 +11046,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 997684,
-    "title": "My obituary for programming",
-    "url": "https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/",
-    "published_at": "2026-10-19T23:58:25+00:00",
-    "fetched_at": "2026-10-20T00:31:18+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "19th October 2026 - Link Blog\n[My obituary for programming](https://dumbmatter.com/2026/10/programming-obituary/) ([via](https://lobste.rs/s/wtobpt/my_obituary_for_programming)) Jeremy Scheff poignantly captures the key loss caused by coding agents for career programmers who enjoyed the puzzle of developing code:\nProgramming turned into one of the greatest jobs you could imagine. You got paid to work on tricky little logic puzzles. The trickier the puzzle, the more you got paid. But even pretty simple puzzles were worth a lot of money because regular people just couldn't do it! No, they needed us. They would give us a problem and we would solve it the way we wanted. We set the strategy, we made the timeline, we defined what was and was not possible.\nIf you're a programmer who thrives on building working systems and doesn't care too deeply about the problems solved along the way, LLMs are the gift that keeps on giving.\nIf directly solving those problems was a big part of your enjoyment, the loss is very real.\nRecent articles\n[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026",
-    "topic": "coding",
-    "tags": [
-      "models",
-      "agents",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 997948,
-    "title": "It's still OK to enjoy programming - Blogomatano",
-    "url": "https://chriskiehl.com/article/it-is-still-ok-to-enjoy-programming",
-    "published_at": "2026-10-19T23:00:47+00:00",
-    "fetched_at": "2026-10-20T00:31:28+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "trafilatura",
-    "body": "It's still OK to enjoy programming\nPublished: 2026-10-17\nReading [Hacker News](https://news.ycombinator.com/news) makes me feel like I need to write this: it's still OK to enjoy programming.\nYes, at work, where you are paid to produce value for a business, the economics of purely hand-written code have changed. But that's work. Work is not life. The loudest voices on the internet are the saddest and most infectious.\nTo throw a tiny counter example in the sea of despair: I still program on the weekends because it is fun. I'm currently learning game programming! My current level of sophistication is a buggy Breakout clone with terrible collision detection. I write it by hand because I enjoy it. I struggle with problems because solving them makes me happy. It doesn't bother me that Claude could one-shot it, because that's not the point.\nI also get side-tracked from working on this \"game\" to study random programming topics. Last weekend was exploring how far I could push type safety in Java using ideas from dependently typed languages like [Agda](https://agda.readthedocs.io/en/latest/index.html). There is no point to this. It gets tucked away under \"interesting ways of thinking about a particular problem.\" Maybe it will come up in work life. Maybe not. I did it because exploring is was fun[0].\nA few weekends ago: [recursion schemes](https://en.wikipedia.org/wiki/Category:Recursion_schemes). Technically, this was not fun. I spent hours of banging my head against a wall. In the end, I still don't even know what's valuable about the ideas[1]. But I do know that many of the most beautiful ideas in programming only become clear to me after years of baking in my mind. It's why [entire papers get written about Monoids](http://ozark.hendrix.edu/~yorgey/pub/monoid-pearl.pdf). Maybe one day I'll find a problem that this applies to. Maybe not. I did it because understanding hard things is rewarding.\nI write this because I increasingly feel a strange social pressure. It's like I'm not \"supposed\" to enjoy this any more. As though there's no point or joy to be had in continuing to grow as a human. The more of this doom stream you consume, the more it starts to infect you. Maybe \"there is no point,\" you find yourself thinking. But this disappears as soon as you disconnect.\nIt's OK to enjoy things[2]. Doing so requires no economic justification.\nFootnotes:\n[ Fin](https://idris-lang.org/Idris2/base/docs/Data.Fin.html) one day. It is beautiful.",
-    "topic": "coding",
-    "tags": [
-      "models",
-      "safety",
-      "research",
-      "coding",
-      "education",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 997926,
-    "title": "How to Know When an AI Agent Can Work Unsupervised \u2014 Evan Kormos, Coinbase",
-    "url": "https://www.youtube.com/watch?v=_4Ph2dhmUFI",
-    "published_at": "2026-10-19T23:00:08+00:00",
-    "fetched_at": "2026-10-20T00:31:26+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Evan Kormos, a player-coach at Coinbase with 15 years in enterprise financial services, lays out a practical way to bring agents into policy-driven, regulated workflows. He models processes as DAGs and loops, explains why a loop is only as trustworthy as its check, and shows how evals and traces become a new confidence mechanism. Agents then move through three stages: fully supervised, then sampled, then humans handling only exceptions.\n\nChapters:\n- 00:00 Policy is the original system prompt\n- 02:53 Where agents fit: people, process, technology\n- 03:49 Workflows as DAGs\n- 05:31 Inside a node: the loop\n- 07:16 Exception flows and bottlenecks\n- 08:59 Quality inputs, quality outputs\n- 10:43 The loop is only as good as the check\n- 11:47 Evals as a confidence mechanism\n- 12:39 Which steps should an agent own?\n- 14:29 Supervised, then sampled, then exceptions only\n- 15:31 Takeaways\n\nEvan Kormos \u2014 https://www.coinbase.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/_4Ph2dhmUFI",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 995234,
-    "title": "Germany Wants to Lead the World in Industrial AI: How NVIDIA Will Help",
-    "url": "https://blogs.nvidia.com/blog/germany-wants-to-lead-the-world-in-industrial-ai-how-nvidia-will-help/",
-    "published_at": "2026-10-19T19:27:08+00:00",
-    "fetched_at": "2026-10-19T21:21:07+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "In the cavernous hall of Kraftwerk, a former power station in Berlin, German Chancellor Friedrich Merz and NVIDIA founder and CEO Jensen Huang sat down to discuss Germany\u2019s AI roadmap, and in particular, the industrial applications of AI.\nHuang opened by tracing NVIDIA\u2019s longstanding relationship with German industry, beginning with gaming systems, workstations and automotive design in the early 2000s and leading to today\u2019s partnerships in autonomous vehicle development and digital twins for manufacturing.\nThe conversation focused on how Germany can make the most of the AI revolution by playing to its strengths in manufacturing and automotive \u2014 and by encouraging AI adoption across the country\u2019s ecosystem of small and medium-sized companies.\nEarlier in the day, as part of the Invest in Germany Summit, Chancellor Merz, the Federal Ministry for Economic Affairs and Energy and the Federal Ministry for Research, Technology and Space signed a Joint Declaration of Intent with NVIDIA.\nThe German federal government\u2019s aim is to merge traditional German engineering and manufacturing expertise with cutting-edge research and AI technology. The declaration sets out an agreement to work on a joint initiative with NVIDIA to advance cutting edge AI models for physical AI.\nFormalizing and expanding NVIDIA\u2019s collaboration with Germany\u2019s federal government and its \u201cIndustry 4.0 Platform,\u201d which is comprised of representatives from politics, industry, research and trade associations, helps achieve the government\u2019s stated goal to \u201csystematically bring industrial AI into widespread use and to establish a state-of-the-art industrial AI ecosystem in Europe.\u201d\nGermany\u2019s Ambition to Integrate AI With Industry\nMerz and Huang dug into industrial AI and how NVIDIA can help Germany lead the way. The German Chancellor first laid out his government\u2019s ambition.\n\u201cWe are fully committed to be one of the most advanced places in the world, not just in the European Union, but in the world to work with AI, to integrate AI into our industry,\u201d Merz said. \u201cI\u2019m really optimistic that we will be one of the leading, if not the leading, country in the world in terms of the spread of AI for all the companies \u2014 our manufacturers, machinery, automotive industry and suppliers of the automotive industry. I think this is a great opportunity.\u201d\nMerz called out the leaders of the small and medium businesses \u2014 the Mittelstand \u2014 in the audience.\n\u201cThe biggest advantage we have in Germany is our so-called Mittelstand,\u201d Merz said. \u201cPlease open your doors for AI to make use of your data. This is a real secret and a real advantage for Germany to make use of all the data which is already available in our companies.\u201d\nHuang agreed, and praised Germany\u2019s world-class expertise in manufacturing companies both large and small, as well as its math and science excellence. That national expertise and knowledge is what sets the German economy apart, he said, and AI will only amplify it.\n\u201cThat knowledge belongs to you,\u201d Huang said. \u201cIt cannot be replaced. AI can only augment your capability, it will not replace your capability. Take advantage of the technology. It\u2019s a new instrument.\u201d\nGermany\u2019s expertise with physical technologies is a differentiator, Huang and Merz agreed, and a powerful accelerator for the German economy when AI is included.\n\u201cIf we are successful in bringing these two aspects and parts of the business of the future together,\u201d Merz said. \u201cI\u2019m really very optimistic that Germany can be one of the most successful economies in the world.\u201d\nHuang described AI\u2019s impact across virtually every industry as a new industrial revolution.\n\u201cThis industrial revolution is so mighty, so powerful,\u201d Huang said. \u201cIn the Chancellor\u2019s words, you are re-engineering Germany. This is your chance to do it well.\u201d\nMerz envisioned a regular reunion with Huang to assess the progress Germany is making with AI.\n\u201cI would like to see him regularly, let\u2019s say at least once a year, and discuss the progress we made,\u201d Merz said, \u201cAnd see a guy sitting in my office being extremely happy about Germany as a place to invest.\u201d\nNVIDIA\u2019s Investments in Germany\nHuang also announced new investments in four German startups, part of a nearly $10 billion commitment by NVIDIA to support companies, universities, research institutions and more across Europe.\nNVIDIA has been investing across Germany\u2019s startup ecosystem, supporting leading technology companies including n8n, Neura Robotics and Black Forest Labs.\nToday, Huang announced new planned investments in Agile Robots, Avelios Medical, Mirelo and Reflex Aerospace.\nAgile Robots, a Munich-based robotics company, builds AI-powered robots, from robotic arms to its Agile ONE humanoid, for manufacturing, logistics and healthcare.\nAvelios Medical, a Munich-based healthcare technology startup, develops an AI-native hospital information system that serves as the core system of record for clinical and administrative workflows, integrating AI directly into hospital operations to free up doctors and nurses to deliver better patient care.\nMirelo, a German startup, develops AI models that generate sound effects, speech and music for video, helping creators and production teams produce high-quality audio that perfectly matches their visuals on screen.\nReflex Aerospace, a Berlin-based space scaleup, designs and builds high-performance satellites ready for launch in about 12 months instead of years.\nSiemens and NVIDIA Advance Autonomous Manufacturing; Record-Breaking Quantum Simulation\nEarlier in the day, Siemens announced it\u2019s partnering with NVIDIA to advance AI-driven, autonomous factories. Siemens [showcased new AI solutions at its Erlangen factory](https://blogs.nvidia.com/gtc-berlin-2026-news/#entry-postlet-siemens-and-nvidia-put-industrial-ai-to-work-in-erlangen), advancing its role as a global blueprint for autonomous manufacturing. Fully virtual production ramp-up reduces engineering effort by up to 85%, while agent-based production planning enables more adaptive manufacturing and cost savings of up to 20%.\nNVIDIA researchers used JUPITER, Europe\u2019s largest supercomputer at the J\u00fclich Supercomputing Centre, to run a [record-breaking simulation](https://nvidianews.nvidia.com/news/nvidia-runs-record-simulation-of-fault-tolerant-quantum-computing-at-julich-supercomputing-centre) of a fault-tolerant quantum computer. The 104-qubit simulation is the largest and most detailed of its kind to date.",
-    "topic": "robotics",
-    "tags": [
-      "robotics",
-      "release",
-      "models",
-      "agents",
-      "research",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 994873,
-    "title": "Smarter Models Killed the Harness. Here's What's Left \u2014 Jediah Katz, SpaceXAI",
-    "url": "https://www.youtube.com/watch?v=7Y4sbZgBdnc",
-    "published_at": "2026-10-19T19:00:17+00:00",
-    "fetched_at": "2026-10-19T21:21:04+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Is the agent harness dead? Jediah Katz, Cursor's longest-tenured agent-harness engineer and now at SpaceX, explains why fancy harnesses no longer add coding intelligence: the data flywheel teaches models the skills harnesses used to patch in. He then argues why the harness matters more than ever. It opens new frontiers like Grokbot, and it owns what models can't absorb: infrastructure, trust and security, and efficiency. He closes with predictions, including that 90% of agent work runs off the laptop within six months.\n\nChapters:\n- 00:00 Is the harness dead?\n- 01:09 From prompt engineer to harness engineer\n- 02:02 What's inside an agent harness\n- 02:59 Peak harness, and the backlash\n- 05:00 What the research says\n- 06:16 The data flywheel\n- 07:34 The harness unlocks the next frontier\n- 12:07 What models can't absorb: infra, trust, efficiency\n- 14:21 What's next for harnesses\n- 17:36 Long live the harness\n\nJediah Katz \u2014 X: https://x.com/jediahkatz | https://cursor.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/7Y4sbZgBdnc",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "agents",
-      "safety",
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 993054,
-    "title": "NVIDIA Advances Agentic Security for Media, From European Public Service Broadcasting to Global Content Production",
-    "url": "https://blogs.nvidia.com/blog/media-agentic-security-european-public-service-broadcasting-global-content-production/",
-    "published_at": "2026-10-19T15:00:31+00:00",
-    "fetched_at": "2026-10-19T16:49:28+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "At a creative industry event that took place today in Berlin \u2014 hosted in collaboration with Adobe, Bertelsmann, NVIDIA and UFA \u2014 the latest advancements in intelligent media were on display.\nKey to the news: the European Broadcasting Union (EBU) is collaborating with NVIDIA to expand its sovereign framework with cloud, open models and integration partners, while Adobe Frame.io is accelerating video agent search capabilities with NVIDIA GPUs, helping German TV and film producer UFA find the right moments faster.\nRead more about both announcements below.\nSovereign Clouds and Open Models Built for European Broadcasters\nThe EBU and NVIDIA are expanding the sovereign standards they [introduced](https://blogs.nvidia.com/blog/european-broadcasting-union-sovereign-ai/) last year for European public service media. The initiative now brings in sovereign cloud providers, open model developers and systems integrators to define how broadcasters can deploy agents while keeping control of their data, infrastructure, models and security.\nThe EBU is the world\u2019s leading alliance of public service media, with over 115 member organizations in more than 55 countries reaching over 1 billion people. As agents move into newsrooms, production and audience services, those broadcasters need a foundation that protects editorial independence, data sovereignty and national resilience.\nThe expanded initiative is turning those principles into deployable services. It\u2019ll define requirements and reference architectures for where workloads run, how data is governed, which models power services and how systems stay secure throughout their lifecycle.\n\u201cThese standards give EBU members a shared foundation to strengthen resilience, retain control and deliver accountable advanced services that sustain audience trust,\u201d said Annsofi Eriksson, chief technology officer at the EBU.\nCloud providers will map the standards to sovereign deployment options:\n- Microsoft will bring expertise from Microsoft Sovereign Cloud, including Azure Local and Foundry Local, so broadcasters can process sensitive editorial material locally and keep critical services running when external connectivity is down.\n- Nebius offers a platform for broadcasters to train, fine-tune and run their own models on European infrastructure.\nOpen models give broadcasters the visibility to inspect, evaluate and adapt AI for local languages, archives and editorial policies. [NVIDIA Nemotron](https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/) open models provide a foundation broadcasters can customize for domain-specific applications and public-service requirements.\n\u201cSovereign cloud infrastructure and open models can help Europe\u2019s public service media innovate while protecting data, editorial independence and cultural diversity,\u201d said Delphine Ernotte, CEO of France T\u00e9l\u00e9visions and president of the EBU.\nMedia-specific consulting and systems integration provided from Qvest and other system integrators to ensure that reference architectures are practical, interoperable and deployable in real world broadcast environments.\nAdobe Frame.io Speeds Video Search With NVIDIA Accelerated Computing\nAlso at the event, Adobe is highlighting its latest enhancements that help creatives search through video data faster.\nAdobe is using NVIDIA accelerated computing to help creative teams find and work with video content faster. Its GPU-accelerated search pipeline uses [NVIDIA NVDEC ](https://developer.nvidia.com/video-codec-sdk)for video decoding, [TensorRT](https://developer.nvidia.com/tensorrt) for optimized AI inference and the [CUDA platform](https://developer.nvidia.com/cuda-zone) for preprocessing and embedding generation.\nAdobe is also advancing GPU-accelerated media ingest using NVIDIA NVENC and NVDEC to accelerate video encoding and decoding, helping production teams process growing media libraries more efficiently.\nThe results: about 5x faster embedding generation, up to 4x higher throughput and up to 5x lower latency for search processing. A new two-frame-per-second proxy, about 80% smaller than the 360p version it replaces, cuts storage and transfer while keeping the visual detail search needs.\nThat speed matters for UFA, one of Germany\u2019s leading film and TV producers. It delivers more than 3,500 hours of programming a year, including the daily drama \u201cGute Zeiten, schlechte Zeiten.\u201d When editors build a recap or flashback, they may need a specific reaction or unresolved exchange from as far back as 15 years \u2014 something file names and folders can\u2019t surface.\nFrame.io semantic search finds moments inside videos by concept, action or setting, and hybrid search adds notes, transcripts and approval status. An editor can search for \u201ca character looking concerned,\u201d narrow by character name and filter to approved footage, then move straight into review.\nThe work is part of a broader Adobe and NVIDIA collaboration that also spans Adobe Substance 3D, Firefly Foundry and 3D digital twin workflows for enterprises.\nLearn more about [NVIDIA technologies for media and entertainment](https://www.nvidia.com/en-us/industries/media-and-entertainment/live-media/).",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark",
-      "video"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
