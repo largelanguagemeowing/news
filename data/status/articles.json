@@ -1,5 +1,218 @@
 [
   {
+    "article_id": 1247205,
+    "title": "The Agents Were Fine. Everything Around Them Broke. - Joey Wang, Harvey",
+    "url": "https://www.youtube.com/watch?v=ktbAVYsAxpk",
+    "published_at": "2026-11-10T02:00:24+00:00",
+    "fetched_at": "2026-11-10T03:19:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "After 10,000 agent-written pull requests at Harvey, the agents weren't the problem. Everything around them was. Joey Wang tells three stories from Spectre, Harvey's internal cloud agent platform: letting engineers pick their own agent while one platform owns what happens after, making every action callable so agents can drive other agents, and what broke once they did. Expect an alert storm that spun up hundreds of tasks, a full cluster, a merge queue that couldn't keep up, and the fixes they built in response.\n\nJoey Wang, Harvey: https://x.com/ZongZiWang | https://www.harvey.ai",
+    "topic": "infrastructure",
+    "tags": [
+      "infrastructure",
+      "agents",
+      "media",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247206,
+    "title": "60% of Our Data PRs Now Merge With No Human Review - Chetas Joshi, Robinhood",
+    "url": "https://www.youtube.com/watch?v=MQiojLnK-E0",
+    "published_at": "2026-11-10T01:00:08+00:00",
+    "fetched_at": "2026-11-10T03:19:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Coding agents made data pipeline PRs cheap, and human review couldn't keep up. Chetas Joshi shows the hybrid reviewer agent Robinhood built for its data platform: deterministic checks run first, the model judges what scripts can't, and anything risky still goes to a person. Today about 60% of those PRs merge with no human review, saving roughly 132 engineering hours a month. He covers where they draw the line between agent and human, how they evaluate the reviewer itself, and what they got wrong.\n\nChetas Joshi, Robinhood: https://robinhood.com",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "safety",
+      "benchmark",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247207,
+    "title": "An Agent That Fixes Its Own Mistakes - Saloni Gandhi & Ziwei Guo, LinkedIn",
+    "url": "https://www.youtube.com/watch?v=yH7_SIIgI-Y",
+    "published_at": "2026-11-10T00:00:13+00:00",
+    "fetched_at": "2026-11-10T03:19:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "At LinkedIn, AI agents pull together profiles, preferences, career goals and activity into an evolving picture of each member's career. Saloni Gandhi and Ziwei Guo show the closed loop that keeps that agent improving: it evaluates its own outputs, finds failure patterns, reflects on root causes, and proposes targeted fixes, using GEPA to refine its instructions. They also share where they're taking it next, beyond prompts to improving the whole agent harness.\n\nSaloni Gandhi, LinkedIn: https://x.com/sal_gandhi | https://www.linkedin.com\nZiwei Guo, LinkedIn: https://www.linkedin.com",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1246915,
+    "title": "llm-anthropic 0.31",
+    "url": "https://simonwillison.net/2026/Nov/9/llm-anthropic/",
+    "published_at": "2026-11-09T23:58:46+00:00",
+    "fetched_at": "2026-11-10T03:19:24+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-anthropic/releases/tag/0.31\">llm-anthropic 0.31</a></p>\n        <p>Anthropic <a href=\"https://www.anthropic.com/claude-fable-and-mythos-5-2\">released Fable 5.2 and Mythos 5.2</a> today. I've added them to <code>llm-anthropic</code>, so you can now run prompts through Fable 5.2 like this:</p>\n<pre><code>uv tool install llm\nllm install llm-anthropic\nllm keys set anthropic\n# paste key here\nllm -m claude-fable-5.2 \"Generate an SVG of a pelican riding a bicycle\"\n</code></pre>\n<p>I ran pelicans at all five reasoning levels - <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, and <code>max</code>. You can <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Fbcd1a1bf38b929b0bbbae2e38b808e97\">see them all here</a> - here's the best result I got, from <code>xhigh</code>:</p>\n<p><img alt=\"It's good - legs the right side of the bicycle, good frame, nice pouch, weird little fingers on the handlebars. The pouch looks slightly misaligned with the top of the beak.\" src=\"https://static.simonwillison.net/static/2026/fable-5.2-xhigh.avif\" /></p>\n<p><code>max</code> failed to return an image at all, running out of tokens after spending 128,000 <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Fbcd1a1bf38b929b0bbbae2e38b808e97#reasoning-2\">thinking about them</a>. That's the same bug that I saw with <a href=\"https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/#claude-opus-5-5-max-over-thinks-to-the-point-of-breaking\">Opus 5.5</a> - but it's new for the Fable series, both <a href=\"https://simonwillison.net/2026/Jun/9/claude-fable-5/#and-some-pelicans\">Fable 5</a> and <a href=\"https://simonwillison.net/2026/Sep/1/claude-fable-5-1/#max\">Fable 5.1</a> returned max effort pelicans just fine.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/llm\">llm</a>, <a href=\"https://simonwillison.net/tags/anthropic\">anthropic</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "coding",
+      "media",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1246916,
+    "title": "Locating the source of a mysterious beep with Claude",
+    "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+    "published_at": "2026-11-09T23:57:21+00:00",
+    "fetched_at": "2026-11-10T03:19:24+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p>Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started <em>intermittently beeping</em>. The beeps were far enough apart that standing in the room and trying to determine the source of the noise was frustrating, and I really didn't want to dig through every one of those boxes. So I had Claude Code build <a href=\"https://github.com/simonw/beep-locator\">Beep Locator</a>, a software system for triangulating the source of a mysterious beep using multiple devices scattered around the room.</p>\n<p>Here's what Beep Locator looks like after it has been running for a while:</p>\n<p><img alt=\"Screenshot of a web app that uses several phones, tablets and laptops as microphones to locate a mystery beeping sound in a room. The left column has an &quot;Add a listener&quot; panel with a QR code and join link, a &quot;Controls&quot; panel with buttons including &quot;Calibrate&quot;, &quot;Test beep&quot; and &quot;It just beeped!&quot; plus a &quot;Listen for beeps&quot; checkbox, and a &quot;Mystery beep&quot; note reading &quot;3345 Hz \u00b7 3 confirmed \u00b7 remembered across sessions&quot;. Below that, a &quot;Devices&quot; list shows five color-coded listeners (Simon iPhone, New iPad, Old iPad, MacBook Pro, Surface Ultra), each marked &quot;\u2713 mic working \u00b7 \u2713 speaker working&quot;. The main area is a gridded map with a 1 m scale bar that shows the five devices as colored dots and earlier sounds as small timestamped markers. A pink shaded circle near the MacBook Pro is labeled &quot;mystery beep \u00b7 2 hearings \u00b7 within ~41 cm&quot;, and beside it a dashed plus marker suggests &quot;add a listener here? could tighten the mystery beep's position by ~12%&quot;. Below the map, a &quot;Mystery beep loudness warmer / colder&quot; panel shows a bar for each device: Surface Ultra is loudest at &quot;-6.0 dB \u25b2 +11.6 dB warmer&quot;, with the note &quot;about 6 dB louder means roughly half the distance&quot;. At the bottom, a &quot;Sounds located&quot; table lists recent claps and beeps with coordinates, or the warning &quot;arrival times are not physically possible (echo or a different sound?)&quot;.\" src=\"https://static.simonwillison.net/static/2026/beep-locator-ui.webp\" /></p>\n<p>You run Python web server to show the primary UI, and then use the QR code or URL to connect as many devices as you can spare to act as listeners - I was using two iPads, a phone, a MacBook Pro and a Surface Ultra.</p>\n<p>The devices then play noises to each other to help estimate their locations. This didn't work particularly well, so I added a \"Rough mode\" where you can drag their icons around in the space to provide rough locations which are then adjusted based on those sounds.</p>\n<p>Once that's set up, the devices all listen for the beep!</p>\n<p>I added a clapping mode too so I could test it by clapping my hands in different locations around the room - displayed as diamonds on the map. This helped me gain confidence that it was capable of locating a sound.</p>\n<p>Beeps show up on the map as an X, plus a line in the \"Sounds located\" log. You can replay these sounds (from each device in turn) to confirm they are the mysterious beep you are looking for, then click \"This is the mystery beep\" to mark them as such.</p>\n<p>Once you've confirmed the mysterious beep frequency the system will listen out for it, measure the interval between beeps, and use the triangulated locations to lock down the most likely location on the map.</p>\n<p>The system worked as intended. It gave me the position of the beep to within about 40cm, then I dug through that specific pile of boxes and found an ancient carbon monoxide detector that desperately wanted its batteries replaced.</p>\n<h4 id=\"how-it-works\">How it works</h4>\n<p>When I started working through this problem with Claude it quickly dug up <a href=\"https://www.cs.purdue.edu/homes/chunyi/pubs/sensys106-beepbeep.pdf\">BeepBeep: A High-Accuracy Acoustic-Based System for Ranging and Localization Using COTS Devices</a>, a 2007 paper by Chunyi Peng, Guobin Shen, Yongguang Zhang, Yanlin Li, and Kun Tan. Here's that paper's abstract:</p>\n<blockquote>\n<p>We present the design, implementation, and evaluation of BeepBeep, a high-accuracy acoustic-based ranging system. It operates in a spontaneous, ad-hoc, and device-to-device context without leveraging any pre-planned infrastructure. It is a pure software-based solution and uses only the most basic set of commodity hardware \u2013 a speaker, a microphone, and some form of device-to-device communication \u2013 so that it is readily applicable to many low-cost sensor platforms and to most commercial-off-the-shelf mobile devices like cell phones and PDAs. It achieves high accuracy through a combination of three techniques: two-way sensing, self-recording, and sample counting.</p>\n</blockquote>\n<p>That sounded exactly like what we needed to build!</p>\n<p>Beep Locator runs a Python web application server that does most of the work. The listening devices then connect to that server via WebSockets and present a UI which requests browser microphone access. The listeners mainly work by recording a 60 second buffer of recent audio. They also run a simple beep detection algorithm (see <a href=\"https://github.com/simonw/beep-locator/blob/main/beep_locator/modules/listener/detector.js\">detector.js</a>), which uses Fast Fourier Transform and a high-pass filter to identify potential beeps. It sends these events to the main server.</p>\n<p>When a beep is reported, the server has a device play a short chirp (the device with the lowest round-trip time to the server), then asks every listener upload a clip from about 0.6s before the beep to 0.8s after that chirp. This chirp allows the clips to be aligned with each other, a crucial step in locating the beep.</p>\n<h4 id=\"how-i-built-it\">How I built it</h4>\n<p>I started this project using Claude Code Cloud via my iPhone, with Opus 5.5 running in Extra thinking effort mode. Here's <a href=\"https://claude.ai/code/cshk_016BvfqAWf7MeGZKeYCrUnN2MmRfCSAX9Gu8DiptXMuH9P\">that shared starter session</a>, which began with this prompt against a newly created empty GitHub repository:</p>\n<blockquote>\n<p><code>Write out a problem.md file describing the problem we want to solve</code></p>\n<p><code>There is a device beeping in a room and I cannot find it</code></p>\n<p><code>I want to set up several devices - laptops, phones, iPads - around the room all listening at the same time and have them help triangulate where the beep comes from</code></p>\n<p><code>There needs to be a Python web app which coordinates it all - one device shows a web page for the app, other devices join a URL which turns them into listeners - all via browser WebAudio and WebSockets back to the Python server app</code></p>\n<p><code>Ideally I wouldn't need to manually input the relative locations of the devices - it would be amazing if they could play sounds to each other in order to locate each other in 2D space - is that even possible though?</code></p>\n</blockquote>\n<p>That got me <a href=\"https://github.com/simonw/beep-locator/blob/main/problem.md\">this problem.md file</a>. As part of writing that up Claude found and read the BeepBeep paper, which is described in that file.</p>\n<p>The research looked good, so I told it:</p>\n<blockquote>\n<p><code>Ok try and build it, add a mechanism so you can send new code to the listeners which they will then run automatically - that way I can set everything up in the room and then leave you alone to continue hacking and experiment while I do something else</code></p>\n</blockquote>\n<p>That got me <a href=\"https://github.com/simonw/beep-locator/commits/e36ac93a81091a246403c074e34c0041c6972fac\">to this point</a> - most of the system was built, but nothing had actually tried running it yet.</p>\n<p>I cloned the new repository to my laptop and fired up Claude Code... and then <a href=\"https://www.anthropic.com/claude-fable-and-mythos-5-2\">Fable 5.2 was released</a>, and this project seemed like an excellent opportunity to put that through its paces.</p>\n<p>I had Claude Code on my laptop start the server running, then made sure it could both see what was happening <em>and</em> make live changes to the software as it ran.</p>\n<p>This was already baked into the software: Opus 5.5 had built an <a href=\"https://github.com/simonw/beep-locator/blob/44fea65c918fb31a7d2c0e17797ee1a106860e23/beep_locator/static/runtime.js#L710\">installModule()</a> method on the listeners that could be triggered over the WebSocket connection, meaning the admin server could execute arbitrary new code on any of its clients.</p>\n<p>On some devices, web pages that listen on the microphone request user permission any time the page reloads. The hot-swap module mechanism meant that we could deploy new code without having to manually interact with each of the listening devices in turn.</p>\n<p>From that point on my involvement was mainly to sit by the laptop chatting with Fable 5.2 about what was going on, and occasionally requesting new features. Here are some of the feature prompts I ran:</p>\n<blockquote>\n<p><code>I think we need to make it so I can drag things around on the map in \u201crough mode\u201d, where my job is just to put them roughly where they are, then switch out of rough mode and it attempts to get them accurate</code></p>\n</blockquote>\n<p>This gave me the ability to drag listeners around the map.</p>\n<blockquote>\n<p><code>what\u2019s a good way for me to test this I wonder? Can we have it listen for claps, then I could clap and it could identify the location of the clap? [...]</code></p>\n<p><code>Claps should use a different symbol on the map than beeps</code></p>\n</blockquote>\n<p>That added the thing where any time I clapped it would show on the map as a different symbol from the beeps.</p>\n<blockquote>\n<p><code>each symbol on the map should include a HH:MM:SS timestamp</code></p>\n</blockquote>\n<p>That made it easier to spot which symbol likely reflected which real-world sound.</p>\n<blockquote>\n<p><code>The log should show beeps and claps with their timestamps AND have a little play button which, when clicked, replays the recorded noise from each of the listeners in sequence (with clear text on screen showing which listener recorded which snippet) while temporarily turning off microphone recording while that replay plays</code></p>\n</blockquote>\n<p>Now I could replay sounds, making it much easier to identify which recorded clip was the mysterious beep I was looking for.</p>\n<blockquote>\n<p><code>There should be a button next to a recording for \u201cThis is the mystery beep\u201d - then I can hit replay to see and then confirm it was the mystery beep if that\u2019s the one I am looking for</code></p>\n<p><code>Then the system can categorize noises in the future to see if they are likely that same mysterious beep and use that information to build a more accurate idea of where it is</code></p>\n</blockquote>\n<p>At this point I was getting close - I had a solid idea of where the beep was coming from, but wouldn't it be neat if I could reposition the listeners around that point to get an even finer location?</p>\n<blockquote>\n<p><code>I want a feature for this, I don\u2019t want to have to restart each listening device etc, I want to be able to click a \u201cReposition the devices\u201d button which lets me switch into repositioning, then I click \u201cRepositioned\u201d and it puts me into Rough mode and asks me to roughly locate them, then I do that and click, then it starts up again. The previous session can be read-only viewed through the app.</code></p>\n</blockquote>\n<p>And since I had one spare device, I then said:</p>\n<blockquote>\n<p><code>add a feature where the map includes a spot that is a suggestion for a location that it would be useful to add a listener at - based on data collected so far</code></p>\n</blockquote>\n<h4 id=\"giving-claude-code-ears\">Giving Claude Code ears</h4>\n<p>I think the most interesting part of this project is that I demonstrated it's possible to <em>give Claude Code ears</em>.</p>\n<p>Claude doesn't have native audio input (yet), but it can run JavaScript and Python code that can analyze audio captured by a microphone.</p>\n<p>I told it to run a web server with WebSocket connections to multiple listening devices, then had it both run a WebAudio microphone on those devices and hook them up so they could be sent fresh JavaScript code to execute via that WebSocket.</p>\n<p>Then I could pretty much leave Claude alone, hacking away at the problem, querying the audio logs, and reconfiguring its ears to help it solve the problem.</p>\n<p>I'm reminded of a similar hack I heard about at GitHub Universe a few weeks ago, where <a href=\"https://github.com/martinwoodward\">Martin Woodward</a> told me he had been debugging the <a href=\"https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/\">GitHub Universe Badge computers</a> by plugging them into a computer via USB-C and then pointing a webcam at their screen, so his coding agent could tell if updates were working correctly or not.</p>\n<p>Figuring out ways to let coding agents perceive the world around them is a whole lot of fun.</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/claude\">claude</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/claude-code\">claude-code</a>, <a href=\"https://simonwillison.net/tags/claude-mythos-fable\">claude-mythos-fable</a></p>",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "research"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247145,
+    "title": "Anthropic's Fable 5.2 is the World\u2019s Best AI Model",
+    "url": "https://www.youtube.com/watch?v=2TM8W66NI_8",
+    "published_at": "2026-11-09T23:16:34+00:00",
+    "fetched_at": "2026-11-10T03:19:25+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Fable 5.2 from Anthropic just dropped today. Here's the details.\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nResources From Today's Video:\nLaunch Post: https://www.anthropic.com/claude-fable-and-mythos-5-2\nMatt Berman Gears of War: https://x.com/MatthewBerman/status/2119871207206158459\nAlex\u2019s Examples: https://x.com/The_Alex/status/2119884217261892083\nPeter Yang Animation: https://x.com/petergyang/status/2119886560992854431\nFutre Brian Post: https://x.com/ForwardEditor/status/2119867747425194377\nMatt Shumer Game: https://x.com/mattshumer_/status/2119877065701036047\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nTime Stamps:\n0:00 Intro\n0:33 What is Fable 5.2?\n1:50 Benchmark Review\n4:27 Artificial Analysis\n5:41 BuseyBench\n6:30 Availability / Pricing\n7:44 Anthropic's Examples\n9:09 Megabonk Test\n11:53 Build Me A Gadget Test\n14:50 Community Examples and Use-Cases\n18:28 Final Analysis",
+    "topic": "media",
+    "tags": [
+      "media",
+      "release",
+      "models",
+      "benchmark",
+      "video",
+      "coding",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247208,
+    "title": "Stop Chatting With Spreadsheets \u2014 Francesco Galletta & Felippe Felisola Caso, Monzo",
+    "url": "https://www.youtube.com/watch?v=ATMcd9tkhhc",
+    "published_at": "2026-11-09T23:04:36+00:00",
+    "fetched_at": "2026-11-10T03:19:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Fast answers are easy to get. Answers you can trust with your money are harder. Francesco Galletta and Felippe Felisola Caso build a financial-analyst agent harness live, using one real problem: paying for a wedding. They show the five design principles they use for AI you can trust: shared domain, consistency, evidence, accountability and verification. They also explain why calculations belong in code instead of in the model's head.\n\nNote: the speakers work at Monzo but are not presenting on Monzo's behalf.\n\n\ud83c\udf9f\ufe0f Join us at the next one: AIE CODE Summit \u2192 https://aie.codes\n\nSpeakers\nFrancesco Galletta \u2014 LinkedIn: https://www.linkedin.com/in/francescogalletta/\nFelippe Felisola Caso \u2014 LinkedIn: https://www.linkedin.com/in/felippecaso/\nMonzo \u2014 https://monzo.com\n\nTimestamps\n0:00 Intro: Francesco & Felippe\n2:54 Using AI for impact, not token-maxing\n4:22 Speed isn't the bottleneck. Trust is.\n7:25 Components vs. design principles\n8:45 The 5 principles of trust\n12:13 The use case: budgeting a wedding\n17:05 How the principles build on each other\n20:40 Principle 1: Shared domain\n25:59 Live demo: planning with the agent\n30:42 From plan to decision tree\n35:48 Why long linear chats fall apart\n36:48 Principle 2: Consistency (math belongs in code)\n55:50 Principle 3: Evidence (show the receipts)\n1:00:17 The \"master file\" horror story\n1:06:42 Principle 4: Accountability\n1:20:39 Principle 5: Verification\n1:24:16 Golden examples & outside reference points\n1:34:05 Q&amp;A: How many harnesses should you build?\n1:38:11 Don't over-sharpen the axe\n1:44:00 Q&amp;A: Skills vs. a dedicated harness\n1:48:31 Takeaway: design for trust on purpose",
+    "topic": "tutorials",
+    "tags": [
+      "tutorials",
+      "models",
+      "agents",
+      "coding",
+      "events",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247209,
+    "title": "Your Self-Hosted LLM Needs to Say No - Harshul Jain & Parv Khatri, Audible & SAP",
+    "url": "https://www.youtube.com/watch?v=ntVpbyDTYaQ",
+    "published_at": "2026-11-09T23:00:23+00:00",
+    "fetched_at": "2026-11-10T03:19:25+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Coding agents fan out, retry and burst, and if they hit an LLM you host yourself, your inference layer will happily accept every request and bury the ones you needed first. Harshul Jain and Parv Khatri make the case for admission control: deciding what to refuse before it reaches the GPU. Drawing on a review of 55 systems papers and eight real production incidents, they share five questions to ask any admission policy before you deploy it, and a checklist you can use right away.\n\nHarshul Jain, Audible: https://x.com/hj1393 | https://www.audible.com\nParv Khatri, SAP: https://www.sap.com",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "agents",
+      "research",
+      "infrastructure",
+      "coding",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247537,
+    "title": "recommended viewing. sigh. here we go again, clowning on the internet.",
+    "url": "https://video.twimg.com/amplify_video/2119816697322639360/vid/avc1/1920x1080/EvJALx4OnHxrUJpV.mp4",
+    "published_at": "2026-11-09T22:22:58+00:00",
+    "fetched_at": "2026-11-10T03:19:29+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing. sigh. here we go again, clowning on the internet.\n\neverytime @dillon_mulroy talks about his typescript code, the gods shine upon him.",
+    "topic": "general",
+    "tags": [
+      "general",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247160,
+    "title": "OpenAI spent $1.2 million hacking Linux... and it was a bargain",
+    "url": "https://www.youtube.com/watch?v=pf5tXJZM1Rw",
+    "published_at": "2026-11-09T21:04:16+00:00",
+    "fetched_at": "2026-11-10T03:19:25+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Greptile is the only AI code reviewer that actually runs your code. Try it for free: https://greptile.com/go/fireship\n\nA model you're not allowed to use just tore through the Linux kernel and came back with 948 root exploits... let's break it down.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "news",
+    "tags": [
+      "models",
+      "coding",
+      "education",
+      "media",
+      "news",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1241655,
     "title": "ChatGPT Enterprise now available in AWS Marketplace",
     "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
@@ -73,6 +286,27 @@
       "robotics",
       "education",
       "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1245544,
+    "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+    "url": "https://openai.com/index/control-room",
+    "published_at": "2026-11-09T13:00:00+00:00",
+    "fetched_at": "2026-11-10T03:19:23+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Learn how OpenAI\u2019s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+    "topic": "research",
+    "tags": [
+      "models",
+      "api",
+      "safety",
+      "research",
+      "education"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -382,6 +616,26 @@
     "available": true
   },
   {
+    "article_id": 1245545,
+    "title": "CodeRabbit scales agentic software development and ships 20x more",
+    "url": "https://openai.com/index/coderabbit-codex-daybreak",
+    "published_at": "2026-11-09T08:00:00+00:00",
+    "fetched_at": "2026-11-10T03:19:23+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "CodeRabbit uses OpenAI models to govern and trust AI-generated code and Codex to ship 20 times more software with the same engineering team.",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "agents",
+      "coding",
+      "development"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1241656,
     "title": "Kuken Industries searches 70 years of drawings in minutes",
     "url": "https://openai.com/index/kuken",
@@ -654,6 +908,101 @@
       "ai-models",
       "models",
       "infrastructure",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247224,
+    "title": "JPMorganChase expands Claude Code to more employees across the firm",
+    "url": "https://claude.com/resources/articles/jpmorganchase-expands-claude-code",
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "fetched_at": "2026-11-10T03:19:26+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "JPMorganChase expands Claude Code to more employees across the firm",
+    "topic": "agents",
+    "tags": [
+      "agents",
+      "models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247223,
+    "title": "Safely scaling multi-agent teams with Claude Fable 5.2",
+    "url": "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/",
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "fetched_at": "2026-11-10T03:19:26+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "How a team of 1,000 agents running an early version of Claude Fable 5.2 reproduced a formal proof of Fermat's Last Theorem with general tools, a shared database, and layered safety controls.",
+    "topic": "safety",
+    "tags": [
+      "models",
+      "agents",
+      "safety",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247222,
+    "title": "Which Claude model should you build with?",
+    "url": "https://claude.dev/blog/which-claude-model-should-you-build-with/",
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "fetched_at": "2026-11-10T03:19:26+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "How to choose between Claude Fable 5.2, Opus 5.5, Sonnet 5.5, and Haiku 5.5 by task, cost, and effort level.",
+    "topic": "tutorials",
+    "tags": [
+      "models",
+      "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247221,
+    "title": "Claude Fable 5.2 and Mythos 5.2",
+    "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "fetched_at": "2026-11-10T03:19:26+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, our new models for the hardest technical challenges.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1247220,
+    "title": "Claude can design electronic prototypes from start to finish",
+    "url": "https://www.anthropic.com/research/claude-electronics-design",
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "fetched_at": "2026-11-10T03:19:26+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "We asked Claude to design three electronic devices: a speakerphone, a voice-assistant hub, and a handheld virtual pet. The prototypes worked without any fixes to their circuitry.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
       "hardware"
     ],
     "dearrow_thumbnail_url": "",
@@ -10709,373 +11058,6 @@
       "safety",
       "benchmark",
       "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 992385,
-    "title": "Pi Durable: AI agents that survive crashes",
-    "url": "https://www.youtube.com/shorts/3-sSbJKb-fQ",
-    "published_at": "2026-10-19T14:48:54+00:00",
-    "fetched_at": "2026-10-19T16:49:24+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "Your agent sent 4 of 5 emails\u2026 then crashed. A regular coding agent leaves you with a half-finished tool call and a \"continue\" prayer. Pi Durable checkpoints every task and tool call (SQLite / JSONL), so when the process restarts, the agent resumes where it left off.\n\nIt's not a CLI. It's a TypeScript library for building always-on agents, even fully local with Qwen3.5-0.8B on llama.cpp.\n\n\u25b6 Full tutorial: https://www.youtube.com/watch?v=ti3vVYwzW4A\n\ud83d\udcbb Demo code: https://github.com/alejandro-ao/pi-durable-demo\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/3-sSbJKb-fQ",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 992399,
-    "title": "The Model Swap Workshop: GPT-5.5 vs Kimi vs DeepSeek vs Mistral \u2014 Pamela Fox, Microsoft",
-    "url": "https://www.youtube.com/watch?v=UGjk3Uk0MxM",
-    "published_at": "2026-10-19T14:06:53+00:00",
-    "fetched_at": "2026-10-19T16:49:24+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Benchmarks won't tell you how a model behaves in your app. Swapping it in and testing will.\n\nNEXT UP: AI ENGINEER CODE SUMMIT\nJoin us in SF for the second annual AIE CODE Summit, Nov 10\u201312, our last flagship summit of 2026. Applications live now: https://aie.codes\n\nPamela Fox, Principal Cloud Advocate at Microsoft, runs the same scenarios against GPT-5.5, Kimi K2.6, DeepSeek V4 Flash and Mistral Large 3 on Microsoft Foundry so you can see where models differ and what you can do about it. She works up from a letter-counting prompt to RAG groundedness, image input, multilingual pitfalls, tool calling, tool calling in a loop and a LangChain v1 travel agent, then moves to evaluation: string-check evals, LLM-as-a-judge, Microsoft's new ASSERT tool for generating test sets from a spec, and DSPy prompt optimization that finds a prompt the cheapest model can satisfy.\n\nIn this video:\n- Where top models differ: counting, groundedness, vision, tool calls and parallel tool calling\n- How prompt engineering closes some gaps but not image understanding\n- Bulk evals with string checks and LLM-as-a-judge\n- Generating test sets with ASSERT and optimizing prompts with DSPy\n\nSPEAKER\nPamela Fox, Principal Cloud Advocate, Microsoft\nX: https://x.com/pamelafox\nLinkedIn: https://www.linkedin.com/in/pamela-s-fox\nGitHub: https://github.com/pamelafox\n\nLINKS\nASSERT (GitHub): https://github.com/responsibleai/ASSERT\n\nCHAPTERS\n0:00 Workshop setup\n2:23 Why you need to be able to swap models\n3:08 The four models\n5:18 Benchmarks vs your scenario\n5:38 Test 1: counting letters\n7:48 Fixing it with prompt engineering\n8:38 Test 2: RAG and groundedness\n13:03 Test 3: image input\n16:18 Switching languages\n17:13 Test 4: tool calling\n21:03 Test 5: tool calling in a loop\n23:58 Agents with LangChain v1\n26:17 Parallel tool calls\n30:27 Evals with string checks\n33:42 Q&amp;A: eval frameworks\n35:12 LLM as a judge\n40:07 ASSERT: evals from a spec\n43:32 ASSERT results across models\n45:52 Prompt optimization with DSPy\n47:52 A DSPy prompt for Mistral\n49:22 Anthropic and citations\n50:32 Wrap-up\n\nRecorded at the AI Engineer World's Fair 2026 in San Francisco.\nSubscribe for more talks from the engineers building with AI.\n\nAI Engineer: https://ai.engineer\nYouTube: https://www.youtube.com/@aiDotEngineer\nX: https://x.com/aiDotEngineer\nLinkedIn: https://www.linkedin.com/company/aidotengineer/\n\n#LLM #Evals #AIEngineer\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/UGjk3Uk0MxM",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 992339,
-    "title": "3 New Claude Prompts You Need To Try",
-    "url": "https://www.youtube.com/shorts/aIrrq3CLSKM",
-    "published_at": "2026-10-19T12:43:39+00:00",
-    "fetched_at": "2026-10-19T16:49:24+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Claude just got 3 powerful new upgrades. Here's how to use them:\n\n1. Motion can transform boring reports into animated explainer videos in seconds. \n2. Dashboards can turn your business data into interactive, live dashboards with a simple prompt.\n3. And Claude Haiku 5.5 let's you get everyday AI tasks done faster and cheaper.\n\nFollow for more AI tools, news, and future tech videos.\n\n#Claude #Anthropic #AITools #Productivityhack\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/aIrrq3CLSKM",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "video",
-      "coding",
-      "tutorials",
-      "enterprise"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 996384,
-    "title": "Advancing coding in low\u2011resource programming languages",
-    "url": "https://openai.com/index/low-resource-programming-languages",
-    "published_at": "2026-10-19T12:00:00+00:00",
-    "fetched_at": "2026-10-20T00:31:18+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nOctober 19, 2026\n\n[Publication](https://openai.com/research/index/publication/) [Research](https://openai.com/news/research/)\n\n# \\[\u2009COBOL\u2009]![]()![]()![]()\\[\u2009OCaml]![]()\\[\u2009Fortran]![]()\\[\u2009Visual Basic\u2009]Advancing coding in low\u2011resource programming languages\n\nLoading\u2026\n\nShare\n\n1\\. Building SQLite from scratch (MultiLangBench)\n\n- [1. Building SQLite from scratch (MultiLangBench)](#building-sqlite-from-scratch-multilangbench)\n- [2. Migrating a COBOL codebase](#migrating-a-cobol-codebase)\n- [Advancing capabilities for enterprise software](#advancing-capabilities-for-enterprise-software)\n\n- [1. Building SQLite from scratch (MultiLangBench)](#building-sqlite-from-scratch-multilangbench)\n- [2. Migrating a COBOL codebase](#migrating-a-cobol-codebase)\n- [Advancing capabilities for enterprise software](#advancing-capabilities-for-enterprise-software)\n\nOur latest model advances bring stronger capabilities for building and migrating software in low-resource programming languages such as COBOL, Fortran, and Visual Basic. These languages have less code and documentation available for models to learn from than languages like Python and JavaScript, yet support critical infrastructure and essential services around the world. COBOL [supports\u2060(opens in a new window)](https://www.ibm.com/think/topics/cobol) more than 40% of online banking systems, 80% of in-person credit card transactions and 95% of ATM transactions, while Fortran is used in [weather forecasting\u2060(opens in a new window)](https://repository.library.noaa.gov/view/noaa/71120) and [nuclear reactor safety analysis\u2060(opens in a new window)](https://www.nrc.gov/education-regulatory-research/research/computer-codes). Improving AI\u2019s ability to work in these languages could help teams maintain and modernize the software that essential services depend on.\n\nThis work is guided by feedback from developers and enterprise customers who have told us that coding models often struggle with these languages. Maintaining and modernizing this software can be difficult: documentation may be incomplete, original developers may have left the company, and important business rules may only exist in code. Whether teams are fixing bugs or migrating to another language, they need to preserve the behavior their systems depend on.\n\nTo measure progress, we developed two evaluations. MultiLangBench tests whether a model can build a SQLite-compatible database engine from scratch across 20 different programming languages. Our COBOL migration evaluation tests whether a model can migrate existing programs to another language while preserving their behavior. Together, they test two complementary skills: building new software and preserving what existing software does.\n\nOur latest models show substantial improvements across both evaluations, delivering much higher accuracy at lower cost.\n\nOn MultiLangBench, GPT\u20116 Astra achieves an average test pass rate of 87.4% across 20 programming languages, up from 26.8% for GPT\u20115.6 Sol, with improvements in every language tested. GPT\u20116 Luna also outperforms GPT\u20115.6 Sol, reaching 40.3% at approximately 78% lower estimated API cost.\n\nOn our COBOL migration evaluation, GPT\u20116.1 Sol achieves 86.6% accuracy at low reasoning effort, compared with just 5.4% for GPT\u20115.6 Sol, while costing 39% less. At higher reasoning effort, accuracy reaches 97.9%, nearly saturating the evaluation.\n\nTogether, these results show that our models are becoming significantly better at working with a wide range of programming languages, while also becoming more cost-efficient.\n\n## 1. Building SQLite from scratch (MultiLangBench)\n\nMultiLangBench asks a model to build a SQLite-compatible database engine in a specified programming language. The model must organize a codebase, manage state, handle errors, and add new features while preserving existing functionality.\n\nTo compare implementations across languages, we use database files as a shared interface. The candidate program receives an initial database and a SQL query, then produces a modified database. We use the reference SQLite implementation to check whether the resulting database has the expected contents. This lets us apply the same tests regardless of the language used to build the engine.\n\nWe adapted tests from SQLite\u2019s existing test suite to this format. The evaluation measures how much working functionality a model can build over an extended coding session, reporting both test pass rate and API cost.\n\nAt maximum reasoning effort, GPT\u20116 Astra achieves an average test pass rate of 87.4% across the 20 languages, up from 26.8% for GPT\u20115.6 Sol. Improvements extend to every language tested, including COBOL (10.9% to 72.1%), OCaml (25.6% to 85.8%), Fortran (21.4% to 83.5%), and Visual Basic (27.5% to 89.4%). Astra scores above 83% in 19 of the 20 languages, with COBOL remaining the hardest at 72%.\n\nGPT\u20116 Luna offers a lower-cost option that also improves on GPT\u20115.6 Sol in every language tested. At maximum reasoning effort, it reaches an average test pass rate of 40.3%. Gains include COBOL (10.9% to 17.1%), OCaml (25.6% to 34.1%), Fortran (21.4% to 31.4%), and Visual Basic (27.5% to 41.6%). These improvements come at an estimated average API cost of $0.77 per sample, compared with $3.48 for GPT\u20115.6 Sol, approximately 78% lower.\n\nCC#C++COBOLCommon LispFortranGoJavaJavaScriptLeanOCamlPHPPowerShellPythonRubyRustScalaSwiftVisual BasicZig\n\nWe are releasing the MultiLangBench evaluation setup and test suite on [GitHub\u2060(opens in a new window)](https://github.com/openai/MultiLangBench), along with results for each language. Developers can inspect what the evaluation tests, review performance in the languages they use, and identify gaps that matter for their own work.\n\n## 2. Migrating a COBOL codebase\n\nOur second evaluation asks models to migrate COBOL programs to C++, Java, Kotlin, Python, or Rust while preserving what each program does.\n\nSuccessful migration requires understanding both the program\u2019s business logic and COBOL\u2019s specific language behavior. COBOL programs often process financial transactions and business records, where details such as rounding rules and missing-record handling reflect business requirements. For example, COBOL\u2019s fixed-point arithmetic discards excess decimal digits unless rounding is explicitly requested. A rewrite that rounds those values instead can run without errors while producing different financial results.\n\nTo test whether these behaviors are preserved, we evaluate our models on hidden tests that require byte-for-byte parity on observable outputs. A migration is considered successful only if all tests pass. Behavior-preserving capabilities like these are useful for teams maintaining and modernizing older systems, though applying it to production software still requires expert review and testing against the system\u2019s business rules and dependencies.\n\nOn this evaluation, GPT\u20116.1 Sol achieves 86.6% accuracy at low reasoning effort, compared with GPT\u20115.6 Sol\u2019s 5.4% at the same setting at just 61% of the API cost. At higher reasoning effort, accuracy reaches 97.9%, bringing the evaluation close to saturation. These evaluation results demonstrate progress toward more accurate, affordable code migration for teams modernizing the software their businesses depend on.\n\n## Advancing capabilities for enterprise software\n\nThese evaluations, alongside direct feedback from developers and enterprise customers, help us see where our models are improving and where they still fall short.\n\nOur goal is to help models apply software engineering skills across more languages: understanding unfamiliar repositories, planning changes, using build tools, running tests, and debugging failures.\n\nYou can try our latest models through the API on coding tasks in the languages your team uses. Your feedback on what works, where the models struggle, and which languages or workflows we should focus on next helps shape how we train and evaluate models to better support the software you depend on.\n\n- [Software & Engineering](https://openai.com/research/index/?tags=software-engineering)\n- [GPT](https://openai.com/research/index/?tags=gpt)\n- [Learning Paradigms](https://openai.com/research/index/?tags=learning-paradigms)\n- [2026](https://openai.com/research/index/?tags=2026)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Introducing the Rosalind Academic PlanResearchOct 15, 2026 Introducing the Rosalind Academic Plan - Research - Oct 15, 2026](https://openai.com/index/introducing-the-rosalind-academic-plan/)\n\n\n\n[Sharing AI progress in mathematicsResearchOct 6, 2026 Sharing AI progress in mathematics - Research - Oct 6, 2026](https://openai.com/index/sharing-ai-progress-in-mathematics/)\n\n\n\n[Advancing computer use with IroncladPublicationOct 6, 2026 Advancing computer use with Ironclad - Publication - Oct 6, 2026](https://openai.com/index/advancing-computer-use-with-ironclad/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Apps SDK(opens in a new window)](https://developers.openai.com/apps-sdk)\n- [Open Models](https://openai.com/open-models/)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://o",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 989471,
-    "title": "Why Buying Companies Beats Selling Them AI \u2014 Prathik Naidu, Long Lake",
-    "url": "https://www.youtube.com/watch?v=J7n3WJnFTto",
-    "published_at": "2026-10-19T09:00:32+00:00",
-    "fetched_at": "2026-10-19T09:38:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Deploying AI into real businesses is hard: org charts are messy, trust takes decades, and service firms don't scale like software. Prathik Naidu, founding partner at Long Lake, explains their strategy: acquire established service businesses, then transform them with AI from the inside. He covers how they choose companies and what changes once they own them, drawing on 40 businesses across residential services, architecture, HR and more.\n\nChapters:\n- 00:00 Intro\n- 02:15 Why deploying AI into businesses is hard\n- 06:27 Why trust and brand win\n- 10:41 Software vs service economics\n- 12:42 The Long Lake model\n- 14:50 Choosing what to buy\n- 16:53 Results\n\nPrathik Naidu \u2014 Long Lake\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/J7n3WJnFTto",
-    "topic": "research",
-    "tags": [
-      "research",
-      "models",
-      "video",
-      "coding",
-      "enterprise",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 989486,
-    "title": "The Buckmaster Interview (Navier-Stokes) - Numberphile",
-    "url": "https://www.youtube.com/watch?is=kimGlsNZ6H7ps5u6&v=Mzbtj5nkMXI&feature=youtu.be",
-    "published_at": "2026-10-19T08:23:25+00:00",
-    "fetched_at": "2026-10-19T09:38:29+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "youtube",
-    "body": "recommended viewing.\n\nauthor: Numberphile\n\nvideo: https://www.youtube.com/embed/Mzbtj5nkMXI",
-    "topic": "general",
-    "tags": [
-      "general",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 989472,
-    "title": "Version-Controlled Search: The Web as It Was \u2014 Ryan Ahern, Exa",
-    "url": "https://www.youtube.com/watch?v=vS2IA9pq0Q4",
-    "published_at": "2026-10-19T08:00:29+00:00",
-    "fetched_at": "2026-10-19T09:38:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Ryan Ahern of Exa introduces Exa Snapshot, which lets agents search the web as it looked on any past date. He covers why search quality matters when agents broker most searches, how snapshot results compare to live results, and how teams use point-in-time search to build and test predictive signals without overfitting.\n\nChapters:\n- 00:00 Intro\n- 02:14 Agents as the new searchers\n- 04:15 Exa's three core principles\n- 08:19 Snapshot vs live search\n- 12:45 From signals to predictions\n- 16:58 Backtesting without overfitting\n\nRyan Ahern \u2014 https://exa.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/vS2IA9pq0Q4",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "agents",
-      "video",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 989487,
-    "title": "There's never been a better time to go into math",
-    "url": "https://www.youtube.com/watch?is=VWA3o2sOxOuTF9MV&v=LKrwhjOI8Nc&feature=youtu.be",
-    "published_at": "2026-10-19T07:55:31+00:00",
-    "fetched_at": "2026-10-19T09:38:29+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "youtube",
-    "body": "recommended viewing. crazy how much of this applies to SWE as well.\n\nauthor: 3Blue1Brown\n\nvideo: https://www.youtube.com/embed/LKrwhjOI8Nc",
-    "topic": "general",
-    "tags": [
-      "general",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 989473,
-    "title": "Backtest Your Agent Against Yesterday's Web \u2014 Ryan Ahern, Exa",
-    "url": "https://www.youtube.com/watch?v=L4dUFimVDKU",
-    "published_at": "2026-10-19T07:00:39+00:00",
-    "fetched_at": "2026-10-19T09:38:28+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "How do you know whether your agent would have made the right call? Ryan Ahern of Exa shows how to use version-controlled search to see the web exactly as it was on a past date, then backtest an agent's predictions against what actually happened. The hands-on example predicts company acquisitions from signals like leadership turnover, then tunes the system without leaking future information.\n\nChapters:\n- 00:00 Why search matters for agents\n- 04:15 Exa's search benchmark\n- 06:17 Versioning the whole web\n- 10:34 Avoiding look-ahead bias\n- 14:43 Backtesting and tuning a predictor\n- 18:49 Hands-on: predicting acquisitions\n- 22:54 Results and overfitting\n\nRyan Ahern \u2014 https://exa.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/L4dUFimVDKU",
-    "topic": "research",
-    "tags": [
-      "research",
-      "agents",
-      "benchmark",
-      "video",
-      "coding",
-      "tutorials",
-      "funding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 989488,
-    "title": "recommended reading.",
-    "url": "https://archive.ph/kD622",
-    "published_at": "2026-10-19T06:43:48+00:00",
-    "fetched_at": "2026-10-19T09:38:29+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "jina",
-    "body": "Warning: This page maybe requiring CAPTCHA, please make sure you are authorized to access this page.\n\nMarkdown Content:\n## One more step\n\n## Please complete the security check to access archive.ph\n\n## Why do I have to complete a CAPTCHA?\n\nCompleting the CAPTCHA proves you are a human and gives you temporary access to the web property.\n\n## What can I do to prevent this in the future?\n\nIf you are on a personal connection, like at home, you can run an anti-virus scan on your device to make sure it is not infected with malware.\n\nIf you are at an office or shared network, you can ask the network administrator to run a scan across the network looking for misconfigured or infected devices.",
-    "topic": "security",
-    "tags": [
-      "security",
-      "safety",
-      "events",
-      "hardware"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 989456,
-    "title": "Pi Durable EXPLAINED: Build Always-On Agents with Local Models",
-    "url": "https://www.youtube.com/watch?v=ti3vVYwzW4A",
-    "published_at": "2026-10-19T03:34:17+00:00",
-    "fetched_at": "2026-10-19T09:38:28+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "Pi Durable is a building block for always-on agent applications, not a new coding-agent CLI. Learn how checkpoints, conversations, and storage support recovery after interruptions, where Durable fits in the Pi ecosystem, and the six steps to initialize a harness. Then follow a local llama.cpp demo with Qwen3.5-0.8B, including a second script that resumes interrupted work from SQLite. The APIs are experimental and may change; tool replay safety and restarting the host process remain important application responsibilities.\n\n---\n\ud83d\udd17 *Links*\n- Tutorial companion code (fresh chat and restart recovery): https://github.com/alejandro-ao/pi-durable-demo\n- Pi Durable introduction: https://earendil.com/posts/pi-durable/\n- Pi source code: https://github.com/earendil-works/pi\n- Pi: https://pi.dev/\n- llama.cpp: https://github.com/ggml-org/llama.cpp\n- Qwen3.5-0.8B: https://huggingface.co/Qwen/Qwen3.5-0.8B\n- GGUF weights used in the demo (BF16): https://huggingface.co/unsloth/Qwen3.5-0.8B-GGUF\n\n---\n\ud83e\udd13 *Topics Covered*\n- Durable agent checkpoints and crash recovery\n- Harness architecture, conversations, and storage\n- Local-model setup and restart recovery demo\n\n---\n\u23f1\ufe0f *Timestamps*\n0:00 Introduction and tutorial roadmap\n1:48 What Pi Durable is and crash recovery\n8:38 Harness versus application in the Pi ecosystem\n13:46 Building an application around Pi Durable\n19:30 Six steps to initialize the harness\n23:11 Local-model code demo, restart recovery, and outro\n\n\ud83d\udc4b *Connect with me*\nMy website: https://alejandro-ao.com/\nX (Twitter): https://x.com/_alejandroao\nLinkedIn: https://www.linkedin.com/in/alejandro-ao-\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/ti3vVYwzW4A",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 992414,
-    "title": "Redesigning source control at Anthropic",
-    "url": "https://www.anthropic.com/engineering/redesigning-source-control",
-    "published_at": "2026-10-19T00:00:00+00:00",
-    "fetched_at": "2026-10-19T16:49:24+00:00",
-    "source_id": "claude-blog",
-    "source_name": "Claude Blog",
-    "extraction_method": "trafilatura",
-    "body": "Get the developer newsletter\nProduct updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.\nUpdated October 15 to include more detail on the projects that pioneered many of the techniques we use in Scion.\nAt Anthropic, coding is no longer the bottleneck to building systems or doing research. Claude is able to autonomously iterate on research loops, micro-optimize complex programs, and build new services from the ground up at a speed and scale we haven\u2019t seen before. The bottleneck, now, is all of the developer infrastructure built for human scale: source control, builds, and CI.\nIn May 2026, Anthropic averaged around 2,500 code changes merged per day; as of September, we merged over 30,000 per day. We don\u2019t expect this rate of growth to slow down anytime soon; the latent demand for merging code is practically infinite, and every bottleneck we remove immediately leads to a further increase in the amount of code we produce.\nIn order to support this growth, we built Scion, an in-house version control system, and fully migrated our monorepo from git in five months. We also built and shipped a code review surface (called Antique), code search, a rich source control IAM system, novel ways of managing and landing large amounts of reviewed code, and more, all in that same time period. In this post, we\u2019ll focus on how we built Scion specifically. It makes for an interesting case study: Claude\u2019s ability to write code was both what put us in this situation in the first place and how we were able to quickly build a high-quality, scalable system to deal with it.\nBefore we explore what we built, we should acknowledge how unusual our workload is. Unsurprisingly, Anthropic uses Claude to write software far more than almost any other company, so we\u2019re often the first to see where tools built for human scale start to strain. Source control is just one example of this. While we don\u2019t expect many organizations to have these problems in the very near term, we suspect it won\u2019t be too long before others who use AI coding tools experience these same pressure points, which is why we wanted to share what we built and what we learned.\nGit is a decentralized system: every clone is a complete, self-contained repository that can compute diffs, read history and blame, and check out any revision while fully offline. For the vast majority of repositories, this is the right design, and it\u2019s a large part of why git became the standard.\nAs our monorepo grows, it increasingly doesn\u2019t fit that design space. The history of our main branch alone is almost 100 GB, and a compressed working copy is over 25 GB. We perform on the order of 25 million code checkouts per day for CI, before counting developer environments, agent sandboxes, and research jobs. Fetched naively, that would be over 600 PB of git traffic per day.\nGit offers tools for working with a slice of a repository, such as shallow clones, sparse checkouts, and promisor remotes. Beyond these, there are standard workarounds for large monorepos, like internal git mirrors and repository snapshots (seeds) kept in blob storage. We\u2019ve used all of them\u2014at our peak, we operated several hundred internal git mirrors to deal with the load. This bought us time, but they became harder to operate as our merge rate increased. Seeds fell further from the tip of main between refreshes, and it took more and more care to keep operations that depend on history, like diff and blame, working on partial clones.\nTaking a step back, we noticed that, like most companies, we were using git as a centralized system with one authoritative copy, but nearly all of our clients were agents and jobs that are online by definition. The properties that make git excellent for distributed, offline work were actively undermining our ability to scale as the repo grew. So we asked ourselves: if we designed source control with the fact that agents are always online in mind from the start, what would it look like?\nWith agentic coding, many common assumptions about how software is developed are evolving. We embraced these changes when building Scion, which allowed us to take a fundamentally different approach than git on several core principles. Source control for huge monorepos has prior art, notably Google\u2019s [Piper](https://en.wikipedia.org/wiki/Piper_(source_control_system)) and Meta\u2019s [Sapling](https://sapling-scm.com/),[2](#footnote-2) so we were able to build Scion with their hard-won lessons in mind. Our principles are:\nClients are always online. Git assumes that clients work offline and need a complete copy of the repository. Since nearly all of our clients are agents and jobs, we designed Scion\u2019s client and protocols around a server that is always reachable, and have clients fetch data when they need it.\nClient-server asymmetry. In git, every client is capable of being a full-fledged server. In Scion, the server answers questions about file history and blame, creates commits, performs merges and rebases, and so on. The client maintains a bounded local object cache, lays out the working copy files on disk, monitors for filesystem changes, and gives users an ergonomic way to work with the server. It can compute very little on its own but, in exchange, it requires much less data locally.\nA comprehensive source control service can power many novel applications. With git, a CI job or tool that needs to ask a question about the repository, such as who last changed a line or how two commits are related, has to maintain a local copy of the repo or hope that vendor-specific APIs provide the answer. With Scion, all of the source control queries the client uses are also exposed via API, so in many cases jobs don\u2019t need a local repository at all. Many internal tools, such as our automated bisect and revert pipelines, wouldn\u2019t be practical at scale without this cheap, programmatic access to source control.\nEverything must be horizontally scalable. At our peak, we ran several hundred git mirrors, which significantly strained capacity and no longer scaled once the repo outgrew the mirrors\u2019 disks or memory limits. In Scion, the repository\u2019s data is distributed, and every component is independently scalable; there is no fully materialized copy of the repo anywhere, even on the server. There is no equivalent of packfiles (git\u2019s compressed bundles of objects), so no repository maintenance is needed.\nCommits must be cheap, incremental, and lock-free. In git, you commit locally and then push to share your work. In Scion, every commit, rebase, or merge happens on the server, so there\u2019s nothing to push, but each of those operations needs to be fast. The cost of creating a commit and updating its downstream data structures has to scale with the size of the change, not the overall size of the repo, or the server can\u2019t keep up. The development lifecycle in Scion discourages refs (pointers to commits, such as branches and tags), except for the main ref or release branches, because global state that every server has to agree on is a looming scaling problem.\nThe working copy is optional, and sparse by design. Because our monorepo is so large, and because we check out code tens of millions of times a day for CI, we wanted to avoid checkouts whenever we could. With Scion, a CI job that needs the diff between a commit and its merge base, for example, can ask the server for it. The same goes for writes: many write workloads can also skip the checkout and function entirely via API. Scion\u2019s protocol is centered around sparse checkouts, which only contain the directories the client asks for, and virtualized checkouts, which materialize files on demand, so when a job does need files on disk, the client only pays for what it actually reads.\nIt\u2019s helpful to understand how these principles came together in practice when building Scion. These insights can apply to other source control systems or, more broadly, to other stages of the software development lifecycle.\nIn Scion, the unit of work is a \u201cchangeset,\u201d an entry in a write-ahead log. A changeset stores most of what you\u2019d expect from a commit in git. But where a git commit stores a pointer to the tree, a changeset stores a list of the files that changed relative to its first parent,[1](#footnote-1) along with content-addressed pointers to the compressed file contents in blob storage. Changesets are created server-side and are available everywhere, instantly.\nThis structure lets us accept changesets with very high throughput because there are no packfiles to accept, no locking or cross-server coordination, and no refs to move around. Scion does technically support refs, but since neither creating nor fetching commits involves them, moving one is a compare-and-swap on a single Spanner row that happens separately from creating changesets.\nA changeset records only what\u2019s changed, so on its own, it can\u2019t quickly answer questions like who last edited a line or which commits affected a file. To answer those, Scion builds additional data structures from the changesets, including dedicated structures for file blame and path history and skip lists for the commit graph. We call everything that isn\u2019t directly part of the changeset \u201cderived data,\u201d and we compute it all through one generic mechanism. Each type of derived data is defined recursively, so its value for a changeset is computed from its values for that changeset\u2019s parents.\nThis mechanism has three benefits. First, we can easily add a new type of derived data when a new data structure would make some operation faster. Second, for each type, we can choose whether to compute it eagerly or defer the work, so we avoid materializing data we don\u2019t need. And third, because the client never sees the internals of these data structures, we can optimize them without changing the client. We\u2019ve added new types of derived data many times as the system has grown, such as new indices for performing copy detection or path-based file search.\nA small fleet of Scion servers provides source control APIs for any operation a client needs, such as getting changesets, computing diffs, finding merge bases, and fetching blobs. All source control data is content-addressed, so a piece of data never changes once it\u2019s stored, and any server can cache it without checking with the others. As a result, the servers are horizontally scalable and require little coordination. They are essentially large caches that can also compute derived data on the fly and write the results back to Spanner.\nScion\u2019s many consumers no longer need to maintain local repositories of their own. Fetching and maintaining the repository used to be a significant maintenance burden for CI jobs or tools that needed to ask source control questions, particularly about commit ancestry and blame. Early in the migration, before we had our own client, repo format, or protocols, Scion only answered these \u201cmetadata\u201d queries. Fetching file contents and materializing working copies are far more data-intensive operations, and they needed a design of their own.\nScion\u2019s scn client deviates from git\u2019s fetch protocols in several important ways and, as a result, lends itself to a highly scalable architecture that requires significantly less CPU than git servers. Scion\u2019s negotiation doesn\u2019t tell the server what the client already has; instead, it operates exclusively on trees and blobs the client wants. Starting from a root tree, the client checks its local store for missing trees and requests them recursively, then repeats the process for blobs. Every request is for a specific object that never changes, so any cache can answer it, and the architecture closely resembles traditional tiered caches. The process is also efficient and resumable, because there is no single multi-gigabyte packfile response. Sparse and even virtualized checkouts don\u2019t need special support, because the client simply doesn\u2019t ask for trees it doesn\u2019t want.\nIn the fleet, the client talks over a socket to a da",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 995252,
-    "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
-    "url": "https://huggingface.co/blog/hf-torchneuron",
-    "published_at": "2026-10-19T00:00:00+00:00",
-    "fetched_at": "2026-10-19T21:21:07+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "[\n](#torchneuron-running-hf-models-on-aws-trainium-is-easier-than-ever)\nTorchNeuron: running HF models on AWS Trainium is easier than ever\n[Update on GitHub](https://github.com/huggingface/blog/blob/main/hf-torchneuron.md)\n[\n](#torchneuron)\nTorchNeuron\n[TorchNeuron](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/frameworks/torch/index.html) is a PyTorch plugin that brings a new backend for Trainium enabling support for eager mode, torch.compile\nand native distributed APIs like FSDP and TP.\nRead the Pytorch [blog](https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/) to learn more about TorchNeuron.\nStarting Oct. 20, 2026, TorchNeuron will be available as a public beta. Researchers and developers will be able to install it with pip install torch-neuronx\n.\n[\n](#new-backend-native-interface-in-hf-libraries)\nNew backend, native interface in HF libraries\nTo date, the Hugging Face experience on AWS Trainium and Inferentia \u2014 AI chips designed respectively for cost-effective training and inference at scale \u2014 has been delivered through [optimum-neuron](https://github.com/huggingface/optimum-neuron). This library relies on the torch-neuronx package, which is based on PyTorch XLA. It was the natural choice at the time, but it meant thinking like a compiler: lazy tensors instead of eager execution, static shapes only, a recompilation for every graph break. Optimum Neuron existed to hide that complexity, and maintained custom code (modeling classes, trainers, etc) to do so.\nTorchNeuron changes this. It integrates directly into PyTorch and exposes neuron\nas a native device, with eager execution, PyTorch's own distributed primitives (DTensor, FSDP2) and torch.compile\n.\nFor the Hugging Face libraries, Trainium becomes a device like any other: Transformers, Diffusers, Accelerate, PEFT and TRL run on it directly, with the same classes and scripts you would use on any other accelerator. From now on, we recommend that Neuron users use these libraries directly instead of going through Optimum Neuron.\n[\n](#transformers)\nTransformers\n[\n](#inference)\nInference\nText generation is now natively supported in Transformers for a wide range of models. With TorchNeuron, 89% of the top 100 most-used text-generation model architectures are supported out of the box, compared to 46% with Optimum Neuron v0.4.5. You just need to pass the device_map=neuron\nargument in your code and your model will be moved to the Neuron devices.\nThe following is an example of text-generation with tensor parallelism, which will enable to fully benefit from your Neuron instance. Note that it uses a static cache for generation as this is strongly recommended with Neuron to prevent frequent recompilations.\nimport os\nimport torch\nimport torch.distributed as dist\nimport torch_neuronx # noqa: F401\nfrom torch.distributed import DeviceMesh\nfrom transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig\nfrom transformers.distributed import DistributedConfig\nfrom transformers.generation.configuration_utils import CompileConfig\nMODEL_ID = \"Qwen/Qwen3.8-27B\"\nMAX_SEQ_LEN = 1024\nPREFILL_CHUNK_SIZE = 512\ndist.init_process_group(backend=\"neuron\")\nworld_size = dist.get_world_size()\nmodel = AutoModelForCausalLM.from_pretrained(\nMODEL_ID,\ndtype=torch.bfloat16,\ndistributed_config=DistributedConfig(tp_size=world_size),\ndevice_mesh=DeviceMesh(\"neuron\", list(range(world_size))),\n).eval()\ntokenizer = AutoTokenizer.from_pretrained(MODEL_ID)\nif tokenizer.pad_token is None:\ntokenizer.pad_token = tokenizer.eos_token\ntokenizer.padding_side = \"left\"\ninputs = tokenizer.apply_chat_template(\n[{\"role\": \"user\", \"content\": \"The future of AI is\"}],\nadd_generation_prompt=True,\npadding=True,\ntokenizer_kwargs={\"pad_to_multiple_of\": PREFILL_CHUNK_SIZE},\nreturn_tensors=\"pt\",\n)\ngeneration_config = GenerationConfig(\nmax_new_tokens=128,\ndo_sample=False,\nuse_cache=True,\npad_token_id=tokenizer.pad_token_id,\neos_token_id=tokenizer.eos_token_id,\ncache_implementation=\"static\",\nmax_cache_len=MAX_SEQ_LEN,\nprefill_chunk_size=PREFILL_CHUNK_SIZE,\ncompile_config=CompileConfig(backend=\"neuron\", fullgraph=False, dynamic=False),\n)\nwith torch.no_grad():\noutput_ids = model.generate(\ninputs[\"input_ids\"],\nattention_mask=inputs[\"attention_mask\"],\ngeneration_config=generation_config,\n)\nif dist.get_rank() == 0:\nprompt_len = inputs[\"input_ids\"].shape[1]\nprint(tokenizer.decode(output_ids[0, prompt_len:], skip_special_tokens=True))\n[\n](#training)\nTraining\nNow that Neuron is a native PyTorch device, training on Trainium uses the same Hugging Face libraries as any other accelerator: Transformers, Accelerate, PEFT and TRL. You no longer need a dedicated trainer or a Neuron-specific fork of the model code. A standard TRL fine-tuning script runs on a Trainium instance with only a few Neuron-specific settings.\nHere is a supervised fine-tuning script built on TRL's SFTTrainer\n. If you have fine-tuned a model with TRL on GPUs before, it should look familiar.\nimport os\nimport torch\nfrom datasets import load_dataset\nfrom transformers.distributed import DistributedConfig\nfrom trl import ModelConfig, ScriptArguments, SFTConfig, SFTTrainer, TrlParser\ndef main(script_args, training_args, model_args):\n# The Neuron backend can't compile Dynamo's automatic dynamic shapes yet (https://github.com/huggingface/trl/issues/7660)\ntorch._dynamo.config.automatic_dynamic_shapes = False\ntraining_args.model_init_kwargs = {\n\"revision\": model_args.model_revision,\n\"trust_remote_code\": training_args.trust_remote_code,\n\"attn_implementation\": model_args.attn_implementation,\n\"dtype\": model_args.dtype,\n\"device_map\": None,\n}\nif int(os.environ.get(\"WORLD_SIZE\", \"1\")) > 1:\n# The model is sharded on the TP x FSDP grid as its weights are loaded\ntraining_args.model_init_kwargs[\"distributed_config\"] = DistributedConfig(\ntp_size=int(os.environ.get(\"TP_SIZE\", \"1\")),\nfsdp_size=int(os.environ.get(\"FSDP_SIZE\", \"1\")),\n)\n# Prepare dataset\ntrain_dataset = load_dataset(\nscript_args.dataset_name,\nname=script_args.dataset_config,\nsplit=script_args.dataset_train_split,\n)\n# UltraChat also has a string `prompt` column, which makes TRL treat it as a prompt-completion dataset.\ntrain_dataset = train_dataset.select_columns([\"messages\"])\n# Training\ntrainer = SFTTrainer(\nmodel=model_args.model_name_or_path,\nargs=training_args,\ntrain_dataset=train_dataset,\n)\ntrainer.train()\ntrainer.save_model(training_args.output_dir)\ntrainer.end()\nif __name__ == \"__main__\":\nparser = TrlParser((ScriptArguments, SFTConfig, ModelConfig))\nscript_args, training_args, model_args = parser.parse_args_and_config()\nmain(script_args, training_args, model_args)\nParallelism is handled natively by Transformers. You put a DistributedConfig\nwith the tensor-parallel (TP) and FSDP sizes in model_init_kwargs\n, SFTTrainer\npasses it to from_pretrained\n, and the model is sharded as its weights are loaded. The Trainer sees that the model is already distributed and does not wrap it again. You don't need an --fsdp\nflag or an Accelerate FSDP config.\nNothing in the script is tied to Trainium: the same code runs on any hardware. A few things are worth knowing when you run it on Trainium:\n- Static shapes. The script disables automatic dynamic shapes in\ntorch.compile\nand uses wrapped packing to produce sequences of up to 2048 tokens. With TRL \u2265 1.16, batches on Neuron are padded to a multiple of 128 tokens, limiting the number of input shapes. Compiled graphs are reused for subsequent steps with the same shapes. torch.compile\non. Passing--torch_compile true\nis all it takes: on a Trainium instance,torch.compile\ndetects the device and picks the Neuron backend automatically, with nothing else to configure.- Async weight loading off. The built-in asynchronous weight loading in Transformers is not supported on Neuron, so for now we disable it with\nHF_DEACTIVATE_ASYNC_LOAD=1\n.\nThe command below launches training with torchrun\n, which starts one process per NeuronCore. TP_SIZE\nand FSDP_SIZE\nset the parallelism layout, and their product is the number of processes: here 4 x 8 = 32, matching --nproc_per_node\n. The 32 processes form a 4 x 8 grid. Tensor parallelism splits each layer across the 4 cores of a TP group, and FSDP shards the parameters, gradients and optimizer state across the 8 TP groups.\nTP_SIZE=4 FSDP_SIZE=8 HF_DEACTIVATE_ASYNC_LOAD=1 uv run torchrun --nproc_per_node=32 sft_neuron_example.py \\\n--model_name_or_path Qwen/Qwen3-8B \\\n--dataset_name HuggingFaceH4/ultrachat_200k \\\n--dataset_train_split train_sft \\\n--output_dir Qwen3-8B-sft-tp4-fsdp8 \\\n--dtype bfloat16 \\\n--max_length 2048 \\\n--packing true \\\n--packing_strategy wrapped \\\n--learning_rate 2e-5 \\\n--warmup_steps 0.03 \\\n--num_train_epochs 1 \\\n--logging_steps 2 \\\n--per_device_train_batch_size 4 \\\n--gradient_accumulation_steps 4 \\\n--save_only_model true \\\n--torch_compile true\nWe ran it on 8 Trainium2 chips (32 NeuronCores), which is half a trn2.48xlarge\ninstance.\nTraining runs to completion, and trainer.save_model\nwrites a standard Transformers checkpoint. Nothing in it is tied to Neuron: you can push it to the Hugging Face Hub as is and load it on any other hardware.\n[\n](#diffusers)\nDiffusers\n[\n](#inference-1)\nInference\nMany pipelines from the Diffusers library are compatible with TorchNeuron in eager and compiled mode. FLUX.1-dev, FLUX.2, Qwen-Image, Qwen-Image-2.1 and H3 are also compatible with tensor parallelism to make the most of your Neuron devices. The following is an example showing how you can use TP:\nimport torch, torch.distributed as dist, torch_neuronx # TP\nfrom torch.distributed.device_mesh import DeviceMesh # TP\nfrom diffusers import QwenImage21Pipeline, QwenImage21Transformer2DModel, TensorParallelConfig\n# Distributed devices initialization\ndist.init_process_group(backend=\"neuron\") # TP\ndev = torch.neuron.current_device()\nmesh = DeviceMesh(\"neuron\", list(range(8))) # TP=8\n# Pipeline initialization\nmodel = \"Qwen/Qwen-Image-2.1\"\ntransformer = QwenImage21Transformer2DModel.from_pretrained(\nmodel,\nsubfolder=\"transformer\",\ntorch_dtype=torch.bfloat16,\nparallel_config=TensorParallelConfig(mesh=mesh), # TP\n)\npipe = QwenImage21Pipeline.from_pretrained(\nmodel,\ntransformer=transformer,\ntorch_dtype=torch.bfloat16,\n)\npipe.vae.to(dev)\npipe.transformer.compile_repeated_blocks(backend=\"neuron\", fullgraph=True, dynamic=False)\n# Image generation\nemb, mask, _ = pipe.encode_prompt(prompt=\"A capybara wearing a wizard hat, oil painting\", device=\"cpu\") # text encoder stays on CPU\nimage = pipe(\nprompt_embeds=emb.to(dev),\nprompt_embeds_mask=mask.to(dev) if mask is not None else None,\nheight=1024,\nwidth=1024,\nnum_inference_steps=40,\ngenerator=torch.Generator(\"cpu\").manual_seed(0), # same noise on every rank\n).images[0]\nif dist.get_rank() == 0:\nimage.save(\"out.png\")\nYou can run this piece of code with: NEURON_LOGICAL_NC_CONFIG=2 torchrun --nproc_per_node=8 run.py\n.\nMore and more pipleines will be compatible with TP. If a pipeline you like is not, you can also add support for it following [this guide](https://huggingface.co/docs/diffusers/main/en/training/distributed_inference#writing-a-tensor-parallelism-plan).\n[\n](#kernels)\nKernels\nMake sure to check out the [kernels from the Neuron team](https://huggingface.co/aws-neuron/kernels) as more and more Neuron kernels will become available on the Hub to speed up your models.\nNeuron kernels can be written using the [Neuron Kernel Interface](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/nki/index.html) (NKI), which gives lower control to optimize operations. This way, users can run their own custom operations and share them on the hub.\nYou can use for example [this kernel](https://huggingface.co/kernels/aws-neuron/vit-encoder-neuron-kernels) to speed up your vision transformers with up to a x2.4 speedup on Trainium!\n[\n](#acknowledgments)\nAcknowledgments\nSpecial thanks to the AWS team for their work on TorchNeuron and for their reactivity to our feedback to make the HF integration as good as possible.",
-    "topic": "hardware",
-    "tags": [
-      "hardware",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "benchmark",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 996134,
-    "title": "Together Post-Training: frontier-grade model shaping, the way that fits you",
-    "url": "https://www.together.ai/blog/together-post-training",
-    "published_at": "2026-10-19T00:00:00+00:00",
-    "fetched_at": "2026-10-19T21:21:07+00:00",
-    "source_id": "together-ai",
-    "source_name": "Together AI",
-    "extraction_method": "trafilatura",
-    "body": "We are introducing Together Post-Training, a new service for building custom models on our platform \u2014 both from environment rewards via RL and supervision data via SFT. This service is designed to give you flexible and efficient model shaping without the heavy infra burden.\nTogether Post-Training makes it easy to define the training loop, while we co-optimize the systems and infrastructure underneath for model quality and training speed. Nothing now stands between you and the best model that is uniquely yours.\nThe value of custom models\nIn 2026, training custom models for your AI workloads is no longer a niche topic. Companies are actively exploring it to reduce costs and improve task-specific performance. Instead of fixing model behaviors and improving their efficiency via context or harness engineering, many AI-native and AI-forward organizations are training specialist agents, matching the quality of frontier models at a fraction of the cost and runtime. On top of that, training the model yourself yields greater ownership and flexibility: the resulting checkpoint can be deployed in any location, further refined, or even used locally.\nAt Together, we want to empower every AI developer with the ability to get the best model for their task, as conveniently as possible. Post-training a great model requires many iterations on data curation, training algorithms, and evaluation protocols. On top of that, infrastructure for RL is getting ever more complex, with a fine line between \u201can efficiency optimization\u201d and \u201ca silent bug that holds back your runs\u201d. Doing so for large models reliably and at scale presents its own set of challenges.\nFrontier labs have entire teams solving each of the above problems. Since tackling all challenges at once is a big investment, many companies that could benefit from post-training never start it, or start and stall. Together Post-Training handles all optimizations and infrastructure without getting in the way, and our forward-deployed team partners with our customers to help with the end-to-end workflow. This lets every researcher or domain expert focus on what they do best while we take care of the rest.\nTogether Post-Training at a glance\nAs the complexity of post-training continues to evolve, so should the tooling around it. Together Post-Training provides a set of common abstractions familiar to ML developers, as well as control over the resources used by each experiment, while making sure that all computations under the hood are fast, cost-efficient, and, most importantly, correct.\nWe built our service to offer the highest degree of flexibility for your experiments. You can run LoRA training, including multiple LoRA adapters sharing the same GPU capacity, as well as full-weight experiments for select models. In contrast to our [fine-tuning service](https://www.together.ai/fine-tuning), the entire training loop of Together Post-Training is yours to define. You can use any data, environments, or agentic harnesses that suit your setup best, and add any steps you need (such as logging or external benchmarking) throughout the training process. The entire workflow is as follows:\nAll experiments run on Model Resources \u2014 GPU allocations that are fully yours, not competing with others\u2019 requests for priority. Each Model Resource can hold one or several Training Sessions, where each one corresponds to a single experiment using the same base model (for example, one set of LoRA adapters). This means you get the best rollout and training performance, as you never have to compete with other users\u2019 requests executing on the same hardware. At the same time, dedicated GPU allocations mean you can run full-weight finetuning, going beyond LoRA when adapting to large knowledge-intensive tasks.\nOnce you allocate the model resource and start the session, you can execute each step of the training loop. Each session contains a Trainer instance responsible for running forward/backward steps and updating the weights, as well as Generator instances for executing rollouts from the policy. For every model, we heavily optimize training and rollout performance, making sure all operations are fast and numerically aligned across stacks. In the case of SFT, you can start a model resource with 0 generators to save costs. You decide the point at which the trainer parameters are sent to the generator; we also support asynchronous RL for high GPU utilization of both components at all times, especially with long agentic rollouts.\nWhile we support a number of standard losses (from cross-entropy and GRPO to CISPO and DPPO), we also allow computing a custom training objective locally and sending its gradients to the Trainer for computing the updates.\nTogether Post-Training launches with a range of leading open-weight models, including Muse Spark Open, GLM 5.3, Kimi K3, and Qwen 3.8-27B. We will expand the selection in the coming weeks, making sure you can use both the highest-capability frontier LLMs and efficient smaller models.\nQuality, performance, and efficiency\nDelegating the internals of post-training infrastructure can be a daunting decision. Our team has first-hand experience catching silent bugs in complex machine learning systems, from pushing the frontier of RL research to training LLMs that have served millions of users. We understand that the best training stack is the one that gets you the best model, and building such infrastructure demands careful implementation and co-design across all components.\nFor these reasons, we prioritized quality of output models as our north star in the development of the service. One notorious example of issues affecting RL results is the alignment between training and inference engines: if the same model weights produce slightly different outputs due to mismatching numerics, the whole run might underperform or even collapse. We eliminate numerous sources of policy drift across training and inference, using both standard techniques like [Rollout Routing Replay](https://arxiv.org/abs/2510.11370) and advanced optimizations driven by our research in training stability.\nBeyond model quality, we also work to make each run as fast and as efficient as possible, because post-training requires multiple iterations: the sooner a run finishes and the less it costs, the more ideas you get to test. Most of the time in RL is spent on generating rollouts, which allows us to capitalize on years of research and engineering behind Together\u2019s inference products. Our rollout engines draw on the same optimizations as our serving stack. For multi-turn agents, intelligent caching and routing minimize redundant computations while keeping memory costs bounded. On the training side, optimized parallelism and sequence packing speed up both SFT and RL steps.\nWith Together Post-Training, you size each experiment to what it needs and do not pay more. If your experiment is bottlenecked by rollout concurrency, you can request the exact number of sampler replicas. Several LoRA experiments can share one model resource, so running a sweep doesn\u2019t mean reserving more GPUs for every setup. We bill every model resource per GPU-minute, yet thanks to many optimizations of our dedicated and multi-LoRA serving stacks, the overall costs of training drop below token-based pricing as soon as you scale up the experiments.\nOptimized deployment after training\nWhen the post-training experiments are finished, it might be important to run each resulting model side by side to compare their outputs. We now support [multi-LoRA adapter serving](https://docs.together.ai/docs/post-training/multi-lora-deployment) in Dedicated Model Inference: instead of starting a separate production deployment for each run, you can swap the adapters at your convenience in a single GPU deployment, helping you lower the serving costs.\nLastly, converting the model to run at the highest throughput in production means it potentially executes in lower precision, in a different hardware configuration, and with different kernels compared to rollout generation. Through a combination of algorithmic and systems improvements, we ensure that each training checkpoint retains the quality in serving, even after switching from multi-LoRA sampling to a fully performant [merged inference in FP4 precision](https://docs.together.ai/docs/post-training/prepare-for-fp4-inference).\nGetting started\nTo begin your first post-training experiments, install the latest [Together SDK](https://github.com/togethercomputer/together-py) and [read the docs](https://docs.together.ai/docs/post-training/overview). We also provide a selection of cookbooks that can help you get started with Together Post-Training, which are available at [github.com/togethercomputer/post-training-cookbook](https://github.com/togethercomputer/post-training-cookbook). These cookbooks provide examples of training with GRPO on a standard GSM8K benchmark, implementing DPO as a custom loss, or training multiple LoRA adapters within the same model resource. If you already have a setup that uses post-training services such as Tinker API, we also offer a simple way to migrate from them. You can replace one line in your scripts, and everything else can stay the same:\nRead our [Tinker migration guide](https://docs.together.ai/docs/post-training/migrate-from-tinker) to learn more.\nHow AI-native companies are using Together Post-Training today\nBefore this launch, we worked with a select group of organizations pushing the frontier of custom models. We granted them early access to our service over the past few months; the feedback we received was invaluable in developing the product which now everyone can use. Hear from the teams themselves:\n\u201cWe had a great experience with the Together Post-Training platform from day one. The high degree of control and flexibility let us start running real RL experiments within a couple of hours. The service is efficient, allowing us to run up to five concurrent RL experiments on the same GPU capacity. The Together Research team was an exceptional collaborator throughout the training process, giving us feedback on model selection, training techniques, reward functions, and training efficiency.\u201d\n\u2013 Anthony Li, Associate Director of Data Science, [Deel](https://www.deel.com/)\n\u201cAt Jack & Jill, we build two AI agents: Jack for professionals, and Jill for companies, who recruit from Jack\u2019s network of professionals who\u2019ve opted in to being introduced. We used Together Post-Training to post-train a model that predicts which candidates a hiring manager will want to meet, a core step in Jill\u2019s search. Onboarding was easy, their team helped design our experiments, and their forward-deployed engineers wrote the scripts that got us to first results. We matched a closed-source model\u2019s quality in offline evaluations, using an open-source model that\u2019s significantly cheaper to serve.\u201d\n\u2013 Oliver Normand, Founding Engineer, [Jack & Jill](https://www.jackandjill.ai/)\n\u201cWe\u2019ve been collaborating with the Together team since the launch of its Post-Training beta in April. With the latest iteration, seamless self-onboarding made it easy to quickly launch full-scale agentic RL runs. The Post-Training service has proven to be exceptionally intuitive, flexible, and powerful for scaling sophisticated agentic workloads.\u201d\n\u2013 Adit Jain, Researcher, [Collinear AI](https://collinear.ai/)\nBuild with Together Post-Training\nWith the launch of Together Post-Training, we\u2019re turning frontier-grade model customization into a reliable, flexible and efficient service. The next step is for you to make the most of it. For the first eight weeks, we are offering Together Post-Training at a reduced price of $9 per GPU-hour of B200 usage. Learn how to [get started](https://docs.together.ai/docs/post-training/quickstart-rl) today \u2014 we\u2019re excited to see what you will build.\nBut you don\u2019t have to do this alone. For companies that want a partner, our forward-deployed engineers work alongside your team acro",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 987115,
-    "title": "llm-tools-datasette 0.1.1",
-    "url": "https://simonwillison.net/2026/Oct/18/llm-tools-datasette/",
-    "published_at": "2026-10-18T23:43:09+00:00",
-    "fetched_at": "2026-10-19T03:30:47+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "18th October 2026\nRecent articles\n[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026",
-    "topic": "tools",
-    "tags": [
-      "models",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 987116,
-    "title": "llm-echo 0.5",
-    "url": "https://simonwillison.net/2026/Oct/18/llm-echo/",
-    "published_at": "2026-10-18T23:16:16+00:00",
-    "fetched_at": "2026-10-19T03:30:47+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "18th October 2026\nI'm working towards a new [LLM](https://llm.datasette.io/) release, and testing PRs caused me to revisit the llm-echo\ndebug plugin. This plugin provides a \"model\" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates the simulated token usage counts to take tool calls, system prompts, and reasoning tokens into account.\nExample usage:\nuvx --with llm-echo llm -m echo 'hi there' -o thinking 1 --usage\nOutputs:\nFirst I consider the prompt, then I decide what to say.\n{\n\"prompt\": \"hi there\",\n\"system\": \"\",\n\"attachments\": [],\n\"stream\": true,\n\"previous\": []\n}\nToken usage: 2 input, 24 output\nRecent articles\n[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026[We're going to need default hard budget caps on pretty much everything](/2026/Oct/3/default-hard-budget-caps/)- 3rd October 2026",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "infrastructure",
-      "coding",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 985323,
-    "title": "Why AI Agents Still Won't Pay for Anything \u2014 Jan Curn, Apify",
-    "url": "https://www.youtube.com/watch?v=-AOxpwVeIWw",
-    "published_at": "2026-10-18T23:00:35+00:00",
-    "fetched_at": "2026-10-18T23:31:00+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "x402, AP2, ACP, MPP, TAP, UCP: every big fintech and payments company now has an agent payment standard, but real volume is close to zero. Jan Curn, founder of Apify, walks the agent payment funnel (need, setup, discovery, purchase) to show where it breaks. He covers why API keys still win, why crypto is well placed, the trust problem in finding services, and how pay-per-use billing finally landed.\n\nChapters:\n- 00:00 The agent payments boom\n- 02:57 Every protocol, from x402 to AP2\n- 05:47 Why crypto fits agent payments\n- 07:38 Nobody's using them. Why?\n- 08:36 The agent payment funnel\n- 09:37 Need: competing with API keys\n- 12:19 Setup: wallets are still hard\n- 13:19 Discovery: who can an agent trust?\n- 16:06 Buying: pay-per-use and batch settlement\n- 19:41 What's next\n\nJan Curn \u2014 X: https://x.com/jancurn | https://apify.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/-AOxpwVeIWw",
-    "topic": "product",
-    "tags": [
-      "product",
-      "api",
-      "agents",
-      "video",
-      "coding",
-      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
