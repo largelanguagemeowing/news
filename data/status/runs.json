@@ -1,8 +1,116 @@
 [
   {
+    "run_id": "3264916480d6",
+    "started_at": "2026-11-13T12:45:59+00:00",
+    "ended_at": "2026-11-13T12:46:31+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "43427764569",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/43427764569",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-11-13T12:45:59+00:00",
+        "ended_at": "2026-11-13T12:46:31+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 23,
+          "enriched": 22,
+          "updated": 22,
+          "unchanged": 1,
+          "misses": 0,
+          "markdown_new_used": 2,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 15,
+            "youtube": 5,
+            "markdown_new": 2,
+            "rss": 1
+          },
+          "per_source": {
+            "simon-willison": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "fireship": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "matt-wolfe": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "openai-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "huggingface-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "google-deepmind-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "google-ai-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "bens-bites": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "nvidia-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "matt-pocock-youtube": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "apple-machine-learning": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "claude-blog": {
+              "attempted": 6,
+              "enriched": 6,
+              "failed": 0
+            },
+            "cohere-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "marios-rec-reading": {
+              "attempted": 1,
+              "enriched": 0,
+              "failed": 1
+            }
+          },
+          "flush_batches": 1,
+          "defuddle_enabled": true,
+          "duration_ms": 32170.71
+        }
+      }
+    ]
+  },
+  {
     "run_id": "cab24247447c",
     "started_at": "2026-11-13T06:22:46+00:00",
-    "ended_at": "2026-11-13T06:23:06+00:00",
+    "ended_at": "2026-11-13T06:23:17+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "43378168776",
@@ -823,36 +931,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 17384.46
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "e64908010180",
-    "started_at": "2026-11-08T22:44:18+00:00",
-    "ended_at": "2026-11-08T22:44:40+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "42531635303",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/42531635303",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-11-08T22:44:18+00:00",
-        "ended_at": "2026-11-08T22:44:26+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 3,
-          "duplicate_articles": 2247,
-          "dead_letters": 0,
-          "failed_sources": 0,
-          "skipped_sources": 1,
-          "not_modified_sources": 17,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 7928.11
         }
       }
     ]
