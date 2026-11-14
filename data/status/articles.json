@@ -1,5 +1,44 @@
 [
   {
+    "article_id": 1288018,
+    "title": "datasette-cluster-map 0.19",
+    "url": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
+    "published_at": "2026-11-13T23:02:45+00:00",
+    "fetched_at": "2026-11-14T01:35:55+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette-cluster-map/releases/tag/0.19\">datasette-cluster-map 0.19</a></p>\n        <p>One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on <a href=\"https://simonwillison.net/2026/Nov/13/datasette-leaflet/\">the new datasette-leaflet</a> to ensure OpenStreetMap tiles are requested with a referrer header.</p>\n<p>Here's <a href=\"https://datasette.io/global-power-plants/global-power-plants?owner=Pacific+Gas+%26+Electric+Co.\">a map of power plants owned by California's PG&amp;E</a>, also demonstrating Datasette's recently <a href=\"https://github.com/simonw/datasette/pull/3032\">redesigned facets</a>:</p>\n<p><img alt=\"Screenshot of a faceted map interface. Three facet panels at the top: &quot;country_long 1&quot; with United States of America 81 selected; &quot;owner 1&quot; with Pacific Gas &amp; Electric Co. 81 selected; &quot;primary_fuel 5&quot; listing Hydro 63, Solar 10, Gas 5, Storage 2, Nuclear 1. Each primary_fuel row has a pale blue horizontal bar behind its label, sized in proportion to its count: Hydro's bar fills most of the row width, Solar's is a short sliver, Gas's is shorter still, and Storage and Nuclear have only a thin strip at the left edge. Below is a Leaflet map with + and \u2212 zoom controls showing California and Nevada, with marker clusters across northern and central California: 9 near Redding, 21 near Chico, 2 to the west of Chico, 13 northeast of Sacramento, 7 east of Stockton, 6 at Oakland, 10 at Fresno, 9 west of Visalia, 2 north of Bakersfield, plus two individual blue pin markers on the coast, one in the far north and one north of Santa Maria. Attribution: Leaflet | \u00a9 OpenStreetMap contributors\" src=\"https://static.simonwillison.net/static/2026/power-plants-pge.webp\" /></p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/geospatial\">geospatial</a>, <a href=\"https://simonwillison.net/tags/openstreetmap\">openstreetmap</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1288019,
+    "title": "datasette-leaflet 0.3",
+    "url": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
+    "published_at": "2026-11-13T22:30:54+00:00",
+    "fetched_at": "2026-11-14T01:35:55+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/datasette-leaflet/releases/tag/0.3\">datasette-leaflet 0.3</a></p>\n        <p>OpenStreetMap have a very reasonable policy that hits to their hosted tile server <a href=\"https://wiki.openstreetmap.org/wiki/Referer\">should send a referrer header</a>. Datasette table pages used the <code>Referrer-Policy: no-referrer</code> HTTP header, causing plugins that loaded tiles from OpenStreetMap to violate that policy.</p>\n<p><code>datasette-leaflet</code> is the plugin that loads a bundled Leaflet so other Datasette plugins can depend on it. It now sets the referrer policy on the tile requests themselves to <code>strict-origin-when-cross-origin</code>, passing the host but not the full path to the page.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/leaflet\">leaflet</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/openstreetmap\">openstreetmap</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1284680,
     "title": "After 600 experiments, here's what I discovered about JEPA world models",
     "url": "https://haddyalchaer.com/jepa",
@@ -129,6 +168,24 @@
     "tags": [
       "research",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1286632,
+    "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+    "url": "https://openai.com/business/customer-stories/shield",
+    "published_at": "2026-11-13T08:00:00+00:00",
+    "fetched_at": "2026-11-14T01:35:55+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their judgment.",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -482,7 +539,7 @@
     "published_at": "2026-11-12T12:46:57+00:00",
     "fetched_at": "2026-11-12T18:43:01+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
+    "source_name": "Matt Pocock YouTube",
     "extraction_method": "youtube",
     "body": "Working with agents across many repos? Put your skills, steering files and tooling in one Home Repo, and point your agent at the rest.\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/zyQxyNQZ8B4",
     "topic": "ai-models",
@@ -526,7 +583,7 @@
     "published_at": "2026-11-12T11:55:26+00:00",
     "fetched_at": "2026-11-12T18:43:01+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
+    "source_name": "Matt Pocock YouTube",
     "extraction_method": "youtube",
     "body": "Discover the Home Repo pattern: a simple technique to manage multiple repositories with shared agent skills, steering files, and custom tooling. Learn how to organize your team's AI-powered development workflow.\n\n0:00 A too-simple technique goes viral\n0:27 The multi-repo agent problem\n2:20 The home repo solution\n2:53 Tour of my home repo\n4:42 Scaling and why not monorepos\n5:43 Personal wiki and custom tooling\n\nRead the full Home Repo Pattern article:\nhttps://aihero.dev/the-home-repo-pattern\n\nTake my self-paced AI coding crash course:\nhttps://www.aihero.dev/workshops/ai-coding-crash-course\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/skills/subscribe\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/discord\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/hWe-j78vNpc",
     "topic": "education",
@@ -1079,7 +1136,7 @@
     "published_at": "2026-11-11T16:30:02+00:00",
     "fetched_at": "2026-11-11T21:49:52+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
+    "source_name": "Matt Pocock YouTube",
     "extraction_method": "youtube",
     "body": "Matt Pocock talks with Mario Zechner and Armin Ronacher about how to write code with agents that isn't absolute garbage.\n\nvideo: https://www.youtube.com/embed/ZBTegd8DUZM",
     "topic": "tutorials",
@@ -3935,7 +3992,7 @@
     "published_at": "2026-11-06T21:19:15+00:00",
     "fetched_at": "2026-11-07T11:31:36+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
+    "source_name": "Matt Pocock YouTube",
     "extraction_method": "youtube",
     "body": "An academic paper was written about my /retro skill - discover what researchers found about how coding agents self-evolve and what it means for AI-assisted development.\n\nThe paper: https://arxiv.org/pdf/2610.34938\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/skills/subscribe\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/discord\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/KJr1Q-k-yH0",
     "topic": "research",
@@ -4875,7 +4932,7 @@
     "published_at": "2026-11-05T13:02:02+00:00",
     "fetched_at": "2026-11-05T17:33:06+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
+    "source_name": "Matt Pocock YouTube",
     "extraction_method": "youtube",
     "body": "Is \"Vibe Coding\" a slur or an accurate term? In this video, we break down what vibe coding actually means, explore Andrej Karpathy's definition, and discuss when it's useful versus harmful to your codebase.\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/skills/subscribe\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/discord\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/Jy8vX_CIsBw",
     "topic": "development",
@@ -5320,7 +5377,7 @@
     "published_at": "2026-11-04T19:20:27+00:00",
     "fetched_at": "2026-11-04T21:25:38+00:00",
     "source_id": "matt-pocock-youtube",
-    "source_name": "Matt Pocock",
+    "source_name": "Matt Pocock YouTube",
     "extraction_method": "youtube",
     "body": "Should you use your software factory idea as a junior developer? In this clip, we explore whether you should wait until mid-senior level to adopt advanced workflows, or if you should start experimenting now. The key insight: it's not about your mistake rate, it's about the trust and responsibility you're given.\n\nKeep up to date with my skills here:\n\nhttps://aihero.dev/skills/subscribe\n\nFollow Matt on Twitter\n\nhttps://twitter.com/mattpocockuk\n\nJoin the Discord:\n\nhttps://aihero.dev/discord\n\nauthor: Matt Pocock\n\nvideo: https://www.youtube.com/embed/Z1saoyb_98M",
     "topic": "ai-models",
@@ -10970,71 +11027,6 @@
     "topic": "infrastructure",
     "tags": [
       "safety",
-      "video",
-      "infrastructure",
-      "coding",
-      "events"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1043890,
-    "title": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
-    "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
-    "published_at": "2026-10-22T22:24:34+00:00",
-    "fetched_at": "2026-10-22T22:37:54+00:00",
-    "source_id": "huggingface-blog",
-    "source_name": "Hugging Face Blog",
-    "extraction_method": "trafilatura",
-    "body": "Viewer \u2022 Updated \u2022 513 \u2022 326 \u2022 16\n[\n](#turning-database-grading-into-rl-rewards-post-training-agents-with-thinkingbox)\nTurning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox\n[Enterprise Article](/blog)\nThis is the follow up to our first blog post,\n[The Agent Said It Was Done. The Database Disagreed.]ThinkingBox-Training is now available on[GitHub].\nWe built ThinkingBox to evaluate an agent's work by comparing the final database state with the expected outcome. We then used the same kind of executable signal as a reward on training tasks outside ThinkingBox-Bench. For Qwen3.8-27B, average success rose from 51.70% to 60.78%, while tasks completed correctly on all twenty attempts rose from 38 to 107 with 50 GRPO steps.\nFigure 1. ThinkingBox turns executable checks of terminal database state into rewards for post-training agents on tasks outside ThinkingBox-Bench.\n[\n](#this-is-a-joint-blog-by-microsoft-and-hugging-face-special-thanks-to-mirco-milletari-and-xiang-jiang-from-microsoft-sergio-paniego-from-hugging-face-and-our-former-intern-zhuochun-li-university-of-pittsburgh-for-co-authoringreviewing-efforts)\nThis is a joint blog by Microsoft and Hugging Face, special thanks to Mirco Milletari and Xiang Jiang from Microsoft, Sergio Paniego from Hugging Face and our former intern Zhuochun Li (University of Pittsburgh) for co-authoring/reviewing efforts.\nWe built ThinkingBox to catch agents that say they are done when they are not.\nEach of its 507 tasks in ThinkingBox-Bench (our benchmark dataset) hands an agent a real backend and a set of tools, lets it work, then checks what really changed in the database. [In the first post](https://huggingface.co/blog/microsoft/thinkingbox), we caught a model closing a customer's ticket as resolved while the carrier exception behind it was still open. Nine competent-looking tool calls, one wrong database row.\nThen we noticed what we had built. For most tasks, an executable check can return 1 or 0 directly from the final database state. That is not just a grader. This can be a reward function.+\nSo we constructed a training pool from ThinkingBox-format tasks outside the benchmark and used their executable outcomes as rewards. The catch was choosing which tasks are suitable for agent training: most tasks are either already solved or hopeless for the model in front of you, and both teach it nothing.\nDifficulty is policy-relative: a task is hard for the current model only until that model learns it.\nWe call this offline policy-relative difficulty. We estimated each task's success probability once using the base policy before training and kept the selected training pool fixed throughout the run.\n[\n](#what-happened-after-training)\nWhat happened after training\nWe used offline policy-relative difficulty to build the training pool, then fine-tuned Qwen3.8-27B with GRPO for 50 steps. To recap, we evaluate each of the 507 benchmark tasks 20 times. pass@1 measures average success across all 10,140 attempts. pass@20 measures the share of tasks solved at least once. Observed 20/20 measures the share of tasks that pass every recorded attempt.\nTable 1. Qwen3.8-27B results before and after 50 steps of GRPO on the offline-selected training pool.\n| Metric | Base | RL fine-tuned | Change | |\n|---|---|---|---|---|\n| Observed 20/20 | 38 (7.50%) | \u2192 | 107 (21.10%) | +69 tasks |\n| pass@1 (successful attempts) | 5,242 (51.70%) | \u2192 | 6,163 (60.78%) | +9.08 pt |\n| pass@20 (tasks solved at least once) | 453 (89.35%) | \u2192 | 446 (87.97%) | \u22127 tasks |\nTraining sharply increased repeatable success, with a small decline in at-least-once coverage. The rest of the post explains how we selected practice tasks, built the reward loop, and measured that tradeoff.\nWhat does that improvement look like on one task? A traveler requests a room downgrade, but company policy requires manager approval first. Before training, the agent changed the booking and issued refunds without approval in 15 of 20 attempts. After RL fine-tuning, it preserved the booking and payment state in all 20.\nFigure 2. One corporate hotel-booking task, 20 attempts per model. The base Qwen3.8-27B model changed the booking without required manager approval in 15 attempts. The RL fine-tuned model preserved booking and payment state in all 20; all expected records matched in 19.\n[\n](#contents)\nContents\n[What the benchmark found, in sixty seconds](#what-the-benchmark-found-in-sixty-seconds)[Results: the dependability column moved](#results-the-dependability-column-moved)[Where the gains landed](#where-the-gains-landed)[What dependability costs](#what-dependability-costs)[The training loop](#the-training-loop)[Offline policy-relative difficulty](#offline-policy-relative-difficulty)[What earns a reward](#what-earns-a-reward)[Run the training stack](#run-the-training-stack)[Where this goes next](#where-this-goes-next)\nIn a hurry? The headline result is above. The implementation is in [Run the training stack](#run-the-training-stack).\n[\n](#what-the-benchmark-found-in-sixty-seconds)\nWhat the benchmark found, in sixty seconds\n[ThinkingBox-Bench](https://huggingface.co/datasets/microsoft/ThinkingBox-Bench) grades agents on the database records they leave behind. Each of its 507 tasks starts a real backend, hands the agent a set of MCP tools and a simulated LLM user with private context, and at the end runs executable checks against the terminal database state. Checks are against the backend record that needs to be correct, not the specific tool calls. This incentivizes the model to discover possibly new solution paths rather than \u201crediscover\u201d the human-backed solution, that might be suboptimal albeit correct.\n[In our first post](https://huggingface.co/blog/microsoft/thinkingbox) we ran eighteen models through that benchmark twenty times each and reported a gap that headline accuracy hides. Kimi-K3 solved 93.89% of tasks at least once but completed only 68 of 507 tasks (13.41%) on all twenty recorded attempts. Claude Opus 5 inverted it: narrower coverage, far more consistency.\nAnd bigger or better model did not close it. Claude Opus 5.5 scored 0.66 percentage points higher than Claude Opus 5 on pass@1, yet passed exactly the same number of tasks, 241, on all twenty attempts. That gain in headline accuracy bought zero additional dependability.\nIf you are choosing a model for work that touches production database records, pass@1 should not be read alone. Observed 20/20 shows which tasks succeed on every attempt, which is closer to what production reliability requires.\nThe executable terminal-state verdict was also the training reward. Before unpacking the training loop, here is what changed on the sealed benchmark.\n[\n](#results-the-dependability-column-moved)\nResults: the dependability column moved\nAfter training Qwen3.8-27B, we evaluated the selected step-50 checkpoint on the 507-task benchmark it had never trained on. The 507 tasks represent an out-of-distribution test set: their domains, databases, and most MCP tools were not encountered during RL training.\nTable 2. ThinkingBox-Bench pass@1 (%) by domain, for selected models from [our first blog's Table 2](https://huggingface.co/blog/microsoft/thinkingbox) and our fine-tuned model for different domains and overall. Observed 20/20 numbers are over the entire benchmark with 507 tasks. Each model is evaluated on all 507 tasks for 20 repeated trials. Bold marks the column leader; underline marks the runner-up.\n| Model | Retail | Auto insurance | Travel | Neobank | Consulting | Overall | Observed 20/20 |\n|---|---|---|---|---|---|---|---|\n| Claude Opus 5.5 | 80.97 | 68.40 | 54.28 | 71.25 | 61.58 | 67.16 | 241 (47.53%) |\n| Claude Opus 5 | 80.71 | 65.80 | 49.95 | 70.62 | 66.19 | 66.50 | 241 (47.53%) |\n| GPT-5.4 | 76.33 | 62.65 | 68.12 | 65.34 | 54.60 | 65.36 | 128 (25.25%) |\n| GPT-5.6 Sol | 67.65 | 65.30 | 60.34 | 59.09 | 57.52 | 61.91 | 82 (16.17%) |\n| Qwen3.8-27B RLFT | 67.91 | 56.45 | 62.69 | 62.40 | 54.51 | 60.78 | 107 (21.10%) |\n| Claude Sonnet 4.6 | 72.35 | 54.40 | 58.94 | 56.39 | 54.31 | 59.19 | 102 (20.12%) |\n| GPT-6 Astra | 71.73 | 46.55 | 55.87 | 60.87 | 56.83 | 58.31 | 231 (45.56%) |\n| Kimi-K3 | 82.24 | 50.80 | 61.83 | 41.35 | 51.63 | 57.37 | 68 (13.41%) |\n| Qwen3.8-27B | 64.03 | 47.85 | 53.41 | 47.88 | 45.69 | 51.70 | 38 (7.50%) |\nThe headline result is the observed-20/20 row in Table 1. A 27B model that initially completed 38 (7.5%) of ThinkingBox-Bench on every attempt now completes 107 (21.1%) on every attempt, almost thrice. For comparison, observed 20/20 for Kimi-K3 is 68, GPT-5.4 with 128, GPT-6 Astra has 231, and Claude Opus 5.5 leads with 241.\nAverage success and repeatability produce different orderings. In Table 2, we notice that GPT-5.6 Sol scored slightly higher on pass@1 than the RL fine-tuned Qwen3.8-27B (61.91% versus 60.78%) but passed fewer tasks on all 20 recorded attempts: 82 versus 107. Claude Sonnet 4.6 scored lower on pass@1, at 59.19%, yet passed nearly the same number of tasks every time, at 102. Neither metric alone captures the full picture.\nThe observed pattern is consistent with sharpening: repeatable success rose while at-least-once coverage fell slightly. This is in-line with [prior work](https://arxiv.org/abs/2504.13837). One explanation is that probability distribution moved toward trajectories that work repeatedly while some low-probability paths disappeared.\nOverall, the model did not become broader. It became more repeatable. The next question is where those gains landed.\n[\n](#where-the-gains-landed)\nWhere the gains landed\nFigure 3. Domain-level base scores, RLFT scores, and percentage-point changes. Green change cells show gains and red cells show declines; blue shading indicates the score level within each metric.\nPass@1 and observed 20/20 rose in all five domains. Pass@20 was mixed: it increased in neobank and consulting, but declined in retail, travel, and auto insurance. Auto insurance had the largest breadth loss (\u22127.0 points), while retail had the largest observed-20/20 gain (+24.5 points).\n[\n](#what-dependability-costs)\nWhat dependability costs\nThe [first post](https://huggingface.co/blog/microsoft/thinkingbox) priced consistency using simple math: divide the estimated cost of the full 20-run campaign by the number of tasks the model passed every single time.\nCost per dependable task = estimated cost of the 507 \u00d7 20 campaign \u00f7 tasks passing 20/20\nApplying the same cost math to the fine-tuned checkpoint's measured token usage:\nTable 3. Estimated evaluation cost and dependability for base and RL fine-tuned Qwen3.8-27B. Cost per successful attempt divides total estimated campaign cost (507 x 20) by the number of passing attempts.\n| Measure | Base | RL fine-tuned | Change | |\n|---|---|---|---|---|\n| Campaign cost, 20 runs | $925.80 | \u2192 | $855.58 | \u22127.6% |\n| Cost per successful attempt | $0.177 | \u2192 | $0.139 | \u221221.4% |\n| Tasks passing 20/20 | 38 | \u2192 | 107 | 2.8\u00d7 as many |\n| Cost per dependable task | $24.36 | \u2192 | $8.00 | \u221267.2% |\nAt $8.00 per dependable task, the fine-tuned model came close to GPT-5.4 ($6.80), GPT-6 Astra ($7.45), and Claude Opus 5.5 ($7.80) in the companion comparison.\n[\n](#the-single-attempt-view)\nThe single-attempt view\nFigure 4 prices cost per successful attempt against pass@1.\nFigure 4. The golden arrow traces Qwen3.8-27B base pareto cost position to the RLFT (diamond): pass@1 rises from 51.70% to 60.78% while estimated cost per successful attempt falls from $0.177 to $0.139. Ringed circles mark the Pareto cost frontier.\nThe move places the fine-tuned checkpoint close to GPT-5.6 Sol, although GPT-5.6 Sol remains cheaper and slightly higher on pass@1. Four models priced in [our paper](https://arxiv.org/abs/2608.19741) fall outside the plotted range.\nThe dollar values are a comparative serving index, not invoice or cloud bills. Serving the fine-tuned checkpoint would be the same as the base model. The calculation includes model inference cost, and excludes training run and policy-probe cos",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1042938,
-    "title": "DE STAAT - FREEDOM (Official Music Video)",
-    "url": "https://simonwillison.net/2026/Oct/22/de-staat-freedom/",
-    "published_at": "2026-10-22T19:42:26+00:00",
-    "fetched_at": "2026-10-22T22:37:48+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "22nd October 2026 - Link Blog\n[DE STAAT - FREEDOM (Official Music Video)](https://www.youtube.com/watch?v=hKO4pQtIXow) ([via](https://news.ycombinator.com/item?id=50186129#50193407)) OK well this is a first for me... at [00:44](https://www.youtube.com/watch?v=hKO4pQtIXow&t=44s) in this new music video by Dutch alternative rock band [De Staat](https://en.wikipedia.org/wiki/De_Staat):\nThe visual effects are credited to Matties Grooten of [Fake it or Leave it](https://fakeitorleaveit.com).\nRecent articles\n[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1043210,
-    "title": "Better AI Models Won't Fix Your Engineering Team \u2014 Nicholas Arcolano, Jellyfish",
-    "url": "https://www.youtube.com/watch?v=Ve2bAarPA2I",
-    "published_at": "2026-10-22T19:00:39+00:00",
-    "fetched_at": "2026-10-22T22:37:51+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Nicholas Arcolano, head of AI and research at Jellyfish, uses data from about 50,000 engineers at 447 companies to ask how much the model really matters for AI coding output. When Cursor pushed many of its users onto Grok, merged PRs barely moved. Breaking down what drives throughput, the tool explains under 1%, skill use about 3% (heavy skill users see roughly a 30% bump), token usage about 9%, company and team about 12%, and the individual engineer most of the rest. The engineers who were top performers before AI are mostly still the top performers now. His advice for leaders: focus on the people, skills and environment you can control.\n\nChapters:\n- 00:00 Intro\n- 00:40 A golf analogy\n- 02:01 Models keep getting better\n- 02:59 A natural experiment: the Grok switch\n- 04:54 What actually drives output\n- 07:14 The tool\n- 08:07 How well you use it: skills\n- 10:00 How much you use it: tokens\n- 11:23 Where you work\n- 12:22 You, the individual\n- 13:42 Is AI reshuffling the top engineers?\n- 14:50 What leaders can control\n\nNicholas Arcolano, Jellyfish: https://jellyfish.co\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/Ve2bAarPA2I",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "models",
-      "research",
       "video",
       "infrastructure",
       "coding",
