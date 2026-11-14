@@ -1,8 +1,106 @@
 [
   {
+    "run_id": "78c85290e077",
+    "started_at": "2026-11-14T11:53:58+00:00",
+    "ended_at": "2026-11-14T11:54:21+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "43592108904",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/43592108904",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-11-14T11:53:58+00:00",
+        "ended_at": "2026-11-14T11:54:21+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 18,
+          "enriched": 17,
+          "updated": 17,
+          "unchanged": 1,
+          "misses": 0,
+          "markdown_new_used": 2,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 13,
+            "youtube": 2,
+            "markdown_new": 2,
+            "rss": 1
+          },
+          "per_source": {
+            "simon-willison": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "marios-rec-reading": {
+              "attempted": 2,
+              "enriched": 1,
+              "failed": 1
+            },
+            "huggingface-blog": {
+              "attempted": 3,
+              "enriched": 3,
+              "failed": 0
+            },
+            "matt-wolfe": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "openai-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "nvidia-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "anthropic-engineering": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "anthropic-research": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "claude-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "cohere-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "google-deepmind-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            }
+          },
+          "flush_batches": 1,
+          "defuddle_enabled": true,
+          "duration_ms": 23060.23
+        }
+      }
+    ]
+  },
+  {
     "run_id": "42873029ae13",
     "started_at": "2026-11-14T08:40:12+00:00",
-    "ended_at": "2026-11-14T08:40:20+00:00",
+    "ended_at": "2026-11-14T08:40:34+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "43576834143",
@@ -864,36 +962,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 4995.23
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "3ee5ed02f59b",
-    "started_at": "2026-11-10T03:19:22+00:00",
-    "ended_at": "2026-11-10T03:19:45+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "42748567104",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/42748567104",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-11-10T03:19:22+00:00",
-        "ended_at": "2026-11-10T03:19:34+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 17,
-          "duplicate_articles": 2506,
-          "dead_letters": 0,
-          "failed_sources": 1,
-          "skipped_sources": 0,
-          "not_modified_sources": 14,
-          "auto_disabled_sources": 1,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 12523.87
         }
       }
     ]
