@@ -1,5 +1,146 @@
 [
   {
+    "article_id": 1317277,
+    "title": "Microsoft and Salesforce Announce Copilotforce, Bringing Trusted Customer Context and Action into Microsoft AI Experiences",
+    "url": "https://news.microsoft.com/source/2026/11/17/microsoft-and-salesforce-announce-copilotforce-bringing-trusted-customer-context-and-action-into-microsoft-ai-experiences/",
+    "published_at": "2026-11-17T18:10:16+00:00",
+    "fetched_at": "2026-11-17T18:14:39+00:00",
+    "source_id": "microsoft-ai-blog",
+    "source_name": "Microsoft AI Blog",
+    "extraction_method": "rss",
+    "body": "<p>The post <a href=\"https://news.microsoft.com/source/2026/11/17/microsoft-and-salesforce-announce-copilotforce-bringing-trusted-customer-context-and-action-into-microsoft-ai-experiences/\">Microsoft and Salesforce Announce Copilotforce, Bringing Trusted Customer Context and Action into Microsoft AI Experiences </a> appeared first on <a href=\"https://news.microsoft.com/source\">Source</a>.</p>",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1320280,
+    "title": "Microsoft-Decision-1.1 is now generally available for fast, low-cost decision making",
+    "url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+    "published_at": "2026-11-17T18:10:02+00:00",
+    "fetched_at": "2026-11-17T18:14:46+00:00",
+    "source_id": "microsoft-commandline",
+    "source_name": "Microsoft Commandline",
+    "extraction_method": "rss",
+    "body": "Microsoft-Decision-1.1 is now generally available in Microsoft Foundry and through OpenRouter and Vercel. The model is powering experiences across Microsoft and has been used by more than 4,000 customers since launching in public preview last month.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317407,
+    "title": "Introducing GPT-6.2 Astra and Sol",
+    "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+    "published_at": "2026-11-17T17:45:00+00:00",
+    "fetched_at": "2026-11-17T18:14:40+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Introducing GPT\u20116.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "api",
+      "agents",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317287,
+    "title": "Put Gemini to work for you",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+    "published_at": "2026-11-17T17:00:00+00:00",
+    "fetched_at": "2026-11-17T18:14:40+00:00",
+    "source_id": "google-ai-blog",
+    "source_name": "Google AI Blog",
+    "extraction_method": "rss",
+    "body": "A user interface displaying the prompt \"What can I get done for you?\" above an input box containing placeholder text \"Describe a task\".",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1318812,
+    "title": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
+    "url": "https://simonwillison.net/2026/Nov/17/datasette-lite/",
+    "published_at": "2026-11-17T16:48:33+00:00",
+    "fetched_at": "2026-11-17T18:14:41+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><a href=\"https://lite.datasette.io/\">Datasette Lite</a> is my port of the <a href=\"https://datasette.io/\">Datasette</a> Python application to run directly in the browser using WebAssembly and <a href=\"https://pyodide.org/\">Pyodide</a>. I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real server-side application.</p>\n<p>You can now do all of the following, using a carefully crafted URL to <strong>lite.datasette.io</strong>:</p>\n<ul>\n<li>Load client-side Datasette to browse any SQLite database, JSON file, CSV file or SQL script</li>\n<li>Select a released version of Datasette to load from PyPI</li>\n<li>Load a specific commit, tag, or branch name from the Datasette GitHub repository</li>\n<li>Pick from over 100 versions of SQLite to use with Datasette</li>\n<li>Install additional Datasette plugins from PyPI or URLs to wheel files, including JavaScript visualization tools</li>\n</ul>\n<p>The ability to load specific Datasette references, plugins, and SQLite versions makes this a fantastic tool for linking to demos of work-in-progress features or bug reproductions, without needing to spin up a full web server to serve that demo.</p>\n<p>As an example, consider the following URL:</p>\n<p><a href=\"https://lite.datasette.io/?install=datasette-maplibre&amp;url=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/demo.db&amp;metadata=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/metadata.yml#/demo/capitals_and_countries%23map=0/4.2/180&amp;color=continent\">https://lite.datasette.io/?install=datasette-maplibre&amp;url=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/demo.db&amp;metadata=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/metadata.yml#/demo/capitals_and_countries%23map=0/4.2/180&amp;color=continent</a></p>\n<p>Follow that link and, after a short loading screen, you'll find yourself on a page that looks like this:</p>\n<p><img alt=\"Screenshot of a web map interface. Toolbar: &quot;View&quot; set to &quot;Clusters&quot;, &quot;Colour by&quot; set to &quot;continent&quot;, plus &quot;Filter to this area&quot; and &quot;Download GeoJSON&quot; buttons. A world map shows countries outlined and shaded by continent, with coloured dots and numbered cluster circles. A popup for a point in South America reads: capital Caracas, country Venezuela, continent South America, capital_population 2985000, latitude 10.502944, longitude -66.918983. Legend: Africa (52), Asia (45), Europe (39), North America (16), South America (13), Oceania (6). Text: &quot;All 171 rows are on the map&quot;. Below, a table with columns country, continent, capital_population, latitude, longitude, boundary. First row: Afghanistan, Asia, 3277000, 34.518636, 69.181314, with a small map in the boundary column showing Afghanistan outlined and shaded in blue.\" src=\"https://static.simonwillison.net/static/cors-allow/2026/datasette-maplibre.webp\" /></p>\n<p>That's Datasette running the new <a href=\"https://github.com/datasette/datasette-maplibre\">datasette-maplibre</a> plugin, loading up a database of GeoJSON shapes of countries and displaying both a combined map and individual boundary maps in a table.</p>\n<p>Let's break down that URL to see what it's doing:</p>\n<pre><code>https://lite.datasette.io/\n  ?install=datasette-maplibre\n  &amp;url=https://.../demo.db\n  &amp;metadata=https://.../metadata.yml\n  #/demo/capitals_and_countries%23map=0/4.2/180&amp;color=continent\n</code></pre>\n<p>The <code>?install=datasette-maplibre</code> installs that additional plugin from PyPI. You can pass <code>&amp;install=...</code> as many times as you like to load more plugins.</p>\n<p><code>&amp;url=https://.../demo.db</code> loads that SQLite database from the provided URL. These URLs need to have <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS\">open CORS headers</a> - I host files like this in <a href=\"https://gist.github.com/\">Gists</a>, because they provide an easy way to get open CORS headers on a web-hosted file.</p>\n<p><code>&amp;metadata=https://.../metadata.yml</code> loads <a href=\"https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/metadata.yml\">this metadata.yml file</a>. The metadata file adds HTML descriptions to various tables, and to the Datasette homepage. Visit <a href=\"https://lite.datasette.io/?install=datasette-maplibre&amp;url=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/demo.db&amp;metadata=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/metadata.yml#/\">that homepage here</a> for a guided tour of the other features of that plugin, all defined in the metadata file.</p>\n<p><code>#/demo/capitals_and_countries%23map=0/4.2/180&amp;color=continent</code> is a fragment hash that turns into a location within Datasette - here it's loading the <code>/demo/capitals_and_countries</code> SQL view, then appending <em>another</em> fragment hash to it (<code>%23</code> is a URL-encoded <code>#</code>) which tells the map plugin to zoom to a certain location and to set the color of the shapes on the map based on the <code>continent</code> column in the data.</p>\n<p>That URL is doing a lot of work! I wrote more about this trick for building URL-addressable software in <a href=\"https://simonwillison.net/2025/Feb/13/url-addressable-python/\">URL-addressable Pyodide Python environments</a> last year.</p>\n<p>The full set of supported URL arguments is <a href=\"https://github.com/simonw/datasette-lite#load-a-different-datasette-version\">described in the Datasette Lite README</a>.</p>\n<p>I've already started using Datasette Lite as part of the Datasette development process. Here's <a href=\"https://github.com/simonw/datasette/issues/3056#issuecomment-6902484982\">a recent issue</a> describing a pagination bug - I posted a comment there demonstrating the old, broken behavior and the new fix using links to Datasette Lite:</p>\n<blockquote>\n<p>Demo of the bug: <a href=\"https://lite.datasette.io/?ref=1.0a42&amp;sql=https://gist.github.com/simonw/75ececf61d50e6e8d50f0c150150ee81#/data/scores?_size=2&amp;_sort=score\">https://lite.datasette.io/?ref=1.0a42&amp;sql=https://gist.github.com/simonw/75ececf61d50e6e8d50f0c150150ee81#/data/scores?_size=2&amp;_sort=score</a> - click next and the second page is empty.</p>\n<p>Here's that same page with the bug fixed (running on 1.0a43): <a href=\"https://lite.datasette.io/?ref=1.0a43&amp;sql=https://gist.github.com/simonw/75ececf61d50e6e8d50f0c150150ee81#/data/scores?_size=2&amp;_sort=score\">https://lite.datasette.io/?ref=1.0a43&amp;sql=https://gist.github.com/simonw/75ececf61d50e6e8d50f0c150150ee81#/data/scores?_size=2&amp;_sort=score</a></p>\n</blockquote>\n<h4 id=\"how-this-works-using-service-workers\">How this works, using service workers</h4>\n<p>Datasette Lite is not a new project. I launched the first version <a href=\"https://simonwillison.net/2022/May/4/datasette-lite/\">back in 2022</a>, originally as a bit of a joke (running server-side apps in the browser is pretty funny) but one that quickly started proving its value.</p>\n<p>The problem with that initial version is that it was a <em>hack</em>. It worked by running Datasette in a Pyodide web worker, simulating requests through that stack, then injecting the resulting HTML back into the top level page using <code>innerHTML</code>.</p>\n<p>This worked for basic Datasette, but meant that any feature that used JavaScript failed to work, because script tags in <code>innerHTML</code> don't execute, and the web worker tricks it used failed to load additional JavaScript or CSS files.</p>\n<p>The new version takes a completely different approach based on <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API\">Service Workers</a>. These allow JavaScript to intercept HTTP requests for new pages and resources and serve them from client-side code instead.</p>\n<p>Datasette Lite registers a service worker for the entire <code>lite.datasette.io</code> domain. The parent page then creates an iframe that sends requests for Datasette pages to URLs that look like this:</p>\n<pre><code>/app/aa94e6851595/ # the homepage (HTML)\n/app/aa94e6851595/data/places # a table page (HTML)\n/app/aa94e6851595/-/static/navigation-search.js # (JavaScript)\n/app/aa94e6851595/-/static/app.css # (CSS)\n</code></pre>\n<p>Those are regular Datasette URLs, but with a <code>/app/aa94e6851595/</code> prefix. What's that about?</p>\n<p>The <code>/app/&lt;session&gt;/</code> prefix is necessary because of multiple tabs.</p>\n<p>Consider the URL above, which loads the demo instance with the <code>datasette-maplibre</code> plugin. That URL defines a full, custom Datasette instance. You might have that one running in a tab, then one of my other demo links running in another.</p>\n<p>The service worker for <code>lite.datasette.io</code> is shared between all of those tabs. If it routed to a single instance of Datasette then every tab would share that underlying instance, no matter what plugins or other settings their URL attempted to configure.</p>\n<p>Instead, the parent page generates a random session ID and uses it as a prefix for all of the subsequent hidden asset and page loads. The service worker can then use that session ID to route those requests back through the parent page to a web worker running a dedicated Datasette instance for that particular session.</p>\n<p>(We still need a web worker because Pyodide in a service worker would not be able to maintain state beyond around 30 seconds, depending on the browser. There are a lot of moving parts here!)</p>\n<p>I had Claude Fable 5.2 <a href=\"https://gisthost.github.io/?4192a5a24136cad4c8490ccb15e87d83\">generate several SVG diagrams</a> to help explain this. Here's my favorite of those, now embedded in the Datasette Lite README:</p>\n<p><img alt=\"Architecture diagram titled &quot;What happens when you click a link in Datasette Lite&quot;, with a legend showing a solid arrow for &quot;request&quot; and a dashed arrow for &quot;response&quot;. A blue box labeled &quot;index.html: the page you opened - Each tab picks a random session and starts one Web Worker.&quot; contains two white boxes: &quot;iframe Datasette pages at /app/session/\u2026&quot; and &quot;shell.js the page's own script: relays&quot;. Below it is a yellow box labeled &quot;sw.js: the service worker - Intercepts requests for /app/session/\u2026.&quot; To the right is a green box marked 4 and labeled &quot;webworker.js: a Web Worker - Pyodide: Python in WebAssembly&quot; containing three stacked white boxes: &quot;ASGI bridge + cookie jar&quot;, &quot;Datasette ASGI app&quot; and &quot;SQLite databases&quot;. Numbered arrows connect them: solid arrow 1 from the iframe down to sw.js, solid arrow 2 from sw.js up to shell.js, solid arrow 3 from shell.js across to the Web Worker, dashed arrow 5 from the Web Worker back to shell.js, dashed arrow 6 from shell.js down to sw.js, and dashed arrow 7 from sw.js up to the iframe. A numbered key at the bottom reads: 1 The page requests /app/session/fixtures. 2 sw.js intercepts it and posts it to the owning tab. 3 shell.js forwards it to the Web Worker. 4 Python adds cookies and calls Datasette, which queries SQLite. 5 The status, headers and body return to the page, 6 then to sw.js over a MessagePort, 7 which hands the browser a Response. The iframe renders it.\" src=\"https://static.simonwillison.net/static/2026/datasette-lite-diag.webp\" /></p>\n<p>This system started life <a href=\"https://simonwillison.net/2026/May/30/pyodide-asgi-browser/\">back in May</a> as an <a href=\"https://github.com/simonw/research/tree/main/pyodide-asgi-browser#readme\">AI research spike</a> generated using Claude Opus 4.8. It wasn't until November (and Claude Fable 5.2) that I felt familiar enough with how it all works to confidently ship it to production!</p>\n<h4 id=\"bonus-feature-pick-your-version-of-sqlite\">Bonus feature: pick your version of SQLite</h4>\n<p>I added this feature <a href=\"https://github.com/simonw/datasette-lite/commit/de661dbee42a68304811a0035b78e6b683203cd1\">last night</a> as an off-shoot of investigating <a href=\"https://simonwillison.net/2026/Nov/16/llm/\">a potential bug in SQLite</a>.</p>\n<p>Datasette is meant to work against any released version of SQLite since 3.25 (released in September 2018). There have been 87 further releases since then.</p>\n<p>Being able to fire up Datasette against a specific version of SQLite is really useful for demonstrating new SQLite features and debugging weird issues.</p>\n<p>In the past I've <a href=\"https://til.simonwillison.net/sqlite/sqlite-version-macos-python\">used various tricks</a> to get different SQLite versions running with Python on my Mac, but it's not a trivial process.</p>\n<p>WebAssembly is perfect for this. I can load up a custom SQLite build entirely in my browser, test it there, then discard it when I close my tab.</p>\n<p><a href=\"https://github.com/datasette/pysqlite3-wasm-wheels\">datasette/pysqlite3-wasm-wheels</a> is my new repository which contains WebAssembly compiled Python wheels for <a href=\"https://github.com/coleifer/pysqlite3\">pysqlite3</a> for 163 different SQLite versions. Each version gets a file with a name like this:</p>\n<p><code>pysqlite3-0.6.2-3.54.1-cp314-cp314-pyemscripten_2026_0_wasm32.whl</code></p>\n<p>That's for SQLite 3.54.1, the most recent version.</p>\n<p>Datasette Lite now takes a special <code>?sqlite=</code> URL parameter, which will accept a version number like <code>3.54.1</code>, resolve the path to the corresponding wheel file, then fetch that wheel and install it into the Pyodide environment and configure Datasette to use it.</p>\n<p>Once I'd built the wheels, I decided to have Claude Fable 5.2 build me [this bonus tool](<a href=\"https://datasette.github.io/pysqlite3-wasm-wheels/?versions=3.54.1,3.54.0&amp;sql=select+json_object(%27a%27%2C+(select+json_array(1%29%29%29)\">https://datasette.github.io/pysqlite3-wasm-wheels/?versions=3.54.1,3.54.0&amp;sql=select+json_object(%27a%27%2C+(select+json_array(1%29%29%29)</a> for comparing a SQL query across any selected versions of SQLite. Here's an example showing how <code>select json_object('a', (select json_array(1)))</code> differs between SQLite 3.54.0 and 3.54.1:</p>\n<p><img alt=\"Screenshot of a web tool for comparing SQL across SQLite versions. Heading &quot;SQLite versions (163 available)&quot; sits above a filter text input with placeholder &quot;Filter, e.g. 3.4&quot;, a &quot;Clear selection&quot; button and a blue &quot;Start REPL with 2 versions&quot; button. Below is a scrollable grid of pill-shaped checkboxes, one per version, running from 3.54.1 down past 3.30.0, with 3.54.1 and 3.54.0 checked. A &quot;REPL&quot; heading follows, with two green status badges reading &quot;3.54.1 ready&quot; and &quot;3.54.0 ready&quot;, then a textarea containing &quot;select json_object('a', (select json_array(1)))&quot; beside a blue &quot;Run&quot; button, and a row of clickable example queries labeled &quot;Examples:&quot;. The output section shows the prompt &quot;sqlite&gt; select json_object('a', (select json_array(1)))&quot; followed by an orange warning &quot;Versions differ: 2 different results&quot; and two side-by-side yellow result panels, each with the query as its column header. The &quot;SQLite 3.54.1&quot; panel returns a JSON object where key &quot;a&quot; has a string value: the array containing 1, wrapped in double quotes. The &quot;SQLite 3.54.0&quot; panel returns a JSON object where key &quot;a&quot; has an actual array containing 1, with no quotes around it.\" src=\"https://static.simonwillison.net/static/2026/compare-sqlite.webp\" /></p>\n<h4 id=\"this-should-work-for-every-other-python-app-too\">This should work for every other Python app, too</h4>\n<p>Nothing about how Datasette Lite works is unique to Datasette. Almost any Python application should be able to pull the same trick - running entirely in the browser using WebAssembly and Pyodide, as a cheap way to provide preview environments, demonstrate features, and recreate bugs.</p>\n<p>C and Rust extensions used to be a blocker for this kind of thing, but any good coding agent can compile those to Pyodide-compatible WebAssembly now. You can <a href=\"https://github.com/pypi/warehouse/pull/19804\">even publish them to PyPI</a> as of PEP 783 in April 2026.</p>\n<p>One catch is databases. SQLite is no problem at all, but running PostgreSQL or MySQL in WebAssembly, while possible, is still a path less trodden.</p>\n<p>I'd love to see WebAssembly preview environments like these become a common pattern across the Python ecosystem.</p>\n<p>For Hacker News: Full server-side Datasette Python app in the browser with service workers</p>\n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/javascript\">javascript</a>, <a href=\"https://simonwillison.net/tags/projects\">projects</a>, <a href=\"https://simonwillison.net/tags/python\">python</a>, <a href=\"https://simonwillison.net/tags/urls\">urls</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/webassembly\">webassembly</a>, <a href=\"https://simonwillison.net/tags/service-workers\">service-workers</a>, <a href=\"https://simonwillison.net/tags/pyodide\">pyodide</a>, <a href=\"https://simonwillison.net/tags/datasette-lite\">datasette-lite</a></p>",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1319787,
+    "title": "Productiv-icky",
+    "url": "https://www.bensbites.com/p/productiv-icky",
+    "published_at": "2026-11-17T14:14:18+00:00",
+    "fetched_at": "2026-11-17T18:14:44+00:00",
+    "source_id": "bens-bites",
+    "source_name": "Ben's Bites",
+    "extraction_method": "rss",
+    "body": "Digging holes on the beach",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1319807,
+    "title": "Ian Buck Kicks Off NVIDIA\u2019s Week at SC26 as Science Enters the Age of Agents",
+    "url": "https://blogs.nvidia.com/blog/ian-buck-sc26/",
+    "published_at": "2026-11-17T14:00:10+00:00",
+    "fetched_at": "2026-11-17T18:14:45+00:00",
+    "source_id": "nvidia-blog",
+    "source_name": "NVIDIA Blog",
+    "extraction_method": "rss",
+    "body": "NVIDIA\u2019s Ian Buck kicked off the company\u2019s week at SC26 in Chicago on Monday with new tools for AI agents, software that can plan experiments, run code and check results on researchers\u2019 own systems. In NVIDIA\u2019s special address, Buck announced Nemotron for Science, the Rubin HPC GPU and an expanded Vera CPU platform for high-performance [&#8230;]",
+    "topic": "infrastructure",
+    "tags": [
+      "release",
+      "agents",
+      "research",
+      "infrastructure",
+      "coding",
+      "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1316471,
     "title": "Quoting Go Proverbs",
     "url": "https://simonwillison.net/2026/Nov/17/go-proverbs/",
@@ -35,6 +176,82 @@
       "video",
       "coding",
       "tutorials"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1319117,
+    "title": "Linked billing on the Claude Platform",
+    "url": "https://claude.com/resources/articles/linked-billing-on-claude-platform",
+    "published_at": "2026-11-17T00:00:00+00:00",
+    "fetched_at": "2026-11-17T18:14:43+00:00",
+    "source_id": "claude-blog",
+    "source_name": "Claude Blog",
+    "extraction_method": "rss",
+    "body": "Linked billing on the Claude Platform",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1319825,
+    "title": "Crunchbase in North: Private market signals for growth-stage companies",
+    "url": "https://cohere.com/blog/crunchbase-in-north",
+    "published_at": "2026-11-17T00:00:00+00:00",
+    "fetched_at": "2026-11-17T18:14:45+00:00",
+    "source_id": "cohere-blog",
+    "source_name": "Cohere Blog",
+    "extraction_method": "rss",
+    "body": "Connect Crunchbase to North and access market data on over five million company profiles, funding and M&amp;A history, competitors, and growth signals across your North workflows.",
+    "topic": "funding",
+    "tags": [
+      "agents",
+      "funding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317410,
+    "title": "Astra for Law leads in legal intelligence",
+    "url": "https://openai.com/index/astra-law-6-2",
+    "published_at": "2026-11-17T00:00:00+00:00",
+    "fetched_at": "2026-11-17T18:14:40+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Astra for Law ranked first in a launch evaluation spanning 24 areas of law. Every ChatGPT Enterprise customer can now request access.",
+    "topic": "policy",
+    "tags": [
+      "release",
+      "models",
+      "benchmark",
+      "funding",
+      "policy",
+      "enterprise"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317409,
+    "title": "Introducing OpenAI for Chile",
+    "url": "https://openai.com/index/introducing-openai-for-chile",
+    "published_at": "2026-11-17T00:00:00+00:00",
+    "fetched_at": "2026-11-17T18:14:40+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -2021,6 +2238,24 @@
       "research",
       "infrastructure",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317429,
+    "title": "ChatGPT Ads increases its market presence in 44 countries",
+    "url": "https://openai.com/ads/blog/chatgpt-ads-increases-its-market-presence",
+    "published_at": "2026-11-12T00:00:00+00:00",
+    "fetched_at": "2026-11-17T18:14:40+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Aleph selected as ChatGPT Ads\u2019 exclusive reseller in 44 countries to offer local invoicing, in-person support and local market expertise to brands and agencies",
+    "topic": "product",
+    "tags": [
+      "product",
+      "models"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -4706,6 +4941,27 @@
       "benchmark",
       "infrastructure",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1317443,
+    "title": "How VistaPrint helps small businesses get the word out",
+    "url": "https://openai.com/ads/customers/vistaprint",
+    "published_at": "2026-11-09T00:00:00+00:00",
+    "fetched_at": "2026-11-17T18:14:40+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Small business owners preparing for a launch or an event often know what they want to accomplish before they know what to print. VistaPrint uses ChatGPT Ads to show how products like signs and branded merchandise can help them get the word out.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "enterprise",
+      "events"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10794,300 +11050,6 @@
       "benchmark",
       "research",
       "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1093454,
-    "title": "Our newest AI Quest: Mapping the human brain",
-    "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
-    "published_at": "2026-10-26T16:00:00+00:00",
-    "fetched_at": "2026-10-26T18:48:28+00:00",
-    "source_id": "google-ai-blog",
-    "source_name": "Google AI Blog",
-    "extraction_method": "trafilatura",
-    "body": "Our newest AI Quest: Mapping the human brain\nToday, we\u2019re launching \u201cPolar Peaks\u201d, our third quest in the [AI Quests](https://research.google/ai-quests/intl/en_us) series, created by Google Research and the [Stanford Accelerator for Learning](https://acceleratelearning.stanford.edu/) to teach students [how AI works and how to use it responsibly.](https://blog.google/products-and-platforms/products/education/ai-quests/%5C) AI Quests invites students ages 11 to 14 to step into the shoes of Google researchers to tackle some of humanity\u2019s biggest challenges.\nMore than 400,000 quests have been completed to date, localized to 10 languages. Alongside the new quest, we\u2019re also releasing training modules for teachers.\nPolar Peaks: A journey to map the human brain\nIn the first two quests, students tackle flood forecasting and eye disease detection, inspired by Google Research\u2019s [Flood Forecasting initiative](https://sites.research.google/gr/floodforecasting/) and AI model for [diabetic retinopathy](https://blog.google/company-news/inside-google/around-the-globe/google-asia/arda-diabetic-retinopathy-india-thailand/) screening. Our newest quest, \u201cPolar Peaks,\u201d has students travel to the frontiers of neuroscience and see how AI can speed up scientific research.\nWith the guidance of in-game mentors, students scan and map the neurons in the brain to better understand the game character\u2019s memory loss. They complete tasks like data cleaning and model testing, learning firsthand that AI requires careful human oversight and critical thinking.\nThe quest is inspired by over a [decade of our research](https://research.google/blog/ten-years-of-neuroscience-at-google-yields-maps-of-human-brain/) in connectomics: the science of mapping neural networks in the brain. Upon completion of the quest, students hear from two researchers behind our real-world breakthroughs, including the recent mapping of the complete [fruit fly](https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/) brain, the largest brain map by number of neurons to date.\nTraining modules: Tools for teaching AI literacy\nTeachers play a critical role in bringing the quests to life and fitting them into their existing classroom curriculum. We\u2019re rolling out new dedicated teacher training modules to help educators reinforce key AI literacy concepts and use AI Quests for learning and discussion. These are launching within the [Google AI Educator Series](https://edu.google.com/learning-center/google-ai-educator-series/). The modules for Quest #1 and #2 are accessible [here](https://educertifications.google/google-ai-educator-series/47). The training module for Quest #3 will follow next month.\nEarlier this year, AI Quests won a [2026 Webby Award](https://winners.webbyawards.com/winners/ai/ai-experiences-applications/education-learning-training?years=0) for AI Education, Learning & Training, and Best Global K\u201312 Learning Solution at the ETIH Innovation Awards. We\u2019ll continue working with educators and partners to bring more quests to more classrooms this school year.",
-    "topic": "research",
-    "tags": [
-      "release",
-      "models",
-      "research",
-      "coding",
-      "tutorials",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1095121,
-    "title": "Workshop: Training Agents at the frontier of AI Industry",
-    "url": "https://www.youtube.com/watch?v=CKFUx7COIwQ",
-    "published_at": "2026-10-26T14:32:20+00:00",
-    "fetched_at": "2026-10-26T18:48:30+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "Training Agents IRL: four talks and a panel on post-training agents with open models\n\nTraining Agents IRL is the in-person follow-up to the Training Agents livestream series. Speakers from Microsoft, Mercor, RadixArk and BenchFlow cover enterprise RL, environment design, scaling agent RL with Miles, and OpenEnv Arena. A panel and audience Q&amp;A close the session.\n\nThe four livestream classes teach the methods discussed here, step by step. If a talk makes you want to try something yourself, start there.\n\nCHAPTERS\n\n00:00 Training Agents livestream series recap\n01:46 Learnings from enterprise RL (Gobind, Microsoft)\n19:23 Environments and benchmarks in industry (Victor, Mercor)\n40:25 How to train your agents with Miles (Tao Lin, RadixArk)\n52:40 Why we built OpenEnv Arena (Xiangyi Li, BenchFlow)\n1:07:54 Panel discussion\n1:38:28 Audience Q&amp;A\n\nSLIDES\n\nAll slides https://huggingface.co/buckets/burtenshaw/training-agents-irl\n\nIntro (Training Agents IRL) https://huggingface.co/buckets/burtenshaw/training-agents-irl/resolve/00-training-agents-irl-intro.pptx\n\nLearnings from enterprise RL https://huggingface.co/buckets/burtenshaw/training-agents-irl/resolve/01-learnings-from-enterprise-rl.html\n\nHow to train your agents with Miles https://huggingface.co/buckets/burtenshaw/training-agents-irl/resolve/02-how-to-train-your-agents-with-miles.pdf\n\nWhy we built OpenEnv Arena https://huggingface.co/buckets/burtenshaw/training-agents-irl/resolve/03-why-we-built-openenv-arena.html\n\nTRAINING AGENTS LIVESTREAM SERIES\n\nFull curriculum (blog) https://huggingface.co/blog/huggingface/train-agents\n\nPlaylist https://www.youtube.com/playlist?list=PLo2EIpI_JMQvQZm-kVlz4wY1vWF0LBcf5\n\nClass 1, fine-tune a coding agent on traces https://www.youtube.com/watch?v=rNgUoH7Wbv8 Code: https://huggingface.co/burtenshaw/gemma4-pi-mono-youtube-livestream-1-scripts TRL SFT Trainer: https://huggingface.co/docs/trl/sft_trainer\n\nClass 2, distillation https://www.youtube.com/watch?v=GZT_oNQnLV4 Collection: https://huggingface.co/collections/sergiopaniego/training-agents-class-2-distillation-6a47a62b9f09867dccf61e1e TRL Distillation Trainer: https://huggingface.co/docs/trl/distillation_trainer\n\nClass 3, reinforcement learning https://www.youtube.com/watch?v=ztdTed5egrM Collection: https://huggingface.co/collections/sergiopaniego/training-agents-class-3-reinforcement-learning-6ad6aa71050342629dd0e3ec TRL GRPO Trainer: https://huggingface.co/docs/trl/grpo_trainer\n\nClass 4, from reward functions to environments https://www.youtube.com/watch?v=nJV3yUuz6DU Collection: https://huggingface.co/collections/sergiopaniego/training-agents-class-4-rl-environments-6aa27543918888a0f2b5312c\n\nRL for Agents Workshop https://www.youtube.com/watch?v=cixmqTsi2A4\n\nTOOLS AND PROJECTS FROM THE TALKS\n\nMiles (RadixArk) https://github.com/radixark/miles\n\nMiles docs https://miles.radixark.com\n\nOpenEnv Arena https://posttrain.com\n\nOpenEnv docs https://huggingface.co/docs/openenv\n\nTRL + OpenEnv https://huggingface.co/docs/trl/openenv\n\nAsync GRPO Trainer https://huggingface.co/docs/trl/async_grpo_trainer\n\nFURTHER READING\n\nTrain the agent, not just the model (slides) https://huggingface.co/spaces/sergiopaniego/train-the-agent-slides\n\nHarness, scaffold, and the AI agent terms worth getting right https://huggingface.co/blog/agent-glossary\n\nA brief history of distillation in AI https://huggingface.co/blog/sergiopaniego/brief-history-of-distillation-in-ai\n\nDistillation in 2026 (so far) https://huggingface.co/blog/sergiopaniego/distillation-2026\n\nHow frontier models train on outcomes in 2026 https://huggingface.co/blog/sergiopaniego/agentic-rl-2026\n\nFine-tuning a 350M model for structured outputs in 100 GRPO steps https://huggingface.co/blog/grpo-with-trl-ifstruct\n\nWhy RL environments work now (and could not in 2016) https://huggingface.co/blog/sergiopaniego/rl-environments-story\n\nOne sandbox per rollout https://huggingface.co/blog/sergiopaniego/rl-environments-2026\n\nKeep the tokens flowing, lessons from 16 open-source RL libraries https://huggingface.co/blog/async-rl-training-landscape\n\nThe ultimate guide to multi-harness RL https://huggingface.co/spaces/FineEnvs/multi-harness-rl\n\nMulti-harness RL slides https://huggingface.co/spaces/FineEnvs/multi-harness-rl-slides\n\nOpenEnv harnesses https://huggingface.co/docs/openenv/tutorials/harnesses\n\nHugging Face LLM Course https://huggingface.co/learn/llm-course\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/CKFUx7COIwQ",
-    "topic": "education",
-    "tags": [
-      "education",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1096836,
-    "title": "Working with academic communities to build scientific understanding",
-    "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
-    "published_at": "2026-10-26T14:30:00+00:00",
-    "fetched_at": "2026-10-26T23:02:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nOctober 26, 2026\n\n[Research](https://openai.com/news/research/) [Publication](https://openai.com/research/index/publication/)\n\n# Working with academic communities to build scientific understanding\n\nLoading\u2026\n\nShare\n\nLocal smoothing and the Kakeya conjecture\n\n- [Local smoothing and the Kakeya conjecture](#local-smoothing-and-the-kakeya-conjecture)\n- [The Exponential Time Hypothesis is false](#the-exponential-time-hypothesis-is-false)\n- [Existence of quantum chromodynamics and completions of the Standard Model](#existence-of-quantum-chromodynamics-and-completions-of-the-standard-model)\n- [Supporting scientists](#supporting-scientists)\n\n- [Local smoothing and the Kakeya conjecture](#local-smoothing-and-the-kakeya-conjecture)\n- [The Exponential Time Hypothesis is false](#the-exponential-time-hypothesis-is-false)\n- [Existence of quantum chromodynamics and completions of the Standard Model](#existence-of-quantum-chromodynamics-and-completions-of-the-standard-model)\n- [Supporting scientists](#supporting-scientists)\n\nWe are announcing three new discoveries in mathematics, computer science, and physics about harmonic analysis, complexity theory, and quantum field theory.\n\nOur release process continues to evolve in response to feedback from the associated academic communities. In our view, these manuscripts are best understood as a form of raw research data. To convert this raw research data into scientific understanding, in this release we are experimenting with a new approach. We reached out to external experts and asked them to act as shepherds, organizing groups to understand the new results. They advised three different release strategies:\n\n- For the math result, release the AI output, leaving researchers free to organize their own efforts to explain the result.\n- For the computer science result, form an external group of collaborators to explain the result, while making the AI output publicly available for anyone to examine and build on.\n- For the physics result, form an external group of collaborators and defer to them on the release of materials.\n\nWe do not yet know which of these three approaches will be most useful, and we welcome feedback on what works and what we can improve.\n\nThe external collaborations will follow four principles:\n\n1. **Transparency.** We are transparent about the existence of our collaborations. Participants will not be asked to sign nondisclosure agreements and will be free to discuss the work, share intermediate products, and publish their conclusions.\n2. **No Academic Credit.** We do not seek academic credit for the discoveries produced by our internal models. Inviting a researcher to help steward a collaboration also does not imply that they or their working group made the original discovery.\n3. **Recognition.** This group should receive recognition for the understanding they develop, the writeups they author, and the other materials they create. The group will also help ensure that the work appropriately credits researchers, techniques, and ideas that it draws on.\n4. **Independence.** Participation is voluntary and unpaid. Working-group members participate independently, and their conclusions are their own. They do not speak on behalf of OpenAI, and OpenAI does not speak on their behalf.\n\nWe will turn over materials and artifacts related to these results to the collaborations. For the computer science collaboration, the group has decided to make the natural language proof and Lean formalization public immediately, and we are publishing them directly to our GitHub repository. For the physics collaboration, the group has decided to hold off on releasing the AI-produced artifacts and instead work on writing it up themselves.\n\nAll of these approaches involve tradeoffs. On the one hand, the collaborations empower experts to foster unpacking the results and contextualizing them in the broader academic community. On the other hand, choosing initial shepherds necessarily shapes who gets involved first and creates asymmetry of information. We welcome feedback on how to broaden participation and make this process more useful.\n\n## Local smoothing and the Kakeya conjecture\n\nThe result in mathematics concerns harmonic analysis. In 1991, Sogge proposed the local smoothing conjecture, which concerns the behavior of waves as they become focused. In particular, the conjecture states that the most extreme focusing must be short-lived. The amount of focusing at a typical random time is always much smaller than what can happen at the worst-case time. This is a familiar pattern throughout mathematics: what can happen in the worst case is more extreme than what is observed after averaging. Because of how fundamental this conjectured phenomenon is, it also has wide ranging implications throughout mathematical analysis. For instance, it implies the Kakeya conjecture and Stein\u2019s restriction conjecture.\n\nIn 2019, [Guth, Wang, and Zhang\u2060(opens in a new window)](https://annals.math.princeton.edu/2020/192-2/p06) proved the local smoothing conjecture in two spatial dimensions. In 2025, [Wang and Zahl\u2060(opens in a new window)](https://www.ias.edu/news/once-century-proof-settles-maths-kakeya-conjecture) proved the Kakeya conjecture in three dimensions. Our models produced a proof of the local smoothing conjecture in every dimension and therefore also resolve the Kakeya conjecture and Stein\u2019s restriction conjecture in all dimensions. The new proof is based on a novel auxiliary partial differential equation.\n\nWe obtained our AI output on October 18th, 2026, which was formalized in Lean the following day, and then we reached out to an expert to discuss forming a collaboration around this result. Following their recommendation, we decided to release the AI output publicly, following the same strategy for this result as our October 6th, 2026 [release\u2060](https://openai.com/index/sharing-ai-progress-in-mathematics/). We have released both an [AI natural language output writeup\u2060(opens in a new window)](https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) produced by our models and a\u00a0 [Lean proof \u2060(opens in a new window)](https://github.com/openai/math/blob/main/lean/docs/079.md)in our public GitHub repository.\n\n## The Exponential Time Hypothesis is false\n\nThe computer science collaboration will understand and explain a result concerning the Exponential Time Hypothesis (ETH), a longstanding conjecture about the computational complexity of Boolean formula satisfiability, a problem deeply related to the P vs. NP problem. The ETH has been widely believed to be true, and has been used in hundreds of papers to derive conditional computational hardness results across a wide variety of fields including graph theory, computational biology, databases, computational geometry, and more. Surprisingly, our system has recently proved that the ETH is false, a result that was subsequently verified in Lean. The refutation of the ETH reopens questions about how much faster these tasks could become, and may help guide the search for better algorithms. Finding such algorithms, and turning theoretical advances into practical improvements, will require significant further research.\n\nThis work will be verified and shepherded by a group led by Russell Impagliazzo (UC San Diego), Ramamohan Paturi (UC San Diego), and Ryan Williams (MIT). All three are experts in algorithm design and complexity theory.\n\n- Impagliazzo and Paturi, along with Francis Zane, are the original proposers of the Exponential Time Hypothesis, and have authored a [\u2060(opens in a new window)](https://doi.org/10.1006/jcss.2001.1774) [number\u2060(opens in a new window)](https://doi.org/10.1006/jcss.2001.1774) of [\u2060(opens in a new window)](https://doi.org/10.1006/jcss.2000.1727) [influential\u2060(opens in a new window)](https://doi.org/10.1006/jcss.2000.1727) [\u2060(opens in a new window)](https://link.springer.com/chapter/10.1007/978-3-642-11269-0_6) [papers\u2060(opens in a new window)](https://link.springer.com/chapter/10.1007/978-3-642-11269-0_6) on the [topic\u2060(opens in a new window)](https://ieeexplore.ieee.org/document/1663742) over the last 30 years.\n- Williams has refuted [\u2060(opens in a new window)](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2016.2) [strong\u2060(opens in a new window)](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2016.2) [\u2060(opens in a new window)](https://www.jair.org/index.php/jair/article/view/11859) [versions\u2060(opens in a new window)](https://www.jair.org/index.php/jair/article/view/11859) of the ETH, used ETH for [\u2060(opens in a new window)](https://epubs.siam.org/doi/10.1137/1.9781611973075.86) [hardness\u2060(opens in a new window)](https://epubs.siam.org/doi/10.1137/1.9781611973075.86) [\u2060(opens in a new window)](https://www.sciencedirect.com/science/article/pii/S0304397505005438?via%3Dihub) [results\u2060(opens in a new window)](https://www.sciencedirect.com/science/article/pii/S0304397505005438?via%3Dihub), and connected [\u2060(opens in a new window)](https://epubs.siam.org/doi/10.1137/10080703X) [algorithms\u2060(opens in a new window)](https://epubs.siam.org/doi/10.1137/10080703X) and [\u2060(opens in a new window)](https://dl.acm.org/doi/abs/10.1145/2559903) [lower bounds\u2060(opens in a new window)](https://dl.acm.org/doi/abs/10.1145/2559903).\n\nWe have agreed to the group\u2019s requests that all raw data of the results be made public to facilitate independent verification by the community, and that OpenAI commit to funding a conference to understand the implications of this work on the field as a whole. The group invites the community to help organize an open examination of the ETH claim and to discuss the broader questions that AI-generated breakthroughs raise about verification, access, credit, and the future of research.\n\nOur AI found its natural language disproof for the ETH on October 16th, 2026 and then subsequently we formalized the result in Lean on October 17th, 2026, which led us to develop the collaboration described here. To that end, we have released both an [AI natural language output writeup\u2060(opens in a new window)](https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) produced by our models and a [Lean proof \u2060(opens in a new window)](https://github.com/openai/math/blob/main/lean/docs/378.md)in our public GitHub repository.\n\nComputational complexity has many open questions and conjectures, whose proofs or refutations have so far eluded the best efforts of scientists. We hope that humans with AI can provide new understanding in this field, and shed light on the inherent capabilities and limits of efficient computation.\n\n## Existence of quantum chromodynamics and completions of the Standard Model\n\nThe physics collaboration will understand and explain a result that gives a mathematically rigorous existence proof of certain interacting quantum field theories containing gauge fields and fermions in four dimensions, including Quantum Chromodynamics (QCD) and a unified completion of the Standard Model of particle physics. Our work builds on [Balaban\u2019s approach\u2060(opens in a new window)](https://www.worldscientific.com/doi/abs/10.1142/S0129055X13300100) in constructive quantum field theory. As a subproblem, this work also includes a proof of the existence of pure Yang\u2013Mills theory, which is part of the [Quantum Yang\u2013M",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "research",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1096837,
-    "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
-    "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
-    "published_at": "2026-10-26T13:45:00+00:00",
-    "fetched_at": "2026-10-26T23:02:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nOctober 26, 2026\n\n[Security](https://openai.com/news/security/)\n\n# GPT\u20116.1 Sol helps CodeRabbit strengthen security across complex codebases\n\nLoading\u2026\n\nShare\n\nAs AI accelerates software development, engineering and application-security teams need ways to investigate code changes and address vulnerabilities while keeping people in control. CodeRabbit is using [GPT\u20116.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/) as the primary model in its security agent to extend review beyond individual changes and help developers understand risks across complex codebases.\n\nA pull request can affect shared libraries, dependencies and safeguards elsewhere in an application. GPT\u20116.1 Sol helps CodeRabbit connect behavior across files and components to surface potential security issues. CodeRabbit\u2019s review is independent of the agent that wrote the code and complements established scanners. Its system also uses other frontier models and security tooling.\n\nDuring pull-request review, Sol helps analyze changes as developers work. In Deep Scan, it supports broader investigation across repositories, including dependencies and how components interact. CodeRabbit Secure extends that investigation to linked repositories, such as a shared authentication library, to help teams understand how a weakness could affect the wider system.\n\nCodeRabbit reports using GPT\u20116.1 Sol to flag security-related issues across thousands of repositories and organizations. These findings feed into the pull-request workflows developers already use to review and improve their code.\n\nCodeRabbit Secure connects investigation to remediation. For user-selected findings, it can attempt exploit verification in an isolated sandbox without testing production systems. For supported issues, it can draft a pull request with a proposed fix for a person to review and approve.\n\nThis work shows how frontier reasoning can support software security: understanding risks beyond an individual change, helping validate findings and turning them into proposed fixes. Human reviewers remain responsible for deciding which changes to ship.\n\nLearn more about GPT\u20116.1 Sol [here](https://openai.com/index/introducing-gpt-6-1-sol/). Learn more about CodeRabbit Secure [here\u2060(opens in a new window)](https://www.coderabbit.ai/security).\n\n- [Cybersecurity](https://openai.com/news/?tags=cybersecurity)\n- [2026](https://openai.com/news/?tags=2026)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Patch the Planet: global response coordination as agents uncover critical vulnerabilitiesSecurityOct 21, 2026 Patch the Planet: global response coordination as agents uncover critical vulnerabilities - Security - Oct 21, 2026](https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/)\n\n\n\n[The Defender\u2019s WindowSecurityAug 17, 2026 The Defender\u2019s Window - Security - Aug 17, 2026](https://openai.com/index/the-defenders-window/)\n\n\n\n[Democratic governance of frontier AI, part II: Empowering cyber defendersGlobal AffairsOct 21, 2026 Democratic governance of frontier AI, part II: Empowering cyber defenders - Global Affairs - Oct 21, 2026](https://openai.com/index/empowering-cyber-defenders/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n- [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1095122,
-    "title": "Hugging Face Journal Club: Score Centering Stabilizes Off-policy Reinforcement Learning",
-    "url": "https://www.youtube.com/watch?v=mEtRe_KKYm0",
-    "published_at": "2026-10-26T13:38:50+00:00",
-    "fetched_at": "2026-10-26T18:48:30+00:00",
-    "source_id": "hugging-face",
-    "source_name": "Hugging Face",
-    "extraction_method": "youtube",
-    "body": "Kashif Rasul from the Hugging Face research team gives an in-depth derivation of the mathematics behind the score centering paper, followed by discussion among the team.\n\nPaper link: https://huggingface.co/papers/2609.20807\n\nauthor: Hugging Face\n\nvideo: https://www.youtube.com/embed/mEtRe_KKYm0",
-    "topic": "research",
-    "tags": [
-      "benchmark",
-      "research",
-      "video",
-      "coding",
-      "education"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1096705,
-    "title": "Cheap code, precious trust: Code modernization at scale",
-    "url": "https://commandline.microsoft.com/agentic-software-engineering-large-scale-code-migration-language-modernization-spec-driven-development/",
-    "published_at": "2026-10-26T13:35:44+00:00",
-    "fetched_at": "2026-10-26T18:48:37+00:00",
-    "source_id": "microsoft-commandline",
-    "source_name": "Microsoft Commandline",
-    "extraction_method": "jina",
-    "body": "Published Time: 2026-10-26T13:35:44+00:00\n\nMarkdown Content:\nWhat happens when AI agents can rewrite millions of lines of code orders of magnitude faster than humans can review them?\n\nAt Microsoft, we\u2019re working on exactly that problem.\n\nWe\u2019re building and running AI agents that transform some of the world\u2019s largest codebases, including Windows and Azure. Our work ranges from migrating a 400-million-line codebase to a new compiler toolchain to modernizing legacy C and C++ code into Rust\u2014increasingly backed by formal verification.\n\nGenerating code is becoming the easy part. Knowing whether to trust it is the real challenge. When agents make changes across hundreds of millions of lines of code, how do we know they haven\u2019t broken something subtle? How do we preserve behavior, security, and architectural intent? And how can a small team of engineers confidently stand behind changes that AI agents make at that scale?\n\n> Since 2024, we\u2019ve been combining AI agents with static analysis, testing, and formal verification to make large-scale software transformation practical and trustworthy.\n\nThese questions are at the heart of our work. Since 2024, we\u2019ve been combining AI agents with static analysis, testing, and formal verification to make large-scale software transformation practical and trustworthy.\n\nAlong the way, the flow of control inverted. We began by hard-coding workflows that called LLMs as subroutines; by May 2025, agents had become better planners than our pipelines, and our job became building the tools that agents call. The most valuable of those tools are the ones that tell an agent\u2014and the engineers behind it\u2014whether a change is right.\n\nWe\u2019re now continuously updating our approach through our flexible harness to leverage formal methods, decompose large-scale goals across complex systems, and tackle the kinds of problems that mature companies with large, complex codebases face. We\u2019re also rethinking how humans and agents work together. Even as models and agent harnesses improve, the cognitive load on human experts is growing. Human attention has become the scarcest resource in agentic software engineering, and we design our tools to spend it where it matters most.\n\n> Human attention has become the scarcest resource in agentic software engineering, and we design our tools to spend it where it matters most.\n\nThis is the first post in a series about what we\u2019re building, what we\u2019ve learned, and the questions we\u2019re still trying to answer. Here, we introduce some of the problems we\u2019re working on and the ideas that connect them.\n\n![Image 1: Figure 1. Inversion of control: As agents took over planning, the scarce resource shifted from generating code to trusting it.](https://commandline.microsoft.com/wp-content/uploads/2026/10/fosse-01-command-line-1024x485.png)\n\nFigure 1. Inversion of control: As agents took over planning, the scarce resource shifted from generating code to trusting it.\n\n## Migration\n\nImagine needing to make similar kinds of changes across hundreds of millions of lines of code, maintained by thousands of engineers. That\u2019s the challenge of large-scale code migration. Generating any single edit is easy. The hard part is getting thousands of edits right in the same way: capturing what experts know, validating that knowledge, and applying it consistently\u2014without pulling every engineer in the organization into the effort.\n\nWe define migration as a transformation applied across a codebase to achieve a specific engineering objective, such as upgrading dependencies, adopting a new compiler, remediating static-analysis findings, or moving to a new platform. Our case studies include migrating the entire Windows codebase\u2014which is several hundred million lines of code\u2014to add support for the Clang/LLVM toolchain; remediating findings from CodeQL, PREfast, and Roslyn analyzers across codebases; and retargeting services from x86 to ARM.\n\nWe make a deliberate choice about the operating model: a very small team of migration experts can\u2014and should\u2014drive a large migration. Instead of distributing migration ownership across the broader engineering organization, we concentrate expertise and amplify it with agents.\n\n![Image 2: Figure 2. Our migration operating model: Agents learn a knowledge base from sampled findings, a small expert team approves it, and agents apply it across the codebase\u2014with reviewer feedback refining the knowledge base at every stage.](https://commandline.microsoft.com/wp-content/uploads/2026/10/fosse-02-command-line-2-1024x485.png)\n\nFigure 2. Our migration operating model: Agents learn a knowledge base from sampled findings, a small expert team approves it, and agents apply it across the codebase\u2014with reviewer feedback refining the knowledge base at every stage.\n\nAgents first learn a candidate knowledge base from sampled findings. A reviewer agent scores each proposed fix for correctness, minimality, consistency with file conventions, and maintainability, and its findings refine the knowledge base. Experts then approve the knowledge base rather than individual fixes, and agents apply it across the codebase. Human feedback remains essential, but we direct it where it has the highest leverage: approving knowledge and resolving novel or ambiguous cases. Grouping similar fixes for review further reduces the cognitive load on reviewers.\n\n## Language modernization\n\nMuch of the world\u2019s most critical software is written in languages like C /C++ that make memory-safety bugs easy to introduce and hard to eliminate. Rewriting in Rust promises safety by construction\u2014but only if the rewrite preserves exactly what the original code did. At the scale of real systems, a manual rewrite is rarely practical, and an automated one is only useful if we can trust it.\n\nOur work focuses on moving legacy codebases to Rust, and the rapid improvement of models and agents has changed what is possible:\n\n**1****January 2025**  \nGenerated Rust code that didn\u2019t compile.\n**2****June 2025**  \nCode compiled but didn\u2019t run correctly or pass tests.\n**3****September 2025**  \nWorking translations of approximately 30,000 lines, with manual guidance.\n**4****February 2026 onward**  \nModernizing large codebases with significant automation.\n\nEach step moved the bottleneck\u2014from compiling to passing tests to validated behavior at scale. As generation improved, the challenge became deciding what to modernize and showing that the result is right.\n\nWe\u2019ve built interactive experiences that help engineers visualize the module structure and layering of a codebase and decide which components to modernize, and in what order. Our tools then produce both the modernized code and its validation strategy.\n\nWe\u2019ve found that migrating feature by feature works better than translating a component line by line. A feature is a unit of user-visible behavior that we can validate end to end with scenario-driven tests, and each feature gets its own validation gate. Differential testing compares source and target behavior, and tests held out from the agent\u2014so it can\u2019t overfit to them\u2014measure the robustness of the translation. Most recently, we\u2019ve begun extracting formal specifications from the source, carrying them into the target language, and using Verus to prove that the modernized code satisfies them.\n\n## Specification-driven development\n\nAgents can produce changes faster than people can assess them, and locally plausible code can still violate architectural assumptions, distributed protocols, security boundaries, or operational invariants. Tests catch some of these problems, reviewers catch others, but neither keeps pace with the rate at which agents produce changes. We believe the answer is to make intent explicit. As agents write more of our code, developers\u2019 attention is shifting from writing code to managing the specifications that guide agents and validate their output. We\u2019re building tools that put formal, interpretable specifications at the center of the software development life cycle.\n\nOur first step is to infer formal specifications (e.g., TLA+) from existing codebases using agents. These specifications capture concurrency, fault tolerance, and other aspects of critical software components. We use tools like TLC to check that execution traces of the implementation are admitted by the specifications. This gives us evidence that the specifications admit the implementation\u2019s observed behavior; whether they also capture what the system is supposed to do is a harder question\u2014and one we return to below. When a trace is not admitted, the discrepancy may point to an implementation defect, an inaccurate specification, or an invalid test, and agents revise whichever is wrong.\n\n![Image 3: Figure 3. Specification-driven validation: A non-conforming trace may reveal a code defect, an inaccurate model, or an invalid test assumption.](https://commandline.microsoft.com/wp-content/uploads/2026/10/fosse-03-command-line-2-1024x468.png)\n\nFigure 3. Specification-driven validation: A non-conforming trace may reveal a code defect, an inaccurate model, or an invalid test assumption.\n\nOnce we have specifications, we put them to work. They\u2019re a good source of rainy-day test cases that exercise tricky concurrent interleavings and fault scenarios. We model check candidate properties and inductive invariants on small, finite configurations to find counterexamples quickly, and we prove properties for all configurations in F* and Lean, using a TLA+-to-F* and TLA+-to-Lean compiler that we\u2019re building. For brownfield codebases, this layer of specifications, test cases, and properties becomes a guardrail for future AI-driven changes.\n\nOur goal is to bring the power of formal methods to every engineer without requiring them to become experts in TLA+ or formal verification. The engineer reviews and approves the properties the system must satisfy; the agents find the inductive invariants needed to prove them. As specifications become comprehensive, they can also anchor modernization\u2014which is how we\u2019re approaching the translation of C/C++ into Verus-verified Rust.\n\n## Open questions\n\nHere are some open questions we\u2019re grappling with:\n\n*   **Can we trust specifications written by AI?** When an agent infers a specification from the very code it is meant to check, how do we know the specification captures what the system should do rather than simply what it currently does?\n\n*   **Can we verify more than functional correctness?** Can agents help us reason about security, performance, and reliability, beyond simply checking whether code produces the expected output?\n\n*   **Will engineers eventually stop reading code?** If agents generate code and verification tools prove that it satisfies approved specifications, can engineers stop reading code and work only at the level of specifications?\n\n*   **Who owns code when every agent can change everything?** Traditional code ownership assumes engineers work within relatively well-defined boundaries. Agentic development challenges that assumption. What replaces it?\n\nThese aren\u2019t hypothetical questions for us. They\u2019re shaping what we build next.\n\nWe would love to hear what you see in your own work, where you disagree with us, and which problems you think matter most. Please feel free to reach out with your thoughts.",
-    "topic": "development",
-    "tags": [
-      "development",
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "benchmark",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1093574,
-    "title": "ChatGPT\u2019s expanding world of work",
-    "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
-    "published_at": "2026-10-26T10:00:00+00:00",
-    "fetched_at": "2026-10-26T18:48:29+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nOctober 26, 2026\n\n[Research](https://openai.com/news/research/)\n\n# ChatGPT\u2019s expanding world of work\n\nOpenAI Economic Research releases data for researchers to explore questions on AI and labor more deeply.\n\n[Explore and download the data](https://openai.com/signals/data-download/)\n\nLoading\u2026\n\nShare\n\nUnderstanding how people use AI for work at a deeper level\n\n- [Understanding how people use AI for work at a deeper level](#understanding-how-people-use-ai-for-work-at-a-deeper-level)\n- [How researchers can use this data](#how-researchers-can-use-this-data)\n- [Explore the data](#explore-the-data)\n- [Citation](#citation)\n\n- [Understanding how people use AI for work at a deeper level](#understanding-how-people-use-ai-for-work-at-a-deeper-level)\n- [How researchers can use this data](#how-researchers-can-use-this-data)\n- [Explore the data](#explore-the-data)\n- [Citation](#citation)\n\nToday, we are releasing [OpenAI Signals data that explores](https://openai.com/signals/data/) 165 work activities across nearly 100 countries, revealing how consumers use ChatGPT for work. This data gives researchers a new way to study AI\u2019s role in the economy, with new information on the work activities people bring to ChatGPT\u2014from preparing instructional materials and developing marketing content to programming and analyzing business data.\n\nResearchers can use this data to explore how ChatGPT use for work differs across countries, track changes over time, and match this data to other economic indicators. The release connects ChatGPT usage to 165 work activity categories called Intermediate Work Activities (IWAs). IWAs are commonly-used categories of tasks for the kinds of work people do across occupations. The data is represented quarterly, spanning a period from the first quarter of 2025 through the third quarter of 2026.\n\n## Understanding how people use AI for work at a deeper level\n\nOur new data draws on O\\*NET, a standardized framework that groups occupation-specific tasks into broader categories of work activities shared across occupations. Using a common framework helps researchers compare ChatGPT use with other types of occupational and employment data.\n\nThe interactive chart below can be used to explore these work activities within a specific country over time, moving from broad activity groups to more specific activities. The data shows wide variation across countries in how people use ChatGPT for work.\n\n*Explore the work people bring to ChatGPT. Select an activity group to see the tasks within it, see how those change over time, or choose a country to explore its mix of work-related messages.*\n\nConnecting this data to IWAs revealed that work-related use became less concentrated in the most common activities. That means that countries tended to specialize in their work over time, and different countries specialized in different types of work. These differences might reflect variation in the kind of work done across countries or varying access to AI tools. Exploring these questions is one example of many that researchers can pursue with this new data.\n\n*Across 74 countries observed in every quarter, the ten most common activities represented an average of 51.1% of each country\u2019s classified work messages in Q3 2026, down from 56.0% in Q1 2025.*\n\n## How researchers can use this data\n\nConnecting ChatGPT usage data with IWAs lets researchers compare ChatGPT messages with activities performed across U.S. jobs. The paired visualizations below compare how people use ChatGPT with the activities performed across U.S. jobs. This comparison shows the difference in how people use ChatGPT for work and the actual work being done in the U.S. economy. The two distributions differ substantially, largely because about 43% of the employment-weighted task mix for mapped U.S. occupations falls into Other IWAs, outside the individually reported categories. These include activities such as moving materials, operating vehicles, and maintaining health or medical records. These omitted categories did not meet our threshold for consistent representation in the original U.S. ChatGPT sample.\n\n*Select an activity to see how much it appears in ChatGPT usage versus the overall U.S. economy.*\n\n## Explore the data\n\nThis release builds on OpenAI Signals, our ongoing effort to share evidence about how people use AI. The data covers work-related messages on individual ChatGPT plans and does not include enterprise messages or Codex use. We invite researchers to explore the data, connect it with other sources, and investigate what these patterns mean for workers and businesses.\n\nTo protect users\u2019 privacy, researchers do not read individual conversations. Automated systems classify messages after identifying information is removed. We publish aggregated statistics, withhold results for small groups, and add statistical noise to protect individual messages.\n\n## Citation\n\n#### BibTeX\n\n```` ```\n1 @online{openaiecon2026signalsdata,2  author = {Aaron Chatterji and Thomas Cunningham and David J. Deming and Zoe Hitzig and Drew Johnston and Alex Martin Richmond and Christopher Ong and Carl Yan Shan and Kevin Wadman},3  title = {{OpenAI} Signals v3.0},4  year = {2026},5  organization = {OpenAI},6  url = {https://openai.com/signals/data-download/},7  urldate = {2026-10-26},8  note = {Data download and methodology},9 }\n``` ````\n\n- [2026](https://openai.com/news/?tags=2026)\n- [ChatGPT](https://openai.com/news/?tags=chatgpt)\n- [Economic Research](https://openai.com/news/?tags=economic-research)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Working with academic communities to build scientific understandingResearchOct 26, 2026 Working with academic communities to build scientific understanding - Research - Oct 26, 2026](https://openai.com/index/building-scientific-understanding-with-academic-communities/)\n\n\n\n[Using thousands of AI agents to uncover new leads in biological dataPublicationOct 21, 2026 Using thousands of AI agents to uncover new leads in biological data - Publication - Oct 21, 2026](https://openai.com/index/scaling-ai-research-for-complex-biological-data/)\n\n\n\n[Advancing coding in low\u2011resource programming languagesPublicationOct 19, 2026 Advancing coding in low\u2011resource programming languages - Publication - Oct 19, 2026](https://openai.com/index/low-resource-programming-languages/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n- [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1092940,
-    "title": "How to Build an AI Code Review Agent - Daksh Gupta, Greptile",
-    "url": "https://www.youtube.com/watch?v=4UtrRVtUN_g",
-    "published_at": "2026-10-26T09:00:23+00:00",
-    "fetched_at": "2026-10-26T12:21:46+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Daksh Gupta, co-founder of Greptile, which reviews about 1% of all pull requests on GitHub, shares what Greptile tells companies that want to build their own review agent. Starting from a simple sandbox-plus-webhook setup, he explains why it misses bugs, costs $3-25 per PR and floods you with nitpicks, then walks through the fixes: targeted prompts, a dataset of past incident PRs, model inversion (reviewing Claude-written code with GPT and vice versa catches about 10% more bugs), codebase context and a living wiki, autonomous testing in sandboxes with computer use, and routing cheaper models to most subtasks.\n\nChapters\n00:00 Intro: Greptile and why companies build their own\n01:22 What makes a great review agent\n02:38 The simple version: sandbox, agent, webhook\n03:55 What goes wrong\n06:02 Fix 1: Better prompts and fewer nitpicks\n07:44 Fix 2: A dataset of historical PRs\n09:02 Fix 3: Model inversion\n11:04 Fix 4: Codebase context\n12:36 Docs, tickets and a living wiki\n14:26 Fix 5: Autonomous testing with computer use\n16:05 Fix 6: Cheaper models for most subtasks\n\nDaksh Gupta, Greptile\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/4UtrRVtUN_g",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1092941,
-    "title": "Build Your Own Team of Managed Agents - Jack Wotherspoon, Google DeepMind",
-    "url": "https://www.youtube.com/watch?v=Y_p3y6zP5QE",
-    "published_at": "2026-10-26T08:00:11+00:00",
-    "fetched_at": "2026-10-26T12:21:46+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Jack Wotherspoon, developer experience engineer at Google DeepMind, introduces Gemini Managed Agents: coding agents that run in cloud sandboxes from a single API call instead of on your laptop. He covers the Interactions API, the Antigravity harness, environments that several agents can share, uploaded skills and AGENTS.md files, a proxy that keeps secrets out of the sandbox, scheduled triggers and multi-agent workflows. Demos include an SEC filing researcher handing its work to a quant agent, and a stock research app built in AI Studio.\n\nChapters\n00:00 Intro: what are managed agents?\n00:54 Why run agents in the cloud\n02:13 Doing it yourself vs one API call\n03:26 The Interactions API\n04:32 How it works under the hood\n05:22 Building blocks: harness, environment, skills, credentials, triggers\n07:02 Choosing models, including Gemini 4 Argon\n08:51 Interactions and environments\n10:46 Tools, MCP servers and file mounts\n12:21 Keeping secrets out of the sandbox\n13:12 Triggers and scheduled agents\n13:37 Multi-agent workflows\n14:32 Demo: SEC research to quant analysis to report\n16:34 Demo: managed agents inside an app\n17:44 Getting started in AI Studio\n\nJack Wotherspoon, Google DeepMind\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/Y_p3y6zP5QE",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "research",
-      "video"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1092942,
-    "title": "How to Build Voice Agents That Don't Fall Apart When You Interrupt - Jesse Hall, LiveKit",
-    "url": "https://www.youtube.com/watch?v=OmyqelTwpOo",
-    "published_at": "2026-10-26T07:00:26+00:00",
-    "fetched_at": "2026-10-26T12:21:46+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Jesse Hall of LiveKit shows how to build voice agents for financial services that feel human, not robotic. He explains why model leaderboards mislead (they score components, but you ship a conversation), why you should measure time to first audio and time to first sentence instead of first byte or first token, and how async tool calls keep a conversation flowing while slow back-end work runs. He also covers audio-aware turn detection, the roughly 1.5-second latency budget (500-600ms feels truly human), and benchmarking your own stack with simulated callers.\n\nChapters\n00:00 Intro: real-time agents vs background agents\n01:47 Humanlike voice agents for financial services\n03:46 LiveKit and the voice pipeline\n04:21 Cascaded pipelines vs speech-to-speech\n05:05 Why leaderboards don't pick your stack\n06:46 Time to first audio, not first byte\n07:52 Time to first sentence, not first token\n08:38 Hiding slow tool calls like a human would\n10:14 Demo: hotel booking agent\n12:33 Turn detection: knowing when to listen\n14:02 The latency budget\n15:44 Benchmarking your stack with simulated callers\n18:35 Results and a pre-launch checklist\n\nJesse Hall, LiveKit\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/OmyqelTwpOo",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1093575,
-    "title": "How Fanatics and OpenAI streamline the fan experience",
-    "url": "https://openai.com/index/fanatics-streamline-fan-experience",
-    "published_at": "2026-10-26T07:00:00+00:00",
-    "fetched_at": "2026-10-26T18:48:29+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nOctober 26, 2026\n\n# How Fanatics and OpenAI streamline the fan experience\n\nNew \u201cShop the Look\u201d online commerce feature launches in time for fall sports calendar.\n\n[Contact sales](https://openai.com/contact-sales/) [Learn more](https://openai.com/solutions/industries/retail/)\n\n\n\nCompany size: Enterprise\n\nRegion: North America\n\nIndustry: Retail\n\nProducts: ChatGPT, Codex\n\nEngagement\n\n10%\n\nHigher engagement than the previous Shop the Look experience.\n\nTesting scale\n\n\\~30,000\n\nMLB products included in recommendation testing.\n\nTesting speed\n\n<24 hours\n\nTo test the first 50 products.\n\nLoading\u2026\n\nShare\n\nHelping fans complete the look\n\n- [Helping fans complete the look](#helping-fans-complete-the-look)\n- [Building and testing the first 50 looks in 24 hours](#building-and-testing-the-first-50-looks-in-24-hours)\n\n- [Helping fans complete the look](#helping-fans-complete-the-look)\n- [Building and testing the first 50 looks in 24 hours](#building-and-testing-the-first-50-looks-in-24-hours)\n\nFanatics and OpenAI are collaborating to improve the fan experience. As part of that work, Fanatics is launching an OpenAI-powered version of Shop the Look, which uses AI models to recommend coordinated merchandise to help fans complete their game-day outfits.\n\nFanatics, a global digital sports platform, uses ChatGPT Work and Codex across Fanatics Corporate, Commerce, Collectibles, and Betting and Gaming.\n\n\n\n## Helping fans complete the look\n\nShop the Look is now live across many sites across the Fanatics network\u2014including Fanatics.com and the official NFL, NBA, MLB and NHL online stores. With it, fans can more easily find recommended merchandise to match with items they\u2019re looking to wear. When fans browse for their favorite team\u2019s jersey, Shop the Look suggests coordinated outfits on the product page, using in-stock items that match their team and intended style.\n\n\n\nOpenAI models draw on enriched product data, team and inventory information to assemble the recommendations. Fanatics\u2019 merchandising rules keep the selections compatible and relevant, and looks are refreshed daily as catalogs change.\n\n## Building and testing the first 50 looks in 24 hours\n\nUsing Codex, OpenAI and the Fanatics engineering team quickly developed custom recommendation tools to enrich product and catalog data, find compatible merchandise, evaluate recommendations, and generate looks for each product.\n\nTesting the new approach on 50 products took less than a day to complete. Fanatics reviewed the looks and gave feedback directly to the builders. After a couple days of iteration, the company approved the minimum viable product that same week. OpenAI helped design the solution which enabled Fanatics to implement the new Shop the Look experience in their production environment and scale the approach across thousands of products.\n\nAfter testing the recommendations across roughly 30,000 MLB products, the OpenAI-powered Shop the Look experience achieved 10% higher engagement than the previous experience.\n\n## Join the new era of work\n\nMore than 1 million businesses around the world are achieving meaningful results with OpenAI.\n\n[Contact sales](https://openai.com/contact-sales/)\n\n## Keep reading\n\n\n\n[Greptile takes bug detection beyond code review with GPT-6 AstraStartupOct 26, 2026 Greptile takes bug detection beyond code review with GPT-6 Astra - Startup - Oct 26, 2026](https://openai.com/index/greptile-code-review-codex-astra/)\n\n\n\n[Working with academic communities to build scientific understandingResearchOct 26, 2026 Working with academic communities to build scientific understanding - Research - Oct 26, 2026](https://openai.com/index/building-scientific-understanding-with-academic-communities/)\n\n\n\n[GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebasesSecurityOct 26, 2026 GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases - Security - Oct 26, 2026](https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n- [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "enterprise",
-    "tags": [
-      "enterprise",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1096840,
-    "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
-    "url": "https://openai.com/index/openai-cut-incident-investigation",
-    "published_at": "2026-10-26T07:00:00+00:00",
-    "fetched_at": "2026-10-26T23:02:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "next_flight",
-    "body": "*This is part of our series sharing internal examples of how OpenAI is using its own technology and APIs. These tools are being used internally, at OpenAI, and are shared here as illustrative examples of how frontier AI is supporting use cases across our teams.*\n\nUltrafast is a high-speed mode in Codex, and for engineers at OpenAI, it\u2019s become the default for incident response. When something breaks, engineers often don\u2019t have time to wait minutes for an answer while the issue compounds. With Ultrafast, they can investigate multiple potential causes at once and get answers without splitting their attention.\n\nAaron Friel, Member of the Technical Staff at OpenAI, is usually the one running point on an incident. He spins up a Slack channel for incident response and then points Codex at the problem, asking Codex to monitor, investigate, and answer any questions as they come in. \u201cIn any incident, there are usually many hops along the way of what could have gone wrong, and finding the right needle in the right haystack is really the chief job of the people on that channel,\u201d he says. \u201cUsing Ultrafast, I\u2019m able to essentially search all of those haystacks at the same time, and respond to incidents much faster.\u201d\n\nAJ Trbojevic, Member of the Technical Staff and a Datacenter Security Architect, says investigations into security issues used to take an hour or two to pull structured and unstructured data together, normalize it, and provide context to make a decision. \u201cNow that happens in 10 to 15 minutes,\u201d he says. \u201cAnd at times it\u2019s near real time.\u201d\n\nAdam Perry and Sayan Sisodiya both work on the core agent team, building the code that lets Codex take actions, run commands, and use tools. Ultrafast has changed how they operate during security incidents. \u201cBefore, I\u2019d ask Codex to look into something, and then go look into it myself at the same time, because I knew it wouldn\u2019t be fast enough to just wait on,\u201d Adam says. \u201cNow with Ultrafast, Codex is fast enough that I can just stay focused instead of splitting my attention.\u201d\n\nSayan appreciates how Ultrafast lets him get immediate answers from multiple data sources: \u201cBeyond just digging through logs in an incident, I use Codex to dig through Slack to see if there are references to changes that might be suspect or people talking about similar symptoms elsewhere in Slack,\u201d he says.\n\nIf it takes more than 30 seconds to find an answer with AI, Jeff Niu, another Member of the Technical Staff, says he\u2019ll check Slack or chat with a coworker. But most of his work is now under that threshold with Ultrafast. He used to ask Codex a question, switch over to something else while it thought, and come back having lost his train of thought. Now that conversation happens in real time; it helps him stay focused on the task at hand.\n\nUltrafast also makes Jeff more willing to tackle large refactors, because reworking existing code takes less time. \u201cTechnical debt is much easier to pay down now than it ever was before,\u201d he says. \u201cCode is cheap, and now it\u2019s very quick to produce. A refactor that used to cost a lot happens almost instantly.\u201d\n\nAdam keeps a running Codex thread that he calls his chief of staff. Every morning it tells him what meetings he has and which messages he might have forgotten to reply to. \u201cIt\u2019s already looked at all the data to write that summary, so when I ask a followup, it\u2019s not waiting to go fetch more,\u201d he says. \u201cI can just keep asking questions in the same conversation just like an actual chief of staff.\u201d\n\nSayan uses Codex to do tedious manual work in the browser, like filling out forms\u2014something he\u2019d previously avoided because it was too slow. \u201cIt would open a browser, sit there thinking for five seconds, click something, sit there again,\u201d he says. With the latest models\u2019 improvements in computer use, he\u2019s more comfortable letting Codex handle that work. \u201cNow I\u2019m totally fine letting it click through the browser and it\u2019s fast enough that I\u2019m not losing time by not doing it myself.\u201d\n\nAcross incident response, daily planning, and refactoring, Ultrafast lets OpenAI\u2019s Technical Staff work with Codex at the pace of their questions. They can follow up on an answer, try another approach, and keep working without losing their train of thought. That shorter wait also changes what they\u2019re willing to take on, from a refactor they\u2019d put off to a routine task that\u2019s finally worth delegating.\n\n- Codex\n- 2026\n## Author\n\nOpenAI## Keep reading\n\nView allHow Codex became a collaborator for OpenAI\u2019s creative teamOpenAI on OpenAIJul 16, 2026\n\nImproving support with every interaction at OpenAIAPISep 29, 2025\n\nBuilding OpenAI with OpenAIChatGPTSep 29, 2025\n\n$@ec\n\nHow Ultrafast cut incident investigation from hours to minutes at OpenAI | OpenAI\n\nBusiness- \n- \n- \n- \n- \n- \n- \nDevelopers- \n- \n- \n- \n-\n\nUltrafast is a high-speed mode in Codex, and for engineers at OpenAI, it\u2019s become the default for incident response. When something breaks, engineers often don\u2019t have time to wait minutes for an answer while the issue compounds. With Ultrafast, they can investigate multiple potential causes at once and get answers without splitting their attention.\n\nAaron Friel, Member of the Technical Staff at OpenAI, is usually the one running point on an incident. He spins up a Slack channel for incident response and then points Codex at the problem, asking Codex to monitor, investigate, and answer any questions as they come in. \u201cIn any incident, there are usually many hops along the way of what could have gone wrong, and finding the right needle in the right haystack is really the chief job of the people on that channel,\u201d he says. \u201cUsing Ultrafast, I\u2019m able to essentially search all of those haystacks at the same time, and respond to incidents much faster.\u201d\n\nAJ Trbojevic, Member of the Technical Staff and a Datacenter Security Architect, says investigations into security issues used to take an hour or two to pull structured and unstructured data together, normalize it, and provide context to make a decision. \u201cNow that happens in 10 to 15 minutes,\u201d he says. \u201cAnd at times it\u2019s near real time.\u201d\n\nAdam Perry and Sayan Sisodiya both work on the core agent team, building the code that lets Codex take actions, run commands, and use tools. Ultrafast has changed how they operate during security incidents. \u201cBefore, I\u2019d ask Codex to look into something, and then go look into it myself at the same time, because I knew it wouldn\u2019t be fast enough to just wait on,\u201d Adam says. \u201cNow with Ultrafast, Codex is fast enough that I can just stay focused instead of splitting my attention.\u201d\n\nSayan appreciates how Ultrafast lets him get immediate answers from multiple data sources: \u201cBeyond just digging through logs in an incident, I use Codex to dig through Slack to see if there are references to changes that might be suspect or people talking about similar symptoms elsewhere in Slack,\u201d he says.\n\nIf it takes more than 30 seconds to find an answer with AI, Jeff Niu, another Member of the Technical Staff, says he\u2019ll check Slack or chat with a coworker. But most of his work is now under that threshold with Ultrafast. He used to ask Codex a question, switch over to something else while it thought, and come back having lost his train of thought. Now that conversation happens in real time; it helps him stay focused on the task at hand.\n\nUltrafast also makes Jeff more willing to tackle large refactors, because reworking existing code takes less time. \u201cTechnical debt is much easier to pay down now than it ever was before,\u201d he says. \u201cCode is cheap, and now it\u2019s very quick to produce. A refactor that used to cost a lot happens almost instantly.\u201d\n\nAdam keeps a running Codex thread that he calls his chief of staff. Every morning it tells him what meetings he has and which messages he might have forgotten to reply to. \u201cIt\u2019s already looked at all the data to write that summary, so when I ask a followup, it\u2019s not waiting to go fetch more,\u201d he says. \u201cI can just keep asking questions in the same conversation just like an actual chief of staff.\u201d\n\nSayan uses Codex to do tedious manual work in the browser, like filling out forms\u2014something he\u2019d previously avoided because it was too slow. \u201cIt would open a browser, sit there thinking for five seconds, click something, sit there again,\u201d he says. With the latest models\u2019 improvements in computer use, he\u2019s more comfortable letting Codex handle that work. \u201cNow I\u2019m totally fine letting it click through the browser and it\u2019s fast enough that I\u2019m not losing time by not doing it myself.\u201d\n\nAcross incident response, daily planning, and refactoring, Ultrafast lets OpenAI\u2019s Technical Staff work with Codex at the pace of their questions. They can follow up on an answer, try another approach, and keep working without losing their train of thought. That shorter wait also changes what they\u2019re willing to take on, from a refactor they\u2019d put off to a routine task that\u2019s finally worth delegating.\n\n- Codex\n- 2026\n## Author\n\nOpenAI## Keep reading\n\nView allHow Codex became a collaborator for OpenAI\u2019s creative teamOpenAI on OpenAIJul 16, 2026\n\nImproving support with every interaction at OpenAIAPISep 29, 2025\n\nBuilding OpenAI with OpenAIChatGPTSep 29, 2025\n\n## Keep reading\n\nView allHow Codex became a collaborator for OpenAI\u2019s creative teamOpenAI on OpenAIJul 16, 2026\n\nImproving support with every interaction at OpenAIAPISep 29, 2025\n\nBuilding OpenAI with OpenAIChatGPTSep 29, 2025\n\nImproving support with every interaction at OpenAIAPISep 29, 2025",
-    "topic": "agents",
-    "tags": [
-      "models",
-      "api",
-      "agents",
-      "safety",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1092880,
-    "title": "The Robot Butler Will Clean Up After You",
-    "url": "https://www.youtube.com/shorts/B8YFkYY20OY",
-    "published_at": "2026-10-26T05:18:59+00:00",
-    "fetched_at": "2026-10-26T12:21:46+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/B8YFkYY20OY",
-    "topic": "media",
-    "tags": [
-      "video",
-      "coding",
-      "robotics",
-      "enterprise",
-      "media",
-      "news"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
