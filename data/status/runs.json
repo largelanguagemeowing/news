@@ -1,8 +1,112 @@
 [
   {
+    "run_id": "812bd60f5e2b",
+    "started_at": "2026-11-18T13:37:15+00:00",
+    "ended_at": "2026-11-18T13:38:32+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "44315341438",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/44315341438",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-11-18T13:37:15+00:00",
+        "ended_at": "2026-11-18T13:38:32+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 23,
+          "enriched": 21,
+          "updated": 21,
+          "unchanged": 2,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": true,
+          "stopped_early": false,
+          "method_counts": {
+            "youtube": 4,
+            "trafilatura": 9,
+            "jina": 7,
+            "rss": 2,
+            "next_flight": 1
+          },
+          "per_source": {
+            "matt-wolfe": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "simon-willison": {
+              "attempted": 3,
+              "enriched": 3,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "microsoft-commandline": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "microsoft-ai-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "openai-blog": {
+              "attempted": 6,
+              "enriched": 5,
+              "failed": 1
+            },
+            "google-ai-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "bens-bites": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "nvidia-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "claude-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "cohere-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "apple-machine-learning": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "marios-rec-reading": {
+              "attempted": 1,
+              "enriched": 0,
+              "failed": 1
+            }
+          },
+          "flush_batches": 1,
+          "defuddle_enabled": true,
+          "duration_ms": 76594.53
+        }
+      }
+    ]
+  },
+  {
     "run_id": "bf634caaff50",
     "started_at": "2026-11-18T08:54:26+00:00",
-    "ended_at": "2026-11-18T08:54:32+00:00",
+    "ended_at": "2026-11-18T08:54:40+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "44270910371",
@@ -778,36 +882,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 7990.71
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "6374515ef52d",
-    "started_at": "2026-11-14T01:35:54+00:00",
-    "ended_at": "2026-11-14T01:36:23+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "43541447606",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/43541447606",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-11-14T01:35:54+00:00",
-        "ended_at": "2026-11-14T01:36:13+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 3,
-          "duplicate_articles": 2308,
-          "dead_letters": 0,
-          "failed_sources": 7,
-          "skipped_sources": 1,
-          "not_modified_sources": 14,
-          "auto_disabled_sources": 0,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 18477.32
         }
       }
     ]
