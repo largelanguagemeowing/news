@@ -1,5 +1,27 @@
 [
   {
+    "article_id": 1324355,
+    "title": "OpenAI GPT-6.2 Astra is Here - It's Not What You Think",
+    "url": "https://www.youtube.com/watch?v=JVHkb8PTMvc",
+    "published_at": "2026-11-18T01:43:27+00:00",
+    "fetched_at": "2026-11-18T08:54:29+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Sharing the latest news and advancements in AI - \ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "topic": "media",
+    "tags": [
+      "models",
+      "enterprise",
+      "media",
+      "news",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1322066,
     "title": "ChatGPT 6.2 Astra is \"A Mess\"",
     "url": "https://www.youtube.com/shorts/LxKNPrXBuyU",
@@ -11014,28 +11036,6 @@
     "topic": "agents",
     "tags": [
       "agents",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1100576,
-    "title": "GitHub - badlogic/qwen3_tts_rs: A Rust implementation of the Qwen3 Text-to-Speech (TTS) model inference.",
-    "url": "https://github.com/badlogic/qwen3_tts_rs",
-    "published_at": "2026-10-26T23:10:57+00:00",
-    "fetched_at": "2026-10-27T02:19:17+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "trafilatura",
-    "body": "Rust Qwen3-TTS inference with an Apple Silicon MLX backend. This fork is maintained for Pipi's native TTS worker and for Rust/Python MLX parity work.\npibot-tts-worker\n: persistent binary-framed TTS worker used by Pipi.tts\n: one-shot text-to-speech CLI.voice_clone\n: one-shot voice-cloning CLI.api_server\n: OpenAI-compatible HTTP speech API.trace_rust\n: Rust trace generator for MLX parity debugging.- Python trace/compare tools in\nscripts/\n.\nThe important path for Pipi is the MLX backend plus pibot-tts-worker\n.\n- Apple Silicon Mac.\n- Rust toolchain.\n- Xcode command line tools and Metal toolchain.\n- CMake, pkg-config, and Opus.\nbrew install cmake pkg-config opus\nxcodebuild -downloadComponent MetalToolchain\nFrom this repository:\ngit submodule update --init --recursive\ncargo build --release --no-default-features --features mlx --bin pibot-tts-worker\nBuild all MLX binaries:\ncargo build --release --no-default-features --features mlx\nPipi builds this submodule with:\nnpm run build:tts-rust\nfrom the Pipi repository root.\nPipi currently defaults to the 0.6B Base 6-bit MLX model:\nmlx-community/Qwen3-TTS-12Hz-0.6B-Base-6bit\nThe 1.7B Base 6-bit MLX model is also supported and was used for parity/performance testing:\nmlx-community/Qwen3-TTS-12Hz-1.7B-Base-6bit\nDense BF16 Qwen/Qwen3-TTS models are still supported. Dense MLX linear weights and biases are intentionally cast to FP32 in this fork; this is required for good audio quality with the unquantized 0.6B model.\nExample worker invocation:\ntarget/release/pibot-tts-worker \\\n--serve \\\n--model-name /path/to/qwen3-tts-model \\\n--ref-audio /path/to/reference.wav \\\n--ref-text-file /path/to/reference.txt \\\n--language de \\\n--output-sample-rate 24000 \\\n--temperature 0.7 \\\n--top-k 30\nThe worker uses a binary stdin/stdout protocol and logs status/events on stderr. It emits streamed PCM chunks for low-latency playback.\nLanguage names and short aliases are normalized by the worker, e.g. de\nmaps to german\n. auto\nremains supported.\nText-to-speech with a preset/custom voice model:\ntarget/release/tts /path/to/Qwen3-TTS-12Hz-0.6B-CustomVoice \\\n\"Hello world\" Vivian english\nVoice cloning with a Base model:\ntarget/release/voice_clone /path/to/Qwen3-TTS-12Hz-0.6B-Base \\\nreference.wav \\\n\"Hello from a cloned voice.\" \\\nenglish \\\n\"Transcript of the reference audio\"\nReference audio should be mono 24 kHz WAV.\nGenerate Python MLX traces:\npython3 scripts/trace_python_mlx.py \\\n--model /path/to/model \\\n--ref-audio /path/to/reference.wav \\\n--ref-text-file /path/to/reference.txt \\\n--text \"Hallo\" \\\n--language de \\\n--out /tmp/python-trace\nGenerate Rust MLX traces:\ncargo run --release --no-default-features --features mlx --bin trace_rust -- \\\n--model /path/to/model \\\n--ref-audio /path/to/reference.wav \\\n--ref-text-file /path/to/reference.txt \\\n--text \"Hallo\" \\\n--language de \\\n--out /tmp/rust-trace\nCompare traces:\npython3 scripts/compare_traces.py /tmp/python-trace /tmp/rust-trace\nThe trace tools support forced/reference code paths used to isolate talker/code-predictor parity from audio-encoder drift.\nMLX loads mlx.metallib\nat runtime for Metal kernels. With Xcode 26.5 / Metal compiler metalfe-32023.883\n, locally source-built MLX v0.31.2\ncan produce incorrect results for large-M transposed 6-bit quantized_matmul\n/ qmm_splitk\ncalls. The official Python MLX wheel artifact does not show the same issue.\nThe vendored MLX-C wrapper in this fork works around the bad local Metal artifact by chunking large 2D/3D transposed quantized matmul calls into 16-token slices before calling MLX core. This keeps MLX's real quantized Metal kernels, avoids dequantization, and restores parity with Python MLX for Qwen3-TTS.\nStandalone repro:\nhttps://github.com/badlogic/mlx-qmm-repro\nUpstream issue:\nhttps://github.com/ml-explore/mlx/issues/3586\nApache-2.0\nBased on the original Rust implementation from Second State and the Qwen3-TTS Python/MLX implementation from the Alibaba Qwen team.",
-    "topic": "infrastructure",
-    "tags": [
       "release",
       "models",
       "open-source",
