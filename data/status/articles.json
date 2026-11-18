@@ -1,5 +1,135 @@
 [
   {
+    "article_id": 1322066,
+    "title": "ChatGPT 6.2 Astra is \"A Mess\"",
+    "url": "https://www.youtube.com/shorts/LxKNPrXBuyU",
+    "published_at": "2026-11-17T23:38:50+00:00",
+    "fetched_at": "2026-11-18T01:10:40+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "topic": "media",
+    "tags": [
+      "models",
+      "enterprise",
+      "media",
+      "news",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1321836,
+    "title": "External sandboxes for coding agents",
+    "url": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/",
+    "published_at": "2026-11-17T22:52:29+00:00",
+    "fetched_at": "2026-11-18T01:10:40+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://blog.primeradiant.com/external-sandboxes-for-coding-agents/\">External sandboxes for coding agents</a></strong></p>\nI've been exploring new ways to sandbox code that is executed by agents, with a focus on making it safer to try out local models without worrying that a mistake or prompt injection attack might cause them to take damaging actions on a machine.</p>\n<p>I worked on this project with <a href=\"https://primeradiant.com\">Prime Radiant</a>, the AI research lab behind Superpowers and <a href=\"https://github.com/orgs/prime-radiant-inc/repositories\">other projects</a>.</p>\n<p><a href=\"https://blog.primeradiant.com/external-sandboxes-for-coding-agents/\">My post</a> on the Prime Radiant blog introduces the <strong>external sandbox</strong> pattern, where code executed by the agent runs inside a dedicated sandbox while the agent itself lives outside of that sandbox.</p>\n<p>To demonstrate this pattern we've released three sandbox server implementations:</p>\n<ul>\n<li><a href=\"https://github.com/prime-radiant-inc/external-sandbox-v86\">external-sandbox-v86</a> runs a Node.js server which then uses <a href=\"https://github.com/copy/v86\">v86</a> to run Alpine Linux inside WebAssembly.</li>\n<li><a href=\"https://github.com/prime-radiant-inc/external-sandbox-container\">external-sandbox-container</a> is a Python web server which runs the sandbox in Alpine Linux inside an Apple Containers instance.</li>\n<li><a href=\"https://github.com/prime-radiant-inc/external-sandbox-quicksand\">external-sandbox-quicksand</a> is another Python web server, this time using Microsoft's <a href=\"https://github.com/microsoft/quicksand\">Quicksand</a> sandboxing library, which bundles QEMU <em>and</em> Alpine Linux in a Python package!</li>\n</ul>\n<p>Each of these implementations offers the same localhost API. You can then configure Pi, Claude Code, or Codex to send API calls to that sandbox any time they want to execute code.</p>\n<p>The sandboxes also include an optional HTTP/HTTPS allow-list proxy, so you can control exactly which hosts your agent's code is allowed to communicate with - plus a credential replacement mechanism to make authenticated API calls without sharing a secret with the agent. Here's the UI you can use to reconfigure that proxy while the sandbox is still running:</p>\n<p><img alt=\"The network policy page with allowed destinations, the policy JSON editor and recent proxy activity\" src=\"https://static.simonwillison.net/static/2026/sandbox-proxy.png\" /></p>\n<p>I continue to be fascinated by the challenge of safely running untrusted code. This external sandbox pattern provides a neat way to experiment with different approaches.\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/sandboxing\">sandboxing</a>, <a href=\"https://simonwillison.net/tags/security\">security</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/webassembly\">webassembly</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/coding-agents\">coding-agents</a>, <a href=\"https://simonwillison.net/tags/claude-code\">claude-code</a>, <a href=\"https://simonwillison.net/tags/codex\">codex</a>, <a href=\"https://simonwillison.net/tags/pi\">pi</a></p>",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "safety"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1321837,
+    "title": "GPT\u20116.2 Astra and GPT\u20116.2 Sol",
+    "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+    "published_at": "2026-11-17T22:38:52+00:00",
+    "fetched_at": "2026-11-18T01:10:40+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong><a href=\"https://openai.com/index/introducing-gpt-6-2-astra-sol/\">GPT\u20116.2 Astra and GPT\u20116.2 Sol</a></strong></p>\nOpenAI:</p>\n<blockquote>\n<p>We\u2019re introducing GPT\u20116.2 Astra, our new frontier model for your hardest projects, and GPT\u20116.2 Sol, our efficient, versatile model for everyday work.</p>\n</blockquote>\n<p>They're available in the API as <code>gpt-6.2-astra</code> and <code>gpt-6.2-sol</code>. I shipped <a href=\"https://llm.datasette.io/en/stable/changelog.html#v0-38\">LLM 0.38</a> with support for the new models.</p>\n<p>6.2 Astra is 80% of the price of 6 Astra - $8/MTok input and $40/MTok output, the same price as Claude Fable 5.2 (which was also 80% of its predecessor). 6 Astra and Fable 5 were both $10/$50. The cached price is an even bigger discount - $0.40/million compared to $1/million for the older model. This is great news for longer running agentic sessions.</p>\n<p>GPT-6.2 Sol is the same $2/$10 price as 6.1 Sol and 6 Sol - which are half the price of GPT-5.6 Sol ($4/$20).</p>\n<p>Here are the pelicans <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Fa940cc2750162ac9edf0ddf881067b83\">for GPT-6.2 Sol</a> and <a href=\"https://tools.simonwillison.net/markdown-svg-renderer?url=https%3A%2F%2Fgist.github.com%2Fsimonw%2Ffe836e13c90c00233c9e9e499a941805\">for GPT-6.2 Astra</a>. The 6.2 Astra max pelican looks like this:</p>\n<p><img alt=\"Good bicycle, good pelican, one wing is on the handlebars with fingers, the other wing is behind. Feet on the correct side of the frame. Nice gradiants. Good pouch, hooked bill.\" src=\"https://static.simonwillison.net/static/2026/astra-6-2-max.webp\" /></p>\n<p>I have a <a href=\"https://static.simonwillison.net/static/2026/openai-pelicans-november-2026.html\">full comparison grid here</a>, but here's how the high/xhigh/max pelicans compare with the previous Sol and Astra releases:</p>\n<p><img alt=\"Twelve pastel illustrations compare four models drawing a pelican riding a bicycle at three effort levels. All twelve have a recognizable pelican and bicycle. The clearest differences are in the feather detail and how convincingly the bird steers and pedals. gpt-6.2-astra has the most detailed Max drawing (88.71\u00a2), with layered feathers, a trailing red scarf, and a wing on the handlebars. Xhigh (17.70\u00a2) adds a green cap and keeps the seaside setting. High (11.55\u00a2) simplifies the feathers while keeping the riding pose clear. gpt-6.2-sol shows a convincing pedaling pose at both Max (13.69\u00a2) and Xhigh (6.74\u00a2), with one foot higher than the other and a wing reaching forward. At High (2.41\u00a2), the bird sits lower and the handlebars are harder to distinguish. gpt-6-astra gives the bird a long wing that follows the curve of the handlebars at Max (63.21\u00a2). Xhigh (33.85\u00a2) shows two bent legs on the pedals. At High (18.37\u00a2), one leg stretches almost straight down, making the pose look stiffer. gpt-6.1-sol uses nearly the same long-necked bird with a wing on the bars at Max (13.48\u00a2) and Xhigh (5.39\u00a2). At High (3.66\u00a2), the bird folds its wing against its body and appears to ride hands-free.\" src=\"https://static.simonwillison.net/static/2026/gpt-6-2-grid.webp\" /></p>\n<p>I also ran my most recent benchmark prompt against the two models, using \"Ultra' effort levels in the Codex CLI:</p>\n<blockquote>\n<p><code>Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and stomps around manhattan and queens and Brooklyn, use openstreetmap mapping data</code></p>\n</blockquote>\n<p>Here's <a href=\"https://static.simonwillison.net/static/2026/yonkers-gpt-6.2-sol-ultra/index.html\">Sol</a> and here's <a href=\"https://static.simonwillison.net/static/2026/yonkers-gpt-6.2-astra-ultra/index.html\">Astra</a>. Neither of them did a good enough job of morphing Yonkers into a big mech, at least in comparison to <a href=\"https://tools.simonwillison.net/yonkers-rises\">Claude Fable 5.2</a> and <a href=\"https://static.simonwillison.net/static/2026/yonkers-mech-standalone.html\">Gemini 4 Carbon</a>.</p>\n<p>This video showing the Astra and Sol animations playing out at the same time:</p>\n<video controls=\"controls\" height=\"1080\" poster=\"https://static.simonwillison.net/static/2026/yonkers-astra-sol-20s.webp\" preload=\"none\" width=\"1080\">\n  <source src=\"https://static.simonwillison.net/static/2026/yonkers-astra-sol-20s-largest.mp4\" type=\"video/mp4\" />\n</video>\n\n<p>I created that video using GPT-6.2 Astra (Ultra) in the Codex desktop app by prompting:</p>\n<blockquote>\n<p><code>https://static.simonwillison.net/static/2026/yonkers-gpt-6.2-astra-ultra/index.html\u00a0and https://static.simonwillison.net/static/2026/yonkers-gpt-6.2-sol-ultra/index.html\u00a0 are two videos of the same thing by two different models</code></p>\n<p><code>I need a video of the first 10 seconds where the top half of the video plays the first and the bottom half plays the second</code></p>\n<p><code>I need an overlaid label of \"GPT-6.2 Astra\" on the top half and \"GPT-6.2 Sol\" on the bottom half. These labels should be tastefully positioned.</code></p>\n<p><code>Make the video square and 2000x2000 pixels</code></p>\n</blockquote>\n<p>Then later:</p>\n<blockquote>\n<p><code>OK make it 20s</code></p>\n</blockquote>\n<p>Here's the <a href=\"https://gist.github.com/simonw/6b44c588a1321b60799dbbfd13db6d23\">exported transcript</a>.</p>\n<p>The buzz around these new models is mixed at the moment. Astra 6.2 isn't scoring quite as high as Fable 5.2 on various benchmarks, and I've seen a few complaints that its communication style can be confusing. Theo Browne's <a href=\"https://twitter.com/theo/status/2122760447103484410\">review</a> (in the form of a feedback letter he sent OpenAI during pre-release) has this useful example:</p>\n<blockquote>\n<p>When this model is working on long tasks, it can pull in a lot of subagents and manage them pretty well. It will then proceed to randomly <em>ask you some weird internal implementation detail bullshit that you could not under any earthly circumstance understand, much less have input on</em>.</p>\n<p>I sent \"/goal make a new level for Outer Wilds\". 2 hours in, it's \"blocked\" because it wanted to ask me \"does r24's reviewer write it's clips to 24_g521.mp4 or 24_p11.mp4?\"</p>\n</blockquote>\n\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/openai\">openai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/llm-pricing\">llm-pricing</a>, <a href=\"https://simonwillison.net/tags/pelican-riding-a-bicycle\">pelican-riding-a-bicycle</a>, <a href=\"https://simonwillison.net/tags/llm-release\">llm-release</a>, <a href=\"https://simonwillison.net/tags/theo-browne\">theo-browne</a>, <a href=\"https://simonwillison.net/tags/gpt\">gpt</a>, <a href=\"https://simonwillison.net/tags/yonkers-rising\">yonkers-rising</a></p>",
+    "topic": "agents",
+    "tags": [
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1322126,
+    "title": "2026 in LLMs \u2014 Simon Willison, Datasette",
+    "url": "https://www.youtube.com/watch?v=9RKrSF9d2SE",
+    "published_at": "2026-11-17T20:00:09+00:00",
+    "fetched_at": "2026-11-18T01:10:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Simon Willison used AI coding agents to locate a beeping detector buried in 40 boxes. At CODE Summit 2026, the Datasette creator traces three LLM inflection points: reliable coding agents, persistent problem solving and vibe coded game development. Pelican benchmarks, prompt injection and rogue agents frame a broader question about developer productivity: why does software engineering still feel harder?\n\nSpeaker info:\n- https://github.com/simonw\n- https://x.com/simonw\n- https://simonwillison.net/\n\nTimestamps:\n0:00 - The coding agent inflection point\n1:43 - More ambition and predictions for 2026\n3:57 - Pelicans, parrots and model benchmarks\n5:23 - Frontier models, security and export controls\n7:49 - Defining goals models can solve\n8:42 - Finding a hidden beep with coding agents\n11:22 - Rogue agents and AI security\n13:42 - From raccoon heists to playable games\n15:37 - Making vibe coded games fun\n17:33 - Why software engineering still feels harder",
+    "topic": "tools",
+    "tags": [
+      "tools",
+      "models",
+      "open-source",
+      "agents",
+      "safety",
+      "benchmark",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1322127,
+    "title": "New Ways of Working with Codex \u2014 Dominik Kundel & Charlie Guo, OpenAI",
+    "url": "https://www.youtube.com/watch?v=IPh9YsWvDQk",
+    "published_at": "2026-11-17T19:43:56+00:00",
+    "fetched_at": "2026-11-18T01:10:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "An internal video app lets Codex edit footage in DaVinci Resolve and return a cut for review. OpenAI\u2019s Dominik Kundel and Charlie Guo demonstrate connected agent workflows at CODE Summit 2026, from context gathering with plugins, Appshots and ChatGPT Space to fast UI iteration, Codex Cloud and ChatGPT Sites. Voice, Dots, code review and parallel agents show how the pieces fit into everyday work.\n\nSpeaker info:\nDominik Kundel: https://x.com/dkundel\nCharlie Guo: https://x.com/charlierguo\nWorkshop resource: https://aie-codex-workshop.openai.chatgpt.site/\n\nTimestamps:\n0:00 - How Codex has evolved\n3:52 - Context gathering, plugins and shared knowledge\n13:05 - Appshots, computer use and privacy\n17:52 - Collaboration with ChatGPT Space\n20:52 - Fast iteration, Ultrafast and annotations\n28:27 - Codex Cloud and remote environments\n37:08 - Shipping with ChatGPT Sites and Cutroom\n42:02 - A computer use wiki race\n43:36 - Code review with Codex\n45:10 - Voice, Dots and the Agents API\n51:40 - Models, reasoning effort and parallel agents\n55:35 - CLI, shortcuts and closing tips",
+    "topic": "agents",
+    "tags": [
+      "models",
+      "api",
+      "agents",
+      "safety",
+      "video",
+      "infrastructure"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1322619,
+    "title": "Building modern agentic applications with Microsoft Copilot SDK 2.0",
+    "url": "https://commandline.microsoft.com/microsoft-copilot-sdk-2-0-github/",
+    "published_at": "2026-11-17T18:29:15+00:00",
+    "fetched_at": "2026-11-18T01:11:31+00:00",
+    "source_id": "microsoft-commandline",
+    "source_name": "Microsoft Commandline",
+    "extraction_method": "rss",
+    "body": "How we enhanced the Copilot runtime to support multi-tenanted, high performance architectures, and how you can choose the right architecture for your agentic use case.",
+    "topic": "coding",
+    "tags": [
+      "api",
+      "agents",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1317277,
     "title": "Microsoft and Salesforce Announce Copilotforce, Bringing Trusted Customer Context and Action into Microsoft AI Experiences",
     "url": "https://news.microsoft.com/source/2026/11/17/microsoft-and-salesforce-announce-copilotforce-bringing-trusted-customer-context-and-action-into-microsoft-ai-experiences/",
@@ -136,6 +266,27 @@
       "infrastructure",
       "coding",
       "hardware"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1320422,
+    "title": "Introducing ChatGPT for Sales",
+    "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+    "published_at": "2026-11-17T08:00:00+00:00",
+    "fetched_at": "2026-11-18T01:10:39+00:00",
+    "source_id": "openai-blog",
+    "source_name": "OpenAI Blog",
+    "extraction_method": "rss",
+    "body": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "research",
+      "tools"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -858,6 +1009,25 @@
       "safety",
       "research",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1321826,
+    "title": "Split-and-Scale Latent 3D Representations",
+    "url": "https://machinelearning.apple.com/research/split-scale-latent-3d",
+    "published_at": "2026-11-16T00:00:00+00:00",
+    "fetched_at": "2026-11-18T01:10:40+00:00",
+    "source_id": "apple-machine-learning",
+    "source_name": "Apple ML Research",
+    "extraction_method": "rss",
+    "body": "Latent 3D representations have significantly expanded the capabilities of modern shape modeling, enabling compact encoding of 3D scenes and supporting powerful 3D generative models. Despite this progress, current representations struggle to capture the fine details of complex objects, fundamentally limited by the capacity of their latents. However, scaling latent capacity at training time is computationally expensive and often infeasible under memory limits, and naively increasing the number of latents at inference fails to make effective use of the added capacity. In this paper, we address\u2026",
+    "topic": "research",
+    "tags": [
+      "models",
+      "research",
+      "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10871,184 +11041,6 @@
       "open-source",
       "api",
       "video",
-      "infrastructure"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1100561,
-    "title": "Agents That Self Improve While You Sleep - Fuad Ali, Arize AI",
-    "url": "https://www.youtube.com/watch?v=UGuNt2_Oz8s",
-    "published_at": "2026-10-26T23:00:39+00:00",
-    "fetched_at": "2026-10-27T02:19:16+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "In this workshop, Fuad Ali of Arize AI shows how to build a self-improvement loop for AI agents: trace everything, let Signal (an always-on agent) read your traces on a schedule and file deduplicated issues, turn failures into evals and living regression datasets, run experiments to prove a fix works, and keep humans at the highest-leverage points: eval design, dataset curation and reviewing fixes. He demos the loop on a toy-shopping agent with a planted bug and takes questions on evaluating qualitative output, decision models and cost.\n\nChapters\n00:00 Intro and workshop setup\n05:42 Where is your team on the maturity curve?\n07:39 The loop: trace, signal, eval, experiment, fix\n08:46 Demo agent and tracing\n12:15 Signal: an always-on agent reading your traces\n16:11 Agent Studio and managed agents\n18:31 Turning failures into datasets\n20:32 Evals: code, LLM as a judge, decision models\n24:48 Creating an eval from a Signal issue\n27:01 Experiments: proving the fix works\n31:12 Keeping humans in the loop\n34:16 Toward a fully automated loop\n40:16 Q&amp;A: evaluating qualitative output\n48:21 Q&amp;A: decision models, data sources and cost\n\nFuad Ali, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/UGuNt2_Oz8s",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "models",
-      "agents",
-      "benchmark",
-      "video",
-      "infrastructure",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1096835,
-    "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
-    "url": "https://openai.com/index/greptile-code-review-codex-astra",
-    "published_at": "2026-10-26T22:00:00+00:00",
-    "fetched_at": "2026-10-26T23:02:28+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nOctober 26, 2026\n\nStartup\n\n# Greptile takes bug detection beyond code review with GPT\u20116 Astra\n\nHow Greptile uses GPT\u20116 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.\n\n[Start building with OpenAI](https://openai.com/startups/)\n\nCompany size: Startup\n\nRegion: North America\n\nIndustry: Technology\n\nProducts: API, Codex\n\nLoading\u2026\n\nShare\n\nTesting applications at scale with GPT-6 Astra\n\n- [Testing applications at scale with GPT-6 Astra](#testing-applications-at-scale-with-gpt-6-astra)\n- [Strengthening customers\u2019 defenses with Daybreak](#strengthening-customers-defenses-with-daybreak)\n- [Reducing bugs and rework with Codex](#reducing-bugs-and-rework-with-codex)\n- [Looking ahead to faster development with Ultrafast](#looking-ahead-to-faster-development-with-ultrafast)\n\n- [Testing applications at scale with GPT-6 Astra](#testing-applications-at-scale-with-gpt-6-astra)\n- [Strengthening customers\u2019 defenses with Daybreak](#strengthening-customers-defenses-with-daybreak)\n- [Reducing bugs and rework with Codex](#reducing-bugs-and-rework-with-codex)\n- [Looking ahead to faster development with Ultrafast](#looking-ahead-to-faster-development-with-ultrafast)\n\n[Greptile\u2060(opens in a new window)](https://www.greptile.com/) builds AI agents that review and test code changes with full context of the codebase. \u201cWe are in the business of reducing bugs and making the world\u2019s software more reliable,\u201d says Co-founder and CEO Daksh Gupta.\n\nFor Daksh, that mission requires testing an application\u2019s behavior as well as reading its code, and GPT\u20116 Astra\u2019s computer use gives Greptile a way to automate testing at scale.\n\n> \u201cFor the first time ever, computer use is in a place where you can automate the experience of having a user try to break your application and allow large companies to ship much more confidently.\u201d\n\n*\u2014Daksh Gupta, Co-founder and CEO, Greptile*\n\n## Testing applications at scale with GPT\u20116 Astra\n\nValidating a pull request involves checking whether the code is logically correct, does what the developer intended, is secure, and avoids breaking existing functionality. For some of that testing, you need to actually run the application because reading the code alone might not reveal the problem.\n\nDaksh gives the example of a button that disappears when a website is viewed on an iPhone. With GPT\u20116 Astra, Greptile can start a development server for a pull request, resize the browser to an iPhone-sized viewport, and simulate a user moving through the application. The model\u2019s visual understanding lets it inspect the screen and spot the hidden button.\n\n\u201cA QA firm testing all of your changes is just impractically slow considering how fast we\u2019re able to ship code with these models,\u201d he says. With GPT\u20116 Astra, Greptile can automate this kind of application testing at scale.\n\n## Strengthening customers\u2019 defenses with Daybreak\n\nDaksh says more powerful models also make it easier for attackers to exploit applications, putting companies at risk, even those that previously would not have been typical targets.\n\n\u201cWe want to make it very easy for even a startup to secure their systems,\u201d says Daksh. \u201cWith Daybreak, we\u2019re able to do this in a way that is very safe, and we can ensure that our customers have more sophisticated defense mechanisms than the adversaries have offense mechanisms.\u201d\n\n## Reducing bugs and rework with Codex\n\nGreptile\u2019s Knowledge Base indexes a company\u2019s codebase and documents how it works in a form people and agents can read. The company makes that documentation available to Codex through a Model Context Protocol (MCP) server.\n\nThis allows Codex to write code that follows the customer\u2019s existing patterns, and thousands of customers have connected Codex to Greptile\u2019s knowledge base, according to Daksh.\n\nTo measure the impact, the team tracks how often AI-generated code is reverted. \u201cWhen we provide agents with context, fewer reverts happen and customers save time and save inference,\u201d Daksh says. Customers can put those savings toward new work instead of reworking the same changes.\n\nGreptile also uses Codex to build its own software and agents. \u201cWe are massive users of Codex,\u201d Daksh says. \u201cWe have enormous amounts of usage across every single function, engineering in particular.\u201d\n\n## Looking ahead to faster development with Ultrafast\n\nFor Greptile, Daksh explains, the only real bottleneck is how quickly the team can turn ideas into working software. He says model intelligence is already sufficient for many tasks, so he sees Ultrafast as a way to speed up development.\n\n> \u201cI\u2019m most excited about Ultrafast as a lever for us to move exactly as fast as we can come up with good ideas.\u201d\n\n*\u2014Daksh Gupta, Co-founder and CEO, Greptile*\n\nHis longer-term goal is to make changing and shipping critical enterprise software as easy as shipping a side project, with OpenAI helping Greptile build the validation that requires.\n\n## Join the new era of work\n\nMore than 1 million businesses around the world are achieving meaningful results with OpenAI.\n\n[Contact sales](https://openai.com/contact-sales/)\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Terminal X matches senior investor judgment 88.6% with GPT-6.1StartupOct 20, 2026 Terminal X matches senior investor judgment 88.6% with GPT-6.1 - Startup - Oct 20, 2026](https://openai.com/index/terminal-x/)\n\n\n\n[Stack Overflow for Agents triples signups with ChatGPT pluginStartupOct 16, 2026 Stack Overflow for Agents triples signups with ChatGPT plugin - Startup - Oct 16, 2026](https://openai.com/index/stack-overflow-chatgpt-plugin/)\n\n\n\n[Amp puts AI agents to work beyond code with OpenAIStartupOct 14, 2026 Amp puts AI agents to work beyond code with OpenAI - Startup - Oct 14, 2026](https://openai.com/index/amp-beyond-coding/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n- [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1098382,
-    "title": "ANOTHER Flying Car? (Not Tesla / Not AI)",
-    "url": "https://www.youtube.com/shorts/gC18kqOcCEI",
-    "published_at": "2026-10-26T20:19:13+00:00",
-    "fetched_at": "2026-10-26T23:02:31+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/gC18kqOcCEI",
-    "topic": "media",
-    "tags": [
-      "video",
-      "coding",
-      "enterprise",
-      "media",
-      "news",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1100562,
-    "title": "How to Test Your Agents on Real Tasks With Harbor - Xander Song, Arize AI",
-    "url": "https://www.youtube.com/watch?v=kRJjSOYqW0I",
-    "published_at": "2026-10-26T19:00:25+00:00",
-    "fetched_at": "2026-10-27T02:19:16+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Xander Song, an engineer at Arize AI who works on Phoenix, introduces Harbor, an open source framework for evaluating agents on realistic tasks with real data in isolated sandboxes. He explains tasks, Docker environments, verifiers and rewards, trials and jobs, oracles that validate your setup before you spend tokens, and ATIF trajectories. Then he shows how his team runs Harbor at scale on Daytona and with Phoenix to test a prompt change that steered agents toward a new SQL tool, cutting tool calls without hurting correctness.\n\nChapters\n00:00 Intro: shipping on evidence, not vibes\n01:28 What Harbor is\n03:37 Architecture: tasks, environments, verifiers\n06:08 Trajectories, jobs and oracles\n07:58 Example: fixing a failing migration\n10:48 Verifiers as black-box integration tests\n14:21 Running at scale in parallel sandboxes\n17:04 Harbor with Phoenix\n20:37 How the Phoenix team uses Harbor\n25:07 Q&amp;A: how Harbor orchestrates runs\n29:24 Q&amp;A: complex systems and data size\n33:21 Case study: steering agents to a SQL tool\n38:34 Demo: datasets and experiments in Phoenix\n44:10 Demo: comparing jobs task by task\n48:31 Regression tests and skills\n\nXander Song, Arize AI\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/kRJjSOYqW0I",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "open-source",
-      "agents",
-      "benchmark",
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1098170,
-    "title": "Quoting Jason Koebler",
-    "url": "https://simonwillison.net/2026/Oct/26/jason-koebler/",
-    "published_at": "2026-10-26T19:00:25+00:00",
-    "fetched_at": "2026-10-26T23:02:28+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "26th October 2026\nBecause big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support problems that they have discovered something journalistically notable and that 404 Media, specifically, can help them.\n\u2014 [Jason Koebler](https://www.404media.co/chatgpt-keeps-telling-people-404-media-can-solve-their-tech-support-problems/), ChatGPT Keeps Telling People 404 Media Can Solve Their Tech Support Problems\nRecent articles\n[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026",
-    "topic": "product",
-    "tags": [
-      "product",
-      "models",
-      "coding",
-      "opinion"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1098397,
-    "title": "China just dropped a new frontier model... and nobody can explain how",
-    "url": "https://www.youtube.com/watch?v=G_em1hHPnXY",
-    "published_at": "2026-10-26T18:55:29+00:00",
-    "fetched_at": "2026-10-26T23:02:31+00:00",
-    "source_id": "fireship",
-    "source_name": "Fireship",
-    "extraction_method": "youtube",
-    "body": "Get 20% off Mobbin Pro to help your agent design UIs that actually convert - https://mobbin.com/fireship\n\nKimi K3.1 just dropped as a free 3-trillion-parameter open-weight model that comes within one point of Opus on Terminal Bench. But is it *actually* good? Let's find out.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev\n\nauthor: Fireship\n\nvideo: https://www.youtube.com/embed/G_em1hHPnXY",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents",
-      "video",
-      "coding",
-      "education",
-      "media"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1184391,
-    "title": "Introducing GPT-6.1 Terra",
-    "url": "https://openai.com/index/introducing-gpt-6-1-terra",
-    "published_at": "2026-10-26T18:00:00+00:00",
-    "fetched_at": "2026-11-04T00:06:48+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\n# GPT-6.1Terra\n\nFrom visual understanding to action\n\n- [From visual understanding to action](#from-visual-understanding-to-action)\n- [A significant step up on factuality and coding](#a-significant-step-up-on-factuality-and-coding)\n- [Safety and alignment](#safety-and-alignment)\n- [Pricing and availability](#pricing-and-availability)\n\n- [From visual understanding to action](#from-visual-understanding-to-action)\n- [A significant step up on factuality and coding](#a-significant-step-up-on-factuality-and-coding)\n- [Safety and alignment](#safety-and-alignment)\n- [Pricing and availability](#pricing-and-availability)\n\n## Delivering fast and capable computer use at scale\n\nWe\u2019re introducing **GPT-6.1 Terra**, a fast, efficient model that combines detailed visual reasoning and precise computer use alongside clearer, more natural writing. A significant step up from GPT\u20115.6 Terra, it excels at the communication and computer-based tasks that fill the workday, from drafting proposals and interpreting technical drawings to filling out forms and editing videos.\n\nTerra continues to advance the cost-intelligence frontier across our model families, providing a new balance of speed, capability, and cost. Its standard API prices are 50% lower than those of GPT-5.6 Terra and GPT-6.1 Sol, making it practical for developers to automate high-volume work, like reading incoming invoices and entering their details into accounting software. In ChatGPT Work and Codex, your plan goes further with GPT-6.1 Terra\u2014the same usage allowance covers more tasks than with GPT\u20115.6 Terra and substantially more than with GPT\u20116.1 Sol or GPT\u20116 Astra.\n\n## From visual understanding to action\n\nWe measured GPT-6.1 Terra\u2019s computer-use capabilities on **Agents\u2019 Last Exam,** a benchmark of professional tasks that includes turning architectural drawings into a 3D model and reviewing an animated film shot by shot to create a time-coded log for a restoration team. At medium reasoning effort, GPT-6.1 Terra scores 15 percentage points higher than GPT-5.6 Terra at about one-third the cost. It even performs on par with GPT-6 Astra at only one-tenth its price per token. At max effort, Terra is over three times as token efficient as Claude Opus 5.5, and one-fourth its price per token, resulting in a \\~9x lower cost per task. Terra is also much quicker, completing tasks **over three times faster** than both GPT-6 Astra and GPT-6.1 Sol.\n\nOn **MMMU-Pro**, a benchmark of visual reasoning, GPT-6.1 Terra outperforms GPT-5.6 Terra at every reasoning setting. It even nearly matches the scores of our most capable frontier model, GPT-6 Astra, and GPT-6.1 Sol at much lower cost.\n\n**OSWorld 2.1** tests how well AI agents use desktop apps to complete multistep tasks, such as building a 3D model from a technical drawing. At medium reasoning effort, GPT-6.1 Terra surpasses GPT-5.6 Terra\u2019s best score at a fraction of the cost per task.\n\n## A significant step up on factuality and coding\n\nThis year, we\u2019ve invested heavily in reducing hallucinations and factual errors produced by our models. On our internal benchmark of error-inducing prompts, the error rate at low reasoning effort fell from 53.6% with GPT-5.6 Terra to 16.7% with GPT-6.1 Terra, a drop of nearly 37 percentage points. At maximum effort, the error rate fell by 18 percentage points to 4.3%, nearly matching the rates for GPT-6 Astra and GPT-6.1 Sol.\n\nGPT-6.1 Terra marks a substantial improvement over GPT-5.6 Terra for software engineering. **Terminal-Bench 4.0** tests how well coding agents solve problems from the command line, such as fixing a webpage whose layout shifts as it loads. At maximum reasoning effort, GPT\u20116.1 Terra solves 50.3% of tasks, more than double GPT\u20115.6 Terra\u2019s published score of 21.5%. For the most complex coding tasks, GPT-6.1 Sol and GPT-6 Astra remain the better choice.\n\n**Terminal-Bench-Science 0.1** tests how well agents use code to carry out scientific research tasks, such as tracking cell divisions in a time-lapse video. At max reasoning, GPT-6.1 Terra surpasses GPT-6.1 Sol at lower cost, coming within five points of Opus 5.5 at less than one-fifth the estimated cost.\n\n## Safety and alignment\n\nAs we make powerful AI more efficient and accessible, we continue training, testing, and refining our safeguards. GPT\u20116.1 Terra meets the Critical threshold in cybersecurity under our Preparedness Framework, and maintains the protections developed for GPT\u20116 Astra.\n\nGPT-6.1 Terra brings with it the alignment improvements of the GPT-6 series. According to our evaluations, GPT-6.1 Terra is more likely to stay within scope and honestly disclose limitations and potential blockers to the user compared to GPT-5.6 Terra. In our prompt-injection tests, GPT-6.1 Terra also showed strong resistance to malicious instructions designed to divert it from the user\u2019s task. More detail is available in the [system card \u2060(opens in a new window)](https://deploymentsafety.openai.com/gpt-6-1-terra).\n\n## Pricing and availability\n\nStarting today, GPT-6.1 Terra is available to all Plus, Pro, Enterprise, and Edu users in ChatGPT Work and Codex. Developers can also access it through the OpenAI API as `gpt-6.1-terra`.\n\nStandard API pricing is $1 per million input tokens, $0.05 per million cached input tokens, and $5 per million output tokens.\n\n- [2026](https://openai.com/news/?tags=2026)\n- [GPT](https://openai.com/news/?tags=gpt)\n\n## Author\n\nOpenAI\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n- [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "product",
-    "tags": [
-      "product",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1100336,
-    "title": "webframe: evaluated as a scraper and a sandbox",
-    "url": "https://simonwillison.net/2026/Oct/26/webframe-evaluation/",
-    "published_at": "2026-10-26T16:15:00+00:00",
-    "fetched_at": "2026-10-27T02:19:06+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "26th October 2026\n[Research](/elsewhere/research/)\n[webframe: evaluated as a scraper and a sandbox](https://github.com/simonw/research/tree/main/webframe-evaluation#readme)\u2014 An evaluation of webframe found it to be a fast, lightweight browser-JavaScript runner suitable for scraping, with performance comparable to shot-scraper, but with important rough edges including CSP failures, a 0\u00d70 viewport, hanging loads, missing HTTP metadata, and limited browser controls.\n[webframe](https://github.com/tractordev/webframe) is a neat little project from Jeff Lindsay which lets you \"run a web page like a program\" - you point it at a URL or file and it executes it in a hidden headless web view and outputs console.log()\nto standard output and any exceptions to standard error.\nIt's written in Go on top of the [glaze](https://github.com/crgimenes/glaze) library, which provides access to a system browser (\"WKWebView on macOS, WebKitGTK on Linux, WebView2 on Windows\") so it doesn't need to bundle its own browser engine.\nIt reminds me of my own [shot-scraper javascript](https://shot-scraper.datasette.io/en/stable/javascript.html) tool, albeit in a much smaller package that doesn't depend on Playwright.\nI had Claude Opus 5.5 [put it through its paces](https://claude.ai/code/cshk_01MX3aJH8vDGmGSj1xH9BYhj2HviVvLDaJbiELHyDoReYT) and prepare a research report for me. Here's the prompt I used:\nExplore https://github.com/tractordev/webframe try running it and put it though its paces, build a few exploratory prototypes, then evaluate it as a potential sandboxing tool and as a tool for scraping web pages using the same patterns encouraged by the \"shot-scraper JavaScript\" command (see simonw/shot-scraper on GitHub, docs directory)\nRecent articles\n[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026[Claude Haiku 5.5](/2026/Oct/7/claude-haiku-5-5/)- 7th October 2026",
-    "topic": "research",
-    "tags": [
-      "models",
-      "open-source",
-      "api",
-      "benchmark",
-      "research",
       "infrastructure"
     ],
     "dearrow_thumbnail_url": "",
