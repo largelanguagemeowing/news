@@ -1,8 +1,38 @@
 [
   {
+    "run_id": "bcd3e11fb59e",
+    "started_at": "2026-11-20T03:56:50+00:00",
+    "ended_at": "2026-11-20T03:56:57+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "44670985945",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/44670985945",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-11-20T03:56:50+00:00",
+        "ended_at": "2026-11-20T03:56:57+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 6,
+          "duplicate_articles": 2341,
+          "dead_letters": 0,
+          "failed_sources": 1,
+          "skipped_sources": 1,
+          "not_modified_sources": 15,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 7774.85
+        }
+      }
+    ]
+  },
+  {
     "run_id": "b9f8c1c68afd",
     "started_at": "2026-11-19T23:00:04+00:00",
-    "ended_at": "2026-11-19T23:00:10+00:00",
+    "ended_at": "2026-11-19T23:00:20+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "44633573615",
@@ -846,58 +876,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 5481.27
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "3275b9c1abe1",
-    "started_at": "2026-11-15T12:25:15+00:00",
-    "ended_at": "2026-11-15T12:25:39+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "43713643161",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/43713643161",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-11-15T12:25:15+00:00",
-        "ended_at": "2026-11-15T12:25:25+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 4,
-          "enriched": 3,
-          "updated": 3,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 0,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "trafilatura": 2,
-            "youtube": 1,
-            "rss": 1
-          },
-          "per_source": {
-            "simon-willison": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "ai-engineer": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "marios-rec-reading": {
-              "attempted": 1,
-              "enriched": 0,
-              "failed": 1
-            }
-          },
-          "flush_batches": 1,
-          "defuddle_enabled": true,
-          "duration_ms": 10110.46
         }
       }
     ]
