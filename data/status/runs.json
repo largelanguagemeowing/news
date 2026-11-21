@@ -1,8 +1,38 @@
 [
   {
+    "run_id": "adf6541af8a0",
+    "started_at": "2026-11-21T10:03:30+00:00",
+    "ended_at": "2026-11-21T10:03:39+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "44892415730",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/44892415730",
+    "stage_stats": [
+      {
+        "stage_name": "fetch",
+        "started_at": "2026-11-21T10:03:30+00:00",
+        "ended_at": "2026-11-21T10:03:39+00:00",
+        "status": "success",
+        "metrics": {
+          "inserted_articles": 3,
+          "duplicate_articles": 2301,
+          "dead_letters": 0,
+          "failed_sources": 1,
+          "skipped_sources": 1,
+          "not_modified_sources": 17,
+          "auto_disabled_sources": 0,
+          "defuddle_enriched_articles": 0,
+          "defuddle_enabled": false,
+          "skipped_entries": 0,
+          "duration_ms": 8217.22
+        }
+      }
+    ]
+  },
+  {
     "run_id": "933c91768983",
     "started_at": "2026-11-21T02:01:44+00:00",
-    "ended_at": "2026-11-21T02:01:51+00:00",
+    "ended_at": "2026-11-21T02:02:05+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "44853378736",
@@ -886,69 +916,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 6118.37
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "8aeb3d708874",
-    "started_at": "2026-11-16T13:17:24+00:00",
-    "ended_at": "2026-11-16T13:17:52+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "43874139541",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/43874139541",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-11-16T13:17:24+00:00",
-        "ended_at": "2026-11-16T13:17:42+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 10,
-          "enriched": 9,
-          "updated": 9,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 2,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "trafilatura": 6,
-            "markdown_new": 2,
-            "youtube": 1,
-            "rss": 1
-          },
-          "per_source": {
-            "nvidia-blog": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "simon-willison": {
-              "attempted": 5,
-              "enriched": 5,
-              "failed": 0
-            },
-            "openai-blog": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "matt-wolfe": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "marios-rec-reading": {
-              "attempted": 1,
-              "enriched": 0,
-              "failed": 1
-            }
-          },
-          "flush_batches": 1,
-          "defuddle_enabled": true,
-          "duration_ms": 18488.75
         }
       }
     ]

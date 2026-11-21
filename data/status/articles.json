@@ -1,5 +1,68 @@
 [
   {
+    "article_id": 1351947,
+    "title": "Announcing DreamCoder",
+    "url": "https://www.masteringemacs.org/article/announcing-dreamcoder",
+    "published_at": "2026-11-21T09:10:51+00:00",
+    "fetched_at": "2026-11-21T10:03:34+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading by @mickeynp. many nice ideas in dreamcoder.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1351872,
+    "title": "What else could you use this for?",
+    "url": "https://www.youtube.com/shorts/7_pMINxEEPU",
+    "published_at": "2026-11-21T03:42:44+00:00",
+    "fetched_at": "2026-11-21T10:03:32+00:00",
+    "source_id": "matt-wolfe",
+    "source_name": "Matt Wolfe",
+    "extraction_method": "rss",
+    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #AITools #ArtificialIntelligence",
+    "topic": "media",
+    "tags": [
+      "enterprise",
+      "media",
+      "news",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1351932,
+    "title": "What Runs Where? Local AI in Production \u2014 Ahmad Osman, Osmantic",
+    "url": "https://www.youtube.com/watch?v=GKSQYbELDzw",
+    "published_at": "2026-11-21T01:25:29+00:00",
+    "fetched_at": "2026-11-21T10:03:33+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A capable local model still needs the right hardware, inference engine and tools. At CODE Summit 2026, Osmantic founder Ahmad Osman explains how to choose that stack for real workloads, covering quantization, memory bandwidth, batching and specialized models. He connects local AI performance to agent harnesses, evaluation traces and the economics of owning GPUs, then makes the case for continual learning on machines you control.\n\nSpeaker info:\n- https://ahmadosman.com/\n- https://github.com/theahmadosman\n- https://github.com/Osmantic/ODS\n\nTimestamps:\n0:00 - What runs where: local AI in production\n3:35 - Benchmarks, agent workloads and specialized models\n11:00 - An agent-made trailer and the Portal harness\n15:57 - Quantization and model quality\n18:56 - Prefill, decode and choosing hardware\n23:15 - Batching and inference engines per chip\n27:57 - Pipeline optimization and speculative decoding\n32:56 - Why local agents need search and a complete harness\n36:13 - Choosing specialized models from real task traces\n39:26 - Renting GPUs, costs and operational tradeoffs\n44:20 - Planning for more capable models on existing hardware\n48:07 - Why continual learning needs local AI\n52:21 - Engrams, decision models and weight edits",
+    "topic": "hardware",
+    "tags": [
+      "hardware",
+      "models",
+      "open-source",
+      "agents",
+      "benchmark",
+      "infrastructure",
+      "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1349644,
     "title": "We promoted developers into architects without informing them",
     "url": "https://manidoraisamy.com/developer-to-architect.html",
@@ -10956,73 +11019,6 @@
       "api",
       "coding",
       "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1133443,
-    "title": "Custom Voices With Qwen3-TTS",
-    "url": "https://lucumr.pocoo.org/2026/10/29/qwen3-custom-voices/",
-    "published_at": "2026-10-29T19:18:20+00:00",
-    "fetched_at": "2026-10-29T20:27:19+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "trafilatura",
-    "body": "written on October 29, 2026\nWith my kids I\u2019m currently building a little [dungeron\ncrawler](https://github.com/mitsuhiko/dungeon-crawler) and we\u2019re trying to\n[learn a bit about game\ndevelopment](https://mitsuhiko.github.io/dungeon-crawler/learn/) along the way.\nHowever given that we live in the modern times of increasing capabilities we\nwanted to get a narrator and voice over.\nBut we also wanted it to not sound like everyone\u2019s standard AI voices so I\nlooked into what options there are on the table. After some investigation I\nnarrowed down to using [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) which\nuses voice embeddings for custom voices.\nWith a bit of creativity you can also do more with those custom voices than appears initially. In case this is of interest to you, this post just covers what we learned and with some examples. You can probably point your agent to it and it can do something with it.\nQwen3 is not the only TTS model in town, and it wans\u2019t even my first choice. We\ninitially used [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M). However\nQwen3 supports voice cloning and we wanted to have it feel a bit more unique.\nIn practice it\u2019s a bit tricker though. Qwen3 ships three kinds of models:\n1.7B-Base\n(and 0.6B): clones a voice from a few seconds of reference audio1.7B-CustomVoice\n: comes with nine built-in speakers and instructions1.7B-VoiceDesign\n: invents a voice from a text description\nThe base model clones either in context or from the speaker embedding alone but there is no documented way to clone a voice and direct it with instructions. That means unlike the custom voice and voice design models you cannot say \u201cspeak sad\u201d or \u201cwhisper\u201d with a cloned base model.\nAt present the official options for a custom voice are fine-tuning Base on a single speaker or to make a clip with VoiceDesign and clone it with Base. That is not all that bad, but it means instructions are gone.\nFor this blog post I took 28 seconds of me from my talk at [PyAI\nConf](https://www.youtube.com/watch?v=8RHYyRUxVrA), cut between two pauses so\nthat it starts and ends on a full sentence, and transcribed it with Whisper.\nThe transcript is really only needed for baking but to compare against an\nalready existing voice it\u2019s useful to have it say the same thing as the original\nrecording.\nNote that a conference talk recording is not ideal but it works anyways. Which is also a good reminder that you really don\u2019t need a particularly clean recording (or a very long one) to get a halfway convincing version of a person. Particularly when then presented to you on a low quality phone call, it won\u2019t be very hard to trick your grandmother.\nThe first thing you can do is to blend that recording with another voice. For\ninstance you can use VoiceDesign to make up a voice from a description. For this blog\npost the designed voice was created like this, with Qwen\u2019s own Python package\n[ qwen-tts](https://pypi.org/project/qwen-tts/) (\npip install qwen-tts\n, I used\n0.1.1), which the rest of the code in this post uses too:import torch\nfrom qwen_tts import Qwen3TTSModel\nkw = dict(device_map=\"mps\", dtype=torch.bfloat16, attn_implementation=\"sdpa\")\ndesign = Qwen3TTSModel.from_pretrained(\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\", **kw)\nwavs, sr = design.generate_voice_design(\ntext=open(\"voices/transcript.txt\").read(), language=\"English\",\ninstruct=\"A man in his forties with a warm, natural, medium-low voice, speaking \"\n\"clearly and calmly at an easy conversational pace, like someone reading \"\n\"aloud to a friend.\",\n)\nYou can see how the two different voices behave, particularly when blended together:\nLoading the voice samples\u2026\nWhat Base takes from a recording when cloning from the embedding alone is a speaker embedding which is basically 2048 numbers out of a speaker encoder that was trained. The same voice gets similar numbers and different voices get different ones. Which btw, is also a convenient way to do speaker detection from recordings if you want to! It\u2019s not perfect, but it\u2019s quite helpful for a single audio track recording to tell two speakers apart if you do some basic slicing and dicing (more on that below).\nBecause it is just a vector, you can do arithmetic on it. For instance a weighted average of two embeddings is a spaker that is somewhere between two voices:\nbase = Qwen3TTSModel.from_pretrained(\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\", **kw)\ndef fingerprint(path):\nprompt = base.create_voice_clone_prompt(ref_audio=path, x_vector_only_mode=True)\nreturn prompt[0].ref_spk_embedding\ndef blend(a, b, t):\na, b = a.float(), b.float()\nmixed = (1 - t) * a + t * b\nreturn (mixed / mixed.norm() * ((1 - t) * a.norm() + t * b.norm())).to(torch.bfloat16)\narmin, designed = fingerprint(\"voices/armin.flac\"), fingerprint(\"voices/designed.flac\")\nHere is the same sentence in eleven blends:\nLoading the voice samples\u2026\nNote that it stops sounding like me quite quickly, but it retains some of my features. And it for sure ends up with creating a unique voice regardless. I found some better successes when ensuing that the two voices have similar spectograms (eg: similar \u201crecording setups\u201d). In this recording you can hear that one voice picked up by the lapel mic was a bit hollow compared to the designed voice.\nIf you like a a voice that comes out, you can bake it back into a new recording that you can then use as reference:\nimport soundfile as sf\nmixed = blend(armin, designed, 0.5)\naudio, rate = say(open(\"voices/transcript.txt\").read(), mixed) # say() is shown further down\nsf.write(\"voices/final.flac\", audio, rate)\nfinal = fingerprint(\"voices/final.flac\")\nThe baked voice does not come back exactly as the blend but it makes handling it easier if you want to. It\u2019s just one voice reference file.\nSo on the question of using those embeddings for speaker recognition: how good\ndoes that work? I took an episode of [State of Agentic\nCoding](https://www.youtube.com/watch?v=qCpY4K9jtOg), the podcast Ben and I\nrecord, cut it into 2-second windows one second apart and compared each with an\nembedding of me form the conference.\nSomewhat surprising, but maybe not too surprising using my conference recording clip as the reference this does not work at all with Qwen3. If instead I take the 20 seconds where I introduce myself at the start of the episode as the reference, it gets 98% of the rest right.\nOn the other hand using a model that was trained for speaker verification\ninstead does manage to pick me up from the conference recording clip. For\ninstance [ECAPA](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb),\nfinds me from the conference clip in 97% of the windows.\nHere are 20 minutes of that podcast, classified by speaker with the different approaches:\nLoading the voice samples\u2026\nBut the embeddings a very useful for the voice cloning! But how to give them\ninstructions? Base and CustomVoice manipulate the speaker the same way: one\nvector inserted into the talker\u2019s input sequence. In CustomVoice that vector is\na row of the embedding table. In Base it is the x-vector from the speaker\nencoder, which only Base has. The generation code takes either\n(voice_clone_prompt\nis a regular argument of generate\n), and the transformer\nweights of the two models are nearly identical. So take the embedding with\nBase, then hand it to CustomVoice instead of one of its speakers:\ncv = Qwen3TTSModel.from_pretrained(\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\", **kw)\ndef say(text, xvec, instruct=None, language=\"English\"):\nids = cv._tokenize_texts([cv._build_assistant_text(text)])\ntold = [cv._tokenize_texts([cv._build_instruct_text(instruct)])[0]\nif instruct else None]\nvoice = {\"ref_code\": [None], \"ref_spk_embedding\": [xvec],\n\"x_vector_only_mode\": [True], \"icl_mode\": [False]}\ncodes, _ = cv.model.generate(\ninput_ids=ids, instruct_ids=told, voice_clone_prompt=voice,\nlanguages=[language], non_streaming_mode=True,\n**cv._merge_generate_kwargs(temperature=0.7, subtalker_temperature=0.7),\n)\nwavs, rate = cv.model.speech_tokenizer.decode([{\"audio_codes\": codes[0]}])\nreturn wavs[0], rate\nwav, rate = say(\"I really thought this would work.\", armin,\n\"Speak in a sad, sorrowful tone, voice low and heavy, on the verge of tears.\")\nPick a speaker for the slot, a model and an instruction:\nLoading the voice samples\u2026\nInstructions work on cloned voices, but less reliably than on the built-in speakers, and it depends on the emotion, but honestly, it came out better than I anticipated. Definitely good enough to have some true custom voices for a voice over that don\u2019t necessarily sound like something, someone else has in their game.\nIf a voice is a point in a 2048-dimensional space and blending works we can maybe do some other funny math on it. The obvious one is to try to see if some math can be used to manipulate gender.\nTo find it I had VoiceDesign create 14 different voices for men and women each. When you then take the average woman minus the average man you can then move any voice along that direction:\nwomen = torch.stack([fingerprint(f\"design/f{i}.wav\") for i in range(14)]).float()\nmen = torch.stack([fingerprint(f\"design/m{i}.wav\") for i in range(14)]).float()\nmiddle = (women.mean(0) + men.mean(0)) / 2\naxis = women.mean(0) - men.mean(0)\naxis = axis / axis.norm()\ndef move(xvec, t):\n\"\"\"Put the voice at position t along the gender axis, keep the rest.\"\"\"\nx = xvec.float()\nreturn (x + (t - (x - middle) @ axis) * axis).to(torch.bfloat16)\nHere is the result for my clone:\nLoading the voice samples\u2026\nAnyways, that\u2019s that. If you want to play around with Qwen3 TTS I hope this was of some help, and maybe you got some ideas of what to do with the voice embeddings. Use it for good, not evil.",
-    "topic": "tutorials",
-    "tags": [
-      "models",
-      "open-source",
-      "agents",
-      "video",
-      "coding",
-      "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1133428,
-    "title": "Why Humans Can't Keep Up With AI-Written Code - Tariq Shaukat, Sonar",
-    "url": "https://www.youtube.com/watch?v=LQW_Wvqhp04",
-    "published_at": "2026-10-29T19:00:16+00:00",
-    "fetched_at": "2026-10-29T20:27:17+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Agents have made code cheap: one study saw lines of code up 2,450% but releases up only 30%. Sonar CEO Tariq Shaukat draws on the factory revolution that Toyota and Lexus started to explain how to build agentic software factories you can trust. He breaks down five hard problems: human review that doesn't scale (people agree with AI that's wrong 4 out of 5 times), agents struggling with large codebases, errors compounding over long tasks, unreliable LLM judges, and near-zero time to exploit. Then he lays out Sonar's code confidence formula: intent, guide rails, verification and evidence.\n\nChapters:\n0:00 Intro\n0:26 The ball bearing that changed car factories\n2:23 Software already borrowed these ideas\n2:55 Agents break the factory\n5:19 Problem 1: Human in the loop doesn't scale\n6:45 Problem 2: Agents struggle with big codebases\n8:04 Problem 3: Errors compound\n9:06 Problem 4: LLM judges are unreliable\n10:03 Problem 5: Time to exploit is near zero\n10:25 The code confidence formula\n12:36 Results from customers\n15:49 Code is abundant, confidence is scarce\n\nTariq Shaukat\nhttps://www.sonarsource.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/LQW_Wvqhp04",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "release",
-      "models",
-      "agents",
-      "research",
-      "video",
-      "coding"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1134350,
-    "title": "GitHub Universe 2026: Highlights from the developer\u2019s developer conference",
-    "url": "https://commandline.microsoft.com/github-universe-2026-recap/",
-    "published_at": "2026-10-29T18:34:49+00:00",
-    "fetched_at": "2026-10-29T20:27:22+00:00",
-    "source_id": "microsoft-commandline",
-    "source_name": "Microsoft Commandline",
-    "extraction_method": "jina",
-    "body": "Final URL: https://commandline.microsoft.com/github-universe-2026-recap/\n\nPublished Time: 2026-10-29T18:34:49+00:00\n\nMarkdown Content:\nThe hero at the heart of the two-day event was the developer community.\n\nBy [Command Line team](https://commandline.microsoft.com/author/command-line-team)Command Line editorial team\n\n2026.10.29\n\nFrom the menus at Mo\u2019s Diner to the badge hack station to major product ships, GitHub Universe 2026 delivered. The [annual Octoverse report](https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/?utm_source=blog-cta-octoverse&utm_medium=blog&utm_campaign=universe-2026) came out, showing just how much the platform has scaled over the past year in the face of agentic software delivery. And the hero at the heart of the two-day event was the developer community.\n\n![Image 1: Attendees watch the keynote speech during GitHub Universe 2026, Wednesday, Oct. 28, 2026, at Fort Mason Center for Arts and Culture, in San Francisco, Calif. (Photo: Cameron Karsten)](https://commandline.microsoft.com/wp-content/uploads/2026/10/GHUNI26-2_CK_241-1024x683.jpg)\n\nAttendees watch the keynote speech during GitHub Universe 2026, Wednesday, Oct. 28, 2026, at Fort Mason Center for Arts and Culture, in San Francisco, Calif. (Photo: Cameron Karsten)\n\nYesterday\u2019s opening keynote was packed with demos and announcements. But [Copilot Fusion](https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/?utm_source=blog-cta-fusion&utm_medium=blog&utm_campaign=universe-2026) was clearly the belle of the ball.\n\n![Image 2: Jay Parikh, Executive Vice President of CoreAI, Microsoft, and GitHub Senior Director of Developer Advocacy Cassidy Williams onstage during GitHub Universe 2026, Wednesday, Oct. 28, 2026, at Fort Mason Center for Arts and Culture, in San Francisco, Calif. (Photo: Cameron Karsten)](https://commandline.microsoft.com/wp-content/uploads/2026/10/GHUNI26-2_CK_327-1024x683.jpg)\n\nJay Parikh, Executive Vice President of CoreAI, Microsoft, and GitHub Senior Director of Developer Advocacy Cassidy Williams onstage during GitHub Universe 2026, Wednesday, Oct. 28, 2026, at Fort Mason Center for Arts and Culture, in San Francisco, Calif. (Photo: Cameron Karsten)\n\nAs a frame for the ships (of which there were many), EVP of CoreAI [Jay Parikh](https://x.com/jayparikh) laid out [our vision for GitHub](https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/?utm_source=blog-cta-jay-hero-blog&utm_medium=blog&utm_campaign=universe-2026) as the most comprehensive, end-to-end software delivery system in the world.\n\n![Image 3: West Bos, Kyle Daigle, and Scott Tolinski.](https://commandline.microsoft.com/wp-content/uploads/2026/10/IMG_7885-1024x768.jpg)\n\nWest Bos, Kyle Daigle, and Scott Tolinski.\n\nGitHub COO and Microsoft CMO of Developer [Kyle Daigle](https://x.com/kdaigle) joined [Syntax](https://syntax.fm/) co-hosts [Wes Bos](https://x.com/wesbos) and [Scott Tolinski](https://x.com/stolinski) for a chat.\n\n![Image 4](https://commandline.microsoft.com/wp-content/uploads/2026/10/Image-6-1024x768.jpeg)\n\nTanguy Fournier Le Roy and Jay Parikh.\n\nAnd great conversations were had, on and off the show floor.\n\n![Image 5: Seth Juarez, Damian Brady, Cassidy Williams, Christopher Harrison, Jay Parikh, Burke Holland, April Leonard, Jessica Deen, and Kyle Daigle.](https://commandline.microsoft.com/wp-content/uploads/2026/10/Command-Line-image-options.002-1024x576.jpeg)\n\nSeth Juarez, Damian Brady, Cassidy Williams, Christopher Harrison, Jay Parikh, Burke Holland, April Leonard, Jessica Deen, and Kyle Daigle.\n\n## Session spotlights\n\n### Agentic Workflows: Automation at scale\n\nAutomation is how we buy time for craft, enforce correctness in situations that require judgment, and improve our software at business scale. This session taught attendees how to start automating, including setting up a software factory with governance, monitoring, and security.\n\n### Agentic engineering past the pilot: An enterprise playbook\n\nThe industry has moved from code completion to chat to agents, and now into AI-native software delivery. But what does that actually look like inside an enterprise, where governance, developer experience, and adoption at scale all have to coexist? Through live demos spanning IDE, CLI, and multi-session orchestration, Nick Liffen and Philip Holleran shared the system-level patterns that move agentic engineering from experiment to operating model.\n\n### Securing MCP: Real exploits, what actually mitigates them, and what doesn\u2019t\n\nThis interactive session broke down MCP security as it really stands today: what the threats are, which layer each one operates on, and how to host MCP servers in production without opening yourself up to unnecessary risk.\n\n### Shut the context window! You\u2019re letting the tokens out\n\nDylan McCarthy showed how Copilot constructs context in practice, demonstrated the developer habits that quietly inflate token usage, and walked through focused workflows that produce better results with less overhead.\n\n### Your benchmark is lying: What evals actually look like\n\nJulia Kasper and Walker Chabbott went behind the scenes on how GitHub Copilot evaluates models in production: what they measure, what they\u2019ve stopped measuring, the signals that correlate with real developer outcomes, and why your favorite leaderboard may be leading your team astray.\n\n\u2026 and that\u2019s just a taste of the 150+ sessions at this year\u2019s Universe. Check out the full list [here](https://reg.githubuniverse.com/flow/github/universe26/attendee-portal/page/sessioncatalog?tab.allsessions=1783449560443001ldrh).\n\n## Watch the full keynote \u2026\n\n## \u2026 or the abridged version: 42 minutes of announcements in < 8\n\n## Before you go\n\nIf you take away [one thing](https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/?utm_source=blog-cta-jay-hero-blog&utm_medium=blog&utm_campaign=universe-2026) from Universe 2026, make it this:\n\nThe [SDLC is no longer a linear path](https://commandline.microsoft.com/new-agentic-software-delivery-primitives/) from planning to coding to testing to deployment. The new [agentic software delivery system](https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/?utm_source=blog-cta-jay-hero-blog&utm_medium=blog&utm_campaign=universe-2026) solves for three things: velocity, intelligence, and quality. GitHub is a platform built for you and your agents. We\u2019ll continue releasing new products and features that push the work forward. And our ongoing infrastructure work will ensure the platform scales to meet increased demand.\n\nAI is changing what\u2019s possible. But it\u2019s in the hands of developers where that possibility converts to real-world impact.",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
