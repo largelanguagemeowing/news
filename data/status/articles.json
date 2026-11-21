@@ -1,5 +1,22 @@
 [
   {
+    "article_id": 1349644,
+    "title": "We promoted developers into architects without informing them",
+    "url": "https://manidoraisamy.com/developer-to-architect.html",
+    "published_at": "2026-11-20T20:46:06+00:00",
+    "fetched_at": "2026-11-21T02:01:48+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended reading. sucks for juniors :/",
+    "topic": "general",
+    "tags": [
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1345649,
     "title": "How to build an agent that builds the culture \u2014 Zach Bruggeman, Ramp",
     "url": "https://www.youtube.com/watch?v=MDI81OaZAD4",
@@ -11006,29 +11023,6 @@
       "agents",
       "safety",
       "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1133156,
-    "title": "Building a multiplayer game world with autonomous Fable-class models",
-    "url": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
-    "published_at": "2026-10-29T17:00:26+00:00",
-    "fetched_at": "2026-10-29T20:27:15+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "29th October 2026 - Link Blog\n[How I Built the Most AI-Pilled Company in the World](https://twitter.com/jsnnsa/status/2115623382721126826). Don't be put off by the clickbait headline, this piece by Jacob Sansbury describing how they are building [Spawn](https://spawn.co) is a fascinating exploration of the bleeding edge of what's possible with agentic engineering against frontier models.\nSpawn is a massively multiplayer gaming environment where players can use prompts (to the in-game agent, Savi) to modify the game world.\nI fired it up on my phone for a few minutes and was able to prompt a castle into existence, then a dragon, then ride the dragon to fly around that castle.\nBy Jacob's telling, Spawn is now being developed autonomously by a swarm of Fable-powered agents costing over $3 million in tokens per month (\"we spend 30x payroll on AI tokens\").\nOur agents change the live code directly and ship to production hourly, so they read every error, bug report and metric themselves. About 60% of our work starts from a production error, a Savi bug report (Savi is the AI you build games with in Spawn), something odd in our logs, or a feature request.\nSavi files bugs herself. When a user hits one, or Savi hits one in the product, she files it. It goes straight to an agent that decides whether it's a real bug to fix, something we won't fix, or intentional design that needs a decision. Usually it becomes a change, delivered to that user within an hour, with a message in the same chat.\nThis is [continuous deployment](https://en.wikipedia.org/wiki/Continuous_deployment) turned up to 11:\nA loop this tight only works if it never stops, so we treat an hour without a ship as a SEV-0, our most severe kind of incident. Unshipped changes pile up, and every problem already in production lasts longer. The feedback slows down too. An agent can only keep a few hours of work in its head, so shipping faster than that actually helps it stay coherent. [...]\nWe can roll back a broken change in 30 seconds, exactly where it's broken and nowhere else. When a monitor or a log alert fires, it starts or wakes an agent that owns the incident, and we break things on purpose to test that those recovery paths work.\nMy eyebrows raised at least a dozen times reading this. I have trouble imagining this style of development working on software with higher stakes for when something goes wrong, but for a game this appears to be working surprisingly well.\nJacob says that Fable 5 (and then 5.1) was the model that made this level of autonomy possible. Opus 5.5 doesn't quite hack it for them, and when they tried GPT-6 Astra to apply fixes from a security review everything stopped working:\nEvery feature had been disabled and marked to be turned on again once the security fixes were done. Astra had gone through our whole product and made the insecure things secure by turning them off.\nThese kinds of extreme experiments are why I'm [excited about game development](https://simonwillison.net/2026/Oct/28/vibe-game-development/) as a substrate for exploring the edges of what today's coding agents can do.\nRecent articles\n[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026",
-    "topic": "security",
-    "tags": [
-      "security",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "coding",
-      "development"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
