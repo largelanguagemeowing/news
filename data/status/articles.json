@@ -1,5 +1,85 @@
 [
   {
+    "article_id": 1377464,
+    "title": "Commitment issues (app edition)",
+    "url": "https://www.bensbites.com/p/commitment-issues-app-edition",
+    "published_at": "2026-11-24T14:04:45+00:00",
+    "fetched_at": "2026-11-24T14:35:57+00:00",
+    "source_id": "bens-bites",
+    "source_name": "Ben's Bites",
+    "extraction_method": "rss",
+    "body": "It&#8217;s not me, it&#8217;s you",
+    "topic": "product",
+    "tags": [
+      "product",
+      "general"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1377093,
+    "title": "Software Factories: Escape from Trash Mountain \u2014 Steve Yegge, Gas Town",
+    "url": "https://www.youtube.com/watch?v=SRhXgeNluIk",
+    "published_at": "2026-11-24T14:00:11+00:00",
+    "fetched_at": "2026-11-24T14:35:56+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Software factories can turn out code faster than anyone can keep it clean, and the pile grows. Steve Yegge, creator of Beads and Gas Town, takes on software factories and how to escape the trash mountain they can leave behind.\n\nSpeaker info:\n- https://x.com/steve_yegge",
+    "topic": "tutorials",
+    "tags": [
+      "coding",
+      "tutorials",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1376803,
+    "title": "datasette-charts 0.2a0",
+    "url": "https://simonwillison.net/2026/Nov/24/datasette-charts/",
+    "published_at": "2026-11-24T04:24:29+00:00",
+    "fetched_at": "2026-11-24T14:35:55+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-charts/releases/tag/0.2a0\">datasette-charts 0.2a0</a></p>\n        <p>I introduced this new charting plugin for Datasette <a href=\"https://simonwillison.net/2026/Nov/23/datasette-charts/\">yesterday</a>. Today it's gained integration with <a href=\"https://agent.datasette.io/\">Datasette Agent</a>, so now you can ask chat for a chart and it will create one for you using the same underlying chart suggestion and generation tools.</p>\n<p>Here's a demo video, recorded on <a href=\"https://agent.datasette.io/\">agent.datasette.io</a>  where you can sign in with GitHub to try the plugin yourself:</p>\n<figure>\n  <video controls=\"controls\" height=\"1080\" poster=\"https://static.simonwillison.net/static/cors-allow/2026/datasette-charts-agent-demo.webp\" preload=\"none\" style=\"height: auto;\" width=\"1440\">\n    <source src=\"https://static.simonwillison.net/static/cors-allow/2026/datasette-charts-agent-demo.mp4\" type=\"video/mp4\" />\n    <a href=\"https://static.simonwillison.net/static/cors-allow/2026/datasette-charts-agent-demo.mp4\">Download the video (MP4)</a>\n  </video>\n  <figcaption id=\"charts-demo-desc\" style=\"margin-top: 1em;\">\n    I prompt Datasette Agent to \"Use #stats to show sqlite-utils downloads over time as a chart\" - where typing \"#stats\" opens a table search box. It shows me a chart inline in the chat, and when I click \"Open in the chart builder\" it opens the chart in a panel along with the table page. I use the table page to switch to a chart of \"datasette\", then when I ask the agent \"what does the chart show?\" it notices that I changed the content in the panel and describes the new Datasette chart to me.\n  </figcaption>\n</figure>\n\n<p>Here's <a href=\"https://gist.github.com/simonw/12646fcc72dddae3d4ac04b496c20af2\">a Markdown export</a> of the chat from the video.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a>, <a href=\"https://simonwillison.net/tags/visualization\">visualization</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "video",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1376804,
+    "title": "datasette-agent 0.7a1",
+    "url": "https://simonwillison.net/2026/Nov/24/datasette-agent/",
+    "published_at": "2026-11-24T03:45:57+00:00",
+    "fetched_at": "2026-11-24T14:35:55+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<p><strong>Release:</strong> <a href=\"https://github.com/datasette/datasette-agent/releases/tag/0.7a1\">datasette-agent 0.7a1</a></p>\n        <p>I small improvement to <a href=\"https://agent.datasette.io/\">Datasette Agent</a>: chat sessions can open an iframe side panel, and that panel can then navigate to different pages. This version improves navigation by fragment hashes, for deeper integration with other Datasette plugins that update fragment hashes when the user interacts with the plugin in a way that changes state.</p>\n<p>I built this in order to fix some bugs with the much more exciting <a href=\"https://simonwillison.net/2026/Nov/24/datasette-charts/\">datasette-charts 0.2a0 release</a>.</p>\n    \n    \n        <p>Tags: <a href=\"https://simonwillison.net/tags/datasette-agent\">datasette-agent</a>, <a href=\"https://simonwillison.net/tags/datasette\">datasette</a></p>",
+    "topic": "tools",
+    "tags": [
+      "release",
+      "open-source",
+      "agents",
+      "coding",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1374323,
     "title": "Build the Workshop Before the Software Factory \u2014 Armin Ronacher, Earendil",
     "url": "https://www.youtube.com/watch?v=JNexz3Tbiu8",
@@ -10918,91 +10998,6 @@
       "infrastructure",
       "coding",
       "tutorials"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1175090,
-    "title": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization",
-    "url": "https://openai.com/index/dan-driscoll-joins-openai",
-    "published_at": "2026-11-02T00:00:00+00:00",
-    "fetched_at": "2026-11-03T03:37:27+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nNovember 2, 2026\n\n[Company](https://openai.com/news/company-announcements/) [Global Affairs](https://openai.com/news/global-affairs/)\n\n# OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization\n\nLoading\u2026\n\nShare\n\nDan Driscoll will join OpenAI as Senior Counselor for National Security Modernization, working with senior leadership and external partners to advise on how advanced AI can strengthen national and cyber security, with a particular focus on working with U.S. allies to advance its responsible use.\n\nIn this newly created role, Dan will work with OpenAI teams and leaders across governments, industry, academia, and allied institutions to advance practical modernization initiatives that support the buildout of democratic AI. He will also help internal OpenAI teams understand the operational needs of global national security institutions.\n\nDan previously served as the 26th Secretary of the Army, overseeing the service\u2019s operations, modernization, and resources. He brings experience spanning military service, senior government leadership, and the private sector.\n\nIn his role, Dan will advise our public and private sector partners in modernizing policy and strategy choices to unlock practical uses of AI to improve national security and help ensure the world is building AI to support democratic principles. He will work to identify where operational needs, institutional change and emerging AI capabilities come together. Dan\u2019s appointment reflects our commitment to helping democratic institutions use advanced AI responsibly to strengthen shared security, and builds on OpenAI\u2019s work with allies and partners to strengthen cyber resilience and protect essential services under its [Daybreak](https://openai.com/daybreak/) program.\n\n> \u201cAI should give people more power over their lives and people should have a say in how it\u2019s developed. The US has an extraordinary opportunity to work with other countries to spread the adoption of democratic AI and I\u2019m excited to welcome Dan Driscoll to OpenAI to strengthen American leadership and help us do that.\u201d\n\n*Sam Altman*\n\n> \u201cI\u2019ve spent much of my career in public service, first as a Soldier and most recently as Secretary of the Army and Acting Director of ATF. The people who serve deserve the very best tools we can put in their hands. National security requirements are changing faster than at any time in the past fifty years. This technology will help them keep pace by cutting through paperwork, making sense of more information, and getting the right answer to the right person faster. I\u2019m joining OpenAI to help the United States and our allies put this technology to work responsibly, for the people who keep us safe.\u201d\n\n*Dan Driscoll*\n\n**Dan Driscoll** was the 26th Secretary of the United States Army. As Secretary, he oversaw operations, modernization, and resource allocation for nearly one million Active, Guard, and Reserve Soldiers and more than 265,000 Army Civilians. He drove Army transformation focused on accelerating the fielding of new technology, reforming acquisition, and building a more capable force. A former Army officer and business leader, Dan has experience spanning military service, law, and the private sector.\n\n- [2026](https://openai.com/news/?tags=2026)\n- [Global Affairs](https://openai.com/news/?tags=global-affairs)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Strengthening Democratic Oversight in National SecurityGlobal AffairsAug 18, 2026 Strengthening Democratic Oversight in National Security - Global Affairs - Aug 18, 2026](https://openai.com/index/strengthening-democratic-oversight-in-national-security/)\n\n\n\n[Democratic governance of frontier AI, part II: Empowering cyber defendersGlobal AffairsOct 21, 2026 Democratic governance of frontier AI, part II: Empowering cyber defenders - Global Affairs - Oct 21, 2026](https://openai.com/index/empowering-cyber-defenders/)\n\n\n\n[Expanding AI access across every level of US governmentGlobal AffairsSep 10, 2026 Expanding AI access across every level of US government - Global Affairs - Sep 10, 2026](https://openai.com/index/expanding-ai-access-us-government/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n- [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "security",
-    "tags": [
-      "security",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1172619,
-    "title": "Qodo builds context into AI code review with Codex",
-    "url": "https://openai.com/index/qodo-codex-plugin",
-    "published_at": "2026-11-02T00:00:00+00:00",
-    "fetched_at": "2026-11-02T22:25:24+00:00",
-    "source_id": "openai-blog",
-    "source_name": "OpenAI Blog",
-    "extraction_method": "markdown_new",
-    "body": "[Skip to main content](#main)\n\n[OpenAI Home](https://openai.com/)\n\n- [Research](https://openai.com/research/index/)\n- Products\n- [Business](https://openai.com/business/)\n- [Developers](https://openai.com/api/)\n- [Company](https://openai.com/about/)\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\nLog in [Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n- Research\n- Products\n- Business\n- Developers\n- Company\n- [Foundation(opens in a new window)](https://openaifoundation.org)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nNovember 2, 2026\n\nStartup\n\n# Qodo builds context into AI code review with Codex\n\nQodo brings organizational context and codebase standards into Codex, helping developers catch P0 issues across repositories.\n\n[Start building(opens in a new window)](https://openai.com/startups)\n\nCompany size: Startup\n\nRegion: North America\n\nIndustry: Technology\n\nProducts: API, Codex\n\nLoading\u2026\n\nShare\n\nFinding P0 bugs across repositories with Codex\n\n- [Finding P0 bugs across repositories with Codex](#finding-p0-bugs-across-repositories-with-codex)\n- [Automating review while keeping human judgment](#automating-review-while-keeping-human-judgment)\n- [Putting Codex to work every day](#putting-codex-to-work-every-day)\n- [Choosing which coding rules apply with the Decisions API](#choosing-which-coding-rules-apply-with-the-decisions-api)\n- [Building software factories customers can own](#building-software-factories-customers-can-own)\n\n- [Finding P0 bugs across repositories with Codex](#finding-p0-bugs-across-repositories-with-codex)\n- [Automating review while keeping human judgment](#automating-review-while-keeping-human-judgment)\n- [Putting Codex to work every day](#putting-codex-to-work-every-day)\n- [Choosing which coding rules apply with the Decisions API](#choosing-which-coding-rules-apply-with-the-decisions-api)\n- [Building software factories customers can own](#building-software-factories-customers-can-own)\n\n[Qodo\u2060(opens in a new window)](https://www.qodo.ai/) builds AI tools for code review and software quality, giving coding agents the organizational knowledge they need to understand the code they change. Co-founder and CEO Itamar Friedman calls it \u201cthe coding agent\u2019s best friend.\u201d\n\nQodo uses OpenAI models including GPT\u20116 Astra to gather engineering knowledge, review code, and monitor software quality. Its Codex plugin brings that context and review into developers\u2019 coding sessions.\n\n> \u201cWe love OpenAI models. We want the frontier, the best reasoning models, but also those that are really fast.\u201d\n\n\u2014Itamar Friedman, Co-founder and CEO, Qodo\n\n## Finding P0 bugs across repositories with Codex\n\nItamar describes customer environments that can span 10,000 or more repositories, where a local code change can break a downstream service, even if it looks correct on its own. Qodo built a plugin in the Codex marketplace to address this.\n\n\u201cCodex is really good at taking a local task and completing it in an efficient way,\u201d Itamar says. Qodo\u2019s plugin gives Codex access to codebase knowledge, organizational rules, and independent review through Qodo\u2019s Agentic Toolbox.\n\nWith context, Codex can account for dependencies across repositories, including those hosted by different Git providers or services connected through Kafka. \u201cQodo will make that connection and will help Codex look at the software as a whole and not miss those P0 bugs,\u201d Itamar says.\n\n## Automating review while keeping human judgment\n\nBefore Codex starts writing code, it can use Qodo\u2019s plugin to retrieve the relevant codebase rules and pull request history and patterns. After Codex makes the changes, Qodo reviews them and returns its findings directly to Codex in the same session, before the developer opens a pull request.\n\nNnenna Ndukwe, Qodo\u2019s AI Developer Relations Lead, sees developers using this workflow to build features and tackle technical debt with GPT\u20116 models in Codex. They are automating the handoff between Codex\u2019s coding work and Qodo\u2019s independent review. \u201cThat\u2019s what I\u2019ve been seeing developers do, which is really exciting because GPT\u20116 is extremely capable,\u201d Nnenna says.\n\nItamar describes coding and review agents as \u201cyin and yang\u201d: one creates code, the other challenges it. Each role needs its own setup and context and may involve multiple agents. His vision is for agents to discuss findings and \u201csurface only what they don\u2019t accept\u201d for human review. Developers would become planners and reviewers, able to inspect unresolved issues alongside the agents\u2019 discussion, context, and prior developer decisions.\n\n\u201cThat\u2019s how you create trust,\u201d Itamar says. \u201cI think it makes the whole process overall more efficient,\u201d Nnenna adds. \u201cWe get to leverage the best parts of our expertise.\u201d\n\n## Putting Codex to work every day\n\nInternally at Qodo, Nnenna has been using GPT\u20116 Astra\u2019s Extra High and Ultra effort settings in her own automated development workflows as well as knowledge work.\n\n> \u201cWhat does Codex *not* do? I love everything that Codex does. I love the idea of combining AI and automation.\u201d\n\n\u2014Nnenna Ndukwe, AI Developer Relations Lead, Qodo\n\nNnenna schedules Codex to report on what she accomplished during the week and where she could focus or improve next. She also uses it to research conversations about agentic engineering on social platforms and suggest ideas for developer content. When it comes to her own code changes, she schedules Codex to analyze her work and suggest agent skills to create or refine.\n\n## Choosing which coding rules apply with the Decisions API\n\nItamar sees an opportunity to use OpenAI\u2019s recently launched Decisions API to choose which rules and agent skills apply at each stage of development, rather than rely on language models for every decision.\n\nHe cites an example where the Decisions API could select which of 200 rules need checking before a language model reasons through the relevant ones, helping to make selection faster and cheaper while improving the quality of the review. \u201cThe Decisions API is an immense opportunity for us to bring more trust to the process,\u201d Itamar says.\n\n## Building software factories customers can own\n\nQodo\u2019s approach combines \u201cthe best aspects of artificial intelligence and the best aspects of traditional software engineering and scripting,\u201d Nnenna says. Company knowledge guides coding agents, independent review checks their work, and human expertise resolves the questions that remain.\n\nThis creates the foundation of what Itamar describes as a software factory: a system customers could assemble and own, bringing coding and review agents together with an understanding of how software changes in production.\n\nWith OpenAI, Qodo is building a future where coding agents put more of a company\u2019s experience to work and developers can focus their judgment where it matters most.\n\n## OpenAI <3 startups\n\n[Join the community](https://openai.com/leads/startup/) [Start building(opens in a new window)](https://openai.com/startups)\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n\n\n[Greptile takes bug detection beyond code review with GPT-6 AstraStartupOct 26, 2026 Greptile takes bug detection beyond code review with GPT-6 Astra - Startup - Oct 26, 2026](https://openai.com/index/greptile-code-review-codex-astra/)\n\n\n\n[Anima helps clinics cut call waits by 75% with GPT-6 and GPT-LiveStartupOct 23, 2026 Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live - Startup - Oct 23, 2026](https://openai.com/index/anima/)\n\n\n\n[Terminal X matches senior investor judgment 88.6% with GPT-6.1StartupOct 20, 2026 Terminal X matches senior investor judgment 88.6% with GPT-6.1 - Startup - Oct 20, 2026](https://openai.com/index/terminal-x/)\n\nResearch\n\n- [Research Index](https://openai.com/research/index/)\n- [Research Overview](https://openai.com/research/)\n- [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n\n- [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n- [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n- [GPT-5.6](https://openai.com/index/gpt-5-6/)\n- [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n\n- [Safety Approach](https://openai.com/safety/)\n- [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n- [Security & Privacy](https://openai.com/security-and-privacy/)\n- [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n\n- [ChatGPT(opens in a new window)](https://chatgpt.com/)\n- [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/)\n- [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/)\n- [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/)\n- [Codex](https://chatgpt.com/codex/)\n- [Dots(opens in a new window)](https://chatgpt.com/features/dots)\n- [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n\n- [Overview](https://openai.com/api/)\n- [API Log In(opens in a new window)](https://platform.openai.com/login)\n- [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n\n- [Overview](https://openai.com/business/)\n- [Solutions](https://openai.com/solutions/)\n- [Resources](https://openai.com/business/learn/)\n- [Plugins](https://openai.com/business/plugins/)\n- [Customer Stories](https://openai.com/business/customer-stories/)\n- [Partner Network](https://openai.com/business/partners/)\n- [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n\n- [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n- [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n- [Docs(opens in a new window)](https://developers.openai.com/)\n- [Resources(opens in a new window)](https://developers.openai.com/learn)\n- [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n\n- [About Us](https://openai.com/about/)\n- [Our Charter](https://openai.com/charter/)\n- [Careers](https://openai.com/careers/)\n- [News](https://openai.com/news/)\n\nSupport\n\n- [Help Center(opens in a new window)](https://help.openai.com/)\n- [OpenAI Status(opens in a new window)](https://status.openai.com)\n\nMore\n\n- [Stories](https://openai.com/stories/)\n- [Academy](https://openai.com/academy/)\n- [Supply Co.](https://openai.com/supply/)\n- [Livestreams](https://openai.com/live/)\n- [Podcast](https://openai.com/podcast/)\n- [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n\n- [Terms of Use](https://openai.com/policies/terms-of-use/)\n- [Privacy Policy](https://openai.com/policies/privacy-policy/)\n- [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI) [(opens in a new window)](https://www.youtube.com/OpenAI) [(opens in a new window)](https://www.linkedin.com/company/openai) [(opens in a new window)](https://github.com/openai) [(opens in a new window)](https://www.instagram.com/openai/) [(opens in a new window)](https://www.tiktok.com/@openai) [(opens in a new window)](https://discord.gg/openai)\n\nOpenAI \u00a9 2015\u20132026Your privacy choices\n\nEnglishUnited States",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1167383,
-    "title": "If in doubt, delete the uv.lock file",
-    "url": "https://simonwillison.net/2026/Nov/1/delete-uv-lock-first/",
-    "published_at": "2026-11-01T23:24:22+00:00",
-    "fetched_at": "2026-11-01T23:47:01+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "1st November 2026\nI've been getting the occasional confusing Python dependency error since switching over to Python 3.15 and the rule I'm having to remember is:\nIf in doubt, delete the uv.lock file\nMost of my projects are libraries which don't include a uv.lock\nfile, since it's rude for a library dependency to lock versions for anything else that uses it.\nRunning uv run pytest\netc tends to leave uv.lock\nfiles lying around, which are listed in .gitignore\nand so do not get committed to my repositories.\nBut... sometimes that uv.lock\npins a version of a dependency that doesn't yet have a Python 3.15 wheel. An example from earlier today:\nerror: Failed to build `watchfiles==1.1.1`\ncause: Call to `maturin.build_wheel` failed\nerror: the configured Python interpreter version (3.15) is newer\nthan PyO3's maximum supported version (3.14)\nDeleting that file and running uv run pytest\nagain usually fixes the problem.\nRecent articles\n[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026[A new feature for my blog, built using my voice](/2026/Oct/9/built-using-my-voice/)- 9th October 2026",
-    "topic": "tutorials",
-    "tags": [
-      "tutorials",
-      "open-source",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1167680,
-    "title": "X - The Everything App",
-    "url": "https://x.com/i/article/2116829218935857152",
-    "published_at": "2026-11-01T20:56:38+00:00",
-    "fetched_at": "2026-11-01T23:47:11+00:00",
-    "source_id": "marios-rec-reading",
-    "source_name": "Mario's Reading List",
-    "extraction_method": "fxtwitter",
-    "body": "Exploring Super-agent Design: Towards a More Autonomous Agent System\n\nThe original article is in Chinese. This is a machine translation.\nThis article discusses architectural ideas. It is not an introduction to existing features of DeepSeek Harness.\n1. Super-agent\nOver",
-    "topic": "ai-models",
-    "tags": [
-      "ai-models",
-      "models",
-      "agents",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
