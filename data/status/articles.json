@@ -1,5 +1,80 @@
 [
   {
+    "article_id": 1388579,
+    "title": "Quoting Scott Aaronson",
+    "url": "https://simonwillison.net/2026/Nov/25/scott-aaronson/",
+    "published_at": "2026-11-25T23:26:32+00:00",
+    "fetched_at": "2026-11-26T01:54:37+00:00",
+    "source_id": "simon-willison",
+    "source_name": "Simon Willison",
+    "extraction_method": "rss",
+    "body": "<blockquote cite=\"https://scottaaronson.blog/?p=10379\"><p>It\u2019s now obvious that we\u2019ll be getting, not one-off solutions to this or that complexity question, but a whole new continent of mathematical truth, one that we\u2019d previously only glimpsed through fog. Picture van Leeuwenhoek first training a microscope on pondwater, or Galileo first training his telescope on the stars. That might give you <em>some</em> idea of how our resolution into the complexity-theoretic universe, and the whole universe of mathematical truth beyond it, has now improved.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://scottaaronson.blog/?p=10379\">Scott Aaronson</a></p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/mathematics\">mathematics</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a></p>",
+    "topic": "opinion",
+    "tags": [
+      "models",
+      "coding",
+      "opinion"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1388869,
+    "title": "1,000 Claude Agents Formalized Fermat's Last Theorem \u2014 Lance Martin, Anthropic",
+    "url": "https://www.youtube.com/watch?v=wrfbI5eyLAI",
+    "published_at": "2026-11-25T20:00:32+00:00",
+    "fetched_at": "2026-11-26T01:54:38+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "A team of 1,000 Claude agents formalized Fermat's Last Theorem in Lean over about 30 hours, using nothing but Git and a database, with no domain-specific harness and no human steering on the solution. Lance Martin shows how the lead agent built its own coordination tables and how the team reassigned itself as the work progressed. Then he turns to memory: why stronger models know what to write down, how Claude's Pokemon memory got tighter from Sonnet 3.7 to Fable 5, and how \"dreaming\" over transcripts fixes poisoned memories and builds better wikis.\n\nSpeaker info:\n- https://x.com/RLanceMartin\n- https://www.anthropic.com\n\nTimestamps:\n0:00 - Fermat's Last Theorem\n0:57 - Formalizing the proof in Lean\n2:27 - 1,000 agents, no domain harness\n3:57 - The lead agent builds its own tables\n5:27 - Agents reassign themselves over 30 hours\n7:01 - Memory: understood backwards, lived forwards\n8:31 - Daily memory vs long-term knowledge\n9:16 - Stronger models use memory better\n10:46 - Pokemon memory: Sonnet 3.7 vs Fable 5\n12:16 - Dreaming over transcripts and notes\n13:46 - Dreaming fixes a poisoned memory\n15:16 - Building a company wiki\n17:35 - Dreaming fills the gaps",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "models",
+      "agents",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1389280,
+    "title": "Where scientists draw the line on AI agents",
+    "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+    "published_at": "2026-11-25T18:52:55+00:00",
+    "fetched_at": "2026-11-26T01:54:44+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "agents"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1388884,
+    "title": "Google DeepMind's Demis Hassabis: How AI could become dangerous (with Reid Hoffman) | Summit '26",
+    "url": "https://www.youtube.com/watch?is=_7jKyxspeoPsB386&v=x7Z_1miRWB8&feature=youtu.be",
+    "published_at": "2026-11-25T17:37:59+00:00",
+    "fetched_at": "2026-11-26T01:54:40+00:00",
+    "source_id": "marios-rec-reading",
+    "source_name": "Mario's Reading List",
+    "extraction_method": "rss",
+    "body": "recommended viewing. i always enjoy  listening to and learning from hassabis. he also seems to be one of the not so many leaders in the space without sociopathic tendencies.",
+    "topic": "education",
+    "tags": [
+      "education",
+      "events"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1385312,
     "title": "Math's million dollar problem is solved... and nobody knows how",
     "url": "https://www.youtube.com/watch?v=Jatwf_XOncE",
@@ -149,6 +224,29 @@
     "tags": [
       "infrastructure",
       "coding"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1390197,
+    "title": "Introducing Hurdle: Run agent evals on your API, skills, and docs",
+    "url": "https://www.together.ai/blog/introducing-hurdle-run-agent-evals-on-your-api-skills-and-docs",
+    "published_at": "2026-11-25T00:00:00+00:00",
+    "fetched_at": "2026-11-26T01:54:45+00:00",
+    "source_id": "together-ai",
+    "source_name": "Together AI",
+    "extraction_method": "rss",
+    "body": "Hurdle is an open-source npm library for agent evals. Run Claude Code and Codex against real tasks on your API, score each run with code checks, guards and an LLM judge, and see which models and conditions pass.",
+    "topic": "product",
+    "tags": [
+      "product",
+      "release",
+      "models",
+      "open-source",
+      "api",
+      "agents",
+      "benchmark"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10924,114 +11022,6 @@
       "api",
       "agents",
       "safety"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1179504,
-    "title": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
-    "url": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/",
-    "published_at": "2026-11-03T07:00:12+00:00",
-    "fetched_at": "2026-11-03T11:40:10+00:00",
-    "source_id": "nvidia-blog",
-    "source_name": "NVIDIA Blog",
-    "extraction_method": "trafilatura",
-    "body": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge.\nPhysical and agentic AI offer new ways to close that gap, from digital twins for infrastructure planning to vision and service agents, while keeping local governments in control of how sensitive data is processed and used.\nBuilding on [initiatives announced at GTC Berlin](https://blogs.nvidia.com/blog/european-cities-agents-urban-operations/), NVIDIA and its partners are expanding physical AI and AI agents to cities worldwide. Shared computing infrastructure gives city departments, neighboring municipalities and local developers a common foundation to build on \u2014 extending services without each organization having to acquire and manage resources of their own.\nAgentic AI for Cities\nFrom resident services to vision agents, cities are adopting NVIDIA agentic AI to deliver faster, more responsive public services. City teams don\u2019t need a massive infrastructure investment to get started building these AI services: depending on the workload, NVIDIA RTX workstations or a small GPU system may be enough.\nIn Spain, 1MillionBot combines open source ALIA models trained at the Barcelona Supercomputing Center with [NVIDIA Nemotron](https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/) and other models in resident-service agents for Madrid Digital (Comunidad de Madrid), Administraci\u00f3 Oberta de Catalunya and 150+ deployments across Spain, handling municipal procedures, appointment requests, urban-planning incidents and service inquiries.\nIn the San Francisco Bay Area, [LiveX](https://livex.ai/insights/livex-unveils-ai-city-bringing-physical-ai-to-everyday-spaces-with-nvidia) is bringing its AI City vision to life with NVIDIA [Cosmos](https://www.nvidia.com/en-us/ai/cosmos/) world models and Nemotron open models, and [Omniverse](https://www.nvidia.com/en-us/omniverse/) and [Metropolis](https://www.nvidia.com/en-us/autonomous-machines/intelligent-video-analytics-platform/) libraries on NVIDIA RTX PRO GPUs. The interactive, conversational AI hosts understand people\u2019s needs, provide answers and take action, and can be tailored to local languages and service needs in airports, hospitals, local events and other public spaces.\nVision AI agents can turn existing city camera feeds into operational insights, helping teams identify mobility and safety issues and coordinate emergency responses across city services.\nIn Wroc\u0142aw, Poland, K2K is building shared AI infrastructure using NVIDIA accelerated computing, NVIDIA Cosmos world reasoning models, and NVIDIA Metropolis Blueprint for video search and summarization (VSS) to transform existing camera streams into actionable intelligence for mobility, safety and event response \u2014 using the same infrastructure across several city functions.\nIn Malaysia, [ITMAX](http://www.itmax.com.my/newsroom/itmax-and-nvidia-use-ai-to-give-kuala-lumpur-commuters-time-back) bundles infrastructure and agentic AI applications into long-term managed services for cities, including for traffic management. Built with reference to Cosmos, Nemotron and the Metropolis VSS blueprint, ITMAX\u2019s SamurAI V2 vision agents are scaling on NVIDIA RTX PRO 6000 GPUs to support 17,000+ cameras by 2027. ITMAX integrates TeraSim, an open source traffic simulation platform from Laplace Intelligence, to test signal timing, reducing peak-hour corridor travel times by up to 26%.\nPlan and Operate Critical Infrastructure With Digital Twins\nBeyond public-facing services, digital twins can help cities expedite infrastructure planning, minimizing disruption to local communities. City digital twins can also serve as a real-time operational simulation to facilitate faster decision-making.\nAt Dangote\u2019s Lekki refinery in Nigeria, Honeywell Technologies\u2019 Forge Plant Cognition uses Nemotron-powered AI agents to understand operational data. A digital twin of the plant and its processes, built using Omniverse libraries, is also planned to support simulation and training. The platform, built on Dell PowerEdge servers with NVIDIA RTX PRO accelerators, helps operators identify bottlenecks, anticipate equipment and process issues, and optimize plant performance.\nIn Taiwan, [Linker Vision](https://www.linkervision.com/post/linker-vision-unveils-linker-ai-nexa-to-bring-physical-ai-to-city-governance) and Dutch architecture firm MVRDV are using NVIDIA Omniverse and Nemotron to build environmental, social and governance agents that can assess the environmental impact of various urban planning scenarios, simulating 15-year outcomes of an urban forest canopy in 10 minutes \u2014 increasing design iteration speed from two weeks per iteration to less than an hour.\nBuild a Broader Local AI Ecosystem\nCities can extend AI to more services by building on infrastructure already in place and adding capacity. Shared resources and managed services can help extend those capabilities across departments and municipalities.\nAt Morocco\u2019s Tanger Med port, Cires Technologies is expanding a sovereign AI factory for planned applications in worker safety, congestion analysis, cargo routing and port operations. Cires Technologies is also building an ecosystem of application providers to develop local models and applications for ports and cities.\nBeyond city services, Barcelona Supercomputing Center\u2019s [AI Factory Accelerator Programme](https://blogs.nvidia.com/blog/spain-startups-barcelona-supercomputing-center/) gives startups access to sovereign computing, technical support and training. BSC AI Factory also supports research and innovation for startups \u2014 spanning agriculture, medical imaging, knowledge access and speech services.\nLearn how NVIDIA and its ecosystem are bringing physical AI, agentic AI and local AI factories to cities worldwide at Smart City Expo World Congress, running Nov. 3-5 in Barcelona, where NVIDIA Vice President of EMEA Paolo Guglielmini will deliver a [keynote address](https://www.smartcityexpo.com/agenda/from-ai-factories-to-intelligent-cities/) followed by a [panel](https://www.smartcityexpo.com/agenda/by-the-city-for-the-city-making-ai-work/) moderated by Charbel Aoun, director of smart city and spaces for EMEA at NVIDIA.",
-    "topic": "agents",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "safety",
-      "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1178645,
-    "title": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube",
-    "url": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/",
-    "published_at": "2026-11-03T05:32:25+00:00",
-    "fetched_at": "2026-11-03T11:40:07+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "3rd November 2026 - Link Blog\n[I discovered a sound that leaks your exact location (and it's everywhere) - YouTube](https://www.youtube.com/watch?v=UytYrhYLOKI) ([via](https://lobste.rs/s/s1btqo/this_background_sound_leaks_your_exact)) Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross reference them against ADS-B data to find the exact location of the video based on their speed, distance, and gaps between different flights.\nRecent articles\n[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026",
-    "topic": "development",
-    "tags": [
-      "video",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1178646,
-    "title": "October sponsors-only newsletter",
-    "url": "https://simonwillison.net/2026/Nov/3/october-newsletter/",
-    "published_at": "2026-11-03T05:28:59+00:00",
-    "fetched_at": "2026-11-03T11:40:07+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "3rd November 2026\nI sent out the October edition of my [sponsors-only monthly newsletter](https://github.com/sponsors/simonw/). If you are a sponsor (or start a sponsorship now) you can [access it here](https://github.com/simonw-private/monthly/blob/main/2026-10-october.md). This month:\n- The October inflection point for vibe game development\n- The vulnerability apocalypse gets hot\n- LLM releases\n- API credits for $100+/month subscriptions\n- What I'm using right now\n- My software releases\nMy September newsletter [can now be seen here](https://simonwillison.net/newsletters/monthly-2026-09-september/), as a preview of what you'll get. Pay $10/month to stay a month ahead of the free copy!\nRecent articles\n[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026[Hello Python 3.15, goodbye 3.10, and now I can use 3.11](/2026/Oct/12/python-3-15/)- 12th October 2026",
-    "topic": "news",
-    "tags": [
-      "news",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1178938,
-    "title": "You Can't Tell What's Real Anymore. Here's What Comes Next - Crist\u00f3bal Valenzuela, Runway",
-    "url": "https://www.youtube.com/watch?v=q4ITwvlFplQ",
-    "published_at": "2026-11-03T00:00:29+00:00",
-    "fetched_at": "2026-11-03T11:40:08+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Runway's first AI film in 2019 was 128x128 pixels. Today, people can't tell generated video from real footage. Runway co-founder and CEO Crist\u00f3bal Valenzuela explains how next-frame prediction at scale teaches models physics, object permanence and how the world works. He then shows what happens when those models become real-time and interactive: world interface models, robotics, and Continuum, an early research prototype where anything on your screen can become a live, interactive video.\n\n0:00 Intro\n0:50 Runway's first AI film (2019)\n1:49 State-of-the-art video today\n2:48 Video as next-frame prediction\n4:04 What video models learn: physics and object permanence\n5:54 From video to simulation\n6:54 Making world models real-time and interactive\n7:59 Robotics and world interface models\n10:04 Extrapolating forward: Continuum\n13:45 Visual thinking for coding agents\n15:05 Live, reactive experiences\n16:08 Everything will be simulated\n\nCrist\u00f3bal Valenzuela, Runway: https://runwayml.com\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/q4ITwvlFplQ",
-    "topic": "robotics",
-    "tags": [
-      "models",
-      "agents",
-      "research",
-      "video",
-      "coding",
-      "robotics"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1255534,
-    "title": "Attention to Mamba: A Recipe for Cross-Architecture Distillation",
-    "url": "https://machinelearning.apple.com/research/attention-mamba-distillation",
-    "published_at": "2026-11-03T00:00:00+00:00",
-    "fetched_at": "2026-11-11T00:11:18+00:00",
-    "source_id": "apple-machine-learning",
-    "source_name": "Apple ML Research",
-    "extraction_method": "trafilatura",
-    "body": "[content type paper](/research/)published November 2026\nAttention to Mamba: A Recipe for Cross-Architecture Distillation\nAuthorsAbhinav Moudgil\u00e2 **, Ningyuan Huang\u00e2\u00a1**, Eeshan Gunesh Dhekane, Pau Rodr\u00c3guez Lopez, Luca Zappella, Federico Danieli\nAttention to Mamba: A Recipe for Cross-Architecture Distillation\nAuthorsAbhinav Moudgil\u00e2 **, Ningyuan Huang\u00e2\u00a1**, Eeshan Gunesh Dhekane, Pau Rodr\u00c3guez Lopez, Luca Zappella, Federico Danieli\nState Space Models (SSMs) such as Mamba have become a popular alternative to Transformer models, due to their reduced memory consumption and higher throughput at generation compared to their Attention-based counterparts. On the other hand, the community has built up a considerable body of knowledge on how to train Transformers, and many pretrained Transformer models are readily available. To facilitate the adoption of SSMs while leveraging existing pretrained Transformers, we aim to identify an effective recipe to distill an Attention-based model into a Mamba-like architecture. In prior work on cross-architecture distillation, however, it has been shown that a na\u00c3\u00afve distillation procedure from Transformers to Mamba fails to preserve the original teacher performance, a limitation often overcome with hybrid solutions combining Attention and SSM blocks. The key argument from our work is that, by equipping Mamba with a principled initialization, we can recover an overall better recipe for cross-architectural distillation. To this end, we propose a principled two-stage approach: first, we distill knowledge from a traditional Transformer into a linearized version of Attention, using an adaptation of the kernel trick. Then, we distill the linearized version into an adapted Mamba model that does not use any Attention block. Overall, the distilled Mamba model retains most of the original Pythia-1B Transformer performance, reaching a perplexity of 14.01 close to the teacher\u00e2s 13.86. This largely carries over to downstream tasks, although some gaps appear on tasks relying more on in-context recall. To show the efficacy of our recipe, we conduct thorough ablations at 1B scale with 10B tokens varying sequence mixer architecture, scaling analysis on model sizes and total distillation tokens, and a sensitivity analysis on tokens allocation between stages.\n- \u00e2 Concordia University and MILA Research Institute\n- \u00e2\u00a1 Johns Hopkins University and Flatiron Institute\n- ** Work done while at Apple\nUnderstanding Input Selectivity in Mamba\nJuly 4, 2025[research area Methods and Algorithms](/research/?domain=Methods%20and%20Algorithms), [research area Speech and Natural Language Processing](/research/?domain=Speech%20and%20Natural%20Language%20Processing)[conference ICML](/research/?event=ICML)\nState-Space Models (SSMs), and particularly Mamba, have recently emerged as a promising alternative to Transformers. Mamba introduces input selectivity to its SSM layer (S6) and incorporates convolution and gating into its block definition. While these modifications do improve Mamba\u00e2s performance over its SSM predecessors, it remains largely unclear how Mamba leverages the additional functionalities provided by input selectivity, and how these\u00e2\u00a6\nDistillation Scaling Laws\nJuly 1, 2025[research area Methods and Algorithms](/research/?domain=Methods%20and%20Algorithms), [research area Speech and Natural Language Processing](/research/?domain=Speech%20and%20Natural%20Language%20Processing)[conference ICML](/research/?event=ICML)\nWe propose a distillation scaling law that estimates distilled model performance based on a compute budget and its allocation between the student and teacher. Our findings mitigate the risks associated with large-scale distillation by enabling compute-optimal allocation for both the teacher and student to maximize student performance. We provide compute-optimal distillation recipes for two key scenarios: when a teacher already exists, and when a\u00e2\u00a6",
-    "topic": "research",
-    "tags": [
-      "models",
-      "safety",
-      "research",
-      "infrastructure",
-      "coding",
-      "tutorials"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
