@@ -1,8 +1,95 @@
 [
   {
+    "run_id": "9576594385af",
+    "started_at": "2026-11-26T14:38:46+00:00",
+    "ended_at": "2026-11-26T14:39:06+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "45840911171",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/45840911171",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-11-26T14:38:46+00:00",
+        "ended_at": "2026-11-26T14:39:06+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 20,
+          "enriched": 19,
+          "updated": 19,
+          "unchanged": 1,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "trafilatura": 13,
+            "youtube": 6,
+            "rss": 1
+          },
+          "per_source": {
+            "simon-willison": {
+              "attempted": 4,
+              "enriched": 4,
+              "failed": 0
+            },
+            "huggingface-blog": {
+              "attempted": 4,
+              "enriched": 4,
+              "failed": 0
+            },
+            "together-ai": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "marios-rec-reading": {
+              "attempted": 3,
+              "enriched": 2,
+              "failed": 1
+            },
+            "fireship": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "matt-wolfe": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "anthropic-engineering": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "anthropic-research": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "google-deepmind-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            }
+          },
+          "flush_batches": 1,
+          "defuddle_enabled": true,
+          "duration_ms": 19840.16
+        }
+      }
+    ]
+  },
+  {
     "run_id": "c8beb1320c88",
     "started_at": "2026-11-26T10:30:49+00:00",
-    "ended_at": "2026-11-26T10:30:57+00:00",
+    "ended_at": "2026-11-26T10:31:10+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "45801860977",
@@ -768,100 +855,6 @@
           "defuddle_enabled": false,
           "skipped_entries": 0,
           "duration_ms": 12973.32
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "b293e7e69d23",
-    "started_at": "2026-11-21T13:11:31+00:00",
-    "ended_at": "2026-11-21T13:12:12+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "44907531721",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/44907531721",
-    "stage_stats": [
-      {
-        "stage_name": "enrich",
-        "started_at": "2026-11-21T13:11:31+00:00",
-        "ended_at": "2026-11-21T13:12:01+00:00",
-        "status": "success",
-        "metrics": {
-          "attempted": 20,
-          "enriched": 19,
-          "updated": 19,
-          "unchanged": 1,
-          "misses": 0,
-          "markdown_new_used": 0,
-          "markdown_new_rate_limited": false,
-          "stopped_early": false,
-          "method_counts": {
-            "trafilatura": 9,
-            "youtube": 6,
-            "jina": 1,
-            "next_flight": 3,
-            "rss": 1
-          },
-          "per_source": {
-            "marios-rec-reading": {
-              "attempted": 3,
-              "enriched": 2,
-              "failed": 1
-            },
-            "matt-wolfe": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "ai-engineer": {
-              "attempted": 3,
-              "enriched": 3,
-              "failed": 0
-            },
-            "fireship": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "simon-willison": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "microsoft-commandline": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "openai-blog": {
-              "attempted": 3,
-              "enriched": 3,
-              "failed": 0
-            },
-            "apple-machine-learning": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "anthropic-news": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            },
-            "huggingface-blog": {
-              "attempted": 2,
-              "enriched": 2,
-              "failed": 0
-            },
-            "together-ai": {
-              "attempted": 1,
-              "enriched": 1,
-              "failed": 0
-            }
-          },
-          "flush_batches": 1,
-          "defuddle_enabled": true,
-          "duration_ms": 30307.73
         }
       }
     ]
