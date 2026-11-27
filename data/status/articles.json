@@ -1,5 +1,91 @@
 [
   {
+    "article_id": 1403757,
+    "title": "Stop Paying LLM Prices for Yes-or-No Answers \u2014 Chinmay Goyal, Glean",
+    "url": "https://www.youtube.com/watch?v=K5_ST-kMrvY",
+    "published_at": "2026-11-27T20:00:36+00:00",
+    "fetched_at": "2026-11-27T20:44:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Most steps in an AI product are bounded decisions, not generation: classifying a query, routing to an expert, ranking suggestions, checking a citation. Chinmay Goyal, a software engineer on Glean Assistant, shows how Glean moved these steps to Jev, TypeSafe's decision model. The results include expert routing with about 8x lower latency, follow-up suggestions on time in 99.2% of cases with zero invalid outputs, consistent citation checks, and security-classifier recall rising from 31.5% to 90.2%. He closes with a simple rule for when to use a decision model.\n\nSpeaker info:\n- https://www.glean.com\n\nTimestamps:\n0:00 - Most AI steps are bounded decisions\n0:57 - LLMs, open models, fine-tuning or Jev\n2:27 - How Glean evaluates changes\n3:12 - Query classification\n3:57 - Expert routing at 8x lower latency\n5:27 - Ranking follow-up suggestions\n7:46 - Zero invalid outputs\n8:31 - Self-tuning thresholds\n10:01 - Consistent LLM-as-judge for citations\n12:16 - Security recall from 31.5% to 90.2%\n14:31 - When to use a decision model",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "safety",
+      "benchmark",
+      "infrastructure",
+      "tools",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1403712,
+    "title": "The wild world of tech in 2027...",
+    "url": "https://www.youtube.com/watch?v=sPGzM3ktJVE",
+    "published_at": "2026-11-27T16:08:25+00:00",
+    "fetched_at": "2026-11-27T20:44:41+00:00",
+    "source_id": "fireship",
+    "source_name": "Fireship",
+    "extraction_method": "rss",
+    "body": "Get 67% off VPS hosting with Hostinger's Black Friday sale. Use code FIRESHIP for an extra discount - https://hostinger.com/fireship\n\nThe junior dev job is dead, open source is drowning in slop, and npm install is a gamble. Here are 10 trends every dev needs to watch in 2027 to avoid the permanent underclass.\n\nWant more Fireship?\n\n\ud83d\uddde\ufe0f Newsletter: https://bytes.dev\n\ud83e\udde0 Courses: https://fireship.dev",
+    "topic": "news",
+    "tags": [
+      "open-source",
+      "coding",
+      "education",
+      "media",
+      "news",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1403742,
+    "title": "AI for Science at Hugging Face",
+    "url": "https://www.youtube.com/watch?v=oFI3ohzJDTY",
+    "published_at": "2026-11-27T14:00:18+00:00",
+    "fetched_at": "2026-11-27T20:44:41+00:00",
+    "source_id": "hugging-face",
+    "source_name": "Hugging Face",
+    "extraction_method": "rss",
+    "body": "What does the AI for Science team actually do at Hugging Face? In this deep dive, Aritra sits down with ML researcher Emma to explore Hugging Science (Hugging Face\u2019s initiative to make open-source scientific AI models, datasets, and tools accessible to everyone).\n\nImportant Links\n* Hugging Science Organization: https://huggingface.co/hugging-science\n* Hugging Science on X: https://x.com/huggingscience\n* Connect with Emma Scharfmann: https://x.com/EmmaScharfmann\n* Connect with Aritra Roy Gosthipaty: https://x.com/ariG23498",
+    "topic": "enterprise",
+    "tags": [
+      "enterprise",
+      "models",
+      "open-source",
+      "research",
+      "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1403758,
+    "title": "Why Cloudflare Became a Neolab \u2014 Michelle Chen, Cloudflare",
+    "url": "https://www.youtube.com/watch?v=cYcYfM9Mvwo",
+    "published_at": "2026-11-27T14:00:04+00:00",
+    "fetched_at": "2026-11-27T20:44:41+00:00",
+    "source_id": "ai-engineer",
+    "source_name": "AI Engineer",
+    "extraction_method": "rss",
+    "body": "Cloudflare bet early that AI models would get smaller and network latency would matter. Instead models grew to trillions of parameters, so Cloudflare pivoted to serving them. Then System 1 decision models arrived, and Cloudflare trained its own over a weekend and shipped four models in three weeks. Michelle Chen, group PM for Workers AI, tells that story and demos Clef and Cleric alongside an LLM on a CI triage task: about 2x faster, 72% cheaper and 94% fewer tokens, with the same answer.\n\nSpeaker info:\n- https://www.cloudflare.com\n\nTimestamps:\n0:00 - Why Cloudflare became a neolab\n1:42 - From CDN to edge infrastructure\n2:27 - Workers and compute primitives\n3:12 - Storage for full-stack apps\n3:57 - Workers AI bets on small models\n4:42 - Models got bigger instead\n6:12 - Serving trillion-parameter models\n7:42 - Waiting for the east wind\n8:27 - System 1 models arrive\n9:57 - Training Clef in 48 hours\n11:27 - Cleric, the extraction model\n13:46 - Demo: triaging a CI failure\n16:46 - 2x faster, 72% cheaper, 94% fewer tokens\n17:31 - What people are building\n18:16 - Go onwards",
+    "topic": "infrastructure",
+    "tags": [
+      "models",
+      "infrastructure",
+      "coding",
+      "development",
+      "video"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
     "article_id": 1401524,
     "title": "Simple Scaling of Swarms viaCooperative Multi-agent RL",
     "url": "https://www.youtube.com/watch?v=SUP5rlVHI0Y",
@@ -37,6 +123,25 @@
       "media",
       "news",
       "tools"
+    ],
+    "dearrow_thumbnail_url": "",
+    "available": true
+  },
+  {
+    "article_id": 1404150,
+    "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+    "url": "https://huggingface.co/blog/video-trainium3",
+    "published_at": "2026-11-27T00:00:00+00:00",
+    "fetched_at": "2026-11-27T20:44:43+00:00",
+    "source_id": "huggingface-blog",
+    "source_name": "Hugging Face Blog",
+    "extraction_method": "rss",
+    "body": "",
+    "topic": "ai-models",
+    "tags": [
+      "ai-models",
+      "video",
+      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
@@ -10932,119 +11037,6 @@
       "api",
       "agents",
       "research"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1190552,
-    "title": "Together Compiler: Continuous Compilation for AI inference",
-    "url": "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference",
-    "published_at": "2026-11-04T00:00:00+00:00",
-    "fetched_at": "2026-11-04T15:09:19+00:00",
-    "source_id": "together-ai",
-    "source_name": "Together AI",
-    "extraction_method": "trafilatura",
-    "body": "AI inference workloads are dynamic. There are thousands of regimes spanning new models, hardware platforms, customers, use cases, and traffic shapes. It\u2019s no longer scalable to optimize each of these regimes by hand.\n- Architectures are highly variable: it\u2019s been ~11 years since the Transformer. We might have thought there would be more consolidation, but none of the top-10 open-source LLMs on OpenRouter use the same architecture!\n- Workloads are highly variable: Together serves many trillions of tokens per day across thousands of customers, each with a different traffic shape (batch size, sequence length, MoE expert imbalance, attention sparsity, session duration, domain).\n- Hardware is highly variable: H100s, B200s, B300s, NVL72, VR, Groq, and more each require distinct strategies.\nAgents are a great fit for this problem, in theory. They can adapt to new workloads and search over the space of possible optimizations without relying on fixed rules or heuristics that plague human experts and traditional machine learning compilers. However, today\u2019s agentic systems are bottlenecked by the speed of experimentation.\nWe introduce Together Compiler (TKCC), the first truly continual optimization loop that leverages high-throughput agents to optimize to diverse inference workloads\nIn less than 24 hours, TKCC achieves up to 2.6x higher TPS across frontier open source models (Kimi K3, GLM 5.3, MiniMax M3.1-Flash, DeepSeek v4.1-Flash), sets the state-of-the-art on SemiAnalysis\u2019 InferenceX benchmark for low-latency with 1111 TPS on MiniMax M3.1-Flash and 1205 TPS on DeepSeek v4.1-Flash, and outperforms available open-source megakernels by 1.7x on their workhorse Llama 1B batch size 1 setting. Furthermore, TKCC generalizes to domains beyond language model inference (weather modeling, PDE, time-series, and biology). This performance boost is enabled by TKCC\u2019s 252x higher experiment throughput compared to baseline agentic performance optimization systems. Together Compiler is serving trillions of tokens today.\nTraffic is continually changing\nAs an inference provider, we see a variety of user behaviors based on regional patterns, new model releases, and burstiness.\n- Regional patterns: Users across the world may have different model preferences. We\u2019ve observed traffic for one country\u2019s working hours to have 1.4x longer prompts than another country (97k vs 70k).\n- Model releases: Users take time to figure out how to integrate new model releases into their workflows. First, they tend to opt for chat-based interaction and evaluation. This is swiftly followed by an 80% increase in prompt length just two weeks after the release as users shift towards agentic workloads.\n- Burstiness: Customers may send bursts of requests at random times throughout the day. Prompt lengths can suddenly double and cache hit rates can fall if not handled carefully.\nIt\u2019s clear that we must adapt to ever-changing user behavior with specialized optimizations for each new deployment.\nOverview of Together Compiler\nTKCC takes as input the traffic shape, model, and hardware. TKCC uses agents to generate a series of optimizations for an inference engine.\nThe core insights in TKCC are as follows:\n1. TKCC maximizes experimentation throughput and minimizes GPU idle time during agent optimization\nMost existing agentic inference optimization systems require agents to launch and teardown engines like VLLM, SGLang, or TRT-LLM to test each new experiment. However, engine start times are tens of minutes, significantly impeding experimentation throughput (see table below). Instead, TKCC proposes a new paradigm of \u201cpersistent engines\u201d where the engine starts up once and can hot-reload any candidate forward pass, without any restarts. To ensure that the persistent engines constantly have new optimizations to test, TKCC spawns multiple agents that continually generate ideas and communicate via a message board to parallelize their efforts.\n2. TKCC balances the tradeoff between measurement throughput and measurement fidelity\nExisting agent optimization systems either iteratively relaunch the inference engine, suffering from low experiment throughput, or optimize standalone kernels in isolation, outside of the inference engine, suffering from poor measurement fidelity. Systems that optimize standalone kernels often evaluate them using random input data. However, with modern architectures using data-dependent primitives like MoE and sparse-k attention, input data distributions have a direct effect on which optimization strategies may win (see figure below). High-fidelity inputs are important for effective optimization. TKCC uses a tier of persistent engines to balance the throughput-fidelity tradeoff: \u201cfast engines\u201d load a few layers and are ideal for rapid iteration and low-variance timings, while \u201cslower engines\u201d load many layers and are ideal for testing whether optimizations hold-up on real data distributions.\n3. TKCC utilizes a custom cost model to select parallelism strategies (e.g., TP, EP, DCP, etc.) for agents to achieve the highest performance\nExisting systems have sophisticated methods for selecting inference configurations under SLA requirements. However, selecting the ideal configuration faces the same throughput-fidelity tradeoff: it is intractable to measure each parallelism configuration, especially because software implementations are immature. A naive approach is to select a parallelism strategy based on raw hardware specs or micro-benchmarks. However, this insufficiently captures data dependent traffic properties like MoE expert imbalance or uneven prompt length distributions. We designed a cost model that uses a tiered measurement strategy involving hardware specs, microbenchmarks, and measured forward passes to construct a high-fidelity representation while rapidly pruning the configuration search space to support continual traffic drift.\nResults\nWe evaluate TKCC against three different types of baselines: Hand-tuned megakernels, InferenceX engine configurations, and popular AI codebases from diverse domains like weather modeling, PDE, time series and biology models.\nMegaKernel workloads\nWe start by evaluating the canonical MegaKernel workload: Llama 1B at batch size 1. This model architecture has been well-optimized by both human experts and traditional machine learning compilers. TKCC generates 1.7x higher TPS and continues to perform as sequence length increases.\nInferenceX AgentX workloads\nWe evaluate TKCC on the AgentX benchmark from SemiAnalysis. We start from the best-reported open source engine configurations for frontier models across inference engines and hardware platforms. TKCC consistently sets the performance frontier across all settings, outperforming highly-optimized baselines by up to 2.6x higher TPS.1\nWe also evaluate specifically on the low-latency use case at batch size 1 and set the state-of-the-art performance with 1111 TPS on MiniMax M3.1-Flash and 1205 TPS on DeepSeek v4.1-Flash. For these results, we use our cost model to select the parallelism configuration instead of using the InferenceX configuration. We observe speedups with this approach.\nAcross AI workloads\nWe select popular open-source code bases across weather modeling, PDE, time-series, and biology. We show the geometric mean speedups of TKCC over simply using Claude Code with the /goal command, illustrating that the principles of TKCC generalize across domains. We have been using TKCC as a general purpose AI compiler beyond LLM inference.\nPolymorphic AI systems is the next frontier\nFor Together AI, the most exciting systems challenge has been [Polymorphic Inference](https://www.together.ai/blog/polymorphic-inference). Inference is no longer about optimizing for a single traffic shape for a single hardware platform and model, traffic is constantly and dynamically evolving, much like financial markets, and that dynamism has opened up a whole host of new research questions.\nCheck out our [paper to learn more](http://www.together.ai/together-compiler-paper).\nAnd if these frontiers of AI systems excite you, feel free to [reach out to us](https://www.together.ai/contact-sales)!\n1 Trainium2 was run on a synthetic multi-turn dataset (70k ISL, 3.5k new ISL 95% cached, 700 OSL) instead of AgentX since our implementation does not yet support higher concurrencies on the limited HBM capacity.",
-    "topic": "research",
-    "tags": [
-      "research",
-      "release",
-      "models",
-      "open-source",
-      "api",
-      "agents",
-      "benchmark"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1192170,
-    "title": "datasette-agent 0.5a0",
-    "url": "https://simonwillison.net/2026/Nov/3/datasette-agent/",
-    "published_at": "2026-11-03T23:13:45+00:00",
-    "fetched_at": "2026-11-04T21:25:29+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "3rd November 2026\nThis is a significant release of [Datasette Agent](https://agent.datasette.io/). The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page.\nWhen combined with [datasette-apps](https://github.com/datasette/datasette-apps) this means you can prompt a database-backed app into existence and then modify it from the chat that sits next to that app.\nYou can try it by signing in with your GitHub account to [agent.datasette.io](https://agent.datasette.io/).\nRecent articles\n[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026",
-    "topic": "tools",
-    "tags": [
-      "tools",
-      "release",
-      "models",
-      "open-source",
-      "agents",
-      "coding",
-      "development"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1192171,
-    "title": "llm 0.37.1",
-    "url": "https://simonwillison.net/2026/Nov/3/llm/",
-    "published_at": "2026-11-03T21:41:42+00:00",
-    "fetched_at": "2026-11-04T21:25:29+00:00",
-    "source_id": "simon-willison",
-    "source_name": "Simon Willison",
-    "extraction_method": "trafilatura",
-    "body": "3rd November 2026\nA bugfix release for [LLM](https://llm.datasette.io/), with contributions from [Steven Huang](https://github.com/remote-controlled-man), [Tao An](https://github.com/tao-hpu), [Arjan Mossel](https://github.com/ar-jan), and [XQ](https://github.com/XXXXXQ-0206).\nRecent articles\n[Qwen 3.8 27B on my laptop can interpret model weights, too](/2026/Nov/3/qwen-can-interpret-model-weights/)- 3rd November 2026[The U.S. Census Bureau and \u201cSuper Intelligence\u201d](/2026/Nov/2/census-bureau-super-intelligence/)- 2nd November 2026[The October inflection point for vibe game development](/2026/Oct/28/vibe-game-development/)- 28th October 2026[Battle Drones - a vibe coded RTS with audio-based multiplayer](/2026/Oct/20/battledrones/)- 20th October 2026",
-    "topic": "tools",
-    "tags": [
-      "release",
-      "models",
-      "open-source",
-      "coding",
-      "development",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1190115,
-    "title": "A real-life speeder bike from Return of the Jedi (Not AI)",
-    "url": "https://www.youtube.com/shorts/PRAY_SewRxI",
-    "published_at": "2026-11-03T20:51:24+00:00",
-    "fetched_at": "2026-11-04T15:09:16+00:00",
-    "source_id": "matt-wolfe",
-    "source_name": "Matt Wolfe",
-    "extraction_method": "youtube",
-    "body": "Sharing the latest news and advancements in AI\n\nDiscover More:\n\ud83d\udee0\ufe0f Explore AI Tools & News: https://futuretools.io/\n\ud83d\udcf0 Weekly Newsletter: https://futuretools.io/newsletter\n\nSocials:\n\u274c Twiter/X: https://x.com/mreflow\n\ud83d\uddbc\ufe0f Instagram: https://instagram.com/mr.eflow\n\ud83e\uddf5 Threads: https://www.threads.net/@mr.eflow\n\ud83d\udfe6 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n\ud83d\udc4d Facebook: https://www.facebook.com/mattrwolfe\n\n\nLet\u2019s work together!\n- Brand, sponsorship & business inquiries: business@mattwolfe.com\n\n#AINews #StarWars #FutreTech\n\nauthor: Matt Wolfe\n\nvideo: https://www.youtube.com/embed/PRAY_SewRxI",
-    "topic": "media",
-    "tags": [
-      "video",
-      "coding",
-      "enterprise",
-      "media",
-      "news",
-      "tools"
-    ],
-    "dearrow_thumbnail_url": "",
-    "available": true
-  },
-  {
-    "article_id": 1190179,
-    "title": "Without Caching, Your AI Agent Costs 10x More - George Cameron, Artificial Analysis",
-    "url": "https://www.youtube.com/watch?v=prGP0huECPo",
-    "published_at": "2026-11-03T20:00:08+00:00",
-    "fetched_at": "2026-11-04T15:09:17+00:00",
-    "source_id": "ai-engineer",
-    "source_name": "AI Engineer",
-    "extraction_method": "youtube",
-    "body": "Some models now cost dollars to complete a single task, while others cost a few cents. George Cameron, co-founder of Artificial Analysis, breaks down what actually drives agent costs in 2026: input tokens, cache hit rate and the number of steps. In one example, an agent task costs about $21 with caching and over $200 without it. He then shows how to decide when you need the smartest model and when a cheaper one gives the same answer.\n\n0:00 Intro to Artificial Analysis\n2:47 The AI landscape and the Intelligence Index\n5:25 Progress is accelerating\n6:27 Open weights models stay close behind\n6:53 Why cost matters now\n8:53 Intelligence gets about 10x cheaper every year\n10:18 Breaking down the cost of an agent task\n12:59 Why caching matters so much\n13:38 Reasoning effort and cost\n15:30 Making the trade-off decision\n17:02 Limited vs. unlimited intelligence tasks\n18:12 How to shortlist and benchmark models\n\nGeorge Cameron, Artificial Analysis: https://artificialanalysis.ai\n\nJoin us in SF for the second annual AIE CODE summit: https://aie.codes our last flagship summit of 2026. Applications live now!\n\nauthor: AI Engineer\n\nvideo: https://www.youtube.com/embed/prGP0huECPo",
-    "topic": "opinion",
-    "tags": [
-      "opinion",
-      "models",
-      "open-source",
-      "agents",
-      "benchmark",
-      "video",
-      "coding"
     ],
     "dearrow_thumbnail_url": "",
     "available": true
