@@ -1,8 +1,80 @@
 [
   {
+    "run_id": "4e61101274d9",
+    "started_at": "2026-11-27T14:34:00+00:00",
+    "ended_at": "2026-11-27T14:34:20+00:00",
+    "status": "success",
+    "error_message": null,
+    "github_run_id": "46016895661",
+    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/46016895661",
+    "stage_stats": [
+      {
+        "stage_name": "enrich",
+        "started_at": "2026-11-27T14:34:00+00:00",
+        "ended_at": "2026-11-27T14:34:20+00:00",
+        "status": "success",
+        "metrics": {
+          "attempted": 10,
+          "enriched": 9,
+          "updated": 9,
+          "unchanged": 1,
+          "misses": 0,
+          "markdown_new_used": 0,
+          "markdown_new_rate_limited": false,
+          "stopped_early": false,
+          "method_counts": {
+            "youtube": 4,
+            "trafilatura": 5,
+            "rss": 1
+          },
+          "per_source": {
+            "hugging-face": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "matt-wolfe": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "ai-engineer": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "simon-willison": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "nvidia-blog": {
+              "attempted": 1,
+              "enriched": 1,
+              "failed": 0
+            },
+            "huggingface-blog": {
+              "attempted": 2,
+              "enriched": 2,
+              "failed": 0
+            },
+            "marios-rec-reading": {
+              "attempted": 1,
+              "enriched": 0,
+              "failed": 1
+            }
+          },
+          "flush_batches": 1,
+          "defuddle_enabled": true,
+          "duration_ms": 19813.72
+        }
+      }
+    ]
+  },
+  {
     "run_id": "a02fa53933f0",
     "started_at": "2026-11-27T11:49:24+00:00",
-    "ended_at": "2026-11-27T11:49:31+00:00",
+    "ended_at": "2026-11-27T11:49:43+00:00",
     "status": "success",
     "error_message": null,
     "github_run_id": "45993478776",
@@ -825,36 +897,6 @@
           "flush_batches": 1,
           "defuddle_enabled": true,
           "duration_ms": 11999.57
-        }
-      }
-    ]
-  },
-  {
-    "run_id": "a9a2b9e948d0",
-    "started_at": "2026-11-22T10:46:31+00:00",
-    "ended_at": "2026-11-22T10:46:46+00:00",
-    "status": "success",
-    "error_message": null,
-    "github_run_id": "45014002548",
-    "github_run_url": "https://github.com/largelanguagemeowing/news/actions/runs/45014002548",
-    "stage_stats": [
-      {
-        "stage_name": "fetch",
-        "started_at": "2026-11-22T10:46:31+00:00",
-        "ended_at": "2026-11-22T10:46:38+00:00",
-        "status": "success",
-        "metrics": {
-          "inserted_articles": 0,
-          "duplicate_articles": 2304,
-          "dead_letters": 0,
-          "failed_sources": 1,
-          "skipped_sources": 1,
-          "not_modified_sources": 17,
-          "auto_disabled_sources": 1,
-          "defuddle_enriched_articles": 0,
-          "defuddle_enabled": false,
-          "skipped_entries": 0,
-          "duration_ms": 6967.17
         }
       }
     ]
